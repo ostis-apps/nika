@@ -1,6 +1,6 @@
 services:
   web:
-    image: ostis/sc-web
+    image: ostis/sc-web:0.7.0
     build:
       context: ./sc-web
       dockerfile: ./Dockerfile
@@ -18,7 +18,7 @@ services:
         condition: service_healthy
 
   problem-solver:
-    image: ostis/nika
+    image: ostis/nika:0.1.0
     build:
       context: ./
       dockerfile: ./Dockerfile
@@ -48,7 +48,7 @@ services:
       - "serve"
 
   nika-ui:
-    image: ostis/nika-ui
+    image: ostis/nika-ui:0.1.0
     build:
       context: ./interface
       dockerfile: ./Dockerfile
