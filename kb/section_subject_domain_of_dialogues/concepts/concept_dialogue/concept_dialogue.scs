@@ -1,0 +1,35 @@
+concept_dialogue
+<-sc_node_class;
+=>nrel_main_idtf:
+	[диалог](* <- lang_ru;; *);
+	[dialogue](* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+            [Опр. (диалог)](* <- lang_ru;; *);
+            [Def. (dialogue)](* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+        ...
+        (*
+            -> rrel_example:
+                [Диалог - процесс передачи информации от коммуникатора к получателю.](* <- lang_ru;; *);;
+	    *);
+		...
+		(*
+		-> rrel_example: 
+			[Dialogue is the process of transmitting of information from the communicator to the recipient.](* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		    process
+		};;
+	*);
+<= nrel_inclusion: process;
+=> nrel_inclusion: concept_active_dialogue;
+<= nrel_subdividing:
+	{
+        concept_dialogue_in_english;
+        concept_dialogue_in_russian
+	};;

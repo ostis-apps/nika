@@ -1,0 +1,24 @@
+action_standard_message_reply
+<- sc_node_class;
+=> nrel_main_idtf:
+	[действие. ответить на сообщение с использованием логических правил](* <- lang_ru;; *);
+	[action. answer message with logic rules](* <- lang_en;; *);
+<- actions_class;
+<- atomic_action_class;
+<= nrel_inclusion: information_action;
+<- rrel_key_sc_element:
+	...
+	(*
+	<- explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+			-> rrel_example:
+				[Действие. ответить на сообщение с использованием логических правил - действие по генерации ответного сообщения с использованием логических правил.](* <- lang_ru;;	*);;
+		*);
+		...
+		(*
+			-> rrel_example:
+				[Action. answer message with logic rules is an action to generate a response message using logic rules.](* <- lang_en;; *);;
+		*);;
+	*);;

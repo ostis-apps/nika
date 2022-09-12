@@ -1,0 +1,34 @@
+concept_non_atomic_message
+<- sc_node_class;
+=> nrel_main_idtf:
+	[неатомарное сообщение]
+	(* <- lang_ru;; *);
+	[non atomic message]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (неатомарное сообщение)]
+		(* <- lang_ru;; *);
+		[Def. (non atomic message)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Неатомарное сообщение - сообщение, в состав которого входят другие сообщения.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Non atomic message is a message, that includes other messages.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_message
+		};;
+	*);;

@@ -1,0 +1,52 @@
+nrel_wit_ai_idtf => nrel_main_idtf: [идентификатор Wit.ai*] (* <- lang_ru;; *);;
+nrel_wit_ai_idtf => nrel_main_idtf: [Wit.ai identifier*] (* <- lang_en;; *);;
+
+nrel_wit_ai_idtf <- definition;;
+
+nrel_wit_ai_idtf => nrel_main_idtf: [Опр.(идентификатор Wit.ai*)] (* <- lang_ru;; *);;
+nrel_wit_ai_idtf => nrel_main_idtf: [Def.(Wit.ai identifier*)] (* <- lang_en;; *);;
+ 
+nrel_wit_ai_idtf -> rrel_key_sc_element: nrel_wit_ai_idtf;;
+nrel_wit_ai_idtf <= nrel_sc_text_translation:
+	...
+	(*
+	-> rrel_example: 
+		[Идентификатор Wit.ai* - подмножество отношения идентификатор*, связывающее класс с соответствующим идентификатором Wit.ai.]
+		(* <- lang_ru;; *);;
+	*);
+	...
+	(*
+	-> rrel_example:
+		[A Wit.ai identifier* is a subset of the ID* relation, which connects a class with the corresponding Wit.ai identifier.]
+		(* <- lang_en;; *);;
+	*);;
+
+nrel_wit_ai_idtf <= nrel_using_constants:
+	{
+	    relation;
+	    nrel_idtf
+	};;	
+
+
+nrel_wit_ai_idtf => nrel_first_domain: sc_element;;
+	
+nrel_wit_ai_idtf => nrel_second_domain: sc_link;;
+
+nrel_wit_ai_idtf => nrel_definitional_domain: 
+	... 
+	(*
+        <= nrel_combination:
+            {
+                sc_element;
+                sc_link
+            };;
+	*);;	
+
+nrel_wit_ai_idtf <- relation;;
+nrel_wit_ai_idtf <- binary_relation;;
+nrel_wit_ai_idtf <- oriented_relation;;
+nrel_wit_ai_idtf <- antireflexive_relation;;
+nrel_wit_ai_idtf <- asymmetric_relation;;
+nrel_wit_ai_idtf <- antitransitive_relation;;
+
+nrel_idtf => nrel_inclusion: nrel_wit_ai_idtf;;

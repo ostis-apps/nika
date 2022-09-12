@@ -1,0 +1,11 @@
+action_node
+    <- action_message_topic_classification;
+    -> rrel_1: message;;
+
+...
+    => nrel_sc_text_translation: message;
+    -> [Hello Maksim from summer.] (* <- lang_en;;  <- concept_text_file;; *);;
+
+message
+    <- concept_message;
+    <- concept_atomic_message;;

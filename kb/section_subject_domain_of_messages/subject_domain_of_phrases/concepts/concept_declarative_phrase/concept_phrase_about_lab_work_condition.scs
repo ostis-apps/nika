@@ -1,0 +1,26 @@
+concept_phrase_about_lab_work_condition
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза про условие лабораторной работы]
+	(* <- lang_ru;; *);
+	[phrase about lab work condition]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (фраза про условие лабораторной работы)]
+		(* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Фраза про условие лабораторной работы - фраза, содержащая информацию про условие лабораторной работы.]
+			(* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;
+	*);;

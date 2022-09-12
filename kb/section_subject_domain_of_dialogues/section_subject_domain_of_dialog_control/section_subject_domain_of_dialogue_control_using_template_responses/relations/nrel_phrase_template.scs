@@ -1,0 +1,43 @@
+nrel_phrase_template
+    <- relation;
+    <- binary_relation;
+    <- oriented_relation;
+    <- antireflexive_relation;
+    <- asymmetric_relation;
+    <- antitransitive_relation;
+    <= nrel_main_idtf:
+        [шаблон фразы*](* <-lang_ru;; *);
+        [phrase template*](* <-lang_en;; *);
+    => nrel_first_domain: file;
+    => nrel_second_domain: structure;
+    => nrel_definitional_domain:
+        ...
+        (*
+            <= nrel_combination:
+                {
+                    structure;
+                    sheaf
+                };;
+        *);
+    <- rrel_key_sc_element:
+        ...
+        (*
+            => nrel_main_idtf:
+                [Опр. (шаблон фразы*)](* <-lang_ru;; *);
+                [Def. (phrase template*)](* <-lang_en;; *);;
+            <- definition;;
+            <= nrel_sc_text_translation:
+                ...
+                (*
+                    -> rrel_example:
+                        [Шаблон фразы* - это бинарное отношение, связывающее sc-ссылку, содержащую шаблонную фразу, с контуром, содержащим шаблон, по которому будет осуществляться поиск необходимой конструкции для генерации фразы.](* <- lang_ru;; *);
+                        [Phrase template* is a binary relation that connects a sc-link with a template phrase and a contour with a template, which will be used to search for the necessary construction for generating the phrase.](* <- lang_en;; *);;
+                *);;
+        <= nrel_using_constants:
+            {
+                template_phrases_class;
+                binary_relation;
+                structure;
+                file
+            };;
+        *);;

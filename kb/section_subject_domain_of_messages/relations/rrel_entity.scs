@@ -1,0 +1,55 @@
+rrel_entity
+<- sc_node_role_relation;
+<- relation;
+<- role_relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+	[сущность']
+	(* <- lang_ru;; *);
+	[entity']
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+    [rrel_entity];
+=> nrel_first_domain: concept_atomic_message;
+=> nrel_second_domain: sc_node;
+=> nrel_definitional_domain:
+	...
+	(*
+	<= nrel_combination:
+		{
+			concept_atomic_message;
+			sc_node
+		};;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (сущность')]
+		(* <- lang_ru;; *);
+		[Def. (entity')]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сущность' - отношение, которое связывает атомарное сообщение с сущностью, указанной в сообщении.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Entity' is a relation that connects an atomic message with the entity specified in the message.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message;
+			concept_relation
+		};;
+	*);;

@@ -1,0 +1,47 @@
+section_subject_domain_of_dialogues => nrel_main_idtf: [Раздел. Предметная область диалогов] (* <- lang_ru;; *);;
+section_subject_domain_of_dialogues => nrel_main_idtf: [Section. Subject domain of dialogues] (* <- lang_en;; *);;
+section_subject_domain_of_dialogues <- sc_node_class;;
+
+non_atomic_section -> section_subject_domain_of_dialogues;;
+
+section_subject_domain_of_dialogues = [*
+    subject_domain_of_dialogues
+    =>nrel_main_idtf:
+        [Предметная область диалогов](* <- lang_ru;; *);
+        [Subject domain of dialogues](* <- lang_en;; *);
+    <- subject_domain;
+    -> rrel_maximum_studied_object_class: concept_dialogue;
+    -> rrel_not_maximum_studied_object_class:
+        concept_active_dialogue;
+        concept_dialogue_in_english;
+        concept_dialogue_in_russian;
+        concept_empty_dialogue;
+    -> rrel_explored_relation:
+        nrel_dialogue_history;;
+*];;
+section_subject_domain_of_dialogues <= nrel_section_decomposition:
+	{
+        section_subject_domain_of_dialogue_control;
+        section_subject_domain_of_dialogue_participants
+	};;
+
+rrel_key_sc_element -> (section_subject_domain_of_dialogues -> subject_domain_of_dialogues)
+(*
+	=> nrel_key_sc_element_order: (section_subject_domain_of_dialogues -> concept_dialogue)
+(*
+	<- rrel_key_sc_element;;
+	=> nrel_key_sc_element_order: (section_subject_domain_of_dialogues -> concept_active_dialogue)
+(*
+	<- rrel_key_sc_element;;
+	=> nrel_key_sc_element_order: (section_subject_domain_of_dialogues -> concept_dialogue_in_english)
+(*
+	<- rrel_key_sc_element;;
+	=> nrel_key_sc_element_order: (section_subject_domain_of_dialogues -> concept_dialogue_in_russian)
+(*
+	<- rrel_key_sc_element;;
+	=> nrel_key_sc_element_order: (section_subject_domain_of_dialogues -> concept_empty_dialogue)
+(*
+	<- rrel_key_sc_element;;
+	=> nrel_key_sc_element_order: (section_subject_domain_of_dialogues -> nrel_dialogue_history)
+	(* <- rrel_key_sc_element;; *);;
+*);;*);;*);;*);;*);;*);;

@@ -1,0 +1,47 @@
+section_subject_domain_of_messages
+    => nrel_main_idtf:
+        [Раздел. Предметная область сообщений] (* <- lang_ru;; *);
+        [Section. Subject domain of messages] (* <- lang_en;; *);
+<- sc_node_class;
+<- atomic_section;;
+
+section_subject_domain_of_messages = [*
+    subject_domain_of_messages
+        => nrel_main_idtf: 
+            [Предметная область сообщений] (* <- lang_ru;; *);
+            [Subject domain of messages] (* <- lang_en;; *);
+        <- subject_domain;
+        ->rrel_maximum_studied_object_class:
+            concept_message;
+            concept_empty_string;
+        ->rrel_explored_relation:
+            nrel_message_sequence;
+            nrel_reply;
+            rrel_entity;
+        ->rrel_not_maximum_studied_object_class:
+            concept_greeting_message;
+            concept_message_about_entity;
+            concept_non_atomic_message;
+            concept_atomic_message;;
+*];;
+
+rrel_key_sc_element -> (section_subject_domain_of_messages -> subject_domain_of_messages)
+(*
+	=> nrel_key_sc_element_order: (section_subject_domain_of_messages -> concept_message)
+(*
+	<- rrel_key_sc_element;;
+	=> nrel_key_sc_element_order: (section_subject_domain_of_messages -> concept_empty_string)
+(*
+	<- rrel_key_sc_element;;
+	=> nrel_key_sc_element_order: (section_subject_domain_of_messages -> concept_non_atomic_message)
+(*
+	<- rrel_key_sc_element;;
+	=> nrel_key_sc_element_order: (section_subject_domain_of_messages -> concept_atomic_message)
+(*
+	<- rrel_key_sc_element;;
+	=> nrel_key_sc_element_order: (section_subject_domain_of_messages -> nrel_message_sequence)
+(*
+	<- rrel_key_sc_element;;
+	=> nrel_key_sc_element_order: (section_subject_domain_of_messages -> nrel_reply)
+	(* <- rrel_key_sc_element;; *);;
+*);;*);;*);;*);;*);;*);;

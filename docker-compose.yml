@@ -1,0 +1,70 @@
+services:
+  web:
+    image: ostis/sc-web
+    build:
+      context: ./sc-web
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    expose:
+      - 8000
+    networks:
+      - nika
+    command:
+      - "--server-host=problem-solver"
+    depends_on:
+      problem-solver:
+        condition: service_healthy
+
+  problem-solver:
+    image: ostis/nika
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ./kb:/nika/kb
+      - kb-binary:/kb.bin
+      - ./repo.path:/nika/repo.path
+      - ./nika.ini:/nika/nika.ini
+    networks:
+      - nika
+    ports:
+      - "8090:8090"
+    expose:
+      - 8090
+    healthcheck:
+      test: "python3 /nika/problem-solver/sc-machine/scripts/healthcheck.py"
+      interval: 5s
+      timeout: 10s
+      retries: 6
+      start_period: 40s
+    environment:
+      # Use the commented env variable if you need to rebuild KB every startup.
+      - "REBUILD_KB=1"
+      - "KB_PATH=../repo.path"
+    command:
+      - "serve"
+
+  nika-ui:
+    image: ostis/nika-ui
+    build:
+      context: ./interface
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    ports: 
+      - "3033:8080"
+    networks:
+      - nika
+    environment:
+      - SOCKET_URL=ws://problem-solver:8090
+      - SC_URL=ws://problem-solver:8090
+      - SC_WEB_URL=http://web:8000
+    depends_on:
+      - web
+volumes:
+  kb-binary: {}
+
+networks:
+  nika: {}

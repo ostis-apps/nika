@@ -1,0 +1,34 @@
+concept_not_classified_by_intent_message
+<- sc_node_class;
+=> nrel_main_idtf:
+	[не классифицированное по цели сообщение]
+	(* <- lang_ru;; *);
+	[not classified by trait message]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (не классифицированное по цели сообщение)]
+        (* <- lang_ru;; *);
+        [Def. (not classified by intent message)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Не классифицированное по цели сообщение - атомарное сообщение, класс которого по цели не определён.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Not classified by intent message is an atomic message, that intent class is not defined.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

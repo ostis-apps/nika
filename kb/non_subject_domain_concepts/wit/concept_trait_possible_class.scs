@@ -1,0 +1,30 @@
+concept_trait_possible_class
+<- sc_node_class;
+=> nrel_main_idtf:
+	[возможный класс признака Wit.ai]
+	(* <- lang_ru;; *);
+	[Wit.ai trait possible class]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (возможный класс признака Wit.ai)]
+		(* <- lang_ru;; *);
+		[Def. (Wit.ai trait possible class)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Возможный класс признака Wit.ai - класс, элементы которого могут быть выделены посредством Wit.ai как признаки.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A Wit.ai trait possible class is a class whose elements can be identified by Wit.ai as traits.]
+			(* <- lang_en;; *);;
+		*);;
+	*);;

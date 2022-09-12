@@ -1,0 +1,40 @@
+concept_answer_on_standard_message_rule
+    => nrel_main_idtf:
+        [правило ответов на стандартные сообщения] (* <- lang_ru;; *);
+        [answer on standard message rule] (* <- lang_en;; *);
+    <- sc_node_class;
+    <= nrel_inclusion:
+        logical_formula;
+    => nrel_subdividing:
+        {
+            concept_answer_on_standard_message_rule_priority_1;
+            concept_answer_on_standard_message_rule_priority_2;
+            concept_answer_on_standard_message_rule_priority_3
+        };
+    => nrel_set_of_subsets:
+        concept_answer_on_standard_message_rule_class_by_priority;;
+
+...
+    <- definition;
+    => nrel_main_idtf:
+        [Опр.(правило ответов на стандартные сообщения)] (* <- lang_ru;; *);
+        [Def.(answer on standard message rule)] (* <- lang_en;; *);
+    -> rrel_key_sc_element:
+        concept_answer_on_standard_message_rule;
+    <= nrel_sc_text_translation: 
+        ...
+        (*
+            -> rrel_example:
+                [Правило ответов на стандартные сообщения - логическая формула, в соответствии с которой осуществляется ответ на стандартные сообщения.](* <- lang_ru;; *);;
+        *);
+        ...
+        (*
+            -> rrel_example:
+                [The answer on standard message rule is a logical formula, according to which the response to standard messages is carried out.](* <- lang_en;; *);;
+        *);
+    <= nrel_using_constants:
+        {
+            logical_formula;
+            concept_message
+        };;
+

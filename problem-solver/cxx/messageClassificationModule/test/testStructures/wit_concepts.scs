@@ -1,0 +1,84 @@
+concept_intent_possible_class
+    <- sc_node_class;
+    -> concept_greeting_message;
+    -> concept_general_message_about_weather;;
+
+concept_greeting_message
+    <- sc_node_class;
+    => nrel_wit_ai_idtf:
+        [greeting];
+    => nrel_wit_ai_idtf:
+        [start_greeting];;
+
+concept_general_message_about_weather
+    <- sc_node_class;
+    => nrel_wit_ai_idtf:
+        [weather];;
+
+concept_trait_possible_class
+    <- sc_node_class;
+    -> concept_message_with_negative_emotional_coloring;
+    -> concept_message_with_neutral_emotional_coloring;
+    -> concept_message_with_positive_emotional_coloring;;
+
+concept_message_with_positive_emotional_coloring
+    <- sc_node_class;
+    => nrel_wit_ai_idtf:
+        [positive];
+    <= nrel_inclusion:
+        concept_message_with_emotional_coloring;;
+
+concept_message_with_neutral_emotional_coloring
+    <- sc_node_class;
+    => nrel_wit_ai_idtf:
+        [neutral];
+    <= nrel_inclusion:
+        concept_message_with_emotional_coloring;;
+
+concept_message_with_negative_emotional_coloring
+    <- sc_node_class;
+    => nrel_wit_ai_idtf:
+        [negative];
+    <= nrel_inclusion:
+        concept_message_with_emotional_coloring;;
+
+concept_message_with_emotional_coloring
+    <- sc_node_class;
+    => nrel_wit_ai_idtf:
+        [wit$sentiment];;
+
+concept_entity_possible_class
+    <- sc_node_class;
+    -> concept_wit_season;
+    -> concept_human;;
+
+concept_human
+    <- sc_node_class;
+    => nrel_entity_possible_role: { rrel_contact };
+    => nrel_wit_ai_idtf: [wit$contact];
+    -> maksim;;
+
+maksim
+    => nrel_main_idtf: [Maksim]
+                        (* <- lang_en;; *);;
+
+rrel_contact
+    <- sc_node_role_relation;
+    => nrel_wit_ai_idtf:
+        [contact];;
+
+concept_wit_season
+    <- sc_node_class;
+    => nrel_wit_ai_idtf:
+        [season];
+    => nrel_entity_possible_role: { rrel_season	};
+    -> summer;;
+
+summer
+    => nrel_main_idtf: [summer]
+                        (* <- lang_en;; *);;
+
+rrel_season
+    <- sc_node_role_relation;
+    => nrel_wit_ai_idtf:
+        [season];;

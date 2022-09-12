@@ -1,0 +1,45 @@
+concept_phrase
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза]
+	(* <- lang_ru;; *);
+	[phrase]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (фраза)]
+		(* <- lang_ru;; *);
+		[Def. (phrase)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Фраза - сочетание слов, выражающее законченную мысль.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Phrase is a combination of words that expresses a complete thought.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		    concept_word
+		};;
+	*);
+<=nrel_subdividing:
+	{
+		concept_declarative_phrase;
+		concept_hortative_phrase;
+		concept_interrogative_phrase
+	};
+	{
+		concept_phrase_about_future_time;
+		concept_phrase_about_present_time;
+		concept_phrase_about_past_time
+	};;

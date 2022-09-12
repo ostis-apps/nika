@@ -1,0 +1,36 @@
+# Git
+# .git - project uses submodules
+.gitignore
+.gitmodules
+.gitattributes
+.github
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+.devcontainer
+
+# Doesn't come inside this image
+interface 
+sc-web
+kb
+repo.path
+
+# Docs
+docs
+mkdocs.yml
+README.md
+
+# macOS (optional)
+.DS_Store
+
+# IDEs (optional)
+.vscode
+.idea
+.clang-format
+.pre-commit-config.yaml
+.pylintrc
+
+# Node.js
+node_modules
