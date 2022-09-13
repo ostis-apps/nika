@@ -1,6 +1,6 @@
 services:
   web:
-    image: ostis/sc-web:0.7.0
+    image: ostis/sc-web:prerelease-0.7.0
     build:
       context: ./sc-web
       dockerfile: ./Dockerfile
