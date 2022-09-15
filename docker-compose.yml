@@ -4,6 +4,7 @@ services:
     build:
       context: ./sc-web
       dockerfile: ./Dockerfile
+    container_name: nika-sc-web
     restart: unless-stopped
     ports:
       - "8000:8000"
@@ -22,6 +23,7 @@ services:
     build:
       context: ./
       dockerfile: ./Dockerfile
+    container_name: nika-problem-solver
     restart: unless-stopped
     volumes:
       - ./kb:/nika/kb
@@ -39,7 +41,7 @@ services:
       interval: 5s
       timeout: 10s
       retries: 6
-      start_period: 40s
+      start_period: 120s
     environment:
       # Use the commented env variable if you need to rebuild KB every startup.
       - "REBUILD_KB=1"
@@ -52,8 +54,9 @@ services:
     build:
       context: ./interface
       dockerfile: ./Dockerfile
+    container_name: nika-ui
     restart: unless-stopped
-    ports: 
+    ports:
       - "3033:8080"
     networks:
       - nika
