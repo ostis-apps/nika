@@ -23,23 +23,23 @@ The agent classifies a message using Wit.ai.
 
 Examples of an input structure:
 
-<img src="../images/messageTopicClassificationAgentInput.png"></img>
+<img src="./images/messageTopicClassificationAgentInput.png"></img>
 
 Examples of an output structure:
 
-<img src="../images/messageTopicClassificationAgentOutput.png"></img>
+<img src="./images/messageTopicClassificationAgentOutput.png"></img>
 
 Example of a structure needed to classify message by intent:
 
-<img src="../images/messageTopicClassificationAgentIntentFormalization.png"></img>
+<img src="./images/messageTopicClassificationAgentIntentFormalization.png"></img>
 
 Example of a structure needed to classify message by trait:
 
-<img src="../images/messageTopicClassificationAgentTraitFormalization.png"></img>
+<img src="./images/messageTopicClassificationAgentTraitFormalization.png"></img>
 
 Example of a structure needed to get message entity:
 
-<img src="../images/messageTopicClassificationAgentEntityFormalization.png"></img>
+<img src="./images/messageTopicClassificationAgentEntityFormalization.png"></img>
 
 **Message classes:**
 

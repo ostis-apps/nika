@@ -18,37 +18,37 @@ Then it calls the phrase generation agent to generate a sc-link with the reply m
 
 1.1. Example of an input structure:
 
-<img src="../images/standardMessageReplyAgentAtomicInput.png"></img>
+<img src="./images/standardMessageReplyAgentAtomicInput.png"></img>
 
 1.2. Example of a logic rule:
 
-<img src="../images/standardMessageReplyAgentAtomicMessageRule.png"></img>
+<img src="./images/standardMessageReplyAgentAtomicMessageRule.png"></img>
 
 1.3. Example of a phrase:
 
-<img src="../images/standardMessageReplyAgentAtomicPhrase.png"></img>
+<img src="./images/standardMessageReplyAgentAtomicPhrase.png"></img>
 
 1.4. Example of an output structure (an atomic message):
 
-<img src="../images/standardMessageReplyAgentAtomicMessageOutput.png"></img>
+<img src="./images/standardMessageReplyAgentAtomicMessageOutput.png"></img>
 
 #### 2. Generation of a non-atomic message
 
 2.1. Example of an input structure:
 
-<img src="../images/standardMessageReplyAgentNonAtomicInput.png"></img>
+<img src="./images/standardMessageReplyAgentNonAtomicInput.png"></img>
 
 2.2. Example of a logic rule:
 
-<img src="../images/standardMessageReplyAgentNonAtomicMessageRule.png"></img>
+<img src="./images/standardMessageReplyAgentNonAtomicMessageRule.png"></img>
 
 2.3. Example of phrases:
 
-<img src="../images/standardMessageReplyAgentNonAtomicPhrase.png"></img>
+<img src="./images/standardMessageReplyAgentNonAtomicPhrase.png"></img>
 
 2.4. Example of an output structure (a non-atomic message)
 
-<img src="../images/standardMessageReplyAgentNonAtomicMessageOutput.png"></img>
+<img src="./images/standardMessageReplyAgentNonAtomicMessageOutput.png"></img>
 
 ### Result
 
