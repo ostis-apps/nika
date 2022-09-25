@@ -4,3 +4,44 @@ section_subject_domain_of_new_era_technologies
 [Раздел. Предметная область технологий нового поколения] (*<-lang_ru;;*);
 [Section. Subject domain of new era technologies] (*<-lang_en;;*);
 <- atomic_class;;
+section_subject_domain_of_new_era_technologies = [*
+	subject_domain_of_new_era_technologies
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область технологий нового поколения]
+   (* <- lang_ru;; *);
+   [Subject domain of new era technologies]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+   concept_artificial_intelligent_systems;
+   concept_robots;
+   concept_microprocessors;
+   concept_quantum_computer;
+	-> rrel_not_maximum_studied_object_class:
+   concept_expert_system;
+   concept_decision_making_system;
+   concept_natural_language_interface;
+	-> rrel_explored_relation:
+   nrel_knowledge_base;
+   nrel_microcamera;
+   nrel_silicon_valley;
+   nrel_motherboard;
+   nrel_talking_bots;;
+*];;
+
+section_subject_domain_of_intelligent_study_systems
+-> rrel_key_sc_element:
+   subject_domain_of_intelligent_study_systems;
+   concept_artificial_intelligent_systems;
+   concept_robots;
+   concept_microprocessors;
+   concept_quantum_computer;
+   nrel_knowledge_base;
+   nrel_microcamera;
+   nrel_silicon_valley;
+   nrel_motherboard;
+   nrel_talking_bots;
+   concept_expert_system;
+   concept_decision_making_system;
+   concept_natural_language_interface;;
