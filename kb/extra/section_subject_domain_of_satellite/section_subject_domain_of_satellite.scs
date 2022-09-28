@@ -1,0 +1,119 @@
+section_subject_domain_of_satellite
+=> nrel_main_idtf:
+	  [Раздел. Предметная область спутников]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of satellite] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_satellite = [*
+	subject_domain_of_satellite
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область спутников]
+   (* <- lang_ru;; *);
+   [Subject domain of satellite]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	
+	-> rrel_maximum_studied_object_class:
+   concept_satellite;
+   concept_heavenly_body;
+   concept_satellite_characteristics;
+	-> rrel_not_maximum_studied_object_class:
+	concept_galilean_satellites;
+    concept_artificial_satellite;
+   	concept_military_satellite;
+	concept_research_satellite;
+	concept_weather_satellite;
+	concept_communications_satellite;
+	concept_broadcast_satellite;
+	concept_navigation_satellite;
+   concept_natural_satellite;
+   concept_subsatellite;
+   concept_planet;
+   concept_outer_space;
+   concept_orbit;
+   	concept_satellite_physical_characteristics;
+	concept_satellite_orbital_characteristics;
+	concept_satellite_technical_characteristics;
+	concept_satellite_manufacturer;
+	concept_satellite_discoverer;
+	concept_satellite_launchpad;
+	concept_satellite_average_radius;
+	concept_satellite_surface_area;
+	concept_satellite_volum;
+	concept_satellite_weight;
+	concept_satellite_form;
+	concept_satellite_max_diameter;
+	concept_satellite_orbit_semi_major_axis;
+	concept_satellite_orbit_speed;
+	concept_satellite_orbit_circulation_period;
+	-> rrel_explored_relation:
+	nrel_satellite;
+	nrel_satellite_discoverer;
+	nrel_satellite_manufacturer;
+	nrel_satellite_operator;
+	nrel_satellite_launchpad;
+
+	nrel_satellite_date_of_discover;
+	nrel_count_of_loop_around_the_orbit;
+	nrel_satellite_date_of_launch;
+	nrel_satellite_trip_time;
+	nrel_satellite_date_of_deorbit;
+	nrel_count_of_artificial_satellite;
+	nrel_count_of_natural_satellite;;
+*];;
+
+section_subject_domain_of_satellite
+-> rrel_key_sc_element:
+	nrel_satellite;
+	nrel_count_of_artificial_satellite;
+	nrel_count_of_natural_satellite;
+	nrel_satellite_discoverer;
+	nrel_satellite_manufacturer;
+	nrel_satellite_operator;
+	nrel_satellite_launchpad;
+
+	nrel_satellite_date_of_discover;
+	nrel_count_of_loop_around_the_orbit;
+	nrel_satellite_date_of_launch;
+	nrel_satellite_trip_time;
+	nrel_satellite_date_of_deorbit;
+
+   subject_domain_of_satellite;
+   concept_galilean_satellites;
+   concept_satellite;
+   concept_heavenly_body;
+   concept_artificial_satellite;
+   concept_natural_satellite;
+   concept_subsatellite;
+   concept_planet;
+   concept_outer_space;
+   concept_orbit;
+   	concept_military_satellite;
+	concept_research_satellite;
+	concept_weather_satellite;
+	concept_communications_satellite;
+	concept_broadcast_satellite;
+	concept_navigation_satellite;
+   concept_satellite_characteristics;
+   	concept_satellite_physical_characteristics;
+	concept_satellite_orbital_characteristics;
+	concept_satellite_technical_characteristics;
+	concept_satellite_discoverer;
+	concept_satellite_manufacturer;
+	concept_satellite_launchpad;
+		concept_satellite_average_radius;
+		concept_satellite_surface_area;
+		concept_satellite_volum;
+		concept_satellite_weight;
+		concept_satellite_form;
+		concept_satellite_max_diameter;
+		concept_satellite_orbit_semi_major_axis;
+		concept_satellite_orbit_speed;
+		concept_satellite_orbit_circulation_period;;
+
+

@@ -1,0 +1,28 @@
+concept_planet
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [планета]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [planet]
+   (* <- lang_en;; *);
+   
+<= nrel_inclusion:
+   concept_heavenly_body;
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. планета](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://HTML/concept_planet_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+	concept_orbit;
+	concept_heavenly_body
+	};;
+*);;
