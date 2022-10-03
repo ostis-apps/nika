@@ -1,0 +1,25 @@
+concept_orator
+=> nrel_main_idtf:
+    [оратор](* <-lang_ru;; *);
+    [orator](* <-lang_en;; *);;
+
+concept_orator
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (оратор)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (orator)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Оратор - это человек, занимающийся ораторстким искусством.](*<- lang_ru;;*);;
+        -> rrel_example:
+            [An orator - is a person whose profession is oratory.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_human;
+        concept_oratory
+    };;
+*);;

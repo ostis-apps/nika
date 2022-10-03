@@ -1,0 +1,24 @@
+concept_circus_arts
+=> nrel_main_idtf:
+    [цирк](* <-lang_ru;; *);
+    [circus arts](* <-lang_en;; *);;
+
+concept_circus_arts
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (цирк)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (circus arts)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Цирк - это вид зрелищного искусства, по законам которого строится развлекательное представление.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Circus arts - is a form of performance art, the laws of which are used to construct an entertainment performance.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_art
+    };;
+*);;

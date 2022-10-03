@@ -1,0 +1,24 @@
+concept_painting
+=> nrel_main_idtf:
+    [живопись](* <-lang_ru;; *);
+    [painting](* <-lang_en;; *);;
+
+concept_painting
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (живопись)] (* <- lang_ru;; *);;
+    => nrel_main_idtf: [Def. (painting)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Живопись - это искусство, произведения которого создаются с помощью красок, наносимых на какую-либо твёрдую поверхность.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Painting - is a form of visual art where works of art are created with paint applied to a solid surface.](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_art
+    };;
+*);;

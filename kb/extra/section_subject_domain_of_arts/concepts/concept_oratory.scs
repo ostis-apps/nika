@@ -1,0 +1,24 @@
+concept_oratory
+=> nrel_main_idtf:
+    [ораторскоеое искусство](* <-lang_ru;; *);
+    [oratory](* <-lang_en;; *);;
+
+concept_oratory
+<- rrel_key_sc_element: ...
+(*
+        <- sc_definition;;
+        => nrel_main_idtf: [Опр. (ораторскоеое искусство)] (* <- lang_ru;; *);; 
+        => nrel_main_idtf: [Def. (oratory)] (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation: ...
+            (*
+            -> rrel_example: 
+                [Ораторскоеое искусство - это искусство публичного выступления с целью убеждения.](*<- lang_ru;;*);;
+            -> rrel_example: 
+                [Oratory - is the art of public speaking for the purpose of persuasion.](*<- lang_en;;*);;
+            *);;
+        <= nrel_using_constants:
+        {
+            concept_art
+        };;
+*);;

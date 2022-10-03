@@ -1,0 +1,34 @@
+concept_performing_arts
+=> nrel_main_idtf:
+    [исполнительское искусство](* <-lang_ru;; *);
+    [performing arts](* <-lang_en;; *);;
+
+concept_performing_arts
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (исполнительское искусство)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (performing arts)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Исполнительское искусство - направление искусства, в котором так называемым "произведением" является человек или группа людей. Т.е для исполнения необходимы собственное тело, лицо и присутствие артиста.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Performing arts - art forms in which individual people perform separately or together. The artist's own body, face, and presence is needed for the performance. ](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_art
+    };;
+*);;
+
+concept_performing_arts
+<= nrel_subdividing: ...
+(*
+    <- explanation;;
+    => nrel_main_idtf:
+        [Разбиение по направлениям](*<-lang_ru;; *);
+        [Subdividing based on directions](*<-lang_en;; *);;
+    -> concept_dance; concept_music; concept_opera; concept_oratory; concept_circus_arts;;
+*);;

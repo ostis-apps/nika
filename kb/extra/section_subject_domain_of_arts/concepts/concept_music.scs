@@ -1,0 +1,24 @@
+concept_music
+=> nrel_main_idtf:
+    [музыка](* <-lang_ru;; *);
+    [music](* <-lang_en;; *);;
+
+concept_music
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (музыка)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (music)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Музыка - это искусство, в котором определённым образом организованные звуки используются для создания некоторого сочетания формы, гармонии, мелодии, ритма или иного выразительного содержания.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Music - is an art in which sounds organised in a certain way are used to create some combination of form, harmony, melody, rhythm or other expressive content.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_art
+    };;
+*);;

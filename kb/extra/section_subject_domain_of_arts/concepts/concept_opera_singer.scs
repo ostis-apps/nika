@@ -1,0 +1,25 @@
+concept_opera_singer
+=> nrel_main_idtf:
+    [оперный певец](* <-lang_ru;; *);
+    [opera singer](* <-lang_en;; *);;
+
+concept_opera_singer
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (оперный певец)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (opera singer)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Оперный певец - это человек, занимающийся оперой.](*<- lang_ru;;*);;
+        -> rrel_example:
+            [An opera singer - is a person whose profession is opera.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_human;
+        concept_opera
+    };;
+*);;

@@ -1,0 +1,25 @@
+concept_dancer
+=> nrel_main_idtf:
+    [танцор](* <-lang_ru;; *);
+    [dancer](* <-lang_en;; *);;
+
+concept_dancer
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (танцор)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (dancer)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Танцор - это человек, занимающийся танцами.](*<- lang_ru;;*);;
+        -> rrel_example:
+            [A dancer - is a person whose profession is dance.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_human;
+        concept_dance
+    };;
+*);;

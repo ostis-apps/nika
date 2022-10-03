@@ -1,0 +1,24 @@
+concept_drawing
+=> nrel_main_idtf:
+    [графика](* <-lang_ru;; *);
+    [drawing](* <-lang_en;; *);;
+
+concept_drawing
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (графика)] (* <- lang_ru;; *);;
+    => nrel_main_idtf: [Def. (drawing)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example:
+            [Графика - это искусство, в котором основными изобразительными средствами, которые называют графическими, являются свойства изобразительной поверхности и тональные отношения линий, штрихов и пятен.](*<- lang_ru;;*);;
+        -> rrel_example:
+            [Graphics - is a type of visual art in which the main means of representation, which are called graphic, are the properties of the pictorial surface and the tonal relationships of lines, strokes and spots.](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_art
+    };;
+*);;

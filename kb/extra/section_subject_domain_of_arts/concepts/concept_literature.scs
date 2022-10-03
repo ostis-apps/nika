@@ -1,0 +1,24 @@
+concept_literature
+=> nrel_main_idtf:
+    [литература](* <-lang_ru;; *);
+    [literature](* <-lang_en;; *);;
+
+concept_literature
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (литература)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (literature)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Литература - это искусство организации слов для получения удовольствия.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Literature - is an art of organisation of words to give pleasure.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_art
+    };;
+*);;

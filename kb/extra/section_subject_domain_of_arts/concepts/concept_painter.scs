@@ -1,0 +1,25 @@
+concept_painter
+=> nrel_main_idtf:
+    [живописец](* <-lang_ru;; *);
+    [painter](* <-lang_en;; *);;
+
+concept_painter
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (живописец)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (painter)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Живописец - это человек, занимающийся живописью.](*<- lang_ru;;*);;
+        -> rrel_example:
+            [A painter - is a person whose profession is painting.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_human;
+        concept_painting
+    };;
+*);;

@@ -1,0 +1,24 @@
+concept_ceramics
+=> nrel_main_idtf:
+    [керамика](* <-lang_ru;; *);
+    [ceramics](* <-lang_en;; *);;
+
+concept_ceramics
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (керамика)] (* <- lang_ru;; *);;
+    => nrel_main_idtf: [Def. (ceramics)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Керамика - это искусство из керамических материалов, в том числе из глины.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Ceramics - the art of ceramic materials, including clay.](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_art
+    };;
+*);;

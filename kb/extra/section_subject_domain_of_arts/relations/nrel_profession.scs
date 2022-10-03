@@ -1,0 +1,46 @@
+nrel_profession
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+    [род занятий](* <- lang_ru;; *);
+    [profession](* <- lang_eng;; *);;
+
+nrel_profession
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (род занятий)](*<- lang_ru;;*);
+    [Def. (profession)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Род занятий - это любая деятельность, которую человек выполняет, всё, чем он занимается.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [Profession - is any activity that a person performs, whatever he or she does.](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_human
+    };;
+*);;
+
+nrel_profession
+=>nrel_first_domain:concept_human;
+=>nrel_second_domain:concept_art;
+
+<- binary_relation ;
+<- antireflexive_relation ;
+<- antitransitive_relation ;;
+
+concept_potter => nrel_profession: concept_ceramics;;
+concept_engraver => nrel_profession: concept_drawing;;
+concept_painter => nrel_profession: concept_painting;;
+concept_sculptor => nrel_profession: concept_sculpture;;
+concept_dancer => nrel_profession: concept_dance;;
+concept_musician => nrel_profession: concept_music;;
+concept_opera_singer => nrel_profession: concept_opera;;
+concept_orator => nrel_profession: concept_oratory;;
+concept_circus_artist => nrel_profession: concept_circus_arts;;
+concept_architect => nrel_profession: concept_architecture;;
+concept_literator => nrel_profession: concept_literature;;

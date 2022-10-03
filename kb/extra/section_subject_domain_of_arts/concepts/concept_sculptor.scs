@@ -1,0 +1,25 @@
+concept_sculptor
+=> nrel_main_idtf:
+    [скульптор](* <-lang_ru;; *);
+    [sculptor](* <-lang_en;; *);;
+
+concept_sculptor
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (скульптор)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (sculptor)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Скульптор - это человек, занимающийся скульптурами.](*<- lang_ru;;*);;
+        -> rrel_example:
+            [A sculptor - is a person whose profession is sculpture.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_human;
+        concept_sculpture
+    };;
+*);;

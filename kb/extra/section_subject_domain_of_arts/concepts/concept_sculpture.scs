@@ -1,0 +1,24 @@
+concept_sculpture
+=> nrel_main_idtf:
+    [скульптура](* <-lang_ru;; *);
+    [sculpture](* <-lang_en;; *);;
+
+concept_sculpture
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (скульптура)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (sculpture)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Скульптура - это искусство, произведения которого имеют объёмную форму и выполняются из твёрдых материалов методом высекания, удаления лишнего из начальной массы каменного или иного блока.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Sculpture - is a form of art with a three-dimensional form and is made from solid materials by carving, removing surplus material from the initial mass of a stone or other block.](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_art
+    };;
+*);;

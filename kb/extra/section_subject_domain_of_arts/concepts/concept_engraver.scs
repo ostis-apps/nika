@@ -1,0 +1,25 @@
+concept_engraver
+=> nrel_main_idtf:
+    [гравёр](* <-lang_ru;; *);
+    [engraver](* <-lang_en;; *);;
+
+concept_engraver
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (гравёр)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (engraver)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Гравёр - это человек, занимающийся графикой.](*<- lang_ru;;*);;
+        -> rrel_example:
+            [An engraver - is a person whose profession is drawing.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_human;
+        concept_drawing
+    };;
+*);;

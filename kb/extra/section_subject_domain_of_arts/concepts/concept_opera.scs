@@ -1,0 +1,20 @@
+concept_opera
+=> nrel_main_idtf:
+    [опера](* <-lang_ru;; *);
+    [opera](* <-lang_en;; *);;
+
+concept_opera
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (опера)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (opera)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Опера - это музыкально-театральный жанр, основанный на синтезе музыки, сценического действия и слова.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Opera - is a genre of music and theatre based on a synthesis of music, stage action and words.](*<- lang_en;;*);;
+    *);;
+*);;

@@ -1,0 +1,29 @@
+concept_art
+=> nrel_main_idtf:
+    [искусство](* <-lang_ru;; *);
+    [art](* <-lang_en;; *);;
+
+concept_art 
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (искусство)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (art)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Искусство - особый способ познания и отражения действительности при помощи творческих или технических навыков. Предмет искусства - произведение искусства.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Art -  a creative activity that expresses imaginative or technical skill. It produces an artifact, also called a work of art, for others to experience. ](*<- lang_en;;*);;
+    *);;
+*);;
+
+concept_art <= nrel_subdividing: ... 
+(*
+	<- explanation;;
+	=> nrel_main_idtf:
+		[Разбиение по видам искусства](*<-lang_ru;; *); 
+		[Subdividing based on types of art](*<-lang_en;; *);;
+	-> concept_plastic_arts; concept_performing_arts; concept_practical_arts;;
+*);;

@@ -1,0 +1,80 @@
+section_subject_domain_of_arts
+=> nrel_main_idtf:
+    [Раздел. Предметная область искусств](* <- lang_ru;; *);
+    [Section. Subject domain of arts](* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_arts =
+[*
+    subject_domain_of_arts
+    <- sc_node_struct;
+    => nrel_main_idtf:
+        [Предметная область искусств](* <- lang_ru;; *);
+        [Subject domain of arts](* <- lang_en;; *);
+    <- subject_domain;
+    -> rrel_maximum_studied_object_class:
+        concept_art;
+        concept_human;
+    -> rrel_not_maximum_studied_object_class:
+        concept_architect;
+        concept_architecture;
+        concept_ceramics;
+        concept_circus_artist;
+        concept_circus_arts;
+        concept_dance;
+        concept_dancer;
+        concept_drawing;
+        concept_engraver;
+        concept_literator;
+        concept_literature;
+        concept_music;
+        concept_musician;
+        concept_opera_singer;
+        concept_opera;
+        concept_orator;
+        concept_oratory;
+        concept_painter;
+        concept_painting;
+        concept_performing_arts;
+        concept_plastic_arts;
+        concept_potter;
+        concept_practical_arts;
+        concept_sculptor;
+        concept_sculpture;
+    -> rrel_explored_relation:
+        nrel_artwork;
+        nrel_profession;;
+*];;
+
+section_subject_domain_of_arts
+-> rrel_key_sc_element:
+    subject_domain_of_arts;
+    concept_architect;
+    concept_architecture;
+    concept_art;
+    concept_ceramics;
+    concept_circus_artist;
+    concept_circus_arts;
+    concept_dance;
+    concept_dancer;
+    concept_drawing;
+    concept_engraver;
+    concept_human;
+    concept_literator;
+    concept_literature;
+    concept_music;
+    concept_musician;
+    concept_opera_singer;
+    concept_opera;
+    concept_orator;
+    concept_oratory;
+    concept_painter;
+    concept_painting;
+    concept_performing_arts;
+    concept_plastic_arts;
+    concept_potter;
+    concept_practical_arts;
+    concept_sculptor;
+    concept_sculpture;
+    nrel_artwork;
+    nrel_profession;;

@@ -1,0 +1,34 @@
+concept_practical_arts
+=> nrel_main_idtf:
+    [неизобразительное искусство](* <-lang_ru;; *);
+    [practical arts](* <-lang_en;; *);;
+
+concept_practical_arts
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (неизобразительное искусство)] (* <- lang_ru;; *);;
+    => nrel_main_idtf: [Def. (practical arts)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Неизобразительное искусство - направление искусства, при помощи которого создаются произведения, которые служат материальным потребностям.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Practical arts - art forms that serves ordinary or material needs. ](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_art
+    };;
+*);;
+
+concept_practical_arts
+<= nrel_subdividing: ...
+(*
+    <- explanation;;
+    => nrel_main_idtf:
+        [Разбиение по направлениям](*<-lang_ru;; *); 
+        [Subdividing based on directions](*<-lang_en;; *);;
+    -> concept_architecture; concept_literature;;
+*);;
