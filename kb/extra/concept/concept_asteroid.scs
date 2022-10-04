@@ -1,0 +1,36 @@
+concept_asteroid
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Астероид]
+	(* <- lang_ru;; *);
+	[Asteroid]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Астероид)]
+		(* <- lang_ru;; *);
+		[Def. (Asteroid)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Астероид это  относительно небольшое небесное тело Солнечной системы, движущееся по орбите вокруг Солнца. Астероиды значительно уступают по массе и размерам планетам, имеют неправильную форму и не имеют атмосферы, хотя при этом и у них могут быть спутники.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[An asteroid is a relatively small celestial body in the solar system that orbits around the sun. Asteroids are significantly inferior in mass and size to planets, have an irregular shape and have no atmosphere, although they may have satellites.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		file
+		};;
+
+	*);
+<=nrel_inclusion: file;;

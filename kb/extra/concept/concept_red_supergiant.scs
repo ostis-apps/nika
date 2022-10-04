@@ -1,0 +1,48 @@
+concept_red_supergiant
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Красный супергигант]
+	(* <- lang_ru;; *);
+	[Red supergiant]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Красный супергигант)]
+		(* <- lang_ru;; *);
+		[Def. (Red supergiant)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Красный сверхгигант — это звезда, исчерпавшая запасы водорода в своих ядрах, и в результате ее внешние слои сильно расширяются по мере ее эволюции с главной последовательности]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A red supergiant is a star that has run out of hydrogen in its core, and as a result, its outer layers are greatly expanding as it evolves from the main sequence.]
+			(* <- lang_en;; *);;
+		*);;
+
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Красный супергигант)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Звезды этого типа являются одними из самых больших звезд, известных с точки зрения чистой массы.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion:concept_star_by_luminosity;;

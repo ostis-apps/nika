@@ -1,0 +1,47 @@
+concept_nebula
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Туманность]
+	(* <- lang_ru;; *);
+	[Nebula]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Туманность)]
+		(* <- lang_ru;; *);
+		[Def. (Nebula)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Туманность — участок межзвёздной среды, выделяющийся своим излучением или поглощением излучения на общем фоне неба. ]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A nebula s a distinct luminescent part of interstellar medium, which can consist of ionized, neutral or molecular hydrogen and also cosmic dust.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Туманность)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Большинство туманностей имеют огромные размеры; некоторые имеют диаметр в сотни световых лет.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_extended_object;;

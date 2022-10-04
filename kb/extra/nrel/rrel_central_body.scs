@@ -1,0 +1,54 @@
+rrel_central_body
+<- sc_node_role_relation;
+<- relation;
+<- role_relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+	[Центральное тело']
+	(* <- lang_ru;; *);
+	[entity']
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+    [rrel_entity];
+=> nrel_first_domain: concept_astronomical_object;
+=> nrel_second_domain: concept_astronomical_object;
+=> nrel_definitional_domain:
+	...
+	(*
+	<= nrel_combination:
+		{
+			concept_astronomical_object;
+			concept_astronomical_object
+		};;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (центрально тело')]
+		(* <- lang_ru;; *);
+		[Def. (central body')]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Центральное тело' - отношение, которое связывает два астрономических объекта, один из которых вращается вокруг другого.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Central body' - a relationship that links two astronomical objects, one of which revolves around the other]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_astronomical_object
+		};;
+	*);;

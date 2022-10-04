@@ -1,0 +1,47 @@
+concept_astronomical_object
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Астрономический объект]
+	(* <- lang_ru;; *);
+	[Astronomical object]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Астрономический объект)]
+		(* <- lang_ru;; *);
+		[Def. (Astronomical object)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Астрономический объект -  естественное физическое тело, ассоциация, или структура, которую современная наука определяет как расположенную в наблюдаемой Вселенной]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[An astronomical object is a natural physical body, association, or structure that modern science defines as being located in the observable universe.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Астрономический объект)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Термин «астрономический объект» нередко используется наравне с термином «небесное тело».]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_outer_of_space;;

@@ -1,0 +1,48 @@
+concept_red_dwarf
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Красный карлик]
+	(* <- lang_ru;; *);
+	[Red dwarf]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Красный карлик)]
+		(* <- lang_ru;; *);
+		[Def. (Red dwarf)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Красный карлик является самым распространенным типом звезд во Вселенной. Это звезды главной последовательности, но у них настолько малая масса, что они намного холоднее звезд, подобных нашему Солнцу.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A red dwarf is the most common type of star in the universe. These are main sequence stars, but they have such a low mass that they are much colder than stars like our Sun.]
+			(* <- lang_en;; *);;
+		*);;
+
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Красная карлик)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[По оценкам астрономов, некоторые красные карлики будут гореть до 10 триллионов лет.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_star_by_luminosity;;

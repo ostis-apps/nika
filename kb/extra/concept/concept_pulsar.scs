@@ -1,0 +1,48 @@
+concept_pulsar
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Пульсар]
+	(* <- lang_ru;; *);
+	[Pulsar]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Пульсар)]
+		(* <- lang_ru;; *);
+		[Def. (Pulsar)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Пульсар - представляет собой вращающуюся нейтронную звёзду с магнитным полем, которое наклонено к оси вращения, что вызывает модуляцию приходящего на Землю излучения.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Pulsar - is a rotating neutron star with a magnetic field that is tilted to the axis of rotation, which causes the modulation of radiation coming to Earth.]
+			(* <- lang_en;; *);;
+		*);;
+
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Пульсар)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Сигналы от пульсаров можно использовать как эталоны времени и ориентиры для спутников]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_compact_star;;

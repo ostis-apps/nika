@@ -1,0 +1,52 @@
+nrel_number_of_star
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antransitive_relation;
+<-asymmetric_relation;
+=>nrel_main_idtf:
+	[Количество звезд*]
+	(* <- lang_ru;; *);
+	[Number of star*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_galaxy_structure;
+=>nrel_second_domain: number;
+=>nrel_definitional_domain: ... (*
+	<= nrel_combination:
+	{
+		concept_galaxy_structure;
+		number
+	};;
+*);
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Количество звезд*)]
+		(* <- lang_ru;; *);
+		[Def.(Number of star*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Количество звезд* -  величина, показывающая кол-во звезд в галактической структуре, характеризующая масштаб и светимость галактики.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The number of stars* - a value showing the number of stars in the galactic structure, characterizing the scale and luminosity of the galaxy.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_galaxy_structure;
+		number;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

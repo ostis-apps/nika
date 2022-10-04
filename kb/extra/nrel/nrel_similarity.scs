@@ -1,0 +1,51 @@
+nrel_similarity
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-non_oriented_relation;
+<-reflexive_relation;
+<-transitive_relation;
+<-symmetric_relation;
+=>nrel_main_idtf:
+	[Подобие*]
+	(* <- lang_ru;; *);
+	[Similarity*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_planet;
+=>nrel_second_domain: concept_planet;
+=>nrel_definitional_domain: ... (*
+	<= nrel_combination:
+	{
+		concept_planet;
+		concept_planet
+	};;
+*);
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Подобие*)]
+		(* <- lang_ru;; *);
+		[Def.(Similarity*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Подобие* - отношение, означающее схожесть одной планеты с другой по разным признакам.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Similarity * - a relation meaning the similarity of one planet with another in various ways.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_planet;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

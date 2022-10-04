@@ -1,0 +1,47 @@
+concept_star_system
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Звёздная система]
+	(* <- lang_ru;; *);
+	[Star_system]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Звёздная система)]
+		(* <- lang_ru;; *);
+		[Def. (Star_system)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Звёздная система — это небольшое количество звёзд, вращающихся вокруг друг друга и связанных гравитационным притяжением.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A star system is a small number of stars revolving around each other and bound by gravitational attraction.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Звёздная система)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Кратность звёздной системы ограничена. Невозможно создать долгоживущую систему из трёх, четырёх и более равноправных звёзд]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_system;;

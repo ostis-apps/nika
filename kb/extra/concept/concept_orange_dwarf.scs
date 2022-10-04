@@ -1,0 +1,47 @@
+concept_orange_dwarf
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Ораньжевый карлик]
+	(* <- lang_ru;; *);
+	[Orange dwarf]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Ораньжевый карлик)]
+		(* <- lang_ru;; *);
+		[Def. (Orange dwarf)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Оранжевый карлик - это звезда K-типа на главной последовательности, которая по размеру занимает промежуточное положение между красными звездами M-типа главной последовательности и желтыми звездами G-типа главной последовательности.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[An orange dwarf is a K-type main sequence star that is intermediate in size between red M-type main sequence stars and yellow G-type main sequence stars.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Ораньжевый карлик)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Ораньжевые карлики представляют особый интерес для поиска внеземной жизни, так как имеют более безопасное излучение и остаются стабильными в 3 раза дольше чем Земля]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_star_by_luminosity;;

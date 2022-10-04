@@ -1,0 +1,48 @@
+concept_dwarf_planet
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Карликовая планета]
+	(* <- lang_ru;; *);
+	[Dwarf planet]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Карликовая планета)]
+		(* <- lang_ru;; *);
+		[Def. (Dwarf planet)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Карликовая планета — это небольшой объект планетарной массы, находящийся на прямой орбите Солнца, меньший, чем любая из восьми классических планет, но все же являющийся самостоятельным объектом.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A dwarf planet is a small planetary-mass object in direct orbit around the Sun, smaller than any of the eight classical planets, but still an object in its own right.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Карликовая планета)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Карликовая планета не может расчистить район своей орбиты от других объектов.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+<=nrel_inclusion: concept_planet;;

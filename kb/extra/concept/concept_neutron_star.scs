@@ -1,0 +1,47 @@
+concept_neutron_star
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Нейтронная звезда]
+	(* <- lang_ru;; *);
+	[Neutron star]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Нейтронная звезда)]
+		(* <- lang_ru;; *);
+		[Def. (Neutron star)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Нейтронная звезда представляет собой коллапс ядра массивной звезды массой от 10 до 29 солнечных, которая была сжата после стадии белого карлика во время взрыва сверхновой.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A neutron star is the collapse of the core of a massive star with a mass of 10 to 29 solar masses, which was compressed after the white dwarf stage during a supernova explosion.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Нейтронная звезда)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Сильная гравитация нейтронной звезды сжимает протоны и электроны вместе, образуя нейтроны.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_compact_star;;

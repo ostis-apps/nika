@@ -1,0 +1,48 @@
+concept_galaxy
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Галактика]
+	(* <- lang_ru;; *);
+	[Galaxy]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Галактика)]
+		(* <- lang_ru;; *);
+		[Def. (Galaxy)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Галактика это гравитационно-связанная система из звёзд, звёздных скоплений, межзвёздного газа и пыли, тёмной материи, планет]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A galaxy is a gravitationally bound system of stars, star clusters, interstellar gas and dust, dark matter, and planets.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Галактика)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Одной из нерешённых проблем строения галактик является тёмная материя, проявляющая себя только в гравитационном взаимодействии.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+<=nrel_inclusion: concept_compound_object;;

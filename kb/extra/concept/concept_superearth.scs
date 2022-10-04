@@ -1,0 +1,47 @@
+concept_superearth
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Супер-Земля]
+	(* <- lang_ru;; *);
+	[Super-Earth]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Супер-Земля)]
+		(* <- lang_ru;; *);
+		[Def. (Super-Earth)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Супер-Земля— класс планет, массивнее Земли, но легче ледяных гигантов, таких как Нептун и Уран, и могут состоять из газа, камня или их комбинации.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Super-Earths are a class of planets that are more massive than Earth, but lighter than ice giants such as Neptune and Uranus, and may be composed of gas, rock, or a combination of both.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Супер-Земля)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Планет данного класса нет в Солнечной система]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_planet;;

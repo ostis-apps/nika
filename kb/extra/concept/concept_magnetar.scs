@@ -1,0 +1,47 @@
+concept_magnetar
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Магнетар]
+	(* <- lang_ru;; *);
+	[Magnetar]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Магнетар)]
+		(* <- lang_ru;; *);
+		[Def. (Magnetar)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Магнетар - нейтронная звезда, обладающая исключительно сильным магнитным полем]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Magnetar is a neutron star with an exceptionally strong magnetic field.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Магнетар)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[У магнетаров сильнейшее магнитное поле во Вселенной]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_compact_star;;

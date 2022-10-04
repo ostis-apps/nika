@@ -1,0 +1,47 @@
+concept_black_hole
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Черная дыра]
+	(* <- lang_ru;; *);
+	[Black hole]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Черная дыра)]
+		(* <- lang_ru;; *);
+		[Def. (Black hole)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Черная дыра - область пространства-времени, гравитационное притяжение которой настолько велико, что покинуть её не могут даже объекты, движущиеся со скоростью света, в том числе кванты самого света.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A black hole is a region of space-time, the gravitational attraction of which is so great that even objects moving at the speed of light, including quanta of light itself, cannot leave it.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Черная дыра)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Черная дыра со временем испаряется из-за излучения Хокинга]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+<=nrel_inclusion: concept_compact_star;;

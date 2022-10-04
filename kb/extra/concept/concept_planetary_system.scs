@@ -1,0 +1,48 @@
+concept_planetary_system
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Планетная система]
+	(* <- lang_ru;; *);
+	[Planetary system]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Планетная система)]
+		(* <- lang_ru;; *);
+		[Def. (Planetary system)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Планетарная система — это набор гравитационно связанных незвездных объектов, находящихся на орбите или вне орбиты вокруг звезды или звездной системы.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A planetary system is a collection of gravitationally bound non-stellar objects in or out of orbit around a star or star system.]
+			(* <- lang_en;; *);;
+		*);;
+
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Планетная система)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Планетная система, в которую входит Земля, вместе с Солнцем образует Солнечную систему.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_system;;

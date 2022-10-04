@@ -1,0 +1,44 @@
+section_subject_domain_of_system
+=> nrel_main_idtf: 
+	[Раздел. Предметная область  Система]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of System]
+	(* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+	concept_star_system;
+	concept_planetary_system;
+	concept_constellation;
+	nrel_gravity;
+	nrel_mass;
+	subject_domain_of_system;
+	concept_system;;
+
+section_subject_domain_of_system = [*
+subject_domain_of_system
+
+=> nrel_main_idtf: 
+	[Предметная область Система]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of System]
+	(* <- lang_en;; *);
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_system;
+		
+-> rrel_maximum_studied_object_class:
+	concept_system;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_star_system;
+	concept_planetary_system;
+	concept_constellation;
+	
+-> rrel_explored_relation:
+	nrel_gravity;
+	nrel_mass;
+	
+<- subject_domain;;
+*];;

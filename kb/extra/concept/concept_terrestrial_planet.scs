@@ -1,0 +1,47 @@
+concept_terrestrial_planet
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Планеты земной группы]
+	(* <- lang_ru;; *);
+	[Terrestrial planet]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Планеты земной группы)]
+		(* <- lang_ru;; *);
+		[Def. (Terrestrial planet)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Планеты земной группы представляют собой каменистые миры, состоящие из горных пород, силикатов, воды и/или углерода.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The terrestrial planets are rocky worlds composed of rocks, silicates, water and/or carbon.]
+			(* <- lang_en;; *);;
+		*);;
+
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Планеты земной группы )]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Планеты данной группы самие редкие во Вселенной]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_planet;;

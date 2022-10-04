@@ -1,0 +1,48 @@
+concept_extended_object
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Масштабная структура]
+	(* <- lang_ru;; *);
+	[Extended object]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Масштабная структура)]
+		(* <- lang_ru;; *);
+		[Def. (Extended object)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Масштабная структура -- структура, которая является большой в рамках Вселенной.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A scale structure is a structure that is large within the universe.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Масштабная структура)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[К ним относятся туманности, межгалактическая пыль и т.д.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+<=nrel_inclusion: concept_astronomical_object;;

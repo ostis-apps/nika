@@ -1,0 +1,51 @@
+nrel_gravity
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-non_oriented_relation;
+<-antireflexive_relation;
+<-transitive_relation;
+<-symmetric_relation;
+=>nrel_main_idtf:
+	[Гравитация*]
+	(* <- lang_ru;; *);
+	[gravity*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_astronomical_object;
+=>nrel_second_domain: concept_astronomical_object;
+=>nrel_definitional_domain: ... (*
+	<= nrel_combination:
+	{
+		concept_astronomical_object;
+		concept_astronomical_object
+	};;
+*);
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Гравитация*)]
+		(* <- lang_ru;; *);
+		[Def.(gravity*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Гравитация* - универсальное фундаментальное взаимодействие между материальными телами, обладающими массой.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Gravity* is a universal fundamental interaction between material bodies that have mass.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_astronomical_object;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

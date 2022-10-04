@@ -1,0 +1,47 @@
+concept_system
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Система]
+	(* <- lang_ru;; *);
+	[System]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Система)]
+		(* <- lang_ru;; *);
+		[Def. (System)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Система - совокупность объектов, связанных гравитационным взаимодействием]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[System - a set of objects connected by gravitational interaction]
+			(* <- lang_en;; *);;
+		*);;
+
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Система)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Делятся на звездные и планетарные]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_compound_object;;

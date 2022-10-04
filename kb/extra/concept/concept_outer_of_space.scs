@@ -1,0 +1,46 @@
+concept_outer_of_space
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Космос]
+	(* <- lang_ru;; *);
+	[Outer of space]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Космос)]
+		(* <- lang_ru;; *);
+		[Def. (Outer of space)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Космос — это пространство, существующее за пределами Земли и ее атмосферы, а также между небесными телами.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Outer of space is the space that exists outside the Earth and its atmosphere, as well as between celestial bodies.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Космос)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Космос никогда не может быть полностью пустым]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);;
