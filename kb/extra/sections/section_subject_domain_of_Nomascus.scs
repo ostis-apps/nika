@@ -1,0 +1,46 @@
+section_subject_domain_of_Nomascus
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Носмаскусы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Nomascus]
+	(* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+		concept_Nomascus_annamensis;
+		concept_Nomascus_concolor;
+		concept_Nomascus_nasutus;
+		concept_Nomascus_leucogenys;
+		concept_Nomascus_siki;
+		concept_Nomascus_gabriellae;
+		concept_Nomascus_hainanus;
+		subject_domain_of_Nomascus;
+		concept_Nomascus;;
+
+section_subject_domain_of_Nomascus = [*
+subject_domain_of_Nomascus
+
+=> nrel_main_idtf: 
+	[Предметная область Номаскусы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Nomascus]
+	(* <- lang_en;; *);
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_Nomascus;
+		
+-> rrel_maximum_studied_object_class:
+	concept_Nomascus;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_Nomascus_annamensis;
+	concept_Nomascus_concolor;
+	concept_Nomascus_nasutus;
+	concept_Nomascus_leucogenys;
+	concept_Nomascus_siki;
+	concept_Nomascus_gabriellae;
+	concept_Nomascus_hainanus;
+	
+<- subject_domain;;
+*];;

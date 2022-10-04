@@ -1,0 +1,52 @@
+nrel_evolution
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antransitive_relation;
+<-asymmetric_relation;
+=>nrel_main_idtf:
+	[Эволюция*]
+	(* <- lang_ru;; *);
+	[Evolution*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_Propliopithecus;
+=>nrel_second_domain: concept_Hominoidea;
+=>nrel_definitional_domain: ... (*
+	<= nrel_combination:
+	{
+		concept_Propliopithecus;
+		concept_Hominoidea
+	};;
+*);
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Эволюция*)]
+		(* <- lang_ru;; *);
+		[Def.(Evolution*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Эволюция* - естественный процесс развития живой природы, сопровождающийся изменением генетического состава популяций, формированием адаптаций, видообразованием и вымиранием видов, преобразованием экосистем и биосферы в целом.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Evolution* - the natural process of the development of wildlife, accompanied by a change in the genetic composition of populations, the formation of adaptations, speciation and extinction of species, transformation of ecosystems and the biosphere as a whole.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_Propliopithecus;
+		concept_Hominoidea;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

@@ -1,0 +1,47 @@
+concept_Nomascus_leucogenys
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Белощёкий хохлатый гиббон]
+	(* <- lang_ru;; *);
+	[Nomascus leucogenys]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Белощёкий хохлатый гиббон)]
+		(* <- lang_ru;; *);
+		[Def. (Nomascus leucogenys)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Белощёкий хохлатый гиббон — вид приматов из семейства гиббоновых. Родственен виду Nomascus siki, с которым ранее включался в один вид. Самки этих двух видов практически неотличимы внешне.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Nomascus leucogenys is a species of primate from the Gibbon family. It is related to the species Nomascus siki, with which it was previously included in the same species. The females of these two species are virtually indistinguishable in appearance.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Белощёкий хохлатый гиббон)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Стабильная популяция из 455 животных была обнаружена в Национальном парке Пумат в провинции Нгеан, в северном Вьетнаме возле границы с Лаосом. Эта популяция живёт на больших высотах вдали от человеческих поселений и составляет две трети общей популяции белощёких хохлатых гиббонов Вьетнама. Специалисты считают, что это единственная жизнеспособная популяция этих приматов в мире.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_Nomascus;;

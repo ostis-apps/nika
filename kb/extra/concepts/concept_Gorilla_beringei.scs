@@ -1,0 +1,47 @@
+concept_Gorilla_beringei
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Восточная горилла]
+	(* <- lang_ru;; *);
+	[Gorilla beringei]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Восточная горилла)]
+		(* <- lang_ru;; *);
+		[Def. (Gorilla beringei)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Восточная горилла — вид приматов из рода гориллы семейства гоминиды. Видовое название дано в честь немецкого офицера Фридриха Роберта фон Беринге, который первым обнаружил животное в горах Вирунга.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The Gorilla beringei is a species of primate from the genus gorilla of the family Hominidae. The species name is given in honor of the German officer Friedrich Robert von Behring, who was the first to discover the animal in the Virunga Mountains.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Восточная горилла)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Проживают в семейных группах, состоящей из доминирующего самца, его самок и детёнышей. Размер группы больше, чем у западных горилл, в среднем 35 особей. Границы территории не охраняются, однако могут происходить стычки при встречах одной группы с другой.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+<=nrel_inclusion: concept_Gorilla;;

@@ -1,0 +1,47 @@
+concept_Nomascus_siki
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Жёлтощёкий номаскус]
+	(* <- lang_ru;; *);
+	[Nomascus siki]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Жёлтощёкий номаскус)]
+		(* <- lang_ru;; *);
+		[Def. (Nomascus siki)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Жёлтощёкий номаскус — вид приматов из семейства гиббоновых, обитающий в Лаосе и Вьетнаме.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Nomascus siki is a species of primate from the Gibbon family found in Laos and Vietnam.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Жёлтощёкий номаскус)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Масса составляет 7—10 кг. Выражен половой диморфизм. Самцы в основном чёрного цвета, но имеют узкие белые пятна на щеках. Верхняя и нижняя губа окружены белым мехом. Окраска самок варьирует от жёлто-серого до светло-коричневого, в верхней части головы у них есть небольшое чёрное пятно.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_Nomascus;;

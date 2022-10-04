@@ -1,0 +1,50 @@
+section_subject_domain_of_Hominoidea
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Человекообразные]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Hominoidea]
+	(* <- lang_en;; *);
+	
+<= nrel_section_decomposition: 
+	{
+		section_subject_domain_of_Hylobatidae;
+		section_subject_domain_of_Hominidae
+	};
+
+<- rrel_key_sc_element:
+	concept_Hylobatidae;
+	concept_Hominidae;
+	nrel_evolution;
+	subject_domain_of_Hominoidea;
+	concept_Hominoidea;;
+
+section_subject_domain_of_Hominoidea = [*
+subject_domain_of_Hominoidea
+
+=> nrel_main_idtf: 
+	[Предметная область Человекообразные]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Hominoidea]
+	(* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+	section_subject_domain_of_Hylobatidae;
+	section_subject_domain_of_Hominidae;
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_Hominoidea;
+		
+-> rrel_maximum_studied_object_class:
+	concept_Hominoidea;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_Hylobatidae;
+	concept_Hominidae;
+	
+-> rrel_explored_relation:
+	nrel_evolution;
+	
+<- subject_domain;;
+*];;
