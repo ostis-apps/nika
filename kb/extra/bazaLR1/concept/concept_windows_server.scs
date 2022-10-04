@@ -1,0 +1,48 @@
+concept_windows_server
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Windows server]
+	(* <- lang_ru;; *);
+	[Windows server]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Windows server)]
+		(* <- lang_ru;; *);
+		[Def. (Windows server)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Windows server — это семейство серверных систем.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[windows server is a family of server systems]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Windows server)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Это семейство используется для серверных компьютеров и ноутбуков.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+<=nrel_inclusion: concept_windows;;

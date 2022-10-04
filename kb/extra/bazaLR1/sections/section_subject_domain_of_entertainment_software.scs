@@ -1,0 +1,51 @@
+section_subject_domain_of_entertainment_software
+=> nrel_main_idtf: 
+	[Раздел. Предметная область ПО развлекательного назначения]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Entertainment software]
+	(* <- lang_en;; *);
+	
+<= nrel_section_decomposition: 
+	{
+		section_subject_domain_of_game;
+		section_subject_domain_of_mediaplayer
+	};
+
+<- rrel_key_sc_element:
+	concept_game;
+	concept_mediaplayer;
+	nrel_property;
+	nrel_type;
+	subject_domain_of_entertainment_software;
+	concept_entertainment_software;;
+
+section_subject_domain_of_entertainment_software = [*
+subject_domain_of_entertainment_software
+
+=> nrel_main_idtf: 
+	[Предметная область ПО развлекательного назначения]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Entertainment software]
+	(* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+	section_subject_domain_of_entertainment_software;
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_application_software;
+		
+-> rrel_maximum_studied_object_class:
+	concept_entertainment_software;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_game;
+	concept_mediaplayer;
+	
+-> rrel_explored_relation:
+	nrel_property;
+	nrel_type;
+	
+<- subject_domain;;
+*];;

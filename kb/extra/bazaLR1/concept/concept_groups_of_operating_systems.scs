@@ -1,0 +1,47 @@
+concept_groups_of_operating_systems
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Семейства операционных систем ]
+	(* <- lang_ru;; *);
+	[Groups of operating systems]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Семейства операционных систем )]
+		(* <- lang_ru;; *);
+		[Def. (Groups of operating systems)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Семейства операционных систем  -  операционная система, которая образовалась под влиянием другой операционной системы]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Groups of operating systems - an operating system that was formed under the influence of another operating system]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Семейства операционных систем)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[С 1990-х годов наиболее распространёнными операционными системами являются системы семейства Windows, Unix и UNIX-подобные системы.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_operating_system;;

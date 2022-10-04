@@ -1,0 +1,47 @@
+concept_test_translator
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Тестовый транслятор]
+	(* <- lang_ru;; *);
+	[Test translator]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Тестовый транслятор)]
+		(* <- lang_ru;; *);
+		[Def. (Test translator)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Тестовый транслятор — транслятор, получающий на вход исходный код и выдающий на выходе изменённый исходный код.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A test translator is a translator that receives source code as input and outputs modified source code as output.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Тестовый транслятор)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Запускается перед основным транслятором для добавления в исходный код отладочных процедур.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_translator;;

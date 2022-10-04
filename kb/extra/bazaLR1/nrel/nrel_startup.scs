@@ -1,0 +1,51 @@
+nrel_startup
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antransitive_relation;
+<-asymmetric_relation;
+=>nrel_main_idtf:
+	[Тип Запуска*]
+	(* <- lang_ru;; *);
+	[Startup*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_software;
+=>nrel_second_domain: concept_software;
+=>nrel_definitional_domain: ... (*
+	<= nrel_combination:
+	{
+		concept_software;
+		concept_software
+	};;
+*);
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Тип Запуска*)]
+		(* <- lang_ru;; *);
+		[Def.(Startup*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Тип запуска* -  определяет, каким образом запускается приложение: с установкой или без.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Startup* - determines how the application is launched: with or without installation.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_software;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

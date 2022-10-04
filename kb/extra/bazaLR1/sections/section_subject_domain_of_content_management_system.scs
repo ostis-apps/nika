@@ -1,0 +1,44 @@
+section_subject_domain_of_content_management_system
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Система управления содержимым]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of content management system]
+	(* <- lang_en;; *);
+	
+<- rrel_key_sc_element:
+	concept_content;
+	concept_enterprise_content_management_system;
+	concept_web_content_management_system;
+	nrel_purpose;
+	nrel_type;
+	subject_domain_of_content_management_system;
+	concept_content_management_system;;
+
+section_subject_domain_of_content_management_system = [*
+subject_domain_of_galaxy_content_management_system
+
+=> nrel_main_idtf: 
+	[Предметная область  Система управления содержимым]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of content management system]
+	(* <- lang_en;; *);
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_content_management_system;
+		
+-> rrel_maximum_studied_object_class:
+	concept_content_management_system;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_content;
+	concept_enterprise_content_management_system;
+	concept_web_content_management_system;
+	
+-> rrel_explored_relation:
+	nrel_purpose;
+	nrel_type;
+	
+<- subject_domain;;
+*];;

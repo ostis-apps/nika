@@ -1,0 +1,47 @@
+concept_text_editor
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Текстовый редактор]
+	(* <- lang_ru;; *);
+	[Text editor]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Текстовый редактор)]
+		(* <- lang_ru;; *);
+		[Def. (Text Editor)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Текстовый редактор - самостоятельная компьютерная программа или компонент программного комплекса, предназначенная для создания и изменения текстовых данных в общем и текстовых файлов, в частности.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Text editor is a type of computer program that edits plain text.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Текстовый редактор)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Текстовые редакторы предназначены для работы с текстовыми файлами в интерактивном режиме]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_common_software;;

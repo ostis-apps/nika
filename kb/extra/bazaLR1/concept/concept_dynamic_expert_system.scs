@@ -1,0 +1,47 @@
+concept_dynamic_expert_system
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Динамическая экспертная система]
+	(* <- lang_ru;; *);
+	[Dynamic expert system]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Динамическая экспертная система)]
+		(* <- lang_ru;; *);
+		[Def. (Dynamic expert system)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Динамические — решающие задачи в условиях изменяющихся во времени исходных данных и знаний.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Dynamic - solving problems in the conditions of initial data and knowledge changing in time.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Динамическая экспертная система)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[способные принимать решения в реальном времени в динамически изменяющихся средах.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_expert_system;;

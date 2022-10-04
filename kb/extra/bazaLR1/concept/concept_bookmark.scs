@@ -1,0 +1,48 @@
+concept_bookmark
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Закладка]
+	(* <- lang_ru;; *);
+	[Bookmark]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Закладка)]
+		(* <- lang_ru;; *);
+		[Def. (Bookmark)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Закладка — избранная, любимая интернет-ссылка в браузере или выбранное место (позиция) в тексте.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A bookmark is a Uniform Resource Identifier (URI) that is stored for later retrieval in any of various storage formats]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Закладка)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[В браузерах Firefox и Opera закладки хранятся в специальном файле и вызываются через меню Закладки (Bookmarks). В Internet Explorer закладки хранятся в виде ярлыков в специальной папке Избранное (Favorites) и вызываются через одноимённое меню.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+<=nrel_inclusion: concept_web_browser;;

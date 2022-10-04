@@ -1,0 +1,47 @@
+concept_dialog_translator
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Диалоговый транслятор]
+	(* <- lang_ru;; *);
+	[Dialog translator]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Диалоговый транслятор)]
+		(* <- lang_ru;; *);
+		[Def. (Dialog translator)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Диалоговый транслятор — транслятор, обеспечивающий использование языка программирования в режиме разделения времени.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A dialog translator is a translator that provides the use of a programming language in time-sharing mode.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Диалоговый транслятор)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Обеспечивает использование языка программирования в режиме разделения времени.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_translator;;

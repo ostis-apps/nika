@@ -1,0 +1,45 @@
+section_subject_domain_of_windows
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Windows]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Windows]
+	(* <- lang_en;; *);
+	
+<- rrel_key_sc_element:
+	concept_windows_nt;
+	concept_windows_server;
+	concept_windows_phone;
+	nrel_property;
+	subject_domain_of_windows;
+	rrel_platform;
+	concept_windows;;
+
+section_subject_domain_of_windows = [*
+subject_domain_of_windows
+
+=> nrel_main_idtf: 
+	[Предметная область Windows]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Windows]
+	(* <- lang_en;; *);
+
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_windows;
+		
+-> rrel_maximum_studied_object_class:
+	concept_windows;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_windows_nt;
+	concept_windows_server;
+	concept_windows_phone;
+	
+-> rrel_explored_relation:
+	nrel_property;
+	rrel_platform;
+	
+<- subject_domain;;
+*];;

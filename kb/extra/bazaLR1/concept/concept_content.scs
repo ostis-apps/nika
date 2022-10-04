@@ -1,0 +1,48 @@
+concept_content
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Контент]
+	(* <- lang_ru;; *);
+	[Content]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Контент)]
+		(* <- lang_ru;; *);
+		[Def. (Content)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Контент — различное информационно-значимое содержимое цифровых носителей]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Content - various informationally significant content of digital media ]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Контент)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[В системе управления содержимым может являться самыми различными данными: документы, фильмы, фотографии, номера телефонов, научные данные и так далее. ]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+<=nrel_inclusion: concept_content_management_system;;

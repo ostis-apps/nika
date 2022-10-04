@@ -1,0 +1,47 @@
+concept_unix_shell
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Unix shell]
+	(* <- lang_ru;; *);
+	[Unix shell]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Unix shell)]
+		(* <- lang_ru;; *);
+		[Def. (Unix shell)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Unix shell —  командный интерпретатор, используемый в операционных системах семейства Unix.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Unix shell is a command interpreter used in operating systems of the Unix family.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Unix shell)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[ пользователь может либо давать команды операционной системе по отдельности, либо запускать скрипты, состоящие из списка команд.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_unix;;

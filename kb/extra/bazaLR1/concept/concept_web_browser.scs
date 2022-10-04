@@ -1,0 +1,47 @@
+concept_web_browser
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Браузер]
+	(* <- lang_ru;; *);
+	[Web browser]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Браузер)]
+		(* <- lang_ru;; *);
+		[Def. (Web browser)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Браузер - прикладное программное обеспечение для просмотра страниц, содержания веб-документов, компьютерных файлов и их каталогов; управления веб-приложениями, а также для решения других задач.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A web browser is application software for accessing the World Wide Web or a local website.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Браузер)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[В глобальной сети браузеры используют для запроса, обработки, манипулирования и отображения содержания веб-сайтов.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_common_software;;

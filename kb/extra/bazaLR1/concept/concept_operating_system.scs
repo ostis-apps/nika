@@ -1,0 +1,46 @@
+concept_operating_system
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Операционная Система]
+	(* <- lang_ru;; *);
+	[Operating System]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Операционная система)]
+		(* <- lang_ru;; *);
+		[Def. (Operating System)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Операционная система  — комплекс взаимосвязанных программ, предназначенных для управления ресурсами компьютера и организации взаимодействия с пользователем.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Operating system - a set of interrelated programs designed to manage computer resources and organize interaction with the user.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Операционная система )]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[В большинстве вычислительных систем операционная система является основной, наиболее важной частью системного программного обеспечения.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);;

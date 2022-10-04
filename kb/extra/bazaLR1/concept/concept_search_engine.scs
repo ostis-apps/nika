@@ -1,0 +1,47 @@
+concept_search_engine
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Поисковая система]
+	(* <- lang_ru;; *);
+	[Search engine]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Поисковая система)]
+		(* <- lang_ru;; *);
+		[Def. (Search engine)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Поисковая система-алгоритмы и реализующая их совокупность компьютерных программ, предоставляющая пользователю возможность быстрого доступа к необходимой ему информации при помощи поиска в обширной коллекции доступных данных.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Search engine-algorithms and a set of computer programs that implements them, providing the user with the ability to quickly access the information he needs by searching in a vast collection of available data.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Поисковая система)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Для поиска информации с помощью поисковой системы пользователь формулирует поисковый запрос.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_web_browser;;

@@ -1,0 +1,47 @@
+concept_web_content_management_system
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Система управления веб контентом]
+	(* <- lang_ru;; *);
+	[Web content management system]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Система управления веб контентом)]
+		(* <- lang_ru;; *);
+		[Def. (Web content management system)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[WCMS-система — программный комплекс, предоставляющий функции создания, редактирования, контроля и организации веб-страниц.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[WCMS is a software package that provides the functions of creating, editing, controlling and organizing web pages.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Система управления веб контентом)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[ WCMS часто используются для создания блогов, личных страниц и интернет-магазинов и нацелены на пользователей, мало знакомых с программированием.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_content_management_system;;

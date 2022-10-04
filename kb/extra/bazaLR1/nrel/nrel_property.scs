@@ -1,0 +1,52 @@
+nrel_property
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antransitive_relation;
+<-asymmetric_relation;
+=>nrel_main_idtf:
+	[Свойство*]
+	(* <- lang_ru;; *);
+	[Property*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_software;
+=>nrel_second_domain: license;
+=>nrel_definitional_domain: ... (*
+	<= nrel_combination:
+	{
+		concept_software;
+		license
+	};;
+*);
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Свойство*)]
+		(* <- lang_ru;; *);
+		[Def.(Property*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Свойство* -  Прикладное программное обеспечение обычно подразделяют на два основных класса: приложения с закрытым исходным кодом и приложения с открытым исходным кодом, а также бесплатные или проприетарные программные приложения.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Property* -Application software is usually distinguished into two main classes: closed source vs open source software applications, and free or proprietary software applications.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_software;
+		license;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;
