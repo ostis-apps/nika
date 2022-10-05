@@ -1,0 +1,39 @@
+nrel_actor
+<- sc_node_role_relation;
+<- relation;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:
+    concept_spectacle;
+
+=> nrel_second_domain:
+    concept_person;
+ 
+=> nrel_definitional_domain:
+    concept_person;
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[актер*] (*<-lang_ru;;*);
+	[actor*] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (актер)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        nrel_role;
+        concept_spectacle;
+        concept_play
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Актер - исполнитель ролей в театральных представлениях (спектаклях).] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

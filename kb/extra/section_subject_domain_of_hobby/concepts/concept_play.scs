@@ -1,0 +1,21 @@
+concept_play
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [пьеса] (*<-lang_ru;;*);
+    [драматическое произведение] (*<-lang_ru;;*);
+    [play] (*<-lang_en;;*);
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (пьеса)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_spectacle
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Пьеса - драматическое произведение для театрального представления (спектакля).] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);;

@@ -1,0 +1,17 @@
+concept_literature
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [литература] (*<-lang_ru;;*);
+    [literature] (*<-lang_en;;*);
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (литература)] (* <- lang_ru;; *);;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Литература - совокупность художественных произведений (поэзия, проза, драма).] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);;

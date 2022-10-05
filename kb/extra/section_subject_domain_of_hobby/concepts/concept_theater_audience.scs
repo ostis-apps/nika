@@ -1,0 +1,38 @@
+//Публика
+concept_theater_audience
+<- sc_node_not_relation;
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[театральная публика] (*<-lang_ru;;*);
+  [посетители театра] (*<-lang_ru;;*);
+	[theater audience] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (театральная публика)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+      concept_theater
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Театральная публика - совокупность зрителей в театре.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(театральная публика, спектакль)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+		concept_stage;
+        concept_spectacle
+};; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+      [Публика затихает, когда на сцене начинается спектакль.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

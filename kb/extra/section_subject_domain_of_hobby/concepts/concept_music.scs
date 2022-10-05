@@ -1,0 +1,17 @@
+concept_music
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf: 
+ 	[музыка] (*<-lang_ru;;*);
+	[music] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (музыка)] (* <- lang_ru;; *);;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Музыка - искусство, в котором переживания, чувства и идеи выражаются ритмически и интонационно организованными звуками, а также сами произведения этого искусства.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

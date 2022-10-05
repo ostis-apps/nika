@@ -1,0 +1,39 @@
+//Сцена
+concept_stage
+<- sc_node_class;
+<- class;
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[сцена] (*<-lang_ru;;*);
+	[stage] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (сцена)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+		nrel_place;
+		concept_theatrical_action
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Сцена - место основного театрального действия (спектакля).] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(сцена, ключевая часть*, помещение, театр)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+		concept_room;
+		concept_theater 
+};; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+[Cцена - ключевая часть помещения театра.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

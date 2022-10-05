@@ -1,0 +1,39 @@
+section_subject_domain_of_music
+=> nrel_main_idtf:
+	  [Раздел. Предметная область музыки]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of music] 
+  (* <- lang_en;; *);;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_music = [*
+	subject_domain_of_music
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область музыки]
+   (* <- lang_ru;; *);
+   [Subject domain of music]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_music;
+	-> rrel_not_maximum_studied_object_class:
+      concept_musical_composition;
+      concept_sound;
+      concept_sound_panel;
+	-> rrel_explored_relation:
+      rrel_soundtrack;
+      nrel_composer;;
+*];;
+
+
+section_subject_domain_of_hobby
+-> rrel_key_sc_element:
+    subject_domain_of_music; 
+    concept_music;
+    concept_musical_composition;
+    concept_sound;
+    concept_sound_panel;
+    rrel_soundtrack;
+    nrel_composer;;

@@ -1,0 +1,61 @@
+//Костюм
+nrel_costume
+<- sc_node_role_relation;
+<- relation;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:{
+    concept_person;
+    concept_character
+};
+
+=> nrel_second_domain:
+    concept_clothes;
+ 
+=> nrel_definitional_domain:
+    concept_clothes;
+
+<= nrel_inclusion:
+    nrel_props;
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[костюм*] (*<-lang_ru;;*);
+	[costume*] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (костюм)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+      concept_clothes;
+      concept_character;
+      concept_spectacle;
+      nrel_actor
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Костюм - одежда персонажа (играющего его актера), элемент оформления спектакля.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(костюм*, актёр*, персонаж)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+      nrel_actor;
+      nrel_character
+};; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+      [Костюм помогает актёру создать образ персонажа.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

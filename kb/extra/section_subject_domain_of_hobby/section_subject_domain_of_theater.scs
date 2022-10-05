@@ -1,0 +1,69 @@
+section_subject_domain_of_theater
+=> nrel_main_idtf:
+	  [Раздел. Предметная область театра]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of theater] 
+  (* <- lang_en;; *);;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_theater = [*
+	subject_domain_of_theater
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область театра]
+   (* <- lang_ru;; *);
+   [Subject domain of theater]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_theater;
+	-> rrel_not_maximum_studied_object_class:
+      concept_authentic_item;
+      concept_character;
+      concept_curtain;
+      concept_dialogue;
+      concept_fake_item;
+      concept_monologue;
+      concept_play;
+      concept_props;
+      concept_stage;
+      concept_spectacle;
+      concept_text_of_the_role;
+      concept_theatrical_action;
+      concept_theater_audience;
+	-> rrel_explored_relation:
+      rrel_replica;
+      nrel_actor;
+      nrel_costume;
+      nrel_composer;
+      nrel_prompter;
+      nrel_props;
+      nrel_role;;
+*];;
+
+
+section_subject_domain_of_hobby
+-> rrel_key_sc_element:
+    subject_domain_of_theater; 
+    concept_theater;
+    concept_authentic_item;
+    concept_character;
+    concept_curtain;
+    concept_dialogue;
+    concept_fake_item;
+    concept_monologue;
+    concept_play;
+    concept_props;
+    concept_stage;
+    concept_spectacle;
+    concept_text_of_the_role;
+    concept_theatrical_action;
+    concept_theater_audience;
+    rrel_replica;
+    nrel_actor;
+    nrel_costume;
+    nrel_composer;
+    nrel_prompter;
+    nrel_props;
+    nrel_role;;

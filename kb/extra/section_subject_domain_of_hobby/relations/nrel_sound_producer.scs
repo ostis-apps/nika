@@ -1,0 +1,52 @@
+//Звукорежиссер*
+nrel_sound_producer
+<- sc_node_role_relation;
+=> nrel_main_idtf: 
+ 	[звукорежиссер*] (*<-lang_ru;;*);
+	[sound_producer*] (*<-lang_en;;*);
+
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:
+    concept_spectacle;
+
+=> nrel_second_domain:
+    concept_person;
+ 
+=> nrel_definitional_domain:
+    concept_person;
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (звукорежиссер)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_sound;
+        concept_spectacle 
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Звукорежиссер - тот, кто готовит звук к спектаклю.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(звукорежиссер*, звуковой пульт)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+		concept_sound_panel
+};; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+[Звукорежиссёр использует звуковой пульт.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

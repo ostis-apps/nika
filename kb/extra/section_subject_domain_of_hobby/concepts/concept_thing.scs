@@ -1,0 +1,16 @@
+//предмет
+sc_node_not_relation -> concept_thing;;
+	concept_thing => nrel_main_idtf: 
+ 	[предмет] (*<-lang_ru;;*);
+	[thing] (*<-lang_en;;*);;
+
+//разделение на подмножества
+concept_thing <= nrel_subdividing: ... 
+(*
+	<- explanation;;
+	=> nrel_main_idtf:
+	[Подлинность](* <-lang_ru;; *);
+    [Authenticity](* <-lang_en;; *);;
+->concept_fake_item;
+concept_authentic_item;;
+*);;

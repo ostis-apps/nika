@@ -1,0 +1,36 @@
+concept_authentic_item
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+ 	[подлинник] (*<-lang_ru;;*);
+	[оригинал] (*<-lang_ru;;*);
+	[authentic item] (*<-lang_en;;*);
+
+	
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (подлинник)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_spectacle
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Подлинник - подлинная вещь, оригинал, не копия.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(подлинник)] (* <- lang_ru;; *);; 
+	=> nrel_using_constants: {
+		concept_thing
+};; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+		[Подлинным считается все вещи, что сделаны не по образцу, не подражательно. Не снимок, не список, не подделка, а вещь налицо, как она сделана.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

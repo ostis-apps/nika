@@ -1,0 +1,24 @@
+//Занавес
+concept_curtain
+<- sc_node_class;
+<- class;
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[занавес] (*<-lang_ru;;*);
+	[curtain] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (занавес)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+      concept_stage;
+      concept_theater_audience
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Занавес - полотнище, закрывающее сцену от театральной публики.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;
