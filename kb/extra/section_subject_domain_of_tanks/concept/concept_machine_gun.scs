@@ -1,0 +1,28 @@
+concept_machine_gun <- sc_node_not_relation;;
+
+concept_machine_gun => nrel_main_idtf:
+[Пулемёт] (*<-lang_ru;;*);
+[Machine gun] (*<-lang_en;;*);;
+
+concept_machine_gun <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Пулемёт)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_machine_gun.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_machine_gun <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Пулемёт)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Стрельба из пулемёта может вестись с сошек или станка, короткими (до 10 выстрелов), длинными (до 30 выстрелов) очередями или непрерывно.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

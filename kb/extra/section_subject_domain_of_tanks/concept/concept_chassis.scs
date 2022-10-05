@@ -1,0 +1,16 @@
+concept_chassis <- sc_node_not_relation;;
+
+concept_chassis => nrel_main_idtf:
+[Ходовая часть] (*<-lang_ru;;*);
+[Chassis] (*<-lang_en;;*);;
+
+concept_chassis <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Ходовая часть)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_chassis.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;

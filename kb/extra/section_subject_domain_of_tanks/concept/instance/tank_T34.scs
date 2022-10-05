@@ -1,0 +1,23 @@
+tank_T34
+<- concept_tank;
+
+=> nrel_main_idtf:
+   [танк Т-34]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Т-34]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [tank T-34]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Т-34](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Т-34 - советский средний танк периода Великой Отечественной войны, выпускался серийно с 1940 года.](*<-lang_ru;;*);;
+	*);;
+*);;

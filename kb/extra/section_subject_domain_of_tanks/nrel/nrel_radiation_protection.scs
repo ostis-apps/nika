@@ -1,0 +1,49 @@
+nrel_radiation_protection
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-antisymmetric_relation;
+
+=>nrel_main_idtf:
+	[Защита от ОМП*]
+	(* <- lang_ru;; *);
+	[Radiation protection*]
+	(* <- lang_en;; *);
+
+=> nrel_first_domain:
+	concept_tank;
+=> nrel_second_domain:
+	concept_degassing_devices;
+
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Защита от ОМП*)]
+		(* <- lang_ru;; *);
+		[Def.(Radiation protection*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Защита от ОМП* - это отношение, связывающее боевую машину и дегазационные устройства в ней и показывающее уровень предотвращения поражающего действия оружия массового поражения.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Radiation protection* is a relation that connects a combat vehicle and degassing devices in it and shows the level of prevention of a damaging weapon from the impact.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_tank;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

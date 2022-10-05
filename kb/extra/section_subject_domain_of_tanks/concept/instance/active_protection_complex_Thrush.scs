@@ -1,0 +1,25 @@
+active_protection_complex_Thrush
+<- concept_active_protection_complex;
+
+=> nrel_main_idtf:
+   [комплекс активной защиты "Дрозд"]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [защита "Дрозд"]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [active protection complex Thrush]
+   (* <- lang_en;; *);
+
+<= nrel_protected: tank_T34;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. комплекс активной защиты "Дрозд"](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Комплекс активной защиты "Дрозд" - советская система активной защиты танков](*<-lang_ru;;*);;
+	*);;
+*);;

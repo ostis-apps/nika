@@ -1,0 +1,36 @@
+accumulator_battery_6CT_128
+<- concept_accumulator_battery;
+
+=> nrel_main_idtf:
+   [аккумуляторная батарея 6СТ-128]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [6СТ-128]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [accumulator battery 6СТ-128]
+   (* <- lang_en;; *);
+
+<= nrel_power: tank_T34;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. аккумуляторная батарея 6СТ-128](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Аккумуляторная батарея 6СТ-128 - это устройство, отвечающее за питание танка Т34.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+accumulator_battery_6CT_128
+	<= nrel_sc_text_translation:	
+			...
+			(*
+			-> 
+				"file://images/Masashi_Kishimoto.png"
+				(*
+				    <- lang_ru;;
+				*);;
+			*);;

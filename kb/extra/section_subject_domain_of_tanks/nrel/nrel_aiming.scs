@@ -1,0 +1,48 @@
+nrel_aiming
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-antisymmetric_relation;
+=>nrel_main_idtf:
+	[Прицеливание*]
+	(* <- lang_ru;; *);
+	[aiming*]
+	(* <- lang_en;; *);
+
+=> nrel_first_domain:
+	concept_tank;
+=> nrel_second_domain:
+	concept_guiding_device;
+
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Прицеливание*)]
+		(* <- lang_ru;; *);
+		[Def.(aiming*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Прицеливание* - это отношение, связывающее боевую машину и наводящее устройство и обепечивающее попадание снарядов в цель.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Aiming* is the ratio that connects the combat vehicle and the aiming device and ensures that the projectiles hit the target.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_tank;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

@@ -1,0 +1,93 @@
+section_subject_domain_of_tanks
+=> nrel_main_idtf:
+	  [Раздел. Предметная область танков]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of tanks]
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_tanks = [*
+	subject_domain_of_tanks
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область танков]
+   (* <- lang_ru;; *);
+   [Subject domain of tanks]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	
+	-> rrel_maximum_studied_object_class:
+   concept_tank;
+   concept_tank_commander;
+	-> rrel_not_maximum_studied_object_class:
+	concept_accumulator_battery;
+    concept_active_protection_complex;
+   	concept_caterpillar_device;
+	concept_chassis;
+	concept_degassing_devices;
+	concept_driver_mechanic;
+	concept_guiding_device;
+	concept_gun;
+    concept_gun_layer;
+    concept_layout;
+    concept_machine_gun;
+    concept_masking_grid;
+    concept_periscope;
+    concept_radio_station;
+	concept_tank_engine;
+	concept_operator;
+	concept_machine_gunner;
+
+	-> rrel_explored_relation:
+	nrel_aiming;
+	nrel_communication;
+	nrel_control;
+	nrel_movement;
+	nrel_observation;
+    nrel_power;
+    nrel_protected;
+    nrel_radiation_protection;
+    nrel_subordinate;
+    nrel_survivability;
+    nrel_weaponry;
+    nrel_camouflage;;
+*];;
+
+section_subject_domain_of_tanks
+-> rrel_key_sc_element:
+	nrel_aiming;
+	nrel_communication;
+	nrel_control;
+	nrel_movement;
+	nrel_observation;
+    nrel_power;
+    nrel_protected;
+    nrel_radiation_protection;
+    nrel_subordinate;
+    nrel_survivability;
+    nrel_weaponry;
+    nrel_camouflage;
+
+   subject_domain_of_tanks;
+	concept_accumulator_battery;
+    concept_active_protection_complex;
+   	concept_caterpillar_device;
+	concept_chassis;
+	concept_degassing_devices;
+	concept_driver_mechanic;
+	concept_guiding_device;
+	concept_gun;
+    concept_gun_layer;
+    concept_layout;
+    concept_machine_gun;
+    concept_masking_grid;
+    concept_periscope;
+    concept_radio_station;
+    concept_tank;
+    concept_tank_commander;
+    concept_operator;
+    concept_machine_gunner;
+	concept_tank_engine;;
+

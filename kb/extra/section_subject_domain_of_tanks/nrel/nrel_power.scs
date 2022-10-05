@@ -1,0 +1,48 @@
+nrel_power
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-antisymmetric_relation;
+=>nrel_main_idtf:
+	[Питание*]
+	(* <- lang_ru;; *);
+	[power*]
+	(* <- lang_en;; *);
+
+=> nrel_first_domain:
+	concept_tank;
+=> nrel_second_domain:
+	concept_accumulator_battery;
+
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Питание*)]
+		(* <- lang_ru;; *);
+		[Def.(power*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Питание* - это отношение, связывающее боевую машину и АКБ и обеспечивающее работу устройств.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Power* is the relationship that connects the combat vehicle and the battery and ensures the operation of the devices.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_tank;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

@@ -1,0 +1,50 @@
+nrel_movement
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-antisymmetric_relation;
+=>nrel_main_idtf:
+	[Передвижение*]
+	(* <- lang_ru;; *);
+	[movement*]
+	(* <- lang_en;; *);
+
+=> nrel_first_domain:
+	concept_tank;
+=> nrel_second_domain:
+	concept_chassis;
+	concept_caterpillar_device;
+	concept_tank_engine;
+
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Передвижение*)]
+		(* <- lang_ru;; *);
+		[Def.(movement*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Передвижение* - это отношение, связывающее боевую машину и гусеничное устройство и обеспечивающее изменение положения объекта в пространстве.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Movement* is a relationship that connects a combat vehicle and a tracked device and provides a change in the position of an object in space.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_tank;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

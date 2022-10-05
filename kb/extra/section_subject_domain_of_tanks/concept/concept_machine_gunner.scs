@@ -1,0 +1,16 @@
+concept_machine_gunner <- sc_node_not_relation;;
+
+concept_machine_gunner => nrel_main_idtf:
+[Пулемётчик] (*<-lang_ru;;*);
+[Machine gunner] (*<-lang_en;;*);;
+
+concept_machine_gunner <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Пулемётчик)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_machine_gunner.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;

@@ -1,0 +1,28 @@
+concept_degassing_devices <- sc_node_not_relation;;
+
+concept_degassing_devices => nrel_main_idtf:
+[Дегазационные приборы] (*<-lang_ru;;*);
+[Degassing devices] (*<-lang_en;;*);;
+
+concept_degassing_devices <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Дегазационные приборы)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_degassing_devices.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_degassing_devices <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Дегазационные приборы)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Дегазационные приборы спасают танкистов от оружия массового поражения.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

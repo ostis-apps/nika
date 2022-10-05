@@ -1,0 +1,28 @@
+concept_gun_layer <- sc_node_not_relation;;
+
+concept_gun_layer => nrel_main_idtf:
+[Наводчик] (*<-lang_ru;;*);
+[Gun layer] (*<-lang_en;;*);;
+
+concept_gun_layer <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Наводчик)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_gun_layer.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_gun_layer <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Наводчик)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Hаводчик орудия танка является заместителем командира танка.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

@@ -1,0 +1,16 @@
+concept_operator <- sc_node_not_relation;;
+
+concept_operator => nrel_main_idtf:
+[Радист] (*<-lang_ru;;*);
+[Operator] (*<-lang_en;;*);;
+
+concept_operator <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Радист)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_operator.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;

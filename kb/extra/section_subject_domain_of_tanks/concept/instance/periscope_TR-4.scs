@@ -1,0 +1,25 @@
+periscope_TR_4
+<- concept_periscope;
+
+=> nrel_main_idtf:
+   [перископ ТР-4]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [ТР-4]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [periscope TR-4]
+   (* <- lang_en;; *);
+
+<= nrel_observation: tank_T34;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. перископ ТР-4](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Перископ ТР-4 - труба разведчика, 4-х кратное увеличение](*<-lang_ru;;*);;
+	*);;
+*);;

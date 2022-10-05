@@ -1,0 +1,29 @@
+tank_commander_Chugunin_Mikhail
+<- concept_tank_commander;
+
+=> nrel_main_idtf:
+   [командир танка Чугунин Михаил]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Чугунин Михаил]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [tank commander Chugunin Mikhail]
+   (* <- lang_en;; *);
+
+=> nrel_subordinate: driver_mechanic_Bukhtuev_Mikhail;
+=> nrel_subordinate: gun_layer_Koryavin_Alexander;
+=> nrel_subordinate: machine_gunner_Nuradilov_Khanpasha;
+=> nrel_subordinate: operator_Guslev_Georgy;
+<= nrel_control: tank_T34;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Чугунин Михаил](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Чугунин Михаил - советский офицер, танкист, участник Великой Отечественной войны, Герой Советского Союза.](*<-lang_ru;;*);;
+	*);;
+*);;

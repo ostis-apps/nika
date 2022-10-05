@@ -1,0 +1,25 @@
+masking_grid_MKT_2L
+<- concept_masking_grid;
+
+=> nrel_main_idtf:
+   [маскировочная сетка МКТ-2Л]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [МКТ-2Л]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [masking grid MKT-2L]
+   (* <- lang_en;; *);
+
+<= nrel_camouflage: tank_T34;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. маскировочная сетка МКТ-2Л](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Маскировочная сетка МКТ-2Л - советский камуфляж для танков.](*<-lang_ru;;*);;
+	*);;
+*);;

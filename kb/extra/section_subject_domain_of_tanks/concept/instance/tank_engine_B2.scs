@@ -1,0 +1,25 @@
+tank_engine_B2
+<- concept_tank_engine;
+
+=> nrel_main_idtf:
+   [танковый двигатель B2]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [B2]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [tank engine B2]
+   (* <- lang_en;; *);
+
+<= nrel_movement: tank_T34;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. танковый двигатель B2](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Танковый двигатель B2 -  советский V-образный 12-цилиндровый четырёхтактный быстроходный дизельный танковый двигатель водяного охлаждения с непосредственным впрыском.](*<-lang_ru;;*);;
+	*);;
+*);;

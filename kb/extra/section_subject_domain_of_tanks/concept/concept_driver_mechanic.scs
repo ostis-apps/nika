@@ -1,0 +1,28 @@
+concept_driver_mechanic <- sc_node_not_relation;;
+
+concept_driver_mechanic => nrel_main_idtf:
+[Механик-водитель] (*<-lang_ru;;*);
+[Driver mechanic] (*<-lang_en;;*);;
+
+concept_driver_mechanic <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Механик-водитель)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_driver_mechanic.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_driver_mechanic <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Механик-водитель)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Механик-водитель должен знать устройство, правила эксплуатации и технического обслуживания специального и транспортного средства, установленные правила движения и сигналы.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

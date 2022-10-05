@@ -1,0 +1,48 @@
+nrel_survivability
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-antisymmetric_relation;
+=>nrel_main_idtf:
+	[Живучесть*]
+	(* <- lang_ru;; *);
+	[survivability*]
+	(* <- lang_en;; *);
+
+=> nrel_first_domain:
+	concept_tank;
+=> nrel_second_domain:
+	concept_layout;
+
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Живучесть*)]
+		(* <- lang_ru;; *);
+		[Def.(survivability*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Живучесть* - это отношение, связывающее боевую машину и её внутреннюю сборку и показывающее способность технического устройства, сооружения, средства или системы выполнять основные свои функции, несмотря на полученные повреждения.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Survivability* is a ratio that links a combat vehicle and its accumulation and shows the capabilities of a technical device, structure, means or system for the implementation of its functions, despite the detected damage.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_tank;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

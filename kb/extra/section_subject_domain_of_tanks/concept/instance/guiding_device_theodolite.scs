@@ -1,0 +1,25 @@
+guiding_device_theodolite
+<- concept_guiding_device;
+
+=> nrel_main_idtf:
+   [устройство наведения теодолит]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [теодолит]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [guiding device theodolite]
+   (* <- lang_en;; *);
+
+=> nrel_control: gun_layer_Koryavin_Alexander;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. устройство наведения теодолит](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Устройство наведения теодолит - это устройство, отвечающее за прицеливание танка Т34.](*<-lang_ru;;*);;
+	*);;
+*);;
