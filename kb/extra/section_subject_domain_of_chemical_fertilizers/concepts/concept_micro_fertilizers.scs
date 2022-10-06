@@ -1,0 +1,43 @@
+sc_node_not_relation -> concept_micro_fertilizers;;
+sc_node_not_relation -> concept_fertilizers;;
+sc_node_not_relation -> concept_chelates;;
+
+sc_node_norole_relation -> nrel_consume;;
+sc_node_norole_relation -> nrel_contain;;
+
+concept_micro_fertilizers => nrel_main_idtf: [Микроудобрения](* <- lang_ru;; *);;
+concept_micro_fertilizers => nrel_main_idtf: [Micro fertilizers](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+  -> rrel_key_sc_element : concept_micro_fertilizers;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Микроудобрения –  удобрения, содержащие микроэлементы, вещества, потребляемые растениями в небольших количествах.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Определение (Микроудобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (*
+           -> concept_fertilizers;;
+       	   -> nrel_contain;;
+	   -> nrel_consume;;
+  *);;
+*);;
+
+statement ->...
+(*
+  -> rrel_key_sc_element : concept_micro_fertilizers;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Наиболее эффективными формами микроэлементов являются хелаты.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Утверждение(Микроудобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (* 
+   	-> concept_chelates;;
+  *);;
+*);;
+
+concept_micro_fertilizers <= nrel_subdividing: …
+(*
+	<- explanation;;
+	=> nrel_main_idtf: 
+		[Разбиение по микроудобрениям](*<-lang_ru;; *);
+		[Subdividing based on micro fertilizing](*<-lang_en;; *);;
+	-> concept_boric_micro_fertilizers; concept_cooper_micro_fertilizers; concept_zinc_micro_fertilizers; concept_manganese_micro_fertilizers; concept_molybdenum_micro_fertilizers; concept_cobalt_micro_fertilizers;;
+*);;

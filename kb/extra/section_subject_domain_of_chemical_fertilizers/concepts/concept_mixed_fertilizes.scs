@@ -1,0 +1,35 @@
+sc_node_not_relation -> concept_mixed_fertilizes;;
+sc_node_not_relation -> concept_complex_fertilizers;;
+sc_node_not_relation -> concept_nutritional_element;;
+
+sc_node_norole_relation -> nrel_contain;;
+sc_node_norole_relation -> nrel_apply;;
+
+concept_mixed_fertilizes => nrel_main_idtf: [Смешанные удобрения](* <- lang_ru;; *);;
+concept_mixed_fertilizes => nrel_main_idtf: [Mixed fertilizers](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+  -> rrel_key_sc_element : concept_mixed_fertilizes;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Смешанные удобрения – комплексные удобрения, получаемые механическим смешиванием удобрений, содержат несколько питательных элементов..](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Определение (Смешанные удобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (*
+	   -> concept_complex_fertilizers;;
+	   -> concept_nutritional_element;;
+	   -> nrel_contain;;
+  *);;
+*);;
+
+statement ->...
+(*
+  -> rrel_key_sc_element : concept_mixed_fertilizes;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Применяют при необходимости одновременного внесения за один прием несколько питательных веществ.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Утверждение(Смешанные удобрения](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (* 
+   	-> nrel_apply;;
+	-> concept_nutritional_element;;
+  *);;
+*);;

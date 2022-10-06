@@ -1,0 +1,30 @@
+sc_node_not_relation -> concept_iodine_containing_micro_fertilizers;;
+
+sc_node_norole_relation -> nrel_contain;;
+sc_node_norole_relation -> nrel_promote_growth;;
+
+concept_iodine_containing_micro_fertilizers => nrel_main_idtf: [Йодо-содержащие микроудобрения](* <- lang_ru;; *);;
+concept_iodine_containing_micro_fertilizers => nrel_main_idtf: [Iodine containing micro fertilizers](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+  -> rrel_key_sc_element : concept_iodine_containing_micro_fertilizers;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Йодо-содержащие микроудобрения – удобрительные вещества, содержащие йод.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Определение (Йодо-содержащие микроудобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (*
+	   -> nrel_contain;;
+  *);;
+*);;
+
+statement ->...
+(*
+  -> rrel_key_sc_element : concept_iodine_containing_micro_fertilizers;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Этот элемент оказывает стимулирующее действие на рост и развитие растений.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Утверждение(Йодо-содержащие микроудобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (* 
+	-> nrel_promote_growth;;
+  *);;
+*);;

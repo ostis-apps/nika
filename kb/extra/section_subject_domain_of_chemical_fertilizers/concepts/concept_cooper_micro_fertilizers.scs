@@ -1,0 +1,34 @@
+sc_node_not_relation -> concept_cooper_micro_fertilizers;;
+sc_node_not_relation -> concept_plant;;
+sc_node_not_relation -> concept_fungal_disease;;
+
+sc_node_norole_relation -> nrel_contain;;
+sc_node_norole_relation -> nrel_promote_growth;;
+
+concept_cooper_micro_fertilizers => nrel_main_idtf: [Медные микроудобрения](* <- lang_ru;; *);;
+concept_cooper_micro_fertilizers => nrel_main_idtf: [Cooper micro fertilizers](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+  -> rrel_key_sc_element : concept_cooper_micro_fertilizers;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Медные микроудобрения –  удобрительные вещества, содержащие медь в форме, легкодоступной для растений.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Определение (Медные микроудобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (*
+	   -> nrel_contain;;
+	   -> concept_plant;;
+  *);;
+*);;
+
+statement ->...
+(*
+  -> rrel_key_sc_element : concept_cooper_micro_fertilizers;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Под влиянием меди ускоряется созревание урожая, снижается вероятность заболевания различными грибковыми заболеваниями.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Утверждение(Медные микроудобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (* 
+   	-> concept_fungal_disease;;
+	-> nrel_promote_growth;;
+  *);;
+*);;

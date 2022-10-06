@@ -1,0 +1,32 @@
+sc_node_not_relation -> concept_ammonia_fertilizes;;
+sc_node_not_relation -> concept_nitrogen;;
+sc_node_not_relation -> concept_sulfuric_acid;;
+
+sc_node_norole_relation -> nrel_aggresive;;
+
+concept_ammonia_fertilizes => nrel_main_idtf: [Аммонийные удобрения](* <- lang_ru;; *);;
+concept_ammonia_fertilizes => nrel_main_idtf: [Ammonia fertilizers](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+  -> rrel_key_sc_element : concept_ammonia_fertilizes;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Аммонийные удобрения – те, в которых азот имеет форму аммония.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Определение (Аммонийные удобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (*
+	   -> concept_nitrogen;;
+  *);;
+*);;
+
+statement ->...
+(*
+  -> rrel_key_sc_element : concept_ammonia_fertilizes;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Очень агрессивная вещество, особенно во время увлажнения, ведь в нем присутствует серная кислота..](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Утверждение(Аммонийные удобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (* 
+   	-> concept_sulfuric_acid;;
+	-> nrel_aggresive;;
+  *);;
+*);;

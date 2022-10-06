@@ -1,0 +1,34 @@
+sc_node_not_relation -> concept_raw_potash_fertilizes;;
+sc_node_not_relation -> concept_sylvinite;;
+sc_node_not_relation -> concept_cainite;;
+sc_node_not_relation -> concept_immunity;;
+
+sc_node_norole_relation -> nrel_increases;;
+
+concept_raw_potash_fertilizes => nrel_main_idtf: [Сырые калийные удобрения](* <- lang_ru;; *);;
+concept_raw_potash_fertilizes => nrel_main_idtf: [Raw potash fertilizers](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+  -> rrel_key_sc_element : concept_raw_potash_fertilizes;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Сырые калийные удобрения – сильвинит и каинит.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Определение (Сырые калийные удобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (*
+	   -> concept_sylvinite;;
+	   -> concept_cainite;;
+  *);;
+*);;
+
+statement ->...
+(*
+  -> rrel_key_sc_element : concept_raw_potash_fertilizes;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Значительно повышает иммунитет растения.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Утверждение(Сырые калийные удобрения](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (* 
+   	-> concept_immunity;;
+	-> nrel_increases;;
+  *);;
+*);;

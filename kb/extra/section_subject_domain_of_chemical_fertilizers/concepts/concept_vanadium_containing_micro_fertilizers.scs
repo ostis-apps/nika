@@ -1,0 +1,32 @@
+sc_node_not_relation -> concept_vanadium_containing_micro_fertilizers;;
+sc_node_not_relation -> concept_metavanadate;;
+sc_node_not_relation -> concept_vanadate;;
+
+sc_node_norole_relation -> nrel_contain;;
+
+concept_vanadium_containing_micro_fertilizers => nrel_main_idtf: [Ванадий-содержащие микроудобрения](* <- lang_ru;; *);;
+concept_vanadium_containing_micro_fertilizers => nrel_main_idtf: [Vanadium containing micro fertilizers](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+  -> rrel_key_sc_element : concept_vanadium_containing_micro_fertilizers;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[удобрительные вещества, содержащие ванадий.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Определение (Ванадий-содержащие микроудобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (*
+	   -> nrel_contain;;
+  *);;
+*);;
+
+statement ->...
+(*
+  -> rrel_key_sc_element : concept_vanadium_containing_micro_fertilizers;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[В качестве ванадийсодержащих удобрений применяются метаванадат натрия, ванадат аммония.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Утверждение(Ванадий-содержащие микроудобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (* 
+	-> concept_metavanadate;;
+	-> concept_vanadate;;
+  *);;
+*);;
