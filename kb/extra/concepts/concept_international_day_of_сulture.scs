@@ -1,0 +1,47 @@
+concept_international_day_of_culture
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Международный день культуры]
+	(* <- lang_ru;; *);
+	[International Day of Culture]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Международный день культуры)]
+		(* <- lang_ru;; *);
+		[Def. (International Day of Culture)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Поэтому, чтобы еще раз подчеркнуть важность всех сфер деятельности культурного мира, был учрежден специальный праздник – Международный день культуры (World Day of Culture), который отмечается во многих странах мира ежегодно 15 апреля. Он был учрежден в честь принятия 15 апреля 1935 года международного договора «Об охране художественных и научных учреждений и исторических памятников», который стал известен в международно-правовой практике как Пакт Рериха.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Therefore, in order to once again emphasize the importance of all spheres of activity of the cultural world, a special holiday was established - the International Day of Culture (World Day of Culture), which is celebrated in many countries of the world annually on April 15th. It was established in honor of the adoption on April 15, 1935 of the international treaty "On the Protection of Artistic and Scientific Institutions and Historical Monuments", which became known in international legal practice as the Roerich Pact.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Международный день культуры)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[«Культура» в переводе с санскритского дословно означает «почитание света», выражающее стремление к познанию прекрасного, идеалам и самосовершенствованию.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

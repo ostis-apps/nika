@@ -1,0 +1,47 @@
+concept_day_of_the_chemist
+<- sc_node_class;
+=> nrel_main_idtf:
+	[День химика]
+	(* <- lang_ru;; *);
+	[Day of the Chemist]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (День химика)]
+		(* <- lang_ru;; *);
+		[Def. (Day of the Chemist)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[День химика — профессиональный праздник работников химической и нефтехимической промышленности, который ведет свою историю с советских времен и отмечается в последнее воскресенье мая.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Chemist's Day is a professional holiday for workers in the chemical and petrochemical industry, which dates back to Soviet times and is celebrated on the last Sunday of May.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (День химика)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Входя в число основных отраслей тяжелой промышленности, химический комплекс включает химическую и нефтехимическую промышленность, которые, в свою очередь, подразделяются на многие отрасли и производства.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

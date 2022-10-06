@@ -1,0 +1,47 @@
+concept_international_womens_day
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Международный женский день]
+	(* <- lang_ru;; *);
+	[International Women's Day]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Международный женский день)]
+		(* <- lang_ru;; *);
+		[Def. (International Women's Day)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Междунаро́дный же́нский день (8 Ма́рта) — праздник, который отмечается ежегодно 8 марта в ряде государств и стран мира.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[International Women's Day (March 8) is a holiday celebrated annually on March 8 in a number of states and countries around the world.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Международный женский день)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Международный день женщин появился как день солидарности женщин в борьбе за равные права и эмансипацию. С марта 1975 года Международный женский день отмечается в ООН]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

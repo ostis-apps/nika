@@ -1,0 +1,47 @@
+concept_post_day
+<- sc_node_class;
+=> nrel_main_idtf:
+	[День Почты]
+	(* <- lang_ru;; *);
+	[Post day]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (День Почты)]
+		(* <- lang_ru;; *);
+		[Def. (Post day)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Всемирный день почты — один из международных дней, отмечаемых в системе Организации Объединенных Наций. Проводится ежегодно 9 октября по решению 14 конгресса Всемирного почтового союза в день создания союза в 1874 году. А Всемирным днем почты этот день был провозглашен на Конгрессе Всемирного союза почтовиков, состоявшемся в Токио в 1969 году.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[World Post Day is one of the international days celebrated in the United Nations system. It is held annually on October 9 by decision of the 14th Congress of the Universal Postal Union on the day of the creation of the union in 1874. This day was proclaimed World Post Day at the Congress of the World Postal Union, held in Tokyo in 1969.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (День Почты)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[9 октября 1874 года в Бьерне (Швейцария) представителями 22 стран, в том числе России, был подписан Бернский договор, учреждающий основание Генерального почтового союза. В 1878 году союз изменил свое название и стал именоваться Всемирным почтовым союзом (ВПС). На сегодняшний день ВПС насчитывает в своем составе 192 страны. Во всем мире, начиная с 9 октября, проводится Международная неделя письма.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

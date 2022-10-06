@@ -1,0 +1,47 @@
+concept_international_friends_day
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Международный день друзей]
+	(* <- lang_ru;; *);
+	[International Friends Day]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Международный день друзей)]
+		(* <- lang_ru;; *);
+		[Def. (International Friends Day)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Все народы во все времена почитали дружбу величайшей социальной и нравственной ценностью. Не удивительно, что в разных странах есть и праздники посвященные друзьям. Один из них — Международный день друзей (International Friends Day) отмечается в ряде стран ежегодно 9 июня.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[All peoples at all times have revered friendship as the greatest social and moral value. It is not surprising that in different countries there are also holidays dedicated to friends. One of them - International Friends Day (International Friends Day) is celebrated in a number of countries every year on June 9th.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Международный день друзей)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Естественно, что в народном творчестве присутствует немало пословиц, поговорок и афоризмов о друзьях. Помните? — Старый друг лучше новых двух. Три друга: отец, да мать, да верная жена. Друзьям и в одной могиле не тесно. Не держи сто рублей, а держи сто друзей.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

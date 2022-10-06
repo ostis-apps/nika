@@ -1,0 +1,47 @@
+concept_international_tiger_day
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Международный день тигра]
+	(* <- lang_ru;; *);
+	[International Tiger Day]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Международный день тигра)]
+		(* <- lang_ru;; *);
+		[Def. (International Tiger Day)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Ежегодно 29 июля во всем мире отмечается Международный день тигра (International Tiger Day), который был учрежден в 2010 году на Международном форуме «Тигриный саммит» в Санкт-Петербурге по проблемам сохранения популяции этого хищного животного.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Every year on July 29, the world celebrates International Tiger Day, which was established in 2010 at the Tiger Summit International Forum in St. Petersburg on the problems of preserving the population of this predatory animal.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Международный день тигра)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Инициаторами учреждения даты выступили 13 государств, участвовавшие в форуме, в которых тигры еще обитают. В ходе мероприятия также была разработана и принята программа восстановления тигриной популяции, рассчитанная на 2010-2022 годы, целью которой является увеличение количества тигров в 2 раза за обозначенный период.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

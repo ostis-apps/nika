@@ -1,0 +1,47 @@
+concept_day_of_the_belarusian_police
+<- sc_node_class;
+=> nrel_main_idtf:
+	[День белорусской милиции]
+	(* <- lang_ru;; *);
+	[Day of the Belarusian police]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (День белорусской милиции)]
+		(* <- lang_ru;; *);
+		[Def. (Day of the Belarusian police)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[День милиции — профессиональный праздник белорусской милиции.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Police Day is a professional holiday of the Belarusian police.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (День белорусской милиции)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[4 марта 1917 года приказом гражданского коменданта города Минска Михайлов Михаил Александрович (по паспортным данным, настоящее имя Михаил Васильевич Фрунзе) был назначен временным начальником милиции Всероссийского Земского Союза по охране порядка в городе Минске. Эта дата считается Днём рождения белорусской милиции.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

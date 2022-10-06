@@ -1,0 +1,47 @@
+concept_new_year
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Новый Год]
+	(* <- lang_ru;; *);
+	[New year]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Новый Год)]
+		(* <- lang_ru;; *);
+		[Def. (New year)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Новый год — главный календарный праздник, наступающий в момент перехода с последнего дня текущего года в первый день следующего года.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[New Year is the main calendar holiday, coming at the moment of transition from the last day of the current year to the first day of the next year.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Новый Год)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Начало года с 1 января было установлено римским правителем Юлием Цезарем в 46 году до нашей эры. В Древнем Риме этот день был посвящён Янусу — богу выбора, дверей и всех начал. Январь получил своё название в честь бога Януса, которого изображали с двумя лицами: одно смотрело вперёд, а другое — назад.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

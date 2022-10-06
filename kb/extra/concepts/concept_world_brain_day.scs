@@ -1,0 +1,47 @@
+concept_world_brain_day
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Всемирный день мозга]
+	(* <- lang_ru;; *);
+	[World Brain Day]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Всемирный день мозга)]
+		(* <- lang_ru;; *);
+		[Def. (World Ice Cream Day)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[В последние годы всё чаще всевозможные федерации и ассоциации врачей-специалистов определённого профиля, стремясь повысить внимание людей и государственных органов здравоохранения к вопросам здоровья человека, учреждают дни, посвящённые здоровью того или иного органа человека, либо системы органов. Именно с такой целью Всемирная Федерация неврологии учредила Всемирный день мозга (World Brain Day) и постановила отмечать его ежегодно 22 июля.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[In recent years, more and more often, all kinds of federations and associations of medical specialists of a certain profile, in an effort to increase the attention of people and public health authorities to human health issues, establish days dedicated to the health of a particular human organ or organ system. It is for this purpose that the World Federation of Neurology established World Brain Day and decided to celebrate it annually on July 22.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Всемирный день мозга)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Не секрет, что головной мозг является главным органом центральной нервной системы человека. Несмотря на прогресс медицины, на сделанные научные открытия в этой сфере, в том числе в области исследования головного мозга, нервная система человека остаётся той областью, исследование которой продолжается по сей день. Именно головной мозг и множественные аспекты, связанные с его работой продолжают оставаться загадкой.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

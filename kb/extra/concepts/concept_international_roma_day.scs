@@ -1,0 +1,47 @@
+concept_international_roma_day
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Международный день цыган]
+	(* <- lang_ru;; *);
+	[International Roma Day]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Международный день цыган)]
+		(* <- lang_ru;; *);
+		[Def. (International Roma Day)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Международный день цыган, который отмечается ежегодно 8 апреля представителями этой нации по всему миру, был учрежден на первом Всемирном цыганском конгрессе, состоявшемся в Лондоне 8 апреля 1971 года и собравшем представителей из 30 стран.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The International Gypsy Day, which is celebrated annually on April 8 by representatives of this nation around the world, was established at the first World Gypsy Congress, held in London on April 8, 1971 and brought together representatives from 30 countries.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Международный день цыган)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[На конгрессе также был создан Международный союз цыган (International Romani Union, IRU) и приняты национальные символы: флаг и гимн, что позволило цыганам мира признать себя единой свободной нацией. В настоящее время IRU объединяет цыганские общественные организации 42 стран мира. Полагают, что первое упоминание о цыганах датировано 1501 годом, когда цыганский вожак Василь получил охранную грамоту от литовского князя Александра Казимировича.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

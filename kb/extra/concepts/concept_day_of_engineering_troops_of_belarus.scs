@@ -1,0 +1,47 @@
+concept_day_of_engineering_troops_of_belarus
+<- sc_node_class;
+=> nrel_main_idtf:
+	[День инженерных войск Беларуси]
+	(* <- lang_ru;; *);
+	[Day of Engineering Troops of Belarus]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (День инженерных войск Беларуси)]
+		(* <- lang_ru;; *);
+		[Def. (Day of Engineering Troops of Belarus)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[День инженерных войск в Беларуси, также как и в России, отмечается ежегодно 21 января. В Республике этот профессиональный праздник установлен Указом Президента Республики № 157 от 26 марта 1998 года.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The Day of Engineering Troops in Belarus, as well as in Russia, is celebrated annually on January 21st. In the Republic, this professional holiday was established by Decree of the President of the Republic No. 157 of March 26, 1998.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (День инженерных войск Беларуси)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Свою историю инженерные войска ведут со времени Петра I, когда он своим Указом от 21 января 1701 года создал в Москве «Школу пушкарского приказа», в которой готовили офицеров артиллерии и военных инженеров.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

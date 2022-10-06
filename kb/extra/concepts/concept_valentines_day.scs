@@ -1,0 +1,47 @@
+concept_valentines_day
+<- sc_node_class;
+=> nrel_main_idtf:
+	[День Святого Валентина]
+	(* <- lang_ru;; *);
+	[Valentine's Day]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (День Святого Валентина)]
+		(* <- lang_ru;; *);
+		[Def. (Valentine's Day)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[День свято́го Валенти́на (также Валентинов день), или День всех влюблённых — праздник католического происхождения, который отмечается 14 февраля во многих странах мира.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Valentine's Day (also Valentine's Day), or Valentine's Day - a holiday of Catholic origin, which is celebrated on February 14 in many countries around the world.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (День Святого Валентина)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Официально День всех влюбленных существует уже больше 16 веков, но праздники Любви известны еще со времен древних языческих культур. Массово День святого Валентина отмечается в Западной Европе с 13 века, а в США с 18 века.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;
