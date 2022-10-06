@@ -1,0 +1,24 @@
+concept_engineering_systems
+=> nrel_main_idtf:
+    [системотехника](* <-lang_ru;; *);
+    [engineering systems](* <-lang_en;; *);;
+
+concept_engineering_systems
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (системотехника)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (engineering systems)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Системотехника - направления науки и техники, охватывающего проектирование, создание, испытание и эксплуатацию сложных систем технического и социально-технического характера.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Engineering systems - areas of science and technology, covering the design, creation, testing and operation of complex systems of a technical and socio-technical nature.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_engineering
+    };;
+*);;

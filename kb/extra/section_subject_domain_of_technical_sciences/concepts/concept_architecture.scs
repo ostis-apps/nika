@@ -1,0 +1,24 @@
+concept_architecture
+=> nrel_main_idtf:
+    [архитектура](* <-lang_ru;; *);
+    [architecture](* <-lang_en;; *);;
+
+concept_architecture
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (архитектура)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (architecture)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Архитектура - наука строить, проектировать здания и сооружения (включая их комплексы), а также сама совокупность зданий и сооружений, создающих пространственную среду для жизни и деятельности человека.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Architecture - technique of designing and building, as distinguished from the skills associated with construction.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_technical_science
+    };;
+*);;

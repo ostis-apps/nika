@@ -1,0 +1,29 @@
+concept_technology
+=> nrel_main_idtf:
+    [техника](* <-lang_ru;; *);
+    [technology](* <-lang_en;; *);;
+
+concept_technology 
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (техника)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (technology)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Техника - термин для обозначения методов, процессов и технологий упорядоченной искусной деятельности, например, для создания, изготовления, обеспечения, использования чего-либо, включая методологически упорядоченные процессы творчества.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [technology -  a term for the methods, processes, and technologies of ordered artful activity, e.g., for the creation, manufacture, provision, use of something, including methodologically ordered processes of creativity. ](*<- lang_en;;*);;
+    *);;
+*);;
+
+concept_technology <= nrel_subdividing: ... 
+(*
+	<- explanation;;
+	=> nrel_main_idtf:
+		[Классификация техники](*<-lang_ru;; *); 
+		[Classification of technology](*<-lang_en;; *);;
+	-> concept_industrial_technology; concept_computing_technology; concept_construction_technology;;
+*);;

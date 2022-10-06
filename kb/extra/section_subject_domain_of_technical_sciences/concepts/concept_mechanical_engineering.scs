@@ -1,0 +1,24 @@
+concept_mechanical_engineering
+=> nrel_main_idtf:
+    [механика](* <-lang_ru;; *);
+    [mechanical engineering](* <-lang_en;; *);;
+
+concept_mechanical_engineering
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (механика)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (mechanical engineering)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Механика - раздел физики, наука, изучающая движение материальных тел и взаимодействие между ними; при этом движением в механике называют изменение во времени взаимного положения тел или их частей в пространстве.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [mechanical engineering - branch of physics, the science that studies the motion of material bodies and the interaction between them; in this case, motion in mechanics is called the change in time of the mutual position of bodies or their parts in space.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_engineering
+    };;
+*);;

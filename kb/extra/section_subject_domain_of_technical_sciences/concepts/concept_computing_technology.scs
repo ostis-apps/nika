@@ -1,0 +1,34 @@
+concept_computing_technology
+=> nrel_main_idtf:
+    [вычислительная техника](* <-lang_ru;; *);
+    [computing technology](* <-lang_en;; *);;
+
+concept_computing_technology
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (вычислительная техника)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (computing technology)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Вычислительная техника - наука, изу­чаю­щая прин­ци­пы создания и функционирования технических и математических средств автоматизации вычислений и обработки информации. В узком смысле — совокупность таких средств — устройств, оборудования, а также методов и приёмов, применяемых для вычислений.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Computing technology - science that studies the principles of creation and functioning of technical and mathematical means of automation of calculations and information processing. In a narrow sense, it is a set of such means - devices, equipment, as well as methods and techniques used for calculations. ](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_technology
+    };;
+*);;
+
+concept_computing_technology
+<= nrel_subdividing: ...
+(*
+    <- explanation;;
+    => nrel_main_idtf:
+        [Разделение по видам обеспечения](*<-lang_ru;; *);
+        [Subdividing based on ware](*<-lang_en;; *);;
+    -> concept_hardware; concept_software;;
+*);;

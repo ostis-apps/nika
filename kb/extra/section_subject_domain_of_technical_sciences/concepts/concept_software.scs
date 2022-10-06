@@ -1,0 +1,20 @@
+concept_software
+=> nrel_main_idtf:
+    [программное обеспечение](* <-lang_ru;; *);
+    [software](* <-lang_en;; *);;
+
+concept_software
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (программное обеспечение)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (software)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Программное обеспечение - совокупность программ системы обработки информации и программных документов, необходимых для эксплуатации этих программ.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Software - a set of programs of the information processing system and program documents necessary for the operation of these programs.](*<- lang_en;;*);;
+    *);;
+*);;
