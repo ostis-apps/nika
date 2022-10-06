@@ -1,0 +1,30 @@
+concept_chronic_nature_of_disease_flow <- sc_node_not_relation;;
+
+concept_chronic_nature_of_disease_flow => nrel_main_idtf:
+[Хронический характер течения болезни] (*<-lang_ru;;*);
+[Chronic course of the disease] (*<-lang_en;;*);;
+
+concept_chronic_nature_of_disease_flow <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Хронический характер течения болезни)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Хронический характер течения болезни - характер течения болезни, при котором наблюдаются долгие, однотипные ощущения](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_chronic_nature_of_disease_flow <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Хронический характер течения болезни)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Хронический характер течения болезни требует длительного медицинского вмешательства](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

@@ -1,0 +1,30 @@
+concept_fever <- sc_node_not_relation;;
+
+concept_fever => nrel_main_idtf:
+[Лихорадка] (*<-lang_ru;;*);
+[Fever] (*<-lang_en;;*);;
+
+concept_fever <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Лихорадка)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Лихорадка - симптом некоторых заболеваний, выражающийся в повышенной относительно нормального для организма уровня температуры тела, неспецифическая защитная реакция организма в ответ на действие пирогеновЛихорадка - ](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_fever <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Лихорадка)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Лихорадка встречается только у теплокровных животных, в том числе у человека.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

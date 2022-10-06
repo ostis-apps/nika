@@ -1,0 +1,42 @@
+section_subject_domain_of_specific_pathological_changes
+=> nrel_main_idtf: 
+	[Раздел. Предметная область патологических изменений]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of specific pathological changes]
+	(* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+		concept_molecular_level_of_specific_pathological_changes;
+		concept_chromosomal_level_of_specific_pathological_changes;
+		concept_cellular_level_of_specific_pathological_changes;
+		concept_tissue_level_of_specific_pathological_changes;
+		concept_organ_level_of_specific_pathological_changes;
+		concept_desease_of_while_body_level_of_specific_pathological_changes;
+		concept_level_of_specific_pathological_changes;;
+
+section_subject_domain_of_specific_pathological_changes = [*
+subject_domain_of_specific_pathological_changes
+
+=> nrel_main_idtf: 
+	[Предметная область патологических изменений]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of specific pathological changes]
+	(* <- lang_en;; *);
+
+<= nrel_private_subject_domain:
+	section_subject_domain_of_specific_pathological_changes;
+
+-> rrel_maximum_studied_object_class:
+	concept_level_of_specific_pathological_changes;
+
+-> rrel_not_maximum_studied_object_class:
+		concept_molecular_level_of_specific_pathological_changes;
+		concept_chromosomal_level_of_specific_pathological_changes;
+		concept_cellular_level_of_specific_pathological_changes;
+		concept_tissue_level_of_specific_pathological_changes;
+		concept_organ_level_of_specific_pathological_changes;
+		concept_desease_of_while_body_level_of_specific_pathological_changes;
+<- subject_domain;;
+*];;

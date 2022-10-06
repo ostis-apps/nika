@@ -1,0 +1,30 @@
+concept_muscle_pain <- sc_node_not_relation;;
+
+concept_muscle_pain => nrel_main_idtf:
+[Мышечная боль] (*<-lang_ru;;*);
+[Muscle pain] (*<-lang_en;;*);;
+
+concept_muscle_pain <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Мышечная боль)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Мышечная боль (миалгия) представляет собой тянущие, иногда мучительные или спастические боли в мышцах](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_muscle_pain <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Мышечная боль)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Мышечные боли (миалгии) встречаются, чаще всего, в области плеч и шеи в спине.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

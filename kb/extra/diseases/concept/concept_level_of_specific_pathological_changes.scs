@@ -1,0 +1,30 @@
+concept_level_of_specific_pathological_changes <- sc_node_not_relation;;
+
+concept_level_of_specific_pathological_changes => nrel_main_idtf:
+[Уровень специфических паталогических изменений] (*<-lang_ru;;*);
+[Level of specific pathological changes] (*<-lang_en;;*);;
+
+concept_level_of_specific_pathological_changes <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Уровень специфических паталогических изменений)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Патологи́ческий проце́сс — это закономерная динамическая совокупность сложных рефлекторных реакций в тканях, органах и системах, направленных на компенсацию воздействия и/или последствий воздействия повреждающего фактора](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_level_of_specific_pathological_changes <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Уровень специфических паталогических изменений)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Патологический процесс характеризуется: стереотипностью, универсальностью, относительным полисиллогизмом и аутохтонностью, эквифинальностью, а также характерной онтогенетической динамикой](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

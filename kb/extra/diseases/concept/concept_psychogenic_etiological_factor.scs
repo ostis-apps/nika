@@ -1,0 +1,30 @@
+concept_psychogenic_etiological_factor <- sc_node_not_relation;;
+
+concept_psychogenic_etiological_factor => nrel_main_idtf:
+[Психилогический этиологический фактор] (*<-lang_ru;;*);
+[Psychological etiological factor] (*<-lang_en;;*);;
+
+concept_psychogenic_etiological_factor <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Психилогический этиологический фактор)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Психилогический этиологический фактор - фактор, появляющийся в результате психологического взаимодействия на организм](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_psychogenic_etiological_factor <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Психилогический этиологический фактор)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Сюда входят причинные факторы информационного характера, точкой их приложения является ЦНСПсихилогический этиологический фактор](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

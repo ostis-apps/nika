@@ -1,0 +1,43 @@
+section_subject_domain_of_disease
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Болезней]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Disease]
+	(* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+		concept_nature_of_disease_flow;
+		concept_level_of_specific_pathological_changes;
+		concept_etiological_factor;
+		concept_disease_treating_way;
+		concept_Gorilla_beringei;
+		subject_domain_of_disease;
+		nrel_disease;
+		nrel_disease_symptom;
+		concept_disease;;
+
+section_subject_domain_of_disease = [*
+subject_domain_of_disease
+
+=> nrel_main_idtf: 
+	[Предметная область Болезней]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Disease]
+	(* <- lang_en;; *);
+
+<= nrel_private_subject_domain:
+	section_subject_domain_of_disease;
+
+-> rrel_maximum_studied_object_class:
+	concept_disease;
+
+-> rrel_not_maximum_studied_object_class:
+		concept_nature_of_disease_flow;
+		concept_level_of_specific_pathological_changes;
+		concept_etiological_factor;
+		concept_disease_treating_way;
+
+<- subject_domain;;
+*];;

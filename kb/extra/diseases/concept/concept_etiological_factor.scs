@@ -1,0 +1,30 @@
+concept_etiological_factor <- sc_node_not_relation;;
+
+concept_etiological_factor => nrel_main_idtf:
+[Этиологическому фактору] (*<-lang_ru;;*);
+[Etiological factor] (*<-lang_en;;*);;
+
+concept_etiological_factor <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Этиологическому фактору)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Этиологический фактор – медицинский термин, означающий причину развития определённого состояния или патологии.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_etiological_factor <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Этиологическому фактору)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Этиологические взаимоотношения такого рода называются неспецифическими](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

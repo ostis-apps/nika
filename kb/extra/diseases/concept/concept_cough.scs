@@ -1,0 +1,30 @@
+concept_cough <- sc_node_not_relation;;
+
+concept_cough => nrel_main_idtf:
+[Кашель] (*<-lang_ru;;*);
+[Cough] (*<-lang_en;;*);;
+
+concept_cough <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Кашель)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Кашель — врождённый защитный безусловный рефлекс, действующий как часть иммунной системы организма](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_cough <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Кашель)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[изиологическая роль кашля — очищение респираторного тракта от посторонних веществ и предупреждение механических препятствий, нарушающих проходимость воздухоносных путей](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

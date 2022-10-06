@@ -1,0 +1,30 @@
+concept_weakness <- sc_node_not_relation;;
+
+concept_weakness => nrel_main_idtf:
+[Слабость ] (*<-lang_ru;;*);
+[Weakness] (*<-lang_en;;*);;
+
+concept_weakness <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Слабость )] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Слабость – это субъективное ощущение недостатка энергии в бытовых ситуациях](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_weakness <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Слабость )] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Жалобы на слабость возникают обычно тогда, когда действия, до сих пор привычные и естественные, вдруг начинают требовать особенных усилий.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

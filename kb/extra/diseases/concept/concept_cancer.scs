@@ -1,0 +1,30 @@
+concept_cancer <- sc_node_not_relation;;
+
+concept_cancer => nrel_main_idtf:
+[Онкология] (*<-lang_ru;;*);
+[Oncology] (*<-lang_en;;*);;
+
+concept_cancer <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Онкология)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Онкология — раздел медицины, изучающий доброкачественные и злокачественные опухоли, механизмы и закономерности их возникновения и развития, методы их профилактики, диагностики и лечения.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_cancer <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Онкология)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Онкологические болезни представляют собой обширный и разнородный класс заболеваний. ](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

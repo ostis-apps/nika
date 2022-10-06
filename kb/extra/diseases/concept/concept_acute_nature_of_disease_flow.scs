@@ -1,0 +1,30 @@
+concept_acute_nature_of_disease_flow <- sc_node_not_relation;;
+
+concept_acute_nature_of_disease_flow => nrel_main_idtf:
+[Острый характер течения болезни] (*<-lang_ru;;*);
+[Acute course of the disease] (*<-lang_en;;*);;
+
+concept_acute_nature_of_disease_flow <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Острый характер течения болезни)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Острый характер течения болезни - характер течения болезни, при котором наблюдаются острые ощущения](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_acute_nature_of_disease_flow <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Острый характер течения болезни)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Острый характер течения болезни требует срочного медицинского вмешательства](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

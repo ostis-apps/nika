@@ -1,0 +1,35 @@
+concept_nature_of_disease_flow <- sc_node_not_relation;;
+
+concept_nature_of_disease_flow => nrel_main_idtf:
+[Характер течения болезни] (*<-lang_ru;;*);
+[The nature of the course of the disease] (*<-lang_en;;*);;
+
+concept_nature_of_disease_flow <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Характер течения болезни)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Классификация болезни по ее течению](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_nature_of_disease_flow <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Характер течения болезни)] (*<-lang_ru;;*);;
+=> nrel_using_constants:
+	{
+		concept_acute_nature_of_disease_flow;
+		concept_chronic_nature_of_disease_flow
+	};;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[В зависимости от длительности течения и быстроты нарастания и исчезновения проявлений болезни различают <b><sc_element sys_idtf="concept_acute_nature_of_disease_flow">острые</b> и <b><sc_element sys_idtf="concept_chronic_nature_of_disease_flow">хронические</b>](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

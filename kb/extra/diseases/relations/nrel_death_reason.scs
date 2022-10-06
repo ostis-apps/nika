@@ -1,0 +1,77 @@
+nrel_death_reason <- sc_node_norole_relation;;
+
+nrel_death_reason => nrel_main_idtf:
+[Причина смерти*] (*<-lang_ru;;*);
+[Death reason*] (*<-lang_en;;*);;
+
+nrel_death_reason <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Причина смерти*)] (*<-lang_ru;;*);;
+=> nrel_using_constants:
+	{
+		concept_man;
+		concept_disease_reason
+	};;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Причина смерти - симметричное бинарное отношение между <b><sc_element sys_idtf="concept_man">человеком</b> и  <b><sc_element sys_idtf="concept_disease_reason">причиной смерти</b>](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_death_reason <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Причина смерти*)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Явление, которое объективно (с внутренней необходимостью) привело к прекращению жизнедеятельности организма человека.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_death_reason
+=> nrel_first_domain: concept_man;
+=> nrel_second_domain: concept_disease_reason;
+
+=> nrel_definitional_domain: ...
+(*
+	<= nrel_combination:
+	{
+		concept_man;
+		concept_disease_reason
+	};;
+*);;
+
+arity -> ...
+(*
+	-> nrel_death_reason;;
+	=> nrel_measurement: 2;;
+*);;
+
+relation => nrel_inclusion: oriented_relation
+(*
+	-> nrel_death_reason;;
+*);;
+
+relation => nrel_inclusion: binary_relation
+(*
+	 => nrel_inclusion: symmetric_relation
+	(*
+		-> nrel_death_reason;;
+	*);;
+
+	 => nrel_inclusion: transitive_relation
+	(*
+		-|> nrel_death_reason;;
+	*);;
+
+	 => nrel_inclusion: reflexive_relation
+	(*
+		-|> nrel_death_reason;;
+	*);;
+
+*);;

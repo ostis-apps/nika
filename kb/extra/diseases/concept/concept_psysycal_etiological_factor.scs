@@ -1,0 +1,30 @@
+concept_psysycal_etiological_factor <- sc_node_not_relation;;
+
+concept_psysycal_etiological_factor => nrel_main_idtf:
+[Физический этиологический фактор] (*<-lang_ru;;*);
+[Physical etiological factor] (*<-lang_en;;*);;
+
+concept_psysycal_etiological_factor <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Физический этиологический фактор)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Физический этиологический фактор - факор, возникающий в результате физического воздейтсвия на организм](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_psysycal_etiological_factor <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Физический этиологический фактор)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[физические — воздействие различных видов физической энергии: электрической (ожоги, электрический шок, нарушение проходимости импульсов по нервным волокнам, параличи, парезы и других)](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
