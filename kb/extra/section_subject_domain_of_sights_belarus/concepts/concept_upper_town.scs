@@ -1,0 +1,31 @@
+sc_node_not_relation -> concept_upper_town;;
+sc_node_not_relation -> concept_places_tourists;;
+sc_node_not_relation -> concept_minsk_region;;
+
+sc_node_norole_relation -> nrel_location;;
+
+concept_upper_town => nrel_main_idtf: [Верхний город](* <- lang_ru;; *);;
+concept_upper_town => nrel_main_idtf: [Upper town](* <- lang_en;; *);;
+
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_upper_town;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Верхний город — исторический центр Минска и одно из любимых мест туристов и жителей города.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (Верхний город)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(*
+	       -> concept_places_tourists;;
+	*);;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element :  concept_upper_town;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Он расположен в минской области.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(Верхний город)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(* 
+	 -> nrel_location;;
+	 -> concept_minsk_region;;
+	*);;
+*);;

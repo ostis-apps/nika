@@ -1,0 +1,36 @@
+
+sc_node_not_relation -> concept_church;;
+sc_node_not_relation -> concept_place;;
+sc_node_not_relation -> concept_divine_services;;
+sc_node_not_relation -> concept_elevated_places;;
+
+sc_node_norole_relation -> nrel_built;;
+
+
+concept_church => nrel_main_idtf: [Церковь](* <- lang_ru;; *);;
+concept_church => nrel_main_idtf: [Church](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_church;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Церковь - здание для богослужения.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (Церковь)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(*
+	-> concept_place;;
+		   -> concept_divine_services;;
+	*);;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element :  concept_church;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Церковь строят на возвышенных местах.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(Церковь)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(* 
+	 -> nrel_built;;
+	 -> concept_elevated_places;;
+	*);;
+*);;

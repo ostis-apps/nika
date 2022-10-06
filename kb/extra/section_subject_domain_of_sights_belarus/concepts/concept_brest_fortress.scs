@@ -1,0 +1,35 @@
+sc_node_not_relation -> concept_brest_fortress;;
+sc_node_not_relation -> concept_fortification;;
+sc_node_not_relation -> concept_museum;;
+sc_node_not_relation -> concept_fortress;;
+sc_node_not_relation -> concept_19th_century;;
+
+sc_node_norole_relation -> nrel_built;;
+
+concept_brest_fortress => nrel_main_idtf: [Brest Fortress](* <- lang_ru;; *);;
+concept_brest_fortress => nrel_main_idtf: [Castle of the Puslovskys](* <- lang_en;; *);;
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_brest_fortress;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Брестская крепость – оборонительное сооружение и музей под открытым небом.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (Брестская крепость)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(*
+           -> concept_fortification;;
+		   -> concept_museum;;
+	*);;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element :  concept_brest_fortress;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[крепость была построена в XIX веке.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(Брестская крепость)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(* 
+	 -> concept_fortress;;
+	 -> nrel_built;;
+	 -> concept_19th_century;;
+	*);;
+*);;

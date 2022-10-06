@@ -1,0 +1,37 @@
+sc_node_not_relation -> concept_polissya;;
+sc_node_not_relation -> concept_swamp_area;;
+sc_node_not_relation -> concept_gomel_region;;
+sc_node_not_relation -> concept_brest_region;;
+sc_node_not_relation -> concept_minsk_region;;
+sc_node_not_relation -> concept_mogilev_region;;
+
+sc_node_norole_relation -> nrel_location;;
+
+concept_polissya => nrel_main_idtf: [Полесье](* <- lang_ru;; *);;
+concept_polissya => nrel_main_idtf: [Polissya](* <- lang_en;; *);;
+
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_polissya;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Полесье – Самая большая из европейских болотных территорий.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (Полесье)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(*
+           -> concept_swamp_area;;
+	*);;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element :  concept_polissya;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Оно расположено Брестской, Гомельской, Минской и  Могилёвской области.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(Полесье)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(* 
+	 -> nrel_location;;
+	 -> concept_gomel_region;;
+	 -> concept_brest_region;;
+	 -> concept_minsk_region;;
+	 -> concept_mogilev_region;;
+	*);;
+*);;

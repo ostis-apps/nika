@@ -1,0 +1,36 @@
+
+sc_node_not_relation -> concept_sights;;
+sc_node_not_relation -> concept_place;;
+sc_node_not_relation -> concept_john_murray;;
+sc_node_not_relation -> concept_object;;
+
+sc_node_norole_relation -> nrel_developed;;
+
+concept_sights => nrel_main_idtf: [Достопримечательность](* <- lang_ru;; *);;
+concept_sights => nrel_main_idtf: [Sight](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_sights;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Достопримечательность -  место или объект заслуживающие особого внимания.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (Достопримечательность)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(*
+           -> concept_place;;
+		   -> concept_object;;
+	*);;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element :  concept_sights;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Понятие достопримечательность было разработано Джоном Мюрреем.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(Достопримечательность)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(* 
+	 -> nrel_developed;;
+	 -> concept_sights;;
+	 -> concept_john_murray;;
+	*);;
+*);;

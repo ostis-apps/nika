@@ -1,0 +1,36 @@
+sc_node_not_relation -> concept_august_canal;;
+sc_node_not_relation -> concept_shipping_channel;;
+sc_node_not_relation -> concept_19th_century;;
+sc_node_not_relation -> concept_tourist_mecca;;
+
+sc_node_norole_relation -> nrel_built;;
+sc_node_norole_relation -> nrel_became;;
+
+concept_august_canal => nrel_main_idtf: [Августовский канал](* <- lang_ru;; *);;
+concept_august_canal => nrel_main_idtf: [Church of the Holy Trinity](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_august_canal;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Августовский канал – судоходный канал, построенный в XIX веке.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (Августовский канал)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(*
+           -> concept_shipping_channel;;
+	       -> concept_19th_century;;
+		   -> nrel_built;;
+	*);;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_august_canal;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Августовский канал стал туристической меккой.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(Августовский канал)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(* 
+	 -> nrel_became;;
+	 -> concept_tourist_mecca;;
+	*);;
+*);;

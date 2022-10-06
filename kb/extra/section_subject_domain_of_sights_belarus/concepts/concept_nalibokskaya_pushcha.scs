@@ -1,0 +1,36 @@
+
+sc_node_not_relation -> concept_nalibokskaya_pushcha;;
+sc_node_not_relation -> concept_forest;;
+sc_node_not_relation -> concept_pushcha;;
+sc_node_not_relation -> concept_neman;;
+sc_node_not_relation -> concept_berezina;;
+
+sc_node_norole_relation -> nrel_surrounded;;
+
+concept_nalibokskaya_pushcha => nrel_main_idtf: [Налибокская пущаь](* <- lang_ru;; *);;
+concept_nalibokskaya_pushcha => nrel_main_idtf: [Nalibokskaya Pushcha](* <- lang_en;; *);;
+
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_nalibokskaya_pushcha;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Налибокская пущаь - самый большой в Беларуси лесной массив.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (Налибокская пущаь)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(*
+           -> concept_forest;;
+	*);;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element :  concept_nalibokskaya_pushcha;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Пуща окружена Неманом и Березиной.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(Налибокская пущаь)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(* 
+	 -> nrel_surrounded;;
+	 -> concept_pushcha;;
+	 -> concept_neman;;
+	 -> concept_berezina;;
+	*);;
+*);;

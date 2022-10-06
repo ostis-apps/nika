@@ -1,0 +1,52 @@
+subject_domain_of_sights_belarus
+	=> nrel_main_idtf:
+	              [Предметная область достопримечательности Беларуси]
+	              (* <- lang_ru;; *);
+	              [Subject domain of sights Belarus]
+	              (* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+                  subject_domain_of_sights_minsk; 
+
+<= nrel_private_subject_domain:
+	              subject_domain_of_sights;
+	
+-> rrel_maximum_studied_object_class: 
+		concept_sights;
+                concept_castle;
+                concept_monastery;
+                concept_synagogue;
+                concept_church;
+                concept_pushcha;
+                concept_museum;
+                concept_lakes;
+
+
+-> rrel_not_maximum_studied_object_class:
+concept_mir_castle;
+concept_borisoglebskaya_church;
+concept_holy_trinity_church;
+concept_august_canal;
+concept_slonim_synagogue;
+concept_nativity_virgin_church;
+concept_novogrudok_castle;
+concept_chetvertinsky_castle;
+concept_krevo_castle;
+concept_puslovsky;
+concept_sapeg_castle;
+concept_brest_fortress;
+concept_belovezhskaya_pushcha;
+concept_polissya;
+concept_nesvizh_castle;
+concept_bobruisk_fortress;
+concept_nalibokskaya_pushcha;
+concept_braslav_lakes;
+concept_chagall_museum;
+concept_upper_town;
+
+-> rrel_explored_relation:
+                  nrel_location;
+                  nrel_built;
+                  
+       
+<- subject_domain;;

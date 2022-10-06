@@ -1,0 +1,31 @@
+sc_node_not_relation -> concept_monastery;;
+sc_node_not_relation -> concept_religious_community_monks;;
+sc_node_not_relation -> concept_place;;
+
+sc_node_norole_relation -> nrel_location;;
+
+concept_monastery => nrel_main_idtf: [Монастырь](* <- lang_ru;; *);;
+concept_monastery => nrel_main_idtf: [Monastery](* <- lang_en;; *);;
+
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_monastery;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Монастырь -  религиозная община монахов.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (Монастырь)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(*
+		   -> concept_religious_community_monks;;
+	*);;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element :  concept_monastery;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Монастыри могут располагаться где угодно.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(Монастырь)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(* 
+	-> nrel_location;;
+	  -> concept_place;;
+	*);;
+*);;

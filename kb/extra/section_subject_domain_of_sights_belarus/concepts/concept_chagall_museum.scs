@@ -1,0 +1,40 @@
+
+sc_node_not_relation -> concept_chagall_museum;;
+sc_node_not_relation -> concept_museum;;
+sc_node_not_relation -> concept_house;;
+sc_node_not_relation -> concept_art_center;;
+sc_node_not_relation -> concept_vitebsk_region;;
+
+
+sc_node_norole_relation -> nrel_location;;
+sc_node_norole_relation -> nrel_consists;;
+
+concept_chagall_museum => nrel_main_idtf: [Музей Марка Шагала](* <- lang_ru;; *);;
+concept_chagall_museum => nrel_main_idtf: [Museum Marc Chagall](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_chagall_museum;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Музей Марка Шагал –  В состав музея входят два здания: дом и Арт-центр Марка Шагала.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (Музей Марка Шагал)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(*
+           -> concept_museum;;
+	       -> concept_house;;
+		   -> concept_art_center;;
+		   -> nrel_consists;;
+	*);;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element :  concept_chagall_museum;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Он расположен в Витебской области.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(Музей Марка Шагал)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(* 
+	 -> nrel_location;;
+	 -> concept_vitebsk_region;;
+	*);;
+*);;

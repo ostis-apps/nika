@@ -1,0 +1,36 @@
+sc_node_norole_relation -> nrel_built;;
+
+nrel_built => nrel_system_idtf: [nrel_built];;
+nrel_built => nrel_idtf: [built](*<- lang_en;;*);;
+nrel_built => nrel_main_idtf: [построить](*<- lang_ru;;*);;
+nrel_built => nrel_idtf: [построить](*<- lang_ru;;*);;
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: nrel_built;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Завершить сооружение.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(построить)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+            -> concept_building;;
+        *);;
+*);;
+
+nrel_built => nrel_definitional_domain:..union;;
+nrel_built => nrel_first_domain: concept_object;;
+nrel_built => nrel_second_domain: concept_place;;
+..union<=nrel_combination:{concept_object;concept_place};;
+
+relation => nrel_built: non_oriented_relation;;
+relation => nrel_built: binary_relation;;
+
+binary_relation => nrel_built: antireflexive_relation;;
+binary_relation => nrel_built: antitransitive_relation;;
+binary_relation => nrel_built: symetric_relation;;
+
+antireflexive_relation -> nrel_built;;
+antitransitive_relation -> nrel_built;;
+symmetric_relation -|> nrel_built;;

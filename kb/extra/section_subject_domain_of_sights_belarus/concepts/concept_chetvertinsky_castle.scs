@@ -1,0 +1,41 @@
+
+sc_node_not_relation -> concept_chetvertinsky_castle;;
+sc_node_not_relation -> concept_castle;;
+sc_node_not_relation -> concept_grodno_region;;
+sc_node_not_relation -> concept_18th_century;;
+sc_node_not_relation -> concept_belarus;;
+sc_node_not_relation -> concept_cinematic_places;;
+
+sc_node_norole_relation -> nrel_location;;
+sc_node_norole_relation -> nrel_built;;
+
+concept_chetvertinsky_castle => nrel_main_idtf: [Дворец Четвертинских](* <- lang_ru;; *);;
+concept_chetvertinsky_castle => nrel_main_idtf: [Chetvertinsky Palace](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_chetvertinsky_castle;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Дворец Четвертинских – дворец построен в 18 веке, расположен в Гродненской области.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (Дворец Четвертинских)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(*
+           -> concept_castle;;
+		   -> concept_grodno_region;;
+		   -> concept_18th_century;;
+		   -> nrel_built;;
+	       -> nrel_location;;
+	*);;
+*);;
+\\
+statement ->...
+(*
+	-> rrel_key_sc_element :  concept_chetvertinsky_castle;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Одно из самых кинематографичных мест Беларуси.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(Дворец Четвертинских)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(* 
+	 -> concept_belarus;;
+	 -> concept_cinematic_places;;
+	*);;
+*);;
