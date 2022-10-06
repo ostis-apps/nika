@@ -1,0 +1,43 @@
+concept_Culture_of_the_Middle_Ages
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Культура Средних веков]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Culture of the Middle Ages]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Средневековье по времени охватывает с V по XVII век.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Термин «средние века» закрепился за данным периодом в связи с тем, что он занимает промежуточное место между Античностью и Новым временем.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Культура Средних веков]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Средневековая культура Западной Европы – эпоха великих духовных и социокультурных завоеваний в истории всего человечества.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_era;
+			concept_history;
+			concept_conquest;
+			concept_humanity
+   	 };;
+  *);;

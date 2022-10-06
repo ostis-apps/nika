@@ -1,0 +1,64 @@
+concept_community
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [общество]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [community]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Человеческие общества характеризуются моделью отношений (социальных отношений) между людьми, которая может быть описана как совокупность отношений между субъектами]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.общество]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [общество — круг людей, объединённых общностью положения, происхождения, интересов и т. п.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_unite;
+			concept_interest;
+			concept_commonality;
+			concept_origin;
+			concept_human;
+			concept_situation
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.общество]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [общество — это человеческая общность, специфику которой представляют отношения людей между собой, их формы взаимодействия и объединения.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			rrel_form;
+			concept_an_association;
+			concept_commonality;
+			concept_interaction;
+			concept_human
+   	 };;
+  *);;

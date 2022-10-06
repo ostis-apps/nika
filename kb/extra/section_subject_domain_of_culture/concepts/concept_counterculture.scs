@@ -1,0 +1,64 @@
+concept_counterculture
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [контркультура]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [counterculture]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Контркультура — явление, свойственное не только и не столько широко известным и приведённым выше молодёжным движениям XX века.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Примером контркультуры является также уголовная среда, в замкнутой и обособленной среде которой постоянно формируются и видоизменяются идеологические доктрины, буквально «переворачивающие с ног на голову» общепринятые ценности — честность, трудолюбие, семейную жизнь и т. д.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.контркультура]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Контркультура — специфический вид культуры]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_species;
+			concept_culture
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.контркультура]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [контркультура — это течение, которое отрицает ценности доминирующей культуры]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_dominant_culture;
+			nrel_deny;
+			concept_value;
+			concept_flow
+   	 };;
+  *);;

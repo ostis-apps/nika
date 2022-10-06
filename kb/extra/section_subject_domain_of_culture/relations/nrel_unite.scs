@@ -1,0 +1,29 @@
+nrel_unite
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+  [объединять](* <- lang_ru;; *);
+  [unite](* <- lang_eng;; *);;
+
+nrel_unite <- rrel_key_sc_element:... 
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (объединять)](*<- lang_ru;;*);
+    [Def. ( unite)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Объединять — вместе с другими образовать единую сущность, единое целое.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [To unite - together with others to form a single entity, a single whole.](*<- lang_en;;*);;
+    *);;
+*);;
+
+nrel_unite
+=>nrel_first_domain:concept_an_object;
+=>nrel_second_domain:concept_an_object;
+
+<- binary_relation ;
+<- reflexive_relation ;
+<- transitive_relation ;;

@@ -1,0 +1,44 @@
+concept_demassification
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [демассификация]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [demassification]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Тоффлер называет так процесс, противоположный массификации]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Демассификация средств массовой информации привела и к демассификации массового сознания через исчезновение стандартизированных шаблонов мира, создание разнообразных образов, идей, символов и ценностей, по-разному интерпретируемых в разных точках мира]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.демассификация]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Демассификация — термин для описания тенденций, характеризующих постиндустриальное общество «третьей волны»]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_trend;
+			concept_post_industrial_society;
+			nrel_describe;
+			concept_third_wave;
+			concept_community
+   	 };;
+  *);;

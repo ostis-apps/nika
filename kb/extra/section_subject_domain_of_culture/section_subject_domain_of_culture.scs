@@ -1,0 +1,99 @@
+section_subject_domain_of_culture
+=> nrel_main_idtf:
+	[Раздел. Предметная область культуры]
+   (* <- lang_ru;; *);
+	[Section. Subject domain of culture] 
+   (* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_culture = [*
+	subject_domain_of_culture
+<- sc_node_struct;
+	=> nrel_main_idtf:
+      [Предметная область культуры]
+      (* <- lang_ru;; *);
+      [Subject domain of culture]
+      (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_base;
+      concept_community;
+      concept_cringe;
+      concept_cultural_studies;
+      concept_culture;
+      concept_demassification;
+      concept_development;
+      concept_semiotics_of_culture;
+      concept_tradition;
+      concept_upbringing;
+	-> rrel_not_maximum_studied_object_class:
+      concept_consumer_society;
+      concept_counterculture;
+      concept_Culture_of_the_Ancient_World;
+      concept_Culture_of_the_Middle_Ages;
+      concept_Culture_of_the_New_Age;
+      concept_mass_consciousness;
+      concept_Mass_culture;
+      concept_mass_society;
+      concept_modern_culture;
+      concept_oral_tradition;
+      concept_primitive_culture;
+      concept_Renaissance_culture;
+      concept_subculture;
+      concept_totalitarian_society;
+      concept_traditional_culture;
+      concept_traditional_society;
+      concept_underground;
+      concept_veneration;
+	-> rrel_explored_relation:
+      nrel_deny;
+      nrel_develop;
+      nrel_manifestation;
+      nrel_prescribe;
+      nrel_prevail;
+      nrel_study;
+      nrel_unite;
+      rrel_describe;
+      rrel_form;;
+*];;
+
+section_subject_domain_of_culture
+-> rrel_key_sc_element:
+   subject_domain_of_culture;
+   concept_base;
+   concept_community;
+   concept_cringe;
+   concept_cultural_studies;
+   concept_culture;
+   concept_demassification;
+   concept_development;
+   concept_semiotics_of_culture;
+   concept_tradition;
+   concept_upbringing;
+   concept_consumer_society;
+   concept_counterculture;
+   concept_Culture_of_the_Ancient_World;
+   concept_Culture_of_the_Middle_Ages;
+   concept_Culture_of_the_New_Age;
+   concept_mass_consciousness;
+   concept_Mass_culture;
+   concept_mass_society;
+   concept_modern_culture;
+   concept_oral_tradition;
+   concept_primitive_culture;
+   concept_Renaissance_culture;
+   concept_subculture;
+   concept_totalitarian_society;
+   concept_traditional_culture;
+   concept_traditional_society;
+   concept_underground;
+   concept_veneration;
+   nrel_deny;
+   nrel_develop;
+   nrel_manifestation;
+   nrel_prescribe;
+   nrel_prevail;
+   nrel_study;
+   nrel_unite;
+   rrel_describe;
+   rrel_form;;

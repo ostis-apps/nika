@@ -1,0 +1,62 @@
+concept_primitive_culture
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Первобытная культура]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [primitive culture]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Основным занятием кроманьонцев была охота, собирательство и рыбная ловля, для чего использовались каменные, деревянные, костяные орудия труда.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Первобытная культура]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Первобытная культура — термин классической антропологии, который применяется для обозначения культуры, у которой отсутствуют экономические, социальные и институциональные признаки развития.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_anthropology;
+			concept_development;
+			nrel_apply;
+			concept_culture;
+			concept_sign;
+			nrel_designate
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Первобытная культура]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Первобытная культура – первый и самый длительный этап в развитии культуры.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_stage;
+			concept_culture;
+			nrel_develop
+   	 };;
+  *);;

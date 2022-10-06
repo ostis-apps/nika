@@ -1,0 +1,46 @@
+concept_Renaissance_culture
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Культура Возрождения]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Renaissance culture]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [В Италии начало эпохи Возрождения относят к XIV веку — периоду проторенессанса, или треченто]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Расцвет ренессансной культуры приходится на XV—XVI века, в котором выделяют Высокое Возрождение]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Культура Возрождения]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Возрождение — одна из величайших культурно-исторических эпох, переломный для истории Европы этап между Средними веками и Новым временем, заложивший основы новой европейской культуры]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_Middle_Ages;
+			concept_stage;
+			concept_new_time;
+			concept_era;
+			concept_culture;
+			concept_Europe;
+			concept_history
+   	 };;
+  *);;

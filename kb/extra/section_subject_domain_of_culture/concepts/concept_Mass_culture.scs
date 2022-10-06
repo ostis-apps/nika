@@ -1,0 +1,45 @@
+concept_Mass_culture
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [массовая культура]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Mass culture]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Содержание массовой культуры обусловлено ежедневными событиями, стремлениями и потребностями, составляющими жизнь большинства населения]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Термин «массовая культура» возник в 40-х годах XX века в текстах Макса Хоркхаймера и Дуайта Макдональда, посвящённых критике телевидения, и получил широкое распространение благодаря трудам представителей Франкфуртской социологической школы.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.массовая культура]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Массовая культура — культура быта, развлечений и информации, преобладающая в современном обществе]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_entertainment;
+			concept_culture;
+			nrel_prevail;
+			concept_information;
+			concept_modern_society;
+			concept_life
+   	 };;
+  *);;

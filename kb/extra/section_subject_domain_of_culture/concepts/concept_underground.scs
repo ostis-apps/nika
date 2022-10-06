@@ -1,0 +1,44 @@
+concept_underground
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [андеграунд]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [underground]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Андеграунд включает в себя неформальные, независимые или запрещённые цензурой виды и произведения искусства.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Для андеграунда характерны разрыв с господствующей идеологией, игнорирование стилистических и языковых ограничений, отказ от общепринятых ценностей, норм, социальных и художественных традиций.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.андеграунд]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Андеграунд — совокупность творческих направлений в современном искусстве, противопоставляющихся массовой культуре, мейнстриму и официальному искусству.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_art;
+			concept_mainstream;
+			concept_Mass_culture;
+			nrel_oppose;
+			concept_direction
+   	 };;
+  *);;
