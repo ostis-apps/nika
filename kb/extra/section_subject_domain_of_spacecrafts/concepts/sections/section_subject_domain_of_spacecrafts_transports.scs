@@ -1,0 +1,29 @@
+section_subject_domain_of_spacecrafts_transports
+=> nrel_main_idtf:
+	  [Раздел. Предметная область транспорта космических аппаратов]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of spacecrafts transports] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_spacecrafts_transports = [*
+	subject_domain_of_spacecrafts_transports
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область транспорта космических аппаратов]
+   (* <- lang_ru;; *);
+   [Subject domain of spacecrafts transports]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+		concept_transport;
+	-> rrel_not_maximum_studied_object_class:
+		concept_carrier_rocket;
+		concept_carrier_plane;;
+*];;
+
+section_subject_domain_of_spacecrafts_transports
+-> rrel_key_sc_element:
+	concept_transport;
+	concept_carrier_rocket;
+	concept_carrier_plane;;

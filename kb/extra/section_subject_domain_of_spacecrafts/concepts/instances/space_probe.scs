@@ -1,0 +1,34 @@
+space_probe_Luna24
+<- concept_spacecraft;
+<- concept_uncrewed_spacecraft;
+<- concept_space_probe;
+
+=> nrel_main_idtf:
+   [Луна 24]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [luna 24]
+   (* <- lang_en;; *);
+
+=> nrel_orbit: orbit_interplanetary;
+=> nrel_location: natural_satellite_Moon;
+=> nrel_mass: mass_5800kg
+            (*
+                <- concept_mass;;
+                => nrel_main_idtf:
+                    [5800 кг]
+                    (* <- lang_;; *);;
+            *);
+=> nrel_launched_by: carrier_rocket_Proton_K;
+=> nrel_purpose: purpose_collecting_samples;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Луна 24](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Луна-24 — последняя советская автоматическая межпланетная станция для изучения Луны, забора и доставки лунного грунта на Землю.](*<-lang_ru;;*);;
+	*);;
+*);;

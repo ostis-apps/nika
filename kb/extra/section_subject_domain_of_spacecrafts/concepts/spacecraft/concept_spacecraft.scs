@@ -1,0 +1,33 @@
+concept_spacecraft
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [космический аппарат]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [spacecraft]
+   (* <- lang_en;; *);
+   
+=> nrel_inclusion:
+	concept_crewed_spacecraft;
+	concept_uncrewed_spacecraft;
+
+=> nrel_note:
+   [Средствами доставки космических аппаратов на орбиту служат ракеты-носители или специально подготовленные самолёты.]
+   (* <- lang_ru;; *);	
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. (космический аппарат)](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Космический аппарат — общее название технических устройств, используемых для выполнения разнообразных задач в космическом пространстве, а также проведения исследовательских и иного рода работ на поверхности небесных тел.](*<-lang_ru;;*);;
+		<= nrel_using_constants: {
+			 concept_celestial_object;
+			 concept_purpose
+		};;
+	*);;
+*);;

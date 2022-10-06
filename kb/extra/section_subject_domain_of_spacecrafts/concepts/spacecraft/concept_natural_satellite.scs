@@ -1,0 +1,29 @@
+concept_natural_satellite
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [естественный спутник]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [natural satellite]
+   (* <- lang_en;; *);
+    
+<= nrel_inclusion:
+	concept_satellite;
+	concept_celestial_object;
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. (естественный спутник)](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Естественный спу́тник — небесное тело, обращающееся по определённой траектории (орбите) вокруг другого объекта в космическом пространстве под действием гравитации.](*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+		concept_orbit;
+		concept_celestial_object
+	};;
+*);;

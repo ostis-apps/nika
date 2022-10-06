@@ -1,0 +1,91 @@
+carrier_rocket_Soyuz_STB
+<- concept_transport;
+<- concept_carrier_rocket;
+
+=> nrel_main_idtf:
+   [ракета-носитель Союз СТ-Б]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [carrier_rocket Soyuz ST-B]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. ракета-носитель Союз СТ-Б](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [ракета-носитель Союз СТ-Б - трёхступенчатая ракета-носитель среднего класса, разработанная и производимая РКЦ «Прогресс» путём глубокой модернизации ракеты-носителя «Союз-У».](*<-lang_ru;;*);;
+	*);;
+*);;
+
+carrier_rocket_Proton_K
+<- concept_transport;
+<- concept_carrier_rocket;
+
+=> nrel_main_idtf:
+   [ракета-носитель Протон К]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [carrier_rocket Proton K]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. ракета-носитель Протон К](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [ракета-носитель Протон К -  ракета-носитель тяжёлого класса, предназначенная для выведения автоматических космических аппаратов на орбиту Земли и далее в космическое пространство. ](*<-lang_ru;;*);;
+	*);;
+*);;
+
+carrier_rocket_Energia
+<- concept_transport;
+<- concept_carrier_rocket;
+
+=> nrel_main_idtf:
+   [ракета-носитель Энергия]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [carrier_rocket Energia]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [На момент начала эксплуатации являлась одной из самых мощных в мире наряду с «Сатурном-5», «Н-1» и значительно превосходила по грузоподъёмности эксплуатировавшиеся на тот момент в мире ракеты-носители.]
+   (* <- lang_ru;; *);	
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. ракета-носитель Энергия](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [ракета-носитель Энергия — советская ракета-носитель сверхтяжёлого класса, разработанная НПО «Энергия».](*<-lang_ru;;*);;
+	*);;
+*);;
+
+carrier_rocket_Saturn5
+<- concept_transport;
+<- concept_carrier_rocket;
+
+=> nrel_main_idtf:
+   [ракета-носитель Сатурн 5]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [carrier_rocket Saturn V]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. ракета-носитель Сатурн 5](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [ракета-носитель Сатурн 5 — американская сверхтяжелая ракета-носитель семейства Сатурн.](*<-lang_ru;;*);;
+	*);;
+*);;

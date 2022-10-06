@@ -1,0 +1,45 @@
+space_station_ISS
+<- concept_spacecraft;
+<- concept_crewed_spacecraft;
+<- concept_space_station;
+
+=> nrel_main_idtf:
+   [Международная космическая станция]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [International Space Station]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [МКС рассчитана на работу на орбитах с высотой от 270 до 500 км.]
+   (* <- lang_ru;; *);
+
+=> nrel_orbit: orbit_nearplanetary;
+<= nrel_satellite: planet_Earth;
+=> nrel_mass: mass_440075kg
+            (*
+                <- concept_mass;;
+                => nrel_main_idtf:
+                    [440075 кг]
+                    (* <- lang_;; *);;
+            *);
+=> nrel_speed: speed_7.7kms
+            (*
+                <- concept_speed;;
+                => nrel_main_idtf:
+                    [7,7 км/с]
+                    (* <- lang_;; *);;
+            *);
+=> nrel_launched_by: carrier_rocket_Proton_K;
+=> nrel_purpose: purpose_astronomical_research;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Международная космическая станция](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Международная космическая станция — пилотируемая орбитальная станция, используемая как многоцелевой космический исследовательский комплекс; эксплуатируется с конца 1998 года по настоящее время. ](*<-lang_ru;;*);;
+	*);;
+*);;

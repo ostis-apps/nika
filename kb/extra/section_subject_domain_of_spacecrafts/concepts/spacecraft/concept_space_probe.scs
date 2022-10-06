@@ -1,0 +1,29 @@
+concept_space_probe
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [автоматическая межпланетная станция]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [space probe]
+   (* <- lang_en;; *);
+   
+<= nrel_inclusion:
+   concept_uncrewed_spacecraft;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. (автоматическая межпланетная станция)](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Автоматическая межпланетная станция — беспилотный космический аппарат, предназначенный для полёта в межпланетном космическом пространстве (не по геоцентрической орбите) с выполнением различных поставленных задач.](*<-lang_ru;;*);;
+		<= nrel_using_constants: {
+			 concept_uncrewed_spacecraft;
+			 concept_orbit;
+			 concept_purpose
+		};;
+	*);;
+*);;

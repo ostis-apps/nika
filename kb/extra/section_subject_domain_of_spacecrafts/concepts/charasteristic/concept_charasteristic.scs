@@ -1,0 +1,27 @@
+concept_charasteristic
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [характеристика]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [charasteristic]
+   (* <- lang_en;; *);
+
+=> nrel_inclusion:
+		concept_orbit;
+		concept_mass;
+		concept_speed;
+		concept_purpose;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. (характеристика)](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Характеристика - совокупность отличительных свойств кого-либо или чего-либо.](*<-lang_ru;;*);;
+	*);;
+*);;

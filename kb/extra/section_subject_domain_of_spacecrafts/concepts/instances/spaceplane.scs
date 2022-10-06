@@ -1,0 +1,41 @@
+spaceplane_Buran
+<- concept_spacecraft;
+<- concept_crewed_spacecraft;
+<- concept_spaceplane;
+
+=> nrel_main_idtf:
+   [Буран]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Buran]
+   (* <- lang_en;; *);
+
+=> nrel_orbit: orbit_suborbital;
+<= nrel_satellite: planet_Earth;
+=> nrel_mass: mass_105000kg
+            (*
+                <- concept_mass;;
+                => nrel_main_idtf:
+                    [105000 кг]
+                    (* <- lang_;; *);;
+            *);
+=> nrel_speed: speed_30000kmh
+            (*
+                <- concept_speed;;
+                => nrel_main_idtf:
+                    [30000 км/ч]
+                    (* <- lang_;; *);;
+            *);
+=> nrel_launched_by: carrier_rocket_Energia;
+=> nrel_purpose: purpose_transporting;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Буран](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Буран — советский орбитальный корабль-ракетоплан многоразовой транспортной космической системы (МТКС), созданный в рамках программы «Энергия — Буран».](*<-lang_ru;;*);;
+	*);;
+*);;

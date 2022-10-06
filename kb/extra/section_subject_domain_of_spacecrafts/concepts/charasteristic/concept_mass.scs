@@ -1,0 +1,27 @@
+concept_mass
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [масса]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [mass]
+   (* <- lang_en;; *);
+
+<= nrel_inclusion:
+   concept_charasteristic;	
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. (масса)](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Масса - скалярная физическая величина, определяющая инерционные и гравитационные свойства тел в ситуациях, когда их скорость намного меньше скорости света.](*<-lang_ru;;*);;
+        <= nrel_using_constants: {
+                concept_speed
+		};;
+	*);;
+*);;

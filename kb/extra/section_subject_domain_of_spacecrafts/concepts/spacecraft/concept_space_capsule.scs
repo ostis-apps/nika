@@ -1,0 +1,27 @@
+concept_space_capsule
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [спускаемый аппарат]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [space capsule]
+   (* <- lang_en;; *);
+   
+<= nrel_inclusion:
+   concept_crewed_spacecraft;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. (спускаемый аппарат)](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Спускаемый аппарат — это часто пилотируемый космический корабль, который использует капсулу с тупым телом для повторного входа в атмосферу Земли без крыльев.  ](*<-lang_ru;;*);;
+		<= nrel_using_constants: {
+			 concept_crewed_spacecraft
+		};;
+	*);;
+*);;

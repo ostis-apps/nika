@@ -1,0 +1,34 @@
+space_capsule_Apollo15
+<- concept_spacecraft;
+<- concept_crewed_spacecraft;
+<- concept_space_capsule;
+
+=> nrel_main_idtf:
+   [Апполон 15]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Appolo 15]
+   (* <- lang_en;; *);
+
+=> nrel_orbit: orbit_nearplanetary;
+<= nrel_satellite: natural_satellite_Moon;
+=> nrel_mass: mass_48599kg
+            (*
+                <- concept_mass;;
+                => nrel_main_idtf:
+                    [48599 кг]
+                    (* <- lang_;; *);;
+            *);
+=> nrel_launched_by: carrier_rocket_Saturn5;
+=> nrel_purpose: purpose_astronomical_research;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Апполон 15](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Аполлон-15 — девятый пилотируемый космический корабль в рамках программы «Аполлон», четвёртая высадка людей на Луну.](*<-lang_ru;;*);;
+	*);;
+*);;

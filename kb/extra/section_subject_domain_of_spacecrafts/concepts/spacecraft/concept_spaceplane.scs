@@ -1,0 +1,32 @@
+concept_spaceplane
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [космоплан]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [spaceplane]
+   (* <- lang_en;; *);
+   
+<= nrel_inclusion:
+   concept_crewed_spacecraft;
+	
+=> nrel_note:
+   [В 1960-х годах и позже в США и СССР существовали, но не были реализованы проекты орбитальных космопланов (X-20 Dyna Soar в США и Лапоток, ЛКС и Спираль в СССР).]
+   (* <- lang_ru;; *);
+   
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. (космоплан)](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Космоплан - это транспортное средство, которое может летать и скользить, как самолет в атмосфере Земли, и маневрировать, как космический аппарат в космическом пространстве. ](*<-lang_ru;;*);;
+		<= nrel_using_constants: {
+			concept_spacecraft;
+			concept_transport
+		};;
+	*);;
+*);;

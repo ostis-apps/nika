@@ -1,0 +1,72 @@
+section_subject_domain_of_spacecrafts
+=> nrel_main_idtf:
+	  [Раздел. Предметная область космических аппаратов]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of spacecrafts] 
+  (* <- lang_en;; *);
+<- atomic_section;
+
+<= nrel_section_decomposition: 
+{
+	section_subject_domain_of_crewed_spacecrafts;
+	section_subject_domain_of_uncrewed_spacecrafts;
+	section_subject_domain_of_spacecrafts_transports;
+	section_subject_domain_of_spacecrafts_charasteristics;
+	section_subject_domain_of_celestial_objects
+};;
+
+section_subject_domain_of_spacecrafts = [*
+	subject_domain_of_spacecrafts
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область космических аппаратов]
+   (* <- lang_ru;; *);
+   [Subject domain of spacecrafts]
+   (* <- lang_en;; *);
+	<- subject_domain;
+
+	<= nrel_private_subject_domain:
+		section_subject_domain_of_spacecrafts;
+
+	=> nrel_private_subject_domain:
+		section_subject_domain_of_crewed_spacecrafts;
+		section_subject_domain_of_uncrewed_spacecrafts;
+		section_subject_domain_of_spacecrafts_transports;
+		section_subject_domain_of_spacecrafts_charasteristics;
+		section_subject_domain_of_celestial_objects;
+
+	-> rrel_maximum_studied_object_class:
+		concept_spacecraft;
+	-> rrel_not_maximum_studied_object_class:
+		concept_crewed_spacecraft;
+		concept_uncrewed_spacecraft;
+		concept_transport;
+		concept_charasteristic;
+		concept_celestial_object;
+	-> rrel_explored_relation:
+		nrel_orbit;
+		nrel_launched_by;
+		nrel_location;
+		nrel_purpose;
+		nrel_speed;
+		nrel_mass;
+		nrel_satellite;;
+*];;
+
+section_subject_domain_of_spacecrafts
+-> rrel_key_sc_element:
+	concept_spacecraft;
+	concept_crewed_spacecraft;
+	concept_uncrewed_spacecraft;
+	concept_transport;
+	concept_charasteristic;
+	concept_celestial_object;
+	nrel_orbit;
+	nrel_launched_by;
+	nrel_location;
+	nrel_purpose;
+	nrel_speed;
+	nrel_mass;
+	nrel_satellite;
+	nrel_count_of_artificial_satellite;
+	nrel_count_of_natural_satellite;;

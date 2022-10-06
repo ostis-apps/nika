@@ -1,0 +1,27 @@
+star_Sun
+<- concept_celestial_object;
+<- concept_star;
+
+=> nrel_main_idtf:
+   [Солнце]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Sun]
+   (* <- lang_en;; *);
+
+=> nrel_count_of_planets: [8] (* <- number;; *);
+
+=> nrel_note:
+   [Солнце является звездой в центре Солнечной системы. ]
+   (* <- lang_ru;; *);	
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Солнце](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Солнце является звездой главной последовательности G-типа, которая составляет около 99,86% массы Солнечной системы.](*<-lang_ru;;*);;
+	*);;
+*);;

@@ -1,0 +1,54 @@
+nrel_orbit
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [орбита* ]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [orbit* ]
+   (* <- lang_en;; *);
+   
+=> nrel_first_domain: 
+      concept_heavenly_body;
+      concept_planet;
+      concept_planetoid;
+      concept_star;
+      concept_natural_satellite;
+=> nrel_second_domain: 
+      concept_satellite;
+      concept_artificial_satellite;
+      concept_spacecraft;
+      concept_crewed_spacecraft;
+      concept_uncrewed_spacecraft;
+      concept_space_station;
+      concept_space_probe;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (орбита* )]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Орбита* - бинарное 
+               ориентированное отношение, связывающее 
+               небесное тело(объект) и космический аппарат(объект), который находится на определенной орбите.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+   	 	 concept_celestial_object;
+   	 	 concept_orbit;
+		 concept_spacecraft
+   	 };;
+*);;
