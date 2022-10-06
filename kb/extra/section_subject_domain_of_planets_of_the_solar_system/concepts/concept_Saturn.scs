@@ -1,0 +1,48 @@
+concept_Saturn
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Сатурн]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Saturn]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [В основном Сатурн состоит из водорода, с примесями гелия и следами воды, метана, аммиака и тяжёлых элементов]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Сатурн назван в честь римского бога земледелия]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Сатурн]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Сатурн — шестая планета по удалённости от Солнца и вторая по размерам планета в Солнечной системе после Юпитера]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_Jupiter;
+			rrel_size;
+			concept_planet;
+			concept_hydrogen;
+			concept_helium;
+			concept_sun;
+			concept_solar_system;
+			nrel_consist;
+			concept_gas_giant
+   	 };;
+  *);;

@@ -1,0 +1,36 @@
+concept_astronomy
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [астрономия]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [astronomy]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [В частности, астрономия изучает Солнце и другие звёзды, планеты Солнечной системы и их спутники, экзопланеты, астероиды, кометы, метеороиды, межпланетное вещество, межзвёздное вещество, пульсары, чёрные дыры, туманности, галактики и их скопления, квазары и многое другое]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.астрономия]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Астрономия — наука о небесных телах]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_heavenly_body;
+			concept_science
+   	 };;
+  *);;

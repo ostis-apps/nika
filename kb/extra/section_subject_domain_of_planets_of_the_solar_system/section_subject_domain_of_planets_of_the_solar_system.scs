@@ -1,0 +1,103 @@
+section_subject_domain_of_planets_of_the_solar_system
+=> nrel_main_idtf:
+	[Раздел. Предметная область планет солнечной системы]
+   (* <- lang_ru;; *);
+	[Section. Subject domain of planets of the solar system] 
+   (* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_planets_of_the_solar_system = [*
+	subject_domain_of_planets_of_the_solar_system
+<- sc_node_struct;
+	=> nrel_main_idtf:
+      [Предметная область планет солнечной системы]
+      (* <- lang_ru;; *);
+      [Subject domain of planets of the solar system]
+      (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+            concept_astronomical_object;
+            concept_astronomy;
+            concept_barycenter;
+            concept_dark_matter;
+            concept_gravity;
+            concept_interstellar_gas;
+            concept_orbit;
+            concept_physical_body;
+	-> rrel_not_maximum_studied_object_class:
+            concept_earth_group;
+            concept_Earth;
+            concept_galaxy;
+            concept_gas_giant;
+            concept_heavenly_body;
+            concept_heliocentric_orbit;
+            concept_Jupiter;
+            concept_Mars;
+            concept_Mercury;
+            concept_Milky_Way;
+            concept_Neptune;
+            concept_planet;
+            concept_planetary_system;
+            concept_Saturn;
+            concept_solar_system;
+            concept_space_object;
+            concept_star_cluster;
+            concept_star;
+            concept_sun;
+            concept_Universe;
+            concept_Uranium;
+            concept_Venus;
+	-> rrel_explored_relation:
+            rrel_diameter;
+            rrel_form;
+            nrel_inhabit;
+            rrel_size;
+            rrel_volume;
+            rrel_weight;
+            nrel_consist;
+            nrel_include;
+            rrel_rotate;;
+*];;
+
+section_subject_domain_of_planets_of_the_solar_system
+-> rrel_key_sc_element:
+      subject_domain_of_planets_of_the_solar_system;   
+      concept_astronomical_object;
+      concept_astronomy;
+      concept_barycenter;
+      concept_dark_matter;
+      concept_gravity;
+      concept_interstellar_gas;
+      concept_orbit;
+      concept_physical_body;
+      concept_earth_group;
+      concept_Earth;
+      concept_galaxy;
+      concept_gas_giant;
+      concept_heavenly_body;
+      concept_heliocentric_orbit;
+      concept_Jupiter;
+      concept_Mars;
+      concept_Mercury;
+      concept_Milky_Way;
+      concept_Neptune;
+      concept_planet;
+      concept_planetary_system;
+      concept_Saturn;
+      concept_solar_system;
+      concept_space_object;
+      concept_star_cluster;
+      concept_star;
+      concept_sun;
+      concept_Universe;
+      concept_Uranium;
+      concept_Venus;
+      rrel_diameter;
+      rrel_form;
+      nrel_inhabit;
+      rrel_size;
+      rrel_volume;
+      rrel_weight;
+      nrel_consist;
+      nrel_include;
+      rrel_rotate;;

@@ -1,0 +1,46 @@
+concept_dark_matter
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [темная материя]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [dark matter]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Состав и природа тёмной материи на настоящий момент неизвестны]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Понятие тёмной материи введено для теоретического объяснения проблемы скрытой массы в эффектах аномально высокой скорости вращения внешних областей галактик и гравитационного линзирования (в них задействовано вещество, масса которого намного превышает массу обычной видимой материи); среди прочих предложенных оно наиболее удовлетворительно.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.темная материя]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Тёмная мате́рия — в астрономии и космологии, а также в теоретической физике форма материи, не участвующая в электромагнитном взаимодействии и поэтому недоступная прямому наблюдению.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_theoretical_physics;
+			concept_form;
+			concept_electromagnetic_interaction;
+			nrel_available;
+			concept_cosmology;
+			concept_astronomy;
+			concept_direct_observation
+   	 };;
+  *);;

@@ -1,0 +1,60 @@
+concept_heliocentric_orbit
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [гелиоцентрическая орбита]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [heliocentric orbit]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [При движении небесного тела под действием силы притяжения звезды его полная энергия и момент импульса относительно этой звезды сохраняются]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.гелиоцентрическая орбита]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Гелиоцентрическая орбита — коническая траектория движения небесного тела вокруг барицентра Солнечной системы]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_heavenly_body;
+			concept_conical_path;
+			concept_barycenter;
+			concept_solar_system
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.гелиоцентрическая орбита]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Гѐоцентрическая орбита — траектория движения небесного тела вокруг Земли.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_Earth;
+			concept_heavenly_body;
+			concept_trajectory_movements
+   	 };;
+  *);;

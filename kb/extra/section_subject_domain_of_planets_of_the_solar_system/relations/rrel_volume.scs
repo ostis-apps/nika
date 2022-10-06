@@ -1,0 +1,29 @@
+rrel_volume
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+  [объем](* <- lang_ru;; *);
+  [volume](* <- lang_eng;; *);;
+
+rrel_volume <- rrel_key_sc_element:... 
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (объем)](*<- lang_ru;;*);
+    [Def. ( volume)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Объем - это количественная характеристика пространства, занимаемого объектом.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [Volume is a quantitative characteristic of the space occupied by an object.](*<- lang_en;;*);;
+    *);;
+*);;
+
+rrel_volume
+=>nrel_first_domain:concept_an_object;
+=>nrel_second_domain:concept_size;
+
+<- binary_relation ;
+<- antireflexive_relation ;
+<- antitransitive_relation ;;

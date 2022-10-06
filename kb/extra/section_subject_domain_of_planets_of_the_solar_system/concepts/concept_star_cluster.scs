@@ -1,0 +1,39 @@
+concept_star_cluster
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [звездное скопление]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [star cluster]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Некоторые звёздные скопления также содержат, кроме звёзд, облака газа и/или пыли]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.звездное скопление]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Звёздное скопление — визуально связанная группа звёзд, имеющая общее происхождение и движущаяся в гравитационном поле галактики как единое целое]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_Group;
+			concept_star;
+			concept_origin;
+			concept_gravitational_field;
+			concept_galaxy
+   	 };;
+  *);;

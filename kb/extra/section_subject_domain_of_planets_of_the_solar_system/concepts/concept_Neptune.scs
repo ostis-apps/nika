@@ -1,0 +1,42 @@
+concept_Neptune
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Нептун]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Neptune]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Его масса превышает массу Земли в 17,2 раза и является третьей среди планет Солнечной системы, а по экваториальному диаметру Нептун занимает четвёртое место, превосходя Землю в 3,9 раза]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Планета названа в честь Нептуна — римского бога морей]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Нептун]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Нептун — восьмая и самая дальняя от Солнца планета Солнечной системы.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_planet;
+			concept_sun;
+			concept_solar_system
+   	 };;
+  *);;

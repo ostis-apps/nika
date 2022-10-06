@@ -1,0 +1,61 @@
+concept_barycenter
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [барицентр]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [barycenter]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Неформально, геометрический барицентр есть точка равновесия фигуры]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.барицентр]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Барицентр — это среднее арифметическое положений всех точек данной фигуры.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			rrel_average;
+			concept_figure;
+			concept_situation;
+			concept_point
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.барицентр]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Барицентр — синоним понятия «центр масс»]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_concept;
+			concept_center;
+			rrel_weight;
+			concept_a_synonym
+   	 };;
+  *);;

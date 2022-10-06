@@ -1,0 +1,44 @@
+concept_Uranium
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Уран]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Uranium]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Уран стал первой планетой, обнаруженной в Новое время и при помощи телескопа]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Основу атмосферы Урана составляют водород и гелий.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Уран]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Уран — планета Солнечной системы, седьмая по удалённости от Солнца, третья по диаметру и четвёртая по массе]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			rrel_diameter;
+			concept_planet;
+			rrel_weight;
+			concept_sun;
+			concept_solar_system
+   	 };;
+  *);;

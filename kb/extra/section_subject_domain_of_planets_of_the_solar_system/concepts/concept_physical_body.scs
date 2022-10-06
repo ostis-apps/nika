@@ -1,0 +1,39 @@
+concept_physical_body
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [физическое тело]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [physical body]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Широко используется в классической механике]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.физическое тело]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Физическое тело — материальный объект, имеющий массу, форму, объём; и отделенный от других тел внешней границей раздела.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_border;
+			rrel_volume;
+			rrel_form;
+			concept_material_object;
+			rrel_weight
+   	 };;
+  *);;

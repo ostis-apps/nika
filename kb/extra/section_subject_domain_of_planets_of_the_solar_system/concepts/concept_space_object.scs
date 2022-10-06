@@ -1,0 +1,39 @@
+concept_space_object
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [космический объект]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [space object]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [К естественным космическим объектам относятся звёзды, планеты и их естественные спутники, астероиды, кометы и т. п.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.космический объект]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Космический объект — небесное тело (астрономический объект) или космический аппарат находящиеся за пределами земной атмосферы в космическом пространстве.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_heavenly_body;
+			concept_spacecraft;
+			concept_astronomical_object;
+			concept_earth_atmosphere;
+			concept_space
+   	 };;
+  *);;

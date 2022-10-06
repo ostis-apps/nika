@@ -1,0 +1,46 @@
+concept_earth_group
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [земная группа]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [earth group]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Расположены во внутренней области Солнечной системы, в отличие от планет-гигантов]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Согласно ряду космогонических теорий, в значительной части внесолнечных планетных систем экзопланеты тоже делятся на твердотельные планеты во внутренних областях и планеты-гиганты — во внешних.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.земная группа]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Планеты земной группы — четыре планеты Солнечной системы: Меркурий, Венера, Земля и Марс]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_Earth;
+			concept_Mars;
+			concept_Venus;
+			concept_planet;
+			concept_Mercury;
+			concept_sun;
+			concept_solar_system
+   	 };;
+  *);;

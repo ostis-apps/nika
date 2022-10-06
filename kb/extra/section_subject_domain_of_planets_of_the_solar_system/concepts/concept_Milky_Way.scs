@@ -1,0 +1,52 @@
+concept_Milky_Way
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Млечный Путь]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Milky Way]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Все звёзды, видимые невооружённым глазом, относятся к нашей Галактике]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Большинство звёзд в Галактике сосредоточено в галактическом диске со спиральными рукавами]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [В Млечном Пути темп звездообразования составляет 1,6—2 M⊙ в год]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Млечный Путь находится в Местной группе галактик]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Млечный Путь]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Млечный Путь — спиральная галактика, в которой находится Земля и Солнечная система. ]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_Earth;
+			concept_spiral_galaxy;
+			concept_solar_system
+   	 };;
+  *);;

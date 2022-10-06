@@ -1,0 +1,29 @@
+rrel_rotate
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+  [вращаться](* <- lang_ru;; *);
+  [rotate](* <- lang_eng;; *);;
+
+rrel_rotate <- rrel_key_sc_element:... 
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (вращаться)](*<- lang_ru;;*);
+    [Def. ( rotate)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Вращаться — это Обращаться вокруг своей оси, двигаться вокруг чего-либо.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [To rotate is to rotate around its own axis, to move around something.](*<- lang_en;;*);;
+    *);;
+*);;
+
+rrel_rotate
+=>nrel_first_domain:concept_an_object;
+=>nrel_second_domain:concept_an_object;
+
+<- binary_relation ;
+<- antireflexive_relation ;
+<- transitive_relation ;;

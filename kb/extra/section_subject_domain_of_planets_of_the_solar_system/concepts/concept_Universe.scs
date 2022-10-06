@@ -1,0 +1,63 @@
+concept_Universe
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [вселенная]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Universe]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Любое исследование или наблюдение, будь то наблюдение физика за тем, как раскалывается ядро атома, ребёнка за кошкой или астронома, ведущего наблюдения за отдалённой галактикой, — всё это наблюдение за Вселенной, вернее, за отдельными её частями.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Оно делится на две принципиально отличающиеся сущности: умозрительную (философскую) и материальную, доступную наблюдениям в настоящее время или в обозримом будущем.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.вселенная]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Вселенная — не имеющее строгого определения понятие в астрономии и философии]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_concept;
+			concept_astronomy;
+			concept_philosophy;
+			concept_strict_definition
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.вселенная]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Вселенная — это все, что нас окружает.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_surround
+   	 };;
+  *);;
