@@ -1,0 +1,61 @@
+immersion
+
+	<-sc_node_not_relation;
+
+	=> nrel_main_idtf:
+		[Alexander "Immersion" Hmelevskoy](* <-lang_en;; *);
+		[Александр "Immersion" Хмелевской](* <-lang_ru;; *);
+	=> nrel_idtf:
+		[Immersion](* <-lang_en; lang_ru;; *);
+
+	<-player_dota;	
+
+	=>nrel_citizen_of: Russia;
+	=>nrel_surname: Hmelevskoy;
+	=>nrel_first_name: Alexander;
+	=>nrel_nickname: Immersion;
+//=>nrel_birthday: ;
+
+  <=nrel_with_whom: contract_immersion_and_com18anji_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Immersion and CoM18Anji](* <-lang_en;; *);
+			[Контракт между Immersion и CoM18Anji](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: com18anji_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 12_04_2018;;
+			->rrel_end: 01_05_2018;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_immersion_and_espada_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Immersion and ESPADA](* <-lang_en;; *);
+			[Контракт между Immersion и ESPADA](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: espada_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 01_05_2018;;
+			->rrel_end: 26_11_2018;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_immersion_and_gambit_esports_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Immersion and Gambit Esports](* <-lang_en;; *);
+			[Контракт между Immersion и Gambit Esports](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: gambit_esports_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 25_12_2018;;
+		*);;
+	*);;

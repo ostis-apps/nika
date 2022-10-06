@@ -1,0 +1,20 @@
+dota_2
+
+	<-sc_node_not_relation;
+
+	=> nrel_main_idtf:
+		[Dota 2](* <-lang_en; lang_ru;; *);
+
+	<-video_game;
+
+	=> nrel_game_developer: valve;
+	=> nrel_game_publisher: valve;
+	=> nrel_game_designer: icefrog;
+	=> nrel_game_engine: sourse_2;
+	=> nrel_game_genre: moba;
+	=> nrel_game_platform: pc;
+	=> nrel_game_release: 09_07_2013;
+
+	-> team_dota;
+	-> player_dota;
+	-> tournament_dota;;

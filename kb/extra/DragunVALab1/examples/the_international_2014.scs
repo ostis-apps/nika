@@ -1,0 +1,40 @@
+the_international_2014
+
+	<-sc_node_not_relation;
+
+	=> nrel_main_idtf:
+		[The International 2014](* <-lang_en; lang_ru;; *);
+	=> nrel_idtf:
+		[TI4](* <-lang_en; lang_ru;; *);
+
+	<-tournament_dota;
+
+	=> nrel_organizer: valve;
+	=> nrel_sponsor: valve;
+	=> nrel_type: offline;
+	=> nrel_location: Seattle;
+	=>nrel_prize_pool: [$10,923,977];
+	=>nrel_period: ...
+	(*
+		<-period_of_time;;
+		->rrel_start: 08_07_2014;;
+		->rrel_end: 21_07_2014;;
+	*);
+
+	=>nrel_participate: 
+			lgd_gaming_dota;
+			fnatic_dota;
+			invictus_gaming_dota;
+			team_dk_dota;
+			evil_geniuses_dota;
+			cloud_nine_dota;
+			titan_dota;
+			alliance_dota;
+			mousesports_dota;
+			team_liquid_dota;
+			newbee_dota;
+			team_empire_dota;
+			natus_vincere_north_america_dota;
+			natus_vincere_dota;
+			arrow_gaming_dota;
+			vici_gaming_dota;;

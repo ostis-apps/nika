@@ -1,0 +1,11 @@
+nrel_gamerole
+
+	<-sc_node_norole_relation;
+	<-oriented_relation;
+	<-binary_relation;
+	<-antisymmetric_relation;
+	<-antireflexive_relation;
+
+	=> nrel_main_idtf:
+		[роль*](* <-lang_ru;; *);
+		[gamerole*](* <-lang_en;; *);;

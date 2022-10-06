@@ -1,0 +1,46 @@
+lec_2019_spring_season
+
+	<-sc_node_not_relation;
+
+	=> nrel_main_idtf:
+		[League of Legends European Championship 2019 Spring Season](* <-lang_en; lang_ru;; *);
+	=> nrel_idtf:
+		[LEC 2019 Spring Season](* <-lang_en; lang_ru;; *);
+    
+  <-tournament;
+	<-tournament_lol;
+
+	=> nrel_organizer: Riot_Games;
+	=> nrel_sponsor:
+			kia;
+			alienware;
+			shell;
+			logitech;
+			foot_locker;
+			dxracer;
+			redbull;
+	=> nrel_type: offline;
+	=> nrel_location: Germany;
+	=>nrel_prize_pool: [€200,000];
+	
+	=>nrel_period: ...
+	(*
+		=> nrel_main_idtf:
+			[Time frame of LEC 2019 Spring Season](* <-lang_en;; *);
+			[Период проведения LEC 2019 Spring Season](* <-lang_ru;; *);;
+		<-period_of_time;;
+		->rrel_start: 18_01_2019;;
+		->rrel_end: 16_03_2019;;
+	*);
+
+	=>nrel_participate: 
+			excel_esports_lol;
+			fc_schalke_04_esports_lol;
+			fnatic_lol;
+			g2_esports_lol;
+			misfits_gaming_lol;
+			origen_lol;
+			rogue_lol;
+			sk_gaming_lol;
+			splyce_lol;
+			team_vitality_lol;;

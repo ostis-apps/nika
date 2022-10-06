@@ -1,0 +1,18 @@
+renault
+
+ <-sc_node_not_relation;
+
+ => nrel_main_idtf:
+		[Renault](* <-lang_en;; *);
+
+	<-rrel_sc_key_element: definition_renault
+	(*
+		<-definition;;
+		=> nrel_main_idtf:
+			[def.(Renault)](* <-lang_en;; *);;
+
+		<=nrel_sc_text_translation: ...
+		(*
+			->rrel_example:	[a French multinational automobile manufacturer.]  (* <-lang_en;; *);;
+		*);;
+	*);;

@@ -1,0 +1,114 @@
+chuvash
+
+	<-sc_node_not_relation;
+
+	=> nrel_main_idtf:
+		[Evgeniy "Chuvash" Makarov](* <-lang_en;; *);
+		[Евгений "Chuvash" Макаров](* <-lang_ru;; *);
+	=> nrel_idtf:
+		[Chuvash](* <-lang_en; lang_ru;; *);
+
+	<-player_dota;	
+
+	=>nrel_citizen_of: Russia;
+	=>nrel_surname: Makarov;
+	=>nrel_first_name: Evgeniy;
+	=>nrel_nickname: Chuvash;
+	=>nrel_birthday: 10_05_1998;
+
+  <=nrel_with_whom: contract_chuvash_and_comanche_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Chuvash and Comanche](* <-lang_en;; *);
+			[Контракт между Chuvash и Comanche](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: comanche_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 10_06_2016;;
+			->rrel_end: 15_11_2016;;
+		*);;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 03_01_2017;;
+			->rrel_end: 17_03_2017;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_chuvash_and_effect_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Chuvash and Effect](* <-lang_en;; *);
+			[Контракт между Chuvash и Effect](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: effect_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: xx_11_2016;;
+			->rrel_end: 03_01_2017;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_chuvash_and_cyber_anji_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Chuvash and Cyber Anji](* <-lang_en;; *);
+			[Контракт между Chuvash и Cyber Anji](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: cyber_anji_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 17_03_2017;;
+			->rrel_end: 29_06_2017;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_chuvash_and_spartak_esports_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Chuvash and Spartak Esports](* <-lang_en;; *);
+			[Контракт между Chuvash и Spartak Esports](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: spartak_esports_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 12_09_2017;;
+			->rrel_end: 29_11_2017;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_chuvash_and_team_empire_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Chuvash and Team Empire](* <-lang_en;; *);
+			[Контракт между Chuvash и Team Empire](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: team_empire_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 06_06_2018;;
+			->rrel_end: 06_09_2018;;
+		*);;
+	*);
+
+
+  <=nrel_with_whom: contract_chuvash_and_natus_vincere_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Chuvash and Natus Vincere](* <-lang_en;; *);
+			[Контракт между Chuvash и Natus Vincere](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: natus_vincere_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 07_09_2018;;
+			->rrel_end: 24_04_2019;;
+		*);;
+	*);;

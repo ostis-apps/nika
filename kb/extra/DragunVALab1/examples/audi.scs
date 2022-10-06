@@ -1,0 +1,18 @@
+audi
+
+ <-sc_node_not_relation;
+
+ => nrel_main_idtf:
+		[Audi](* <-lang_en;; *);
+
+	<-rrel_sc_key_element: definition_audi
+	(*
+		<-definition;;
+		=> nrel_main_idtf:
+			[def.(Audi)](* <-lang_en;; *);;
+
+		<=nrel_sc_text_translation: ...
+		(*
+			->rrel_example:	[a German automobile manufacturer that designs, engineers, produces, markets and distributes luxury vehicles.]  (* <-lang_en;; *);;
+		*);;
+	*);;

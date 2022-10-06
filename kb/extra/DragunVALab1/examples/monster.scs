@@ -1,0 +1,18 @@
+monster
+
+ <-sc_node_not_relation;
+
+ => nrel_main_idtf:
+		[Monster](* <-lang_en; lang_ru;; *);
+
+	<-rrel_sc_key_element: definition_monster
+	(*
+		<-definition;;
+		=> nrel_main_idtf:
+			[def.(Monster)](* <-lang_en;; *);;
+
+		<=nrel_sc_text_translation: ...
+		(*
+			->rrel_example:	[the top racing series of the National Association for Stock Car Auto Racing.]  (* <-lang_en;; *);;
+		*);;
+	*);;

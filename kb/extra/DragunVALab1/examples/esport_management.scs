@@ -1,0 +1,18 @@
+esport_management
+
+ <-sc_node_not_relation;
+
+ => nrel_main_idtf:
+		[Esport-Management](* <-lang_en;; *);
+
+	<-rrel_sc_key_element: definition_esport_management
+	(*
+		<-definition;;
+		=> nrel_main_idtf:
+			[def.(Esport-Management)](* <-lang_en;; *);;
+
+		<=nrel_sc_text_translation: ...
+		(*
+			->rrel_example:	[a global online platform for amateur Esport players & teams.]  (* <-lang_en;; *);;
+		*);;
+	*);;

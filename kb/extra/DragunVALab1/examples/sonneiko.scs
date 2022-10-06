@@ -1,0 +1,87 @@
+sonneiko
+
+	<-sc_node_not_relation;
+
+	=> nrel_main_idtf:
+		[Akbar "SoNNeikO" Butaev](* <-lang_en;; *);
+		[Акбар "SoNNeikO" Бутаев](* <-lang_ru;; *);
+	=> nrel_idtf:
+		[SoNNeikO](* <-lang_en; lang_ru;; *);
+
+	<-player_dota;	
+
+	=>nrel_citizen_of: Russia;
+	=>nrel_surname: Butaev;
+	=>nrel_first_name: Akbar;
+	=>nrel_nickname: SoNNeikO;
+	=>nrel_birthday: 16_05_1997;
+
+  <=nrel_with_whom: contract_sonneiko_and_vega_squadron_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Sonneiko and Vega Squadron](* <-lang_en;; *);
+			[Контракт между Sonneiko и Vega Squadron](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: vega_squadron_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 18_11_2016;;
+			->rrel_end: 31_03_2017;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_sonneiko_and_power_rangers_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Sonneiko and Power Rangers](* <-lang_en;; *);
+			[Контракт между Sonneiko и Power Rangers](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: power_rangers_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 29_10_2014;;
+			->rrel_end: 20_03_2015;;
+		*);;
+	*);
+
+	<=nrel_with_whom: contract_sonneiko_and_natus_vincere_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Sonneiko and Natus Vincere](* <-lang_en;; *);
+			[Контракт между Sonneiko и Natus Vincere](* <-lang_ru;; *);;
+		
+		<-contract;;
+		=>nrel_with_what: natus_vincere_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 20_10_2015;;
+			->rrel_end: 07_11_2016;;
+		*);;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 05_04_2015;;
+			->rrel_end: 16_10_2015;;
+		*);;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 20_04_2017;;
+			->rrel_end: 03_02_2018;;
+		*);;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 03_02_2018;;
+			->rrel_end: 28_02_2018;;
+		*);;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 01_09_2018;;
+			->rrel_end: 23_10_2019;;
+		*);;
+	*);;
