@@ -1,0 +1,25 @@
+concept_satiric_animal_tale
+<-sc_node_class;
+<-concept_animal_tale;
+=>nrel_main_idtf:
+	[сатирическая сказка о животных](* <- lang_ru;; *);
+	[satiric animal tale](* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+            [Опр. (Сатирическая сказка о животных)](* <- lang_ru;; *);
+            [Def. (Satiric animal tale)](* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+        	...
+        	(*
+            	-> rrel_example:
+                	[Сатирическая сказка о животных — комическая зарисовка на тему животных.](* <- lang_ru;; *);;
+	    	*);
+		...
+		(*
+		-> rrel_example: 
+			[Satiric animal tale is a short humorous tale with animals as main heros.](* <- lang_en;; *);;
+		*);;
+	*);;

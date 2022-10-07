@@ -1,0 +1,25 @@
+concept_magic_animal_tale
+<-sc_node_class;
+<-concept_animal_tale;
+=>nrel_main_idtf:
+	[волшебная сказка о животных](* <- lang_ru;; *);
+	[magical animal tale](* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+            [Опр. (Волшебная сказка о животных)](* <- lang_ru;; *);
+            [Def. (Magical animal tale)](* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+        	...
+        	(*
+            	-> rrel_example:
+                	[Волшебная сказка о животных — произведение, где главными персонажами являются животные и используется волшебные предметы или волшебство в целом.](* <- lang_ru;; *);;
+	    	*);
+		...
+		(*
+		-> rrel_example: 
+			[Magical animal tale is a tale with animals as main heros and usage of magical things or magic.](* <- lang_en;; *);;
+		*);;
+	*);;

@@ -1,0 +1,24 @@
+concept_tall_tale
+<-sc_node_class;
+=>nrel_main_idtf:
+	[Небылицы](* <- lang_ru;; *);
+	[tall tale](* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+            [Опр. (Небылица)](* <- lang_ru;; *);
+            [Def. (Tall tale)](* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+        	...
+        	(*
+            	-> rrel_example:
+                	[Небылицы — это сказки, построенные на бессмыслице.](* <- lang_ru;; *);;
+	    	*);
+		...
+		(*
+		-> rrel_example: 
+			[Tall tales are tales based on a nonsense.](* <- lang_en;; *);;
+		*);;
+	*);;

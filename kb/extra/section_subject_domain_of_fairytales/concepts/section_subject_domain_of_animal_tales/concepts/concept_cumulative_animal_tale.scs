@@ -1,0 +1,25 @@
+concept_cumulative_animal_tale
+<-sc_node_class;
+<-concept_animal_tale;
+=>nrel_main_idtf:
+	[кумулятивная сказка о животных](* <- lang_ru;; *);
+	[cumulative animal tale](* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+            [Опр. (Кумулятивная сказка о животных)](* <- lang_ru;; *);
+            [Def. (Cumulative animal tale)](* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+        	...
+        	(*
+            	-> rrel_example:
+                	[Кумулятивная сказка о животных — произведение, в котором происходит многократное повторение единицы сюжета.](* <- lang_ru;; *);;
+	    	*);
+		...
+		(*
+		-> rrel_example: 
+			[Cumulative animal tale is a tale with repeated action of a plot unit.](* <- lang_en;; *);;
+		*);;
+	*);;

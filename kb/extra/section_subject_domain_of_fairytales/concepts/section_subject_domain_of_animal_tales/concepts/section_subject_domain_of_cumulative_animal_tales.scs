@@ -1,0 +1,30 @@
+section_subject_domain_of_cumulative_animal_tales
+=> nrel_main_idtf:
+	[Раздел. Предметная область волшебных сказок о животных]
+	(* <- lang_ru;; *);
+	[Section. Subject domain of cumulative animal tales]
+	(* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_cumulative_animal_tales = [*
+subject_domain_of_cumulative_animal_tales
+<- sc_node_struct;
+=> nrel_main_idtf:
+	[Предметная область волшебных сказок о животных]
+	(* <- lang_ru;; *);
+	[Subject domain of cumulative animal tales]
+	(* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+	concept_cumulative_animal_tale;
+-> rrel_not_maximum_studied_object_class:
+	concept_unendless_cumulative_animal_tale;
+	concept_endless_cumulative_animal_tale;;
+*];;
+
+section_subject_domain_of_cumulative_animal_tales
+-> rrel_key_sc_element:
+	subject_domain_of_cumulative_animal_tales;
+	concept_cumulative_animal_tale;
+	concept_unendless_cumulative_animal_tale;
+	concept_endless_cumulative_animal_tale;;

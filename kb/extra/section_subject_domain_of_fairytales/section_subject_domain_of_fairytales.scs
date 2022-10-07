@@ -1,0 +1,43 @@
+section_subject_domain_of_fairytales
+=> nrel_main_idtf:
+	[Раздел. Предметная область сказок]
+	(* <- lang_ru;; *);
+	[Section. Subject domain of fairytales]
+	(* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_fairytales = [*
+subject_domain_of_fairytales
+<- sc_node_struct;
+=> nrel_main_idtf:
+	[Предметная область сказок]
+	(* <- lang_ru;; *);
+	[Subject domain of fairytales]
+	(* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+	concept_fairytale;
+	section_subject_domain_of_animal_tales;
+-> rrel_not_maximum_studied_object_class:
+	concept_magic_tale;
+	concept_tall_tale;
+	concept_folk_tale;
+	concept_fiction_tale;
+-> rrel_explored_relation:
+	nrel_country;
+	nrel_main_hero;
+	nrel_century;;
+*];;
+
+section_subject_domain_of_fairytales
+-> rrel_key_sc_element:
+	subject_domain_of_fairytales;
+	concept_fairytale;
+	section_subject_domain_of_animal_tales;
+	concept_magic_tales;
+	concept_tall_tales;
+	concept_folk_tale;
+	concept_fiction_tale;
+	nrel_country;
+	nrel_main_hero;
+	nrel_century;;

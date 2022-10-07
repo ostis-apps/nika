@@ -1,0 +1,24 @@
+concept_animal_tale
+<-sc_node_class;
+=>nrel_main_idtf:
+	[сказка о животных](* <- lang_ru;; *);
+	[animal tale](* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+            [Опр. (Сказка о животных)](* <- lang_ru;; *);
+            [Def. (Animal tale)](* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+        	...
+        	(*
+            	-> rrel_example:
+                	[Сказка о животных — эпические произведения, в центре повествования которых находятся животные.](* <- lang_ru;; *);;
+	    	*);
+		...
+		(*
+		-> rrel_example: 
+			[Animal tale is epic tale where animals are the center of a narration.](* <- lang_en;; *);;
+		*);;
+	*);;

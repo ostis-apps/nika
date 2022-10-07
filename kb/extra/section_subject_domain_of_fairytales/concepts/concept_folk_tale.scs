@@ -1,0 +1,30 @@
+concept_folk_tale
+<-sc_node_class;
+=>nrel_main_idtf:
+	[народная сказка]
+	(* <- lang_ru;; *);
+	[folk tale]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+            [Опр. (Народная сказка)]
+            (* <- lang_ru;; *);
+            [Def. (Folk tale)]
+            (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+        	...
+        	(*
+            	-> rrel_example:
+                	[Народная сказка прозаический устный рассказ о вымышленных событиях в фольклоре разных народов.]
+                	(* <- lang_ru;; *);;
+	    	*);
+		...
+		(*
+		-> rrel_example: 
+			[Folk tale is epic tale about not real events written by peoples.]
+			(* <- lang_en;; *);;
+		*);;
+	*);;
