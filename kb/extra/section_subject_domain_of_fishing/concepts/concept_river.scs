@@ -1,0 +1,24 @@
+concept_river
+=> nrel_main_idtf:
+    [река](* <-lang_ru;; *);
+    [river](* <-lang_en;; *);;
+
+concept_river
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (река)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (river)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Река - постоянный водный поток, движущийся в выработанном им природном углублении – русле.](*<- lang_ru;;*);; 
+        -> rrel_example:
+            [A river is a constant water flow moving in a natural depression developed by it - a riverbed.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_water
+    };;
+*);;

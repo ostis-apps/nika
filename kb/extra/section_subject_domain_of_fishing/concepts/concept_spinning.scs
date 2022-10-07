@@ -1,0 +1,24 @@
+concept_spinning
+=> nrel_main_idtf:
+    [спиннинг](* <-lang_ru;; *);
+    [spinning](* <-lang_en;; *);;
+
+concept_spinning
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (спиннинг)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (spinning)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Спиннинг -  это удилище, которое предназначено для ловли хищной рыбы с помощью различных приманок, которые приводятся в движение.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Spinning is a rod that is designed to catch predatory fish with the help of various baits that are set in motion.](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_tackle
+    };;
+*);;

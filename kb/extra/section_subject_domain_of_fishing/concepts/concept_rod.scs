@@ -1,0 +1,24 @@
+concept_rod
+=> nrel_main_idtf:
+    [удочка](* <-lang_ru;; *);
+    [rod](* <-lang_en;; *);;
+
+concept_rod
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (удочка)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (rod)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Удочка - снасть в виде гибкого хлыста, изготовляемого ранее из дерева (сейчас и из других материалов), которая предназначается для рыбалки.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [A fishing rod is a tackle in the form of a flexible whip, previously made of wood (now also of other materials), which is intended for fishing.](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_tackle
+    };;
+*);;

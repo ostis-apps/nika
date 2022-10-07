@@ -1,0 +1,24 @@
+concept_trawler
+=> nrel_main_idtf:
+    [траулер](* <-lang_ru;; *);
+    [trawler](* <-lang_en;; *);;
+
+concept_trawler
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (траулер)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (trawler)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Траулер - промысловое судно, предназначенное для добычи водных биоресурсов с помощью трала.](*<- lang_ru;;*);; 
+        -> rrel_example:
+            [A trawler is a fishing vessel designed for the extraction of aquatic biological resources using a trawl.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_boat
+    };;
+*);;

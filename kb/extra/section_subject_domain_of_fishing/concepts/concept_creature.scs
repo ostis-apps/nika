@@ -1,0 +1,20 @@
+concept_creature
+=> nrel_main_idtf:
+    [живое существо](* <-lang_ru;; *);
+    [creature](* <-lang_en;; *);;
+
+concept_creature
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (живое существо)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (creature)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Живое существо - организм, который проявляет ключевые характеристики жизни.](*<- lang_ru;;*);; 
+        -> rrel_example:
+            [Creature - is an organism that exhibits the key characteristics of life.](*<- lang_en;;*);;
+        *);;
+*);;

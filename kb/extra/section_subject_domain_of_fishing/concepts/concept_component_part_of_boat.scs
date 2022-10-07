@@ -1,0 +1,20 @@
+concept_component_part_of_boat
+=> nrel_main_idtf:
+    [составная часть корабля](* <-lang_ru;; *);
+    [component part of boat](* <-lang_en;; *);;
+
+concept_component_part_of_boat
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (составная часть корабля)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (component part of boat)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Составная часть корабля - механизм или устройство, позволяющее судну нормально функционировать ипередвигаться по воде.](*<- lang_ru;;*);; 
+        -> rrel_example:
+            [A component part of boat is a mechanism or device that allows a ship to function normally to move on water.](*<- lang_en;;*);;
+        *);;
+*);;

@@ -1,0 +1,20 @@
+concept_water
+=> nrel_main_idtf:
+    [вода](* <-lang_ru;; *);
+    [water](* <-lang_en;; *);;
+
+concept_water
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (вода)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (water)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Вода - прозрачная жидкость, не имеющая цвета (при малой толщине слоя), запаха и вкуса.](*<- lang_ru;;*);; 
+        -> rrel_example:
+            [Water is a transparent liquid that has no color (with a small layer thickness), smell and taste.](*<- lang_en;;*);;
+        *);;
+*);;

@@ -1,0 +1,24 @@
+concept_harpoon
+=> nrel_main_idtf:
+    [гарпун](* <-lang_ru;; *);
+    [harpoon](* <-lang_en;; *);;
+
+concept_harpoon
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (гарпун)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (harpoon)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Гарпун - метательное охотничье оружие, применяемое в рыболовстве и особенно в морском зверобойном промысле.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [The harpoon is a throwing hunting weapon used in fishing and especially in the marine hunting industry.](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_tackle
+    };;
+*);;

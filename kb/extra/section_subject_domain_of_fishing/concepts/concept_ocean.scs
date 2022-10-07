@@ -1,0 +1,24 @@
+concept_ocean
+=> nrel_main_idtf:
+    [океан](* <-lang_ru;; *);
+    [ocean](* <-lang_en;; *);;
+
+concept_ocean
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (океан)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (ocean)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Океан - крупнейший водный объект, составляющий часть Мирового океана, расположенный среди материков, обладающий системой циркуляции вод и другими специфическими особенностями.](*<- lang_ru;;*);; 
+        -> rrel_example:
+            [The ocean is the largest water body that makes up part of the World Ocean, located among continents, with a water circulation system and other specific features.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_water
+    };;
+*);;

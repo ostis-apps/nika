@@ -1,0 +1,24 @@
+concept_superstructure
+=> nrel_main_idtf:
+    [надстройка](* <-lang_ru;; *);
+    [superstructure](* <-lang_en;; *);;
+
+concept_superstructure
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (надстройка)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (superstructure)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Надстройка - закрытое сооружение на главной палубе судна, расположенное от борта до борта, либо отстоящее от бортов на небольшое расстояние.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Superstructure - a closed structure on the main deck of the vessel, located from side to side, or spaced from the sides for a short distance.](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_component_part_of_boat
+    };;
+*);;
