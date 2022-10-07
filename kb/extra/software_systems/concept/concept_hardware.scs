@@ -1,0 +1,39 @@
+concept_hardware <- sc_node_not_relation;;
+
+concept_hardware => nrel_main_idtf:
+[Аппаратное обеспечение] (*<-lang_ru;;*);
+[Hardware] (*<-lang_en;;*);
+=> nrel_inclusion:
+concept_cpu;
+concept_battery;
+concept_case;
+concept_chipset;
+concept_input;
+concept_output;
+concept_motherboard;
+concept_power_supply_unit;
+concept_rom;
+concept_ram;;
+
+concept_hardware <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Аппаратное обеспечение)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_hardware.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_hardware <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Аппаратное обеспечение)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Аппаратное обеспечение обычно направляется программным обеспечением для выполнения любой команды или инструкции. Комбинация аппаратного и программного обеспечения образует пригодную для использования вычислительную систему.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

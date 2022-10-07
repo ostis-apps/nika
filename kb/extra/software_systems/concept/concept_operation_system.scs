@@ -1,0 +1,28 @@
+concept_operation_system <- sc_node_not_relation;;
+
+concept_operation_system => nrel_main_idtf:
+[Операционная система] (*<-lang_ru;;*);
+[Operation system] (*<-lang_en;;*);;
+
+concept_operation_system <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Операционная система)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_operation_system.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_operation_system <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Операционная система)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[В логической структуре типичной вычислительной системы операционная система занимает положение между устройствами с их микроархитектурой, машинным языком и, возможно, собственными (встроенными) микропрограммами (драйверами) — с одной стороны — и прикладными программами с другой.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

@@ -1,0 +1,25 @@
+motherboard_EU515
+<- concept_motherboard;
+
+=> nrel_main_idtf:
+   [материнская плата EU515]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [EU515 motherboard]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [motherboard EU515]
+   (* <- lang_en;; *);
+
+<= nrel_basis_of_construction: lenovo_legion_y530;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. материнская плата EU515](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Материнская плата EU515 - это материнская плата, являющаяся основой конструкции Lenovo Legion Y530.](*<-lang_ru;;*);;
+	*);;
+*);;

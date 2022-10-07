@@ -1,0 +1,25 @@
+cpu_intel_core_i5_8300H
+<- concept_cpu;
+
+=> nrel_main_idtf:
+   [ЦПУ intel core i5-8300H]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [intel core i5-8300H CPU]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [CPU intel core i5-8300H]
+   (* <- lang_en;; *);
+
+<= nrel_processing: lenovo_legion_y530;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. ЦПУ intel core i5-8300H](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [ЦПУ intel core i5-8300H - это процессор, отвечающий за обработку данных в Lenovo Legion Y530.](*<-lang_ru;;*);;
+	*);;
+*);;

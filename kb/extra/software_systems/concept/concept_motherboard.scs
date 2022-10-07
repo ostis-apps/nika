@@ -1,0 +1,28 @@
+concept_motherboard <- sc_node_not_relation;;
+
+concept_motherboard => nrel_main_idtf:
+[Материнская плата] (*<-lang_ru;;*);
+[motherboard] (*<-lang_en;;*);;
+
+concept_motherboard <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Материнская плата)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_motherboard.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_motherboard <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Материнская плата)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[В отличие от объединительной панели/платы, просто соединяющей между собой разъёмы карт расширения, материнская плата всегда несёт на себе активные компоненты или разъёмы для их установки.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

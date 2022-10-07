@@ -1,0 +1,28 @@
+concept_rom <- sc_node_not_relation;;
+
+concept_rom => nrel_main_idtf:
+[ПЗУ] (*<-lang_ru;;*);
+[Rom] (*<-lang_en;;*);;
+
+concept_rom <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (ПЗУ)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_rom.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_rom <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (ПЗУ)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Постоянные запоминающие устройства стали находить применение в технике задолго до появления ЭВМ и электронных приборов. В частности, одним из первых типов ПЗУ был кулачковый валик, применявшийся в шарманках, музыкальных шкатулках, часах с боем.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

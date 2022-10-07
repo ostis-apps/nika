@@ -1,0 +1,28 @@
+concept_case <- sc_node_not_relation;;
+
+concept_case => nrel_main_idtf:
+[Корпус] (*<-lang_ru;;*);
+[case] (*<-lang_en;;*);;
+
+concept_case <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Корпус)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_case.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_case <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Корпус)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Корпус также является частью системы контроля электромагнитных помех, излучаемых компьютером, и защищает внутренние детали от электростатического разряда.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

@@ -1,0 +1,25 @@
+purpose_lenovo_legion_y530
+<- concept_purpose;
+
+=> nrel_main_idtf:
+   [назначение Lenovo Legion Y530]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Lenovo Legion Y530 purpose]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [purpose Lenovo Legion Y530]
+   (* <- lang_en;; *);
+
+<= nrel_purpose_characteristic: lenovo_legion_y530;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. назначение Lenovo Legion Y530](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Назначение Lenovo Legion Y530 - поддерживать хорошую производительность в играх.](*<-lang_ru;;*);;
+	*);;
+*);;

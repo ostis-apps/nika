@@ -1,0 +1,28 @@
+concept_output <- sc_node_not_relation;;
+
+concept_output => nrel_main_idtf:
+[Выход] (*<-lang_ru;;*);
+[output] (*<-lang_en;;*);;
+
+concept_output <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Выход)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_output.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_output <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Выход)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Устройства ввывода могут преобразовывать информацию в текст, графику, тактильные ощущения, аудио или видео.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
