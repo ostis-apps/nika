@@ -1,5 +1,5 @@
 State_Academic_Bolshoi_Theater_of_Russia
-<- concept_theater;
+<- concept_theater; concept_entertainment_facility; concept_historical_object; concept_cultural_object;	concept_architectural_object;
 
 => nrel_main_idtf:
    [Большой театр(Россия)]
@@ -8,54 +8,246 @@ State_Academic_Bolshoi_Theater_of_Russia
    [Большой]
    (* <- lang_ru;; *);   
    
+=> nrel_cost_of_visit: 
+   [120$]
+   (* <- lang_ru;; *);
+=> nrel_city: Moscow;
+=> nrel_age_limit: 9;
+=> nrel_google_rating: [4,8] (* <- number;; *);
+=> nrel_country: Russia;
+=> nrel_time_of_visit: 
+   [с 11:00 до 20:00;]
+   (* <- lang_ru;; *);
 
-   
-=> nrel_count_of_artificial_satellite: [44468] (* <- number;; *);
-=> nrel_count_of_natural_satellite: [1] (* <- number;; *);
-
-=> nrel_note:
-   [Единственное известное человеку в настоящее время тело во Вселенной, населённое живыми организмами.]
-   (* <- lang_ru;; *);	
 
 <-rrel_key_sc_element:...
 (*
 	<-definition;;
 	=>nrel_main_idtf:
-		[Опр. планета Земля](*<-lang_ru;;*);;
+		[Опр. Большой театр(Россия)](*<-lang_ru;;*);;
 	<=nrel_sc_text_translation:...
 	(*
-		->rrel_example: [планета Земля - третья по удалённости от Солнца планета Солнечной системы.](*<-lang_ru;;*);;
+		->rrel_example: [Большой театр(Россия) - дин из крупнейших в России и один из самых значительных в мире театров оперы и балета.
+       Комплекс зданий театра расположен в центре Москвы, на Театральной площади.](*<-lang_ru;;*);;
 	*);;
 *);;
 
-planet_Jupiter
-<- concept_heavenly_body;
-<- concept_planet;
+Crocus_City_Hall
+<- concept_concert_hall; concept_entertainment_facility; concept_architectural_object;
 
 => nrel_main_idtf:
-   [планета Юпитер]
+   [Крокус Сити Холл]
    (* <- lang_ru;; *);
-=> nrel_idtf:
-   [Юпитер]
-   (* <- lang_ru;; *);   
-=> nrel_main_idtf:
-   [planet Jupiter]
-   (* <- lang_en;; *);
-
-=> nrel_count_of_artificial_satellite: [2] (* <- number;; *);
-=> nrel_count_of_natural_satellite: [80] (* <- number;; *);
-
-=> nrel_note:
-   [Наряду с Сатурном, Юпитер классифицируется как газовый гигант.]
+  
+   
+=> nrel_cost_of_visit: 
+   [120$-500$]
    (* <- lang_ru;; *);
+=> nrel_age_limit: 12;
+=> nrel_city: Krasnogorsk; 
+=> nrel_google_rating: [4,7] (* <- number;; *);
+=> nrel_country: Russia;
+=> nrel_time_of_visit: 
+   [с 11:00 до 20:00]
+   (* <- lang_ru;; *);
+
 
 <-rrel_key_sc_element:...
 (*
 	<-definition;;
 	=>nrel_main_idtf:
-		[Опр. планета Юпитер](*<-lang_ru;;*);;
+		[Опр. Крокус Сити Холл](*<-lang_ru;;*);;
 	<=nrel_sc_text_translation:...
 	(*
-		->rrel_example: [планета Юпитер -  крупнейшая планета Солнечной системы, пятая по удалённости от Солнца.](*<-lang_ru;;*);;
+		->rrel_example: [Крокус Сити Холл — многоуровневый концертный зал, расположенный на территории делового центра «Крокус-Сити» в Красногорске,
+       в непосредственной близости от 67-го км МКАД и рядом со станцией метро «Мякинино».](*<-lang_ru;;*);;
+	*);;
+*);;
+
+TheRajMandir
+<- concept_cinema; concept_entertainment_facility; concept_cultural_object; concept_architectural_object;
+
+=> nrel_main_idtf:
+   [TheRajMandir]
+   (* <- lang_ru;; *);
+  
+   
+=> nrel_cost_of_visit: 
+   [300$]
+   (* <- lang_ru;; *);
+=> nrel_city:  Jaipur; 
+=> nrel_google_rating: [4,5] (* <- number;; *);
+=> nrel_country: India;
+=> nrel_time_of_visit: 
+   [с 12:00 до 23.00]
+   (* <- lang_ru;; *);
+
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. TheRajMandir](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [TheRajMandir —  кинотеатр в Джайпуре, штат Раджастхан, Индия. Расположен на Бхагван Дас Роуд, недалеко от М.И. Дорога, аудитория в форме безе, открылась в 1976 году,
+       и за многие годы она стала свидетелем многих кинопремьер фильмов на хинди и стала популярным символом Джайпура.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+
+Bellagio
+<- concept_casino; concept_entertainment_facility; concept_historical_object; concept_architectural_object;
+
+=> nrel_main_idtf:
+   [Bellagio]
+   (* <- lang_ru;; *);
+  
+   
+=> nrel_cost_of_visit: 
+   [100$-~]
+   (* <- lang_ru;; *);
+=> nrel_age_limit: 18;
+=> nrel_city:  Las_Vegas; 
+=> nrel_google_rating: [4,7] (* <- number;; *);
+=> nrel_country: USA;
+=> nrel_time_of_visit: 
+   [ 24/7]
+   (* <- lang_ru;; *);
+
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Bellagio](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [«Белладжио» — пятизвёздочный отель-казино, расположенный на бульваре Las Vegas Strip, Лас-Вегас, штат Невада, США. Принадлежит компании MGM Resorts International. Главной достопримечательностью является музыкальный фонтан, расположенный перед зданием отеля.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+
+Saint_Basils_Cathedral
+<- concept_church;  concept_religious_object; concept_architectural_object;
+
+=> nrel_main_idtf:
+   [Собор Василия Блаженного]
+   (* <- lang_ru;; *);
+  
+   
+=> nrel_cost_of_visit: 
+   [10$]
+   (* <- lang_ru;; *);
+=> nrel_city:    
+  [Red Square(Moscow)]
+   (* <- lang_ru;; *);
+=> nrel_google_rating: [4,8] (* <- number;; *);
+=> nrel_country:   Russia;
+=> nrel_time_of_visit: 
+   [с 10:00 до 18:00]
+   (* <- lang_ru;; *);
+
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Собор Василия Блаженного](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Собор Василия Блаженного, широко известный как Собор Василия Блаженного, является православным храмом на Красной площади в Москве и является одним из самых популярных культурных символов России.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+
+Budapest_Great_Synagogue
+<- concept_synagogue; concept_religious_object; concept_architectural_object;
+
+=> nrel_main_idtf:
+   [Будапештская_Большая_синагога]
+   (* <- lang_ru;; *);
+  
+   
+=> nrel_cost_of_visit: 
+   [-]
+   (* <- lang_ru;; *);
+=> nrel_city:  Budapest; 
+=> nrel_google_rating: [4,4] (* <- number;; *);
+=> nrel_country: Hungary;
+=> nrel_time_of_visit: 
+   [с 9:00 до 23.00]
+   (* <- lang_ru;; *);
+
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Будапештская Большая синагога](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Будапештская Большая синагога — самая крупная синагога в Европе. Расположена в еврейском квартале Пешта, где и по сей день проживает много евреев.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+
+Yellowstone_National_Park
+<- concept_reserve;  concept_natural_object;
+
+=> nrel_main_idtf:
+   [Yellowstone_National_Park]
+   (* <- lang_ru;; *);
+  
+   
+=> nrel_cost_of_visit: 
+   [-]
+   (* <- lang_ru;; *);
+=> nrel_google_rating: [4,8] (* <- number;; *);
+=> nrel_country: USA;
+=> nrel_time_of_visit: 
+   [24/7]
+   (* <- lang_ru;; *);
+
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Национальный парк Йеллоустон](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Национальный парк Йеллоустон известен своей дикой природой и действующим вулканом. Его площадь составляет около 9000 кв. км. Парк расположен преимущественно на территории штата Вайоминг, частично – штатов Монтана и Айдахо.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+
+Empire_State_Building
+<- concept_building;  concept_historical_object; concept_architectural_object;
+
+=> nrel_main_idtf:
+   [Эмпайр-стейт-билдинг]
+   (* <- lang_ru;; *);
+  
+   
+=> nrel_cost_of_visit: 
+   [18$]
+   (* <- lang_ru;; *);
+=> nrel_city:  New_York; 
+=> nrel_google_rating: [4,7] (* <- number;; *);
+=> nrel_country: USA;
+=> nrel_time_of_visit: 
+   [с 9:00 до 22.00]
+   (* <- lang_ru;; *);
+
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. TheRajMandir](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Эмпайр-стейт-билдинг — 102-этажный небоскрёб, расположенный в Нью-Йорке на острове Манхэттен, на Пятой авеню между Западными 33-й и 34-й улицами. Является офисным зданием. С 1931 по 1970, до открытия Северной башни Всемирного торгового центра, был высочайшим зданием мира.](*<-lang_ru;;*);;
 	*);;
 *);;
