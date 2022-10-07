@@ -1,0 +1,35 @@
+concept_microbe
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [микроб]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [microbe]
+   (* <- lang_en;; *);
+   
+=> nrel_note:
+   [Повсеместная распространённость и суммарная мощность метаболического потенциала микроорганизмов определяют их 
+   важнейшую роль в круговороте веществ и поддержании динамического равновесия в биосфере Земли.
+   ]
+   (* <- lang_ru;; *);
+
+=> nrel_note:
+   [Характерный размер микроорганизмов — менее 0,1 мм. В их классификацию входят как безъядерные (прокариоты: бактерии, археи), так и эукариоты: некоторые грибы, протисты. 
+   ]
+   (* <- lang_ru;; *);
+
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. микроб](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_microbe_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+      <= nrel_using_constants:{
+      concept_microbe
+      };;
+*);;

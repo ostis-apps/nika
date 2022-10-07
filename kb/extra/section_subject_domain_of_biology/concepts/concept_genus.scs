@@ -1,0 +1,30 @@
+concept_genus
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [род]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [genus]
+   (* <- lang_en;; *);
+   
+=> nrel_note:
+   [По установившейся советской традиции в работах по ботанической, микологической, бактериологической и вирусологической систематике этот же ранг (genus) называют порядком.
+   ]
+   (* <- lang_ru;; *);
+
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. род](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_genus_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+      <= nrel_using_constants:{
+      concept_biology;
+      concept_biological_taxonomy
+      };;
+*);;

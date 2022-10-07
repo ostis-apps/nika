@@ -1,0 +1,26 @@
+concept_color
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [цвет]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [color]
+   (* <- lang_en;; *);
+   
+=> nrel_note:
+   [Говоря простым языком, цвет — это ощущение, которое получает человек при попадании ему в глаз световых лучей.
+   ]
+   (* <- lang_ru;; *);
+
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. цвет](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_color_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+*);;

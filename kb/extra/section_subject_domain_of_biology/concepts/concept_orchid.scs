@@ -1,0 +1,37 @@
+concept_orchid
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [орхидея]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [orchid]
+   (* <- lang_en;; *);
+   
+=> nrel_note:
+   [Название «орхидея» произошло от др.-греч. ὄρχις — яичко (человека или другого млекопитающего) из-за формы корневища.
+   ]
+   (* <- lang_ru;; *);
+
+=> nrel_note:
+   [Классификация орхидных основана главным образом на строении их колонки и характера расположения пыльника и рыльца. 
+   Новую систему орхидных разработал американский учёный Р. Л. Дресслер: он разделяет семейство Орхидные на 5 подсемейств, 22 трибы и 70 подтриб.
+   ]
+   (* <- lang_ru;; *);
+
+<= nrel_is: concept_plant;
+
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. орхидея](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_orchid_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+      <= nrel_using_constants:{
+      concept_plant
+      };;
+*);;

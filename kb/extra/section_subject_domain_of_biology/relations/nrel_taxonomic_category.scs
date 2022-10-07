@@ -1,0 +1,47 @@
+nrel_taxonomic_category
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [таксономическая категория* ]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: 
+	concept_domain;
+	concept_regnum;
+	concept_phylum;
+	concept_classis;
+	concept_ordo;
+	concept_familia;
+	concept_genus;
+	concept_species;
+=> nrel_second_domain: 
+	concept_biological_taxonomy;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (таксономическая категория* )]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [таксономическая категория* - бинарное 
+               ориентированное отношение, связывающее 
+               биологическую систематику и категорию.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+	   concept_organism;
+	   concept_regnum
+   	 };;
+*);;

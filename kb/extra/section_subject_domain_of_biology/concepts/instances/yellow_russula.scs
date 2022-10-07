@@ -1,0 +1,28 @@
+yellow_russula
+<- concept_russula;
+<- concept_mushroom;
+<- concept_organism;
+
+=> nrel_main_idtf:
+   [жёлтая сыроежка]
+   (* <- lang_ru;; *);  
+=> nrel_main_idtf:
+   [yellow_russula]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Окраска жёлтая или охристая, реже, особенно в центре, зеленовато-жёлтая. Кожица блестящая, клейкая, снимающаяся на протяжении половины шляпки.]
+   (* <- lang_ru;; *);	
+
+=> nrel_color: yellow;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. жёлтая сыроежка](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Жёлтая сыроежка - вид грибов, включённый в род Сыроежка (Russula) семейства Сыроежковые (Russulaceae). ](*<-lang_ru;;*);;
+	*);;
+*);;

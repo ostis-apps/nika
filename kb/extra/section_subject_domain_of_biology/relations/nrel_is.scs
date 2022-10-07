@@ -1,0 +1,43 @@
+nrel_is
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [является* ]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: 
+	concept_animal;
+	concept_plant;
+	concept_microbe;
+	concept_mushroom;
+=> nrel_second_domain: 
+	concept_organism;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (является* )]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [является* - бинарное 
+               ориентированное отношение, связывающее 
+               организм и царство, к которому он относится.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+	   concept_organism;
+	   concept_regnum
+   	 };;
+*);;

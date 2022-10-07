@@ -1,0 +1,44 @@
+concept_biological_taxonomy
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [биологическая систематика]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [biological taxonomy]
+   (* <- lang_en;; *);
+   
+=> nrel_taxonomic_category:
+   concept_domain;
+   concept_regnum;
+   concept_phylum;
+   concept_classis;
+   concept_ordo;
+   concept_familia;
+   concept_genus;
+   concept_species;
+
+=> nrel_note:
+   [Основные цели систематики:
+    1) наименование (в том числе и описание) таксонов,
+    2) диагностика (определение, то есть нахождение места в системе),
+    3) экстраполяция, то есть предсказание признаков объекта, основывающееся на том, что он относится к тому или иному таксону. 
+    Например, если на основании строения зубов мы отнесли животное к отряду грызунов, то можем предполагать, что у него имеется длинная слепая кишка и стопоходящие конечности, 
+    даже если нам неизвестны эти части тела.
+   ]
+   (* <- lang_ru;; *);
+
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. биологическая систематика](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_biological_taxonomy_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+      // <= nrel_using_constants:{
+      // concept_biology
+      // };;
+*);;

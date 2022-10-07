@@ -1,0 +1,29 @@
+concept_phylum
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [тип]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [phylum]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [В ботанических, микологических и бактериологических классификациях ему соответствует термин отдел (лат. divisio).]
+   (* <- lang_ru;; *);
+
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. тип](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_phylum_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+      <= nrel_using_constants:{
+      concept_biology;
+      concept_biological_taxonomy
+      };;
+*);;

@@ -1,0 +1,32 @@
+concept_science
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [наука]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [science]
+   (* <- lang_en;; *);
+   
+=> nrel_note:
+   [Деятельность осуществляется путём сбора фактов, их регулярного обновления, систематизации и критического анализа. 
+   ]
+   (* <- lang_ru;; *);
+
+-> concept_biology;
+-> concept_botany;
+-> concept_zoology;
+-> concept_microbiology;
+-> concept_mycology;
+
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. наука](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_science_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+*);;

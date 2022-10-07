@@ -1,0 +1,39 @@
+nrel_habitat
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [среда обитания* ]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: 
+	concept_natural_area;
+=> nrel_second_domain: 
+	concept_animal;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (среда обитания* )]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [среда обитания* - бинарное 
+               ориентированное отношение, связывающее 
+               животное и природную зону, в которой оно проживает.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+	   concept_animal
+   	 };;
+*);;

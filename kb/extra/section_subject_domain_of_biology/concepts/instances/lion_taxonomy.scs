@@ -1,0 +1,206 @@
+eukaryote
+<- concept_domain;
+
+=> nrel_main_idtf:
+   [эукариоты]
+   (* <- lang_ru;; *);  
+=> nrel_main_idtf:
+   [eukaryotes]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Эукариотами, в частности, являются животные, грибы и растения.]
+   (* <- lang_ru;; *);	
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. эукариот](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Эукариоты - домен (надцарство) живых организмов, клетки которых содержат ядро.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+
+animals_regnum
+<- concept_regnum;
+
+=> nrel_main_idtf:
+   [царство животных]
+   (* <- lang_ru;; *);  
+=> nrel_main_idtf:
+   [animals_regnum]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Животные относятся к эукариотам.]
+   (* <- lang_ru;; *);	
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. царство животных](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Царство животных - выделяемая категория организмов, в настоящее время рассматриваемая в качестве биологического царства.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+
+chordates
+<- concept_phylum;
+
+=> nrel_main_idtf:
+   [хордовые]
+   (* <- lang_ru;; *);  
+=> nrel_main_idtf:
+   [chordates]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [По степени развития нервной системы тип хордовых занимает высшее место среди всех животных.]
+   (* <- lang_ru;; *);	
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. хордовые](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Хордовые -  тип вторичноротых животных, для которых характерно наличие энтодермального осевого скелета в виде хорды, которая у высших форм заменяется позвоночником.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+
+mammals
+<- concept_classis;
+
+=> nrel_main_idtf:
+   [млекопетающие]
+   (* <- lang_ru;; *);  
+=> nrel_main_idtf:
+   [mammals]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Класс входит в кладу синапсид надкласса четвероногих.]
+   (* <- lang_ru;; *);	
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. млекопетающие](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Млекопетающие -  класс позвоночных животных, основной отличительной особенностью которых является вскармливание детёнышей молоком.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+
+predators
+<- concept_ordo;
+
+=> nrel_main_idtf:
+   [хищники]
+   (* <- lang_ru;; *);  
+=> nrel_main_idtf:
+   [predators]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Традиционное подразделение хищных на две сильно отличающиеся друг от друга по образу жизни группы — сухопутные хищные (Fissipedia) и ластоногие (Pinnipedia).]
+   (* <- lang_ru;; *);	
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. хищники](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Хищники -  отряд плацентарных млекопитающих, состоящий из подотрядов собакообразных (Caniformia) и кошкообразных (Feliformia). ](*<-lang_ru;;*);;
+	*);;
+*);;
+
+
+feline
+<- concept_familia;
+
+=> nrel_main_idtf:
+   [кошачьи]
+   (* <- lang_ru;; *);  
+=> nrel_main_idtf:
+   [feline]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Наиболее специализированные из хищников, приспособленные к добыванию животной пищи путём подкрадывания, подкарауливания, реже — преследования.]
+   (* <- lang_ru;; *);	
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. кошачьи](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Кошачьи -  семейство млекопитающих отряда хищных.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+
+panther
+<- concept_genus;
+
+=> nrel_main_idtf:
+   [пантера]
+   (* <- lang_ru;; *);  
+=> nrel_main_idtf:
+   [panther]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Состоит из пяти ныне живущих общеизвестных видов: ирбис, тигр, лев, леопард и ягуар, а также ряда ископаемых таксонов.]
+   (* <- lang_ru;; *);	
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. пантера](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Пантера -   род крупных животных в семействе кошачьих.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+
+species_lion
+<- concept_species;
+
+=> nrel_main_idtf:
+   [вид лев]
+   (* <- lang_ru;; *);  
+=> nrel_main_idtf:
+   [species_lion]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Наряду с тигром — самая крупная из ныне живущих кошек.]
+   (* <- lang_ru;; *);	
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. вид лев](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Вид лев - вид хищных млекопитающих, один из пяти представителей рода пантер (Panthera), относящегося к подсемейству больших кошек в составе семейства кошачьих.](*<-lang_ru;;*);;
+	*);;
+*);;

@@ -1,0 +1,37 @@
+concept_lion
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [лев]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [lion]
+   (* <- lang_en;; *);
+   
+=> nrel_note:
+   [Наряду с тигром — самая крупная из ныне живущих кошек, масса некоторых самцов может достигать 250 кг. 
+   ]
+   (* <- lang_ru;; *);
+
+=> nrel_note:
+   [Исторический ареал льва был значительно шире современного: ещё в Раннем Средневековье лев встречался на 
+   всей территории Африки, кроме пустынь и тропических лесов, также его можно было увидеть на Ближнем Востоке, Иране и даже в ряде мест южной Европы.
+   ]
+   (* <- lang_ru;; *);
+   
+<= nrel_is: concept_animal;
+
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. лев](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_lion_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+      <= nrel_using_constants:{
+      concept_animal
+      };;
+*);;

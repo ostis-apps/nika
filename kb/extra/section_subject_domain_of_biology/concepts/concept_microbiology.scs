@@ -1,0 +1,37 @@
+concept_microbiology
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [микробиология]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [microbiology]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Разделы микробиологии: бактериология, микология, вирусология, паразитология.]
+   (* <- lang_ru;; *);
+
+=> nrel_note:
+   [ В зависимости от экологических особенностей микроорганизмов, условий их обитания, сложившихся отношений с окружающей средой и 
+   практических потребностей человека, наука о микроорганизмах в своем развитии дифференцировалась на такие специальные дисциплины, 
+   как общая микробиология, медицинская, промышленная (техническая), космическая, геологическая, сельскохозяйственная и ветеринарная микробиология.]
+   (* <- lang_ru;; *);
+
+=> nrel_studies: concept_microbe;
+
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. микробиология](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_microbiology_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+      <= nrel_using_constants:{
+      concept_biology;
+      concept_science
+      };;
+*);;

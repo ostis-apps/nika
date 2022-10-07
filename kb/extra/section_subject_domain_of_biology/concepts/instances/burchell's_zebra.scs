@@ -1,0 +1,32 @@
+burchells_zebra
+<- concept_zebra;
+<- concept_animal;
+<- concept_organism;
+
+=> nrel_main_idtf:
+   [бурчеллова зебра]
+   (* <- lang_ru;; *);  
+=> nrel_main_idtf:
+   [burchells_zebra]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Широко распространена в юго-восточной Африке, от Южной Эфиопии до востока ЮАР и Анголы. ]
+   (* <- lang_ru;; *);	
+
+=> nrel_habitat: tropical_forest;
+=> nrel_life_span: [40 лет];
+=> nrel_eats: grass;
+=> nrel_color: white;
+=> nrel_color: black;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. бурчеллова зебра](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Бурчеллова зебра - млекопитающее рода лошадей отряда непарнокопытных; наиболее обычный и распространённый вид зебр. ](*<-lang_ru;;*);;
+	*);;
+*);;

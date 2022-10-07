@@ -1,0 +1,35 @@
+concept_domain
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [домен]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [domain]
+   (* <- lang_en;; *);
+   
+=> nrel_inclusion:
+   concept_eukaryote;
+
+=> nrel_note:
+   [Термин был предложен в 1990 г. Карлом Вёзе, который разделил все живые организмы на три домена:
+    археи (Archaea);
+    бактерии (Bacteria), или эубактерии (Eubacteria);
+    эукариоты (Eukaryota, или Eukarya).]
+   (* <- lang_ru;; *);
+
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. домен](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_domain_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+      <= nrel_using_constants:{
+      concept_biology;
+      concept_biological_taxonomy
+      };;
+*);;

@@ -1,0 +1,33 @@
+concept_species
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [вид]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [species]
+   (* <- lang_en;; *);
+   
+=> nrel_note:
+   [Научное название вида биномиально, то есть состоит из двух слов: названия рода, к которому принадлежит данный вид, и второго слова, 
+   называемого в ботанике видовым эпитетом, а в зоологии — видовым названием. Первое слово — существительное в единственном числе; 
+   второе — либо прилагательное в именительном падеже, согласованное в роде (мужском, женском или среднем) с родовым названием, 
+   либо существительное в родительном падеже. Первое слово пишется с заглавной буквы, второе — со строчной.
+   ]
+   (* <- lang_ru;; *);
+
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. вид](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_species_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+      <= nrel_using_constants:{
+      concept_biology;
+      concept_biological_taxonomy
+      };;
+*);;
