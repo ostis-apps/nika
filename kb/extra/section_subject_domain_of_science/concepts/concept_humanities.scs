@@ -1,0 +1,47 @@
+concept_humanities
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Гуманитарная наука]
+	(* <- lang_ru;; *);
+	[Humanities]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Гуманитарная наука)]
+		(* <- lang_ru;; *);
+		[Def. (Humanities)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Гуманитарные науки — науки, специализирующиеся на человеке и его жизнедеятельности в обществе.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The humanities - sciences that specialize in man and his life in society.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Гуманитарная наука)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Гуманитарные науки отличаются интересом и вниманием к человеку, его деятельности, и в первую очередь — деятельности духовной.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_scientific_knowledge;;

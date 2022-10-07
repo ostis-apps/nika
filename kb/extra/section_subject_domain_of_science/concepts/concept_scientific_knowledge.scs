@@ -1,0 +1,47 @@
+concept_scientific_knowledge
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Научное знание]
+	(* <- lang_ru;; *);
+	[Scientific knowledge]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Научное знание)]
+		(* <- lang_ru;; *);
+		[Def. (Scientific knowledge)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Научное знание — система знаний о законах природы, общества, мышления.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Scientific knowledge is a system of knowledge about the laws of nature, society, and thinking.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Научное знание)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Научное знание является основой научной картины мира, поскольку описывает законы его развития.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_science;;

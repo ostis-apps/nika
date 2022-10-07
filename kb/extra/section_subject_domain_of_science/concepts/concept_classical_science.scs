@@ -1,0 +1,47 @@
+concept_classical_science
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Классическая наука]
+	(* <- lang_ru;; *);
+	[Classical science]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Классическая наука)]
+		(* <- lang_ru;; *);
+		[Def. (Classical science)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Классическая наука - формирование науки в современном смысле в трудах Галилея, Ньютона, Линнея.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Classical science - the formation of science in the modern sense in the works of Galileo, Newton, Linnaeus.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Классическая наука)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Этапу классической науки характерно стремление к такой системе знаний, которая фиксирует истину в окончательном виде.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_history_of_science;;

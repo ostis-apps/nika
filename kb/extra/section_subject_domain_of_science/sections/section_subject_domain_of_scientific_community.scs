@@ -1,0 +1,52 @@
+section_subject_domain_of_scientific_community
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Научное сообщество]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Scientific community]
+	(* <- lang_en;; *);
+
+<= nrel_section_decomposition: 
+	{
+		section_subject_domain_of_scientists;
+		section_subject_domain_of_scientific_organizations;
+		section_subject_domain_of_scientific_institutes
+	};
+
+<- rrel_key_sc_element:
+	concept_scientists;
+	concept_scientific_organizations;
+	concept_scientific_institutes;
+	subject_domain_of_scientific_community;
+	concept_scientific_community;;
+
+section_subject_domain_of_scientific_community = [*
+subject_domain_of_scientific_community
+
+=> nrel_main_idtf: 
+	[Предметная область Научное сообщество]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Scientific community]
+	(* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+	section_subject_domain_of_scientists;
+	section_subject_domain_of_scientific_organizations;
+	section_subject_domain_of_scientific_institutes;
+
+
+<= nrel_private_subject_domain:
+	section_subject_domain_of_scientific_community;
+
+-> rrel_maximum_studied_object_class:
+	concept_scientific_community;
+
+-> rrel_not_maximum_studied_object_class:
+	concept_scientists;
+	concept_scientific_organizations;
+	concept_scientific_institutes;
+
+
+<- subject_domain;;
+*];;

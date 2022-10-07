@@ -1,0 +1,42 @@
+section_subject_domain_of_scientometrics
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Наукометрия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Scientometrics]
+	(* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+	concept_citation_index;
+	concept_h_index;
+	concept_scientific_journal_quartile;
+	nrel_data;
+	subject_domain_of_scientometrics;
+	concept_scientometrics;;
+
+section_subject_domain_of_scientometrics = [*
+subject_domain_of_scientometrics
+
+=> nrel_main_idtf: 
+	[Предметная область Наукометрия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Scientometrics]
+	(* <- lang_en;; *);
+
+<= nrel_private_subject_domain:
+	section_subject_domain_of_scientometrics;
+
+-> rrel_maximum_studied_object_class:
+	concept_scientometrics;
+
+-> rrel_not_maximum_studied_object_class:
+	concept_citation_index;
+	concept_h_index;
+	concept_scientific_journal_quartile;
+
+-> rrel_explored_relation:
+	nrel_data;
+
+<- subject_domain;;
+*];;

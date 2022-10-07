@@ -1,0 +1,47 @@
+concept_science_studies
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Науковедение]
+	(* <- lang_ru;; *);
+	[Science studies]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Науковедение)]
+		(* <- lang_ru;; *);
+		[Def. (Science studies)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Науковедение — исследовательская отрасль, занимающаяся изучением науки, её структуры, динамики, взаимодействие и связь с различными социальными институтами, материальной и духовной жизнью; междисциплинарная область исследований, рассматривающих науку в широком социальном, историческом и философском контексте.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Science studies - a research branch that studies science, its structure, dynamics, interaction and connection with various social institutions, material and spiritual life; interdisciplinary field of study that views science in a broad social, historical, and philosophical context.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Науковедение)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Науковедение использует различные методы для анализа выработки, представления и получения научных знаний и их эпистемологической и семиотической ролей.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_science;;

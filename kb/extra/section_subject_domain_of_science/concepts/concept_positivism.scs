@@ -1,0 +1,47 @@
+concept_positivism
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Позитивизм]
+	(* <- lang_ru;; *);
+	[Positivism]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Позитивизм)]
+		(* <- lang_ru;; *);
+		[Def. (Positivism)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Позитивизм — философское учение и направление в методологии науки, определяющее единственным источником истинного, действительного знания эмпирические исследования и отрицающее познавательную ценность философского исследования.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Positivism is a philosophical doctrine and a trend in the methodology of science that defines empirical research as the only source of true, real knowledge and denies the cognitive value of philosophical research.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Позитивизм)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Основной тезис позитивизма — «Всё подлинное (позитивное) знание есть совокупный результат специальных наук».]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_philosophy_of_science;;

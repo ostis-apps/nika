@@ -1,0 +1,47 @@
+concept_instrumental_method
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Инструментальный метод]
+	(* <- lang_ru;; *);
+	[Instrumental method]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Инструментальный метод)]
+		(* <- lang_ru;; *);
+		[Def. (Instrumental method)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Инструментальный метод — алгоритм группового и/или индивидуального решения конкретных задач.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The instrumental method - an algorithm for group and/or individual solution of specific problems.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Инструментальный метод)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Примерами инструментального метода являются мозговой штурм и синектика.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_psychology_of_science;;

@@ -1,0 +1,47 @@
+concept_analytical_research
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Аналитические исследования]
+	(* <- lang_ru;; *);
+	[Analytical research]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Аналитические исследования)]
+		(* <- lang_ru;; *);
+		[Def. (Analytical research)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Аналитические исследования — исследования с целью изучить взаимосвязи, обычно гипотетические причинные взаимоотношения.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Analytical studies - studies to explore relationships, usually hypothetical causal relationships.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Аналитические исследования)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Обычно задача аналитического исследования — выявить или измерить влияние факторов риска или же оценить влияние на человека определенных воздействий.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_technical_science;;

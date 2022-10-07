@@ -1,0 +1,47 @@
+concept_prescience
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Преднаука]
+	(* <- lang_ru;; *);
+	[Prescience]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Преднаука)]
+		(* <- lang_ru;; *);
+		[Def. (Prescience)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Преднаука — начальный этап становления научного знания в рамках цивилизаций Древнего Востока.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Prescience - the initial stage of the formation of scientific knowledge within the civilizations of the Ancient East.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Преднаука)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Систематизация знания шла вокруг решения практических задач.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_history_of_science;;

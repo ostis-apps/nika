@@ -1,0 +1,47 @@
+concept_natural_experiment
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Натурный эксперимент]
+	(* <- lang_ru;; *);
+	[Natural experiment]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Натурный эксперимент)]
+		(* <- lang_ru;; *);
+		[Def. (Natural experiment)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Натурный эксперимент — исследовательская методология во многих областях науки, включая этологию, антропологию, лингвистику, социальные науки и психологию, при которой данные собираются в том виде, в каком они встречаются в природе, без каких-либо манипуляций со стороны наблюдателя.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A natural experiment - a research methodology in many fields of science, including ethology, anthropology, linguistics, social sciences, and psychology, in which data are collected as they occur in nature, without any manipulation by the observer.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Натурный эксперимент)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Такие наблюдения вызывают больше доверия, потому что поведение происходит в реальном типичном сценарии, а не в искусственно созданном в лаборатории.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_technical_science;;

@@ -1,0 +1,47 @@
+concept_research_institute
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Научно-исследовательский институт]
+	(* <- lang_ru;; *);
+	[Research institute]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Научно-исследовательский институт)]
+		(* <- lang_ru;; *);
+		[Def. (Research institute)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Научно-исследовательский институт (НИИ) — государственное учреждение, специально созданное для организации научных исследований и проведения опытно-конструкторских разработок.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Research Institute (NII) - a state institution specially created to organize scientific research and conduct experimental design.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Научно-исследовательский институт)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Если исходить только из критерия «коллективно организованного труда специалистов», то исторически первыми прообразами НИИ были Дома знаний древнего Вавилона и Египта.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_scientific_institutes;;

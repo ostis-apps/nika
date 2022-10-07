@@ -1,0 +1,43 @@
+section_subject_domain_of_methodology
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Методология науки]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Methodology]
+	(* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+	concept_scientific_method;
+	concept_theory;
+	concept_hypothesis;
+	concept_observation;
+	concept_experiment;
+	subject_domain_of_methodology;
+	concept_methodology;;
+
+section_subject_domain_of_methodology = [*
+subject_domain_of_methodology
+
+=> nrel_main_idtf: 
+	[Предметная область Методология науки]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Methodology]
+	(* <- lang_en;; *);
+
+<= nrel_private_subject_domain:
+	section_subject_domain_of_methodology;
+
+-> rrel_maximum_studied_object_class:
+	concept_methodology;
+
+-> rrel_not_maximum_studied_object_class:
+	concept_scientific_method;
+	concept_theory;
+	concept_hypothesis;
+	concept_observation;
+	concept_experiment;
+	
+
+<- subject_domain;;
+*];;

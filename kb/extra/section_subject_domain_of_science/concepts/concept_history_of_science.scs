@@ -1,0 +1,47 @@
+concept_history_of_science
+<- sc_node_class;
+=> nrel_main_idtf:
+	[История науки]
+	(* <- lang_ru;; *);
+	[History of science]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (История науки)]
+		(* <- lang_ru;; *);
+		[Def. (History of science)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[История науки — развитие разнообразных наук или история современного научного мировоззрения: картина исторического развития научных учений, фактов и явлений, фиксируемых наукой, методологий, представлений, мировоззрений, процессов и проблем, влияние которых может быть прослежено во времени.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The history of science - the development of various sciences or the history of the modern scientific worldview: a picture of the historical development of scientific doctrines, facts and phenomena fixed by science, methodologies, ideas, worldviews, processes and problems, the influence of which can be traced over time.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (История науки)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Изучение истории современной науки опирается на множество сохранившихся оригинальных или переизданных текстов.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: science_studies;;

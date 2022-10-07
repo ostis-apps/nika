@@ -1,0 +1,47 @@
+nrel_method
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-asymmetric_relation;
+=>nrel_main_idtf:
+	[Метод*]
+	(* <- lang_ru;; *);
+	[Method*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_psychology_of_science;
+=>nrel_second_domain: 
+	concept_instrumental_method;
+	concept_personal_method;
+	
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Метод*)]
+		(* <- lang_ru;; *);
+		[Def.(Method*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Метод* - это отношение, связывающее науку и способ достижения какой-либо цели в ней.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Method* - a relation that connects science and the way to achieve some goal in it.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_psychology_of_science;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

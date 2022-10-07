@@ -1,0 +1,36 @@
+section_subject_domain_of_social_science
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Общественная наука]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Social science]
+	(* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+	concept_society;
+	concept_social_structure;
+	subject_domain_of_social_science;
+	concept_social_science;;
+
+section_subject_domain_of_social_science = [*
+subject_domain_of_social_science
+
+=> nrel_main_idtf: 
+	[Предметная область Общественная наука]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Social science]
+	(* <- lang_en;; *);
+
+<= nrel_private_subject_domain:
+	section_subject_domain_of_social_science;
+
+-> rrel_maximum_studied_object_class:
+	concept_social_science;
+
+-> rrel_not_maximum_studied_object_class:
+	concept_society;
+	concept_social_structure;
+
+<- subject_domain;;
+*];;
