@@ -1,0 +1,18 @@
+benelli_comfort
+
+<- concept_rifle;
+
+=> nrel_main_idtf:
+    [Бенелли Комфорт]
+
+    (* 
+        <- lang_ru;; 
+        *);
+        
+
+<= nrel_compatible_cartridge:
+    concept_shotgun_pellet;
+    concept_buckshot;
+
+<= nrel_weapon_type:
+    concept_smoothbore_weapons;;

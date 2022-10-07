@@ -1,0 +1,46 @@
+nrel_animal_class
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+    [класс животного*]
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_first_domain: 
+    concept_animal;
+
+=> nrel_second_domain:
+    concept_animal;
+
+<- rrel_key_sc_element:
+    ...
+    (*
+        => nrel_main_idtf:
+            [класс животного*]
+
+            (* 
+                <- lang_ru;; 
+            *);;
+        
+        <- definition;;
+        
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [
+                        класс животного
+                    ]
+
+                    (* 
+                        <- lang_ru;; 
+                    *);;
+            *);;
+    *);;
