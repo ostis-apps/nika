@@ -1,0 +1,23 @@
+concept_theater
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Театр]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [theater]
+   (* <- lang_en;; *);
+	
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Театр](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://HTML/concept_theater_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+	
+*);;

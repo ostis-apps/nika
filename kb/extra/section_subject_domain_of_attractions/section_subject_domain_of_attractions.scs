@@ -1,0 +1,93 @@
+section_subject_domain_of_attractions
+=> nrel_main_idtf:
+	  [Раздел. Предметная область достопримечательностей]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of attractions] 
+  (* <- lang_en;; *);
+
+  <= nrel_section_decomposition: 
+	{
+		section_subject_domain_of_entertainment_facility;
+		section_subject_domain_of_historical_object;
+		section_subject_domain_of_natural_object;
+		section_subject_domain_of_cultural_object
+	};
+	
+<- atomic_section;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_attractions = [*
+	subject_domain_of_attractions
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область достопримечательностей]
+   (* <- lang_ru;; *);
+   [Subject domain of attractions]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	=> nrel_private_subject_domain:
+	{
+		subject_domain_of_entertainment_facility;
+		subject_domain_of_historical_object;
+		subject_domain_of_natural_object;
+		subject_domain_of_cultural_object
+		
+	};
+
+
+
+	-> rrel_maximum_studied_object_class:
+   		concept_attraction;
+
+	-> rrel_not_maximum_studied_object_class:
+	concept_entertainment_facility;
+	concept_historical_object;
+	concept_natural_object;
+	concept_military_patriotic_attraction;
+	concept_cultural_object;
+	concept_religious_object;
+	concept_architectural_object;
+	concept_cinema;
+	concept_theater;
+	concept_concert_hall;
+	concept_church;
+	concept_synagogue;
+	concept_karaoke;
+	concept_casino;
+	concept_geyser;
+	concept_reserve;
+	concept_building;
+	concept_fountain;;
+
+	-> rrel_explored_relation:
+	nrel_cost_of_visit;
+	nrel_city;
+	nrel_google_rating;
+	nrel_country;
+	nrel_time_of_visit;;
+*];;
+
+section_subject_domain_of_attractions
+-> rrel_key_sc_element:
+	
+   concept_entertainment_facility;
+	concept_historical_object;
+	concept_natural_object;
+	concept_military_patriotic_attraction;
+	concept_cultural_object;
+	concept_religious_object;
+	concept_architectural_object;
+	concept_cinema;
+	concept_theater;
+	concept_concert_hall;
+	concept_church;
+	concept_synagogue;
+	concept_karaoke;
+	concept_geyser;
+	concept_reserve;
+	concept_building;
+	concept_fountain;
+	concept_casino;;
+
+

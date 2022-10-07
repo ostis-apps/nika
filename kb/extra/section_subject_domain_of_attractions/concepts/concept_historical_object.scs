@@ -1,0 +1,29 @@
+concept_historical_object
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [исторический объект]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [historical object]
+   (* <- lang_en;; *);
+
+=> nrel_inclusion:
+	concept_military_patriotic_attraction;
+	concept_cultural_object;
+	concept_religious_object;
+	concept_architectural_object;
+
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. исторический объект](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://HTML/concept_historical_object_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+	
+*);;

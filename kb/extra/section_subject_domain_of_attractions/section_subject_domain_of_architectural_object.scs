@@ -1,0 +1,41 @@
+section_subject_domain_of_architectural_object
+=> nrel_main_idtf:
+	  [Раздел. Предметная область архитектурных объектов]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of architectural object] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_architectural_object = [*
+	subject_domain_of_architectural_object
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область архитектурных объектов]
+   (* <- lang_ru;; *);
+   [Subject domain of architectural object]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	
+	-> rrel_maximum_studied_object_class:
+   		concept_architectural_object;
+
+	-> rrel_not_maximum_studied_object_class:
+	concept_building;
+	concept_fountain;;
+	
+
+
+*];;
+
+section_subject_domain_of_architectural_object
+-> rrel_key_sc_element:
+	
+
+   
+   concept_architectural_object;
+	concept_building;
+	concept_fountain;;
+
+

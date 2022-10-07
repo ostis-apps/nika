@@ -1,0 +1,27 @@
+concept_entertainment_facility
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Развлекательный объект]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [entertainment facility]
+   (* <- lang_en;; *);
+
+=> nrel_inclusion:
+	concept_karaoke;
+	concept_casino;
+	
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. развлекательный объект](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://HTML/concept_entertainment_facility_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+	
+*);;

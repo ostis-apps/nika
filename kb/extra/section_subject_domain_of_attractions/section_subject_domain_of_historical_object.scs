@@ -1,0 +1,67 @@
+section_subject_domain_of_historical_object
+=> nrel_main_idtf:
+	  [Раздел. Предметная область исторических объектов]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of historical object] 
+  (* <- lang_en;; *);
+
+	<= nrel_section_decomposition: 
+	{
+		section_subject_domain_of_military_patriotic_attraction;
+		section_subject_domain_of_religious_object;
+		section_subject_domain_of_architectural_object
+	};
+
+<- atomic_section;;
+
+
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_historical_object = [*
+	subject_domain_of_historical_object
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область исторических объектов]
+   (* <- lang_ru;; *);
+   [Subject domain of historical object]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	=> nrel_private_subject_domain:
+	{
+		subject_domain_of_military_patriotic_attraction;
+		subject_domain_of_religious_object;
+		subject_domain_of_architectural_object
+		
+	};
+
+
+	-> rrel_maximum_studied_object_class:
+   		concept_historical_object;;
+
+	-> rrel_not_maximum_studied_object_class:
+	concept_military_patriotic_attraction;
+	concept_religious_object;
+	concept_architectural_object;
+	concept_church;
+	concept_synagogue;
+	concept_building;
+	concept_fountain;;
+
+	-> rrel_explored_relation:
+	nrel_year_of_creation;
+	nrel_creator;;
+*];;
+
+section_subject_domain_of_historical_object
+-> rrel_key_sc_element:
+	
+	concept_military_patriotic_attraction;
+	concept_religious_object;
+	concept_architectural_object;
+	concept_church;
+	concept_synagogue;
+	concept_building;
+	concept_fountain;
+	concept_historical_object;;
+

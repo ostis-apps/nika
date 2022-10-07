@@ -1,0 +1,94 @@
+nrel_age_limit
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [возростное ограничение*]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: 
+	concept_entertainment_facility;
+=> nrel_second_domain: 
+	concept_age;
+
+=> nrel_definitional_domain: 
+	{     
+		concept_attraction; 
+		concept_age
+
+	};
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (возростное ограничение*)]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [возростное ограничение* - бинарное 
+               ориентированное отношение, связывающее 
+               достопримечательность и минимальный возрост для прохода.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+   	 	 concept_attraction;
+   	 	 concept_age
+   	 };;
+*);;
+
+nrel_google_rating
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [оценка в Google*]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: 
+	concept_attraction;
+=> nrel_second_domain: 
+	concept_rating;
+
+=> nrel_definitional_domain: 
+	{     
+		concept_attraction; 
+		concept_rating
+
+	};
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (оценка в Google*)]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [оценка в Google* - бинарное 
+               ориентированное отношение, связывающее 
+               достопримечательность и ее оценку.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+   	 	 concept_attraction;
+   	 	 concept_rating
+   	 };;
+*);;

@@ -1,0 +1,42 @@
+section_subject_domain_of_entertainment_facility
+=> nrel_main_idtf:
+	  [Раздел. Предметная область развлекательных объектов]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of entertainment facility] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_entertainment_facility = [*
+	subject_domain_of_entertainment_facility
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область развлекательных объектов]
+   (* <- lang_ru;; *);
+   [Subject domain of entertainment facility]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	
+	-> rrel_maximum_studied_object_class:
+   		concept_attraction;
+
+	-> rrel_not_maximum_studied_object_class:
+	concept_karaoke;
+	concept_casino;;
+	
+	-> rrel_explored_relation:
+	nrel_age_limit;
+
+*];;
+
+section_subject_domain_of_entertainment_facility
+-> rrel_key_sc_element:
+	
+
+   
+   concept_entertainment_facility;
+	concept_karaoke;
+	concept_casino;;
+
+

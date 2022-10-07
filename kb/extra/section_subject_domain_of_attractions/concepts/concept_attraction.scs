@@ -1,0 +1,33 @@
+concept_attraction
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [достопримечательность]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [attraction]
+   (* <- lang_en;; *);
+
+=> nrel_inclusion:
+	concept_entertainment_facility;
+	concept_historical_object;
+	concept_natural_object;
+	
+=> nrel_note:
+   [Достопримечательности делят условно на следующие категории: 
+   военно-патриотические, культурные объекты, развлекательные объекты, религиозные объекты, исторические объекты, архитектурные объекты, природные объекты, общепит.]
+   (* <- lang_ru;; *);
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. достопримечательность](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:
+		 "file://HTML/concept_attraction_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+	
+*);;

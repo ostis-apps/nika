@@ -1,0 +1,27 @@
+concept_architectural_object
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [архитектурный объект]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [architectural object]
+   (* <- lang_en;; *);
+
+=> nrel_inclusion:
+	concept_building;
+	concept_fountain;
+
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. архитектурный объект](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://HTML/concept_architectural_object_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+	
+*);;
