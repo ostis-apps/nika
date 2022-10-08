@@ -1,0 +1,41 @@
+nrel_main_character
+<- sc_node_role_relation;
+<- relation;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:
+    concept_game;
+    concept_board_game;
+
+=> nrel_second_domain:
+    concept_character;
+ 
+=> nrel_definitional_domain:
+    concept_character;
+
+//идентификаторы
+=> nrel_main_idtf:
+ 	[главный герой'] (*<-lang_ru;;*);
+	[main character'] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (главный герой)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        nrel_role;
+        concept_game;
+        concept_board_game;
+        concept_character
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Главный герой- это персонаж, который имеет первостепенную роль в игре.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

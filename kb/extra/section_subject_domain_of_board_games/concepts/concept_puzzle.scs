@@ -1,0 +1,40 @@
+concept_puzzle
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+ 	[головоломка] (*<-lang_ru;;*);
+	[puzzle] (*<-lang_en;;*);
+
+<= nrel_inclusion:
+    concept_board_game;
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (головоломка)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_game;
+        concept_board_game;
+        concept_cleverness
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Головоломка — непростая задача, для решения которой, как правило, требуется сообразительность, а не специальные знания высокого уровня.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(головоломка)] (* <- lang_ru;; *);; 
+	=> nrel_using_constants: {
+		concept_puzzle;
+        concept_board_game
+};; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+		[Некоторые головоломки стимулируют теоретические и практические разработки учёных.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

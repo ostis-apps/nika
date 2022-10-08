@@ -1,0 +1,45 @@
+concept_push
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf: 
+ 	[бросок] (*<-lang_ru;;*);
+	[push] (*<-lang_en;;*);
+    
+<= nrel_inclusion:
+    nrel_action;
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (Бросок)] (* <- lang_ru;; *);;
+      => nrel_using_constants: {
+        concept_person;
+        concept_rules;
+        concept_game;
+        nrel_gamer;
+        nrel_action
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Бросок - это осуществление игроком быстрого, толкающего действия с кубиком, предусмотренным правилами игры.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(Ход, настольная игра, бросок, кубик)] (* <- lang_ru;; *);; 
+      => nrel_using_constants: {
+        concept_board_game;
+        concept_person;
+        concept_move;
+        concept_push;
+        nrel_gamer
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+		[Иногда в настольной игре нужно бросать кубик несколько раз за ход.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

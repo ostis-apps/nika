@@ -1,0 +1,23 @@
+concept_skills
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf: 
+ 	[навыки] (*<-lang_ru;;*);
+	[skills] (*<-lang_en;;*);
+    
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (Навыки)] (* <- lang_ru;; *);;
+      => nrel_using_constants: {
+        concept_person;
+        nrel_action
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Навык — способность деятельности, сформированная путём повторения и доведённая до автоматизма. ] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);;
+
+
