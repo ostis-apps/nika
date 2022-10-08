@@ -1,0 +1,52 @@
+nrel_dialect
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-non_oriented_relation;
+<-antireflexive_relation;
+<-antransitive_relation;
+<-asymmetric_relation;
+=>nrel_main_idtf:
+	[Диалект*]
+	(* <- lang_ru;; *);
+	[Dialect*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_Language;
+=>nrel_second_domain: concept_English;
+=>nrel_definitional_domain: ... (*
+	<= nrel_combination:
+	{
+		concept_Language;
+		concept_English
+	};;
+*);
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Диалект*)]
+		(* <- lang_ru;; *);
+		[Def.(Dialect*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Диалект - это разновидность языка, которая употребляется как средство общения межд людьми, связанными одной территорией.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Brachiation* - a form of locomotion that allows you to move along the branches of trees.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_Hominoidea;
+		concept_movement;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

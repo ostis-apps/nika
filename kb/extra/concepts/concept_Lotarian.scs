@@ -1,0 +1,47 @@
+concept_Russian
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Русский]
+	(* <- lang_ru;; *);
+	[Russian]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Русский)]
+		(* <- lang_ru;; *);
+		[Def. (Russian)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Ру́сский язы́к — язык восточнославянской группы славянской ветви индоевропейской языковой семьи, национальный язык русского народа.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Russian language is the language of the East Slavic group of the Slavic branch of the Indo-European language family, the national language of the Russian people.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Русский)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Русский язык — государственный язык Российской Федерации, один из двух государственных языков Белоруссии, один из официальных языков Казахстана, Киргизии и некоторых других стран, основной язык международного общения в Центральной Евразии, в Восточной Европе, в странах бывшего Советского Союза, один из шести рабочих языков ООН, ЮНЕСКО и других международных организаций.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_Russian;;

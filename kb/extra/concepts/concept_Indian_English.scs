@@ -1,0 +1,47 @@
+concept_Indian_English
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Индийский]
+	(* <- lang_ru;; *);
+	[Indian English]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Индийский)]
+		(* <- lang_ru;; *);
+		[Def. (Indian English)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Индийский английский — это группа диалектов английского языка, на которых говорят в Индии и среди индийской диаспоры.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Indian English is a group of dialects of the English language spoken in India and among the Indian diaspora.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Индийский)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Indian English (IE) is a group of English dialects spoken in India and among the Indian diaspora. English is used by the Indian government for communication, along with Hindi, as enshrined in the Constitution of India]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_Indian_English;;

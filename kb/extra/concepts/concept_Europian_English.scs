@@ -1,0 +1,51 @@
+concept_European_English
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Европейский]
+	(* <- lang_ru;; *);
+	[European English]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Европейский)]
+		(* <- lang_ru;; *);
+		[Def. (European English)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Английский язык, используемый в европейский организациях, таких как Евросоюз и Европейское Космическое Агентство.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[English used in European organizations such as the European Union and the European Space Agency.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Европейский)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Европейский английский может также относится к английскому языку, используемому в
+Ирландии
+Джерси и Гернси
+Мальте
+Британии (включая остров Мэн).]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_European_English;;
