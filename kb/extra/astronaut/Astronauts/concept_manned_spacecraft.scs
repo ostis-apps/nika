@@ -1,0 +1,31 @@
+concept_manned_spacecraft
+=> nrel_main_idtf:
+	[Пилотируемый космический корабль]
+	(* <- lang_ru;; *);
+	[manned_spacecraft]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Пилотируемый космический корабль)]
+		(* <- lang_ru;; *);
+		[Def. (manned_spacecraft)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Пилотируемый космический корабль -  пилотируемый космический аппарат, предназначенный для выполнения полётов людей в космическом пространстве и, в частности, доставки людей в космос и безопасного их возвращения на Землю (или иную планету/спутник/космическую станцию).]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A manned spacecraft is a manned spacecraft designed to carry out flights of people in outer space and, in particular, to deliver people into space and safely return them to Earth (or another planet/satellite/space station).
+]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_spaceship;;

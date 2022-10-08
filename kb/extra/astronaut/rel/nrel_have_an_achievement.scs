@@ -1,0 +1,52 @@
+nrel_have_an_achievement
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-non_oriented_relation;
+<-reflexive_relation;
+<-transitive_relation;
+<-symmetric_relation;
+=>nrel_main_idtf:
+	[Иметь достижение*]
+	(* <- lang_ru;; *);
+	[Have_an_achievement*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_astronaut;
+=>nrel_second_domain: concept_achievement;
+=>nrel_definitional_domain: ... (*
+	<= nrel_combination:
+	{
+		concept_astronaut;
+		concept_achievement
+	};;
+*);
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Иметь достижение*)]
+		(* <- lang_ru;; *);
+		[Def.(Have_an_achievement*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Иметь достижение* - отношение, показывающее достижение астронавта.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Have_an_achievement * - attitude showing the astronaut's achievement.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_astronaut;
+		concept_achievement;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

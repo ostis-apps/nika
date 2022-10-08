@@ -1,0 +1,32 @@
+concept_moon_ship
+-> 7k_lok;
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Лунный корабль]
+	(* <- lang_ru;; *);
+	[moon ship]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Лунный корабль)]
+		(* <- lang_ru;; *);
+		[Def. (moon ship)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Лунный корабль (ЛК) — спускаемый аппарат, космический корабль-часть пилотируемого экспедиционного комплекса Л3, разработанный в КБ Королёва в рамках советской лунно-посадочной программы для высадки на поверхность Луны космонавта.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The lunar ship (LK) is a descent vehicle, a spacecraft part of the manned expeditionary complex L3, developed at the Korolev Design Bureau as part of the Soviet lunar landing program for landing an astronaut on the lunar surface.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_spaceship;;

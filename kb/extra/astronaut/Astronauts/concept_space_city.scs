@@ -1,0 +1,30 @@
+concept_space_city
+-> nordrung_project;
+=> nrel_main_idtf:
+	[Космический город ]
+	(* <- lang_ru;; *);
+	[ space city]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Космический город )]
+		(* <- lang_ru;; *);
+		[Def. (space city)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Космический городь — один из наиболее ранних проектов орбитальных космических поселений, гипотетически осуществимый при условии дальнейшей реализации предполагаемых вариантов освоения космоса.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Space_city - one of the earliest projects of orbital space settlements, hypothetically feasible, subject to the further implementation of the proposed options for space exploration.]
+			(* <- lang_en;; *);;
+		*);;
+<=nrel_inclusion: concept_spaceship_concept;;

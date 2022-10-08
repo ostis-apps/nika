@@ -1,0 +1,31 @@
+concept_astronaut
+-> yuri_gagarin;
+<- sc_node_class;
+=> nrel_main_idtf:
+	[астронавт]
+	(* <- lang_ru;; *);
+	[astronaut]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (астронавт)]
+		(* <- lang_ru;; *);
+		[Def. (astronaut)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Астронавт — человек, проводящий испытания и эксплуатацию космической техники в космическом полёте.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[An astronaut is a person who tests and operates space equipment in space flight.]
+			(* <- lang_en;; *);;
+		*);;
+	*);;

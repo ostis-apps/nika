@@ -1,0 +1,31 @@
+concept_spaceship_concept
+
+=> nrel_main_idtf:
+	[Концепции космических кораблей]
+	(* <- lang_ru;; *);
+	[Spaceship concept]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Концепции космических кораблей)]
+		(* <- lang_ru;; *);
+		[Def. (Spaceship concept)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Концепции космических кораблей - идеи проектирования космических кораблей.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Spaceship concepts - ideas for designing spaceships.]
+			(* <- lang_en;; *);;
+		*);;
+	
+<=nrel_inclusion: concept_concept;;

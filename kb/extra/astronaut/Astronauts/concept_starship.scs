@@ -1,0 +1,32 @@
+concept_starship
+-> project_dedal;
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Звездолёт]
+	(* <- lang_ru;; *);
+	[starship]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Звездолёт)]
+		(* <- lang_ru;; *);
+		[Def. (starship)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Звездолёт — космический аппарат (космический корабль), способный перемещаться между звёздами, не являющимися компонентами одной и той же двойной/кратной звезды, совершая таким образом межзвёздный полёт.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A starship is a spacecraft (spacecraft) capable of moving between stars that are not components of the same double/multiple star, thus making interstellar flight.]
+			(* <- lang_en;; *);;
+		*);;
+	
+<=nrel_inclusion: concept_spaceship_concept;;

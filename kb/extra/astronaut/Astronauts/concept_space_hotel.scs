@@ -1,0 +1,30 @@
+concept_space_hotel
+-> Genesis_1;
+=> nrel_main_idtf:
+	[Космический отель ]
+	(* <- lang_ru;; *);
+	[space hotel]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Космический отель )]
+		(* <- lang_ru;; *);
+		[Def. (space hotel)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Космический отель — орбитальная станция, предназначенная для проживания космических туристов и обслуживающего персонала индустрии космического туризма.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A space hotel is an orbital station designed to accommodate space tourists and space tourism industry staff.]
+			(* <- lang_en;; *);;
+		*);;
+<=nrel_inclusion: concept_spaceship_concept;;

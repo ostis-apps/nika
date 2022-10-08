@@ -1,0 +1,44 @@
+section_subject_domain_of_concept
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Концепт]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Concept]
+	(* <- lang_en;; *);
+	
+<= nrel_section_decomposition: 
+	{
+		section_subject_domain_of_spaceship_concept
+	};
+
+<- rrel_key_sc_element:
+	concept_spaceship_concept;
+	concept_spaceship_projects;
+	subject_domain_of_concept;
+	concept_concept;;
+
+section_subject_domain_of_concept = [*
+subject_domain_of_concept
+
+=> nrel_main_idtf: 
+	[Предметная область Концепт]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Concept]
+	(* <- lang_en;; *);
+		
+=> nrel_private_subject_domain:
+	section_subject_domain_of_concept_spaceship_concept;
+<= nrel_private_subject_domain:
+	section_subject_domain_of_concept;
+		
+-> rrel_maximum_studied_object_class:
+	concept_concept;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_spaceship_concept;
+	
+
+	
+<- subject_domain;;
+*];;

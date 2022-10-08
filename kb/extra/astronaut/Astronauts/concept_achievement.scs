@@ -1,0 +1,31 @@
+concept_achievement
+-> first_flight_to_space;
+<- sc_node_class;
+=> nrel_main_idtf:
+	[достижение]
+	(* <- lang_ru;; *);
+	[achievement]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (достижение)]
+		(* <- lang_ru;; *);
+		[Def. (achievement)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Достижение — попадание в определённое место, переход к определённому статусу, возрасту или качеству, воплощение определённого плана.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Achievement - getting to a certain place, the transition to a certain status, age or quality, the embodiment of a certain plan.]
+			(* <- lang_en;; *);;
+		*);;
+	*);;

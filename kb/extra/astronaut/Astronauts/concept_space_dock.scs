@@ -1,0 +1,30 @@
+concept_space_dock
+-> spacedock_earth;
+=> nrel_main_idtf:
+	[Космический док ]
+	(* <- lang_ru;; *);
+	[ space dock]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Космический док )]
+		(* <- lang_ru;; *);
+		[Def. (space dock)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Космический док — предлагаемая в научно-фантастических произведениях, а также в концептуальных проектах космических агентств конструкция, похожая на «сухой док» для космических аппаратов, располагающаяся на низкой околопланетной орбите. Постройка такой конструкции с использованием современных технологий является возможной.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A spacedock is a design proposed in science fiction works, as well as in the concept projects of space agencies, similar to a "dry dock" for spacecraft, located in low circumplanetary orbit. The construction of such a structure using modern technologies is possible.]
+			(* <- lang_en;; *);;
+		*);;
+<=nrel_inclusion: concept_spaceship_concept;;

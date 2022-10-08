@@ -1,0 +1,32 @@
+concept_spacecraft_projects
+
+=> nrel_main_idtf:
+	[Проекты космических кораблей]
+	(* <- lang_ru;; *);
+	[spacecraft projects]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Проекты космических кораблей)]
+		(* <- lang_ru;; *);
+		[Def. (spacecraft projects)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Проекты космических кораблей - проекты для проетирования космических
+			кораблей.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Spacecraft projects - projects for the design of space ships.]
+			(* <- lang_en;; *);;
+		*);;
+	
+<=nrel_inclusion: concept_concept;;

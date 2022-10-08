@@ -1,0 +1,29 @@
+concept_spaceship
+
+=> nrel_main_idtf:
+	[Космический корабль]
+	(* <- lang_ru;; *);
+	[spaceship]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Космический корабль)]
+		(* <- lang_ru;; *);
+		[Def. (spaceship)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Космический корабль - пилотируемый космический аппарат, предназначенный для выполнения полётов людей в космическом пространстве и, в частности, доставки людей в космос и безопасного их возвращения на Землю (или иную планету/спутник/космическую станцию).]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A spacecraft is a manned spacecraft designed to carry out flights of people in outer space and, in particular, to deliver people into space and safely return them to Earth (or another planet/satellite/space station).]
+			(* <- lang_en;; *);;
+		*);;

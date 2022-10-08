@@ -1,0 +1,32 @@
+concept_heavy_interplanetary_ship
+-> feoktistovs_project;
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Тяжёлый межпланетный корабль]
+	(* <- lang_ru;; *);
+	[Heavy interplanetary ship]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Тяжёлый межпланетный корабль)]
+		(* <- lang_ru;; *);
+		[Def. (Heavy interplanetary ship)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Тяжёлый межпланетный корабль — разрабатывавшийся в начале 1960-х годов в Советском Союзе космический корабль, предназначавшийся для многолетних космических экспедиций и высадок космонавтов на ближайшие планеты Солнечной системы (Марс и в обозримом будущем Венера).]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A heavy interplanetary ship is a spacecraft developed in the early 1960s in the Soviet Union, intended for long-term space expeditions and astronaut landings on the nearest planets of the solar system (Mars and Venus in the foreseeable future).]
+			(* <- lang_en;; *);;
+		*);;
+	
+<=nrel_inclusion: concept_spacecraft_projects;;

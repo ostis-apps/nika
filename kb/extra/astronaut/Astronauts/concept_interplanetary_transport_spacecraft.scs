@@ -1,0 +1,33 @@
+concept_interplanetary_transport_spacecraft
+-> Falcon_9;
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Межпланетный транспортный космический корабль ]
+	(* <- lang_ru;; *);
+	[Interplanetary transport spacecraft
+]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Межпланетный транспортный космический корабль )]
+		(* <- lang_ru;; *);
+		[Def. (Interplanetary transport spacecraft)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Межпланетный транспортный космический корабль (англ. Interplanetary Transport Space Ship, МТКК) — проект многоразового транспортного космического корабля, разрабатываемого американской компанией SpaceX в рамках программы МТС ITS для осуществления транспортировки людей и грузов.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The Interplanetary Transport Space Ship (MTKK) is a project of a reusable transport spacecraft developed by the American company SpaceX as part of the MTS ITS program for transporting people and cargo.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_spaceship;;

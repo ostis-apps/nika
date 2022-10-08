@@ -1,0 +1,52 @@
+nrel_went_into_space
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-non_oriented_relation;
+<-reflexive_relation;
+<-transitive_relation;
+<-symmetric_relation;
+=>nrel_main_idtf:
+	[Отправился в космос на*]
+	(* <- lang_ru;; *);
+	[went into space*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_astronaut;
+=>nrel_second_domain: concept_spaceship;
+=>nrel_definitional_domain: ... (*
+	<= nrel_combination:
+	{
+		concept_astronaut;
+		concept_spaceship
+	};;
+*);
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Отправился в космос на*)]
+		(* <- lang_ru;; *);
+		[Def.(went into space*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Отправился в космос на* - отношение, показывающее на каком космическом корабле отправился астронавт в космос.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[went into space* - relation showing which spaceship the astronaut went into space.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_astronaut;
+		concept_spaceship;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;
