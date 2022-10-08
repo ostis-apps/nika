@@ -1,0 +1,30 @@
+concept_mass_media <- sc_node_not_relation;;
+
+concept_mass_media => nrel_main_idtf:
+[средства массовой информации] (*<-lang_ru;;*);
+[mass media] (*<-lang_en;;*);;
+
+concept_mass_media <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (средства массовой информации)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[совокупность органов публичной передачи информации с помощью технических средств](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_mass_media <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (средства массовой информации)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Считается, что средства массовой информации формируют медиакультуру, оказывая поведенческое и интеллектуальное влияние на культуру отдельно взятых людей.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

@@ -1,0 +1,72 @@
+nrel_interview <- sc_node_norole_relation;;
+
+nrel_interview => nrel_main_idtf:
+[интервью] (*<-lang_ru;;*);
+[interview] (*<-lang_en;;*);;
+
+nrel_interview <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (интервью)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[разновидность разговора, беседы между двумя и более людьми, при которой интервьюер задаёт вопросы (не менее трех) своим собеседникам и получает от них ответы.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_interview <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (интервью)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Интервью обычно проходят лицом к лицу и лично, но вместо этого стороны могут быть разделены географически, как при видеоконференцсвязи или телефонных интервью.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_interview
+=> nrel_first_domain: concept_interviewer;
+=> nrel_second_domain: concept_interlocutor;
+
+=> nrel_definitional_domain: ...
+(*
+	<= nrel_combination:
+	{
+		concept_interviewer;
+		concept_interlocutor
+	};;
+*);;
+
+arity -> ...
+(*
+	-> nrel_interview;;
+	=> nrel_measurement: 2;;
+*);;
+
+relation => nrel_inclusion: oriented_relation
+(*
+	-> nrel_interview;;
+*);;
+
+relation => nrel_inclusion: binary_relation
+(*
+	 => nrel_inclusion: symmetric_relation
+	(*
+		-|> nrel_interview;;
+	*);;
+
+	 => nrel_inclusion: transitive_relation
+	(*
+		-|> nrel_interview;;
+	*);;
+
+	 => nrel_inclusion: reflexive_relation
+	(*
+		-|> nrel_interview;;
+	*);;
+
+*);;

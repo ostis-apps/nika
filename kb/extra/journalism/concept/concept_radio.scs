@@ -1,0 +1,30 @@
+concept_radio <- sc_node_not_relation;;
+
+concept_radio => nrel_main_idtf:
+[радио] (*<-lang_ru;;*);
+[radio] (*<-lang_en;;*);;
+
+concept_radio <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (радио)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[передача звуковых сообщений при помощи радио неограниченному числу слушателей.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_radio <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (радио)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Характеризуется передачей сигнала по принципу «от одного — ко многим», то есть более чем одному слушателю, как правило — по заранее известному расписанию.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

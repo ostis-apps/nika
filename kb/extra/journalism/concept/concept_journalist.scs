@@ -1,0 +1,30 @@
+concept_journalist <- sc_node_not_relation;;
+
+concept_journalist => nrel_main_idtf:
+[журналист] (*<-lang_ru;;*);
+[journalist] (*<-lang_en;;*);;
+
+concept_journalist <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (журналист)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[литературный работник<b><sc_element sys_idtf="1</b>,">который занимается сбором, созданием, редактированием, подготовкой и оформлением информации для редакции.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_journalist <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (журналист)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Работая журналистом, нужно продумывать массу деталей: выбирать надежные источники информации и договариваться о встречах, общаться с самыми разными людьми и находить к каждому из них индивидуальный подход.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

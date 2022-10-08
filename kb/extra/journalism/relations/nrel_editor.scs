@@ -1,0 +1,72 @@
+nrel_editor <- sc_node_norole_relation;;
+
+nrel_editor => nrel_main_idtf:
+[редактор] (*<-lang_ru;;*);
+[editor] (*<-lang_en;;*);;
+
+nrel_editor <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (редактор)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[тот, кто работает с текстом, а именно составляет, проверяет и исправляет содержание в соответствии с требованиями определённого жанра, готовит к печати издание, также выступает в роли управляющего.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_editor <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (редактор)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[В числе должностных обязанностей этого специалиста — распределение авторских заданий и контроль за их своевременным и качественным исполнением за определённый срок.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_editor
+=> nrel_first_domain: concept_media_corporation;
+=> nrel_second_domain: concept_human;
+
+=> nrel_definitional_domain: ...
+(*
+	<= nrel_combination:
+	{
+		concept_media_corporation;
+		concept_human
+	};;
+*);;
+
+arity -> ...
+(*
+	-> nrel_editor;;
+	=> nrel_measurement: 2;;
+*);;
+
+relation => nrel_inclusion: oriented_relation
+(*
+	-> nrel_editor;;
+*);;
+
+relation => nrel_inclusion: binary_relation
+(*
+	 => nrel_inclusion: symmetric_relation
+	(*
+		-|> nrel_editor;;
+	*);;
+
+	 => nrel_inclusion: transitive_relation
+	(*
+		-|> nrel_editor;;
+	*);;
+
+	 => nrel_inclusion: reflexive_relation
+	(*
+		-|> nrel_editor;;
+	*);;
+
+*);;

@@ -1,0 +1,30 @@
+concept_reporter <- sc_node_not_relation;;
+
+concept_reporter => nrel_main_idtf:
+[репортёр] (*<-lang_ru;;*);
+[reporter] (*<-lang_en;;*);;
+
+concept_reporter <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (репортёр)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[сотрудник СМИ, посланный на место событий и сообщающий в редакцию информацию — репортаж](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_reporter <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (репортёр)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[В печатных изданиях пишут текстовые сообщения, в аудиовизуальных СМИ работают в кадре или эфире, в интернет-изданиях создают мультимедийный контент.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
