@@ -1,0 +1,47 @@
+concept_Russian_east
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Западный Русский]
+	(* <- lang_ru;; *);
+	[West Russian]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Западный Русский)]
+		(* <- lang_ru;; *);
+		[Def. (West Russian)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Западнору́сский язы́к — восточнославянский язык, имевший распространение в Западной Руси и Молдавском княжестве.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[West Russian language - East Slavic language, which was widespread in Western Russia and the Moldavian principality.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Западный Русский)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Западнорусский письменный язык — один из официальных[9][10][11] письменно-литературных языков Великого княжества Литовского с XIV века по 1696 год[12][13][14], а также восточнославянских воеводств Королевства Польского (после 1569 г.) и Молдавского княжества, как язык делопроизводства и литературы.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+<=nrel_inclusion: concept_Russian_west;;

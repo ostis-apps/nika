@@ -1,0 +1,47 @@
+concept_American_English
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Американский]
+	(* <- lang_ru;; *);
+	[American English]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Американский)]
+		(* <- lang_ru;; *);
+		[Def. (American English)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Америка́нский вариа́нт англи́йского языка́ — языковой вариант английского языка, сложившийся на территории США.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[American English is a language variant of the English language that has developed in the United States.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Американский)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Американцы стремятся упрощать язык, убирать непроизносимые гласные.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_American_English;;

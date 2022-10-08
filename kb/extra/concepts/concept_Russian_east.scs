@@ -1,0 +1,47 @@
+concept_Russian_east
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Восточный Русский]
+	(* <- lang_ru;; *);
+	[East Russian]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Восточный Русский)]
+		(* <- lang_ru;; *);
+		[Def. (East Russian)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Восточнославя́нские языки́ — группа в составе славянской ветви индоевропейской языковой семьи. Распространены в Восточной Европе и в северной части Азии.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The East Slavic languages ​​are a group within the Slavic branch of the Indo-European language family. Distributed in Eastern Europe and northern Asia.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Восточный Русский)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[К современным восточнославянским языкам относятся белорусский, русский и украинский, также выделяют русинский язык, статус которого в качестве самостоятельного языка является предметом научной дискуссии.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+<=nrel_inclusion: concept_Russian_east;;

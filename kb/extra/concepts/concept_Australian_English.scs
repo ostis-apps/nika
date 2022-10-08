@@ -1,0 +1,51 @@
+concept_Australian_English
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Австрали́йский]
+	(* <- lang_ru;; *);
+	[Australian English]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Австрали́йский)]
+		(* <- lang_ru;; *);
+		[Def. (Australian English)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Австрали́йский вариа́нт англи́йского языка́ (англ. Australian English) — один из основных вариантов английского языка, преимущественно используемый в Австралии. Хотя английский язык не имеет официального статуса в Конституции Австралии, австралийский английский де-факто является официальным языком Австралии и родным языком большинства населения.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Australian English is one of the main variants of the English language, mainly used in Australia. Although English has no official status in the Australian Constitution, Australian English is the de facto official language of Australia and the mother tongue of the majority of the population..]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Австрали́йский)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Европейский английский может также относится к английскому языку, используемому в
+Ирландии
+Джерси и Гернси
+Мальте
+Британии (включая остров Мэн).]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_Australian_English;;

@@ -1,0 +1,36 @@
+section_subject_domain_of_Russian
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Русского]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Russian]
+	(* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+		concept_Russian_east;
+		concept_Russian_west;
+		subject_domain_of_Russian;
+		concept_Russian;;
+
+section_subject_domain_of_Russian = [*
+subject_domain_of_Russian
+
+=> nrel_main_idtf: 
+	[Предметная область Русского]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Russian]
+	(* <- lang_en;; *);
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_Russian;
+		
+-> rrel_maximum_studied_object_class:
+	concept_Russian;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_Russian_east;
+	concept_Russian_west;
+	
+<- subject_domain;;
+*];;

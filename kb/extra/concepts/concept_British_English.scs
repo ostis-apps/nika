@@ -1,0 +1,47 @@
+concept_British_English
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Британский]
+	(* <- lang_ru;; *);
+	[British English]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Британский)]
+		(* <- lang_ru;; *);
+		[Def. (British English)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Британский вариант английского языка (BrE, BE, en-GB) — понятие, включающее в себя широкий спектр акцентов и диалектов английского языка, используемых в Соединенном королевстве и отличающихся от других региональных вариантов произношения.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[British English (BrE, BE, en-GB) is a concept that includes a wide range of accents and dialects of the English language used in the United Kingdom and differs from other regional pronunciations.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Британский)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Главный признак англичанина – это произношение, акцент. Одна из характерных черт заключается в произнесении буквы t в середине слова как звука [т].]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_British_English;;

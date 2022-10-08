@@ -1,0 +1,47 @@
+concept_English
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Английский]
+	(* <- lang_ru;; *);
+	[English]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Английский)]
+		(* <- lang_ru;; *);
+		[Def. (English)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Англи́йский язык — язык англо-фризской подгруппы западной группы германской ветви индоевропейской языковой семьи.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[English is the language of the Anglo-Frisian subgroup of the western group of the Germanic branch of the Indo-European language family.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Английский)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Английский язык — важнейший международный язык, что является следствием колониальной политики Британской империи в XIX и первой половине XX века, а также мирового влияния Соединённых Штатов Америки.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_English;;
