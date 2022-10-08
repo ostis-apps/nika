@@ -1,0 +1,34 @@
+  concept_rails
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [рельсы] (*<-lang_ru;;*);
+    [rails] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (вертолёт)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_train;
+        concept_railway_carrige;
+        concept_transport
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Рельсы - стальные балки специального сечения, укладываемые на шпалах или других опорах для образования пути, по которому перемещается подвижной состав железнодорожного транспорта.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(рельсы)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Рельсы для железнодорожного транспорта изготавливаются из углеродистой стали. Качество рельсовой стали определяется её химическим составом, микроструктурой и макроструктурой.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

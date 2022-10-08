@@ -1,0 +1,32 @@
+concept_engine
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [двигатель] (*<-lang_ru;;*);
+    [engine] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (двигатель)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        nrel_detail
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Двигатель - устройство, преобразующее какой-либо вид энергии в механическую работу.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(двигатель)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+[Двигатели подразделяют на первичные и вторичные. К первичным относят непосредственно преобразующие природные энергетические ресурсы в механическую работу, а ко вторичным — преобразующие энергию, выработанную или накопленную другими источниками.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

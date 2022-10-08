@@ -1,0 +1,63 @@
+section_subject_domain_of_railway_transport
+=> nrel_main_idtf:
+	  [Раздел. Предметная область железнодорожного транспорта]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of railway transport] 
+  (* <- lang_en;; *);;
+
+section_subject_domain_of_railway_transport = [*
+	subject_domain_of_railway_transport
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область железнодорожного транспорта]
+   (* <- lang_ru;; *);
+   [Subject domain of railway transport]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_train;
+	-> rrel_not_maximum_studied_object_class:
+      concept_engine;
+      concept_factory;
+      concept_person;
+      concept_petrol;
+      concept_rails;
+      concept_railway_carrige;
+      concept_railway_station;
+      concept_train;
+	-> rrel_explored_relation:
+      nrel_constructor;
+      nrel_detail;
+      nrel_inventor;
+      nrel_kind_of_transport;
+      nrel_manufacturer;
+      nrel_move_through;
+      nrel_passenger_pick_up_point;
+      nrel_passenger;
+      nrel_fuel;
+      nrel_brand;;
+
+*];;
+
+
+section_subject_domain_of_transport
+-> rrel_key_sc_element:
+    subject_domain_of_railway_transport;
+      concept_engine;
+      concept_factory;
+      concept_person;
+      concept_petrol;
+      concept_rails;
+      concept_railway_carrige;
+      concept_railway_station;
+      concept_train;
+      nrel_constructor;
+      nrel_detail;
+      nrel_inventor;
+      nrel_kind_of_transport;
+      nrel_manufacturer;
+      nrel_move_through;
+      nrel_passenger_pick_up_point;
+      nrel_passenger;
+      nrel_fuel;
+      nrel_brand;;
