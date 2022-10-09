@@ -1,0 +1,26 @@
+candy_sizzle_instance
+=> nrel_main_idtf:
+    [Экземпляр текстовго сообщения для конфеты шипучка]
+    (* <- lang_ru;; *);
+<= nrel_candy_instance: nika;
+-> rrel_1: candy_sizzle_instance_1;;
+
+candy_sizzle_instance_1
+<- concept_candy_sizzle;
+<- concept_wit_entity;
+=> nrel_main_idtf:
+    [Информация про конфету шипучка]
+    (* <- lang_ru;; *);
+=> nrel_idtf:
+    [Информация про конфету шипучка]
+    (* <- lang_ru;; *);
+=> nrel_candy_consistency:
+    [твёрдая]
+    (* <- lang_ru;; *);
+=> nrel_candy_filling:
+   [присутствует]
+    (* <- lang_ru;; *);
+=> nrel_candy_taste:
+    [кислая]
+    (* <- lang_ru;; *);;
+
