@@ -1,0 +1,24 @@
+concept_flute
+<= nrel_inclusion: concept_flute_family;
+=> nrel_main_idtf: [flute] (* <- lang_en;; *);
+=> nrel_main_idtf: [флейта] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Флейта)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [лабиальный духовой музыкальный инструмент, в котором первичным источником колебаний является воздушная струя, рассекающаяся о край стенки инструмента, называемого лабиум] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Flute)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [a labial wind musical instrument in which the primary source of vibration is an air jet that cuts against the edge of the wall of the instrument, called the labium] (* <- lang_en;; *);;
+	*);;
+*);;

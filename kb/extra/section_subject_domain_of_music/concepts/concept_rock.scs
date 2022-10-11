@@ -1,0 +1,31 @@
+concept_rock
+<- concept_music_genre;
+<- sc_node_class;
+=> nrel_main_idtf:
+	[рок]
+	(* <- lang_ru;; *);
+	[rock]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (рок)]
+		(* <- lang_ru;; *);
+		[Def. (rock)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Рок - широкий жанр популярной музыки, изначально называвшийся "рок-н-ролл" и появившийся в США в поздних 40х и ранних 50х.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Rock - is a broad genre of popular music that originated as "rock and roll" in the United States in the late 1940s and early 1950s, developing into a range of different styles in the mid-1960s and later, particularly in the United States and United Kingdom.]
+			(* <- lang_en;; *);;
+		*);;
+	*);;

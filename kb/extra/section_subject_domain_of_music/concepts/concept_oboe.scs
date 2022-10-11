@@ -1,0 +1,24 @@
+concept_oboe
+<= nrel_inclusion: concept_reed_family;
+=> nrel_main_idtf: [oboe] (* <- lang_en;; *);
+=> nrel_main_idtf: [гобой] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Гобой)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [язычковый деревянный духовой музыкальный инструмент сопранового регистра, представляющий собой трубку конической формы с системой клапанов и двойной тростью (язычком).] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Oboe)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [reed woodwind musical instrument of the soprano register, which is a conical tube with a valve system and a double reed (tongue).] (* <- lang_en;; *);;
+	*);;
+*);;

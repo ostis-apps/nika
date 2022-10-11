@@ -1,0 +1,24 @@
+concept_timpani
+<= nrel_inclusion: concept_percussion_musical_instruments;
+=> nrel_main_idtf: [timpani] (* <- lang_en;; *);
+=> nrel_main_idtf: [литавры] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Литавры)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [представляют собой систему от двух до семи металлических котлообразных чаш, открытая сторона которых затянута кожей или пластиком, а нижняя часть может иметь отверстие.] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Timpani)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [are a system of two to seven metal cauldron-shaped bowls, the open side of which is covered with leather or plastic, and the lower part may have a hole.] (* <- lang_en;; *);;
+	*);;
+*);;

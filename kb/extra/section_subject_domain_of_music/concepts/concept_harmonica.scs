@@ -1,0 +1,24 @@
+concept_harmonica
+<= nrel_inclusion: concept_wind_musical_instruments;
+=> nrel_main_idtf: [harmonica] (* <- lang_en;; *);
+=> nrel_main_idtf: [губная гармоника] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Гармоника)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [музыкальный инструмент семейства гармоник. Представляет собой небольшой брусок со множеством отверстий сбоку. Выбор извлекаемых звуков осуществляется положением губ и языка на отверстиях, а также направлением движения воздуха на вдох или выдох.] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Harmonica)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [a musical instrument of the harmonica family. It is a small bar with many holes on the side. The choice of extracted sounds is carried out by the position of the lips and tongue on the holes, as well as the direction of air movement to inhale or exhale.] (* <- lang_en;; *);;
+	*);;
+*);;

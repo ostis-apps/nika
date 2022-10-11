@@ -1,0 +1,27 @@
+concept_bowed_musical_instuments
+<= nrel_inclusion: concept_string_musical_instuments;
+=> nrel_main_idtf: [Bowed musical instruments] (* <- lang_en;; *);
+=> nrel_main_idtf: [Смычковые музыкальные инструменты] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Смычковые музыкальные инструменты)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [группа музыкальных инструментов со звукоизвлечением, осуществляемым обычно в процессе ведения смычка по натянутым струнам.] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Bowed musical instruments)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [a group of musical instruments with sound extraction, usually carried out in the process of conducting a bow along stretched strings.] (* <- lang_en;; *);;
+	*);;
+*);
+
+<- sc_node_not_relation;;
