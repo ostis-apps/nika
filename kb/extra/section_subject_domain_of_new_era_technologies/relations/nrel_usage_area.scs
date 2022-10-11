@@ -1,0 +1,45 @@
+nrel_usage_area
+
+<-sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=>nrel_main_idtf:
+    [сфера применения*]
+    (* <- lang_ru;; *);
+    [usage area*]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [аспект жизни, в котором необходимо применение той или иной технологии]
+    (* <-lang_ru;;*);
+
+<- rrel_key_sc_element:
+    ...
+    (*
+        => nrel_main_idtf:
+            [тип охотничьего  снаряжения*]
+
+            (* 
+                <- lang_ru;; 
+            *);;
+
+        <- definition;;
+
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [
+                        тип охотничьего  снаряжения*
+                    ]
+
+                    (* 
+                        <- lang_ru;; 
+                    *);;
+            *);;
+    *);;

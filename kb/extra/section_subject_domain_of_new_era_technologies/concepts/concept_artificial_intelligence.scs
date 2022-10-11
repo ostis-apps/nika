@@ -1,0 +1,49 @@
+concept_artificial_intelligence
+<- sc_node_class;
+=> nrel_main_idtf:
+	[искусственный интеллект]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+    concept_expert_system
+    (* => nrel_main_idtf:
+            [экспертная система]
+            (* <- lang_ru;; *);;
+    *);
+
+    concept_decision_making_system
+    (* => nrel_idtf:
+        [система принятия решений]
+        (* <- lang_ru;; *);;
+
+    *);
+
+    concept_natural_language_interface
+    (* => nrel_main_idtf:
+            [естественно-языковой интерфейс]
+            (* <- lang_ru;; *);;
+    *);
+
+	concept_machine_learning
+    (* => nrel_idtf:
+        [машинное обучение]
+        (* <- lang_ru;; *);;
+    *);
+
+	concept_robotics
+    (* => nrel_idtf:
+        [робототехника]
+        (* <- lang_ru;; *);;
+    *);
+
+	concept_data_science
+    (* => nrel_idtf:
+        [наука о данных]
+        (* <- lang_ru;; *);;
+    *);
+
+	concept_computer_vision
+    (* => nrel_idtf:
+        [компьютерное зрение]
+        (* <- lang_ru;; *);;
+    *);;
