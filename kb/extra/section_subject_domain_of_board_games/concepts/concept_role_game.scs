@@ -1,0 +1,20 @@
+concept_role_game
+=> nrel_main_idtf:
+    [Ролевая игра](* <-lang_ru;; *);
+    [Role game](* <-lang_en;; *);;
+
+concept_role_game
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Ролевая игра)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Role game)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Ролевая игра представляет собой моделирование событий, происходящих в определённом мире в определённое время.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Role-playing game - a simulation of events taking place in a certain world at a certain time.](*<- lang_en;;*);;
+    *);;
+*);;

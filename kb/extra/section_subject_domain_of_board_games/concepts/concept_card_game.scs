@@ -1,0 +1,25 @@
+concept_card_game
+=> nrel_main_idtf:
+    [Карточная игра](* <-lang_ru;; *);
+    [Card game](* <-lang_en;; *);;
+
+concept_card_game
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Карточная игра)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Card game)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Карточная игра - игра с применением игральных карт.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Card game - a game using game cards.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_game;
+        concent_card
+    };;
+*);;

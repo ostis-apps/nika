@@ -1,0 +1,24 @@
+concept_team
+=> nrel_main_idtf:
+    [Команда](* <-lang_ru;; *);
+    [Team](* <-lang_en;; *);;
+
+concept_team
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Команда)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Team)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Команда ― это группа лиц, объединённая общими мотивами, интересами, идеалами, действующая сообща.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Team - a group of people united by common motives, interests, ideals, acting together.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_person
+    };;
+*);;

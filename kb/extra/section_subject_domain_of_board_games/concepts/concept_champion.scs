@@ -1,0 +1,25 @@
+concept_champion
+=> nrel_main_idtf:
+    [Чемпион](* <-lang_ru;; *);
+    [Champion](* <-lang_en;; *);;
+
+concept_champion
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Чемпион)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Champion)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Чемпион - игрок, ставший победителем в каком-либо соревновании.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Сhampion - a player, who has become a winner in some kind of competition.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_player;
+        concept_winner
+    };;
+*);;

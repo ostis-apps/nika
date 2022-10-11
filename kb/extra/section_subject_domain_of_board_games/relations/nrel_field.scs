@@ -1,0 +1,36 @@
+nrel_field
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+    [Поле](* <- lang_ru;; *);
+    [Field](* <- lang_eng;; *);;
+
+nrel_field
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (Поле)](*<- lang_ru;;*);
+    [Def. (Field)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Поле - описывает платморму для осуществления игры.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [Field - Describes a platform for a game.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_game_board
+    };;
+*);;
+
+nrel_field
+=>nrel_first_domain:
+    concept_game_object;
+=>nrel_second_domain:
+    concept_game_board;
+
+<- binary_relation ;
+<- antireflexive_relation ;
+<- antitransitive_relation ;;

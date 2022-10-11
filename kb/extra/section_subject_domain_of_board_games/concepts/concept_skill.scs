@@ -1,0 +1,24 @@
+concept_skill
+=> nrel_main_idtf:
+    [Навык](* <-lang_ru;; *);
+    [Skill](* <-lang_en;; *);;
+
+concept_skill
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Навык)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Skill)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Навык - способность деятельности, сформированная путём повторения и доведённая до автоматизма.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [A skill is an ability of activity, formed by repetition and brought to automatism.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_activity
+    };;
+*);;

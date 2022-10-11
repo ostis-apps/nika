@@ -1,0 +1,25 @@
+concept_dice
+=> nrel_main_idtf:
+    [Кости](* <-lang_ru;; *);
+    [Dice](* <-lang_en;; *);;
+
+concept_dice
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Кости)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Dice)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Кости - игровые объекты, являющиеся источником случайности в игре.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Dice - game objects that are the source of randomness in the game.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_game_object;
+        concept_game
+    };;
+*);;

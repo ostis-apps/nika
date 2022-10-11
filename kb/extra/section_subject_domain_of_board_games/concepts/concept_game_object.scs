@@ -1,0 +1,25 @@
+concept_game_object
+=> nrel_main_idtf:
+    [Игральный объект](* <-lang_ru;; *);
+    [Game object](* <-lang_en;; *);;
+
+concept_game_object
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Игральный объект)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Game object)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Игральные объекты - игровые объекты(фигуры, кости, карточки, миниатюры), которыми игроки осуществляют соревновательный процесс.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Game objects - game objects(figures, dice, cards, miniatures) with which players carry out the competitive process.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_player;
+        concept_competitive_process
+    };;
+*);;

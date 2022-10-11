@@ -1,0 +1,25 @@
+concept_player
+=> nrel_main_idtf:
+    [Игрок](* <-lang_ru;; *);
+    [Player](* <-lang_en;; *);;
+
+concept_player
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Игрок)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Player)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Игрок - рациональный индивид, имеющий заинтересованность в исходе игры и возможности воздействовать на него.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Player - a rational individual who has an interest in the outcome of the game and the ability to influence it.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_person;
+        concept_game
+    };;
+*);;

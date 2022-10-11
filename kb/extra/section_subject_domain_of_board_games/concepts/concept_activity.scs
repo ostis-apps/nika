@@ -1,0 +1,20 @@
+concept_activity
+=> nrel_main_idtf:
+    [Деятельность](* <-lang_ru;; *);
+    [Activity](* <-lang_en;; *);;
+
+concept_activity
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Деятельность)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Activity)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Деятельность - сознательное активное взаимодействие субъекта с объектом.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Competition - conscious active interaction of the subject with the object.](*<- lang_en;;*);;
+    *);;
+*);;

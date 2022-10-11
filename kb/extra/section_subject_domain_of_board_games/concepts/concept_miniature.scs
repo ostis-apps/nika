@@ -1,0 +1,20 @@
+concept_miniature
+=> nrel_main_idtf:
+    [Миниатюра](* <-lang_ru;; *);
+    [Miniature](* <-lang_en;; *);;
+
+concept_miniature
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Миниатюра)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Miniature)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Миниатюра - боевая единица, представленная миниатюрной физической моделью.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Miniature - a military unit represented by miniature physical model.](*<- lang_en;;*);;
+    *);;
+*);;

@@ -1,0 +1,24 @@
+concept_card
+=> nrel_main_idtf:
+    [Карточка](* <-lang_ru;; *);
+    [Card](* <-lang_en;; *);;
+
+concept_card
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Карточка)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Card)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Карты — прямоугольный лист из картона или тонкого пластика, используемый для настольных игр, а также фокусов, гадания.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Cards - a rectangular sheet of cardboard or thin plastic used for board games, as well as tricks, divination.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_board_game
+    };;
+*);;

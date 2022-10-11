@@ -1,0 +1,26 @@
+concept_sport
+=> nrel_main_idtf:
+    [Спорт](* <-lang_ru;; *);
+    [Sport](* <-lang_en;; *);;
+
+concept_sport
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Спорт)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Sport)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Спорт - организованная по определённым правилам деятельность людей (спортсменов), состоящая в сопоставлении их физических и/или интеллектуальных способностей.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Sport - an activity of people (athletes) organized according to certain rules, consisting in comparing their physical and / or intellectual abilities.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_activity;
+        concept_rule;
+        concept_person
+    };;
+*);;

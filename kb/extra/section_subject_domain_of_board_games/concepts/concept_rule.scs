@@ -1,0 +1,26 @@
+concept_rule
+=> nrel_main_idtf:
+    [Правило](* <-lang_ru;; *);
+    [Rule](* <-lang_en;; *);;
+
+concept_rule
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Правило)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Rule)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Правило — требование для исполнения неких условий (норма на поведение) всеми участниками какого-либо действия.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Rule - a requirement for the fulfillment of certain conditions (norm for behavior) by all participants in an action.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_behavior;
+        concept_player;
+        concept_action
+    };;
+*);;

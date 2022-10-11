@@ -1,0 +1,20 @@
+concept_behavior
+=> nrel_main_idtf:
+    [Поведение](* <-lang_ru;; *);
+    [Behavior](* <-lang_en;; *);;
+
+concept_behavior
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Поведение)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Behavior)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Поведeние — определённый сложившийся образ взаимодействия с окружающей средой.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Behavior - a certain established way of interacting with the environment.](*<- lang_en;;*);;
+    *);;
+*);;

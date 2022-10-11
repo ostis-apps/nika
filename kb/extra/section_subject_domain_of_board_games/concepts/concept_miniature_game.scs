@@ -1,0 +1,25 @@
+concept_miniature_game
+=> nrel_main_idtf:
+    [Игра миниатюр](* <-lang_ru;; *);
+    [Miniature game](* <-lang_en;; *);;
+
+concept_miniature_game
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Игра миниатюр)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Miniature game)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Игра миниатюр - форма варгейминга, в которой воинские части представлены миниатюрными физическими моделями на модельном поле боя.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Miniature game - a form of wargaming in which military units are represented by miniature physical models on a model battlefield.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_game;
+        concept_miniature
+    };;
+*);;

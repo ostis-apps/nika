@@ -1,0 +1,25 @@
+concept_game_event
+=> nrel_main_idtf:
+    [Игровое событие](* <-lang_ru;; *);
+    [Game event](* <-lang_en;; *);;
+
+concept_game_event
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Игровое событие)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Game event)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Игровое событие — это предлагаемый игрокам цикл активностей.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Game event - a cycle of activities offered to players.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_activity;
+        concept_player
+    };;
+*);;

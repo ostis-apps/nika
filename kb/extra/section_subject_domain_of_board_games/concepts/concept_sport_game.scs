@@ -1,0 +1,27 @@
+concept_sport_game
+=> nrel_main_idtf:
+    [Спортивная игра](* <-lang_ru;; *);
+    [Sport game](* <-lang_en;; *);;
+
+concept_sport_game
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Спортивная игра)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Sport game)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Спортивная игра — это соревнование в игровой форме между двумя командами или игроками.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Sport game - a competition in the form of a game between two teams or players.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_competition;
+        concent_game;
+        concept_team;
+        concept_player
+    };;
+*);;

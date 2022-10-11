@@ -1,0 +1,27 @@
+concept_competitive_process
+=> nrel_main_idtf:
+    [Соревновательный процесс](* <-lang_ru;; *);
+    [Сompetitive process](* <-lang_en;; *);;
+
+concept_competitive_process
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Соревновательный процесс)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Competitive process)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Соревновательный процесс - соревнование, в котором игроки оттачивают свои навыки и выясняют чемпиона.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Competitive process - competition in which players hone their skills and find out the champion.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_competition;
+        concept_player;
+        concept_skill;
+        concept_champion
+    };;
+*);;

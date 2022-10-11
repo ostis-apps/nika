@@ -1,0 +1,24 @@
+concept_game
+=> nrel_main_idtf:
+    [Игра](* <-lang_ru;; *);
+    [Game](* <-lang_en;; *);;
+
+concept_game
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Игра)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Game)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Игра - инстинктивный способ получения и развития навыков людьми и животными в момент отсутствия непосредственной угрозы для жизни.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Game - an instinctive way of acquiring and developing skills by humans and animals at a time when there is no immediate threat to life.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_skill
+    };;
+*);;

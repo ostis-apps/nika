@@ -1,0 +1,26 @@
+concept_board_game
+=> nrel_main_idtf:
+    [Настольная игра](* <-lang_ru;; *);
+    [Board game](* <-lang_en;; *);;
+
+concept_board_game
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Настольная игра)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Board game)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Настольная игра — игра, основанная на манипуляции относительно небольшим набором предметов, которые могут целиком разместиться на столе или в руках играющих.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Board game - a game based on the manipulation of a relatively small set of objects that can be entirely placed on the table or in the hands of the players.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_game_object;
+        concept_game_board;
+        concept_player
+    };;
+*);;

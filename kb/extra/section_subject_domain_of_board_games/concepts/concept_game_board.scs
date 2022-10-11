@@ -1,0 +1,25 @@
+concept_game_board
+=> nrel_main_idtf:
+    [Игральная доска](* <-lang_ru;; *);
+    [Game board](* <-lang_en;; *);;
+
+concept_game_board
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Игральная доска)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Game board)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Игральная доска - игровое поле, на котором опоненты размещают фигуры.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Game board - a playing field on which opponents place pieces.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_player;
+        concept_game_object
+    };;
+*);;

@@ -1,0 +1,26 @@
+concept_championship
+=> nrel_main_idtf:
+    [Чемпионат](* <-lang_ru;; *);
+    [Championship](* <-lang_en;; *);;
+
+concept_championship
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Чемпионат)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Championship)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Чемпионат — соревнование на звание чемпиона в каком-либо виде спорта.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Championship - competition for the title of champion in any sport.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_competition;
+        concept_champion;
+        concept_sport
+    };;
+*);;

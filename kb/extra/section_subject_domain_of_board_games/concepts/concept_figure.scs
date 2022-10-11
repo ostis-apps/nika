@@ -1,0 +1,27 @@
+concept_figure
+=> nrel_main_idtf:
+    [Фигура](* <-lang_ru;; *);
+    [Figure](* <-lang_en;; *);;
+
+concept_figure
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Фигура)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Figure)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Фигуры - игровые объекты, поведение которых определяется правилами игры.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Figures - game objects which behavior is determined by the rules of the game.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_game_object;
+        concept_behavior;
+        concept_rule;
+        concept_game
+    };;
+*);;

@@ -1,0 +1,24 @@
+concept_pencil_game
+=> nrel_main_idtf:
+    [Игра с карандашом](* <-lang_ru;; *);
+    [Pencil game](* <-lang_en;; *);;
+
+concept_pencil_game
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Игра с карандашом)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Pencil game)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Игра с карандашом — игра, предполагающая моделирование игровой ситуации на листе бумаги.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Pencil game - a game that involves simulating a game situation on a piece of paper.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_game
+    };;
+*);;
