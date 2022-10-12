@@ -1,0 +1,44 @@
+section_subject_domain_of_Hylobates
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Настоящие Гиббоны]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Hylobates]
+	(* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+		concept_Hylobates_lar;
+		concept_Hylobates_agilis;
+		concept_Hylobates_muelleri;
+		concept_Hylobates_moloch;
+		concept_Hylobates_pileatus;
+		concept_Hylobates_klossii;
+		subject_domain_of_Hylobates;
+		concept_Hylobates;;
+
+section_subject_domain_of_Hylobates = [*
+subject_domain_of_Hylobates
+
+=> nrel_main_idtf: 
+	[Предметная область Настоящие Гиббоны]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Hylobates]
+	(* <- lang_en;; *);
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_Hylobates;
+		
+-> rrel_maximum_studied_object_class:
+	concept_Hylobates;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_Hylobates_lar;
+	concept_Hylobates_agilis;
+	concept_Hylobates_muelleri;
+	concept_Hylobates_moloch;
+	concept_Hylobates_pileatus;
+	concept_Hylobates_klossii;
+	
+<- subject_domain;;
+*];;

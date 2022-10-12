@@ -1,0 +1,36 @@
+section_subject_domain_of_Hoolock
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Хулоки]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Hoolock]
+	(* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+		concept_Hoolock_hoolock;
+		concept_Hoolock_leuconedys;
+		subject_domain_of_Hoolock;
+		concept_Hoolock;;
+
+section_subject_domain_of_Hoolock = [*
+subject_domain_of_Hoolock
+
+=> nrel_main_idtf: 
+	[Предметная область Хулоки]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Hoolock]
+	(* <- lang_en;; *);
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_Hoolock;
+		
+-> rrel_maximum_studied_object_class:
+	concept_Hoolock;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_Hoolock_hoolock;
+	concept_Hoolock_leuconedys;
+	
+<- subject_domain;;
+*];;

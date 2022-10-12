@@ -1,0 +1,47 @@
+concept_Pongo_tapanuliensis
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Тапанульский орангутан]
+	(* <- lang_ru;; *);
+	[Pongo tapanuliensis]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Тапанульский орангутан)]
+		(* <- lang_ru;; *);
+		[Def. (Pongo tapanuliensis)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Тапанульский орангутан — вид человекообразных обезьян рода орангутанов семейства гоминид; эндемик Суматры. Один из трёх существующих видов рода наряду с Pongo abelii и Pongo pygmaeus. Выделен в отдельный вид в 2017 году, став первым живущим представителем гоминид, описанным как новый вид с 1929 года, когда был описан Pan paniscus.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Pongo tapanuliensis is a species of ape of the genus orangutans of the family hominidae; endemic to Sumatra. One of the three existing species of the genus along with Pongo abelii and Pongo pygmaeus. It was separated into a separate species in 2017, becoming the first living representative of hominids described as a new species since 1929, when Pan paniscus was described.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Тапанульский орангутан)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Тапанульский орангутан был определён как отдельный вид орангутанов в 2017 году после детального филогенетического исследования. В исследовании собраны генетические образцы 37 особей и проведён морфологический анализ 33 взрослых самцов орангутанов. Ключевым компонентом исследования был скелет взрослого самца, погибшего после ранения местными жителями в 2013 году; этот скелет позже был обозначен как голотип этого вида. Образец имеет отличительные физические свойства по сравнению с основной группой образцов, особенно с определёнными характеристиками черепа и зубов, и хранится в Зоологическом музее Богора. Генетическое исследование также показало, что популяцию Батанг-Тору следует рассматривать как отдельный вид, причём два образца, взятые из популяции, демонстрируют существенные отличия от других двух видов орангутанов.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_Pongo;;
