@@ -1,0 +1,36 @@
+concept_message_about_satellite_division
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о видах спутников]
+	    (* <- lang_ru;; *);
+	[message about satellite division]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_satellite_division];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о видах спутников)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about satellite division)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о видах спутников - атомарное сообщение, с запросом на вывод видов спутников.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Satellite views message - an atomic message, with a request to display satellite types.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
