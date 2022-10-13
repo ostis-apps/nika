@@ -1,0 +1,25 @@
+name: Docker
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    name: Build and Run
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Pull the Docker images
+        run: |
+          git submodule update --init --recursive
+          docker compose pull
+
+      - name: Run the Docker compose
+        run: |
+          docker compose up -d --wait --no-build

@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ main, release/** ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  install-n-lint:
+    name: Install & Lint
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Update
+        run: |
+          sudo apt-get update
+      - name: Install Ubuntu dependencies
+        run: |
+          git submodule update --init --recursive
+          ./scripts/install_deps_ubuntu.sh
+          ./problem-solver/sc-machine/scripts/install_deps_ubuntu.sh --dev
+      - name: Setting variables
+        run: |
+          ./scripts/set_vars.sh -ci
+      - name: Build problem solver
+        run: |
+          cd scripts
+          ./build_problem_solver.sh --tests
+      - name: Run cpp tests
+        run: |
+          cd scripts
+          ./run_cpp_tests.sh
+      - name: Build knowledge base
+        run: |
+          cd scripts
+          ./build_kb.sh
