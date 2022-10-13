@@ -1,5 +1,4 @@
 #include "sc_test.hpp"
-#include "sc-agents-common/utils/CommonUtils.hpp"
 #include "scs_loader.hpp"
 
 #include "agent/MessageTopicClassificationAgent.hpp"
