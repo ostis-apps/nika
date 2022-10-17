@@ -1,0 +1,27 @@
+concept_puppet_animation
+<- sc_node_class;
+<- class;
+
+=>nrel_main_idtf:
+	[кукольная мультипликация](*<-lang_ru;;*);
+	[puppet animation](*<-lang_en;;*);
+=>nrel_idtf:
+	[кукольный](*<-lang_ru;;*);
+	
+=> nrel_note:
+   [Большую роль в истории пластилиновой мультипликации сыграла анимационная студия Aardman Animations.]
+   (* <- lang_ru;; *);	
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. кукольная мультипликация](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [кукольная мультипликация -  технология/способ создания мультфильма, путём покадровой съёмки сцены-макета и кукл-актёров с модификацией (кукл) в промежутках между кадрами.](*<-lang_ru;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+	concept_cartoon
+	};;
+*);;

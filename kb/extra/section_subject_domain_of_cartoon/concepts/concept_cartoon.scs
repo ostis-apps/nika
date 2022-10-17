@@ -1,0 +1,38 @@
+concept_cartoon
+<- sc_node_class;
+<- class;
+
+=>nrel_main_idtf:
+	[мультфильм](*<-lang_ru;;*);
+	[cartoon](*<-lang_en;;*);
+=>nrel_idtf:
+	[анимация](*<-lang_ru;;*);
+	[мультик](*<-lang_ru;;*);
+	[animation](*<-lang_en;;*);
+	[анимационный фильм](*<-lang_ru;;*);
+	[animated film](*<-lang_en;;*);
+
+=> nrel_inclusion:
+	concept_short_cartoon;
+	concept_full_length_cartoon;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. мультфильм](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [мультфильм -  фильм, выполненный при помощи средств мультипликации, то есть покадрового запечатления созданных художником объёмных и плоских изображений или объектов предметно-реального мира на кино- и видеоплёнке или на цифровых носителях.](*<-lang_ru;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+	concept_film
+	};;
+*);;
+
+concept_film
+<- sc_node_class;
+<- class;
+=>nrel_main_idtf:
+	[фильм](*<-lang_ru;;*);
+	[film](*<-lang_en;;*);;

@@ -1,0 +1,27 @@
+concept_short_cartoon
+<- sc_node_class;
+<- class;
+
+=>nrel_main_idtf:
+	[короткометражный мультфильм](*<-lang_ru;;*);
+	[short cartoon](*<-lang_en;;*);
+=>nrel_idtf:
+	[короткометражка](*<-lang_ru;;*);
+	
+=> nrel_note:
+   [Средняя длина короткометражки колеблется в промежутке от 10 до 40 минут.]
+   (* <- lang_ru;; *);	
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. короткометражный мультфильм](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [короткометражный мультфильм -  мультфильм, длина которого не превышает 40-52 минуты.](*<-lang_ru;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+	concept_cartoon
+	};;
+*);;

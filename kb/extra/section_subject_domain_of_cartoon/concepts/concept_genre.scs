@@ -1,0 +1,18 @@
+concept_genre
+<- sc_node_class;
+<- class;
+
+=>nrel_main_idtf:
+	[жанр](*<-lang_ru;;*);
+	[genre](*<-lang_en;;*);
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. жанр](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [жанр -  общее понятие, отражающее наиболее существенные свойства и связи явлений мира искусства, совокупность формальных и содержательных особенностей произведения.](*<-lang_ru;;*);;
+	*);;
+*);;

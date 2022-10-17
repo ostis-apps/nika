@@ -1,0 +1,27 @@
+concept_cartoon_type
+<- sc_node_class;
+<- class;
+
+=>nrel_main_idtf:
+	[тип мультфильма](*<-lang_ru;;*);
+	[cartoon type](*<-lang_en;;*);
+
+=> nrel_inclusion:
+	concept_computer_animation;
+	concept_plasticine_animation;
+	concept_puppet_animation;
+	concept_hand_drawn_animation;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. тип мультфильма](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [тип мультфильма -  способ создания мультфильма, включает в себя компьютерный, кукольный, ручной-рисовки и пластилиновый.](*<-lang_ru;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+	concept_cartoon
+	};;
+*);;

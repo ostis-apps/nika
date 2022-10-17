@@ -1,0 +1,87 @@
+section_subject_domain_of_cartoon
+=> nrel_main_idtf:
+	  [Раздел. Предметная область мультфильмов]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of cartoon] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_cartoon = [*
+	subject_domain_of_cartoon
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область мультфильмов]
+   (* <- lang_ru;; *);
+   [Subject domain of cartoon]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+		concept_cartoon;
+		concept_cartoon_type;
+		concept_genre;
+		concept_film_studio;
+		concept_distributor_country;
+		concept_director;
+		concept_producer;
+		concept_production_designer;
+		concept_composer;
+		concept_screenwriter;
+		concept_film_editor;
+	-> rrel_not_maximum_studied_object_class:
+		concept_short_cartoon;
+		concept_full_length_cartoon;
+		concept_computer_animation;
+		concept_plasticine_animation;
+		concept_puppet_animation;
+		concept_hand_drawn_animation;
+	-> rrel_explored_relation:
+		nrel_next_certoon;
+		nrel_cartoon_type;
+		nrel_genre;
+		nrel_film_studio;
+		nrel_distributor_country;
+		nrel_budget;
+		nrel_box_office;
+		nrel_director;
+		nrel_producer;
+		nrel_production_designer;
+		nrel_composer;
+		nrel_screenwriter;
+		nrel_film_editor;;
+*];;
+
+section_subject_domain_of_cartoon
+-> rrel_key_sc_element:
+		nrel_next_certoon;
+		nrel_cartoon_type;
+		nrel_genre;
+		nrel_film_studio;
+		nrel_distributor_country;
+		nrel_budget;
+		nrel_box_office;
+		concept_director;
+		concept_producer;
+		nrel_production_designer;
+		nrel_composer;
+		nrel_screenwriter;
+		nrel_film_editor;
+		concept_short_cartoon;
+		concept_full_length_cartoon;
+		concept_computer_animation;
+		concept_plasticine_animation;
+		concept_puppet_animation;
+		concept_hand_drawn_animation;
+   		concept_cartoon;
+		concept_cartoon_type;
+		concept_genre;
+		concept_film_studio;
+		concept_distributor_country;
+		concept_director;
+		concept_producer;
+		concept_production_designer;
+		concept_composer;
+		concept_screenwriter;
+		concept_film_editor;
+		subject_domain_of_cartoon;;

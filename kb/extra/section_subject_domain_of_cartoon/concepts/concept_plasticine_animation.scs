@@ -1,0 +1,27 @@
+concept_plasticine_animation
+<- sc_node_class;
+<- class;
+
+=>nrel_main_idtf:
+	[пластилиновая мультипликация](*<-lang_ru;;*);
+	[plasticine animation](*<-lang_en;;*);
+=>nrel_idtf:
+	[пластилиновый](*<-lang_ru;;*);
+	
+=> nrel_note:
+   [Большую роль в истории пластилиновой мультипликации сыграла анимационная студия Aardman Animations.]
+   (* <- lang_ru;; *);	
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. пластилиновая мультипликация](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [пластилиновая мультипликация -  технология/способ создания мультфильма, путём покадровой съёмки пластилиновых объектов с модификацией (этих объектов) в промежутках между кадрами.](*<-lang_ru;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+	concept_cartoon
+	};;
+*);;
