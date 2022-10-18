@@ -1,0 +1,37 @@
+concept_message_about_solar_system
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о солнечной системе]
+	(* <- lang_ru;; *);
+	[message about solar system]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[solar_system];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о солнечной системе)]
+        (* <- lang_ru;; *);
+        [Def. (message about solar system)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о солнечной системе - атомарное сообщение, являющееся запросом на получение информации про солнечную систему]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about solar system - atomic message which used to make a question about solar system]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
