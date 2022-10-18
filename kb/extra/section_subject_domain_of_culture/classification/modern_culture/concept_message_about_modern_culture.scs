@@ -1,0 +1,37 @@
+concept_message_about_modern_culture
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о современной культуре]
+	(* <- lang_ru;; *);
+	[message about modern culture]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[modern_culture];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о современной культуре)]
+        (* <- lang_ru;; *);
+        [Def. (message about modern culture)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о современной культуре - атомарное сообщение, являющееся запросом на получение информации про современную культуру]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about modern culture - atomic message which used to make a question about modern culture]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
