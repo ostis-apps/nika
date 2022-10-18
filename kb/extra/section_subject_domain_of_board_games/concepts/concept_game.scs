@@ -1,7 +1,19 @@
 concept_game
+
+<- sc_node_class;
+<- class;
+
 => nrel_main_idtf:
     [Игра](* <-lang_ru;; *);
-    [Game](* <-lang_en;; *);;
+    [Game](* <-lang_en;; *);
+
+=> nrel_inclusion:
+    concept_card_game;
+    concept_miniature_game;
+    concept_pencil_game;
+    concept_role_game;
+    concept_sport_game;
+    concept_video_game;;
 
 concept_game
 <- rrel_key_sc_element: ...

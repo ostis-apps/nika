@@ -1,7 +1,14 @@
 concept_person
+
+<- sc_node_class;
+<- class;
+
 => nrel_main_idtf:
     [Человек](* <-lang_ru;; *);
-    [Person](* <-lang_en;; *);;
+    [Person](* <-lang_en;; *);
+
+=> nrel_inclusion:
+    concept_player;;
 
 concept_person
 <- rrel_key_sc_element: ...
