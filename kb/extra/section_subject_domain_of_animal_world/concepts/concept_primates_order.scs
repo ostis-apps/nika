@@ -1,0 +1,36 @@
+ concept_primates_order
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Отряд приматов]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Primates order]
+   (* <- lang_en;; *);
+
+<- concept_animal_order;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Отряд приматов)]
+		(* <- lang_ru;; *);
+		[Def. (Primates order)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Отряд приматов - отряд, который включает цепкие руки и ноги, обычно с противопоставленными большими пальцами. Примеры включают горилл, шимпанзе и людей.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Primates order - the order that Includes prehensile hands and feet, commonly with opposable thumbs. Examples include gorillas, chimpanzees, and humans.]
+			(* <- lang_en;; *);;
+		*);;
+    
+  *);;

@@ -1,0 +1,36 @@
+brown_bear
+<- concept_animal;
+=> nrel_main_idtf:
+	   [Бурый медведь](* <- lang_ru;; *);
+       [Brown bear](* <-lang_en;; *);
+
+=> nrel_note:
+   [Бурый медведь или обыкновенный медведь]
+   (* <- lang_ru;; *);
+
+<= rrel_animal_kingdom:
+    concept_animalia_kingdom;
+
+<= rrel_animal_phylum:
+    concept_chordata_phylum;
+
+<= rrel_animal_class:
+    concept_mammalia_class;
+
+<= rrel_animal_order:
+    concept_carnivora_order;
+
+<= rrel_animal_family:
+    concept_ursidae_family;
+
+<= rrel_animal_genus:
+    concept_ursus_genus;
+
+<= rrel_animal_species:
+    concept_ursus_arctos_species;;
+
+number -> 250;;
+brown_bear => nrel_weight: 250;;
+
+number -> 249;;
+brown_bear => nrel_height: 249;;    

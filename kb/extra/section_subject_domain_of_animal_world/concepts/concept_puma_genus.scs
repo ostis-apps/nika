@@ -1,0 +1,39 @@
+concept_puma_genus
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Род пум]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Puma genus]
+   (* <- lang_en;; *);
+
+<- concept_animal_genus;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Род пум)]
+		(* <- lang_ru;; *);
+		[Def. (Puma genus)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Род пум - это род семейства кошачьих, единственным сохранившимся видом которого является пума (также известная как пума, горный лев и пантера, среди других названий), и может также включать несколько малоизвестных ископаемых представителей Старого Света.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Puma genus -  is a genus in the family Felidae whose only extant species is the cougar (also known as the puma, mountain lion, and panther, among other names), and may also include several poorly known Old World fossil representatives.]
+			(* <- lang_en;; *);;
+		*);;
+        <= nrel_using_constants: {
+			concept_felidae_family
+   	    };;
+    
+  *);;

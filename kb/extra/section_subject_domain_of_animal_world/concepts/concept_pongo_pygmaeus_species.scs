@@ -1,0 +1,36 @@
+concept_pongo_pygmaeus_species
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Вид Калимантанский орангутан]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Pongo pygmaeus species]
+   (* <- lang_en;; *);
+
+<- concept_animal_species;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Вид Калимантанский орангутан)]
+		(* <- lang_ru;; *);
+		[Def. (Pongo pygmaeus species)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Вид Калимантанский орангутан - один из трёх ныне существующих видов орангутанов. Крупная человекообразная обезьяна. Особи покрыты густой красно-коричневой шерстью.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Pongo pygmaeus species -  is one of the three currently existing species of orangutans. Large ape. Individuals are covered with thick red-brown hair.]
+			(* <- lang_en;; *);;
+		*);;
+    
+  *);;

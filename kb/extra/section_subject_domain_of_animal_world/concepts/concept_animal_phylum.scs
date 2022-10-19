@@ -1,0 +1,36 @@
+concept_animal_phylum
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Тип]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Phylum]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Тип)]
+		(* <- lang_ru;; *);
+		[Def. (Phylum)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Тип — одна из высших единиц в систематике животных, объединяющая родственные классы.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Phylum — is one of the highest units in the taxonomy of animals, uniting related classes.]
+			(* <- lang_en;; *);;
+		*);;
+        <= nrel_using_constants: {
+			concept_animal_class
+   	    };;
+  *);;

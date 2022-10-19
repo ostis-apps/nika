@@ -1,0 +1,41 @@
+concept_ursus_arctos_species
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Вид Бурый медведь]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Ursus arctos species]
+   (* <- lang_en;; *);
+
+<- concept_animal_species;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Вид Бурый медведь)]
+		(* <- lang_ru;; *);
+		[Def. (Ursus arctos species)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Вид Бурый медведь - млекопитающее семейства медвежьих; один из самых крупных наземных хищников.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Ursus arctos species - is mammal of the bear family; one of the largest land predators.]
+			(* <- lang_en;; *);;
+		*);;
+        <= nrel_using_constants: {
+			concept_mammalia_class;
+            concept_ursidae_family;
+            concept_carnivora_order
+   	    };;
+    
+  *);;

@@ -1,0 +1,39 @@
+ concept_felidae_family
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Семейство кошачьих]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Felidae family]
+   (* <- lang_en;; *);
+
+<- concept_animal_family;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Семейство кошачьих)]
+		(* <- lang_ru;; *);
+		[Def. (Felidae family)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Семейство кошачьих - семейство млекопитающих отряда хищников, в просторечии именуемое кошками, образующее кладу. Члена этого семейства также называют кошачьим. Термин «кошка» относится как к кошачьим в целом, так и к домашней кошке в частности.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Felidae family -  is a family of mammals in the order Carnivora, colloquially referred to as cats, and constitutes a clade. A member of this family is also called a felid. The term cat refers both to felids in general and specifically to the domestic cat.]
+			(* <- lang_en;; *);;
+		*);;
+        <= nrel_using_constants: {
+			concept_carnivora_order
+   	    };;
+    
+  *);;

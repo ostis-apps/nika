@@ -1,0 +1,36 @@
+red_fox
+<- concept_animal;
+=> nrel_main_idtf:
+	   [Обыкновенная лисица](* <- lang_ru;; *);
+       [Red fox](* <-lang_en;; *);
+
+=> nrel_note:
+   [Обыкновенная лисица или рыжая лисица]
+   (* <- lang_ru;; *);
+
+<= rrel_animal_kingdom:
+    concept_animalia_kingdom;
+
+<= rrel_animal_phylum:
+    concept_chordata_phylum;
+
+<= rrel_animal_class:
+    concept_mammalia_class;
+
+<= rrel_animal_order:
+    concept_carnivora_order;
+
+<= rrel_animal_family:
+    concept_canidae_family;
+
+<= rrel_animal_genus:
+    concept_vulpes_genus;
+
+<= rrel_animal_species:
+    concept_vulpes_vulpes_species;;
+
+number -> 8;;
+red_fox => nrel_weight: 8;;
+
+number -> 68;;
+red_fox => nrel_height: 68;;    

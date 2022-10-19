@@ -1,0 +1,40 @@
+concept_animal_world
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Животный мир]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Animal world]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Понятию животный мир синонимично понятие фауна — исторически сложившаяся совокупность видов животных, обитающих в определенной области и являющаяся частью всех ее биогеоценозов.]
+   (* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Животный мир)]
+		(* <- lang_ru;; *);
+		[Def. (Animal world)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Животный мир — исторически сложившаяся совокупность животных всей Земли или ее произвольно выбранной части.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The animal world is a historically established set of animals of the whole Earth or its arbitrarily chosen part.]
+			(* <- lang_en;; *);;
+		*);;
+      <= nrel_using_constants: {
+			concept_animal
+   	 };;
+  *);;

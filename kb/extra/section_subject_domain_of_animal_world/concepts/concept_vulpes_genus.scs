@@ -1,0 +1,41 @@
+concept_vulpes_genus
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Род лисиц]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Vulpes genus]
+   (* <- lang_en;; *);
+
+<- concept_animal_genus;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Род лисиц)]
+		(* <- lang_ru;; *);
+		[Def. (Vulpes genus)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Род лисиц - род хищных млекопитающих семейства псовых. Обитают представители рода в Евразии, Африке, Северной Америке.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Vulpes genus - genus of carnivorous mammals of the canine family. Representatives of the genus live in Eurasia, Africa, North America.]
+			(* <- lang_en;; *);;
+		*);;
+        <= nrel_using_constants: {
+			concept_carnivora_order;
+            concept_mammalia_class;
+            concept_canidae_family
+   	    };;
+    
+  *);;

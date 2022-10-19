@@ -1,0 +1,39 @@
+  concept_ursidae_family
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Семейство медвежьих]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Ursidae family]
+   (* <- lang_en;; *);
+
+<- concept_animal_family;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Семейство медвежьих)]
+		(* <- lang_ru;; *);
+		[Def. (Ursidae family)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Семейство медвежьих - семейство млекопитающих отряда хищников, в которое входят гигантская панда, бурый и белый медведь, а также многие другие существующие и вымершие млекопитающие. Члена этого семейства называют медведем или медвежьим. Они широко распространены в Америке и Евразии. Средой обитания медведя, как правило, являются леса, хотя некоторые виды можно найти на пастбищах и в саваннах, а белый медведь живет в арктических и водных средах обитания.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Ursidae family - is a family of mammals in the order Carnivora, which includes the giant panda, brown bear, and polar bear, and many other extant and extinct mammals. A member of this family is called a bear or an ursid. They are widespread across the Americas and Eurasia. Bear habitats are generally forests, though some species can be found in grassland and savana regions, and the polar bear lives in arctic and aquatic habitats.]
+			(* <- lang_en;; *);;
+		*);;
+        <= nrel_using_constants: {
+			concept_carnivora_order
+   	    };;
+    
+  *);;

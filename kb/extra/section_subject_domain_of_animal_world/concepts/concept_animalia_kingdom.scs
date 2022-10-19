@@ -1,0 +1,39 @@
+concept_animalia_kingdom
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Царство животных]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Animalia kingdom]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Это царство содержит всех живых и вымерших животных.]
+   (* <- lang_ru;; *);
+
+<- concept_animal_kingdom;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Царство животных)]
+		(* <- lang_ru;; *);
+		[Def. (Animalia kingdom)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Царство животных - царство, в которое входят животные организмы. Эти многоклеточные эукариоты зависят от растений и других организмов в плане питания. Большинство животных живут в водной среде и варьируются в размерах от крошечных тихоходок до чрезвычайно больших синих китов. Большинство животных размножаются половым путем, который включает оплодотворение.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Animalia kingdom - kingdom that includes animal organisms. These multicellular eukaryotes depend on plants and other organisms for nutrition. Most animals live in aquatic environments and range in size from tiny tardigrades to the extremely large blue whale. Most animals reproduce by sexual reproduction, which involves fertilization.]
+			(* <- lang_en;; *);;
+		*);;
+  *);;

@@ -1,0 +1,40 @@
+concept_ursus_genus
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Род медведей]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Ursus genus]
+   (* <- lang_en;; *);
+
+<- concept_animal_genus;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Род медведей)]
+		(* <- lang_ru;; *);
+		[Def. (Ursus genus)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Род медведей - род млекопитающих отряда хищных. Обитают представители рода в Северной Америке и Евразии.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Ursus genus - genus of mammals of the carnivore order. Representatives of the genus live in North America and Eurasia.]
+			(* <- lang_en;; *);;
+		*);;
+        <= nrel_using_constants: {
+			concept_carnivora_order;
+            concept_mammalia_class
+   	    };;
+    
+  *);;

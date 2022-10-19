@@ -1,0 +1,37 @@
+concept_animal_order
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Отряд]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Order]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Отряд)]
+		(* <- lang_ru;; *);
+		[Def. (Order)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Отряд — это систематическая категория животных, промежуточная по рангу между семейством и классом.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Order — is a systematic category of animals, intermediate in rank between a family and a class.]
+			(* <- lang_en;; *);;
+		*);;
+        <= nrel_using_constants: {
+			concept_animal_family;
+            concept_animal_class
+   	    };;
+  *);;

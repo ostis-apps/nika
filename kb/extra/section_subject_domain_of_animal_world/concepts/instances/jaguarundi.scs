@@ -1,0 +1,36 @@
+jaguarundi
+<- concept_animal;
+=> nrel_main_idtf:
+	   [Ягуарунди](* <- lang_ru;; *);
+       [Jaguarundi](* <-lang_en;; *);
+
+=> nrel_note:
+   [Ранее вид выделяли в отдельный род Herpailurus, сейчас включают в род Пумы.]
+   (* <- lang_ru;; *);
+
+<= rrel_animal_kingdom:
+    concept_animalia_kingdom;
+
+<= rrel_animal_phylum:
+    concept_chordata_phylum;
+
+<= rrel_animal_class:
+    concept_mammalia_class;
+
+<= rrel_animal_order:
+    concept_carnivora_order;
+
+<= rrel_animal_family:
+    concept_felidae_family;
+
+<= rrel_animal_genus:
+    concept_puma_genus;
+
+<= rrel_animal_species:
+    concept_puma_yagouaroundi_species;;
+
+number -> 7;;
+jaguarundi => nrel_weight: 7;;
+
+number -> 66;;
+jaguarundi => nrel_height: 66;;    

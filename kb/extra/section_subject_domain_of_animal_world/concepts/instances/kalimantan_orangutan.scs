@@ -1,0 +1,36 @@
+kalimantan_orangutan
+<- concept_animal;
+=> nrel_main_idtf:
+	   [Калимантанский орангутан](* <- lang_ru;; *);
+       [Kalimantan orangutan](* <-lang_en;; *);
+
+=> nrel_note:
+   [Калимантанский орангутан — один из трёх ныне существующих видов орангутанов.]
+   (* <- lang_ru;; *);
+
+<= rrel_animal_kingdom:
+    concept_animalia_kingdom;
+
+<= rrel_animal_phylum:
+    concept_chordata_phylum;
+
+<= rrel_animal_class:
+    concept_mammalia_class;
+
+<= rrel_animal_order:
+    concept_primates_order;
+
+<= rrel_animal_family:
+    concept_hominidae_family;
+
+<= rrel_animal_genus:
+    concept_pongo_genus;
+
+<= rrel_animal_species:
+    concept_pongo_pygmaeus_species;;
+
+number -> 70;;
+kalimantan_orangutan => nrel_weight: 70;;
+
+number -> 150;;
+kalimantan_orangutan => nrel_height: 150;;    

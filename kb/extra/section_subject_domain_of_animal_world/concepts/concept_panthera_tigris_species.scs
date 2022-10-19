@@ -1,0 +1,39 @@
+  concept_panthera_tigris_species
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Вид Тигр]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Panthera tigris species]
+   (* <- lang_en;; *);
+
+<- concept_animal_species;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Вид Тигр)]
+		(* <- lang_ru;; *);
+		[Def. (Panthera tigris species)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Вид Тигр - является крупнейшим из ныне живущих видов кошек и членом рода пантер. Он наиболее узнаваем по темным вертикальным полосам на оранжевом меху с белой нижней стороной. Высший хищник, он в основном охотится на копытных, таких как олени и кабаны.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Panthera tigris species - is the largest living cat species and a member of the genus Panthera. It is most recognisable for its dark vertical stripes on orange fur with a white underside. An apex predator, it primarily preys on ungulates, such as deer and wild boar.]
+			(* <- lang_en;; *);;
+		*);;
+        <= nrel_using_constants: {
+			concept_panthera_genus
+   	    };;
+    
+  *);;

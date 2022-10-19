@@ -1,0 +1,39 @@
+  concept_panthera_genus
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Род пантер]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Panthera genus]
+   (* <- lang_en;; *);
+
+<- concept_animal_genus;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Род пантер)]
+		(* <- lang_ru;; *);
+		[Def. (Panthera genus)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Род пантер - род семейства кошачьих, названный и описанный Лоренцем Океном в 1816 году, который поместил всех пятнистых кошек в эту группу.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Panthera genus - is a genus within the family Felidae that was named and described by Lorenz Oken in 1816 who placed all the spotted cats in this group.]
+			(* <- lang_en;; *);;
+		*);;
+        <= nrel_using_constants: {
+			concept_felidae_family
+   	    };;
+    
+  *);;
