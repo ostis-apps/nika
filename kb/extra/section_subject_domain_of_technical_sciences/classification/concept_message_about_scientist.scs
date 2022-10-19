@@ -1,0 +1,27 @@
+concept_message_about_scientist
+<- sc_node_not_relation;
+<- concept_intent_possible_class;
+=> nrel_main_idtf:
+      [сообщение об ученом](* <- lang_ru;; *);
+      [message about scientist](* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+      [about_scientist];;
+
+concept_message_about_scientist
+<- rrel_key_sc_element: ...
+(*
+    => nrel_main_idtf:[Опр. (сообщение об ученом)](* <- lang_ru;; *);;
+    => nrel_main_idtf:[Def. (message about scientist)](* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Сообщение об ученом - атомарное сообщение, которое содержит ученого, информацию о котором необходимо найти.](* <- lang_ru;; *);;
+        -> rrel_example:
+            [A message about scientist is an atomic message that contains the scientist information about whom you want to find.](* <- lang_en;; *);;
+        *);;
+    <= nrel_using_constants:
+        {
+            concept_atomic_message
+        };;
+*);;
