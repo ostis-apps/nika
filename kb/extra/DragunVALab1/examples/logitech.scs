@@ -1,0 +1,18 @@
+logitech
+
+ <-sc_node_not_relation;
+
+ => nrel_main_idtf:
+		[Logitech](* <-lang_en;; *);
+
+	<-rrel_sc_key_element: definition_logitech
+	(*
+		<-definition;;
+		=> nrel_main_idtf:
+			[def.(Logitech)](* <-lang_en;; *);;
+
+		<=nrel_sc_text_translation: ...
+		(*
+			->rrel_example:	[ a brand of Logitech International, is the global leader in PC gaming gear.]  (* <-lang_en;; *);;
+		*);;
+	*);;

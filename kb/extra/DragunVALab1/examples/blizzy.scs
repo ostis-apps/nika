@@ -1,0 +1,92 @@
+blizzy
+
+	<-sc_node_not_relation;
+
+	=> nrel_main_idtf:
+		[Evgeniy "Blizzy" Ree](* <-lang_en;; *);
+		[Евгений "Blizzy" Ри](* <-lang_ru;; *);
+	=> nrel_idtf:
+		[Blizzy](* <-lang_en; lang_ru;; *);
+
+	<-player_dota;	
+
+	=>nrel_citizen_of: Kyrgyzstan;
+	=>nrel_surname: Ree;
+	=>nrel_first_name: Evgeniy;
+	=>nrel_nickname: Blizzy;
+	=>nrel_birthday: 05_01_1995;
+
+  <=nrel_with_whom: contract_blizzy_and_NoLifer5_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Blizzy and NoLifer5](* <-lang_en;; *);
+			[Контракт между Blizzy и NoLifer5](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: NoLifer5_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 09_10_2015;;
+			->rrel_end: 19_09_2016;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_blizzy_and_NoLifer5_reborn_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Blizzy and NoLifer5.Reborn](* <-lang_en;; *);
+			[Контракт между Blizzy и NoLifer5.Reborn](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: NoLifer5_reborn_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 19_09_2016;;
+			->rrel_end: 02_01_2017;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_blizzy_and_mvp_revolution_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Blizzy and MVP Revolution](* <-lang_en;; *);
+			[Контракт между Blizzy и MVP Revolution](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: mvp_revolution_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 02_01_2017;;
+			->rrel_end: 30_01_2018;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_blizzy_and_vega_squadron_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Blizzy and Vega Squadron](* <-lang_en;; *);
+			[Контракт между Blizzy и MVP Vega Squadron](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: vega_squadron_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 30_01_2018;;
+			->rrel_end: 01_09_2018;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_blizzy_and_natus_vincere_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Blizzy and Natus Vincere](* <-lang_en;; *);
+			[Контракт между Blizzy и Natus Vincere](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: natus_vincere_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 01_09_2018;;
+			->rrel_end: 05_09_2019;;
+		*);;
+	*);;

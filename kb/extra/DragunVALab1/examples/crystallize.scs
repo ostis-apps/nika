@@ -1,0 +1,115 @@
+crystallize
+
+	<-sc_node_not_relation;
+
+	=> nrel_main_idtf:
+		[Vladislav "Crystallize" Krystanek](* <-lang_en;; *);
+		[Владислав "Crystallize" Кристанек](* <-lang_ru;; *);
+	=> nrel_idtf:
+		[Crystallize](* <-lang_en; lang_ru;; *);
+
+	<-player_dota;	
+
+	=>nrel_citizen_of: Ukraine;
+	=>nrel_surname: Krystanek;
+	=>nrel_first_name: Vladislav;
+	=>nrel_nickname: Crystallize;
+	=>nrel_birthday: 08_08_1999
+	(*
+		<-sc_node_not_relation;;
+		=> nrel_main_idtf:
+			[08.08.1999](* <-lang_en; lang_ru;; *);;
+		<-date;;
+		=>nrel_date_day: [8];;
+		=>nrel_date_month: [8];;
+		=>nrel_date_year: [1999];;
+	*);
+
+	<=nrel_with_whom: contract_crystallize_and_chew_toy_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Crystallize and Chew Toy](* <-lang_en;; *);
+			[Контракт между Crystallize и Chew Toy](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: chew_toy_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: xx_12_2016
+				(*
+					<-sc_node_not_relation;;
+					=> nrel_main_idtf:
+						[.12.2016](* <-lang_en; lang_ru;; *);;
+					<- date;;
+					=> nrel_date_day: [0];;
+					=> nrel_date_month: [12];;
+					=> nrel_date_year: [2016];;
+				*);;
+			->rrel_end: 01_02_2017
+				(*
+					<-sc_node_not_relation;;
+					=> nrel_main_idtf:
+						[01.02.2017](* <-lang_en; lang_ru;; *);;
+					<- date;;
+					=> nrel_date_day: [1];;
+					=> nrel_date_month: [2];;
+					=> nrel_date_year: [2017];;
+				*);;
+		*);;
+	*);
+
+	  <=nrel_with_whom: contract_crystallize_and_double_dimension_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Crystallize and Double Dimension](* <-lang_en;; *);
+			[Контракт между Crystallize и Double Dimension](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: double_dimension_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 01_02_2017
+				(*
+					<-sc_node_not_relation;;
+					=> nrel_main_idtf:
+						[01.02.2017](* <-lang_en; lang_ru;; *);;
+					<- date;;
+					=> nrel_date_day: [1];;
+					=> nrel_date_month: [2];;
+					=> nrel_date_year: [2017];;
+				*);;
+			->rrel_end: xx_04_2018
+				(*
+					<-sc_node_not_relation;;
+					=> nrel_main_idtf:
+						[.04.2018](* <-lang_en; lang_ru;; *);;
+					<- date;;
+					=> nrel_date_day: [0];;
+					=> nrel_date_month: [4];;
+					=> nrel_date_year: [2018];;
+				*);;
+		*);;
+	*);
+
+	  <=nrel_with_whom: contract_crystallize_and_natus_vincere_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Crystallize and Natus Vincere](* <-lang_en;; *);
+			[Контракт между Crystallize и Natus Vincere](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: natus_vincere_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 04_09_2018
+				(*
+					<-sc_node_not_relation;;
+					=> nrel_main_idtf:
+						[04.09.2018](* <-lang_en; lang_ru;; *);;
+					<- date;;
+					=> nrel_date_day: [4];;
+					=> nrel_date_month: [9];;
+					=> nrel_date_year: [2018];;
+				*);;
+		*);;
+	*);;

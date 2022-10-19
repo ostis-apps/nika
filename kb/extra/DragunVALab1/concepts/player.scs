@@ -1,0 +1,34 @@
+player
+
+<-sc_node_not_relation;
+
+ => nrel_main_idtf:
+		[игрок](* <-lang_ru;; *);
+		[player](* <-lang_en;; *);
+
+	->player_dota
+	(*
+		=> nrel_main_idtf:
+			[игрок | Dota 2](* <-lang_ru;; *);
+			[player | Dota 2](* <-lang_en;; *);;
+	*);
+
+	->player_lol
+	(*
+		=> nrel_main_idtf:
+			[игрок | LoL](* <-lang_ru;; *);
+			[player | LoL](* <-lang_en;; *);;
+	*);
+
+	<-rrel_sc_key_element: definition_player
+	(*
+		<-definition;;
+		=> nrel_main_idtf:
+			[Опр.(игрок)](* <-lang_ru;; *);
+			[def.(player)](* <-lang_en;; *);;
+
+		<=nrel_sc_text_translation: ...
+		(*
+			->rrel_example:	[Player is a person taking part in game.]  (* <-lang_en;; *);;
+		*);;
+	*);;

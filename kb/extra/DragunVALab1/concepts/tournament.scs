@@ -1,0 +1,21 @@
+tournament
+
+ <-sc_node_not_relation;
+
+ => nrel_main_idtf:
+		[турнир](* <-lang_ru;; *);
+		[tournament](* <-lang_en;; *);
+
+	->tournament_dota
+	(*
+		=> nrel_main_idtf:
+			[турнир | Dota 2](* <-lang_ru;; *);
+			[tournament | Dota 2](* <-lang_en;; *);;
+	*);
+
+	->tournament_lol
+	(*
+		=> nrel_main_idtf:
+			[турнир | LoL](* <-lang_ru;; *);
+			[tournament | LoL](* <-lang_en;; *);;
+	*);;

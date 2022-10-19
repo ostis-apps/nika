@@ -1,0 +1,18 @@
+msi
+
+ <-sc_node_not_relation;
+
+ => nrel_main_idtf:
+		[MSI](* <-lang_en;; *);
+
+	<-rrel_sc_key_element: definition_msi
+	(*
+		<-definition;;
+		=> nrel_main_idtf:
+			[def.(MSI)](* <-lang_en;; *);;
+
+		<=nrel_sc_text_translation: ...
+		(*
+			->rrel_example:	[a Taiwanese multinational information technology corporation headquartered in New Taipei City, Taiwan.]  (* <-lang_en;; *);;
+		*);;
+	*);;

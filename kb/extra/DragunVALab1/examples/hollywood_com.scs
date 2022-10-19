@@ -1,0 +1,17 @@
+hollywood_com
+ <-sc_node_not_relation;
+
+ => nrel_main_idtf:
+		[Hollywood.com](* <-lang_en;; *);
+
+	<-rrel_sc_key_element: definition_hollywood_com
+	(*
+		<-definition;;
+		=> nrel_main_idtf:
+			[def.(Hollywood.com)](* <-lang_en;; *);;
+
+		<=nrel_sc_text_translation: ...
+		(*
+			->rrel_example:	[official site of Hollywood]  (* <-lang_en;; *);;
+		*);;
+	*);;

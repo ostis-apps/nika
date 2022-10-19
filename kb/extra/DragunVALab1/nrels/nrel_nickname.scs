@@ -1,0 +1,17 @@
+nrel_nickname
+
+	=> nrel_first_domain: player;
+	=> nrel_second_domain: nickname; 
+
+	<-sc_node_norole_relation;
+	<-oriented_relation;
+	<-binary_relation;
+	<-antisymmetric_relation;
+	<-antireflexive_relation;
+
+	=> nrel_main_idtf:
+		[никнейм*](* <-lang_ru;; *);
+		[nickname*](* <-lang_en;; *);
+
+	=> nrel_idtf:
+		[ник*](* <-lang_ru;; *);;

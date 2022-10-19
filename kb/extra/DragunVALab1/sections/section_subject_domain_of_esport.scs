@@ -1,0 +1,31 @@
+section_subject_domain_of_esport
+
+	=> nrel_main_idtf: 
+		[Раздел. Предметная область киберспорта](*<- lang_ru;;*);
+		[Section. Subject domain of esport](*<- lang_en;;*);
+
+	<- not_enough_formed_structure;
+	<- non_atomic_section;
+	<- ui_start_sc_element;
+
+	<= nrel_section_decomposition:
+	{
+		section_subject_domain_of_video_games
+		(*
+			=> nrel_section_base_order:
+				section_subject_domain_of_esports_organizations;;
+		*);
+		section_subject_domain_of_esports_organizations
+		(*
+			=> nrel_section_base_order:
+				section_subject_domain_of_sponsors;;
+		*);
+		section_subject_domain_of_sponsors
+		(*
+			=> nrel_section_base_order:
+				section_subject_domain_of_tournaments;;
+		*);
+		section_subject_domain_of_tournaments
+	};
+
+	-> rrel_key_sc_element: subject_domain_of_esport;;

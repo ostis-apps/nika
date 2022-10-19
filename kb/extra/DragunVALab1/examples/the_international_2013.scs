@@ -1,0 +1,41 @@
+the_international_2013
+
+	<-sc_node_not_relation;
+
+	=> nrel_main_idtf:
+		[The International 2013](* <-lang_en; lang_ru;; *);
+	=> nrel_idtf:
+		[TI3](* <-lang_en; lang_ru;; *);
+
+	<-tournament_dota;
+
+	=> nrel_organizer: valve;
+	=> nrel_sponsor: valve;
+	=> nrel_type: offline;
+	=> nrel_location: Seattle;
+	=>nrel_prize_pool: [$2,874,380];
+	=>nrel_period: ...
+	(*
+		<-period_of_time;;
+		->rrel_start: 02_08_2013;;
+		->rrel_end: 11_08_2013;;
+	*);
+
+	=>nrel_participate: 
+			lgd_gaming_dota;
+			fnatic_dota;
+			invictus_gaming_dota;
+			team_dk_dota;
+			team_dignitas_dota;
+			team_zenith_dota;
+			mufc_dota;
+			alliance_dota;
+			mousesports_dota;
+			team_liquid_dota;
+			lgd_international_dota;
+			orange_esports_dota;
+			tongfu_dota;
+			natus_vincere_dota;
+			rattlesnake_dota;
+			virtus_pro_dota;;
+

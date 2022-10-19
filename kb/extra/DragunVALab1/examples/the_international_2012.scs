@@ -1,0 +1,41 @@
+the_international_2012
+
+	<-sc_node_not_relation;
+
+	=> nrel_main_idtf:
+		[The International 2012](* <-lang_en; lang_ru;; *);
+	=> nrel_idtf:
+		[TI2](* <-lang_en; lang_ru;; *);
+
+	<-tournament_dota;
+
+	=> nrel_organizer: valve;
+	=> nrel_sponsor: valve;
+	=> nrel_type: offline;
+	=> nrel_location: Seattle;
+	=>nrel_prize_pool: [$1,600,000];
+	=>nrel_period: ...
+	(*
+		<-period_of_time;;
+		->rrel_start: 26_08_2012;;
+		->rrel_end: 02_09_2011;;
+	*);
+
+	=>nrel_participate: 
+			lgd_gaming_dota;
+			ehome_dota;
+			invictus_gaming_dota;
+			team_dk_dota;
+			evil_geniuses_dota;
+			team_zenith_dota;
+			counter_logic_gaming_dota;
+			absolute_legends_dota;
+			mousesports_dota;
+			complexity_gaming_dota;
+			moskow_five_dota;
+			orange_esports_dota;
+			tongfu_dota;
+			natus_vincere_dota;
+			darer_dota;
+			mortal_teamwork_dota;;
+

@@ -1,0 +1,14 @@
+nrel_birthday
+
+	=> nrel_first_domain: player;
+	=> nrel_second_domain: date; 
+	
+	<-sc_node_norole_relation;
+	<-oriented_relation;
+	<-binary_relation;
+	<-antisymmetric_relation;
+	<-antireflexive_relation;
+
+	=> nrel_main_idtf:
+		[дата рождения*](* <-lang_ru;; *);
+		[birthday*](* <-lang_en;; *);;

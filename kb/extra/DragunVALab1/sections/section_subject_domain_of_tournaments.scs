@@ -1,0 +1,13 @@
+section_subject_domain_of_tournaments
+=> nrel_main_idtf: 
+	[Раздел. Предметная область турниров]
+	(* <- lang_ru;;*);
+	[Section. Subject domain of tournaments]
+	(* <- lang_en;; *);
+
+<- not_enough_formed_structure;;
+
+section_subject_domain_of_tournaments = [*^"file://section_subject_domain_of_tournaments.scsi"*];;
+
+section_subject_domain_of_tournaments
+-> rrel_key_sc_element: subject_domain_of_tournaments;;
