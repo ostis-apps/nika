@@ -1,0 +1,27 @@
+concept_message_about_monopoly_rick_and_morty
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о Монополии. Рик и Морти]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_monopoly_rick_and_morty];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о "Монополии. Рик и Морти")]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о "Монополии. Рик и Морти" - атомарное сообщение,
+    которое содержит какую-либо информацию о "Монополии. Рик и Морти".]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
