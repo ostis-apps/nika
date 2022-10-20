@@ -1,0 +1,27 @@
+concept_message_about_director_tesla
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о руководителе в компании "Тесла"]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_director_tesla];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о директоре в компании "Тесла")]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о директоре в компании "Тесла" - атомарное сообщение,
+    которое содержит информацию о директоре данной компании.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
