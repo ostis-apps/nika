@@ -1,0 +1,30 @@
+concept_correspondence <- sc_node_not_relation;;
+
+concept_correspondence => nrel_main_idtf:
+[корреспонденция] (*<-lang_ru;;*);
+[correspondence] (*<-lang_en;;*);;
+
+concept_correspondence <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (корреспонденция)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Это наиболее распространённый аналитический газетный жанр, который основывается на конкретном анализе фактов, изучении какой-либо локальной ситуации.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_correspondence <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (корреспонденция)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Корреспонденция строится на ряде фактов, объединённых одной общей темой.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

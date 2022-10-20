@@ -1,0 +1,30 @@
+concept_literary_magazine <- sc_node_not_relation;;
+
+concept_literary_magazine => nrel_main_idtf:
+[литературный журнал] (*<-lang_ru;;*);
+[literary_magazine] (*<-lang_en;;*);;
+
+concept_literary_magazine <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (литературный журнал)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[журнал, публикующий произведения художественной литературы, а также литературно-критические статьи.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_literary_magazine <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (литературный журнал)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Бывают как общелитературные журналы, так и журналы, представляющие какое-то одно литературное направление.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

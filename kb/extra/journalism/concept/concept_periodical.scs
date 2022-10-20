@@ -1,0 +1,30 @@
+concept_periodical <- sc_node_not_relation;;
+
+concept_periodical => nrel_main_idtf:
+[Периодическое издание] (*<-lang_ru;;*);
+[periodical] (*<-lang_en;;*);;
+
+concept_periodical <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Периодическое издание)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[издание, выходящее с заявленной периодичностью.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_periodical <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Периодическое издание)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Иногда издания меняют свою периодичность в зависимости от самых разных причин.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

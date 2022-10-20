@@ -1,0 +1,30 @@
+concept_chronicle <- sc_node_not_relation;;
+
+concept_chronicle => nrel_main_idtf:
+[хроника] (*<-lang_ru;;*);
+[chronicle] (*<-lang_en;;*);;
+
+concept_chronicle <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (хроника)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[историческое описание событий в хронологическом порядке.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_chronicle <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (хроника)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Как правило, хроники начинают своё повествование с основания мира.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

@@ -1,0 +1,30 @@
+concept_journal <- sc_node_not_relation;;
+
+concept_journal => nrel_main_idtf:
+[журнал] (*<-lang_ru;;*);
+[journal] (*<-lang_en;;*);;
+
+concept_journal <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (журнал)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[печатное или электронное периодическое издание, имеющее постоянную рубрикацию и содержащее статьи или рефераты по различным общественно-политическим, научным, производственным и др. вопросам, литературно-художественные произведения.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_journal <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (журнал)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[С появлением Интернета журналы стали появляться и в сети.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

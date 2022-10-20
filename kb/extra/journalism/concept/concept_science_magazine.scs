@@ -1,0 +1,30 @@
+concept_science_magazine <- sc_node_not_relation;;
+
+concept_science_magazine => nrel_main_idtf:
+[научный_журнал] (*<-lang_ru;;*);
+[science_magazine] (*<-lang_en;;*);;
+
+concept_science_magazine <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (научный_журнал)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[журнал, в котором присылаемые статьи перед публикацией представляются на рецензирование независимым специалистам, которые обычно не входят в состав редакции журнала и ведут исследования в областях, близких с тематикой статьи.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_science_magazine <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (научный_журнал)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Рецензирование материалов выполняется для того, чтобы постараться оградить читателей от методологических ошибок или фальсификаций.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
