@@ -1,0 +1,108 @@
+concept_phrase_about_opportunity_to_tell_about_cartoon
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о наличии возможности говорить о мультфильмах]
+	    (* <- lang_ru;; *);
+	[phrase about opportunity to tell about cartoon]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о наличии возможности говорить о мультфильмах)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о наличии возможности говорить о мультфильмах - фраза, содержащая информацию про возможность говорить на тему "Мультфильмы".]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+	*);;
+
+concept_phrase_about_cartoon
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о мультфильмах]
+	    (* <- lang_ru;; *);
+	[phrase about cartoon]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о мультфильмах]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о мультфильмах - фраза, содержащая информацию про то, что такое мультфильм.]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+*);;
+
+concept_phrase_about_favorite_cartoon
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о любимом мультфильме]
+	    (* <- lang_ru;; *);
+	[phrase about favorite cartoon]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о любимом мультфильме)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о любимом мультфильме - фраза, содержащая пример любимого мультфильма.]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+*);;
+
+concept_phrase_about_director_of_cartoon
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза с ответом на вопрос, какой режиссер у этого мультфильма]
+	    (* <- lang_ru;; *);
+	[phrase about director of cartoon]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза с ответом на вопрос, какой режиссер у этого мультфильма)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза с ответом на вопрос, какой режиссер у этого мультфильма - фраза, содержащая имя режиссера снявшего мультфильм из вопроса.]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+*);;
+

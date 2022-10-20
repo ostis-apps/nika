@@ -1,0 +1,36 @@
+concept_message_about_favorite_cartoon
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о любимом мультике]
+	    (* <- lang_ru;; *);
+	[message about favorite cartoon]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_favorite_cartoon];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о любимом мультфильме)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about favorite cartoon)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о о любимом мультфильме - атомарное сообщение, с запросом на вывод любимого мультфильма.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[An favorite cartoon message is an atomic message, requesting the output of an favorite cartoon.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
