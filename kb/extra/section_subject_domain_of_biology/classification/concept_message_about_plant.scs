@@ -1,0 +1,36 @@
+concept_message_about_plant
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о растениях]
+	    (* <- lang_ru;; *);
+	[message about plant]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_plant];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о растениях)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about plant)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о растениях - атомарное сообщение, с запросом о растениях.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[An example plant message is an atomic message, requesting the definition of plant.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

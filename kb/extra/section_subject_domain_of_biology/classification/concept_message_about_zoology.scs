@@ -1,0 +1,36 @@
+concept_message_about_zoology
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о зоологии]
+	    (* <- lang_ru;; *);
+	[message about zoology]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_zoology];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о зоологии)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about zoology)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о зоологии - атомарное сообщение, с запросом о зоологии.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[An example zoology message is an atomic message, requesting the definition of zoology.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
