@@ -1,8 +1,12 @@
 concept_machine_learning
+
 <- sc_node_class;
+
 => nrel_main_idtf:
 	[машинное обучение]
 	(* <- lang_ru;; *);
+	[machine learning]
+	(* <- lang_en;; *);
 
 => nrel_note:
 	[класс методов искусственного интеллекта, характерной
@@ -10,7 +14,7 @@ concept_machine_learning
 	за счёт применения решений множества сходных задач.]
 	(* <- lang_ru;; *);
 
--> concept_artificial_intelligence;
+<- concept_artificial_intelligence;
 
 => nrel_inclusion:
 	concept_decision_making_system;

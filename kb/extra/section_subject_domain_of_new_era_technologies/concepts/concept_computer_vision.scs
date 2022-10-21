@@ -1,8 +1,12 @@
 concept_computer_vision
+
 <- sc_node_class;
+
 => nrel_main_idtf:
 	[компьютерное зрение]
 	(* <- lang_ru;; *);
+	[computer vision]
+	(* <- lang_en;; *);
 
 => nrel_note:
 	[теория и технология создания машин, которые могут производить обнаружение, отслеживание и классификацию объектов.
@@ -10,12 +14,8 @@ concept_computer_vision
 	систем, которые получают информацию из изображений.]
 	(* <- lang_ru;; *);
 
--> concept_artificial_intelligence;
+<- concept_artificial_intelligence;
 
 => nrel_usage_area:
-	[компьютерная графика]
-	(* <- lang_ru;;*);
-
-=> nrel_usage_area:
-	[медицина]
-	(* <- lang_ru;;*);;
+	concept_computer_graphics;
+	concept_medicine;;

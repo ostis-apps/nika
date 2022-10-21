@@ -1,31 +1,22 @@
 concept_conveyor_robot
+
 <- sc_node_class;
+
 => nrel_main_idtf:
-	[конвеерный робот]
+	[конвейерный робот]
 	(* <- lang_ru;; *);
+	[conveyor robot]
+	(* <- lang_en;; *);
 
 => nrel_note:
 	[машина, обладающая манипуляторами, предназначееная для загрузки, переноски,
 	комплектовки и сборки различных предметов на промышленных конвейерах.]
 	(* <- lang_ru;; *);
 
--> concept_robotics;
+<- concept_robotics;
 
 => nrel_usage_area:
-	[промышленность]
-	(* <- lang_ru;; *);
-
-	[машиностроение]
-	(* <- lang_ru;; *);
-
-=> nrel_control_type:
-	[полуавтономный]
-	(* <- lang_ru;; *);
-
-	[управляемый]
-	(* <- lang_ru;; *);
-
-	[автономный]
-	(* <- lang_ru;; *);;
+	concept_manufacture;
+	concept_engineering;;
 
 

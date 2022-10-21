@@ -1,8 +1,12 @@
 concept_natural_language_interface
+
 <- sc_node_class;
+
 => nrel_main_idtf:
 	[естественно-языковой интерфейс]
 	(* <- lang_ru;; *);
+	[natural language interface]
+	(* <- lang_en;; *);
 
 => nrel_note:
 	[разновидность пользовательского интерфейса, который принимает
@@ -10,4 +14,4 @@ concept_natural_language_interface
 	ЕЯ и для вывода информации (реакции системы на запрос пользователя).]
 	(* <- lang_ru;; *);
 
--> concept_artificial_intelligence;;
+<- concept_artificial_intelligence;;

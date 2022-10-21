@@ -1,8 +1,12 @@
 concept_image_generator
+
 <- sc_node_class;
+
 => nrel_main_idtf:
 	[генератор изображений]
 	(* <- lang_ru;; *);
+	[image generator]
+	(* <- lang_en;; *);
 
 => nrel_note:
 	[компьютерная автоматизированная система,
@@ -12,7 +16,7 @@ concept_image_generator
 	сгенерированное изображение на основании введённого пользователем описания.]
 	(* <- lang_ru;; *);
 
--> concept_artificial_intelligence;
+<- concept_artificial_intelligence;
 
 => nrel_inclusion:
 	concept_natural_language_interface;;

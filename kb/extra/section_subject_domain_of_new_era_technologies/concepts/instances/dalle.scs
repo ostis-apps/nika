@@ -1,0 +1,22 @@
+dalle
+
+=> nrel_main_idtf:
+    [DALL-E]
+    (* <- lang_ru;;*);
+    [DALL-E]
+    (* <- lang_en;;*);
+
+=> nrel_note:
+    [нейронная сеть, созданная при финансовой поддержке Microsoft,
+    способная генерировать высококачественные изображения, исходя из текстовых описаний на английском языке.]
+    (* <- lang_ru;;*);
+
+<- concept_image_generator;
+<- concept_data_science;
+<- concept_knowledge_base;
+
+=> nrel_used_programming_language:
+    concept_python;
+
+=> nrel_company_manufacturer:
+    concept_openai;;

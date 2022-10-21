@@ -1,5 +1,7 @@
 concept_building_robot
+
 <- sc_node_class;
+
 => nrel_main_idtf:
 	[строительный робот]
 	(* <- lang_ru;; *);
@@ -9,10 +11,8 @@ concept_building_robot
 	в выполнении тех или иных строительных работ, значительно ускоряя темпы строительства.]
 	(* <- lang_ru;; *);
 
--> concept_robotics;
+<- concept_robot;
 
 =>nrel_usage_area:
-	[промышленность]
-	(* <- lang_ru;; *);
-	[строительство]
-	(* <- lang_ru;; *);;
+	concept_construction;
+	concept_manufacture;;

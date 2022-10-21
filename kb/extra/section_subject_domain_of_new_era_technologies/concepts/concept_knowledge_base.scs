@@ -1,8 +1,12 @@
 concept_knowledge_base
+
 <- sc_node_class;
+
 => nrel_main_idtf:
 	[база знаний]
 	(* <- lang_ru;; *);
+	[knowledge base]
+	(* <- lang_en;; *);
 
 => nrel_note:
 	[база данных, содержащая правила вывода и информацию о
@@ -11,4 +15,4 @@ concept_knowledge_base
 	информацию, являющуюся результатом решения предыдущих задач.]
 	(* <- lang_ru;; *);
 
--> concept_artificial_intelligence;;
+<- concept_artificial_intelligence;;

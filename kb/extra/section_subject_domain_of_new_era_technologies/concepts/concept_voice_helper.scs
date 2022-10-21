@@ -1,8 +1,12 @@
 concept_voice_helper
+
 <- sc_node_class;
+
 => nrel_main_idtf:
 	[голосовой помощник]
 	(* <- lang_ru;; *);
+	[voice helper]
+	(* <- lang_en;; *);
 
 => nrel_note:
 	[это сервис, основанный на искусственном интеллекте и
@@ -10,14 +14,10 @@ concept_voice_helper
 	такие помощники могут выполнить самые разнообразные действия.]
 	(* <- lang_ru;; *);
 
--> concept_new_era_tecnologies;
+<- concept_new_era_tecnologies;
 
 => nrel_usage_area:
-	[поисковые системы]
-	(* <- lang_ru;; *);
-	[торговля]
-	(* <- lang_ru;; *);
-    [образование]
-	(* <- lang_ru;; *);
-    [банковское дело]
-	(* <- lang_ru;; *);;
+	concept_search_system;
+	concept_trading;
+	concept_education;
+	concept_banking;;

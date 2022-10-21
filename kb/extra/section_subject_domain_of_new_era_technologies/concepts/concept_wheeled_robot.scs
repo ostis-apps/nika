@@ -1,24 +1,23 @@
 concept_wheeled_robot
+
 <- sc_node_class;
+
 => nrel_main_idtf:
 	[колёсный робот]
 	(* <- lang_ru;; *);
+	[wheeled robot]
+	(* <- lang_en;; *);
 
 => nrel_note:
     [робот, использующий моторизованные
     колеса для маневрирования по земле для перемещения.]
 	(* <- lang_ru;; *);
 
--> concept_new_era_tecnologies;
+<- concept_new_era_tecnologies;
 
 => nrel_usage_area:
-    [промышленность]
-	(* <- lang_ru;; *);
-	[строительство]
-	(* <- lang_ru;; *);
-	[пожарная безопасность]
-	(* <- lang_ru;; *);
-	[космонавтика]
-	(* <- lang_ru;; *);
-    [военное дело]
-	(* <- lang_ru;; *);;
+	concept_manufacture;
+	concept_construction;
+	concept_fire_safety;
+	concept_cosmonautics;
+	concept_warfare;;

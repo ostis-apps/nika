@@ -18,28 +18,21 @@ nrel_usage_area
     [аспект жизни, в котором необходимо применение той или иной технологии]
     (* <-lang_ru;;*);
 
-<- rrel_key_sc_element:
-    ...
-    (*
-        => nrel_main_idtf:
-            [тип охотничьего  снаряжения*]
+=> nrel_first_domain:
+    concept_banking;
+    concept_computer_graphics;
+    concept_construction;
+    concept_cosmonautics;
+    concept_education;
+    concept_engineering;
+    concept_fire_safety;
+    concept_machine_learning;
+    concept_manufacture;
+    concept_medicine;
+    concept_statistics;
+    concept_search_system;
+    concept_trading;
+    concept_warfare;
 
-            (* 
-                <- lang_ru;; 
-            *);;
-
-        <- definition;;
-
-        <= nrel_sc_text_translation:
-            ...
-            (*
-                -> rrel_example:
-                    [
-                        тип охотничьего  снаряжения*
-                    ]
-
-                    (* 
-                        <- lang_ru;; 
-                    *);;
-            *);;
-    *);;
+=> nrel_second_domain:
+    concept_new_era_tecnologies;;

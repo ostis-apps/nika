@@ -1,8 +1,12 @@
 concept_tracked_robot
+
 <- sc_node_class;
+
 => nrel_main_idtf:
 	[гусеничный робот]
 	(* <- lang_ru;; *);
+	[tracked robot]
+	(* <- lang_en;; *);
 
 => nrel_note:
     [робот, который использует моторизованную
@@ -11,16 +15,11 @@ concept_tracked_robot
     по сравнению с остальными мобильными роботами]
 	(* <- lang_ru;; *);
 
--> concept_new_era_tecnologies;
+<- concept_new_era_tecnologies;
 
 => nrel_usage_area:
-    [промышленность]
-	(* <- lang_ru;; *);
-	[строительство]
-	(* <- lang_ru;; *);
-    [пожарная безопасность]
-	(* <- lang_ru;; *);
-	[космонавтика]
-	(* <- lang_ru;; *);
-    [военное дело]
-	(* <- lang_ru;; *);;
+	concept_manufacture;
+	concept_construction;
+	concept_fire_safety;
+	concept_cosmonautics;
+	concept_warfare;;

@@ -29,68 +29,45 @@ section_subject_domain_of_new_era_technologies = [*
    concept_voice_helper;
    concept_image_generator;
    concept_knowledge_base;
+   concept_robot;
    concept_building_robot;
    concept_conveyor_robot;
    concept_mobile_robot;
    concept_wheeled_robot;
    concept_tracked_robot;
+   concept_omron;
+   concept_programming_language;
+   concept_golang;
+   concept_python;
+   concept_openai;
+   concept_intel;
+   concept_stabilityai;
+   concept_google;
+   concept_cpp;
+   concept_java;
+   concept_ruby;
+   concept_banking;
+   concept_computer_graphics;
+   concept_construction;
+   concept_cosmonautics;
+   concept_education;
+   concept_engineering;
+   concept_fire_safety;
+   concept_machine_learning;
+   concept_manufacture;
+   concept_medicine;
+   concept_statistics;
+   concept_search_system;
+   concept_trading;
+   concept_warfare;
 	-> rrel_explored_relation:
+   nrel_company_manufacturer;
+   nrel_max_speed;
+   nrel_weight_capacity;
    nrel_control_type;
    nrel_used_programming_language;
    nrel_usage_area;;
 *];;
-
-section_subject_domain_of_new_era_technologies <= nrel_section_decomposition:
-	{
-        section_subject_domain_of_new_era_technologies
-	};;
-
- rrel_key_sc_element -> (section_subject_domain_of_new_era_technologies -> subject_domain_of_new_era_technologies)
-(*
-	=> nrel_key_sc_element_order: (section_subject_domain_of_new_era_technologies -> concept_artificial_intelligence)
-(*
-	<- rrel_key_sc_element;;
-	=> nrel_key_sc_element_order: (section_subject_domain_of_new_era_technologies -> concept_expert_system)
-(*
-	<- rrel_key_sc_element;;
-	=> nrel_key_sc_element_order: (section_subject_domain_of_new_era_technologies -> concept_decision_making_system)
-(*
-   <- rrel_key_sc_element;;
-	=> nrel_key_sc_element_order: (section_subject_domain_of_new_era_technologies -> concept_natural_language_interface)
-(*
-   <- rrel_key_sc_element;;
-	=> nrel_key_sc_element_order: (section_subject_domain_of_new_era_technologies -> concept_machine_learning)
-(*
-   <- rrel_key_sc_element;;
-	=> nrel_key_sc_element_order: (section_subject_domain_of_new_era_technologies -> concept_robotics)
-(*
-   <- rrel_key_sc_element;;
-	=> nrel_key_sc_element_order: (section_subject_domain_of_new_era_technologies -> concept_computer_vision)
-(*
-   <- rrel_key_sc_element;;
-	=> nrel_key_sc_element_order: (section_subject_domain_of_new_era_technologies -> concept_talking_bot)
-(*
-   <- rrel_key_sc_element;;
-	=> nrel_key_sc_element_order: (section_subject_domain_of_new_era_technologies -> concept_voice_helper)
-(*
-   <- rrel_key_sc_element;;
-	=> nrel_key_sc_element_order: (section_subject_domain_of_new_era_technologies -> concept_image_generator)
-
-(*
-   <- rrel_key_sc_element;;
-	=> nrel_key_sc_element_order: (section_subject_domain_of_new_era_technologies -> concept_knowledge_base)
-
-(*
-   <- rrel_key_sc_element;;
-	=> nrel_key_sc_element_order: (section_subject_domain_of_new_era_technologies -> concept_conveyor_robot)
-
-(*
-   <- rrel_key_sc_element;;
-	=> nrel_key_sc_element_order: (section_subject_domain_of_new_era_technologies -> concept_mobile_robot)
-
-	(* <- rrel_key_sc_element;; *);;
-
-*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;
 
 section_subject_domain_of_new_era_technologies
 -> rrel_key_sc_element:
@@ -111,6 +88,35 @@ section_subject_domain_of_new_era_technologies
    concept_mobile_robot;
    concept_wheeled_robot;
    concept_tracked_robot;
+   concept_robot;
+   concept_omron;
+   concept_programming_language;
+   concept_golang;
+   concept_python;
+   concept_openai;
+   concept_intel;
+   concept_stabilityai;
+   concept_google;
+   concept_cpp;
+   concept_java;
+   concept_ruby;
+   concept_banking;
+   concept_computer_graphics;
+   concept_construction;
+   concept_cosmonautics;
+   concept_education;
+   concept_engineering;
+   concept_fire_safety;
+   concept_machine_learning;
+   concept_manufacture;
+   concept_medicine;
+   concept_statistics;
+   concept_search_system;
+   concept_trading;
+   concept_warfare;
    nrel_control_type;
+   nrel_company_manufacturer;
+   nrel_max_speed;
+   nrel_weight_capacity;
    nrel_used_programming_language;
    nrel_usage_area;;

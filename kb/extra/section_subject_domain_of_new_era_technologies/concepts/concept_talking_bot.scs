@@ -1,8 +1,12 @@
 concept_talking_bot
+
 <- sc_node_class;
+
 => nrel_main_idtf:
 	[диалоговый бот]
 	(* <- lang_ru;; *);
+	[talking bot]
+	(* <- lang_en;; *);
 
 => nrel_note:
 	[виртуальный собеседник, программа, которая может решать
@@ -10,17 +14,13 @@ concept_talking_bot
 	искать информацию по запросу и выполнять простейшие поручения.]
 	(* <- lang_ru;; *);
 
--> concept_artificial_intelligence;
+<- concept_artificial_intelligence;
 
 => nrel_usage_area:
-	[образование]
-    (* <-lang_ru;;*);
-    [промышленность]
-    (* <-lang_ru;;*);
-	[торговля]
-    (* <-lang_ru;;*);
-    [банковское дело]
-    (* <-lang_ru;;*);
+	concept_education;
+	concept_manufacture;
+	concept_trading;
+	concept_banking;
 
 => nrel_inclusion:
     concept_natural_language_interface;
