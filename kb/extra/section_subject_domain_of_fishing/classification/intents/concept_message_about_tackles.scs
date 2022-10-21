@@ -1,0 +1,27 @@
+concept_message_about_tackles
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о снастях]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_tackles];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о снастях)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о снастях - атомарное сообщение,
+    которое содержит информацию о том, что такое снасти.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

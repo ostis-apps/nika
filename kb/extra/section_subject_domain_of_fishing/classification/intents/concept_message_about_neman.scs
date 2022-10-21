@@ -1,0 +1,27 @@
+concept_message_about_neman
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о Немане]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_neman];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о Немане)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о Немане - атомарное сообщение,
+    которое содержит информацию о том, что такое река Неман.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
