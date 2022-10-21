@@ -1,0 +1,31 @@
+section_subject_domain_of_computer_games
+<- sc_node_struct;
+=> nrel_main_idtf:
+[Раздел. Предметная область компьютерные игры](* <- lang_ru;; *);
+	[Section. Subject domain of computer games](* <- lang_en;; *);
+<-atomic_section;;
+
+section_subject_domain_of_computer_games = [*
+	subject_domain_of_computer_games
+=> nrel_main_idtf:
+	[Предметная область компьютерные игры](* <- lang_ru;; *);
+	[Subject domain of computer games](* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+concept_computer_games;
+// concept_history_computer_games;
+-> rrel_not_maximum_studied_object_class:
+concept_game_developer;
+concept_history_computer_games;
+concept_game_publisher;
+-> rrel_explored_relation:
+nrel_genre;
+nrel_company;
+nrel_relase_date;
+nrel_gender;
+nrel_game;
+nrel_platform;
+nrel_game_publisher;;
+// nrel_lab_workshop;
+// nrel_lab_work_condition;;
+*];;

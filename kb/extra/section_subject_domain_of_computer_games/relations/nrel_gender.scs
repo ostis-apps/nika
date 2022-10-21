@@ -1,0 +1,11 @@
+nrel_gender
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [пол*]
+    (* <- lang_ru;; *);
+    => nrel_note:
+        [М - Мужчина
+        Ж - Женшина]
+        (*<-lang_ru;;*);
+
+<-binary_relation;;
