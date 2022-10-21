@@ -1,0 +1,47 @@
+concept_self_awareness
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Самосознание]
+	(* <- lang_ru;; *);
+	[Self-awareness]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Самосознание)]
+		(* <- lang_ru;; *);
+		[Def. (Self-awareness)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Самосознание — сознание субъектом самого себя в отличие от иного — других субъектов и мира вообще; это сознание человеком своего взаимодействия с объективным миром и миром субъективным (психикой), своих жизненно важных потребностей, мыслей, чувств, мотивов, инстинктов, переживаний, действий.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Self-awareness - the consciousness of the subject of himself, in contrast to the other - other subjects and the world in general; this is a person's consciousness of his interaction with the objective world and the subjective world (psyche), his vital needs, thoughts, feelings, motives, instincts, experiences, actions.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Самосознание)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Самосознание не изначальная данность, присущая человеку, а продукт развития.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_humanitiese;;

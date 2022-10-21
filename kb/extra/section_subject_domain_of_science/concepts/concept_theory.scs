@@ -1,0 +1,47 @@
+concept_theory
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Теория]
+	(* <- lang_ru;; *);
+	[Theory]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Теория)]
+		(* <- lang_ru;; *);
+		[Def. (Theory)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Теория — упорядоченная и обоснованная система взглядов, суждений, положений, позволяющая адекватно объяснять факты, анализировать процессы, прогнозировать и регулировать их развитие.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Theory - an ordered and substantiated system of views, judgments, and positions that allows one to adequately explain facts, analyze processes, predict and regulate their development.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Теория)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Важное свойство теории — способность прогнозировать, на основе которой выполняется её верификация.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_methodology;;

@@ -1,0 +1,47 @@
+concept_postclassical_science
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Постклассическая наука]
+	(* <- lang_ru;; *);
+	[Postclassical science]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Постклассическая наука)]
+		(* <- lang_ru;; *);
+		[Def. (Postclassical science)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Постклассическая наука - наука эпохи кризиса классической рациональности: теория эволюции Дарвина, теория относительности Эйнштейна, принцип неопределённости Гейзенберга, теория Большого Взрыва, теория катастроф Рене Тома, фрактальная геометрия Мандельброта.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Postclassical science is the science of the era of the crisis of classical rationality: Darwin's theory of evolution, Einstein's theory of relativity, Heisenberg's uncertainty principle, Big Bang theory, Rene Thom's catastrophe theory, Mandelbrot's fractal geometry.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Постклассическая наука)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[На этом этапе важную интегрирующую роль играют математизация научного знания, эволюционно-синергетическая парадигма, системный подход.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_history_of_science;;

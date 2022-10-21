@@ -1,0 +1,47 @@
+concept_scientific_method
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Научный метод]
+	(* <- lang_ru;; *);
+	[Scientific method]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Научный метод)]
+		(* <- lang_ru;; *);
+		[Def. (Scientific method)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Научный метод — система категорий, ценностей, регулятивных принципов, методов обоснования, образцов и т. д., которыми руководствуется в своей деятельности научное сообщество.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The scientific method - a system of categories, values, regulative principles, methods of substantiation, samples, etc., which guide the scientific community in its activities.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Научный метод)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Метод включает в себя способы исследования феноменов, систематизацию, корректировку новых и полученных ранее знаний.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_methodology;;

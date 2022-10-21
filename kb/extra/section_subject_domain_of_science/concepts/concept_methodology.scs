@@ -1,0 +1,47 @@
+concept_methodology
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Методология науки]
+	(* <- lang_ru;; *);
+	[Methodology]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Методология науки)]
+		(* <- lang_ru;; *);
+		[Def. (Methodology)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Методология науки — это учение о методах и процедурах научной деятельности, а также раздел общей теории познания (гносеологии), в особенности теории научного познания (эпистемологии) и философии науки.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The methodology of science - the doctrine of the methods and procedures of scientific activity, as well as a section of the general theory of knowledge (epistemology), in particular the theory of scientific knowledge (epistemology) and the philosophy of science.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Методология науки)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Основная задача методологии науки заключается в обеспечении эвристической формы познания системой строго выверенных и прошедших апробацию принципов, методов, правил и норм.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: science_studies;;

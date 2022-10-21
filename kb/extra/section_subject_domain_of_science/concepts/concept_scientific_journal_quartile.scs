@@ -1,0 +1,47 @@
+concept_scientific_journal_quartile
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Квартиль научного журнала]
+	(* <- lang_ru;; *);
+	[Scientific journal quartile]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Квартиль научного журнала)]
+		(* <- lang_ru;; *);
+		[Def. (Scientific journal quartile)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Квартиль научного журнала — это категория научных журналов, которую определяют библиометрические показатели, отражающие уровень цитируемости, то есть востребованность журнала научным сообществом.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The quartile of a scientific journal - a category of scientific journals, which is determined by bibliometric indicators that reflect the level of citation, that is, the demand for the journal by the scientific community.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Квартиль научного журнала)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[В первую и вторую квартили входят 50% журналов, индексированных в соответствующей международной базе данных, имеющие наибольшие библиометрические показатели.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_scientometrics;;

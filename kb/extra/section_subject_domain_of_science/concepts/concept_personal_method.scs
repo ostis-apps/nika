@@ -1,0 +1,47 @@
+concept_personal_method
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Личностный метод]
+	(* <- lang_ru;; *);
+	[Personal method]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Личностный метод)]
+		(* <- lang_ru;; *);
+		[Def. (Personal method)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Личностный метод — направлен на овладение своим поведением, вырабатывание уверенности в себе, осознание своих сил и возможностей.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Personal method - aimed at mastering one's behavior, developing self-confidence, awareness of one's strengths and capabilities.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Личностный метод)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Следствие личностного метода — развитие самостоятельного мышления и творческого потенциала (например, групповая динамика).]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_psychology_of_science;;

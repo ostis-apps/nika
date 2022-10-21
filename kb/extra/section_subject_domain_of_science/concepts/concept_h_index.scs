@@ -1,0 +1,47 @@
+concept_h_index
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Индекс Хирша]
+	(* <- lang_ru;; *);
+	[H-index]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Индекс Хирша)]
+		(* <- lang_ru;; *);
+		[Def. (H-index)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Индекс Хирша, или h-индекс  — наукометрический показатель, предложенный в 2005 году аргентино-американским физиком Хорхе Хиршем из Калифорнийского университета в Сан-Диего первоначально для оценки научной продуктивности физиков.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The h-index - a scientometric indicator proposed in 2005 by the Argentine-American physicist Jorge Hirsch from the University of California at San Diego, originally to assess the scientific productivity of physicists.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Индекс Хирша)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Индекс Хирша является количественной характеристикой продуктивности учёного, группы учёных, научной организации или страны в целом, основанной на количестве публикаций и количестве цитирований этих публикаций.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_scientometrics;;

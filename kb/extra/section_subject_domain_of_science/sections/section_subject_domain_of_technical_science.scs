@@ -1,0 +1,39 @@
+section_subject_domain_of_technical_science
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Техническая наука]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Technical science]
+	(* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+	concept_analytical_research;
+	concept_natural_experiment;
+	concept_computer_modelling;
+	subject_domain_of_technical_science;
+	concept_technical_science;;
+
+section_subject_domain_of_technical_science = [*
+subject_domain_of_technical_science
+
+=> nrel_main_idtf: 
+	[Предметная область Техническая наука]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Technical science]
+	(* <- lang_en;; *);
+
+<= nrel_private_subject_domain:
+	section_subject_domain_of_technical_science;
+
+-> rrel_maximum_studied_object_class:
+	concept_technical_science;
+
+-> rrel_not_maximum_studied_object_class:
+	concept_analytical_research;
+	concept_natural_experiment;
+	concept_computer_modelling;
+	
+
+<- subject_domain;;
+*];;

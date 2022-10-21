@@ -1,0 +1,50 @@
+nrel_period
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-asymmetric_relation;
+=>nrel_main_idtf:
+	[Период*]
+	(* <- lang_ru;; *);
+	[Period*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_history_of_science;
+=>nrel_second_domain: 
+	concept_prescience;
+	concept_ancient_science;
+	concept_medieval_magical_science;
+	concept_classical_science;
+	concept_postclassical_science;
+	
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Период*)]
+		(* <- lang_ru;; *);
+		[Def.(Period*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Период* - отрезок времени в рамках одной из систем периодизации истории.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Period* - a period of time within one of the systems of periodization of history.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_history_of_science;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

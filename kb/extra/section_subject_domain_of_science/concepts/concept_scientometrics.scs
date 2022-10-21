@@ -1,0 +1,47 @@
+concept_scientometrics
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Наукометрия]
+	(* <- lang_ru;; *);
+	[Scientometrics]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Наукометрия)]
+		(* <- lang_ru;; *);
+		[Def. (Scientometrics)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Наукометрия — область науковедения, проводящая исследование науки количественными методами.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Scientometrics - a field of science studies that conducts the study of science by quantitative methods.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Наукометрия)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Наукометрию применяют как абсолютную основу оценки выполнения и финансирования различных научных единиц (институтов, команд, индивидуумов).]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: science_studies;;
