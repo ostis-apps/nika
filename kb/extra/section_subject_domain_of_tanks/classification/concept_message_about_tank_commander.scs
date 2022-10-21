@@ -1,0 +1,36 @@
+concept_message_about_tank_commander
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о командире танка]
+	    (* <- lang_ru;; *);
+	[message about tank commander]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_tank_commander];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о командире танка)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about tank commander)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о командире танка - атомарное сообщение, с запросом на вывод определения командира танка.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A message about a tank commander is an atomic message, with a request to derive the definition of a tank commander.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
