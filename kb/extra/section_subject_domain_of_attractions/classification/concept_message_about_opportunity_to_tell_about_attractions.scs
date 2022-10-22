@@ -1,0 +1,36 @@
+concept_message_about_opportunity_to_tell_about_attractions
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о наличии возможности говорить о спутниках]
+	    (* <- lang_ru;; *);
+	[message about opportunity to tell about attractions]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[_about_opportunity_to_tell_about_attractions];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о достопримечательностьях)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about opportunity to tell about attractions)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о наличии возможности говорить о спутниках - атомарное сообщение, с вопросом о возмжности говорить на тему "Достопримечательности".]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about opportunity to tell about satellite is an atomic message atomic message, asking if it's possible to talk about "Аttractions"]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

@@ -92,3 +92,49 @@ nrel_city
    	 	 concept_city
    	 };;
 *);;
+
+nrel_be_in_same_city
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- unoriented_relation;
+
+
+<- symmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [находиться в одном городе*]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: 
+	concept_attraction;
+=> nrel_second_domain: 
+	concept_attraction;
+
+=> nrel_definitional_domain: 
+	{     
+		concept_attraction 
+
+	};
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (находиться в одном городе*)]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [находиться в одном городе* - бинарное 
+               ориентированное отношение, связывающее 2
+               достопримечательности, которые находятся в одном городе.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+   	 	 concept_attraction
+   	 };;
+*);;

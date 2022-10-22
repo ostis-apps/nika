@@ -1,0 +1,36 @@
+concept_message_about_the_need_to_visit
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о необходимости посетить]
+	    (* <- lang_ru;; *);
+	[message about the need to visit]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[_about_the_need_to_visit];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о необходимости посетить)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about the need to visit)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о необходимости посетить - атомарное сообщение, с запросом на рассказ о том, какие достопримечательности в данном городе надо посетить.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about entity is an atomic message, what attractions in this city should be visited.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

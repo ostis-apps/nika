@@ -37,8 +37,7 @@ section_subject_domain_of_historical_object = [*
 
 
 	-> rrel_maximum_studied_object_class:
-   		concept_historical_object;;
-
+   		concept_historical_object;
 	-> rrel_not_maximum_studied_object_class:
 	concept_military_patriotic_attraction;
 	concept_religious_object;
@@ -46,11 +45,11 @@ section_subject_domain_of_historical_object = [*
 	concept_church;
 	concept_synagogue;
 	concept_building;
-	concept_fountain;;
-
+	concept_fountain;
 	-> rrel_explored_relation:
 	nrel_year_of_creation;
 	nrel_creator;;
+	
 *];;
 
 section_subject_domain_of_historical_object
@@ -63,5 +62,7 @@ section_subject_domain_of_historical_object
 	concept_synagogue;
 	concept_building;
 	concept_fountain;
-	concept_historical_object;;
+	concept_historical_object;
+	nrel_year_of_creation;
+	nrel_creator;;
 

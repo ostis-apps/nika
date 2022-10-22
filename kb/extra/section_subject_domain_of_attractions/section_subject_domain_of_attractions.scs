@@ -38,7 +38,6 @@ section_subject_domain_of_attractions = [*
 
 	-> rrel_maximum_studied_object_class:
    		concept_attraction;
-
 	-> rrel_not_maximum_studied_object_class:
 	concept_entertainment_facility;
 	concept_historical_object;
@@ -57,8 +56,7 @@ section_subject_domain_of_attractions = [*
 	concept_geyser;
 	concept_reserve;
 	concept_building;
-	concept_fountain;;
-
+	concept_fountain;
 	-> rrel_explored_relation:
 	nrel_cost_of_visit;
 	nrel_city;
@@ -87,6 +85,12 @@ section_subject_domain_of_attractions
 	concept_reserve;
 	concept_building;
 	concept_fountain;
-	concept_casino;;
+	concept_casino;
+	nrel_cost_of_visit;
+	nrel_city;
+	nrel_google_rating;
+	nrel_country;
+	nrel_time_of_visit;;
+	
 
 

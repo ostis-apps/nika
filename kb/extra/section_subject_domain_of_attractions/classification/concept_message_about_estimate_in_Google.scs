@@ -1,0 +1,36 @@
+concept_message_about_estimate_in_Google
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о оценке в Google]
+	    (* <- lang_ru;; *);
+	[message about estimate in Google]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[_about_estimate];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о оценке в Google)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about estimate in Google)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о оценке в Google - атомарное сообщение, с запросом на информацию об оценке в Google.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Google rating message - an atomic message requesting rating information from Google.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
