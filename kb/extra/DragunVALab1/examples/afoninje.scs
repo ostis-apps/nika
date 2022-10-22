@@ -1,0 +1,187 @@
+afoninje
+
+	<-sc_node_not_relation;
+
+	=> nrel_main_idtf:
+		[Andrey "Afoninje" Afonin](* <-lang_en;; *);
+		[Андрей "Afoninje" Афонин](* <-lang_ru;; *);
+	=> nrel_idtf:
+		[Afoninje](* <-lang_en; lang_ru;; *);
+
+	<-player_dota;	
+
+	=>nrel_citizen_of: Russia;
+	=>nrel_surname: Afonin;
+	=>nrel_first_name: Andrey;
+	=>nrel_nickname: Afoninje;
+	=>nrel_birthday: 27_09_1996;
+
+  <=nrel_with_whom: contract_afoninje_and_special_reaction_team_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Afoninje and Special Reaction Team](* <-lang_en;; *);
+			[Контракт между Afoninje и Special Reaction Team](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: special_reaction_team_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 01_08_2014;;
+			->rrel_end: 09_08_2014;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_afoninje_and_nvmi_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Afoninje and NVMI](* <-lang_en;; *);
+			[Контракт между Afoninje и NVMI](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: nvmi_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 09_08_2014;;
+			->rrel_end: 02_09_2014;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_afoninje_and_kompas_gaming_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Afoninje and Kompas.Gaming](* <-lang_en;; *);
+			[Контракт между Afoninje и Kompas.Gaming](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: kompas_gaming_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 09_09_2014;;
+			->rrel_end: 30_10_2014;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_afoninje_and_hell_raisers_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Afoninje and HellRaisers](* <-lang_en;; *);
+			[Контракт между Afoninje и HellRaisers](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: hell_raisers_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 30_10_2014;;
+			->rrel_end: 22_03_2016;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_afoninje_and_polarity_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Afoninje and Polarity](* <-lang_en;; *);
+			[Контракт между Afoninje и Polarity](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: polarity_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 25_03_2016;;
+			->rrel_end: 05_06_2016;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_afoninje_and_power_rangers_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Afoninje and Power Rangers](* <-lang_en;; *);
+			[Контракт между Afoninje и Power Rangers](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: power_rangers_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 08_09_2016;;
+			->rrel_end: 14_11_2016;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_afoninje_and_rebels_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Afoninje and Rebels](* <-lang_en;; *);
+			[Контракт между Afoninje и Rebels](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: rebels_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 05_01_2017;;
+			->rrel_end: 29_01_2017;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_afoninje_and_rebels_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Afoninje and Rebels](* <-lang_en;; *);
+			[Контракт между Afoninje и Rebels](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: rebels_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 05_01_2017;;
+			->rrel_end: 29_01_2017;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_afoninje_and_effect_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Afoninje and Effect](* <-lang_en;; *);
+			[Контракт между Afoninje и Effect](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: effect_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 29_01_2017;;
+			->rrel_end: 06_04_2018;;
+		*);;
+	*);
+
+	<=nrel_with_whom: contract_afoninje_and_ferzee_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Afoninje and ferzee](* <-lang_en;; *);
+			[Контракт между Afoninje и ferzee](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: ferzee_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 14_09_2018;;
+			->rrel_end: 05_10_2018;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_afoninje_and_gambit_esports_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Afoninje and Gambit Esports](* <-lang_en;; *);
+			[Контракт между Afoninje и Gambit Esports](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: gambit_esports_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 23_05_2017;;
+			->rrel_end: 27_06_2018;;
+		*);;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 05_10_2018;;
+		*);;
+	*);;

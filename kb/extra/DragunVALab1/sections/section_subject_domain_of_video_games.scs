@@ -1,0 +1,28 @@
+section_subject_domain_of_video_games
+
+=> nrel_main_idtf: 
+	[Раздел. Предметная область игровых дисциплин](* <- lang_ru;; *);
+	[Section. Subject domain of video games](* <- lang_en;; *);
+
+<- not_enough_formed_structure;
+<- atomic_section;
+
+<= nrel_section_decomposition:
+	{
+		section_subject_domain_of_game_genres
+		(*
+			=> nrel_section_base_order:
+				section_subject_domain_of_game_developers;;
+		*);
+		section_subject_domain_of_game_developers
+		(*
+			=> nrel_section_base_order:
+				section_subject_domain_of_game_platforms;;
+		*);
+		section_subject_domain_of_game_platforms
+	};;
+
+section_subject_domain_of_video_games = [*^"file://section_subject_domain_of_video_games.scsi"*];;
+
+section_subject_domain_of_video_games
+-> rrel_key_sc_element: subject_domain_of_video_games;;

@@ -1,0 +1,13 @@
+section_subject_domain_of_game_genres
+
+=> nrel_main_idtf: 
+	[Раздел. Предметная область жанров игр](* <- lang_ru;; *);
+	[Section. Subject domain of game genres](* <- lang_en;; *);
+
+<- not_enough_formed_structure;
+<- atomic_section;;
+
+section_subject_domain_of_game_genres = [*^"file://section_subject_domain_of_game_genres.scsi"*];;
+
+section_subject_domain_of_game_genres
+-> rrel_key_sc_element: subject_domain_of_game_genres;;

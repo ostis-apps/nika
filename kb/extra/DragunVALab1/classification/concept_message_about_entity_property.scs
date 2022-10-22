@@ -1,0 +1,37 @@
+concept_message_about_entity_property
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение об свойствах сущности]
+	    (* <- lang_ru;; *);
+	[message about entity property]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_entity_property];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение об свойствах сущности)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about entity property)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение об экземплярах сущности - атомарное сообщение, которое содержит свойство, информацию о котором необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about entity example is an atomic message that contains entity property information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

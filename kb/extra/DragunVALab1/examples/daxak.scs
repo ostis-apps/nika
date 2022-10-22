@@ -1,0 +1,97 @@
+daxak
+
+	<-sc_node_not_relation;
+
+	=> nrel_main_idtf:
+		[Nikita "Daxak" Kuzmin](* <-lang_en;; *);
+		[Никита "Daxak" Кузьмин](* <-lang_ru;; *);
+	=> nrel_idtf:
+		[Daxak](* <-lang_en; lang_ru;; *);
+
+	<-player_dota;	
+
+	=>nrel_citizen_of: Russia;
+	=>nrel_surname: Kuzmin;
+	=>nrel_first_name: Nikita;
+	=>nrel_nickname: Daxak;
+	=>nrel_birthday: 07_05_1997;
+
+  <=nrel_with_whom: contract_daxak_and_digital_company_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Daxak and Digital Company](* <-lang_en;; *);
+			[Контракт между Daxak и Digital Company](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: digital_company_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: xx_12_2016;;
+			->rrel_end: 20_01_2017;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_daxak_and_hive_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Daxak and Hive](* <-lang_en;; *);
+			[Контракт между Daxak и Hive](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: hive_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: xx_02_2017;;
+			->rrel_end: 14_04_2017;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_daxak_and_thug_life_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Daxak and Thug Life](* <-lang_en;; *);
+			[Контракт между Daxak и Thug Life](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: thug_life_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: xx_05_2017;;
+			->rrel_end: 23_05_2017;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_daxak_and_ferzee_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Daxak and ferzee](* <-lang_en;; *);
+			[Контракт между Daxak и ferzee](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: ferzee_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 14_09_2018;;
+			->rrel_end: 05_10_2018;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_daxak_and_gambit_esports_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Daxak and Gambit Esports](* <-lang_en;; *);
+			[Контракт между Daxak и Gambit Esports](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: gambit_esports_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 23_05_2017;;
+			->rrel_end: 27_06_2018;;
+		*);;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 05_10_2018;;
+		*);;
+	*);;

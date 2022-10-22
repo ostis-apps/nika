@@ -1,0 +1,13 @@
+section_subject_domain_of_sponsors
+
+=> nrel_main_idtf: 
+	[Раздел. Предметная область спонсоров](* <- lang_ru;;*);
+	[Section. Subject domain of sponsors](* <- lang_en;; *);
+
+<- not_enough_formed_structure;
+<- atomic_section;;
+
+section_subject_domain_of_sponsors = [*^"file://section_subject_domain_of_sponsors.scsi"*];;
+
+section_subject_domain_of_sponsors
+-> rrel_key_sc_element: subject_domain_of_sponsors;;
