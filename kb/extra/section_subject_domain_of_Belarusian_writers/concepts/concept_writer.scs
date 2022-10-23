@@ -1,0 +1,53 @@
+concept_writer
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [писатель]
+   	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [writer] 
+   	(* <-lang_en;; *);
+=> nrel_idtf:
+   [литератор] 
+	(* <-lang_ru;; *);   
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [писатель - человек, который занимается созданием словесных произведений, так или иначе предназначенных для общественного потребления.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_artwork;
+		concept_human
+		};;
+	*);
+	
+=> nrel_copyright:
+   concept_artwork;
+   
+=> nrel_writer_genre:
+   concept_genre;
+   
+=> nrel_date_of_birth:
+	concept_date;
+	
+=> nrel_date_of_death: 
+	concept_date;
+   
+=> nrel_including:
+   concept_proseist;
+   concept_poet;
+   concept_dramatist;
+   concept_publicist;;
+   
+concept_human
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [человек]
+   	(* <- lang_ru;; *);;

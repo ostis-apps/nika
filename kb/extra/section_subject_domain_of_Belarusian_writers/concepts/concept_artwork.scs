@@ -1,0 +1,48 @@
+concept_artwork
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [художественное произведение]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [artwork]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [произведение]     (* <- lang_ru;; *);
+   [сочинение]	   (* <- lang_ru;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [художественное произведение - продукт творчества, в том числе законченное, имеющее самостоятельное значение литературное сочинение] (* <-lang_ru;; *);; 
+		*);;
+	*); 
+   
+=> nrel_promulgation: 
+   concept_electronic_publication;
+   concept_book;
+   concept_printed_publication;
+   
+=> nrel_year_of_writing: 
+   concept_value;
+   
+=> nrel_author:
+   concept_writer;
+   
+=> nrel_artwork_genre:
+   concept_prose_genre;
+   concept_dramatic_genre;
+   concept_poetic_genre;
+   concept_genre;;
+
+concept_value
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [значение]
+   (* <- lang_ru;; *);;

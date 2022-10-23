@@ -1,0 +1,27 @@
+concept_fee
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [гонорар]
+   	(* <- lang_ru;; *);
+   [fee] 
+   	(* <-lang_en;; *);
+=> nrel_idtf:
+   [honorarium]   (* <-lang_en;; *); 
+   [royalty]   (* <-lang_en;; *);    
+	
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [гонорар - денежное вознаграждение, выплачиваемое автору одного или нескольких публикуемых произведений.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_writer;
+		concept_artwork
+		};;
+	*);;

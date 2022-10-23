@@ -1,0 +1,28 @@
+genre_story
+
+<- concept_genre;
+<- concept_prose_genre;
+
+=> nrel_main_idtf:
+   [повесть]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [story]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [narrative]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [повесть - прозаический жанр, занимающий по объёму текста промежуточное место между романом и рассказом, тяготеющий к хроникальному сюжету, воспроизводящему естественное течение жизни. ] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_prose_genre
+		};;
+	*);;

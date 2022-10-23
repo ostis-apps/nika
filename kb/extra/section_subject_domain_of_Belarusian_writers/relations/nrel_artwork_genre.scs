@@ -1,0 +1,28 @@
+nrel_artwork_genre
+<- sc_node_norole_relation;
+
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+<- antireflexive_relation;
+
+=> nrel_main_idtf: 
+	[жанр произведения*] (*<-lang_ru;;*);
+=> nrel_main_idtf: 
+	[artwork genre*] (*<-lang_en;;*);
+
+=> nrel_first_domain: concept_artwork;
+=> nrel_second_domain: concept_genre;
+
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [жанр произведения* - бинарное ориентированное отношение, связывающее художественное произведение и жанр, в котором это произведение написано.] (* <-lang_ru;; *);; 
+		*);;
+	*);;

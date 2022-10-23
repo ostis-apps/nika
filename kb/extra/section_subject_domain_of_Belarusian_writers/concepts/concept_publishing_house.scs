@@ -1,0 +1,23 @@
+concept_publishing_house
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [издательство]
+   	(* <- lang_ru;; *);
+   [publishing house] 
+   	(* <-lang_en;; *);
+=> nrel_idtf:
+   [издательский дом] 
+	(* <-lang_ru;; *);   
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [издательство — медиакомпания, которая работает в области литературы, искусства, музыки или науки, и продукция которой может воспроизводиться и распространяться.] (* <-lang_ru;; *);; 
+		*);;
+	*);;

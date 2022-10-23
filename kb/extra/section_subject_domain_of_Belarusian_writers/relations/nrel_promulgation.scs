@@ -1,0 +1,33 @@
+nrel_promulgation
+<- sc_node_norole_relation;
+
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- asymmetric_relation;
+<- antireflexive_relation;
+
+=> nrel_main_idtf: 
+	[обнародование*] (*<-lang_ru;;*);
+=> nrel_idtf: 
+	[опубликование*] (*<-lang_ru;;*);	
+=> nrel_main_idtf: 
+	[promulgation*] (*<-lang_en;;*);
+
+=> nrel_first_domain: concept_artwork;
+=> nrel_second_domain: concept_publication;
+
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [обнародование* - бинарное ориентированное отношение, связывающее художественное произведение и публикацию этого произведения.] (* <-lang_ru;; *);; 
+		*);;
+				<= nrel_using_constants: {
+		concept_artwork;
+		concept_publication
+		};;
+	*);;

@@ -1,0 +1,29 @@
+concept_poet
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [поэт]
+   	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [poet] 
+   	(* <-lang_en;; *); 
+
+=> nrel_writer_genre:
+   concept_poetic_genre;
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [поэт - писатель, создающий произведения в стихах, автор произведений в поэтическом жанре.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_poetic_genre;
+		concept_writer;
+		concept_artwork
+		};;
+	*);;

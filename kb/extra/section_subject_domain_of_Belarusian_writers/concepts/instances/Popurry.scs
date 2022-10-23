@@ -1,0 +1,24 @@
+Popurry
+<- concept_publishing_house;
+
+=> nrel_main_idtf:
+   [Издательство "Попурри"]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Publishing "Popurry"]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Издательство "Попурри" - минское издательство, выпускающее психологическую, деловую, научно-популярную, детскую, учебную литературу, преимущественно переводную.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_publishing_house;
+		concept_artwork
+		};;
+	*);;

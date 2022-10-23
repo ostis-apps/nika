@@ -1,0 +1,80 @@
+section_subject_domain_of_Belarusian_writers
+=> nrel_main_idtf:
+	  [Раздел. Предметная область Писателей Беларуси]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of Belarusian writers] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_Belarusian_writers = [*
+	subject_domain_of_Belarusian_writers
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область Писателей Беларуси]
+   (* <- lang_ru;; *);
+   [Subject domain of Belarusian writers]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+   	concept_writer;
+   	concept_publication;
+   	concept_artwork;
+	-> rrel_not_maximum_studied_object_class:
+   	concept_book;
+   	concept_proseist;
+   	concept_poet;
+	concept_dramatist;
+	concept_publicist; 
+   	concept_electronic_publication;
+	concept_printed_publication;
+	-> rrel_explored_relation:
+	nrel_year_of_writing;
+	nrel_author;
+	nrel_copyright;
+	nrel_artwork_genre; 
+	nrel_edition;
+	nrel_publisher; 
+	nrel_promulgation;
+	nrel_date_of_death; 
+	nrel_date_of_birth; 
+	nrel_writer_genre; 
+	nrel_fee;;
+*];;
+
+section_subject_domain_of_Belarusian_writers
+-> rrel_key_sc_element:
+	subject_domain_of_Belarusian_writers;
+	concept_writer;
+	concept_proseist;
+	concept_poet;
+	concept_dramatist;
+	concept_publicist; 
+	concept_artwork;
+	concept_book;
+	concept_publication;
+	concept_electronic_publication;
+	concept_printed_publication;
+	concept_genre;
+	concept_prose_genre;
+	concept_dramatic_genre;
+	concept_poetic_genre;
+	concept_publicistic_genre;
+	concept_publishing_house; 
+	concept_date;
+	concept_edition;
+	concept_fee;
+	concept_booklet; 
+	concept_brochure;
+	nrel_year_of_writing;
+	nrel_author;
+	nrel_copyright;
+	nrel_artwork_genre; 
+	nrel_edition;
+	nrel_publisher; 
+	nrel_promulgation;
+	nrel_date_of_death; 
+	nrel_date_of_birth; 
+	nrel_writer_genre; 
+	nrel_fee;;

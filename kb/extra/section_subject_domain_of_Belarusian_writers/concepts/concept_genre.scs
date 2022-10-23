@@ -1,0 +1,26 @@
+concept_genre
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [жанр]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [genre]
+   (* <- lang_en;; *);
+   
+=> nrel_inclusion:
+	concept_prose_genre;
+	concept_dramatic_genre;
+	concept_poetic_genre;
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [жанр - форма, в которой реализуются основные роды литературы: эпос, лирика и драма, характеризующаяся теми или иными общими сюжетными и стилистическими признаками.] (* <-lang_ru;; *);; 
+		*);;
+	*);;
