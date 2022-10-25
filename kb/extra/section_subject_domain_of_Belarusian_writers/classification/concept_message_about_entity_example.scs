@@ -1,0 +1,33 @@
+concept_message_about_entity_example
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение об экземплярах сущности]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_entity_example];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение об экземплярах сущности)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение об экземплярах сущности - атомарное сообщение,
+    которое содержит экземпляры сущности, информацию о которой
+    необходимо найти.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
+	
+concept_intent_possible_class
+-> concept_message_about_entity_example;
+-> concept_message_about_entity_inclusion;
+-> concept_message_about_entity;;
