@@ -1,0 +1,44 @@
+concept_quantum_chaos
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Квантовый хаос]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Quantum chaos]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [В течение первой половины двадцатого века хаотическое поведение в механике было признано (как в задаче трёх тел в небесной механике), но не совсем понято.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Область физических исследований, изучающих квантовые аналоги систем, для которых в классической физике характерно хаотическое поведение, пытается ответить на основной вопрос — как соотносятся между собой квантовая механика и классический хаос.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Квантового хаоса]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Квантовый хаос — динамика квантовых систем, соответствующих хаотическим классическим системам.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+			nrel_date_of_discovering;
+			concept_classical_chaos;
+			concept_theory;
+			concept_quantum_system;
+			concept_quantum_mechanics
+   	 };;
+  *);;
+

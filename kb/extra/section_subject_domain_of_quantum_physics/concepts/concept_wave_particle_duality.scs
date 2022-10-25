@@ -1,0 +1,46 @@
+concept_wave_particle_duality
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Корпускулярно-волновой дуализм]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Wave–particle duality]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Типичные примеры объектов, проявляющих двойственное корпускулярно-волновое поведение — электроны и свет.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Дальнейшим развитием представлений о корпускулярно-волновом дуализме стала концепция квантованных полей в квантовой теории поля.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Корпускулярно-волнового дуализма]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Корпускулярно-волновой дуализм — свойство природы, состоящее в том, что материальные микроскопические объекты могут при одних условиях проявлять свойства классических волн, а при других — свойства классических частиц.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_date_of_discovering;
+			nrel_reseacher;
+			concept_wave_interference;
+			concept_quantum_field_theory;
+			concept_quantum_system;
+			concept_quantum_mechanics
+   	 };;
+  *);;
+

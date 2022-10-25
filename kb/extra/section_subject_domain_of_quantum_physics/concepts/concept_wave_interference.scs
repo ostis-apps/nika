@@ -1,0 +1,45 @@
+concept_wave_interference
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Интерференция волн]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Wave interference]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Интерферировать могут все волны, однако устойчивая интерференционная картина будет наблюдаться только в том случае, если волны имеют одинаковую частоту и колебания в них не ортогональны.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [При интерференции энергия волн перераспределяется в пространстве.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Интерференции волн]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Интерференция волн - взаимное увеличение или уменьшение результирующей амплитуды двух или нескольких когерентных волн при их наложении друг на друга.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_date_of_discovering;
+   			nrel_quantum_chemics;
+			concept_wave;
+			concept_energy;
+			concept_quantum_mechanics
+   	 };;
+  *);;
+

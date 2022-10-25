@@ -1,0 +1,33 @@
+nrel_date_of_discovering
+<- sc_node_norole_relation;
+
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+<- antireflexive_relation;
+
+=> nrel_main_idtf: 
+	[дата открытия*] (*<-lang_ru;;*);
+=> nrel_main_idtf: 
+	[date of discovering*] (*<-lang_en;;*);
+
+=> nrel_first_domain: concept_date;
+=> nrel_second_domain:  concept_human;
+			
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Исследователь* - отношение, описывающее дату открытия явления.] (* <-lang_ru;; *);; 
+		*);;
+				<= nrel_using_constants: {
+		concept_quantum_physics;
+		concept_date
+		};;
+	*);;
+

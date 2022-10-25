@@ -1,0 +1,47 @@
+concept_schrodinger_equation
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Уравнение Шрёдингера]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Schrodinger equation]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Играет в квантовой механике такую же важную роль, как уравнения Гамильтона или уравнение второго закона Ньютона в классической механике или уравнения Максвелла для электромагнитных волн.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Уравнение Шрёдингера предназначено для частиц без спина, движущихся со скоростями, много меньшими скорости света.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Уравнения Шрёдингера]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Уравнение Шрёдингера — линейное дифференциальное уравнение в частных производных, описывающее изменение в пространстве и во времени чистого состояния, задаваемого волновой функцией, в гамильтоновых квантовых системах.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_date_of_discovering;
+   			nrel_reseacher;
+   			nrel_quantum_mechanics;
+			concept_wave_function;
+			concept_hamiltonian;
+			concept_quantum_system;
+			concept_particle_in_box
+   	 };;
+  *);;
+

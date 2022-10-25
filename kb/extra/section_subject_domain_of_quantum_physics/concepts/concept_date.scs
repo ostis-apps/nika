@@ -1,0 +1,22 @@
+concept_date
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [дата]
+   	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [date] 
+   	(* <-lang_en;; *); 
+
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [дата - запись, включающая в себя день, месяц и год, иногда день недели, номер недели в году.] (* <-lang_ru;; *);; 
+		*);;
+	*);;

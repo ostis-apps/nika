@@ -1,0 +1,45 @@
+concept_quantum_superposition
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Принцип суперпозиции]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Quantum superposition]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Из принципа суперпозиции следует, что все уравнения, которым подчиняются волновые функции (например, уравнение Шрёдингера) в квантовой механике должны быть линейными.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Важными следствиями принципа суперпозиции являются различные интерференционные эффекты, а для составных систем — зацепленные состояния.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Принципа суперпозиции]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Принцип суперпозиции — фундаментальный принцип квантовой механики, согласно которому, если для некоторой квантовой системы допустимы состояния Ψ 1 и Ψ 2, то допустима и любая их линейная комбинация.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+			nrel_date_of_discovering;
+			nrel_authors;
+			concept_quantum_states;
+			concept_principle;
+			concept_quantum_system;
+			concept_electron
+   	 };;
+  *);;
+

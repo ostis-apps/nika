@@ -1,0 +1,44 @@
+concept_free_particle
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Свободная частица]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Free particle]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Совокупность свободных частиц образует идеальный газ.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [В классической физике свободная частица сохраняет свою скорость, соответственно, сохраняется также импульс.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Свободной частицы]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Свободная частица — термин, который используется в физике для обозначения частиц, которые не взаимодействуют с другими телами и имеют только кинетическую энергию.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_date_of_discovering;
+			nrel_reseacher;
+			concept_wave_function;
+			concept_particle
+   	 };;
+  *);;
+

@@ -1,0 +1,46 @@
+concept_atomic_orbital
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Атомная орбиталь]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Atomic orbital]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Атом каждого элемента имеет полный набор всех орбиталей на всех электронных уровнях.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Геометрическое представление атомной орбитали — область пространства, ограниченная поверхностью равной плотности (эквиденситной поверхностью) вероятности или заряда.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Атомной орбитали]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Атомная орбиталь — одноэлектронная волновая функция, полученная решением уравнения Шрёдингера для данного атома задаётся: главным n, орбитальным l, и магнитным m — квантовыми числами.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_date_of_discovering;
+			nrel_reseacher;
+			concept_wave_interference;
+			concept_atomic_theory;
+			concept_quantum_system;
+			concept_quantum_mechanics
+   	 };;
+  *);;
+

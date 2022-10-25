@@ -1,0 +1,47 @@
+concept_quantum_state
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Квантовое состояние]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Quantum state]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [В общем случае квантовое состояние принципиально не может быть описано волновой функцией и должно быть описано матрицей плотности.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Для описания возможных состояний заданной квантовой системы применяется математический аппарат гильбертова пространства H, позволяющий практически полностью описать всё, что может происходить с системой.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Квантового состояния]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Квантовое состояние — любое возможное состояние, в котором может находиться квантовая система.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_date_of_discovering;
+			nrel_reseacher;
+			concept_electron;
+			concept_wave_function;
+			concept_quantum_system;
+			concept_quantum_mechanics;
+			concept_superposition
+   	 };;
+  *);;
+

@@ -1,0 +1,46 @@
+concept_particle_in_box
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Квантовая яма с бесконечными стенками]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Particle in a box]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Часто анализируется прямоугольная область по всем измерениям (прямоугольный «ящик»), а потенциальная энергия в нём полагается нулевой.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Для демонстрации основных черт поведения частицы в яме удобны такие профили потенциальной энергии, при которых движение происходит независимо по трём декартовым координатам и переменные в уравнении Шрёдингера разделяются.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Квантовой ямы]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Квантовая яма с бесконечными стенками — область пространства размером порядка длины волны де Бройля рассматриваемой частицы (хотя бы в одном направлении), вне которой потенциальная энергия U бесконечна.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_date_of_discovering;
+   			nrel_quantum_mechanics;
+   			nrel_reseacher;
+			concept_wave_interference;
+			concept_wave_function;
+			concept_quantum_system
+   	 };;
+  *);;
+

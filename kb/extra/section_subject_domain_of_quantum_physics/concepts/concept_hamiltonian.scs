@@ -1,0 +1,45 @@
+concept_hamiltonian
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Гамильтониан]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Quantum field theory]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Спектр гамильтониана может быть дискретным или непрерывным.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Так как энергия — вещественная величина, гамильтониан является самосопряжённым оператором.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Гамильтониана]
+   	   (* <- lang_ru;; *);;
+      	<- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Гамильтониан в квантовой теории — оператор полной энергии.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_date_of_discovering;
+			concept_wave_interference;
+			concept_operator;
+			concept_quantum_theory;
+			concept_energy
+   	 };;
+  *);;
+
