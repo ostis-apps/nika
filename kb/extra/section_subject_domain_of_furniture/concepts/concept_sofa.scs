@@ -1,0 +1,33 @@
+concept_sofa
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [диван] (*<-lang_ru;;*);
+    [sofa] (*<-lang_en;;*);
+<= nrel_inclusion: concept_multiple_seat_furniture;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (диван)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Жёсткий, полужёсткий, полумягкий или мягкий предмет мебели со спинкой, предназначенный для сидения одного и/или нескольких человек.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(диван)] (* <- lang_ru;; *);; 
+    => nrel_using_constants: {
+        concept_bed
+	};;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Иногда может быть использован как кровать.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

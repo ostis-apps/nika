@@ -1,0 +1,33 @@
+concept_bed
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [кровать] (*<-lang_ru;;*);
+    [bed] (*<-lang_en;;*);
+<= nrel_inclusion: concept_lying_furniture;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (кровать)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_lying_furniture
+	};;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Основной подтип мебели для лежания, предназначенный для сна.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+   
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(кровать)] (* <- lang_ru;; *);; 
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [В жилых помещениях обычно располагается в спальне.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

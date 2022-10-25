@@ -1,0 +1,35 @@
+concept_bunk_bed
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [двухъярусная кровать] (*<-lang_ru;;*);
+    [bunk bed] (*<-lang_en;;*);
+<= nrel_inclusion: concept_bed;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (двухъярусная кровать)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Двухъярусная кровать - это кровать, имеющая 2 уровня (кровать над кроватью).] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+   
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(двухъярусная кровать)] (* <- lang_ru;; *);; 
+    => nrel_using_constants: {
+        concept_bed
+	};;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Дальнейшим развитием двухъярусных кроватей стали спальные комплексы. 
+		Это сложная многоуровневая мебель, позволяющая в одном комплексе объединить несколько спальных мест, 
+		а также расположить дополнительные зоны для работы или детского уголка.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

@@ -1,0 +1,32 @@
+concept_furniture_brand
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [бренд мебели] (*<-lang_ru;;*);
+    [furniture brand] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (бренд мебели)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_furniture
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Бренд мебели - комплекс представлений, мнений, ассоциаций, эмоций, ценностных характеристик о продукте либо услуге в сознании потребителя..] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(бренд мебели)] (* <- lang_ru;; *);; 
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Бренд воспринимается как широко известная торговая марка или компания, занимающая в сознании и психологии потребительских сегментов особое место из массы себе подобных.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

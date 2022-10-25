@@ -1,0 +1,35 @@
+concept_entertainment_furniture
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [мебель для развлечения] (*<-lang_ru;;*);
+    [entartainment furniture] (*<-lang_en;;*);
+<= nrel_inclusion: concept_furniture;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (мебель для развлечения)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+		concept_billiard_table;
+		concept_chess_table;
+        concept_furniture
+	};;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Мебель для развлечения - мебель, использующаяся для развлечения. Включает в себя бильярдные столы, столы для шахмат и т.п..] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(мебель для развлечения)] (* <- lang_ru;; *);; 
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Обычно устанавливается в специализированных заведениях, но также может находится и в жилых помещениях.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

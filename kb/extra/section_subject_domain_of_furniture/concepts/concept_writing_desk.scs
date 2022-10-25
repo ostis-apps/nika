@@ -1,0 +1,36 @@
+concept_writing_desk
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [письменный стол] (*<-lang_ru;;*);
+    [writing desk] (*<-lang_en;;*);
+<= nrel_inclusion: concept_table;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (письменный стол)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+      concept_table
+	};;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Письменный стол - стол, предназначенный для различных письменных работ. В нём часто имеются специальные места для хранения письменных принадлежностей.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(письменный стол)] (* <- lang_ru;; *);; 
+    => nrel_using_constants: {
+	  concept_computer_desk
+	};;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Иногда может быть использован и как компьютерный стол.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

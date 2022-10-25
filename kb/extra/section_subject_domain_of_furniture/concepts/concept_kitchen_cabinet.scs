@@ -1,0 +1,19 @@
+concept_kitchen_cabinet
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [кухонный шкафчик] (*<-lang_ru;;*);
+    [kitchen cabinet] (*<-lang_en;;*);
+<= nrel_inclusion: concept_storage_furniture;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (кухонный шкафчик)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Кухонный шкафчик - шкафчик, находящийси на кухне и использующийся для хранения различных кухонных принадлежностей.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);;

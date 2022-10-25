@@ -1,0 +1,30 @@
+concept_gun_cabinet
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [шкаф для хранения оружия] (*<-lang_ru;;*);
+    [gun cabinet] (*<-lang_en;;*);
+<= nrel_inclusion: concept_storage_furniture;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (шкаф для хранения оружия)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Шкаф для хранения оружия.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(шкаф для хранения оружия)] (* <- lang_ru;; *);; 
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Такие шкафы можно увидеть в КХО в различных силовых ведомствах.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

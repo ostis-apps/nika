@@ -1,0 +1,35 @@
+concept_storage_furniture
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [мебель для хранения] (*<-lang_ru;;*);
+    [storage furniture] (*<-lang_en;;*);
+<= nrel_inclusion: concept_furniture;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (мебель для хранения)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_chest;
+		concept_wardrobe;
+        concept_furniture
+	};;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Мебель для хранения - мебель, использующаяся для хранения. Включает в себя различные типы шкафов, сундуки, гардеробы и т.п..] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(мебель для хранения)] (* <- lang_ru;; *);; 
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+		[В том или ином виде присутствует везде, где вообще появляется человек (т.к. у него почти всегда есть необходимость что-либо хранить).](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

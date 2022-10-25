@@ -1,0 +1,30 @@
+concept_bench
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [скамья] (*<-lang_ru;;*);
+    [bench] (*<-lang_en;;*);
+<= nrel_inclusion: concept_multiple_seat_furniture;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (скамья)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Скамья - широкая площадка на ножках или стойках, предназначенная для сидения нескольких человек. Может быть со спинкой (деревянный диван) или без неё (типа лавки).] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(скамья)] (* <- lang_ru;; *);; 
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Скамейки, установленные в общественных местах, относятся к формам малой архитектуры.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

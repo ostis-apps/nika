@@ -1,0 +1,29 @@
+concept_furniture
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [мебель] (*<-lang_ru;;*);
+    [furniture] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (мебель)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Мебель - овокупность передвижных или встроенных изделий для обстановки жилых и общественных помещений и различных зон пребывания человека.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);
+   
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(мебель)] (* <- lang_ru;; *);; 
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Первые свидетельства наличия мебели относятся ко временам фараонов и находкам из Акротири примерно 1500 год до н. э.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

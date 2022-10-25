@@ -1,0 +1,19 @@
+concept_bookcase
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [книжный шкаф] (*<-lang_ru;;*);
+    [bookcase] (*<-lang_en;;*);
+<= nrel_inclusion: concept_storage_furniture;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (книжный шкаф)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Шкаф для хранения книг.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);;

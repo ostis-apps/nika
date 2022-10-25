@@ -1,0 +1,26 @@
+section_subject_domain_of_furniture_brands
+=> nrel_main_idtf:
+	  [Раздел. Предметная область брендов мебели]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of furniture brands] 
+  (* <- lang_en;; *);;
+  
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_furniture_brands = [*
+	subject_domain_of_furniture_brands
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область брендов мебели]
+   (* <- lang_ru;; *);
+   [Subject domain of furniture brands]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_furniture_brand;;
+*];;
+
+section_subject_domain_of_furniture_brands
+-> rrel_key_sc_element:
+      subject_domain_of_furniture_brands; 
+      concept_furniture_brand;;

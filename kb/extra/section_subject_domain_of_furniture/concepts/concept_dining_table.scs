@@ -1,0 +1,33 @@
+concept_dining_table
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [обеденный стол] (*<-lang_ru;;*);
+    [dining desk] (*<-lang_en;;*);
+<= nrel_inclusion: concept_table;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (обеденный стол)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+      concept_table
+	};;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Обеденный стол - стол, за которым люди едят (и не обятельно обедают).] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(обеденный стол)] (* <- lang_ru;; *);; 
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Один из самых простых типов столов.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

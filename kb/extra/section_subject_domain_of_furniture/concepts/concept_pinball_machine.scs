@@ -1,0 +1,22 @@
+concept_pinball_machine
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [автомат для игры в пинбол] (*<-lang_ru;;*);
+    [pinball machine] (*<-lang_en;;*);
+<= nrel_inclusion: concept_entertainment_furniture;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (автомат для игры в пинбол)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_table
+	};;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Автомат для игры в пинбол - специальная установка для игры в пинбол. Внешне напоминает стол, содержащий в себе механизмы для игры.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;
