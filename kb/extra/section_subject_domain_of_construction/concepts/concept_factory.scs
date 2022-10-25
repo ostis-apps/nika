@@ -1,0 +1,32 @@
+concept_factory
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [фабрика] (*<-lang_ru;;*);
+    [factory] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (фабрика)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_building
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Фабрика — промышленное предприятие, основанное на применении машин, характеризующееся крупномасштабным производством. ] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(фабрика)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+[Как правило, состоит из одного или нескольких расположенных неподалёку друг от друга строений, в которых располагаются цеха, сформированные по функции или по виду выпускаемой продукции, а также складские и офисные помещения. ](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

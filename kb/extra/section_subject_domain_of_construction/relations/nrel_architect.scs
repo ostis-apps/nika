@@ -1,0 +1,39 @@
+nrel_architect
+<- sc_node_role_relation;
+<- relation;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:
+    concept_person;
+
+=> nrel_second_domain:
+    concept_construction;
+ 
+=> nrel_definitional_domain:
+    concept_construction;
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[архитектор* ] (*<-lang_ru;;*);
+	[architect* ] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (архитектор)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_construction;
+        concept_building;
+        concept_structure
+};;
+<= nrel_sc_text_translation: ... (*
+    -> rrel_example:
+        [Архитектор — квалифицированный специалист, который на профессиональной основе осуществляет архитектурное проектирование (организацию архитектурной среды), включая проектирование зданий, в том числе разработку объёмно-планировочных и интерьерных решений, а также «авторский надзор за строительством архитектурного объекта».] (* <- lang_ru;; => nrel_format: format_html;;*);;
+        *);;
+*);;

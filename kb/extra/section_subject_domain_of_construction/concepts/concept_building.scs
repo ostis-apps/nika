@@ -1,0 +1,33 @@
+concept_building
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [здание] (*<-lang_ru;;*);
+    [building] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (здание)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_structure;
+        concept_territory  
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Здание — результат строительства, представляющий собой объемное надземное строительное сооружение, включающую в себя помещения, предназначенные для проживания и (или) деятельности людей, размещения производства, хранения продукции или содержания животных, а также сети и системы инженерно-технического обеспечения.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(здание)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+[В соответствии с примечанием к п. 2.1.4 ГОСТ 27751-2014 здание является частным случаем строительного сооружения.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

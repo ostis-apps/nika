@@ -1,0 +1,32 @@
+  concept_corral
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [загон] (*<-lang_ru;;*);
+    [corral] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (загон)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_building
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Загон — место на выгоне или пастбище, огороженное жердневой изгородью, куда загоняют домашний скот, чаще лошадей и коров, предназначенное для отдыха и дополнительной подкормки.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(загон)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Загон позволяет производить выпас скота без присутствия пастуха и собак. ](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

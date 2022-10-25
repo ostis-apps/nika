@@ -1,0 +1,32 @@
+  concept_farm
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [ферма] (*<-lang_ru;;*);
+    [farm] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (ферма)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_building
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Ферма — частное сельскохозяйственное предприятие, занимающееся производством сельскохозяйственной продукции.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(ферма)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [В России в результате распространения колхозов начиная с 1930-х годов фермерская деятельность ограничивалась размерами малого семейного предприятия, в котором исключалось применение наёмного труда (крестьяне-единоличники).](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

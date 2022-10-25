@@ -1,0 +1,49 @@
+nrel_material
+<- sc_node_role_relation;
+<- relation;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:
+    concept_cement;
+
+=> nrel_second_domain:
+    concept_construction;
+ 
+=> nrel_definitional_domain:
+    concept_construction;
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[материал* ] (*<-lang_ru;;*);
+	[material* ] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (материал)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_construction;
+        concept_cement
+};;
+<= nrel_sc_text_translation: ... (*
+    -> rrel_example:
+        [Материал — вещество или смесь веществ, из которых изготавливается продукция.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+        *);;
+*);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(материал)] (* <- lang_ru;; *);;
+    <= nrel_sc_text_translation: ... (*
+        -> rrel_example:
+        [Изучению материалов, их правильному выбору и применению посвящена такая отрасль знания, как материаловедение.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

@@ -1,0 +1,34 @@
+  concept_tunnel
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [тоннель] (*<-lang_ru;;*);
+    [tunnel] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (тоннель)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_structure;
+        concept_rails;
+        concept_road
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Тоннель — горизонтальное или наклонное подземное сооружение, одно из измерений которого (длина) значительно превосходит по размерам два других (ширину и высоту).] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(тоннель)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Тоннель может быть пешеходным и/или велосипедным, для движения автомобилей, поездов, кораблей, а также трамваев и другого городского общественного транспорта, перемещения воды, прокладки сетей городского хозяйства и т. п. ](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

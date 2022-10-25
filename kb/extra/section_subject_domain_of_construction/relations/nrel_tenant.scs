@@ -1,0 +1,37 @@
+nrel_tenant
+<- sc_node_role_relation;
+<- relation;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:
+    concept_person;
+
+=> nrel_second_domain:
+    concept_construction;
+ 
+=> nrel_definitional_domain:
+    concept_construction;
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[жилец* ] (*<-lang_ru;;*);
+	[tenant* ] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (жилец)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_transport
+};;
+<= nrel_sc_text_translation: ... (*
+    -> rrel_example:
+        [Жилец - тот, кто живёт где-либо (в доме, квартире и т. п.).] (* <- lang_ru;; => nrel_format: format_html;;*);;
+        *);;
+*);;

@@ -1,0 +1,32 @@
+concept_warehouse
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [склад] (*<-lang_ru;;*);
+    [warehouse] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (склад)] (* <- lang_ru;; *);;
+          => nrel_using_constants: {
+        concept_building
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Склад —  помещение, предназначенное для хранения материальных ценностей и оказания складских услуг.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(склад)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+[Склады используются производителями, импортёрами, экспортёрами, оптовыми торговцами, транспортными предприятиями, таможней и т. д.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

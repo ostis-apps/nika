@@ -1,0 +1,86 @@
+section_subject_domain_of_construction
+=> nrel_main_idtf:
+	  [Раздел. Предметная область строительства]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of construction] 
+  (* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+                  section_subject_domain_of_agricultural_construction;
+                  section_subject_domain_of_industrial_construction;
+                  section_subject_domain_of_transport_construction;
+                  section_subject_domain_of_military_construction;
+                  section_subject_domain_of_hydro_reclamation_construction;
+                  section_subject_domain_of_hydrotechnical_construction;
+                  section_subject_domain_of_civil_construction;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_construction = [*
+	subject_domain_of_construction
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область строительства]
+   (* <- lang_ru;; *);
+   [Subject domain of construction]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_construction;
+	-> rrel_not_maximum_studied_object_class:
+      concept_bridge;
+      concept_building;
+      concept_cement;
+      concept_construction;
+      concept_corral;
+      concept_dam;
+      concept_drainage_system;
+      concept_factory;
+      concept_farm;
+      concept_house;
+      concept_person;
+      concept_mall;
+      concept_rails;
+      concept_public_buildings;
+      concept_structure;
+      concept_road;
+      concept_territory;
+      concept_test_site;
+      concept_tunnel;
+      concept_warehouse;
+      concept_water_reservoir;      
+	-> rrel_explored_relation:
+      nrel_architect;
+      nrel_designer;
+      nrel_material;
+      nrel_tenant;;
+*];;
+
+section_subject_domain_of_construction
+-> rrel_key_sc_element:
+      subject_domain_of_construction;
+      concept_bridge;
+      concept_building;
+      concept_cement;
+      concept_construction;
+      concept_corral;
+      concept_dam;
+      concept_drainage_system;
+      concept_factory;
+      concept_farm;
+      concept_house;
+      concept_person;
+      concept_mall;
+      concept_rails;
+      concept_public_buildings;
+      concept_structure;
+      concept_road;
+      concept_territory;
+      concept_test_site;
+      concept_tunnel;
+      concept_warehouse;
+      concept_water_reservoir;      
+      nrel_architect;
+      nrel_designer;
+      nrel_material;
+      nrel_tenant;;

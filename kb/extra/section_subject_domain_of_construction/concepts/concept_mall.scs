@@ -1,0 +1,32 @@
+concept_mall
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [торговый центр] (*<-lang_ru;;*);
+    [mall] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (торговый центр)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_building
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Торговый центр — группа предприятий торговли, управляемых как единое целое и находящихся в одном здании или комплексе зданий.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(торговый центр)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+[Современный торговый центр может представлять собой большой торгово-развлекательный комплекс — многоэтажное здание, в котором кроме магазинов могут находиться также кафе, бары, казино, кинотеатр, боулинг и иное.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;
