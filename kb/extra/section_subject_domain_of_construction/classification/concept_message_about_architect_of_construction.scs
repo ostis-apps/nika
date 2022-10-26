@@ -1,0 +1,42 @@
+concept_message_about_architect_of_construciton
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение с вопрососм о том, какой архитектор у этого объекта строительства]
+	    (* <- lang_ru;; *);
+	[message about architect of construction]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_architect_of_construction];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение с вопрососм о том, какой архитектор у этого объекта строительства)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about architect of construction)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение с вопрососм о том, какой архитектор у этого объекта строительства - атомарное сообщение, с запросом на ответ на вопрос, какой архитектор разрабатывал этот объект строительства?]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about architect of object of construction is an atomic message, with a request for an answer to the question, which architect designed this object of construction?]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
+concept_intent_possible_class
+-> concept_message_about_opportunity_to_tell_about_construciton;
+-> concept_message_about_construction;
+-> concept_message_about_favorite_construction;
+-> concept_message_about_architect_of_construction;;

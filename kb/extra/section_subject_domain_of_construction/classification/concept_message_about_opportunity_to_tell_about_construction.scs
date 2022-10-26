@@ -1,0 +1,36 @@
+concept_message_about_opportunity_to_tell_about_construction
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о наличии возможности говорить о строительстве]
+	    (* <- lang_ru;; *);
+	[message about opportunity to tell about construction]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_opportunity_to_tell_about_construction];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о наличии возможности говорить о строительстве)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about opportunity to tell about construction)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о наличии возможности говорить о строительстве - атомарное сообщение, с вопросом о возмжности говорить на тему "Строительство".]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about opportunity to tell about construction is an atomic message atomic message, asking if it's possible to talk about "Сonstruction".]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
