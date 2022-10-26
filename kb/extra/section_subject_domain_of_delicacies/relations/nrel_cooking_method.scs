@@ -1,0 +1,21 @@
+nrel_cooking_method
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+
+=>nrel_main_idtf:
+    [способ готовки]
+    (* <- lang_ru;; *);
+    [cooking method]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [те или иные методы, применяемые при готовке блюд]
+    (* <-lang_ru;;*);
+
+=> nrel_first_domain:
+    concept_cooking_method;
+
+=> nrel_second_domain:
+    concept_delicacy;;

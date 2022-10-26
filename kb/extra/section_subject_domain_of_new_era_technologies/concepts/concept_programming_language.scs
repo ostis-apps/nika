@@ -1,0 +1,24 @@
+concept_programming_language
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+	[язык программирования]
+	(* <- lang_ru;; *);
+    [programming language]
+	(* <- lang_en;; *);
+
+<-concept_new_era_tecnologies;
+
+=> nrel_inclusion:
+    concept_golang;
+    concept_ruby;
+    concept_cpp;
+    concept_python;
+    concept_java;
+
+=> nrel_note:
+    [формальный язык, предназначенный для записи компьютерных программ.
+    Язык программирования определяет набор лексических, синтаксических и семантических правил,
+    определяющих внешний вид программы и действия, которые выполнит исполнитель (обычно — ЭВМ) под её управлением]
+	(* <- lang_ru;; *);;

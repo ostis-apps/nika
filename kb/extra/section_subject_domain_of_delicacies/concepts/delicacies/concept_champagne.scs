@@ -1,0 +1,16 @@
+concept_champagne
+
+<-sc_node_class;
+
+=> nrel_main_idtf:
+	[шампанское]
+	(* <- lang_ru;; *);
+    [champagne]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [Игристое белое виноградное вино, насыщенное углекислым газом в результате вторичного брожения.]
+    (* <-lang_ru;;*);
+
+=> nrel_cooking_method:
+    concept_fermentation;;

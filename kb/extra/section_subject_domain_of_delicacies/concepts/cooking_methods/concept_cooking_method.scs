@@ -1,0 +1,23 @@
+concept_cooking_method
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+	[способ готовки блюд]
+	(* <- lang_ru;; *);
+    [cooking method]
+	(* <- lang_en;; *);
+
+=> nrel_inclusion:
+    concept_boiling;
+    concept_stewing;
+    concept_baking;
+    concept_steaming;
+    concept_frying;
+    concept_smoking;
+    concept_microwave_cooking;
+    concept_canning;
+
+=> nrel_note:
+    [алгоритм действий, направленный на приготовление того или иного блюда]
+	(* <- lang_ru;; *);;

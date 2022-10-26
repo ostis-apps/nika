@@ -1,0 +1,20 @@
+concept_foie_gras
+
+<-sc_node_class;
+
+=> nrel_main_idtf:
+	[Фуа-гра]
+	(* <- lang_ru;; *);
+    [foie gras]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [специальным образом приготовленная печень откормленного гуся или утки.]
+    (* <-lang_ru;;*);
+
+=> nrel_cooking_method:
+    concept_steaming;
+    concept_smoking;
+    concept_stewing;
+    concept_boiling;
+    concept_frying;;

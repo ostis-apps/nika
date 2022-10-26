@@ -1,0 +1,37 @@
+concept_delicacy
+
+<-sc_node_class;
+
+=> nrel_main_idtf:
+	[деликатес]
+	(* <- lang_ru;; *);
+    [delicacy]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [редкий или дорогой продукт питания, который считается очень желанным,
+    изысканным или особенно отличительным в данной культуре.]
+    (* <-lang_ru;;*);
+
+=> nrel_inclusion:
+    concept_durian;
+    concept_champagne;
+    concept_quail_egg;
+    concept_puffer;
+    concept_foie_gras;
+    concept_black_caviar;
+    concept_red_caviar;
+    concept_truffle;
+    concept_lobster;
+    concept_shrimp;
+    concept_oyster;
+    concept_jellyfish;
+    concept_blue_cheese;
+    concept_mussel;
+    concept_cashew_nuts;
+
+=> nrel_usage_area:
+    concept_cooking;
+    concept_restaurant;
+    concept_food;
+    concept_consuming;;

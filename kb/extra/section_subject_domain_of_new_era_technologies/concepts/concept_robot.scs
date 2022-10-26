@@ -1,0 +1,21 @@
+concept_robot
+
+=> nrel_main_idtf:
+    [робот]
+    (* <- lang_ru;; *);
+    [robot]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [автоматическое устройство, предназначенное для осуществления
+    различного рода механических операций, которое действует по заранее заложенной программе.]
+    (* <- lang_ru;; *);
+
+<- concept_robotics;
+
+=> nrel_inclusion:
+	concept_building_robot;
+	concept_conveyor_robot;
+	concept_mobile_robot;
+	concept_tracked_robot;
+	concept_wheeled_robot;;

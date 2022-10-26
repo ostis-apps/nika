@@ -1,0 +1,21 @@
+concept_fermentation
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+	[брожение]
+	(* <- lang_ru;; *);
+    [fermentation]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [биохимический процесс, основанный на окислительно-восстановительных превращениях
+    органических соединений в анаэробных условиях. В ходе брожения происходит образование АТФ за счёт
+    субстратного фосфорилирования.]
+    (* <-lang_ru;;*);
+
+=> nrel_basic_decomposition:
+    concept_pickling;
+    concept_marinating;
+    concept_candiing;
+    concept_salting;;

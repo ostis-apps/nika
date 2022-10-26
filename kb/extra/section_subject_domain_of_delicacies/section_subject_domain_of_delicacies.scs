@@ -1,0 +1,58 @@
+section_subject_domain_of_delicacies
+=> nrel_main_idtf:
+[Раздел. Предметная область деликатесов] (* <- lang_ru;; *);
+[Section. Subject domain of delicacies] (* <- lang_en;; *);
+<- atomic_class;;
+
+section_subject_domain_of_delicacies = [*
+    subject_domain_of_delicacies
+    <- sc_node_struct;
+    => nrel_main_idtf:
+        [Предметная область деликатесов] (* <- lang_ru;; *);
+        [Subject domain of delicacies] (* <- lang_en;; *);
+    <- subject_domain;
+
+    -> rrel_maximum_studied_object_class:
+        concept_delicacy;
+
+	-> rrel_not_maximum_studied_object_class:
+        concept_durian;
+        concept_champagne;
+        concept_quail_egg;
+        concept_puffer;
+        concept_foie_gras;
+        concept_black_caviar;
+        concept_red_caviar;
+        concept_truffle;
+        concept_lobster;
+        concept_shrimp;
+        concept_oyster;
+        concept_jellyfish;
+        concept_blue_cheese;
+        concept_mussel;
+        concept_cashew_nuts;
+
+    -> rrel_explored_relation:
+        nrel_cooking_method;
+        nrel_country_of_origin;;
+*];;
+
+section_subject_domain_of_delicacies
+-> rrel_key_sc_element:
+        concept_durian;
+        concept_champagne;
+        concept_quail_egg;
+        concept_puffer;
+        concept_foie_gras;
+        concept_black_caviar;
+        concept_red_caviar;
+        concept_truffle;
+        concept_lobster;
+        concept_shrimp;
+        concept_oyster;
+        concept_jellyfish;
+        concept_blue_cheese;
+        concept_mussel;
+        concept_cashew_nuts;
+        nrel_cooking_method;
+        nrel_country_of_origin;;
