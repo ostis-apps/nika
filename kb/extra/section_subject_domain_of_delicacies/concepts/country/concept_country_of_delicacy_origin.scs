@@ -1,0 +1,31 @@
+concept_country_of_delicacy_origin
+
+<-sc_node_class;
+
+=> nrel_main_idtf:
+	[страна происхождения деликатеса]
+	(* <- lang_ru;; *);
+    [country of delicacy origin]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [места, в которых преимущественно производят те или иные деликатесы.]
+    (* <-lang_ru;;*);
+
+=> nrel_inclusion:
+    concept_iran;
+    concept_usa;
+    concept_france;
+    concept_italy;
+    concept_germany;
+    concept_india;
+    concept_brazil;
+    concept_thailand;
+    concept_south_korea;
+    concept_japan;
+    concept_chile;
+    concept_new_zealand;
+    concept_equador;
+    concept_switzerland;
+    concept_russia;
+    concept_china;;

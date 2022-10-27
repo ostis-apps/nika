@@ -1,13 +1,17 @@
 nrel_cooking_method
 
-<- sc_node_norole_relation;
+<-sc_node_norole_relation;
 <- relation;
 <- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
 
 =>nrel_main_idtf:
-    [способ готовки]
+    [способы готовки]
     (* <- lang_ru;; *);
-    [cooking method]
+    [cooking methods]
     (* <- lang_en;; *);
 
 => nrel_note:

@@ -1,0 +1,25 @@
+nrel_country_of_origin
+
+<-sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=>nrel_main_idtf:
+    [страны происхождения деликатесов]
+    (* <- lang_ru;; *);
+    [countries of delicacies origin]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [отношения между деликатесом и его страной происхождеия и/или производства]
+    (* <-lang_ru;;*);
+
+=> nrel_first_domain:
+    concept_country_of_delicacy_origin;
+
+=> nrel_second_domain:
+    concept_delicacy;;
