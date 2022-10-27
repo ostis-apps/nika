@@ -1,0 +1,35 @@
+concept_possibilities_of_neurobionics
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+    [возможности нейробионики]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_note:
+    [
+         Под нейроподобными системами понимаются физические системы или математические модели, воспроизводящие наиболее существенные информационные свойства нейронных структур.
+    ]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+<= nrel_stage:
+    concept_thought_transmission;
+    concept_stage;
+    concept_rebuilding;
+    concept_brain;
+    concept_brainputer;
+
+
+<= nrel_applications_type:
+    concept_muscles;
+    concept_eyes;
+    concept_reactions;
+    concept_technique;
+    concept_elements;;
