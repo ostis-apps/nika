@@ -1,0 +1,15 @@
+concept_oriented_route
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [ориентированный маршрут]
+    (* <- lang_ru;; *);
+    [oriented route]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [конечную последовательность вершин и дуг, в которой каждый элемент инцидентен предыдущему и последующему.]
+    (* <- lang_ru;; *);
+
+<- concept_route;;
