@@ -1,0 +1,46 @@
+concept_message_about_ammo_material
+
+<- sc_node_not_relation;
+
+=> nrel_main_idtf:
+    [сообщение о материале патрона]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_wit_ai_idtf:
+    [about_ammo_material];
+
+<- rrel_key_sc_element:
+    ...
+
+    (*
+        => nrel_main_idtf:
+            [Опр. (сообщение о материале патрона)]
+
+            (* 
+                <- lang_ru;; 
+            *);;
+        
+        <- definition;;
+    
+        <= nrel_sc_text_translation:
+        ...
+        
+            (*
+                -> rrel_example:
+                    [Сообщение о материале патрона - атомарное сообщение,
+                    которое содержит понятие патрона, материал которого
+                    необходимо найти.]
+
+                    (* 
+                        <- lang_ru;; 
+                    *);;
+            *);;
+
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+    *);;

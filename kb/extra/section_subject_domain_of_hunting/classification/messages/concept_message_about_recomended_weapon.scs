@@ -1,0 +1,46 @@
+concept_message_about_recomended_weapon
+
+<- sc_node_not_relation;
+
+=> nrel_main_idtf:
+    [сообщение о рекомендуемой винтовке]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_wit_ai_idtf:
+    [about_recomended_weapon];
+
+<- rrel_key_sc_element:
+    ...
+
+    (*
+        => nrel_main_idtf:
+            [Опр. (сообщение о рекомендуемой винтовке)]
+
+            (* 
+                <- lang_ru;; 
+            *);;
+        
+        <- definition;;
+    
+        <= nrel_sc_text_translation:
+        ...
+        
+            (*
+                -> rrel_example:
+                    [Сообщение о рекомендуемой винтовке - атомарное сообщение,
+                    которое содержит понятие патрона, рекомендуемый тип винтовки которого
+                    необходимо найти.]
+
+                    (* 
+                        <- lang_ru;; 
+                    *);;
+            *);;
+
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+    *);;
