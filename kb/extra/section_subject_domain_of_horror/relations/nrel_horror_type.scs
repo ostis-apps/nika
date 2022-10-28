@@ -1,0 +1,44 @@
+nrel_horror_type
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [тип фильма ужаса*]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: 
+	concept_horror;
+=> nrel_second_domain: 
+	concept_horror_type;
+	concept_classic;
+	concept_computer_graphics;
+	concept_anime;
+	concept_hand_drawn_animation;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (тип фильма ужаса*)]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [тип фильма ужаса* - бинарное 
+               ориентированное отношение, связывающее 
+               фильм ужаса и способ его создания(тип).]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+   	 	 concept_horror;
+		 concept_horror_type
+   	 };;
+*);;

@@ -1,0 +1,37 @@
+nrel_box_office
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [кассовые сборы*]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: 
+	concept_horror;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (кассовые сборы*)]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [кассовые сборы* - бинарное 
+               ориентированное отношение, связывающее 
+               фильм ужасов (или др. произведение) и его кассовые сборы.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+   	 	 concept_horror
+   	 };;
+*);;

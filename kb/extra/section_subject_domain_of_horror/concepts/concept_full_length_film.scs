@@ -1,0 +1,28 @@
+concept_full_length_film
+<- sc_node_class;
+<- class;
+
+=>nrel_main_idtf:
+	[полнометражный фильм](*<-lang_ru;;*);
+	[full length film](*<-lang_en;;*);
+=>nrel_idtf:
+	[полнометражка](*<-lang_ru;;*);
+	
+=> nrel_note:
+   [Разные страны и киноакадемии определяют различную минимальную длительность полнометражного мультфильма.]
+   (* <- lang_ru;; *);	
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. полнометражный фильм](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [полнометражный фильм - фильм, длина которого не менее 40-55 минут.](*<-lang_ru;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+	concept_horror
+	};;
+*);;
+

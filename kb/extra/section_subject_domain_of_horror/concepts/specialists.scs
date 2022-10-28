@@ -1,0 +1,140 @@
+concept_director
+<- sc_node_class;
+<- class;
+
+=>nrel_main_idtf:
+	[режиссёр](*<-lang_ru;;*);
+	[director](*<-lang_en;;*);
+	
+<= nrel_aim: [Руководить командой, задействованной в реализации проекта.] (* <- lang_ru;; *);	
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. режиссёр](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [режиссёр - это творческий специалист, является одной из главных фигур в создании проекта (фильма, шоу, телепрограммы и т.д.).](*<-lang_ru;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+	concept_film
+	};;
+*);;
+
+concept_producer
+<- sc_node_class;
+<- class;
+
+=>nrel_main_idtf:
+	[продюсер](*<-lang_ru;;*);
+	[producer](*<-lang_en;;*);
+	
+<= nrel_aim: [идейно-художественный и организационно-финансовый контроль, подбор актёров, технического персонала.] (* <- lang_ru;; *);	
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. продюсер](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [продюсер - специалист, доверенное лицо кинокомпании, осуществляющее идейно-художественный и организационно-финансовый контроль над постановкой фильма.](*<-lang_ru;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+	concept_film_company
+	};;
+*);;
+
+concept_production_designer
+<- sc_node_class;
+<- class;
+
+=>nrel_main_idtf:
+	[художник постановщик](*<-lang_ru;;*);
+	[production designer](*<-lang_en;;*);
+	
+<= nrel_aim: [разрабатывает эскизы, делает макет декорационного комплекса, а также руководит постройкой декораций.] (* <- lang_ru;; *);	
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. художник постановщик](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [художник постановщик - специалист, который отвечает за изобразительно-декорационное решение и оформление фильма.](*<-lang_ru;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+	concept_film
+	};;
+*);;
+
+concept_composer
+<- sc_node_class;
+<- class;
+
+=>nrel_main_idtf:
+	[композитор](*<-lang_ru;;*);
+	[composer](*<-lang_en;;*);
+	
+<= nrel_aim: [написание музыкального сопровождения к фильму и др.] (* <- lang_ru;; *);	
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. композитор](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [композитор - специалист, который пишет музыку(в том числе для фильмов).](*<-lang_ru;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+	concept_film
+	};;
+*);;
+
+concept_screenwriter
+<- sc_node_class;
+<- class;
+
+=>nrel_main_idtf:
+	[автор сценария](*<-lang_ru;;*);
+	[screenwriter](*<-lang_en;;*);
+	
+<= nrel_aim: [создание сюжета, характеров героев, диалоги, описание места действия.] (* <- lang_ru;; *);	
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. автор сценария](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [автор сценария - это специалист, который пишет сценарии (в т.ч. к фильмам).](*<-lang_ru;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+	concept_film
+	};;
+*);;
+
+concept_film_editor
+<- sc_node_class;
+<- class;
+
+=>nrel_main_idtf:
+	[монтажёр](*<-lang_ru;;*);
+	[film_editor](*<-lang_en;;*);
+	
+<= nrel_aim: [создание целостного видеоряда.] (* <- lang_ru;; *);	
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. монтажёр](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [монтажёр - это специалист по работе с видеорядом, который в своей работе использует аналоговую и цифровую технику, а также компьютерные программы. ](*<-lang_ru;;*);;
+	*);;
+*);;

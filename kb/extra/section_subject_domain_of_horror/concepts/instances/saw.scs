@@ -1,0 +1,271 @@
+saw
+<-concept_horror;
+<-concept_full_length_film;
+
+=>nrel_main_idtf:
+	[пила](*<-lang_ru;;*);
+	[saw](*<-lang_en;;*);
+
+=>nrel_horror_type:concept_classic;
+=>nrel_species:film_about_psychopaths;
+
+=>nrel_film_studio:Lions_Gate_Films;
+=>nrel_distributor_country: USA;
+=>nrel_budge:[$1 200 000];
+=>nrel_box_office:[$103 096 345];
+=>nrel_year_of_production:[2004];
+
+=>nrel_director:James_Wan;
+=>nrel_producer:Gregg_Hoffman;
+=>nrel_production_designer:Leigh_Whannell;
+=>nrel_composer:Charlie_Clouser;
+=>nrel_screenwriter:David_Armstrong;
+=>nrel_film_editor:Kevin_Grothert;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. пила](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [пила - полнометражный фильм производства студии «Lions Gate Films».](*<-lang_ru;;*);;
+	*);;
+*);;
+
+
+saw_2
+<-concept_horror;
+<-concept_full_length_film;
+
+<=nrel_next_horror:saw;
+
+=>nrel_main_idtf:
+	[пила 2](*<-lang_ru;;*);
+	[saw 2](*<-lang_en;;*);
+
+=>nrel_horror_type:concept_classic;
+=>nrel_species:film_about_psychopaths;
+
+=>nrel_film_studio:Lions_Gate_Films;
+=>nrel_distributor_country: USA;
+=>nrel_budge:[$4 млн.];
+=>nrel_box_office:[$147 748 505];
+=>nrel_year_of_production:[2005];
+
+=>nrel_director:James_Wan;
+=>nrel_producer:Gregg_Hoffman;
+=>nrel_production_designer:Leigh_Whannell;
+=>nrel_composer:Charlie_Clouser;
+=>nrel_screenwriter:David_Armstrong;
+=>nrel_film_editor:Kevin_Grothert;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. пила 2](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [пила 2 - полнометражный фильм производства студии «Lions Gate Films».](*<-lang_ru;;*);;
+	*);;
+*);;
+
+
+saw_3
+<-concept_horror;
+<-concept_full_length_film;
+
+<=nrel_next_horror:saw_2;
+
+=>nrel_main_idtf:
+	[пила 3](*<-lang_ru;;*);
+	[saw 3](*<-lang_en;;*);
+
+=>nrel_horror_type:concept_classic;
+=>nrel_species:film_about_psychopaths;
+
+=>nrel_film_studio:Lions_Gate_Films;
+=>nrel_distributor_country: USA;
+=>nrel_budge:[$10 млн.];
+=>nrel_box_office:[$164 874 275];
+=>nrel_year_of_production:[2006];
+
+=>nrel_director:James_Wan;
+=>nrel_producer:Gregg_Hoffman;
+=>nrel_production_designer:Leigh_Whannell;
+=>nrel_composer:Charlie_Clouser;
+=>nrel_screenwriter:David_Armstrong;
+=>nrel_film_editor:Kevin_Grothert;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. пила 3](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [пила 3 - полнометражный фильм производства студии «Lions Gate Films».](*<-lang_ru;;*);;
+	*);;
+*);;
+
+
+
+film_about_psychopaths
+<-concept_species;
+=>nrel_main_idtf:
+	[фильм о психопатах](*<-lang_ru;;*);
+	[film about psychopaths](*<-lang_en;;*);
+=>nrel_idtf:
+	[психопаты](*<-lang_ru;;*);
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. фильмы о психопатах](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [фильмы о психопатах - фильмы, где завязка строится на людях, с психическими расстройствами.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+
+USA
+<-concept_nrel_distributor_country;
+=>nrel_main_idtf:
+	[США](*<-lang_ru;;*);
+	[USA](*<-lang_en;;*);
+=>nrel_idtf:
+	[соедененные штаты америки](*<-lang_ru;;*);
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. США](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [США -  государство в Северной Америке.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+Lions_Gate_Films
+<- concept_film_company;
+=>nrel_main_idtf:
+	[лайонс гейт филмс](*<-lang_ru;;*);
+	[Lions Gate Films](*<-lang_en;;*);
+=>nrel_idtf:
+	[LGF](*<-lang_en;;*);
+<-rrel_key_sc_element:...	
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. лайонс гейт филмс](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [лайонс гейт филмс -  американская киностудия по производству и распространению фильмов со штаб-квартирой в Санта-Монике и основана в Канада и является флагманским подразделением Lionsgate Entertainment.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+David_Armstrong
+<-concept_screenwriter;
+
+=>nrel_main_idtf:
+	[Дэвид Армстронг](*<-lang_ru;;*);
+	[David Armstrong](*<-lang_en;;*);
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Дэвид Армстронг](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Дэвид Армстронг -  оператор, продюсер, режиссер, актер. Его первый фильм был снят в 1986 году. Особую популярность  Дэвиду А. Армстронгу принесла работа над фильмами: «Пила: Игра на выживание», «Пила 2», «Пила 3».](*<-lang_ru;;*);;
+	*);;
+*);;
+
+
+Gregg_Hoffman
+<-concept_producer;
+
+=>nrel_main_idtf:
+	[Грегг Хоффман](*<-lang_ru;;*);
+	[Gregg Hoffman](*<-lang_en;;*);
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Грегг Хоффман](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Грегг Хоффман -  продюсер фильмов «Пила: Игра на выживание» и «Пила 2». Он работал также и над фильмом «Пила 3», но умер в Голливудской больнице, прежде жалуясь на боль в шее.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+Leigh_Whannell
+<-concept_production_designer;
+
+=>nrel_main_idtf:
+	[Ли Уоннелл](*<-lang_ru;;*);
+	[Leigh Whannell](*<-lang_en;;*);
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Ли Уоннелл](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Ли Уоннелл - австралийский сценарист, актёр, продюсер и режиссёр, наиболее известный по работе над кинофраншизой «Пила» и исполнения роли Адама Фолкнера-Стэнхайта в ней, а также по работе над серией фильмов «Астрал».](*<-lang_ru;;*);;
+	*);;
+*);;
+
+Charlie_Clouser
+<-concept_composer;
+
+=>nrel_main_idtf:
+	[Чарльз Клоузер](*<-lang_ru;;*);
+	[Charlie Clouser](*<-lang_en;;*);
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Чарльз Клоузер](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Чарльз Клоузер - американский музыкант, композитор и продюсер звукозаписи. Наиболее известный как участник индастриал-рок-группы Nine Inch Nails в 1994—2000 годах, Клоузер также известен как композитор, пишущий саундтреки для кино и телевидения.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+
+Kevin_Grothert
+<-concept_film_editor;
+
+=>nrel_main_idtf:
+	[Кевин Гротерт](*<-lang_ru;;*);
+	[Kevin Grothert](*<-lang_en;;*);
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Кевин Гротерт](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Кевин Гротерт - американский кинорежиссёр и писатель, наиболее известный своими работами над cерией фильмов «Пила», а также сверхъестественными ужасами, сосредоточенными на персонажах.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+
+James_Wan
+<-concept_director;
+=>nrel_main_idtf:
+	[Джеймс Ван](*<-lang_ru;;*);
+	[James Wan](*<-lang_en;;*);
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Джеймс Ван](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Джеймс Ван - австралийский кинорежиссёр фильмов ужасов, сценарист и продюсер, известный съёмками кинофраншиз «Пила», «Астрал» и «Заклятие».](*<-lang_ru;;*);;
+	*);;
+*);;
