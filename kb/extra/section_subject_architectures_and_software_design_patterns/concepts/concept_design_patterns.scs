@@ -1,0 +1,26 @@
+concept_design_patterns
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Шаблоны проектирования](* <-lang_ru;; *);
+    [Design patterns](* <-lang_en;; *);
+
+
+<= nrel_subdividing:
+    concept_classification_of_patterns;;
+
+concept_design_patterns
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Шаблоны проектирования)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Design patterns)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Шоблон проектирования — это часто встречающееся решение определённой проблемы при проектировании архитектуры программ.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Design patterns are typical solutions to commonly occurring problems in software design.](*<- lang_en;;*);;
+        *);;   
+*);;

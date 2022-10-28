@@ -1,0 +1,46 @@
+nrel_solid_principle
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+    [принцип solid*]
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_first_domain: 
+    concept_solid_design_principles;
+
+=> nrel_second_domain:
+    concept_solid_design_principles;
+
+<- rrel_key_sc_element:
+    ...
+    (*
+        => nrel_main_idtf:
+            [принцип solid*]
+
+            (* 
+                <- lang_ru;; 
+            *);;
+
+        <- definition;;
+
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [
+                        принцип solid' - отношение, показывающее к какому принципу относится данный принцип*
+                    ]
+
+                    (* 
+                        <- lang_ru;; 
+                    *);;
+            *);;
+    *);;

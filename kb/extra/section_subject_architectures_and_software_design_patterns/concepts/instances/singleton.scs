@@ -1,0 +1,12 @@
+singletone
+=> nrel_main_idtf:
+    [Одиночка](* <-lang_ru;; *);
+    [Singletone](* <-lang_en;; *);
+
+=> nrel_note:
+[Одиночка — это порождающий паттерн проектирования, который гарантирует, что у класса есть только один экземпляр, и предоставляет к нему глобальную точку доступа.](* <- lang_ru;; *);
+
+<= nrel_creational_pattern:
+    concept_creational_patterns;
+
+<- concept_creational_patterns;;

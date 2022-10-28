@@ -1,0 +1,28 @@
+concept_microservice_architecture
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Микросервисная архитектура](* <-lang_ru;; *);
+    [Layered Architecture](* <-lang_en;; *);;
+
+concept_microservice_architecture
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Микросервисная архитектура)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Microservice Architecture] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Микросервисная архитектура — распространенный подход к разработке программного обеспечения, когда приложение разбивается на небольшие автономные компоненты (микросервисы) с четко определенными интерфейсами.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Microservice architecture is a common approach to software development, when an application is divided into small autonomous components (microservices) with well-defined interfaces.](*<- lang_en;;*);;
+        *);; 
+
+    <= nrel_using_constants:
+    {
+        concept_software_architecture
+    };;
+    
+*);;

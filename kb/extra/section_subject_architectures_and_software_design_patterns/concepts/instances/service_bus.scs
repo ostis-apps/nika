@@ -1,0 +1,10 @@
+service_bus
+=> nrel_main_idtf:
+    [Сервисная шина](* <-lang_ru;; *);
+    [Service bus](* <-lang_en;; *);
+
+
+<= nrel_microservice_component:
+    concept_microservice_architecture;
+
+<- concept_microservice_architecture;;

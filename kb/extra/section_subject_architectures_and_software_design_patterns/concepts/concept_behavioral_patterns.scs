@@ -1,0 +1,26 @@
+concept_behavioral_patterns
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Поведенческие шаблоны](* <-lang_ru;; *);
+    [Behavioral patterns](* <-lang_en;; *);;
+
+concept_behavioral_patterns
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Поведенческие шаблоны)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Behavioral patterns)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Поведенческие шаблоны — шаблоны проектирования, определяющие алгоритмы и способы реализации взаимодействия различных объектов и классов.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [behavioral design patterns are design patterns that identify common communication patterns among objects. By doing so, these patterns increase flexibility in carrying out communication.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_classification_of_patterns
+    };;
+*);;

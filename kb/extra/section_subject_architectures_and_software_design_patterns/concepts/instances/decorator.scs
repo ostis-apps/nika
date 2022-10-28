@@ -1,0 +1,17 @@
+decorator 
+=> nrel_main_idtf:
+    [Декоратор](* <-lang_ru;; *);
+    [Decorator](* <-lang_en;; *);
+
+=> nrel_note:
+[Декоратор — это структурный паттерн проектирования, который позволяет динамически добавлять объектам новую функциональность, оборачивая их в полезные «обёртки».](* <- lang_ru;; *);
+
+<= nrel_structural_pattern:
+    concept_structural_patterns;
+
+=> nrel_compostion:
+    concept_class;
+=> nrel_generalization:
+    concept_class;
+
+<- concept_structural_patterns;;

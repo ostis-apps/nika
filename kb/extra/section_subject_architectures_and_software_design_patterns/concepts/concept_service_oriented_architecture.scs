@@ -1,0 +1,28 @@
+concept_service_oriented_architecture
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Сервис-ориентированная архитектура](* <-lang_ru;; *);
+    [Service Oriented Architecture — SOA](* <-lang_en;; *);;
+
+concept_service_oriented_architecture
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Сервис-ориентированная архитектура)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Service Oriented Architecture — SOA)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Эта архитектурная модель состоит из компонентов и приложений, которые связываются друг с другом с помощью четко определенных сервисов.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [This architectural model consists of components and applications that communicate with each other using well-defined services.](*<- lang_en;;*);;
+        *);; 
+
+    <= nrel_using_constants:
+    {
+        concept_software_architecture
+    };;
+    
+*);;

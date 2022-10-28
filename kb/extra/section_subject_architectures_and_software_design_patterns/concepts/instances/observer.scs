@@ -1,0 +1,15 @@
+observer 
+=> nrel_main_idtf:
+    [Наблюдатель](* <-lang_ru;; *);
+    [Observer](* <-lang_en;; *);
+
+=> nrel_note:
+[Наблюдатель — это поведенческий паттерн проектирования, который создаёт механизм подписки, позволяющий одним объектам следить и реагировать на события, происходящие в других объектах.](* <- lang_ru;; *);
+
+<= nrel_behavioral_pattern:
+    concept_behavioral_patterns;
+
+=> nrel_generalization:
+    concept_class;
+
+<- concept_behavioral_patterns;;

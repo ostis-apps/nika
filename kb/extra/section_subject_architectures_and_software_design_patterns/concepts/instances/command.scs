@@ -1,0 +1,21 @@
+command 
+=> nrel_main_idtf:
+    [Команда](* <-lang_ru;; *);
+    [Command](* <-lang_en;; *);
+
+
+<= nrel_behavioral_pattern:
+    concept_behavioral_patterns;
+
+=> nrel_compostion:
+    concept_class;
+=> nrel_generalization:
+    concept_class;
+=> nrel_dependency:
+    concept_class;
+
+
+<- concept_behavioral_patterns;
+
+=> nrel_note:
+[Команда — это поведенческий паттерн проектирования, который превращает запросы в объекты, позволяя передавать их как аргументы при вызове методов, ставить запросы в очередь, логировать их, а также поддерживать отмену операций.](* <- lang_ru;; *);;

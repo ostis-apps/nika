@@ -1,0 +1,26 @@
+concept_allocation_views
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Размещение](* <-lang_ru;; *);
+    [Allocation views](* <-lang_en;; *);;
+
+concept_allocation_views
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Размещение)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Allocation views)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Размещение — показывает размещение элементов системы во внешних средах.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Allocation views — shows the placement of system elements in external environments.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_views_of_architectures
+    };;
+*);;

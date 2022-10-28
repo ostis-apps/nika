@@ -1,0 +1,12 @@
+data_link_layer 
+=> nrel_main_idtf:
+    [Слой передачи данных](* <-lang_ru;; *);
+    [Data Link Layer](* <-lang_en;; *);
+
+=> nrel_note:
+[Слой передачи данных - отвечает за взаимодействие с постоянными хранилищами, такими как базы данных, и прочую обработку информации, которая не связана с бизнесом.](* <- lang_ru;; *);
+
+<= nrel_architecture_layers:
+    concept_layered_architecture;
+    
+<- concept_layered_architecture;;

@@ -1,0 +1,26 @@
+concept_component_and_connector_views
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Компоненты и коннекторы](* <-lang_ru;; *);
+    [Component and connector views](* <-lang_en;; *);;
+
+concept_component_and_connector_views
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Компоненты и коннекторы)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Component and connector views)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Компоненты-и-коннекторы — показывают систему как структуру из параллельно запущенных элементов (компонентов) и способов их взаимодействия (коннекторов).](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Component-and-connector views — show the system as a structure of parallel running elements (components) and ways of their interaction (connectors).](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_views_of_architectures
+    };;
+*);;

@@ -1,0 +1,32 @@
+concept_views_of_architectures
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Виды архитектур](* <-lang_ru;; *);
+    [Views of architectures](* <-lang_en;; *);
+
+<= nrel_subdividing:
+    concept_allocation_views;
+    concept_component_and_connector_views;
+    concept_module_views;;
+
+concept_views_of_architectures
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Виды архитектур)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Views of architectures)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Архитектура ПО обычно содержит несколько видов, которые аналогичны различным типам чертежей в строительстве зданий.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Software architecture usually contains several views that are similar to various types of drawings in the construction of buildings.](*<- lang_en;;*);;
+        *);;  
+
+    <= nrel_using_constants:
+    {
+        concept_software_architecture
+    };; 
+*);;

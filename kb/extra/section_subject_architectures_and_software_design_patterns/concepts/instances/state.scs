@@ -1,0 +1,17 @@
+state 
+=> nrel_main_idtf:
+    [Состояние](* <-lang_ru;; *);
+    [State](* <-lang_en;; *);
+
+=> nrel_note:
+[Состояние — это поведенческий паттерн проектирования, который позволяет объектам менять поведение в зависимости от своего состояния. Извне создаётся впечатление, что изменился класс объекта.](* <- lang_ru;; *);
+
+<= nrel_behavioral_pattern:
+    concept_behavioral_patterns;
+
+=> nrel_generalization:
+    concept_class;
+=> nrel_compostion:
+    concept_class;
+
+<- concept_behavioral_patterns;;

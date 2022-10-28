@@ -1,0 +1,26 @@
+concept_structural_patterns
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Структурные шаблоны](* <-lang_ru;; *);
+    [Structural patterns](* <-lang_en;; *);;
+
+concept_structural_patterns
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Структурные шаблоны)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Structural patterns)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Структурные шаблоны — шаблоны проектирования, в которых рассматривается вопрос о том, как из классов и объектов образуются более крупные структуры.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [structural design patterns are design patterns that ease the design by identifying a simple way to realize relationships among entities.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_classification_of_patterns
+    };;
+*);;

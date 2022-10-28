@@ -1,0 +1,17 @@
+flyweight 
+=> nrel_main_idtf:
+    [Приспособленец](* <-lang_ru;; *);
+    [Flyweight](* <-lang_en;; *);
+
+=> nrel_note:
+[Паттерн Приспособленец (Flyweight) - структурный шаблон проектирования, который позволяет использовать разделяемые объекты сразу в нескольких контекстах. Данный паттерн используется преимущественно для оптимизации работы с памятью.](* <- lang_ru;; *);
+
+<= nrel_structural_pattern:
+    concept_structural_patterns;
+
+=> nrel_compostion:
+    concept_class;
+=> nrel_generalization:
+    concept_class;
+    
+<- concept_structural_patterns;;
