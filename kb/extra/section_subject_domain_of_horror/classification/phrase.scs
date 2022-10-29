@@ -1,0 +1,108 @@
+concept_phrase_about_opportunity_to_tell_about_horror
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о наличии возможности говорить о фильмах ужасов]
+	    (* <- lang_ru;; *);
+	[phrase about opportunity to tell about horror]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о наличии возможности говорить о фильмах ужасов)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о наличии возможности говорить о фильмах ужасов - фраза, содержащая информацию про возможность говорить на тему "Фильмы ужасов".]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+	*);;
+
+concept_phrase_about_horror
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о фильмах ужасов]
+	    (* <- lang_ru;; *);
+	[phrase about horror]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о фильмах ужасов]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о фильмах ужасов - фраза, содержащая информацию про то, что такое фильм ужасов.]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+*);;
+
+concept_phrase_about_favorite_horror
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о любимом фильме ужасов]
+	    (* <- lang_ru;; *);
+	[phrase about favorite horror]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о любимом фильме ужасов)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о любимом фильме ужасов - фраза, содержащая пример любимого фильма ужасов.]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+*);;
+
+concept_phrase_about_director_of_horror
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза с ответом на вопрос, какой режиссер у этого фильма ужасов]
+	    (* <- lang_ru;; *);
+	[phrase about director of horror]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза с ответом на вопрос, какой режиссер у этого фильма ужасов)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза с ответом на вопрос, какой режиссер у этого фильма ужасов - фраза, содержащая имя режиссера снявшего фильм ужасов из вопроса.]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+*);;
+

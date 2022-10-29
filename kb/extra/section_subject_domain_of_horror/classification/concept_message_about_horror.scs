@@ -1,0 +1,36 @@
+concept_message_about_horror
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о фильме ужасов]
+	    (* <- lang_ru;; *);
+	[message about horror]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_horror];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о фильме ужасов)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about horror)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о фильме ужасов - атомарное сообщение, с запросом на рассказ о том, что такое фильм ужасов.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about horror is an atomic message that asks for a story about what a horror is.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
