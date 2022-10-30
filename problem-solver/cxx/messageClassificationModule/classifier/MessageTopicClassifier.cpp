@@ -23,7 +23,7 @@ ScAddrVector MessageTopicClassifier::classifyMessage(ScAddr const & messageAddr)
   std::string const messageText = getMessageText(messageAddr);
 
   json const witResponse = client->getWitResponse(messageText);
-  SC_LOG_WARNING(witResponse);
+  SC_LOG_INFO(witResponse);
 
   ScAddrVector const messageIntentElements = getMessageIntentClass(messageAddr, witResponse);
   messageClassificationElements.insert(
