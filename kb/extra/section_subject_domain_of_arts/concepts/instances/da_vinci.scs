@@ -2,8 +2,12 @@ da_vinci
 => nrel_main_idtf:
     [Леонардо да Винчи](* <-lang_ru;; *);
     [Leonardo da Vinci](* <-lang_en;; *);
+=> nrel_idtf:
+    [да Винчи](* <-lang_ru;; *);
+    [da Vinci](* <-lang_en;; *);
 <- concept_engraver;
 <- concept_painter;
 => nrel_artwork:
     da_vinci_self_portrait;
-    mona_lisa;;
+    mona_lisa;
+<- concept_wit_entity;;
