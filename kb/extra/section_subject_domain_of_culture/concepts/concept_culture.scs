@@ -1,0 +1,119 @@
+concept_culture
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [культура]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [culture]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Источником происхождения культуры мыслится человеческая деятельность, познание и творчество]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.культура]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Культура является предметом изучения философии, культурологии, истории, социологии, искусствознания, лингвистики (этнолингвистики), политологии, этнологии, психологии, экономики, педагогики]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_linguistics;
+			concept_cultural_studies;
+			concept_psychology;
+			concept_art_history;
+			concept_sociology;
+			concept_Ethnology;
+			concept_political_science;
+			concept_pedagogy;
+			concept_economy;
+			concept_history;
+			concept_subject_of_study;
+			concept_philosophy
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.культура]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Культура - человеческая деятельность в её самых разных проявлениях, включая все формы и способы человеческого самовыражения и самопознания, накопление человеком и социумом в целом навыков и умений]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_manifestation;
+			concept_society;
+			concept_self_knowledge;
+			rrel_form;
+			concept_self_expression;
+			concept_skill;
+			concept_human_activity;
+			concept_human
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.культура]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Культура - проявление человеческой субъективности и объективности]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_manifestation;
+			concept_subjectivity;
+			concept_objectivity
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.культура]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Культура — это набор правил, которые предписывают человеку определённое поведение]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_kit;
+			concept_rule;
+			rrel_prescribe;
+			concept_behavior;
+			concept_human
+   	 };;
+  *);;

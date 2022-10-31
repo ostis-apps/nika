@@ -1,0 +1,37 @@
+concept_message_about_manifestation
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о проявлении]
+	(* <- lang_ru;; *);
+	[message about manifestation]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[manifestation];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о проявлении)]
+        (* <- lang_ru;; *);
+        [Def. (message about manifestation)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о проявлении - атомарное сообщение, являющееся запросом на получение информации про проявление]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about manifestation - atomic message which used to make a question about manifestation]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

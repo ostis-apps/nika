@@ -1,0 +1,42 @@
+concept_Culture_of_the_New_Age
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Культура Нового Времени]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Culture of the New Age]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Эпоха Нового времени была довольно противоречивой, поскольку людям необходимо было сменить привычный консервативный уклад жизни на совершенно новый мобильный, принять все изменения, происходившие в обществе, культуре, науке.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [В центре внимания становится человек, его личность, духовность, саморазвитие.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Культура Нового Времени]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Культура Нового времени - временной отрезок, начиная с конца XVII века и вплоть до ХХ века.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_century;
+			concept_the_end;
+			concept_time_period
+   	 };;
+  *);;

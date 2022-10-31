@@ -1,0 +1,66 @@
+concept_base
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [база]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [base]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [В широком смысле “база” – это поведение человека, который ведет себя естественно и не зависит от чужого мнения.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Первая запись о таком слове появилась в словаре Urban Dictionary в мае 2009 года.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.база]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [база (Based, Это база, базированный мем) – ироничный мем, который в американском сленге используется для положительной оценки.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_meme;
+			concept_positive_evaluation;
+			nrel_use;
+			concept_slang;
+			concept_irony
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.база]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [база – это синоним согласия и одобрения.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_agreement;
+			concept_approval;
+			concept_a_synonym
+   	 };;
+  *);;

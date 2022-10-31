@@ -1,0 +1,42 @@
+concept_intent_possible_class
+<- sc_node_class;
+=> nrel_main_idtf:
+	[возможный класс цели Wit.ai]
+	(* <- lang_ru;; *);
+	[Wit.ai intent possible class]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (возможный класс цели Wit.ai)]
+		(* <- lang_ru;; *);
+		[Def. (Wit.ai intent possible class)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Возможный класс цели Wit.ai - класс, элементы которого могут быть выделены посредством Wit.ai как цели.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Wit.ai intent possible class is a class whose elements can be identified by Wit.ai as intents.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+-> concept_greeting_message;
+-> concept_message_about_entity;
+-> concept_message_about_lab_work_condition;
+-> concept_message_about_lab_work_deadline;
+-> concept_message_about_culture;
+-> concept_message_about_education;
+-> concept_message_about_manifestation;
+-> concept_message_about_mass_culture;
+-> concept_message_about_modern_culture;
+-> concept_message_about_study;
+-> concept_message_about_unite;
+-> concept_message_about_community;;

@@ -1,0 +1,29 @@
+nrel_prescribe
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+  [предписывать](* <- lang_ru;; *);
+  [prescribe](* <- lang_eng;; *);;
+
+nrel_prescribe <- rrel_key_sc_element:... 
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (предписывать)](*<- lang_ru;;*);
+    [Def. ( prescribe)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Предписывать — это предлагать кому-либо соблюдать или обязательно делать что-либо.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [To prescribe is to suggest that someone observe or be sure to do something.](*<- lang_en;;*);;
+    *);;
+*);;
+
+nrel_prescribe
+=>nrel_first_domain:concept_human;
+=>nrel_second_domain:concept_action;
+
+<- binary_relation ;
+<- antireflexive_relation ;
+<- antitransitive_relation ;;

@@ -1,0 +1,39 @@
+concept_semiotics_of_culture
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [семиотика культуры]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [semiotics of culture]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Понятие семиотики культуры приходит к нам в XX веке благодаря Ю. М. Лотману.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.семиотика культуры]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [семиотика культуры - это раздел семиотики, который представляет культуру в виде системы знаков и текстов.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_culture;
+			concept_sign;
+			concept_section;
+			concept_text;
+			concept_semiotics
+   	 };;
+  *);;

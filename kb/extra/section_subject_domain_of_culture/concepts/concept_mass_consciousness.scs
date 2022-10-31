@@ -1,0 +1,38 @@
+concept_mass_consciousness
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [массовое сознание]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [mass consciousness]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Массовое сознание характеризуется разорванностью, подвижностью, противоречивостью, резкостью и неожиданность перемен в одних ситуациях и определенными стереотипами в прочих ситуациях]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.массовое сознание]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Массовое сознание — феномен, который является объектом изучения многих наук]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_study;
+			concept_object_of_study;
+			concept_science;
+			concept_a_phenomenon
+   	 };;
+  *);;

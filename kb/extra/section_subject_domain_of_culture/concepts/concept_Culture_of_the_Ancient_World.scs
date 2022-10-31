@@ -1,0 +1,43 @@
+concept_Culture_of_the_Ancient_World
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Культура Древнего мира]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Culture of the Ancient World]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Культура и цивилизация возникли независимо в нескольких пунктах Старого Света – в Египте, Месопотамии, Индии, Китае и других местах]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Первые цивилизации можно назвать речными в отличие от морских, в которых в древности главную роль играли финикийцы с карфагенянами, греки и римляне]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Культура Древнего мира]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Культура Древнего мира — культура и цивилизация возникшая независимо в нескольких пунктах Старого Света]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_civilization;
+			nrel_arise;
+			concept_culture;
+			concept_old_light
+   	 };;
+  *);;

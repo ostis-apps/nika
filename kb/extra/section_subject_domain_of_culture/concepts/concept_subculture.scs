@@ -1,0 +1,44 @@
+concept_subculture
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [субкультура]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [subculture]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Субкультура может отличаться от доминирующей культуры собственной системой ценностей, языком, манерой поведения, одеждой и другими аспектами]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [В частности, субкультуры образуются этническими общностями, отличающимися своим диалектом от языковой нормы]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.субкультура]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Субкультура - часть культуры общества, отличающейся своим поведением от преобладающего большинства]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_overwhelming_majority;
+			concept_culture;
+			concept_community;
+			concept_behavior;
+			nrel_differ
+   	 };;
+  *);;

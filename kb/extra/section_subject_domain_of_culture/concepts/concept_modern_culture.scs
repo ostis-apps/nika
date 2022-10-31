@@ -1,0 +1,40 @@
+concept_modern_culture
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [современная культура]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [modern culture]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Современная культурная ситуация определяется тем, что ее основные черты являются развитием и глобализацией преимущественно европейской (западноевропейской) культурной традиции.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.современная культура]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Современная культура представляет собой динамичный процесс, в котором происходят постоянные изменения и именно созидательная деятельность человека стимулирует процесс непрерывного поступательного развития, формирования, изменения и преобразования культуры.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_development;
+			concept_culture;
+			concept_dynamic_process;
+			concept_formation;
+			concept_transformation;
+			concept_human
+   	 };;
+  *);;

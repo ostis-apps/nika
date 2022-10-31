@@ -1,0 +1,66 @@
+concept_totalitarian_society
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [тоталитарное общество]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [totalitarian society]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Понятие «тоталитарное государство» появилось в начале 1920-х для характеристики режима Бенито Муссолини.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.тоталитарное общество]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [тоталитарное общество — форма отношения общества и власти, при которой политическая власть стремится к полному (тотальному) контролю людей и общества]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_form;
+			nrel_pursuit;
+			concept_power;
+			concept_community;
+			concept_human;
+			concept_CONTROL;
+			concept_attitude
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.тоталитарное общество]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Тоталитаризм — политический режим, подразумевающий абсолютный (тотальный) контроль государства над всеми аспектами общественной и частной жизни.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_political_regime;
+			concept_aspect;
+			concept_state;
+			concept_community;
+			concept_life;
+			concept_CONTROL
+   	 };;
+  *);;

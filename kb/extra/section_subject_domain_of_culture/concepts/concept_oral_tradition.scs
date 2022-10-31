@@ -1,0 +1,39 @@
+concept_oral_tradition
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [устная традиция]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [oral tradition]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [До изобретения письма именно в устной форме хранились и передавались от поколения к поколению социальный опыт, знания о прошлом, первые художественные произведения]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.устная традиция]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Устная традиция — передача информации между поколениями устно, по памяти, с соответствующими способами варьирования, оставляющими простор импровизации]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_generation;
+			nrel_transfer;
+			concept_memory;
+			concept_information;
+			concept_improvisation
+   	 };;
+  *);;

@@ -1,0 +1,46 @@
+concept_tradition
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [традиция]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [tradition]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [По мнению Энтони Гидденса и других, современное значение традиции развивалось в эпоху Просвещения, в противовес современности и прогрессу]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Вплоть до Нового времени латинское понятие «традиция» ассоциировалось только с тем, что связано с прошлым культуры, утратило новизну и символизирует некий застой]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.традиция]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Традиция — сложившаяся анонимно, в результате накопленного опыта, система норм, представлений, правил и образцов, которой руководствуется в своём поведении довольно обширная и стабильная группа людей]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_Group;
+			concept_image;
+			concept_performance;
+			concept_an_experience;
+			concept_rule;
+			concept_human;
+			concept_system_of_norms
+   	 };;
+  *);;
