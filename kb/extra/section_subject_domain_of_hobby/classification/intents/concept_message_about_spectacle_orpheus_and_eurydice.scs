@@ -1,5 +1,9 @@
 concept_message_about_spectacle_orpheus_and_eurydice
 <- sc_node_not_relation;
+
+<= nrel_inclusion:
+    concept_message_about_spectacle;
+
 => nrel_main_idtf:
 	  [сообщение о спектакле "Орфей и Эвридика"]
 	  (* <- lang_ru;; *);
@@ -17,7 +21,7 @@ concept_message_about_spectacle_orpheus_and_eurydice
 		(*
 		-> rrel_example:
 	   [Сообщение о спектакле "Орфей и Эвридика" - атомарное сообщение,
-    которое содержит информацию о данном спектакля.]
+    которое содержит информацию о данном спектакле.]
 		   (* <- lang_ru;; *);;
 		*);;
 	<= nrel_using_constants:
