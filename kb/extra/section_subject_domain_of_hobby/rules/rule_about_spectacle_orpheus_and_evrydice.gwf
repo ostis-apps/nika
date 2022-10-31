@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GWF version="2.0">
     <staticSector>
+        <node type="node/const/perm/role" idtf="rrel_entity" shapeColor="0" id="122138984" parent="124881640" left="0" top="0" right="87" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="255.5" y="268.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_spectacle" shapeColor="0" id="122136392" parent="124881640" left="0" top="0" right="150" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="404.5" y="226.5" haveBus="false" idtf_pos="3">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/var/perm/general" idtf="_spectacle" shapeColor="0" id="122137832" parent="124881640" left="0" top="0" right="89" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="404" y="323" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
         <node type="node/var/perm/general" idtf="_message" shapeColor="0" id="127365464" parent="124881640" left="0" top="0" right="85" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="154.5" y="328.37" haveBus="false" idtf_pos="0">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
@@ -10,13 +19,22 @@
         <node type="node/const/perm/group" idtf="concept_message_about_spectacle_orpheus_and_eurydice" shapeColor="0" id="127367624" parent="124881640" left="0" top="0" right="465" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="155.5" y="143.5" haveBus="false" idtf_pos="3">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
+        <pair type="pair/var/pos/perm/orient/membership" idtf="" shapeColor="0" id="125533960" parent="124881640" id_b="122138984" id_e="125532112" b_x="255.5" b_y="268.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.3819">
+            <points/>
+        </pair>
+        <pair type="pair/var/pos/perm/orient/membership" idtf="" shapeColor="0" id="125532112" parent="124881640" id_b="127365464" id_e="122137832" b_x="154.5" b_y="328.37" e_x="404" e_y="323" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/var/pos/perm/orient/membership" idtf="" shapeColor="0" id="125532952" parent="124881640" id_b="122136392" id_e="122137832" b_x="404.5" b_y="226.5" e_x="404" e_y="323" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
         <pair type="pair/var/pos/perm/orient/membership" idtf="" shapeColor="0" id="125535136" parent="124881640" id_b="127364888" id_e="127365464" b_x="197.5" b_y="211.5" e_x="154.5" e_y="328.37" dotBBalance="0" dotEBalance="0">
             <points/>
         </pair>
         <pair type="pair/var/pos/perm/orient/membership" idtf="" shapeColor="0" id="125535640" parent="124881640" id_b="127367624" id_e="127365464" b_x="155.5" b_y="143.5" e_x="154.5" e_y="328.37" dotBBalance="0" dotEBalance="0">
             <points/>
         </pair>
-        <contour type="contour/const/perm" idtf="" shapeColor="255" id="124881640" parent="0">
+        <contour type="contour/const/perm" idtf="" shapeColor="0" id="124881640" parent="0">
             <points>
                 <point x="108.5" y="80.3697"/>
                 <point x="107.5" y="390.37"/>
@@ -24,13 +42,13 @@
                 <point x="635.5" y="80.3697"/>
             </points>
         </contour>
+        <node type="node/const/perm/group" idtf="concept_message_about_spectacle_orpheus_and_eurydice" shapeColor="0" id="127367192" parent="124883200" left="0" top="0" right="465" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="251.5" y="567.5" haveBus="false" idtf_pos="3">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
         <node type="node/const/perm/group" idtf="concept_atomic_message" shapeColor="0" id="127367336" parent="124883200" left="0" top="0" right="206" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="414.5" y="643.5" haveBus="false" idtf_pos="0">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
         <node type="node/var/perm/general" idtf="_message" shapeColor="0" id="127367768" parent="124883200" left="0" top="0" right="85" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="87" y="638.87" haveBus="false" idtf_pos="0">
-            <content type="0" mime_type="" content_visibility="false" file_name=""/>
-        </node>
-        <node type="node/const/perm/group" idtf="concept_message_about_spectacle_orpheus_and_eurydice" shapeColor="0" id="127367192" parent="124883200" left="0" top="0" right="465" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="251.5" y="567.5" haveBus="false" idtf_pos="3">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
         <node type="node/var/perm/general" idtf="_reply_message" shapeColor="0" id="127367912" parent="124883200" left="0" top="0" right="132" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="251" y="638.87" haveBus="false" idtf_pos="0">
@@ -59,6 +77,9 @@
                 <point x="736.5" y="532.37"/>
             </points>
         </contour>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_spectacle_orpheus_and_eurydice" shapeColor="0" id="127364312" parent="0" left="0" top="0" right="450" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="1104.5" y="442.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
         <node type="node/const/perm/group" idtf="concept_answer_on_standard_message_rule_priority_1" shapeColor="0" id="122133224" parent="0" left="0" top="0" right="438" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="803" y="374.87" haveBus="false" idtf_pos="0">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
@@ -69,9 +90,6 @@
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
         <node type="node/const/perm/tuple" idtf="" shapeColor="0" id="122135816" parent="0" x="954.5" y="434.37" haveBus="false" idtf_pos="0">
-            <content type="0" mime_type="" content_visibility="false" file_name=""/>
-        </node>
-        <node type="node/const/perm/group" idtf="concept_phrase_about_spectacle_orpheus_and_eurydice" shapeColor="0" id="127364312" parent="0" left="0" top="0" right="450" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="1104.5" y="442.5" haveBus="false" idtf_pos="0">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
         <node type="node/const/perm/group" idtf="atomic_logical_formula" shapeColor="0" id="127365896" parent="0" left="0" top="0" right="185" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="43.5" y="427.37" haveBus="false" idtf_pos="1">

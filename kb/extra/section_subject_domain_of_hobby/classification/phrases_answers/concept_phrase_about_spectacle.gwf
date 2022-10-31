@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/group" idtf="concept_spectacle" shapeColor="0" id="47287416" parent="122283720" left="0" top="0" right="150" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="1193.19" y="475.192" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/var/perm/general" idtf="_note" shapeColor="0" id="47284968" parent="122283720" left="0" top="0" right="51" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="1189.19" y="269.128" haveBus="false" idtf_pos="2">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[ ]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="47285976" parent="122283720" left="0" top="0" right="67" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="1265.2" y="269.128" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/var/perm/general" idtf="_name" shapeColor="0" id="47285832" parent="122283720" left="0" top="0" right="59" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="1483.5" y="270.128" haveBus="false" idtf_pos="3">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[ ]]></content>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_note" shapeColor="0" id="47284392" parent="122283720" left="0" top="0" right="81" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="1265.2" y="321.964" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_main_idtf" shapeColor="0" id="47287128" parent="122283720" left="0" top="0" right="118" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="1396.5" y="480.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/var/perm/general" idtf="_spectacle" shapeColor="0" id="47286984" parent="122283720" left="0" top="0" right="89" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="1192.19" y="365.442" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/var/pos/perm/orient/membership" idtf="" shapeColor="0" id="125532784" parent="122283720" id_b="47285976" id_e="47284968" b_x="1265.2" b_y="269.128" e_x="1189.19" e_y="269.128" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/var/pos/perm/orient/membership" idtf="" shapeColor="0" id="125531944" parent="122283720" id_b="47284392" id_e="125533288" b_x="1265.2" b_y="321.964" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.233569">
+            <points/>
+        </pair>
+        <pair type="pair/var/-/perm/orient" idtf="" shapeColor="0" id="125529592" parent="122283720" id_b="47286984" id_e="47285832" b_x="1192.19" b_y="365.442" e_x="1483.5" e_y="270.128" dotBBalance="0" dotEBalance="0">
+            <points>
+                <point x="1487" y="362"/>
+            </points>
+        </pair>
+        <pair type="pair/var/pos/perm/orient/membership" idtf="" shapeColor="0" id="125530936" parent="122283720" id_b="47287128" id_e="125529592" b_x="1396.5" b_y="480.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.694412">
+            <points/>
+        </pair>
+        <pair type="pair/var/-/perm/orient" idtf="" shapeColor="0" id="125533288" parent="122283720" id_b="47286984" id_e="47284968" b_x="1192.19" b_y="365.442" e_x="1189.19" e_y="269.128" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/var/pos/perm/orient/membership" idtf="" shapeColor="0" id="125533120" parent="122283720" id_b="47285976" id_e="47285832" b_x="1265.2" b_y="269.128" e_x="1483.5" e_y="270.128" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/var/pos/perm/orient/membership" idtf="" shapeColor="0" id="125531608" parent="122283720" id_b="47287416" id_e="47286984" b_x="1193.19" b_y="475.192" e_x="1192.19" e_y="365.442" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <contour type="contour/const/perm" idtf="" shapeColor="0" id="122283720" parent="0">
+            <points>
+                <point x="899.353" y="183.534"/>
+                <point x="902.563" y="620.271"/>
+                <point x="1551.14" y="625.271"/>
+                <point x="1556.77" y="176.482"/>
+            </points>
+        </contour>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_spectacle" shapeColor="193" id="47284104" parent="0" left="0" top="0" right="265" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="380" y="406" haveBus="false" idtf_pos="1">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="47284536" parent="0" x="372.91" y="267" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[
+${_name} - это великолепный спектакль на основе знаменитой пьесы.${_note}
+
+ 
+]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="47284248" parent="0" left="0" top="0" right="67" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-46.5" y="267.445" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_phrase_template" shapeColor="0" id="47287848" parent="0" left="0" top="0" right="173" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="772.5" y="122.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="47287704" parent="0" left="0" top="0" right="67" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-34.5" y="548.445" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="47287560" parent="0" x="384.91" y="548" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[
+Cпектакль "${_name}" довольно популярный спектакль сегодняшних дней. ${_note}
+
+]]></content>
+        </node>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="125530264" parent="0" id_b="47284248" id_e="47284536" b_x="-46.5" b_y="267.445" e_x="372.91" e_y="267" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="125529256" parent="0" id_b="47284104" id_e="47287560" b_x="380" b_y="406" e_x="384.91" e_y="548" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="125529088" parent="0" id_b="47287848" id_e="125533960" b_x="772.5" b_y="122.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.478655">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="125534128" parent="0" id_b="47287704" id_e="47287560" b_x="-34.5" b_y="548.445" e_x="384.91" e_y="548" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="125533960" parent="0" id_b="47287560" id_e="122283720" b_x="384.91" b_y="548" e_x="1228.06" e_y="400.876" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="125533792" parent="0" id_b="47284104" id_e="47284536" b_x="380" b_y="406" e_x="372.91" e_y="267" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="125533624" parent="0" id_b="47284536" id_e="122283720" b_x="372.91" b_y="267" e_x="1228.06" e_y="400.876" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="125530096" parent="0" id_b="47287848" id_e="125533624" b_x="772.5" b_y="122.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.439783">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>
