@@ -1,0 +1,30 @@
+concept_press <- sc_node_not_relation;;
+
+concept_press => nrel_main_idtf:
+[пресса] (*<-lang_ru;;*);
+[press] (*<-lang_en;;*);;
+
+concept_press <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (пресса)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[часть средств массовой коммуникации, совокупность массовых периодических печатных, а также электронных изданий для массового читателя: газет, журналов, сборников, альманахов.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_press <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (пресса)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Термин происходит от названия первой массовой газеты «La Presse»](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
