@@ -1,0 +1,68 @@
+concept_gas_giant
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [газовый гигант]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [gas giant]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Планеты этого типа имеют небольшую плотность, короткий период суточного вращения, и, следовательно, значительное сжатие у полюсов.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [В Солнечной системе к газовым гигантам относят Юпитер и Сатурн]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.газовый гигант]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Газовые гиганты — планеты-гиганты, состоящие в основном из водорода и гелия]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_planet;
+			concept_giant;
+			concept_hydrogen;
+			concept_helium;
+			nrel_consist
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.газовый гигант]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Газовые гиганты — планеты, имеющие значительную долю газа в своём составе]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_fate;
+			concept_composition;
+			concept_planet;
+			concept_gas;
+			nrel_consist
+   	 };;
+  *);;

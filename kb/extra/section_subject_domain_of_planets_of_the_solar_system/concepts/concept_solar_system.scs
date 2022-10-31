@@ -1,0 +1,45 @@
+concept_solar_system
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [солнечная система]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [solar system]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Крупнейшие планеты, входящие в состав Солнечной системы, Юпитер и Сатурн, состоят главным образом из водорода и гелия]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [В Солнечной системе существуют две области, заполненные малыми телами]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.солнечная система]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Солнечная система — планетная система, включающая в себя центральную звезду Солнце и все естественные космические объекты на гелиоцентрических орбитах.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_include;
+			concept_star;
+			concept_space_object;
+			concept_planetary_system;
+			concept_sun;
+			concept_heliocentric_orbit
+   	 };;
+  *);;

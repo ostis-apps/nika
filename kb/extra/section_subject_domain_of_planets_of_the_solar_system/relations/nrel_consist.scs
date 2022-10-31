@@ -1,0 +1,29 @@
+nrel_consist
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+  [состоять](* <- lang_ru;; *);
+  [consist](* <- lang_eng;; *);;
+
+nrel_consist <- rrel_key_sc_element:... 
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (состоять)](*<- lang_ru;;*);
+    [Def. ( consist)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Состоять — это содержать, иметь в своём составе, складываться.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [To consist is to contain, to have in its composition, to take shape.](*<- lang_en;;*);;
+    *);;
+*);;
+
+nrel_consist
+=>nrel_first_domain:concept_an_object;
+=>nrel_second_domain:concept_an_object;
+
+<- binary_relation ;
+<- reflexive_relation ;
+<- transitive_relation ;;

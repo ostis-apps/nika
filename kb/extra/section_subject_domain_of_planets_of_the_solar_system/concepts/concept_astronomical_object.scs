@@ -1,0 +1,37 @@
+concept_astronomical_object
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [астрономический объект]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [astronomical object]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Во Вселенной отчётливо прослеживается иерархическая структура]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.астрономический объект]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Астрономический объект — естественное физическое тело, ассоциация, или структура]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_physical_body;
+			concept_association;
+			concept_structure
+   	 };;
+  *);;

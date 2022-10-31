@@ -1,0 +1,66 @@
+concept_orbit
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [орбита]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [orbit]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [В небесной механике это траектория небесного тела в гравитационном поле другого тела, обладающего значительно большей массой]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Долгое время считалось, что планеты должны иметь круговую орбиту.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.орбита]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Орбита - путь движения небесного тела или космического корабля.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_spaceship;
+			concept_path;
+			concept_heavenly_body
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.орбита]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Орбита — траектория движения материальной точки в заданной системе пространственных координат для заданной конфигурации поля сил, которые на точку действуют.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_strength;
+			concept_coordinate_system;
+			concept_trajectory_movements;
+			concept_material_point;
+			concept_point
+   	 };;
+  *);;

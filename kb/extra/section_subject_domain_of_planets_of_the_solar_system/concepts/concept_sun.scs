@@ -1,0 +1,72 @@
+concept_sun
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [солнце]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [sun]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Прямой свет Солнца у поверхности нашей планеты приобретает некоторый жёлтый оттенок]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Солнечное излучение поддерживает жизнь на Земле]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [По спектральной классификации Солнце относится к типу жёлтый карлик]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.солнце]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Солнце — одна из звёзд Галактики Млечный Путь и единственная звезда Солнечной системы.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_Milky_Way;
+			concept_star;
+			concept_galaxy;
+			concept_solar_system
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.солнце]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Солнце - раскалённое небесное тело шарообразной формы, вокруг которого вращается Земля и другие планеты.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_Earth;
+			concept_heavenly_body;
+			rrel_rotate;
+			concept_spherical_shape;
+			concept_planet
+   	 };;
+  *);;

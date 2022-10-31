@@ -1,0 +1,65 @@
+concept_Mars
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Марс]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Mars]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Названа в честь Марса — древнеримского бога войны]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [У Марса есть два естественных спутника — Фобос и Деймос]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Марс]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Марс - планета земной группы с разреженной атмосферой.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_planet;
+			concept_earth_group;
+			concept_rarefied_atmosphere
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Марс]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Марс - четвёртая по удалённости от Солнца и седьмая по размеру планета Солнечной системы.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			rrel_size;
+			concept_planet;
+			concept_sun;
+			concept_solar_system
+   	 };;
+  *);;
