@@ -1,0 +1,33 @@
+sc_node_not_relation -> concept_nesvizh_castle;;
+sc_node_not_relation -> concept_castle;;
+sc_node_not_relation -> concept_diverse_architecture;;
+sc_node_not_relation -> concept_minsk_region;;
+
+sc_node_norole_relation -> nrel_location;;
+
+concept_nesvizh_castle => nrel_main_idtf: [Несвижский замок](* <- lang_ru;; *);;
+concept_nesvizh_castle => nrel_main_idtf: [Nesvizh Castle](* <- lang_en;; *);;
+
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_nesvizh_castle;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Несвижский замок – замок с разноплановой архитектурой.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (Несвижский замок)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(*
+	       -> concept_castle;;
+           -> concept_diverse_architecture;;
+	*);;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element :  concept_nesvizh_castle;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Он расположен в минской области.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(Несвижский замок)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(* 
+	 -> nrel_location;;
+	 -> concept_minsk_region;;
+	*);;
+*);;

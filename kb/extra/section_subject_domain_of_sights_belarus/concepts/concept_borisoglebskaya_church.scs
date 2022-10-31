@@ -1,0 +1,37 @@
+sc_node_not_relation -> concept_borisoglebskaya_church;;
+sc_node_not_relation -> concept_church;;
+sc_node_not_relation -> concept_ancient_russia;;
+sc_node_not_relation -> concept_neman;;
+
+sc_node_norole_relation -> nrel_ancient;;
+sc_node_norole_relation -> nrel_location;;
+
+concept_borisoglebskaya_church => nrel_main_idtf: [Борисоглебская церковь](* <- lang_ru;; *);;
+concept_borisoglebskaya_church => nrel_main_idtf: [Borisoglebskaya church](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_borisoglebskaya_church;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Борисоглебская церковь – одна из древнейших церквей Древней Руси.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (Борисоглебская церковь)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(*
+           -> concept_ancient_russia;;
+	       -> concept_church;;
+		   -> nrel_ancient;;
+	*);;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_borisoglebskaya_church;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Церковь стоит на берегу Немана.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(Борисоглебская церковь)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(* 
+     -> concept_church;;
+	 -> nrel_location;;
+	 -> concept_neman;;
+	*);;
+*);;

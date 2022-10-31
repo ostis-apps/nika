@@ -1,0 +1,33 @@
+
+sc_node_not_relation -> concept_synagogue;;
+sc_node_not_relation -> concept_prayer_house;;
+sc_node_not_relation -> concept_meeting_house;;
+
+
+
+concept_synagogue => nrel_main_idtf: [Синагога](* <- lang_ru;; *);;
+concept_synagogue => nrel_main_idtf: [Synagogue](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_synagogue;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Синагога - еврейский молитвенный дом.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (Синагога)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(*
+           -> concept_prayer_house;;
+	*);;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element :  concept_synagogue;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Другое название синагоги - дом собрания.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(Синагога)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(* 
+	 -> concept_meeting_house;;
+	 -> concept_synagogue;;
+	*);;
+*);;

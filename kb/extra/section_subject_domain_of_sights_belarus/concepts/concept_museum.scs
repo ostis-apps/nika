@@ -1,0 +1,35 @@
+sc_node_not_relation -> concept_museum;;
+sc_node_not_relation -> concept_place;;
+sc_node_not_relation -> concept_temple_muse;;
+sc_node_not_relation -> concept_work_art;;
+
+sc_node_norole_relation -> nrel_stored;;
+sc_node_norole_relation -> nrel_defensive_tasks;;
+
+concept_museum => nrel_main_idtf: [Музей](* <- lang_ru;; *);;
+concept_museum => nrel_main_idtf: [Museum](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_museum;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Музей - это учреждение, где хранятся произведения искусства.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (Музей)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(*
+           -> nrel_stored;;
+           -> concept_work_art;;
+		   -> concept_place;;
+	*);;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element :  concept_museum;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Слово музей происходит от греческого, что означает «храм музы».](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(Музей)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(* 
+	 -> concept_temple_muse;;
+	*);;
+*);;

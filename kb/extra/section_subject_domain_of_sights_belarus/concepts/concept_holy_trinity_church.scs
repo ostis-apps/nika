@@ -1,0 +1,36 @@
+
+sc_node_not_relation -> concept_holy_trinity_church;;
+sc_node_not_relation -> concept_church;;
+sc_node_not_relation -> concept_gervyaty;;
+sc_node_not_relation -> concept_neogothic_style;;
+
+sc_node_norole_relation -> nrel_built;;
+
+concept_holy_trinity_church => nrel_main_idtf: [Костел Святой Троицы](* <- lang_ru;; *);;
+concept_holy_trinity_church => nrel_main_idtf: [Church of the Holy Trinity](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_holy_trinity_church;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Костел Святой Троицы – костел был построен в Гервяты.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (Костел Святой Троицы)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(*
+           -> concept_church;;
+	       -> concept_gervyaty;;
+		   -> nrel_built;;
+	*);;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_holy_trinity_church;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Он построен в неоготическом стиле.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(Костел Святой Троицы)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(* 
+	 -> nrel_built;;
+	 -> concept_neogothic_style;;
+	*);;
+*);;

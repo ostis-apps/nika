@@ -1,0 +1,33 @@
+sc_node_not_relation -> concept_lakes;;
+sc_node_not_relation -> concept_land_deepening;;
+sc_node_not_relation -> concept_pond;;
+
+sc_node_norole_relation -> nrel_slow_water_exchange;;
+
+concept_lakes => nrel_main_idtf: [Озеро](* <- lang_ru;; *);;
+concept_lakes => nrel_main_idtf: [Lake](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_lakes;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Озеро -  это замкнутое углубление суши, заполненное водой.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (Озеро)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(*
+           -> concept_land_deepening;;
+	*);;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element :  concept_lakes;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Озера водоемы замедленного водообмена.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(Озеро)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(* 
+	 -> nrel_slow_water_exchange;;
+	 -> concept_pond;;
+	 
+	*);;
+*);;

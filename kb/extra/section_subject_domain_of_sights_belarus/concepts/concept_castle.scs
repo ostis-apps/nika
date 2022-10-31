@@ -1,0 +1,35 @@
+sc_node_not_relation -> concept_castle;;
+sc_node_not_relation -> concept_place;;
+sc_node_not_relation -> concept_object;;
+sc_node_not_relation -> concept_historical_monuments;;
+
+sc_node_norole_relation -> nrel_residential_tasks;;
+sc_node_norole_relation -> nrel_defensive_tasks;;
+
+concept_castle => nrel_main_idtf: [Замок](* <- lang_ru;; *);;
+concept_castle => nrel_main_idtf: [Сastle](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_castle;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Замок - объект , сочетающее в себе жилые и оборонительнонные задачи.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (Замок)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(*
+           -> nrel_residential_tasks;;
+           -> nrel_defensive_tasks;;
+		   -> concept_object;;
+	*);;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element :  concept_castle;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Признанными памятниками истории.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(Замок)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(* 
+	 -> concept_historical_monuments;;
+	*);;
+*);;

@@ -1,0 +1,37 @@
+sc_node_not_relation -> concept_puslovsky;;
+sc_node_not_relation -> concept_castle;;
+sc_node_not_relation -> concept_kossovo;;
+sc_node_not_relation -> concept_khreptovichi;;
+sc_node_not_relation -> concept_sangushki;;
+sc_node_not_relation -> concept_sapieha;;
+
+sc_node_norole_relation -> nrel_location;;
+
+concept_puslovsky => nrel_main_idtf: [Дворец Пусловских](* <- lang_ru;; *);;
+concept_puslovsky => nrel_main_idtf: [Castle of the Puslovskys](* <- lang_en;; *);;
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_puslovsky;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Дворец Пусловских –  дворец, расположенный в Коссово.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (Дворец Пусловских)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(*
+           -> concept_castle;;
+	       -> nrel_location;;
+		   -> concept_kossovo;;
+	*);;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element :  concept_puslovsky;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Владельцами замка были: Хрептовичи, Сангушки, Сапеги.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(Дворец Пусловских)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(* 
+	 -> concept_khreptovichi;;
+	 -> concept_sangushki;;
+	 -> concept_sapieha;;
+	*);;
+*);;

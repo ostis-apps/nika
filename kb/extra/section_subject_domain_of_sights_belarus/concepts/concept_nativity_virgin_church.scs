@@ -1,0 +1,37 @@
+
+sc_node_not_relation -> concept_nativity_virgin_church;;
+sc_node_not_relation -> concept_church;;
+sc_node_not_relation -> concept_renaissance_architecture;;
+sc_node_not_relation -> concept_malomozheykovskaya;;
+
+sc_node_norole_relation -> nrel_defensive_type;;
+
+concept_nativity_virgin_church => nrel_main_idtf: [Церковь Рождества Богородицы](* <- lang_ru;; *);;
+concept_nativity_virgin_church => nrel_main_idtf: [Church of the Holy Trinity](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_nativity_virgin_church;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Церковь Рождества Богородицы – костел оборонительного типа, памятник ренессансной архитектуры.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (Церковь Рождества Богородицы)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(*
+           -> concept_church;;
+		   -> nrel_defensive_type;;
+		   -> concept_renaissance_architecture;;
+	*);;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_nativity_virgin_church;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[церковь еще называют Маломожейковской.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(Церковь Рождества Богородицы)](*<- lang_ru;;*);;
+	=> nrel_using_constants: ...
+	(* 
+	 -> concept_church;;
+	 -> concept_malomozheykovskaya;;
+	*);;
+*);;
+
