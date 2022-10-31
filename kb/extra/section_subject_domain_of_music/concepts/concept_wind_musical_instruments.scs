@@ -1,0 +1,26 @@
+concept_wind_musical_instruments
+<= nrel_inclusion: concept_musical_instrument; //от кого идёт
+=> nrel_main_idtf: [Wind musical instruments] (* <- lang_en;; *);
+=> nrel_main_idtf: [Духовые музыкальные инструменты] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Духовые музыкальные инструменты)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [музыкальные инструменты, источником звука в которых является колеблющийся столб воздуха, находящийся в трубке инструмента.] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Wind musical instruments)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [musical instruments in which the sound source is an oscillating column of air located in the instrument's tube.] (* <- lang_en;; *);;
+	*);;
+*);
+
+<- sc_node_not_relation;;

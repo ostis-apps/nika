@@ -1,0 +1,58 @@
+section_subject_domain_of_music
+    => nrel_main_idtf:
+        [Раздел. Предметная область музыки] (* <- lang_ru;; *);
+        [Section. Subject domain of music] (* <- lang_en;; *);
+<- sc_node_class;
+<- atomic_section;;
+
+section_subject_domain_of_music = [*
+    subject_domain_of_music
+        => nrel_main_idtf: 
+            [Предметная область музыки] (* <- lang_ru;; *);
+            [Subject domain of music] (* <- lang_en;; *);
+        <- subject_domain;
+        ->rrel_maximum_studied_object_class:
+            concept_wind_musical_instruments;
+            concept_viola_family;
+            concept_violin_family;
+            concept_reed_family;
+            concept_percussion_musical_instruments;
+            concept_bowed_musical_instuments;
+            concept_musical_instrument;
+            concept_flute_family;
+            concept_music_genre;
+        ->rrel_not_maximum_studied_object_class:
+            concept_castanets;
+            concept_xylophone;
+            concept_violin;
+            concept_viola_d_amoure;
+            concept_viola_da_gamba;
+            concept_viola_bastarda;
+            concept_vibraphone;
+            concept_timpani;
+            concept_saxophone;
+            concept_organ;
+            concept_oboe;
+            concept_flute;
+            concept_drum;
+            concept_contrabass;
+            concept_rock;
+            concept_rap;
+            concept_pop;
+            concept_kpop;
+            concept_chanson;
+            concept_hyperpop;
+            concept_harmonica;
+            concept_cello;
+            concept_musician;
+            concept_song;
+            concept_bells;
+            concept_bassoon;
+            concept_bass_drum;
+            concept_alto;
+        ->rrel_explored_relation:
+            nrel_artist;
+            nrel_country_of_origin;
+            nrel_instruments_used;
+            nrel_release_year;;
+*];;

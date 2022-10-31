@@ -1,0 +1,25 @@
+concept_cello
+<= nrel_inclusion: concept_violin_family; //от кого идёт
+=> nrel_main_idtf: [cello] (* <- lang_en;; *);
+=> nrel_main_idtf: [виолончель] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Виолончель)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [смычковый музыкальный инструмент с 4-мя струнами, настроенными по квинтам: Cб Gб Dм Aм. По высоте звучания занимает промежуточное положение между более высоким альтом и низким контрабасом.] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Cello)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [bowed musical instrument with 4 strings tuned in fifths: Cb Gb Dm Am. In terms of pitch, it occupies an intermediate position between a higher alto and a lower double bass.] (* <- lang_en;; *);;
+	*);;
+*);;
+

@@ -1,0 +1,31 @@
+concept_hyperpop
+<- concept_music_genre;
+<- sc_node_class;
+=> nrel_main_idtf:
+	[гиперпоп]
+	(* <- lang_ru;; *);
+	[hyperpop]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (гиперпоп)]
+		(* <- lang_ru;; *);
+		[Def. (hyperpop)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Гиперпоп - свободно определяемое музыкальное направление, характеризующееся преувеличенным подходом к популярной музыке.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Hyperpop - is a loosely-defined music movement and microgenre, characterized by a maximalist or exaggerated take on popular music.]
+			(* <- lang_en;; *);;
+		*);;
+	*);;

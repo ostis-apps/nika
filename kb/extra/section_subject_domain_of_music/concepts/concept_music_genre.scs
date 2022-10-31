@@ -1,0 +1,30 @@
+concept_music_genre
+<- sc_node_class;
+=> nrel_main_idtf:
+	[жанр]
+	(* <- lang_ru;; *);
+	[genre]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (жанр)]
+		(* <- lang_ru;; *);
+		[Def. (genre)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Жанр - стиль или категория искусства, музыки или литературы.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Genre - a style or category of art, music, or literature.]
+			(* <- lang_en;; *);;
+		*);;
+	*);;

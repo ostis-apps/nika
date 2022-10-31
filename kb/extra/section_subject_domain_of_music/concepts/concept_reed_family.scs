@@ -1,0 +1,26 @@
+concept_reed_family
+<= nrel_inclusion: concept_wind_musical_instruments;
+=> nrel_main_idtf: [Reed family] (* <- lang_en;; *);
+=> nrel_main_idtf: [Семейство язычковых] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(семейство язычковых)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [семейство состоящее из тростевых инструментов с одинарной или двойной тростью.] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Reed family)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [a family of reed instruments with single or double reeds.] (* <- lang_en;; *);;
+	*);;
+*);
+
+<- sc_node_not_relation;;

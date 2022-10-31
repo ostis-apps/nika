@@ -1,0 +1,31 @@
+concept_rap
+<- concept_music_genre;
+<- sc_node_class;
+=> nrel_main_idtf:
+	[рэп]
+	(* <- lang_ru;; *);
+	[rap]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (рэп)]
+		(* <- lang_ru;; *);
+		[Def. (rap)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Рэп - музыкальная форма вокальной подачи, включающая в себя «рифму, ритмичную речь и уличный жаргон», которая исполняется или произносится нараспев различными способами, как правило, под фоновый бит или музыкальный аккомпанемент.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Rap - is a musical form of vocal delivery that incorporates "rhyme, rhythmic speech, and street vernacular", which is performed or chanted in a variety of ways, usually over a backing beat or musical accompaniment.]
+			(* <- lang_en;; *);;
+		*);;
+	*);;
