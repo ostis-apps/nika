@@ -1,0 +1,43 @@
+sc_node_not_relation -> concept_nitrogen_fertilizers;;
+sc_node_not_relation -> concept_nitrogen;;
+sc_node_not_relation -> concept_synthetic_ammonia;;
+
+sc_node_norole_relation -> nrel_promote_growth;;
+sc_node_norole_relation -> nrel_contain;;
+
+concept_nitrogen_fertilizers => nrel_main_idtf: [Азотные удобрения](* <- lang_ru;; *);;
+concept_nitrogen_fertilizers => nrel_main_idtf: [Nitrogen fertilizers](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+  -> rrel_key_sc_element : concept_nitrogen_fertilizers;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Азотные удобрения –  неорганические и органические вещества, содержащие азот, которые вносят в почву для повышения урожайности.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Определение (Азотные удобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (*
+           -> concept_nitrogen;;
+       	   -> nrel_contain;;
+	   -> nrel_promote_growth;;
+  *);;
+*);;
+
+statement ->...
+(*
+  -> rrel_key_sc_element : concept_nitrogen_fertilizers;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Азотные удобрения получают главным образом из синтетического аммиака.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Утверждение(Азотные удобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (* 
+   	-> concept_synthetic_ammonia;;
+  *);;
+*);;
+
+concept_nitrogen_fertilizers <= nrel_subdividing: …
+(*
+	<- explanation;;
+	=> nrel_main_idtf: 
+		[Разбиение по азотным удобрениям](*<-lang_ru;; *);
+		[Subdividing based on nitrogen fertilizers](*<-lang_en;; *);;
+	-> concept_iodine_containing_micro_fertilizers; concept_vanadium_containing_micro_fertilizers; concept_nitrate_fertilizes; concept_amide_fertilizes; concept_vital_nitrogen_fertilizes;;
+*);;

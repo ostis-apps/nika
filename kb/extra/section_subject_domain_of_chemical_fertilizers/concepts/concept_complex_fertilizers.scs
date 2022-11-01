@@ -1,0 +1,32 @@
+sc_node_not_relation -> concept_complex_fertilizers;;
+sc_node_not_relation -> concept_chemical_compound;;
+sc_node_not_relation -> concept_nutrient_element;;
+
+sc_node_norole_relation -> nrel_contain;;
+
+concept_complex_fertilizers => nrel_main_idtf: [Комплексные удобрения](* <- lang_ru;; *);;
+concept_complex_fertilizers => nrel_main_idtf: [Complex fertilizers](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+  -> rrel_key_sc_element : concept_complex_fertilizers;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Комплексные удобрения –  удобрения, содержащие несколько питательных элементов.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Определение (Комплексные удобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (*
+	   -> nrel_contain;;
+  *);;
+*);;
+
+statement ->...
+(*
+  -> rrel_key_sc_element : concept_complex_fertilizers;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Сложные удобрения содержат два или три питательных элемента в составе одного химического соединения.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Утверждение(Комплексные удобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (* 
+   	-> concept_chemical_compound;;
+	-> concept_nutrient_element;;
+  *);;
+*);;

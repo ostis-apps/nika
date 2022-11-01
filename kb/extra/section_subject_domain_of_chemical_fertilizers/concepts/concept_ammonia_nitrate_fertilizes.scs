@@ -1,0 +1,36 @@
+sc_node_not_relation -> concept_ammonia_nitrate_fertilizes;;
+sc_node_not_relation -> concept_ammonium_form;;
+sc_node_not_relation -> concept_nitrate_form;;
+sc_node_not_relation -> concept_gaseous_ammonia;;
+
+sc_node_norole_relation -> nrel_contain;;
+sc_node_norole_relation -> nrel_interact;;
+
+concept_ammonia_nitrate_fertilizes => nrel_main_idtf: [Аммиачно-нитратные удобрения](* <- lang_ru;; *);;
+concept_ammonia_nitrate_fertilizes => nrel_main_idtf: [Ammonia nitrate fertilizers](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+  -> rrel_key_sc_element : concept_ammonia_nitrate_fertilizes;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Аммиачно-нитратные удобрения - содержат азот сразу в двух формах: аммонийной и нитратной.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Определение (Аммиачно-нитратныеудобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (*
+	   -> nrel_contain;;
+	   -> concept_ammonium_form;;
+	   -> concept_nitrate_form;;
+  *);;
+*);;
+
+statement ->...
+(*
+  -> rrel_key_sc_element : concept_ammonia_nitrate_fertilizes;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Получают аммонийно-нитратные удобрения на основе взаимодействия азотной кислоты с газообразным аммиаком..](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Утверждение(Аммиачно-нитратные удобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (* 
+	-> concept_gaseous_ammonia;;
+	-> nrel_interact;;
+  *);;
+*);;

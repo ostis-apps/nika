@@ -1,0 +1,52 @@
+subject_domain_of_chemical_fertilizers
+	=> nrel_main_idtf:
+	              [Предметная область химических удобрений]
+	              (* <- lang_ru;; *);
+	              [Subject domain of chemical fertilizers]
+	              (* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+                  subject_domain_of_chemical_fertilizers;
+<= nrel_private_subject_domain: subject_domain_of_fertilizers
+	
+-> rrel_maximum_studied_object_class: 
+		concept_mineral_fertilizers; 
+		concept_micro_fertilizers; 
+		concept_nitrogen_fertilizers; 
+		concept_potash_fertilizers;
+		concept_phosphorus_fertilizers; 
+		concept_complex_fertilizers; 
+
+
+-> rrel_not_maximum_studied_object_class:
+		concept_boric_micro_fertilizers; 
+		concept_cooper_micro_fertilizers; 
+		concept_zinc_micro_fertilizers; 
+		concept_molybdenum_micro_fertilizers; 
+		concept_manganese_micro_fertilizers; 
+		concept_cobalt_micro_fertilizers; 
+		concept_iodine_containing_micro_fertilizers; 
+		concept_vanadium_containing_micro_fertilizers; 
+		concept_nitrate_fertilizes; 
+		concept_amide_fertilizes; 
+		concept_vital_nitrogen_fertilizes; 
+		concept_ammonia_nitrate_fertilizes; 
+		concept_ammonia_fertilizes; 
+		concept_complicated_fertilizes; 
+		concept_fertilizes; 
+		concept_mixed_fertilizes; 
+		concept_difficult_mixed_fertilizes; 
+		concept_liquid_fertilizes; 
+		concept_raw_potash_fertilizes; 
+		concept_concentrated_potash_fertilizes; 
+		concept_water_soluble_phosphate_fertilizes;
+		concept_water_insoluble_phosphate_fertilizers;
+			
+
+
+-> rrel_explored_relation:
+                  nrel_contain; 
+                  nrel_promote_growth; 
+		              
+       
+<- subject_domain;;

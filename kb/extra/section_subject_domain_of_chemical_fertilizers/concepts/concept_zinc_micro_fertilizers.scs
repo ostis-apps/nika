@@ -1,0 +1,35 @@
+sc_node_not_relation -> concept_zinc_micro_fertilizers;;
+sc_node_not_relation -> concept_zinc;;
+sc_node_not_relation -> concept_plant;;
+sc_node_not_relation -> concept_ascarbic_acid;;
+
+sc_node_norole_relation -> nrel_increase;;
+sc_node_norole_relation -> nrel_promote_growth;;
+
+concept_zinc_micro_fertilizers => nrel_main_idtf: [Цинковые микроудобрения](* <- lang_ru;; *);;
+concept_zinc_micro_fertilizers => nrel_main_idtf: [Zinc micro fertilizers](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+  -> rrel_key_sc_element : concept_zinc_micro_fertilizers;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Цинковые микроудобрения – удобрительные вещества, содержащие цинк.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Определение (Цинковые микроудобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (*
+	   -> concept_zinc;;
+  *);;
+*);;
+
+statement ->...
+(*
+  -> rrel_key_sc_element : concept_zinc_micro_fertilizers;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Принимает участие в белковом и фосфорном обмене, синтезе аскорбиновой кислоты, ростовых веществ и тиамина, повышает водоудерживающую силу растений..](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Утверждение(Цинковые микроудобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (* 
+   	-> concept_ascarbic_acid;;
+	-> concept_plant;;
+	-> nrel_increase;;
+  *);;
+*);;

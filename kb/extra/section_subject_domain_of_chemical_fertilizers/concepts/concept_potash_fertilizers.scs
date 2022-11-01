@@ -1,0 +1,43 @@
+sc_node_not_relation -> concept_potash_fertilizers;;
+sc_node_not_relation -> concept_disease;;
+sc_node_not_relation -> concept_mineral_substances;;
+
+sc_node_norole_relation -> nrel_promote_growth;;
+sc_node_norole_relation -> nrel_influence;;
+
+concept_potash_fertilizers => nrel_main_idtf: [Калийные удобрения](* <- lang_ru;; *);;
+concept_potash_fertilizers => nrel_main_idtf: [Potash fertilizers](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+  -> rrel_key_sc_element : concept_potash_fertilizers;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Калийные удобрения –  минеральные вещества, используемые как источник калия для питания растений.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Определение (Калийные удобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (*
+           -> concept_mineral_substances;;
+	   -> nrel_promote_growth;;
+  *);;
+*);;
+
+statement ->...
+(*
+  -> rrel_key_sc_element : concept_potash_fertilizers;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Способствуют повышению сопротивляемости растений к заболеваниям.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Утверждение(Калийные удобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (* 
+   	-> nrel_influence;;
+	-> concept_disease;;
+  *);;
+*);;
+
+concept_potash_fertilizers <= nrel_subdividing: …
+(*
+	<- explanation;;
+	=> nrel_main_idtf: 
+		[Разбиение по калийным удобрениям](*<-lang_ru;; *);
+		[Subdividing based on potash fertilizers](*<-lang_en;; *);;
+	-> concept_raw_potash_fertilizes; concept_concentrated_potash_fertilizes;;
+*);;

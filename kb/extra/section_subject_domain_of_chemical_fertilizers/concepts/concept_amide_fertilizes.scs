@@ -1,0 +1,36 @@
+sc_node_not_relation -> concept_amide_fertilizes;;
+sc_node_not_relation -> concept_nitrogen;;
+sc_node_not_relation -> concept_turf_podolic_soil;;
+
+sc_node_norole_relation -> nrel_contain;;
+sc_node_norole_relation -> nrel_effective;;
+sc_node_norole_relation -> nrel_solid;;
+
+concept_amide_fertilizes => nrel_main_idtf: [Амидные удобрения](* <- lang_ru;; *);;
+concept_amide_fertilizes => nrel_main_idtf: [Amide fertilizers](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+  -> rrel_key_sc_element : concept_amide_fertilizes;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Амидные удобрения - это удобрения, в которых азот находится в амидной форме](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Определение (Амидные удобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (*
+	   -> nrel_contain;;
+	   -> concept_nitrogen;;
+  *);;
+*);;
+
+statement ->...
+(*
+  -> rrel_key_sc_element : concept_amide_fertilizes;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Это концентрированное твердое азотное удобрение, которое содержит 46% азота.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Утверждение(Амидные удобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (* 
+	-> nrel_contain;;
+	-> concept_nitrogen;;
+	-> nrel_solid;;
+  *);;
+*);;

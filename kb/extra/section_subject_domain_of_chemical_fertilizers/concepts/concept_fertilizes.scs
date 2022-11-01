@@ -1,0 +1,36 @@
+sc_node_not_relation -> concept_fertilizes;;
+sc_node_not_relation -> concept_soil;;
+sc_node_not_relation -> concept_plant;;
+sc_node_not_relation -> concept_chemical_component;;
+
+sc_node_norole_relation -> nrel_raising;;
+sc_node_norole_relation -> nrel_provide;;
+
+concept_fertilizes => nrel_main_idtf: [Удобрения](* <- lang_ru;; *);;
+concept_fertilizes => nrel_main_idtf: [Fertilizers](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+  -> rrel_key_sc_element : concept_fertilizes;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Удобрения – вещества для питания растений и повышения плодородия почв.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Определение (Удобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (*
+	   -> concept_soil;;
+	   -> nrel_raising;;
+  *);;
+*);;
+
+statement ->...
+(*
+  -> rrel_key_sc_element : concept_fertilizes;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Их эффект обусловлен тем, что они предоставляют растениям один или несколько дефицитных химических компонентов, необходимых для их нормального роста и развития.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Утверждение(Удобрения](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (* 
+   	-> concept_plant;;
+	-> nrel_provide;;
+	-> concept_chemical_component;;
+  *);;
+*);;

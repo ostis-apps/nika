@@ -1,0 +1,36 @@
+sc_node_not_relation -> concept_vital_nitrogen_fertilizes;;
+sc_node_not_relation -> concept_larger_volumes;;
+sc_node_not_relation -> concept_plant;;
+sc_node_not_relation -> concept_leaf_surface;;
+sc_node_not_relation -> concept_root_surface;;
+
+sc_node_norole_relation -> nrel_assimilate;;
+
+concept_vital_nitrogen_fertilizes => nrel_main_idtf: [Жидкие азотные удобрения](* <- lang_ru;; *);;
+concept_vital_nitrogen_fertilizes => nrel_main_idtf: [Vital nitrogen fertilizers](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+  -> rrel_key_sc_element : concept_vital_nitrogen_fertilizes;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Жидкие азотные удобрения - новый вид азотного удобрения, помогающий растениям активно набирать большие объемы зеленой массы.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Определение (Жидкие азотные удобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (*
+	   -> concept_larger_volumes;;
+	   -> concept_plant;;
+  *);;
+*);;
+
+statement ->...
+(*
+  -> rrel_key_sc_element : concept_vital_nitrogen_fertilizes;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[КАС работает как через листья, так и через корни: через листовую поверхность усваивается амидная форма, а нитратная и аммонийная формы – через корневую систему.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Утверждение(Жидкие азотные удобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (* 
+	-> concept_leaf_surface;;
+	-> concept_root_surface;;
+	-> nrel_assimilate;;
+  *);;
+*);;

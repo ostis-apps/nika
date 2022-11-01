@@ -1,0 +1,37 @@
+sc_node_norole_relation -> nrel_contain;;
+
+nrel_contain => nrel_system_idtf: [nrel_contain];;
+nrel_contain => nrel_idtf: [Contain](*<- lang_en;;*);;
+nrel_contain => nrel_main_idtf: [Содержать](*<- lang_ru;;*);;
+nrel_contain => nrel_idtf: [Содержать](*<- lang_ru;;*);;
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: nrel_contain;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Содержать - иметь, заключать в себе.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Содержать)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+            -> concept_micro_fertilizers;;
+	    -> concept_elements;;
+        *);;
+*);;
+
+nrel_contain => nrel_definitional_domain:..union;;
+nrel_contain => nrel_first_domain: concept_elements;;
+nrel_contain => nrel_second_domain: concept_micro_fertilizers;;
+..union<=nrel_combination:{concept_elements; concept_micro_fertilizers};;
+
+relation => nrel_contain: non_oriented_relation;;
+relation => nrel_contain: binary_relation;;
+
+binary_relation => nrel_contain: antireflexive_relation;;
+binary_relation => nrel_contain: antitransitive_relation;;
+binary_relation => nrel_contain: symetric_relation;;
+
+antireflexive_relation -> nrel_contain;;
+antitransitive_relation -> nrel_contain;;
+symmetric_relation -> nrel_contain;;

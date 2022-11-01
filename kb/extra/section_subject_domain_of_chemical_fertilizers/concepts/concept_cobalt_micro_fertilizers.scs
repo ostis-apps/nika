@@ -1,0 +1,34 @@
+sc_node_not_relation -> concept_cobalt_micro_fertilizers;;
+sc_node_not_relation -> concept_metabolism;;
+sc_node_not_relation -> concept_microelement;;
+
+sc_node_norole_relation -> nrel_contain;;
+sc_node_norole_relation -> nrel_promote_growth;;
+
+concept_cobalt_micro_fertilizers => nrel_main_idtf: [Кобальтовые микроудобрения](* <- lang_ru;; *);;
+concept_cobalt_micro_fertilizers => nrel_main_idtf: [Cobalt micro fertilizers](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+  -> rrel_key_sc_element : concept_cobalt_micro_fertilizers;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[Кобальтовые микроудобрения –  один из видов микроудобрений, содержащий в качестве микроэлемента Co.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Определение (Кобальтовые микроудобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (*
+	   -> nrel_contain;;
+	   -> concept_microelement;;
+  *);;
+*);;
+
+statement ->...
+(*
+  -> rrel_key_sc_element : concept_cobalt_micro_fertilizers;;
+  <= nrel_sc_text_translation: ...(*->rrel_example:[В обмене веществ, способствует фиксации атмосферного азота, ускоряет рост, развитие и повышает продуктивность сельскохозяйственных культур.](*<-lang_ru;;*);;*);;
+  => nrel_main_idtf: [Утверждение(Кобальтовые микроудобрения)](*<- lang_ru;;*);;
+  => nrel_using_constants: ...
+  (* 
+   	-> concept_metabolism;;
+	-> nrel_promote_growth;;
+  *);;
+*);;
