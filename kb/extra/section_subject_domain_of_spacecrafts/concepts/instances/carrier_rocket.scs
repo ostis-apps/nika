@@ -1,13 +1,22 @@
 carrier_rocket_Soyuz_STB
 <- concept_transport;
 <- concept_carrier_rocket;
+<- concept_wit_entity;
 
 => nrel_main_idtf:
-   [ракета-носитель Союз СТ-Б]
-   (* <- lang_ru;; *);
+   [Союз СТ-Б]
+   (* <- lang_ru;; <-concept_text;; *);
 => nrel_main_idtf:
-   [carrier_rocket Soyuz ST-B]
-   (* <- lang_en;; *);
+   [Soyuz ST-B]
+   (* <- lang_en;; <-concept_text;; *);
+
+=> nrel_transport_name:
+	[Союз СТ-Б]
+	(*<-lang_ru;;<-concept_text;;*);
+	
+=> nrel_definition:
+	[ракета-носитель Союз СТ-Б - трёхступенчатая ракета-носитель среднего класса, разработанная и производимая РКЦ «Прогресс» путём глубокой модернизации ракеты-носителя «Союз-У».]
+	(*<-lang_ru;;<-concept_transport_definition;;*);
 
 <-rrel_key_sc_element:...
 (*
@@ -16,20 +25,29 @@ carrier_rocket_Soyuz_STB
 		[Опр. ракета-носитель Союз СТ-Б](*<-lang_ru;;*);;
 	<=nrel_sc_text_translation:...
 	(*
-		->rrel_example: [ракета-носитель Союз СТ-Б - трёхступенчатая ракета-носитель среднего класса, разработанная и производимая РКЦ «Прогресс» путём глубокой модернизации ракеты-носителя «Союз-У».](*<-lang_ru;;*);;
+		->rrel_example: [ракета-носитель Союз СТ-Б - трёхступенчатая ракета-носитель среднего класса, разработанная и производимая РКЦ «Прогресс» путём глубокой модернизации ракеты-носителя «Союз-У».](*<-lang_ru;;<-concept_transport_definition;;*);;
 	*);;
 *);;
 
 carrier_rocket_Proton_K
 <- concept_transport;
 <- concept_carrier_rocket;
+<- concept_wit_entity;
 
 => nrel_main_idtf:
-   [ракета-носитель Протон К]
-   (* <- lang_ru;; *);
+   [Протон К]
+   (* <- lang_ru;; <-concept_text;; *);
 => nrel_main_idtf:
-   [carrier_rocket Proton K]
-   (* <- lang_en;; *);
+   [Proton K]
+   (* <- lang_en;; <-concept_text;; *);
+
+=> nrel_transport_name:
+	[Протон К]
+	(*<-lang_ru;;<-concept_text;;*);
+	
+=> nrel_definition:
+	[ракета-носитель Протон К -  ракета-носитель тяжёлого класса, предназначенная для выведения автоматических космических аппаратов на орбиту Земли и далее в космическое пространство.]
+	(*<-lang_ru;;<-concept_transport_definition;;*);
 
 <-rrel_key_sc_element:...
 (*
@@ -38,24 +56,33 @@ carrier_rocket_Proton_K
 		[Опр. ракета-носитель Протон К](*<-lang_ru;;*);;
 	<=nrel_sc_text_translation:...
 	(*
-		->rrel_example: [ракета-носитель Протон К -  ракета-носитель тяжёлого класса, предназначенная для выведения автоматических космических аппаратов на орбиту Земли и далее в космическое пространство. ](*<-lang_ru;;*);;
+		->rrel_example: [ракета-носитель Протон К -  ракета-носитель тяжёлого класса, предназначенная для выведения автоматических космических аппаратов на орбиту Земли и далее в космическое пространство. ](*<-lang_ru;;<-concept_transport_definition;;*);;
 	*);;
 *);;
 
 carrier_rocket_Energia
 <- concept_transport;
 <- concept_carrier_rocket;
+<- concept_wit_entity;
 
 => nrel_main_idtf:
-   [ракета-носитель Энергия]
-   (* <- lang_ru;; *);
+   [Энергия]
+   (* <- lang_ru;; <-concept_text;;*);
 => nrel_main_idtf:
-   [carrier_rocket Energia]
-   (* <- lang_en;; *);
+   [Energia]
+   (* <- lang_en;; <-concept_text;; *);
 
 => nrel_note:
    [На момент начала эксплуатации являлась одной из самых мощных в мире наряду с «Сатурном-5», «Н-1» и значительно превосходила по грузоподъёмности эксплуатировавшиеся на тот момент в мире ракеты-носители.]
    (* <- lang_ru;; *);	
+
+=> nrel_transport_name:
+	[Буран]
+	(*<-lang_ru;;<-concept_text;;*);
+	
+=> nrel_definition:
+	[ракета-носитель Энергия — советская ракета-носитель сверхтяжёлого класса, разработанная НПО «Энергия».]
+	(*<-lang_ru;;<-concept_transport_definition;;*);
 
 <-rrel_key_sc_element:...
 (*
@@ -64,20 +91,29 @@ carrier_rocket_Energia
 		[Опр. ракета-носитель Энергия](*<-lang_ru;;*);;
 	<=nrel_sc_text_translation:...
 	(*
-		->rrel_example: [ракета-носитель Энергия — советская ракета-носитель сверхтяжёлого класса, разработанная НПО «Энергия».](*<-lang_ru;;*);;
+		->rrel_example: [ракета-носитель Энергия — советская ракета-носитель сверхтяжёлого класса, разработанная НПО «Энергия».](*<-lang_ru;;<-concept_transport_definition;;*);;
 	*);;
 *);;
 
 carrier_rocket_Saturn5
 <- concept_transport;
 <- concept_carrier_rocket;
+<- concept_wit_entity;
 
 => nrel_main_idtf:
-   [ракета-носитель Сатурн 5]
-   (* <- lang_ru;; *);
+   [Сатурн 5]
+   (* <- lang_ru;; <-concept_text;; *);
 => nrel_main_idtf:
-   [carrier_rocket Saturn V]
-   (* <- lang_en;; *);
+   [Saturn V]
+   (* <- lang_en;; <-concept_text;; *);
+
+=> nrel_transport_name:
+	[Сатурн 5]
+	(*<-lang_ru;;<-concept_text;;*);
+	
+=> nrel_definition:
+	[ракета-носитель Сатурн 5 — американская сверхтяжелая ракета-носитель семейства Сатурн.]
+	(*<-lang_ru;;<-concept_transport_definition;;*);
 
 <-rrel_key_sc_element:...
 (*
@@ -86,6 +122,6 @@ carrier_rocket_Saturn5
 		[Опр. ракета-носитель Сатурн 5](*<-lang_ru;;*);;
 	<=nrel_sc_text_translation:...
 	(*
-		->rrel_example: [ракета-носитель Сатурн 5 — американская сверхтяжелая ракета-носитель семейства Сатурн.](*<-lang_ru;;*);;
+		->rrel_example: [ракета-носитель Сатурн 5 — американская сверхтяжелая ракета-носитель семейства Сатурн.](*<-lang_ru;;<-concept_transport_definition;; *);;
 	*);;
 *);;

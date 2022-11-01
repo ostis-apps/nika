@@ -2,6 +2,7 @@ space_capsule_Apollo15
 <- concept_spacecraft;
 <- concept_crewed_spacecraft;
 <- concept_space_capsule;
+<- concept_wit_entity;
 
 => nrel_main_idtf:
    [Апполон 15]
@@ -21,6 +22,10 @@ space_capsule_Apollo15
             *);
 => nrel_launched_by: carrier_rocket_Saturn5;
 => nrel_purpose: purpose_astronomical_research;
+
+=> nrel_definition:
+	[Аполлон-15 — девятый пилотируемый космический корабль в рамках программы «Аполлон», четвёртая высадка людей на Луну.]
+	(*<-lang_ru;;<-concept_spacecraft_definition;;*);
 
 <-rrel_key_sc_element:...
 (*

@@ -3,11 +3,15 @@ plane_An225
 <- concept_carrier_plane;
 
 => nrel_main_idtf:
-   [самолет-носитель Ан-225]
+   [Ан-225]
    (* <- lang_ru;; *);
 => nrel_main_idtf:
-   [carrier-plane An-225]
+   [An-225]
    (* <- lang_en;; *);
+
+=> nrel_definition:
+	[самолет-носитель Ан-225 - транспортный реактивный самолет сверхбольшой грузоподъемности разработки ОКб имени О. К. Антонова.]
+	(*<-lang_ru;;<-concept_spacecraft_definition;;*);
 
 <-rrel_key_sc_element:...
 (*

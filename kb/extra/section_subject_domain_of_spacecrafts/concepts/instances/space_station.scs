@@ -2,6 +2,7 @@ space_station_ISS
 <- concept_spacecraft;
 <- concept_crewed_spacecraft;
 <- concept_space_station;
+<- concept_wit_entity;
 
 => nrel_main_idtf:
    [Международная космическая станция]
@@ -32,6 +33,10 @@ space_station_ISS
             *);
 => nrel_launched_by: carrier_rocket_Proton_K;
 => nrel_purpose: purpose_astronomical_research;
+
+=> nrel_definition:
+	[Международная космическая станция — пилотируемая орбитальная станция, используемая как многоцелевой космический исследовательский комплекс; эксплуатируется с конца 1998 года по настоящее время.]
+	(*<-lang_ru;;<-concept_spacecraft_definition;;*);
 
 <-rrel_key_sc_element:...
 (*

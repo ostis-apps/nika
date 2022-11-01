@@ -2,10 +2,11 @@ spaceplane_Buran
 <- concept_spacecraft;
 <- concept_crewed_spacecraft;
 <- concept_spaceplane;
+<- concept_wit_entity;
 
 => nrel_main_idtf:
    [Буран]
-   (* <- lang_ru;; *);
+   (* <- lang_ru;; <-concept_text;;*);
 => nrel_main_idtf:
    [Buran]
    (* <- lang_en;; *);
@@ -29,6 +30,14 @@ spaceplane_Buran
 => nrel_launched_by: carrier_rocket_Energia;
 => nrel_purpose: purpose_transporting;
 
+=> nrel_spacecraft_name:
+    [Буран]
+    (*<-lang_ru;;<-concept_text;;*);
+
+=> nrel_definition:
+	[Буран — советский орбитальный корабль-ракетоплан многоразовой транспортной космической системы (МТКС), созданный в рамках программы «Энергия — Буран».]
+	(*<-lang_ru;;<-concept_spacecraft_definition;;*);
+
 <-rrel_key_sc_element:...
 (*
 	<-definition;;
@@ -36,6 +45,6 @@ spaceplane_Buran
 		[Опр. Буран](*<-lang_ru;;*);;
 	<=nrel_sc_text_translation:...
 	(*
-		->rrel_example: [Буран — советский орбитальный корабль-ракетоплан многоразовой транспортной космической системы (МТКС), созданный в рамках программы «Энергия — Буран».](*<-lang_ru;;*);;
+		->rrel_example: [Буран — советский орбитальный корабль-ракетоплан многоразовой транспортной космической системы (МТКС), созданный в рамках программы «Энергия — Буран».](*<-lang_ru;;<-concept_spacecraft_definition;;*);;
 	*);;
 *);;

@@ -4,10 +4,10 @@ rover_Curiosity
 <- concept_rover;
 
 => nrel_main_idtf:
-   [планетоход Curiosity]
+   [Curiosity]
    (* <- lang_ru;; *);
 => nrel_main_idtf:
-   [rover Curiosity]
+   [Curiosity]
    (* <- lang_en;; *);
 
 => nrel_location: planet_Mars;
@@ -27,6 +27,10 @@ rover_Curiosity
             *);
 => nrel_launched_by: carrier_rocket_Atlas5;
 => nrel_purpose: purpose_astronomical_research;
+
+=> nrel_definition:
+	[планетоход Curiosity — планетоход третьего поколения, разработанный для исследования кратера Гейла на Марсе в рамках миссии НАСА "Марсианская научная лаборатория" ]
+	(*<-lang_ru;;<-concept_spacecraft_definition;;*);
 
 <-rrel_key_sc_element:...
 (*

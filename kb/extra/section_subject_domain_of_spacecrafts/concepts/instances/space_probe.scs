@@ -2,6 +2,7 @@ space_probe_Luna24
 <- concept_spacecraft;
 <- concept_uncrewed_spacecraft;
 <- concept_space_probe;
+<- concept_wit_entity;
 
 => nrel_main_idtf:
    [Луна 24]
@@ -21,6 +22,9 @@ space_probe_Luna24
             *);
 => nrel_launched_by: carrier_rocket_Proton_K;
 => nrel_purpose: purpose_collecting_samples;
+=> nrel_definition:
+	[Луна-24 — последняя советская автоматическая межпланетная станция для изучения Луны, забора и доставки лунного грунта на Землю.]
+	(*<-lang_ru;;<-concept_spacecraft_definition;;*);
 
 <-rrel_key_sc_element:...
 (*

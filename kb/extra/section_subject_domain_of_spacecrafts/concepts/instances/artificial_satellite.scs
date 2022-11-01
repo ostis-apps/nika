@@ -15,6 +15,10 @@ artificial_satellite_Gaia
    [Миссия Gaia создаст точную трехмерную карту астрономических объектов по всему Млечному Пути и отобразит их движения.]
    (* <- lang_ru;; *);
 
+=> nrel_definition:
+	[Gaia — космическая обсерватория Европейского космического агентства, запущенная в 2013 году и, как ожидается, будет работать до 2025 года.]
+	(*<-lang_ru;;<-concept_spacecraft_definition;;*);
+
 => nrel_orbit: orbit_interplanetary;
 <= nrel_satellite: planet_Earth;
 => nrel_mass: mass_2029kg
