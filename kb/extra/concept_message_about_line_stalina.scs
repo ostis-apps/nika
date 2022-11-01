@@ -1,0 +1,37 @@
+concept_message_about_line_stalina
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о Линия Сталина]
+	(* <- lang_ru;; *);
+	[message about line stalina]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[line_stalina];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о Линия Сталина)]
+        (* <- lang_ru;; *);
+        [Def. (message about line stalina)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о Линия Сталина - атомарное сообщение, являющееся запросом на получение информации про линию сталина]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about line stalina - atomic message which used to make a question about line stalina]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

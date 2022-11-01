@@ -1,0 +1,37 @@
+concept_message_about_nesvizh
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о несвиже]
+	(* <- lang_ru;; *);
+	[message about nesvizh]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[nesvizh];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о несвиже)]
+        (* <- lang_ru;; *);
+        [Def. (message about nesvizh)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о несвиже - атомарное сообщение, являющееся запросом на получение информации про несвиж]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about nesvizh - atomic message which used to make a question about nesvizh]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
