@@ -1,0 +1,29 @@
+concept_intent_possible_class
+<- sc_node_class;
+=> nrel_main_idtf:
+	   [возможный класс цели Wit.ai]
+	   (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (возможный класс цели Wit.ai)]
+		(* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Возможный класс цели Wit.ai - класс, элементы которого могут быть выделены посредством Wit.ai как цели.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+-> concept_message_about_actors_in_orpheus_and_eurydice;
+-> concept_message_about_characters_in_orpheus_and_eurydice;
+-> concept_message_about_hobby;
+-> concept_message_about_spectacle;
+-> concept_message_about_spectacle_orpheus_and_eurydice;
+-> concept_message_actors;
+-> concept_message_about_certain_actor;
+-> concept_message_hobby_theater;
+-> concept_message_main_characters;;

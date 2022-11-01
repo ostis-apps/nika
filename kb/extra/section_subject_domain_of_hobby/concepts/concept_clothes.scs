@@ -1,0 +1,23 @@
+concept_clothes
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf: 
+ 	[одежда] (*<-lang_ru;;*);
+	[clothes] (*<-lang_en;;*);
+
+<= nrel_inclusion:
+    concept_thing;
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (одежда)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_thing
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Одежда - совокупность предметов, которыми покрывают, облекают тело.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

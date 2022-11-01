@@ -1,0 +1,38 @@
+section_subject_domain_of_literature
+=> nrel_main_idtf:
+	  [Раздел. Предметная область литературы]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of literature] 
+  (* <- lang_en;; *);;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_literature = [*
+	subject_domain_of_literature
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область литературы]
+   (* <- lang_ru;; *);
+   [Subject domain of literature]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_literature;
+	-> rrel_not_maximum_studied_object_class:
+      concept_book;
+      concept_character;
+      concept_dialogue;
+      concept_monologue;
+      concept_play;;
+*];;
+
+
+section_subject_domain_of_hobby
+-> rrel_key_sc_element:
+    subject_domain_of_literature; 
+    concept_literature;
+    concept_book;
+    concept_character;
+    concept_dialogue;
+    concept_monologue;
+    concept_play;;

@@ -1,0 +1,42 @@
+concept_theater
+<- sc_node_class;
+<- class;
+<- concept_wit_entity;
+
+=> nrel_main_idtf:
+    [театр] (*<-lang_ru;;*);
+    [theater] (*<-lang_en;;*);
+
+<= nrel_inclusion:
+    concept_hobby;
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (театр)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_stage;
+        concept_spectacle;
+        concept_play
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Театр - искусство изображения драматических произведений на сцене.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(театр, хобби)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+		concept_hobby
+};; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+[Театр - замечательное хобби! Театральное искусство является прекрасной возможностью избавиться от зажатости и излишней стеснительности.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

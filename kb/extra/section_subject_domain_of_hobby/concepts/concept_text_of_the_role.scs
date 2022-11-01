@@ -1,0 +1,35 @@
+//Текст роли (фраза сценического персонажа)
+concept_text_of_the_role
+<- sc_node_class;
+<- class;
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[текст роли] (*<-lang_ru;;*);
+ 	[фраза сценического персонажа] (*<-lang_ru;;*);
+	[text of the role] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (текст роли, фраза сценического персонажа)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+		nrel_character;
+		concept_text
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Фраза сценического персонажа - тест, сказанный персонажем.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);;
+
+//разделение на подмножества
+concept_thing <= nrel_subdividing: ... 
+(*
+	<- explanation;;
+	=> nrel_main_idtf:
+  [По количеству участников](* <-lang_ru;; *);
+  [By the number of participants](* <-lang_en;; *);;
+  ->concept_monologue;concept_dialogue;;
+*);;

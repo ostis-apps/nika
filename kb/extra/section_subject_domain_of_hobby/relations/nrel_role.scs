@@ -1,0 +1,61 @@
+//Суфлер
+nrel_role
+<- sc_node_norole_relation;
+<- relation;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:
+    concept_person;
+
+=> nrel_second_domain:
+    concept_character;
+ 
+=> nrel_definitional_domain:
+    concept_character;
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[роль*] (*<-lang_ru;;*);
+	[role*] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (роль)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_stage;
+        concept_character;
+        concept_spectacle;
+        nrel_actor;
+        concept_play
+};;
+<= nrel_sc_text_translation: ... (*
+    -> rrel_example:
+        [Роль - изображение актёром на сцене персонажа пьесы (спектакля).] (* <- lang_ru;; => nrel_format: format_html;;*);;
+        *);;
+*);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(роль*, персонаж, пьеса, спектакль)] (* <- lang_ru;; *);;
+      => nrel_using_constants: {
+        rrel_replica;
+        concept_character;
+        concept_spectacle;
+        concept_play    	
+};;
+    <= nrel_sc_text_translation: ... (*
+        -> rrel_example:
+        [Роль представляет из себя совокупность реплик одного персонажа в пьесе.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;
+
+

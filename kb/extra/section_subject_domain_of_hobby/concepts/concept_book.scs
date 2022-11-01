@@ -1,0 +1,31 @@
+concept_book
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf: 
+ 	[книга] (*<-lang_ru;;*);
+	[book] (*<-lang_en;;*);
+
+<= nrel_inclusion:
+    concept_thing;
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (книга)] (* <- lang_ru;; *);;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Книга - сшитые в один переплёт листы бумаги для каких-либо записей.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(книга)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+		[Читая книги мы увеличиваем словарный запас, обогащаем свой внутренний мир, учимся переживать. С помощью книги современный человек может погрузиться в прошлые эпохи, понять что руководило людьми, когда они испытывали трудности.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

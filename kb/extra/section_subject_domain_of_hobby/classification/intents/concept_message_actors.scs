@@ -1,0 +1,27 @@
+concept_message_actors
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение об актерах]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [actors];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение об актерах)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение об актерах - атомарное сообщение,
+    которое содержит информацию о каких-либо актерах.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

@@ -1,0 +1,17 @@
+concept_dialogue
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+ 	[диалог] (*<-lang_ru;;*);
+	[dialogue] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (диалог)] (* <- lang_ru;; *);;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Диалог - разговор между двумя или несколькими лицами.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

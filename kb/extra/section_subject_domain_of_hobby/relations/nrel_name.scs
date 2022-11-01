@@ -1,0 +1,24 @@
+nrel_name
+<- sc_node_norole_relation;
+<- relation;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:{
+    concept_character;
+    concept_person;
+    concept_theater;
+    concept_spectacle;
+    concept_book;
+    concept_film
+};
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[имя*] (*<-lang_ru;;*);
+    [название*] (*<-lang_ru;;*);
+	[name*] (*<-lang_en;;*);;

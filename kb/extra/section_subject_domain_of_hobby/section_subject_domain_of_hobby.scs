@@ -1,0 +1,98 @@
+section_subject_domain_of_hobby
+=> nrel_main_idtf:
+	  [Раздел. Предметная область хобби]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of hobby] 
+  (* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+                  section_subject_domain_of_theater;
+                  section_subject_domain_of_literature;
+                  section_subject_domain_of_music;
+                  section_subject_domain_of_cinema;;
+
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_hobby = [*
+	subject_domain_of_hobby
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область хобби]
+   (* <- lang_ru;; *);
+   [Subject domain of hobby]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_hobby;
+	-> rrel_not_maximum_studied_object_class:
+      concept_authentic_item;
+      concept_book;
+      concept_character;
+      concept_clothes;
+      concept_curtain;
+      concept_dialogue;
+      concept_fake_item;
+      concept_film;
+      concept_literature;
+      concept_monologue;
+      concept_music;
+      concept_musical_composition;
+      concept_person;
+      concept_play;
+      concept_sound;
+      concept_sound_panel;
+      concept_stage;
+      concept_spectacle;
+      concept_text_of_the_role;
+      concept_theatrical_action;
+      concept_theater_audience;
+      concept_theater;
+      concept_thing;
+	-> rrel_explored_relation:
+      rrel_replica;
+      rrel_soundtrack;
+      nrel_actor;
+      nrel_costume;
+      nrel_composer;
+      nrel_prompter;
+      nrel_props;
+      nrel_role;;
+*];;
+
+
+section_subject_domain_of_hobby
+-> rrel_key_sc_element:
+   subject_domain_of_hobby; 
+   concept_hobby;
+   concept_authentic_item;
+   concept_book;
+   concept_character;
+   concept_clothes;
+   concept_curtain;
+   concept_dialogue;
+   concept_fake_item;
+   concept_film;
+   concept_literature;
+   concept_monologue;
+   concept_music;
+   concept_musical_composition;
+   concept_person;
+   concept_play;
+   concept_sound;
+   concept_sound_panel;
+   concept_stage;
+   concept_spectacle;
+   concept_text_of_the_role;
+   concept_theatrical_action;
+   concept_theater_audience;
+   concept_theater;
+   concept_thing;
+   rrel_replica;
+   rrel_soundtrack;
+   nrel_actor;
+   nrel_costume;
+   nrel_composer;
+   nrel_prompter;
+   nrel_props;
+   nrel_role;;

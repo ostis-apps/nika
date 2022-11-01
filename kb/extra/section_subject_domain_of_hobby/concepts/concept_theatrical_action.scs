@@ -1,0 +1,42 @@
+//Театральное действие
+concept_theatrical_action
+<- sc_node_class;
+<- class;
+
+<= nrel_inclusion:
+	concept_spectacle;
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[театрально действие] (*<-lang_ru;;*);
+	[театральный акт] (*<-lang_ru;;*);
+	[theatrical action] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (акт в театре, театральный акт, спектакль, пьеса)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_spectacle;
+        concept_play
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Акт (театральное действие) - законченная часть спектакля, пьесы.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(акт, театральное действие, книга, глава)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+		concept_book
+};; 
+<= nrel_sc_text_translation: ... (*
+    -> rrel_example:
+	[Акт — это как глава в книге.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

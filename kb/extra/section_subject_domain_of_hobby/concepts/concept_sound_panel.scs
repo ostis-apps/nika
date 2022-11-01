@@ -1,0 +1,37 @@
+concept_sound_panel
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf: 
+ 	[звуковой пульт] (*<-lang_ru;;*);
+	[микшер] (*<-lang_ru;;*);
+	[sound panel] (*<-lang_en;;*);
+
+	
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (микшер, звуковой пульт)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_sound
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Микшер - это электронное устройство, предназначенное для сведения звуковых сигналов.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(микшер)] (* <- lang_ru;; *);; 
+    => nrel_using_constants: {
+        concept_sound
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+[Задача микшера - суммирование нескольких звуковых сигналов в один. Но современные микшерные пульты, кроме этой функции, выполняют ряд других: коррекцию сигналов (эквализация, компрессирование, спецэффекты).](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;
