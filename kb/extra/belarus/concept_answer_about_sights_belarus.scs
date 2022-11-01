@@ -1,0 +1,38 @@
+concept_message_about_sights_belarus
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о достопримечательность Беларуси]
+	(* <- lang_ru;; *);
+	[message about sights of Belarus]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[belarus];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о достопримечательность Беларуси)]
+        (* <- lang_ru;; *);
+        [Def. (message about sights of Belarus)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о достопримечаательность Беларуси - атомарное сообщение, являющееся запросом на получение информации про достопримечательности Беларуси]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about sights of Belarus - atomic message which used to make a question about sights of Belarus]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
+

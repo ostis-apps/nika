@@ -1,0 +1,37 @@
+concept_message_about_lida_castle
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о лидском замок]
+	(* <- lang_ru;; *);
+	[message about lida castle]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[lida_castle];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о лидском замок)]
+        (* <- lang_ru;; *);
+        [Def. (message about lida castle)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о лидском замок - атомарное сообщение, являющееся запросом на получение информации про лидском замок]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about lida castle - atomic message which used to make a question about lida castle]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
