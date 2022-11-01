@@ -1,0 +1,107 @@
+concept_phrase_about_opportunity_to_tell_about_furniture
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о наличии возможности говорить о мебели]
+	    (* <- lang_ru;; *);
+	[phrase about opportunity to tell about furniture]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о наличии возможности говорить о мебели)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о наличии возможности говорить о мебели - фраза, содержащая информацию про возможность говорить на тему "мебель".]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+	*);;
+
+concept_phrase_about_furniture
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о мебели]
+	    (* <- lang_ru;; *);
+	[phrase about furniture]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о мебели]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о мебели - фраза, содержащая информацию про то, что такое мебель.]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+*);;
+
+concept_phrase_about_favorite_furniture_type
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о любимом типе мебели]
+	    (* <- lang_ru;; *);
+	[phrase about favorite furniture type]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о любимом типе мебели)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о любимом типе мебели - фраза, содержащая пример любимого типа мебели.]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+*);;
+
+concept_phrase_about_furniture_instance_brand
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза с ответом на вопрос, кто изготавливает данную мебель]
+	    (* <- lang_ru;; *);
+	[phrase about furniture instance brand]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза с ответом на вопрос, кто изготавливает данную мебель)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза с ответом на вопрос, кто изготавливает данную мебель - фраза, содержащая название бренда, который изготавливает данную мебель.]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+*);;

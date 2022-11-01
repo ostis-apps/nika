@@ -1,0 +1,38 @@
+concept_message_about_furniture_instance_brand
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение с вопросом о том, кто изготавливает данную мебель]
+	    (* <- lang_ru;; *);
+	[message about furniture instance brand]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_furniture_instance_brand];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение с вопросом о том, кто изготавливает данную мебель)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about furniture instance brand)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение с вопросом о том, кто изготавливает данную мебель - атомарное сообщение, с запросом на ответ на вопрос, какой бренд у данной мебели?]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about furniture instance brand is an atomic message, with a request for an answer to the question, what is the brand of this furniture instance?]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
+

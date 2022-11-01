@@ -1,0 +1,36 @@
+concept_message_about_horror
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о мебели]
+	    (* <- lang_ru;; *);
+	[message about furniture]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_furniture];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о мебели)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about furniture)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о мебели - атомарное сообщение, с запросом на ответ о том, что такое мебель.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about furniture is an atomic message that asks what a furniture is.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
