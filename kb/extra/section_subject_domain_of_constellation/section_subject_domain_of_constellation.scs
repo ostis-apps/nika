@@ -1,0 +1,69 @@
+section_subject_domain_of_constellation
+
+=> nrel_main_idtf:
+   	[Предметная область созвездий]
+ 	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+   	[Subject domain of constellation]
+   	(* <- lang_en;; *);
+
+<= nrel_section_decomposition: 
+	{
+		subject_domain_of_bayer_family;
+		subject_domain_of_hercules_family;
+		subject_domain_of_la_caille_family;
+		subject_domain_of_orion_family;
+		subject_domain_of_perseus_family;
+		subject_domain_of_ursa_major_family;
+		subject_domain_of_zodiak_family
+	};
+
+<- rrel_key_sc_element:
+	concept_astronomy;
+	concept_asterism;
+	concept_celestial_sphere;
+	concept_constellation;
+	concept_constellation_families;
+	concept_star;
+	concept_starry_sky;
+	concept_satellite;
+	concept_planet;
+	concept_photon;;
+
+section_subject_domain_of_constellation = [*
+subject_domain_of_constellation
+
+=> nrel_main_idtf: 
+	[Предметная область созвездий]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of constellation]
+	(* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+	subject_domain_of_bayer_family;
+	subject_domain_of_constellation;
+	subject_domain_of_hercules_family;
+	subject_domain_of_la_caille_family;
+	subject_domain_of_orion_family;
+	subject_domain_of_perseus_family;
+	subject_domain_of_ursa_major_family;
+	subject_domain_of_zodiak_family;
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_constellation;
+		
+-> rrel_maximum_studied_object_class:
+	concept_constellation;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_bayer_family;
+	concept_hercules_family;
+	concept_la_caille_family;
+	concept_orion_family;
+	concept_perseus_family;
+	concept_ursa_major_family;
+	concept_zodiak_family;
+	
+<- subject_domain;;
+*];;

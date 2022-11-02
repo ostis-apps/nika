@@ -1,0 +1,38 @@
+section_subject_domain_of_astronomy
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Астономии]
+	(* <- lang_ru;; *);
+	
+<= nrel_section_decomposition: 
+	{
+		section_subject_domain_of_constellation
+	};
+
+<- rrel_key_sc_element:
+	concept_astronomy;
+	nrel_object_of_stydy;;
+
+section_subject_domain_of_astronomy = [*
+subject_domain_of_astronomy
+
+=> nrel_main_idtf: 
+	[Предметная область Астономии]
+	(* <- lang_ru;; *);
+
+=> nrel_private_subject_domain:
+	section_subject_domain_of_constellation;
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_astronomy;
+		
+-> rrel_maximum_studied_object_class:
+	concept_astronomy;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_constellation;
+	
+-> rrel_explored_relation:
+	nrel_object_of_stydy;
+	
+<- subject_domain;;
+*];;
