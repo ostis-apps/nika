@@ -1,0 +1,20 @@
+concept_paver
+=> nrel_main_idtf:
+    [асфальтоукладчик](* <-lang_ru;; *);
+    [paver](* <-lang_en;; *);;
+
+concept_paver
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (асфальтоукладчик)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (paver)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Асфальтоукладчик - техника, предназначенная для укладки слоев асфальтобетонного покрытия, включающей распределение и предварительное уплотнение асфальтобетонной смеси по нижележащему слою дорожной одежды.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Paver - piece of construction equipment used to lay asphalt concrete or Portland cement concrete on roads, bridges, parking lots and other such places.](*<- lang_en;;*);;
+    *);;
+*);;

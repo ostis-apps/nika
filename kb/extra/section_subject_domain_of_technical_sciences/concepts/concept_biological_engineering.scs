@@ -1,0 +1,24 @@
+concept_biological_engineering
+=> nrel_main_idtf:
+    [биотехнология](* <-lang_ru;; *);
+    [biological engineering](* <-lang_en;; *);;
+
+concept_biological_engineering
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (биотехнология)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (biological engineering)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Биотехнология -  дисциплина, изучающая возможности использования живых организмов, их систем или продуктов их жизнедеятельности для решения технологических задач, а также возможности создания живых организмов с необходимыми свойствами методом генной инженерии.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Biological engineering -  integration of natural sciences and engineering sciences in order to achieve the application of organisms, cells, parts thereof and molecular analogues for products and services.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_engineering
+    };;
+*);;

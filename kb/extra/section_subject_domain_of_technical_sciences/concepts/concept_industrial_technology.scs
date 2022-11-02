@@ -1,0 +1,34 @@
+concept_industrial_technology
+=> nrel_main_idtf:
+    [промышленная техника](* <-lang_ru;; *);
+    [industrial technology](* <-lang_en;; *);;
+
+concept_industrial_technology
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (промышленная техника)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (industrial technology)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Промышленная техника - раздел техники, предназначенной для обеспечения работы в промышленном производственном процессе на предприятии.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Industrial technology - type of technology designed to ensure work in the industrial production process at the enterprise. ](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_technology
+    };;
+*);;
+
+concept_industrial_technology
+<= nrel_subdividing: ...
+(*
+    <- explanation;;
+    => nrel_main_idtf:
+        [Разбиение по видам](*<-lang_ru;; *);
+        [Subdividing based on type](*<-lang_en;; *);;
+    -> concept_industrial_robot; concept_industrial_computer; concept_industrial_electronics;;
+*);;

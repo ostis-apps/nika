@@ -1,0 +1,25 @@
+concept_researcher
+=> nrel_main_idtf:
+    [исследователь](* <-lang_ru;; *);
+    [researcher](* <-lang_en;; *);;
+
+concept_researcher
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (исследователь)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (researcher)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Исследователь - научный сотрудник в любой области науки.](*<- lang_ru;;*);;
+        -> rrel_example:
+            [Researcher - specialist focused on research in any field of science.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_human;
+        concept_technical_science
+    };;
+*);;

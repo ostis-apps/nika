@@ -1,0 +1,24 @@
+concept_engineering
+=> nrel_main_idtf:
+    [инженерия](* <-lang_ru;; *);
+    [engineering](* <-lang_en;; *);;
+
+concept_engineering
+<- rrel_key_sc_element: ...
+    (*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (инженерия)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (engineering)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Инженерия - область технической деятельности, включающая в себя целый ряд специализированных областей и дисциплин, направленная на практическое приложение и применение научных, экономических, социальных и практических знаний с целью обращения природных ресурсов на пользу человека.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Engineering - a field of technical activity comprising a number of specialized fields and disciplines aimed at the practical application and application of scientific, economic, social and practical knowledge with the aim of converting natural resources for human benefit.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_technology
+    };;
+*);;

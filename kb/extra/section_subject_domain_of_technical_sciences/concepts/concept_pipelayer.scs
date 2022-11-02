@@ -1,0 +1,22 @@
+concept_pipelayer
+=> nrel_main_idtf:
+    [трубоукладчик](* <-lang_ru;; *);
+    [pipelayer](* <-lang_en;; *);;
+
+concept_pipelayer
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (трубоукладчик)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (pipelayer)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Трубоукладчик - техника, предназначенная для перемещения, наводки, опускания и укладки в проектное положение труб различных диаметров.
+
+.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Pipelayer - type of a construction vehicle used to lay pipes.](*<- lang_en;;*);;
+    *);;
+*);;

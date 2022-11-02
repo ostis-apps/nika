@@ -1,0 +1,20 @@
+concept_industrial_robot
+=> nrel_main_idtf:
+    [промышленный робот](* <-lang_ru;; *);
+    [industrial robot](* <-lang_en;; *);;
+
+concept_industrial_robot
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (промышленный робот)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (industrial robot)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Промышленный робот - предназначенный для выполнения двигательных и управляющих функций в производственном процессе манипуляционный робот, то есть автоматическое устройство, состоящее из манипулятора и перепрограммируемого устройства управления, которое формирует управляющие воздействия, задающие требуемые движения исполнительных органов манипулятора.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Industrial robot - a manipulation robot designed to perform motor and control functions in the production process, that is, an automatic device consisting of a manipulator and a reprogrammable control device that forms control actions that determine the required movements of the actuator's executive organs.](*<- lang_en;;*);;
+    *);;
+*);;

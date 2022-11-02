@@ -1,0 +1,22 @@
+concept_loader
+=> nrel_main_idtf:
+    [погрузчик](* <-lang_ru;; *);
+    [loader](* <-lang_en;; *);;
+
+concept_loader
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (погрузчик)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (loader)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Погрузчик - самоходная или ручная (мускульная) машина для поднятия, транспортировки и укладки различных грузов.
+
+.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Loader -  heavy equipment machine used in construction to move or load materials such as soil, rock, sand, demolition debris, etc. into or onto another type of machinery (such as a dump truck, conveyor belt, feed-hopper, or railroad car).](*<- lang_en;;*);;
+    *);;
+*);;

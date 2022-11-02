@@ -1,0 +1,24 @@
+concept_materials_science
+=> nrel_main_idtf:
+    [материаловедение](* <-lang_ru;; *);
+    [materials science](* <-lang_en;; *);;
+
+concept_materials_science
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (материаловедение)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (materials science)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Материаловедение - междисциплинарный раздел науки, изучающий изменения свойств материалов как в твёрдом, так и в жидком состоянии в зависимости от некоторых факторов.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Materials science - an interdisciplinary branch of science that studies changes in the properties of materials in both solid and liquid states depending on certain factors.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_technical_science
+    };;
+*);;

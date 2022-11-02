@@ -1,0 +1,25 @@
+concept_engineer
+=> nrel_main_idtf:
+    [инженер](* <-lang_ru;; *);
+    [engineer](* <-lang_en;; *);;
+
+concept_engineer
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (инженер)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (engineer)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Инженер - специалист, осуществляющий инженерную деятельность.](*<- lang_ru;;*);;
+        -> rrel_example:
+            [An engineer - specialist engaged in engineering activities.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_human;
+        concept_engineering
+    };;
+*);;

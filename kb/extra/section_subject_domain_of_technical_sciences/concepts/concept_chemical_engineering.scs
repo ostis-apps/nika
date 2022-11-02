@@ -1,0 +1,24 @@
+concept_chemical_engineering
+=> nrel_main_idtf:
+    [химическая технология](* <-lang_ru;; *);
+    [chemical engineering](* <-lang_en;; *);;
+
+concept_chemical_engineering
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (химическая технология)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (chemical engineering)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Химическая технология - наука о наиболее экономичных и экологически обоснованных методах химической переработки сырых природных материалов в предметы потребления и средства производства. Процессы химической технологии включают химическую переработку сырья, основанную на сложных по своей природе химических и физико-химических явлениях.  .](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Chemical engineering - the science of the most economical and environmentally sound methods of chemical processing of raw natural materials into commodities and means of production. The processes of chemical technology include the chemical processing of raw materials based on chemical and physicochemical phenomena that are complex in nature.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_engineering
+    };;
+*);;

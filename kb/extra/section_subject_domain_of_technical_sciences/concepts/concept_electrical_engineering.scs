@@ -1,0 +1,24 @@
+concept_electrical_engineering
+=> nrel_main_idtf:
+    [электротехника](* <-lang_ru;; *);
+    [electrical engineering](* <-lang_en;; *);;
+
+concept_electrical_engineering
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (электротехника)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (electrical engineering)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Электротехника - область техники, связанная с получением, распределением, преобразованием и использованием электрической энергии, а также c разработкой, эксплуатацией и оптимизацией электронных компонентов, электронных схем и устройств, оборудования и технических систем.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Electrical engineering - the field of technology related to the production, distribution, conversion and use of electrical energy, as well as the development, operation and optimization of electronic components, electronic circuits and devices, equipment and technical systems.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_engineering
+    };;
+*);;

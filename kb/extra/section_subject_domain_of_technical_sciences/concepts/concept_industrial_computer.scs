@@ -1,0 +1,20 @@
+concept_industrial_computer
+=> nrel_main_idtf:
+    [промышленный компьютер](* <-lang_ru;; *);
+    [industrial computer](* <-lang_en;; *);;
+
+concept_industrial_computer
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (промышленный компьютер)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (industrial computer)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Промышленный компьютер - техническое средство, предназначенное для обеспечения работы программных средств в промышленном производственном процессе на предприятии.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Industrial computer - technical means designed to ensure the operation of software tools in the industrial production process at the enterprise.](*<- lang_en;;*);;
+    *);;
+*);;

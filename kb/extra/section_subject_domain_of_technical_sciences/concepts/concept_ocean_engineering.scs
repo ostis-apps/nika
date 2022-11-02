@@ -1,0 +1,24 @@
+concept_ocean_engineering
+=> nrel_main_idtf:
+    [судостроение](* <-lang_ru;; *);
+    [ocean engineering](* <-lang_en;; *);;
+
+concept_ocean_engineering
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (судостроение)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (ocean engineering)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Судостроение - процесс создания плавучих сооружений, таких как суда, корабли и плавучие объекты. Плавучие сооружения обычно строят на специализированных предприятиях — верфях.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Ocean engineering - construction of ships and other floating vessels.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_engineering
+    };;
+*);;

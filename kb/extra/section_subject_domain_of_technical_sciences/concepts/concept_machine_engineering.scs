@@ -1,0 +1,24 @@
+concept_machine_engineering
+=> nrel_main_idtf:
+    [машиностроение](* <-lang_ru;; *);
+    [machine engineering](* <-lang_en;; *);;
+
+concept_machine_engineering
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (машиностроение)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (machine engineering)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Машиностроение -  вид производственной деятельности предприятий обрабатывающей промышленности и сферы услуг, специализирующихся на проектировании, производстве, обслуживании и утилизации всевозможных машин, технологического оборудования и их деталей.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Machine engineering - type of production activity of manufacturing enterprises and the service sector specializing in the design, production, maintenance and disposal of all kinds of machines, technological equipment and their parts.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_engineering
+    };;
+*);;

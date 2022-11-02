@@ -1,0 +1,24 @@
+concept_astronautics
+=> nrel_main_idtf:
+    [космонавтика](* <-lang_ru;; *);
+    [astronautics](* <-lang_en;; *);;
+
+concept_astronautics
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (космонавтика)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (astronautics)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Космонавтика -  наука и технология космических полётов.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Astronautics - science and technology of space flight.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_technical_science
+    };;
+*);;
