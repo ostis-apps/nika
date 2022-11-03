@@ -1,0 +1,36 @@
+concept_message_about_natural_satellite_ownership
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о том, чей это натуральный спутник]
+	    (* <- lang_ru;; *);
+	[message about natural satellite ownership]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_natural_satellite_ownership];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о том, чей это натуральный спутник)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about natural satellite ownership)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о том, чей это натуральный спутник - атомарное сообщение, с запросом на рассказ о том, какой планете(или другому небесному телу) принадлежит этот спутник.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about entity is an atomic message, with a request for a story about which planet (or other celestial body) this satellite belongs to.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

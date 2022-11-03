@@ -1,0 +1,34 @@
+concept_military_satellite
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [военный спутник]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [military satellite]
+   (* <- lang_en;; *);
+	
+=> nrel_note:
+   [Наиболее распространенными миссиями являются сбор разведывательных данных, судоходство и военная связь.]
+   (* <- lang_ru;; *);
+=> nrel_note:
+   [Первые военные спутники занимались фоторазведкой.]
+   (* <- lang_ru;; *);
+=> nrel_note:
+   [Были предприняты попытки разработать оружие базируемое на спутниках, но эти работы были прекращены в 1967 году после ратификации международных договоров о запрещении развертывания оружия массового уничтожения на орбите.]
+   (* <- lang_ru;; *);
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. военный спутник](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://HTML/concept_military_satellite_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+	concept_artificial_satellite
+	};;
+*);;

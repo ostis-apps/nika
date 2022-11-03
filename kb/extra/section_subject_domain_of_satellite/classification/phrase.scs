@@ -1,0 +1,134 @@
+concept_phrase_about_opportunity_to_tell_about_satellite
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о наличии возможности говорить о спутниках]
+	    (* <- lang_ru;; *);
+	[phrase about opportunity to tell about satellite]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о наличии возможности говорить о спутниках)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о наличии возможности говорить о спутниках - фраза, содержащая информацию про возможность говорить на тему "Спутники".]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+	*);;
+
+concept_phrase_about_satellite
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о сптунике]
+	    (* <- lang_ru;; *);
+	[phrase about satellite]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о спутниках)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о спутниках - фраза, содержащая информацию про то, что такое спутник.]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+*);;
+
+concept_phrase_about_satellite_division
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о видах спутников]
+	    (* <- lang_ru;; *);
+	[phrase about satellite division]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о видах спутников)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о видах спутников - фраза, содержащая информацию про виды спутников.]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+*);;
+
+concept_phrase_about_example_of_natural_satellite
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о примере натурального спутника]
+	    (* <- lang_ru;; *);
+	[phrase about example of natural satellite]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о примере натурального спутника)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о примере натурального спутника - фраза, содержащая пример натруального спутника.]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+*);;
+
+concept_phrase_about_natural_satellite_ownership
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о том, чей это натуральный спутник]
+	    (* <- lang_ru;; *);
+	[phrase about natural satellite ownership]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о том, чей это натуральный спутник)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о том, чей это натуральный спутник - фраза, содержащая информацию о том, какого небесного тела это спутник.]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+*);;

@@ -1,0 +1,63 @@
+planet_Earth
+<- concept_heavenly_body;
+<- concept_planet;
+
+=> nrel_main_idtf:
+   [планета Земля]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Земля]
+   (* <- lang_ru;; *);   
+=> nrel_main_idtf:
+   [planet Earth]
+   (* <- lang_en;; *);
+   
+=> nrel_count_of_artificial_satellite: [44468] (* <- number;; *);
+=> nrel_count_of_natural_satellite: [1] (* <- number;; *);
+
+=> nrel_note:
+   [Единственное известное человеку в настоящее время тело во Вселенной, населённое живыми организмами.]
+   (* <- lang_ru;; *);	
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. планета Земля](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [планета Земля - третья по удалённости от Солнца планета Солнечной системы.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+planet_Jupiter
+<- concept_heavenly_body;
+<- concept_planet;
+
+=> nrel_main_idtf:
+   [планета Юпитер]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Юпитер]
+   (* <- lang_ru;; *);   
+=> nrel_main_idtf:
+   [planet Jupiter]
+   (* <- lang_en;; *);
+
+=> nrel_count_of_artificial_satellite: [2] (* <- number;; *);
+=> nrel_count_of_natural_satellite: [80] (* <- number;; *);
+
+=> nrel_note:
+   [Наряду с Сатурном, Юпитер классифицируется как газовый гигант.]
+   (* <- lang_ru;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. планета Юпитер](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [планета Юпитер -  крупнейшая планета Солнечной системы, пятая по удалённости от Солнца.](*<-lang_ru;;*);;
+	*);;
+*);;

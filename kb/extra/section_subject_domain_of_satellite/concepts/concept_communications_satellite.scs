@@ -1,0 +1,28 @@
+concept_communications_satellite
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [спутник связи]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [communications satellite]
+   (* <- lang_en;; *);
+   
+=> nrel_note:
+   [Спутник связи принимает спектр частот с сигналами передающих наземных станций, направленных на него, (как правило) переносит его в другую часть спектра, усиливает и излучает обратно на Землю.]
+   (* <- lang_ru;; *);
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. спутник связи](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://HTML/concept_communications_satellite_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+	concept_artificial_satellite
+	};;
+*);;

@@ -1,0 +1,404 @@
+concept_satellite_characteristics
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [характеристики спутника]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [satellite characteristics]
+   (* <- lang_en;; *);
+
+=> nrel_inclusion:
+	concept_satellite_physical_characteristics;
+	concept_satellite_orbital_characteristics;
+	concept_satellite_technical_characteristics;
+	concept_satellite_discoverer;
+	concept_satellite_manufacturer;
+	concept_satellite_operator;
+	concept_satellite_launchpad;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. характеристики спутника](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Характеристики спутника - совокупность отличительных свойств спутника.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+concept_satellite_discoverer
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [первооткрыватель спутника]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [satellite discoverer]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. первооткрыватель спутника](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Первооткрыватель спутника - человек, первым открывший новый спутник.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+concept_satellite_manufacturer
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [производитель спутника]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [satellite manufacturer]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. производитель спутника](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Производитель спутника - сторона, которая изготовляет или собирает спутник.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+concept_satellite_operator
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [оператор спутника]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [satellite operator]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. оператор спутника](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Оператор спутника - сторона по управлению работой оборудования (спутников) различного вида и назначения.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+concept_satellite_launchpad
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [стартовая площадка спутника]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [satellite launchpad]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. стартовая площадка спутника](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Стартовая площадка спутника - место запуска спутника.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+
+concept_satellite_physical_characteristics
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [физические характеристики спутника]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [satellite physical characteristics]
+   (* <- lang_en;; *);
+   
+=> nrel_inclusion:
+	concept_satellite_average_radius;
+	concept_satellite_surface_area;
+	concept_satellite_volum;
+	concept_satellite_weight;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр.физические характеристики спутника](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Физические характеристики спутника - совокупность физических отличительных свойств спутника.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+concept_satellite_average_radius
+<- sc_node_class;
+<- class;
+<- value;
+
+=> nrel_main_idtf:
+   [средний радиус спутника]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [satellite average radius]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. средний радиус спутника](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Средний радиус спутника - предел, к которому стремится среднее арифметическое из радиусов кривизны нормальных сечений, когда число их стремится к бесконечности..](*<-lang_ru;;*);;
+	*);;
+*);;
+concept_satellite_surface_area
+<- sc_node_class;
+<- class;
+<- value;
+
+=> nrel_main_idtf:
+   [площадь поверхности спутника]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [satellite surface area]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. площадь поверхности спутника](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Площадь поверхности спутника - аддитивная числовая характеристика поверхности.](*<-lang_ru;;*);;
+	*);;
+*);;
+concept_satellite_volum
+<- sc_node_class;
+<- class;
+<- value;
+
+=> nrel_main_idtf:
+   [объем спутника]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [satellite volum]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. объем спутника](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Объем спутника - количественная характеристика пространства, занимаемого спутником.](*<-lang_ru;;*);;
+	*);;
+*);;
+concept_satellite_weight
+<- sc_node_class;
+<- class;
+<- value;
+
+=> nrel_main_idtf:
+   [масса спутника]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [satellite weight]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. масса спутника](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Масса спутника - скалярная физическая величина, определяющая инерционные и гравитационные свойства спутника в ситуациях, когда его скорость намного меньше скорости света.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+concept_satellite_orbital_characteristics
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [орбитальные характеристики спутника]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [satellite orbital characteristics]
+   (* <- lang_en;; *);
+
+=> nrel_inclusion:
+	concept_satellite_orbit_semi_major_axis;
+	concept_satellite_orbit_speed;
+	concept_satellite_orbit_circulation_period;	
+	concept_satellite_form;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр.орбитальные характеристики спутника](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Орбитальные характеристики спутника - совокупность орбитальных отличительных свойств спутника.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+concept_satellite_orbit_semi_major_axis
+<- sc_node_class;
+<- class;
+<- value;
+
+=> nrel_main_idtf:
+   [орбитальная большая полуось спутника]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [satellite orbit semi major axis]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. орбитальная большая полуось спутника](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Орбитальная большая полуось спутника - один из основных геометрических параметров спутников как объектов, образованных посредством конического сечения.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+concept_satellite_orbit_speed
+<- sc_node_class;
+<- class;
+<- value;
+
+=> nrel_main_idtf:
+   [орбитальная скорость спутника]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [satellite orbit speed]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. орбитальная скорость спутника](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Орбитальная скорость спутника - скорость, с которой он вращается вокруг барицентра системы, как правило вокруг более массивного тела.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+concept_satellite_orbit_circulation_period
+<- sc_node_class;
+<- class;
+<- value;
+
+=> nrel_main_idtf:
+   [орбитальный период обращения спутника]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [satellite orbit circulation period]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. орбитальный  период обращения спутника](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Орбитальный период обращения спутника - промежуток времени, в течение которого какое-либо небесное тело-спутник совершает вокруг главного тела полный оборот относительно удалённых звёзд.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+concept_satellite_form
+<- sc_node_class;
+<- class;
+<- value;
+
+=> nrel_main_idtf:
+   [орбитальная форма обращения спутника]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [satellite orbit circulation form]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. орбитальная форма обращения спутника](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Орбитальная форма обращения спутника - геометрическая форма траектории движения спутника.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+concept_satellite_technical_characteristics
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [технические характеристики спутника]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [satellite technical characteristics]
+   (* <- lang_en;; *);
+
+=> nrel_inclusion:
+	concept_satellite_max_diameter;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр.технические характеристики спутника](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Технические характеристики спутника - совокупность технических отличительных свойств спутника.](*<-lang_ru;;*);;
+	*);;
+*);;
+
+concept_satellite_max_diameter
+<- sc_node_class;
+<- class;
+<- value;
+
+=> nrel_main_idtf:
+   [максимальный диаметр спутника]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [satellite max diameter]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. максимальный диаметр спутника](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Максимальный диаметр спутника -  максимальный отрезок, соединяющий две точки на спутнике и проходящий через его центр, а также длина этого отрезка.](*<-lang_ru;;*);;
+	*);;
+*);;
