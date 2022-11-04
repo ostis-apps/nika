@@ -1,0 +1,35 @@
+concept_сognac
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Коньяк]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Cognac]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Коньяк)]
+		(* <- lang_ru;; *);
+		[Def. (Cognac)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Конья́к — крепкий алкогольный напиток, производимый из определённых сортов винограда по особой технологии в департаменте Шаранта в регионе Новая Аквитания, Франция.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Cognac is a strong alcoholic drink produced from certain grape varieties using a special technology in the Charente department in the New-Aquitaine region, France.]
+			(* <- lang_en;; *);;
+		*);;
+      <= nrel_using_constants: {
+   	 };;
+  *);;

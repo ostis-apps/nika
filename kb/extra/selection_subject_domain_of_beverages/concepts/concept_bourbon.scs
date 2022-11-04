@@ -1,0 +1,35 @@
+concept_bourbon
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Бурбон]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Bourbon]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Бурбон)]
+		(* <- lang_ru;; *);
+		[Def. (Bourbon)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Бурбо́н — вид виски, производимый в США из кукурузы и обладающий золотистым цветом и долгим послевкусием. Главное отличие бурбона от европейского виски заключается в том, что основным сырьём для производства бурбона служит кукуруза, а не ячмень.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Bourbon is a type of whiskey made in the USA from corn and has a golden color and a long aftertaste. The main difference between bourbon and European whiskey is that the main raw material for the production of bourbon is corn, not barley.]
+			(* <- lang_en;; *);;
+		*);;
+      <= nrel_using_constants: {
+   	 };;
+  *);;

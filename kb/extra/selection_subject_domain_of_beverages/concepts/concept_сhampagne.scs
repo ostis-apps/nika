@@ -1,0 +1,35 @@
+concept_сhampagne
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Шампанское]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Champagne]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Шампанское)]
+		(* <- lang_ru;; *);
+		[Def. (Champagne)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Шампа́нское — игристое вино, произведённое во французском регионе Шампань из установленных сортов винограда методом вторичного брожения вина в бутылке.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Champagne is a sparkling wine produced in the French region of Champagne from established grape varieties by the method of secondary fermentation of wine in a bottle.]
+			(* <- lang_en;; *);;
+		*);;
+      <= nrel_using_constants: {
+   	 };;
+  *);;

@@ -1,0 +1,35 @@
+concept_liquor
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Ликер]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Liquor]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Ликер)]
+		(* <- lang_ru;; *);
+		[Def. (Liquor)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Ликёр — ароматный, как правило сладкий алкогольный напиток из фруктовых и ягодных соков, настоев душистых трав с добавлением кореньев и пряностей. Содержание этилового спирта варьируется в широких пределах, а содержание сахара, как правило, колеблется между 25 % и 60 %.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Liquor is a fragrant, usually sweet alcoholic drink made from fruit and berry juices, infusions of fragrant herbs with the addition of roots and spices. The ethanol content varies widely, while the sugar content typically ranges between 25% and 60%.]
+			(* <- lang_en;; *);;
+		*);;
+      <= nrel_using_constants: {
+   	 };;
+  *);;

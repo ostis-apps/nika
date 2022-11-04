@@ -1,0 +1,35 @@
+concept_beverages
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Тархун]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [tarragon]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Тархун)]
+		(* <- lang_ru;; *);
+		[Def. (tarragon)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[«Тархун» (тур. targun < араб. at-tarhыn) — сладкий безалкогольный газированный прохладительный лимонадный напиток изумрудно-зелёного цвета. Изготавливается из воды, лимонной кислоты, сахара и экстракта эстрагона (растения, также известного как тархун, что и дало название напитку).]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Tarragon (Turkish targun < Arabic at-tarhyn) is a sweet non-alcoholic carbonated soft lemonade drink of emerald green color. It is made from water, citric acid, sugar and tarragon extract (a plant also known as tarragon, which gives the drink its name).]
+			(* <- lang_en;; *);;
+		*);;
+      <= nrel_using_constants: {
+   	 };;
+  *);;

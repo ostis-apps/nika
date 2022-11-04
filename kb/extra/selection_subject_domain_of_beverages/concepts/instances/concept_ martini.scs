@@ -1,0 +1,35 @@
+concept_ martini
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Мартини]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Martini]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Мартини)]
+		(* <- lang_ru;; *);
+		[Def. (Martini)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Марти́ни — марка производимых в Италии вермутов и игристых вин, названная по имени винокуренного завода Martini & Rossi в Турине, основанного Алессандро Мартини и Луиджи Росси. В настоящее время бренд Martini принадлежит компании Bacardi Limited.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Martini is a brand of vermouth and sparkling wines produced in Italy, named after the Martini & Rossi distillery in Turin, founded by Alessandro Martini and Luigi Rossi. The Martini brand is currently owned by Bacardi Limited.]
+			(* <- lang_en;; *);;
+		*);;
+      <= nrel_using_constants: {
+   	 };;
+  *);;
