@@ -1,32 +1,30 @@
-nika_concept_computer_games
-=> nrel_main_idtf:
-    [Игры]
-    (* <- lang_ru;; *);
-    [Games]
-    (* <- lang_en;; *);;
+game_caliber
 
-nika_game_1
-<- concept_computer_games;
 => nrel_main_idtf:
     [Калибр]
     (* <- lang_ru;; *);
     [Caliber]
     (* <- lang_en;; *);
 => nrel_genre:
-    action
-    // [Шутеры/MMO]  // ММО - Массовая многопользовательская онлайн-игра
-    (* <- lang_ru;; *);
+    genre_action;
+    genre_shooter;
+    genre_mmo;
+    <-concept_genre;
 => nrel_platform:
-    [Windows, GeForce Now]
-    (* <- lang_eng;; *);
+    pc_platform;
+    <-concept_platform;
 => nrel_company:
-    [1С Game Studios]
-    (* <- lang_eng;; *);
+    1c_game_studios_company;
+    <-concept_game_company;
 => nrel_relase_date:
     [29 октября 2019]
     (* <- lang_ru;; *);
-
+=> nrel_game_publisher:
+    wargaming_publisher;
+    <-concept_game_publisher;
 =>nrel_note:
 [Калибр — многопользовательская онлайн-игра от третьего и от первого лица про современный спецназ. Проект относится к жанру тактического командного экшена, предлагает бои в режимах PvP (формат «4 на 4»), PvE (4 игрока против искусственного интеллекта) и PvPvE (4 игрока против искусственного интеллекта и 4 игроков противника). «Калибр» распространяется по бизнес-модели free-to-play. Ключевая особенность игры — реалистичное воспроизведение внешнего вида вооружения, спецсредств и экипировки сил специального назначения из разных стран. Особое внимание уделяется спецназу России и других стран СНГ]
 (* <-lang_ru;;*);
+
 <-binary_relation;;
+

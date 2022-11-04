@@ -1,0 +1,16 @@
+concept_game_company
+
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+	[компания](* <- lang_ru;;*);
+	[company](* <- lang_en;; *);
+=> nrel_inclusion:
+    idSoftware_company;
+    ubisoft_company;
+    activision_company;
+    1c_game_studios_company;
+=> mrel_note:
+[Видеоигры внесли большой вклад в индустрию развлечений, и пока игровая индустрия не демонстрирует никаких признаков замедления. Причина, вероятно, кроется в том, что в игры играют все, независимо от пола и возраста. Поэтому сегодня компании, производящие видеоигры, стали влиятельными игроками в технологическом секторе.]
+(* <-lang_ru;;*);
+<-binary_relation;;

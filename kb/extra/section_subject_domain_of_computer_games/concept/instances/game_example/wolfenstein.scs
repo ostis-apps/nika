@@ -1,0 +1,32 @@
+game_wolfenstein
+
+=> nrel_main_idtf:
+    [Wolfenstein 3D] (* <- lang_ru;; *);
+    [Wolfenstein 3D] (* <- lang_en;; *);
+=> nrel_genre:
+    genre_action;
+    genre_shooter;
+    genre_mmo;
+    genre_fps;
+    <-concept_genre;
+=> nrel_platform:
+    pc_platform;
+    ps_platform;
+    nintendo_platform;
+    xbox_platform;
+    linux_platform;
+    <-concept_platform;
+=> nrel_developer:
+    john_carmack_II;
+<-concept_game_developer;
+=> nrel_company:
+    idSoftware_company;
+=> nrel_relase_date:
+    [5 май 1992]
+    (* <- lang_ru;; *);
+=>nrel_note:
+[Wolfenstein 3D — компьютерная игра в жанре шутера от первого лица, разработанная компанией id Software и изданная Apogee Software. Выпущена 5 мая 1992 года для платформы DOS и впоследствии портирована на различные платформы, включая Super Nintendo Entertaiment System, Atari Jaguar, 3DO, Game Boy Advance, iOS и другие. Wolfenstein 3D является третьей игрой в серии игр Wolfenstein — источником вдохновения для её создателей послужила игра 1981 года Castle Wolfenstein. Игрок берёт на себя роль разведчика союзников Второй мировой войны Уильяма (Би-Джея) Бласковица, который пытается сбежать из места своего заключения — замка Вольфенштайн — и выполняет ряд диверсионных заданий против нацистского режима. На каждом уровне игрок должен сражаться с нацистскими солдатами, собаками и мутантами, используя нож и огнестрельное оружие, а также добраться до лифта или победить финального босса.]
+(* <-lang_ru;;*);
+
+<-binary_relation;;
+
