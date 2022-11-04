@@ -1,0 +1,47 @@
+concept_international_olympic_day
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Международный олимпийский день]
+	(* <- lang_ru;; *);
+	[International Olympic Day]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Международный олимпийский день)]
+		(* <- lang_ru;; *);
+		[Def. (International Olympic Day)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Ежегодно 23 июня во всем мире отмечается Международный Олимпийский день (International Olympic Day), в память о возрождении олимпийского движения в его современном виде.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Every year on June 23, International Olympic Day is celebrated around the world to commemorate the rebirth of the Olympic movement in its modern form.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Международный олимпийский день)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Идея об установлении специального праздничного дня, посвященного олимпийскому движению во всем мире, и который позволил бы рассказать людям об основных олимпийских принципах, впервые прозвучала на 41-й сессии Международного олимпийского комитета (МОК) в Стокгольме в 1947 году, а еще через год на 42-й сессии МОК в Санкт-Морице этот проект был одобрен официально.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

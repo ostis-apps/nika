@@ -1,0 +1,47 @@
+concept_pancake_week
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Масленица]
+	(* <- lang_ru;; *);
+	[Pancake week]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Масленица)]
+		(* <- lang_ru;; *);
+		[Def. (Pancake week)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Ма́сленица — восточнославянский традиционный праздник, отмечаемый в течение недели перед Великим постом, сохранивший в своей обрядовой основе ряд элементов дохристианской славянской мифологии.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Shrovetide is an Eastern Slavic traditional holiday celebrated during the week before Lent, which has retained a number of elements of pre-Christian Slavic mythology in its ritual basis.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Масленица)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Масленица была сначала древнеславянским языческим многодневным праздником «проводов зимы», которым отмечался переход к весенним земледельческим работам. Позже христианская церковь включила Масленицу в число своих праздников, которые предваряют Великий пост.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

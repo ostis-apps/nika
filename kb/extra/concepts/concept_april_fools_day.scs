@@ -1,0 +1,47 @@
+concept_april_fools_day
+<- sc_node_class;
+=> nrel_main_idtf:
+	[День смеха]
+	(* <- lang_ru;; *);
+	[April Fool's Day]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (День смеха)]
+		(* <- lang_ru;; *);
+		[Def. (April Fool's Day)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[День дурака (April Fools' Day или All Fool's Day) или День смеха — это международный праздник, отмечаемый во всем мире 1 апреля. В этот день принято разыгрывать родных, друзей и просто знакомых, или подшучивать над ними.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[April Fools' Day (or All Fool's Day) is an international holiday celebrated around the world on April 1st. On this day, it is customary to play pranks on relatives, friends and just acquaintances, or make fun of them.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (День смеха)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Откуда именно родом этот праздник — из Франции, Англии, Мексики или Швеции — тайна, которая, к сожалению, покрыта мраком. Одну из влиятельных версий о возникновении праздника смеха связывают с тем, что изначально 1 апреля праздновалось во многих странах как день весеннего равноденствия и время Пасхи. Празднества по случаю весеннего нового года всегда сопровождались шутками, шалостями и веселыми проделками. Традиция праздника живет и теперь: причиной стала сама природа, потому что весенние капризы погоды люди старались задобрить шутками и розыгрышами.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

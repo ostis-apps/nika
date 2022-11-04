@@ -1,0 +1,47 @@
+concept_porridge_day
+<- sc_node_class;
+=> nrel_main_idtf:
+	[День Каши]
+	(* <- lang_ru;; *);
+	[Porridge day]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (День Каши)]
+		(* <- lang_ru;; *);
+		[Def. (Porridge day)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Октябрь ежегодно становится месяцем, когда отмечается Международный день каши . Традиционное блюдо кухонь многих народов мира, продолжает оставаться популярным на протяжении уже более тысячи лет.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[October is annually the month that International Porridge Day is celebrated. A traditional dish of cuisines of many peoples of the world, continues to be popular for over a thousand years.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (День Каши)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Именно этим и было обусловлено появление данного замечательного праздника. Он не обладает официальным статусом, а дата его проведения в Интернете указывается разная – 10 или 11 октября. Так или иначе, но октябрь объединил всех любителей каши – традиционного блюда многих народов. В культуре русского народа, в его кулинарных традициях каша занимает особое место. Не случайной стала поговорка «Щи, да каша – пища наша».]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

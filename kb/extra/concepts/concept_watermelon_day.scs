@@ -1,0 +1,47 @@
+concept_watermelon_day
+<- sc_node_class;
+=> nrel_main_idtf:
+	[День арбуза]
+	(* <- lang_ru;; *);
+	[Watermelon Day]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (ень арбуза)]
+		(* <- lang_ru;; *);
+		[Def. (Watermelon Day)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[3 августа в разных странах отмечают вкусный праздник – День арбуза (Watermelon Day).]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[On August 3, different countries celebrate a delicious holiday - Watermelon Day.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (ень арбуза)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Свою историю он ведет из США, где отмечается как Национальный День арбуза (National Watermelon Day). Америка занимает первое место по количеству поедания арбуза по сравнению с другими странами. Здесь этот сладкий и вкусный фрукт (а вернее – ягода) является столь же необходимым атрибутом летних пикников, как и знаменитый хот-дог.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

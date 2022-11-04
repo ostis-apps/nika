@@ -1,0 +1,47 @@
+concept_world_hydrography_day
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Всемирный день гидрографии]
+	(* <- lang_ru;; *);
+	[World Hydrography Day]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Всемирный день гидрографии)]
+		(* <- lang_ru;; *);
+		[Def. (World Hydrography Day)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Ежегодно 21 июня отмечается Всемирный день гидрографии (World Hydrography Day). Он был учреждён в 2006 году, благодаря усилиям Международной гидрографической организации, МГО (International Hydrographic Organization, IHO), ведущей свою историю с июня 1921 года. Инициатива учреждения нового международного праздника была поддержана Генеральной Ассамблеей ООН.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Every year on June 21, World Hydrography Day is celebrated. It was established in 2006 through the efforts of the International Hydrographic Organization, IHO (International Hydrographic Organization, IHO), dating back to June 1921. The initiative to establish a new international holiday was supported by the UN General Assembly.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Всемирный день гидрографии)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Гидрография – наука и сфера деятельности, связанная с составлением карт, изданием инструкций, требований и руководящих документов по навигации. Не случайно буквальный смысл слова «гидрография» в переводе с греческого означает водоописание. Таким образом, к одной из основных задач гидрографии можно отнести обеспечение безопасности судоходства в океанах, морях и внутренних водах государств (на реках, озёрах, водохранилищах). Достигается это путём гидрографических исследований, работ, результатом которых и становятся новые навигационные карты, пособия и руководства, возведение маяков, сигнальных огней, оградительных знаков и т.д.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;
