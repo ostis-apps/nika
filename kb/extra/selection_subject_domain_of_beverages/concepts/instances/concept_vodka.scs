@@ -1,0 +1,35 @@
+concept_vodka
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Водка]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Vodka]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Водка)]
+		(* <- lang_ru;; *);
+		[Def. (Vodka)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Во́дка — крепкий алкогольный напиток, бесцветный водно-спиртовой раствор с характерным вкусом и ярко выраженным спиртовым запахом.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Vodka is a strong alcoholic drink, a colorless water-alcohol solution with a characteristic taste and a pronounced alcoholic smell.]
+			(* <- lang_en;; *);;
+		*);;
+      <= nrel_using_constants: {
+   	 };;
+  *);;

@@ -1,0 +1,35 @@
+concept_beverages
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Напиток]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Drink]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Напиток)]
+		(* <- lang_ru;; *);
+		[Def. (Drink)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Напи́ток (от гл. пить) — жидкость, предназначенная для питья.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Drink (from ch. to drink) is a liquid intended for drinking.]
+			(* <- lang_en;; *);;
+		*);;
+      <= nrel_using_constants: {
+   	 };;
+  *);;

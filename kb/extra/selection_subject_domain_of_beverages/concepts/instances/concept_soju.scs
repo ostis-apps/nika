@@ -1,0 +1,35 @@
+concept_soju
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Соджу]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [soju]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Соджу)]
+		(* <- lang_ru;; *);
+		[Def. (soju)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Со́джу — традиционный корейский алкогольный напиток. Объёмная доля спирта может составлять от 13 % до 45 %. Изготавливается в основном из сладкого картофеля или из зерна. Представляет собой прозрачную жидкость с характерным запахом спирта, сладковатую на вкус.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Soju is a traditional Korean alcoholic drink. The volume fraction of alcohol can range from 13% to 45%. It is made mainly from sweet potatoes or grains. It is a clear liquid with a characteristic odor of alcohol, sweetish in taste.]
+			(* <- lang_en;; *);;
+		*);;
+      <= nrel_using_constants: {
+   	 };;
+  *);;

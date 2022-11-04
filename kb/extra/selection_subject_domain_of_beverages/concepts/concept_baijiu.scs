@@ -1,0 +1,35 @@
+concept_baijiu
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Байцзю]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [baijiu]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Байцзю)]
+		(* <- lang_ru;; *);
+		[Def. (baijiu)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Байцзю — традиционный китайский алкогольный напиток, наиболее близкий водке. Представляет собой прозрачную жидкость со специфическим запахом.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Baijiu is a traditional Chinese alcoholic drink, most closely related to vodka. It is a clear liquid with a specific odor.]
+			(* <- lang_en;; *);;
+		*);;
+      <= nrel_using_constants: {
+   	 };;
+  *);;

@@ -1,0 +1,35 @@
+concept_gin
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Джин]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Gin]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Джин)]
+		(* <- lang_ru;; *);
+		[Def. (Gin)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Джин — крепкий алкогольный напиток крепостью не менее 37,5 %. Изготавливается путём перегонки зернового спирта с добавлением растительных пряностей, обычно это можжевёловая ягода, кориандр, корень дудника, корень ириса, миндаль и другие, которые придают джину его характерный вкус.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Gin is a strong alcoholic drink with a strength of at least 37.5%. It is made by distilling grain alcohol with the addition of vegetable spices, usually juniper berry, coriander, angelica root, orris root, almonds and others, which give gin its characteristic taste.]
+			(* <- lang_en;; *);;
+		*);;
+      <= nrel_using_constants: {
+   	 };;
+  *);;

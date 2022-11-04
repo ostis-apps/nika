@@ -1,0 +1,35 @@
+concept_whiskey
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Виски]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Whiskey]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Виски)]
+		(* <- lang_ru;; *);
+		[Def. (Whiskey)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Ви́ски — крепкий ароматный алкогольный напиток, получаемый из различных видов зерна с использованием процессов соложения, брожения, перегонки и длительного выдерживания в дубовых бочках. При изготовлении виски может использоваться ячмень, рожь, пшеница или кукуруза.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Whiskey is a strong aromatic alcoholic beverage obtained from various types of grain using the processes of malting, fermentation, distillation and long-term aging in oak barrels. In the manufacture of whiskey, barley, rye, wheat or corn can be used.]
+			(* <- lang_en;; *);;
+		*);;
+      <= nrel_using_constants: {
+   	 };;
+  *);;

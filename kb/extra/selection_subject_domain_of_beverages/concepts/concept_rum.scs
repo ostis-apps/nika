@@ -1,0 +1,35 @@
+concept_rum
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Ром]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Rum]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Ром)]
+		(* <- lang_ru;; *);
+		[Def. (Rum)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Ром — крепкий спиртной напиток, изготавливаемый путём сбраживания и перегонки побочных продуктов сахарно-тростникового производства, таких, как патока и тростниковый сироп.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Rum is a strong alcoholic beverage made by fermenting and distilling by-products of sugarcane production, such as molasses and cane syrup.]
+			(* <- lang_en;; *);;
+		*);;
+      <= nrel_using_constants: {
+   	 };;
+  *);;

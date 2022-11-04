@@ -1,0 +1,35 @@
+concept_tequila
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Текила]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Tequila]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Текила)]
+		(* <- lang_ru;; *);
+		[Def. (Tequila)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Теки́ла (исп. Tequila) — крепкий алкогольный напиток, полученный путём дистилляции ферментированного сока голубой агавы (лат. Agáve tequilána, исп. Agave azul) строго на территории 5 штатов Мексики: Халиско, Гуанахуато, Мичоакан, Наярит и Тамаулипас.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Tequila (Spanish Tequila) is a strong alcoholic drink obtained by distillation of fermented blue agave juice (lat. Agáve tequilána, Spanish Agave azul) strictly in the 5 states of Mexico: Jalisco, Guanajuato, Michoacán, Nayarit and Tamaulipas.]
+			(* <- lang_en;; *);;
+		*);;
+      <= nrel_using_constants: {
+   	 };;
+  *);;
