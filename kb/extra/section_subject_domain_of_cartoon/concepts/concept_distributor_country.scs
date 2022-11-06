@@ -1,0 +1,21 @@
+concept_distributor_country
+<- sc_node_class;
+<- class;
+
+=>nrel_main_idtf:
+	[страна производства](*<-lang_ru;;*);
+	[distributor country](*<-lang_en;;*);
+=>nrel_idtf:
+	[producing country](*<-lang_en;;*);
+
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. страна производства](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [страна производства - страна создания чего-либо.](*<-lang_ru;;*);;
+	*);;
+*);;

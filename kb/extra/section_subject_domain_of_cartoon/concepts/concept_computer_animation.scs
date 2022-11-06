@@ -1,0 +1,23 @@
+concept_computer_animation
+<- sc_node_class;
+<- class;
+
+=>nrel_main_idtf:
+	[компьютерная мультипликация](*<-lang_ru;;*);
+	[computer animation](*<-lang_en;;*);
+=>nrel_idtf:
+	[компьютерный](*<-lang_ru;;*);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. компьютерная мультипликация](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [компьютерная мультипликация -  способ создания мультфильма, путем использования возможностей компьютерной графики.](*<-lang_ru;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+	concept_cartoon
+	};;
+*);;

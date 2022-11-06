@@ -1,0 +1,36 @@
+concept_message_about_opportunity_to_tell_about_cartoon
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о наличии возможности говорить о мультфильмах]
+	    (* <- lang_ru;; *);
+	[message about opportunity to tell about cartoon]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_opportunity_to_tell_about_cartoon];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о наличии возможности говорить о мультфильмах)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about opportunity to tell about cartoon)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о наличии возможности говорить о мультфильмах - атомарное сообщение, с вопросом о возмжности говорить на тему "Мультфильмы".]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about opportunity to tell about cartoon is an atomic message atomic message, asking if it's possible to talk about "Сartoon"]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

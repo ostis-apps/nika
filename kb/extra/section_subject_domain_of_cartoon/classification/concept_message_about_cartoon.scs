@@ -1,0 +1,36 @@
+concept_message_about_cartoon
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о мультфильме]
+	    (* <- lang_ru;; *);
+	[message about cartoon]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_cartoon];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о мультфильме)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about cartoon)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о мультфильме - атомарное сообщение, с запросом на рассказ о том, что такое мультфильм.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about cartoon is an atomic message that asks for a story about what a cartoon is.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

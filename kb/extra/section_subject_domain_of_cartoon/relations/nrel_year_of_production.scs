@@ -1,0 +1,38 @@
+nrel_year_of_production
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [год производства*]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: 
+	concept_cartoon;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (год производства*)]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [год производства* - бинарное 
+               ориентированное отношение, связывающее 
+               мультфильм (или др. произведение) и его год производства.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+   	 	 concept_cartoon
+   	 };;
+*);;
+
