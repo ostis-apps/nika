@@ -1,0 +1,27 @@
+concept_message_about_captain_of_ship
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о капитане судна]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_captain_of_ship];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о капитане судна)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о капитане судна - атомарное сообщение,
+    которое содержит сущность, являющуюся экземпляром класса корабль.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

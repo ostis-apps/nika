@@ -1,0 +1,27 @@
+concept_message_about_seafarer
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение об открытии]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_seafarer];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение об открытии)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение об открытии - атомарное сообщение,  которое содержит 
+	   сущность мореплавателя, информацию о котором требуется найти.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
