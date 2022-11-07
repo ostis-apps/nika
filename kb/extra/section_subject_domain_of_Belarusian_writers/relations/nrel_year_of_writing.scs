@@ -1,0 +1,38 @@
+nrel_year_of_writing
+<- sc_node_norole_relation;
+
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+<- antireflexive_relation;
+
+=> nrel_main_idtf: 
+	[год написания*] (*<-lang_ru;;*);
+=> nrel_main_idtf: 
+	[year of writing*] (*<-lang_en;;*);
+
+=> nrel_first_domain: concept_artwork;
+=> nrel_second_domain: concept_year;
+
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [год написания* - бинарное ориентированное отношение, связывающее художественное произведение и год его написания.] (* <-lang_ru;; *);; 
+		*);;
+				<= nrel_using_constants: {
+		concept_artwork;
+		concept_year
+		};;
+	*);;
+
+concept_year
+<- sc_node_class;
+<- class;  
+=> nrel_main_idtf: 
+	[год*] (*<-lang_ru;;*);;

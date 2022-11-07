@@ -1,0 +1,73 @@
+concept_printed_publication
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [печатная публикация]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [printed publication] 
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [печатное издание] 
+   (* <- lang_ru;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [печатная публикация - обнародованное определенным издательством произведение, доведенное до всеобщего сведения посредством печати.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_publishing_house;
+		concept_artwork
+		};;
+	*);
+	
+=> nrel_inclusion:
+   concept_book;
+   concept_booklet;
+   concept_brochure;;
+   
+
+concept_booklet
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [буклет]
+   (* <- lang_ru;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [буклет - листовое издание в виде одного листа печатного материала, сложенного в два или более сгибов.] (* <-lang_ru;; *);; 
+		*);;
+	*);;
+   
+   
+concept_brochure
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [брошюра]
+   (* <- lang_ru;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [брошюра - печатное издание небольшого объёма, как правило, до 48 страниц.] (* <-lang_ru;; *);; 
+		*);;
+	*);;

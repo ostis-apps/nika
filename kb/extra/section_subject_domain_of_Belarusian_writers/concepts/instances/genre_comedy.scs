@@ -1,0 +1,38 @@
+genre_comedy
+
+<- concept_genre;
+<- concept_dramatic_genre;
+
+=> nrel_main_idtf:
+   [комедия]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [comedy]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [комедия - жанр художественного произведения, вид драмы, в котором специфически разрешается момент действенного конфликта или борьбы.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_artwork;
+		concept_genre;
+		concept_drama
+		};;
+	*);;
+	
+concept_drama
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [драма]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [drama]
+   (* <- lang_en;; *);;

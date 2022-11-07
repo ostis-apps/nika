@@ -1,0 +1,33 @@
+concept_dramatist
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [драматург]
+   	(* <- lang_ru;; *);
+   [dramatist] 
+   	(* <-lang_en;; *);
+=> nrel_idtf:
+   [playwright] 
+	(* <-lang_en;; *);   
+   [dramaturge] 
+	(* <-lang_en;; *);   
+
+=> nrel_writer_genre:
+   concept_dramatic_genre;
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [драматург - писатель, пишущий произведения в драматическом жанре.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_dramatic_genre;
+		concept_writer;
+		concept_artwork
+		};;
+	*);;

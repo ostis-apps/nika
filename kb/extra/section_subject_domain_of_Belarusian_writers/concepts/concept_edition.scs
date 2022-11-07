@@ -1,0 +1,23 @@
+concept_edition
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf: 
+	[тираж] (*<-lang_ru;;*);
+	[edition] (*<-lang_en;;*);
+=> nrel_idtf: 
+	[pressrun] (*<-lang_en;;*);  
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [тираж - количество экземпляров печатного издания одного названия.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_printed_publication
+		};;
+	*);;

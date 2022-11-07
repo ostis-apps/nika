@@ -1,0 +1,36 @@
+nrel_author
+<- sc_node_norole_relation;
+
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+<- antireflexive_relation;
+
+=> nrel_main_idtf: 
+	[автор*] (*<-lang_ru;;*);
+=> nrel_main_idtf: 
+	[author*] (*<-lang_en;;*);
+
+=> nrel_first_domain: concept_artwork;
+=> nrel_second_domain:  concept_writer;
+			concept_publicist;
+			concept_proseist;
+			concept_poet;
+			concept_dramatist;
+			
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [автор* - отношение, связывающее художественное произведение и писателя, написавшего это произведение.] (* <-lang_ru;; *);; 
+		*);;
+				<= nrel_using_constants: {
+		concept_artwork;
+		concept_writer
+		};;
+	*);;

@@ -1,0 +1,35 @@
+nrel_copyright
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+<- antireflexive_relation;
+
+=> nrel_main_idtf: 
+	[авторские права*] (*<-lang_ru;;*);
+=> nrel_main_idtf: 
+	[copyright*] (*<-lang_en;;*);
+
+=> nrel_first_domain: 	concept_writer;
+			concept_proseist;
+			concept_poet;
+			concept_dramatist;
+			concept_publicist;	
+=> nrel_second_domain: concept_artwork;
+
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [авторские права* - бинарное ориентированное отношение, связывающее писателя с художественным произведением, на которое он имеет авторское право.] (* <-lang_ru;; *);; 
+		*);;
+				<= nrel_using_constants: {
+		concept_artwork;
+		concept_writer
+		};;
+	*);;

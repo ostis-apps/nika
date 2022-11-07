@@ -1,0 +1,31 @@
+concept_publicist
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [публицист]
+   	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [publicist] 
+   	(* <-lang_en;; *);
+=> nrel_idtf:
+   [political writer] 
+	(* <-lang_en;; *);  
+	
+=> nrel_writer_genre:
+   concept_publicistic_genre;	
+	
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [публицист - писатель, пишущий произведения, посвященные общественно-политическим вопросам и другим проблемам общества, актуальным для современности и будущего] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_writer;
+		concept_artwork
+		};;
+	*);;

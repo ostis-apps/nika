@@ -1,0 +1,29 @@
+concept_proseist
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [прозаик]
+   	(* <- lang_ru;; *);
+   [proseist] 
+   	(* <-lang_en;; *);
+=> nrel_idtf:
+   [prose writer] 
+	(* <-lang_en;; *);   
+   
+=> nrel_writer_genre:
+   concept_prose_genre;
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [прозаик - писатель, автор прозаических произведений (прозы)] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_writer;
+		concept_artwork
+		};;
+	*);;
