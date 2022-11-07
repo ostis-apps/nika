@@ -1,0 +1,33 @@
+concept_tiger
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Тигр]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Tiger]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Тигр)]
+		(* <- lang_ru;; *);
+		[Def. (Tiger)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Тигр — вид хищных млекопитающих семейства кошачьих, один из пяти представителей рода пантера, который относится к подсемейству больших кошек.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The tiger is a species of carnivorous mammals of the cat family, one of five representatives of the panther genus, which belongs to the subfamily of big cats.]
+			(* <- lang_en;; *);;
+		*);;
+  *);;

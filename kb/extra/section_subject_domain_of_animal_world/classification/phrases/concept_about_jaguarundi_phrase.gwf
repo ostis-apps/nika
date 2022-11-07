@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/relation" idtf="nrel_appearance" shapeColor="0" id="94566152950432" parent="94566148117008" left="0" top="0" right="132.297" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="1247.22" y="-6.53954" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/var/perm/general" idtf="_jaguarundi_apper" shapeColor="0" id="94566144878960" parent="94566148117008" left="0" top="0" right="146.766" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="1283.22" y="59.46" haveBus="false" idtf_pos="1">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_jaguarundi" shapeColor="0" id="94566152176432" parent="94566148117008" left="0" top="0" right="155.578" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="1284.15" y="116.643" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/var/perm/general" idtf="_jaguarundi_appearance" shapeColor="0" id="94566152429696" parent="94566148117008" left="0" top="0" right="189.063" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="1413.22" y="60.46" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[ ]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="94566143297296" parent="94566148117008" left="0" top="0" right="64.9219" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="1497.22" y="59.46" haveBus="false" idtf_pos="3">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/var/pos/perm/orient/membership" idtf="" shapeColor="0" id="94566152230480" parent="94566148117008" id_b="94566143297296" id_e="94566152429696" b_x="1497.22" b_y="59.46" e_x="1413.22" e_y="60.46" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/var/-/perm/orient" idtf="" shapeColor="0" id="94566152952112" parent="94566148117008" id_b="94566144878960" id_e="94566152429696" b_x="1283.22" b_y="59.46" e_x="1413.22" e_y="60.46" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/var/pos/perm/orient/membership" idtf="" shapeColor="0" id="94566145359344" parent="94566148117008" id_b="94566152176432" id_e="94566144878960" b_x="1284.15" b_y="116.643" e_x="1283.22" e_y="59.46" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/var/pos/perm/orient/membership" idtf="" shapeColor="0" id="94566152951872" parent="94566148117008" id_b="94566152950432" id_e="94566152952112" b_x="1247.22" b_y="-6.53954" e_x="398.722" e_y="-86" dotBBalance="0" dotEBalance="0.554945">
+            <points/>
+        </pair>
+        <contour type="contour/const/perm" idtf="" shapeColor="0" id="94566148117008" parent="0">
+            <points>
+                <point x="1100.22" y="-39.5395"/>
+                <point x="1100.22" y="179.46"/>
+                <point x="1604.22" y="179.46"/>
+                <point x="1606.22" y="-40.5395"/>
+            </points>
+        </contour>
+        <node type="node/const/perm/general" idtf="" shapeColor="193" id="94566153310528" parent="0" x="604.722" y="89" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Ягуарунди относится к царству животных, типу хордовых, классу млекопитающих, отряду хищных, семейству кошачьих, роду пум и виду ягуарунди. Характерен следующий внешний вид: ${_jaguarundi_appearance}]]></content>
+        </node>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="94566143348224" parent="0" x="605.222" y="555.22" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Царство - Животные;
+Тип - Хордовые;
+Класс - Млекопитающие;
+Отряд - Хищные;
+Семейство - Кошачьи;
+Род - Пумы;
+Вид - Ягуарунди.]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_about_jaguarundi_phrase" shapeColor="0" id="94566143353648" parent="0" left="0" top="0" right="260.281" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="604.222" y="341.222" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_about_jaguarundi_phrase" shapeColor="0" id="94566144824672" parent="0" left="0" top="0" right="260.281" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-150.5" y="144.5" haveBus="false" idtf_pos="4">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="94566152280256" parent="0" left="0" top="0" right="64.9219" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="185.222" y="551.22" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_phrase_template" shapeColor="0" id="94566152894480" parent="0" left="0" top="0" right="169.266" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="876.483" y="227.874" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="94566152795792" parent="0" left="0" top="0" right="64.9219" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="218.222" y="358.222" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase" shapeColor="0" id="94566152336912" parent="0" left="0" top="0" right="125.656" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="14.5" y="144.5" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_inclusion" shapeColor="0" id="94566152392928" parent="0" left="0" top="0" right="111.891" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-75.5" y="84.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="94566152233520" parent="0" id_b="94566143353648" id_e="94566153310528" b_x="604.222" b_y="341.222" e_x="604.722" e_y="89" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="94566152231536" parent="0" id_b="94566143353648" id_e="94566143348224" b_x="604.222" b_y="341.222" e_x="605.222" e_y="555.22" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="94566150600096" parent="0" id_b="94566152894480" id_e="94566152229552" b_x="876.483" b_y="227.874" e_x="398.722" e_y="-86" dotBBalance="0" dotEBalance="0.452747">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="94566152232528" parent="0" id_b="94566152392928" id_e="94566153112384" b_x="-75.5" b_y="84.5" e_x="398.722" e_y="-86" dotBBalance="0" dotEBalance="0.55137">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="94566152229552" parent="0" id_b="94566153310528" id_e="94566148117008" b_x="604.722" b_y="89" e_x="1353.22" e_y="69.4602" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="94566153911296" parent="0" id_b="94566152795792" id_e="94566153310528" b_x="218.222" b_y="358.222" e_x="604.722" e_y="89" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="94566143350352" parent="0" id_b="94566152280256" id_e="94566143348224" b_x="185.222" b_y="551.22" e_x="605.222" e_y="555.22" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="94566153112384" parent="0" id_b="94566152336912" id_e="94566144824672" b_x="14.5" b_y="144.5" e_x="-150.5" e_y="144.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>

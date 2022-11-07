@@ -1,0 +1,33 @@
+concept_fox
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Лисица]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Fox]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Лисица)]
+		(* <- lang_ru;; *);
+		[Def. (Fox)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Лисица — хищное млекопитающее, относится к отряду хищные, семейству псовые. ]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The fox is a predatory mammal, belongs to the carnivorous order, the canine family.]
+			(* <- lang_en;; *);;
+		*);;
+  *);;

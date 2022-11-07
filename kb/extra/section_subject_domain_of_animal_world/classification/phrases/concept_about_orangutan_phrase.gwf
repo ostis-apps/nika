@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/relation" idtf="nrel_note" shapeColor="193" id="94623568223120" parent="94623560104960" left="0" top="0" right="79.6094" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="1195.22" y="31.4605" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_orangutan" shapeColor="0" id="94623560169616" parent="94623560104960" left="0" top="0" right="151.5" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="1131.15" y="153.643" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/var/perm/general" idtf="_orangutan_fact" shapeColor="0" id="94623567241776" parent="94623560104960" left="0" top="0" right="129.422" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="1260.22" y="97.46" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[ ]]></content>
+        </node>
+        <node type="node/var/perm/general" idtf="_orangutan" shapeColor="0" id="94623567314736" parent="94623560104960" left="0" top="0" right="93.6094" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="1130.22" y="96.46" haveBus="false" idtf_pos="1">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="94623560226816" parent="94623560104960" left="0" top="0" right="64.9219" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="1344.22" y="96.46" haveBus="false" idtf_pos="3">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/var/pos/perm/orient/membership" idtf="" shapeColor="0" id="94623565416528" parent="94623560104960" id_b="94623568223120" id_e="94623562370816" b_x="1195.22" b_y="31.4605" e_x="245.722" e_y="-49" dotBBalance="0" dotEBalance="0.554945">
+            <points/>
+        </pair>
+        <pair type="pair/var/pos/perm/orient/membership" idtf="" shapeColor="0" id="94623560061520" parent="94623560104960" id_b="94623560226816" id_e="94623567241776" b_x="1344.22" b_y="96.46" e_x="1260.22" e_y="97.46" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/var/-/perm/orient" idtf="" shapeColor="0" id="94623562370816" parent="94623560104960" id_b="94623567314736" id_e="94623567241776" b_x="1130.22" b_y="96.46" e_x="1260.22" e_y="97.46" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/var/pos/perm/orient/membership" idtf="" shapeColor="0" id="94623562432176" parent="94623560104960" id_b="94623560169616" id_e="94623567314736" b_x="1131.15" b_y="153.643" e_x="1130.22" e_y="96.46" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <contour type="contour/const/perm" idtf="" shapeColor="0" id="94623560104960" parent="0">
+            <points>
+                <point x="947.222" y="-2.53954"/>
+                <point x="947.222" y="216.46"/>
+                <point x="1451.22" y="216.46"/>
+                <point x="1453.22" y="-3.53954"/>
+            </points>
+        </contour>
+        <node type="node/const/perm/group" idtf="concept_about_orangutan_phrase" shapeColor="0" id="94623556392368" parent="0" left="0" top="0" right="257.203" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="359.5" y="-43.5" haveBus="false" idtf_pos="4">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="94623563302688" parent="0" x="451.722" y="126" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Орангутан относится к царству животных, типу хордовых, классу млекопитающих, отряду приматов, семейству гоминидов, роду орангутанов и виду калимантанский орангутан. Интересный факт: ${_orangutan_fact}]]></content>
+        </node>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="94623567053552" parent="0" x="452.222" y="592.22" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Царство - Животные;
+Тип - Хордовые;
+Класс - Млекопитающие;
+Отряд - Приматы;
+Семейство - Гоминиды;
+Род - Орангутаны;
+Вид - Калимантанский орангутан.]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_about_orangutan_phrase" shapeColor="0" id="94623567634176" parent="0" left="0" top="0" right="257.203" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="451.222" y="378.222" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="94623556635648" parent="0" left="0" top="0" right="64.9219" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="32.222" y="588.22" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase" shapeColor="0" id="94623567737616" parent="0" left="0" top="0" right="125.656" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="524.5" y="-43.5" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_inclusion" shapeColor="0" id="94623558276768" parent="0" left="0" top="0" right="111.891" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="434.5" y="-103.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="94623564936864" parent="0" left="0" top="0" right="64.9219" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="65.222" y="395.222" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_phrase_template" shapeColor="0" id="94623556344192" parent="0" left="0" top="0" right="169.266" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="723.483" y="264.874" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="94623568592528" parent="0" id_b="94623556344192" id_e="94623557990528" b_x="723.483" b_y="264.874" e_x="245.722" e_y="-49" dotBBalance="0" dotEBalance="0.452747">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="94623556635856" parent="0" id_b="94623567737616" id_e="94623556392368" b_x="524.5" b_y="-43.5" e_x="359.5" e_y="-43.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="94623568591536" parent="0" id_b="94623556635648" id_e="94623567053552" b_x="32.222" b_y="588.22" e_x="452.222" e_y="592.22" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="94623557990528" parent="0" id_b="94623563302688" id_e="94623560104960" b_x="451.722" b_y="126" e_x="1200.22" e_y="106.46" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="94623562433232" parent="0" id_b="94623567634176" id_e="94623563302688" b_x="451.222" b_y="378.222" e_x="451.722" e_y="126" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="94623565673888" parent="0" id_b="94623564936864" id_e="94623563302688" b_x="65.222" b_y="395.222" e_x="451.722" e_y="126" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="94623559816448" parent="0" id_b="94623567634176" id_e="94623567053552" b_x="451.222" b_y="378.222" e_x="452.222" e_y="592.22" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="94623562408208" parent="0" id_b="94623558276768" id_e="94623556635856" b_x="434.5" b_y="-103.5" e_x="908.722" e_y="-274" dotBBalance="0" dotEBalance="0.55137">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>

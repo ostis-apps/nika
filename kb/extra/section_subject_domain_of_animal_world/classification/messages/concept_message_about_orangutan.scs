@@ -1,0 +1,34 @@
+concept_message_about_orangutan
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение об орангутане]
+	  (* <- lang_ru;; *);
+      [message about orangutan]
+	  (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	  [about_orangutan];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение об орангутане)]
+	   (* <- lang_ru;; *);;
+    => nrel_main_idtf:
+       [Def. (message about orangutan)]
+	   (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение об орангутане - атомарное сообщение, которое содержит орангутана, информацию о котором необходимо найти.]
+		   (* <- lang_ru;; *);;
+        -> rrel_example:
+	   [Message about orangutan - atomic message that contains the orangutan, information about which needs to be found.]
+		   (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

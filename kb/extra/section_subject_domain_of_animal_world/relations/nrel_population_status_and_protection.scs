@@ -1,0 +1,32 @@
+nrel_population_status_and_protection
+<- sc_node_norole_relation;
+
+=> nrel_main_idtf:
+    [population status and protection*](*<- lang_en;;*);
+    [статус популяции и охрана*](*<- lang_ru;;*);;
+
+nrel_population_status_and_protection <- rrel_key_sc_element:... 
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (статус популяции и охрана*)](*<- lang_ru;;*);
+    [Def. (population status and protection*)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [статус популяции и охрана* — бинарное отношение, которое представляет собой показатель вероятности того, что таксон сохраняется в настоящее время и сохранится в ближайшем будущем.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [population status and protection* is a binary relation, which is a measure of the likelihood that a taxon is currently and will continue to be in the near future.](*<- lang_en;;*);;
+    *);;
+*);;
+
+nrel_population_status_and_protection
+=>nrel_first_domain:concept_animal;
+=>nrel_second_domain:concept_text_file;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- antisymmetric_relation;
+<- antitransitive_relation;;

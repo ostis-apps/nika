@@ -1,0 +1,34 @@
+concept_message_about_jaguarundi
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о ягуарунди]
+	  (* <- lang_ru;; *);
+      [message about jaguarundi]
+	  (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	  [about_jaguarundi];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о ягуарунди)]
+	   (* <- lang_ru;; *);;
+    => nrel_main_idtf:
+       [Def. (message about jaguarundi)]
+	   (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о ягуарунди - атомарное сообщение, которое содержит ягуарунди, информацию о котором необходимо найти.]
+		   (* <- lang_ru;; *);;
+        -> rrel_example:
+	   [Message about jaguarundi - atomic message that contains the jaguarundi, information about which needs to be found.]
+		   (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

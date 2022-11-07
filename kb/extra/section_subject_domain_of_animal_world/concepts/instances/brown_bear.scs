@@ -1,5 +1,6 @@
 brown_bear
 <- concept_animal;
+<- concept_bear;
 => nrel_main_idtf:
 	   [Бурый медведь](* <- lang_ru;; *);
        [Brown bear](* <-lang_en;; *);
@@ -34,3 +35,11 @@ brown_bear => nrel_weight: 250;;
 
 number -> 249;;
 brown_bear => nrel_height: 249;;    
+
+brown_bear => nrel_population_status_and_protection: 
+    [Облик бурого медведя типичен для представителя семейства медвежьих. Тело у него мощное, с высокой холкой; голова массивная с небольшими ушами и глазами. Хвост короткий — 65—210 мм, едва выделяющийся из шерсти. Лапы сильные с мощными, невтяжными когтями длиной 8—10 см, пятипалые, стопоходящие. Шерсть густая, равномерно окрашенная. Окраска бурого медведя очень изменчива, причём не только в разных частях ареала, но и в пределах одного района. Цвет меха варьирует от светло-палевого до синеватого и почти чёрного. Самой обычной является бурая форма. ]  (* <- lang_ru;; *);
+    [The appearance of a brown bear is typical for a representative of the bear family. His body is powerful, with high withers; the head is massive with small ears and eyes. The tail is short - 65-210 mm, barely visible from the coat. Paws are strong with powerful, non-retractable claws 8-10 cm long, five-fingered, plantigrade. The coat is dense, evenly colored. The coloration of the brown bear is very variable, and not only in different parts of the range, but also within the same region. The color of the fur varies from light fawn to bluish and almost black. The most common is the brown form.] (* <- lang_en;; *);;
+
+brown_bear => nrel_population_status_and_protection:
+    [Бурый медведь внесён в Красную книгу МСОП со статусом «вид, находящийся под угрозой», однако его численность сильно разнится от популяции к популяции. По примерным оценкам, сейчас в мире около 200 000 бурых медведей. Из них большинство обитает в России — 120 000, США — 32 500 (95 % живёт на Аляске) и Канаде — 21 750. В Европе сохранилось около 14 000 особей.]  (* <- lang_ru;; *);
+    [The brown bear is listed as endangered on the IUCN Red List, but numbers vary greatly from population to population. According to rough estimates, there are now about 200,000 brown bears in the world. Of these, most live in Russia - 120,000, the USA - 32,500 (95% live in Alaska) and Canada - 21,750. About 14,000 individuals have survived in Europe.] (* <- lang_en;; *);;    
