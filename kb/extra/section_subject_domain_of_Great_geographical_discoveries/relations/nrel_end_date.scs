@@ -1,0 +1,41 @@
+nrel_end_date
+<- sc_node_norole_relation;
+
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+<- antireflexive_relation;
+
+=> nrel_main_idtf: 
+	[дата окончания*] (*<-lang_ru;;*);
+=> nrel_main_idtf: 
+	[end date*] (*<-lang_en;;*);
+
+=> nrel_first_domain: 	concept_period;
+			concept_process;			
+=> nrel_second_domain: 	concept_date;
+
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [дата окончания* - бинарное ориентированное отношение, связывающее процесс либо исторический период с датой его окончания.] (* <-lang_ru;; *);; 
+		*);;
+			<= nrel_using_constants: {
+		concept_period;
+		concept_process;
+		concept_date
+		};;
+	*);;
+	
+concept_process
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [процесс]
+   	(* <- lang_ru;; *);;

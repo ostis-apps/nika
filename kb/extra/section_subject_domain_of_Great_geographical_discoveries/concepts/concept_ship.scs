@@ -1,0 +1,53 @@
+concept_ship
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+	[корабль]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[ship]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[судно]		(* <- lang_ru;; *);
+	[vessel]	(* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Корабль - многомачтовое парусное судно с прямыми парусами на всех мачтах.] (* <-lang_ru;; *);; 
+		*);;
+			<= nrel_using_constants: {
+				concept_sail;
+				concept_mast
+		};;
+	*); 
+   
+=> nrel_inclusion: 
+	concept_caravelle;
+	concept_galleon;
+	concept_caracca;;
+	
+concept_mast
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [мачта]
+   	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[mast]
+	(* <- lang_en;; *);; 
+	
+concept_sail
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [парус]
+   	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[sail]
+	(* <- lang_en;; *);;   	

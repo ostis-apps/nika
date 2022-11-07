@@ -1,0 +1,29 @@
+Fernand_Magellan
+<- concept_seafarer;
+<- concept_traveller;
+
+<- concept_wit_entity;
+
+=> nrel_main_idtf:
+   [Фернан Магеллан]
+   	(* <- lang_ru;; *);
+   [Fernand Magellan] 
+   	(* <-lang_en;; *);
+   	
+=> nrel_participant: 
+	First_around_the_world_voyage;
+
+-> rrel_crew_member:
+	Trinidad;
+
+-> rrel_captain:
+	Trinidad;
+	   
+=> nrel_citizenship:
+	Spain;
+	
+=> nrel_nationality:
+	Portugal; 
+	
+=> nrel_used_navigation_tool:
+	Astrolabe;;

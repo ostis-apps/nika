@@ -1,0 +1,46 @@
+nrel_make
+<- sc_node_norole_relation;
+
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+<- antireflexive_relation;
+
+=> nrel_main_idtf: 
+	[совершать*] (*<-lang_ru;;*);
+=> nrel_main_idtf: 
+	[make*] (*<-lang_en;;*);
+
+=> nrel_first_domain: 	
+	concept_seafarer;		
+	concept_researcher; 
+	concept_traveller;
+	concept_conquistador;
+=> nrel_second_domain: 	
+	concept_event;
+	concept_discovery;
+	concept_conquest;
+
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [совершать* - бинарное ориентированное отношение, связывающее актора (человека) с определенным событием, которое он совершает.] (* <-lang_ru;; *);; 
+		*);;
+				<= nrel_using_constants: {
+		concept_event;
+		concept_human
+		};;
+	*);;
+	
+concept_human
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [человек]
+   	(* <- lang_ru;; *);;

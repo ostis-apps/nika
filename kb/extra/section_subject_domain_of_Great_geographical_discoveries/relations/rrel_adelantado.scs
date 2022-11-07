@@ -1,0 +1,39 @@
+rrel_adelantado
+<- sc_node_role_relation;
+
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+<- antireflexive_relation;
+
+=> nrel_main_idtf: 
+	[аделантадо'] (*<-lang_ru;;*);
+=> nrel_main_idtf: 
+	[adelantado'] (*<-lang_en;;*);
+
+=> nrel_first_domain: 	concept_army;		
+=> nrel_second_domain:  concept_conquistador;
+			
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [аделантадо' - бинарное ориентированное отношение, определяющее титул конкистадора, который направлялся королём для исследования и завоевывания земель.] (* <-lang_ru;; *);; 
+		*);;
+			<= nrel_using_constants: {
+		concept_conquistador
+		};;
+	*);;
+	
+concept_army
+
+=> nrel_main_idtf: 
+	[армия] (*<-lang_ru;;*);
+=> nrel_main_idtf: 
+	[army'] (*<-lang_en;;*);;
+

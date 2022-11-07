@@ -1,0 +1,26 @@
+concept_caravelle
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+	[каравелла]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[caravelle]
+	(* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Каравелла - тип парусного судна, распространённый в Европе, особенно в Португалии и Испании, во второй половине XV — начале XVII века. Обычно представляется двух- или трёхмачтовым судном с косым латинским парусным вооружением.] (* <-lang_ru;; *);; 
+		*);;
+			<= nrel_using_constants: {
+				concept_sail;
+				concept_mast;
+				concept_ship
+		};;
+	*);; 

@@ -1,0 +1,27 @@
+concept_caracca
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+	[каракка]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[caracca]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[неф]		(* <- lang_ru;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Корабль - большое парусное судно XV—XVI веков, распространённое во всей Европе. Отличалось исключительно хорошей по тем временам мореходностью, с чем связано активное их использование для плаваний в океанах в эпоху Великих географических открытий.] (* <-lang_ru;; *);; 
+		*);;
+			<= nrel_using_constants: {
+				concept_sail;
+				concept_ship
+		};;
+	*);;

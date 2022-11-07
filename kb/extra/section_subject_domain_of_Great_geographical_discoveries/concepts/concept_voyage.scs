@@ -1,0 +1,56 @@
+concept_voyage
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+	[путешествие]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[voyage]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[вояж]		(* <- lang_ru;; *);
+	[travel]	(* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Путешествие - передвижение по какой-либо территории или акватории с целью их изучения, а также с общеобразовательными, познавательными, спортивными и другими целями.] (* <-lang_ru;; *);; 
+		*);;
+			<= nrel_using_constants: {
+				concept_water_area
+		};;
+	*); 
+   
+=> nrel_inclusion: 
+	concept_around_the_world_voyage;
+	concept_expedition;
+
+=> nrel_start_date:
+	concept_date;
+	
+=> nrel_end_date:
+	concept_date;
+	
+=> nrel_element_of_epoch: 
+	concept_period;
+	
+=> nrel_ship:
+	concept_ship;
+	concept_caravelle;
+	concept_galleon;
+	concept_caracca;;
+	
+concept_water_area
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [акватория]
+   	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[water area]
+	(* <- lang_en;; *);;

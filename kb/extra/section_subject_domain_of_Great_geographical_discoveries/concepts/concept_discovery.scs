@@ -1,0 +1,40 @@
+concept_discovery
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+	[открытие]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[discovery]
+	(* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Открытие - новое достижение, совершаемое в процессе научного познания природы и общества; установление неизвестных ранее, объективно существующих закономерностей, свойств и явлений материального мира.] (* <-lang_ru;; *);; 
+		*);;
+			<= nrel_using_constants: {
+			concept_achievement
+		};;
+	*); 
+   
+=> nrel_date: 
+	concept_date;
+	
+=> nrel_element_of_epoch: 
+	concept_period;;
+	
+concept_achievement
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [достижение]
+   	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[achievement]
+	(* <- lang_en;; *);;  

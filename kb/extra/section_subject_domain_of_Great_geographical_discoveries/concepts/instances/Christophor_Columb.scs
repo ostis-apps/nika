@@ -1,0 +1,43 @@
+Christophor_Columb
+<- concept_seafarer;
+<- concept_traveller;
+<- concept_researcher;
+
+<- concept_wit_entity;
+
+=> nrel_main_idtf:
+   [Христофор Колумб]
+   	(* <- lang_ru;; *);
+   [Christophor Columb] 
+   	(* <-lang_en;; *);
+   	
+=> nrel_make: 
+	Discovery_of_America;
+
+=> nrel_participant:
+	First_Christophor_Columb_expedition;
+
+-> rrel_crew_member:
+	Santa_Maria;
+
+-> rrel_captain:
+	Santa_Maria;
+	   
+=> nrel_citizenship:
+	Spain;
+	
+=> nrel_nationality:
+	Italy; 
+	
+=> nrel_used_navigation_tool:
+	Astrolabe;;
+	
+Italy
+<- concept_country;
+
+=> nrel_main_idtf:
+	[Италия]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Italy]
+	(* <- lang_en;; *);;
