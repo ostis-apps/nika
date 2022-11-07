@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Add excluding many entities with the same role in message classification agent
 - Add README about project and installation
 - Add clang format check
 - Dockerize system

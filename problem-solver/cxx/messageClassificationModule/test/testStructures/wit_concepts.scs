@@ -50,6 +50,7 @@ concept_message_with_emotional_coloring
 concept_entity_possible_class
     <- sc_node_class;
     -> concept_wit_season;
+    -> concept_wit_entity;
     -> concept_human;;
 
 concept_human
@@ -60,7 +61,9 @@ concept_human
 
 maksim
     => nrel_main_idtf: [Maksim]
-                        (* <- lang_en;; *);;
+                       (* <- lang_en;; *);
+                       [Максим]
+                       (* <- lang_ru;; *);;
 
 rrel_contact
     <- sc_node_role_relation;
@@ -76,9 +79,22 @@ concept_wit_season
 
 summer
     => nrel_main_idtf: [summer]
-                        (* <- lang_en;; *);;
+                       (* <- lang_en;; *);
+                       [лето]
+                       (* <- lang_ru;; *);;
 
 rrel_season
     <- sc_node_role_relation;
     => nrel_wit_ai_idtf:
         [season];;
+
+concept_wit_entity
+    <- sc_node_class;
+    => nrel_wit_ai_idtf:
+        [rrel_entity];
+    => nrel_entity_possible_role: { rrel_entity	};;
+
+rrel_entity
+    <- sc_node_role_relation;
+    => nrel_wit_ai_idtf:
+        [rrel_entity];;

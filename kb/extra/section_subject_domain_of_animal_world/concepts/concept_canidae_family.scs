@@ -1,0 +1,36 @@
+  concept_canidae_family
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Семейство псовых]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Canidae family]
+   (* <- lang_en;; *);
+
+<- concept_animal_family;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Семейство псовых)]
+		(* <- lang_ru;; *);
+		[Def. (Canidae family)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Семейство псовых - представляет собой семейство собакоподобных хищников, в просторечии называемых собаками, и составляет кладу. Член этого семейства также называется псовым.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Canidae family - is a family of dog-like carnivorans, colloquially referred to as dogs, and constitutes a clade. A member of this family is also called a canid.]
+			(* <- lang_en;; *);;
+		*);;
+    
+  *);;

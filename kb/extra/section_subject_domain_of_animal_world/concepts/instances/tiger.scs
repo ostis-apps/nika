@@ -1,0 +1,45 @@
+tiger
+<- concept_tiger;
+<- concept_animal;
+=> nrel_main_idtf:
+	   [Тигр](* <- lang_ru;; *);
+       [Tiger](* <-lang_en;; *);
+
+=> nrel_note:
+   [Общая численность составляет порядка 4000—6500 особей.]
+   (* <- lang_ru;; *);
+
+<= rrel_animal_kingdom:
+    concept_animalia_kingdom;
+
+<= rrel_animal_phylum:
+    concept_chordata_phylum;
+
+<= rrel_animal_class:
+    concept_mammalia_class;
+
+<= rrel_animal_order:
+    concept_carnivora_order;
+
+<= rrel_animal_family:
+    concept_felidae_family;
+
+<= rrel_animal_genus:
+    concept_panthera_genus;
+
+<= rrel_animal_species:
+    concept_panthera_tigris_species;;
+
+number -> 275;;
+tiger => nrel_weight: 275;;
+
+number -> 240;;
+tiger => nrel_height: 240;; 
+
+tiger => nrel_appearance: 
+    [Тело у тигра массивное, вытянутое, мускулистое, гибкое. Передняя часть тела развита сильнее задней, в плечах тигр выше, чем в крестце. Хвост длинный, равномерно опушённый. На передних лапах по 5 пальцев, на задних — по четыре, все со втяжными когтями. Голова с заметно выступающей лицевой частью и выпуклым лбом. Голова округлая. Череп довольно крупный и массивный, с широко расставленными скулами. Кондилобазальная длина черепа тигра превышает 200 мм. Задние концы носовых костей заходят за линию концов верхнечелюстных костей. Уши небольшие закруглённые. По бокам головы баки.]  (* <- lang_ru;; *);
+    [The tiger's body is massive, elongated, muscular, and flexible. The anterior part of the body is more developed than the posterior part; the tiger is higher at the shoulders than at the sacrum. The tail is long, evenly pubescent. There are 5 toes on the front paws, four on the hind paws, all with retractable claws. Head with prominently protruding facial part and convex forehead. The head is rounded. The skull is rather large and massive, with widely spaced cheekbones. The condylobasal length of the tiger's skull exceeds 200 mm. The posterior ends of the nasal bones extend beyond the line of the ends of the maxillary bones. The ears are small and rounded. Tanks on the sides of the head.] (* <- lang_en;; *);;
+
+tiger => nrel_population_status_and_protection: 
+    [Ситуацию с сохранением тигров в глобальном масштабе можно охарактеризовать как катастрофическую. За последние 100 лет численность этого вида сократилась в 25 раз — со 100 тысяч до 4 тысяч. При этом численность продолжает снижаться.]  (* <- lang_ru;; *);
+    [The situation with the conservation of tigers on a global scale can be described as catastrophic. Over the past 100 years, the number of this species has decreased by 25 times - from 100 thousand to 4 thousand. At the same time, the number continues to decline.] (* <- lang_en;; *);;    

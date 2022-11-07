@@ -1,0 +1,29 @@
+rrel_animal_species
+<- sc_node_role_relation;
+=>nrel_main_idtf:
+  [часть вида'](* <- lang_ru;; *);
+  [part of the species'](* <- lang_eng;; *);;
+
+rrel_animal_species <- rrel_key_sc_element:... 
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (часть вида')](*<- lang_ru;;*);
+    [Def. (part of the species')](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [часть вида' — отношение, показывающее к какому виду принадлежит живой организм.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [part of the species' — is a relation showing which species a living organism belongs to.](*<- lang_en;;*);;
+    *);;
+*);;
+
+rrel_animal_species
+=>nrel_first_domain:concept_animal_species;
+=>nrel_second_domain:concept_animal;
+
+<- binary_relation ;
+<- antireflexive_relation ;
+<- antitransitive_relation ;;

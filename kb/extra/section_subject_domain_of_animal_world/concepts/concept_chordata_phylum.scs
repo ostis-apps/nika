@@ -1,0 +1,36 @@
+concept_chordata_phylum
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Тип хордовых]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Chordata phylum]
+   (* <- lang_en;; *);
+
+<- concept_animal_phylum;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Тип хордовых)]
+		(* <- lang_ru;; *);
+		[Def. (Chordata phylum)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Тип хордовых - позвоночные животные, у которых развивается хорда, хрящевой скелетный стержень, который поддерживает тело в эмбрионе и часто может стать позвоночником. Большинство животных, с которыми мы знакомы, включая собак, лошадей, птиц и людей, попадают в эту категорию.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Chordata phylum - vertebrates animals that develop a notochord, a cartilaginous skeletal rod that supports the body in embryo and can often become a spine. Most animals we are familiar with, including dogs, horses, birds, and humans fall in to this category.]
+			(* <- lang_en;; *);;
+		*);;
+    
+  *);;

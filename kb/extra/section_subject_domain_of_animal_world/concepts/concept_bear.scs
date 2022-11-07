@@ -1,0 +1,33 @@
+concept_bear
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Медведь]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Bear]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Медведь)]
+		(* <- lang_ru;; *);
+		[Def. (Bear)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Медведь — млекопитающее семейства медвежьих; один из самых крупных наземных хищников.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The bear is a mammal of the bear family; one of the largest land predators.]
+			(* <- lang_en;; *);;
+		*);;
+  *);;

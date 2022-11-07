@@ -1,0 +1,41 @@
+concept_puma_yagouaroundi_species
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Вид Ягуарунди]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Puma yagouaroundi species]
+   (* <- lang_en;; *);
+
+<- concept_animal_species;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Вид Ягуарунди)]
+		(* <- lang_ru;; *);
+		[Def. (Puma yagouaroundi species)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Вид Ягуарунди - вид хищных млекопитающих семейства кошачьих. Волосяной покров низкий. Окраска у ягуарунди однотонная, и бывает двух типов: бурая с примесью рыжих, серых или тёмных тонов или ярко-рыжая.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Puma yagouaroundi species -  is the species of carnivorous mammals of the cat family. The hairline is low. The color of the jaguarundi is monophonic, and there are two types: brown with an admixture of red, gray or dark tones, or bright red.]
+			(* <- lang_en;; *);;
+		*);;
+        <= nrel_using_constants: {
+			concept_carnivora_order;
+            concept_mammalia_class;
+            concept_felidae_family
+   	    };;
+    
+  *);;
