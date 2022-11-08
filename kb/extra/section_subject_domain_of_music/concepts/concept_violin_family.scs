@@ -1,0 +1,26 @@
+concept_violin_family
+<= nrel_inclusion: concept_bowed_musical_instuments;
+=> nrel_main_idtf: [Violin family] (* <- lang_en;; *);
+=> nrel_main_idtf: [Семейство скрипичных] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Семейство скрипичных)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [составляют основу симфонического оркестра. Смычковые образуют наиболее монолитную и универсальную группу, имеющую высокий музыкально-технический потенциал, большой диапазон и ровное звучание на всём его протяжении, обширный арсенал приёмов игры и штрихов. Большое количество смычковых струнных в оркестре позволяет различным образом их разделять и группировать для исполнения многообразной фактуры.] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Violin family)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [form the basis of a symphony orchestra. Bowed strings form the most monolithic and versatile group, having a high musical and technical potential, a large range and smooth sound throughout its entire length, an extensive arsenal of playing techniques and touches. A large number of bow strings in the orchestra allows them to be divided and grouped in various ways to perform a diverse texture.] (* <- lang_en;; *);;
+	*);;
+*);
+
+<- sc_node_not_relation;;

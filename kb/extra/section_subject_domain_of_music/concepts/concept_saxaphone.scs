@@ -1,0 +1,24 @@
+concept_saxophone
+<= nrel_inclusion: concept_reed_family;
+=> nrel_main_idtf: [saxophone] (* <- lang_en;; *);
+=> nrel_main_idtf: [саксофон] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Cаксофон)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [тростевой духовой музыкальный инструмент, по принципу звукоизвлечения принадлежащий к семейству язычковых деревянных духовых музыкальных инструментов.] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Saxophone)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [reed wind musical instrument, according to the principle of sound production, belonging to the family of reed woodwind musical instruments.] (* <- lang_en;; *);;
+	*);;
+*);;

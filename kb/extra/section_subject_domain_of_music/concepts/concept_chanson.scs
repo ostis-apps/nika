@@ -1,0 +1,31 @@
+concept_chanson
+<- concept_music_genre;
+<- sc_node_class;
+=> nrel_main_idtf:
+	[шансон]
+	(* <- lang_ru;; *);
+	[chanson]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (шансон)]
+		(* <- lang_ru;; *);
+		[Def. (chanson)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Шансон - французская эстрадная песня в стиле кабаре.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Chanson - any lyric-driven French song.]
+			(* <- lang_en;; *);;
+		*);;
+	*);;

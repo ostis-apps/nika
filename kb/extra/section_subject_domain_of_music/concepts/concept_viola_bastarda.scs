@@ -1,0 +1,24 @@
+concept_viola_bastarda
+<= nrel_inclusion: concept_viola_family;
+=> nrel_main_idtf: [viola bastarda] (* <- lang_en;; *);
+=> nrel_main_idtf: [виола бастарда] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Виола бастарда)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [смычковый струнный инструмент , похожий на виолончель , но отличающийся дополнительным набором щипковых струн.] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Viola bastarda)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [a bowed string instrument, similar to the cello, but featuring an additional set of plucked strings.] (* <- lang_en;; *);;
+	*);;
+*);;

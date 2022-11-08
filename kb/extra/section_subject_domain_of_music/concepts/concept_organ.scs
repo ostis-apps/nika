@@ -1,0 +1,24 @@
+concept_organ
+<= nrel_inclusion: concept_wind_musical_instruments; //от кого идёт
+=> nrel_main_idtf: [organ] (* <- lang_en;; *);
+=> nrel_main_idtf: [орган] (* <- lang_ru;; *);
+
+<-concept_classes;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Орган)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [клавишный духовой музыкальный инструмент. Большие концертные органы превосходят по габаритам все прочие музыкальные инструменты.] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Organ)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [keyboard wind musical instrument. Large concert organs are larger than all other musical instruments.] (* <- lang_en;; *);;
+	*);;
+*);;

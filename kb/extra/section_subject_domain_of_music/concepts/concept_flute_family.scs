@@ -1,0 +1,26 @@
+concept_flute_family
+<= nrel_inclusion: concept_wind_musical_instruments;
+=> nrel_main_idtf: [Flutes woodwind instruments] (* <- lang_en;; *);
+=> nrel_main_idtf: [Губные музыкальные медные инструменты] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Губные музыкальные медные инструменты)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [инструменты в которых источником колебаний является струя воздуха, рассекающаяся об острый край стенки инструмента, называемый лабиум] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Flutes woodwind instruments)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [instruments in which the source of vibration is a jet of air that cuts against the sharp edge of the instrument wall, called the labium.] (* <- lang_en;; *);;
+	*);;
+*);
+
+<- sc_node_not_relation;;

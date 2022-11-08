@@ -1,0 +1,12 @@
+xylophone
+  <- concept_wit_entity;
+  => nrel_main_idtf:
+    [Ксилофон]
+    (* <- lang_ru;; *);
+    [Xylophone]
+    (* <- lang_en;; *);;
+
+answer_structure = [*
+	xylophone
+	<- concept_xylophone;;
+*];;

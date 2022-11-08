@@ -1,0 +1,24 @@
+concept_bassoon
+<= nrel_inclusion: concept_reed_family;
+=> nrel_main_idtf: [bassoon] (* <- lang_en;; *);
+=> nrel_main_idtf: [фагот] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Фагот)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [язычковый деревянный духовой музыкальный инструмент басового, тенорового, альтового и частично сопранового регистра. Имеет вид согнутой, дугообразной, длинной трубки с системой клапанов и двойной (как у гобоя) тростью, которая надевается на металлическую трубку («эс») в форме буквы S, соединяющую трость с основным корпусом инструмента.] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Bassoon)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [reed woodwind musical instrument of bass, tenor, alto and partially soprano register. It has the form of a bent, arched, long tube with a valve system and a double (like an oboe) reed, which is put on a metal tube ("es") in the shape of the letter S, connecting the reed to the main body of the instrument.] (* <- lang_en;; *);;
+	*);;
+*);;

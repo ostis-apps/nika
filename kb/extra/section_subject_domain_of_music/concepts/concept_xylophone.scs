@@ -1,0 +1,24 @@
+concept_xylophone
+<= nrel_inclusion: concept_percussion_musical_instruments;
+=> nrel_main_idtf: [xylophone] (* <- lang_en;; *);
+=> nrel_main_idtf: [ксилофон] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Ксилофон)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [ударный музыкальный инструмент с определённой высотой звучания. Представляет собой ряд деревянных брусков разной величины, настроенных на определённые ноты. По брускам ударяют палочками с шарообразными наконечниками (малетами) или специальными молоточками, похожими на небольшие ложки.] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Xylophone)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [percussion musical instrument with a certain pitch. It is a series of wooden blocks of different sizes, tuned to certain notes. The bars are hit with sticks with spherical tips (malets) or special hammers that look like small spoons.] (* <- lang_en;; *);;
+	*);;
+*);;

@@ -1,0 +1,31 @@
+concept_kpop
+<- concept_music_genre;
+<- sc_node_class;
+=> nrel_main_idtf:
+	[кейпоп]
+	(* <- lang_ru;; *);
+	[kpop]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (кейпоп)]
+		(* <- lang_ru;; *);
+		[Def. (kpop)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Кейпоп -  музыкальный жанр, возникший в Южной Корее и вобравший в себя элементы западного электропопа, хип-хопа, танцевальной музыки и современного ритм-н-блюза.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Kpop is a form of popular music originating in South Korea as part of South Korean culture. It includes styles and genres from around the world, such as pop, hip hop, R&B, experimental, rock, jazz, gospel, reggae, electronic dance, folk, country, disco, and classical on top of its traditional Korean music roots.]
+			(* <- lang_en;; *);;
+		*);;
+	*);;

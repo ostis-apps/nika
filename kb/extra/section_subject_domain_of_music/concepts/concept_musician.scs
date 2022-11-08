@@ -1,0 +1,30 @@
+concept_musician
+<- sc_node_class;
+=> nrel_main_idtf:
+	[исполнитель]
+	(* <- lang_ru;; *);
+	[musician]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (исполнитель)]
+		(* <- lang_ru;; *);
+		[Def. (musician)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Музыкант — специалист в области музыки или тот, кто занимается игрой на музыкальном инструменте; занимающийся музыкой профессионально или как знаток и любитель.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Musician - a specialist in the field of music or one who plays a musical instrument; involved in music professionally or as a connoisseur and amateur.]
+			(* <- lang_en;; *);;
+		*);;
+	*);;

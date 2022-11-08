@@ -1,0 +1,24 @@
+concept_violin
+<= nrel_inclusion: concept_violin_family; //от кого идёт
+=> nrel_main_idtf: [violin] (* <- lang_en;; *);
+=> nrel_main_idtf: [скрипка] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Скрипка)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [смычковый музыкальный инструмент с четырьмя струнами, настроенными по квинтам: Gм D1 A1 E2.] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Violin)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [bowed musical instrument with four strings tuned in fifths: Gm D1 A1 E2.] (* <- lang_en;; *);;
+	*);;
+*);;
