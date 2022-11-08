@@ -1,0 +1,30 @@
+concept_karting <- sc_node_not_relation;;
+
+concept_karting => nrel_main_idtf:
+[картинг] (*<-lang_ru;;*);
+[karting] (*<-lang_en;;*);;
+
+concept_karting <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (картинг)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Картинг - вид спорта и развлечения, гонки на картах - простейших гоночных автомобилях без кузова.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_karting <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (картинг)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Скорость карта может достигать 260 км/ч.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

@@ -1,0 +1,30 @@
+concept_children_zone <- sc_node_not_relation;;
+
+concept_children_zone => nrel_main_idtf:
+[детская зона] (*<-lang_ru;;*);
+[children zone] (*<-lang_en;;*);;
+
+concept_children_zone <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (детская зона)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Детская зона - зона, которая предусмотрена исключительно для детей 6-14 лет.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_children_zone <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (детская зона)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Для детей младше 6 лет предназначены электро-механические качалки.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

@@ -1,0 +1,34 @@
+concept_bungee <- sc_node_not_relation;;
+
+concept_bungee => nrel_main_idtf:
+[тарзранка] (*<-lang_ru;;*);
+[bungee] (*<-lang_en;;*);;
+
+concept_bungee <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (тарзранка)] (*<-lang_ru;;*);;
+=> nrel_using_constants:
+	{
+		concept_attraction
+	};;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Тарзанка - <b><sc_element sys_idtf="concept_attraction">аттракцион</b>, на котором участников привязывают (обычно за ноги) к длинному резиновому канату, на котором они совершают прыжок вниз](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_bungee <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (тарзранка)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Название дано в честь Тарзана - главного персонажа серии кинофильмов, широко демонстрировавшегося на советских телеэкранах.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

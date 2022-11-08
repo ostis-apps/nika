@@ -1,0 +1,30 @@
+concept_autodrome <- sc_node_not_relation;;
+
+concept_autodrome => nrel_main_idtf:
+[автодром] (*<-lang_ru;;*);
+[autodrome] (*<-lang_en;;*);;
+
+concept_autodrome <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (автодром)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Автодром - участок местности, оборудованный для обучения вождению, испытания автомобилей, мотоциклов и гусеничных транспортеров-тягачей, а также проведения автомобильных и мотоциклетных соревнований.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_autodrome <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (автодром)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Автодром для соревнований состоит из трека, площадки для фигурной езды, помещений для обслуживания автомобилей, гаражей, трибун для зрителей.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

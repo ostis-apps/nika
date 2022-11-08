@@ -1,0 +1,30 @@
+concept_attraction <- sc_node_not_relation;;
+
+concept_attraction => nrel_main_idtf:
+[аттракцион] (*<-lang_ru;;*);
+[attraction] (*<-lang_en;;*);;
+
+concept_attraction <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (аттракцион)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Аттракцион - сооружение или устройство, созданное для развлечений.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_attraction <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (аттракцион)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Устанавливается в местах, предназначенных для коллективного отдыха.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

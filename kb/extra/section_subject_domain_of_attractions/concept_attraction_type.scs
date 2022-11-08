@@ -1,0 +1,30 @@
+concept_attraction_type <- sc_node_not_relation;;
+
+concept_attraction_type => nrel_main_idtf:
+[тип аттракциона] (*<-lang_ru;;*);
+[attraction type] (*<-lang_en;;*);;
+
+concept_attraction_type <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (тип аттракциона)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Тип аттракциона - это то, чем обусловлен принцип его работы.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_attraction_type <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (тип аттракциона)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Аттракционы по принципу работы бывают: водными, механическими, электрическими](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

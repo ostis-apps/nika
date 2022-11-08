@@ -1,0 +1,34 @@
+concept_amusement_park <- sc_node_not_relation;;
+
+concept_amusement_park => nrel_main_idtf:
+[парк развлечений] (*<-lang_ru;;*);
+[amusement park] (*<-lang_en;;*);;
+
+concept_amusement_park <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (парк развлечений)] (*<-lang_ru;;*);;
+=> nrel_using_constants:
+	{
+		concept_attraction
+	};;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Парк развлечений - собирательный термин, описывающий некоторое количество <b><sc_element sys_idtf="concept_attraction">аттракционов</b> и других видов развлечений, размещённых на одной территории.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_amusement_park <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (парк развлечений)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Парк развлечений предназначен именно для развлечения людей, в основном взрослых, подростков и детей.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

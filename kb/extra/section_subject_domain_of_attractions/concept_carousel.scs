@@ -1,0 +1,34 @@
+concept_carousel <- sc_node_not_relation;;
+
+concept_carousel => nrel_main_idtf:
+[карусель] (*<-lang_ru;;*);
+[carousel] (*<-lang_en;;*);;
+
+concept_carousel <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (карусель)] (*<-lang_ru;;*);;
+=> nrel_using_constants:
+	{
+		concept_attraction
+	};;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Карусель - <b><sc_element sys_idtf="concept_attraction">аттракцион</b>, представляющий собой вращающуюся платформу, на которой установлены (либо подвешены к крыше, либо прикреплены к центральной стойке) сиденья, сделанные чаще всего в виде лошадок, автомобильчиков и других животных или транспортных средств.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_carousel <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (карусель)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[В XVI веке каруселями (слово тогда имело мужской род) называли праздники, пришедшие на смену рыцарским турнирам.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
