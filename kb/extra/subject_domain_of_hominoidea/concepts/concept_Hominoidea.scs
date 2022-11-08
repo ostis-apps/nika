@@ -2,7 +2,7 @@ concept_Hominoidea
 <- sc_node_class;
 => nrel_main_idtf:
 	[Человекообразные]
-	(* <- lang_ru;; *);
+	(* <- lang_ru;; <-concept_text;; *);
 	[Hominoidea]
 	(* <- lang_en;; *);
 <- rrel_key_sc_element:
@@ -33,7 +33,7 @@ concept_Hominoidea
 	...
 	(*
 	=>nrel_main_idtf:
-		[Утв. (Составной объект)]
+		[Утв. (Человекообразные)]
 		(* <- lang_ru;; *);;
 	<- statement;;
 	<= nrel_sc_text_translation:

@@ -1,8 +1,10 @@
 Zahar
 <- concept_Pongo_pygmaeus;
+<- concept_Hominoidea;
+<- concept_wit_entity;
 => nrel_main_idtf:
     [Захар]
-    (* <- lang_ru;; *);
-=> nrel_idtf:
-    [Калимантанский орангутан Захар. Он родился 9 сентября 2000 года в Московском зоопарке.]
-    (* <- lang_ru;; *);;
+    (* <- lang_ru;; <-concept_text;; *);
+=> nrel_definition:
+	[Калимантанский орангутан Захар. Он родился 9 сентября 2000 года в Московском зоопарке.]
+	(*<-lang_ru;;<-concept_hominoidea_example_definition;;*);;
