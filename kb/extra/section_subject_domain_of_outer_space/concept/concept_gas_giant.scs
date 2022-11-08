@@ -1,0 +1,47 @@
+concept_gas_giant
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Газовый гигант]
+	(* <- lang_ru;; *);
+	[Gas giant]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Газовый гигант)]
+		(* <- lang_ru;; *);
+		[Def. (Gas giant)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Газовый гигант — это большая планета, состоящая в основном из гелия и/или водорода.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A gas giant is a large planet composed primarily of helium and/or hydrogen.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Газовый гигант)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Из-за больших размеров и масс газовые гиганты наиболее просты в обнаружении любыми способами из всех типов экзопланет]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_planet;;

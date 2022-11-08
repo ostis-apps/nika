@@ -1,0 +1,47 @@
+concept_compound_object
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Составной объект]
+	(* <- lang_ru;; *);
+	[Compound object]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Составной объект)]
+		(* <- lang_ru;; *);
+		[Def. (Compound object)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Составной объект -- структура состоящяя из малого или большого количества связанных между собой одиночных объектов.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Composite object - a structure consisting of a small or large number of interconnected single objects.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Составной объект)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[К составным объектам относятся системы, галактики.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_astronomical_object;;

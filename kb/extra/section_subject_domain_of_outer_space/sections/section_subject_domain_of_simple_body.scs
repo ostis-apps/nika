@@ -1,0 +1,52 @@
+section_subject_domain_of_simple_body
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Одиночный объект]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Simple body]
+	(* <- lang_en;; *);
+	
+<= nrel_section_decomposition: 
+	{
+		section_subject_domain_of_planet;
+		section_subject_domain_of_star
+	};
+
+<- rrel_key_sc_element:
+	concept_planet;
+	concept_star;
+	nrel_gravity;
+	nrel_mass;
+	subject_domain_of_simple_body;
+	concept_simple_body;;
+
+section_subject_domain_of_simple_body = [*
+subject_domain_of_simple_body
+
+=> nrel_main_idtf: 
+	[Предметная область Одиночный объект]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Simple body]
+	(* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+	section_subject_domain_of_planet;
+	section_subject_domain_of_star;
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_astronomical_object;
+		
+-> rrel_maximum_studied_object_class:
+	concept_simple_body;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_planet;
+	concept_star;
+	
+-> rrel_explored_relation:
+	nrel_gravity;
+	nrel_mass;
+	
+<- subject_domain;;
+*];;

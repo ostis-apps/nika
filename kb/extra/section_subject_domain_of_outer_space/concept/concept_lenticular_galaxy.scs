@@ -1,0 +1,47 @@
+concept_lenticular_galaxy
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Линзовидная галактика]
+	(* <- lang_ru;; *);
+	[Lenticular galaxy]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Линзовидная галактика)]
+		(* <- lang_ru;; *);
+		[Def. (Lenticular galaxy)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Линзовидная галактика — тип галактик, промежуточный между эллиптическими и спиральными в классификации Хаббла.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A lenticular galaxy  is a type of galaxy intermediate between an elliptical and a spiral galaxy in galaxy morphological classification schemes]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Линзовидная галактика)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[В основном такие галактики состоят из старых звезд.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_galaxy;;

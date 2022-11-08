@@ -1,0 +1,50 @@
+section_subject_domain_of_galaxy
+=> nrel_main_idtf: 
+	[Раздел. Предметная область  Галактика]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Galaxy]
+	(* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+	concept_elliptical_galaxy;
+	concept_spiral_galaxy;
+	concept_ring_galaxy;
+	concept_lenticular_galaxy;
+	concept_irregular_galaxy;
+	nrel_gravity;
+	nrel_mass;
+	nrel_number_of_star;
+	subject_domain_of_galaxy;
+	concept_galaxy;;
+
+section_subject_domain_of_galaxy = [*
+subject_domain_of_galaxy
+
+=> nrel_main_idtf: 
+	[Предметная область Галактика]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Galaxy]
+	(* <- lang_en;; *);
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_galaxy;
+		
+-> rrel_maximum_studied_object_class:
+	concept_galaxy;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_elliptical_galaxy;
+	concept_spiral_galaxy;
+	concept_ring_galaxy;
+	concept_lenticular_galaxy;
+	concept_irregular_galaxy;
+	
+-> rrel_explored_relation:
+	nrel_gravity;
+	nrel_mass;
+	nrel_number_of_star;
+	
+<- subject_domain;;
+*];;

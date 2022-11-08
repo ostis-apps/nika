@@ -1,0 +1,48 @@
+concept_compact_star
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Компактная звезда]
+	(* <- lang_ru;; *);
+	[Compact star]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Компактная звезда)]
+		(* <- lang_ru;; *);
+		[Def. (Compact star)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Компактная звезда — в совокупности белые карлики, нейтронные звезды и черные дыры.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[
+A compact star is a collection of white dwarfs, neutron stars, and black holes.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Компактная звезда)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Компактные звезды часто являются конечным состоянием звездной эволюции, и в этом отношении их также называют звездными остатками.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_star;;

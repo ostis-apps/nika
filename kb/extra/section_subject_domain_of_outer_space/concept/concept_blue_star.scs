@@ -1,0 +1,46 @@
+concept_blue_star
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Голубая звезда]
+	(* <- lang_ru;; *);
+	[Blue star]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Голубая звезда)]
+		(* <- lang_ru;; *);
+		[Def. (Blue star)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Голубая звезда это обычно горячая звезда O-типа, которая обычно встречается в активных областях звездообразования, особенно в рукавах спиральных галактик.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A blue star is usually a hot O-type star that is commonly found in active star-forming regions, especially in the arms of spiral galaxies.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Голубая звезда)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[У них относительно короткая жизнь, которая заканчивается сильными вспышками сверхновых, что в конечном итоге приводит к созданию либо черных дыр, либо нейтронных звезд.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_star_by_luminosity;;

@@ -1,0 +1,48 @@
+concept_galaxy_cluster
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Скопление галактик]
+	(* <- lang_ru;; *);
+	[Galaxy cluster]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Скопление галактик)]
+		(* <- lang_ru;; *);
+		[Def. (Galaxy cluster)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Скопления галактик — гравитационно-связанные системы галактик, одни из самых больших структур во Вселенной. Характерный размер по диаметру — десятки миллионов световых лет]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Clusters of galaxies are gravitationally bound systems of galaxies, one of the largest structures in the universe. The characteristic size in diameter is tens of millions of light years.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Скопление галактик)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Темная материя занимает 90% всей массы в данных скоплениях]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+<=nrel_inclusion: concept_galaxy_structure;;

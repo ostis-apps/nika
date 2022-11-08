@@ -1,0 +1,48 @@
+concept_elliptical_galaxy 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Эллиптическая галактика]
+	(* <- lang_ru;; *);
+	[Elliptical galaxy]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Эллиптическая галактика)]
+		(* <- lang_ru;; *);
+		[Def. (Elliptical galaxy)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Эллиптическая галактика - класс галактик со сферической структурой без каких-либо особенностей. Это один из четырёх основных типов галактик.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[An elliptical galaxy is a class of galaxies with a spherical structure without any features. It is one of the four main types of galaxies.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Эллиптическая галактика)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[В эллиптических галактиках остались только старые звёзды.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+<=nrel_inclusion: concept_galaxy;;

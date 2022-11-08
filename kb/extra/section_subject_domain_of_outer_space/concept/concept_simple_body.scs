@@ -1,0 +1,47 @@
+concept_simple_body
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Одиночный объект]
+	(* <- lang_ru;; *);
+	[Simple body]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Одиночный объект)]
+		(* <- lang_ru;; *);
+		[Def. (Simple body)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Одиночный объект - это вид объектов, которые рассматриваются как самостоятельные структуры.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A single body is a kind of object that is treated as a self-contained structure.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Одиночный объект)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[К одиночным объектам относятся планеты, звезды.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_astronomical_object;;

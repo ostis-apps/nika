@@ -1,0 +1,47 @@
+concept_neptune_like_planet
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Нептуновая планета]
+	(* <- lang_ru;; *);
+	[Neptune-like planet]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Нептуновая планета)]
+		(* <- lang_ru;; *);
+		[Def. (Neptune-like planet)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Нептуновые планеты -- планеты по размеру похожие на Нептун или Уран в нашей Солнечной системе.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The Neptune-like planets are planets similar in size to Neptune or Uranus in our solar system.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Нептуновая планета)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Нептуновые планеты обычно имеют атмосферу с преобладанием водорода и гелия с ядрами или камнями и более тяжелыми металлами.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_planet;;

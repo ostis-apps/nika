@@ -1,0 +1,47 @@
+concept_protostar
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Протозвезда]
+	(* <- lang_ru;; *);
+	[Protostar]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Протозвезда)]
+		(* <- lang_ru;; *);
+		[Def. (Protostar)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Протозвезда — это очень молодая звезда, которая все еще набирает массу из родительского молекулярного облака. Протозвездная фаза — самая ранняя в процессе звездной эволюции.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A protostar is a very young star that is still gaining mass from its parent molecular cloud. The protostellar phase is the earliest in the process of stellar evolution.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Протозвезда)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[ зависимости от массы протозвезды, данная стадия может продолжаться от 10^5 лет для самых крупных объектов до 10^9 лет для самых маломассивных.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_star_by_luminosity;;

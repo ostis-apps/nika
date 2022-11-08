@@ -1,0 +1,47 @@
+concept_yellow_dwarf
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Желтый карлик]
+	(* <- lang_ru;; *);
+	[Yellow dwarf]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Желтый карлик)]
+		(* <- lang_ru;; *);
+		[Def. (Yellow dwarf)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Желтый карлик — звезда, принадлежащая к главной последовательности спектрального класса G и имеющая массу от 0,7 до 1 массы Солнца.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A yellow dwarf is a star belonging to the main sequence of spectral type G and having a mass of 0.7 to 1 solar mass.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Желтый карлик)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Около 10% звезд Млечного Пути карликового желтого цвета. Они имеют температуру поверхности около 6000°С и светятся ярко-желтым, почти белым цветом.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_star_by_luminosity;;

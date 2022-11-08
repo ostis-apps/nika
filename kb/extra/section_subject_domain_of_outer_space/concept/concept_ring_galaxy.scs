@@ -1,0 +1,47 @@
+concept_ring_galaxy
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Кольцеобразная галактика]
+	(* <- lang_ru;; *);
+	[Ring galaxy]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Кольцеобразная галактика)]
+		(* <- lang_ru;; *);
+		[Def. (Ring galaxy)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Кольцеобразная галактика — разновидность пекулярных галактик, характеризующаяся наличием плотного ядра, окруженного протяженным кольцом ярких молодых звёзд, отделенным от ядра некоторым расстоянием]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A ring galaxy is a variety of peculiar galaxies characterized by the presence of a dense core surrounded by an extended ring of bright young stars, separated from the core by some distance.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Кольцеобразная галактика)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Наиболее вероятным механизмом рождения кольцеобразных галактик является лобовое столкновение между большой дисковой и сопутствующей ей компактной галактиками]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_galaxy;;

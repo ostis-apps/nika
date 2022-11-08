@@ -1,0 +1,52 @@
+nrel_earth_index
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antransitive_relation;
+<-asymmetric_relation;
+=>nrel_main_idtf:
+	[Индекс Земли*]
+	(* <- lang_ru;; *);
+	[Index of Earth*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_planet;
+=>nrel_second_domain: number;
+=>nrel_definitional_domain: ... (*
+	<= nrel_combination:
+	{
+		concept_planet;
+		number
+	};;
+*);
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Индекс Земли*)]
+		(* <- lang_ru;; *);
+		[Def.(Index of Earth*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Индекс Земли* - индекс пригодности планеты или спутника для жизни, разработанный международной группой учёных.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The Earth Index* is a proposed characterization of how similar a planetary-mass object or natural satellite is to Earth.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_planet;
+		number;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

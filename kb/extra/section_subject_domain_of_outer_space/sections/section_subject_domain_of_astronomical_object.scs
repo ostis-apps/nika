@@ -1,0 +1,56 @@
+section_subject_domain_of_astronomical_object
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Астрономические  объекты]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Astronomical object]
+	(* <- lang_en;; *);
+	
+<= nrel_section_decomposition: 
+	{
+		section_subject_domain_of_simple_body;
+		section_subject_domain_of_extended_object;
+		section_subject_domain_of_compound_object
+	};
+
+<- rrel_key_sc_element:
+	concept_simple_body;
+	concept_extended_object;
+	concept_compound_object;
+	nrel_gravity;
+	nrel_mass;
+	subject_domain_of_astronomical_object;
+	concept_astronomical_object;;
+
+section_subject_domain_of_astronomical_object = [*
+subject_domain_of_astronomical_object
+
+=> nrel_main_idtf: 
+	[Предметная область Астрономический объект]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of  Astronomical object]
+	(* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+	section_subject_domain_of_simple_body;
+	section_subject_domain_of_extended_object;
+	section_subject_domain_of_compound_object;
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_astronomical_object;
+		
+-> rrel_maximum_studied_object_class:
+	concept_astronomical_object;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_simple_body;
+	concept_extended_object;
+	concept_compound_object;
+	
+-> rrel_explored_relation:
+	nrel_gravity;
+	nrel_mass;
+	
+<- subject_domain;;
+*];;

@@ -1,0 +1,55 @@
+section_subject_domain_of_compound_object
+=> nrel_main_idtf: 
+	[Раздел. Предметная область  Составной объект]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Compound object]
+	(* <- lang_en;; *);
+	
+<= nrel_section_decomposition: 
+	{
+		section_subject_domain_of_galaxy;
+		section_subject_domain_of_system;
+		section_subject_domain_of_galaxy_structure
+	};
+
+<- rrel_key_sc_element:
+	concept_galaxy;
+	concept_system;
+	concept_galaxy_structure;
+	nrel_gravity;
+	subject_domain_of_compound_object;
+	concept_compound_object;;
+
+section_subject_domain_of_compound_object= [*
+subject_domain_of_compound_object
+
+=> nrel_main_idtf: 
+	[Предметная область Составных объектов]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Compound object]
+	(* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+	section_subject_domain_of_galaxy;
+	section_subject_domain_of_system;
+	section_subject_domain_of_galaxy_structure;
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_compound_object;
+		
+-> rrel_maximum_studied_object_class:
+	concept_compound_object;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_galaxy;
+	concept_system;
+	concept_galaxy_structure;
+	
+-> rrel_explored_relation:
+	nrel_gravity;
+	nrel_mass;
+	
+<- subject_domain;;
+*];;

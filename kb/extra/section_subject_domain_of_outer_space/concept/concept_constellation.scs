@@ -1,0 +1,46 @@
+concept_constellation
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Созвездие]
+	(* <- lang_ru;; *);
+	[Constellation]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Созвездие)]
+		(* <- lang_ru;; *);
+		[Def. (Constellation)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Созвездия — в современной астрономии участки, на которые разделена небесная сфера для удобства ориентирования на звёздном небе. ]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A constellation is an area on the celestial sphere in which a group of visible stars forms a perceived pattern or outline, typically representing an animal, mythological subject, or inanimate object.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Созвездия)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[В древности созвездиями назывались характерные фигуры, образуемые яркими звёздами.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_system;;

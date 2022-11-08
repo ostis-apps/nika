@@ -1,0 +1,45 @@
+section_subject_domain_of_nebula
+=> nrel_main_idtf: 
+	[Раздел. Предметная область  Туманность]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Nebula]
+	(* <- lang_en;; *);
+	
+<- rrel_key_sc_element:
+	nrel_gravity;
+	subject_domain_of_nebula;
+	concept_pulsar_wind_nebula;
+	concept_supernova_remnant_nebula;
+	concept_nebula;
+	nrel_mass;
+	concept_planetary_nebula;;
+
+section_subject_domain_of_nebula = [*
+subject_domain_of_nebula
+
+=> nrel_main_idtf: 
+	[Предметная область Туманность]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Nebula]
+	(* <- lang_en;; *);
+
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_nebula;
+		
+-> rrel_maximum_studied_object_class:
+	concept_nebula;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_planetary_nebula;
+	concept_pulsar_wind_nebula;
+	concept_supernova_remnant_nebula;
+	
+-> rrel_explored_relation:
+	nrel_gravity;
+	nrel_mass;
+	
+<- subject_domain;;
+*];;

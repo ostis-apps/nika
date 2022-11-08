@@ -1,0 +1,47 @@
+concept_white_dwarf
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Белый карлик]
+	(* <- lang_ru;; *);
+	[White dwarf]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Белый карлик)]
+		(* <- lang_ru;; *);
+		[Def. (White dwarf)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Белый карлик — звёзда, состоящая из электронно-ядерной плазмы, лишённая источников термоядерной энергии и светящеяся благодаря своей тепловой энергии, постепенно остывая в течение миллиардов лет.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A white dwarf is a star consisting of electron-nuclear plasma, devoid of sources of thermonuclear energy and glowing due to its thermal energy, gradually cooling down over billions of years.]
+			(* <- lang_en;; *);;
+		*);;
+
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Белый карлик)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Белые карлики образуются в процессе эволюции звёзд, чья масса недостаточна для превращения в нейтронную звезду.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_star_by_luminosity;;

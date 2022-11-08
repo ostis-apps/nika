@@ -1,0 +1,49 @@
+concept_galaxy_group
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Группа галактик]
+	(* <- lang_ru;; *);
+	[Galaxy group]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Группа галактик)]
+		(* <- lang_ru;; *);
+		[Def. (Galaxy group)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Группа галактик — скопление галактик первого порядка,включает в себя не более 50 объектов, яркость каждого из которых порядка яркости галактики Млечный Путь]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A group of galaxies is a cluster of galaxies of the first order, includes no more than 50 objects, the brightness of each of which is of the order of the brightness of the Milky Way galaxy.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Группа галактик)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Выделяют несколько подтипов групп галактик.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+<=nrel_inclusion: concept_galaxy_structure;;

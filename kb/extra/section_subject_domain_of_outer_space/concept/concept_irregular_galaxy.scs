@@ -1,0 +1,47 @@
+concept_irregular_galaxy
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Неправильная галактика]
+	(* <- lang_ru;; *);
+	[Irregular galaxy]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Неправильная галактика)]
+		(* <- lang_ru;; *);
+		[Def. (Irregular galaxy)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Неправильная галактика —  галактики неправильной формы, не вписывающиеся в последовательность Хаббла. Они не имеют ни спиральной, ни эллиптической структуры. ]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[An irregular galaxy is a galaxy that does not have a distinct regular shape, unlike a spiral or an elliptical galaxy.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Неправильная галактика)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Как правило, в этих галактиках много молодых звёзд, а ядро и балдж у них практически не выражены.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_galaxy;;

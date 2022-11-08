@@ -1,0 +1,47 @@
+concept_supernova_remnant_nebula
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Остаток сверхновой]
+	(* <- lang_ru;; *);
+	[Supernova remnant Nebula]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Остаток сверхновой)]
+		(* <- lang_ru;; *);
+		[Def. (Supernova remnant nebula)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Остаток сверхновой — туманности, появившиеся из-за произошедшего много десятков или сотен лет назад катастрофического взрыва звезды и превращения её в сверхновую.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A supernova remnant (SNR) is the structure resulting from the explosion of a star in a supernova.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Остаток сверхновой)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Остаток состоит из выброшенного взрывом звёздного материала и межзвёздного вещества, поглотившего ударную волну]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_nebula;;

@@ -1,0 +1,47 @@
+concept_star_by_luminosity
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Звезды по светимости]
+	(* <- lang_ru;; *);
+	[Star by luminosity]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Звезды по светимости)]
+		(* <- lang_ru;; *);
+		[Def. (Star by luminosity)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Звезды по светимости -- разделение звезд по светимости и температуре.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Stars by luminosity - the division of stars by luminosity and temperature.]
+			(* <- lang_en;; *);;
+		*);;
+
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Звезды по светимости)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Выделают 8 спектральных классов]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_star;;

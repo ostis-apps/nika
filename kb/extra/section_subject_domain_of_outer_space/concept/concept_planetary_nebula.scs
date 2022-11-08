@@ -1,0 +1,47 @@
+concept_planetary_nebula
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Планета́рная туманность]
+	(* <- lang_ru;; *);
+	[Planetary Nebula]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Планета́рная туманность)]
+		(* <- lang_ru;; *);
+		[Def. (Planetary nebula)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Планета́рная туманность — астрономический объект, представляющий собой оболочку ионизированного газа вокруг центральной звезды, белого карлика.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A planetary nebula is a type of emission nebula consisting of an expanding, glowing shell of ionized gas ejected from red giant stars late in their lives.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Планета́рная туманность)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Для планетарных туманностей характерна округлая форма с чётким краем.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_nebula;;

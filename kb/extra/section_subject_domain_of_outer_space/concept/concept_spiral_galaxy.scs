@@ -1,0 +1,47 @@
+concept_spiral_galaxy
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Спиральная галактика]
+	(* <- lang_ru;; *);
+	[Spiral galaxy]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Спиральная галактика)]
+		(* <- lang_ru;; *);
+		[Def. (Spiral galaxy)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Спиральная галакьтка это галактика, которая имеет значительную дисковую составляющую и небольшой балдж, и, в отличие от линзовидных галактик, имеют выраженные спиральные рукава]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A spiral galaxy is a galaxy that has a significant disk component and a small bulge, and, unlike lenticular galaxies, has pronounced spiral arms.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Спиральная галактика)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Спиральные галактики составляют примерно половину всех галактик]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_galaxy;;
