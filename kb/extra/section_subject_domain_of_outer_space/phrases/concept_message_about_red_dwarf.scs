@@ -1,0 +1,36 @@
+concept_message_about_red_dwarf
+<- sc_node_class;
+=> nrel_main_idtf:
+	[красный карлик]
+	    (* <- lang_ru;; *);
+	[red dwarf]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_red_dwarf];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о экземпляре сущности)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about entity example)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о экземпляре сущностей - атомарное сообщение, которое содержит экземляр сущности, информацию о котором необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about entity example is an atomic message that contains entity example information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
