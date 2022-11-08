@@ -1,0 +1,30 @@
+concept_song
+<- sc_node_class;
+=> nrel_main_idtf:
+	[песня]
+	(* <- lang_ru;; *);
+	[song]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (песня)]
+		(* <- lang_ru;; *);
+		[Def. (song)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Песня - стихотворное произведение для пения.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Song - a short poem or other set of words set to music or meant to be sung.]
+			(* <- lang_en;; *);;
+		*);;
+	*);;

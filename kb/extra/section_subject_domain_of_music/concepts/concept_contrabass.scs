@@ -1,0 +1,24 @@
+concept_contrabass
+<= nrel_inclusion: concept_violin_family;
+=> nrel_main_idtf: [contrabass] (* <- lang_en;; *);
+=> nrel_main_idtf: [контрабас] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Контрабас)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [смычковый музыкальный инструмент с 4-мя струнами, настроенными по квартам: Eк Aк Dб Gб.] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Contrabass)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [bowed musical instrument with 4 strings tuned in fourths: Ek Ak Db Gb.] (* <- lang_en;; *);;
+	*);;
+*);;

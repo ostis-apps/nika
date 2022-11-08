@@ -1,0 +1,25 @@
+concept_musical_instrument
+=> nrel_main_idtf: [Musical instrument] (* <- lang_en;; *);
+=> nrel_main_idtf: [Музыкальные интсрументы] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Музыкальные инструменты)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [предмет, способный издавать звук, эстетически воспринимаемый как музыкальный.] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Musical instrument)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [an object capable of producing a sound that is aesthetically perceived as musical.] (* <- lang_en;; *);;
+	*);;
+*);
+
+<- sc_node_not_relation;;

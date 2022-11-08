@@ -1,0 +1,24 @@
+concept_bass_drum
+<= nrel_inclusion: concept_percussion_musical_instruments;
+=> nrel_main_idtf: [bass_drum] (* <- lang_en;; *);
+=> nrel_main_idtf: [басовый барабан] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Басовый барабан)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [представляет собой большой барабан , производящий ноты низкой определенной или неопределенной высоты . Инструмент обычно имеет цилиндрическую форму, диаметр барабана намного больше глубины барабана, с ударной головкой на обоих концах цилиндра.] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Bass drum)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [is a large drum that produces a note of low definite or indefinite pitch. The instrument is typically cylindrical, with the drum's diameter much greater than the drum's depth, with a struck head at both ends of the cylinder.] (* <- lang_en;; *);;
+	*);;
+*);;

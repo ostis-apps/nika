@@ -1,0 +1,12 @@
+violin
+  <- concept_wit_entity;
+  => nrel_main_idtf:
+    [Скрипка]
+    (* <- lang_ru;; *);
+    [Violin]
+    (* <- lang_en;; *);;
+
+answer_structure = [*
+	violin
+	<- concept_violin;;
+*];;

@@ -1,0 +1,24 @@
+concept_alto
+<= nrel_inclusion: concept_violin_family;
+=> nrel_main_idtf: [alto] (* <- lang_en;; *);
+=> nrel_main_idtf: [альт] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Альт)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [смычковый музыкальный инструмент с 4-мя струнами, настроенными по квинтам: Cм Gм D1 A1.] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Alto)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [bowed musical instrument with 4 strings tuned in fifths: Cm Gm D1 A1.] (* <- lang_en;; *);;
+	*);;
+*);;

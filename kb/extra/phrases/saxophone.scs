@@ -1,0 +1,12 @@
+saxophone
+  <- concept_wit_entity;
+  => nrel_main_idtf:
+    [Саксофон]
+    (* <- lang_ru;; *);
+    [Saxophone]
+    (* <- lang_en;; *);;
+
+answer_structure = [*
+	saxophone
+	<- concept_saxophone;;
+*];;

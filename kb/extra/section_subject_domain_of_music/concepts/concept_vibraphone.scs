@@ -1,0 +1,24 @@
+concept_vibraphone
+<= nrel_inclusion: concept_percussion_musical_instruments;
+=> nrel_main_idtf: [vibraphone] (* <- lang_en;; *);
+=> nrel_main_idtf: [вибрафон] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Вибрафон)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [инструмент состоящий из клавиш, традиционно из полутвёрдого алюминиевого сплава, расположенных по принципу фортепианной клавиатуры, и электромотора, приводящего в действие лопасти, которые открывают и закрывают отверстия в резонаторах (полых, металлических трубах, имеющих дно в нижней части), расположенных под клавишами и тем самым создают эффект вибрации и объёмность звучания.] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Vibraphone)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [an instrument consisting of keys, traditionally made of semi-hard aluminum alloy, arranged like a piano keyboard, and an electric motor that drives paddles that open and close holes in resonators (hollow, metal tubes with a bottom at the bottom) located under the keys and theme thereby creating the effect of vibration and surround sound.] (* <- lang_en;; *);;
+	*);;
+*);;

@@ -1,0 +1,31 @@
+concept_pop
+<- concept_music_genre;
+<- sc_node_class;
+=> nrel_main_idtf:
+	[поп]
+	(* <- lang_ru;; *);
+	[pop]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (поп)]
+		(* <- lang_ru;; *);
+		[Def. (pop)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Поп - жанр музыки, зародившийся в 50х годах в США.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Pop music is a genre of popular music that originated in its modern form during the mid-1950s in the United States and the United Kingdom.]
+			(* <- lang_en;; *);;
+		*);;
+	*);;

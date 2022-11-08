@@ -1,0 +1,24 @@
+concept_drum
+<= nrel_inclusion: concept_percussion_musical_instruments;
+=> nrel_main_idtf: [drum] (* <- lang_en;; *);
+=> nrel_main_idtf: [барабан] (* <- lang_ru;; *);
+
+<-sc_node_class;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	=> nrel_main_idtf:[Опр.(Барабан)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [Типичным представителем является мембранный барабан, состоящий из полого корпуса-резонатора определённой формы или рамы, на которую натянута кожаная или пластиковая мембрана.] (* <- lang_ru;; *);;
+	*);;
+	<- definition;;
+	=> nrel_main_idtf:[Def.(Drum)] (* <- lang_en;; *);;
+	<= nrel_sc_text_translation: 
+	...
+	(* 
+		-> [A typical representative is a membrane drum, consisting of a hollow resonator body of a certain shape or frame, on which a leather or plastic membrane is stretched.] (* <- lang_en;; *);;
+	*);;
+*);;
