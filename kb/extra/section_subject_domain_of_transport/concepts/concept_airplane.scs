@@ -1,0 +1,34 @@
+concept_airplane
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [самолёт] (*<-lang_ru;;*);
+    [airplane] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (самолёт)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_atmosphere;
+        concept_aircraft;
+        concept_engine
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Самолёт - класс аэродинамичных летательных аппаратов тяжелее воздуха, предназначенных для полётов в атмосфере.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(самолёт)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+[Классификация самолётов может быть дана по различным признакам — по назначению, по конструктивным признакам, по типу двигателей, по лётно-техническим параметрам.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

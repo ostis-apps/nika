@@ -1,0 +1,94 @@
+section_subject_domain_of_transport
+=> nrel_main_idtf:
+	  [Раздел. Предметная область транспорта]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of transport] 
+  (* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+                  section_subject_domain_of_railway_transport;
+                  section_subject_domain_of_air_transport;
+                  section_subject_domain_of_automobile_transport;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_transport = [*
+	subject_domain_of_transport
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область транспорт]
+   (* <- lang_ru;; *);
+   [Subject domain of transport]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_transport;
+	-> rrel_not_maximum_studied_object_class:
+      concept_aircraft;
+      concept_airplane;
+      concept_airport;
+      concept_atmosphere;
+      concept_automobile;
+      concept_bus_station;
+      concept_engine;
+      concept_factory;
+      concept_helicopter;
+      concept_helm;
+      concept_person;
+      concept_petrol;
+      concept_rails;
+      concept_railway_carrige;
+      concept_railway_station;
+      concept_road;
+      concept_steering_wheel;
+      concept_train;
+      concept_transport;
+      concept_wheel;
+      concept_wing;      
+	-> rrel_explored_relation:
+      nrel_brand;
+      nrel_constructor;
+      nrel_detail;
+      nrel_fuel;
+      nrel_inventor;
+      nrel_kind_of_transport;
+      nrel_manufacturer;
+      nrel_move_through;
+      nrel_passenger_pick_up_point;
+      nrel_passenger;;
+*];;
+
+section_subject_domain_of_transport
+-> rrel_key_sc_element:
+      subject_domain_of_transport; 
+      concept_aircraft;
+      concept_airplane;
+      concept_airport;
+      concept_atmosphere;
+      concept_automobile;
+      concept_bus_station;
+      concept_engine;
+      concept_factory;
+      concept_helicopter;
+      concept_helm;
+      concept_person;
+      concept_petrol;
+      concept_rails;
+      concept_railway_carrige;
+      concept_railway_station;
+      concept_road;
+      concept_steering_wheel;
+      concept_train;
+      concept_transport;
+      concept_wheel;
+      concept_wing;   
+      nrel_brand;
+      nrel_constructor;
+      nrel_detail;
+      nrel_fuel;
+      nrel_inventor;
+      nrel_kind_of_transport;
+      nrel_manufacturer;
+      nrel_move_through;
+      nrel_passenger_pick_up_point;
+      nrel_passenger;;

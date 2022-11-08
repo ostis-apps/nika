@@ -1,0 +1,29 @@
+concept_atmosphere
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [атмосфера] (*<-lang_ru;;*);
+    [atmosphere] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (атмосфера)] (* <- lang_ru;; *);;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Атмосфера - газовая оболочка небесного тела, удерживаемая около него гравитацией.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(атмосфера)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+[Атмосфера Земли содержит кислород, используемый большинством живых организмов для дыхания, и диоксид углерода, потребляемый растениями и цианобактериями в процессе фотосинтеза.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

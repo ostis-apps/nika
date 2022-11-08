@@ -1,0 +1,64 @@
+section_subject_domain_of_automobile_transport
+=> nrel_main_idtf:
+	  [Раздел. Предметная область автомобильного транспорта]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of automobile transport] 
+  (* <- lang_en;; *);;
+
+section_subject_domain_of_automobile_transport = [*
+	subject_domain_of_automobile_transport
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область автомобильного транспорта]
+   (* <- lang_ru;; *);
+   [Subject domain of automobile transport]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_automobile;
+	-> rrel_not_maximum_studied_object_class:
+      concept_automobile;
+      concept_engine;
+      concept_bus_station;
+      concept_factory;
+      concept_person;
+      concept_petrol;
+      concept_road;
+      concept_steering_wheel;
+      concept_wheel;
+	-> rrel_explored_relation:
+      nrel_constructor;
+      nrel_detail;
+      nrel_inventor;
+      nrel_kind_of_transport;
+      nrel_manufacturer;
+      nrel_move_through;
+      nrel_passenger_pick_up_point;
+      nrel_passenger;
+      nrel_fuel;
+      nrel_brand;;
+
+*];;
+
+section_subject_domain_of_transport
+-> rrel_key_sc_element:
+    subject_domain_of_automobile_transport; 
+      concept_automobile;
+      concept_engine;
+      concept_bus_station;
+      concept_factory;
+      concept_person;
+      concept_petrol;
+      concept_road;
+      concept_steering_wheel;
+      concept_wheel;    
+      nrel_constructor;
+      nrel_detail;
+      nrel_inventor;
+      nrel_kind_of_transport;
+      nrel_manufacturer;
+      nrel_move_through;
+      nrel_passenger_pick_up_point;
+      nrel_passenger;
+      nrel_fuel;
+      nrel_brand;;

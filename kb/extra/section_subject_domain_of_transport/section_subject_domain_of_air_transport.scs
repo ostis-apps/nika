@@ -1,0 +1,65 @@
+section_subject_domain_of_air_transport
+=> nrel_main_idtf:
+	  [Раздел. Предметная область воздушного транспорта]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of air transport] 
+  (* <- lang_en;; *);;
+
+section_subject_domain_of_air_transport = [*
+	subject_domain_of_air_transport
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область воздушного транспорта]
+   (* <- lang_ru;; *);
+   [Subject domain of air transport]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_aircraft;
+	-> rrel_not_maximum_studied_object_class:
+      concept_aircraft;
+      concept_airplane;
+      concept_airport;
+      concept_atmosphere;
+      concept_engine;
+      concept_engine;
+      concept_factory;
+      concept_helicopter;
+      concept_helm;
+      -> rrel_explored_relation:
+      nrel_constructor;
+      nrel_detail;
+      nrel_inventor;
+      nrel_kind_of_transport;
+      nrel_manufacturer;
+      nrel_move_through;
+      nrel_passenger_pick_up_point;
+      nrel_passenger;
+      nrel_fuel;
+      nrel_brand;;
+
+*];;
+
+
+section_subject_domain_of_transport
+-> rrel_key_sc_element:
+    subject_domain_of_air_transport; 
+      nrel_constructor;
+      nrel_detail;
+      nrel_inventor;
+      nrel_kind_of_transport;
+      nrel_manufacturer;
+      nrel_move_through;
+      nrel_passenger_pick_up_point;
+      nrel_passenger;
+      nrel_fuel;
+      nrel_brand;
+      concept_aircraft;
+      concept_airplane;
+      concept_airport;
+      concept_atmosphere;
+      concept_engine;
+      concept_engine;
+      concept_factory;
+      concept_helicopter;
+      concept_helm;;

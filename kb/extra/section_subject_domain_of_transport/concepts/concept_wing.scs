@@ -1,0 +1,33 @@
+concept_wing
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [крыло] (*<-lang_ru;;*);
+    [wing] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (крыло)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_airplane;
+        nrel_detail
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Крыло - плоскость, служащая для образования подъёмной силы самолёта.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(крыло)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Подъёмная сила крыла создаётся за счёт изменения направления потока воздуха.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;
