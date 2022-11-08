@@ -1,0 +1,37 @@
+concept_message_about_os_groups
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о семействах ос]
+	    (* <- lang_ru;; *);
+	[message about os groups]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_os_groups];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о семействах ос )]
+	        (* <- lang_ru;; *);
+	    [Def. (message about os groups)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о семействах ос - атомарное сообщение, которое содержит семейства ос , информацию о которых необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about os groups is an atomic message that contains os groups information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
