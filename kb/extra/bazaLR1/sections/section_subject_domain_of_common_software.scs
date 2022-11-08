@@ -1,0 +1,52 @@
+section_subject_domain_of_common_software
+=> nrel_main_idtf: 
+	[Раздел. Предметная область ПО общего назначения]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Common software]
+	(* <- lang_en;; *);
+	
+<= nrel_section_decomposition: 
+	{
+		section_subject_domain_of_text_editor;
+		section_subject_domain_of_web_browser
+	};
+
+<- rrel_key_sc_element:
+	concept_text_editor;
+	concept_web_browser;
+	nrel_property;
+	nrel_type;
+	subject_domain_of_common_software;
+	concept_common_software;;
+
+section_subject_domain_of_common_software = [*
+subject_domain_of_common_software
+
+=> nrel_main_idtf: 
+	[Предметная область ПО общего назначения]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Common software]
+	(* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+	section_subject_domain_of_text_editors;
+	section_subject_domain_of_web_browsers;
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_application_software;
+		
+-> rrel_maximum_studied_object_class:
+	concept_common_software;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_text_editor;
+	concept_web_browser;
+	
+-> rrel_explored_relation:
+	nrel_property;
+	nrel_type;
+	
+<- subject_domain;;
+*];;

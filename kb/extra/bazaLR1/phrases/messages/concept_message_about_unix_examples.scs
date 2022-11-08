@@ -1,0 +1,37 @@
+concept_message_about_unix_examples
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение об экземплярах Юникс]
+	    (* <- lang_ru;; *);
+	[message about unix examples]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_unix_examples];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение об экземплярах юникс)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about unix examples)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение об экземплярах юникс - атомарное сообщение, которое содержит экземпляры Юникс, информацию о которых необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about Unix examples is an atomic message that contains Unix examples information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

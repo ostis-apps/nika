@@ -1,0 +1,47 @@
+concept_application_software
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Прикладное Программное Обеспечение ]
+	(* <- lang_ru;; *);
+	[Application software]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Программное обеспечение )]
+		(* <- lang_ru;; *);
+		[Def. (Application software)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Программное обеспечение -   программа, ориентированная на решение конкретных задач, рассчитанная на взаимодействие с пользователем]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[An application program is a computer program designed to carry out a specific task other than one relating to the operation of the computer itself, typically to be used by end-users.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Программное обеспечение)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[К прикладному программному обеспечению относятся компьютерные программы, написанные для пользователей или самими пользователями для задания компьютеру конкретной работы]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_operating_system;;

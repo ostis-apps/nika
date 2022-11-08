@@ -1,0 +1,51 @@
+nrel_type
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-non_oriented_relation;
+<-antireflexive_relation;
+<-transitive_relation;
+<-symmetric_relation;
+=>nrel_main_idtf:
+	[Тип*]
+	(* <- lang_ru;; *);
+	[Type*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_software;
+=>nrel_second_domain: concept_software;
+=>nrel_definitional_domain: ... (*
+	<= nrel_combination:
+	{
+		concept_software;
+		concept_software
+	};;
+*);
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Тип*)]
+		(* <- lang_ru;; *);
+		[Def.(Type*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Типы программного обеспечения* - это различные наборы программ и приложений, которые формируются на основе их различных функций и характеристик.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Type of software* are various sets of programs and applications that are formed on the basis of their various functions and characteristics.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_software;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

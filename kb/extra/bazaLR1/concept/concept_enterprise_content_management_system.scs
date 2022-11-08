@@ -1,0 +1,47 @@
+concept_enterprise_content_management_system
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Система управления корпоративным контентом]
+	(* <- lang_ru;; *);
+	[Enterprise content management system]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Система управления корпоративным контентом)]
+		(* <- lang_ru;; *);
+		[Def. (Enterprise content management system)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[ECM-система — программное обеспечение для управления корпоративным контентом.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[ECM-system - software for corporate content management.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Система управления корпоративным контентом)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[ Часто ECM-системы считаются особой разновидностью систем управления содержимым.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_content_management_system;;

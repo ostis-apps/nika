@@ -1,0 +1,47 @@
+concept_reverse_translator
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Обратный транслятор]
+	(* <- lang_ru;; *);
+	[Reverse translator]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Обратный транслятор)]
+		(* <- lang_ru;; *);
+		[Def. (Reverse translator)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Обратный транслятор — транслятор, выполняющий преобразование машинного кода в текст на каком-либо языке программирования.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A Reverse translator is a translator that converts machine code to text in any programming language.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Обратный транслятор)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[преобразует машинный код, объектный файл или библиотечные модули в текст программы на языке ассемблера.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_translator;;

@@ -1,0 +1,47 @@
+concept_posix
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Posix]
+	(* <- lang_ru;; *);
+	[Posix]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Posix)]
+		(* <- lang_ru;; *);
+		[Def. (Posix)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[POSIX — набор стандартов, описывающих интерфейсы между операционной системой и прикладной программой , библиотеку языка C и набор приложений и их интерфейсов. ]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[POSIX is a set of standards that describe interfaces between an operating system and an application program, a C language library, and a set of applications and their interfaces.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Posix)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[ Стандарт создан для обеспечения совместимости различных UNIX-подобных операционных систем и переносимости прикладных программ на уровне исходного кода, но может быть использован и для не-Unix систем.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_unix;;

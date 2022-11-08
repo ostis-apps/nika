@@ -1,0 +1,48 @@
+section_subject_domain_of_groups_of_operating_systems
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Семейства операционных систем]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Groups of operating systems]
+	(* <- lang_en;; *);
+	
+<= nrel_section_decomposition: 
+	{
+		section_subject_domain_of_windows;
+		section_subject_domain_of_unix
+	};
+
+<- rrel_key_sc_element:
+	concept_windows;
+	concept_unix;
+	subject_domain_of_groups_of_operating_systems;
+	concept_groups_of_operating_systems;;
+
+section_subject_domain_of_groups_of_operating_systems = [*
+subject_domain_of_groups_of_operating_systems
+
+=> nrel_main_idtf: 
+	[Предметная область Семейство операционных систем]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of  Groups of operating systems]
+	(* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+	section_subject_domain_of_windows;
+	section_subject_domain_of_unix;
+	
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_roups_of_operating_systems;
+		
+-> rrel_maximum_studied_object_class:
+	concept_groups_of_operating_systems;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_windows;
+	concept_unix;
+	
+	
+<- subject_domain;;
+*];;

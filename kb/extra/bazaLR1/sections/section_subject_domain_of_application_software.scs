@@ -1,0 +1,56 @@
+section_subject_domain_of_application_software
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Прикладное программное обеспечение]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Application Software]
+	(* <- lang_en;; *);
+	
+<= nrel_section_decomposition: 
+	{
+		section_subject_domain_of_common_software;
+		section_subject_domain_of_entertainment_software;
+		section_subject_domain_of_special_purpose_software
+	};
+
+<- rrel_key_sc_element:
+	concept_common_software;
+	concept_entertainment_software;
+	concept_special_purpose_software;
+	nrel_type;
+	nrel_property;
+	subject_domain_of_application_software;
+	concept_application_software;;
+
+section_subject_domain_of_application_software = [*
+subject_domain_of_application_software
+
+=> nrel_main_idtf: 
+	[Предметная область Программное обеспечение]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Application  software]
+	(* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+	section_subject_domain_of_common_software;
+	section_subject_domain_of_entertainment_software;
+	section_subject_domain_of_special_purpose_software;
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_application_software;
+		
+-> rrel_maximum_studied_object_class:
+	concept_application_software;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_common_software;
+	concept_entertainment_software;
+	concept_special_purpose_software;
+	
+-> rrel_explored_relation:
+	nrel_type;
+	nrel_property;
+
+<- subject_domain;;
+*];;

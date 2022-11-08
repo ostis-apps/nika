@@ -1,0 +1,47 @@
+concept_entertainment_software
+<- sc_node_class;
+=> nrel_main_idtf:
+	[программное обеспечение развлекательного назначения]
+	(* <- lang_ru;; *);
+	[Entertainment software]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (программное обеспечение развлекательного назначения)]
+		(* <- lang_ru;; *);
+		[Def. (Entertainment software)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[программное обеспечение развлекательного назначения - те программные средства, основной целью которых является развлечение пользователя.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Entertainment software - software tools whose main purpose is to entertain the user.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (программное обеспечение развлекательного назначения)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[К программному обеспечению развлекательного назначения относятся игры, медиаплееры.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_application_software;;

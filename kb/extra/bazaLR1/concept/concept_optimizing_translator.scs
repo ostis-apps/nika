@@ -1,0 +1,47 @@
+concept_optimizing_translator
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Оптимизирующий транслятор]
+	(* <- lang_ru;; *);
+	[Optimizing translator]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Оптимизирующий транслятор)]
+		(* <- lang_ru;; *);
+		[Def. (Optimizing translator)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Оптимизирующий транслятор — транслятор, выполняющий оптимизацию создаваемого кода.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A dialog translator is a translator that provides the use of a programming language in time-sharing mode.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Оптимизирующий транслятор)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Оптимизация может происходить неявно во время трансляции программы]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_translator;;

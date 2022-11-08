@@ -1,0 +1,47 @@
+concept_quasidynamic_expert_system
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Квазидинамическая экспертная система]
+	(* <- lang_ru;; *);
+	[Quasidynamic expert system]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Квазидинамическая экспертная система)]
+		(* <- lang_ru;; *);
+		[Def. (Quasidynamic expert system)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Квазидинамические  — интерпретируют ситуацию, которая меняется с некоторым фиксированным интервалом времени.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Quasi-dynamic - interpret the situation, which changes with some fixed time interval.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Квазидинамическая экспертная система)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[способные принимать решения в реальном времени в динамически изменяющихся средах.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_expert_system;;

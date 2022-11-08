@@ -1,0 +1,47 @@
+concept_mediaplayer
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Медиаплеер]
+	(* <- lang_ru;; *);
+	[Mediaplayer]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Медиаплеер)]
+		(* <- lang_ru;; *);
+		[Def. (Mediaplayer)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Медиаплеер - компьютерная программа, предназначенная для воспроизведения файлов мультимедиа-содержимого.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A media player is a computer program designed to play multimedia content files.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Медиаплеер)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Одна разновидность медиаплееров предназначена для воспроизведения только аудио- или же видеофайлов, и которые называются, соответственно, — аудиоплеер и видеоплеер.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_entertainment_software;;

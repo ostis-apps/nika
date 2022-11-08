@@ -1,0 +1,47 @@
+concept_browser_extension
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Расширение браузера]
+	(* <- lang_ru;; *);
+	[Browser extension]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Расширение браузера)]
+		(* <- lang_ru;; *);
+		[Def. (Browser extension)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Расширение браузера — компьютерная программа, которая в некотором роде расширяет функциональные возможности браузера.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A browser extension is a computer program that extends the functionality of a browser in some way.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Расширение браузера))]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[В зависимости от браузера термин может отличаться от условленных обозначений, к примеру, plug-in , add-on  или extension.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_web_browser;;

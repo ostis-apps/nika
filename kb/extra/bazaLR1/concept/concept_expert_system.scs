@@ -1,0 +1,48 @@
+concept_expert_system
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Экспертная система]
+	(* <- lang_ru;; *);
+	[Expert System]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Экспертная система)]
+		(* <- lang_ru;; *);
+		[Def. (Expert System)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Экспертная система - компьютерная система, способная частично заменить специалиста-эксперта в разрешении проблемной ситуации.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[An expert system is a computer system that can partially replace a specialist expert in resolving a problem situation.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Экспертная система)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Важнейшей частью экспертной системы являются базы знаний как модели поведения экспертов в определённой области знаний с использованием процедур логического вывода и принятия решений, иными словами, базы знаний — совокупность фактов и правил логического вывода в выбранной предметной области деятельности.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+<=nrel_inclusion: concept_special_purpose_software;;

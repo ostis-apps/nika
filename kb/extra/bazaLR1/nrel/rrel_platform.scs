@@ -1,0 +1,54 @@
+rrel_platform
+<- sc_node_role_relation;
+<- relation;
+<- role_relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+	[Совместимость']
+	(* <- lang_ru;; *);
+	[Compatible']
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+    [rrel_entity];
+=> nrel_first_domain: concept_software;
+=> nrel_second_domain: concept_computer;
+=> nrel_definitional_domain:
+	...
+	(*
+	<= nrel_combination:
+		{
+			concept_software;
+			concept_computer
+		};;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (Совместимость')]
+		(* <- lang_ru;; *);
+		[Def. (Compatible')]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Совместимость' - отношение, которое связывает программное обеспечение и устойство.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Compatible' - a relationship that links software and any device.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_software
+		};;
+	*);;

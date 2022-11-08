@@ -1,0 +1,47 @@
+concept_source_code_editor
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Редактор исходного кода]
+	(* <- lang_ru;; *);
+	[Source code editor]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Редактор исходного кода)]
+		(* <- lang_ru;; *);
+		[Def. (Source code editor)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Редактор исходного кода - текстовый редактор для создания и редактирования исходного кода программ.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Source code editor - a text editor for creating and editing the source code of programs.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Редактор исходного кода)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Такие редакторы предоставляют удобный способ для запуска компилятора, интерпретатора, отладчика или других программ, необходимых в процессе разработки программного обеспечения.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_text_editor;;

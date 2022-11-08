@@ -1,0 +1,48 @@
+concept_windows_phone
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Windows phone]
+	(* <- lang_ru;; *);
+	[Windows phone]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Windows phone)]
+		(* <- lang_ru;; *);
+		[Def. (Windows phone)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Windows phone — Это семейство операционных систем реального времени было специально разработано для мобильных устройств.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Windows phone - This family of real-time operating systems was specifically designed for mobile devices.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Windows phone)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Поддерживаются процессоры ARM, MIPS, SuperH и x86.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+<=nrel_inclusion: concept_windows;;

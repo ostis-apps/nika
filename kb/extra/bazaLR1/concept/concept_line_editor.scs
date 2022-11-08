@@ -1,0 +1,47 @@
+concept_line_editor
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Строковый текстовый редактор]
+	(* <- lang_ru;; *);
+	[Line editor]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Строковый текстовый редактор)]
+		(* <- lang_ru;; *);
+		[Def. (Line editor)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Строковый текстовый редактор — работает с текстом как последовательностью пронумерованных строк, выполняя операции над текстом в указанных строках.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[line text editor operates on text as a sequence of numbered lines, performing operations on the text on the specified lines.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Строковый текстовый редактор)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Примером такого редактора может быть edlin, входивший в состав MS-DOS.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_text_editor;;

@@ -1,0 +1,47 @@
+concept_single_pass_translator
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Однопроходной транслятор ]
+	(* <- lang_ru;; *);
+	[Single pass translator]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Однопроходной транслятор )]
+		(* <- lang_ru;; *);
+		[Def. (Single pass translator)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Однопроходной транслятор — транслятор, преобразующий исходный код при его однократном последовательном чтении (за один проход).]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A one-pass translator is a translator that transforms the source code during its single sequential reading (in one pass).]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Однопроходной транслятор)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[преобразует исходный код при его однократном последовательном чтении]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_translator;;

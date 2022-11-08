@@ -1,0 +1,47 @@
+concept_syntactically_oriented_translator
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Синтаксически-ориентированный транслятор]
+	(* <- lang_ru;; *);
+	[Syntactically-oriented translator]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Синтаксически-ориентированный транслятор)]
+		(* <- lang_ru;; *);
+		[Def. (Syntactically-oriented translator)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Синтаксически-ориентированный транслятор — транслятор, получающий на вход описание синтаксиса и семантики языка, текст на описанном языке и выполняющий трансляцию в соответствии с заданным описанием.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A syntactically oriented translator is a translator that receives as input a description of the syntax and semantics of the language, text in the described language, and performs translation in accordance with the specified description.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Синтаксически-ориентированный транслятор)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[получает на вход описание синтаксиса и семантики языка]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_translator;;

@@ -1,0 +1,48 @@
+concept_special_purpose_software
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Специальное программное обеспечение]
+	(* <- lang_ru;; *);
+	[special purpose software]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Специальное программное обеспечение)]
+		(* <- lang_ru;; *);
+		[Def. (special purpose software)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Специальное программное обеспечение -совокупность программ для решения более узких задач различных предметных областей.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[special purpose software -a set of programs for solving narrower problems of various subject areas.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Специальное программное обеспечение)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[К ним относятся Экспертные системы , Трансляторы и т.д.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+<=nrel_inclusion: concept_application_software;;

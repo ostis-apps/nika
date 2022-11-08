@@ -1,0 +1,48 @@
+concept_windows_nt
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Windows NT]
+	(* <- lang_ru;; *);
+	[Windows NT]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Windows NT)]
+		(* <- lang_ru;; *);
+		[Def. (Windows NT)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Windows NT —  линейка операционных систем (ОС) производства корпорации Microsoft и название первых версий ОС.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Windows NT is a line of operating systems (OS) manufactured by Microsoft Corporation and the name of the first versions of the OS.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Windows NT)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Операционные системы этого семейства в настоящее время работают на процессорах с архитектурами x86, x86-64, ARM]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+<=nrel_inclusion: concept_windows;;

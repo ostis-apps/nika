@@ -1,0 +1,47 @@
+concept_common_software
+<- sc_node_class;
+=> nrel_main_idtf:
+	[программное обеспечение общего назначения]
+	(* <- lang_ru;; *);
+	[Common software]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (программное обеспечение общего назначения)]
+		(* <- lang_ru;; *);
+		[Def. (common software)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[программное обеспечение общего назначения -  используется для решения наиболее общих задач информационного характера в любой сфере человеческой деятельности.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[common software - used to solve the most common informational problems in any type of activity.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (программное обеспечение общего назначения)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[К программному обеспечению общего назначения относятся Текстовые редакторы, Веб-браузеры.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_application_software;;
