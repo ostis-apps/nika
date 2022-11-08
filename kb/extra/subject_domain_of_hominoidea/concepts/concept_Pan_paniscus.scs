@@ -1,0 +1,47 @@
+concept_Pan_paniscus
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Карликовый шимпанзе]
+	(* <- lang_ru;; *);
+	[Pan paniscus]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Карликовый шимпанзе)]
+		(* <- lang_ru;; *);
+		[Def. (Pan paniscus)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Карликовый шимпанзе — вид млекопитающих из семейства гоминид.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Pan paniscus is a species of mammal from the family hominidae.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Карликовый шимпанзе)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Несмотря на своё название, по размеру он не меньше шимпанзе обыкновенного, но уступает ему в плотности телосложения. Кожа бонобо — чёрная, а не розовая, как у обыкновенных шимпанзе. Более длинные ноги и узкие, покатые плечи, в отличие от обыкновенных шимпанзе. Голосовые сигналы карликовых шимпанзе — это резкие, высокие, лающие звуки.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_Pan;;

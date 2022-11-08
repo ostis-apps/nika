@@ -1,0 +1,54 @@
+section_subject_domain_of_Hominidae
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Гоминиды]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Hominidae]
+	(* <- lang_en;; *);
+	
+<= nrel_section_decomposition: 
+	{
+		section_subject_domain_of_Pongo;
+		section_subject_domain_of_Gorilla;
+		section_subject_domain_of_Pan;
+		section_subject_domain_of_Homo
+	};
+
+<- rrel_key_sc_element:
+		concept_Pongo;
+		concept_Gorilla;
+		concept_Pan;
+		concept_Homo;
+		subject_domain_of_Hominidae;
+		concept_Hominidae;;
+
+section_subject_domain_of_Hominidae = [*
+subject_domain_of_Hominidae
+
+=> nrel_main_idtf: 
+	[Предметная область Гоминиды]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Hominidae]
+	(* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+	section_subject_domain_of_Pongo;
+	section_subject_domain_of_Gorilla;
+	section_subject_domain_of_Pan;
+	section_subject_domain_of_Homo;
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_Hominidae;
+		
+-> rrel_maximum_studied_object_class:
+	concept_Hominidae;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_Pongo;
+	concept_Gorilla;
+	concept_Pan;
+	concept_Homo;
+	
+<- subject_domain;;
+*];;

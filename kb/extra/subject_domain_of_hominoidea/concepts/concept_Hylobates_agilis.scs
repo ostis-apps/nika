@@ -1,0 +1,47 @@
+concept_Hylobates_agilis
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Чернорукий гиббон]
+	(* <- lang_ru;; *);
+	[Hylobates agilis]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Чернорукий гиббон)]
+		(* <- lang_ru;; *);
+		[Def. (Hylobates agilis)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Чернорукий гиббон - вид приматов из семейства гиббоновых. Обитает в Индонезии на острове Суматра, в Малайзии и Таиланде. Международный союз охраны природы рассматривает вид как находящийся под угрозой из-за разрушения среды обитания и браконьерства.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The Hylobates agilis is a species of primate from the Gibbon family. It lives in Indonesia on the island of Sumatra, in Malaysia and Thailand. The International Union for Conservation of Nature considers the species to be under threat due to habitat destruction and poaching.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Чернорукий гиббон)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Шерсть варьируется по цвету от чёрного до красно-коричневого. На бровях светлые отметины, самцы имеют белые или светло-серые щёки. Самцы несколько крупнее самок. Вес от 4 до 6 кг, в среднем 5 кг, хотя в неволе могут достигать 8 кг. Длина тела от 44 до 63,5 см. Хвост отсутствует, как и у остальных гиббонов.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_Hylobates;;

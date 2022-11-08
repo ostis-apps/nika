@@ -1,0 +1,52 @@
+nrel_brachiation
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-non_oriented_relation;
+<-antireflexive_relation;
+<-antransitive_relation;
+<-asymmetric_relation;
+=>nrel_main_idtf:
+	[Брахиация*]
+	(* <- lang_ru;; *);
+	[Brachiation*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_Hominoidea;
+=>nrel_second_domain: concept_movement;
+=>nrel_definitional_domain: ... (*
+	<= nrel_combination:
+	{
+		concept_Hominoidea;
+		concept_movement
+	};;
+*);
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Брахиация*)]
+		(* <- lang_ru;; *);
+		[Def.(Brachiation*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Брахиация* - форма локомоции, позволяющей передвигаться по ветвям деревьев.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Brachiation* - a form of locomotion that allows you to move along the branches of trees.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_Hominoidea;
+		concept_movement;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

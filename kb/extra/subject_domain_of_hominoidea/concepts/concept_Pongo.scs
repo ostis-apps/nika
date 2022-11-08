@@ -1,0 +1,48 @@
+concept_Pongo
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Орангутаны]
+	(* <- lang_ru;; *);
+	[Pongo]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Орангутаны)]
+		(* <- lang_ru;; *);
+		[Def. (Pongo)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Орангутаны — род древесных человекообразных обезьян, один из наиболее близких к человеку по гомологии ДНК. В разговорном русском языке равнозначным является вариант названия «орангутанг».]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Orangutans are a genus of arboreal apes, one of the closest to humans in terms of DNA homology. In colloquial Russian, the variant name "orangutan" is equivalent.]
+			(* <- lang_en;; *);;
+		*);;
+
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Орангутаны)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[По некоторым данным орангутан считается самым умным животным после человека.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion:concept_Hominidae;;

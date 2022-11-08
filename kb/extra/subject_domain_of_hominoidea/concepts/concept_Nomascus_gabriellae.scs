@@ -1,0 +1,47 @@
+concept_Nomascus_gabriellae
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Желтощёкий хохлатый гиббон]
+	(* <- lang_ru;; *);
+	[Nomascus gabriellae]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Желтощёкий хохлатый гиббон)]
+		(* <- lang_ru;; *);
+		[Def. (Nomascus gabriellae)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Желтощёкий хохлатый гиббон — вид приматов из семейства гиббоновых. Обитает в Камбодже, Лаосе и Вьетнаме.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Nomascus gabriellae is a species of primate from the Gibbon family. It lives in Cambodia, Laos and Vietnam.]
+			(* <- lang_en;; *);;
+		*);;
+
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Желтощёкий хохлатый гиббон)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Ранее все современные виды номаскусов классифицировались в составе вида Hylobates concolor, который помещался в подрод Nomascus в составе рода Hylobates. Желтощёкий хохлатый гиббон считался подвидом Hylobates concolor gabriellae. Однако некоторые морфологические и поведенческие отличия позволили поднять его до ранга вида, а Hylobates был разбит на несколько отдельных родов, включая Nomascus.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_Nomascus;;

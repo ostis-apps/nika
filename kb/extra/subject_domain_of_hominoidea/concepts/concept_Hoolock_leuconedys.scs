@@ -1,0 +1,48 @@
+concept_Hoolock_leuconedys
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Восточный хулок]
+	(* <- lang_ru;; *);
+	[Hoolock leuconedys]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Восточный хулок)]
+		(* <- lang_ru;; *);
+		[Def. (Hoolock leuconedys)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Восточный хулок — вид приматов из семейства гиббоновых. Встречается в Индии, Китае и Мьянме.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The Eastern Hoolock is a species of primate from the Gibbon family. It is found in India, China and Myanmar.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Восточный хулок)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Ранее хулоки классифицировались в составе рода Гиббоны, однако после проведённых молекулярных исследований были выделены в отдельный род с двумя видами, одним из которых является восточный хулок, а другим — западный хулок. Оба вида до этого имели ранг подвидов.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+<=nrel_inclusion: concept_Hoolock;;

@@ -1,0 +1,47 @@
+concept_Hylobates_klossii
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Карликовый гиббон]
+	(* <- lang_ru;; *);
+	[Supernova remnant Nebula]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Карликовый гиббон)]
+		(* <- lang_ru;; *);
+		[Def. (Hylobates klossii)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Карликовый гиббон — вид приматов из семейства гиббоновых. Видовое латинское название дано в честь английского зоолога Сесила Бодена Клосса 1877—1949]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The Hylobates klossii is a species of primate from the Gibbon family. The specific Latin name is given in honor of the English zoologist Cecil Boden Kloss 1877-1949]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Карликовый гиббон)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[В отличие от других видов гиббоновых, кроме серебристого гиббона, самцы и самки карликового гиббона никогда не поют в дуэте. Пение самцов обычно начинается за час до восхода солнца, хор самок звучит после заката. С помощью песен карликовые гиббоны заявляют права на свою территорию]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_Hylobates;;

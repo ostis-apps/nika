@@ -1,0 +1,37 @@
+concept_message_about_hominoidea_examples
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение об экземплярах человекообразных]
+	    (* <- lang_ru;; *);
+	[message about hominoidea examples]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_hominoidea_examples];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение об экземплярах человекообразных)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about hominoidea examples)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о Сандре - атомарное сообщение, которое содержит информацию о Сандре которую необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about Sandra is an atomic message that contains Sandra information which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

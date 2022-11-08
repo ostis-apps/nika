@@ -1,0 +1,47 @@
+concept_Symphalangus_syndactylus
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Сиаманг]
+	(* <- lang_ru;; *);
+	[Symphalangus syndactylus]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Сиаманг)]
+		(* <- lang_ru;; *);
+		[Def. (Symphalangus syndactylus)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Сиаманг — вид приматов семейства Гиббоновые]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Symphalangus syndactylus is a species of primate in the Gibbon family]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Сиаманг)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Рост сиаманга составляет от 75 до 90 см, а вес от 8 до 13 кг, благодаря чему он является самым крупным и тяжёлым из всех гиббоновых. Его шерсть окрашена в чёрный цвет, а его руки, как у всех представителей подсемейства гиббоновых, чрезвычайно длинны и могут достигать размаха 1,5 метра. У этих обезьян развит горловой мешок, служащий резонатором при пении. Благодаря этому пение сиамангов слышно за 3-4 километра. Горловой мешок у самок и самцов всегда голый. Диплоидный набор хромосом — 50.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_Symphalangus;;

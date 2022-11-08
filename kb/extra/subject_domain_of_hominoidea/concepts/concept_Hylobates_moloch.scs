@@ -1,0 +1,47 @@
+concept_Hylobates_moloch
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Серебристый гиббон]
+	(* <- lang_ru;; *);
+	[Hylobates moloch]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Серебристый гиббон)]
+		(* <- lang_ru;; *);
+		[Def. (Hylobates moloch)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Серебристый гиббон - вид приматов из семейства гиббоновых.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The Hylobates moloch is a species of primate from the Gibbon family.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Серебристый гиббон)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Шерсть синевато-серого цвета, на голове тёмно-серая или чёрная. Как и у других гиббонов, у серебристого гиббона нет хвоста и ограничена гибкость в поясничном отделе. У него длинные пальцы и очень длинные верхние конечности. В весе достигают 9 кг.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_Hylobates;;

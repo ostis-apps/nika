@@ -1,0 +1,47 @@
+concept_Nomascus_concolor
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Чёрный хохлатый гиббон]
+	(* <- lang_ru;; *);
+	[Nomascus concolor]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Чёрный хохлатый гиббон)]
+		(* <- lang_ru;; *);
+		[Def. (Nomascus concolor)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Чёрный хохлатый гиббон — вид приматов из семейства гиббоновых. Обитает в Китае, Лаосе и северном Вьетнаме.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Nomascus concolor is a species of primate from the Gibbon family. It lives in China, Laos and northern Vietnam.]
+			(* <- lang_en;; *);;
+		*);;
+
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Чёрный хохлатый гиббон)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Как и другие гиббоновые, являются дневными животными, живущими на деревьях и передвигающимися при помощи брахиации. Иногда, впрочем, передвигаются на двух ногах, как по земле, так и по веткам деревьев. Моногамны, живут в небольших семейных группах. Каждые два-три года у пары рождается детёныш, находящийся на грудном вскармливании до двух лет.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_Nomascus;;

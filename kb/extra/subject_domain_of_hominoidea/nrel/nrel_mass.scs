@@ -1,0 +1,52 @@
+nrel_mass
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antransitive_relation;
+<-asymmetric_relation;
+=>nrel_main_idtf:
+	[Масса*]
+	(* <- lang_ru;; *);
+	[Mass*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_Hominoidea;
+=>nrel_second_domain: number;
+=>nrel_definitional_domain: ... (*
+	<= nrel_combination:
+	{
+		concept_Hominoidea;
+		number
+	};;
+*);
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Масса*)]
+		(* <- lang_ru;; *);
+		[Def.(Mass*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Масса* -  скалярная физическая величина, определяющая инерционные и гравитационные свойства тел в ситуациях, когда их скорость намного меньше скорости света.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Mass* is a scalar physical quantity that determines the inertial and gravitational properties of bodies in situations where their speed is much less than the speed of light.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_Hominoidea;
+		number;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;
