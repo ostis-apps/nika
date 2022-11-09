@@ -1,0 +1,37 @@
+concept_message_about_diseased_people
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение об экземплярах больных людей]
+	    (* <- lang_ru;; *);
+	[message about diseased people examples]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_diseased_people];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение об экземплярах больных людей)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about diseased people examples)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение об экземплярах больных людей - атомарное сообщение, которое содержит информацию о Сандре которую необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message diseased people examples is an atomic message that contains Sandra information which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
