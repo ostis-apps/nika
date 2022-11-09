@@ -1,0 +1,44 @@
+concept_heavenly_body
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [небесное тело]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [heavenly body]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Термин «астрономический объект» нередко используется наравне с термином «небесное тело»]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Как правило, небесное тело представляет собой обособленную, единую, связанную гравитацией структуру]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.небесное тело]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [небесное тело — естественное физическое тело, ассоциация, или структура, которую современная наука определяет как расположенную в наблюдаемой Вселенной]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_physical_body;
+			concept_science;
+			concept_association;
+			concept_Universe;
+			concept_structure
+   	 };;
+  *);;

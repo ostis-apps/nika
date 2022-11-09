@@ -1,0 +1,53 @@
+concept_Venus
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Венера]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Venus]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Венера не имеет естественных спутников]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Венера имеет плотную атмосферу, состоящую более чем на 96 % из углекислого газа]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Венера была главной целью для ранних межпланетных исследований]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Венера - первая планета, которую посетили космические аппараты]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Венера]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Венера — вторая по удалённости от Солнца и шестая по размеру планета Солнечной системы]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			rrel_size;
+			concept_planet;
+			concept_sun;
+			concept_solar_system
+   	 };;
+  *);;

@@ -1,0 +1,59 @@
+concept_galaxy
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [галактика]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [galaxy]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Общее количество галактик в наблюдаемой части Вселенной пока точно не известно]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.галактика]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Галактика — гравитационно-связанная система из звёзд, звёздных скоплений, межзвёздного газа и пыли, тёмной материи, планет.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_dark_matter;
+			concept_star;
+			concept_planet;
+			concept_interstellar_gas;
+			concept_star_cluster
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.галактика]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Галактика — чрезвычайно далёкий астрономический объект. ]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_astronomical_object
+   	 };;
+  *);;

@@ -1,0 +1,38 @@
+concept_interstellar_gas
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [межзвёздный газ]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [interstellar gas]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Межзвёздный газ прозрачен]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.межзвёздный газ]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Межзвёздный газ — это разрежённая газовая среда, заполняющая всё пространство между звёздами.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_star;
+			nrel_fill;
+			concept_gaseous_environment;
+			concept_space
+   	 };;
+  *);;

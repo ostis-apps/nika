@@ -1,0 +1,86 @@
+concept_star
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [звезда]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [star]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Самая распространённая схема классификации звёзд — по спектральным классам]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Вид звёздного неба привлекал людей с древности]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.звезда]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Звезда — небесное тело, видимое простым глазом в форме светящейся точки на небе.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_eye;
+			concept_sky;
+			concept_heavenly_body;
+			concept_glowing_dot
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.звезда]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Звезда — массивное самосветящееся небесное тело, состоящее из газа и плазмы.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_heavenly_body;
+			concept_gas;
+			concept_plasma;
+			nrel_consist
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.звезда]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Звезда — раскаленное и светящееся небесное тело.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_heavenly_body
+   	 };;
+  *);;

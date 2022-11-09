@@ -1,0 +1,64 @@
+concept_Jupiter
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Юпитер]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Jupiter]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Планета была известна людям с глубокой древности, что нашло своё отражение в мифологии и религиозных верованиях различных культур]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Ряд атмосферных явлений на Юпитере: штормы, молнии, полярные сияния, — имеет масштабы, на порядки превосходящие земные]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Юпитер]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Юпитер — крупнейшая планета Солнечной системы, пятая по удалённости от Солнца]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_planet;
+			concept_sun;
+			concept_solar_system
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Юпитер]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Юпитер — это газовый гигант, покрытый клубящимися облаками.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_cloud;
+			nrel_cover_by;
+			concept_gas_giant
+   	 };;
+  *);;

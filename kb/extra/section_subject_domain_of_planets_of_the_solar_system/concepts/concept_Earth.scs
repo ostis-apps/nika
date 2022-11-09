@@ -1,0 +1,67 @@
+concept_Earth
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Земля]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Earth]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Земля образовалась из солнечной туманности]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Самая плотная, пятая по диаметру и массе среди всех планет Солнечной системы и крупнейшая среди планет земной группы]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Земля]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Земля — третья по удалённости от Солнца планета Солнечной системы.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_planet;
+			concept_sun;
+			concept_solar_system
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Земля]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Земля - единственное известное человеку в настоящее время небесное тело во Вселенной, населённое живыми организмами]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_heavenly_body;
+			rrel_known;
+			rrel_inhabit;
+			concept_Universe;
+			concept_human;
+			concept_living_organisms
+   	 };;
+  *);;
