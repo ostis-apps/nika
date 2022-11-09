@@ -1,0 +1,30 @@
+concept_tissue_level_of_specific_pathological_changes <- sc_node_not_relation;;
+
+concept_tissue_level_of_specific_pathological_changes => nrel_main_idtf:
+[Уровень тканевых патологических изменений] (*<-lang_ru;;*);
+[Level of tissue pathological changes] (*<-lang_en;;*);;
+
+concept_tissue_level_of_specific_pathological_changes <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Уровень тканевых патологических изменений)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Уровень тканевых патологических изменений — это закономерная динамическая совокупность сложных рефлекторных реакций в тканевых частях организма](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_tissue_level_of_specific_pathological_changes <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Уровень тканевых патологических изменений)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Уровень тканевых патологических изменений характеризуется: стереотипностью, универсальностью, относительным полисиллогизмом и аутохтонностью, эквифинальностью.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

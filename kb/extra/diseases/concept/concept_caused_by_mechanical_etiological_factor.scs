@@ -1,0 +1,30 @@
+concept_caused_by_mechanical_etiological_factor <- sc_node_not_relation;;
+
+concept_caused_by_mechanical_etiological_factor => nrel_main_idtf:
+[Механический этиологический фактор] (*<-lang_ru;;*);
+[Mechanical etiological factor] (*<-lang_en;;*);;
+
+concept_caused_by_mechanical_etiological_factor <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Механический этиологический фактор)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Механический этиологический фактор — воздействие явлений или предметов, обладающих большим запасом механической энергии, что в момент соприкосновения с организмом вызывает повреждение его тканей](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_caused_by_mechanical_etiological_factor <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Механический этиологический фактор)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Возникают в результате механичского воздействия на организм](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

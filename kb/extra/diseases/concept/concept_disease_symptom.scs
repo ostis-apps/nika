@@ -1,0 +1,30 @@
+concept_disease_symptom <- sc_node_not_relation;;
+
+concept_disease_symptom => nrel_main_idtf:
+[Симптом болезни] (*<-lang_ru;;*);
+[Symptom of the disease] (*<-lang_en;;*);;
+
+concept_disease_symptom <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Симптом болезни)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Симптом болезни - один из отдельных признаков, частное проявление какого-либо заболевания, патологического состояния или нарушения какого-либо процесса жизнедеятельности.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_disease_symptom <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Симптом болезни)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Учение о симптомах называется симптоматологией, или медицинской семиотикой.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

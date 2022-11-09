@@ -1,0 +1,30 @@
+concept_runny_nose <- sc_node_not_relation;;
+
+concept_runny_nose => nrel_main_idtf:
+[Насморк ] (*<-lang_ru;;*);
+[Runny nose] (*<-lang_en;;*);;
+
+concept_runny_nose <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Насморк )] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Насморк - воспаление слизистой оболочки носа, которое развивается под действием различных факторов.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_runny_nose <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Насморк )] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Регулярное употребление алкоголя, острой и очень горячей пищей тоже может спровоцировать отек слизистой в носу, в том числе и хронический.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

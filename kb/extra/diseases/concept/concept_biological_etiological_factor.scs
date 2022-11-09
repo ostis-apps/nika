@@ -1,0 +1,30 @@
+concept_biological_etiological_factor <- sc_node_not_relation;;
+
+concept_biological_etiological_factor => nrel_main_idtf:
+[Биологический этиологический фактор] (*<-lang_ru;;*);
+[Biological etiological factor] (*<-lang_en;;*);;
+
+concept_biological_etiological_factor <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Биологический этиологический фактор)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Биологический этиологический фактор - фактор, появляющийся в результате биологических процессов в организме](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_biological_etiological_factor <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Биологический этиологический фактор)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[биологические — прионы, вирусы, бактерии, гельминты, паразитические простейшие, а также продукты их жизнедеятельности](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

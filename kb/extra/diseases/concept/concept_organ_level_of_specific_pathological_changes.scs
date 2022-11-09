@@ -1,0 +1,30 @@
+concept_organ_level_of_specific_pathological_changes <- sc_node_not_relation;;
+
+concept_organ_level_of_specific_pathological_changes => nrel_main_idtf:
+[Уровень органных патологических изменений] (*<-lang_ru;;*);
+[Level of organs pathological changes] (*<-lang_en;;*);;
+
+concept_organ_level_of_specific_pathological_changes <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Уровень органных патологических изменений)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Уровень органных патологических изменений — это закономерная динамическая совокупность сложных рефлекторных реакций в органах](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_organ_level_of_specific_pathological_changes <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Уровень органных патологических изменений)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Уровень органных патологических изменений характеризуется: стереотипностью, универсальностью, относительным полисиллогизмом и аутохтонностью, эквифинальностью.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

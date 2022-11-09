@@ -1,0 +1,30 @@
+concept_headache <- sc_node_not_relation;;
+
+concept_headache => nrel_main_idtf:
+[Головная боль] (*<-lang_ru;;*);
+[Headache] (*<-lang_en;;*);;
+
+concept_headache <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Головная боль)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Головная боль – один из наиболее частых симптомов. Термин включает все типы боли и дискомфорта, локализованные в области головы, но в быту его чаще используют для обозначения неприятных ощущений в области черепа.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_headache <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Головная боль)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Для каждого вида боли в голове существует отдельный способ лечения](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

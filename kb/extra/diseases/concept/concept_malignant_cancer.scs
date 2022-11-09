@@ -1,0 +1,30 @@
+concept_malignant_cancer <- sc_node_not_relation;;
+
+concept_malignant_cancer => nrel_main_idtf:
+[Злокачественная опухоль] (*<-lang_ru;;*);
+[Malignant tumor] (*<-lang_en;;*);;
+
+concept_malignant_cancer <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Злокачественная опухоль)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Злокачественная опухоль — опухоль, свойства которой чаще всего делают её крайне опасной для жизни организма, что и дало основание называть её «злокачественной».](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_malignant_cancer <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Злокачественная опухоль)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Злокачественное новообразование — заболевание, характеризующееся появлением бесконтрольно делящихся клеток, способных к инвазии в прилежащие ткани и метастазированию в отдалённые органы](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

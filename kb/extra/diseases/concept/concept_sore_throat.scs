@@ -1,0 +1,30 @@
+concept_sore_throat <- sc_node_not_relation;;
+
+concept_sore_throat => nrel_main_idtf:
+[Боль в горле] (*<-lang_ru;;*);
+[Sore throat] (*<-lang_en;;*);;
+
+concept_sore_throat <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Боль в горле)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Боль в горле – один из признаков развития воспалительного процесса в области задней стенки глотки, миндалин.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_sore_throat <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Боль в горле)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[В зависимости от причины развития болезни и выраженности воспаления, помимо болевых ощущений человека может беспокоить озноб, насморк, затрудненное дыхание, осиплость голоса, гипертермия, недомогание, головная боль.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

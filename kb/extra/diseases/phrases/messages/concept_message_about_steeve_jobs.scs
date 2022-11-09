@@ -1,0 +1,37 @@
+concept_message_about_steeve_jobs
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение об Стиве Джобсе]
+	    (* <- lang_ru;; *);
+	[message about Steeve jobs]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_steeve_jobs];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение об Стиве Джобсе)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about Steeve Jobs)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение об Стиве Джобсе - атомарное сообщение, которое содержит экземпляры орангутанов, информацию о которых необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about Steeve Jobs is an atomic message that contains pongo examples information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

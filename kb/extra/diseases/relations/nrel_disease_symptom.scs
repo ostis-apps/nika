@@ -1,0 +1,72 @@
+nrel_disease_symptom <- sc_node_norole_relation;;
+
+nrel_disease_symptom => nrel_main_idtf:
+[Сиптом болезни] (*<-lang_ru;;*);
+[Symptom of the disease] (*<-lang_en;;*);;
+
+nrel_disease_symptom <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Сиптом болезни)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Сиптом болезни - один из отдельных признаков, частное проявление какого-либо заболевания, патологического состояния или нарушения какого-либо процесса жизнедеятельности.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_disease_symptom <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Сиптом болезни)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Симптом указывает на заболевание, травму или аномальное физиологическое состояние, которое может быть обнаружено при медицинском осмотре](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_disease_symptom
+=> nrel_first_domain: concept_disease;
+=> nrel_second_domain: concept_disease_symptom;
+
+=> nrel_definitional_domain: ...
+(*
+	<= nrel_combination:
+	{
+		concept_disease;
+		concept_disease_symptom
+	};;
+*);;
+
+arity -> ...
+(*
+	-> nrel_disease_symptom;;
+	=> nrel_measurement: 2;;
+*);;
+
+relation => nrel_inclusion: oriented_relation
+(*
+	-> nrel_disease_symptom;;
+*);;
+
+relation => nrel_inclusion: binary_relation
+(*
+	 => nrel_inclusion: symmetric_relation
+	(*
+		-|> nrel_disease_symptom;;
+	*);;
+
+	 => nrel_inclusion: transitive_relation
+	(*
+		-> nrel_disease_symptom;;
+	*);;
+
+	 => nrel_inclusion: reflexive_relation
+	(*
+		-|> nrel_disease_symptom;;
+	*);;
+
+*);;

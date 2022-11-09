@@ -1,0 +1,35 @@
+section_subject_domain_of_disease_threating_way
+=> nrel_main_idtf: 
+	[Раздел. Предметная область лечения болезней]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Disease thread]
+	(* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+		concept_therapeutic_disease_treating_way;
+		concept_surgical_disease_treating_way;
+		concept_disease_treating_way;;
+
+section_subject_domain_of_disease_threating_way = [*
+subject_domain_of_disease_threating_way
+
+=> nrel_main_idtf: 
+	[Предметная область лечения болезней]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Disease thread]
+	(* <- lang_en;; *);
+
+<= nrel_private_subject_domain:
+	section_subject_domain_of_disease_threating_way;
+
+-> rrel_maximum_studied_object_class:
+	concept_disease_treating_way;
+
+-> rrel_not_maximum_studied_object_class:
+		concept_therapeutic_disease_treating_way;
+		concept_surgical_disease_treating_way;
+
+<- subject_domain;;
+*];;

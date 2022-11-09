@@ -1,0 +1,34 @@
+concept_chemical_etiological_factor <- sc_node_not_relation;;
+
+concept_chemical_etiological_factor => nrel_main_idtf:
+[Химический этиологический фактор] (*<-lang_ru;;*);
+[Chemical etiological factor] (*<-lang_en;;*);;
+
+concept_chemical_etiological_factor <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Химический этиологический фактор)] (*<-lang_ru;;*);;
+=> nrel_using_constants:
+	{
+		bvbxtcrjuj
+	};;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Химический этиологический фактор - afrnjh? djpybrf.obq d htpekmnfnt <b><sc_element sys_idtf="bvbxtcrjuj">dkbzybz yf jhufybpv](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_chemical_etiological_factor <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Химический этиологический фактор)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[В настоящее время уже выявлено около 10 тысяч экзогенных химических веществ, оказывающих патогенное воздействие на организм человека, из них наиболее важную роль играют: кислоты и щелочи, алкоголь](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

@@ -1,0 +1,30 @@
+concep_bening_cancer <- sc_node_not_relation;;
+
+concep_bening_cancer => nrel_main_idtf:
+[Доброкачественная опухоль] (*<-lang_ru;;*);
+[Benign tumor] (*<-lang_en;;*);;
+
+concep_bening_cancer <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Доброкачественная опухоль)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Доброкачественная опухоль - патологические образования, возникающие вследствие нарушения механизмов контроля деления, роста и дифференцировки клеток.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concep_bening_cancer <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Доброкачественная опухоль)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Клетки доброкачественных опухолей в процессе опухолевой (неопластической) трансформации утрачивают способность контроля клеточного деления, но сохраняют способность (частично или почти полностью) к дифференцировке. ](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

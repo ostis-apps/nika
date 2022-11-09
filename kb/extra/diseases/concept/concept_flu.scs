@@ -1,0 +1,30 @@
+concept_flu <- sc_node_not_relation;;
+
+concept_flu => nrel_main_idtf:
+[Грипп] (*<-lang_ru;;*);
+[Flu] (*<-lang_en;;*);;
+
+concept_flu <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Грипп)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Грипп — острое респираторное вирусное заболевание, вызываемое вирусами гриппа и поражающее в первую очередь верхние дыхательные пути, также поражает бронхи, в более редких случаях — лёгкие](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_flu <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Грипп)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Симптомы гриппа появляются на 1—4-й день после заражения и включают в себя лихорадку, кашель, головную боль, боль в мышцах и суставах, слабость, боль в горле и насморк.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
