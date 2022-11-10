@@ -1,0 +1,85 @@
+nrel_creator
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [создатель*]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: 
+	concept_historical_object;
+	concept_military_patriotic_attraction;
+	concept_religious_object;
+	concept_architectural_object;
+	concept_attraction;
+=> nrel_second_domain: 
+	concept_person;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (создатель*)]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [создатель* - бинарное 
+               ориентированное отношение, связывающее 
+               достопримечательность и человека(организацию и др.), создавшее ее.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+   	 	 concept_attraction;
+   	 	 concept_person
+   	 };;
+*);;
+
+nrel_year_of_creation
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [год создания*]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: 
+	concept_attraction;
+=> nrel_second_domain: 
+	concept_year;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (год создания*)]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [год создания* - бинарное 
+               ориентированное отношение, связывающее 
+               достопримечательность и год ее создания.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+   	 	 concept_attraction;
+   	 	 concept_year
+   	 };;
+*);;

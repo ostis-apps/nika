@@ -1,0 +1,136 @@
+concept_phrase_about_opportunity_to_tell_about_attractions
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о наличии возможности говорить о достопримечательностях]
+	    (* <- lang_ru;; *);
+	[phrase about opportunity to tell about attractions]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о наличии возможности говорить о достопримечательностях)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о наличии возможности говорить о спутниках - фраза, содержащая информацию про возможность говорить на тему "Достопримечательности".]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+	*);;
+
+concept_phrase_about_attractions
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о достопримечательности]
+	    (* <- lang_ru;; *);
+	[phrase about attractions]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о достопримечательностях)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о достопримечательностях - фраза, содержащая информацию про то, что такое достопримечательность.]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+*);;
+
+
+concept_phrase_about_the_need_to_visit
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о необходимости посещения]
+	    (* <- lang_ru;; *);
+	[phrase about the need to visit]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о необходимости посещения)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о необходимости посетить - фраза, содержащая информацию про то, какие достопримечательности в городе надо посетить.]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+*);;
+
+
+concept_phrase_about_estimate_in_Google
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о оценке в Google]
+	    (* <- lang_ru;; *);
+	[phrase about estimate in Google]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о оценке в Google)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о оценке в Google - фраза, содержащая информацию об оценке в Google.]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+*);;
+
+concept_phrase_about_attractions_division
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о видах достопримечательностей]
+	    (* <- lang_ru;; *);
+	[phrase about attractions division]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о видах достопримечательностей)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о видах достопримечательностей - фраза, содержащая информацию про виды достопримечательностей.]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+*);;

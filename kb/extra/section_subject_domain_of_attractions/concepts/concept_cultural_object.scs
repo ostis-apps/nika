@@ -1,0 +1,27 @@
+concept_cultural_object
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [культурный объект]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [cultural object]
+   (* <- lang_en;; *);
+
+=> nrel_inclusion:
+	concept_cinema;
+	concept_theater;
+	concept_concert_hall;
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. культурный объектность](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://HTML/concept_cultural_object_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+	
+*);;

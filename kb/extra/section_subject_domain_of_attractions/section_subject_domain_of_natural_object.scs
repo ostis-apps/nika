@@ -1,0 +1,37 @@
+section_subject_domain_of_natural_object
+=> nrel_main_idtf:
+	  [Раздел. Предметная область природных объектов]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of natural object] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_natural_object = [*
+	subject_domain_of_natural_object
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область природных объектов]
+   (* <- lang_ru;; *);
+   [Subject domain of natural object]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	
+	-> rrel_maximum_studied_object_class:
+   		concept_natural_object;
+
+	-> rrel_not_maximum_studied_object_class:
+	concept_geyser;
+	concept_reserve;;
+
+*];;
+
+section_subject_domain_of_natural_object
+-> rrel_key_sc_element:
+	
+	concept_natural_object;
+	concept_geyser;
+	concept_reserve;;
+
+

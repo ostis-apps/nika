@@ -1,0 +1,23 @@
+concept_fountain
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Фонтан]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [fountain]
+   (* <- lang_en;; *);
+	
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. фонтан](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: 
+		[ Фонта́н — природное или искусственно созданное явление, заключающееся в истечении жидкости, под действием оказываемого на неё давления, вверх или в сторону. ](*<-lang_ru;;*);;
+	*);;
+*);;
