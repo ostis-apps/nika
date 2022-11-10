@@ -1,0 +1,46 @@
+concept_active_leisure
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Активный отдых]
+	(* <- lang_ru;; *);
+	[Active leisure]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Активный отдых)]
+		(* <- lang_ru;; *);
+		[Def. (Active leisure)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Активный отдых - это отдых, который предполагает физическую активность.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Active leisure - it is a leisure time that involves physical activity.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Активный отдых)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[После активного отдыха, мозг человека (особенно, если он занимается умственной работой) принимается за решение рабочих задач с новыми силами. Кровь насыщается кислородом.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

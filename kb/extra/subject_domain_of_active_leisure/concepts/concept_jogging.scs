@@ -1,0 +1,48 @@
+concept_jogging
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Бег трусцой]
+	(* <- lang_ru;; *);
+	[Hunting]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Бег трусцой)]
+		(* <- lang_ru;; *);
+		[Def. (Jogging)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Бег трусцой - бег со скоростью 7-9 километров в час.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Jogging - running at a speed of 7-9 kilometers per hour.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Бег трусцой)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Бег трусцой используется спортсменами в разминке и заминке, в качестве восстанавливающих тренировок после тяжёлых нагрузок или в период после травм. В качестве оздоровительного средства бег трусцой может использоваться неспортсменами любого возраста без тяжёлых поражений опорно-двигательного аппарата и сердечно-сосудистой системы.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+	
+=> nrel_inventory: concept_sneakers;;

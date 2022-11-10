@@ -1,0 +1,48 @@
+concept_skydiving
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Прыжки с парашютом]
+	(* <- lang_ru;; *);
+	[Skydiving]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Прыжки с парашютом)]
+		(* <- lang_ru;; *);
+		[Def. (Skydiving)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Прыжки с парашютом -  один из видов авиационного спорта, связанный с применением парашютов.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Skydiving - one of the aviation sports associated with the use of parachutes.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Прыжки с парашютом)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Цели и задачи парашютизма постоянно менялись. Если первоначально парашют предназначался для спасения жизни, позже он стал важным элементом подготовки десанта. Современный парашютный спорт включает в себя как действия связанные с точным пилотированием купола, как точность приземления и свуп, так и различные артистические виды спорта, вроде фристайла, перестроения в свободном падении, как групповая акробатика и фрифлай.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+	
+=> nrel_inventory: concept_parachute;;

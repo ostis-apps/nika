@@ -1,0 +1,46 @@
+concept_windsurfing
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Виндсёрфинг]
+	(* <- lang_ru;; *);
+	[Windsurfing]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Виндсёрфинг)]
+		(* <- lang_ru;; *);
+		[Def. (Windsurfing)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Виндсёрфинг — вид парусного спорта и водного развлечения, в основе которого лежит мастерство управления на водной поверхности лёгкой доской небольшого размера с установленным на ней парусом.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Windsurfing - type of sailing and water entertainment, which is based on the skill of controlling a small light board with a sail mounted on it on the water surface.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Виндсёрфинг)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Спортивный снаряд, используемый в виндсёрфинге, называется «парусной доской» или «виндсёрфом» и состоит из лёгкой доски обтекаемой формы длиной 2—4,7 м, выполненной из плавучего материала, и закреплённого на ней в гибком соединении паруса.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

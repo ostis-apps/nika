@@ -1,0 +1,46 @@
+concept_fishing_rod
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Удочка]
+	(* <- lang_ru;; *);
+	[Fishing rod]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Удочка)]
+		(* <- lang_ru;; *);
+		[Def. (Fishing rod)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Удочка —  гибкая длинная палка, к к-рой прикреплена леска с крючком.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Fishing rod - flexible long stick, to which a fishing line with a hook is attached.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Удочка)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[На сегодняшний день самой распространенной среди экспертов теорией стало «северное» происхождение удочки. По мнению многих исследователей, именно в умеренных и холодных широтах, где рыбных ресурсов меньше и добывать их труднее, и появилась необходимость в изобретении подобного инструмента. Например, в данном отношении очень любопытен древний инструмент кауашкаров, индейцев, с бытом которых в свое время знакомился знаменитый Жак-Ив Кусто.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

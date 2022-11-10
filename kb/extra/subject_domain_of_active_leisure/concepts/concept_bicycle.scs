@@ -1,0 +1,46 @@
+concept_bicycle
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Велосипед]
+	(* <- lang_ru;; *);
+	[Bicycle]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Велосипед)]
+		(* <- lang_ru;; *);
+		[Def. (Bicycle)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Велосипед —  колёсное транспортное средство (или спортивный снаряд), приводимое в движение мускульной силой человека через ножные педали или (крайне редко) через ручные рычаги.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Bicycle - wheeled vehicle (or sports impact) propelled by human muscle power with foot pedals or (very rarely) with hand levers.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Велосипед)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Первый велосипед, похожий на используемые в наши дни, назывался Rover — „Скиталец“ (или „Бродяга“). Он был сделан в 1884 году английским изобретателем Джоном Кемпом Старли и выпускался с 1885 года. В отличие от велосипеда „пенни-фартинг“, Ровер обладал цепной передачей на заднее колесо, одинаковыми по размеру колёсами, и водитель сидел между колёсами.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

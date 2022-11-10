@@ -1,0 +1,46 @@
+concept_hunting
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Охота]
+	(* <- lang_ru;; *);
+	[Hunting]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Охота)]
+		(* <- lang_ru;; *);
+		[Def. (Hunting)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Охота - промысел или развлечение, состоящие в поиске, выслеживании, преследовании и добыче (то есть поимке или умерщвлении) некоторых видов диких животных.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Hunting - fishing or entertainment, consisting in the search, tracking, pursuit and production (that is, the capture or killing) of certain species of wild animals.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Охота)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Промысловая охота служит для того, чтобы воспользоваться продуктами животного происхождения (мясом, жиром, мехом, кожей, костью, рогом, пухом, пером и проч.)Её целью может быть также уничтожение опасных, вредных либо чрезмерно расплодившихся животных. К охоте относится и отлов животных живыми для разведения, расселения в другой местности, для использования в цирках и зоопарках, для научных исследований.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

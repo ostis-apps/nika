@@ -1,0 +1,48 @@
+concept_auto_racing
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Автогонки]
+	(* <- lang_ru;; *);
+	[Auto racing]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Автогонки)]
+		(* <- lang_ru;; *);
+		[Def. (Auto racing)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Автогонки - спортивные соревнования в скоростной езде на автомобилях.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Auto racing - sports competitions in high-speed driving on cars..]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Автогонки)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Датой начала истории автомобильного спорта можно назвать 1894 год.В конце 1893 года (19 декабря) издатель парижской газеты «Le Petit Journal» Пьер Жиффар объявил о проведении первой автомобильной гонки (до этого, в 1887 году, прошёл конкурс «колясок, передвигающихся без посторонней помощи» с одним единственным участником). Её старт был назначен на 22 июля 1894 года.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+=> nrel_inventory: concept_car;;

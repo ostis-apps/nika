@@ -1,0 +1,46 @@
+concept_mountaineering
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Альпинизм]
+	(* <- lang_ru;; *);
+	[Mountaineering]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Альпинизм)]
+		(* <- lang_ru;; *);
+		[Def. (Mountaineering)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Альпинизм -  вид спорта и активного отдыха, целью которого является восхождение на вершины гор.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Mountaineering - sport and active recreation, the purpose of which is to climb the tops of mountains.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Альпинизм)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Возникновение альпинизма чаще всего связывают с покорением 8 августа 1786 врачом Мишелем-Габриэлем Паккардом и горным проводником Жаком Бальма (англ. Jacques Balmat, 1762–1834) высшей точки Альп — Монблана. Памятник первовосходителям на Монблан находится в мировом центре альпинизма и горных лыж — Шамони.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

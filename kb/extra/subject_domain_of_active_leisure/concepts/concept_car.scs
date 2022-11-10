@@ -1,0 +1,46 @@
+concept_car
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Автомобиль]
+	(* <- lang_ru;; *);
+	[Car]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Автомобиль)]
+		(* <- lang_ru;; *);
+		[Def. (Car)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Автомобиль — моторное безрельсовое дорожное и/или внедорожное, чаще всего автономное, транспортное средство, используемое для перевозки людей и/или грузов, имеющее от четырёх колёс.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Car - motorized off-road road and/or off-road, most often autonomous, vehicle used to transport people and/or goods, having four or more wheels.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Автомобиль)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Первый прообраз автомобиля был построен как игрушка для китайского императора членом иезуитской общины в Китае Фердинандом Вербистом в 1672 году. Паровая тележка могла двигаться на одной заправке угля больше часа. В описании своей игрушки Вербист впервые упомянул термин «мотор» в его нынешнем значении.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

@@ -1,0 +1,46 @@
+concept_geocaching
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Геокешинг]
+	(* <- lang_ru;; *);
+	[Geocaching]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Геокешинг)]
+		(* <- lang_ru;; *);
+		[Def. (Geocaching)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Геокешинг -  туристическая игра с применением спутниковых навигационных систем, состоящая в нахождении тайников, спрятанных другими участниками игры.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Geocaching - tourist game with the use of satellite navigation systems, which consists in finding caches hidden by other participants in the game.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Геокешинг)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[В геокешинг можно играть семьёй, компанией или в одиночку. Основная идея состоит в том, что одни игроки прячут тайники, с помощью географические координаты и сообщают о них в интернете. Другие игроки используют эти координаты и свои GPS-приёмники для поиска тайников. Можно использовать «связки» c подключением к КПК или ноутбуку.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

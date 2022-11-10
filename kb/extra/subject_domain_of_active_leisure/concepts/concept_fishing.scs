@@ -1,0 +1,48 @@
+concept_fishing
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Рыбалка]
+	(* <- lang_ru;; *);
+	[Fishing]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Рыбалка)]
+		(* <- lang_ru;; *);
+		[Def. (Fishing)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Рыбалка - занятие выуживанием рыбы из водоёма с целью прокорма или для развлечения.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Fishing is the activity of fishing fish out of a body of water for the purpose of feeding or for entertainment.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Рыбалка)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Ловля рыбы оказывает ощутимый оздоравливающий эффект. Положительные эмоции, полученные во время рыбалки, помогают сохранить хорошее настроение несколько дней. Помимо самой рыбалки как процесса, хорошо влияет на человека и то, что с ней связано: сбор снастей, переходы по берегам рек. Еще, рыбалка учит человека терпению. Ведь не сразу, как только закинул удочку, рыба начинает клевать, бывает, что надо подождать, а бывает, что и за весь день ничего не поймаешь.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+	
+=> nrel_inventory: concept_fishing_rod;;

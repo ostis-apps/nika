@@ -1,0 +1,37 @@
+concept_message_about_bicycle_examples
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение об экземплярах велосипедов]
+	    (* <- lang_ru;; *);
+	[message about bicycle examples]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_bicycle_examples];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение об экземплярах велосипедов)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about bicycle examples)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение об экземплярах велосипедов - атомарное сообщение, которое содержит экземпляры велосипедов, информацию о которых необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about bicycle examples is an atomic message that contains bicycle examples information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

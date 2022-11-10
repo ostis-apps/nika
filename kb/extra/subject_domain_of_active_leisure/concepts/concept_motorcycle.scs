@@ -1,0 +1,46 @@
+concept_motorcycle
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Мотоцикл]
+	(* <- lang_ru;; *);
+	[Motorcycle]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Мотоцикл)]
+		(* <- lang_ru;; *);
+		[Def. (Motorcycle)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Мотоцикл — двухколёсное (реже — трёхколёсное) транспортное средство с двигателем (внутреннего сгорания, электрическим, пневматическим), главными отличительными чертами которого являются вертикальная посадка водителя (мотоциклиста), наличие боковых ножных упоров (площадок, подножек) и прямое (безредукторное) управление передним поворотным колесом.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Motorcycle - a two-wheeled (less often - three-wheeled) vehicle with an engine (internal combustion, electric, pneumatic), the main distinguishing features of which are the vertical landing of the driver (motorcyclist), the presence of side foot stops (platforms, footboards) and direct (gearless) control of the front swivel wheel.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Мотоцикл)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Классические мотоциклы включают в себя двухколёсные, двухколёсные с боковой коляской, и трёхколёсные; в начале XXI века стали набирать популярность квадроциклы. Мотоциклы также подразделяются по своей конструкции и размерам: мопеды, мокики (имеют небольшой размер двигателя, как правило до 50 см³) мотороллеры или скутеры (закрытый пластиком двигатель, расположенный под сиденьем водителя и площадки для ног), и собственно мотоциклы различных типов: классические, крузеры, туреры, спортивные, шоссейные, кроссовые, эндуро, чопперы.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

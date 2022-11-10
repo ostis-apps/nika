@@ -1,0 +1,48 @@
+concept_tennis
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Теннис]
+	(* <- lang_ru;; *);
+	[Tennis]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Теннис)]
+		(* <- lang_ru;; *);
+		[Def. (Tennis)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Теннис - вид спорта, в котором соперничают либо два игрока («одиночная игра»), либо две команды, состоящие из двух игроков («парная игра»).Задачей соперников — тенниси́ста или тенниси́стки — является при помощи ракеток отправлять мяч на сторону соперника так, чтобы тот не смог его отразить, не более чем после первого падения мяча на игровом поле на половине соперника.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Tennis - sport in which either two players compete ("singles") or two teams of two players ("doubles"). The task of the opponents - a tennis player or a tennis player - is to use rackets to send the ball to the opponent's side so that he cannot reflect it, no more than after the first fall of the ball on the playing field in the opponent's half.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Теннис)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Прямым предшественником современного тенниса считается игра в помещениях, до конца XIX века носившая то же название, а в настоящее время известная как реал-теннис, корт-теннис или жё-де-пом (фр. jeu de paume, в буквальном переводе игра ладонью). Жё-де-пом, в который могли играть одновременно до 12 человек, появился в XI веке, по-видимому, в монастырях. Вначале в этой игре, как и в ручной пелоте, мяч отбивали рукой, затем появились перчатки, биты и, наконец, в XVI веке, ракетки и сетка. На это же время приходится пик популярности жё-де-пома, в который играли французские, английские и испанские короли того времени.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+	
+=> nrel_inventory: concept_tennis_racquet;;

@@ -1,0 +1,46 @@
+concept_speleotourism
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Спелеотуризм]
+	(* <- lang_ru;; *);
+	[Speleotourism]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Спелеотуризм)]
+		(* <- lang_ru;; *);
+		[Def. (Speleotourism)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Спелеотуризм -  разновидность спортивного туризма, смысл заключается в путешествиях по естественным подземным полостям (пещерам) и преодолением в них различных препятствий (сифоны, колодцы) с использованием различного специального снаряжения (акваланги, карабины, верёвки, крючья, индивидуальные страховочные системы и пр.).]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Speleotourism - a kind of sports tourism, the meaning is to travel through natural underground cavities (caves) and overcome various obstacles in them (siphons, wells) using various special equipment (scuba gear, carabiners, ropes, hooks, individual safety systems, etc.).]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Спелеотуризм)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Становление российской научной спелеологии связано с именем Виктора Николаевича Дублянского. Его перу принадлежат первые учебники по спелеотуризму «Путешествие под землей» (1968), увлекательная научно-популярная книга «Вслед за каплей воды» (1971), несколько десятков монографий о пещерах Крыма, Украины, Западного Кавказа. Спелеотуризмом также является посещение пещер с познавательной целью.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

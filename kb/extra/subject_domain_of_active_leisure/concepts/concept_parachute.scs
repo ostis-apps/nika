@@ -1,0 +1,46 @@
+concept_parachute
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Парашют]
+	(* <- lang_ru;; *);
+	[Parachute]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Парашют)]
+		(* <- lang_ru;; *);
+		[Def. (Parachute)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Парашют — устройство в форме зонта из ткани или другого мягкого материала, к которому стропами прикреплена подвесная система или груз. Служит для замедления движения предмета в воздухе. Парашюты используются для прыжков из летательных аппаратов (или с фиксированных объектов) с целью безопасного спуска и приземления людей (грузов), для торможения летательных аппаратов при посадке.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Parachute - a device in the form of an umbrella made of fabric or other soft material, to which a suspension system or load is attached by slings. Serves to slow down the movement of an object in the air. Parachutes are used for jumping from aircraft (or from fixed objects) for the purpose of safe descent and landing of people (cargo), for braking aircraft during landing.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Парашют)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Изобретателем парашюта в современном виде является Г. Е. Котельников (1872—1944), инженер из Санкт-Петербурга, который первым в мире создал ранцевый парашют, в 1912 году получив патент на это изобретение в России, Франции, Германии и США. Он впервые разделил все стропы подвески на две группы, расположил аппарат в ранце, крепившемся к летчику, и применил полюсное отверстие в центре купола для выхода воздуха. Испытан 6 июня 1912 года в гатчинском лагере Воздухоплавательной школы. В России первым спасся на парашюте Михаил Громов в 1927 году.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
