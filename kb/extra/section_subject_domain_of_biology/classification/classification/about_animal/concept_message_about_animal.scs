@@ -1,0 +1,37 @@
+concept_message_about_animal
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о животном]
+	(* <- lang_ru;; *);
+	[message about animal]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_animal];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о животном)]
+        (* <- lang_ru;; *);
+        [Def. (message about animal)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о животном - атомарное сообщение, с запросом о животном.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [message about animal is an atomic message, requesting the definition of animal.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

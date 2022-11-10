@@ -1,0 +1,34 @@
+concept_phrase_about_lion
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о льве]
+	(* <- lang_ru;; *);
+	[phrase about lion]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (фраза о льве)]
+		(* <- lang_ru;; *);
+		[Def. (phrase about lion)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о льве - фраза, являющаяся запросом о льве.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[phrase about lion is a phrase that requesting the definition of lion.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;
+	*);;
