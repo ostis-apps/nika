@@ -1,0 +1,35 @@
+concept_zoology
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [зоология]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [zoology]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Зоология связана с другими биологическими науками, медициной, ветеринарией, сельским хозяйством, с производственной деятельностью человека и защитой животных.]
+   (* <- lang_ru;; *);
+
+=> nrel_note:
+   [Зоология изучает физиологию, анатомию, эмбриологию, экологию, систематическую филогению животных (многоклеточных гетеротрофных подвижных эукариот).]
+   (* <- lang_ru;; *);
+
+=> nrel_studies: concept_animal;
+
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. зоология](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_zoology_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+      <= nrel_using_constants:{
+      concept_biology;
+      concept_animal
+      };;
+*);;

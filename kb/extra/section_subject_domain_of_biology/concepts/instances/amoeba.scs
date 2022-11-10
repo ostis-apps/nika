@@ -1,0 +1,29 @@
+amoeba
+<- concept_bacterium;
+<- concept_microbe;
+<- concept_organism;
+
+=> nrel_main_idtf:
+   [амёба]
+   (* <- lang_ru;; *);  
+=> nrel_main_idtf:
+   [amoeba]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [У амёб неправильная, всё время меняющаяся форма из-за временных цитоплазматических выростов, 
+   называемых ложноножками или псевдоподиями, которые служат для передвижения и захвата пищи.]
+   (* <- lang_ru;; *);	
+
+=> nrel_form: [всё время меняется](*<-lang_ru;;*);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. амёба](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Амёба - род микроскопических одноклеточных простейших из семейства Amoebidae. ](*<-lang_ru;;*);;
+	*);;
+*);;

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="104916816" parent="0" left="0" top="0" right="55" bottom="24" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-341.5" y="416.5" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="104917536" parent="0" x="-87" y="416.5" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Традиционно выделяемая категория организмов, в настоящее время рассматриваемая в качестве биологического царства. Животные являются основным объектом изучения зоологии.]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_animal" shapeColor="0" id="104918544" parent="0" left="0" top="0" right="197" bottom="24" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-145.69" y="319" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase" shapeColor="0" id="104916384" parent="0" left="0" top="0" right="105" bottom="24" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="197" y="147.5" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_inclusion" shapeColor="0" id="104919696" parent="0" left="0" top="0" right="96" bottom="24" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="106" y="79.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_animal" shapeColor="0" id="22750616" parent="0" left="0" top="0" right="197" bottom="24" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="26.5" y="148" haveBus="false" idtf_pos="4">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="22704664" parent="0" id_b="104916816" id_e="104917536" b_x="-341.5" b_y="416.5" e_x="-87" e_y="416.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="22701136" parent="0" id_b="104918544" id_e="104917536" b_x="-145.69" b_y="319" e_x="-87" e_y="416.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="22703152" parent="0" id_b="104919696" id_e="22702312" b_x="106" b_y="79.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.531597">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="22702312" parent="0" id_b="104916384" id_e="22750616" b_x="197" b_y="147.5" e_x="26.5" e_y="148" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>

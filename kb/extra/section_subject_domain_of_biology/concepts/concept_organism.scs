@@ -1,0 +1,44 @@
+concept_organism
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [организм]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [organism]
+   (* <- lang_en;; *);
+   
+=> nrel_note:
+   [Термин организм введён Аристотелем. Он выявил, что любое живое существо характеризуется четкой и строгой организацией, в отличие от неживого.
+   ]
+   (* <- lang_ru;; *);
+
+=> nrel_note:
+   [организм — один из главных предметов изучения в биологии, как «типовая особь» биологической группы, которой присущи её основные свойства.
+   ]
+   (* <- lang_ru;; *);
+
+=> nrel_note:
+  [Для удобства рассмотрения все организмы распределяются по разным группам и категориям, что составляет биологическую систему их классификации.
+  ]
+  (* <- lang_ru;; *);
+
+-> concept_animal;
+-> concept_plant;
+-> concept_microbe;
+-> concept_mushroom;
+
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. организм](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_organism_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+      <= nrel_using_constants:{
+      concept_biology
+      };;
+*);;

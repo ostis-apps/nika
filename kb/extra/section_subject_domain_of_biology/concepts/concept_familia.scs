@@ -1,0 +1,32 @@
+concept_familia
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [семейство]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [familia]
+   (* <- lang_en;; *);
+   
+=> nrel_note:
+   [Названия семейств образуются по правилам, регулируемым международными кодексами зоологической и ботанической номенклатуры. 
+   В зоологии название семейства образуется от названия типового рода, к основе которого добавляется стандартное окончание -idae, 
+   в ботанике к основе названия типового рода добавляется стандартное окончание -aceae.
+   ]
+   (* <- lang_ru;; *);
+
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. семейство](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_familia_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+      <= nrel_using_constants:{
+      concept_biology;
+      concept_biological_taxonomy
+      };;
+*);;

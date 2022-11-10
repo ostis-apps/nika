@@ -1,0 +1,36 @@
+concept_message_greeting
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение приветствия]
+	    (* <- lang_ru;; *);
+	[message greeting]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_greeting];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение приветствия)]
+	        (* <- lang_ru;; *);
+	    [Def. (message greeting)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение приветствия - атомарное сообщение, с запросом приветствия.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[An example greeting message is an atomic message, requesting the greeting.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

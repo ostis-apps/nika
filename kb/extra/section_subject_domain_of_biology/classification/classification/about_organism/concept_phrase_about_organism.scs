@@ -1,0 +1,34 @@
+concept_phrase_about_organism
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза об организме]
+	(* <- lang_ru;; *);
+	[phrase about organism]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (фраза об организме)]
+		(* <- lang_ru;; *);
+		[Def. (phrase about organism)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза об организме - фраза, являющаяся запросом об организме.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[phrase about organism is a phrase that requesting the definition of organism.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;
+	*);;

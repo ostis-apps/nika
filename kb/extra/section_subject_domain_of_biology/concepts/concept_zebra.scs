@@ -1,0 +1,34 @@
+concept_zebra
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [зебра]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [zebra]
+   (* <- lang_en;; *);
+   
+=> nrel_note:
+   [Гибридные формы между зебрами и домашними лошадьми называют зеброидами, между зебрами и ослами — зебрулами. 
+   ]
+   (* <- lang_ru;; *);
+
+=> nrel_note:
+   [Зебры живут маленькими группами, состоящими из самок с детёнышами и одного жеребца.
+   ]
+   (* <- lang_ru;; *);
+   
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. зебра](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_zebra_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+      <= nrel_using_constants:{
+      concept_animal
+      };;
+*);;

@@ -1,0 +1,50 @@
+concept_biology
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [биология]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [biology]
+   (* <- lang_en;; *);
+
+=> nrel_inclusion:
+   concept_botany;
+   concept_microbiology;
+   concept_mycology;
+   concept_zoology;
+
+=> nrel_studies:
+   concept_organism;
+
+<= nrel_systematizes:
+   concept_biological_taxonomy;
+
+=> nrel_note:
+   [Как самостоятельная наука биология выделилась из естественных наук в XIX веке, когда учёные обнаружили, 
+   что все живые организмы обладают некоторыми общими свойствами и признаками, в совокупности не характерными для неживой природы.]
+   (* <- lang_ru;; *);
+
+=> nrel_note:
+   [Большинство биологических наук являются дисциплинами с более узкой специализацией. Традиционно они группируются по типам исследуемых организмов: 
+      1) ботаника изучает растения, водоросли и грибоподобные организмы;
+      2) зоология — животных и протистов;
+      3) микробиология — микроорганизмы и вирусы;
+      4) микология — грибы (ранее являлась разделом ботаники).]
+   (* <- lang_ru;; *);
+
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. биология](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_biology_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+      <= nrel_using_constants:{
+      concept_science;
+      concept_biology
+      };;
+*);;

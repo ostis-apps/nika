@@ -1,0 +1,37 @@
+concept_message_about_botany
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о ботанике]
+	(* <- lang_ru;; *);
+	[message about botany]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_botany];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о ботанике)]
+        (* <- lang_ru;; *);
+        [Def. (message about botany)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о ботанике - атомарное сообщение, с запросом о ботанике.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [message about botany is an atomic message, requesting the definition of botany.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

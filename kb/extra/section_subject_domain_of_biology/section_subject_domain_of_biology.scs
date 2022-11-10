@@ -1,0 +1,105 @@
+section_subject_domain_of_biology
+=> nrel_main_idtf:
+	  [Раздел. Предметная область биологии]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of biology] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_biology = [*
+	subject_domain_of_biology
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область биологии]
+   (* <- lang_ru;; *);
+   [Subject domain of biology]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+   concept_biology;
+   concept_biological_taxonomy;
+   concept_natural_area;
+	-> rrel_not_maximum_studied_object_class:
+   concept_animal;
+   concept_bacterium;
+   concept_botany;
+   concept_classis;
+   concept_color;
+   concept_domain;
+   concept_familia;
+   concept_genus;
+   concept_lion;
+   concept_microbe;
+   concept_microbiology;
+   concept_mushroom;
+   concept_mycology;
+   concept_natural_area;
+   concept_orchid;
+   concept_ordo;
+   concept_organism;
+   concept_phylum;
+   concept_plant;
+   concept_regnum;
+   concept_russula;
+   concept_science;
+   concept_species;
+   concept_zebra;
+   concept_zoology;
+	-> rrel_explored_relation:
+   nrel_color;
+   nrel_eats;
+   nrel_flower_size;
+   nrel_flowering_period;
+   nrel_form;
+   nrel_habitat;
+   nrel_is;
+   nrel_life_span;
+   nrel_studies;
+   nrel_systematizes;
+   nrel_taxonomic_category;;
+*];;
+
+section_subject_domain_of_biology
+-> rrel_key_sc_element:
+   nrel_color;
+   nrel_eats;
+   nrel_flower_size;
+   nrel_flowering_period;
+   nrel_form;
+   nrel_habitat;
+   nrel_is;
+   nrel_life_span;
+   nrel_studies;
+   nrel_systematizes;
+   nrel_taxonomic_category;
+
+   concept_biology;
+   concept_biological_taxonomy;
+   concept_natural_area;
+   concept_animal;
+   concept_bacterium;
+   concept_botany;
+   concept_classis;
+   concept_color;
+   concept_domain;
+   concept_familia;
+   concept_genus;
+   concept_lion;
+   concept_microbe;
+   concept_microbiology;
+   concept_mushroom;
+   concept_mycology;
+   concept_natural_area;
+   concept_orchid;
+   concept_ordo;
+   concept_organism;
+   concept_phylum;
+   concept_plant;
+   concept_regnum;
+   concept_russula;
+   concept_science;
+   concept_species;
+   concept_zebra;
+   concept_zoology;;

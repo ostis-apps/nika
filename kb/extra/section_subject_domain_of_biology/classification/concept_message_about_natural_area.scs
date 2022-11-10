@@ -1,0 +1,36 @@
+concept_message_about_natural_area
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о природная зона]
+	    (* <- lang_ru;; *);
+	[message about natural_area]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_zoology];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о природная зона)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about natural_area)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о природная зона - атомарное сообщение, с запросом о природная зона.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[An example natural_area message is an atomic message, requesting the definition of natural_area.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

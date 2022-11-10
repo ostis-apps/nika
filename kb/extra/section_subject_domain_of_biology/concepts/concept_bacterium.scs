@@ -1,0 +1,48 @@
+concept_bacterium
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [бактерия]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [bacterium]
+   (* <- lang_en;; *);
+   
+=> nrel_note:
+   [Бактерии — одна из первых форм жизни на Земле и встречаются почти во всех земных местообитаниях. 
+   Они населяют почву, пресные и морские водоёмы, кислые горячие источники, радиоактивные отходы и глубинные слои земной коры.
+   ]
+   (* <- lang_ru;; *);
+
+=> nrel_note:
+   [Бактерии изучает наука бактериология — раздел микробиологии.
+   ]
+   (* <- lang_ru;; *);
+
+=> nrel_note:
+   [Бактерии часто являются симбионтами и паразитами растений и животных.
+   ]
+   (* <- lang_ru;; *);
+
+=> nrel_note:
+   [Большинство бактерий к настоящему времени не описано, и представители лишь половины отделов бактерий могут быть выращены в лаборатории.
+   ]
+   (* <- lang_ru;; *);
+
+<= nrel_is: concept_microbe;
+
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. бактерия](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_bacterium_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+      <= nrel_using_constants:{
+      concept_bacterium;
+      concept_microbiology
+      };;
+*);;

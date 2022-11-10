@@ -1,0 +1,32 @@
+concept_animal
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [животное]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [animal]
+   (* <- lang_en;; *);
+   
+=> nrel_note:
+   [Животные относятся к эукариотам (в клетках имеются ядра). Классическими признаками животных считаются: гетеротрофность (питание готовыми органическими соединениями) 
+   и способность активно передвигаться. Впрочем, существует немало животных, ведущих прикреплённый образ жизни, а гетеротрофность свойственна грибам и некоторым растениям-паразитам.
+   ]
+   (* <- lang_ru;; *);
+
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. животное](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_animal_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+      <= nrel_using_constants:{
+      concept_biology;
+      concept_animal;
+      concept_zoology
+      };;
+*);;

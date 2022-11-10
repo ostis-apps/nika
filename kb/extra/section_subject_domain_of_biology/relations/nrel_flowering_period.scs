@@ -1,0 +1,37 @@
+nrel_flowering_period
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [период цветения* ]
+   (* <- lang_ru;; *);
+   
+=> nrel_second_domain: 
+	concept_plant;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (период цветения* )]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [период цветения* - бинарное 
+               ориентированное отношение, связывающее 
+               растение и время, которое он цветёт.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+	   concept_plant
+   	 };;
+*);;

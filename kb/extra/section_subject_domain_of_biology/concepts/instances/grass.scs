@@ -1,0 +1,25 @@
+grass
+<- concept_plant;
+<- concept_organism;
+
+=> nrel_main_idtf:
+   [трава]
+   (* <- lang_ru;; *);  
+=> nrel_main_idtf:
+   [grass]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Травы имеют листья и стебли, отмирающие в конце вегетационного периода на поверхности почвы.]
+   (* <- lang_ru;; *);	
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. трава](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Трава -  жизненная форма высших растений с недолго живущими надземными побегами.](*<-lang_ru;;*);;
+	*);;
+*);;

@@ -1,0 +1,36 @@
+concept_message_about_organism
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о организмах]
+	    (* <- lang_ru;; *);
+	[message about organism]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_organism];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о организмах)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about organism)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о организмах - атомарное сообщение, с запросом о организмах.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[An example organism message is an atomic message, requesting the definition of organism.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

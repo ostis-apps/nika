@@ -1,0 +1,31 @@
+concept_classis
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [класс]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [classis]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Названия классов, как и названия других таксонов, ранг которых выше рода, являются униномиальными, 
+   то есть состоят из одного слова — существительного (или прилагательного, используемого как существительное) во множественном числе, написанного с заглавной буквы.
+   ]
+   (* <- lang_ru;; *);
+
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. класс](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_classis_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+      <= nrel_using_constants:{
+      concept_biology;
+      concept_biological_taxonomy
+      };;
+*);;

@@ -1,0 +1,38 @@
+concept_regnum
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [царство]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [regnum]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Исторически различают четыре царства живых организмов: Животные, Растения, Грибы и Бактерии. 
+   С 1977 года добавлены царства Протисты и Археи, в 1998 году царство Протисты разделено на царства Простейшие и Хромисты,
+    хотя не все макросистематики поддерживают это разделение.]
+   (* <- lang_ru;; *);
+
+=> nrel_note:
+   [Все царства объединяют в три надцарства, или домена: Бактерии, Археи, Эукариоты. К домену бактерий относят царство бактерий, 
+   к домену архей — царство архей, к домену эукариот — все остальные царства организмов, состоящих из клеток.]
+   (* <- lang_ru;; *);
+
+<= nrel_is: concept_mushroom;
+
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. царство](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_regnum_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+      <= nrel_using_constants:{
+      concept_biology;
+      concept_biological_taxonomy
+      };;
+*);;

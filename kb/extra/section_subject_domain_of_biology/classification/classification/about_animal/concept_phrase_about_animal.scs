@@ -1,0 +1,34 @@
+concept_phrase_about_animal
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о животном]
+	(* <- lang_ru;; *);
+	[phrase about animal]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (фраза о животном)]
+		(* <- lang_ru;; *);
+		[Def. (phrase about animal)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о животном - фраза, являющаяся запросом о животном.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[phrase about animal is a phrase that requesting the definition of animal.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;
+	*);;

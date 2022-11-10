@@ -1,0 +1,31 @@
+concept_natural_area
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [природная зона]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [natural_area]
+   (* <- lang_en;; *);
+   
+=> nrel_note:
+   [Климатические условия (температура, увлажнение, цикличность их изменений) являются определяющими факторами.
+   ]
+   (* <- lang_ru;; *);
+
+=> nrel_note:
+   [Природные зоны названы по присущему им типу растительности — их наиболее яркой географической особенности.
+   ]
+   (* <- lang_ru;; *);
+
+<-rrel_key_sc_element:...
+(*
+      <-definition;;
+      =>nrel_main_idtf:
+      [Опр. природная зона](*<-lang_ru;;*);;
+      <=nrel_sc_text_translation:...
+      (*
+         ->rrel_example: "file://HTML/concept_natural_area_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+      *);;
+*);;

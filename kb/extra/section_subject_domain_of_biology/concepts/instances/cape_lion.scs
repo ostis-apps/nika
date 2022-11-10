@@ -1,0 +1,36 @@
+cape_lion
+<- concept_lion;
+<- concept_animal;
+<- concept_organism;
+<- concept_wit_entity;
+
+=> nrel_main_idtf:
+   [капский лев]
+   (* <- lang_ru;; *);  
+=> nrel_main_idtf:
+   [cape_lion]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Капские львы жили на юге африканского континента. ]
+   (* <- lang_ru;; *);	
+
+=> nrel_note:
+   [Последний капский лев был убит в 1858 году. ]
+   (* <- lang_ru;; *);	
+
+=> nrel_habitat: tropical_forest;
+=> nrel_life_span: [15 лет];
+=> nrel_eats: burchells_zebra;
+=> nrel_color: yellow;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. капский лев](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Капский лев -  вымерший подвид львов.  ](*<-lang_ru;;*);;
+	*);;
+*);;

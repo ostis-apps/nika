@@ -1,0 +1,37 @@
+concept_message_about_biology
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о биологии]
+	(* <- lang_ru;; *);
+	[message about biology]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_biology];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о биологии)]
+        (* <- lang_ru;; *);
+        [Def. (message about biology)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о биологии - атомарное сообщение, с запросом о биологии.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [message about biology is an atomic message, requesting the definition of biology.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
