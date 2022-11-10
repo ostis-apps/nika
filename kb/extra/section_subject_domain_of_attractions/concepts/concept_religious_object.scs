@@ -1,0 +1,27 @@
+concept_religious_object
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Религиозный объект]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [religious object]
+   (* <- lang_en;; *);
+
+=> nrel_inclusion:
+	concept_church;
+	concept_synagogue;
+	
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. религиозный объект](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://HTML/concept_religious_object_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+	
+*);;
