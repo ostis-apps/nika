@@ -1,0 +1,18 @@
+concept_minimum_spanning_tree
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [минимальное остовное дерево]
+    (* <- lang_ru;; *);
+    [minimum spanning tree]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [остовное дерево, у которого сумма веса (или длины) всех его ребер меньше, чем у всех других возможных остовных деревьев графа G, называется минимальным остовным деревом или остовным деревом с минимальной стоимостью .]
+    (* <- lang_ru;; *);
+
+=> nrel_inclusion:
+    concept_cruscal_algorithm;
+    concept_minimum_range_algorithm;
+    concept_prim_algorithm;;

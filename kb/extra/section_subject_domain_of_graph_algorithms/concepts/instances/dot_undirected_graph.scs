@@ -1,0 +1,29 @@
+dot_undirected_graph
+
+=> nrel_main_idtf:
+    [ненаправленный на языке DOT]
+    (* <- lang_ru;;*);
+    [undirected graph described by DOT]
+    (* <- lang_en;;*);
+
+=> nrel_note:
+    [Неориентированный граф в языке DOT описывается списком вершин и рёбер, представленных названием вершин и двойным тире (--) между связанными вершинами.]
+    (* <- lang_ru;;*);
+    [graph graphname {
+    a;
+    b;
+    c;
+    d;
+    a -- b;
+    b -- c;
+    b -- d;
+    }]
+    (* <- lang_ru;;*);
+
+=> nrel_used_description_language:
+    concept_dot;
+
+=> nrel_used_building_graphs_program:
+    concept_graphviz;
+
+<- concept_undirected_graph;;
