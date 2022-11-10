@@ -1,0 +1,79 @@
+section_subject_domain_of_active_leisure
+=> nrel_main_idtf: 
+	[Раздел. Предметная область активный отдых]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of active leisure]
+	(* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+	concept_mountaineering;
+	concept_rock_climbing;
+	concept_bicycle_rides;
+	concept_skiing;
+	concept_snowboarding;
+	concept_tennis;
+	concept_golf;
+	concept_jogging;
+	concept_fishing;
+	concept_hunting;
+	concept_rafting;
+	concept_skateboarding;
+	concept_auto_racing;
+	concept_motorcycle_racing;
+	concept_horse_rides;
+	concept_kayaking;
+	concept_geocaching;
+	concept_skydiving;
+	concept_speleotourism;
+	concept_windsurfing;
+	concept_swimming;
+	concept_active_leisure;
+
+	subject_domain_of_active_leisure;;
+
+section_subject_domain_of_active_leisure = [*
+subject_domain_of_active_leisure
+
+=> nrel_main_idtf: 
+	[Предметная область активный отдых]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of active leisure]
+	(* <- lang_en;; *);
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_active_leisure;
+		
+-> rrel_maximum_studied_object_class:
+	concept_active_leisure;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_mountaineering;
+	concept_rock_climbing;
+	concept_bicycle_rides;
+	concept_skiing;
+	concept_snowboarding;
+	concept_tennis;
+	concept_golf;
+	concept_jogging;
+	concept_fishing;
+	concept_hunting;
+	concept_rafting;
+	concept_skateboarding;
+	concept_auto_racing;
+	concept_motorcycle_racing;
+	concept_horse_rides;
+	concept_tourism;
+	concept_kayaking;
+	concept_geocaching;
+	concept_skydiving;
+	concept_speleotourism;
+	concept_windsurfing;
+	concept_swimming;
+	
+-> rrel_explored_relation:
+	nrel_inventory;
+	
+<- subject_domain;;
+*];;

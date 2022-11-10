@@ -1,0 +1,46 @@
+concept_swimming_cap
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Шапка для плавания]
+	(* <- lang_ru;; *);
+	[Swimming cap]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Шапка для плавания)]
+		(* <- lang_ru;; *);
+		[Def. (Swimming cap)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Шапка для плавания —  плавательный аксессуар, представляющий собой головной убор для плавания в воде. Используется для исключения попадания волос в воду бассейна и засорения фильтров, а также для защиты волос от хлорированной воды.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Swimming cap - a swimming accessory, which is a headgear for swimming in water. It is used to prevent hair from entering the pool water and clogging filters, as well as to protect hair from chlorinated water.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Шапка для плавания)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[О первых шапочках для плавания история умалчивает, но известно, что для сохранения прически во время водных процедур и плавания именитых особ использовались головные уборы из шелка и сетчатой тафты.С конца 19 века, после изобретения резины в Европе для плавания стали использовать шапочки из этого материала, напоминающие собой шлемы. Они держались на голове благодаря завязывающимся шнуркам.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

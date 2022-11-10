@@ -1,0 +1,48 @@
+concept_horse_rides
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Конные прогулки]
+	(* <- lang_ru;; *);
+	[Horse Rides]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Конные прогулки)]
+		(* <- lang_ru;; *);
+		[Def. (Horse Rides)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Конные прогулки - вид активного отдыха и спортивного туризма с использованием животных (лошадей, пони, ослов, верблюдов, собак, оленей, слонов и т.п.) верхом или в упряжи в качестве средства передвижения. В конный туризм входит 5 дисциплин: конно-полевые выезды (выезды в поля, прогулки верхом), конные маршруты (походы, путешествия), дистанции (TREC), дистанции упряжки (TREC в упряжках), соревнования пастухов.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Horse Rides - type of active recreation and sports tourism using animals (horses, ponies, donkeys, camels, dogs, deer, elephants, etc.) on horseback or in harness as a means of transportation. Equestrian tourism includes 5 disciplines: horse-field trips (field trips, horseback riding), horse routes (hiking, travel), distances (TREC), team distances (TREC in teams), shepherd competitions.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Конные прогулки)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Считается, что игра в гольф зародилась в Шотландии и была изобретена пастухами, которые с помощью посохов (будущих клюшек) загоняли камни в кроличьи норы. Предположительно игра существовала уже в XIV веке, а в XV веке в Шотландии вышло несколько законов, запрещавших играть в «гоуф». В XVII веке клюшками в мяч играли уже в Нидерландах. Игра в её современном виде оформилась в XIX веке в Шотландии.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+	
+=> nrel_inventory: concept_horse;;

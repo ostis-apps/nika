@@ -1,0 +1,46 @@
+concept_rafting
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Рафтинг]
+	(* <- lang_ru;; *);
+	[Rafting]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Рафтинг)]
+		(* <- lang_ru;; *);
+		[Def. (Rafting)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Рафтинг - спортивный сплав по горным рекам и искусственным гребным каналам на 6-, 4- и 2-местных надувных судах.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Rafting - sports rafting on mountain rivers and artificial rowing channels on 6-, 4- and 2-seat inflatable boats.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Рафтинг)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Рафтинг принципиально отличается от других видов водного туризма как видом судна, на котором производится сплав, так и идеологией. Рафтинг является коммерческим видом сплава, т.е для участия в сплаве не требуется никакого предыдущего опыта. Достаточно оплатить тур, и вы в группе. Соответственно реки для рафтинга должны быть легко доступны, т.е к ним проложены дороги на старт и финиш маршрута.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

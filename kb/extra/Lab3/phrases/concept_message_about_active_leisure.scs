@@ -1,0 +1,38 @@
+concept_message_about_active_leisure
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение об активном отдыхе]
+	    (* <- lang_ru;; *);
+	[message about active leisure]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_active_leisure];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о активном отдыхе)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about active leisure)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о активном отдыхе - атомарное сообщение, которое содержит экземпляр сушности, информацию о котором необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about active leisure is an atomic message that contains entity example information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

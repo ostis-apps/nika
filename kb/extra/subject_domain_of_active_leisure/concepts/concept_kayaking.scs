@@ -1,0 +1,48 @@
+concept_kayaking
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Каякинг]
+	(* <- lang_ru;; *);
+	[Kayaking]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Каякинг)]
+		(* <- lang_ru;; *);
+		[Def. (Kayaking)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Каякинг - один из видов водного туризма или активного отдыха на воде в судне, которое называется каяк.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Kayaking - one of the types of water tourism or active recreation on the water in a vessel called a kayak.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Каякинг)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[История каякинга берёт своё начало в глубине веков, когда народами Гренландии, Северной Америки, Азии, Арктики был придуман первый каяк. Люди использовали коряги и иногда кости морских животных (например, скелет кита), чтобы построить каркас каяка, а для придания плавучести лодке использовалась шкура животных, особенно шкура тюленя, которой обтягивался весь каркас. Алеуты и инуиты добытые шкуры натирали жиром, чтобы предохранить лодку от разрушающего контакта с водой.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+=> nrel_inventory: concept_kayak;;

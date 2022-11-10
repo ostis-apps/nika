@@ -1,0 +1,48 @@
+concept_skateboarding
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Скейтбординг]
+	(* <- lang_ru;; *);
+	[Skateboarding]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Скейтбординг)]
+		(* <- lang_ru;; *);
+		[Def. (Skateboarding)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Скейтбординг - экстремальный вид спорта, заключающийся в катании, а также в исполнении различных трюков на скейтборде.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Skateboarding - extreme sport that consists of skating, as well as performing various tricks on a skateboard.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Скейтбординг)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Скейтбординг появился в конце 1940-х — начале 1950-х годов, в среде калифорнийских сёрферов, которые не могли заниматься сёрфингом, когда не было волн. Первыми скейтами были ящики и доски с прикреплёнными колёсами. Позже ящики были заменены на доски из спрессованных слоёв древесины — похожие на те, которые используются в настоящее время.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+	
+=> nrel_inventory: concept_skateboard;;

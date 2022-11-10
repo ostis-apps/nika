@@ -1,0 +1,52 @@
+nrel_inventory
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antransitive_relation;
+<-asymmetric_relation;
+=>nrel_main_idtf:
+	[Быть инвентарём*]
+	(* <- lang_ru;; *);
+	[isInventory*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_active_leisure;
+=>nrel_second_domain: concept_inventory;
+=>nrel_definitional_domain: ... (*
+	<= nrel_combination:
+	{
+		concept_active_leisure;
+		concept_inventory
+	};;
+*);
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Быть инвентарём**)]
+		(* <- lang_ru;; *);
+		[Def.(Inventory*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Быть инвентарём* - отношение означающее,что предмет используется в каком-либо виде активного отдыха]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[isInventory* - relation meaning that the item is used in some kind of outdoor activity.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_inventory;
+		concept_active_leisure;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

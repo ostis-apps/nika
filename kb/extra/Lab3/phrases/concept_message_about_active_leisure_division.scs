@@ -1,0 +1,37 @@
+concept_message_about_active_leisure_division
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о видах активного отдыха]
+	    (* <- lang_ru;; *);
+	[message about active leisure division]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_active_leisure_division];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о видах активного отдыха)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about active leisure division)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о видах активного отдыха - атомарное сообщение, которое содержит виды активного отдыха, информацию о которых необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about active leisure division is an atomic message that contains active leisure division information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

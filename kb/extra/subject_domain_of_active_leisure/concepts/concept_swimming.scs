@@ -1,0 +1,48 @@
+concept_swimming
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Плавание]
+	(* <- lang_ru;; *);
+	[Swimming]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Плавание)]
+		(* <- lang_ru;; *);
+		[Def. (Swimming)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Плавание - метод передвижения человека и животных в воде, который не подразумевает контакт с дном. Плавание является способом передвижения, развлечением и отдыхом, а также видом спорта.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Swimming - method of movement of humans and animals in the water, which does not involve contact with the bottom. Swimming is a way of transportation, entertainment and recreation, as well as a sport.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Плавание)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Плавание было известно с доисторических времен. Самое раннее упоминание относится к картинам Каменного века нарисованным приблизительно 7 000 лет назад. Первое письменное упоминание относят к 2000 году до н. э. Самыми ранними источниками считают Гильгамеш, Илиаду, Одиссею, Библию (Ezekiel 47:5, Acts 27:42, Isaiah 25:11), Беовульф, и другие саги. В 1538 немецкий профессор Nikolaus Wynmann написал первую книгу о плавании, «Пловец или Диалог об Искусстве Плавания» (Der Schwimmer oder ein Zwiegespräch über die Schwimmkunst). Спортивное плавание в Европе началось приблизительно в 1800 и, в основном, брассом.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+
+=> nrel_inventory: concept_swimming_cap;;

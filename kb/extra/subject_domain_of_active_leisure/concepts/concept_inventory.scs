@@ -1,0 +1,46 @@
+concept_inventory
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Инвентарь]
+	(* <- lang_ru;; *);
+	[Inventory]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Инвентарь)]
+		(* <- lang_ru;; *);
+		[Def. (Inventory)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Инвентарь - совокупность вещей, которые нужны для занятия опредёленным видом отдыха.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Inventory - a set of things that are needed to engage in a certain type of recreation.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Инвентарь)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Без определенного инвентаря некоторыми спорта/активного отдыха нельзя заниматься либо это небезопасно.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

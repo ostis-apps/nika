@@ -1,0 +1,48 @@
+concept_golf
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Гольф]
+	(* <- lang_ru;; *);
+	[Golf]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Гольф)]
+		(* <- lang_ru;; *);
+		[Def. (Golf)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Гольф -  спортивная игра, в которой отдельные участники или команды соревнуются, загоняя маленький мячик в специальные лунки ударами клюшек, пытаясь пройти отведённую дистанцию за минимальное число ударов.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Golf - sport game in which individuals or teams compete by driving a small ball into special holes with clubs, trying to cover the allotted distance in the minimum number of strokes.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Гольф)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Считается, что игра в гольф зародилась в Шотландии и была изобретена пастухами, которые с помощью посохов (будущих клюшек) загоняли камни в кроличьи норы. Предположительно игра существовала уже в XIV веке, а в XV веке в Шотландии вышло несколько законов, запрещавших играть в «гоуф». В XVII веке клюшками в мяч играли уже в Нидерландах. Игра в её современном виде оформилась в XIX веке в Шотландии.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+	
+=> nrel_inventory: concept_golf_club;;

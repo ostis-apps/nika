@@ -1,0 +1,46 @@
+concept_rock_climbing
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Скалолазание]
+	(* <- lang_ru;; *);
+	[Rock climbing]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Скалолазание)]
+		(* <- lang_ru;; *);
+		[Def. (Rock climbing)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Скалолазание -  вид спорта и вид активного отдыха, который заключается в лазании по естественному (скалы) или искусственному (скалодром) рельефу.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Rock climbing - sport and type of active recreation, which consists in climbing on natural (rocks) or artificial (climbing wall) relief.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Скалолазание)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Скалолазание как способ преодоления скального рельефа человеком в процессе освоения и приспособления к жизни в горных районах возник очень давно. Скалолазание как преодоление скального рельефа не с целью решения утилитарных житейских задач (охота, поиск кратчайших путей в горах и т. п.), а для самоутверждения, решения спортивных задач, то есть как разновидность активного отдыха и спорта, возникло в горных районах в XIX веке.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

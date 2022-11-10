@@ -1,0 +1,46 @@
+concept_golf_club
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Клюшка для гольфа]
+	(* <- lang_ru;; *);
+	[Golf club]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Клюшка для гольфа)]
+		(* <- lang_ru;; *);
+		[Def. (Golf club)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Клюшка для гольфа —  sports equipment in the form of a stick with a curved end for playing golf. The names of club types imply that these clubs have heads made of a certain material (for example, the "wood" type), although the heads of modern clubs are mainly made of metal alloys based on titanium.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Golf club - type of sailing and water entertainment, which is based on the skill of controlling a small light board with a sail mounted on it on the water surface.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Клюшка для гольфа)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Различается 29 типов клюшек, однако в одной игре максимально можно использовать только 14. Клюшки различаются по длине и весу, а также углу, под которым наносится удар по мячу.Каждая клюшка предназначена для выполнения своего специфического удара.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

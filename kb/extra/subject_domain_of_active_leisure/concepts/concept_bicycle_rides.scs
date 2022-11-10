@@ -1,0 +1,48 @@
+concept_bicycle_rides
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Велосипедные прогулки]
+	(* <- lang_ru;; *);
+	[Bicycle rides]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Велосипедные прогулки)]
+		(* <- lang_ru;; *);
+		[Def. (Bicycle rides)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Велосипедные прогулки- это полезный, приятный и интересный вид активного отдыха, который откроет массу новых впечатлений.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Bicycle rides is a useful, pleasant and interesting type of outdoor activity that will open up a lot of new experiences..]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Велосипедные прогулки)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Исходя из того, что движение велосипеду придается с помощью ног, то можно сразу предположить, что польза для здоровья кроется в проработке мышц ног, так как именно они работают наиболее интенсивно во время велосипедной прогулки. Кстати, слово “велосипед” имеет французские корни и его можно перевести как “быстрые ноги”. При этом езда на велосипеде не только хорошо укрепляет мышцы ног, но также происходит и тренировка выносливости.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+	
+=> nrel_inventory: concept_bicycle;;
