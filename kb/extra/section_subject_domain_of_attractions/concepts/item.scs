@@ -2,7 +2,7 @@ State_Academic_Bolshoi_Theater_of_Russia
 <- concept_theater; concept_entertainment_facility; concept_historical_object; concept_cultural_object;	concept_architectural_object;
 
 => nrel_main_idtf:
-   [Большой театр(Россия)]
+   [Большой театр]
    (* <- lang_ru;; *);
 => nrel_idtf:
    [Большой]
@@ -77,7 +77,7 @@ TheRajMandir
    [300$]
    (* <- lang_ru;; *);
 => nrel_city:  Jaipur; 
-=> nrel_google_rating: [4,5] (* <- number;; *);
+=> nrel_google_rating: [4,5] (* <- lang_ru;; *);
 => nrel_country: India;
 => nrel_time_of_visit: 
    [с 12:00 до 23.00]
@@ -97,25 +97,21 @@ TheRajMandir
 *);;
 
 
+
+
 Bellagio
-<- concept_casino; concept_entertainment_facility; concept_historical_object; concept_architectural_object;
+<- concept_entertainment_facility; 
 
-=> nrel_main_idtf:
-   [Bellagio]
-   (* <- lang_ru;; *);
-  
-   
+
+
 => nrel_cost_of_visit: 
-   [100$-~]
+   [10$]
    (* <- lang_ru;; *);
-=> nrel_age_limit: 18;
-=> nrel_city:  Las_Vegas; 
-=> nrel_google_rating: [4,7] (* <- number;; *);
-=> nrel_country: USA;
+=> nrel_city:  Las_Vegas ;
+=> nrel_country:   USA;
 => nrel_time_of_visit: 
-   [ 24/7]
+   [24/7]
    (* <- lang_ru;; *);
-
 
 <-rrel_key_sc_element:...
 (*
@@ -140,9 +136,7 @@ Saint_Basils_Cathedral
 => nrel_cost_of_visit: 
    [10$]
    (* <- lang_ru;; *);
-=> nrel_city:    
-  [Red Square(Moscow)]
-   (* <- lang_ru;; *);
+=> nrel_city:  Moscow ;
 => nrel_google_rating: [4,8] (* <- number;; *);
 => nrel_country:   Russia;
 => nrel_time_of_visit: 
