@@ -1,0 +1,37 @@
+concept_message_about_holiday_example
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о экземпляре праздника]
+	    (* <- lang_ru;; *);
+	[message about holiday example]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_holiday_example];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о экземпляре праздника)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about holiday example)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о экземпляре праздника - атомарное сообщение, которое содержит информацию о экземпляре праздника.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about holiday example is an atomic message that contains information holiday example.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

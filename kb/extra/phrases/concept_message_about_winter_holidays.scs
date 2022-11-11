@@ -1,0 +1,37 @@
+concept_message_about_winter_holidays
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о зимних праздниках]
+	    (* <- lang_ru;; *);
+	[message about winter holidays]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_winter_holidays];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о зимних праздниках)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about winter holidays)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[сообщение о зимних праздниках - атомарное сообщение, которое зимние праздники.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[message about winter holidays is an atomic message that contains winter holidays.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
