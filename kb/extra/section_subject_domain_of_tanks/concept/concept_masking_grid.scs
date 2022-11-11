@@ -1,0 +1,28 @@
+concept_masking_grid <- sc_node_not_relation;;
+
+concept_masking_grid => nrel_main_idtf:
+[Маскировочная сетка] (*<-lang_ru;;*);
+[Masking grid] (*<-lang_en;;*);;
+
+concept_masking_grid <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Маскировочная сетка)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_masking_grid.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_masking_grid <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Маскировочная сетка)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Маскировочная сетка широко применяется для маскировки вооружения, военной техники и инженерных сооружений на фоне местности, растительного покрова от различных методов разведки противника.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

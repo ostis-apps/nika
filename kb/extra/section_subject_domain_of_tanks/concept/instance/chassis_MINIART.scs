@@ -1,0 +1,26 @@
+chassis_MINIART
+<- concept_chassis;
+
+=> nrel_main_idtf:
+   [Ходовая часть T34 позднего типа]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Ходовая часть T34]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [chassis MINIART]
+   (* <- lang_en;; *);
+
+<= nrel_movement: tank_T34;
+=> nrel_control: driver_mechanic_Bukhtuev_Mikhail;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Ходовая часть T34 позднего типа](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Ходовая часть T34 позднего типа - это устройство, отвечающее за передвижение танка Т34.](*<-lang_ru;;*);;
+	*);;
+*);;

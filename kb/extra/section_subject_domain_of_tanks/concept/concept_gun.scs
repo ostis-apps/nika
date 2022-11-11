@@ -1,0 +1,28 @@
+concept_gun <- sc_node_not_relation;;
+
+concept_gun => nrel_main_idtf:
+[Пушка] (*<-lang_ru;;*);
+[Gun] (*<-lang_en;;*);;
+
+concept_gun <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Пушка)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_gun.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_gun <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Пушка)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Современные танковые пушки имеют большой калибр (от 105 до 125 мм, на перспективных образцах до 152 мм), могут быть как нарезными, так и гладкоствольными.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

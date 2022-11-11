@@ -1,0 +1,37 @@
+concept_message_about_tank_subordinates
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о личном составе танка]
+	    (* <- lang_ru;; *);
+	[message about subordinates tank]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_subordinates];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о личном составе танка)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about subordinates tank)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о личном составе танке - атомарное сообщение, с запросом на вывод определения личном составе танка.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Tank subordinates message - atomic message, requesting the output of the tank subordinates definition.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

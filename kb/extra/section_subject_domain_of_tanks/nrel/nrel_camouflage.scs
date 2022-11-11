@@ -1,0 +1,49 @@
+nrel_camouflage
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-antisymmetric_relation;
+
+=>nrel_main_idtf:
+	[Камуфляж*]
+	(* <- lang_ru;; *);
+	[camouflage*]
+	(* <- lang_en;; *);
+
+=> nrel_first_domain:
+	concept_tank;
+=> nrel_second_domain:
+	concept_masking_grid;
+
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Камуфляж*)]
+		(* <- lang_ru;; *);
+		[Def.(camouflage*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Камуфляж* - это отношение, связывающее боевую машину и средства маскировки, тем самым обеспчивая скрытность от противника.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example:
+			[camouflage* is the relationship that connects the combat vehicle and the means of disguise, thereby providing stealth from the enemy.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_tank;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

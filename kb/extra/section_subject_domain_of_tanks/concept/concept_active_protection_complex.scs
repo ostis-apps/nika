@@ -1,0 +1,28 @@
+concept_active_protection_complex <- sc_node_not_relation;;
+
+concept_active_protection_complex => nrel_main_idtf:
+[Комплекс активной защиты] (*<-lang_ru;;*);
+[Active protection complex] (*<-lang_en;;*);;
+
+concept_active_protection_complex <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Комплекс активной защиты)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_active_protection_complex.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_active_protection_complex <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Комплекс активной защиты)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[В системе с отстреливаемыми защитными зарядами устройство, совмещённое с РЛС локального действия, даёт команду на отстрел специальных зарядов, которые при сближении со снарядом взрываются, формируя облако осколков, поражающих приближающийся боеприпас.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

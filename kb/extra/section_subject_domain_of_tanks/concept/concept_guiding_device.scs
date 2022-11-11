@@ -1,0 +1,16 @@
+concept_guiding_device <- sc_node_not_relation;;
+
+concept_guiding_device => nrel_main_idtf:
+[Наводящее устройство] (*<-lang_ru;;*);
+[Guiding device] (*<-lang_en;;*);;
+
+concept_guiding_device <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Наводящее устройство)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_guiding_device.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;

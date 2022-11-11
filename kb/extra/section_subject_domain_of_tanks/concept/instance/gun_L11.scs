@@ -1,0 +1,28 @@
+gun_L11
+<- concept_gun;
+
+=> nrel_main_idtf:
+   [пушка Л11]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Л11]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [gun L11]
+   (* <- lang_en;; *);
+
+<= nrel_weaponry: tank_T34;
+=> nrel_control: gun_layer_Koryavin_Alexander;
+=> nrel_aiming: guiding_device_theodolite;
+
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. пушка Л11](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [пушка Л11 - советская танковая пушка, разработанная в СКБ-4 Ленинградского Кировского завода конструктором И. А. Махановым.](*<-lang_ru;;*);;
+	*);;
+*);;

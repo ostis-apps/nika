@@ -1,0 +1,25 @@
+caterpillar_device_Asphalt_walking
+<- concept_caterpillar_device;
+
+=> nrel_main_idtf:
+   [гусеничное устройство Асфальтового хождения]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [гусеница Асфальтового хождения]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [caterpillar device Asphalt-walking]
+   (* <- lang_en;; *);
+
+<= nrel_movement: tank_T34;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. гусеничное устройство Асфальтового хождения](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Гусеничное устройство Асфальтового хождения - гусеницы, которые состоят из одного резинового элемента, упрочнены в поперечном направлении стальными поперечинами, а в продольном направлении — полосами текстильного корда.](*<-lang_ru;;*);;
+	*);;
+*);;

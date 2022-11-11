@@ -1,0 +1,28 @@
+concept_periscope <- sc_node_not_relation;;
+
+concept_periscope => nrel_main_idtf:
+[Перископ] (*<-lang_ru;;*);
+[Periscope] (*<-lang_en;;*);;
+
+concept_periscope <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Перископ)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_periscope.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_periscope <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Перископ)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Простейшая форма перископа – труба, на обоих концах которой закреплены зеркала, наклонённые относительно оси трубы на 45° для изменения хода световых лучей.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

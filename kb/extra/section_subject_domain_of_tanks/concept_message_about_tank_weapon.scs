@@ -1,0 +1,37 @@
+concept_message_about_tank_weapon
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о вооружении танка]
+	    (* <- lang_ru;; *);
+	[message about weapon tank]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_weapon];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о вооружении танка)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about weapon tank)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о вооружении танка - атомарное сообщение, с запросом на вывод определения вооружения танка.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Tank weapon message - atomic message, requesting the output of the tank weapon definition.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

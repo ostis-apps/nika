@@ -1,0 +1,49 @@
+nrel_weaponry
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-antisymmetric_relation;
+=>nrel_main_idtf:
+	[Вооружение*]
+	(* <- lang_ru;; *);
+	[weaponry*]
+	(* <- lang_en;; *);
+
+=> nrel_first_domain:
+	concept_tank;
+=> nrel_second_domain:
+	concept_gun;
+	concept_machine_gun;
+
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Вооружение*)]
+		(* <- lang_ru;; *);
+		[Def.(weaponry*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Вооружение* - это орудие, располагающееся на боевой машине.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[weaponry* is a weapon located on a combat vehicle.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_tank;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

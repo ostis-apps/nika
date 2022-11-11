@@ -1,0 +1,26 @@
+radio_station_9_R
+<- concept_radio_station;
+
+=> nrel_main_idtf:
+   [радиостанция 9-Р]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [9-Р]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [radio station 9-R]
+   (* <- lang_en;; *);
+
+<= nrel_communication: tank_T34;
+=> nrel_control: operator_Guslev_Georgy;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. радиостанция 9-Р](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Радиостанция 9-Р - радиостанция, разработанная в ноябре 1942 года, в производстве с апреля 1943 года. Главное отличие — это другой передатчик с двумя радиолампами 6Л6 или 6П3С, питание которого осуществляется от бортовой сети 12 В через умформер РУ-45Б.](*<-lang_ru;;*);;
+	*);;
+*);;

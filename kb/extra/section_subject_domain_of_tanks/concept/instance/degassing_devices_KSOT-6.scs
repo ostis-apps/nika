@@ -1,0 +1,25 @@
+degassing_devices_KSOT_6
+<- concept_degassing_devices;
+
+=> nrel_main_idtf:
+   [устройства дегазации КСОТ-6]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [КСОТ-6]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [degassing devices KSOT-6]
+   (* <- lang_en;; *);
+
+<= nrel_radiation_protection: tank_T34;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. устройства дегазации КСОТ-6](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Устройства дегазации КСОТ-6 - комплект специальной обработка танка Т34, применяющийся против радиации.](*<-lang_ru;;*);;
+	*);;
+*);;

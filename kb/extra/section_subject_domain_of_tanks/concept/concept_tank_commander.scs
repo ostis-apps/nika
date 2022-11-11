@@ -1,0 +1,28 @@
+concept_tank_commander <- sc_node_not_relation;;
+
+concept_tank_commander => nrel_main_idtf:
+[Командир танка] (*<-lang_ru;;*);
+[Tank commander] (*<-lang_en;;*);;
+
+concept_tank_commander <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Командир танка)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_tank_commander.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_tank_commander <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Командир танка)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Командир танка подчиняется командиру танкового взвода и является непосредственным начальником для членов экипажа танка.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

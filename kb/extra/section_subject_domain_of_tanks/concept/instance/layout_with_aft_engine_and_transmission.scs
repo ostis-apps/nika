@@ -1,0 +1,25 @@
+layout_with_aft_engine_and_transmission
+<- concept_layout;
+
+=> nrel_main_idtf:
+   [компоновка с кормовым расположением двигателя и трансмиссии]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [компоновка Т34]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [layout with aft engine and transmission]
+   (* <- lang_en;; *);
+
+<= nrel_survivability: tank_T34;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. компоновка с кормовым расположением двигателя и трансмиссии](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Компоновка с кормовым расположением двигателя и трансмиссии - советская компоновка танков](*<-lang_ru;;*);;
+	*);;
+*);;

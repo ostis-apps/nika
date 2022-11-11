@@ -1,0 +1,28 @@
+concept_radio_station <- sc_node_not_relation;;
+
+concept_radio_station => nrel_main_idtf:
+[Радиостанция] (*<-lang_ru;;*);
+[Radio station] (*<-lang_en;;*);;
+
+concept_radio_station <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Радиостанция)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_radio_station.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_radio_station <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Радиостанция)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Радиостанция работает с помощью специальных оборудований таких как, радиопередатчики и радиоприёмники.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

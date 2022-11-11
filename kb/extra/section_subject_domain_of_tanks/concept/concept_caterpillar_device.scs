@@ -1,0 +1,16 @@
+concept_caterpillar_device <- sc_node_not_relation;;
+
+concept_caterpillar_device => nrel_main_idtf:
+[Гусеничное устройство] (*<-lang_ru;;*);
+[Caterpillar device] (*<-lang_en;;*);;
+
+concept_caterpillar_device <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Гусеничное устройство)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_caterpillar_device.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;

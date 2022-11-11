@@ -1,0 +1,28 @@
+concept_layout <- sc_node_not_relation;;
+
+concept_layout => nrel_main_idtf:
+[Компоновка] (*<-lang_ru;;*);
+[Layout] (*<-lang_en;;*);;
+
+concept_layout <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Компоновка)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_layout.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_layout <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Компоновка)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Главной задачей общей компоновки является получение наиболее высоких показателей боевых свойств танка при заданных массе и габаритах.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

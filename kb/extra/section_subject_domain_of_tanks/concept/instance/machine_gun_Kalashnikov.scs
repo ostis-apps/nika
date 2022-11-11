@@ -1,0 +1,26 @@
+machine_gun_Kalashnikov
+<- concept_machine_gun;
+
+=> nrel_main_idtf:
+   [автомат-пулемёт Калашникова]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [пулемёт Калашникова]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [machine gun Kalashnikov]
+   (* <- lang_en;; *);
+
+<= nrel_weaponry: tank_T34;
+=> nrel_control: machine_gunner_Nuradilov_Khanpasha;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Автомат-пулемёт Калашникова](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Автомат-пулемёт Калашникова - советский пулемёт, разработанный М. Т. Калашниковым в качестве единого пулемёта для Вооружённых Сил СССР.](*<-lang_ru;;*);;
+	*);;
+*);;

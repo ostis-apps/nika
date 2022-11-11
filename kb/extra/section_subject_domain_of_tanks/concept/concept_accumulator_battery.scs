@@ -1,0 +1,28 @@
+concept_accumulator_battery <- sc_node_not_relation;;
+
+concept_accumulator_battery => nrel_main_idtf:
+[Аккумуляторная батарея] (*<-lang_ru;;*);
+[Accumulator battery] (*<-lang_en;;*);;
+
+concept_accumulator_battery <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Аккумуляторная батарея)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_accumulator_battery.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_accumulator_battery <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Аккумуляторная батарея)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[На электротранспорте аккумуляторная батарея является не вспомогательным источником энергии, а основным.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

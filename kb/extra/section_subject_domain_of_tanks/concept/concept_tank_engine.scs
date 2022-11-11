@@ -1,0 +1,28 @@
+concept_tank_engine <- sc_node_not_relation;;
+
+concept_tank_engine => nrel_main_idtf:
+[Танковый двигатель] (*<-lang_ru;;*);
+[Tank engine] (*<-lang_en;;*);;
+
+concept_tank_engine <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Танковый двигатель)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_tank_engine.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_tank_engine <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Танковый двигатель)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Основные преимущества танкового двигателя это его компактность, надёжность работы в разном климате, высокие энергетические показатели, экономичность и многотопливность.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
