@@ -1,0 +1,115 @@
+section_subject_domain_of_journalism
+=> nrel_main_idtf: 
+	[Раздел. Предметная область журналистики]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of journalism]
+	(* <- lang_en;; *);
+	
+<= nrel_section_decomposition: 
+	{
+		section_subject_domain_of_press;
+	};
+
+<- rrel_key_sc_element:
+		concept_journalism;
+		concept_mass_media;
+		concept_press;
+		concept_interview;
+		concept_reporter;
+		concept_reportage;
+		concept_tv;
+		concept_radio;
+		concept_newspaper;
+		concept_note;
+		concept_report;
+		concept_comment;
+		concept_correspondence;
+		concept_article;
+		concept_review;
+		concept_essay;
+		concept_chronicle;
+		concept_feuilleton;
+		concept_internet;
+		concept_communication;
+		concept_journalist;
+		concept_radio_journalism;
+		concept_newspaper_journalism;
+		concept_internet_journalism;
+		concept_photojournalism;
+		concept_confidentiality;
+		concept_freedom_of_speech;
+		nrel_confidentiality;;
+		
+
+section_subject_domain_of_journalism = 
+[*
+	subject_domain_of_journalism
+
+=> nrel_main_idtf: 
+	[Предметная область журналистики]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of journalism]
+	(* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+		subject_domain_of_press;
+
+<= nrel_private_subject_domain:
+	subject_domain_culture;
+		
+-> rrel_maximum_studied_object_class:
+	concept_journalism;
+
+-> rrel_explored_general_subject_domain_concept:
+	nrel_confidentiality;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_ice;
+	concept_snow;
+	winter_sport;
+	concept_alpine_skiing_combined;
+	concept_bandy;
+	concept_broomball;
+	concept_curling_stone;
+	concept_downhill;
+	concept_eisstock_sport;
+	concept_freeride;
+	concept_ice_climbing;
+	concept_military_patrol_competition;
+	concept_mogul;
+	concept_new_school_skiing;
+	concept_nordic_combined;
+	concept_ringette;
+	concept_short_track_speed_skating;
+	concept_skates;
+	concept_skeleton;
+	concept_skiboard;
+	concept_skiboarding;
+	concept_skiing_sport;
+	concept_skijoring;
+	concept_ski_jumping;
+	concept_ski_race;
+	concept_slalom;
+	concept_sledge_hockey;
+	concept_sleigh;
+	concept_slopestyle;
+	concept_snowboard;
+	concept_snowboard_cross;
+	concept_snowkiting;
+	concept_snow_rugby;
+	concept_snowskate;
+	concept_speed_competition;
+	concept_speedgliding;
+	concept_speedway_on_ice;
+	concept_synchronized_figure_skating;
+	concept_telemark;
+	concept_wok_racing;
+	concept_yukigassen;
+	
+-> rrel_explored_relation:
+	nrel_confidentiality;
+
+<- subject_domain;;
+*];;

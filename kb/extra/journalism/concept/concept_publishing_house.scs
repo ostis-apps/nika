@@ -1,0 +1,30 @@
+concept_publishing_house <- sc_node_not_relation;;
+
+concept_publishing_house => nrel_main_idtf:
+[издательство] (*<-lang_ru;;*);
+[publishing_house] (*<-lang_en;;*);;
+
+concept_publishing_house <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (издательство)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[медиакомпания, которая работает в области литературы, искусства, музыки или науки, и продукция которой может воспроизводиться и распространяться.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_publishing_house <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (издательство)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Распространение издательской продукции может осуществляться через каналы торговли, интернет, а также непосредственно самим издателем.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

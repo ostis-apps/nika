@@ -1,0 +1,72 @@
+nrel_newspaper_journalism <- sc_node_norole_relation;;
+
+nrel_newspaper_journalism => nrel_main_idtf:
+[Газетная журналистика] (*<-lang_ru;;*);
+[newspaper_journalism] (*<-lang_en;;*);;
+
+nrel_newspaper_journalism <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Газетная журналистика)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[одна из разновидностей журналистики при классификации по критерию используемой технологии производства массовой информации.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_newspaper_journalism <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Газетная журналистика)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Является первой по времени возникновения среди современных разновидностей журналистики.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_newspaper_journalism
+=> nrel_first_domain: concept_newspaper;
+=> nrel_second_domain: concept_consumer;
+
+=> nrel_definitional_domain: ...
+(*
+	<= nrel_combination:
+	{
+		concept_newspaper;
+		concept_consumer
+	};;
+*);;
+
+arity -> ...
+(*
+	-> nrel_newspaper_journalism;;
+	=> nrel_measurement: 2;;
+*);;
+
+relation => nrel_inclusion: oriented_relation
+(*
+	-> nrel_newspaper_journalism;;
+*);;
+
+relation => nrel_inclusion: binary_relation
+(*
+	 => nrel_inclusion: symmetric_relation
+	(*
+		-|> nrel_newspaper_journalism;;
+	*);;
+
+	 => nrel_inclusion: transitive_relation
+	(*
+		-|> nrel_newspaper_journalism;;
+	*);;
+
+	 => nrel_inclusion: reflexive_relation
+	(*
+		-|> nrel_newspaper_journalism;;
+	*);;
+
+*);;

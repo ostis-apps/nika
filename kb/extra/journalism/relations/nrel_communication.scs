@@ -1,0 +1,72 @@
+nrel_communication <- sc_node_norole_relation;;
+
+nrel_communication => nrel_main_idtf:
+[коммуникация] (*<-lang_ru;;*);
+[communication] (*<-lang_en;;*);;
+
+nrel_communication <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (коммуникация)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[взаимодействие, связь, общение между живыми существами или передача информации между клетками организма, например с целью координации, синхронизации процессов.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_communication <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (коммуникация)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Вне общения невозможна человеческая деятельность.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_communication
+=> nrel_first_domain: concept_creature;
+=> nrel_second_domain: concept_creature;
+
+=> nrel_definitional_domain: ...
+(*
+	<= nrel_combination:
+	{
+		concept_creature;
+		concept_creature
+	};;
+*);;
+
+arity -> ...
+(*
+	-> nrel_communication;;
+	=> nrel_measurement: 2;;
+*);;
+
+relation => nrel_inclusion: oriented_relation
+(*
+	-> nrel_communication;;
+*);;
+
+relation => nrel_inclusion: binary_relation
+(*
+	 => nrel_inclusion: symmetric_relation
+	(*
+		-> nrel_communication;;
+	*);;
+
+	 => nrel_inclusion: transitive_relation
+	(*
+		-|> nrel_communication;;
+	*);;
+
+	 => nrel_inclusion: reflexive_relation
+	(*
+		-|> nrel_communication;;
+	*);;
+
+*);;

@@ -1,0 +1,30 @@
+concept_essay <- sc_node_not_relation;;
+
+concept_essay => nrel_main_idtf:
+[очерк] (*<-lang_ru;;*);
+[essay] (*<-lang_en;;*);;
+
+concept_essay <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (очерк)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[одна из разновидностей малой формы эпической литературы — рассказа, отличная от другой его формы, новеллы, отсутствием единого, острого и быстро разрешающегося конфликта и большей развитостью описательного изображения.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_essay <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (очерк)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Это полухудожественный-полудокументальный жанр, в котором описываются или реальные события и люди, или образы-типы, посвящённый злободневной или публицистической теме.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

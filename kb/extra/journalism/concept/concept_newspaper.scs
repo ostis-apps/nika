@@ -1,0 +1,30 @@
+concept_newspaper <- sc_node_not_relation;;
+
+concept_newspaper => nrel_main_idtf:
+[газета] (*<-lang_ru;;*);
+[newspaper] (*<-lang_en;;*);;
+
+concept_newspaper <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (газета)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Печатное периодическое издание, выходящее под постоянным названием и не реже одного раза в месяц.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_newspaper <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (газета)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Прообразом газеты считают древние рукописные сводки новостей.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

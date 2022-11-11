@@ -1,0 +1,30 @@
+concept_media_corporation <- sc_node_not_relation;;
+
+concept_media_corporation => nrel_main_idtf:
+[медиакорпорация] (*<-lang_ru;;*);
+[media_corporation] (*<-lang_en;;*);;
+
+concept_media_corporation <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (медиакорпорация)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[холдинговая компания, владеющая значительным количеством медиаресурсов.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_media_corporation <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (медиакорпорация)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[На 2008 год The Walt Disney Company была самым большим медиаконгломератом в мире.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
