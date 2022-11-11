@@ -1,0 +1,30 @@
+concept_editor <- sc_node_not_relation;;
+
+concept_editor => nrel_main_idtf:
+[редактор] (*<-lang_ru;;*);
+[editor] (*<-lang_en;;*);;
+
+concept_editor <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (редактор)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[тот, кто работает с текстом, а именно составляет, проверяет и исправляет содержание в соответствии с требованиями определённого жанра, готовит к печати издание, также выступает в роли управляющего.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_editor <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (редактор)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[В числе должностных обязанностей этого специалиста — распределение авторских заданий и контроль за их своевременным и качественным исполнением за определённый срок.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

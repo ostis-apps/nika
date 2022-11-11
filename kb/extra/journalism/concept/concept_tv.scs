@@ -1,0 +1,30 @@
+concept_tv <- sc_node_not_relation;;
+
+concept_tv => nrel_main_idtf:
+[телевидение] (*<-lang_ru;;*);
+[tv] (*<-lang_en;;*);;
+
+concept_tv <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (телевидение)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[технология электросвязи, предназначенная для передачи на расстояние движущегося изображения.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_tv <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (телевидение)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[В большинстве случаев одновременно с изображением передаётся звуковое сопровождение.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

@@ -1,0 +1,72 @@
+nrel_photojournalism <- sc_node_norole_relation;;
+
+nrel_photojournalism => nrel_main_idtf:
+[фотожурналистика] (*<-lang_ru;;*);
+[photojournalism] (*<-lang_en;;*);;
+
+nrel_photojournalism <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (фотожурналистика)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[особая форма журналистики, использующая фотографию в качестве основного средства выражения.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_photojournalism <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (фотожурналистика)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Фотожурналисты должны действовать, принимать решения и носить фотографическое оборудование в тех же условиях, что и участники событий (пожар, война, уличные беспорядки), часто подвергаясь одинаковому риску с ними.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_photojournalism
+=> nrel_first_domain: concept_photo;
+=> nrel_second_domain: concept_consumer;
+
+=> nrel_definitional_domain: ...
+(*
+	<= nrel_combination:
+	{
+		concept_photo;
+		concept_consumer
+	};;
+*);;
+
+arity -> ...
+(*
+	-> nrel_photojournalism;;
+	=> nrel_measurement: 2;;
+*);;
+
+relation => nrel_inclusion: oriented_relation
+(*
+	-> nrel_photojournalism;;
+*);;
+
+relation => nrel_inclusion: binary_relation
+(*
+	 => nrel_inclusion: symmetric_relation
+	(*
+		-|> nrel_photojournalism;;
+	*);;
+
+	 => nrel_inclusion: transitive_relation
+	(*
+		-|> nrel_photojournalism;;
+	*);;
+
+	 => nrel_inclusion: reflexive_relation
+	(*
+		-|> nrel_photojournalism;;
+	*);;
+
+*);;

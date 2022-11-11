@@ -1,0 +1,72 @@
+nrel_confidentiality <- sc_node_norole_relation;;
+
+nrel_confidentiality => nrel_main_idtf:
+[конфиденциальность] (*<-lang_ru;;*);
+[confidentiality] (*<-lang_en;;*);;
+
+nrel_confidentiality <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (конфиденциальность)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[необходимость предотвращения разглашения, утечки какой-либо информации.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_confidentiality <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (конфиденциальность)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[обязательное для выполнения лицом, получившим доступ к определенной информации, требование не передавать такую информацию третьим лицам без согласия её обладателя.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_confidentiality
+=> nrel_first_domain: concept_human;
+=> nrel_second_domain: concept_information;
+
+=> nrel_definitional_domain: ...
+(*
+	<= nrel_combination:
+	{
+		concept_human;
+		concept_information
+	};;
+*);;
+
+arity -> ...
+(*
+	-> nrel_confidentiality;;
+	=> nrel_measurement: 2;;
+*);;
+
+relation => nrel_inclusion: oriented_relation
+(*
+	-> nrel_confidentiality;;
+*);;
+
+relation => nrel_inclusion: binary_relation
+(*
+	 => nrel_inclusion: symmetric_relation
+	(*
+		-|> nrel_confidentiality;;
+	*);;
+
+	 => nrel_inclusion: transitive_relation
+	(*
+		-|> nrel_confidentiality;;
+	*);;
+
+	 => nrel_inclusion: reflexive_relation
+	(*
+		-|> nrel_confidentiality;;
+	*);;
+
+*);;

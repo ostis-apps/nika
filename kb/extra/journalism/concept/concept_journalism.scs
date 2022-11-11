@@ -1,0 +1,30 @@
+concept_journalism <- sc_node_not_relation;;
+
+concept_journalism => nrel_main_idtf:
+[журналиистика] (*<-lang_ru;;*);
+[journalism] (*<-lang_en;;*);;
+
+concept_journalism <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (журналиистика)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Деятельность по сбору, обработке и распространению информации с помощью СМИ](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_journalism <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (журналиистика)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Журналистика институционально является частью средств массовой информации, то есть входит в многофункциональные институты общества, такие, как пресса, телевидение, радио, интернет и др.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

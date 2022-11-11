@@ -1,0 +1,72 @@
+nrel_radio_journalism <- sc_node_norole_relation;;
+
+nrel_radio_journalism => nrel_main_idtf:
+[радиожурналистика] (*<-lang_ru;;*);
+[radio_journalism] (*<-lang_en;;*);;
+
+nrel_radio_journalism <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (радиожурналистика)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[вид журналистской деятельности, основанный на использовании технических средств радиовещания, а также результаты журналистской деятельности, представленные радиопередачами.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_radio_journalism <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (радиожурналистика)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Отличия радиожурналистики от других видов журналистской деятельности вызваны чрезвычайно высоким уровнем оперативности, особым характером эмоционального воздействия на аудиторию и вследствие этого — структурным своеобразием композиционных решений исходного журналистского (жизненного и литературного) материала, использованием специальных приемов организации внимания аудитории.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_radio_journalism
+=> nrel_first_domain: concept_audio_content;
+=> nrel_second_domain: concept_consumer;
+
+=> nrel_definitional_domain: ...
+(*
+	<= nrel_combination:
+	{
+		concept_audio_content;
+		concept_consumer
+	};;
+*);;
+
+arity -> ...
+(*
+	-> nrel_radio_journalism;;
+	=> nrel_measurement: 2;;
+*);;
+
+relation => nrel_inclusion: oriented_relation
+(*
+	-> nrel_radio_journalism;;
+*);;
+
+relation => nrel_inclusion: binary_relation
+(*
+	 => nrel_inclusion: symmetric_relation
+	(*
+		-|> nrel_radio_journalism;;
+	*);;
+
+	 => nrel_inclusion: transitive_relation
+	(*
+		-|> nrel_radio_journalism;;
+	*);;
+
+	 => nrel_inclusion: reflexive_relation
+	(*
+		-|> nrel_radio_journalism;;
+	*);;
+
+*);;
