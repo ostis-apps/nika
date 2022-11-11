@@ -1,7 +1,7 @@
 concept_tank <- sc_node_not_relation;;
 
 concept_tank => nrel_main_idtf:
-[Танк] (*<-lang_ru;;*);
+[танк] (*<-lang_ru;;*);
 [Tank] (*<-lang_en;;*);;
 
 concept_tank <- rrel_key_sc_element: ...
@@ -11,7 +11,8 @@ concept_tank <- rrel_key_sc_element: ...
 	[Опр. (Танк)] (*<-lang_ru;;*);;
 <= nrel_sc_text_translation: ...
 	(*
-		->rrel_example: "file://HTML/concept_tank.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+		->rrel_example: [Танк - бронированная боевая машина, чаще всего на гусеничном ходу, как правило с пушечным и дополнительным пулемётным вооружением , обычно во вращающейся полноповоротной башне , предназначенным в основном для стрельбы прямой наводкой.]
+			(*<- lang_ru;;*);;
 	*);;
 *);;
 
