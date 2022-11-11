@@ -1,0 +1,14 @@
+concept_print_publications
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Печатные издания]
+	(* <- lang_ru;; *);
+=> nrel_inclusion:
+    concept_europe_history_print_publications;
+    concept_asia_history_print_publications;
+    concept_print_publications_types;
+    concept_print_publications_list;
+=> nrel_note:
+            [Документы, предназначенные для распространения содержащейся в них информации, прошедшие редакционно-издательскую подготовку, полиграфически самостоятельно оформленные, полученные цифровым или натуральным печатанием.]     (* <- lang_ru;; *);
+<-binary_relation;;    

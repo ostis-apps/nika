@@ -1,0 +1,14 @@
+nrel_print_developer
+
+=> nrel_first_domain: concept_print_publications;
+=> nrel_second_domain: concept_print_developer; 
+
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+
+=> nrel_main_idtf:
+	[Изобретатель*](* <-lang_ru;; *);
+	[Developer*](* <-lang_en;; *);;

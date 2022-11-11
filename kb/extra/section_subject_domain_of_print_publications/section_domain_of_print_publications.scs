@@ -1,0 +1,34 @@
+section_subject_domain_of_print_publications
+<- sc_node_struct;
+=> nrel_main_idtf:
+[Раздел. Предметная область Печатные издания](* <- lang_ru;; *);
+	[Section. Subject domain of Print publications](* <- lang_en;; *);
+<-atomic_section;;
+
+section_subject_domain_of_print_publications = [*
+	subject_domain_of_print_publications
+=> nrel_main_idtf:
+	[Предметная область Печатные издания](* <- lang_ru;; *);
+	[Subject domain of Print publications](* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+concept_print_publications;
+// concept_history_print_publications;
+-> rrel_not_maximum_studied_object_class:
+concept_print_developer;
+concept_history_print_publications;
+concept_asia_history_print_publications;
+concept_belarus_history_print_publications;
+concept_europe_history_print_publications;
+concept_print_publications_genre;
+concept_print_publications_list;
+concept_print_publications;
+concept_print_publications_types;
+concept_print_publisher;
+-> rrel_explored_relation:
+nrel_creation_date;
+nrel_developer;
+nrel_genre;
+nrel_print_type;
+nrel_publisher;;
+*];;

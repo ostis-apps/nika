@@ -1,0 +1,16 @@
+concept_print_publisher
+
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+	[Издатель](* <- lang_ru;;*);
+	[Publisher](* <- lang_en;; *);
+=> nrel_inclusion:
+	the_guardian;
+        daily_mail;
+        the_times;
+        the_new_york_times;
+	
+=> mrel_note:
+[В ранней истории печатания различных публикаций издателями выступали сами книгопечатаники, после чего, с учетом появления новых технологий, эта роль начала переходить мануфактурам, предприятиям, компаниям, корпорациям.]
+(* <-lang_ru;;*);;

@@ -1,0 +1,14 @@
+concept_print_publications_genre
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+    [жанр](* <- lang_ru;;*);
+    [genre](* <- lang_en;; *);
+    => nrel_inclusion:
+    educational_publication;
+    scientific_publication;
+    oficial_publication;
+    reference_publication;
+    =>nrel_note:
+    [Группа изданий, выделенная в жанр на основе одного или нескольких отличительных признаков.]
+    (*<- lang_ru;; *);;

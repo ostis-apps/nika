@@ -1,0 +1,18 @@
+concept_print_publications_list
+
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+	[Список печатных изданий](* <- lang_ru;;*);
+	[Print publications list](* <- lang_en;; *);
+
+
+=> nrel_inclusion:
+	the_psalter;
+	the_little_travel_book;
+	fransyck_bible;
+	johannes_bible;
+=> mrel_note:
+[Печатных изданий огромное количество, указаны лишь те, которые оказали значительное влияние на печать.]
+(* <-lang_ru;;*);
+<-concept_print_publications;;
