@@ -1,0 +1,20 @@
+concept_print_publications_types
+
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+	[Типы печатных изданий](* <- lang_ru;;*);
+	[Print publications types](* <- lang_en;; *);
+
+
+=> nrel_inclusion:
+	almanac;
+	journal;
+	book;
+	digital_edition;
+	newspaper;
+	sourcebook;
+=> mrel_note:
+[По мере развития печати появлялись различные типы, которые преследовали собой разные цели.]
+(* <-lang_ru;;*);
+<-concept_print_publications;;

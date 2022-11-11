@@ -1,0 +1,15 @@
+francysk_skaryna <- sc_node_class;
+
+=> nrel_main_idtf:
+    [Франциск Скарина]
+    (* <- lang_ru;; *);
+=> nrel_genre:
+    educational_publication;
+    <-concept_print_publications_genre;
+=> nrel_print_type:
+    almanac;
+    <-concept_print_publications_type;
+=> nrel_publication_name:
+    francysk_bible;
+    <-concept_print_publications_list;
+<-concept_print_developer;;

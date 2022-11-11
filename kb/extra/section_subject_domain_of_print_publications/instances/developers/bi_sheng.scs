@@ -1,0 +1,12 @@
+bi_sheng <-sc_node_class;
+
+=> nrel_main_idtf:
+    [Би Шенг]
+    (* <- lang_ru;; *);
+=> nrel_genre:
+    educational_publication;
+    <-concept_print_publications_genre;
+=> nrel_print_type:
+    newspaper; 
+    <-concept_print_publications_types;
+<-concept_print_developer;;

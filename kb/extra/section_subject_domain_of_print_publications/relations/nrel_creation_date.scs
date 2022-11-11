@@ -1,0 +1,14 @@
+nrel_creation_date
+
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [дата создания*]
+    (* <- lang_ru;; *);
+    [Creation date*]
+    (* <- lang_en;; *);
+
+<=concept_print_publications;
+<-oriented_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;

@@ -1,0 +1,14 @@
+concept_history_print_publications
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+            [История печатных изданий]
+            (* <- lang_ru;; *);
+            => nrel_note:
+            [История печатных изданий развивалась параллельно в разных концах света, ввиду чего образовывались разные технологии нанесения символов на определенные бумагоподобные материалы. Основными линиями развития считаются азиатская и европейская.]
+            (* <- lang_ru;; *);
+
+=> nrel_basic_decomposition:
+    concept_europe_history_print_publications;
+    concept_asia_history_print_publications;
+    concept_belarus_history_print_publications;;

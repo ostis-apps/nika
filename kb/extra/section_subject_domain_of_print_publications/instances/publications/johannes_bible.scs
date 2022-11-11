@@ -1,0 +1,23 @@
+johannes_bible
+
+=> nrel_main_idtf:
+    [Библия Йоханнеса]
+    (* <- lang_ru;; *);
+    [Johannes Bible]
+    (* <- lang_en;; *);
+=> nrel_genre:
+    educational_publication;
+    <-concept_genre;
+=> nrel_developer:
+    johannes_gutenberg;
+    <-concept_print_developer;
+=> nrel_print_type:
+    book;
+    <-concept_print_publications_types;
+=> nrel_creation_date:
+    [1450]
+    (* <- lang_ru;; *);
+=>nrel_note:
+[Издание Вульгаты, выпущенное Иоганном Гутенбергом в первой половине 1450-х годов. Традиционно считается точкой отсчёта истории книгопечатания в Европе. Хотя это не первая инкунабула, среди других первопечатных изданий её выделяет исключительное качество оформления.]
+(* <-lang_ru;;*);;
+
