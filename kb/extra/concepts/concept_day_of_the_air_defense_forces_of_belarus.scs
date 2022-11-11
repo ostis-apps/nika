@@ -1,0 +1,47 @@
+concept_day_of_the_air_defense_forces_of_belarus
+<- sc_node_class;
+=> nrel_main_idtf:
+	[День войск противовоздушной обороны Беларуси]
+	(* <- lang_ru;; *);
+	[Day of the Air Defense Forces of Belarus]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (День войск противовоздушной обороны Беларуси)]
+		(* <- lang_ru;; *);
+		[Def. (Day of the Air Defense Forces of Belarus)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[День войск противовоздушной обороны Беларуси был установлен Указом президента Республики Беларусь № 157 в марте 1998 года, но праздновать его начали еще в советское время. Президиум Верховного Совета СССР в 1975 году постановил: «за большие заслуги Войск ПВО в годы войны и за выполнение ими особо важных задач в мирное время отмечать этот день ежегодно во второе воскресенье апреля».]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The Day of the Air Defense Forces of Belarus was established by Decree of the President of the Republic of Belarus No. 157 in March 1998, but it began to be celebrated back in Soviet times. The Presidium of the Supreme Soviet of the USSR in 1975 decided: "for the great merits of the Air Defense Forces during the war years and for their performance of especially important tasks in peacetime, celebrate this day annually on the second Sunday of April."]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (День войск противовоздушной обороны Беларуси)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Как самостоятельный вид вооруженных сил войска ПВО были созданы осенью 1941 года, когда в городе Куйбышев была сформирована 5-я дивизия ПВО. После обретения Республикой Беларусь государственного суверенитета и создания собственных Вооруженных сил в 1992 году были сформированы войска ПВО. В конце 2001 года на завершающем этапе реформирования Вооруженных сил было принято решение об образовании единого вида ВС — Военно-воздушных сил и войск противовоздушной обороны.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

@@ -1,0 +1,47 @@
+concept_world_chocolate_day
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Всемирный день шоколада]
+	(* <- lang_ru;; *);
+	[world chocolate day]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Всемирный день шоколада)]
+		(* <- lang_ru;; *);
+		[Def. (world chocolate day)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Ежегодно 11 июля любители сладкого отмечают Всемирный день шоколада (World Chocolate Day). Этот вкусный праздник был придуман и впервые проведён французами в 1995 году.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Every year on July 11, sweet lovers celebrate World Chocolate Day. This delicious holiday was invented and first held by the French in 1995.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Всемирный день шоколада)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Есть мнение, что первыми научились делать шоколад ацтеки. Они называли его «пищей богов». Испанские конкистадоры, которые впервые доставили его в Европу, окрестили лакомство «черным золотом» и использовали для укрепления физических сил и выносливости.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

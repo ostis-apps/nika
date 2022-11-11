@@ -1,0 +1,47 @@
+concept_world_ice_cream_day
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Всемирный день мороженого]
+	(* <- lang_ru;; *);
+	[World Ice Cream Day]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Всемирный день мороженого)]
+		(* <- lang_ru;; *);
+		[Def. (World Ice Cream Day)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[10 июня отмечается сладкий праздник – Всемирный день мороженого (World Ice Cream Day).]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[June 10 is a sweet holiday - World Ice Cream Day.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Всемирный день мороженого)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[В списке праздников, посвящённых различным сладостям и десертам, безусловно, этот найдёт поклонников во всех частях Земного шара. А всё потому, что напоминает он об истории появления и распространения мороженого. Мало кто среди людей с равнодушием относится к этому молочному продукту. Для детей же мороженое – всегда сладость и радость!]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

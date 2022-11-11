@@ -1,0 +1,47 @@
+concept_holiday
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Праздник]
+	(* <- lang_ru;; *);
+	[Holiday]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Праздник)]
+		(* <- lang_ru;; *);
+		[Def. (Holiday)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Праздник - отрезок времени, выделенный в календаре в честь чего-либо или кого-либо, имеющий сакральное (небытовое, мифическое) значение и связанный с культурной или религиозной традицией.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Holiday - a period of time allocated in the calendar in honor of something or someone, having a sacred (non-domestic, mythical) meaning and associated with a cultural or religious tradition]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Праздник)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Праздник - отрезок времени, выделенный в календаре в честь чего-либо или кого-либо, имеющий сакральное (небытовое, мифическое) значение и связанный с культурной или религиозной традицией.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

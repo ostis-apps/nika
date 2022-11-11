@@ -1,0 +1,47 @@
+concept_radonitsa_in_belarus
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Радоница в Беларуси]
+	(* <- lang_ru;; *);
+	[Radonitsa in Belarus]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Радоница в Беларуси)]
+		(* <- lang_ru;; *);
+		[Def. (Radonitsa in Belarus)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Радуница (Радуніца) — весенний языческий праздник восточных славян, связанный с культом предков. После крещения его стали отмечать на Фоминой неделе — в 1-е воскресенье после Пасхи, либо в следующие за ним понедельник или вторник (последнее особенно распространено).]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Radunitsa is a spring pagan holiday of the Eastern Slavs, associated with the cult of ancestors. After baptism, they began to celebrate it on St. Thomas' week - on the 1st Sunday after Easter, or on the following Monday or Tuesday (the latter is especially common).]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Радоница в Беларуси)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Радуница — один из древнейших праздников, когда на могилы прадедов приносят вино и еду, устраивают причитания и игрища (игры, песни и пляски).]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

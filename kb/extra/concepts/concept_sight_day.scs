@@ -1,0 +1,47 @@
+concept_sight_day
+<- sc_node_class;
+=> nrel_main_idtf:
+	[День зрения]
+	(* <- lang_ru;; *);
+	[Sight day]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (День зрения)]
+		(* <- lang_ru;; *);
+		[Def. (Sight day)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Всемирный день зрения отмечается во второй четверг октября по инициативе Всемирной организации здравоохранения (ВОЗ).]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[World Sight Day is celebrated on the second Thursday of October at the initiative of the World Health Organization (WHO).]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (День зрения)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Эта дата отмечена в календаре для привлечения глобального внимания к проблемам слепоты, нарушения зрения и реабилитации людей с нарушением зрения.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

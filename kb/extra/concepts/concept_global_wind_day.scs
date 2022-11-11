@@ -1,0 +1,47 @@
+concept_global_wind_day
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Всемирный день ветра]
+	(* <- lang_ru;; *);
+	[Global Wind Day]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Всемирный день ветра)]
+		(* <- lang_ru;; *);
+		[Def. (Global Wind Day)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[15 июня отмечается Всемирный день ветра (Global Wind Day)]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[15 июня отмечается Всемирный день ветра (Global Wind Day)]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Всемирный день ветра)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Инициаторами создания столь необычного на первый взгляд праздника стали Европейская ассоциация ветроэнергетики (European Wind Energy Association, EWEA) и Всемирный совет по энергии ветра (Global Wind Energy Council, GWEC). А его цель — привлечение внимания общественности (в первую очередь, представителей энергетических комплексов разных стран) к огромному потенциалу ветроэнергетики.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

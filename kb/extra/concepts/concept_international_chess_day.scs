@@ -1,0 +1,47 @@
+concept_international_chess_day
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Международный день шахмат]
+	(* <- lang_ru;; *);
+	[International Chess Day]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Международный день шахмат)]
+		(* <- lang_ru;; *);
+		[Def. (International Chess Day)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Уже много лет, начиная с 1966 года, во всем мире 20 июля отмечают Международный день шахмат (International Chess Day). Этот праздник проводится по решению ФИДЕ — Международной шахматной федерации (Federation Internationale des Echecs, FIDE), основанной в этот день в 1924 году.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[For many years, since 1966, International Chess Day has been celebrated around the world on July 20. This holiday is held by the decision of FIDE - the International Chess Federation (Federation Internationale des Echecs, FIDE), founded on this day in 1924.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Международный день шахмат)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[ФИДЕ — международная неправительственная спортивная организация, которая объединяет национальные шахматные ассоциации разных стран — на сегодняшний день её членами являются 199 национальных федераций (на 2022 год). Деятельность ФИДЕ направлена на распространение и развитие шахмат по всему миру, а также на пропаганду и подъём уровня шахматной культуры и знаний.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

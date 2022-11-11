@@ -1,0 +1,47 @@
+concept_labor_day_in_belarus
+<- sc_node_class;
+=> nrel_main_idtf:
+	[День труда в Беларуси]
+	(* <- lang_ru;; *);
+	[2larus]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (День труда в Беларуси)]
+		(* <- lang_ru;; *);
+		[Def. (Labor Day in Belarus)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[1 мая в Беларуси отмечается Праздник труда, который является общереспубликанским праздничным днём. Он установлен Указом Президента страны № 157 от 26 марта 1998 года и имеет более чем вековую историю.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[On May 1, Belarus celebrates Labor Day, which is a national holiday. It was established by Decree of the President of the country No. 157 of March 26, 1998 and has more than a century of history.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (День труда в Беларуси)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[1 мая 1886 года чикагские рабочие организовали забастовку и демонстрацию с требованиями 8-часового рабочего дня. Все это закончилось кровопролитным столкновением с полицией. В ответ на выстрелы из толпы полиция открыла огонь, что привело к массовым жертвам среди демонстрантов.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

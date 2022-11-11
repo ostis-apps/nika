@@ -1,0 +1,47 @@
+concept_belarusian_science_day
+<- sc_node_class;
+=> nrel_main_idtf:
+	[День белорусской науки]
+	(* <- lang_ru;; *);
+	[Belarusian Science Day]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (День белорусской науки)]
+		(* <- lang_ru;; *);
+		[Def. (Belarusian Science Day)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Ежегодно в последнее воскресенье января в Беларуси отмечается День белорусской науки, официально установленный в 1993 году.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Every year on the last Sunday of January, Belarus celebrates the Day of Belarusian Science, officially established in 1993.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (День белорусской науки)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Ведущим исследовательским и научным центром страны является Национальная академия наук Беларуси, основанная в 1928 году. Сегодня она объединяет высококвалифицированных ученых различных специальностей и десятки научно-исследовательских, научно-производственных, конструкторских и внедренческих организаций.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;

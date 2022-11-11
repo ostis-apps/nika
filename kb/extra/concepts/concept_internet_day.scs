@@ -1,0 +1,47 @@
+concept_internet_day
+<- sc_node_class;
+=> nrel_main_idtf:
+	[День Интернета]
+	(* <- lang_ru;; *);
+	[Internet Day]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (День Интернета)]
+		(* <- lang_ru;; *);
+		[Def. (Internet Day)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Во многих странах мира ежегодно 4 апреля — в день преставления святого Исидора Севильского — отмечается День Интернета, который в 1998 году был санкционирован папой Иоанном Павлом II. Однако официально святой покровитель Интернета ещё не утверждён.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[In many countries of the world, every year on April 4 - the day of the repose of St. Isidore of Seville - Internet Day is celebrated, which in 1998 was sanctioned by Pope John Paul II. However, the official patron saint of the Internet has not yet been approved.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (День Интернета)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Католический святой Исидор Севильский (Saint Isidore of Seville, ок. 560 — 4 апреля 636), епископ Севильский, получил известность не только благодаря своему благочестию, но и благодаря любви к наукам. Он является автором одной из первых книг по этимологии, первым представил работы Аристотеля в Испании, был реформатором и человеком широких взглядов.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: subject_domain_of_holidays;;
