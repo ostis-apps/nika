@@ -2,8 +2,10 @@ competition127028
 
 <- concept_ammo;
 
+<- concept_wit_entity;
+
 => nrel_main_idtf:
-    [Соревновательный, 12/70]
+    [12/70 Соревновательный]
 
     (* 
         <- lang_ru;; 
@@ -12,5 +14,5 @@ competition127028
 <= nrel_ammo_type:
     concept_sports_cartridges;
 
-=> nrel_material:
+<= nrel_material:
     concept_steel;;

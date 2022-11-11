@@ -2,8 +2,10 @@ record1270
 
 <- concept_ammo;
 
+<- concept_wit_entity;
+
 => nrel_main_idtf:
-    [Рекорд, 12/70]
+    [12/70 Рекорд]
 
     (* 
         <- lang_ru;; 
@@ -12,5 +14,5 @@ record1270
 <= nrel_ammo_type:
     concept_buckshot;
 
-=> nrel_material:
+<= nrel_material:
     concept_plumbum;;
