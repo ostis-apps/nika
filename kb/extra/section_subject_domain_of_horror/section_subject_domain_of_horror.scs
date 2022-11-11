@@ -1,0 +1,87 @@
+section_subject_domain_of_horror
+=> nrel_main_idtf:
+	  [Раздел. Предметная область фильмов ужасов]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of horror] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_horror = [*
+	subject_domain_of_horror
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область фильмов ужасов]
+   (* <- lang_ru;; *);
+   [Subject domain of horror]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+		concept_horror;
+		concept_horror_type;
+		concept_species;
+		concept_film_studio;
+		concept_distributor_country;
+		concept_director;
+		concept_producer;
+		concept_production_designer;
+		concept_composer;
+		concept_screenwriter;
+		concept_film_editor;
+	-> rrel_not_maximum_studied_object_class:
+		concept_short_film;
+		concept_full_length_film;
+		concept_anime;
+		concept_classic;
+		concept_computer_graphics;
+		concept_hand_drawn_animation;
+	-> rrel_explored_relation:
+		nrel_next_horror;
+		nrel_horror_type;
+		nrel_species;
+		nrel_film_studio;
+		nrel_distributor_country;
+		nrel_budget;
+		nrel_box_office;
+		nrel_director;
+		nrel_producer;
+		nrel_production_designer;
+		nrel_composer;
+		nrel_screenwriter;
+		nrel_film_editor;;
+*];;
+
+section_subject_domain_of_cartoon
+-> rrel_key_sc_element:
+		nrel_next_horror;
+		nrel_horror_type;
+		nrel_species;
+		nrel_film_studio;
+		nrel_distributor_country;
+		nrel_budget;
+		nrel_box_office;
+		concept_director;
+		concept_producer;
+		nrel_production_designer;
+		nrel_composer;
+		nrel_screenwriter;
+		nrel_film_editor;
+		concept_short_film;
+		concept_full_length_film;
+		concept_anime;
+		concept_classic;
+		concept_computer_graphics;
+		concept_hand_drawn_animation;
+   		concept_horror;
+		concept_horror_type;
+		concept_species;
+		concept_film_studio;
+		concept_distributor_country;
+		concept_director;
+		concept_producer;
+		concept_production_designer;
+		concept_composer;
+		concept_screenwriter;
+		concept_film_editor;
+		subject_domain_of_cartoon;;

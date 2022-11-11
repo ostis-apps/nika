@@ -1,0 +1,27 @@
+concept_horror_type
+<- sc_node_class;
+<- class;
+
+=>nrel_main_idtf:
+	[тип фильма ужаса](*<-lang_ru;;*);
+	[horror type](*<-lang_en;;*);
+
+=> nrel_inclusion:
+	concept_classic;
+	concept_computer_graphics;
+	concept_anime;
+	concept_hand_drawn_animation;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. тип фильма ужаса](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [тип фильма ужаса -  способ создания фильма ужаса, включает в себя классический, компьютерный, ручной-рисовки и анимированный.](*<-lang_ru;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+	concept_horror
+	};;
+*);;

@@ -1,0 +1,27 @@
+concept_hand_drawn_animation
+<- sc_node_class;
+<- class;
+
+=>nrel_main_idtf:
+	[рисованная мультипликация](*<-lang_ru;;*);
+	[hand drawn animation](*<-lang_en;;*);
+=>nrel_idtf:
+	[рисованный](*<-lang_ru;;*);
+	
+=> nrel_note:
+   [Возникла в конце XIX — начале XX веков.]
+   (* <- lang_ru;; *);	
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. рисованная мультипликация](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [рисованная анимация -  технология/способ создания фильма, основанная на покадровой съёмке немного отличающихся двумерных рисунков.](*<-lang_ru;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+	concept_horror
+	};;
+*);;

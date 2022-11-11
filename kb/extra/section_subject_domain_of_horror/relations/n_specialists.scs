@@ -1,0 +1,245 @@
+nrel_director
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [режиссёр*]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: 
+	concept_horror;
+=> nrel_second_domain: 
+	concept_director;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (режиссёр*)]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [режиссёр* - бинарное 
+               ориентированное отношение, связывающее 
+               фильм и его режиссёра.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+   	 	 concept_film;
+		 concept_director
+   	 };;
+*);;
+
+nrel_producer
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [продюсер*]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: 
+	concept_horror;
+=> nrel_second_domain: 
+	concept_producer;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (продюсер*)]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [продюсер* - бинарное 
+               ориентированное отношение, связывающее 
+               фильм и его продюсера.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+   	 	 concept_film;
+		 concept_producer
+   	 };;
+*);;
+
+nrel_production_designer
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [художник постановщик*]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: 
+	concept_horror;
+=> nrel_second_domain: 
+	concept_production_designer;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (художник постановщик*)]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [художник постановщик* - бинарное 
+               ориентированное отношение, связывающее 
+               фильм и его художник-постановщика.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+   	 	 concept_film;
+		 concept_production_designer
+   	 };;
+*);;
+
+nrel_composer
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [композитор*]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: 
+	concept_horror;
+=> nrel_second_domain: 
+	concept_composer;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (композитор*)]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [композитор* - бинарное 
+               ориентированное отношение, связывающее 
+               фильм и его композитора.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+   	 	 concept_film;
+		 concept_composer
+   	 };;
+*);;
+
+nrel_screenwriter
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [автор сценария*]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: 
+	concept_horror;
+=> nrel_second_domain: 
+	concept_screenwriter;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (автор сценария*)]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [автор сценария* - бинарное 
+               ориентированное отношение, связывающее 
+               фильм и его автора сценария.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+   	 	 concept_film;
+		 concept_screenwriter
+   	 };;
+*);;
+
+nrel_film_editor
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [монтажер*]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: 
+	concept_horror;
+=> nrel_second_domain: 
+	concept_film_editor;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (монтажер*)]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [монтажер* - бинарное 
+               ориентированное отношение, связывающее 
+               фильм и его автора монтажера.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+   	 	 concept_film;
+		 concept_film_editor
+   	 };;
+*);;

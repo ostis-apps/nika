@@ -1,0 +1,36 @@
+concept_message_about_favorite_horror
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о любимом фильме ужасов]
+	    (* <- lang_ru;; *);
+	[message about favorite horror]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_favorite_horror];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о любимом фильме ужасов)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about favorite horror)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о любимом фильме ужасов - атомарное сообщение, с запросом на вывод любимого фильма ужасов.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[An favorite horror message is an atomic message, requesting the output of an favorite horror.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

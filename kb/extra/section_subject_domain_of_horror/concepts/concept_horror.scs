@@ -1,0 +1,37 @@
+concept_horror
+<- sc_node_class;
+<- class;
+
+=>nrel_main_idtf:
+	[фильм ужасов](*<-lang_ru;;*);
+	[horror](*<-lang_en;;*);
+=>nrel_idtf:
+	[ужастик](*<-lang_ru;;*);
+	[страшилка](*<-lang_ru;;*);
+	[horrible](*<-lang_en;;*);
+	[horror story](*<-lang_en;;*);
+
+=> nrel_inclusion:
+	concept_short_film;
+	concept_full_length_film;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. фильм ужасов](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [фильм ужасов -  жанр современного искусства, который предназначен устрашить, напугать, шокировать или вызвать отвращение у своих читателей или зрителей, вызвав у них чувства ужаса и шока.](*<-lang_ru;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+	concept_film
+	};;
+*);;
+
+concept_film
+<- sc_node_class;
+<- class;
+=>nrel_main_idtf:
+	[фильм](*<-lang_ru;;*);
+	[film](*<-lang_en;;*);;

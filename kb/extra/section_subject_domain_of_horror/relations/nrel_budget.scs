@@ -1,0 +1,38 @@
+nrel_budget
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [бюджет*]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: 
+	concept_horror;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (бюджет*)]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [бюджет* - бинарное 
+               ориентированное отношение, связывающее 
+               фильм ужасов (или др. произведение) и его бюджет.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+   	 	 concept_horror
+   	 };;
+*);;
+

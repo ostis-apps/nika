@@ -1,0 +1,42 @@
+concept_message_about_director_of_horror
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение с вопросом о том, какой режиссер у этого фильма ужасов]
+	    (* <- lang_ru;; *);
+	[message about director of horror]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_director_of_horror];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение с вопросом о том, какой режиссер у этого фильма ужасов)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about director of horror)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение с вопросом о том, какой режиссер у этого фильма ужасов - атомарное сообщение, с запросом на ответ на вопрос, какой режиссер снимал этот фильм ужасов?]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about director of horror is an atomic message, with a request for an answer to the question, which director filmed this horror?]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
+concept_intent_possible_class
+-> concept_message_about_opportunity_to_tell_about_horror;
+-> concept_message_about_horror;
+-> concept_message_about_favorite_horror;
+-> concept_message_about_director_of_horror;;
