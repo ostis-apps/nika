@@ -1,0 +1,35 @@
+  concept_train
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [поезд] (*<-lang_ru;;*);
+    [train] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (поезд)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_transport;
+        concept_rails;
+        concept_railway_carrige;
+        concept_engine
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Поезд - сформированный и сцеплённый состав, состоящий из группы вагонов, с одним или несколькими действующими локомотивами или моторными вагонами, приводящими его в движение, и имеющий установленные сигналы (звуковые и видимые), которые обозначают его голову и хвост.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(поезд)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Дисциплина, которая изучает поезда и вопросы, связанные с их движением, называется «Тяга поездов».](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

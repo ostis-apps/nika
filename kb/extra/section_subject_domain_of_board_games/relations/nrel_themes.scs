@@ -1,0 +1,46 @@
+rrel_themes
+<- sc_node_role_relation;
+<- relation;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:
+    concept_game;
+    concept_board_game;
+
+=> nrel_second_domain:{
+    concept_film;
+    concept_horror;
+    concept_detective
+};
+ 
+=> nrel_definitional_domain:{
+    concept_film;
+    concept_horror;
+    concept_detective
+};
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[тематика'] (*<-lang_ru;;*);
+	[themes'] (*<-lang_en;;*);
+
+//определение   
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (тематика')] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_game;
+        nrel_creator;
+        concept_person
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Тематика — совокупность основных и побочных тем литературного произведения или ряда произведений одного писателя или целой группы, школы, направления.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);;

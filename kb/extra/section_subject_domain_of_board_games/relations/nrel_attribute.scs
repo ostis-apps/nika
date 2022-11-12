@@ -1,0 +1,35 @@
+nrel_attribute
+<- sc_node_role_relation;
+<- relation;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:
+    concept_game;
+    concept_board_game;
+
+=> nrel_second_domain:
+    concept_thing;
+ 
+=> nrel_definitional_domain:
+    concept_thing;;
+
+sc_node_not_relation -> concept_thing;;
+	nrel_attribute => nrel_main_idtf: 
+ 	[атрибут'] (*<-lang_ru;;*);
+	[attribute'] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (Атрибут)] (* <- lang_ru;; *);;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Атрибут - это необходимый, постоянный предмет.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);;

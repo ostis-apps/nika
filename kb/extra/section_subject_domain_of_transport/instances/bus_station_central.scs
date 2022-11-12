@@ -1,0 +1,11 @@
+bus_station_central
+<- concept_bus_station;
+
+=> nrel_main_idtf: 
+ 	[Автовокзал "Центральный"] (*<-lang_ru;;*);
+	[Bus Station "Central"] (*<-lang_en;;*);
+
+<= nrel_passenger_pick_up_point: platform_2;
+
+=> nrel_note:
+[Филиал «Минский автовокзал» государственного предприятия Минсктранс. Является единственным автобусным пассажирским терминалом, обустроенным для обслуживания пассажиров в городе Минске](* <- lang_ru;; *);;

@@ -1,0 +1,48 @@
+nrel_passenger
+<- sc_node_role_relation;
+<- relation;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:
+    concept_person;
+
+=> nrel_second_domain:
+    concept_transport;
+ 
+=> nrel_definitional_domain:
+    concept_transport;
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[пассажир* ] (*<-lang_ru;;*);
+	[passenger* ] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (суфлер)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_transport
+};;
+<= nrel_sc_text_translation: ... (*
+    -> rrel_example:
+        [Пассажир - человек, который не является членом экипажа и который перевозится транспортным средством в соответствии с гласным или негласным договором перевозки.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+        *);;
+*);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(суфлер)] (* <- lang_ru;; *);;
+    <= nrel_sc_text_translation: ... (*
+        -> rrel_example:
+        [Заключение договора перевозки пассажира обычно удостоверяется билетом.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

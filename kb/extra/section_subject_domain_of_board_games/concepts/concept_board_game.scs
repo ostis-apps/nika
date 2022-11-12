@@ -1,0 +1,42 @@
+concept_board_game
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [настольная игра] (*<-lang_ru;;*);
+    [board game] (*<-lang_en;;*);
+
+<= nrel_inclusion:
+    concept_game;
+
+<= nrel_inclusion:
+    concept_hobby;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (настольная игра)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_game;
+        concept_attribute;
+        concept_person;
+        nrel_gamer
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Настольная игра - игра, основанная на манипуляции относительно небольшим набором предметов, которые могут целиком разместиться на столе или в руках играющих.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(настольная игра, специальное поле, карты, кости)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+[В число настольных игр входят игры со специальным полем, карточные игры, кости и другие.  ](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

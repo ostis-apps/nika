@@ -1,0 +1,35 @@
+nrel_action
+<- sc_node_role_relation;
+<- relation;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:
+    concept_move;
+    concept_push;
+
+=> nrel_second_domain:
+    concept_person;
+ 
+=> nrel_definitional_domain:
+    concept_person;;
+
+sc_node_not_relation -> concept_thing;;
+	nrel_attribute => nrel_main_idtf: 
+ 	[событие'] (*<-lang_ru;;*);
+	[action'] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (Событие)] (* <- lang_ru;; *);;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Событие - это действие, совершенное человеком в определенный момент времени.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);;

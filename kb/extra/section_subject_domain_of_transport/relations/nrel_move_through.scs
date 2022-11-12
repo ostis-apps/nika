@@ -1,0 +1,41 @@
+nrel_move_through
+<- sc_node_role_relation;
+<- relation;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:
+    concept_transport;
+
+=> nrel_second_domain:
+    concept_atmosphere;
+    concept_rails;
+    concept_road;
+ 
+=> nrel_definitional_domain:
+    concept_atmosphere;
+    concept_rails;
+    concept_road;
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[двигаться посредством* ] (*<-lang_ru;;*);
+	[move through* ] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (двигаться посредством)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_transport
+};;
+<= nrel_sc_text_translation: ... (*
+    -> rrel_example:
+        [Двигаться посредством - способ передвижения объектов (транспорта) с помощью той или иной сущности (природного явления, изобретения человека).] (* <- lang_ru;; => nrel_format: format_html;;*);;
+        *);;
+*);;

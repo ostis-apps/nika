@@ -1,0 +1,40 @@
+concept_strategy_game
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+ 	[стратегическая игра] (*<-lang_ru;;*);
+	[strategy game] (*<-lang_en;;*);
+
+<= nrel_inclusion:
+    concept_board_game;
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (Стратегическая игра)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_game;
+        concept_strategy_game;
+        concept_person;
+        nrel_gamer
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Стратегическая игра - это игра, в которой одни игроки при выборе своей собственной стратегии принимают во внимание, какое влияние данное решение, по их предположению, будет оказывать на выбор стратегии другими игроками] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(стратегическая игра, игрок)] (* <- lang_ru;; *);; 
+	=> nrel_using_constants: {
+		concept_strategy_game
+};; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+		[В стратегической игре игроки могут использовать сразу несколько разных стратегий.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

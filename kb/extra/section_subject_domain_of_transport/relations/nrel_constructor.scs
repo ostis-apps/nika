@@ -1,0 +1,40 @@
+nrel_constructor
+<- sc_node_role_relation;
+<- relation;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:
+    concept_person;
+
+=> nrel_second_domain:
+    concept_transport;
+ 
+=> nrel_definitional_domain:
+    concept_transport;
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[конструктор* ] (*<-lang_ru;;*);
+	[constructor* ] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (конструктор)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_transport;
+        concept_airplane;
+        concept_automobile;
+        concept_train
+};;
+<= nrel_sc_text_translation: ... (*
+    -> rrel_example:
+        [Конструктор - специалист, чья деятельность (работа) необходима для разработки и создания оптимального конечного продукта (например автомобиля, самолета, поезда) из продуктов и ресурсов существующего материального производства.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+        *);;
+*);;

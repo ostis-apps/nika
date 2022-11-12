@@ -1,0 +1,35 @@
+concept_airport
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [аэропорт] (*<-lang_ru;;*);
+    [airport] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (аэропорт)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_aircraft;
+        concept_airplane;
+        concept_helicopter;
+        nrel_passenger
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Аэропорт - комплекс сооружений, предназначенный для приёма, отправки, базирования воздушных судов и обслуживания воздушных перевозок, имеющий для этих целей аэродром, аэровокзал, один или несколько грузовых терминалов и другие наземные сооружения и необходимое оборудование.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(аэропорт)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+[Одним из самых первых аэропортов мира стал кёнигсбергский аэропорт Девау, открывшийся в 1921 году.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

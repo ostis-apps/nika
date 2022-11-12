@@ -1,0 +1,34 @@
+  concept_helm
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [штурвал] (*<-lang_ru;;*);
+    [helm] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (штурвал)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_aircraft;
+        concept_airplane;
+        nrel_detail
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Штурвал - устройство управления движением летательного аппарата (самолёта) по курсу.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(штурвал)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [На штурвале могут располагаться дополнительные переключатели и органы управления: клавиши управления радиосвязью, управление триммером; такое их расположение предоставляет удобство для пилота, так как он может управлять этими системами, не снимая рук со штурвала. ](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

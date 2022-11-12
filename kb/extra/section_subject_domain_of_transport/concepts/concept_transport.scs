@@ -1,0 +1,35 @@
+concept_transport
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [транспорт] (*<-lang_ru;;*);
+    [transport] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (транспорт)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+      concept_atmosphere;
+      concept_rails;
+      concept_road
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Транспорт - это совокупность всех видов путей сообщения, транспортных средств, технических устройств и сооружений на путях сообщения, обеспечивающих процесс перемещения людей, грузов и информации различного назначения из одного места в другое.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(транспорт)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+[Транспорт представляет собой важное звено логистической системы.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;
