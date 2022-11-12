@@ -1,0 +1,40 @@
+concept_reaction_game
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+ 	[Игра на реакцию] (*<-lang_ru;;*);
+	[reaction game] (*<-lang_en;;*);
+
+<= nrel_inclusion:
+    concept_board_game;
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (реакция)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_game;
+        concept_reaction_game;
+        concept_person;
+        nrel_gamer
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Игра на реакцию - это игра, в которой главными инстурментами игрока являются скорость и внимательность.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(головоломка)] (* <- lang_ru;; *);; 
+	=> nrel_using_constants: {
+		concept_reaction_game
+};; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+		[Игры на реакцию очень хорошо развивают внимательность.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

@@ -1,0 +1,30 @@
+concept_hobby
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [хобби] (*<-lang_ru;;*);
+    [hobby] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (хобби)] (* <- lang_ru;; *);;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Хобби - это увлечение; любимое занятие на досуге, для себя.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(театр, хобби)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+[Хобби не имеет отношения к профессиональной деятельности человека. Это то, чем нравится заниматься в свободное от работы время. ](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

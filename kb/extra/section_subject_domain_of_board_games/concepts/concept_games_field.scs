@@ -1,0 +1,38 @@
+concept_games_field
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf: 
+ 	[Игровое поле] (*<-lang_ru;;*);
+	[Games field] (*<-lang_en;;*);
+
+<= nrel_inclusion:
+    concept_thing;
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (Игровое поле)] (* <- lang_ru;; *);;
+      => nrel_using_constants: {
+        concept_thing;
+        concept_board_game;
+        concept_person;
+        concept_rules;
+        nrel_gamer
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Игровое поле – специальное место на игровом столе, предназначенное для проведения настольной игры с определенным количеством игроков, установленных правилами.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(игральная кость)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+		[В настольных играх игровое поле может быть как специальная доска или фирменно отпечатанный плотный картон, так и поле собственного производства.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

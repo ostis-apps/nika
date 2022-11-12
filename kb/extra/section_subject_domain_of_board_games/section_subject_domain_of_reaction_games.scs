@@ -1,0 +1,77 @@
+section_subject_domain_of_reaction_games
+=> nrel_main_idtf:
+	  [Раздел. Предметная область игр на реакцию]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of reaction games] 
+  (* <- lang_en;; *);;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_reaction_games = [*
+	subject_domain_of_reaction_games
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область игр на реакцию]
+   (* <- lang_ru;; *);
+   [Subject domain of raection games]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_reaction_game;
+	-> rrel_not_maximum_studied_object_class:
+      concept_arcade;
+      concept_attention;
+      concept_character;
+      concept_cleverness;
+      concept_detective;
+      concept_film;
+      concept_game;
+      concept_hobby;
+      concept_horror;
+      concept_move;
+      concept_person;
+      concept_playing_card;
+      concept_push;
+      concept_rules;
+      concept_skills;
+      concept_thing;
+	-> rrel_explored_relation:
+      rrel_rule_clause;
+      nrel_action;
+      nrel_attribute;
+      nrel_creator;
+      nrel_gamer;
+      nrel_leading;
+      nrel_main_character;
+      nrel_role;
+      nrel_themes;;
+*];;
+
+
+section_subject_domain_of_reaction_games
+-> rrel_key_sc_element:
+      concept_arcade;
+      concept_attention;
+      concept_character;
+      concept_cleverness;
+      concept_detective;
+      concept_film;
+      concept_game;
+      concept_hobby;
+      concept_horror;
+      concept_move;
+      concept_person;
+      concept_playing_card;
+      concept_push;
+      concept_rules;
+      concept_skills;
+      concept_thing;
+      rrel_rule_clause;
+      nrel_action;
+      nrel_attribute;
+      nrel_creator;
+      nrel_gamer;
+      nrel_leading;
+      nrel_main_character;
+      nrel_role;
+      nrel_themes;;
