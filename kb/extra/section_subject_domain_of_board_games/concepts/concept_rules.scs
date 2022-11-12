@@ -1,0 +1,45 @@
+concept_rules
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf: 
+ 	[правила] (*<-lang_ru;;*);
+	[rules] (*<-lang_en;;*);
+
+<= nrel_inclusion:
+    concept_thing;
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (Правила)] (* <- lang_ru;; *);;
+      => nrel_using_constants: {
+        concept_board_game;
+        concept_game;
+        concept_person;
+        concept_gamer;
+        nrel_attribute
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Правила - требования для исполнения неких условий (норма на поведение) всеми участниками какого-либо игры (настольной игры).] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(правила)] (* <- lang_ru;; *);; 
+    => nrel_using_constants: {
+        concept_game;
+        concept_person;
+        nrel_gamer;
+        nrel_leading;
+        nrel_attribute
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+		[Всем участникам перед началом игры ведущий зачитывает правила.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

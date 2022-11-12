@@ -1,0 +1,32 @@
+concept_character
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [персонаж] (*<-lang_ru;;*);
+    [character] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (персонаж)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_game
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Персонаж - действующее лицо в игре.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(персонаж)] (* <- lang_ru;; *);;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+[Персонажами могут быть люди, животные, сверхъестественные, мифические, божественные существа или персонифицированные абстрактные сущности.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

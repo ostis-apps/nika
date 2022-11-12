@@ -1,0 +1,33 @@
+concept_film
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [фильм] (*<-lang_ru;;*);
+    [film] (*<-lang_en;;*);
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (фильм)] (* <- lang_ru;; *);;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Фильм - произведение кинематографии, предназначенное для демонстрации на экране.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(фильм, настольная игра, тематика)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+		concept_board_game;
+        nrel_themes
+};; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+    [Многие настольные игры соответсвуют тематики фильмов.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

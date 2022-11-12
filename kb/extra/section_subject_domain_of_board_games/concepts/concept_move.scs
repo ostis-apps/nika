@@ -1,0 +1,42 @@
+concept_move
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf: 
+ 	[ход] (*<-lang_ru;;*);
+	[move] (*<-lang_en;;*);
+    
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (Ход)] (* <- lang_ru;; *);;
+      => nrel_using_constants: {
+        concept_person;
+        concept_rules;
+        concept_game;
+        nrel_gamer;
+        nrel_action
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Ход - это осуществление игроком действия, предусмотренного правилами игры.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(Ход)] (* <- lang_ru;; *);; 
+      => nrel_using_constants: {
+        concept_board_game;
+        concept_rules;
+        concept_person;
+        concept_move;
+        nrel_gamer
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+		[В большинстве настольных игр по правилам игрок может осущиствить ход раз за один круг.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;
