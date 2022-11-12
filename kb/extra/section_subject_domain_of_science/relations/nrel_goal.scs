@@ -1,0 +1,45 @@
+nrel_goal
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-asymmetric_relation;
+=>nrel_main_idtf:
+	[Цель*]
+	(* <- lang_ru;; *);
+	[Goal*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_humanities;
+=>nrel_second_domain: concept_self_awareness;
+	
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Цель*)]
+		(* <- lang_ru;; *);
+		[Def.(Goal*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Цель* - конечный результат, на который преднамеренно направлен процесс.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Goal* - the end result to which the process is intentionally directed.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_humanities;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

@@ -1,0 +1,47 @@
+concept_scientific_community
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Научное сообщество]
+	(* <- lang_ru;; *);
+	[Scientific community]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Научное сообщество)]
+		(* <- lang_ru;; *);
+		[Def. (Scientific community)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Научное сообщество представляет собой сложную самоорганизующуюся систему, в которой действуют и государственные учреждения, и общественные организации, и неформальные группы.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The scientific community - a complex self-organizing system in which state institutions, public organizations, and informal groups operate.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Научное сообщество)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Образ жизни и мировоззрение людей научного сообщества могут существенно отличаться от распространённых в обществе.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_science;;

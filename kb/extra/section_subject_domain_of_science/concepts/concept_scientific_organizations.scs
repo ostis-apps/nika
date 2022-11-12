@@ -1,0 +1,47 @@
+concept_scientific_organizations
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Научные организации]
+	(* <- lang_ru;; *);
+	[Scientific organizations]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Научные организации)]
+		(* <- lang_ru;; *);
+		[Def. (Scientific organizations)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Научные организации - это сообщества, основной задачей которых является обмен научной информацией, в том числе, в ходе проводимых конференций, и благодаря публикациям в периодических изданиях, выпускаемых обществом.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Scientific organizations - communities whose main task is the exchange of scientific information, including during conferences and through publications in periodicals issued by the society.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Научные организации)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Одной из наиболее авторитетных и массовых организаций является IEEE (Институт инженеров электротехники и электроники).]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_scientific_community;;

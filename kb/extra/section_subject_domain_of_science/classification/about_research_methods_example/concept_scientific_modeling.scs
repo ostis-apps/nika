@@ -1,0 +1,46 @@
+concept_scientific_modeling
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Научное моделирование]
+	(* <- lang_ru;; <-concept_text;; *);
+	[Scientific modeling]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Научное моделирование)]
+		(* <- lang_ru;; *);
+		[Def. (Scientific modeling)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Научное моделирование — это изучение объекта посредством моделей с переносом полученных знаний на оригинал.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Scientific modeling - the study of an object through models with the transfer of acquired knowledge to the original.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Научное моделирование)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Построение математической модели позволяет систематизировать существующие данные и сформулировать прогнозы, необходимые для поиска новых.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);;

@@ -1,0 +1,47 @@
+concept_computer_modelling
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Натурный эксперимент]
+	(* <- lang_ru;; *);
+	[Сomputer modelling]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Натурный эксперимент)]
+		(* <- lang_ru;; *);
+		[Def. (Сomputer modelling)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Компьютерное моделирование — процесс вычисления компьютерной модели (иначе численной модели) на одном или нескольких вычислительных узлах.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Сomputer modelling - the process of calculating a computer model (otherwise a numerical model) on one or more computing nodes.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Натурный эксперимент)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Реализует представление объекта, системы, понятия в форме, отличной от реальной, но приближенной к алгоритмическому описанию.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_technical_science;;

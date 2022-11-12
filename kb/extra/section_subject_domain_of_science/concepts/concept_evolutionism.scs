@@ -1,0 +1,47 @@
+concept_evolutionism
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Эволюционизм]
+	(* <- lang_ru;; *);
+	[Evolutionism]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Эволюционизм)]
+		(* <- lang_ru;; *);
+		[Def. (Evolutionism)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Эволюционизм — система идей и концепций в биологии, утверждающих историческое прогрессивное развитие биосферы Земли, составляющих её биогеоценозов, а также отдельных таксонов и видов, которое может быть вписано в глобальный процесс эволюции вселенной.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Evolutionism - a system of ideas and concepts in biology that affirms the historical progressive development of the Earth's biosphere, its constituent biogeocenoses, as well as individual taxa and species, which can be inscribed in the global process of the evolution of the universe.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Эволюционизм)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Первые эволюционные идеи выдвигались уже в античности, но только труды Чарльза Дарвина сделали эволюционизм фундаментальной концепцией биологии.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_natural_science;;

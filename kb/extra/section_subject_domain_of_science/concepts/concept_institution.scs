@@ -1,0 +1,47 @@
+concept_institution
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Институт]
+	(* <- lang_ru;; *);
+	[Institution]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Институт)]
+		(* <- lang_ru;; *);
+		[Def. (Institution)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Социальный, или общественный институт — это система взаимосвязанных норм, которые опираются на коллективно разделяемые ценности, свойственные тому или иному обществу или той или иной социальной группе, и обобщаются как способы действия, мышления и чувствования.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A social institution - a system of interrelated norms that are based on the collectively shared values inherent in a particular society or a particular social group, and are generalized as ways of acting, thinking and feeling.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Гипотеза)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Институтами являются, например, частная собственность, демократия, гражданство, брак, договор и т. д.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_sociology_of_science;;

@@ -1,0 +1,40 @@
+section_subject_domain_of_scientific_institutes
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Научные институты]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Scientific institutes]
+	(* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+	concept_academy;
+	concept_research_institute;
+	nrel_comprises;
+	subject_domain_of_scientific_institutes;
+	concept_scientific_institutes;;
+
+section_subject_domain_of_scientific_institutes = [*
+subject_domain_of_scientific_institutes
+
+=> nrel_main_idtf: 
+	[Предметная область Научные институты]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Scientific institutes]
+	(* <- lang_en;; *);
+
+<= nrel_private_subject_domain:
+	section_subject_domain_of_scientific_institutes;
+
+-> rrel_maximum_studied_object_class:
+	concept_scientific_institutes;
+
+-> rrel_not_maximum_studied_object_class:
+	concept_academy;
+	concept_research_institute;
+
+-> rrel_explored_relation:
+	nrel_comprises;
+
+<- subject_domain;;
+*];;

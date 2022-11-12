@@ -1,0 +1,47 @@
+concept_social_science
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Общественная наука]
+	(* <- lang_ru;; *);
+	[Social science]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Общественная наука)]
+		(* <- lang_ru;; *);
+		[Def. (Social science)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Общественные науки — комплекс научных дисциплин, изучающих как общество в целом, его структуру, динамику, развитие, историю, так и его отдельные подсистемы (экономику, политику, государство, гражданское общество, правовое устройство, духовную жизнь).]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Social sciences - a complex of scientific disciplines that study both society as a whole, its structure, dynamics, development, history, and its individual subsystems (economy, politics, state, civil society, legal structure, spiritual life).]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Общественная наука)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Отнесение к общественным наукам может варьироваться в зависимости от различия между задачами и объектами (области, охватываемые познанием человечества по ходу общецивилизационного процесса, с одной стороны, и дисциплины в учебно-академическом понимании, с другой).]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_scientific_knowledge;;

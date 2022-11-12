@@ -1,0 +1,47 @@
+concept_natural_science
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Естественная наука]
+	(* <- lang_ru;; *);
+	[Natural science]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Естественная наука)]
+		(* <- lang_ru;; *);
+		[Def. (Natural science)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Естественные науки — науки, изучающие природу (понимаемую в широком смысле как материальный мир Вселенной).]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Natural sciences - sciences that study nature (understood in a broad sense as the material world of the Universe).]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Естественная наука)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Естественные науки, как современные научные направления, сформировались в XIX веке, они пришли на смену «естественной истории» и «естествознанию».]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_scientific_knowledge;;

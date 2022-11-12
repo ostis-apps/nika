@@ -1,0 +1,47 @@
+concept_society
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Общество]
+	(* <- lang_ru;; *);
+	[Society]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Общество)]
+		(* <- lang_ru;; *);
+		[Def. (Society)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Общество, или социум — это человеческая общность, специфику которой представляют отношения людей между собой, их формы взаимодействия и объединения.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Society - a human community, the specifics of which are the relations of people among themselves, their forms of interaction and association.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Общество)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Человеческие общества характеризуются моделью отношений (социальных отношений) между людьми, которая может быть описана как совокупность таких отношений между его субъектами.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_social_science;;

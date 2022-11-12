@@ -1,0 +1,47 @@
+concept_academic_conference
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Научная конференция]
+	(* <- lang_ru;; *);
+	[Academic conference]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Научная конференция)]
+		(* <- lang_ru;; *);
+		[Def. (Academic conference)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Научная конференция — форма организации научной деятельности, при которой исследователи представляют и обсуждают свои работы.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A scientific conference - a form of organization of scientific activity in which researchers present and discuss their work.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Научная конференция)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[По своему статусу научная конференция занимает промежуточное положение между научным семинаром и конгрессом.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_scientific_organizations;;

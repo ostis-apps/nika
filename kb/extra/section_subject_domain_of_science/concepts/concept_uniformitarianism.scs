@@ -1,0 +1,47 @@
+concept_uniformitarianism
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Униформизм]
+	(* <- lang_ru;; *);
+	[Uniformitarianism]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Униформизм)]
+		(* <- lang_ru;; *);
+		[Def. (Uniformitarianism)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Актуализм, или униформизм — один из методологических подходов в естественных науках. Он опирается на принцип однообразия, по которому геологические процессы, происходящие в прошлые геологические эпохи, и явления, вызывавшиеся этими процессами, имеют много общего с современными.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Actualism, or uniformitarianism, - one of the methodological approaches in the natural sciences. It is based on the principle of uniformity, according to which the geological processes occurring in past geological epochs, and the phenomena caused by these processes, have much in common with modern ones.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Униформизм)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[При общности подходов, актуализм, в отличие от униформизма, впоследствии развивался и учитывает необратимость хронологического развития атмосферы, гидросферы, биосферы, литосферы и эволюцию живых организмов.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_natural_science;;

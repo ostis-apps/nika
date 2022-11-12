@@ -1,0 +1,38 @@
+section_subject_domain_of_scientific_organizations
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Научные организации]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Scientific organizations]
+	(* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+	concept_academic_conference;
+	nrel_hold;
+	subject_domain_of_scientific_organizations;
+	concept_scientific_organizations;;
+
+section_subject_domain_of_scientific_organizations = [*
+subject_domain_of_scientific_organizations
+
+=> nrel_main_idtf: 
+	[Предметная область Научные организации]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Scientific organizations]
+	(* <- lang_en;; *);
+
+<= nrel_private_subject_domain:
+	section_subject_domain_of_scientific_organizations;
+
+-> rrel_maximum_studied_object_class:
+	concept_scientific_organizations;
+
+-> rrel_not_maximum_studied_object_class:
+	concept_academic_conference;
+
+-> rrel_explored_relation:
+	nrel_hold;
+
+<- subject_domain;;
+*];;

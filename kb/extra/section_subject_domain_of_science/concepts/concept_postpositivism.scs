@@ -1,0 +1,47 @@
+concept_postpositivism
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Постпозитивизм]
+	(* <- lang_ru;; *);
+	[Postpositivism]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Постпозитивизм)]
+		(* <- lang_ru;; *);
+		[Def. (Positivism)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Постпозитивизм — общее название для нескольких школ философии науки, объединённых критическим отношением к эпистемологическим учениям, которые были развиты в рамках неопозитивизма и обосновывали получение объективного знания из опыта.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Postpositivism - a common name for several schools of philosophy of science, united by a critical attitude towards epistemological teachings that were developed within the framework of neopositivism and substantiated the receipt of objective knowledge from experience.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Постпозитивизм)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Основные представители: Карл Поппер, Томас Кун, Имре Лакатос, Пол Фейерабенд, Майкл Полани, Стивен Тулмин.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_philosophy_of_science;;

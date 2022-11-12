@@ -1,0 +1,47 @@
+concept_psychology_of_science
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Психология науки]
+	(* <- lang_ru;; *);
+	[Psychology of science]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Психология науки)]
+		(* <- lang_ru;; *);
+		[Def. (Psychology of science)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Психология науки — отрасль, исследующая психологические факторы научной деятельности в целях увеличения её эффективности и трактующая эти факторы на основе понимания науки в качестве социально организованной системы особой разновидности духовной деятельности, результаты которой отражают реальность в формах, подчиняющихся эмпирическому и логическому контролю.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The psychology of science - a branch that studies the psychological factors of scientific activity in order to increase its effectiveness and interprets these factors on the basis of understanding science as a socially organized system of a special kind of spiritual activity, the results of which reflect reality in forms subject to empirical and logical control.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Психология науки)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Психология науки является одним из самых молодых ответвлений психологического познания.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: science_studies;;

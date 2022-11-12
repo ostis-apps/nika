@@ -1,0 +1,47 @@
+concept_catastrophism
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Катастрофизм]
+	(* <- lang_ru;; *);
+	[Сatastrophism]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Катастрофизм)]
+		(* <- lang_ru;; *);
+		[Def. (Сatastrophism)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Катастрофизм, или теория катастроф — система представлений об изменениях живого мира во времени под влиянием событий, приводящих к массовому вымиранию организмов.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Сatastrophism, or the theory of catastrophes, - a system of ideas about changes in the living world in time under the influence of events leading to the mass extinction of organisms.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Катастрофизм)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Катастрофизм как цельную гипотезу разработал известный французский учёный Жорж Кювье.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_natural_science;;

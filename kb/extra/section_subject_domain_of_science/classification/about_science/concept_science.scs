@@ -1,0 +1,46 @@
+concept_science
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Наука]
+	(* <- lang_ru;; <-concept_text;; *);
+	[Science]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Наука)]
+		(* <- lang_ru;; *);
+		[Def. (Science)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Наука — деятельность, направленная на выработку и систематизацию объективных знаний о действительности.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Science - an activity aimed at developing and systematizing objective knowledge about reality.]
+			(* <- lang_en;; *);;
+		*);;
+		
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Наука)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Эта деятельность осуществляется путём сбора фактов, их регулярного обновления, систематизации и критического анализа.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

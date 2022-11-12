@@ -1,0 +1,38 @@
+concept_message_about_research_methods
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о методах научно-исследовательской работы]
+	    (* <- lang_ru;; *);
+	[message about research methods]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_research_methods];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о методах научно-исследовательской работы)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about research methods)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о методах научно-исследовательской работы - атомарное сообщение, которое содержит информацию о методах научно-исследовательской работы которую необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about research methods is an atomic message that contains research methods information which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+	
+	

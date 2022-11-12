@@ -1,0 +1,47 @@
+concept_social_structure
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Социальная структура]
+	(* <- lang_ru;; *);
+	[Social structure]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Социальная структура)]
+		(* <- lang_ru;; *);
+		[Def. (Social structure)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Социальная структура — совокупность взаимосвязанных элементов, составляющих внутреннее строение общества.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Social structure - a set of interrelated elements that make up the internal structure of society.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Социальная структура)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Один из самых ранних и наиболее исчерпывающих анализов социальной структуры был проведен К. Марксом, который показал зависимость политической, культурной, и религиозной сторон жизни от способа производства (основной структуры общества).]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_social_science;;

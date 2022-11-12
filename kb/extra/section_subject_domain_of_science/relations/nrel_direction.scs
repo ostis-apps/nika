@@ -1,0 +1,48 @@
+nrel_direction
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-asymmetric_relation;
+=>nrel_main_idtf:
+	[Направление*]
+	(* <- lang_ru;; *);
+	[Direction*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_natural_science;
+=>nrel_second_domain: 
+	concept_catastrophism;
+	concept_uniformitarianism;
+	concept_evolutionism;
+	
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Направление*)]
+		(* <- lang_ru;; *);
+		[Def.(Direction*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Направление* - область научного исторического знания, предполагающая особый ракурс рассмотрения исторической реальности.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Direction* - an area of scientific historical knowledge, which implies a special perspective on historical reality.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_natural_science;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

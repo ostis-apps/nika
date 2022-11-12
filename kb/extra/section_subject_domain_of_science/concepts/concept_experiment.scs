@@ -1,0 +1,47 @@
+concept_experiment
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Эксперимент]
+	(* <- lang_ru;; *);
+	[Experiment]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Эксперимент)]
+		(* <- lang_ru;; *);
+		[Def. (Experiment)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Эксперимент — процедура, выполняемая для поддержки, опровержения или подтверждения гипотезы или теории.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[An experiment - a procedure performed to support, disprove, or confirm a hypothesis or theory.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Эксперимент)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Научным называют эксперимент реализуемый в рамках научного метода.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_methodology;;
