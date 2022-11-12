@@ -1,0 +1,38 @@
+concept_message_about_cpu_example
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение об экземплярах процессоров]
+	    (* <- lang_ru;; *);
+	[message about cpu example]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_cpu_example];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение об экземплярах процессоров)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about cpu example)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение об экземпляре процессора - атомарное сообщение, которое содержит экземпляр методов научно-исследовательской работы, информацию о котором необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about cpu example is an atomic message that contains research methods example information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

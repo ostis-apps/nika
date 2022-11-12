@@ -1,0 +1,28 @@
+concept_power_supply_unit <- sc_node_not_relation;;
+
+concept_power_supply_unit => nrel_main_idtf:
+[Блок питания] (*<-lang_ru;;*);
+[Power supply unit] (*<-lang_en;;*);;
+
+concept_power_supply_unit <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Блок питания)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_power_supply_unit.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_power_supply_unit <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Блок питания)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[В некоторой степени блок питания также выполняет функции стабилизации и защиты от незначительных помех питающего напряжения.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

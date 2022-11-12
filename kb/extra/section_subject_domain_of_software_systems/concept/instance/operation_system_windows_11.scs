@@ -1,0 +1,25 @@
+operation_system_windows_11
+<- concept_operation_system;
+
+=> nrel_main_idtf:
+   [ОС windows 11]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [windows 11 OS]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [OS windows 11]
+   (* <- lang_en;; *);
+
+<= nrel_resource_management: lenovo_legion_y530;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. ОС windows 11](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [ОС windows 11 - это операционная система от Microsoft, которая стоит на Lenovo Legion Y530.](*<-lang_ru;;*);;
+	*);;
+*);;

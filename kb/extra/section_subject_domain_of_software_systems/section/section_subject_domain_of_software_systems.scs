@@ -1,0 +1,91 @@
+section_subject_domain_of_software_systems
+=> nrel_main_idtf:
+	  [Раздел. Предметная область программных систем]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of software systems]
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_software_systems = [*
+	subject_domain_of_software_systems
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область программных систем]
+   (* <- lang_ru;; *);
+   [Subject domain of software systems]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	
+	-> rrel_maximum_studied_object_class:
+   concept_software_system;
+   concept_gamer;
+	-> rrel_not_maximum_studied_object_class:
+	concept_software;
+	concept_hardware;
+	concept_operation_system;
+	concept_purpose;
+	concept_input;
+	concept_output;
+	concept_case;
+	concept_power_supply_unit;
+	concept_motherboard;
+	concept_cpu;
+	concept_chipset;
+	concept_ram;
+	concept_rom;
+	concept_battery;
+	
+	-> rrel_explored_relation:
+	nrel_protection;
+	nrel_power_supply;
+	nrel_basis_of_construction;
+	nrel_processing;
+	nrel_bridge;
+	nrel_random_access_to_data;
+	nrel_storage;
+	nrel_autonomus_work;
+	nrel_purpose_characteristic;
+	nrel_input_characteristic;
+	nrel_output_characteristic;
+    nrel_owner;
+	nrel_resource_management;
+	nrel_communicator;;
+*];;
+
+section_subject_domain_of_software_systems
+-> rrel_key_sc_element:
+	nrel_protection;
+	nrel_power_supply;
+	nrel_basis_of_construction;
+	nrel_processing;
+	nrel_bridge;
+	nrel_random_access_to_data;
+	nrel_storage;
+	nrel_autonomus_work;
+	nrel_purpose_characteristic;
+	nrel_input_characteristic;
+	nrel_output_characteristic;
+    nrel_owner;
+	nrel_resource_management;
+	nrel_communicator;
+
+   subject_domain_of_software_systems;
+   concept_software_system;
+   concept_gamer;
+    concept_software;
+	concept_hardware;
+	concept_operation_system;
+	concept_purpose;
+	concept_input;
+	concept_output;
+	concept_case;
+	concept_power_supply_unit;
+	concept_motherboard;
+	concept_cpu;
+	concept_chipset;
+	concept_ram;
+	concept_rom;
+	concept_battery;;
+

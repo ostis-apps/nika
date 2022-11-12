@@ -1,0 +1,25 @@
+storage_seagate_barracuda_1tb
+<- concept_storage;
+
+=> nrel_main_idtf:
+   [ПЗУ storage seagate barracuda 1tb]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [seagate barracuda 1tb rom]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [rom seagate barracuda 1tb]
+   (* <- lang_en;; *);
+
+<= nrel_storage: lenovo_legion_y530;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. ПЗУ storage seagate barracuda 1tb](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [ПЗУ storage seagate barracuda 1tb - это ПЗУ, выполняющую роль хранилища в Lenovo Legion Y530.](*<-lang_ru;;*);;
+	*);;
+*);;

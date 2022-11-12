@@ -1,0 +1,30 @@
+concept_software <- sc_node_not_relation;;
+
+concept_software => nrel_main_idtf:
+[Программное обеспечение] (*<-lang_ru;;*);
+[Software] (*<-lang_en;;*);
+=> nrel_inclusion:
+concept_operation_system;;
+
+concept_software <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Программное обеспечение)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_software.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_software <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Программное обеспечение)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Программное обеспечение является одним из видов обеспечения вычислительной системы, наряду с техническим (аппаратным), математическим, информационным, лингвистическим, организационным, методическим и правовым обеспечением.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

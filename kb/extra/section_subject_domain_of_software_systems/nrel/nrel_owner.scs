@@ -1,0 +1,48 @@
+nrel_owner
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-antisymmetric_relation;
+=>nrel_main_idtf:
+	[Владелец*]
+	(* <- lang_ru;; *);
+	[Owner*]
+	(* <- lang_en;; *);
+
+=> nrel_first_domain:
+	concept_software_system;
+=> nrel_second_domain:
+	concept_gamer;
+
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Владелец*)]
+		(* <- lang_ru;; *);
+		[Def.(Owner*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Владелец* - это отношение, связывающее программную систему и того кто ей владеет.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Owner* is the ratio that connects the software system and the one who owns it.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_software_system;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

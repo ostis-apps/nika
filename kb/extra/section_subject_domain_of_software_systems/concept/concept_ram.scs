@@ -1,0 +1,28 @@
+concept_ram <- sc_node_not_relation;;
+
+concept_ram => nrel_main_idtf:
+[ЗУПВ] (*<-lang_ru;;*);
+[ram] (*<-lang_en;;*);;
+
+concept_ram <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (ЗУПВ)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_ram.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_ram <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (ЗУПВ)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Обычно используемая для хранения рабочих данных и машинного кода.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

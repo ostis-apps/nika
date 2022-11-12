@@ -1,0 +1,48 @@
+nrel_bridge
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-antisymmetric_relation;
+=>nrel_main_idtf:
+	[Мост*]
+	(* <- lang_ru;; *);
+	[Bridge*]
+	(* <- lang_en;; *);
+
+=> nrel_first_domain:
+	concept_software_system;
+=> nrel_second_domain:
+	concept_chipset;
+
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Мост*)]
+		(* <- lang_ru;; *);
+		[Def.(Bridge*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Мост* - это отношение, связывающее программную систему и чипсет, который выполняет роль связующего компонета.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Bridge* is the ratio that connects the software system and the chipset, which acts as a connecting component.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_software_system;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

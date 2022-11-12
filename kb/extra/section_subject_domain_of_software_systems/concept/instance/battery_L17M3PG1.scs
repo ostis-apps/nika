@@ -1,0 +1,25 @@
+battery_L17M3PG1
+<- concept_battery;
+
+=> nrel_main_idtf:
+   [Аккумулятор L17M3PG1]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [L17M3PG1 battery]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [battery L17M3PG1]
+   (* <- lang_en;; *);
+
+<= nrel_autonomus_work: lenovo_legion_y530;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Аккумулятор L17M3PG1](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Аккумулятор L17M3PG1 - это аккумулятор, необходимый для автономной работы Lenovo Legion Y530.](*<-lang_ru;;*);;
+	*);;
+*);;

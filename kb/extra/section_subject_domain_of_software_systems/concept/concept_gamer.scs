@@ -1,0 +1,28 @@
+concept_gamer <- sc_node_not_relation;;
+
+concept_gamer => nrel_main_idtf:
+[Геймер] (*<-lang_ru;;*);
+[gamer] (*<-lang_en;;*);;
+
+concept_gamer <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Геймер)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_gamer.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_gamer <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Геймер)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Геймеры считаются новой субкультурой, и вошли в этот список в 2013 году, после признания киберспорта.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

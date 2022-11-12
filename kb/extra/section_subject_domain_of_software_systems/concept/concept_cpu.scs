@@ -1,0 +1,28 @@
+concept_cpu <- sc_node_not_relation;;
+
+concept_cpu => nrel_main_idtf:
+[Центральный процессор] (*<-lang_ru;;*);
+[cpu] (*<-lang_en;;*);;
+
+concept_cpu <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Центральный процессор)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_cpu.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_cpu <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Центральный процессор)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Главными характеристиками ЦПУ являются: тактовая частота, производительность, энергопотребление, нормы литографического процесса, используемого при производстве (для микропроцессоров), и архитектура.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

@@ -1,0 +1,28 @@
+concept_battery <- sc_node_not_relation;;
+
+concept_battery => nrel_main_idtf:
+[Батарея] (*<-lang_ru;;*);
+[Battery] (*<-lang_en;;*);;
+
+concept_battery <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Батарея)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_battery.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_battery <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Батарея)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Основная специфика аккумулятора заключается в обратимости внутренних химических процессов, что обеспечивает его многократное циклическое использование (через заряд-разряд).](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

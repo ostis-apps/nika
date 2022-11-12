@@ -1,0 +1,26 @@
+chipset_HM370
+<- concept_chipset;
+
+=> nrel_main_idtf:
+   [Чипсет HM370]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [HM370 Chipset]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Chipset HM370]
+   (* <- lang_en;; *);
+
+<= nrel_bridge: lenovo_legion_y530;
+<= nrel_communicator: cpu_intel_core_i5_8300H;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. чипсет HM370](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [чипсет HM370 - это чипсет, выполняющий роль моста в Lenovo Legion Y530.](*<-lang_ru;;*);;
+	*);;
+*);;

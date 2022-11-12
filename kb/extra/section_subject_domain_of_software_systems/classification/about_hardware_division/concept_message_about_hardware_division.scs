@@ -1,0 +1,37 @@
+concept_message_about_hardware_division
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о видах аппаратного обеспеченияах]
+	    (* <- lang_ru;; *);
+	[message about hardware division]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_hardware_division];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о видах аппаратного обеспеченияах)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about hardware division)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о видах аппаратного обеспечения - атомарное сообщение, которое содержит виды аппаратного обеспечения, информацию о которых необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about hardware division is an atomic message that contains hardware division information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

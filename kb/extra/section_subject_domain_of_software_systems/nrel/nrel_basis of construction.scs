@@ -1,0 +1,48 @@
+nrel_basis_of_construction
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-antisymmetric_relation;
+=>nrel_main_idtf:
+	[Основа конструкции*]
+	(* <- lang_ru;; *);
+	[Basis of construction*]
+	(* <- lang_en;; *);
+
+=> nrel_first_domain:
+	concept_software_system;
+=> nrel_second_domain:
+	concept_motherboard;
+
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Основа конструкции*)]
+		(* <- lang_ru;; *);
+		[Def.(Basis of construction*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Основа конструкции* - это отношение, связывающее программную систему и материнскую плату, которая является основой конструкции.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Basis of construction* is the ratio that connects the software system and the motherboard, which is the basis of the design.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_software_system;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

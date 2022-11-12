@@ -1,0 +1,25 @@
+case_lenovo_legion_y530
+<- concept_case;
+
+=> nrel_main_idtf:
+   [корпус Lenovo Legion Y530]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Lenovo Legion Y530 case]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [case Lenovo Legion Y530]
+   (* <- lang_en;; *);
+
+<= nrel_protection: lenovo_legion_y530;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. корпус Lenovo Legion Y530](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Корпус Lenovo Legion Y530 - это корпус, отвечающий за защиту ноутбука Lenovo Legion Y530.](*<-lang_ru;;*);;
+	*);;
+*);;

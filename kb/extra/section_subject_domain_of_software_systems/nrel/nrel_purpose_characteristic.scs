@@ -1,0 +1,48 @@
+nrel_purpose_characteristic
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-antisymmetric_relation;
+=>nrel_main_idtf:
+	[Характеристика цели*]
+	(* <- lang_ru;; *);
+	[Purpose characteristic*]
+	(* <- lang_en;; *);
+
+=> nrel_first_domain:
+	concept_software_system;
+=> nrel_second_domain:
+	concept_purpose;
+
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Характеристика цели*)]
+		(* <- lang_ru;; *);
+		[Def.(Purpose characteristic*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Характеристика цели* - это отношение, связывающее программную систему и её назначение.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Purpose characteristic* is the ratio that connects the software system and the purpose for wich it is intended.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_software_system;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

@@ -1,0 +1,25 @@
+power_supply_unit_ADL135NCC3A
+<- concept_power_supply_unit;
+
+=> nrel_main_idtf:
+   [блок питания ADL135NCC3A]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [ADL135NCC3A power supply unit]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [power supply unit ADL135NCC3A]
+   (* <- lang_en;; *);
+
+<= nrel_power_supply: lenovo_legion_y530;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. блок питания ADL135NCC3A](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Блок питания ADL135NCC3A - это блок питания, отвечающий за зарядку ноутбука Lenovo Legion Y530.](*<-lang_ru;;*);;
+	*);;
+*);;

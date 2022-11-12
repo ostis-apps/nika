@@ -1,0 +1,48 @@
+nrel_processing
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-antisymmetric_relation;
+=>nrel_main_idtf:
+	[Обработка*]
+	(* <- lang_ru;; *);
+	[Processing*]
+	(* <- lang_en;; *);
+
+=> nrel_first_domain:
+	concept_software_system;
+=> nrel_second_domain:
+	concept_cpu;
+
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Обработка*)]
+		(* <- lang_ru;; *);
+		[Def.(Processing*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Обработка* - это отношение, связывающее программную систему и ЦПУ, который обрабатывает данные.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Processing* is the ratio that connects the software system and the CPU that processes the data.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_software_system;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

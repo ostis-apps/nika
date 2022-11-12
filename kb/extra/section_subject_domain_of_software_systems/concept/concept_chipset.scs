@@ -1,0 +1,28 @@
+concept_chipset <- sc_node_not_relation;;
+
+concept_chipset => nrel_main_idtf:
+[Чипсет] (*<-lang_ru;;*);
+[chipset] (*<-lang_en;;*);;
+
+concept_chipset <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Чипсет)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_chipset.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_chipset <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Чипсет)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Так, в компьютерах чипсет, размещаемый на материнской плате, выполняет функцию связующего компонента (моста), обеспечивающего взаимодействие центрального процессора (ЦП) c различными типами памяти, устройствами ввода-вывода, контроллерами и адаптерами ПУ, как непосредственно через себя (и имея некоторые из них в своём составе), так и через другие контроллеры и адаптеры, с помощью многоуровневой системы шин.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
