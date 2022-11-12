@@ -1,0 +1,50 @@
+nrel_kind_of_transport
+<- sc_node_role_relation;
+<- relation;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:
+    concept_automobile;
+    concept_train;
+    concept_aircraft;
+
+=> nrel_second_domain:
+    concept_transport;
+ 
+=> nrel_definitional_domain:
+    concept_transport;
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[вид транспорта* ] (*<-lang_ru;;*);
+	[kind of transport* ] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (вид транспорта)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_transport
+};;
+<= nrel_sc_text_translation: ... (*
+    -> rrel_example:
+        [Вид транспорта - возможность разделить транспорт на ряд групп по определенным признакам.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+        *);;
+*);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(вид транспорта)] (* <- lang_ru;; *);;
+    <= nrel_sc_text_translation: ... (*
+        -> rrel_example:
+        [В зависимости от среды, в которой транспорт выполняет свои функции, он может быть: водным, в том числе подводным, наземным, в том числе подземным, воздушным и космическим.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

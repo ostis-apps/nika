@@ -1,0 +1,34 @@
+  concept_steering_wheel
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [руль] (*<-lang_ru;;*);
+    [steering wheel] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (руль)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_transport;
+        concept_automobile;
+        nrel_detail
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Руль - часть рулевого механизма, предназначенная для поворота и удержания направления движения различных транспортных средств (автомобилей).] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(руль)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [На руле могут располагаться дополнительные переключатели и органы управления: клавиши управления радио, фарами, очистителями стекла; такое их расположение предоставляет удобство для водителя, так как он может управлять ими, не снимая рук с руля. ](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

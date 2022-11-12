@@ -1,0 +1,53 @@
+nrel_passenger_pick_up_point
+<- sc_node_role_relation;
+<- relation;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:
+    concept_transport;
+
+=> nrel_second_domain:
+    concept_airport;
+    concept_bus_station;
+    concept_railway_station;
+ 
+=> nrel_definitional_domain:
+    concept_airport;
+    concept_bus_station;
+    concept_railway_station;
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[место пасадки пассажиров* ] (*<-lang_ru;;*);
+	[passenger pick-up point* ] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (место пасадки пассажиров)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_transport;
+        nrel_passenger
+};;
+<= nrel_sc_text_translation: ... (*
+    -> rrel_example:
+        [Место посадки пассажиров - место в котором человек (пассажир) может сесть на транспорт.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+        *);;
+*);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(место пасадки пассажиров)] (* <- lang_ru;; *);;
+    <= nrel_sc_text_translation: ... (*
+        -> rrel_example:
+        [Заключение договора перевозки пассажира обычно удостоверяется билетом.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

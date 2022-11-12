@@ -1,0 +1,34 @@
+  concept_petrol
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [бензин] (*<-lang_ru;;*);
+    [petrol] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (бензин)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_engine;
+        nrel_fuel;
+        concept_automobile
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Бензин - бесцветная горючая жидкость, получаемая переработкой нефти. Самый популярный вид топлива для автомобилей] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(бензин)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Основное преимущество вертолёта заключается в том, что не требуется специальная длинная бетонная полоса для взлета и посадки, достаточно небольшой площадки.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

@@ -4,7 +4,8 @@ action_node
 
 ...
     => nrel_sc_text_translation: message;
-    -> [Hello Maksim.] (* <- lang_en;;  <- concept_text_file;; *);;
+    -> [Hello Maksim.] (* <- lang_en;;  <- concept_text_file;; *);
+    -> [Привет, Максим.] (* <- lang_ru;;  <- concept_text_file;; *);;
 
 message
     <- concept_message;

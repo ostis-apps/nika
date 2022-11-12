@@ -1,0 +1,35 @@
+concept_playing_card
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf: 
+ 	[Игральная карта] (*<-lang_ru;;*);
+	[playing card] (*<-lang_en;;*);
+
+<= nrel_inclusion:
+    concept_thing;
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (Игральная карта)] (* <- lang_ru;; *);;
+      => nrel_using_constants: {
+        concept_board_game;
+        nrel_attribute
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Игральная карта — часть колоды, прямоугольный лист из картона или тонкого пластика, используемый для карточных игр, а также фокусов, гадания.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(игральная карта)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+		[У каждой карты на одной стороне, называемой лицом, указывается её значение](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

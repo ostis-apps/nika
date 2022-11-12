@@ -1,0 +1,28 @@
+action_node
+    <- action_message_topic_classification;
+    -> rrel_1: message;;
+
+...
+    => nrel_sc_text_translation: message;
+    -> [What do you know about such hobby as a theatre?] (* <- lang_en;;  <- concept_text_file;; *);
+    -> [Что ты знаешь о таком хобби, как театр?] (* <- lang_ru;;  <- concept_text_file;; *);;
+
+message
+    <- concept_message;
+    <- concept_atomic_message;;
+
+concept_theatre
+    => nrel_main_idtf: [театр]
+                        (* <- lang_ru;; *);
+    => nrel_main_idtf: [theatre]
+                        (* <- lang_en;; *);;
+
+concept_hobby
+    => nrel_main_idtf: [хобби]
+                        (* <- lang_ru;; *);
+    => nrel_main_idtf: [hobby]
+                        (* <- lang_en;; *);;
+
+concept_wit_entity
+    -> concept_theatre;
+    -> concept_hobby;;

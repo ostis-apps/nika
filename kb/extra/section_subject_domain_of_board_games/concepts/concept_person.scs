@@ -1,0 +1,17 @@
+concept_person
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [личность] (*<-lang_ru;;*);
+    [person] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (личность)] (* <- lang_ru;; *);;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Личность - человек как носитель каких-либо свойств, лицо.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

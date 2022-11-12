@@ -1,0 +1,39 @@
+nrel_detail
+<- sc_node_role_relation;
+<- relation;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:
+    concept_helm;
+    concept_engine;
+
+=> nrel_second_domain:
+    concept_transport;
+ 
+=> nrel_definitional_domain:
+    concept_transport;
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[деталь* ] (*<-lang_ru;;*);
+	[detail* ] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (деталь)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_transport;
+        concept_automobile
+};;
+<= nrel_sc_text_translation: ... (*
+    -> rrel_example:
+        [Деталь - изготовленное изделие, являющееся частью изделия, машины или же какой-либо технической конструкции.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+        *);;
+*);;

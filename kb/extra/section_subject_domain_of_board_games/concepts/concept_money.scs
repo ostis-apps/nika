@@ -1,0 +1,37 @@
+concept_money
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf: 
+ 	[деньги] (*<-lang_ru;;*);
+	[money] (*<-lang_en;;*);
+
+<= nrel_inclusion:
+    concept_thing;
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (деньги)] (* <- lang_ru;; *);;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Деньги - металлические и бумажные знаки, являющиеся мерой стоимости при купле-продаже.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(деньги] (* <- lang_ru;; *);; 
+      => nrel_using_constants: {
+        concept_board_game;
+        concept_money;
+        concept_person;
+        nrel_gamer
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+		[В некоторых играх встречаются искусственные деньги, используемые как капитал игрока.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

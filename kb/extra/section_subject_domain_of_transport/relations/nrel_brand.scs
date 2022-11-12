@@ -1,0 +1,50 @@
+nrel_brand
+<- sc_node_role_relation;
+<- relation;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:
+    concept_automobile;
+    concept_airplane;
+    concept_train;
+
+=> nrel_second_domain:
+    concept_transport;
+ 
+=> nrel_definitional_domain:
+    concept_transport;
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[марка* ] (*<-lang_ru;;*);
+	[brand* ] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (марка)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_transport
+};;
+<= nrel_sc_text_translation: ... (*
+    -> rrel_example:
+        [Марка - комплекс представлений, мнений, ассоциаций, эмоций, ценностных характеристик о продукте либо услуге в сознании потребителя.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+        *);;
+*);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(марка)] (* <- lang_ru;; *);;
+    <= nrel_sc_text_translation: ... (*
+        -> rrel_example:
+        [Бренд воспринимается как широко известная торговая марка или компания, занимающая в сознании и психологии потребительских сегментов особое место из массы себе подобных.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

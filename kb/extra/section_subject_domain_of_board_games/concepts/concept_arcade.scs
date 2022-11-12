@@ -1,0 +1,37 @@
+concept_arcade
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+ 	[аркада] (*<-lang_ru;;*);
+	[arcade] (*<-lang_en;;*);
+
+<= nrel_inclusion:
+    concept_board_game;
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (аркада)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_game
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Аркада - жанр игр, характеризующийся коротким по времени, но интенсивным игровым процессом.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(аркада)] (* <- lang_ru;; *);; 
+	=> nrel_using_constants: {
+		concept_game
+};; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+		[В узком смысле аркадными называются игры для аркадных игровых автоматов.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

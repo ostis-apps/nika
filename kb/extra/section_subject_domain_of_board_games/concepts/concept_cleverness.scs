@@ -1,0 +1,23 @@
+concept_cleverness
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf: 
+ 	[сообразительность] (*<-lang_ru;;*);
+	[cleverness] (*<-lang_en;;*);
+    
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (Сообразительность)] (* <- lang_ru;; *);;
+      => nrel_using_constants: {
+        concept_person;
+        nrel_action
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Сообразительность — интеллектуальное свойство личности, проявляющееся как быстрота мыслительной деятельности, гибкость и точность ума, оригинальность мыслей.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);;
+
+

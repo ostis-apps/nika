@@ -1,0 +1,38 @@
+nrel_founder
+<- sc_node_norole_relation;
+<- relation;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:
+    concept_person;
+
+=> nrel_second_domain:
+    concept_brand;
+ 
+=> nrel_definitional_domain:
+    concept_brand;
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[основатель* ] (*<-lang_ru;;*);
+	[founder* ] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (основатель)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_person;
+        nrel_brand
+};;
+<= nrel_sc_text_translation: ... (*
+    -> rrel_example:
+        [Основатель - это человек, который часть или вся организационная работа, необходимая для создания новой организации, будь то бизнес, благотворительная организация, управляющая тело, школа, группа артистов или любой другой тип организации.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+        *);;
+*);;

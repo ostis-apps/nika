@@ -1,0 +1,44 @@
+//пункт правил
+rrel_rule_clause
+<- sc_node_role_relation;
+<- relation;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_first_domain:{
+    concept_board_game;
+    concept_game
+};
+
+=> nrel_second_domain:
+    concept_rules;
+ 
+=> nrel_definitional_domain:
+    concept_rules;
+
+
+//идентификаторы
+=> nrel_main_idtf: 
+ 	[пункт правила'] (*<-lang_ru;;*);
+	[rule clause'] (*<-lang_en;;*);
+
+//определение   
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (пункт правил')] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_person;
+        nrel_gamer;
+        concept_rules;
+        concept_character
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Пункт правил - одно из правил, которому должен соответствовать игрок.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);;

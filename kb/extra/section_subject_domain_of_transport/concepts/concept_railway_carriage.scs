@@ -1,0 +1,34 @@
+  concept_railway_carrige
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [вагон] (*<-lang_ru;;*);
+    [railway carrige] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (вагон)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_train;
+        concept_transport;
+        concept_rails
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Вагон - несамоходное транспортное средство, предназначенное для движения по рельсам и эксплуатируемое с локомотивом.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(вагон)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Вагон предназначен для перевозки грузов или пассажиров и оборудован всеми необходимыми устройствами для их перевозки и для включения вагона в состав поезда. ](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

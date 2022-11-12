@@ -1,0 +1,36 @@
+concept_wheel
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [колесо] (*<-lang_ru;;*);
+    [wheel] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (колесо)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_automobile;
+        nrel_detail;
+        concept_transport;
+        concept_train;
+        concept_automobile
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Колесо - движитель, свободно вращающийся или закреплённый на вращающейся оси диск, позволяющий поставленному на него телу катиться, а не скользить. Широко применяется для транспортировки грузов при помощи транпорта (поезд, автомобиль).] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(колесо)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Автомобильное колесо за последние 100 лет претерпело немало изменений, от деревянных колёс до композитов и сверхпрочных сплавов.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

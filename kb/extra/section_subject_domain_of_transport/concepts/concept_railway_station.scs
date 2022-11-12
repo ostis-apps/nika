@@ -1,0 +1,34 @@
+  concept_railway_station
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [железнодорожный вокзал] (*<-lang_ru;;*);
+    [railway station] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (железнодорожный вокзал)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_train;
+        concept_railway_carrige;
+        nrel_passenger
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Железнодорожный вокзал - здание или комплекс зданий на железнодорожной станции, предназначенное для обслуживания пассажиров.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(железнодорожный вокзал)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Помещения вокзала подразделяются на пассажирскую зону (вестибюли, залы ожидания, комнаты матери и ребенка, комнаты отдыха транзитных пассажиров, помещения билетных касс и справочных бюро, санузлы) и служебно-техническую. К основным подразделениям вокзала относятся билетно-кассовый цех, справочно-информационная служба, багажное отделение, камеры хранения ручной клади.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

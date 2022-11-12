@@ -1,0 +1,21 @@
+concept_aircraft
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [летательный аппарат] (*<-lang_ru;;*);
+    [aircraft] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (летательный аппарат)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_atmosphere
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Летательный аппарат - общее название устройства (аппарата) для полётов в атмосфере или космическом пространстве.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);;

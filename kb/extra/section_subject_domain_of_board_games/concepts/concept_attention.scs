@@ -1,0 +1,23 @@
+concept_attention
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf: 
+ 	[внимание] (*<-lang_ru;;*);
+	[attention] (*<-lang_en;;*);
+    
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (Внимание)] (* <- lang_ru;; *);;
+      => nrel_using_constants: {
+        concept_person;
+        nrel_action
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Внимание - сосредоточение мыслей или зрения, слуха на чём-либо.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);;
+
+
