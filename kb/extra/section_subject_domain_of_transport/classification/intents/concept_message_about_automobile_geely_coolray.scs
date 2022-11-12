@@ -1,0 +1,27 @@
+concept_message_about_automobile_geely_coolray
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение об автомобиле "Джили Кулрэй"]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_automobile_geely_coolray];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение об автомобиле "Джили Кулрэй")]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение об автомобиле "Джили Кулрэй" - атомарное сообщение,
+    которое содержит информацию об автомобиле "Джили Кулрэй".]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

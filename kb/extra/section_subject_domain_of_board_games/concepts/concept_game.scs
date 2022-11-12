@@ -1,0 +1,41 @@
+concept_game
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [игра] (*<-lang_ru;;*);
+    [game] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (игра)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_game;
+        concept_attribute;
+        concept_person;
+        nrel_gamer
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Игра - непродуктивная деятельность, которая осуществляется человеком (игроком) не ради практических целей, а служит для развлечения и забавы.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(настольная игра, специальное поле, карты, кости)] (* <- lang_ru;; *);; 
+     => nrel_using_constants: {
+        concept_game;
+        concept_attribute;
+        nrel_action
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+[Игра отличается как от труда, так и от чисто инстинктивных действии.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

@@ -1,0 +1,38 @@
+concept_horror
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Ужастик] (*<-lang_ru;;*);
+    [horror] (*<-lang_en;;*);
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (Ужастик)] (* <- lang_ru;; *);;
+      => nrel_using_constants: {
+		concept_film;
+        nrel_themes
+};; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Ужастик - преимущественно литературный и кинематографический жанр, описывающий чаще всего мистическую, загадочную историю, вызывающую чувство страха. ] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(ужастик, тематика)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+		concept_film;
+        concept_horror;
+        nrel_themes
+};; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+    [Основополагающим признаком фильмов ужасов является страх](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

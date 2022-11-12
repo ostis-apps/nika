@@ -1,0 +1,27 @@
+concept_message_about_founder_factory
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение об основателе компании]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_founder_factory];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение об основателе компании)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение об основателе компании - атомарное сообщение,
+    которое содержит какую-либо информацию об основателе компании.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
