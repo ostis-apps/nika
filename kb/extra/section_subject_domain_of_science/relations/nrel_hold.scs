@@ -1,0 +1,45 @@
+nrel_hold
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-asymmetric_relation;
+=>nrel_main_idtf:
+	[Проведение*]
+	(* <- lang_ru;; *);
+	[Hold*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_scientific_organizations;
+=>nrel_second_domain: concept_academic_conference;
+	
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Проведение*)]
+		(* <- lang_ru;; *);
+		[Def.(Hold*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Проведение* - это отношение, связывающее научные организации и конференции, обеспечивающее обмен информацией между учеными.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Hold* - a relationship that connects scientific organizations and conferences, ensuring the exchange of information between scientists.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_scientific_organizations;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

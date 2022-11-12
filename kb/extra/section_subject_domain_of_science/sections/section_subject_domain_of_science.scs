@@ -1,0 +1,51 @@
+section_subject_domain_of_science
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Наука]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Science]
+	(* <- lang_en;; *);
+
+<= nrel_section_decomposition: 
+	{
+		section_subject_domain_of_science_studies;
+		section_subject_domain_of_scientific_knowledge;
+		section_subject_domain_of_scientific_community
+	};
+
+<- rrel_key_sc_element:
+	concept_science_studies;
+	subject_domain_of_science;
+	concept_scientific_knowledge;
+	concept_scientific_community;
+	concept_science;;
+
+section_subject_domain_of_science = [*
+subject_domain_of_science
+
+=> nrel_main_idtf: 
+	[Предметная область Наука]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Science]
+	(* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+	section_subject_domain_of_science_studies;
+	section_subject_domain_of_scientific_knowledge;
+	section_subject_domain_of_scientific_community;
+<= nrel_private_subject_domain:
+	section_subject_domain_of_science;
+
+-> rrel_maximum_studied_object_class:
+	concept_science;
+
+-> rrel_not_maximum_studied_object_class:
+	concept_science_studies;
+	concept_scientific_knowledge;
+	concept_scientific_community;
+
+
+
+<- subject_domain;;
+*];;

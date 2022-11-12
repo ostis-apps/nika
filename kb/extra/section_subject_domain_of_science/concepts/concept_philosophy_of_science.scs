@@ -1,0 +1,47 @@
+concept_philosophy_of_science
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Философия науки]
+	(* <- lang_ru;; *);
+	[Philosophy of science]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Философия науки)]
+		(* <- lang_ru;; *);
+		[Def. (Philosophy of science)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Философия науки — раздел философии, изучающий понятие, границы и методологию науки.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Philosophy of science - a branch of philosophy that studies the concept, boundaries and methodology of science.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Философия науки)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Предметом философии науки — являются общие закономерности и тенденции научного познания как особой деятельности по производству научных знаний, взятых в их историческом развитии и рассматриваемых в исторически изменяющемся социокультурном контексте.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: science_studies;;

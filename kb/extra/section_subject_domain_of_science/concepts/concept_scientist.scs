@@ -1,0 +1,47 @@
+concept_scientist
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Ученый]
+	(* <- lang_ru;; *);
+	[Scientist]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Ученый)]
+		(* <- lang_ru;; *);
+		[Def. (Scientist)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Ученый — представитель науки, осуществляющий осмысленную деятельность по формированию научной картины мира, чья научная деятельность и квалификация в той или иной форме получили признание со стороны научного сообщества.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A scientist - a representative of science who carries out meaningful activities in the formation of a scientific picture of the world, whose scientific activity and qualifications in one form or another have been recognized by the scientific community.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Ученый)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Основной формальный признак признания квалификации — публикация материалов исследований в авторитетных научных изданиях и доклады на авторитетных научных конференциях.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_scientists;;

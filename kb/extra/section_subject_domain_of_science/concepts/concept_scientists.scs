@@ -1,0 +1,47 @@
+concept_scientists
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Ученые]
+	(* <- lang_ru;; *);
+	[Scientists]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Ученые)]
+		(* <- lang_ru;; *);
+		[Def. (Scientists)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Ученые — cовокупность занимающихся наукой людей.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Scientists - a group of people who do science.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Ученые)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[В учёном сообществе высоко ценится педагогическая работа. Право читать лекции в престижном учебном заведении является признанием уровня и квалификации учёного.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_scientific_community;;

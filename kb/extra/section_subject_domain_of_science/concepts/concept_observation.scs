@@ -1,0 +1,47 @@
+concept_observation
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Наблюдение]
+	(* <- lang_ru;; *);
+	[Observation]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Наблюдение)]
+		(* <- lang_ru;; *);
+		[Def. (Observation)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Наблюдение — целенаправленное восприятие, обусловленное задачей деятельности, а в частности в науке — восприятие информации на приборах, обладающее признаками объективности и контролируемости за счет повторного наблюдения, либо применения иных методов исследования (например, эксперимента).]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Observation - a purposeful perception due to the task of activity, and in particular in science - the perception of information on devices, which has signs of objectivity and controllability due to repeated observation, or the use of other research methods (for example, experiment).]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Наблюдение)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Для получения значимых результатов необходимо многократное наблюдение.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_methodology;;

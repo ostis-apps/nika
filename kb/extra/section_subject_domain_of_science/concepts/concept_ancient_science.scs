@@ -1,0 +1,47 @@
+concept_ancient_science
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Античная наука]
+	(* <- lang_ru;; *);
+	[Ancient science]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Античная наука)]
+		(* <- lang_ru;; *);
+		[Def. (Ancient science)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Античная наука - формирование первых научных теорий (атомизм) и составление первых научных трактатов в эпоху Античности: астрономия Птолемея, ботаника Теофраста, геометрия Евклида, физика Аристотеля, а также появление первых протонаучных сообществ в лице Академии.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Ancient science - the formation of the first scientific theories (atomism) and the compilation of the first scientific treatises in the era of Antiquity: Ptolemy's astronomy, Theophrastus's botany, Euclid's geometry, Aristotle's physics, as well as the emergence of the first protoscientific communities represented by the Academy.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Античная наука)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[«Страна происхождения» науки в европейском понимании — Древняя Греция.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_history_of_science;;

@@ -1,0 +1,47 @@
+concept_sociology_of_science
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Социология науки]
+	(* <- lang_ru;; *);
+	[Sociology of science]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Социология науки)]
+		(* <- lang_ru;; *);
+		[Def. (Sociology of science)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Социология науки — отраслевая социологическая дисциплина, выявляющая социальные условия научной деятельности.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The sociology of science - a sectoral sociological discipline that reveals the social conditions of scientific activity.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Социология науки)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Социология науки рассматривает как процессы становления науки в качестве социального института, так и социальную организацию, и социальные функции науки.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: science_studies;;

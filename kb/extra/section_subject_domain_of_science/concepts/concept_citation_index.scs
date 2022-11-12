@@ -1,0 +1,47 @@
+concept_citation_index
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Индекс цитирования научных статей]
+	(* <- lang_ru;; *);
+	[Сitation index]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Индекс цитирования научных статей)]
+		(* <- lang_ru;; *);
+		[Def. (Сitation index)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Индекс цитирования научных статей — реферативная база данных научных публикаций, индексирующая ссылки, указанные в пристатейных списках этих публикаций и предоставляющая количественные показатели этих ссылок (такие как суммарный объём цитирования, индекс Хирша и др.).]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Citation Index of Scientific Articles - an abstract database of scientific publications that indexes the references indicated in the article lists of these publications and provides quantitative indicators of these references (such as the total citation volume, Hirsch index, etc.).]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Индекс цитирования научных статей)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Индекс цитирования является одним из самых распространенных наукометрических показателей и применяется (для формальной оценки) в научных и бюрократических кругах многих стран.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_scientometrics;;

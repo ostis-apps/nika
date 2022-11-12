@@ -1,0 +1,47 @@
+concept_medieval_magical_science
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Средневековая магическая наука]
+	(* <- lang_ru;; *);
+	[Medieval magical science]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Средневековая магическая наука)]
+		(* <- lang_ru;; *);
+		[Def. (Medieval magical science)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Средневековая магическая наука - формирование экспериментальной науки на примере алхимии Джабира ибн Хайяна.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Medieval magical science - the formation of experimental science on the example of Jabir ibn Hayyan's alchemy.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Средневековая магическая наука)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Занятие алхимией, поиск «философского камня» – одно из направлений развития средневековой науки.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_history_of_science;;

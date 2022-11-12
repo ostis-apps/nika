@@ -1,0 +1,47 @@
+concept_academy
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Академия]
+	(* <- lang_ru;; *);
+	[Academy]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Академия)]
+		(* <- lang_ru;; *);
+		[Def. (Academy)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Академия — наименование научных учреждений (академии наук) и учебных заведений.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Academy - the name of scientific institutions (academy of sciences) and educational institutions.]
+			(* <- lang_en;; *);;
+		*);;
+*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Академия)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Словом «академия» именовалась философская школа, которая была основана Платоном в 387 году до н. э. и располагалась в одноимённом саду (священная оливковая роща) около города Афины.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);
+<=nrel_inclusion: concept_scientific_institutes;;
