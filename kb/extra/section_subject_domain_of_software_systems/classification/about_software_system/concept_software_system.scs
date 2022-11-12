@@ -1,0 +1,46 @@
+concept_software_system
+<- sc_node_class;
+=> nrel_main_idtf:
+	[программная система]
+	(* <- lang_ru;; <-concept_text;; *);
+	[software_system]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (программная система)]
+		(* <- lang_ru;; *);
+		[Def. (software system)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[программная система — система, состоящая из программного и аппаратного обеспечения и данных, главная ценность которой создается посредством исполнения программного обеспечения.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[software system - a system consisting of software, hardware and data, the main of which uses the use of software.]
+			(* <- lang_en;; *);;
+		*);;
+		
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (программная система)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Примером программной системы является ноутбук с установленной на него ОС.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

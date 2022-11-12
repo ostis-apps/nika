@@ -1,0 +1,46 @@
+concept_intel_core_i5_8300h
+<- sc_node_class;
+=> nrel_main_idtf:
+	[intel core i5 8300h]
+	(* <- lang_ru;; <-concept_text;; *);
+	[intel core i5 8300h]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (intel core i5 8300h)]
+		(* <- lang_ru;; *);
+		[Def. (intel core i5 8300h)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[intel core i5 8300h — процессор для ноутбуков от компании Intel для сокета BGA-1440, который имеет 4 ядра и 8 потоков.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[intel core i5 8300h - laptop processor from Intel for socket BGA-1440 which has 4 cores and 8 threads.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (intel core i5 8300h)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[intel core i5 8300h имеет интегрированную графику Intel UHD Graphics 630, а размер кэша 3-го уровня составляет 8 МБ.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);;

@@ -1,0 +1,38 @@
+concept_message_about_software_system
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о программных системах]
+	    (* <- lang_ru;; *);
+	[message about software systems]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_software_system];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о программных системах)]
+	        (* <- lang_ru;; *);
+	    [Def. (message software system)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о программных системах - атомарное сообщение, которое содержит экземпляр сушности, информацию о котором необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about software systems is an atomic message that contains entity example information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

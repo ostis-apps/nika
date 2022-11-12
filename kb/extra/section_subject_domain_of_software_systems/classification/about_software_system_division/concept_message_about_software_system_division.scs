@@ -1,0 +1,38 @@
+concept_message_about_software_system_division
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о делении программных систем]
+	    (* <- lang_ru;; *);
+	[message about software system division]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_software_system_division];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о делении программных систем)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about software system divisions)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о делении программных систем - атомарное сообщение, которое содержит информацию о делении программных систем которую необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about software system division is an atomic message that contains software system division information which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+	
+	
