@@ -52,6 +52,33 @@ concept_phrase_about_construction
 		};;		
 *);;
 
+ concept_phrase_about_construction_devision
+ <- sc_node_class;
+ => nrel_main_idtf:
+ 	[фраза о видах строительства]
+ 	    (* <- lang_ru;; *);
+ 	[phrase about construction devision]
+ 	    (* <- lang_en;; *);
+ <- rrel_key_sc_element:
+ 	...
+ 	(*
+ 	=> nrel_main_idtf:
+ 	    [Опр. (фраза о видах строительства]
+ 	        (* <- lang_ru;; *);;
+ 	<- definition;;
+ 	<= nrel_sc_text_translation:
+ 		...
+ 		(*
+ 		-> rrel_example:
+ 			[фраза о видах строительства - фраза, содержащая информацию про то, на какие виды подразделяется строительство.]
+ 			    (* <- lang_ru;; *);;
+ 		*);;
+ 	<= nrel_using_constants:
+ 		{
+ 			concept_phrase
+ 		};;		
+ *);;
+
 concept_phrase_about_favorite_construction
 <- sc_node_class;
 => nrel_main_idtf:

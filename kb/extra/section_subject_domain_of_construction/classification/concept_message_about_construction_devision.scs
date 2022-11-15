@@ -1,0 +1,36 @@
+concept_message_about_construction_devision
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о видах строительства]
+	    (* <- lang_ru;; *);
+	[message about construction devision]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_construction_devision];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о видах строительства)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about construction devision)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о видах строительства - атомарное сообщение, с запросом на рассказ о том, на какие виды делится строительство.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about construction devision is an atomic message that asks what types of construction are divided into.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
