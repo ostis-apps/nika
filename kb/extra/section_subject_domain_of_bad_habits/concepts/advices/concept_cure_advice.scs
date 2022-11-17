@@ -1,0 +1,16 @@
+concept_cure_advice
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+	[советы по лечению]
+	(* <- lang_ru;; *);
+    [cure advice]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [советы, следование которым поможет избежать/излечиться от недуга]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+	concept_willpower;;

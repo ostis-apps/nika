@@ -1,0 +1,24 @@
+concept_illness
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+	[болезнь]
+	(* <- lang_ru;; *);
+    [illness]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [то состояние нарушенной нормальной жизнедеятельности организма,
+	вызванное действием повреждающих аген-тов, в результате чего понижаются
+	его работоспособность и при-способительные возможности.]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+	concept_diabetes;
+	concept_sars;
+	concept_flu;
+	concept_hepatitis;
+	concept_artrosis;
+	concept_depression;
+	concept_bleeding;;
