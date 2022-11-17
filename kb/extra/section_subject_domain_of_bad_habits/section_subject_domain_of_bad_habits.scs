@@ -1,0 +1,88 @@
+section_subject_domain_of_bad_habits
+
+=> nrel_main_idtf:
+[Раздел. Предметная область вредных привычек] (*<-lang_ru;;*);
+[Section. Subject domain of bad habits] (*<-lang_en;;*);
+<- atomic_class;;
+section_subject_domain_of_bad_habits = [*
+	subject_domain_of_bad_habits
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область вредных привычек]
+   (* <- lang_ru;; *);
+   [Subject domain of bad habits]
+   (* <- lang_en;; *);
+	<- subject_domain;
+
+	-> rrel_maximum_studied_object_class:
+   concept_bad_habit;
+	-> rrel_not_maximum_studied_object_class:
+   concept_addiction;
+   concept_habit;
+   concept_alcoholism;
+   concept_narcomania;
+   concept_smoking;
+   concept_game_addiction;
+   concept_shopping_mania;
+   concept_surfeit;
+   concept_tv_addiction;
+   concept_internet_addiction;
+   concept_nails_biting;
+   concept_skin_picking;
+   concept_rhinotillexomania;
+   concept_joint_snapping;
+   concept_technomania;
+   concept_pen_gnawing;
+   concept_spitting;
+   concept_abuse_of_words_parasites;
+   concept_foul_language_abusing;
+   concept_illness;
+   concept_diabetes;
+   concept_sars;
+   concept_flu;
+   concept_hepatitis;
+   concept_artrosis;
+   concept_depression;
+   concept_bleeding;
+   concept_cure_advice;
+   concept_willpower;
+	-> rrel_explored_relation:
+   nrel_causes;
+   nrel_use_advice;;
+
+*];;
+
+section_subject_domain_of_bad_habits
+-> rrel_key_sc_element:
+   concept_bad_habit;
+   concept_addiction;
+   concept_habit;
+   concept_alcoholism;
+   concept_narcomania;
+   concept_smoking;
+   concept_game_addiction;
+   concept_shopping_mania;
+   concept_surfeit;
+   concept_tv_addiction;
+   concept_internet_addiction;
+   concept_nails_biting;
+   concept_skin_picking;
+   concept_rhinotillexomania;
+   concept_joint_snapping;
+   concept_technomania;
+   concept_pen_gnawing;
+   concept_spitting;
+   concept_abuse_of_words_parasites;
+   concept_foul_language_abusing;
+   concept_illness;
+   concept_diabetes;
+   concept_sars;
+   concept_flu;
+   concept_hepatitis;
+   concept_artrosis;
+   concept_depression;
+   concept_bleeding;
+   concept_cure_advice;
+   concept_willpower;
+   nrel_causes;
+   nrel_use_advice;;

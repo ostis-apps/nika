@@ -1,0 +1,26 @@
+nrel_use_advice
+
+<-sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+	[используйте совет*]
+	(* <- lang_ru;; *);
+    [use advice*]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [используемый совет, помогающий в решении той или иной проблемы]
+	(* <- lang_ru;; *);
+
+=> nrel_first_domain:
+    concept_addiction;
+    concept_habit;
+
+=> nrel_second_domain:
+    concept_cure_advice;;
