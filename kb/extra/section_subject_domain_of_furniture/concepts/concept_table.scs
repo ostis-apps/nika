@@ -1,0 +1,33 @@
+concept_table
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [стол] (*<-lang_ru;;*);
+    [table] (*<-lang_en;;*);
+<= nrel_inclusion: concept_furniture;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (стол)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_furniture
+	};;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Стол - предмет обихода, мебельное изделие, имеющее приподнятую горизонтальную или наклонную поверхность, предназначенную для размещения на ней предметов и (или) для выполнения работ, принятия пищи, игр, рисования, обучения и другой деятельности.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(стол)] (* <- lang_ru;; *);; 
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Широко распространены столы, имеющие прямоугольную крышку и четыре (две или одну центральную) опоры. Существуют также столы с круглыми, треугольными, многоугольными крышками, а также крышками криволинейной формы. Число опор также может быть различным.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

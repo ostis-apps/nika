@@ -1,0 +1,36 @@
+concept_message_about_favorite_furniture_type
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о любимом типе мебели]
+	    (* <- lang_ru;; *);
+	[message about favorite furniture type]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_favorite_furniture_type];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о любимом типе мебели)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about favorite furniture type)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о любимом типе мебели - атомарное сообщение, с запросом на вывод любимого типа мебели.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[An favorite furniture type message is an atomic message, requesting the output of an favorite furniture type.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

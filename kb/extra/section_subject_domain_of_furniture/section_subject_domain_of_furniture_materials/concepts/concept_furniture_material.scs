@@ -1,0 +1,21 @@
+concept_furniture_material
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [материал мебели] (*<-lang_ru;;*);
+    [furniture material] (*<-lang_en;;*);
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (материал мебели)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_furniture
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Материал мебели - то, из чего изгавливается мебель.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;
+

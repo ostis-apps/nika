@@ -1,0 +1,36 @@
+concept_computer_desk
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [компьютерный стол] (*<-lang_ru;;*);
+    [computer desk] (*<-lang_en;;*);
+<= nrel_inclusion: concept_table;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (компьютерный стол)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+      concept_table
+	};;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Компьютерный стол - стол, на котором располагается компьютер] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(компьютерный стол)] (* <- lang_ru;; *);; 
+    => nrel_using_constants: {
+	  concept_dining_table
+	};;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Иногда может быть использован и как обеденный стол.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

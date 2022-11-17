@@ -1,0 +1,32 @@
+concept_piano
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Фортепиано] (*<-lang_ru;;*);
+    [piano] (*<-lang_en;;*);
+<= nrel_inclusion: concept_entertainment_furniture;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (Фортепиано)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Фортепиано - струнный ударно-клавишный музыкальный инструмент.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);
+   
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(Фортепиано)] (* <- lang_ru;; *);; 
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Предшественниками фортепиано являлись клавесины и изобретённые позднее клавикорды. 
+		Их недостатками были быстро затухающий звук, что мешало игре легато, и постоянный уровень громкости 
+		(относится только к клавесину), что исключало одно из важных выразительных средств музыки - динамику.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

@@ -1,0 +1,23 @@
+concept_lying_furniture
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [мебель для лежания] (*<-lang_ru;;*);
+    [lying furniture] (*<-lang_en;;*);
+<= nrel_inclusion: concept_furniture;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (мебель для лежания)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_furniture;
+        concept_bed
+	};;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Мебель для лежания - тип мебели, предназначенный для лежания. Включает в вебя различные типы кроватей, гомаков и т.п.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

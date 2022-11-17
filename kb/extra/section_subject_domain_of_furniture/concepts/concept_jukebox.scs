@@ -1,0 +1,30 @@
+concept_jukebox
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [музыкальный автомат] (*<-lang_ru;;*);
+    [jukebox] (*<-lang_en;;*);
+<= nrel_inclusion: concept_entertainment_furniture;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (музыкальный автомат)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Музыкальный автомат - электромеханический аппарат для автоматического воспроизведения музыкальных граммофонных пластинок. Классический механизм состоит из проигрывателя, усилителя, громкоговорителя и устройства для автоматического выбора грампластинки.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);
+   
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(музыкальный автомат)] (* <- lang_ru;; *);; 
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Музыкальные автоматы устанавливаются, как правило, в кафе, барах, ресторанах, танцевальных клубах и других местах отдыха.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

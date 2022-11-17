@@ -1,0 +1,34 @@
+concept_chess_table
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [шахматный стол] (*<-lang_ru;;*);
+    [chess table] (*<-lang_en;;*);
+<= nrel_inclusion: concept_entertainment_furniture;
+<= nrel_inclusion: concept_table;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (шахматный стол)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_table
+	};;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Шахматный стол — стол, функционально приспособленный для игры в шахматы. Шахматная доска при этом, как правило, является неотъемлемой частью крышки стола.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);
+   
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(шахматный стол)] (* <- lang_ru;; *);; 
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Шахматный стол может оборудоваться ящиками для хранения шахматных фигур.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

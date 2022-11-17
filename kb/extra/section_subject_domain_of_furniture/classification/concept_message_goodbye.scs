@@ -1,0 +1,27 @@
+concept_message_goodbye
+<- sc_node_not_relation;
+<- concept_intent_possible_class;
+=> nrel_main_idtf:
+      [прощальное сообщение](* <- lang_ru;; *);
+      [goodbye message](* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+      [goodbye];;
+
+concept_message_goodbye
+<- rrel_key_sc_element: ...
+(*
+    => nrel_main_idtf:[Опр. (прощальное сообщение)](* <- lang_ru;; *);;
+    => nrel_main_idtf:[Def. (goodbye message)](* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Прощальное сообщение - атомарное сообщение, содержащее выражение прощания.](* <- lang_ru;; *);;
+        -> rrel_example:
+            [A goodbye message is an atomic message that contains a goodbye.](* <- lang_en;; *);;
+        *);;
+    <= nrel_using_constants:
+        {
+            concept_atomic_message
+        };;
+*);;

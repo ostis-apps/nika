@@ -1,0 +1,33 @@
+concept_seating_furniture
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [мебель для сидения] (*<-lang_ru;;*);
+    [seating furniture] (*<-lang_en;;*);
+<= nrel_inclusion: concept_furniture;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (мебель для сидения)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_furniture
+	};;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Мебель для седения - мебель, предназначенная для седения. Включает в себя различные типы стульев, диванов и т.п..] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(мебель для сидения)] (* <- lang_ru;; *);; 
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Мебель для седения присутствует почти везде (а в случае её отсутствия человек может приспособить под эти цели почти любой достаточно прочный предмет).](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

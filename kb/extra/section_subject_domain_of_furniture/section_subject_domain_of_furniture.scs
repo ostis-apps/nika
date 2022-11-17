@@ -1,0 +1,94 @@
+section_subject_domain_of_furniture
+=> nrel_main_idtf:
+	  [Раздел. Предметная область мебели]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of furniture] 
+  (* <- lang_en;; *);
+			  
+<= nrel_section_decomposition:
+		{
+			section_subject_domain_of_furniture_brands;
+			section_subject_domain_of_furniture_materials
+		};;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_furniture = [*
+	subject_domain_of_furniture
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область мебели]
+   (* <- lang_ru;; *);
+   [Subject domain of furniture]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_furniture;
+	-> rrel_not_maximum_studied_object_class:
+      concept_entertainment_furniture;
+      concept_lying_furniture;
+      concept_seating_furniture;
+      concept_storage_furniture;
+      concept_table;
+      concept_billiard_table;
+      concept_chess_table;
+      concept_jukebox;
+      concept_piano;
+      concept_pinball_machine;
+      concept_bed;
+      concept_bunk_bed;
+      concept_fourposter_bed;
+      concept_infant_bed;
+      concept_single_seat_furniture;
+      concept_multiple_seat_furniture;
+      concept_chair;
+      concept_sofa; 
+      concept_bench; 
+      concept_bookcase;
+      concept_kitchen_cabinet;
+      concept_gun_cabinet; 
+      concept_wardrobe; 
+      concept_chest; 
+      concept_nightstand;
+      concept_computer_desk;
+      concept_writing_desk;
+      concept_dining_table;
+	-> rrel_explored_relation:
+      nrel_furniture_brand;
+      nrel_furniture_material;;
+*];;
+
+section_subject_domain_of_furniture
+-> rrel_key_sc_element:
+      subject_domain_of_furniture;
+      concept_furniture; 
+      concept_entertainment_furniture;
+      concept_lying_furniture;
+      concept_seating_furniture;
+      concept_storage_furniture;
+      concept_table;
+      concept_billiard_table;
+      concept_chess_table;
+      concept_jukebox;
+      concept_piano;
+      concept_pinball_machine;
+      concept_bed;
+      concept_bunk_bed;
+      concept_fourposter_bed;
+      concept_infant_bed;
+      concept_single_seat_furniture;
+      concept_multiple_seat_furniture;
+      concept_chair;
+      concept_sofa; 
+      concept_bench; 
+      concept_bookcase;
+      concept_kitchen_cabinet;
+      concept_gun_cabinet; 
+      concept_wardrobe; 
+      concept_chest; 
+      concept_nightstand;
+      concept_computer_desk;
+      concept_writing_desk;
+      concept_dining_table;
+      nrel_furniture_brand;
+      nrel_furniture_material;;

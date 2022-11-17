@@ -1,0 +1,19 @@
+concept_single_seat_furniture
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [мебель для сидения одного человека] (*<-lang_ru;;*);
+    [single person seating furniture] (*<-lang_en;;*);
+<= nrel_inclusion: concept_seating_furniture;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (мебель для сидения одного человека)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Тип мебели для сидения, рассчитаный на одного человека.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);;

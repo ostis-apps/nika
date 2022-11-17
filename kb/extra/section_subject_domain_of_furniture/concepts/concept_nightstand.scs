@@ -1,0 +1,33 @@
+concept_nightstand
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [тумбочка] (*<-lang_ru;;*);
+    [nightstand] (*<-lang_en;;*);
+<= nrel_inclusion: concept_storage_furniture;
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (тумбочка)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Небольшое шкафообразное хранилище.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(тумбочка)] (* <- lang_ru;; *);; 
+    => nrel_using_constants: {
+        concept_bed
+	};;
+	<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Тумбочки обычно располагаются по сторонам кровати.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;
