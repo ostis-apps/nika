@@ -1,0 +1,18 @@
+concept_finance_product
+
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+	[финансовые инструменты](* <- lang_ru;;*);
+	[finance product](* <- lang_en;; *);
+
+
+=> nrel_inclusion:
+	ecology_bank;
+	insync;
+	esg_banking;
+=> mrel_note:
+[Финансовый инструмент — «квазиденьги», финансовый документ (ценная бумага, денежное обязательство, фьючерс, опцион и т. п.), продажа или передача которого обеспечивает получение денежных средств.]
+(* <-lang_ru;;*);
+<-concept_finance;
+<-binary_relation;;
