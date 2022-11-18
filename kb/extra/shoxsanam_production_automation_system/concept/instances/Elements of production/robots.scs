@@ -1,0 +1,22 @@
+elements_of_production_robots
+
+=> nrel_main_idtf:
+    [Промышленный робот]
+    (* <- lang_ru;; *);
+    [Industrial robot]
+    (* <- lang_en;; *);
+
+<= nrel_inclusion:
+    control_boards;
+    signaling_devices;
+    software_tools;
+    mechanical_means;
+    physical_means;
+<-concept_automation_tools;
+
+=>nrel_note:
+[Роботов, внедренных непосредственно в центр промышленного процесса. Их стремительное распространение связано с развитием микроэлектроники.
+]
+(* <-lang_ru;;*);
+
+<-binary_relation;;

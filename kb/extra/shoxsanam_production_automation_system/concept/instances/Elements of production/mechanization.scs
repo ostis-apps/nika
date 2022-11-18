@@ -1,0 +1,24 @@
+tools_mechanization
+
+=> nrel_main_idtf:
+    [Механизация производства]
+    (* <- lang_ru;; *);
+    [Mechanization of production]
+    (* <- lang_en;; *);
+
+<= nrel_inclusion:
+    control_boards;
+    signaling_devices;
+    software_tools;
+    mechanical_means;
+    physical_means;
+<-concept_automation_tools;
+
+
+=>nrel_note:
+[Механизация изготовления продукции непрерывно развивается, совершенствуется и перетекает от предыдущих к более совершенным формам.
+
+Автоматизация процессов производства обеспечивает выполнение большей части ручных операций машинами и механизмами.]
+(* <-lang_ru;;*);
+
+<-binary_relation;;

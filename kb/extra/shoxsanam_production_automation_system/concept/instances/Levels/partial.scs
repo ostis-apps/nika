@@ -1,0 +1,23 @@
+levels_partial
+
+<-sc_node_class;
+<-class;
+=>nrel_main_idtf:
+    [ Частичная уровень](* <- lang_ru;;*);
+    [Partial level](* <- lang_en;; *);
+
+=>nrel_inclusion:
+    types_aps;
+    types_ars;
+    types_cds;
+    types_fap;
+<-concept_types_automation;
+
+=>nrel_note:
+[АТПП затрагивает конкретное оборудование или отдельные операции.
+
+Пример частичной автоматизации – установка фрезерного станка ЧПУ на металлообрабатывающем предприятии. 
+Человек задает параметры, но обработку деталей полностью выполняет станок.]
+(*<-lang_ru;;*);
+
+<-binary_relation;;

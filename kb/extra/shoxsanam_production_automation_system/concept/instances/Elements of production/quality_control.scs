@@ -1,0 +1,22 @@
+elements_of_production_quality_control
+
+=> nrel_main_idtf:
+    [Системы контроля качества]
+    (* <- lang_ru;; *);
+    [Quality control systems]
+    (* <- lang_en;; *);
+
+<= nrel_inclusion:
+    control_boards;
+    signaling_devices;
+    software_tools;
+    mechanical_means;
+    physical_means;
+<-concept_automation_tools;
+
+=>nrel_note:
+[Системы контроля качества. Они функционируют на базе ЭВМ. Технические приложения, отвечающие за оценку уровня качества продукции.
+]
+(* <-lang_ru;;*);
+
+<-binary_relation;;

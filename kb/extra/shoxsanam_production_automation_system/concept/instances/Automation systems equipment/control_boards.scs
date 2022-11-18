@@ -1,0 +1,18 @@
+automation_systems_equipment_control_boards
+
+=> nrel_main_idtf:
+    [Платы управления]
+    (* <- lang_ru;; *);
+    [Сontrol boards]
+    (* <- lang_en;; *);
+
+=>nrel_inclusion:
+    mechanical;
+    physical;
+<-concept_automation_tools;
+=>nrel_note:
+[Электрические щиты применяют в различных сферах для регулирования работы насосов, электродвигателей, компрессоров. 
+]
+(* <-lang_ru;;*);
+<-concept_automation_tools;
+<-binary_relation;;

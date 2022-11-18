@@ -1,0 +1,21 @@
+concept_automation_tools
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Средства автоматизации]
+	(* <- lang_ru;; *);
+    [Automation tools]
+    (* <- lang_en;; *);
+    
+=> nrel_note:
+    [Средства автоматизации производства – это специально разработанные приборы и устройства, которые могут использоваться по отдельности или в качестве элемента программно-аппаратного комплекса и выполняют ряд поставленных задач без вмешательства человека.]
+    (* <- lang_ru;; *);
+
+<= nrel_inclusion:
+    control_boards;
+    signaling_devices;
+    software_tools;
+    mechanical_means;
+    physical_means;
+
+<-binary_relation;;

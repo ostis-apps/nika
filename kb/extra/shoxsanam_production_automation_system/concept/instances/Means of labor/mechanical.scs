@@ -1,0 +1,20 @@
+means_of_labor_mechanical
+
+=> nrel_main_idtf:
+    [Механические средства]
+    (* <- lang_ru;; *);
+    [Mechanical means]
+    (* <- lang_en;; *);
+
+=>nrel_inclusion:
+    control_boards;
+    signaling_devices;
+    software_tools; 
+<-concept_automation_tools;
+
+=>nrel_note:
+[Механизация производства, замена ручных средств труда машинами и механизмами с применением для их действия различных видов энергии, тяги в отраслях материального производства или процессах трудовой деятельности. 
+]
+(* <-lang_ru;;*);
+
+<-binary_relation;;
