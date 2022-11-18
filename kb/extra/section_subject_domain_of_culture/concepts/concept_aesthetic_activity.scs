@@ -1,0 +1,41 @@
+concept_aesthetic_activity
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Эстетическая деятельность]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Aesthetic activity]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Эстетическая деятельность — понятие, отражающее формы и проявления человеческой деятельности, детерминированые эстетической потребностью, предполагает трансляцию (передачу) смыслов, определяемых ценностными ориентациями того или иного социума и индивида.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.эстетическая деятельность]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Можно сказать, что эстетическая деятельность - это всякая деятельность человека в ее общечеловеческой значимости. Универсальной формой эстетической деятельности является творчество по законам красоты, ибо любая форма освоения]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_study;
+			concept_object_of_study;
+			concept_society;
+			concept_activity;
+         concept_cognitive_activity;
+         concept_collective_activities_in_primary_school;
+         concept_practical_activities
+   	 };;
+  *);;

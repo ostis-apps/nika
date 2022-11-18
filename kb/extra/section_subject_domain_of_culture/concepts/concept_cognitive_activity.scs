@@ -1,0 +1,38 @@
+concept_cognitive_activity
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Познавательная деятельность]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Cognitive activity]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Современная служит целям понимания объективных законов существования мира, без которого невозможно выполнение практических задач.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Познавательная деятельность]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Познание — основной предмет гносеологии. Устанавливая сущность познания, его формы и принципы, теория познания стремится ответить на вопрос, как возникает знание и как оно соотносится с действительностью.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+			concept_activity;
+			concept_development;
+			concept_education;
+			concept_upbringing;
+			concept_human
+   	 };;
+  *);;

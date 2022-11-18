@@ -1,0 +1,60 @@
+concept_foundation
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [основа]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [foundation]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [В широком смысле “основа” – предполагает координацию и интеграцию деятельности отдельных членов коллектива.]
+   (* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. основа]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [основа (Foundation, Это база, базированный мем) – ироничный мем, который в американском сленге используется для положительной оценки.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_meme;
+			concept_positive_evaluation;
+			nrel_use;
+			concept_slang;
+			concept_irony
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.основа]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [основа – это набор принципов, на которых строится деятельность коллектива.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_agreement;
+			concept_approval;
+			concept_a_synonym
+   	 };;
+  *);;

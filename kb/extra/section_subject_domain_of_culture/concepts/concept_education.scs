@@ -1,0 +1,41 @@
+concept_education
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [образование]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [education]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [В широком смысле слова, образование — процесс или продукт формирования ума, характера и физических способностей личности]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.образование]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Образование — система воспитания и обучения личности, а также совокупность приобретаемых знаний, умений, навыков, ценностных установок, функций, опыта деятельности и компетенций]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_value_orientation;
+			concept_system;
+			concept_personality;
+			concept_function;
+			concept_training;
+			concept_upbringing;
+			concept_knowledge
+   	 };;
+  *);;

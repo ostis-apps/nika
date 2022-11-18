@@ -1,0 +1,29 @@
+nrel_prevail
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+  [преобладать](* <- lang_ru;; *);
+  [prevail](* <- lang_en;; *);;
+
+nrel_prevail <- rrel_key_sc_element:...
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf:
+    [Опр. (преобладать)](*<- lang_ru;;*);
+    [Def. ( prevail)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example:
+            [Преобладать — это иметь перевес, занимать господствующее положение, превосходить кого-либо.](*<- lang_ru;;*);;
+        -> rrel_example:
+            [To prevail is to have an advantage, to occupy a dominant position, to surpass someone.](*<- lang_en;;*);;
+    *);;
+*);;
+
+nrel_prevail
+=>nrel_first_domain:concept_an_object;
+=>nrel_second_domain:concept_an_object;
+
+<- binary_relation ;
+<- antireflexive_relation ;
+<- transitive_relation ;;

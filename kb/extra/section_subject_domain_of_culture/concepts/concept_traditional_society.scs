@@ -1,0 +1,42 @@
+concept_traditional_society
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [традиционное общество]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [traditional society]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Данная организация общества фактически стремится сохранить в неизменном виде сложившиеся в ней социокультурные устои жизни.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Традиционный человек воспринимает мир и заведенный порядок жизни как нечто неразрывно-целостное, холистичное, священное и не подлежащее изменению]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.традиционное общество]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Традиционное общество — общество, которое регулируется традицией.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_regulate;
+			concept_tradition;
+			concept_collective
+   	 };;
+  *);;
