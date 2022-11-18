@@ -1,0 +1,35 @@
+concept_design_pattern
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [шаблон проектирования]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [design pattern]
+   (* <- lang_en;; *);
+
+
+=> nrel_note:
+   [Документация шаблона должна объяснять, когда он применим.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.шаблон проектирования]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Шаблон проектирования — это повторно используемая форма решения проблемы проектирования в программе.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+			concept_program
+   	 };;
+  *);;

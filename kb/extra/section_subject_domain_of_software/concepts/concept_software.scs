@@ -1,0 +1,37 @@
+concept_software
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [программное обеспечение]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [software]
+   (* <- lang_en;; *);
+
+
+=> nrel_note:
+   [Существует множество различных типов прикладного программного обеспечения, поскольку спектр задач, которые можно выполнять с помощью современного компьютера, очень велик.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.программное обеспечение]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Программное обеспечение представляет собой набор компьютерных программ и связанной с ними документации и данных.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+			concept_computer;
+			concept_data;
+			concept_documentation
+   	 };;
+  *);;

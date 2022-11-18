@@ -1,0 +1,33 @@
+concept_software_development_methodology
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [методология разработки программного обеспечения]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [software development methodology]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Среди используемых на сегодняшний день методологий можно выделить Agile и Waterfall.]
+   (* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.методология разработки программного обеспечения]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Методология разработки программного обеспечения - это система, определяющая, из каких этапов будет состоять жизненный цикл разработки ПО, методы оценки решаемых задач и их контроля.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+         concept_software_life_cycle
+   	 };;
+  *);;

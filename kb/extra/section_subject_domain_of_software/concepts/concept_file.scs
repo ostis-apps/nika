@@ -1,0 +1,34 @@
+concept_file
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [файл]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [file]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Обычно выделяют исполняемые файлы (программы) и собственно файлы данных (например, текстовые файлы или медиаконтейнеры).]
+   (* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.файл]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Файл - это именнованная область данных на носителе информации, используемая как базовый объект файловой системы для взаимодействия с данными.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+         concept_data;
+         concept_file_system
+   	 };;
+  *);;

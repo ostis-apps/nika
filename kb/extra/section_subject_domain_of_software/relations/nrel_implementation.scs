@@ -1,0 +1,30 @@
+nrel_implementation
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+    [реализация](* <- lang_ru;; *);
+    [implementation](* <- lang_eng;; *);;
+
+nrel_implementation
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (реализация)](*<- lang_ru;;*);
+    [Def. (implementation)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Реализация - это отношение между 2 сущностями, при котором одна сущность определяет обязательство, а другая является примером его выполнения.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [Implementation is a relationship between 2 entities whereby one entity defines an obligation and the other one serves as an example that fulfills this obligation.](*<- lang_en;;*);;
+    *);;
+*);;
+
+nrel_implementation
+=>nrel_first_domain:concept_application_software;
+=>nrel_second_domain:concept_web_browser;
+
+<- binary_relation ;
+<- antireflexive_relation ;
+<- antitransitive_relation ;;

@@ -1,0 +1,31 @@
+concept_software_architecture
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [архитектура программного обеспечения]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [software architecture]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.архитектура программного обеспечения]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Архитектура программного обеспечения - это совокупность важнейших решений об организации программного обеспечения, зачастую основанных на шаблонах и принципах проектирования.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+         concept_software;
+         concept_design_pattern;
+         concept_design_principle
+   	 };;
+  *);;

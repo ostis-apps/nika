@@ -1,0 +1,36 @@
+concept_file_system
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [файловая система]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [file system]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Некоторые файловые системы были разработаны для использования в определенных приложениях.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.файловая система]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Файловая система (часто сокращенно fs) — это метод и структура данных, которые операционная система использует для управления тем, как данные хранятся и извлекаются.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+			concept_file;
+			concept_operating_system;
+			concept_data_structure
+   	 };;
+  *);;

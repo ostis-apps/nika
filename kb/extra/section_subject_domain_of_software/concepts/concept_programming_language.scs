@@ -1,0 +1,39 @@
+concept_programming_language
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [язык программирования]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [programming language]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Языки программирования бывают декларативными и императивными.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Язык программирования отличается от естественных языков тем, что предназначен для управления ЭВМ, в то время как естественные языки используются, прежде всего, для общения людей между собой.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.язык программирования]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Язык программирования — формальный язык, предназначенный для записи компьютерных программ.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+			concept_program
+   	 };;
+  *);;

@@ -1,0 +1,35 @@
+concept_build_server
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [сервер сборки]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [build server]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Среди самых ярких примеров серверов сборки можно назвать Jenkins, AWS CodeBuild, Azure DevOps, JetBrains TeamCity.]
+   (* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.сервер сборки]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Сервер сборки - это специальное прикладное программное обеспечение, использующееся в процессе Continuous Integration для сборки проекта, проверки прохождения тестов и других требований к коду программы.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+         concept_application_software;
+         concept_continuous_integration;
+         concept_program
+   	 };;
+  *);;

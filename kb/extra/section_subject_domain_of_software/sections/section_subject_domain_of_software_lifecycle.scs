@@ -1,0 +1,30 @@
+section_subject_domain_of_software_lifecycle => nrel_main_idtf:
+	[Раздел. Предметная область жизненного цикла программного обеспечения]
+	(* <- lang_ru;; *);
+	[Section. Subject domain of software lifecycle]
+	(* <- lang_en;; *);;
+
+section_subject_domain_of_software_lifecycle -> rrel_key_sc_element:
+    concept_software_lifecycle;
+    concept_build_server;
+    concept_software_development_methodology;
+    concept_continuous_integration;
+    concept_continuous_delivery;;
+
+section_subject_domain_of_software_lifecycle = [*
+	subject_domain_of_software_lifecycle
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область жизненного цикла программного обеспечения]
+   (* <- lang_ru;; *);
+   [Subject domain of software lifecycle]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_software_lifecycle;
+	-> rrel_not_maximum_studied_object_class:
+        concept_build_server;
+    concept_software_development_methodology;
+    concept_continuous_integration;
+    concept_continuous_delivery;;
+*];;
