@@ -1,0 +1,17 @@
+vertagear
+ <-sc_node_not_relation;
+
+ => nrel_main_idtf:
+		[Vertagear](* <-lang_en;; *);
+
+	<-rrel_sc_key_element: definition_vertagear
+	(*
+		<-definition;;
+		=> nrel_main_idtf:
+			[def.(Vertagear)](* <-lang_en;; *);;
+
+		<=nrel_sc_text_translation: ...
+		(*
+			->rrel_example:	[site of gaming chairs]  (* <-lang_en;; *);;
+		*);;
+	*);;

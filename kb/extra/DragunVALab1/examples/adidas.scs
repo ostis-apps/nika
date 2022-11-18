@@ -1,0 +1,18 @@
+adidas
+
+ <-sc_node_not_relation;
+
+ => nrel_main_idtf:
+		[Adidas AG](* <-lang_en; lang_ru;; *);
+
+	<-rrel_sc_key_element: definition_adidas
+	(*
+		<-definition;;
+		=> nrel_main_idtf:
+			[def.(Adidas AG)](* <-lang_en;; *);;
+
+		<=nrel_sc_text_translation: ...
+		(*
+			->rrel_example:	[a multinational corporation, that designs and manufactures shoes, clothing and accessories.]  (* <-lang_en;; *);;
+		*);;
+	*);;

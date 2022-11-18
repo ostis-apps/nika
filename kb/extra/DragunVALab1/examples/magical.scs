@@ -1,0 +1,76 @@
+magical
+
+	<-sc_node_not_relation;
+
+	=> nrel_main_idtf:
+		[Idan "MagicaL" Vardanian](* <-lang_en;; *);
+		[Идан "MagicaL" Варданян](* <-lang_ru;; *);
+	=> nrel_idtf:
+		[MagicaL](* <-lang_en; lang_ru;; *);
+
+	<-player_dota;	
+
+	=>nrel_citizen_of: Ukraine;
+	=>nrel_surname: Vardanian;
+	=>nrel_first_name: Idan;
+	=>nrel_nickname: MagicaL;
+	=>nrel_birthday: 25_10_1998;
+
+	<=nrel_with_whom: contract_magical_and_20_min_afk_les_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between MagicaL and 20 min afk les](* <-lang_en;; *);
+			[Контракт между MagicaL и 20 min afk les](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: 20_min_afk_les_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: xx_06_2018;;
+			->rrel_end: xx_06_2018;;
+		*);;
+	*);
+
+	<=nrel_with_whom: contract_magical_and_effect_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between MagicaL and Effect](* <-lang_en;; *);
+			[Контракт между MagicaL и Effect](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: effect_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 30_09_2016;;
+			->rrel_end: xx_10_2016;;
+		*);;
+	*);
+
+	<=nrel_with_whom: contract_magical_and_yellow_submarine_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between MagicaL and Yellow Submarine](* <-lang_en;; *);
+			[Контракт между MagicaL и Yellow Submarine](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: yellow_submarine_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: xx_06_2016;;
+			->rrel_end: xx_xx_2016;;
+		*);;
+	*);
+
+	<=nrel_with_whom: contract_magical_and_natus_vincere_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between MagicaL and Natus Vincere](* <-lang_en;; *);
+			[Контракт между MagicaL и Natus Vincere](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: natus_vincere_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 01_09_2018;;
+		*);;
+	*);;

@@ -1,0 +1,17 @@
+nrel_total_earning
+
+	=> nrel_first_domain: organization;
+	=> nrel_second_domain: money; 
+
+	<-sc_node_norole_relation;
+	<-oriented_relation;
+	<-binary_relation;
+	<-antisymmetric_relation;
+	<-antireflexive_relation;
+
+	=> nrel_main_idtf:
+		[Всего заработано*](* <-lang_ru;; *);
+		[Total earn*](* <-lang_en;; *);
+
+	=> nrel_idtf:
+		[Призовые*](* <-lang_ru;; *);;

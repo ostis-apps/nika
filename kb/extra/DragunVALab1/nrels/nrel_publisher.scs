@@ -1,0 +1,14 @@
+nrel_game_publisher
+
+	=> nrel_first_domain: video_game;
+	=> nrel_second_domain: publisher; 
+	
+	<-sc_node_norole_relation;
+	<-oriented_relation;
+	<-binary_relation;
+	<-antisymmetric_relation;
+	<-antireflexive_relation;
+
+	=> nrel_main_idtf:
+		[издатель*](* <-lang_ru;; *);
+		[publisher*](* <-lang_en;; *);;

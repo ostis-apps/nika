@@ -1,0 +1,34 @@
+team
+
+ <-sc_node_not_relation;
+
+ => nrel_main_idtf:
+		[команда](* <-lang_ru;; *);
+		[team](* <-lang_en;; *);
+
+	->team_dota
+	(*
+		=> nrel_main_idtf:
+			[команда | Dota 2](* <-lang_ru;; *);
+			[team | Dota 2](* <-lang_en;; *);;
+	*);
+
+	->team_lol
+	(*
+		=> nrel_main_idtf:
+			[команда | LoL](* <-lang_ru;; *);
+			[team | LoL](* <-lang_en;; *);;
+	*);
+
+	<-rrel_sc_key_element: definition_team
+	(*
+		<-definition;;
+		=> nrel_main_idtf:
+			[Опр.(команда)](* <-lang_ru;; *);
+			[def.(team)](* <-lang_en;; *);;
+
+		<=nrel_sc_text_translation: ...
+		(*
+			->rrel_example:	[Team is a group of players forming one side in a competitive game or sport.]  (* <-lang_en;; *);;
+		*);;
+	*);;

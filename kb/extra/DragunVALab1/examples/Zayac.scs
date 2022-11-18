@@ -1,0 +1,121 @@
+Zayac
+
+	<-sc_node_not_relation;
+
+	=> nrel_main_idtf:
+		[Bakyt "Zayac" Emilzhanov](* <-lang_en;; *);
+		[Бакыт "Zayac" Эмилжанов](* <-lang_ru;; *);
+	=> nrel_idtf:
+		[Zayac](* <-lang_en; lang_ru;; *);
+
+	<-player_dota;	
+
+	=>nrel_citizen_of: Kyrgyzstan;
+	=>nrel_surname: Emilzhanov;
+	=>nrel_first_name: Bakyt;
+	=>nrel_nickname: Zayac;
+	=>nrel_birthday: 02_12_1998;
+
+  <=nrel_with_whom: contract_Zayac_and_NoLifer5_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Zayac and NoLifer5](* <-lang_en;; *);
+			[Контракт между Zayac и NoLifer5](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: NoLifer5_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 29_08_2015;;
+			->rrel_end: xx_05_2016;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_Zayac_and_elements_pro_gaming_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Zayac and Elements Pro Gaming](* <-lang_en;; *);
+			[Контракт между Zayac и Elements Pro Gaming](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: elements_pro_gaming_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 01_06_2016;;
+			->rrel_end: xx_08_2016;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_Zayac_and_NoLifer5_reborn_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Zayac and NoLifer5.Reborn](* <-lang_en;; *);
+			[Контракт между Zayac и NoLifer5.Reborn](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: NoLifer5_reborn_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 19_09_2016;;
+			->rrel_end: 02_01_2017;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_Zayac_and_mvp_revolution_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Zayac and MVP Revolution](* <-lang_en;; *);
+			[Контракт между Zayac и MVP Revolution](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: mvp_revolution_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 02_01_2017;;
+			->rrel_end: 25_09_2017;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_Zayac_and_vega_squadron_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Zayac and Vega Squadron](* <-lang_en;; *);
+			[Контракт между Zayac и Vega Squadron](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: vega_squadron_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 25_09_2017;;
+			->rrel_end: 28_09_2018;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_Zayac_and_the_pango_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Zayac and The Pango](* <-lang_en;; *);
+			[Контракт между Zayac и The Pango](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: the_pango_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 05_10_2018;;
+			->rrel_end: 08_04_2019;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_Zayac_and_natus_vincere_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Zayac and Natus Vincere](* <-lang_en;; *);
+			[Контракт между Zayac и Natus Vincere](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: natus_vincere_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 24_04_2019;;
+		*);;
+	*);;

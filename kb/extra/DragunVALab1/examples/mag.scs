@@ -1,0 +1,271 @@
+mag
+
+	<-sc_node_not_relation;
+
+	=> nrel_main_idtf:
+		[Andrey "Mag" Chipenko](* <-lang_en;; *);
+		[Андрей "Mag" Чипенко](* <-lang_ru;; *);
+	=> nrel_idtf:
+		[Mag](* <-lang_en; lang_ru;; *);
+
+	<-player_dota;	
+
+	=>nrel_citizen_of: Ukraine;
+	=>nrel_surname: Chipenko;
+	=>nrel_first_name: Andrey;
+	=>nrel_nickname: Mag;
+	=>nrel_birthday: 10_05_1990;
+
+  <=nrel_with_whom: contract_mag_and_dts_gaming_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Mag and DTS Gaming](* <-lang_en;; *);
+			[Контракт между Mag и DTS Gaming](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: dts_gaming_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 27_03_2012;;
+			->rrel_end: 20_05_2012;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_mag_and_darer_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Mag and Darer](* <-lang_en;; *);
+			[Контракт между Mag и Darer](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: darer_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 24_05_2012;;
+			->rrel_end: 12_09_2012;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_mag_and_team_kharkiv_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Mag and Team Kharkiv](* <-lang_en;; *);
+			[Контракт между Mag и Team Kharkiv](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: team_kharkiv_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 19_09_2012;;
+			->rrel_end: 04_10_2012;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_mag_and_eclypsia_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Mag and Eclypsia](* <-lang_en;; *);
+			[Контракт между Mag и Eclypsia](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: eclypsia_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 04_10_2012;;
+			->rrel_end: 11_11_2012;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_mag_and_iluminate_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Mag and iLuminate](* <-lang_en;; *);
+			[Контракт между Mag и iLuminate](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: iluminate_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 11_11_2012;;
+			->rrel_end: 01_02_2013;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_mag_and_iccup_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Mag and iCCup](* <-lang_en;; *);
+			[Контракт между Mag и iCCup](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: iccup_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 27_02_2013;;
+			->rrel_end: 16_08_2013;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_mag_and_terrible_terrible_damage_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Mag and Terrible Terrible Damage](* <-lang_en;; *);
+			[Контракт между Mag и Terrible Terrible Damage](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: terrible_terrible_damage_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 16_08_2013;;
+			->rrel_end: 02_09_2013;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_mag_and_team_empire_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Mag and Team Empire](* <-lang_en;; *);
+			[Контракт между Mag и Team Empire](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: team_empire_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 02_09_2013;;
+			->rrel_end: 21_10_2014;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_mag_and_virtus_pro_polar_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Mag and Virtus.pro Polar](* <-lang_en;; *);
+			[Контракт между Mag и Virtus.pro Polar](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: virtus_pro_polar_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 20_12_2014;;
+			->rrel_end: 18_01_2015;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_mag_and_asus_polar_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Mag and ASUS.Polar](* <-lang_en;; *);
+			[Контракт между Mag и ASUS.Polar](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: asus_polar_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 18_01_2015;;
+			->rrel_end: 08_03_2015;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_mag_and_vega_squadron_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Mag and Vega Squadron](* <-lang_en;; *);
+			[Контракт между Mag и Vega Squadron](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: vega_squadron_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 25_04_2015;;
+			->rrel_end: 31_03_2017;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_mag_and_mineski_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Mag and Mineski](* <-lang_en;; *);
+			[Контракт между Mag и Mineski](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: mineski_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 10_05_2017;;
+			->rrel_end: 16_08_2017;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_mag_and_effect_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Mag and Effect](* <-lang_en;; *);
+			[Контракт между Mag и Effect](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: effect_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 08_09_2017;;
+			->rrel_end: 19_10_2017;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_mag_and_planet_dog_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Mag and Planet Dog](* <-lang_en;; *);
+			[Контракт между Mag и Planet Dog](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: planet_dog_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 05_02_2018;;
+			->rrel_end: 06_02_2018;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_mag_and_double_dimension_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Mag and Double Dimension](* <-lang_en;; *);
+			[Контракт между Mag и Double Dimension](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: double_dimension_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 06_02_2018;;
+			->rrel_end: 20_03_2018;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_mag_and_mega_lada_espots_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Mag and MEGA-LADA E-sports](* <-lang_en;; *);
+			[Контракт между Mag и MEGA-LADA E-sports](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: mega_lada_espots_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 11_06_2018;;
+			->rrel_end: 07_09_2018;;
+		*);;
+	*);
+
+  <=nrel_with_whom: contract_mag_and_natus_vincere_dota
+	(*
+		=> nrel_main_idtf:
+			[Сontract between Mag and Natus Vincere](* <-lang_en;; *);
+			[Контракт между Mag и Natus Vincere](* <-lang_ru;; *);;
+		<-contract;;
+		=>nrel_with_what: natus_vincere_dota;;
+		=>nrel_period: ...
+		(*
+			<-period_of_time;;
+			->rrel_start: 07_09_2018;;
+		*);;
+	*);;
