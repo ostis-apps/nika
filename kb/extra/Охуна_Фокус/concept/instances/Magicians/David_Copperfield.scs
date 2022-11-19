@@ -1,0 +1,42 @@
+Magicians_David_Copperfield
+
+=> nrel_main_idtf:
+    [Дэвид Копперфильд]
+    (* <- lang_ru;; *);
+    [David Copperfield]
+    (* <- lang_en;; *);
+
+=>nrel_inclusion:
+   card;
+   case;
+   invisible_threads;
+   lumber;
+<-concept_accessories;
+
+=>nrel_inclusion:
+   50_selected_card_tricks;
+   Game_of_three_thimbles;
+   Magic_losers_Big_game;
+  
+<-concept_magic_books;
+
+=>nrel_inclusion:
+   acting_studies;
+   creating_props;
+   public_work;
+  
+<-concept_tips_for_magicians;
+
+=> nrel_gender:
+    [М]
+    (*<-lang_ru;;*);
+<-nrel_gender;
+
+=>nrel_note:
+[И этот харизматичный иллюзионист начинал свою карьеру с примитивных карточных фокусов. В 12 лет он уже придумывал собственные трюки, а в 16 лет сам учил студентов искусству магии. Его кумиром был и остаётся Гарри Гудини, а количество собственных номеров Копперфильда превышает сотню. 
+Самую широкую популярность ему принесли сногсшибательные исчезновения Эйфелевой башни, статуи Свободы и самолёта. Не менее впечатляющим был прыжок с Ниагарского водопада и побег из Алькатраса – самой охраняемой тюрьмы США.]
+(* <-lang_ru;;*);
+
+
+
+<-binary_relation;;

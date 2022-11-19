@@ -1,0 +1,20 @@
+nrel_accessories
+
+=>nrel_first_domain:
+   concept_accessories;
+=>nrel_second_domain:
+    concept_magicians;
+    concept_focus;
+    
+=> nrel_main_idtf: 
+	[аксессуары](* <- lang_ru;;*);
+	[accessories](* <- lang_en;; *);
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+
+   => mrel_note:
+[У каждого мага есть свое особое снаряжение. Например, открытка, волшебная шкатулка и т. д.]
+(* <-lang_ru;;*);;

@@ -1,0 +1,25 @@
+types_aps
+
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf: 
+    [Автоматизированная система планирования](* <- lang_ru;;*);
+    [Automated planning system](* <- lang_en;; *);
+
+=>nrel_inclusion:
+    levels_complete;
+    levels_integrated;
+    levels_partial;
+    levels_zero;
+     
+<-concept_automation_levels;
+
+=> nrel_note:
+
+[Автоматизированная система планирования (или АСП ) – это совокупность различных математических составляющих, индивидуальных программных решений, универсальных технологических систем и рационального использования ресурсов (в т. ч. персонала), направленных на эффективное управление фирмой.]
+(*<-lang_ru;;*);
+
+<-concept_automation_types;
+<-binary_relation;;
+
+

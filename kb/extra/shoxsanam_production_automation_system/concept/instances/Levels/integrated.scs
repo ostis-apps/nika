@@ -1,0 +1,23 @@
+levels_integrated
+
+<-sc_node_class;
+<-class;
+=>nrel_main_idtf:
+    [Комплексный еуровень](* <- lang_ru;;*);
+    [Integrated level](* <- lang_en;; *);
+
+
+=>nrel_inclusion:
+    types_aps;
+    types_ars;
+    types_cds;
+    types_fap;
+<-concept_types_automation;
+
+=>nrel_note:
+[Автоматизация определенного участка, цеха, линии. 
+
+Обеспечивает автономное функционирование системы. Участие человека сводится к контролю работы оборудования.]
+(*<-lang_ru;;*);
+
+<-binary_relation;;

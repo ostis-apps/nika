@@ -1,0 +1,22 @@
+nrel_goals
+
+=>nrel_first_domain:
+    concept_main_goals;
+=>nrel_second_domain:
+    concept_principles_of_industrial_automation;
+   
+
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+=> nrel_main_idtf:
+            [Основные цели автоматизации производства]
+            (* <- lang_ru;; *);
+            [Main goals of automation production](* <- lang_en;; *);
+    => nrel_note:
+[Цель автоматизации производства заключается в повышении эффективности труда, улучшении качества выпускаемой продукции, в создании условий для оптимального использования всех ресурсов производства. 
+
+Различают следующую автоматизацию производства: частичную, комплексную и полную.]
+(* <- lang_ru;; *);;

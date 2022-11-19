@@ -1,0 +1,24 @@
+nrel_magicians
+
+
+=>nrel_first_domain:
+    concept_magicians;
+=>nrel_second_domain:
+    concept_magic_books;
+    concept_focus;
+
+=> nrel_main_idtf:
+            [фокусники]
+            (* <- lang_ru;; *);
+            [magicians](* <- lang_en;; *);
+
+<- sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+
+ => nrel_note:
+[ФОКУСНИК — Делающий фокусы, штукарь; человек плутоватый. Иллюзионист — артист, демонстрирующий фокусы, основанные на тех или иных физических и психологических явлениях и подсознательных заблуждениях.
+]
+(* <- lang_ru;; *);;

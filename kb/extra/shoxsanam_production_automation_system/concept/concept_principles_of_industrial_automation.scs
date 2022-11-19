@@ -1,0 +1,17 @@
+concept_principles_of_industrial_automation
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Принципы автоматизации](* <- lang_ru;; *);
+	[Principles](* <- lang_en;; *);
+
+=>nrel_inclusion:
+  completion_principle;
+  complex_integration_principle;
+  consistency_principle;
+  flexibility_principle;
+  independence_principle;
+
+=> mrel_note:
+[Одна из основных задач предприятия – органично внедрить систему автоматизации. В ее рамках соблюдают пять принципов]
+(* <-lang_ru;;*);
+<-binary_relation;;

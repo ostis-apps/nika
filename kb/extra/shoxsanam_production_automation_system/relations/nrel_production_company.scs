@@ -1,0 +1,24 @@
+nrel_production_company
+
+=>nrel_first_domain:
+    concept_company;
+=>nrel_second_domain:
+  concept_industry;
+
+<- sc_node_norole_relation;
+
+=> nrel_main_idtf: 
+	[Компании](* <- lang_ru;;*);
+	[Company](* <- lang_en;; *);
+<=concept_company;
+
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;
+
+=> mrel_note:
+[В автоматизированном производстве работа оборудования осуществляется автоматически по заданным программам. Рабочий реализует функции контроля за работой оборудования и его наладкой.]
+(* <-lang_ru;;*);;
