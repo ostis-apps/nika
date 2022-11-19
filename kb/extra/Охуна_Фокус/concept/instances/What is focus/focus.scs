@@ -1,0 +1,26 @@
+What_is_focus_focus
+
+=> nrel_main_idtf:
+    [Фокус]
+    (* <- lang_ru;; *);
+    [focus]
+    (* <- lang_en;; *);
+
+=>nrel_inclusion:
+   Illusionism;
+<-concept_focus;
+
+=>nrel_inclusion:
+   brief_history_of_magic_tricks;
+<-concept_history_of_tricks;
+
+=>nrel_inclusion:
+   difference;
+<-concept_difference_between_focus_and_illusion;
+
+=>nrel_note:
+[Фокус или иллюзия — номер иллюзиониста, демонстрирующий необъяснимый эффект, «чудо».
+]
+(* <-lang_ru;;*);
+
+<-binary_relation;;

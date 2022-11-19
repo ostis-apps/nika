@@ -1,0 +1,42 @@
+Magicians_David_Blaine
+
+=> nrel_main_idtf:
+    [Дэвид Блейн]
+    (* <- lang_ru;; *);
+    [David Blaine]
+    (* <- lang_en;; *);
+
+=>nrel_inclusion:
+   card;
+   case;
+   invisible_threads;
+   lumber;
+<-concept_accessories;
+
+=>nrel_inclusion:
+   50_selected_card_tricks;
+   Game_of_three_thimbles;
+   Magic_losers_Big_game;
+  
+<-concept_magic_books;
+
+=>nrel_inclusion:
+   acting_studies;
+   creating_props;
+   public_work;
+  
+<-concept_tips_for_magicians;
+
+=> nrel_gender:
+    [М]
+    (*<-lang_ru;;*);
+<-nrel_gender;
+
+=>nrel_note:
+[Самыми экстравагантными трюками прославился Дэвид Блейн. От одних описаний в жилах стынет кровь. Например, иллюзиониста захоронили в пластиковой трубе и опустили в саркофаг с водой. Дэвид провёл там 7 дней, всё это время шоу транслировали по телевидению. Ещё один трюк – заморозка в огромной глыбе льда. 
+Фокусник провёл в айсберге 62 часа в состоянии анабиоза – как он сам уверял. Ему же принадлежит рекорд по задержке дыхания под водой – 17 минут!]
+(* <-lang_ru;;*);
+
+
+
+<-binary_relation;;

@@ -1,0 +1,23 @@
+nrel_variety_of_tricks
+
+	=> nrel_first_domain: 
+	concept_variety_of_tricks;
+	=> nrel_second_domain: 
+	concept_type_of_trick;
+    concept_trick_with_card; 
+
+	=> nrel_main_idtf:
+	[разнообразные трюки]
+	(* <- lang_ru;; *);
+      [variety of tricks]
+      (* <- lang_en;; *);
+	
+	<-sc_node_norole_relation;
+	<-oriented_relation;
+	<-binary_relation;
+	<-antisymmetric_relation;
+	<-antireflexive_relation;
+
+=> nrel_note:
+ [Эти трюки подразумевают появление различных предметов из ниоткуда. Классика жанра – извлечение кролика из пустой шляпы и пр.]
+ (* <- lang_ru;; *);;
