@@ -1,0 +1,21 @@
+nrel_data_of_birth2
+
+=>nrel_first_domain:
+    concept_hockey;
+=>nrel_second_domain:
+    concept_best_hockey_players;
+    concept_prezident_name;
+    
+
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [дата рождения *]
+    (* <- lang_ru;; *);
+    [date of birth *]
+    (* <- lang_en;; *);
+
+<=concept_scinetists_in_science;
+<-oriented_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;

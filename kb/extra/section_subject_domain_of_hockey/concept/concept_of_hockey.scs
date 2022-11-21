@@ -1,0 +1,22 @@
+concept_hockey
+
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+            [Хоккей]
+            (* <- lang_ru;; *);
+=> nrel_note:
+[История возникновения хоккея с шайбой начинается с 1763 года. В это время английские солдаты привезли в Канаду игру в хоккей на траве. Но на канадских землях игра переоформилась в прообраз хоккея с шайбой, в который играли на некрупных замёрзших водоёмах]
+(* <- lang_ru;; *);
+=> nrel_inclusion:
+    concept_best_hockey_players;
+    concept_coaches;
+    concept_hockey_awards;
+    concept_hockey_history;
+    concept_of_hockey_players;
+    concept_team_list;
+    concept_team_name;
+    concept_league_name;
+    concept_hockey_game;
+    concept_prezident_name;
+<-binary_relation;;

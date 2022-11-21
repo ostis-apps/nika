@@ -1,0 +1,19 @@
+nrel_data_of_death1
+
+=>nrel_first_domain:
+    concept_problems_sciences;
+=>nrel_second_domain:
+    concept_scinetists_in_science;
+
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [дата смерти*]
+    (* <- lang_ru;; *);
+    [date of death *]
+    (* <- lang_en;; *);
+
+<=concept_scinetists_in_science;
+<-oriented_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;
