@@ -1,0 +1,35 @@
+nrel_amount_of_visitors
+<- sc_node_norole_relation;
+
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+<- antireflexive_relation;
+
+=> nrel_main_idtf: 
+	[количество посетителей*] (*<-lang_ru;;*);
+=> nrel_main_idtf: 
+	[attraction height*] (*<-lang_en;;*);
+
+=> nrel_first_domain: 	concept_amusement_park;
+			concept_amusement_center;
+			concept_park;
+			
+=> nrel_second_domain:  concept_value;
+			
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [количество посетителей* - бинарное ориентированное отношение, связывающее развлекательный объект (парк, центр) с количеством его посетителей за определенный период (обычно год).] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_year;
+		concept_park
+		};;
+	*);;

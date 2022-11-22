@@ -1,0 +1,46 @@
+concept_ferris_wheel
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [колесо обозрения]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [ferris wheel]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Колесо обозрения (колесо Ферриса) — механический аттракцион в виде большого вертикально установленного колеса, к ободу которого прикреплены кабинки для пассажиров.] (* <-lang_ru;; *);; 
+		*);;
+	*); 
+   
+=> nrel_inclusion:
+	concept_observation_wheel;
+   
+=> nrel_city: 
+	concept_city;
+   
+=> nrel_contry: 
+	concept_country;
+	
+=> nrel_opening_year: 
+	concept_year;
+	
+=> nrel_made_by: 
+	concept_producer;
+   
+=> nrel_element_of: 
+	concept_amusement_park;
+	concept_park;
+	
+=> nrel_attraction_height: 
+	concept_value;
+	
+=> nrel_passenger_capacity: 
+	concept_value;;

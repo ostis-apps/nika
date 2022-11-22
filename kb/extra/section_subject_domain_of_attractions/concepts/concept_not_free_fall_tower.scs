@@ -1,0 +1,42 @@
+concept_not_free_fall_tower
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [башня свободного падения]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [not free fall tower]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Башня свободного падения - высокая башня, на которую нанизан тор c местами для пассажиров, которые поднимаются на высоту ≈ 30 метров, а затем происходит свободное падение тора, где начинают работать резиновые — амортизационные шнуры, тормозящие движения.] (* <-lang_ru;; *);; 
+		*);;
+	*); 
+   
+=> nrel_city: 
+	concept_city;
+   
+=> nrel_contry: 
+	concept_country;
+	
+=> nrel_opening_year: 
+	concept_year;
+	
+=> nrel_made_by: 
+	concept_producer;
+   
+=> nrel_element_of: 
+	concept_amusement_park;
+	
+=> nrel_attraction_height: 
+	concept_value;
+	
+=> nrel_passenger_capacity: 
+	concept_value;;

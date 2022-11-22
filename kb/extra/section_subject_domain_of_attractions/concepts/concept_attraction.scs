@@ -1,0 +1,66 @@
+concept_attraction
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [аттракцион]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [attraction]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Аттракцион - сооружение или устройство, созданное для развлечений. Обычно устанавливается в местах, предназначенных для коллективного отдыха (развлекательные центры, развлекательные парки).] (* <-lang_ru;; *);; 
+		*);;
+	*); 
+   
+=> nrel_inclusion:
+	concept_roller_coaster;
+	concept_ferris_wheel;
+	concept_carousel;
+	concept_devil_wheel;
+	concept_funhouse;
+	concept_bumper_car;
+	concept_childrens_railway;
+	concept_swing;
+	concept_not_free_fall_tower;
+   
+=> nrel_city: 
+	concept_city;
+   
+=> nrel_contry: 
+	concept_country;
+	
+=> nrel_opening_year: 
+	concept_year;
+	
+=> nrel_made_by: 
+	concept_producer;
+   
+=> nrel_element_of: 
+	concept_amusement_park;
+	concept_amusement_center;
+	concept_park;
+	
+=> nrel_attraction_height: 
+	concept_value;
+	
+=> nrel_passenger_capacity: 
+	concept_value;;
+	
+concept_value
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [значение]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [value]
+   (* <- lang_en;; *);;

@@ -1,0 +1,39 @@
+concept_carousel
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [карусель]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [carousel]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Карусель — аттракцион, представляющий собой вращающуюся платформу, на которой установлены сиденья, сделанные чаще всего в виде лошадок, автомобильчиков и других животных или транспортных средств.] (* <-lang_ru;; *);; 
+		*);;
+	*); 
+   
+=> nrel_city: 
+	concept_city;
+   
+=> nrel_contry: 
+	concept_country;
+	
+=> nrel_opening_year: 
+	concept_year;
+	
+=> nrel_made_by: 
+	concept_producer;
+   
+=> nrel_element_of: 
+	concept_amusement_park;
+	
+=> nrel_passenger_capacity: 
+	concept_value;;

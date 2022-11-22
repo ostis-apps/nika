@@ -1,0 +1,27 @@
+concept_city
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [город]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [city]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [town]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Город — крупный населённый пункт, имеющий развитый комплекс хозяйства и экономики и являющийся скоплением архитектурных и инженерных сооружений, обеспечивающих жизнедеятельность постоянного и временного населения города.] (* <-lang_ru;; *);; 
+		*);;
+	*); 
+   
+=> nrel_contry: 
+	concept_country;;

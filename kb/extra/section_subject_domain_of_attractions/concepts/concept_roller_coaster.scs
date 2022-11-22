@@ -1,0 +1,49 @@
+concept_roller_coaster
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [американские горки]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [roller coaster]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Американские горки  — русское название одного из самых популярных аттракционов в парках развлечений.] (* <-lang_ru;; *);; 
+		*);;
+	*); 
+   
+=> nrel_inclusion:
+	concept_dive_coaster;
+   
+=> nrel_city: 
+	concept_city;
+   
+=> nrel_contry: 
+	concept_country;
+	
+=> nrel_opening_year: 
+	concept_year;
+	
+=> nrel_made_by: 
+	concept_producer;
+   
+=> nrel_element_of: 
+	concept_amusement_park;
+	concept_amusement_center;
+	
+=> nrel_track_lenght: 
+	concept_value;
+	
+=> nrel_passenger_capacity: 
+	concept_value;
+	
+=> nrel_top_speed: 
+	concept_value;;

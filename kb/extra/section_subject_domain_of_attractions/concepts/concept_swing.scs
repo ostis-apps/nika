@@ -1,0 +1,30 @@
+concept_swing
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [качели]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [swing]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Качели - сооружение для качания, для забавы или развлечения, представляющее собою доску, подвешенную на одной верёвке - к столбу или на двух верёвках - к перекладине.] (* <-lang_ru;; *);; 
+		*);;
+	*); 
+	
+=> nrel_made_by: 
+	concept_producer;
+   
+=> nrel_element_of: 
+	concept_amusement_park;
+	
+=> nrel_passenger_capacity: 
+	concept_value;;
