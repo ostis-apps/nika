@@ -1,0 +1,53 @@
+concept_Burger
+
+
+
+=> nrel_main_idtf: [Бургер] (* <- lang_en;; *);
+
+=> nrel_main_idtf: [Burger] (* <- lang_ru;; *);
+
+
+
+<- concept_resource_food;
+
+
+
+<- rrel_key_sc_element: ...
+
+(*
+
+<- definition;;
+
+=> nrel_main_idtf:[Опр.([Бургер] )] (* <- lang_ru;; *);;
+
+<= nrel_sc_text_translation: ...
+
+(*
+
+-> [Га́мбургер (англ. hamburger, сокр. бу́ргер) — это блюдо, обычно состоящее из котлеты из измельченного мяса, как правило, говядины, помещенной внутрь нарезанной булочки.] (* <- lang_ru;; => nrel_format: format_html;; *);;
+
+*);;
+
+*);
+
+
+
+<- rrel_key_sc_element: ...
+
+(*
+
+<- statement;;
+
+=> nrel_main_idtf:[Утв.(Burger)] (* <- lang_ru;; *);;
+
+<= nrel_sc_text_translation: ...
+
+(*
+
+-> [Гамбургеры часто подают с сыром, салатом, помидорами, луком, маринованными огурцами, беконом или чили; соусами, такими как кетчуп, горчица, майонез, релиш; и часто их кладут на булочки с кунжутом.] (* <- lang_ru;; => nrel_format: format_html;; *);;
+
+*);;
+
+*);
+
+<- sc_node_not_relation;;
