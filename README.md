@@ -5,7 +5,7 @@
   </a>
 </p>
 
-> **N**IKA is an **NIKITOS** **I**ntelligent **K**nowledge-driven **A**ssistant
+> **N**IKA is an **I**ntelligent **K**nowledge-driven **A**ssistant
 
 ## About
 NIKA is an ostis-system designed with [OSTIS Technology principles](https://github.com/ostis-ai) in mind. 
