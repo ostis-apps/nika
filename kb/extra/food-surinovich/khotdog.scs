@@ -1,0 +1,53 @@
+concept_Hot_dog
+
+
+
+=> nrel_main_idtf: [Hot-dog] (* <- lang_en;; *);
+
+=> nrel_main_idtf: [Хотдог] (* <- lang_ru;; *);
+
+
+
+<- concept_resource_food;
+
+
+
+<- rrel_key_sc_element: ...
+
+(*
+
+<- definition;;
+
+=> nrel_main_idtf:[Опр.([Хотдог] )] (* <- lang_ru;; *);;
+
+<= nrel_sc_text_translation: ...
+
+(*
+
+-> [Хот-дог (англ. hot dog, букв. — «горячая собака») — это блюдо, состоящее из жареной или приготовленной на пару сосиски, подаваемой в разрезе булочки.] (* <- lang_ru;; => nrel_format: format_html;; *);;
+
+*);;
+
+*);
+
+
+
+<- rrel_key_sc_element: ...
+
+(*
+
+<- statement;;
+
+=> nrel_main_idtf:[Утв.(Hot-dog)] (* <- lang_ru;; *);;
+
+<= nrel_sc_text_translation: ...
+
+(*
+
+-> [ермин «хот-дог» также может относиться и к самой сосиске. В качестве сосиски используется венская сосиска или франкфуртер. Названия этих сосисок также обычно относятся к блюду, в котором они собраны.] (* <- lang_ru;; => nrel_format: format_html;; *);;
+
+*);;
+
+*);
+
+<- sc_node_not_relation;;

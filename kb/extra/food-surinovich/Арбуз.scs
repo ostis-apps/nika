@@ -1,0 +1,53 @@
+concept_moroz
+
+
+
+=> nrel_main_idtf: [moroz1] (* <- lang_en;; *);
+
+=> nrel_main_idtf: [Арбуз] (* <- lang_ru;; *);
+
+
+
+<- concept_resource_food;
+
+
+
+<- rrel_key_sc_element: ...
+
+(*
+
+<- definition;;
+
+=> nrel_main_idtf:[Опр.([moroz2] )] (* <- lang_ru;; *);;
+
+<= nrel_sc_text_translation: ...
+
+(*
+
+-> [Та́ко[1] (исп. taco; во мн. ч. — tacos) — традиционное блюдо мексиканской кухни] (* <- lang_ru;; => nrel_format: format_html;; *);;
+
+*);;
+
+*);
+
+
+
+<- rrel_key_sc_element: ...
+
+(*
+
+<- statement;;
+
+=> nrel_main_idtf:[Утв.(Moroz)] (* <- lang_ru;; *);;
+
+<= nrel_sc_text_translation: ...
+
+(*
+
+-> [Тако состоит из кукурузной или пшеничной тортильи c разнообразной начинкой — говядиной, свининой, курицей, морепродуктами, чоризо, пережаренными бобами, овощами, тушёной мякотью мексиканского кактуса.] (* <- lang_ru;; => nrel_format: format_html;; *);;
+
+*);;
+
+*);
+
+<- sc_node_not_relation;;
