@@ -1,0 +1,21 @@
+concept_producer
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [производитель]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [producer]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Производитель - человек, являющийся разработчиком, архитектором аттракциона.] (* <-lang_ru;; *);; 
+		*);;
+	*);;

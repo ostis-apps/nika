@@ -1,0 +1,40 @@
+concept_funhouse
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [комната смеха]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [funhouse]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [laughing room]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Комната смеха — традиционный аттракцион в парках развлечений, основной концепцией которого является головоломка типа лабиринта, но в дополнение к сбивающим с толку элементом лабиринта пространственным ощущениям, визуальные ощущения также запутываются путём изготовления стен лабиринта из оптически отражающего материала, чаще всего стеклянных зеркал. ] (* <-lang_ru;; *);; 
+		*);;
+	*); 
+   
+=> nrel_city: 
+	concept_city;
+   
+=> nrel_contry: 
+	concept_country;
+	
+=> nrel_opening_year: 
+	concept_year;
+	
+=> nrel_made_by: 
+	concept_producer;
+   
+=> nrel_element_of: 
+	concept_amusement_park;
+	concept_amusement_center;;

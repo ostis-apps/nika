@@ -1,0 +1,45 @@
+concept_bumper_car
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [автодром]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [bumper car]
+   (* <- lang_en;; *);
+=> nrel_main_idtf:
+   [бамперные машинки]
+   (* <- lang_ru;; *);   
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Автодром — аттракцион, на котором посетители могут ездить по специальной площадке на двухместных электрических автомобилях, сталкиваясь с другими автомобилями.] (* <-lang_ru;; *);; 
+		*);;
+	*); 
+   
+=> nrel_city: 
+	concept_city;
+   
+=> nrel_contry: 
+	concept_country;
+	
+=> nrel_opening_year: 
+	concept_year;
+	
+=> nrel_made_by: 
+	concept_producer;
+   
+=> nrel_element_of: 
+	concept_amusement_park;
+	
+=> nrel_square: 
+	concept_value;
+	
+=> nrel_passenger_capacity: 
+	concept_value;;

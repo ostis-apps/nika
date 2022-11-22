@@ -1,0 +1,43 @@
+concept_observation_wheel
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [наблюдательное колесо]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [observation wheel]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Наблюдательное колесо — новый тип колес обозрения, механический аттракцион в виде большого вертикально установленного колеса, к ободу которого прикреплены кабинки для пассажиров.] (* <-lang_ru;; *);; 
+		*);;
+	*); 
+   
+=> nrel_city: 
+	concept_city;
+   
+=> nrel_contry: 
+	concept_country;
+	
+=> nrel_opening_year: 
+	concept_year;
+	
+=> nrel_made_by: 
+	concept_producer;
+   
+=> nrel_element_of: 
+	concept_amusement_park;
+	concept_park;
+	
+=> nrel_attraction_height: 
+	concept_value;
+	
+=> nrel_passenger_capacity: 
+	concept_value;;
