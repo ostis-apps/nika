@@ -1,0 +1,24 @@
+concept_fishing_hook
+=> nrel_main_idtf:
+    [рыболовный крючок](* <-lang_ru;; *);
+    [fishing hook](* <-lang_en;; *);;
+
+concept_fishing_hook
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (рыболовный крючок)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (fishing hook)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Рыболовный крючок - один из главных составляющих элементов рыболовного комплекта.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [A fishing hook is one of the main components of a fishing kit.](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_tackle
+    };;
+*);;

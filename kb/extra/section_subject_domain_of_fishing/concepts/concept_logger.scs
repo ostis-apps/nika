@@ -1,0 +1,24 @@
+concept_logger
+=> nrel_main_idtf:
+    [логгер](* <-lang_ru;; *);
+    [logger](* <-lang_en;; *);;
+
+concept_logger
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (логгер)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (logger)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Логгер - большое и быстроходное рыболовное судно для лова сельди дрифтерными сетями.](*<- lang_ru;;*);; 
+        -> rrel_example:
+            [Logger is a large and fast-moving fishing vessel for herring fishing with drift nets.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_boat
+    };;
+*);;

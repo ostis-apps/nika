@@ -1,0 +1,20 @@
+concept_fishing
+=> nrel_main_idtf:
+    [рыбное дело](* <-lang_ru;; *);
+    [fishing](* <-lang_en;; *);;
+
+concept_fishing
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (рыбное дело)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (fishing)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Рыбное дело -  занятие выуживанием рыбы из водоёма с целью прокорма или для развлечения.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Fishing is the occupation of fishing fish out of a reservoir for the purpose of feeding or for entertainment.](*<- lang_en;;*);;
+    *);;
+*);;

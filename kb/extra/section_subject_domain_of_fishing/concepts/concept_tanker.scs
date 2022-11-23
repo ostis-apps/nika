@@ -1,0 +1,24 @@
+concept_tanker
+=> nrel_main_idtf:
+    [танкер](* <-lang_ru;; *);
+    [tanker](* <-lang_en;; *);;
+
+concept_tanker
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (танкер)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (tanker)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Танкер - грузовое самоходное судно, предназначенное для перевозки наливных грузов.](*<- lang_ru;;*);; 
+        -> rrel_example:
+            [Tanker is a self-propelled cargo vessel designed for the transportation of bulk cargo.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_boat
+    };;
+*);;

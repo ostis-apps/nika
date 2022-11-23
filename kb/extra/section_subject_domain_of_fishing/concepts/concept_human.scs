@@ -1,0 +1,24 @@
+concept_human
+=> nrel_main_idtf:
+    [человек](* <-lang_ru;; *);
+    [human](* <-lang_en;; *);;
+
+concept_human
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (человек)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (human)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Человек - живое существо, обладающее даром мышления и речи, способностью создавать орудия и пользоваться ими в процессе общественного труда. Специфическими особенностями человека, отличающими его от других животных, являются прямохождение, высокоразвитый головной мозг, мышление и членораздельная речь.](*<- lang_ru;;*);; 
+        -> rrel_example:
+            [A human is a living being with the gift of thought and speech, the ability to create tools and use them in the process of social labor. The specific features of man that distinguish him from other animals are erect, highly developed brain, thinking and articulate speech.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_creature
+    };;
+*);;

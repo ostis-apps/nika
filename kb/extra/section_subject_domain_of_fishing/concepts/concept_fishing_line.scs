@@ -1,0 +1,24 @@
+concept_fishing_line
+=> nrel_main_idtf:
+    [рыболовный крючок](* <-lang_ru;; *);
+    [fishing line](* <-lang_en;; *);;
+
+concept_fishing_line
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (рыболовный леска)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (fishing line)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Рыболовная леска - это шнур, используемый или изготовленный для ловли рыбы.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [A fishing line is a cord used or manufactured for fishing.](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_tackle
+    };;
+*);;

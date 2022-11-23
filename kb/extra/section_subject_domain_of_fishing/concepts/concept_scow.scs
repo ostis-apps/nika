@@ -1,0 +1,24 @@
+concept_scow
+=> nrel_main_idtf:
+    [шаланда](* <-lang_ru;; *);
+    [scow](* <-lang_en;; *);;
+
+concept_scow
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (шаланда)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (scow)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Шаланда - небольшая баржа для погрузки и разгрузки крупнотоннажных судов на рейде.](*<- lang_ru;;*);; 
+        -> rrel_example:
+            [A scow is a small barge for loading and unloading large-tonnage vessels on the roadstead.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_boat
+    };;
+*);;

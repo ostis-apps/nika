@@ -1,0 +1,24 @@
+concept_anchor
+=> nrel_main_idtf:
+    [руль](* <-lang_ru;; *);
+    [handlebar](* <-lang_en;; *);;
+
+concept_anchor
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (руль)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (handlebar)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Руль - основной элемент корабельного пассивного рулевого устройства.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [The handlebar is the main element of the ship's passive steering device.](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_component_part_of_boat
+    };;
+*);;

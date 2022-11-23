@@ -1,0 +1,24 @@
+concept_sea
+=> nrel_main_idtf:
+    [море](* <-lang_ru;; *);
+    [sea](* <-lang_en;; *);;
+
+concept_sea
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (море)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (sea)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Море - часть Мирового океана, обособленная сушей или возвышениями подводного рельефа.](*<- lang_ru;;*);; 
+        -> rrel_example:
+            [The sea is a part of the World Ocean, separated by land or elevations of underwater relief.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_water
+    };;
+*);;

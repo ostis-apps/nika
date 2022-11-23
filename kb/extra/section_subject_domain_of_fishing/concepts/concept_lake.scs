@@ -1,0 +1,24 @@
+concept_lake
+=> nrel_main_idtf:
+    [озеро](* <-lang_ru;; *);
+    [lake](* <-lang_en;; *);;
+
+concept_lake
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (озеро)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (lake)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Озеро - естественно возникший водоём, заполненный в пределах озёрной чаши (озёрного ложа) водой и не имеющий непосредственного соединения с морем.](*<- lang_ru;;*);; 
+        -> rrel_example:
+            [A lake is a naturally occurring body of water filled within a lake basin (lake bed) with water and does not have a direct connection with the sea.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_water
+    };;
+*);;

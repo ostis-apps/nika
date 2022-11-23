@@ -1,0 +1,24 @@
+concept_fish
+=> nrel_main_idtf:
+    [рыба](* <-lang_ru;; *);
+    [fish](* <-lang_en;; *);;
+
+concept_fish
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (рыба)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (fish)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Рыба - это водное животное с черепом и жабрами, у которого отсутствуют конечности с пальцами.](*<- lang_ru;;*);; 
+        -> rrel_example:
+            [Fish are aquatic, craniate, gill-bearing animals that lack limbs with digits.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_creature
+    };;
+*);;

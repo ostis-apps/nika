@@ -1,0 +1,24 @@
+concept_anchor
+=> nrel_main_idtf:
+    [якорь](* <-lang_ru;; *);
+    [anchor](* <-lang_en;; *);;
+
+concept_anchor
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (якорь)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (anchor)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Якорь - специальной формы литая, кованая или сварная конструкция, предназначенная для удержания корабля, подлодки, плота или другого плавающего объекта на одном месте.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [An anchor is a specially shaped cast, forged or welded structure designed to hold a ship, submarine, raft or other floating object in one place.](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_component_part_of_boat
+    };;
+*);;

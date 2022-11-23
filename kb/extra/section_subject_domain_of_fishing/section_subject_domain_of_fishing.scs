@@ -1,0 +1,86 @@
+section_subject_domain_of_fishing
+=> nrel_main_idtf:
+    [Раздел. Предметная область рыбного дела](* <- lang_ru;; *);
+    [Section. Subject domain of fishing](* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_fishing =
+[*
+    subject_domain_of_fishing
+    <- sc_node_struct;
+    => nrel_main_idtf:
+        [Предметная область рыбного дела](* <- lang_ru;; *);
+        [Subject domain of fishing](* <- lang_en;; *);
+    <- subject_domain;
+    -> rrel_maximum_studied_object_class:
+        concept_fishing;
+        concept_creature;
+        concept_tackle;
+    -> rrel_not_maximum_studied_object_class:
+        concept_fish;
+        concept_fisherman;
+        concept_net;
+        concept_fishing_hook;
+        concept_rod;
+        concept_anchor;
+        concept_boat;
+        concept_component_part_of_boat;
+        concept_handlebar;
+        concept_logger;
+        concept_superstructure;
+        concept_tanker;
+        concept_trawler;
+        concept_spinning;
+        concept_human;
+        concept_fishing_line;
+        concept_scow;
+        concept_seiner;
+        concept_turtle;
+        concept_diver;
+        concept_harpoon;
+        concept_water;
+        concept_river;
+        concept_lake;
+        concept_sea;
+        concept_ocean;
+    -> rrel_explored_relation:
+        nrel_prey;
+        nrel_living_environment;
+        nrel_profession;;
+*];;
+
+section_subject_domain_of_fishing
+-> rrel_key_sc_element:
+    subject_domain_of_fishing;
+    concept_creature;
+    concept_fish;
+    concept_anchor;
+    concept_boat;
+    concept_fishing_line;
+    concept_scow;
+    concept_seiner;
+    concept_turtle;
+    concept_diver;
+    concept_harpoon;
+    concept_water;
+    concept_river;
+    concept_lake;
+    concept_sea;
+    concept_ocean;
+    concept_component_part_of_boat;
+    concept_handlebar;
+    concept_logger;
+    concept_superstructure;
+    concept_tanker;
+    concept_fishing_hook;
+    concept_trawler;
+    concept_fisherman;
+    concept_fishing;
+    concept_spinning;
+    concept_human;
+    concept_net;
+    concept_rod;
+    concept_tackle;
+    nrel_prey;
+    nrel_living_environment;
+    nrel_profession;;

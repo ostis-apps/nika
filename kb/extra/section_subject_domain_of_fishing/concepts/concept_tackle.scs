@@ -1,0 +1,28 @@
+concept_tackle
+=> nrel_main_idtf:
+    [снасть](* <-lang_ru;; *);
+    [tackle](* <-lang_en;; *);;
+
+concept_tackle
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (снасть)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (tackle)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Снасть - это приспособление для рыбной ловли.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Tackle is a device for fishing.](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_rod;
+        concept_net;
+        concept_fishing_hook;
+        concept_fishing_line;
+        concept_spinning
+    };;
+*);;

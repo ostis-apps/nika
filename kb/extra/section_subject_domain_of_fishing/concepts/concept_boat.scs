@@ -1,0 +1,26 @@
+concept_boat
+=> nrel_main_idtf:
+    [судно](* <-lang_ru;; *);
+    [boat](* <-lang_en;; *);;
+
+concept_boat
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (судно)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (boat)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Судно - транспортное средство, позволяющее передвигаться по воде.](*<- lang_ru;;*);; 
+        -> rrel_example:
+            [A boat is a vehicle that allows you to move on water.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_anchor;
+        concept_handlebar;
+        concept_superstructure
+    };;
+*);;

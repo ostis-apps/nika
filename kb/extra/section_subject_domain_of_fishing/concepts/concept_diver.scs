@@ -1,0 +1,25 @@
+concept_diver
+=> nrel_main_idtf:
+    [дайвер](* <-lang_ru;; *);
+    [diver](* <-lang_en;; *);;
+
+concept_diver
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (дайвер)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (diver)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Дайвер - это человек совершающий погружения с аквалангом.](*<- lang_ru;;*);;
+        -> rrel_example:
+            [A diver is a person who performs scuba diving.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_human;
+        concept_tackle
+    };;
+*);;

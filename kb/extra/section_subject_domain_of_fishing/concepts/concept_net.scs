@@ -1,0 +1,24 @@
+concept_net
+=> nrel_main_idtf:
+    [сеть](* <-lang_ru;; *);
+    [net](* <-lang_en;; *);;
+
+concept_net
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (сеть)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (net)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Сеть - это устройство, изготовленное из волокон, сплетенных в сетчатую структуру, используемое для рыбной ловли.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [A net is a device made of fibers woven into a mesh structure used for fishing.](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_tackle
+    };;
+*);;

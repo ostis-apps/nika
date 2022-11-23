@@ -1,0 +1,24 @@
+concept_seiner
+=> nrel_main_idtf:
+    [сейнер](* <-lang_ru;; *);
+    [seiner](* <-lang_en;; *);;
+
+concept_seiner
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (сейнер)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (seiner)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Сейнер - рыболовное судно для лова рыбы снюрреводом или кошельковым неводом, который также может называться сейной.](*<- lang_ru;;*);; 
+        -> rrel_example:
+            [Seiner is a fishing vessel for fishing with a seine or purse seine, which can also be called a wall.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_boat
+    };;
+*);;
