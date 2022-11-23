@@ -1,0 +1,17 @@
+concept_finances
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [финансы]
+    (* <- lang_ru;;*);
+    [finances]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [форма организации денежных отношений, движения фондов денежных средств, формируемых на уровне различных предприятий, организаций, иных субъектов хозяйственной деятельности, домохозяйств и отдельных граждан. ]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+    concept_investment;
+    concept_home_accounting;;

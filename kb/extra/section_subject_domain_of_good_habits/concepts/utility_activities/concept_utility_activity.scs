@@ -1,0 +1,26 @@
+concept_utility_activity
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [полезная активность]
+    (* <- lang_ru;;*);
+    [utility activity]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [положительное воздействие на состояние здоровья только при достаточной продолжительности и регулярности.]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+    concept_sleep;
+    concept_physical_activity;
+    concept_proper_nutrition;
+    concept_cold_hot_shower;
+    concept_smile;
+    concept_meditation;
+    concept_getting_knowledge;
+    concept_reading;
+    concept_time_management;
+    concept_investment;
+    concept_home_accounting;;

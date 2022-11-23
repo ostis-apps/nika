@@ -1,0 +1,19 @@
+concept_benefit
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [польза]
+    (* <- lang_ru;;*);
+    [benefit]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [ценностное понятие, отражающее положительное значение предметов и явлений в их отношении к чьим-либо интересам. В более строгом смысле польза - характеристика средств, достаточных для достижения заданной цели.]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+    concept_imagination_development;
+    concept_mental_state_enhancement;
+    concept_weight_losing_aid;
+    concept_aging_slowly;;

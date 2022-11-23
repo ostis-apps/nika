@@ -1,0 +1,19 @@
+concept_health
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [здоровье]
+    (* <- lang_ru;;*);
+    [health]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [состояние полного физического, душевного и социального благополучия, а не только отсутствие болезней и физических дефектов.]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+    concept_sleep;
+    concept_physical_activity;
+    concept_proper_nutrition;
+    concept_cold_hot_shower;;
