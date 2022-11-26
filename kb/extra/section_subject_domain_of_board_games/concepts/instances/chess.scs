@@ -6,5 +6,9 @@ chess
 <- concept_sport;
 <- concept_sport_game;
 <- concept_board_game;
+
 => nrel_using_object:
-    chessmen;;
+    chessmen;
+    
+=> nrel_note:
+	[Шахматы - это стратегическая игра на доске с фигурами.](* <- lang_ru;; *);;

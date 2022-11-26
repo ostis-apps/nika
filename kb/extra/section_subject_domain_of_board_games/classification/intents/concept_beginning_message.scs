@@ -1,0 +1,27 @@
+concept_beginning_message
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [начальное сообщение]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [beginning];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (начальное сообщение)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Начальное сообщение - атомарное сообщение,
+    которое посылается Нике в начале диалога.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
