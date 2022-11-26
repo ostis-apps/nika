@@ -1,0 +1,38 @@
+nrel_participant
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+    [Участник соревнований](* <- lang_ru;; *);
+    [Participant](* <- lang_eng;; *);;
+
+nrel_participant
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (Участник соревнований)](*<- lang_ru;;*);
+    [Def. (Participant)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Участник соревнований - описывает человека, учавствующего в соревновательном процессе.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [Participant - describes a person participating in the competitive process.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_person;
+        concept_competitive_process
+    };;
+*);;
+
+nrel_participant
+=>nrel_first_domain:
+    concept_competition;
+    concept_competitive_process;
+=>nrel_second_domain:
+    concept_person;
+
+<- binary_relation ;
+<- antireflexive_relation ;
+<- antitransitive_relation ;;

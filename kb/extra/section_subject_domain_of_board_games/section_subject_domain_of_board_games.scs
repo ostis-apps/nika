@@ -1,0 +1,88 @@
+section_subject_domain_of_board_games
+=> nrel_main_idtf:
+	  [Раздел. Предметная область настольных игр]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of board games] 
+  (* <- lang_en;; *);;
+
+
+
+section_subject_domain_of_board_games = [*
+	subject_domain_of_board_games
+    <- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область настольных игр]
+   (* <- lang_ru;; *);
+   [Subject domain of board games]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_game;
+      concept_game_event;
+      concept_person;
+      concept_game_object;
+	-> rrel_not_maximum_studied_object_class:
+      concept_activity;
+      concept_behavior;
+      concept_board_game;
+      concept_card;
+      concept_card_game;
+      concept_champion;
+      concept_championship;
+      concept_competition;
+      concept_competitive_process;
+      concept_dice;
+      concept_figure;
+      concept_game_board;
+      concept_miniature;
+      concept_miniature_game;
+      concept_pencil_game;
+      concept_player;
+      concept_role_game;
+      concept_rule;
+      concept_skill;
+      concept_sport;
+      concept_sport_game;
+      concept_team;
+      concept_video_game;
+	-> rrel_explored_relation:
+      nrel_field;
+      nrel_participant;
+      nrel_specialization;
+      nrel_using_object;;
+*];;
+
+
+section_subject_domain_of_board_games
+-> rrel_key_sc_element:
+      concept_game;
+      concept_game_event;
+      concept_person;
+      concept_game_object;
+      concept_activity;
+      concept_behavior;
+      concept_board_game;
+      concept_card;
+      concept_card_game;
+      concept_champion;
+      concept_championship;
+      concept_competition;
+      concept_competitive_process;
+      concept_dice;
+      concept_figure;
+      concept_game_board;
+      concept_miniature;
+      concept_miniature_game;
+      concept_pencil_game;
+      concept_player;
+      concept_role_game;
+      concept_rule;
+      concept_skill;
+      concept_sport;
+      concept_sport_game;
+      concept_team;
+      concept_video_game;
+      nrel_field;
+      nrel_participant;
+      nrel_specialization;
+      nrel_using_object;;

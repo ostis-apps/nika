@@ -1,0 +1,27 @@
+concept_person
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+    [Человек](* <-lang_ru;; *);
+    [Person](* <-lang_en;; *);
+
+=> nrel_inclusion:
+    concept_player;;
+
+concept_person
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Человек)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Person)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Человек — общественное существо, обладающее разумом и сознанием.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Person - a social being with intelligence and consciousness.](*<- lang_en;;*);;
+    *);;
+*);;
