@@ -1,0 +1,40 @@
+sc_node_not_relation -> concept_keyboard;;
+
+concept_keyboard => nrel_system_idtf: [concept_keyboard];;
+concept_keyboard => nrel_main_idtf: [Клавиатура](*<- lang_ru;;*);;
+concept_keyboard => nrel_idtf: [Клавиатура](*<- lang_ru;;*);;
+concept_keyboard => nrel_idtf: [Keyboard](*<- lang_en;;*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_keyboard;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Клавиатура — комплект расположенных в определённом порядке клавиш для управления каким-либо устройством или для ввода данных.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Клавиатура)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+		->concept_set;;
+		->concept_key;;
+        ->concept_devices;;
+        ->concept_data;;
+        *);;
+*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: concept_keyboard;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Существует два основных вида клавиатур: музыкальные и алфавитно-цифровые.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Об.Клавиатура)](*<- lang_ru;;*);;
+<= nrel_using_constants: ...
+        (*
+->concept_type;;
+->concept_musical;;
+->concept_alphanumeric;;
+        *);;
+*);;

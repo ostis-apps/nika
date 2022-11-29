@@ -1,0 +1,39 @@
+sc_node_not_relation -> concept_router;;
+
+concept_router => nrel_system_idtf: [concept_router];;
+concept_router => nrel_main_idtf: [Маршрутизатор](*<- lang_ru;;*);;
+concept_router => nrel_idtf: [Маршрутизатор](*<- lang_ru;;*);;
+concept_router => nrel_idtf: [Router](*<- lang_en;;*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_router;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Маршрутизатор — специализированное устройство, которое пересылает пакеты между различными сегментами сети на основе правил и таблиц маршрутизации.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Маршрутизатор)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+		->concept_device;;
+		->concept_packet;;
+        ->concept_network_segments;;
+        ->concept_routing_tables;;
+        *);;
+*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: concept_router;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Маршрутизатор может связывать разнородные сети различных архитектур.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Об.Маршрутизатор)](*<- lang_ru;;*);;
+<= nrel_using_constants: ...
+        (*
+->concept_newtworks;;
+->concept_architectures;;
+        *);;
+*);;

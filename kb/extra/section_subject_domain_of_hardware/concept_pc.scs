@@ -1,0 +1,37 @@
+sc_node_not_relation -> concept_pc;;
+
+concept_pc => nrel_system_idtf: [concept_pc];;
+concept_pc => nrel_main_idtf: [Персональный компьютер](*<- lang_ru;;*);;
+concept_pc => nrel_idtf: [Персональный компьютер](*<- lang_ru;;*);;
+concept_pc => nrel_idtf: [PC](*<- lang_en;;*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_pc;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Персональный компьютер — однопользовательская ЭВМ, имеющая эксплуатационные характеристики бытового прибора и универсальные функциональные возможности.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Персональный компьютер)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+		->concept_memory_device;;
+		->concept_magnetic_recording;;
+        *);;
+*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: concept_pc;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [ ПК используется в других целях — как средство доступа в информационные сети.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Об.Персональный компьютер)](*<- lang_ru;;*);;
+<= nrel_using_constants: ...
+        (*
+->concept_means_of_access;;
+->concept_information_networks;;
+        *);;
+*);;

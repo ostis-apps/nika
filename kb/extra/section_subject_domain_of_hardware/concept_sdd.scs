@@ -1,0 +1,40 @@
+sc_node_not_relation -> concept_ssd;;
+
+concept_ssd => nrel_system_idtf: [concept_ssd];;
+concept_ssd => nrel_main_idtf: [Твердотельный накопитель](*<- lang_ru;;*);;
+concept_ssd => nrel_idtf: [Твердотельный накопитель](*<- lang_ru;;*);;
+concept_ssd => nrel_idtf: [SSD](*<- lang_en;;*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_ssd;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Твердотельный накопитель — компьютерное энергонезависимое немеханическое запоминающее устройство на основе микросхем памяти, альтернатива жёстким дискам.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Твердотельный накопитель)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+		->concept_storage_device;;
+		->concept_computer_memory;;
+		->concept_memory_chip;;
+		->concept_hdd;;
+        *);;
+*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: concept_ssd;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [По сравнению с традиционными жёсткими дисками твердотельные накопители имеют меньший размер и вес.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Об.Твердотельный накопитель)](*<- lang_ru;;*);;
+<= nrel_using_constants: ...
+        (*
+->concept_hdd;;
+->concept_size;;
+->concept_weight;;
+        *);;
+*);;

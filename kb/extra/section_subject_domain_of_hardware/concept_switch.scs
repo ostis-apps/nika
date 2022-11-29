@@ -1,0 +1,38 @@
+sc_node_not_relation -> concept_switch;;
+
+concept_switch => nrel_system_idtf: [concept_switch];;
+concept_switch => nrel_main_idtf: [Сетевой коммутатор](*<- lang_ru;;*);;
+concept_switch => nrel_idtf: [Сетевой коммутатор](*<- lang_ru;;*);;
+concept_switch => nrel_idtf: [Switch](*<- lang_en;;*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_switch;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Сетевой коммутатор — устройство, предназначенное для соединения нескольких узлов компьютерной сети в пределах одного или нескольких сегментов сети.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Сетевой коммутатор)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+		->concept_device;;
+		->concept_network_node;;
+        ->concept_network_segments;;
+        *);;
+*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: concept_switch;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Коммутатор работает на канальном уровне сетевой модели OSI.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Об.Сетевой коммутатор)](*<- lang_ru;;*);;
+<= nrel_using_constants: ...
+        (*
+->concept_channel_layer;;
+->concept_OSI_model;;
+        *);;
+*);;

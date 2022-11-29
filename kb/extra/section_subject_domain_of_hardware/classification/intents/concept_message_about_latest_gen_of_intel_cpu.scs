@@ -1,0 +1,27 @@
+concept_message_about_latest_gen_of_intel_cpu
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о последнем поколении прцоессоров Intel]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_gpu_manufacturers];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о последнем поколении прцоессоров Intel)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о последнем поколении прцоессоров Intel - атомарное сообщение,
+    которое содержит какую-либо информацию о последнем поколении прцоессоров Intel.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

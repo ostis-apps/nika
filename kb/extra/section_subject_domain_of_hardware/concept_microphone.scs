@@ -1,0 +1,39 @@
+sc_node_not_relation -> concept_microphone;;
+
+concept_microphone => nrel_system_idtf: [concept_microphone];;
+concept_microphone => nrel_main_idtf: [Микрофон](*<- lang_ru;;*);;
+concept_microphone => nrel_idtf: [Микрофон](*<- lang_ru;;*);;
+concept_microphone => nrel_idtf: [Microphone](*<- lang_en;;*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_microphone;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Микрофон — электроакустический прибор, преобразующий акустические колебания в электрический сигнал.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Микрофон)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+		->concept_electroacoustic_device;;
+		->concept_acoustic_vibrations;;
+        ->concept_electrical_signal;;
+        *);;
+*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: concept_microphone;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Принцип работы микрофона заключается в том, что давление звуковых колебаний воздуха, воды или твёрдого вещества действует на тонкую мембрану микрофона.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Об.Микрофон)](*<- lang_ru;;*);;
+<= nrel_using_constants: ...
+        (*
+->concept_pressure;;
+->concept_sound_vibrations;;
+->concept_microphone_membrane;;
+        *);;
+*);;

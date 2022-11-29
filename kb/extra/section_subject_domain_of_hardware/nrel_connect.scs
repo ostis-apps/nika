@@ -1,0 +1,60 @@
+sc_node_norole_relation -> nrel_connect;;
+
+nrel_connect => nrel_system_idtf: [nrel_connect];;
+nrel_connect => nrel_main_idtf: [Подключать](*<- lang_ru;;*);;
+nrel_connect => nrel_idtf: [Connect](*<- lang_en;;*);;
+nrel_connect => nrel_idtf: [Подключать](*<- lang_ru;;*);;
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: nrel_connect;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Подключить — сделать частью или потребителем чего-либо.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Смотреть)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+            -> nrel_do_a_part;;
+            -> nrel_do_a_user;;
+        *);;
+*);;
+
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: nrel_connect;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Таким же образом можно подключать дополнительный жёсткий диск с другого компьютера.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Смотреть)](*<- lang_ru;;*);;
+<= nrel_using_constants: ...
+        (*
+            ->concept_hdd;;
+            ->nrel_connect;;
+            ->concept_pc;;
+        *);;
+*);;
+
+parameter -> arity;;
+arity -> binary_relation;;
+binary_relation -> nrel_connect;;
+binary_relation => nrel_measurement: 2;;
+number -> 2;;
+
+//пример 
+concept_connect-> monitor;;
+concept_connect-> pc;;
+monitor=>nrel_connect:pc;;
+
+relation => nrel_connect: oriented_relation;;
+relation => nrel_connect: binary_relation;;
+
+binary_relation => nrel_connect: reflexive_relation;;
+binary_relation => nrel_connect: transitive_relation;;
+binary_relation => nrel_connect: symetric_relation;;
+
+reflexive_relation -> nrel_connect;;
+transitive_relation -> nrel_connect;;
+symmetric_relation -|> nrel_connect;;

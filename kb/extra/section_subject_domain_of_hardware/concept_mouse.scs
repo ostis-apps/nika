@@ -1,0 +1,37 @@
+sc_node_not_relation -> concept_mouse;;
+
+concept_mouse => nrel_system_idtf: [concept_mouse];;
+concept_mouse => nrel_main_idtf: [Компьютерная мышь](*<- lang_ru;;*);;
+concept_mouse => nrel_idtf: [Компьютерная мышь](*<- lang_ru;;*);;
+concept_mouse => nrel_idtf: [Mouse](*<- lang_en;;*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_mouse;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Компьютерная мышь — координатное устройство для управления курсором и отдачи различных команд компьютеру.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Компьютерная мышь)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+		->concept_coordinate_device;;
+		->concept_cursor;;
+        ->concept_command;;
+        *);;
+*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: concept_mouse;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Управление курсором осуществляется путём перемещения мыши.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Об.Компьютерная мышь)](*<- lang_ru;;*);;
+<= nrel_using_constants: ...
+        (*
+->concept_cursor;;
+        *);;
+*);;

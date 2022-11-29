@@ -1,0 +1,38 @@
+sc_node_not_relation -> concept_printer;;
+
+concept_printer => nrel_system_idtf: [concept_printer];;
+concept_printer => nrel_main_idtf: [Принтер](*<- lang_ru;;*);;
+concept_printer => nrel_idtf: [Принтер](*<- lang_ru;;*);;
+concept_printer => nrel_idtf: [Printer](*<- lang_en;;*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_printer;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Принтер — периферийное устройство компьютера, предназначенное для вывода текстовой или графической информации, хранящейся в компьютере.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Принтер)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+		->concept_peripheral_devices;;
+		->concept_information_output;;
+        ->concept_pc;;
+        *);;
+*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: concept_printer;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [По возможности печати графической информации принтеры делятся на: алфавитно-цифровые, графические.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Об.Принтер)](*<- lang_ru;;*);;
+<= nrel_using_constants: ...
+        (*
+->concept_alphanumeric;;
+->concept_graphic;;
+        *);;
+*);;

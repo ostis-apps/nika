@@ -1,0 +1,38 @@
+sc_node_not_relation -> concept_peripheral_devices;;
+
+concept_peripheral_devices => nrel_system_idtf: [concept_peripheral_devices];;
+concept_peripheral_devices => nrel_main_idtf: [Периферийные устройства](*<- lang_ru;;*);;
+concept_peripheral_devices => nrel_idtf: [Периферийные устройства](*<- lang_ru;;*);;
+concept_peripheral_devices => nrel_idtf: [Peripheral devices](*<- lang_en;;*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_peripheral_devices;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Периферийное устройство — аппаратура, которая позволяет вводить информацию в компьютер или выводить её из него.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Периферийные устройства)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+		->concept_equipment;;
+		->concept_information;;
+        *);;
+*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: concept_peripheral_devices;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Периферийные устройства делят на три типа: устройства ввода, устройства вывода, и устройства хранения.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Об.Периферийные устройства)](*<- lang_ru;;*);;
+<= nrel_using_constants: ...
+        (*
+->concept_input_devices;;
+->concept_output_devices;;
+->concept_storage_device;;
+        *);;
+*);;

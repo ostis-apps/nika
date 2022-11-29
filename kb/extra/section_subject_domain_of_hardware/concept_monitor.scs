@@ -1,0 +1,42 @@
+sc_node_not_relation -> concept_monitor;;
+
+concept_monitor => nrel_system_idtf: [concept_monitor];;
+concept_monitor => nrel_main_idtf: [Монитор](*<- lang_ru;;*);;
+concept_monitor => nrel_idtf: [Монитор](*<- lang_ru;;*);;
+concept_monitor => nrel_idtf: [Monitor](*<- lang_en;;*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_monitor;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Монитор — устройство оперативной визуальной связи пользователя с управляющим устройством и отображением данных, передаваемых с клавиатуры, мыши или центрального процессора.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Монитор)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+		->concept_device;;
+		->concept_operational_visual_communication;;
+        ->concept_control_device;;
+        ->concept_data_display;;
+        ->concept_keyboard;;
+        ->concept_cpu;;
+        ->concept_mouse;;
+        *);;
+*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: concept_monitor;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Принципиальное отличие от телевизора заключается в отсутствии встроенного тюнера.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Об.Монитор)](*<- lang_ru;;*);;
+<= nrel_using_constants: ...
+        (*
+->concept_tv;;
+->concept_tuner;;
+        *);;
+*);;

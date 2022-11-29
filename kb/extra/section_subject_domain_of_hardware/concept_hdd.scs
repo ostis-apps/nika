@@ -1,0 +1,37 @@
+sc_node_not_relation -> concept_hdd;;
+
+concept_hdd => nrel_system_idtf: [concept_hdd];;
+concept_hdd => nrel_main_idtf: [Жесткий диск](*<- lang_ru;;*);;
+concept_hdd => nrel_idtf: [Жесткий диск](*<- lang_ru;;*);;
+concept_hdd => nrel_idtf: [HDD](*<- lang_en;;*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_hdd;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Накопитель на жёстких магнитных дисках — запоминающее устройство (устройство хранения информации, накопитель) произвольного доступа, основанное на принципе магнитной записи.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Жесткий диск)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+		->concept_memory_device;;
+		->concept_magnetic_recording;;
+        *);;
+*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: concept_hdd;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Поскольку данные хранятся на магнитах, HDD не разрушаются при отключении питания.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Об.Жесткий диск)](*<- lang_ru;;*);;
+<= nrel_using_constants: ...
+        (*
+->concept_data;;
+->concept_power;;
+        *);;
+*);;
