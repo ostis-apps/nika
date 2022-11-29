@@ -1,0 +1,38 @@
+sc_node_not_relation -> concept_motherboard;;
+
+concept_motherboard => nrel_system_idtf: [concept_motherboard];;
+concept_motherboard => nrel_main_idtf: [Материнская плата](*<- lang_ru;;*);;
+concept_motherboard => nrel_idtf: [Материнская плата](*<- lang_ru;;*);;
+concept_motherboard => nrel_idtf: [Motherboard](*<- lang_en;;*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_motherboard;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Материнская плата  — печатная плата, являющаяся основой построения модульного электронного устройства.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Материнская плата)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+		->concept_pcb;;
+		->concept_base;;
+        ->concept_modular_electronic_device;;
+        *);;
+*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: concept_motherboard;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Материнская плата всегда несёт на себе активные компоненты или разъёмы для их установки.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Об.Материнская плата)](*<- lang_ru;;*);;
+<= nrel_using_constants: ...
+        (*
+->concept_active_components;;
+->concept_installation_connector;;
+        *);;
+*);;

@@ -1,0 +1,39 @@
+sc_node_not_relation -> concept_headphones;;
+
+concept_headphones => nrel_system_idtf: [concept_headphones];;
+concept_headphones => nrel_main_idtf: [Наушники](*<- lang_ru;;*);;
+concept_headphones => nrel_idtf: [Наушники](*<- lang_ru;;*);;
+concept_headphones => nrel_idtf: [Headphones](*<- lang_en;;*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_headphones;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Наушники — два телефона с оголовьем, предназначенные для подключения к бытовым радиоэлектронным аппаратам.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Наушники)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+		->concept_phone;;
+		->concept_radioelectronic_apparatus;;
+        *);;
+*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: concept_headphones;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [ Наушники часто применяются в быту и в профессиональной деятельности для речевой связи и прослушивания музыки и речи.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Об.Наушники)](*<- lang_ru;;*);;
+<= nrel_using_constants: ...
+        (*
+->concept_life;;
+->concept_professional_activity;;
+->concept_voice_communication;;
+->concept_listening_music;;
+        *);;
+*);;

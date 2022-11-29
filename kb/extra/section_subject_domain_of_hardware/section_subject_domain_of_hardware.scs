@@ -1,0 +1,82 @@
+section_subject_domain_of_mechanics
+=> nrel_main_idtf:
+	  [Раздел. Предметная область аппаратное обеспечение]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of hardware] 
+  (* <- lang_en;; *);;
+
+
+
+section_subject_domain_of_hardware = [*
+	subject_domain_of_hardware
+    <- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область аппаратное обеспечение]
+   (* <- lang_ru;; *);
+   [Subject domain of hardware]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_hardware;
+      concept_cpu;
+      concept_motherboard;
+      concept_hdd;
+      concept_ssd;
+      concept_printer;
+      concept_network_hardware;
+      concept_input_device;
+      concept_output_device;
+      concept_mouse;
+      concept_router;
+      concept_peripheral_device;
+      concept_pc;
+      concept_microphon;
+      concept_headphone;
+      concept_ram;
+      concept_switch;
+	-> rrel_not_maximum_studied_object_class:
+      AOC_24G2UBK;
+      Audio_Technivs_AT2020;
+      ryzen7;
+      MSI_B450_A;
+      WD_Blue;
+      Samsung_970_Evo;
+      HP_Laser;
+      Logitech_G305;
+      Crucial_Ballistix;
+      apple_airpods;
+	-> rrel_explored_relation:
+      nrel_connect;;
+*];;
+
+
+section_subject_domain_of_mechanics
+-> rrel_key_sc_element:
+      concept_hardware;
+      concept_cpu;
+      concept_motherboard;
+      concept_hdd;
+      concept_ssd;
+      concept_printer;
+      concept_network_hardware;
+      concept_input_device;
+      concept_output_device;
+      concept_mouse;
+      concept_router;
+      concept_peripheral_device;
+      concept_pc;
+      concept_microphon;
+      concept_headphone;
+      concept_ram;
+      concept_switch;
+      AOC_24G2UBK;
+      Audio_Technivs_AT2020;
+      ryzen7;
+      MSI_B450_A;
+      WD_Blue;
+      Samsung_970_Evo;
+      HP_Laser;
+      Logitech_G305;
+      Crucial_Ballistix;
+      apple_airpods;
+      nrel_connect;;

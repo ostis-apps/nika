@@ -1,0 +1,40 @@
+sc_node_not_relation -> concept_network_hardware;;
+
+concept_network_hardware => nrel_system_idtf: [concept_network_hardware];;
+concept_network_hardware => nrel_main_idtf: [Cетевое оборудование](*<- lang_ru;;*);;
+concept_network_hardware => nrel_idtf: [Cетевое оборудование](*<- lang_ru;;*);;
+concept_network_hardware => nrel_idtf: [Network hardware](*<- lang_en;;*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_network_hardware;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Сетевое оборудование — устройства, необходимые для работы компьютерной сети, например: маршрутизатор, коммутатор, концентратор.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Cетевое оборудование)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+		->concept_devices;;
+		->concept_computer_network;;
+        ->concept_router;;
+        ->concept_switch;;
+        ->concept_hub;;
+        *);;
+*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: concept_network_hardware;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Можно выделить активное и пассивное сетевое оборудование.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Об.Cетевое оборудование)](*<- lang_ru;;*);;
+<= nrel_using_constants: ...
+        (*
+->concept_passive_network_equipment;;
+->concept_active_network_equipment;;
+        *);;
+*);;

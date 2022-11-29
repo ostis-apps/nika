@@ -1,0 +1,40 @@
+sc_node_not_relation -> concept_input_devices;;
+
+concept_input_devices => nrel_system_idtf: [concept_input_devices];;
+concept_input_devices => nrel_main_idtf: [Устройство ввода](*<- lang_ru;;*);;
+concept_input_devices => nrel_idtf: [Устройство ввода](*<- lang_ru;;*);;
+concept_input_devices => nrel_idtf: [Input devices](*<- lang_en;;*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_input_devices;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Устройства ввода — периферийное оборудование, предназначенное для ввода (занесения) данных или сигналов в компьютер.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Устройство ввода)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+		->concept_peripheral_devices;;
+		->concept_data;;
+        ->concept_signals;;
+        *);;
+*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: concept_input_devices;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Основным и, обычно, необходимым устройством ввода текстовых символов и последовательностей команд в компьютер остаётся клавиатура.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Об.Устройство ввода)](*<- lang_ru;;*);;
+<= nrel_using_constants: ...
+        (*
+->concept_text_symbols;;
+->concept_comand;;
+->concept_pc;;
+->concept_keyboard;;
+        *);;
+*);;

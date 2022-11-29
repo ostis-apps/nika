@@ -1,0 +1,40 @@
+sc_node_not_relation -> concept_ram;;
+
+concept_ram => nrel_system_idtf: [concept_ram];;
+concept_ram => nrel_main_idtf: [Оперативная память](*<- lang_ru;;*);;
+concept_ram => nrel_idtf: [Оперативная память](*<- lang_ru;;*);;
+concept_ram => nrel_idtf: [RAM](*<- lang_en;;*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_ram;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Оперативная память — в большинстве случаев энергозависимая часть системы компьютерной памяти, в которой во время работы компьютера хранится выполняемый машинный код (программы), а также входные, выходные и промежуточные данные, обрабатываемые процессором.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Оперативная память)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+		->concept_system_part;;
+		->concept_computer_memory;;
+		->concept_pc;;
+		->concept_machine_instructions;;
+		->concept_data;;
+		->concept_cpu;;
+        *);;
+*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: concept_ram;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [ Оперативное запоминающее устройство (ОЗУ) — техническое устройство, реализующее функции оперативной памяти.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Об.Оперативная память)](*<- lang_ru;;*);;
+<= nrel_using_constants: ...
+        (*
+->concept_technical_device;;
+        *);;
+*);;

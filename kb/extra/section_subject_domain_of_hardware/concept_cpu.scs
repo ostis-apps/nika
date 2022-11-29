@@ -1,0 +1,40 @@
+sc_node_not_relation -> concept_cpu;;
+
+concept_cpu => nrel_system_idtf: [concept_cpu];;
+concept_cpu => nrel_main_idtf: [Процессор](*<- lang_ru;;*);;
+concept_cpu => nrel_idtf: [Процессор](*<- lang_ru;;*);;
+concept_cpu => nrel_idtf: [CPU](*<- lang_en;;*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_cpu;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Центральный процессор — электронный блок либо интегральная схема, исполняющая машинные инструкции (код программ), главная часть аппаратного обеспечения компьютера.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Процессор)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+		->concept_integrated_circuit;;
+		->concept_machine_instructions;;
+        ->concept_hardware;;
+        *);;
+*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: concept_cpu;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Главными характеристиками ЦПУ являются: тактовая частота, производительность, энергопотребление, и архитектура.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Об.Процессор)](*<- lang_ru;;*);;
+<= nrel_using_constants: ...
+        (*
+->concept_clock_frequence;;
+->concept_performance;;
+->concept_energy_consumption;;
+->concept_architecture;;
+        *);;
+*);;

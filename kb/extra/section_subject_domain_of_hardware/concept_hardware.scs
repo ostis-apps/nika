@@ -1,0 +1,42 @@
+sc_node_not_relation -> concept_hardware;;
+
+concept_hardware => nrel_system_idtf: [concept_hardware];;
+concept_hardware => nrel_main_idtf: [Аппартное обеспечение](*<- lang_ru;;*);;
+concept_hardware => nrel_idtf: [Аппартное обеспечение](*<- lang_ru;;*);;
+concept_hardware => nrel_idtf: [Hardware](*<- lang_en;;*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_hardware;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Аппаратное обеспечение — электронные и механические части вычислительного устройства, входящие в состав системы или сети, исключая программное обеспечение и данные .](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Аппартное обеспечение)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+		->concept_electronic_parts;;
+		->concept_mechanical_parts;;
+        ->concept_computing_device;;
+        ->concept_system;;
+        ->concept_network;;
+        ->concept_software;;
+        ->concept_data;;
+        *);;
+*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: concept_hardware;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [К аппаратному обеспечению относятся устройства, образующие конфигурацию компьютера.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Об.Аппартное обеспечение)](*<- lang_ru;;*);;
+<= nrel_using_constants: ...
+        (*
+->concept_devices;;
+->concept_computer_configuration;;
+        *);;
+*);;

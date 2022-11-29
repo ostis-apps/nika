@@ -1,0 +1,37 @@
+sc_node_not_relation -> concept_output_devices;;
+
+concept_output_devices => nrel_system_idtf: [concept_output_devices];;
+concept_output_devices => nrel_main_idtf: [Устройства вывода](*<- lang_ru;;*);;
+concept_output_devices => nrel_idtf: [Устройства вывода](*<- lang_ru;;*);;
+concept_output_devices => nrel_idtf: [Output devices](*<- lang_en;;*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_output_devices;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Устройства вывода — периферийные устройства, преобразующие результаты обработки цифровых машинных кодов в форму, удобную для восприятия человеком или пригодную для воздействия на исполнительные органы объекта управления.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Устройства вывода)](*<- lang_ru;;*);;
+    <= nrel_using_constants: ...
+        (*
+		->concept_peripherals;;
+		->concept_machine_instructions;;
+        ->concept_executive_body;;
+        *);;
+*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: concept_output_devices;;
+    <= nrel_sc_text_translation: ...
+        (*
+            -> [Устройства вывода различают, в зависимости от типа выводимой из компьютера информации.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Об.Устройства вывода)](*<- lang_ru;;*);;
+<= nrel_using_constants: ...
+        (*
+->concept_information;;
+        *);;
+*);;
