@@ -1,0 +1,11 @@
+concept_satellite
+<- sc_node_class;
+=> nrel_main_idtf:
+       [Спутник]
+       (* <- lang_ru;; *);
+=> nrel_note:
+   [Спу́тник — небесное тело, обращающееся по определённой траектории (орбите) вокруг другого объекта в космическом пространстве под действием гравитации.]
+   (* <- lang_ru;; *);
+   
+<= nrel_inclusion:
+	concept_constellation;;

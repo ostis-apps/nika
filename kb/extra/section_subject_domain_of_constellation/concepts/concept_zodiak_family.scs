@@ -1,0 +1,10 @@
+concept_zodiak_family
+<- sc_node_class;
+=> nrel_main_idtf:
+   [Зодиак]
+   (* <- lang_ru;; *);
+=> nrel_note:
+   [Зодиак - это группа из 12 созвездий: Лев , Дева , Весы , Скорпион , Стрелец , Козерог , Водолей , Рыбы , Овен , Телец , Близнецы и Рак.]
+   (* <- lang_ru;; *);
+
+<= nrel_inclusion: concept_constellation_families;;

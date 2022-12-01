@@ -1,0 +1,25 @@
+section_subject_domain_of_zodiak_family
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Семейства Зодиак]
+	(* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+		concept_zodiak_family;;
+
+section_subject_domain_of_zodiak_family = [*
+subject_domain_of_zodiak_family
+
+=> nrel_main_idtf: 
+	[Предметная область Семейства Зодиак]
+	(* <- lang_ru;; *);
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_zodiak_family;
+		
+-> rrel_maximum_studied_object_class:
+	concept_constellation_families;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_zodiak_family;	
+<- subject_domain;;
+*];;

@@ -1,0 +1,37 @@
+concept_message_about_sourtern_hemisphere
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о южной полусфере]
+	    (* <- lang_ru;; *);
+	[message about sourtern hemisphere]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_sourtern_hemisphere];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о южной полусфере)]
+	        (* <- lang_ru;; *);
+	    [Def. (message sourtern hemisphere)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о южной полусфере - атомарное сообщение, которое содержит экземпляр сушности, информацию о котором необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about sourtern hemisphere is an atomic message that contains entity example information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

@@ -1,0 +1,37 @@
+concept_message_about_andromeda
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о созвездии андромеда]
+	    (* <- lang_ru;; *);
+	[message about andromeda]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_andromeda];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о созвездии андромеда)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about andromeda)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о созвездии андромеда - атомарное сообщение, которое содержит экземпляр сушности, информацию о котором необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about andromeda is an atomic message that contains entity example information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

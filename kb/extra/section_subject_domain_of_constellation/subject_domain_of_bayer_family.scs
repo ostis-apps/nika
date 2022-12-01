@@ -1,0 +1,25 @@
+section_subject_domain_of_bayer_family
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Семейства Байер]
+	(* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+		concept_bayer_family;;
+
+section_subject_domain_of_bayer_family = [*
+subject_domain_of_bayer_family
+
+=> nrel_main_idtf: 
+	[Предметная область Семейства Байер]
+	(* <- lang_ru;; *);
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_bayer_family;
+		
+-> rrel_maximum_studied_object_class:
+	concept_constellation_families;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_bayer_family;	
+<- subject_domain;;
+*];;
