@@ -1,0 +1,36 @@
+section_subject_domain_of_design
+<- sc_node_struct;
+=> nrel_main_idtf:
+[Раздел. Предметная область дизайн](* <- lang_ru;; *);
+	[Section. Subject domain of design](* <- lang_en;; *);
+<-atomic_section;;
+
+section_subject_domain_of_design = [*
+	subject_domain_of_design
+=> nrel_main_idtf:
+	[Предметная область дизайн](* <- lang_ru;; *);
+	[Subject domain of design](* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+concept_design;
+-> rrel_not_maximum_studied_object_class:
+concept_architecture_design;
+concept_animation_design;
+concept_ecological_design;
+concept_game_design;
+concept_graphic_design;
+concept_interior_design;
+concept_landscape_architecture;
+concept_ui_design;
+concept_web_design;
+concept_designer;
+-> rrel_explored_relation:
+nrel_awards;
+nrel_capital;
+nrel_country;
+nrel_date_birth;
+nrel_date_death;
+nrel_style;;
+// nrel_lab_workshop;
+// nrel_lab_work_condition;;
+*];;
