@@ -1,0 +1,14 @@
+nrel_memory_name
+
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [название памяти*]
+    (* <- lang_ru;; *);
+    [memory name*]
+    (* <- lang_en;; *);
+
+<=concept_memory_modules;
+<-oriented_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;
