@@ -1,0 +1,37 @@
+concept_plant_farming
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+ 	[растеневодство] (*<-lang_ru;;*);
+	[plant farming] (*<-lang_en;;*);
+
+<= nrel_inclusion:
+    concept_plant;
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (растеневодство)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_plant
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [отрасль сельского хозяйства, занимающаяся возделыванием культурных растений, а также раздел агрономии.(* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(растеневодство)] (* <- lang_ru;; *);; 
+	=> nrel_using_constants: {
+		concept_plant
+};; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+		[ Растениеводческая продукция используется как источник продуктов питания для населения, как корм в животноводстве, как сырьё во многих отраслях промышленности (особенно в пищевой, текстильной, фармацевтической и парфюмерной промышленности), а также в декоративных (в цветоводстве) и многих других целях .](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

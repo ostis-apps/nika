@@ -1,0 +1,52 @@
+section_subject_domain_of_plant_farming
+=> nrel_main_idtf:
+	  [Раздел. Предметная область растеневодства]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of plant farming] 
+  (* <- lang_en;; *);;
+
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_faming = [*
+	subject_domain_of_plant_farming
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область растеневодства]
+   (* <- lang_ru;; *);
+   [Subject domain of plant_farming]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_plant;
+	-> rrel_not_maximum_studied_object_class:
+     concept_vegetable_cultures;
+	 concept_textile_cultures;
+	 concept_technical_cultures;
+	 concept_rubber_cultures;
+	 concept_root_cultures;
+	 concept_potato_cultures;
+	 concept_onion_cultures;
+	 concept_oil_cultures;
+	 concept_melon_cultures;
+	 concept_leaf_cultures;
+	 concept_fruit_cultures;
+	 concept_essential_oil_cultures;;
+*];;
+
+
+section_subject_domain_of_plant_farming
+-> rrel_key_sc_element:
+     concept_vegetable_cultures;
+	 concept_textile_cultures;
+	 concept_technical_cultures;
+	 concept_rubber_cultures;
+	 concept_root_cultures;
+	 concept_potato_cultures;
+	 concept_plant;
+	 concept_onion_cultures;
+	 concept_oil_cultures;
+	 concept_melon_cultures;
+	 concept_leaf_cultures;
+	 concept_fruit_cultures;
+	 concept_essential_oil_cultures;;

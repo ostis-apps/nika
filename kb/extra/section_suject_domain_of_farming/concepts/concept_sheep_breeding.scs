@@ -1,0 +1,43 @@
+concept_sheep_breeding
+<- sc_node_class;
+<- concept_organism;
+<- concept_animal;
+=> nrel_main_idtf:
+	[овцеводство ]
+	(* <- lang_ru;; *);
+	[sheep breeding]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (овцеводство )]
+		(* <- lang_ru;; *);
+		[Def. (sheep breeding)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Овцеводство — отрасль животноводства, занимающаяся разведением овец. Эти животные относятся к семейству полорогих парнокопытных]
+			(* <- lang_ru;; *);;
+		*);
+	
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (овцеводство )]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Продукцией овцеводства являются мясо, шерсть, молоко, смушки и овчина. Разведение овец преобладает в районах и странах, обладающих обширными пастбищами, особенно в пустынных и полупустынных районах субтропического пояса.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

@@ -1,0 +1,39 @@
+concept_plant
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Растение] (*<-lang_ru;;*);
+    [Plant] (*<-lang_en;;*);
+
+<= nrel_inclusion:
+    concept_organism;
+
+
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (Растение )] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_organism;
+        
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Растение - биологическое царство, одна из основных групп многоклеточных организмов.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(Растение, мхи, папоротники, голосеменные)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+[В число растений входят:  мхи, папоротники, хвощи, плауны, голосеменные и цветковые растения. Нередко к растениям относят также все водоросли или некоторые их группы. Растения (в первую очередь, цветковые) представлены многочисленными жизненными формами, наиболее распространёнными из которых являются деревья, кустарники и травы..  ](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

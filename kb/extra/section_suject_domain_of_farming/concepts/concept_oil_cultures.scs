@@ -1,0 +1,47 @@
+concept_oil_cultures
+<- sc_node_class;
+<- concept_organism;
+<- concept_plant;
+=> nrel_main_idtf:
+	[Масличные  культуры ]
+	(* <- lang_ru;; *);
+	[oil cutures]
+	(* <- lang_en;; *);
+	
+	
+	
+	
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Масличные  культуры )]
+		(* <- lang_ru;; *);
+		[Def. (oil)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Масличные  культуры —   растения, используемые для получения жирных масел]
+			(* <- lang_ru;; *);;
+		*);
+	
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Масличные  культуры )]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[не маляные а масличные]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;
