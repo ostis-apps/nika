@@ -1,0 +1,47 @@
+concept_rabbit_breeding
+<- sc_node_class;
+<- concept_organism;
+<- concept_animal;
+=> nrel_main_idtf:
+	[кролиководство ]
+	(* <- lang_ru;; *);
+	[rabbit breeding]
+	(* <- lang_en;; *);
+	
+	
+	
+	
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (кролиководство )]
+		(* <- lang_ru;; *);
+		[Def. (rabbit breeding)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Кролиководство — отрасль животноводства, занимающаяся разведением кроликов и дающая ценную и разнообразную продукцию, необходимую для народного хозяйства, при использовании дешёвых доступных кормов, небольших затратах труда и средств.]
+			(* <- lang_ru;; *);;
+		*);
+	
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (кролиководство )]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Продукция кролиководства: мясо, шкура, кожа, мех, пух, отдельные части тела (лапы, уши, хвост) в качестве сувениров и сами животные для селекции.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

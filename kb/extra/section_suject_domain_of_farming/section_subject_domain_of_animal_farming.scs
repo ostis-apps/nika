@@ -1,0 +1,49 @@
+section_subject_domain_of_animal_farming
+=> nrel_main_idtf:
+	  [Раздел. Предметная область Животноводство]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of animal_farming] 
+  (* <- lang_en;; *);;
+
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_faming = [*
+	subject_domain_of_animal_farming
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область Животноводство]
+   (* <- lang_ru;; *);
+   [Subject domain of animal farming]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_animal;
+	-> rrel_not_maximum_studied_object_class:
+     concept_bee_breeding;
+	 concept_bird_breeding;
+	 concept_bumble_bee_breeding;
+	 concept_cattle_breeding;
+	 concept_deer_breeding;
+	 concept_fish_breeding;
+	 concept_goat_breeding;
+	 concept_horse_breeding;
+	 concept_pig_breeding;
+	 concept_rabbit_breeding;
+	 concept_sheep_breeding;;
+*];;
+
+
+section_subject_domain_of_animal_farming
+-> rrel_key_sc_element:
+     concept_bee_breeding;
+	 concept_bird_breeding;
+	 concept_bumble_bee_breeding;
+	 concept_cattle_breeding;
+	 concept_deer_breeding;
+	 concept_fish_breeding;
+	 concept_goat_breeding;
+	 concept_horse_breeding;
+	 concept_pig_breeding;
+	 concept_rabbit_breeding;
+	 concept_sheep_breeding;;

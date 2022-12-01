@@ -1,0 +1,17 @@
+concept_organism
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Организм ] (*<-lang_ru;;*);
+    [Organism] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (Организм)] (* <- lang_ru;; *);;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [ Живое тело, обладающее совокупностью свойств, отличающих его от неживой материи.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

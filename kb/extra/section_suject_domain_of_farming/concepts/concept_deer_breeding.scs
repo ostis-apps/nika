@@ -1,0 +1,43 @@
+concept_deer_breeding
+<- sc_node_class;
+<- concept_organism;
+<- concept_animal;
+=> nrel_main_idtf:
+	[оленеводство  ]
+	(* <- lang_ru;; *);
+	[deer breeding]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (оленеводство  )]
+		(* <- lang_ru;; *);
+		[Def. (deer breeding)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Оленеводство — отрасль животноводства, занимающаяся разведением и использованием северных оленей, а также благородного оленя и пятнистого оленя с целью получения пантов, мяса и другой продукции.]
+			(* <- lang_ru;; *);;
+		*);
+	
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (оленеводство  )]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Согласно современным данным, олень был одомашнен в Скандинавии и в Сибири лопарями, самодийцами и тунгусами под влиянием степного коневодства скифских и тюркских народов.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

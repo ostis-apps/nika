@@ -1,0 +1,47 @@
+concept_technical_cultures
+<- sc_node_class;
+<- concept_organism;
+<- concept_plant;
+=> nrel_main_idtf:
+	[Технические культуры ]
+	(* <- lang_ru;; *);
+	[Technical cutures]
+	(* <- lang_en;; *);
+	
+	
+	
+	
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Технические культуры )]
+		(* <- lang_ru;; *);
+		[Def. (Technical cutures)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Технические культуры — культурные растения, возделываемые человеком для получения технического сырья.]
+			(* <- lang_ru;; *);;
+		*);
+	
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Технические культуры )]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[ Так, например, картофель, рис или кукуруза могут возделываться как крахмалоносы (в том числе для дальнейшей переработки в спирт), а также как овощная культура, а кукуруза и рис — зерновая. Зерновые растения могут выращиваться как фуражная культура и т. д.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);;

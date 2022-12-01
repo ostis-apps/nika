@@ -1,0 +1,40 @@
+concept_animal
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Животное] (*<-lang_ru;;*);
+    [animal] (*<-lang_en;;*);
+
+<= nrel_inclusion:
+    concept_organism;
+
+
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (Животное )] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_organism;
+        
+        
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Живо́тные — традиционно выделяемая категория организмов, в настоящее время рассматриваемая в качестве биологического царства.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(Живо́тное, гетеротрофность)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+[Животные относятся к эукариотам (в клетках имеются ядра). Классическими признаками животных считаются: гетеротрофность (питание готовыми органическими соединениями) и способность активно передвигаться.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;
