@@ -1,0 +1,47 @@
+concept_reinforcement_learning
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Обучение с подкреплением]
+	(* <- lang_ru;; *);
+	[Reinforcement learning]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Обучение с подкреплением)]
+		(* <- lang_ru;; *);
+		[Def. (Reinforcement learning)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Обучение с подкреплением  — один из способов машинного обучения, в ходе которого испытуемая система (агент) обучается, взаимодействуя с некоторой средой.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Reinforcement learning - one of the methods of machine learning, during which the system under test (agent) learns by interacting with some environment.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Обучение с подкреплением)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[для каждого прецедента имеется пара «ситуация, принятое решение»]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_machine_learning;;

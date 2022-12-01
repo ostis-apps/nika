@@ -1,0 +1,47 @@
+concept_network_of_radial_basis_functions
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Сеть радиальных базисных функций]
+	(* <- lang_ru;; *);
+	[Network of Radial Basis Functions]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Сеть радиальных базисных функций)]
+		(* <- lang_ru;; *);
+		[Def. (Network of Radial Basis Functions)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Сеть радиальных базисных функций  — обычно используются для задач аппроксимации.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Network of Radial Basis Functions - commonly used for approximation problems.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Сеть радиальных базисных функций)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Сеть радиальных базисных функций состоит всего из трех слоев: входного, выходного и скрытого]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_neural_network;;

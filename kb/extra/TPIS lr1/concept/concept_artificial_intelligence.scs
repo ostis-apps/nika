@@ -1,0 +1,36 @@
+concept_artificial_intelligence
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Искусственный интеллект]
+	(* <- lang_ru;; *);
+	[Artificial intelligence]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Искусственный интеллект)]
+		(* <- lang_ru;; *);
+		[Def. (Artificial intelligence)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Искусственный интеллект это направление науки по разработке аналитических систем, способных к обучению и решению сложных задач.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Artificial intelligence is a branch of science for the development of analytical systems capable of learning and solving complex problems.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		file
+		};;
+
+	*);
+<=nrel_inclusion: file;;

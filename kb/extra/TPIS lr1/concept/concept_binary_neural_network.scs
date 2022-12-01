@@ -1,0 +1,47 @@
+concept_binary_neural_network
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Бинарная нейронная сеть]
+	(* <- lang_ru;; *);
+	[Binary neural network]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Бинарная нейронная сеть)]
+		(* <- lang_ru;; *);
+		[Def. (Binary neural network)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Бинарная нейронная сеть  — нейронная сеть в виде матрицы, входами и выходами которой являются наборы битов, а нейроны реализуют функции двоичной логики нескольких переменных.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Binary neural network - a neural network in the form of a matrix, the inputs and outputs of which are sets of bits, and the neurons implement binary logic functions of several variables.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Бинарная нейронная сеть)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Бинарная нейронная сеть  может дать такие преимущества как конечное число вариантов полного перебора функций сети]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_neural_network;;

@@ -1,0 +1,47 @@
+concept_machine_learning_tasks
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Задачи машинного обучения]
+	(* <- lang_ru;; *);
+	[Machine learning tasks]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Задачи машинного обучения)]
+		(* <- lang_ru;; *);
+		[Def. (Machine learning tasks)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Задачи машинного обучения —  прогноз или вывод, основанный на возникшей проблеме или на вопросе, а также доступных данных.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Machine learning tasks - a prediction or conclusion based on a problem or question that has arisen and available data.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Задачи машинного обучения)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Задачами машинного обучения могут выступать классификация, кластеризация, регрессия и многое другое]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_machine_learning;;

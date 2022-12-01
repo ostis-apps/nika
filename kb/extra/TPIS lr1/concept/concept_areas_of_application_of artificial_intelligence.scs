@@ -1,0 +1,47 @@
+concept_areas_of_application_of artificial_intelligence
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Области применения искусственного интеллекта]
+	(* <- lang_ru;; *);
+	[Areas of application of artificial intelligence]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Области применения искусственного интеллекта)]
+		(* <- lang_ru;; *);
+		[Def. (Areas of application of artificial intelligence)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Области применения искусственного интеллекта —  область в которой применение искусственного интеллекта наиболее рентабельна]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Areas of application of artificial intelligence - the area in which the use of artificial intelligence is most cost-effective]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Области применения искусственного интеллекта)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Области применения искусственного интеллекта - в качестве замены человека на опасных или вредных производствах]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_artificial_intelligence_system;;

@@ -1,0 +1,47 @@
+concept_intelligent_robotics
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Интеллектуальная робототехника]
+	(* <- lang_ru;; *);
+	[Intelligent robotics]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Интеллектуальная робототехника)]
+		(* <- lang_ru;; *);
+		[Def. (Intelligent robotics)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Интеллектуальная робототехника  — прикладная наука, занимающаяся разработкой автоматизированных технических систем с использованием наработок искусственного интеллекта.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Intelligent robotics - applied science that develops automated technical systems using the developments of artificial intelligence.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Интеллектуальная робототехника)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Интеллектуальная робототехника это результат интеграции робототехники и искуственного интеллекта]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_robotics;;

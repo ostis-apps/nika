@@ -1,0 +1,38 @@
+section_subject_domain_of_artificial_intelligence_system
+=> nrel_main_idtf: 
+	[Раздел. Предметная область Искусственные интеллектуальные системы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of Artificial intelligence system]
+	(* <- lang_en;; *);
+	
+<- rrel_key_sc_element:
+	subject_domain_of_artificial_intelligence_system;
+	nrel_year_of_creation;
+	concept_artificial_intelligence_system;;
+
+section_subject_domain_of_of_artificial_intelligence_system = [*
+subject_domain_of_of_artificial_intelligence_system
+
+=> nrel_main_idtf: 
+	[Предметная область Искусственные интеллектуальные системы]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of Artificial intelligence system]
+	(* <- lang_en;; *);
+
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_artificial_intelligence_system;
+		
+-> rrel_maximum_studied_object_class:
+	concept_artificial_intelligence_system;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_areas_of_application_of artificial_intelligence;
+	
+-> rrel_explored_relation:
+	nrel_year_of_creation;
+	
+<- subject_domain;;
+*];;

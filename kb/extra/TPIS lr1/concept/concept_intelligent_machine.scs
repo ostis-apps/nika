@@ -1,0 +1,47 @@
+concept_intelligent_machine
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Интеллектуальная машина]
+	(* <- lang_ru;; *);
+	[Intelligent machine]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Интеллектуальная машина)]
+		(* <- lang_ru;; *);
+		[Def. (Intelligent machine)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Интеллектуальная машина  —  механический прообраз современных экспертных систем.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Intelligent machine - mechanical prototype of modern expert systems.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Интеллектуальная машина)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Интеллектуальная машина впервые была представлена в 1832 году, в конструкции впервые в истории информатики были применены перфорированные карты]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_intelligent_robotics;;

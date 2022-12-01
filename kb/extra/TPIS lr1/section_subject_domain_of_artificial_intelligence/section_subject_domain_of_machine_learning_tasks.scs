@@ -1,0 +1,36 @@
+section_subject_domain_of_machine_learning_tasks
+=> nrel_main_idtf: 
+	[Раздел. Предметная область задачи машинного обучения]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of machine learning tasks]
+	(* <- lang_en;; *);
+	
+<- rrel_key_sc_element:
+	subject_domain_of_machine_learning_tasks;
+	concept_machine_learning_tasks;;
+
+section_subject_domain_of_machine_learning_tasks = [*
+subject_domain_of_machine_learning_tasks
+
+=> nrel_main_idtf: 
+	[Предметная область задачи машинного обучения]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of machine learning tasks]
+	(* <- lang_en;; *);
+
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_machine_learning_tasks;
+		
+-> rrel_maximum_studied_object_class:
+	concept_machine_learning_tasks;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_scope_of_machine_learning;
+	
+
+	
+<- subject_domain;;
+*];;
