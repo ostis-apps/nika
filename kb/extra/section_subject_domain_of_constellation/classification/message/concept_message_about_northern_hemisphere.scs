@@ -1,0 +1,37 @@
+concept_message_about_northern_hemisphere
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о северной полусфере]
+	    (* <- lang_ru;; *);
+	[message about northern hemisphere]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_northern_hemisphere];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о северной полусфере)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about northern hemisphere)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о северной полусфере - атомарное сообщение, которое содержит экземпляр сушности, информацию о котором необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about northern hemisphere is an atomic message that contains entity example information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

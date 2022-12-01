@@ -41,7 +41,7 @@ services:
       interval: 5s
       timeout: 10s
       retries: 6
-      start_period: 120s
+      start_period: 300s
     environment:
       # Use the commented env variable if you need to rebuild KB every startup.
       - "REBUILD_KB=1"

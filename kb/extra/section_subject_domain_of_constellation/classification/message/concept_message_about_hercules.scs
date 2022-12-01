@@ -1,0 +1,37 @@
+concept_message_about_hercules
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о созвездии геркулес]
+	    (* <- lang_ru;; *);
+	[message about constellation hercules]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_hercules];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о созвездии геркулес)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about constellation hercules)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о созвездии геркулес - атомарное сообщение, которое содержит экземпляр сушности, информацию о котором необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about constellation hercules is an atomic message that contains entity example information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
