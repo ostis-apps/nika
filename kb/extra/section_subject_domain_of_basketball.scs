@@ -1,0 +1,75 @@
+section_subject_domain_of_basketball
+
+=> nrel_main_idtf:
+[Раздел. Предметная область баскетбола] (*<-lang_ru;;*);
+[Section. Subject domain of basketball] (*<-lang_en;;*);
+<- atomic_class;;
+section_subject_domain_of_basketball = [*
+	subject_domain_of_basketball
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область баскетбола]
+   (* <- lang_ru;; *);
+   [Subject domain of basketball]
+   (* <- lang_en;; *);
+	<- subject_domain;
+
+	-> rrel_maximum_studied_object_class:
+   concept_basketball;
+	-> rrel_not_maximum_studied_object_class:
+	
+   concept_nba;
+   concept_mpba;
+   concept_acb;
+   concept_laliga;
+   concept_nbl;
+   concept_nbl_pro_a;
+   concept_rfb;
+   concept_memphis_grizzles;
+   concept_clippers;
+   concept_boston_seltics;
+   concept_chicago_bulls;
+   concept_toronto_raptors;
+   concept_eureka_blaze;
+   concept_jacksonville_generals;
+   concept_gateway_steam;
+   concept_champaigne_swarm;
+   concept_bloomington_express;
+   concept_valenica;
+   concept_barcelona;
+   concept_malaga;
+   concept_tenerife;
+   concept_saragosa;
+   concept_wildcats;
+   concept_jack_jumpers;
+   concept_melbourne_united;
+   concept_bullets;
+   concept_sydney_kings;
+   concept_metropolitans;
+   concept_strassburg;
+   concept_sholet;
+   concept_lemain;
+   concept_dijoun;
+   concept_instituto;
+   concept_quimsa;
+   concept_riachuello;
+   concept_sanlorenzo;
+   concept_platense;
+   concept_cska;
+   concept_spartak;
+   concept_lokomotiv;
+   concept_dinamo;
+   concept_himki;
+   
+   	
+rrel_key_sc_element -> (section_subject_domain_of_basketball -> subject_domain_of_basketball)
+(*
+	=> nrel_key_sc_element_order: (section_subject_domain_of_basketball -> concept_basketball)
+(*
+	<- rrel_key_sc_element;;
+	=> nrel_key_sc_element_order: (section_subject_domain_of_basketball -> concept_nba)
+(*
+	<- rrel_key_sc_element;;
+	=> nrel_key_sc_element_order: (section_subject_domain_of_flowering_plants -> concept_nbl)
+	(* <- rrel_key_sc_element;; *);;
+*);;*);;*);;

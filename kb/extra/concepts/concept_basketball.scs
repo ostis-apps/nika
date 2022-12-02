@@ -1,0 +1,24 @@
+concept_basketball
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+	[баскетбол]
+	(* <- lang_ru;; *);
+    [basketball]
+	(* <- lang_en;; *);
+
+=> nrel_inclusion:
+   concept_nba;
+   concept_mpba;
+   concept_acb;
+   concept_laliga;
+   concept_nbl;
+   concept_nlb_pro_a;
+   concept_rfb;
+    
+=> nrel_note:
+    [Баскетбо́л — спортивная командная игра с мячом, в которой мяч забрасывают руками 
+     в кольцо соперника. В баскетбол играют две команды, каждая из которых состоит
+     из пяти полевых игроков.]
+	(* <- lang_ru;; *);;

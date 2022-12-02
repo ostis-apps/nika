@@ -1,0 +1,22 @@
+concept_nba
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+	[нба]
+	(* <- lang_ru;; *);
+    [nba]
+	(* <- lang_en;; *);
+
+=> nrel_inclusion:
+    concept_memphis_grizzles;
+   concept_clippers;
+   concept_boston_seltics;
+   concept_chicago_bulls;
+   concept_toronto_raptors;
+   
+=> nrel_note:
+    [Национа́льная баскетбо́льная ассоциа́ция, НБА — профессиональная баскетбольная 
+     лига Северной Америки, в частности, США и Канады. Входит в четвёрку главных
+     профессиональных спортивных лиг Северной Америки, наряду с НХЛ, МЛБ и НФЛ.]
+	(* <- lang_ru;; *);;
