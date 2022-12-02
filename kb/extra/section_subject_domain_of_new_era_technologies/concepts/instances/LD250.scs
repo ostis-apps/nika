@@ -1,0 +1,27 @@
+LD250
+
+=> nrel_main_idtf:
+    [LD-250 Полностью автономный
+    мобильный робот]
+    (* <- lang_ru;; *);
+    [LD-250 Fully autonomous mobile robot]
+    (* <- lang_en;; *);
+    
+<- concept_mobile_robot;
+<- concept_wheeled_robot;
+
+=> nrel_company_manufacturer:
+    concept_omron;
+
+=> nrel_usage_area:
+	concept_trading;
+
+=> nrel_weight_capacity:
+    [500 кг]
+	(* <- lang_ru;;*);
+
+=> nrel_max_speed:
+    [1.2 м/с]
+	(* <- lang_ru;; *);;
+
+

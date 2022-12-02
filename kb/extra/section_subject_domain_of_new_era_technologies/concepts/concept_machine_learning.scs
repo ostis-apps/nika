@@ -1,0 +1,21 @@
+concept_machine_learning
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+	[машинное обучение]
+	(* <- lang_ru;; *);
+	[machine learning]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+	[класс методов искусственного интеллекта, характерной
+	чертой которых является не прямое решение задачи, а обучение
+	за счёт применения решений множества сходных задач.]
+	(* <- lang_ru;; *);
+
+<- concept_artificial_intelligence;
+
+=> nrel_inclusion:
+	concept_decision_making_system;
+    concept_natural_language_interface;;

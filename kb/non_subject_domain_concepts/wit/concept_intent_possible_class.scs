@@ -23,7 +23,7 @@ concept_intent_possible_class
 		*);
 		...
 		(*
-		-> rrel_example: 
+		-> rrel_example:
 			[Wit.ai intent possible class is a class whose elements can be identified by Wit.ai as intents.]
 			(* <- lang_en;; *);;
 		*);;
@@ -31,4 +31,8 @@ concept_intent_possible_class
 -> concept_greeting_message;
 -> concept_message_about_entity;
 -> concept_message_about_lab_work_condition;
--> concept_message_about_lab_work_deadline;;
+-> concept_message_about_lab_work_deadline;
+-> concept_message_about_new_era_technologies;
+-> concept_message_about_existing_robot;
+-> concept_message_about_is_robot_a_new_era_technology;
+-> concept_message_about_robot_species;;

@@ -1,0 +1,25 @@
+concept_tracked_robot
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+	[гусеничный робот]
+	(* <- lang_ru;; *);
+	[tracked robot]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [робот, который использует моторизованную
+    гусеничную платформу для маневрирования по земле
+    для перемещения. Обладают повышенной проходимостью,
+    по сравнению с остальными мобильными роботами]
+	(* <- lang_ru;; *);
+
+<- concept_new_era_tecnologies;
+
+=> nrel_usage_area:
+	concept_manufacture;
+	concept_construction;
+	concept_fire_safety;
+	concept_cosmonautics;
+	concept_warfare;;

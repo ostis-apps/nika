@@ -17,11 +17,11 @@ section_subject_domain_of_dialogue_control = [*
 			[Предметная область управления диалогом](* <-lang_ru;; *);
 			[Subject domain of dialogue control](* <-lang_en;; *);
 		-> rrel_maximum_studied_object_class:
-			concept_message_processing_program;;
+			_processing_program;;
 *];;
 
 rrel_key_sc_element -> (section_subject_domain_of_dialogue_control -> subject_domain_of_dialogue_control)
 (*
-	=> nrel_key_sc_element_order: (section_subject_domain_of_dialogue_control -> concept_message_processing_program)
+	=> nrel_key_sc_element_order: (section_subject_domain_of_dialogue_control -> _processing_program)
 	(* <- rrel_key_sc_element;; *);;
 *);;

@@ -2,4 +2,22 @@ concept_expert_system
 <- sc_node_class;
 => nrel_main_idtf:
 	[экспертная система]
-	(* <- lang_ru;; *);;
+	(* <- lang_ru;; *);
+
+=> nrel_note:
+	[компьютерная система, способная частично заменить
+	специалиста-эксперта в разрешении проблемной ситуации. ]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+	concept_knowledge_base
+	(* => nrel_idtf:
+        [база знаний]
+        (* <- lang_ru;; *);;
+
+    *);
+    concept_natural_language_interface
+	(* => nrel_main_idtf:
+            [естественно-языковой интерфейс]
+            (* <- lang_ru;; *);;
+    *);;
