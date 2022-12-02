@@ -1,0 +1,28 @@
+concept_hygiene <- sc_node_not_relation;;
+
+concept_hygiene => nrel_main_idtf:
+[Гигиена] (*<-lang_ru;;*);
+[Hygiene] (*<-lang_en;;*);;
+
+concept_hygiene <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Гигиена)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_hygiene.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_hygiene <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Гигиена)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Гигиена - раздел медицины, изучающий влияние жизни и труда на здоровье человека и разрабатывающий меры (санитарные нормы и правила), направленные на предупреждение заболеваний, обеспечение оптимальных условий существования, укрепление здоровья и продление жизни, изучающая влияние факторов окружающей среды на здоровье человека, его работоспособность и продолжительность жизни, разрабатывающий нормативы, требования и санитарные мероприятия, направленные на оздоровление населённых мест, условий жизни и деятельности людей.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

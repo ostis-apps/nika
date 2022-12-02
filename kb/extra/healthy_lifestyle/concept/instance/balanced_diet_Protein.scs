@@ -1,0 +1,24 @@
+Protein
+<- concept_balanced_diet;
+
+=> nrel_main_idtf:
+   [Белковая]
+   (* <- lang_ru;; *);
+
+=> nrel_main_idtf:
+   [Protein]
+   (* <- lang_en;; *);
+   
+<= nrel_pairs: Jogging;
+<= nrel_involves: Walking_topless;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Белковая](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Белковая - это диета на белках.](*<-lang_ru;;*);;
+	*);;
+*);;

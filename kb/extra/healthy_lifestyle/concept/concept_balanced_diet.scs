@@ -1,0 +1,28 @@
+concept_balanced_diet <- sc_node_not_relation;;
+
+concept_balanced_diet => nrel_main_idtf:
+[Сбалансированная диета] (*<-lang_ru;;*);
+[Balanced diet] (*<-lang_en;;*);;
+
+concept_balanced_diet <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Сбалансированная диета)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_balanced_diet.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_balanced_diet <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Сбалансированная диета)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Сбалансировання диета - это диета, в основе которой лежат продукты с низким содержанием ненужных жиров и сахаров и высоким содержанием витаминов, минералов и других питательных веществ.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

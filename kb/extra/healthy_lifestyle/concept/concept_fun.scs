@@ -1,0 +1,28 @@
+concept_fun <- sc_node_not_relation;;
+
+concept_fun => nrel_main_idtf:
+[Радость] (*<-lang_ru;;*);
+[Fun] (*<-lang_en;;*);;
+
+concept_fun <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Радость)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_fun.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_fun <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Радость)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Радость — внутреннее чувство удовлетворения, удовольствия, весёлого настроения и счастья.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

@@ -1,0 +1,42 @@
+nrel_involves
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-antisymmetric_relation;
+=>nrel_main_idtf:
+	[Включает в себя*]
+	(* <- lang_ru;; *);
+	[Involves*]
+	(* <- lang_en;; *);
+
+=> nrel_first_domain:
+	concept_cardio_workout;
+=> nrel_second_domain:
+	concept_physical_activities;
+
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Включает в себя*)]
+		(* <- lang_ru;; *);
+		[Def.(Involves*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Включает в себя* - это отношение, связывающее упражнения и физическую активность.]
+			(* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_cardio_workout;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

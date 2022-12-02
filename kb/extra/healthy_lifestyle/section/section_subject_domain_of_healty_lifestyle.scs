@@ -1,0 +1,89 @@
+section_subject_domain_of_healthy_lifestyle
+=> nrel_main_idtf:
+	  [Раздел. Предметная область здорового образа жизни]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of healthy lifestyle]
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_healthy_lifestyle = [*
+	subject_domain_of_healthy_lifestyle
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область здорового образа жизни]
+   (* <- lang_ru;; *);
+   [Subject domain of healthy lifestyle]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	
+	-> rrel_maximum_studied_object_class:
+	concept_healthy_lifestyle;
+	concept_human;
+	-> rrel_not_maximum_studied_object_class:
+	concept_bad_habits;
+	concept_balanced_diet;
+	concept_cardio_workout;
+	concept_confidence;
+	concept_consistency;
+	concept_doctor_visit;
+	concept_fun;
+	concept_good_emotions;
+	concept_good_habits;
+	concept_good_sleeping_pattern;
+	concept_health;
+	concept_hygiene;
+	concept_physical_activities;
+	concept_stress;
+	concept_sustainability;
+	concept_vitamins;
+
+	-> rrel_explored_relation:
+	nrel_avoid;
+	nrel_benefits;
+	nrel_feels_better;
+	nrel_follow;
+	nrel_growth;
+	nrel_includes;
+	nrel_involves;
+	nrel_less;
+	nrel_medicine;
+	nrel_pairs;
+	nrel_promotes_health_awareness;
+	nrel_taking_care_of;;
+*];;
+
+section_subject_domain_of_healthy_lifestyle
+-> rrel_key_sc_element:
+	nrel_avoid;
+	nrel_benefits;
+	nrel_feels_better;
+	nrel_follow;
+	nrel_growth;
+	nrel_includes;
+	nrel_involves;
+	nrel_less;
+	nrel_medicine;
+	nrel_pairs;
+	nrel_promotes_health_awareness;
+	nrel_taking_care_of;
+   	subject_domain_of_healthy_lifestyle;
+	concept_healthy_lifestyle;
+	concept_human;
+	concept_bad_habits;
+	concept_balanced_diet;
+	concept_cardio_workout;
+	concept_confidence;
+	concept_consistency;
+	concept_doctor_visit;
+	concept_fun;
+	concept_good_emotions;
+	concept_good_habits;
+	concept_good_sleeping_pattern;
+	concept_health;
+	concept_hygiene;
+	concept_physical_activities;
+	concept_stress;
+	concept_sustainability;
+	concept_vitamins;;

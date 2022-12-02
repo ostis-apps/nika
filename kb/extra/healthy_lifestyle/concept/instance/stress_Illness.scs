@@ -1,0 +1,23 @@
+Illness
+<- concept_stress;
+
+=> nrel_main_idtf:
+   [Заболевание]
+   (* <- lang_ru;; *);
+
+=> nrel_main_idtf:
+   [Illness]
+   (* <- lang_en;; *);
+   
+<= nrel_less: concept_healthy_lifestyle;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Заболевание](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Заболевание - это одна из возможных причин стресса.](*<-lang_ru;;*);;
+	*);;
+*);;

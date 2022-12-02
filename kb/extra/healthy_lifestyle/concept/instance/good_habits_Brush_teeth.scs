@@ -1,0 +1,23 @@
+Brush_teeth
+<- concept_good_habits;
+
+=> nrel_main_idtf:
+   [Чистить зубы]
+   (* <- lang_ru;; *);
+
+=> nrel_main_idtf:
+   [Brush teeth]
+   (* <- lang_en;; *);
+   
+<= nrel_taking_care_of: Dmitry;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Чистить зубы](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Чистить зубы - процедура личной гигиены для очистки поверхности зубов от остатков пищи и мягкого зубного налёта, обычно выполняемая с помощью зубной щётки и зубной пасты.](*<-lang_ru;;*);;
+	*);;
+*);;

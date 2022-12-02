@@ -1,0 +1,28 @@
+concept_healthy_lifestyle <- sc_node_not_relation;;
+
+concept_healthy_lifestyle => nrel_main_idtf:
+[Здоровый образ жизни] (*<-lang_ru;;*);
+[Healthy lifestyle] (*<-lang_en;;*);;
+
+concept_healthy_lifestyle <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Здоровый образ жизни)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_healthy_lifestyle.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_healthy_lifestyle <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Здоровый образ жизни)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Здоровый образ жизни — образ жизни человека, помогающий сохранить здоровье и снизить риск неинфекционных заболеваний путём контроля над поведенческими факторами риска.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

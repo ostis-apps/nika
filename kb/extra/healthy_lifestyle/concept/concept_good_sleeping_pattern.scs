@@ -1,0 +1,28 @@
+concept_good_sleeping_pattern <- sc_node_not_relation;;
+
+concept_good_sleeping_pattern => nrel_main_idtf:
+[Хороший режим сна] (*<-lang_ru;;*);
+[Good sleeping pattern] (*<-lang_en;;*);;
+
+concept_good_sleeping_pattern <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Хороший режим сна)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_good_sleeping_pattern.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_good_sleeping_pattern <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Хороший режим сна)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Ложиться желательно не позднее 11 часов вечера, при этом сон должен длиться 8–9 часов. Весь сон должен захватывать период от 12 часов ночи до 5 утра.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

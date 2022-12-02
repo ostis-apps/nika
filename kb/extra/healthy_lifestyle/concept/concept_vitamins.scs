@@ -1,0 +1,28 @@
+concept_vitamins <- sc_node_not_relation;;
+
+concept_vitamins => nrel_main_idtf:
+[Витамины] (*<-lang_ru;;*);
+[Vitamins] (*<-lang_en;;*);;
+
+concept_vitamins <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Витамины)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_vitamins.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_vitamins <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Витамины)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Витамины — группа органических соединений разнообразной химической природы, объединённая по признаку абсолютной необходимости их для гетеротрофного организма в качестве составной части пищи.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

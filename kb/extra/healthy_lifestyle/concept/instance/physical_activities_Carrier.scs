@@ -1,0 +1,23 @@
+Carrier
+<- concept_physical_activities;
+
+=> nrel_main_idtf:
+   [Курьер]
+   (* <- lang_ru;; *);
+
+=> nrel_main_idtf:
+   [Carrier]
+   (* <- lang_en;; *);
+   
+<= nrel_includes: Jogging;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Курьер](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Курьер - доставщик посылок.](*<-lang_ru;;*);;
+	*);;
+*);;

@@ -1,0 +1,43 @@
+nrel_feels_better
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-antisymmetric_relation;
+=>nrel_main_idtf:
+	[Улучшить самочувствие*]
+	(* <- lang_ru;; *);
+	[Feels better*]
+	(* <- lang_en;; *);
+
+=> nrel_first_domain:
+	concept_healthy_lifestyle;
+=> nrel_second_domain:
+	concept_human;
+
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Улучшить самочувствие*)]
+		(* <- lang_ru;; *);
+		[Def.(Output characteristic*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Улучшить самочувствие* - это отношение, связывающее человека и здоровый образ жизни.]
+			(* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_human;
+		concept_healthy_lifestyle;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

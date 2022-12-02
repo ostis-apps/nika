@@ -1,0 +1,28 @@
+concept_stress <- sc_node_not_relation;;
+
+concept_stress => nrel_main_idtf:
+[Стресс] (*<-lang_ru;;*);
+[Stress] (*<-lang_en;;*);;
+
+concept_stress <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Стресс)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_stress.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_stress <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Стресс)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Стресс – состояние организма, характеризующееся эмоциональным и физическим напряжением, вызванным воздействием различных неблагоприятных факторов.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

@@ -1,0 +1,23 @@
+Washing
+<- concept_hygiene;
+
+=> nrel_main_idtf:
+   [Мытье]
+   (* <- lang_ru;; *);
+
+=> nrel_main_idtf:
+   [Washing]
+   (* <- lang_en;; *);
+   
+<= nrel_taking_care_of: Dmitry;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Мытье](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Мытье - это метод очистки, обычно с использованием воды и мыла или моющего средства.](*<-lang_ru;;*);;
+	*);;
+*);;

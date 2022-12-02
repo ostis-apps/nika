@@ -1,0 +1,32 @@
+concept_bad_habits <- sc_node_not_relation;;
+
+concept_bad_habits => nrel_main_idtf:
+[Вредные привычки] (*<-lang_ru;;*);
+[Bad habits] (*<-lang_en;;*);
+=> nrel_avoid:
+concept_healthy_lifestyle;
+concept_human;;
+
+concept_bad_habits <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Вредные привычки)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_bad_habits.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_bad_habits <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Вредные привычки)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Вредные привычки — социально-психологический концепт, охватывающий целый ряд различных форм социального
+поведения, регулярно совершаемых человеком и приносящих ему вред; проявления психического и психологического дискомфорта индивида в результате неблагоприятного воздействия микросоциальных, социально-психологических и индивидуально-биологических факторов, мешающих успешной самореализации личности как представителя данного общества и приносящих вред здоровью человека и окружающей его среде.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

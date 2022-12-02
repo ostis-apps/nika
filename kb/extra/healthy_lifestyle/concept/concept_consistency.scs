@@ -1,0 +1,28 @@
+concept_consistency <- sc_node_not_relation;;
+
+concept_consistency => nrel_main_idtf:
+[Постоянство] (*<-lang_ru;;*);
+[Consistency] (*<-lang_en;;*);;
+
+concept_consistency <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Постоянство)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_consistency.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_consistency <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Постоянство)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Постоянство – это единство целей, намерений и действий человека.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

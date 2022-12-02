@@ -1,0 +1,28 @@
+concept_good_emotions <- sc_node_not_relation;;
+
+concept_good_emotions => nrel_main_idtf:
+[Положительные эмоции] (*<-lang_ru;;*);
+[Good emotions] (*<-lang_en;;*);;
+
+concept_good_emotions <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Положительные эмоции)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_good_emotions.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_good_emotions <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Положительные эмоции)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Положительные эмоции – это позитивная ответная реакция на событие, которое вызывает состояние радости и полностью соответствует ожиданию и внутренним установкам.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

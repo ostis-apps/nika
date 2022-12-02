@@ -1,0 +1,28 @@
+concept_confidence <- sc_node_not_relation;;
+
+concept_confidence => nrel_main_idtf:
+[Уверенность] (*<-lang_ru;;*);
+[Confidence] (*<-lang_en;;*);;
+
+concept_confidence <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Уверенность)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_confidence.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_confidence <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Уверенность)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Уверенность — свойство личности, ядром которого выступает позитивная оценка индивидом собственных навыков и способностей, как достаточных для достижения значимых для него целей и удовлетворения его потребностей.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
