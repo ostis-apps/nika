@@ -1,0 +1,29 @@
+nrel_research
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+	[исследование](* <- lang_ru;; *);
+	[research](* <- lang_eng;; *);;
+
+nrel_profession <- rrel_key_sc_element:... 
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (исследование)](*<- lang_ru;;*);
+    [Def. (research)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Исследование - систематическое расследование с целью установления фактов, основанное на применении научного метода, предоставляет научную информацию и теории для объяснения природы и свойств окружающего мира.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [Research - systematic fact-finding, based on the application of the scientific method, provides scientific information and theories to explain the nature and properties of the world around us.](*<- lang_en;;*);;
+    *);;
+*);;
+
+nrel_research
+=>nrel_first_domain:concept_human;
+=>nrel_second_domain:concept_technical_science;
+
+<- binary_relation ;
+<- antireflexive_relation ;
+<- antitransitive_relation ;;

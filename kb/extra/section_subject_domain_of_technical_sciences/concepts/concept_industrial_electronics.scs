@@ -1,0 +1,20 @@
+concept_industrial_electronics
+=> nrel_main_idtf:
+    [промышленная электроника](* <-lang_ru;; *);
+    [industrial electronics](* <-lang_en;; *);;
+
+concept_industrial_electronics
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (промышленная электроника)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (industrial electronics)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Промышленная электроника - часть электроники, которая занимается инспользованием полупроводниковых, ионных и электронных цстройств в промышленности.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Industrial electronics - a part of electronics that deals with the use of semiconductor, ionic and electronic devices in industry.](*<- lang_en;;*);;
+    *);;
+*);;

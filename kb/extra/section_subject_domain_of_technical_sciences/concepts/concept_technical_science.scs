@@ -1,0 +1,46 @@
+concept_technical_science
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Техническая Наука]
+	(* <- lang_ru;; *);
+	[Technical science]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Техническая Наука)]
+		(* <- lang_ru;; *);
+		[Def. (Technical science)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Техническая Наука  —  наука в области естествознания, изучающие явления, важные для создания и развития техники.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Technical science - science in the field of natural science, which studies phenomena important for the creation and development of technology.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Техническая Наука)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Деятельность учёных технических наук осуществляется в рамках научно-технической деятельности и носит преимущественно прикладной характер.]
+			(* <- lang_ru;; *);;
+		*);;
+
+	*);;

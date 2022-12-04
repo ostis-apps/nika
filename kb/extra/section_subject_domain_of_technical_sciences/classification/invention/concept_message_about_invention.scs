@@ -1,0 +1,38 @@
+concept_message_about_invention
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение об изобретении]
+	    (* <- lang_ru;; *);
+	[message about invention]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[great_inventions];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение об изобретении)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about invention)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[сообщение об изобретении - атомарное сообщение, которое содержит экземпляр сушности, информацию о котором необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about invention is an atomic message that contains entity example information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

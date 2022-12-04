@@ -1,0 +1,24 @@
+concept_computer_science
+=> nrel_main_idtf:
+    [информатика](* <-lang_ru;; *);
+    [computer science](* <-lang_en;; *);;
+
+concept_computer_science
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (информатика)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (computer science)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Информатика - наука о методах и процессах сбора, хранения, обработки, передачи, анализа и оценки информации с применением компьютерных технологий, обеспечивающих возможность её использования для принятия решений.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Computer science - the science of methods and processes for collecting, storing, processing, transmitting, analyzing and evaluating information using computer technologies that make it possible to use it for decision-making.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_technical_science
+    };;
+*);;

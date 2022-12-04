@@ -1,0 +1,39 @@
+concept_message_about_astronautics
+<- sc_node_class;
+<- concept_tokens_category;
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	[сообщение о космонавтике]
+	    (* <- lang_ru;; *);
+	[message about astronautics]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[astronautics];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о космонавтике)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about astronautics)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[сообщение о космонавтике - атомарное сообщение, которое содержит экземпляр сушности, информацию о котором необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about astronautics is an atomic message that contains entity example information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

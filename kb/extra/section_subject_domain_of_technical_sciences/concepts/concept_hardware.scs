@@ -1,0 +1,20 @@
+concept_hardware
+=> nrel_main_idtf:
+    [аппаратное обеспечение](* <-lang_ru;; *);
+    [hardware](* <-lang_en;; *);;
+
+concept_hardware
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (аппаратное обеспечение)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (hardware)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Аппаратное обеспечение - электронные и механические части вычислительного устройства, входящие в состав системы или сети, исключая программное обеспечение и данные (информацию, которую вычислительная система хранит и обрабатывает). Аппаратное обеспечение включает: компьютеры и логические устройства, внешние устройства и диагностическую аппаратуру, энергетическое оборудование, батареи и аккумуляторы.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Hardware - electronic and mechanical parts of a computing device that are part of a system or network, excluding software and data (information that a computer system stores and processes). Hardware includes: computers and logic devices, external devices and diagnostic equipment, power equipment, batteries and accumulators. Hardware refers to the devices that make up the configuration of a computer.](*<- lang_en;;*);;
+    *);;
+*);;

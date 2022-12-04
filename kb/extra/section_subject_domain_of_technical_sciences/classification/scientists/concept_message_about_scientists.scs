@@ -1,0 +1,38 @@
+concept_message_about_scientists
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение об ученом]
+	    (* <- lang_ru;; *);
+	[message about scientists]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[scientists];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение об ученом)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about scientists)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[сообщение об ученом - атомарное сообщение, которое содержит экземпляр сушности, информацию о котором необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about scientists is an atomic message that contains entity example information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

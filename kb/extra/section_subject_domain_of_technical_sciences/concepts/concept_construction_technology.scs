@@ -1,0 +1,34 @@
+concept_construction_technology
+=> nrel_main_idtf:
+    [строительная техника](* <-lang_ru;; *);
+    [construction technology](* <-lang_en;; *);;
+
+concept_construction_technology
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (строительная техника)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (construction technology)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Строительная техника - раздел техники, предназначенной для проведения строительных работ, а также для эксплуатации и содержания сооружений и дорог.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Construction technology - section of equipment intended for construction work, as well as for the operation and maintenance of structures and roads. ](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_technology
+    };;
+*);;
+
+concept_construction_technology
+<= nrel_subdividing: ...
+(*
+    <- explanation;;
+    => nrel_main_idtf:
+        [Виды строительной техники](*<-lang_ru;; *);
+        [Subdividing based on type](*<-lang_en;; *);;
+    -> concept_loader; concept_pipelayer; concept_paver;;
+*);;
