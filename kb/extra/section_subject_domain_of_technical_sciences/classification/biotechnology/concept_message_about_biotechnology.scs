@@ -1,0 +1,38 @@
+concept_message_about_biotechnology
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о биотехнологии]
+	    (* <- lang_ru;; *);
+	[message about biotechnology]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[biotechnology];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о биотехнологии)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about biotechnology)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[сообщение о биотехнологии - атомарное сообщение, которое содержит экземпляр сушности, информацию о котором необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about biotechnology is an atomic message that contains entity example information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

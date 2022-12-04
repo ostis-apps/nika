@@ -1,0 +1,39 @@
+concept_message_about_leonardo_da_vinci
+<- sc_node_class;
+<- concept_tokens_category;
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	[сообщение о Леонардо да Винчи]
+	    (* <- lang_ru;; *);
+	[message about leonardo da vinci]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[leonardo_da_vinci];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о Леонардо да Винчи)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about leonardo da vinci)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[сообщение о Леонардо да Винчи - атомарное сообщение, которое содержит экземпляр сушности, информацию о котором необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about Leonardo da Vinci is an atomic message that contains entity example information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
