@@ -1,0 +1,30 @@
+concept_ammo
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+    [патрон]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_note:
+    [
+        Поражающий элемент стрелкового оружия
+    ]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+<= nrel_material:
+    concept_steel;
+    concept_plumbum;
+
+<= nrel_ammo_type:
+    concept_buckshot;
+    concept_shotgun_pellet;
+    concept_bullet;
+    concept_sports_cartridges;;

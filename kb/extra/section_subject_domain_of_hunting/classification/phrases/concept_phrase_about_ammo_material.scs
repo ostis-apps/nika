@@ -1,0 +1,53 @@
+concept_phrase_about_ammo_material
+
+<- sc_node_class;
+
+<= nrel_inclusion:
+    concept_phrase;
+
+<- rrel_not_maximum_studied_object_class:
+    subject_domain_of_phrases;   
+
+=> nrel_main_idtf:
+	[фраза про материал изготовления патрона]
+
+	(* 
+        <- lang_ru;; 
+    *);
+
+	[phrase about ammo material]
+
+	(* 
+        <- lang_en;; 
+    *);
+
+<- rrel_key_sc_element:
+	...
+
+	(*
+        => nrel_main_idtf:
+            [Опр. (фраза про материал изготовления патрона)]
+
+            (* 
+                <- lang_ru;; 
+            *);;
+        
+        <- definition;;
+
+        <= nrel_sc_text_translation:
+            ...
+
+            (*
+                -> rrel_example:
+                    [Фраза про материал изготовления патрона - фраза, содержащая некоторую информацию о материале изготовления патрона.]
+
+                    (* 
+                        <- lang_ru;; 
+                    *);;
+            *);;
+
+        <= nrel_using_constants:
+            {
+                concept_phrase
+            };;
+	*);;

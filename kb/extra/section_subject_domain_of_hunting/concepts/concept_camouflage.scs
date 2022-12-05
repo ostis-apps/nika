@@ -1,0 +1,26 @@
+concept_camouflage
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+    [маскировка]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_note:
+    [
+        Использование подражательной окраски для сходства с неодушевлёнными предметами.
+    ]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_camouflage_type:
+    concept_camouflage_coverall;
+    
+=> nrel_camouflage_type:
+    concept_camouflage_vest;;

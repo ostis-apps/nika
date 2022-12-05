@@ -1,0 +1,53 @@
+concept_phrase_about_country
+
+<- sc_node_class;
+
+<= nrel_inclusion:
+    concept_phrase;
+
+<- rrel_not_maximum_studied_object_class:
+    subject_domain_of_phrases;
+
+=> nrel_main_idtf:
+	[фраза про страну с производством деликатеса]
+
+	(* 
+        <- lang_ru;; 
+    *);
+
+	[phrase about animal]
+
+	(* 
+        <- lang_en;; 
+    *);
+
+<- rrel_key_sc_element:
+	...
+
+	(*
+        => nrel_main_idtf:
+            [Опр. (фраза про страну с производством деликатеса)]
+
+            (* 
+                <- lang_ru;; 
+            *);;
+        
+        <- definition;;
+
+        <= nrel_sc_text_translation:
+            ...
+
+            (*
+                -> rrel_example:
+                    [фраза про страну с производством деликатеса - фраза, содержащая некоторую информацию о стране в которой производят хотя бы один деликатес.]
+
+                    (* 
+                        <- lang_ru;; 
+                    *);;
+            *);;
+
+        <= nrel_using_constants:
+            {
+                concept_phrase
+            };;
+	*);;

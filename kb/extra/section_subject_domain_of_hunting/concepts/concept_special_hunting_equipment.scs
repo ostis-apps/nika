@@ -1,0 +1,26 @@
+concept_special_hunting_equipment
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+    [специальное снаряжение для охоты]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_note:
+    [
+        Снаряжение характерное лишь для охоты.
+    ]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_special_hunting_equipment_type:
+    concept_reflective_vests;
+    concept_reflective_hats;
+    concept_mark_on_tree;
+    concept_halftower;;

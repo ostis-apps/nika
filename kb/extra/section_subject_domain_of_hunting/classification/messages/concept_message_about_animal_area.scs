@@ -1,0 +1,46 @@
+concept_message_about_animal_area
+
+<- sc_node_not_relation;
+
+=> nrel_main_idtf:
+    [сообщение об ареале обитания животного]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_wit_ai_idtf:
+    [about_animal_area];
+
+<- rrel_key_sc_element:
+    ...
+
+    (*
+        => nrel_main_idtf:
+            [Опр. (сообщение об ареале обитания животного)]
+
+            (* 
+                <- lang_ru;; 
+            *);;
+        
+        <- definition;;
+    
+        <= nrel_sc_text_translation:
+        ...
+        
+            (*
+                -> rrel_example:
+                    [Сообщение об ареале обитания животного - атомарное сообщение,
+                    которое содержит понятие животнрго, ареал обитания которого
+                    необходимо найти.]
+
+                    (* 
+                        <- lang_ru;; 
+                    *);;
+            *);;
+
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+    *);;

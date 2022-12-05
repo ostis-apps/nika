@@ -1,0 +1,53 @@
+concept_phrase_about_delicacy_country_of_origin
+
+<- sc_node_class;
+
+<= nrel_inclusion:
+    concept_phrase;
+
+<- rrel_not_maximum_studied_object_class:
+    subject_domain_of_phrases;
+
+=> nrel_main_idtf:
+	[фраза про деликатес производящийся в странах]
+
+	(* 
+        <- lang_ru;; 
+    *);
+
+	[phrase about animal]
+
+	(* 
+        <- lang_en;; 
+    *);
+
+<- rrel_key_sc_element:
+	...
+
+	(*
+        => nrel_main_idtf:
+            [Опр. (фраза про деликатес производящийся в странах)]
+
+            (* 
+                <- lang_ru;; 
+            *);;
+        
+        <- definition;;
+
+        <= nrel_sc_text_translation:
+            ...
+
+            (*
+                -> rrel_example:
+                    [фраза про деликатес производящийся в странах - фраза, содержащая некоторую информацию о деликатесе производящийся в определенной стране.]
+
+                    (* 
+                        <- lang_ru;; 
+                    *);;
+            *);;
+
+        <= nrel_using_constants:
+            {
+                concept_phrase
+            };;
+	*);;
