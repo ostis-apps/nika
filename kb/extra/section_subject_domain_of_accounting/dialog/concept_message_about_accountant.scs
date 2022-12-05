@@ -1,0 +1,28 @@
+concept_message_about_accountant
+
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о бухгалтере]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_accountant];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Сообщение, в котором описывается кто такой бухглатер ]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о бухглатере - атомарное сообщение,
+    которое не содержит сушность.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

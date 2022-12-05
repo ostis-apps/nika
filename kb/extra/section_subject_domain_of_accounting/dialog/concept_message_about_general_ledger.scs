@@ -1,0 +1,28 @@
+concept_message_about_general_ledger
+
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о итоговых данных]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_general_ledger];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Сообщение, о итоговых данных]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о итоговых данных - атомарное сообщение,
+    которое не содержит сушностей.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
