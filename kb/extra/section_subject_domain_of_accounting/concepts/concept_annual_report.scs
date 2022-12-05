@@ -1,0 +1,15 @@
+concept_annual_report
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [годовой отчёт]
+    (* <- lang_ru;; *);
+    [annual_report]
+    (* <- lang_en;;*);
+   
+    => nrel_note:
+    [форма бухгалтерской отчетности, которая сдается за год]
+    (* <- lang_ru;;*);
+    [annual accounting form]
+    (* <- lang_en;;*);;

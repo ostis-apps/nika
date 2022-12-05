@@ -1,0 +1,83 @@
+section_subject_domain_of_accounting 
+
+=> nrel_main_idtf:
+    [Раздел. Предметная область бухгалтерского учета.]
+    (* <-lang_ru;; *);
+    [Section. Subject domain of accounting.]
+    (* <-lang_en;; *);
+    sc_node_class;
+    <-atomic_class;;
+    
+    /* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_accounting = [*
+	subject_domain_of_accounting
+	=> nrel_main_idtf:
+   [Предметная область бухгалтерского учета.]
+   (* <- lang_ru;; *);
+   [Subject domain of domain of accounting.]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+   concept_accountancy;
+	-> rrel_not_maximum_studied_object_class:
+   concept_accountant;
+   concept_accounting_audit;
+   concept_accounting_policy;
+   concept_accounting_system;
+   concept_accounting;
+   concept_assets;
+   concept_calculation;
+   concept_company;
+   concept_cost_price;
+   concept_credit;
+   concept_debit;
+   concept_double_entry;
+   concept_general_ledger;
+   concept_income;
+   concept_money;
+   concept_outcome;
+   concept_passive;
+   concept_report;
+   concept_reporting_period;
+   concept_supervisor;
+   concept_turnover_balance_sheet;
+   concept_wiring;
+	-> rrel_explored_relation:
+   nrel_use_accounting_system;
+   nrel_date;
+   nrel_manage_company;
+   nrel_report_type;
+   nrel_works_for;;
+*];;
+
+section_subject_domain_of_accounting
+-> rrel_key_sc_element:
+   concept_accountancy;
+   concept_accountant;
+   concept_accounting_audit;
+   concept_accounting_policy;
+   concept_accounting_system;
+   concept_accounting;
+   concept_assets;
+   concept_calculation;
+   concept_company;
+   concept_cost_price;
+   concept_credit;
+   concept_debit;
+   concept_double_entry;
+   concept_general_ledger;
+   concept_income;
+   concept_money;
+   concept_outcome;
+   concept_passive;
+   concept_report;
+   concept_reporting_period;
+   concept_supervisor;
+   concept_turnover_balance_sheet;
+   concept_wiring;
+   nrel_date;
+   nrel_manage_company;
+   nrel_report_type;
+   nrel_use_accounting_system;
+   nrel_works_for;;

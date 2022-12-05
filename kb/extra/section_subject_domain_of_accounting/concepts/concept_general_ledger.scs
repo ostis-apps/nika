@@ -1,0 +1,13 @@
+concept_general_ledger
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [главная бухгалтерская книга]
+    (* <- lang_ru;; *);
+    [general ledger]
+    (* <- lang_en;;*);
+
+=> nrel_note:
+    [сводный документ, в котором представлены итоговые данные по бухгалтерским отчётам и счетам]
+    (* <- lang_ru;; *);;

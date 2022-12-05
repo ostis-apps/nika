@@ -1,0 +1,24 @@
+nrel_report_type
+
+<-sc_node_norole_relation;
+<- relation;
+<- nonbinary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=>nrel_main_idtf:
+    [тип отчёта*]
+    (* <- lang_ru;;*);
+    [report type*]
+    (* <- lang_en;;*);
+
+=>nrel_note:
+    [тип отчёта по времени]
+    (* <- lang_ru;;*);
+    [report time type]
+    (* <- lang_en;;*);
+
+=>nrel_first_domain:
+    concept_report;;

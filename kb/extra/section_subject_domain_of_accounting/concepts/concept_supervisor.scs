@@ -1,0 +1,15 @@
+concept_supervisor
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [руководитель]
+    (* <- lang_ru;; *);
+    [supervisor]
+    (* <- lang_en;;*);
+
+=> nrel_note:
+    [это должностное лицо в компании, ответственный за управление и принятие стратегических решений]
+    (* <- lang_ru;; *);
+    [is a responsible person in the company responsible for management and decision making]
+    (* <- lang_en;;*);;

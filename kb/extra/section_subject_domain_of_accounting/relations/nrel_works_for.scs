@@ -1,0 +1,21 @@
+nrel_works_for
+
+<-sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=>nrel_main_idtf:
+    [работает*]
+    (* <- lang_ru;;*);
+    [works for*]
+    (* <- lang_en;;*);
+
+=>nrel_note:
+    [занятость]
+    (* <- lang_ru;;*);
+    [works for ]
+    (* <- lang_en;;*);;
