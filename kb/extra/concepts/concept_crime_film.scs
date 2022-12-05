@@ -1,0 +1,13 @@
+concept_crime_film
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [криминальный фильм]
+   (* <- lang_ru;; *);
+
+<= nrel_inclusion: concept_film;
+
+=> nrel_note:
+   [Кинематографический жанр, аналогичный литературному жанру криминальной фантастики.]
+   (* <- lang_ru;; *);;

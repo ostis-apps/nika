@@ -1,0 +1,101 @@
+section_subject_domain_of_hollywood_stars
+=> nrel_main_idtf:
+	  [Раздел. Предметная область звёзд Голливуда]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of hollywood stars] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_hollywood_stars = [*
+	subject_domain_of_hollywood_stars
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область звёзд Голливуда]
+   (* <- lang_ru;; *);
+   [Subject domain of hollywood stars]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+   concept_film;
+   concept_human;
+	-> rrel_not_maximum_studied_object_class:
+   concept_action_film;
+   concept_actor;
+   concept_adventure_film;
+   concept_comedy;
+   concept_crime_film;
+   concept_director;
+   concept_drama;
+   concept_melodrama;
+   concept_musical_film;
+   concept_producer;
+   concept_romantic_film;
+   concept_science_fiction;
+   concept_screenwriter;
+   concept_singer;
+   concept_sitcom;
+   concept_stuntman;
+   concept_thriller;
+	-> rrel_explored_relation:
+   nrel_award;
+   nrel_brother;
+   nrel_career_start_year;
+   nrel_citizenship;
+   nrel_current_partner;
+   nrel_daughter;
+   nrel_day_of_birth;
+   nrel_debut_film;
+   nrel_enthusiasm;
+   nrel_father;
+   nrel_former_partner;
+   nrel_imdb_id;
+   nrel_month_of_birth;
+   nrel_mother;
+   nrel_place_of_birth;
+   nrel_popular_film;
+   nrel_sister;
+   nrel_son;
+   nrel_year_of_birth;;
+*];;
+
+section_subject_domain_of_hollywood_stars
+-> rrel_key_sc_element:
+   subject_domain_of_hollywood_stars;
+   concept_film;
+   concept_human;
+   concept_action_film;
+   concept_actor;
+   concept_adventure_film;
+   concept_comedy;
+   concept_crime_film;
+   concept_director;
+   concept_drama;
+   concept_melodrama;
+   concept_musical_film;
+   concept_producer;
+   concept_romantic_film;
+   concept_science_fiction;
+   concept_screenwriter;
+   concept_singer;
+   concept_sitcom;
+   concept_stuntman;
+   concept_thriller;
+   nrel_award;
+   nrel_brother;
+   nrel_career_start_year;
+   nrel_citizenship;
+   nrel_current_partner;
+   nrel_daughter;
+   nrel_day_of_birth;
+   nrel_debut_film;
+   nrel_enthusiasm;
+   nrel_father;
+   nrel_former_partner;
+   nrel_imdb_id;
+   nrel_month_of_birth;
+   nrel_mother;
+   nrel_place_of_birth;
+   nrel_popular_film;
+   nrel_sister;
+   nrel_son;
+   nrel_year_of_birth;;

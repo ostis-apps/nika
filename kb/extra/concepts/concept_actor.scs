@@ -1,0 +1,13 @@
+concept_actor
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [актёр]
+   (* <- lang_ru;; *);
+
+<= nrel_inclusion: concept_human;
+
+=> nrel_note:
+   [Исполнитель ролей в драматических спектаклях и кино.]
+   (* <- lang_ru;; *);;

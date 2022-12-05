@@ -1,0 +1,42 @@
+nrel_imdb_id
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+   [id на сайте IMDb*]
+   (* <- lang_ru;; *);
+=> nrel_first_domain: concept_human;
+=> nrel_second_domain: concept_id;
+=> nrel_definitional_domain:
+   ...
+   (*
+    	<= nrel_combination: {
+        	concept_human;
+   	 	concept_id
+    	};;
+   *);
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (id на сайте IMDb*)]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Id на сайте IMDb* - бинарное 
+               ориентированное отношение, связывающее 
+               человека и id, который присвоен ему на сайте IMDb.com.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+   	 	 concept_human;
+   	 	 concept_id
+   	 };;
+  *);;

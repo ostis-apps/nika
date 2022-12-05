@@ -1,0 +1,42 @@
+nrel_popular_film
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+   [популярный фильм*]
+   (* <- lang_ru;; *);
+=> nrel_first_domain: concept_human;
+=> nrel_second_domain: concept_film;
+=> nrel_definitional_domain:
+   ...
+   (*
+    	<= nrel_combination: {
+        	concept_human;
+   	 	concept_film
+    	};;
+   *);
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (популярный фильм*)]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Поуплярный фильм* - бинарное 
+               ориентированное отношение, связывающее 
+               человека и популярный фильм, в котором он снимался.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+   	 	 concept_human;
+   	 	 concept_film
+   	 };;
+  *);;
