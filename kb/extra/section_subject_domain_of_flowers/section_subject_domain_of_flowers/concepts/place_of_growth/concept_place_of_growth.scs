@@ -1,0 +1,20 @@
+concept_place_of_growth
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [место произрастания]
+    (* <-lang_ru;;*);
+    [place of growth]
+    (* <-lang_en;;*);
+
+=> nrel_note:
+    [природная зона, пригодная для произрастания того или иного растения]
+    (* <-lang_ru;;*);
+
+=> nrel_inclusion:
+    concept_desert;
+    concept_forest;
+    concept_mountain;
+    concept_plain;
+    concept_swamp;;
