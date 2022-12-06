@@ -1,0 +1,37 @@
+concept_watermark
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [водяной знак]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [watermark]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [water mark]		(* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Водяной знак - это идентификационный рисунок или узор на бумаге, который проявляется в виде различных оттенков света при просмотре на свету, вызванное изменением толщины или плотности бумаги .] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_image
+		};;
+	*);;
+	
+concept_image
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [рисунок]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [image]
+   (* <- lang_en;; *);;

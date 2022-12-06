@@ -1,0 +1,33 @@
+concept_message_about_stamp_shape
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о форме марки]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_stamp_shape];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о форме марки)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о форме марки - атомарное сообщение, с 
+	   	информацией, сформированной в ответ на запрос о предпочтительной геометрической форме марки.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
+	
+concept_intent_possible_class
+-> concept_message_about_stamp_shape;
+-> concept_message_about_greet;
+-> concept_message_about_Saxon_troika;
+-> concept_message_about_Red_Mercury;;

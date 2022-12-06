@@ -1,0 +1,52 @@
+concept_geometry_figure
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [геометрическая фигура]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [geometry figure]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [figure]		(* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Геометрическая фигура — множество точек на поверхности (обычно на плоскости), образующее конечное число линий.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_point;
+		concept_surface
+		};;
+	*);;
+	
+concept_point
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [точка]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [point]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [dot]
+   (* <- lang_en;; *);;
+   
+concept_surface
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [поверхность]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [surface]
+   (* <- lang_en;; *);;

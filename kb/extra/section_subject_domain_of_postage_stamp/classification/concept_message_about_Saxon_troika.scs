@@ -1,0 +1,27 @@
+concept_message_about_Saxon_troika
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о "Саксонской тройке"]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_Saxon_troika];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о "Саксонской тройке")]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о "Саксонской тройке" - атомарное сообщение, с 
+	   	информацией, сформированной в ответ на запрос о марке "Саксонская тройка".]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

@@ -1,0 +1,47 @@
+concept_philatelic_fake
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [поддельная марка]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [philatelic fake]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [подделка]		
+   (* <- lang_ru;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Поддельная марка — подлинная марка, которая была определённым образом видоизменена в целях получения наживы.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_postage_stamp
+		};;
+	*); 
+   
+=> nrel_nominal_value: 
+	concept_nominal;
+	
+=> nrel_shape: 
+	concept_geometry_figure;
+	
+=> nrel_material: 
+	concept_material;
+	
+=> nrel_optional_element: 
+	concept_imprinter;
+	concept_watermark;
+	concept_perforation;
+    
+=> nrel_cancellation_method: 
+	concept_cancellation_method;
+
+=> nrel_franking:
+	concept_letter;;

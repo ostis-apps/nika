@@ -1,0 +1,24 @@
+concept_printed_work
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [печатное издание]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [printed work]
+   (* <- lang_en;; *);
+   
+=> nrel_inclusion:
+	concept_letter;	
+	
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Печатное издание — произведение печати, самостоятельно оформленное, прошедшее редакционно издательскую подготовку, имеющее установленные выходные сведения и предназначенное для передачи содержащейся в нем информации.] (* <-lang_ru;; *);; 
+		*);;
+	*);;

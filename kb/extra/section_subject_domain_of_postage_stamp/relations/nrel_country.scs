@@ -1,0 +1,32 @@
+nrel_country
+<- sc_node_norole_relation;
+
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+<- antireflexive_relation;
+
+=> nrel_main_idtf: 
+	[страна *] (*<-lang_ru;;*);
+=> nrel_main_idtf: 
+	[country*] (*<-lang_en;;*);
+
+=> nrel_first_domain: 	concept_postal_administration;
+			concept_non_postal_administration;
+=> nrel_second_domain:  concept_country;
+			
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [страна* - бинарное ориентированное отношение, связывающее ведомство, выпускающее марку и страну, в которой оно находится.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_country
+		};;
+	*);;

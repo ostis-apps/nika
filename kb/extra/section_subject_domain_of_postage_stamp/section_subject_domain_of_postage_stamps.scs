@@ -1,0 +1,78 @@
+section_subject_domain_of_postage_stamps
+=> nrel_main_idtf:
+	  [Раздел. Предметная область почтовых марок]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of postage stamps] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_postage_stamps = [*
+	subject_domain_of_postage_stamps
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область Почтовых марок]
+   (* <- lang_ru;; *);
+   [Subject domain of postage stamps]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+   	concept_postage_stamp;
+	-> rrel_not_maximum_studied_object_class:
+   	concept_official_postage_stamp;
+	concept_non_official_postage_stamp;
+	concept_semi_official_postage_stamp;
+	concept_private_postage_stamp;
+	concept_special_postage_stamp;
+	concept_philatelic_fake;
+	concept_philatelic_forgery;
+	concept_printed_work;
+	concept_country;
+	-> rrel_explored_relation:
+	nrel_franking;
+	nrel_nominal_value;
+	nrel_emitter;
+	nrel_optional_element;
+	nrel_shape;
+	nrel_collection_element;
+	nrel_material;
+	nrel_cancellation_method;
+	nrel_element;
+	nrel_marking_tool;;
+*];;
+
+section_subject_domain_of_postage_stamps
+-> rrel_key_sc_element:
+	subject_domain_of_postage_stamps;
+	concept_postage_stamp;
+	concept_official_postage_stamp;
+	concept_non_official_postage_stamp;
+	concept_semi_official_postage_stamp;
+	concept_private_postage_stamp;
+	concept_special_postage_stamp;
+	concept_postal_administration;
+	concept_nominal;
+	concept_philately;
+	concept_geometry_figure;
+	concept_cancellation_method;
+	concept_imprinter;
+	concept_watermark;
+	concept_perforation;
+	concept_letter;
+	concept_philatelic_fake;
+	concept_philatelic_forgery;
+	concept_postmark;
+	concept_material;
+	concept_printed_work;
+	concept_country;
+	nrel_franking;
+	nrel_nominal_value;
+	nrel_emitter;
+	nrel_optional_element;
+	nrel_shape;
+	nrel_collection_element;
+	nrel_material;
+	nrel_cancellation_method;
+	nrel_element;
+	nrel_marking_tool;;

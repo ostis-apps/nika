@@ -1,0 +1,26 @@
+concept_imprinter
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [надпечатка]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [imprinter]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [overprint]		(* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Надпечатка — собирательное название дополнительно напечатанного текста, иногда — графического изображения, на почтовой марке, блоке, иных знаках почтовой оплаты, готовых к выпуску или поступивших в обращение.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_postage_stamp
+		};;
+	*);;

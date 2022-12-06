@@ -1,0 +1,31 @@
+nrel_marking_tool
+<- sc_node_norole_relation;
+
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+<- antireflexive_relation;
+
+=> nrel_main_idtf: 
+	[прибор для гашения*] (*<-lang_ru;;*);
+=> nrel_main_idtf: 
+	[marking tool*] (*<-lang_en;;*);
+
+=> nrel_first_domain: 	concept_cancellation_method;
+=> nrel_second_domain:  concept_postmark;
+			
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [прибор для гашения* - бинарное ориентированное отношение, связывающее метод гашения и прибор, которым осуществляется гашение.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_cancellation_method
+		};;
+	*);;

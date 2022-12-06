@@ -1,0 +1,25 @@
+concept_perforation
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [перфорация]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [perforation]
+   (* <- lang_en;; *);
+
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Перфорация — результат перфорирования, то есть предусмотренного изготовления значительного числа правильно расположенных отверстий правильной формы в листовом и ином материале.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_material;
+		concept_geometry_figure
+		};;
+	*);;
