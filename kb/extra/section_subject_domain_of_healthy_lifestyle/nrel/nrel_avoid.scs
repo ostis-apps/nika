@@ -1,0 +1,43 @@
+nrel_avoid
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-antisymmetric_relation;
+=>nrel_main_idtf:
+	[Избегать*]
+	(* <- lang_ru;; *);
+	[Avoid*]
+	(* <- lang_en;; *);
+
+=> nrel_first_domain:
+	concept_healthy_lifestyle;
+=> nrel_second_domain:
+	concept_bad_habits;
+
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Избегать*)]
+		(* <- lang_ru;; *);
+		[Def.(Avoid*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Избегать* - это отношение, связывающее здоровый образ жизни и вредные привычки, которох слудет избегать.]
+			(* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_healthy_lifestyle;
+		concept_bad_habits;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

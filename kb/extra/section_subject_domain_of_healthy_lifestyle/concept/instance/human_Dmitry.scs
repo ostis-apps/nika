@@ -1,0 +1,25 @@
+Dmitry
+<- concept_human;
+
+=> nrel_main_idtf:
+   [Дмитрий]
+   (* <- lang_ru;; *);
+
+=> nrel_main_idtf:
+   [Dmitry]
+   (* <- lang_en;; *);
+   
+<= nrel_avoid: Drinking;
+<= nrel_nrel_feels_better: concept_healthy_lifestyle;
+<= nrel_feels_better: Happiness;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Дмитрий](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Дмитрий - это человек, ведущий здоровый образ жизни.](*<-lang_ru;;*);;
+	*);;
+*);;

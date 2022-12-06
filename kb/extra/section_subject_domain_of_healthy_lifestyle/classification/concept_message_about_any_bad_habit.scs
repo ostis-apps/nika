@@ -1,0 +1,38 @@
+concept_message_about_any_bad_habit
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение с вопросом о том, какая есть плохая привычка]
+	    (* <- lang_ru;; *);
+	[message about which bad habit exists]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_any_bad_habit];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение с вопросом о том, какая есть плохая привычка)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about which bad habit exists)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение с вопросом о том, какая есть плохая привычка - атомарное сообщение, с запросом на ответ на вопрос, какая есть плохая привычка?]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about which bad habit exists is an atomic message, with a request for an answer to the question, which bad habit exists?]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
+

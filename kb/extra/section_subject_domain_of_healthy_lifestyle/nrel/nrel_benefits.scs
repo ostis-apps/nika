@@ -1,0 +1,43 @@
+nrel_benefits
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-antisymmetric_relation;
+=>nrel_main_idtf:
+	[Полезно*]
+	(* <- lang_ru;; *);
+	[Power_supply*]
+	(* <- lang_en;; *);
+
+=> nrel_first_domain:
+	concept_doctor_visit;
+=> nrel_second_domain:
+	concept_health;
+
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Полезно*)]
+		(* <- lang_ru;; *);
+		[Def.(Power supply*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Полезно* - это отношение, связывающее здоровье и визит к врачу, который является полезным для здоровья.]
+			(* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_doctor_visit;
+concept_health;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

@@ -1,0 +1,42 @@
+nrel_taking_care_of
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-antisymmetric_relation;
+=>nrel_main_idtf:
+	[Заботиться о*]
+	(* <- lang_ru;; *);
+	[Taking care of*]
+	(* <- lang_en;; *);
+
+=> nrel_first_domain:
+	concept_human;
+=> nrel_second_domain:
+	concept_hygiene;
+
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Заботиться о*)]
+		(* <- lang_ru;; *);
+		[Def.(Taking care of*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Заботиться о* - это отношение, связывающее здоровый образ жизни и гигиену.]
+			(* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_human;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

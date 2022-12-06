@@ -1,0 +1,42 @@
+nrel_growth
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antitransitive_relation;
+<-antisymmetric_relation;
+=>nrel_main_idtf:
+	[Рост*]
+	(* <- lang_ru;; *);
+	[Growth*]
+	(* <- lang_en;; *);
+
+=> nrel_first_domain:
+	concept_healthy_lifestyle;
+=> nrel_second_domain:
+	concept_confidence;
+
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Рост*)]
+		(* <- lang_ru;; *);
+		[Def.(Growth*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Рост* - это отношение, связывающее здоровый образ жизни и уверенность.]
+			(* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_healthy_lifestyle;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

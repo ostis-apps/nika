@@ -1,0 +1,36 @@
+concept_message_about_good_habits
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о хороших привычках]
+	    (* <- lang_ru;; *);
+	[message about good habits]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_good_habits];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о хороших привычках)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about good habits)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[сообщение о хороших привычках - атомарное сообщение, с запросом на ответ о том, что такое хорошие привычки.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[message about good habits is an atomic message that asks what good habits are.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

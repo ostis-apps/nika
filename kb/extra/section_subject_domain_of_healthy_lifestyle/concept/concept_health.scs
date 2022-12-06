@@ -1,0 +1,28 @@
+concept_health <- sc_node_not_relation;;
+
+concept_health => nrel_main_idtf:
+[Здоровье] (*<-lang_ru;;*);
+[Health] (*<-lang_en;;*);;
+
+concept_health <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Здоровье)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_health.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_health <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Здоровье)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Здоровье - состояние полного физического, душевного и социального благополучия, а не только отсутствие болезней и физических дефектов.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

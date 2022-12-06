@@ -1,0 +1,28 @@
+concept_cardio_workout <- sc_node_not_relation;;
+
+concept_cardio_workout => nrel_main_idtf:
+[Кардиотренировка] (*<-lang_ru;;*);
+[Сardio workout] (*<-lang_en;;*);;
+
+concept_cardio_workout <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Кардиотренировка)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_cardio_workout.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_cardio_workout <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Кардиотренировка)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Кардиотренировка - это вид физических нагрузок, который способствует повышению пульса в определенных рамках, повышает кровообращение, заставляет сердце и легкие работать в усиленном режиме, что улучшает работу органов и укрепляет эластичность сосудов.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

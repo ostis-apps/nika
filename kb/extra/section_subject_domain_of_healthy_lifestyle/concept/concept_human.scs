@@ -1,0 +1,28 @@
+concept_human <- sc_node_not_relation;;
+
+concept_human => nrel_main_idtf:
+[Человек] (*<-lang_ru;;*);
+[Human] (*<-lang_en;;*);;
+
+concept_human <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Человек)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_human.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_human <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Человек)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Человек — общественное существо, обладающее разумом и сознанием, субъект общественно-исторической деятельности и культуры, относящийся к виду Человек разумный.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

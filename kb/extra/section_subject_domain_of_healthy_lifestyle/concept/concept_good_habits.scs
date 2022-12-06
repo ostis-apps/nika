@@ -1,0 +1,28 @@
+concept_good_habits <- sc_node_not_relation;;
+
+concept_good_habits => nrel_main_idtf:
+[Полезные привычки] (*<-lang_ru;;*);
+[Good habits] (*<-lang_en;;*);;
+
+concept_good_habits <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Полезные привычки)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_good_habits.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_good_habits <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Полезные привычки)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Полезные привычки – способ конструктивного поведения, который стал для человека в определенной ситуации потребностью. Благодаря ранее сформированным нейронным связям в мозге, эти действия осуществляются на автомате, т. е. практически без участия сознания.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

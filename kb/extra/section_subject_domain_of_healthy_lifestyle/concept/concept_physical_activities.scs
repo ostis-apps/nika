@@ -1,0 +1,28 @@
+concept_physical_activities <- sc_node_not_relation;;
+
+concept_physical_activities => nrel_main_idtf:
+[Физические нагрузки] (*<-lang_ru;;*);
+[Physical activities] (*<-lang_en;;*);;
+
+concept_physical_activities <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Физические нагрузки)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_physical_activities.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_physical_activities <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Физические нагрузки)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Физические нагрузки – это двигательная активность, мышечная работа, величина и интенсивность которой зависит от сферы деятельности человека.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

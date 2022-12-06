@@ -1,0 +1,23 @@
+11_7
+<- concept_good_sleeping_pattern;
+
+=> nrel_main_idtf:
+   [Режим сна 11_7]
+   (* <- lang_ru;; *);
+
+=> nrel_main_idtf:
+   [Sleeping pattern 11_7]
+   (* <- lang_en;; *);
+   
+<= nrel_includes: concept_consistency;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Режим сна 11_7](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Режим сна 11_7 - это сон с 11 вечера до 7 утра.](*<-lang_ru;;*);;
+	*);;
+*);;

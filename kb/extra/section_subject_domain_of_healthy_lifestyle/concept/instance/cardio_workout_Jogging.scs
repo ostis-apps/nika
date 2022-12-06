@@ -1,0 +1,26 @@
+Jogging
+<- concept_cardio_workout;
+
+=> nrel_main_idtf:
+   [Бег]
+   (* <- lang_ru;; *);
+
+=> nrel_main_idtf:
+   [Jogging]
+   (* <- lang_en;; *);
+   
+<= nrel_pairs: Protein;
+<= nrel_includes: Carrier;
+<= nrel_growth: More_pushups;
+<= nrel_involves: Joint_activity;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Бег](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Бег - это вид кардиотренировки.](*<-lang_ru;;*);;
+	*);;
+*);;

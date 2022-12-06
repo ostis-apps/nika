@@ -1,0 +1,23 @@
+Nutritionist
+<- concept_doctor_visit;
+
+=> nrel_main_idtf:
+   [Диетолог]
+   (* <- lang_ru;; *);
+
+=> nrel_main_idtf:
+   [Nutritionist]
+   (* <- lang_en;; *);
+   
+<= nrel_promotes_health_awareness: concept_healthy_lifestyle;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Диетолог](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Врач-диетолог является дипломированным врачом, закончившим медицинский вуз и получившим затем дополнительное образование по диетологии, подтвержденное соответствующим дипломом.](*<-lang_ru;;*);;
+	*);;
+*);;
