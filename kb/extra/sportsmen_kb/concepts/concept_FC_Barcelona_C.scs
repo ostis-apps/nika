@@ -1,0 +1,21 @@
+concept_FC_Barcelona_C
+=> nrel_main_idtf:
+    [Барселона C] (*<-lang_ru;;*);
+    [FC Barcelona C] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Барселона C)] (*<-lang_ru;;*);
+       [Def. (FC Barcelona C)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [испанский футбольный клуб] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Spanish football team] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

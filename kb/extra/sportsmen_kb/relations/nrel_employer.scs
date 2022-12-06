@@ -1,0 +1,44 @@
+nrel_employer
+
+//идентификаторы
+=> nrel_main_idtf:
+    [работодатель] (*<-lang_ru;;*);
+    [employer] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (работодатель)] (*<-lang_ru;;*);
+       [Def. (employer)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [организация, в которой субъект работает или работал] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [person or organization for which the subject works or worked] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_human;
+
+=> nrel_first_domain:
+    concept_association_football_player;
+
+
+=> nrel_second_domain:
+    concept_UNICEF;
+
+=> nrel_second_domain:
+    concept_FC_Barcelona;
+
+=> nrel_second_domain:
+    concept_Paris_Saint_Germain_F_C_;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

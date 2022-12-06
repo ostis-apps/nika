@@ -1,0 +1,158 @@
+nrel_award_received
+
+//идентификаторы
+=> nrel_main_idtf:
+    [полученные награды] (*<-lang_ru;;*);
+    [award received] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (полученные награды)] (*<-lang_ru;;*);
+       [Def. (award received)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [награды, полученные персоной, организацией или произведением] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [award or recognition received by a person, organization or creative work] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_human;
+
+=> nrel_first_domain:
+    concept_association_football_player;
+
+
+=> nrel_second_domain:
+    concept_World_Cup_Golden_Ball;
+
+=> nrel_second_domain:
+    concept_FIFA_Ballon_dOr;
+
+=> nrel_second_domain:
+    concept_Ballon_dOr;
+
+=> nrel_second_domain:
+    concept_FIFA_World_Player_of_the_Year;
+
+=> nrel_second_domain:
+    concept_European_Golden_Shoe;
+
+=> nrel_second_domain:
+    concept_Onze_dOr;
+
+=> nrel_second_domain:
+    concept_Footballer_of_the_Year_of_Argentina;
+
+=> nrel_second_domain:
+    concept_Pichichi_Trophy;
+
+=> nrel_second_domain:
+    concept_Best_International_Athlete_ESPY_Award;
+
+=> nrel_second_domain:
+    concept_Saint_Georges_Cross;
+
+=> nrel_second_domain:
+    concept_Laureus_World_Sports_Award_for_Sportsman_of_the_Year;
+
+=> nrel_second_domain:
+    concept_Golden_Boy;
+
+=> nrel_second_domain:
+    concept_Bravo_Award;
+
+=> nrel_second_domain:
+    concept_Premios_Protagonistas;
+
+=> nrel_second_domain:
+    concept_Ballon_dOr_Dream_Team;
+
+=> nrel_second_domain:
+    concept_The_Best_FIFA_Mens_Player;
+
+=> nrel_second_domain:
+    concept_UEFA_Club_Footballer_of_the_Year;
+
+=> nrel_second_domain:
+    concept_UEFA_Mens_Player_of_the_Year_Award;
+
+=> nrel_second_domain:
+    concept_UEFA_Team_of_the_Year;
+
+=> nrel_second_domain:
+    concept_La_Liga_Player_of_the_Month;
+
+=> nrel_second_domain:
+    concept_Marca_Leyenda;
+
+=> nrel_second_domain:
+    concept_Trofeo_EFE;
+
+=> nrel_second_domain:
+    concept_FIFA_FIFPro_World_XI;
+
+=> nrel_second_domain:
+    concept_juan_manuel_perez;
+
+=> nrel_second_domain:
+    concept_diamond_Konex_award;
+
+=> nrel_second_domain:
+    concept_FIFA_U_20_World_Cup_awards;
+
+=> nrel_second_domain:
+    concept_list_of_UEFA_Champions_League_top_scorers;
+
+=> nrel_second_domain:
+    concept_LFP_Awards;
+
+=> nrel_second_domain:
+    concept_World_Soccer_Award;
+
+=> nrel_second_domain:
+    concept_UEFA_Club_Football_Awards;
+
+=> nrel_second_domain:
+    concept_FIFPRO;
+
+=> nrel_second_domain:
+    concept_IFFHS_Worlds_Best_Player;
+
+=> nrel_second_domain:
+    concept_The_Guardian_100_Best_Footballers_in_the_World;
+
+=> nrel_second_domain:
+    concept_IFFHS_World_Team;
+
+=> nrel_second_domain:
+    concept_IFFHS_Worlds_Best_Playmaker;
+
+=> nrel_second_domain:
+    concept_IFFHS_Worlds_Best_Top_Division_Goal_Scorer;
+
+=> nrel_second_domain:
+    concept_IFFHS_Worlds_Best_Top_Goal_Scorer;
+
+=> nrel_second_domain:
+    concept_IFFHS_Worlds_Best_International_Goal_Scorer;
+
+=> nrel_second_domain:
+    concept_Olimpia_Award;
+
+=> nrel_second_domain:
+    concept_Trofeo_Aldo_Rovira;
+
+=> nrel_second_domain:
+    concept_Mastercard_All_Star_Team;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

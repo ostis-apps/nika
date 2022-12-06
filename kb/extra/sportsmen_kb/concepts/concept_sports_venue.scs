@@ -1,0 +1,21 @@
+concept_sports_venue
+=> nrel_main_idtf:
+    [спортивное сооружение] (*<-lang_ru;;*);
+    [sports venue] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (спортивное сооружение)] (*<-lang_ru;;*);
+       [Def. (sports venue)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [открытая или огороженная площадка, здание, специально оборудованное, в том числе инвентарем, и предназначенные для проведения спортивных игр, занятий спортом или физической культурой] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [building, structure, or place dedicated to sports] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

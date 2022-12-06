@@ -1,0 +1,21 @@
+concept_Ballon_dOr_Dream_Team
+=> nrel_main_idtf:
+    [Ballon d'or Dream Team] (*<-lang_ru;;*);
+    [Ballon d'Or Dream Team] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Ballon d'or Dream Team)] (*<-lang_ru;;*);
+       [Def. (Ballon d'Or Dream Team)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [All Time All-Star опубликовано France Football 14 декабря 2020 года] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [all-time all-star published by France Football on 14 December 2020] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

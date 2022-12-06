@@ -1,0 +1,21 @@
+concept_football_codes
+=> nrel_main_idtf:
+    [разновидности футбола] (*<-lang_ru;;*);
+    [football codes] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (разновидности футбола)] (*<-lang_ru;;*);
+       [Def. (football codes)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [класс видов спорта] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [family of team sports that involve, to varying degrees, kicking a ball to score a goal and played on foot, as opposed to horseback] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

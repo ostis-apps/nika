@@ -1,0 +1,27 @@
+nrel_permanent_duplicated_item
+
+//идентификаторы
+=> nrel_main_idtf:
+    [постоянный дубликат] (*<-lang_ru;;*);
+    [permanent duplicated item] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (постоянный дубликат)] (*<-lang_ru;;*);
+       [Def. (permanent duplicated item)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [обычно для связи двух статей в одном проекте Викимедиа об одном и том же (но на другом диалекте или в другом алфавите)] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [this item duplicates another item and the two can't be merged, as one Wikimedia project includes two pages, e. g. in different scripts or languages (applies to some wiki, e.g.: cdowiki, gomwiki, nanwiki). Use "duplicate item" for other wikis.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

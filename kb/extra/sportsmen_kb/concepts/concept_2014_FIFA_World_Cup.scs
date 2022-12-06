@@ -1,0 +1,21 @@
+concept_2014_FIFA_World_Cup
+=> nrel_main_idtf:
+    [чемпионат мира по футболу 2014] (*<-lang_ru;;*);
+    [2014 FIFA World Cup] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (чемпионат мира по футболу 2014)] (*<-lang_ru;;*);
+       [Def. (2014 FIFA World Cup)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [20-й чемпионат мира по футболу ФИФА] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [20th FIFA World Cup, held in Brazil] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,59 @@
+nrel_member_of_sports_team
+
+//идентификаторы
+=> nrel_main_idtf:
+    [член спортивной команды] (*<-lang_ru;;*);
+    [member of sports team] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (член спортивной команды)] (*<-lang_ru;;*);
+       [Def. (member of sports team)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [команда, в которой данный человек участвует/участвовал] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [sports teams or clubs that the subject represents or represented] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_human;
+
+=> nrel_first_domain:
+    concept_association_football_player;
+
+
+=> nrel_second_domain:
+    concept_Newells_Old_Boys;
+
+=> nrel_second_domain:
+    concept_FC_Barcelona_C;
+
+=> nrel_second_domain:
+    concept_FC_Barcelona;
+
+=> nrel_second_domain:
+    concept_Paris_Saint_Germain_F_C_;
+
+=> nrel_second_domain:
+    concept_Argentina_national_under_20_football_team;
+
+=> nrel_second_domain:
+    concept_Argentina_national_under_23_football_team;
+
+=> nrel_second_domain:
+    concept_Argentina_national_football_team;
+
+=> nrel_second_domain:
+    concept_FC_Barcelona_Juvenil_A;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

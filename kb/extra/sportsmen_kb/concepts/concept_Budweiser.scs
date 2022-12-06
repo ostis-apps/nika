@@ -1,0 +1,21 @@
+concept_Budweiser
+=> nrel_main_idtf:
+    [Budweiser] (*<-lang_ru;;*);
+    [Budweiser] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Budweiser)] (*<-lang_ru;;*);
+       [Def. (Budweiser)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Американская бледная бледная лагер] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [American brand of pale lager] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,56 @@
+nrel_participant_in
+
+//идентификаторы
+=> nrel_main_idtf:
+    [участвовал(а) в] (*<-lang_ru;;*);
+    [participant in] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (участвовал(а) в)] (*<-lang_ru;;*);
+       [Def. (participant in)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [мероприятие, в котором участвовала персона или организация, противоположно P710 и P1923] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [event in which a person or organization was/is a participant; inverse of P710 or P1923] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_human;
+
+=> nrel_first_domain:
+    concept_association_football_player;
+
+
+=> nrel_second_domain:
+    concept_2008_Summer_Olympics;
+
+=> nrel_second_domain:
+    concept_2014_FIFA_World_Cup;
+
+=> nrel_second_domain:
+    concept_2010_FIFA_World_Cup;
+
+=> nrel_second_domain:
+    concept_2006_FIFA_World_Cup;
+
+=> nrel_second_domain:
+    concept_2018_FIFA_World_Cup;
+
+=> nrel_second_domain:
+    concept_UEFA_Champions_League_2010_11;
+
+=> nrel_second_domain:
+    concept_2022_FIFA_World_Cup;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

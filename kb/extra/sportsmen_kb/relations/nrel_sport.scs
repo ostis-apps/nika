@@ -1,0 +1,38 @@
+nrel_sport
+
+//идентификаторы
+=> nrel_main_idtf:
+    [вид спорта] (*<-lang_ru;;*);
+    [sport] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (вид спорта)] (*<-lang_ru;;*);
+       [Def. (sport)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [вид спорта, к которой относится сущность. Для спортивных дисциплин см. Property:P2416] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [sport that the subject participates or participated in or is associated with] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_human;
+
+=> nrel_first_domain:
+    concept_association_football_player;
+
+
+=> nrel_second_domain:
+    concept_association_football;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

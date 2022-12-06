@@ -1,0 +1,35 @@
+concept_answer_about_messi_phrase
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Информация о Месси]
+	(* <- lang_ru;; *);
+	[info about messi]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (Информация о Месси)]
+		(* <- lang_ru;; *);
+		[Def. (Information about messi)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Ответ на вопрос про Месси]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example:
+			[Answer for question about messi]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;
+	*);;
+

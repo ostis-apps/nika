@@ -1,0 +1,44 @@
+nrel_league
+
+//идентификаторы
+=> nrel_main_idtf:
+    [выступает в лиге] (*<-lang_ru;;*);
+    [league] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (выступает в лиге)] (*<-lang_ru;;*);
+       [Def. (league)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [спортивная лига, в которой выступает или выступала команда или спортсмен] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [league in which team or player plays or has played in] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_human;
+
+=> nrel_first_domain:
+    concept_association_football_player;
+
+
+=> nrel_second_domain:
+    concept_Spanish_Third_Division;
+
+=> nrel_second_domain:
+    concept_La_Liga;
+
+=> nrel_second_domain:
+    concept_Ligue_1;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

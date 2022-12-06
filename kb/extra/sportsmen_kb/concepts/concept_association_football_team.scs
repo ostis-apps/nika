@@ -1,0 +1,21 @@
+concept_association_football_team
+=> nrel_main_idtf:
+    [футбольная команда] (*<-lang_ru;;*);
+    [association football team] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (футбольная команда)] (*<-lang_ru;;*);
+       [Def. (association football team)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [группа людей, вместе играющих в европейский футбол] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [sports team that plays association football] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

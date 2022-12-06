@@ -1,0 +1,21 @@
+concept_trial_of_Lionel_and_Jorge_Messi
+=> nrel_main_idtf:
+    [Суд над Лайонелом и Хорхе Месси] (*<-lang_ru;;*);
+    [trial of Lionel and Jorge Messi] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Суд над Лайонелом и Хорхе Месси)] (*<-lang_ru;;*);
+       [Def. (trial of Lionel and Jorge Messi)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Суд над футболистом Лионеля Месси и его отца Хорхе за налоговое мошенничество] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [trial of the football player Lionel Messi and his father Jorge for tax fraud] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

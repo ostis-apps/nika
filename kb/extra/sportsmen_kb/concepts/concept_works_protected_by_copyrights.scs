@@ -1,0 +1,21 @@
+concept_works_protected_by_copyrights
+=> nrel_main_idtf:
+    [работы защищены авторским правом] (*<-lang_ru;;*);
+    [works protected by copyrights] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (работы защищены авторским правом)] (*<-lang_ru;;*);
+       [Def. (works protected by copyrights)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Работы этого автора защищены авторским правом] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [literary and artistic works by creator protected by copyrights (author's rights)] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,44 @@
+nrel_country_of_citizenship
+
+//идентификаторы
+=> nrel_main_idtf:
+    [гражданство] (*<-lang_ru;;*);
+    [country of citizenship] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (гражданство)] (*<-lang_ru;;*);
+       [Def. (country of citizenship)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [государство, признающее человека своим гражданином] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [the object is a country that recognizes the subject as its citizen] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_human;
+
+=> nrel_first_domain:
+    concept_association_football_player;
+
+
+=> nrel_second_domain:
+    concept_Argentina;
+
+=> nrel_second_domain:
+    concept_Spain;
+
+=> nrel_second_domain:
+    concept_Italy;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

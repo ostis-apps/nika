@@ -1,0 +1,21 @@
+concept_Antonella_Roccuzzo
+=> nrel_main_idtf:
+    [Антонела Роккуццо] (*<-lang_ru;;*);
+    [Antonella Roccuzzo] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Антонела Роккуццо)] (*<-lang_ru;;*);
+       [Def. (Antonella Roccuzzo)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Аргентинская модель] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Argentine model] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

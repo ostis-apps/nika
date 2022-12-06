@@ -1,0 +1,21 @@
+concept_history_of_association_football
+=> nrel_main_idtf:
+    [история футбола] (*<-lang_ru;;*);
+    [history of association football] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (история футбола)] (*<-lang_ru;;*);
+       [Def. (history of association football)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [история командной игры] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [aspect of history] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,21 @@
+concept_FC_Barcelona_Juvenil_A
+=> nrel_main_idtf:
+    [ФК Барселона Ювенил А] (*<-lang_ru;;*);
+    [FC Barcelona Juvenil A] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (ФК Барселона Ювенил А)] (*<-lang_ru;;*);
+       [Def. (FC Barcelona Juvenil A)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Команда испанского профессионального футбольного клуба до 19 лет Барселона] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [under-19 team of Spanish professional football club Barcelona] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

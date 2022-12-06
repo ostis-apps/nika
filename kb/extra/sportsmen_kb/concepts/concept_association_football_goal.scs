@@ -1,0 +1,21 @@
+concept_association_football_goal
+=> nrel_main_idtf:
+    [Футбольные ворота] (*<-lang_ru;;*);
+    [association football goal] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Футбольные ворота)] (*<-lang_ru;;*);
+       [Def. (association football goal)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [элемент футбольного поля] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [element of a soccer field] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

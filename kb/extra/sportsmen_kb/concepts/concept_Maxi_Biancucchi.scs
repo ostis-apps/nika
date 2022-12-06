@@ -1,0 +1,21 @@
+concept_Maxi_Biancucchi
+=> nrel_main_idtf:
+    [Бьянкуччи, Максимилиано] (*<-lang_ru;;*);
+    [Maxi Biancucchi] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Бьянкуччи, Максимилиано)] (*<-lang_ru;;*);
+       [Def. (Maxi Biancucchi)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Аргентинский футболист] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Argentine footballer] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,38 @@
+concept_message_about_fastest_runner
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о самом быстром бегуне ]
+	(* <- lang_ru;; *);
+	[message about fastest_runner]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[fastest_runner];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о самом быстром бегуне )]
+        (* <- lang_ru;; *);
+        [Def. (message about fastest_runner)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о самом быстром бегуне  - атомарное сообщение, являющееся запросом на получение информации про самом быстром бегуне]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about fastest_runner - atomic message which used to make a question about fastest_runner]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
+

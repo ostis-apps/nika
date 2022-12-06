@@ -1,0 +1,21 @@
+concept_Hard_Rock_Cafe
+=> nrel_main_idtf:
+    [Hard Rock Cafe] (*<-lang_ru;;*);
+    [Hard Rock Cafe] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Hard Rock Cafe)] (*<-lang_ru;;*);
+       [Def. (Hard Rock Cafe)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Сеть ресторанов] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [chain of restaurants] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

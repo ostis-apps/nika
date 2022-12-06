@@ -1,0 +1,21 @@
+concept_LFP_Awards
+=> nrel_main_idtf:
+    [LFP Awards] (*<-lang_ru;;*);
+    [LFP Awards] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (LFP Awards)] (*<-lang_ru;;*);
+       [Def. (LFP Awards)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Лучшие игроки и тренеры La Liga] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [best Players And Coaches of La Liga] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

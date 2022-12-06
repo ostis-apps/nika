@@ -1,0 +1,21 @@
+concept_FIFA_World_Player_of_the_Year
+=> nrel_main_idtf:
+    [Игрок года ФИФА] (*<-lang_ru;;*);
+    [FIFA World Player of the Year] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Игрок года ФИФА)] (*<-lang_ru;;*);
+       [Def. (FIFA World Player of the Year)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Футбольная премия Ассоциации] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [association football award] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,21 @@
+concept_UNICEF
+=> nrel_main_idtf:
+    [ЮНИСЕФ] (*<-lang_ru;;*);
+    [UNICEF] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (ЮНИСЕФ)] (*<-lang_ru;;*);
+       [Def. (UNICEF)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Детский фонд ООН] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [specialised agency of United Nations] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,16 @@
+concept_Mastercard_All_Star_Team
+=> nrel_main_idtf:
+    [Mastercard All-Star Team] (*<-lang_ru;;*);
+    [Mastercard All-Star Team] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Mastercard All-Star Team)] (*<-lang_ru;;*);
+       [Def. (Mastercard All-Star Team)] (*<-lang_en;;*);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

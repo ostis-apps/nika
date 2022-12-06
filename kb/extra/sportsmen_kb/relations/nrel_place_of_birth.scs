@@ -1,0 +1,38 @@
+nrel_place_of_birth
+
+//идентификаторы
+=> nrel_main_idtf:
+    [место рождения] (*<-lang_ru;;*);
+    [place of birth] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (место рождения)] (*<-lang_ru;;*);
+       [Def. (place of birth)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [наиболее точное место, где субъект родился (например, город, а не страна)] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [most specific known (e.g. city instead of country, or hospital instead of city) birth location of a person, animal or fictional character] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_human;
+
+=> nrel_first_domain:
+    concept_association_football_player;
+
+
+=> nrel_second_domain:
+    concept_Rosario;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

@@ -1,0 +1,16 @@
+concept_IFFHS_World_Team
+=> nrel_main_idtf:
+    [IFFHS World Team] (*<-lang_ru;;*);
+    [IFFHS World Team] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (IFFHS World Team)] (*<-lang_ru;;*);
+       [Def. (IFFHS World Team)] (*<-lang_en;;*);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,21 @@
+concept_sports_location
+=> nrel_main_idtf:
+    [спортивное место] (*<-lang_ru;;*);
+    [sports location] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (спортивное место)] (*<-lang_ru;;*);
+       [Def. (sports location)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [место для занятие спортом] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [site where a sport is practiced, whether dedicated to it or not] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

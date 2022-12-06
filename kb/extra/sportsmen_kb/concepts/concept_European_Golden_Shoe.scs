@@ -1,0 +1,21 @@
+concept_European_Golden_Shoe
+=> nrel_main_idtf:
+    [Золотая бутса] (*<-lang_ru;;*);
+    [European Golden Shoe] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Золотая бутса)] (*<-lang_ru;;*);
+       [Def. (European Golden Shoe)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Ежегодная футбольная награда] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [UEFA award for the top-scorer of a season] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

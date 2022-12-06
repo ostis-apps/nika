@@ -1,0 +1,21 @@
+concept_The_Best_FIFA_Mens_Player
+=> nrel_main_idtf:
+    [The Best FIFA Men’s Player] (*<-lang_ru;;*);
+    [The Best FIFA Men's Player] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (The Best FIFA Men’s Player)] (*<-lang_ru;;*);
+       [Def. (The Best FIFA Men's Player)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [футбольная награда] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [an association football annual award] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,21 @@
+concept_Italian_Argentines
+=> nrel_main_idtf:
+    [итальянцы в Аргентине] (*<-lang_ru;;*);
+    [Italian Argentines] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (итальянцы в Аргентине)] (*<-lang_ru;;*);
+       [Def. (Italian Argentines)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Аргентинские граждане итальянского происхождения] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Argentine citizens of Italian descent] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,21 @@
+concept_forward
+=> nrel_main_idtf:
+    [нападающий] (*<-lang_ru;;*);
+    [forward] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (нападающий)] (*<-lang_ru;;*);
+       [Def. (forward)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [амплуа футболиста, располагающегося у ворот соперника] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [association football position played near the opponent's goal] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

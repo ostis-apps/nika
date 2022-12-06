@@ -1,0 +1,21 @@
+concept_La_Liga
+=> nrel_main_idtf:
+    [Ла Лига] (*<-lang_ru;;*);
+    [La Liga] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Ла Лига)] (*<-lang_ru;;*);
+       [Def. (La Liga)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [профессиональная футбольная лига для испанских футбольных клубов] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [men's top professional football division of the Spanish football league system] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

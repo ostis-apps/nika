@@ -1,0 +1,21 @@
+concept_Rosario
+=> nrel_main_idtf:
+    [Росарио] (*<-lang_ru;;*);
+    [Rosario] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Росарио)] (*<-lang_ru;;*);
+       [Def. (Rosario)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [город в Аргентине, в провинции Санта-Фе] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [city in Argentina] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

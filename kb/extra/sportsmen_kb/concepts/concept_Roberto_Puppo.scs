@@ -1,0 +1,21 @@
+concept_Roberto_Puppo
+=> nrel_main_idtf:
+    [Роберто Puppo] (*<-lang_ru;;*);
+    [Roberto Puppo] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Роберто Puppo)] (*<-lang_ru;;*);
+       [Def. (Roberto Puppo)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Футболист и менеджер ассоциации] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [association football player and manager] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

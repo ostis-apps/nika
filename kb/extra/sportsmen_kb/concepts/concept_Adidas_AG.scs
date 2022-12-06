@@ -1,0 +1,21 @@
+concept_Adidas_AG
+=> nrel_main_idtf:
+    [Adidas] (*<-lang_ru;;*);
+    [Adidas AG] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Adidas)] (*<-lang_ru;;*);
+       [Def. (Adidas AG)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [немецкий промышленный концерн, специализирующийся на выпуске спортивной экипировки и инвентаря] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [German multinational corporation] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

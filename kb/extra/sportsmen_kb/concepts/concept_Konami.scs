@@ -1,0 +1,21 @@
+concept_Konami
+=> nrel_main_idtf:
+    [Konami] (*<-lang_ru;;*);
+    [Konami] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Konami)] (*<-lang_ru;;*);
+       [Def. (Konami)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Японская компания развлечений и видеоигр] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Japanese entertainment and video game company] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

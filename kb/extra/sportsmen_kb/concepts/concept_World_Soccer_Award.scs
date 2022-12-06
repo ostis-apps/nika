@@ -1,0 +1,21 @@
+concept_World_Soccer_Award
+=> nrel_main_idtf:
+    [Награды журнала World Soccer] (*<-lang_ru;;*);
+    [World Soccer Award] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Награды журнала World Soccer)] (*<-lang_ru;;*);
+       [Def. (World Soccer Award)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Дж] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [j] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

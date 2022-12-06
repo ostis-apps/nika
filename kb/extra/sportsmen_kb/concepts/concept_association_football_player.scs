@@ -1,0 +1,21 @@
+concept_association_football_player
+=> nrel_main_idtf:
+    [футболист] (*<-lang_ru;;*);
+    [association football player] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (футболист)] (*<-lang_ru;;*);
+       [Def. (association football player)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [спортсмен, играющий в футбол по правилам Ассоциации FIFA (не путать с игроками в американский, канадский, австралийский, гэльский футбол)] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [person who plays association football (soccer) (note: do NOT use this together with "instance of", use it as "occupation" instead)] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

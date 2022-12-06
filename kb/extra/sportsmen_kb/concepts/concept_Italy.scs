@@ -1,0 +1,21 @@
+concept_Italy
+=> nrel_main_idtf:
+    [Италия] (*<-lang_ru;;*);
+    [Italy] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Италия)] (*<-lang_ru;;*);
+       [Def. (Italy)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [государство на юге Европы, в центре Средиземноморья] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [country in Southern Europe] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

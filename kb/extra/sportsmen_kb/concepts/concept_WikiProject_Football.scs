@@ -1,0 +1,21 @@
+concept_WikiProject_Football
+=> nrel_main_idtf:
+    [Проект:Футбол] (*<-lang_ru;;*);
+    [WikiProject Football] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Проект:Футбол)] (*<-lang_ru;;*);
+       [Def. (WikiProject Football)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [тематический проект Викимедиа] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [project dedicated to association football content] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

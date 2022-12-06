@@ -1,0 +1,21 @@
+concept_Premios_Protagonistas
+=> nrel_main_idtf:
+    [премия программы «Протагонисты»] (*<-lang_ru;;*);
+    [Premios Protagonistas] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (премия программы «Протагонисты»)] (*<-lang_ru;;*);
+       [Def. (Premios Protagonistas)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [испанская премия] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Spanish prize] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

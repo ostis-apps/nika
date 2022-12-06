@@ -1,0 +1,16 @@
+concept_UEFA_Club_Footballer_of_the_Year
+=> nrel_main_idtf:
+    [Клубный футболист года по версии УЕФА] (*<-lang_ru;;*);
+    [UEFA Club Footballer of the Year] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Клубный футболист года по версии УЕФА)] (*<-lang_ru;;*);
+       [Def. (UEFA Club Footballer of the Year)] (*<-lang_en;;*);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

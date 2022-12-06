@@ -1,0 +1,21 @@
+concept_midfielder
+=> nrel_main_idtf:
+    [полузащитник] (*<-lang_ru;;*);
+    [midfielder] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (полузащитник)] (*<-lang_ru;;*);
+       [Def. (midfielder)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [игрок футбольной команды, действующий между защитой и нападением] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [association football position] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

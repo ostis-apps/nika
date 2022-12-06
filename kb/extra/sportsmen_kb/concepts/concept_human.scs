@@ -1,0 +1,21 @@
+concept_human
+=> nrel_main_idtf:
+    [человек] (*<-lang_ru;;*);
+    [human] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (человек)] (*<-lang_ru;;*);
+       [Def. (human)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [общественное существо, обладающее разумом и сознанием; субъект, относящийся к виду Человек разумный] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [common name of Homo sapiens, unique extant species of the genus Homo] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

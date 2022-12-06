@@ -1,0 +1,21 @@
+concept_Laureus_World_Sports_Award_for_Sportsman_of_the_Year
+=> nrel_main_idtf:
+    [Laureus World Sports Award — Спортсмен года] (*<-lang_ru;;*);
+    [Laureus World Sports Award for Sportsman of the Year] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Laureus World Sports Award — Спортсмен года)] (*<-lang_ru;;*);
+       [Def. (Laureus World Sports Award for Sportsman of the Year)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Ежегодная церемония награждения] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [annual award ceremony] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,21 @@
+concept_UEFA_Champions_League_2010_11
+=> nrel_main_idtf:
+    [Лига чемпионов УЕФА 2010/2011] (*<-lang_ru;;*);
+    [UEFA Champions League 2010-11] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Лига чемпионов УЕФА 2010/2011)] (*<-lang_ru;;*);
+       [Def. (UEFA Champions League 2010-11)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [европейский клубный футбольный турнир 2010-2011 годов] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [56th season of the UEFA club football tournament] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

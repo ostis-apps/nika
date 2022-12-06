@@ -1,0 +1,32 @@
+concept_athlete
+=> nrel_main_idtf:
+    [спортсмен] (*<-lang_ru;;*);
+    [athlete] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (спортсмен)] (*<-lang_ru;;*);
+       [Def. (athlete)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [человек, занимающийся спортом] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [person who participates regularly in a sport] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_field_of_this_occupation: concept_sport;
+=> nrel_field_of_this_occupation: concept_womens_sports;
+=> nrel_field_of_this_occupation: concept_mens_sports;
+=> nrel_uses: concept_sports_equipment;
+=> nrel_different_from: concept_athletics_competitor;
+=> nrel_described_by_source: concept_Metropolitan_Museum_of_Art_Tagging_Vocabulary;
+=> nrel_instance_of: concept_occupation;
+=> nrel_patron_saint: concept_Saint_Sebastian;
+
+<- concept_sportsperson;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

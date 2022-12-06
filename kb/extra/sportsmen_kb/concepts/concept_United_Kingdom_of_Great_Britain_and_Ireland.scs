@@ -1,0 +1,21 @@
+concept_United_Kingdom_of_Great_Britain_and_Ireland
+=> nrel_main_idtf:
+    [Соединённое королевство Великобритании и Ирландии] (*<-lang_ru;;*);
+    [United Kingdom of Great Britain and Ireland] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Соединённое королевство Великобритании и Ирландии)] (*<-lang_ru;;*);
+       [Def. (United Kingdom of Great Britain and Ireland)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [конституционная монархия в Западной Европе (1801-1927)] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [historical sovereign state (1801–1922)] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

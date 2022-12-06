@@ -1,0 +1,49 @@
+concept_association_football
+=> nrel_main_idtf:
+    [футбол] (*<-lang_ru;;*);
+    [association football] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (футбол)] (*<-lang_ru;;*);
+       [Def. (association football)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [командный вид спорта с мячом] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [sport that is practiced between two teams of eleven players] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_authority: concept_FIFA;
+=> nrel_regulated_by: concept_FIFA;
+=> nrel_country_of_origin: concept_United_Kingdom_of_Great_Britain_and_Ireland;
+=> nrel_different_from: concept_football_codes;
+=> nrel_different_from: concept_football;
+=> nrel_described_by_source: concept_Armenian_Soviet_Encyclopedia;
+=> nrel_described_by_source: concept_Brockhaus_and_Efron_Encyclopedic_Dictionary;
+=> nrel_described_by_source: concept_Small_Brockhaus_and_Efron_Encyclopedic_Dictionary;
+=> nrel_instance_of: concept_type_of_sport;
+=> nrel_instance_of: concept_spectator_sport;
+=> nrel_instance_of: concept_Olympic_sport;
+=> nrel_maintained_by_WikiProject: concept_WikiProject_Football;
+=> nrel_history_of_topic: concept_history_of_association_football;
+=> nrel_uses: concept_association_football_kit;
+=> nrel_uses: concept_association_football_ball;
+=> nrel_uses: concept_association_football_pitch;
+=> nrel_uses: concept_association_football_goal;
+=> nrel_uses: concept_football_boots;
+=> nrel_practiced_by: concept_association_football_player;
+=> nrel_practiced_by: concept_association_football_manager;
+=> nrel_practiced_by: concept_association_football_referee;
+=> nrel_practiced_by: concept_director_of_football;
+=> nrel_practiced_by: concept_football_scout;
+=> nrel_practiced_by: concept_association_football_team;
+
+<- concept_football_codes;
+<- concept_team_sport;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

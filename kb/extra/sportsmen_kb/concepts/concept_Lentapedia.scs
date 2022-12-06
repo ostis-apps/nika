@@ -1,0 +1,21 @@
+concept_Lentapedia
+=> nrel_main_idtf:
+    [Лентапедия] (*<-lang_ru;;*);
+    [Lentapedia] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Лентапедия)] (*<-lang_ru;;*);
+       [Def. (Lentapedia)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [архив справочно-биографических текстов о людях, организациях, объектах, явлениях и событиях, часто встречающихся в российских новостях от Lenta.ru] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [collection of references and biographical texts about people, organizations, objects, phenomena and events, often occurring in the Russian news] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

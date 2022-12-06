@@ -1,0 +1,21 @@
+concept_game_based_sport
+=> nrel_main_idtf:
+    [игровой спорт] (*<-lang_ru;;*);
+    [game-based sport] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (игровой спорт)] (*<-lang_ru;;*);
+       [Def. (game-based sport)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [виды спорта, связанные с противоборством команд или участников] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [game competitions which are based on various technical and tactical tricks to hit a certain target (opponent's gate, field, etc.) during the competition with various sports items (usually a ball)] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

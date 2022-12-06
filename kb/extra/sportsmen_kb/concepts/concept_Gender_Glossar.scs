@@ -1,0 +1,21 @@
+concept_Gender_Glossar
+=> nrel_main_idtf:
+    [Гендерный глоссар] (*<-lang_ru;;*);
+    [Gender Glossar] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Гендерный глоссар)] (*<-lang_ru;;*);
+       [Def. (Gender Glossar)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Немецкая онлайн -энциклопедия гендера] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [German online encyclopedia of gender] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

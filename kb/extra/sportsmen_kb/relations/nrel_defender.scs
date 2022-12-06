@@ -1,0 +1,27 @@
+nrel_defender
+
+//идентификаторы
+=> nrel_main_idtf:
+    [защитник] (*<-lang_ru;;*);
+    [defender] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (защитник)] (*<-lang_ru;;*);
+       [Def. (defender)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [лицо, осуществляющее защиту интересов обвиняемого или подозреваемого] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [person representing the defendant, at a trial] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

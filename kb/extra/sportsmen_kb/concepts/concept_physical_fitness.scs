@@ -1,0 +1,21 @@
+concept_physical_fitness
+=> nrel_main_idtf:
+    [Фитнес] (*<-lang_ru;;*);
+    [physical fitness] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Фитнес)] (*<-lang_ru;;*);
+       [Def. (physical fitness)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [вид физической активности, который направлен на поддержание хорошей физической формы] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [state of health and well-being and, more specifically, the ability to perform aspects of sports, occupations and daily activities] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

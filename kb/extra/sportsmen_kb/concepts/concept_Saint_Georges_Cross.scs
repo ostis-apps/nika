@@ -1,0 +1,21 @@
+concept_Saint_Georges_Cross
+=> nrel_main_idtf:
+    [крест Сант-Жорди] (*<-lang_ru;;*);
+    [Saint George's Cross] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (крест Сант-Жорди)] (*<-lang_ru;;*);
+       [Def. (Saint George's Cross)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [награда Каталонии] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Catalan government award] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

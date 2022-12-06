@@ -1,0 +1,21 @@
+concept_outline_of_sports
+=> nrel_main_idtf:
+    [Схема спорта] (*<-lang_ru;;*);
+    [outline of sports] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Схема спорта)] (*<-lang_ru;;*);
+       [Def. (outline of sports)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Обзор и актуальное руководство по спорту] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [overview of and topical guide to sports] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

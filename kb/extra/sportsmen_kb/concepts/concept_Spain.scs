@@ -1,0 +1,21 @@
+concept_Spain
+=> nrel_main_idtf:
+    [Испания] (*<-lang_ru;;*);
+    [Spain] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Испания)] (*<-lang_ru;;*);
+       [Def. (Spain)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [страна на юго-западе Европы] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [country in southwestern Europe and northwestern Africa] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,21 @@
+concept_Barcelona
+=> nrel_main_idtf:
+    [Барселона] (*<-lang_ru;;*);
+    [Barcelona] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Барселона)] (*<-lang_ru;;*);
+       [Def. (Barcelona)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [город в Испании, столица Каталонии] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [city in Catalonia, Spain] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

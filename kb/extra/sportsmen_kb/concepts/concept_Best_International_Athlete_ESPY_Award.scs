@@ -1,0 +1,16 @@
+concept_Best_International_Athlete_ESPY_Award
+=> nrel_main_idtf:
+    [Лучший международный спортсмен награду ESPY] (*<-lang_ru;;*);
+    [Best International Athlete ESPY Award] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Лучший международный спортсмен награду ESPY)] (*<-lang_ru;;*);
+       [Def. (Best International Athlete ESPY Award)] (*<-lang_en;;*);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,21 @@
+concept_occupation
+=> nrel_main_idtf:
+    [род занятий] (*<-lang_ru;;*);
+    [occupation] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (род занятий)] (*<-lang_ru;;*);
+       [Def. (occupation)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [ярлык, нанесенный человеку на основании деятельности, в которой он участвует] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [label applied to a person based on an activity they participate in] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

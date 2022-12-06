@@ -1,0 +1,21 @@
+concept_UNICEF_Goodwill_Ambassador
+=> nrel_main_idtf:
+    [посол доброй воли ЮНИСЕФ] (*<-lang_ru;;*);
+    [UNICEF Goodwill Ambassador] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (посол доброй воли ЮНИСЕФ)] (*<-lang_ru;;*);
+       [Def. (UNICEF Goodwill Ambassador)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [почётное звание] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [local, regional or internationally known public figure that is selected to promote UNICEF programs] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;
