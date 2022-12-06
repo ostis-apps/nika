@@ -1,0 +1,76 @@
+section_subject_domain_of_Great_geographical_discoveries
+=> nrel_main_idtf:
+	  [Раздел. Предметная область Великих географических открытий]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of Great geographical discoveries] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_Great_geographical_discoveries = [*
+	subject_domain_of_Great_geographical_discoveries
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область Великих географических открытий]
+   (* <- lang_ru;; *);
+   [Subject domain of Great geographical discoveries]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+	concept_seafarer;
+	-> rrel_not_maximum_studied_object_class:
+	concept_caravelle;
+	concept_galleon;
+	concept_caracca;
+	concept_caravelle;
+	concept_researcher;
+	concept_expedition;
+	concept_conquest; 
+	concept_discovery;
+	-> rrel_explored_relation:
+	rrel_adelantado;
+	nrel_participant;
+	nrel_citizenship;
+	nrel_date;
+	nrel_start_date;
+	nrel_end_date;
+	nrel_make;
+	rrel_crew_member;
+	rrel_captain;
+	nrel_element_of_epoch;
+	nrel_used_navigation_tool;;
+*];;
+
+section_subject_domain_of_Great_geographical_discoveries
+-> rrel_key_sc_element:
+	subject_domain_of_Great_geographical_discoveries;
+	concept_ship;
+	concept_caravelle;
+	concept_seafarer;
+	concept_conquistador;
+	concept_country;
+	concept_voyage;
+	concept_around_the_world_voyage;
+	concept_discovery;
+	concept_event;
+	concept_period;
+	concept_date;
+	concept_galleon;
+	concept_caracca;
+	concept_expedition;
+	concept_conquest;
+	concept_navigation_tool;
+	concept_researcher; 
+	concept_traveller;
+	rrel_adelantado;
+	rrel_captain;
+	nrel_participant;
+	nrel_citizenship;
+	nrel_date;
+	nrel_start_date;
+	nrel_end_date;
+	nrel_make;
+	rrel_crew_member;
+	nrel_element_of_epoch;
+	nrel_used_navigation_tool;;

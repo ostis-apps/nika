@@ -1,0 +1,56 @@
+concept_traveller
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+	[путешественник]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[traveller]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[турист]		(* <- lang_ru;; *);
+	[авантюрист]	(* <- lang_ru;; *);
+	[adventurer]	(* <- lang_en;; *);
+	[traveler]		(* <- lang_en;; *);
+	[tourist]		(* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Путешественник - человек, в течение длительного времени перемещающийся по определённому маршруту (предварительно намеченному, или спонтанно), с намерениями, отличными от отдыха и развлечений] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+			concept_human;
+			concept_route
+		};;
+	*); 
+   
+=> nrel_inclusion:
+	concept_seafarer;
+	concept_researcher;
+	
+=> nrel_participant: 
+	concept_expedition;
+	concept_voyage;
+	concept_around_the_world_voyage;
+   
+-> rrel_crew_member: 
+	concept_ship;
+	concept_caravelle;
+	concept_galleon;
+	concept_caracca;
+	   
+=> nrel_citizenship:
+	concept_country;
+	
+=> nrel_used_navigation_tool:
+	concept_navigation_tool;
+   
+=> nrel_make:
+	concept_event;
+	concept_discovery;;

@@ -1,0 +1,28 @@
+Martin_Alonso_Pinson
+<- concept_seafarer;
+<- concept_traveller;
+<- concept_researcher;
+
+=> nrel_main_idtf:
+   [Мартин Алонсо Пинсон]
+   	(* <- lang_ru;; *);
+   [Martin Alonso Pinson] 
+   	(* <-lang_en;; *);
+
+=> nrel_participant:
+	First_Christophor_Columb_expedition;
+
+-> rrel_crew_member:
+	Pinta;
+
+-> rrel_captain:
+	Pinta;
+	   
+=> nrel_citizenship:
+	Spain;
+	
+=> nrel_nationality:
+	Spain; 
+	
+=> nrel_used_navigation_tool:
+	Astrolabe;;

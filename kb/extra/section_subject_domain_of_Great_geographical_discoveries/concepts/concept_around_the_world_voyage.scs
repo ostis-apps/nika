@@ -1,0 +1,53 @@
+concept_around_the_world_voyage
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+	[кругосветное путешествие]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[around the world]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[кругосветка]	(* <- lang_ru;; *);
+	[around the world voyage]	(* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Кругосветное путешествие -  путешествие, маршрут которого в системе отсчёта, связанной с Землёй, однократно огибает земную ось и завершается в исходной точке.] (* <-lang_ru;; *);; 
+		*);;
+			<= nrel_using_constants: {
+				concept_voyage;
+				concept_route
+		};;
+	*);
+
+=> nrel_start_date:
+	concept_date;
+
+=> nrel_ship:
+	concept_ship;
+	concept_caravelle;
+	concept_galleon;
+	concept_caracca;
+	
+=> nrel_end_date:
+	concept_date;
+	
+=> nrel_element_of_epoch: 
+	concept_period;;
+	
+concept_route
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [маршрут]
+   	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[route]
+	(* <- lang_en;; *);; 

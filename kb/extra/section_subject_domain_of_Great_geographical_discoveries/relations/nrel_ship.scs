@@ -1,0 +1,37 @@
+nrel_ship
+<- sc_node_norole_relation;
+
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+<- antireflexive_relation;
+
+=> nrel_main_idtf: 
+	[корабль*] (*<-lang_ru;;*);
+=> nrel_main_idtf: 
+	[ship*] (*<-lang_en;;*);
+
+=> nrel_first_domain: 	concept_voyage;
+						concept_around_the_world_voyage;
+						concept_expedition; 
+=> nrel_second_domain:  concept_ship;
+						concept_caravelle;
+						concept_galleon;
+						concept_caracca;
+			
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [корабль* - бинарное ориентированное отношение, связывающее морское путешествие (в т.ч. экспедицию) и корабль, на котором было реализовано это путешествие.] (* <-lang_ru;; *);; 
+		*);;
+				<= nrel_using_constants: {
+		concept_voyage;
+		concept_ship
+		};;
+	*);;

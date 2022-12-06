@@ -1,0 +1,34 @@
+nrel_citizenship
+<- sc_node_norole_relation;
+
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+<- antireflexive_relation;
+
+=> nrel_main_idtf: 
+	[подданство*] (*<-lang_ru;;*);
+=> nrel_main_idtf: 
+	[citizenship*] (*<-lang_en;;*);
+
+=> nrel_first_domain: 	concept_traveller;
+			concept_seafarer;
+			concept_researcher; 
+			concept_conquistador;
+=> nrel_second_domain:  concept_country;
+			
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [подданство* - отношение, определяющее принадлежность лица тому или иному государству (обычно монархическому) а также его правителю. Более узкое понятие по отношению к гражданству.] (* <-lang_ru;; *);; 
+		*);;
+				<= nrel_using_constants: {
+		concept_country
+		};;
+	*);;

@@ -1,0 +1,49 @@
+concept_researcher
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+	[исследователь]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[researcher]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[ученый]		
+	(* <- lang_ru;; *);
+	
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [ Мореплаватель - человек, посвятивший значительную часть своей жизни морским путешествиям.] (* <-lang_ru;; *);; 
+		*);;
+			<= nrel_using_constants: {
+				concept_human;
+				concept_voyage
+		};;
+	*); 
+   
+=> nrel_participant: 
+	concept_expedition;
+	concept_voyage;
+	concept_around_the_world_voyage;
+   
+=> rrel_crew_member: 
+	concept_ship;
+	concept_caravelle;
+	concept_galleon;
+	concept_caracca;
+	   
+=> nrel_citizenship:
+	concept_country;
+	
+=> nrel_used_navigation_tool:
+	concept_navigation_tool;
+   
+=> nrel_make:
+	concept_event;
+	concept_discovery;;

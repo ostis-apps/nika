@@ -1,0 +1,38 @@
+concept_expedition
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+	[экспедиция]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[expedition]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[поход]		(* <- lang_ru;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Экспедиция - отправка заинтересованных лиц с целью проведения исследований на местности либо получения иной ценной информации.] (* <-lang_ru;; *);; 
+		*);;
+	*);
+	
+=> nrel_ship:
+	concept_ship;
+	concept_caravelle;
+	concept_galleon;
+	concept_caracca;
+
+=> nrel_start_date:
+	concept_date;
+	
+=> nrel_end_date:
+	concept_date;
+	
+=> nrel_element_of_epoch: 
+	concept_period;;

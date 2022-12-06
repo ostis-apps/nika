@@ -1,0 +1,32 @@
+concept_period
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+	[период]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[period]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[эпоха]		(* <- lang_ru;; *);
+	[epoch]	(* <- lang_en;; *);
+	[era]	(* <- lang_en;; *);
+	[эра]	(* <- lang_ru;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Период - отрезок времени в рамках одной из систем периодизации истории.] (* <-lang_ru;; *);; 
+		*);;
+	*); 
+
+=> nrel_start_date: 
+	concept_date;
+	
+=> nrel_end_date: 
+	concept_date;;

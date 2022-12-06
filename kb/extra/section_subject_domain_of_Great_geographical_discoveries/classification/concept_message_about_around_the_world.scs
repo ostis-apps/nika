@@ -1,0 +1,27 @@
+concept_message_about_around_the_world
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о кругосветном плавании]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_around_the_world];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о кругосветном плавании)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о сущности - атомарное сообщение, с 
+	   	запросом на ответ о первом кругосветном путешествии.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

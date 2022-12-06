@@ -1,0 +1,35 @@
+concept_conquistador
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+	[конкистадор]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[conquistador]
+	(* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Конкистадор - в период конца XV — XVI веков испанский или португальский завоеватель территорий Нового Света в эпоху колонизации Америки, участник конкисты — завоевания Америки.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_conquest
+		};;
+	*); 
+   
+=> nrel_make:
+	concept_event;
+	concept_conquest;
+
+=> nrel_participant: 
+	concept_expedition;
+	
+=> nrel_citizenship:
+	concept_country;;

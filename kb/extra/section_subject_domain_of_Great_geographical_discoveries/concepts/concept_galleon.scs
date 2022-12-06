@@ -1,0 +1,26 @@
+concept_galleon
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+	[галеон]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[galleon]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[галион]	(* <- lang_ru;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Галеон - большое многопалубное парусное судно XVI—XVIII веков с достаточно сильным артиллерийским вооружением, использовавшееся как военное и торговое. ] (* <-lang_ru;; *);; 
+		*);;
+			<= nrel_using_constants: {
+				concept_ship
+		};;
+	*);; 
