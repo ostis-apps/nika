@@ -1,0 +1,27 @@
+concept_message_about_discovery
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение об открытии]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_discovery];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение об открытии)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение об открытии - атомарное сообщение,
+    которое содержит информацию об произведенном открытии в научной области.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
