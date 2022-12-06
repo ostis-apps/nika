@@ -1,0 +1,21 @@
+concept_Ronald_Koeman
+=> nrel_main_idtf:
+    [Рональд Куман] (*<-lang_ru;;*);
+    [Ronald Koeman] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Рональд Куман)] (*<-lang_ru;;*);
+       [Def. (Ronald Koeman)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [нидерландский футболист и футбольный тренер] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Dutch association football manager and former player] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

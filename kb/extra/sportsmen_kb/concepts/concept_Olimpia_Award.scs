@@ -1,0 +1,21 @@
+concept_Olimpia_Award
+=> nrel_main_idtf:
+    [Награда Олимпии] (*<-lang_ru;;*);
+    [Olimpia Award] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Награда Олимпии)] (*<-lang_ru;;*);
+       [Def. (Olimpia Award)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Спортивная награда в Аргентине] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [sports award in Argentina] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

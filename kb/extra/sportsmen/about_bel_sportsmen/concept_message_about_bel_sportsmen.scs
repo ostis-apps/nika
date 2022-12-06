@@ -1,0 +1,38 @@
+concept_message_about_bel_sportsmen
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о беларусских спортсменах ]
+	(* <- lang_ru;; *);
+	[message about bel_sportsmen]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[bel_sportsmen];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о самом беларусских спортсменах )]
+        (* <- lang_ru;; *);
+        [Def. (message about bel_sportsmen)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о самом беларусских спортсменах  - атомарное сообщение, являющееся запросом на получение информации про беларусских спортсменов ]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about bel_sportsmen - atomic message which used to make a question about bel_sportsmen]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
+

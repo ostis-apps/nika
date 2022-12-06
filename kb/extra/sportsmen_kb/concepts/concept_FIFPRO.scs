@@ -1,0 +1,21 @@
+concept_FIFPRO
+=> nrel_main_idtf:
+    [Международная федерация ассоциаций профессиональных футболистов] (*<-lang_ru;;*);
+    [FIFPRO] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Международная федерация ассоциаций профессиональных футболистов)] (*<-lang_ru;;*);
+       [Def. (FIFPRO)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Всемирная организация, представляющая профессиональных футболистов] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Worldwide organization representing professional football players] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

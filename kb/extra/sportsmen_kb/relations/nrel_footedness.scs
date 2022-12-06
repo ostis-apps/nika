@@ -1,0 +1,38 @@
+nrel_footedness
+
+//идентификаторы
+=> nrel_main_idtf:
+    [рабочая нога] (*<-lang_ru;;*);
+    [footedness] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (рабочая нога)] (*<-lang_ru;;*);
+       [Def. (footedness)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [доминирующая нога или предпочтительная позиция этого человека] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [dominant foot or preferred stance of this person] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_human;
+
+=> nrel_first_domain:
+    concept_association_football_player;
+
+
+=> nrel_second_domain:
+    concept_left_footedness;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

@@ -1,0 +1,21 @@
+concept_pleasure
+=> nrel_main_idtf:
+    [удовольствие] (*<-lang_ru;;*);
+    [pleasure] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (удовольствие)] (*<-lang_ru;;*);
+       [Def. (pleasure)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Это ощущения, создающие положительный эмоциональный фон.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [broad class of mental states that humans and other animals experience as positive, enjoyable, or worth seeking] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

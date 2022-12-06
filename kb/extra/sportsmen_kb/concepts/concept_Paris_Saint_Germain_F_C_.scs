@@ -1,0 +1,21 @@
+concept_Paris_Saint_Germain_F_C_
+=> nrel_main_idtf:
+    [Пари Сен-Жермен] (*<-lang_ru;;*);
+    [Paris Saint-Germain F.C.] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Пари Сен-Жермен)] (*<-lang_ru;;*);
+       [Def. (Paris Saint-Germain F.C.)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [футбольный клуб из Парижа, Франция] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [association football club based in Paris, France] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

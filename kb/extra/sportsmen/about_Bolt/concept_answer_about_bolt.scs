@@ -1,0 +1,35 @@
+concept_answer_about_bolt_phrase
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Информация о Болт]
+	(* <- lang_ru;; *);
+	[info about bolt]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (Информация о Болте)]
+		(* <- lang_ru;; *);
+		[Def. (Information about bolt)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Ответ на вопрос про Болт]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example:
+			[Answer for question about bolt]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;
+	*);;
+

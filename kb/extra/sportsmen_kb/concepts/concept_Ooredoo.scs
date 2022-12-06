@@ -1,0 +1,21 @@
+concept_Ooredoo
+=> nrel_main_idtf:
+    [Ooredoo] (*<-lang_ru;;*);
+    [Ooredoo] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Ooredoo)] (*<-lang_ru;;*);
+       [Def. (Ooredoo)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Катарская многонациональная компания] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Qatar-based multinational company] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

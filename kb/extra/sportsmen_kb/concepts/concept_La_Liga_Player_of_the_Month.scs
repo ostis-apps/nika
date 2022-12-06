@@ -1,0 +1,16 @@
+concept_La_Liga_Player_of_the_Month
+=> nrel_main_idtf:
+    [Игрок месяца Ла Лиги] (*<-lang_ru;;*);
+    [La Liga Player of the Month] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Игрок месяца Ла Лиги)] (*<-lang_ru;;*);
+       [Def. (La Liga Player of the Month)] (*<-lang_en;;*);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

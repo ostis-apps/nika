@@ -1,0 +1,21 @@
+concept_Argentina_national_under_23_football_team
+=> nrel_main_idtf:
+    [олимпийская сборная Аргентины по футболу] (*<-lang_ru;;*);
+    [Argentina national under-23 football team] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (олимпийская сборная Аргентины по футболу)] (*<-lang_ru;;*);
+       [Def. (Argentina national under-23 football team)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [футбольная сборная Аргентины на Олимпийских играх] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [national association football team] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

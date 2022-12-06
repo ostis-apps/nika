@@ -1,0 +1,27 @@
+nrel_category_for_eponymous_categories
+
+//идентификаторы
+=> nrel_main_idtf:
+    [категория-эпоним] (*<-lang_ru;;*);
+    [category for eponymous categories] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (категория-эпоним)] (*<-lang_ru;;*);
+       [Def. (category for eponymous categories)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Категория Wikimedia, которая содержит подкатегории, посвященные конкретным случаям указанного элемента] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Wikimedia category that contains subcategories dedicated to specific instances of the said item] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

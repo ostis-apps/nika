@@ -1,0 +1,21 @@
+concept_Olympic_sport
+=> nrel_main_idtf:
+    [олимпийский вид спорта] (*<-lang_ru;;*);
+    [Olympic sport] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (олимпийский вид спорта)] (*<-lang_ru;;*);
+       [Def. (Olympic sport)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Тип спорта с событиями, оспариваемыми на Олимпийских играх] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [type of sport with events contested at the Olympic Games] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,21 @@
+concept_Van_Gogh_Museum
+=> nrel_main_idtf:
+    [Музей Винсента ван Гога] (*<-lang_ru;;*);
+    [Van Gogh Museum] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Музей Винсента ван Гога)] (*<-lang_ru;;*);
+       [Def. (Van Gogh Museum)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Художественный музей в Амстердаме, Нидерланды] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [art museum in Amsterdam, Netherlands] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

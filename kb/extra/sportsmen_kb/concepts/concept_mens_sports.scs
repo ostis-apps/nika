@@ -1,0 +1,21 @@
+concept_mens_sports
+=> nrel_main_idtf:
+    [мужской спорт] (*<-lang_ru;;*);
+    [men's sports] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (мужской спорт)] (*<-lang_ru;;*);
+       [Def. (men's sports)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Спорт участвовал мужчины] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [sports participated by males] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

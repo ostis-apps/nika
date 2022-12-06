@@ -1,0 +1,21 @@
+concept_UEFA_Club_Football_Awards
+=> nrel_main_idtf:
+    [Клубные футбольные награды УЕФА] (*<-lang_ru;;*);
+    [UEFA Club Football Awards] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Клубные футбольные награды УЕФА)] (*<-lang_ru;;*);
+       [Def. (UEFA Club Football Awards)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [премия] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [award] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

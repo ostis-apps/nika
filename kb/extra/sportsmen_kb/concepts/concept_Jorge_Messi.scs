@@ -1,0 +1,21 @@
+concept_Jorge_Messi
+=> nrel_main_idtf:
+    [Хорхе Месси] (*<-lang_ru;;*);
+    [Jorge Messi] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Хорхе Месси)] (*<-lang_ru;;*);
+       [Def. (Jorge Messi)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Prăbușirea lipovat] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [prăbușirea lipovat] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

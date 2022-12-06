@@ -1,0 +1,16 @@
+concept_FIFA_U_20_World_Cup_awards
+=> nrel_main_idtf:
+    [Награды FIFA U-20 Кубка мира] (*<-lang_ru;;*);
+    [FIFA U-20 World Cup awards] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Награды FIFA U-20 Кубка мира)] (*<-lang_ru;;*);
+       [Def. (FIFA U-20 World Cup awards)] (*<-lang_en;;*);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,21 @@
+concept_Spanish
+=> nrel_main_idtf:
+    [испанский язык] (*<-lang_ru;;*);
+    [Spanish] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (испанский язык)] (*<-lang_ru;;*);
+       [Def. (Spanish)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [плюрицентрический иберо-романский язык] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Romanic language originating in the central part of the Iberian Peninsula] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

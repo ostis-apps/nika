@@ -1,0 +1,59 @@
+nrel_different_from
+
+//идентификаторы
+=> nrel_main_idtf:
+    [не путать с] (*<-lang_ru;;*);
+    [different from] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (не путать с)] (*<-lang_ru;;*);
+       [Def. (different from)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [ссылка на элемент с другим смыслом, но который часто путается с этим] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [item that is different from another item, with which it may be confused] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_athlete;
+
+=> nrel_first_domain:
+    concept_association_football;
+
+=> nrel_first_domain:
+    concept_sport;
+
+
+=> nrel_second_domain:
+    concept_athletics_competitor;
+
+=> nrel_second_domain:
+    concept_football_codes;
+
+=> nrel_second_domain:
+    concept_football;
+
+=> nrel_second_domain:
+    concept_sports_discipline;
+
+=> nrel_second_domain:
+    concept_type_of_sport;
+
+=> nrel_second_domain:
+    concept_sports_competition;
+
+=> nrel_second_domain:
+    concept_physical_preparedness;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

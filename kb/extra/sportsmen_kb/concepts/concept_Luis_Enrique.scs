@@ -1,0 +1,21 @@
+concept_Luis_Enrique
+=> nrel_main_idtf:
+    [Луис Энрике] (*<-lang_ru;;*);
+    [Luis Enrique] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Луис Энрике)] (*<-lang_ru;;*);
+       [Def. (Luis Enrique)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [испанский футболист и футбольный тренер] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [former Spanish footballer and manager] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

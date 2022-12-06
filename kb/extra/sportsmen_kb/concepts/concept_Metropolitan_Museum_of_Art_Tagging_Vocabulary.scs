@@ -1,0 +1,16 @@
+concept_Metropolitan_Museum_of_Art_Tagging_Vocabulary
+=> nrel_main_idtf:
+    [Метрополитный музей искусств.] (*<-lang_ru;;*);
+    [Metropolitan Museum of Art Tagging Vocabulary] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Метрополитный музей искусств.)] (*<-lang_ru;;*);
+       [Def. (Metropolitan Museum of Art Tagging Vocabulary)] (*<-lang_en;;*);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

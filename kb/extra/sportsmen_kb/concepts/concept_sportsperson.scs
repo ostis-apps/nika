@@ -1,0 +1,21 @@
+concept_sportsperson
+=> nrel_main_idtf:
+    [человек, связанный со спортом] (*<-lang_ru;;*);
+    [sportsperson] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (человек, связанный со спортом)] (*<-lang_ru;;*);
+       [Def. (sportsperson)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [человек, участвующий в спортивном сообществе] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [person involved in a sports community] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

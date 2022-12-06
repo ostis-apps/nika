@@ -1,0 +1,44 @@
+concept_sport
+=> nrel_main_idtf:
+    [спорт] (*<-lang_ru;;*);
+    [sport] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (спорт)] (*<-lang_ru;;*);
+       [Def. (sport)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [деятельность по состязаниям и физической культуре] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [forms of competitive activity, usually physical] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_different_from: concept_sports_discipline;
+=> nrel_different_from: concept_type_of_sport;
+=> nrel_different_from: concept_sports_competition;
+=> nrel_different_from: concept_physical_preparedness;
+=> nrel_has_use: concept_physical_fitness;
+=> nrel_has_use: concept_pleasure;
+=> nrel_described_by_source: concept_Metropolitan_Museum_of_Art_Tagging_Vocabulary;
+=> nrel_described_by_source: concept_Gender_Glossar;
+=> nrel_inclusion: concept_type_of_sport;
+=> nrel_Wikimedia_outline: concept_outline_of_sports;
+=> nrel_instance_of: concept_academic_discipline;
+=> nrel_maintained_by_WikiProject: concept_WikiProject_Sports;
+=> nrel_uses: concept_sports_equipment;
+=> nrel_uses: concept_pitch;
+=> nrel_uses: concept_sports_field;
+=> nrel_uses: concept_sports_venue;
+=> nrel_uses: concept_sports_location;
+=> nrel_practiced_by: concept_athlete;
+=> nrel_practiced_by: concept_sportsperson;
+=> nrel_said_to_be_the_same_as: concept_game_based_sport;
+
+<- concept_physical_activity;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

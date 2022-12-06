@@ -1,0 +1,21 @@
+concept_athletics_competitor
+=> nrel_main_idtf:
+    [легкоатлет] (*<-lang_ru;;*);
+    [athletics competitor] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (легкоатлет)] (*<-lang_ru;;*);
+       [Def. (athletics competitor)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [человек, занимающийся лёгкой атлетикой] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [sportsperson that competes in athletics (track and field, running, walking)] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,21 @@
+concept_World_Cup_Golden_Ball
+=> nrel_main_idtf:
+    [Золотой мяч чемпионата мира] (*<-lang_ru;;*);
+    [World Cup Golden Ball] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Золотой мяч чемпионата мира)] (*<-lang_ru;;*);
+       [Def. (World Cup Golden Ball)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Награда за лучшего игрока на чемпионате мира FIFA] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [award for the best player at a FIFA World Cup] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,41 @@
+nrel_relative
+
+//идентификаторы
+=> nrel_main_idtf:
+    [родственник] (*<-lang_ru;;*);
+    [relative] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (родственник)] (*<-lang_ru;;*);
+       [Def. (relative)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [родственник персоны (для указания степени родства использовать P1039, также есть отдельные свойства для отцов, матерей, детей, братьев-сестер и.т.д.)] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [family member (qualify with "type of kinship", P1039; for direct family member please use specific property)] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_human;
+
+=> nrel_first_domain:
+    concept_association_football_player;
+
+
+=> nrel_second_domain:
+    concept_Maxi_Biancucchi;
+
+=> nrel_second_domain:
+    concept_Emanuel_Biancucchi;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

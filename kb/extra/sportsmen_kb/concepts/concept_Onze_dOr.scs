@@ -1,0 +1,21 @@
+concept_Onze_dOr
+=> nrel_main_idtf:
+    [Футболист года в Европе] (*<-lang_ru;;*);
+    [Onze d'Or] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Футболист года в Европе)] (*<-lang_ru;;*);
+       [Def. (Onze d'Or)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Футбольная премия Ассоциации] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [association football award] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

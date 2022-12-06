@@ -1,0 +1,35 @@
+nrel_Wikimedia_outline
+
+//идентификаторы
+=> nrel_main_idtf:
+    [обзорная статья Викимедиа] (*<-lang_ru;;*);
+    [Wikimedia outline] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (обзорная статья Викимедиа)] (*<-lang_ru;;*);
+       [Def. (Wikimedia outline)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Предмет об описании темы на сайтах Wikimedia] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [item about an outline of the topic at Wikimedia sites] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_sport;
+
+
+=> nrel_second_domain:
+    concept_outline_of_sports;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

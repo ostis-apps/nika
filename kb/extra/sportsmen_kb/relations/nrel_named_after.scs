@@ -1,0 +1,38 @@
+nrel_named_after
+
+//идентификаторы
+=> nrel_main_idtf:
+    [названо в честь] (*<-lang_ru;;*);
+    [named after] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (названо в честь)] (*<-lang_ru;;*);
+       [Def. (named after)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [объект, персона или событие, чьё имя/название послужило основой для данного элемента] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [entity or event that inspired the subject's name, or namesake (in at least one language). Qualifier "applies to name" (P5168) can be used to indicate which one] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_human;
+
+=> nrel_first_domain:
+    concept_association_football_player;
+
+
+=> nrel_second_domain:
+    concept_Messi;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

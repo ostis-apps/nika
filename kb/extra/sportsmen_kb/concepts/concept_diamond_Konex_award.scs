@@ -1,0 +1,21 @@
+concept_diamond_Konex_award
+=> nrel_main_idtf:
+    [Награда Diamond Konex] (*<-lang_ru;;*);
+    [diamond Konex award] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Награда Diamond Konex)] (*<-lang_ru;;*);
+       [Def. (diamond Konex award)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Аргентинская премия] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [argentinian award] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

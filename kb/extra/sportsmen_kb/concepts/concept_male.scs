@@ -1,0 +1,21 @@
+concept_male
+=> nrel_main_idtf:
+    [мужской пол] (*<-lang_ru;;*);
+    [male] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (мужской пол)] (*<-lang_ru;;*);
+       [Def. (male)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [используется в свойстве P21 (пол человека)] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [to be used in "sex or gender" (P21) to indicate that the human subject is a male or "semantic gender" (P10339) to indicate that a word refers to a male person] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

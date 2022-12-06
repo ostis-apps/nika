@@ -1,0 +1,21 @@
+concept_Gatorade
+=> nrel_main_idtf:
+    [Gatorade] (*<-lang_ru;;*);
+    [Gatorade] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Gatorade)] (*<-lang_ru;;*);
+       [Def. (Gatorade)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Производитель напитков и продуктов питания на тему спорта] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [manufacturer of sports-themed beverage and food products] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

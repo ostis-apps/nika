@@ -1,0 +1,21 @@
+concept_Mauricio_Pochettino
+=> nrel_main_idtf:
+    [Маурисио Почеттино] (*<-lang_ru;;*);
+    [Mauricio Pochettino] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Маурисио Почеттино)] (*<-lang_ru;;*);
+       [Def. (Mauricio Pochettino)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [аргентинский футболист и футбольный тренер] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Argentine association football player and manager] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,21 @@
+concept_Jorge_Castelli
+=> nrel_main_idtf:
+    [Хорхе Кастелли] (*<-lang_ru;;*);
+    [Jorge Castelli] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Хорхе Кастелли)] (*<-lang_ru;;*);
+       [Def. (Jorge Castelli)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Футбольный менеджер аргентинской ассоциации] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Argentinian association football manager] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

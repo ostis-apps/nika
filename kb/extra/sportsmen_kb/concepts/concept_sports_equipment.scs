@@ -1,0 +1,21 @@
+concept_sports_equipment
+=> nrel_main_idtf:
+    [спортивный инвентарь] (*<-lang_ru;;*);
+    [sports equipment] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (спортивный инвентарь)] (*<-lang_ru;;*);
+       [Def. (sports equipment)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [предмет для спортивных занятий] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [object used for sport or exercise] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

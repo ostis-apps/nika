@@ -1,0 +1,21 @@
+concept_academic_discipline
+=> nrel_main_idtf:
+    [академическая дисциплина] (*<-lang_ru;;*);
+    [academic discipline] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (академическая дисциплина)] (*<-lang_ru;;*);
+       [Def. (academic discipline)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [отрасль науки для классифицирования профессий] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [academic field of study or profession] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

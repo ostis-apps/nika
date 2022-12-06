@@ -1,0 +1,21 @@
+concept_Messi
+=> nrel_main_idtf:
+    [Месси] (*<-lang_ru;;*);
+    [Messi] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Месси)] (*<-lang_ru;;*);
+       [Def. (Messi)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [фамилия - Messi] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [family name] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

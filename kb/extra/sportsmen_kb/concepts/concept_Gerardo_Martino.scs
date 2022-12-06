@@ -1,0 +1,21 @@
+concept_Gerardo_Martino
+=> nrel_main_idtf:
+    [Херардо Мартино] (*<-lang_ru;;*);
+    [Gerardo Martino] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Херардо Мартино)] (*<-lang_ru;;*);
+       [Def. (Gerardo Martino)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [аргентинский футболист и футбольный тренер] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Argentine footballer and manager] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

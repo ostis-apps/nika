@@ -1,0 +1,16 @@
+concept_director_of_football
+=> nrel_main_idtf:
+    [Директор по футболу] (*<-lang_ru;;*);
+    [director of football] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Директор по футболу)] (*<-lang_ru;;*);
+       [Def. (director of football)] (*<-lang_en;;*);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

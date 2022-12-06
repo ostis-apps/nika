@@ -1,0 +1,21 @@
+concept_Argentina
+=> nrel_main_idtf:
+    [Аргентина] (*<-lang_ru;;*);
+    [Argentina] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Аргентина)] (*<-lang_ru;;*);
+       [Def. (Argentina)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [страна в Южной Америке] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [sovereign state in South America] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

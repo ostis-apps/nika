@@ -1,0 +1,21 @@
+concept_Ligue_1
+=> nrel_main_idtf:
+    [Чемпионат Франции по футболу - Лига 1] (*<-lang_ru;;*);
+    [Ligue 1] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Чемпионат Франции по футболу - Лига 1)] (*<-lang_ru;;*);
+       [Def. (Ligue 1)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [профессиональная футбольная лига для французских футбольных клубов] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [French professional league for men's association football clubs] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

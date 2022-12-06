@@ -1,0 +1,21 @@
+concept_association_football_ball
+=> nrel_main_idtf:
+    [футбольный мяч] (*<-lang_ru;;*);
+    [association football ball] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (футбольный мяч)] (*<-lang_ru;;*);
+       [Def. (association football ball)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [снаряд для европейского футбола] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [ball used in the sport of association football] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

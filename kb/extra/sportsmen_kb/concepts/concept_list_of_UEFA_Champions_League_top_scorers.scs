@@ -1,0 +1,21 @@
+concept_list_of_UEFA_Champions_League_top_scorers
+=> nrel_main_idtf:
+    [Лучшие бомбардиры Кубка европейских чемпионов и Лиги чемпионов УЕФА] (*<-lang_ru;;*);
+    [list of UEFA Champions League top scorers] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Лучшие бомбардиры Кубка европейских чемпионов и Лиги чемпионов УЕФА)] (*<-lang_ru;;*);
+       [Def. (list of UEFA Champions League top scorers)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [статья-список в проекте Викимедиа] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Wikimedia list article] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,38 @@
+nrel_native_language
+
+//идентификаторы
+=> nrel_main_idtf:
+    [родной язык] (*<-lang_ru;;*);
+    [native language] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (родной язык)] (*<-lang_ru;;*);
+       [Def. (native language)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [язык, который персона знает с детства] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [language or languages a person has learned from early childhood] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_human;
+
+=> nrel_first_domain:
+    concept_association_football_player;
+
+
+=> nrel_second_domain:
+    concept_Spanish;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

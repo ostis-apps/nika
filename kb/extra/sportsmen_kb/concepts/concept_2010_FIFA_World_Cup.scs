@@ -1,0 +1,21 @@
+concept_2010_FIFA_World_Cup
+=> nrel_main_idtf:
+    [Чемпионат мира по футболу 2010] (*<-lang_ru;;*);
+    [2010 FIFA World Cup] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Чемпионат мира по футболу 2010)] (*<-lang_ru;;*);
+       [Def. (2010 FIFA World Cup)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [19 -й чемпионат мира по футболу, проведенный в Южной Африке] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [19th FIFA World Cup, held in South Africa] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

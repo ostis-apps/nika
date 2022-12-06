@@ -1,0 +1,21 @@
+concept_Newells_Old_Boys
+=> nrel_main_idtf:
+    [Ньюэллс Олд Бойз] (*<-lang_ru;;*);
+    [Newell's Old Boys] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Ньюэллс Олд Бойз)] (*<-lang_ru;;*);
+       [Def. (Newell's Old Boys)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [аргентинский футбольный клуб из Росарио] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Argentine sports club in Rosario] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

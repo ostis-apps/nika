@@ -1,0 +1,38 @@
+concept_message_about_famous
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о знаменитых спортсменах  ]
+	(* <- lang_ru;; *);
+	[message about famous]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_famous];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о знаменитых спортсменах  )]
+        (* <- lang_ru;; *);
+        [Def. (message about famous)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о знаменитых спортсменах   - атомарное сообщение, являющееся запросом на получение информации про знаменитых спортсменов ]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about famous - atomic message which used to make a question about famous]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
+

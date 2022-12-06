@@ -1,0 +1,21 @@
+concept_2008_Summer_Olympics
+=> nrel_main_idtf:
+    [Летние Олимпийские игры 2008] (*<-lang_ru;;*);
+    [2008 Summer Olympics] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Летние Олимпийские игры 2008)] (*<-lang_ru;;*);
+       [Def. (2008 Summer Olympics)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Игры олимпиады XXIX, в Пекине, Китай] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Games of the XXIX Olympiad, in Beijing, China] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

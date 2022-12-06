@@ -1,0 +1,21 @@
+concept_womens_sports
+=> nrel_main_idtf:
+    [женский спорт] (*<-lang_ru;;*);
+    [women's sports] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (женский спорт)] (*<-lang_ru;;*);
+       [Def. (women's sports)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Спорт участвовал женщины] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [sports participated by females] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

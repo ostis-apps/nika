@@ -1,0 +1,38 @@
+nrel_copyright_status_as_a_creator
+
+//идентификаторы
+=> nrel_main_idtf:
+    [статус авторского права как автора] (*<-lang_ru;;*);
+    [copyright status as a creator] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (статус авторского права как автора)] (*<-lang_ru;;*);
+       [Def. (copyright status as a creator)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Государства, если работа, опубликованная в течение жизни этого создателя, все еще защищена авторским правом или в общественном доступе] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [states if the body of work published during the lifetime of this creator is still copyrighted or in the public domain] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_human;
+
+=> nrel_first_domain:
+    concept_association_football_player;
+
+
+=> nrel_second_domain:
+    concept_works_protected_by_copyrights;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

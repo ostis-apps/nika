@@ -1,0 +1,38 @@
+nrel_field_of_work
+
+//идентификаторы
+=> nrel_main_idtf:
+    [область деятельности] (*<-lang_ru;;*);
+    [field of work] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (область деятельности)] (*<-lang_ru;;*);
+       [Def. (field of work)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [у организации или персоны: основное поле деятельности, связанное с элементом (например, физика для физического явления, астрономия для персоны); не путать с профессией (физик) — свойством P106] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [specialization of a person or organization; see P106 for the occupation] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_human;
+
+=> nrel_first_domain:
+    concept_association_football_player;
+
+
+=> nrel_second_domain:
+    concept_association_football;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

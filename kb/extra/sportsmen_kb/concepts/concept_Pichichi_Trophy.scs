@@ -1,0 +1,21 @@
+concept_Pichichi_Trophy
+=> nrel_main_idtf:
+    [Трофей Пичичи] (*<-lang_ru;;*);
+    [Pichichi Trophy] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Трофей Пичичи)] (*<-lang_ru;;*);
+       [Def. (Pichichi Trophy)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Трофей, названный в честь вышеупомянутого, присужденного лучшему бомбардиру в Испании Ла Лига каждый сезон] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [trophy named in honour of the above awarded to the top goalscorer in Spain's La Liga each season] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

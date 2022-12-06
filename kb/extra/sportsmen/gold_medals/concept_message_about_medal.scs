@@ -1,0 +1,38 @@
+concept_message_about_medal
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о медалисте ]
+	(* <- lang_ru;; *);
+	[message about medal]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[medal];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о медалисте )]
+        (* <- lang_ru;; *);
+        [Def. (message about medal)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о медалисте  - атомарное сообщение, являющееся запросом на получение информации про медалисте]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about medal - atomic message which used to make a question about medal]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
+

@@ -1,0 +1,21 @@
+concept_2018_FIFA_World_Cup
+=> nrel_main_idtf:
+    [чемпионат мира по футболу 2018] (*<-lang_ru;;*);
+    [2018 FIFA World Cup] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (чемпионат мира по футболу 2018)] (*<-lang_ru;;*);
+       [Def. (2018 FIFA World Cup)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [21-й чемпионат мира по футболу ФИФА] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [21st FIFA World Cup, held in Russia] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

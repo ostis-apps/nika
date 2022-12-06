@@ -1,0 +1,21 @@
+concept_sports_competition
+=> nrel_main_idtf:
+    [спортивное соревнование] (*<-lang_ru;;*);
+    [sports competition] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (спортивное соревнование)] (*<-lang_ru;;*);
+       [Def. (sports competition)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [событие] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [event, during which one or more sporting events are held] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

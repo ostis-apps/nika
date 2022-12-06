@@ -1,0 +1,21 @@
+concept_Pep_Guardiola
+=> nrel_main_idtf:
+    [Хосеп Гвардиола] (*<-lang_ru;;*);
+    [Pep Guardiola] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Хосеп Гвардиола)] (*<-lang_ru;;*);
+       [Def. (Pep Guardiola)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [испанский футболист и футбольный тренер] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Spanish association football manager and former player] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

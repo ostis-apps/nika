@@ -1,0 +1,38 @@
+concept_message_about_famous_footbollers
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о знаменитых футболистах]
+	(* <- lang_ru;; *);
+	[message about famous_footbollers]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[famous_footbollers];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о знаменитых футболистах)]
+        (* <- lang_ru;; *);
+        [Def. (message about famous_footbollers)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о знаменитых футболистах - атомарное сообщение, являющееся запросом на получение информации про знаменитых футболистов ]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about famous_footbollers - atomic message which used to make a question about famous_footbollers]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
+

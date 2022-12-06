@@ -1,0 +1,38 @@
+nrel_ethnic_group
+
+//идентификаторы
+=> nrel_main_idtf:
+    [этническая группа] (*<-lang_ru;;*);
+    [ethnic group] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (этническая группа)] (*<-lang_ru;;*);
+       [Def. (ethnic group)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [ДОЛЖНО быть утверждено самим субъектом или подтверждено консенсусом учёных (либо, для вымышленных персонажей, текстом произведения)] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [subject's ethnicity (consensus is that a VERY high standard of proof is needed for this field to be used. In general this means 1) the subject claims it themselves, or 2) it is widely agreed on by scholars, or 3) is fictional and portrayed as such)] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_human;
+
+=> nrel_first_domain:
+    concept_association_football_player;
+
+
+=> nrel_second_domain:
+    concept_Italian_Argentines;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

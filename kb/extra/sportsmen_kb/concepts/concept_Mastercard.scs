@@ -1,0 +1,21 @@
+concept_Mastercard
+=> nrel_main_idtf:
+    [Mastercard] (*<-lang_ru;;*);
+    [Mastercard] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Mastercard)] (*<-lang_ru;;*);
+       [Def. (Mastercard)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [‎американская транснациональная компания, предоставляющая финансовые услуги] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [American multinational financial services corporation] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

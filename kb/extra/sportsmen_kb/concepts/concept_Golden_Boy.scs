@@ -1,0 +1,21 @@
+concept_Golden_Boy
+=> nrel_main_idtf:
+    [Golden Boy] (*<-lang_ru;;*);
+    [Golden Boy] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Golden Boy)] (*<-lang_ru;;*);
+       [Def. (Golden Boy)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Футбольная премия, вручаемую самому впечатляющему молодому европейскому игроку] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [football award given to the most impressive young European player] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

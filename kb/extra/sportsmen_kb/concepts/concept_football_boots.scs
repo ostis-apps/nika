@@ -1,0 +1,21 @@
+concept_football_boots
+=> nrel_main_idtf:
+    [Бутсы] (*<-lang_ru;;*);
+    [football boots] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Бутсы)] (*<-lang_ru;;*);
+       [Def. (football boots)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [спортивная обувь] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [footwear worn when playing association football] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,71 @@
+nrel_head_coach
+
+//идентификаторы
+=> nrel_main_idtf:
+    [главный тренер] (*<-lang_ru;;*);
+    [head coach] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (главный тренер)] (*<-lang_ru;;*);
+       [Def. (head coach)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [человек, который осуществляет управление спортивной командой или отдельным спорстменом на поле] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [on-field manager or head coach of a sports club (not to be confused with a general manager P505, which is not a coaching position) or person] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_human;
+
+=> nrel_first_domain:
+    concept_association_football_player;
+
+
+=> nrel_second_domain:
+    concept_Jorge_Castelli;
+
+=> nrel_second_domain:
+    concept_Mario_Zanabria;
+
+=> nrel_second_domain:
+    concept_Roberto_Puppo;
+
+=> nrel_second_domain:
+    concept_Ricardo_Dabrowski;
+
+=> nrel_second_domain:
+    concept_Frank_Rijkaard;
+
+=> nrel_second_domain:
+    concept_Pep_Guardiola;
+
+=> nrel_second_domain:
+    concept_Tito_Vilanova;
+
+=> nrel_second_domain:
+    concept_Gerardo_Martino;
+
+=> nrel_second_domain:
+    concept_Luis_Enrique;
+
+=> nrel_second_domain:
+    concept_Ernesto_Valverde;
+
+=> nrel_second_domain:
+    concept_Ronald_Koeman;
+
+=> nrel_second_domain:
+    concept_Mauricio_Pochettino;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;
