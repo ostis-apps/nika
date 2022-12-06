@@ -1,0 +1,26 @@
+concept_message_about_greet
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о приветствии]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_greet];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о приветствии)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о приветствии - атомарное сообщение с приветствием.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
