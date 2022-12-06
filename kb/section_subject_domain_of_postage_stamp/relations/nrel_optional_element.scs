@@ -1,0 +1,40 @@
+nrel_optional_element
+<- sc_node_norole_relation;
+
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+<- antireflexive_relation;
+
+=> nrel_main_idtf: 
+	[необязательный элемент*] (*<-lang_ru;;*);
+=> nrel_main_idtf: 
+	[optional element*] (*<-lang_en;;*);
+
+=> nrel_first_domain: 	concept_postage_stamp;
+			concept_official_postage_stamp;
+			concept_non_official_postage_stamp;
+			concept_semi_official_postage_stamp;
+			concept_private_postage_stamp;
+			concept_special_postage_stamp;
+			concept_philatelic_fake;
+			concept_philatelic_forgery;
+=> nrel_second_domain:  concept_imprinter;
+			concept_watermark;
+			concept_perforation;
+			
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [необязательный элемент* - бинарное ориентированное отношение, связывающее почтовую марку и необязательные её элементы, усиливающие защиту от подделки.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_postage_stamp
+		};;
+	*);;

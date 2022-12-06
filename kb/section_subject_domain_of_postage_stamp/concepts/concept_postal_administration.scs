@@ -1,0 +1,36 @@
+concept_postal_administration
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [почтовое ведомство]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [postal administration]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [postage administration]		
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [post department]		
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [postal authority]		
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [почтовая администрация]
+   (* <- lang_ru;; *);
+   
+=> nrel_country:
+	concept_country;
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Почтовое ведомство — собирательное понятие, обозначающее государственные или территориальные органы какого-либо государства, отвечающие за регулирование, организацию и функционирование национальной и международной почтовой связи.] (* <-lang_ru;; *);; 
+		*);;
+	*);;

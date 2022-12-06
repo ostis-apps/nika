@@ -1,0 +1,50 @@
+concept_semi_official_postage_stamp
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [полуофициальная почтовая марка]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [semi_official postage stamp]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [semi_official postal stamp]		
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Полуофициальная марка — почтовая марка, выпущенная непочтовыми учреждениями или организациями, используемая для оплаты дополнительных почтовых сборов.] (* <-lang_ru;; *);; 
+		*);;
+	*); 
+   
+=> nrel_emitter: 
+	concept_non_postal_administration;
+   
+=> nrel_nominal_value: 
+	concept_nominal;
+	
+=> nrel_shape: 
+	concept_geometry_figure;
+	
+=> nrel_collection_element: 
+	concept_philately;
+	
+=> nrel_material: 
+	concept_material;
+	
+=> nrel_optional_element: 
+	concept_imprinter;
+	concept_watermark;
+	concept_perforation;
+    
+=> nrel_cancellation_method: 
+	concept_cancellation_method;
+
+=> nrel_franking:
+	concept_letter;;

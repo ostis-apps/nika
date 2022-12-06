@@ -1,0 +1,38 @@
+concept_postmark
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [штемпель]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [postmark]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [почтовый штемпель]	   (* <- lang_ru;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Почтовый штемпель — применяющееся почтой устройство для получения ручным или механическим способом штемпельных оттисков, служащих для гашения знаков почтовой оплаты, подтверждения приёма почтового отправления, контроля над маршрутом и временем нахождения в пути, нанесения каких-либо пометок и т. п., либо оттиск такого устройства.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_cancellation;
+		concept_postage_stamp
+		};;
+	*);;
+	
+concept_cancellation
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [гашение]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [cancellation]
+   (* <- lang_en;; *);;

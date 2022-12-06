@@ -1,0 +1,28 @@
+concept_nominal
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [номинал]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [nominal]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [nominal value]		(* <- lang_en;; *);
+   [номинальная стоимость]	   (* <- lang_ru;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Номинал — в филателии, указанная на знаке почтовой оплаты номинальная стоимость. Номинал, как правило, указывается в денежных единицах страны или территории почтового обращения ЗПО.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_philately;
+		concept_country
+		};;
+	*);;

@@ -1,0 +1,21 @@
+concept_material
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [материал]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [material]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Материал —  вещество или смесь веществ, из которых изготавливается продукция] (* <-lang_ru;; *);; 
+		*);;
+	*);;

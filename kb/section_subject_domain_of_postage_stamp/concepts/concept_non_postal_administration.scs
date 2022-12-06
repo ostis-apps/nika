@@ -1,0 +1,33 @@
+concept_non_postal_administration
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [непочтовое ведомство]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [non postal administration]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [non postage administration]		
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [non postal authority]		
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [непочтовая администрация]
+   (* <- lang_ru;; *);
+   
+=> nrel_country:
+	concept_country;
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Непочтовое ведомство — собирательное понятие, обозначающее негосударственные предприятия, отвечающие за регулирование, организацию и функционирование внутринациональной либо международной связи.] (* <-lang_ru;; *);; 
+		*);;
+	*);;

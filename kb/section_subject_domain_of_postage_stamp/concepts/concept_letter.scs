@@ -1,0 +1,33 @@
+concept_letter
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [письмо]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [letter]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [message]		(* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Письмо — сис­те­ма фик­са­ции ре­чи знаками, которая по­зво­ляет с по­мо­щью написанного текста пе­ре­да­вать ин­фор­ма­цию на рас­стоя­нии и за­кре­п­лять её во вре­ме­ни.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_information
+		};;
+	*);;
+	
+concept_information
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [информация]
+   (* <- lang_ru;; *);;
