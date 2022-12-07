@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/general" idtf="" shapeColor="193" id="1416819006000" parent="0" x="662" y="368.5" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Командная спортивная игра на льду, заключающаяся в противоборстве двух команд на коньках, которые, передавая шайбу клюшками, стремятся забросить её наибольшее количество раз в ворота соперника и не пропустить в свои]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_answer_about_hockey_phrase" shapeColor="0" id="1416819009952" parent="0" left="0" top="0" right="226" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="356.5" y="396.962" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_answer_about_hockey_phrase" shapeColor="0" id="1416819006208" parent="0" left="0" top="0" right="226" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="777.418" y="196.5" haveBus="false" idtf_pos="4">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="1416819007248" parent="0" left="0" top="0" right="52" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="447.806" y="308" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_inclusion" shapeColor="0" id="1416819006832" parent="0" left="0" top="0" right="88" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="856.918" y="128" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase" shapeColor="0" id="1416819005584" parent="0" left="0" top="0" right="95" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="947.918" y="196" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1416900825520" parent="0" id_b="1416819006832" id_e="1416900818560" b_x="856.918" b_y="128" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.531597">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="1416900818560" parent="0" id_b="1416819005584" id_e="1416819006208" b_x="947.918" b_y="196" e_x="777.418" e_y="196.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1416900820240" parent="0" id_b="1416819009952" id_e="1416819006000" b_x="356.5" b_y="396.962" e_x="662" e_y="368.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1416900820000" parent="0" id_b="1416819007248" id_e="1416819006000" b_x="447.806" b_y="308" e_x="662" e_y="368.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>

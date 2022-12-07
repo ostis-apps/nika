@@ -1,0 +1,37 @@
+concept_message_about_stanley_cup
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о кубке Стэнли]
+	    (* <- lang_ru;; *);
+	[message about stanley_cup]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_stanley];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о кубке Стэнли)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about stanley cup)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о кубке Стэнли - атомарное сообщение, которое содержит виды человекообразных, информацию о которых необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about о stanley cup is an atomic message that contains hominoidea division information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
