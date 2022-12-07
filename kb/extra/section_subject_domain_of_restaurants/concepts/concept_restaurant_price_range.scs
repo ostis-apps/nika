@@ -1,0 +1,41 @@
+concept_restaurant_price_range
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+    [Ценовой диапазон ресторана]
+    (*<- lang_ru;;*);
+=> nrel_main_idtf:
+    [Restaurant price range]
+    (*<- lang_en;;*);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+        => nrel_main_idtf:
+            [Опр. (Ценовой диапазон ресторана)]
+            (*<- lang_ru;;*);
+            [Def. (Restaurant price range)]
+            (*<- lang_en;;*);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Ценовой диапазон ресторана — условное обозначение средней цены за еду в ресторане.]
+                    (*<- lang_ru;;*);;
+            *);
+            ...
+            (*
+                -> rrel_example: 
+                    [Restaurant price range - a symbol for the average price for a meal in a restaurant.]
+                    (*<- lang_en;;*);;
+            *);;
+  *);
+
+
+=> nrel_note:
+    [Рестораны подпадают под ценовой диапазон -  от недорогих до довольно дорогих. Например, Google в поиске, особенно в зарубежном контенте использует знаки доллара, для обозначения средней цены за еду, например: $ - недорого, $$ - по умеренной цене, $$$ - дорого, $$$$ - очень дорого.]
+    (*<- lang_ru;;*);
+    [Restaurants fall under the price range - from inexpensive to quite expensive. For example, Google in search, especially in foreign content, uses dollar signs to indicate the average price of a meal, for example, $ - inexpensive, $$ - moderately priced, $$$ - expensive, $$$$ - very expensive.]
+    (*<- lang_en;;*);;

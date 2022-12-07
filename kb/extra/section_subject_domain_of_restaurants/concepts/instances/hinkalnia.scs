@@ -1,0 +1,39 @@
+hinkalnia
+<- concept_restaurant;
+<- concept_hinkalnia;
+
+=> nrel_main_idtf:
+    [Хинкальня]
+    (*<- lang_ru;;*);
+    [Hinkalnia]
+    (*<- lang_en;;*);
+
+<- rrel_restaurant_price_range:
+    concept_medium_restaurant;
+
+=> nrel_restaurant_kitchen_type:
+    georgian_kitchen;
+
+=> nrel_restaurant_menu:
+    [В меню ресторана Хинкальня представлены хинкали, хачапури, шашлыки, десерты и напитки.]
+    (*<- lang_ru;;*);
+    [The menu of the Hinkalnia restaurant includes khinkali, khachapuri, kebabs, desserts and drinks.]
+    (*<- lang_en;;*);
+
+=> nrel_restaurant_business_hours:
+    [Рестораны Хинкальня открыты с 12:00 до 23:00.]
+    (*<- lang_ru;;*);
+    [Hinkalnia restaurants are open from 12:00 to 23:00.]
+    (*<- lang_en;;*);
+
+=> nrel_restaurant_attendance:
+    [Ежедневно ресторан Хинкальня посещают около 100 гостей.]
+    (*<- lang_ru;;*);
+    [Every day the Hinkalnia restaurant is visited by about 100 guests.]
+    (*<- lang_en;;*);
+
+=> nrel_restaurant_prevalence_in_belarus:
+    [Рестораны Хинкальня есть в Минске, Бресте, Мозыре, Гродно и Солигорске.]
+    (*<- lang_ru;;*);
+    [There are Hinkalnia restaurants in Minsk, Brest, Mozyr, Grodno and Salihorsk.]
+    (*<- lang_en;;*);;

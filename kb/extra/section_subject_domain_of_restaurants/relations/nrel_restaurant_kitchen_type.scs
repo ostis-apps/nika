@@ -1,0 +1,44 @@
+nrel_restaurant_kitchen_type 
+<- sc_node_norole_relation;
+
+=> nrel_main_idtf:
+    [тип кухни ресторана*]
+    (*<- lang_ru;;*);
+    [restaurant kitchen type*]
+    (*<- lang_en;;*);;
+
+nrel_restaurant_kitchen_type <- rrel_key_sc_element:
+    ... 
+    (*
+        <- sc_definition;;
+        <- definition;;
+        => nrel_main_idtf: 
+            [Опр. (тип кухни ресторана*)]
+            (*<- lang_ru;;*);
+            [Def. (restaurant kitchen type*)]
+            (*<- lang_en;;*);;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example: 
+                    [тип кухни ресторана* — бинарное отношение, которое показывает какой тип кухни имеет ресторан.]
+                    (*<- lang_ru;;*);; 
+            *);
+            ...
+            (*
+                -> rrel_example: 
+                    [restaurant kitchen type* - a binary relation that shows what type of kitchen the restaurant has.]
+                    (*<- lang_en;;*);;
+            *);;
+    *);;
+
+nrel_restaurant_kitchen_type
+=> nrel_first_domain: concept_restaurant;
+=> nrel_second_domain: concept_restaurant_kitchen_type;;
+
+nrel_restaurant_kitchen_type
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- antisymmetric_relation;
+<- antitransitive_relation;;

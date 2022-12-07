@@ -1,0 +1,66 @@
+section_subject_domain_of_restaurants
+<- atomic_section;
+
+=> nrel_main_idtf:
+    [Раздел. Предметная область рестораны]
+    (* <- lang_ru;; *);
+    [Section. Subject domain of restaurants] 
+    (* <- lang_en;; *);;
+
+section_subject_domain_of_restaurants = [*
+subject_domain_of_restaurants
+    <- sc_node_struct;
+    <- subject_domain;
+
+    => nrel_main_idtf:
+        [Предметная область рестораны]
+        (* <- lang_ru;; *);
+        [Subject domain of restaurants]
+        (* <- lang_en;; *);
+
+    -> rrel_maximum_studied_object_class:
+        concept_restaurant;
+        concept_restaurant_kitchen_type;
+        concept_restaurant_price_range;
+
+    -> rrel_not_maximum_studied_object_class:
+        concept_cheap_restaurant;
+        concept_medium_restaurant;
+        concept_expensive_restaurant;
+        concept_very_expensive_restaurant;
+        concept_hinkalnia;
+        concept_kfc;
+        concept_mcdonalds;
+        concept_peaky_blinders;
+
+    -> rrel_explored_relation:
+        nrel_note;
+        nrel_restaurant_attendance;
+        nrel_restaurant_business_hours;
+        nrel_restaurant_kitchen_type;
+        nrel_restaurant_menu;
+        nrel_restaurant_prevalence_in_belarus;
+        rrel_restaurant_price_range;;
+*];;
+
+section_subject_domain_of_restaurants
+-> rrel_key_sc_element:
+    concept_restaurant;
+    concept_restaurant_kitchen_type;
+    concept_restaurant_price_range;
+    concept_cheap_restaurant;
+    concept_medium_restaurant;
+    concept_expensive_restaurant;
+    concept_very_expensive_restaurant;
+    concept_hinkalnia;
+    concept_kfc;
+    concept_mcdonalds;
+    concept_peaky_blinders;
+    nrel_note;
+    nrel_restaurant_attendance;
+    nrel_restaurant_business_hours;
+    nrel_restaurant_kitchen_type;
+    nrel_restaurant_menu;
+    nrel_restaurant_prevalence_in_belarus;
+    rrel_restaurant_price_range;;
+    

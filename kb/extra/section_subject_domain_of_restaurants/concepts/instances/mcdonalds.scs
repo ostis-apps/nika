@@ -1,0 +1,39 @@
+mcdonalds
+<- concept_restaurant;
+<- concept_mcdonalds;
+
+=> nrel_main_idtf:
+    [Макдональдс]
+    (*<- lang_ru;;*);
+    [McDonald’s]
+    (*<- lang_en;;*);
+
+<- rrel_restaurant_price_range:
+    concept_cheap_restaurant;
+
+=> nrel_restaurant_kitchen_type:
+    american_kitchen;
+
+=> nrel_restaurant_menu:
+    [В меню ресторана Макдональдс представлены бургеры, картофель фри, сэндвичи, десерты и напитки.]
+    (*<- lang_ru;;*);
+    [The menu of the McDonald’s restaurant includes burgers, fries, sandwiches, desserts and drinks.]
+    (*<- lang_en;;*);
+
+=> nrel_restaurant_business_hours:
+    [Рестораны Макдональдс открыты с 09:00 до 23:00.]
+    (*<- lang_ru;;*);
+    [McDonald’s restaurants are open from 09:00 to 23:00.]
+    (*<- lang_en;;*);
+
+=> nrel_restaurant_attendance:
+    [Ежедневно ресторан Макдональдс посещают около 1000 гостей.]
+    (*<- lang_ru;;*);
+    [Every day the McDonald’s restaurant is visited by about 1000 guests.]
+    (*<- lang_en;;*);
+
+=> nrel_restaurant_prevalence_in_belarus:
+    [Рестораны Макдональдс есть в Минске, Бресте, Гродно, Гомеле, Витебске, Могилёве.]
+    (*<- lang_ru;;*);
+    [There are McDonald’s restaurants in Minsk, Brest, Grodno, Gomel, Vitebsk, Mogilev.]
+    (*<- lang_en;;*);;

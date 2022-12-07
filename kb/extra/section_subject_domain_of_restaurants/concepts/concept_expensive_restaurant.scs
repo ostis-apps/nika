@@ -1,0 +1,35 @@
+concept_expensive_restaurant
+<- sc_node_class;
+<- class;
+<- concept_restaurant_price_range;
+
+=> nrel_main_idtf:
+    [Дорогой ресторан]
+    (*<- lang_ru;;*);
+=> nrel_main_idtf:
+    [Expensive restaurant]
+    (*<- lang_en;;*);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+        => nrel_main_idtf:
+            [Опр. (Дорогой ресторан)]
+            (*<- lang_ru;;*);
+            [Def. (Expensive restaurant)]
+            (*<- lang_en;;*);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Дорогой ресторан - обычно между $25-$45.]
+                    (*<- lang_ru;;*);;
+            *);
+            ...
+            (*
+                -> rrel_example: 
+                    [Expensive restaurant - usually between $25-$45.]
+                    (*<- lang_en;;*);;
+            *);;
+  *);;
