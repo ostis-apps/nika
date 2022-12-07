@@ -1,0 +1,48 @@
+concept_basketball_crossover <- sc_node_not_relation;;
+
+concept_basketball_crossover => nrel_main_idtf:
+[Кроссовер(Баскетбол)] (*<-lang_ru;;*);
+[Basketball crossover] (*<-lang_en;;*);;
+
+concept_basketball_crossover <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Кроссовер(Баскетбол))] (*<-lang_ru;;*);;
+=> nrel_using_constants:
+	{
+	concept_basketball_dribling
+	};;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Кроссовер - прием <b><sc_element sys_idtf="concept_basketball_dribling">ведения</b></sc_element>, направленный на получения преимущества над противником.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_basketball_crossover <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Кроссовер(Баскетбол))] (*<-lang_ru;;*);;
+=> nrel_using_constants:
+	{
+	concept_basketball_point_guard
+	};;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Кроссовер является довольно сложным приемом и зачастую его используют <b><sc_element sys_idtf="concept_basketball_point_guard">защитники</b></sc_element>.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+concept_basketball_crossover<-rrel_key_sc_element:...
+(*
+<-illustration;;
+<=nrel_sc_text_translation:...
+	(*
+->rrel_example: "file://cross.jpg"
+		(*
+		=>nrel_format:format_jpg;;
+		*);;	
+*);;
+*);;

@@ -1,0 +1,35 @@
+basketball_steal <- sc_node_not_relation;;
+
+basketball_steal => nrel_main_idtf:
+[Перехват(баск.)] (*<-lang_ru;;*);
+[Steal(bask.)] (*<-lang_en;;*);;
+
+basketball_steal <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Перехват(баск.))] (*<-lang_ru;;*);;
+=> nrel_using_constants:
+	{
+	concept_athlete;
+	concept_basketbal
+	};;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[в <b><sc_element sys_idtf="concept_basketbal">баскетболе</b></sc_element> действия <b><sc_element sys_idtf="concept_athlete">игрока</b></sc_element> обороны по завладению мячом. Перехват мяча выполняется при передаче игроков атаки. При утрате контроля над мячом атакующей <b><sc_element sys_idtf="concept_sports_team">команде</b></sc_element> вследствие перехвата защитниками в <b><sc_element_idtf="concept_in_game_statistics"> статистике матча</b></sc_element> записывается потеря.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+basketball_steal <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Перехват(баск.))] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Зачастую показатель количества перехватов за игру наиболее ясно показывает, насколько хорош <b><sc_element sys_idtf="concept_athlete">игрок</b></sc_element> в защите.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+concept_in_game_statistics<=nrel_inclusion:basketball_steal;;

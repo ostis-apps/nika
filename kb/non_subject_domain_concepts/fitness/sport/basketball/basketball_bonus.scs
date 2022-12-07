@@ -1,0 +1,49 @@
+basketball_bonus <- sc_node_not_relation;;
+
+basketball_bonus => nrel_main_idtf:
+[Бонус(баскетбол)] (*<-lang_ru;;*);
+[Basketball penalty shot] (*<-lang_en;;*);;
+
+basketball_bonus <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Бонус(баскетбол))] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Бонус - ситуация в <b><sc_element sys_idtf="concept_basketball">баскетболе</b></sc_element>, когда одна из <b><sc_element sys_idtf="concept_sports_team">команд</b></sc_element> накапливает определенное количество <b><sc_element sys_idtf="concept_personal_foul">фолов</b></sc_element>, после чего любое нарушение этой <b><sc_element sys_idtf="concept_sports_team">командой</b></sc_element> <b><sc_element sys_idtf="concept_basketball_rules">правил</b></sc_element> наказывается <b><sc_element sys_idtf="basketball_penalty_shot">штрафным броском</b></sc_element>. ](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+	<=nrel_using_constants: {
+	concept_basketball;
+	concept_sports_team;
+	concept_personal_foul;
+	concept_sports_rules
+	};;
+*);;
+
+basketball_bonus <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Бонус(баскетбол))] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Данная ситуация может учитываться при применении определенных <b><sc_element sys_idtf="concept_sport_combination">комбинаций</b></sc_element>](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);
+<=nrel_inclusion:concept_basketball;;
+
+basketball_bonus<-rrel_key_sc_element:...
+	(*
+		<-illustration;;
+		<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:
+"file://penalty.jpg"
+	(*
+		=>nrel_format:format_jpg;;
+	*);;	
+*);;
+*);;

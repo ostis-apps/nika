@@ -1,0 +1,62 @@
+concept_technical_foul=>nrel_idtf:[technical_foul]
+	(*
+		<-lang_en;;
+	*);;
+concept_technical_foul=>nrel_main_idtf:[технический фол]
+	(*
+		<-lang_ru;;
+	*);;
+
+concept_technical_foul <-rrel_key_sc_element:...
+	(*
+		<-definition;;
+		=>nrel_main_idtf:
+[Опр.(технический фол)] 
+	(* 
+		<-lang_ru;;
+	*);;
+	
+<=nrel_sc_text_translation:...
+	(*
+		-> rrel_example: [фол, не вызванный контактом со спортсменом, однако вызванный нарушением правил(неуважительное общение, задержка игры, покидание игровой площадки без разрешения судьи)]
+(* 
+<-lang_ru;; 
+*);;
+
+	*);;
+	<=nrel_using_constants: {
+	concept_basketball_foul;
+	concept_athlete;
+	concept_basketball_rules
+	};;
+*);;
+
+concept_technical_foul <- rrel_key_sc_element:...
+	(*
+        <- explanation;;
+        -> rrel_key_sc_element:output ;;
+		=> nrel_main_idtf: 
+         [Утв.(про технического фол)](* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			    -> rrel_example: 
+		[ при фиксировании технического фола судья подает сингал свистком, а так же жестом(складывает руки в форме Т)](*<- lang_ru;;*);;
+
+			*);;	
+*);;
+
+concept_technical_foul<-rrel_key_sc_element:...
+	(*
+		<-illustration;;
+		<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:
+"file://technical_foul.jpg"
+	(*
+		=>nrel_format:format_jpg;;
+	*);;	
+*);;
+*);;
+
+concept_basketball_foul=>nrel_inclusion:concept_technical_foul;;
+

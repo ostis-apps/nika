@@ -1,0 +1,45 @@
+concept_basketball_point_guard<-sc_node_not_relation;
+=>nrel_main_idtf:
+[разыгрывающий защитник] (*<-lang_ru;;*);
+[разыгрывающий] (*<-lang_ru;;*);
+[pg] (*<-lang_en;;*);
+
+<-rrel_key_sc_element:..(*
+<-definition;;
+=>nrel_main_idtf:
+[Опр.(разыгрывающий защитник)](*<-lang_ru;;*);;
+
+<=nrel_sc_text_translation:...(*
+->rrel_example:
+[ Разыгрывающий защитник организует нападение команды, является своего рода лидером на площадке.](* <- lang_ru;; *);;
+    *);;
+    
+            <= nrel_using_constants: {
+                concept_sports_team
+            };;
+*);
+<-rrel_key_sc_element:..
+(*
+<-illustration;;
+<=nrel_sc_text_translation:...
+	(*
+->rrel_example: "file://concept_pg.jpg"
+	(*
+=>nrel_format:format_jpg;;
+	*);;	
+*);;
+*);
+<-rrel_key_sc_element:...(*
+<-explanation;;
+=>nrel_main_idtf:
+[Утв.(разыгрывающий защитник)](*<-lang_ru;;*);;
+<=nrel_sc_text_translation:...(*
+->rrel_example:
+[ средний рост разыгрывающих защитников составляет 185-195 см. Для игроков данного амплуа характерно абсолютно свободное владение мячом, развитое тактическое мышление, большая скорость и ловкость](* <- lang_ru;;*);;
+      *);;
+      
+            <= nrel_using_constants: {
+                concept_sport_role;
+                concept_athlete
+            };;
+  *);;

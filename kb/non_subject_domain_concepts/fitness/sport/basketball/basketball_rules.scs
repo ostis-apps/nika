@@ -1,0 +1,49 @@
+concept_basketball_rules=>nrel_idtf:[basketball_rules]
+	(*
+		<-lang_en;;
+	*);;
+concept_basketball_rules=>nrel_main_idtf:[баскетбольные правила]
+	(*
+		<-lang_ru;;
+	*);;
+concept_basketball_rules <-rrel_key_sc_element:...
+	(*
+		<-definition;;
+		=>nrel_main_idtf:
+[Опр.(баскетбольные правила)] 
+	(* 
+		<-lang_ru;;
+	*);;
+	
+<=nrel_sc_text_translation:...
+	(*
+		-> rrel_example: [правила, применяемые при игре в баскетбол]
+(* 
+<-lang_ru;; 
+*);;
+
+	*);;
+	<=nrel_using_constants: {
+	concept_basketball;
+	concept_sports_rules
+	};;
+*);;
+concept_basketball_rules <- rrel_key_sc_element:...
+	(*
+        <- explanation;;
+        -> rrel_key_sc_element:output ;;
+		=> nrel_main_idtf: 
+         [Утв.(о правилах)](* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			    -> rrel_example: 
+		[ зачастую правила в баскетболе регулируют поведение спортсменов при игре, либо поясняют сам способ игры. ](*<- lang_ru;;*);;
+
+			*);;		
+<=nrel_using_constants: {
+	concept_athlete;
+	concept_game
+	};;
+*);;
+concept_basketball=>nrel_inclusion:concept_basketball_rules;;
+concept_sports_rules=>nrel_inclusion:concept_basketball_rules;;

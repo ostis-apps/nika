@@ -1,0 +1,30 @@
+basketball_mvp <- sc_node_not_relation;;
+
+basketball_mvp => nrel_main_idtf:
+[Самый ценный игрок] (*<-lang_ru;;*);
+[most valuable player] (*<-lang_en;;*);;
+
+basketball_mvp <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Самый ценный игрок)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Данный титул присваивается игроку, имеющему самый высокий показатель полезности по итогу регулярного сезона.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+basketball_mvp <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Самый ценный игрок)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Зачастую титул самого ценного игрока получают наиболее результативные игроки](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

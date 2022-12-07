@@ -1,0 +1,45 @@
+concept_basketball_stuff
+=>nrel_idtf:[basketball_stuff](*<-labg_en;;*);
+=>nrel_main_idtf:[баскетбольный инвентарь](*<-lang_ru;;*);
+
+<-rrel_key_sc_element:...
+	(*
+	<-definition;;
+	=>nrel_main_idtf:
+[Опр.(Баскетбольный инвентарь)](*<-lang_ru;;*);;
+<=nrel_sc_text_translation:...
+	(*
+		-> rrel_example: [Баскетбольный инвентарь - множество всех предметов, используемых при игре в баскетбол, в процессе тренировки, либо для подготовки к проведению матча]
+(* <-lang_ru;;*);;
+
+	*);;
+*);
+
+<=nrel_inclusion:basketball_shield;
+<=nrel_inclusion:basketball_hands_up_training_mannequin;
+<=nrel_inclusion:basketball_ball;;
+	
+concept_basketball_stuff<-rrel_key_sc_element:...
+	(*
+		<-illustration;;
+		<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:
+"file://shield.jpg"
+	(*
+		=>nrel_format:format_jpg;;
+	*);;	
+*);;
+*);;
+concept_basketball_stuff<-rrel_key_sc_element:...
+	(*
+		<-illustration;;
+		<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:
+"file://ball_bucket.jpg"
+	(*
+		=>nrel_format:format_jpg;;
+	*);;	
+*);;
+*);;

@@ -1,0 +1,43 @@
+basketball_penalty_shot <- sc_node_not_relation;;
+
+basketball_penalty_shot => nrel_main_idtf:
+[Штрафной бросок(баскетбол)] (*<-lang_ru;;*);
+[Basketball penalty shot] (*<-lang_en;;*);;
+
+basketball_penalty_shot <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Штрафной бросок(баскетбол))] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Штрафной бросок - наказание, которое назначается за нарушение некоторых <b><sc_element sys_idtf="basketball_rules">правил</b></sc_element>. ](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+basketball_penalty_shot <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Штрафной бросок(баскетбол))] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[За забитый штрафной бросок команде начисляется 1 очко](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);
+<=nrel_inclusion:concept_basketball;;
+
+basketball_penalty_shot<-rrel_key_sc_element:...
+	(*
+		<-illustration;;
+		<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:
+"file://penalty.jpg"
+	(*
+		=>nrel_format:format_jpg;;
+	*);;	
+*);;
+*);;

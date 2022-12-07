@@ -1,0 +1,30 @@
+concept_basketball_dribling <- sc_node_not_relation;;
+
+concept_basketball_dribling => nrel_main_idtf:
+[Ведение(Баскетбол)] (*<-lang_ru;;*);
+[Dribling(Basketball)] (*<-lang_en;;*);;
+
+concept_basketball_dribling <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Ведение(Баскетбол))] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Ведение мяча — один из основных технических элементов баскетбола, второй, после передачи, способ перемещения мяча по площадке посредством последовательных ударов мяча о пол и возвращения в руку игрока.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_basketball_dribling <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Ведение(Баскетбол))] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Правильное, технически грамотное ведение мяча — фундамент для стабильного контроля за ним, основа индивидуального обыгрывания соперника.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+concept_basketball=>nrel_inclusion:concept_basketball_rules;;

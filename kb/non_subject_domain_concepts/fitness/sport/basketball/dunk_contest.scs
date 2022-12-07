@@ -1,0 +1,43 @@
+dunk_contest <- sc_node_not_relation;;
+
+dunk_contest => nrel_main_idtf:
+[Конкурс данков] (*<-lang_ru;;*);
+[Данк контест] (*<-lang_ru;;*);
+[Slam dunk contest] (*<-lang_en;;*);;
+
+dunk_contest <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Данк контест)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Конкурс данков является <b><sc_element sys_idtf="championship">соревнованием</b></sc_element> среди <b><sc_element sys_idtf="concept_athlete">спортсменов</b></sc_element> по забиванию наиболее красивых <b><sc_element sys_idtf="slam_dunk">бросков сверху</b></sc_element>.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+dunk_contest <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Данк контест)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[В некоторых <b><sc_element sys_idtf="concept_sports_league">лигах</b></sc_element>, данный <b><sc_element sys_idtf="championship">конкурс</b></sc_element> имеет такой же регулярный характер, как и <b><sc_element sys_idtf="all_star_game">матч всех звезд</b></sc_element>.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);
+<-rrel_key_sc_element:..
+(*
+<-illustration;;
+<=nrel_sc_text_translation:...
+	(*
+->rrel_example: "file://dunk.jpg"
+	(*
+=>nrel_format:format_jpg;;
+	*);;	
+*);;
+*);;
+championship<=nrel_inclusion:dunk_contest;;
+

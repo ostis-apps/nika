@@ -1,0 +1,51 @@
+concept_streetball
+
+=> nrel_main_idtf:
+	[streetball](*<-lang_en;;*);
+	[стритбол](*<-lang_ru;;*);
+	[баскетбол 3х3](*<-lang_ru;;*);
+	
+<- rrel_key_sc_element: ... 
+		(*
+        <- definition;;
+		=> nrel_main_idtf: [Опр.(стритбол)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[стритбол - вид <b><sc_element sys_idtf="concept_basketbal">баскетбола</b></sc_element> с <b><sc_element sys_idtf="concept_sports_team">командами</b></sc_element> из трех <b><sc_element sys_idtf="concept_athlete">спортсменов</b></sc_element>, имеющий упрощенные <b><sc_element sys_idtf="concept_sports_rule">правила</b></sc_element> и, зачастую, матчи по данному виду спорта проводятся на уличных <b><sc_element sys_idtf="concept_basketball_court">площадках</b></sc_element>.](*<- lang_ru;; => nrel_format: format_html;; *);;
+			*);;
+            <= nrel_using_constants: {
+               concept_athlete;
+               concept_basketball_court;
+               concept_basketbal;
+               concept_sports_team;
+               concept_sports_rule
+            };;
+		*);;
+
+concept_streetball<-rrel_key_sc_element:...(*
+<-explanation;;
+=>nrel_main_idtf:
+[Утв.(Про стритбол)](*<-lang_ru;;*);;
+<=nrel_sc_text_translation:...(*
+->rrel_example:
+[Стритбол появился в США в 1950-х годах в бедных городских кварталах. Сейчас это так же, как и <b><sc_element sys_idtf="concept_basketbal">баскетбол</b></sc_element> довольно популярный <b><sc_element sys_idtf="concept_game">вид командного спорта</b></sc_element>](* <- lang_ru;; => nrel_format: format_html;; *);;
+      *);;
+      <=nrel_using_constants: {
+      concept_basketbal;
+      concept_game
+      };;
+  *);
+<-rrel_key_sc_element:...
+	(*
+		<-illustration;;
+		<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:
+"file://streetball.jpg"
+	(*
+		=>nrel_format:format_jpg;;
+	*);;	
+*);;
+*);  
+<=nrel_inclusion:concept_basketball;;
+

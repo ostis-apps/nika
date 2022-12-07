@@ -1,0 +1,58 @@
+concept_the_double_drible_rule=>nrel_idtf:[the_double_drible_rule]
+	(*
+		<-lang_en;;
+	*);;
+concept_the_double_drible_rule=>nrel_main_idtf:[правило двойного ведения]
+	(*
+		<-lang_ru;;
+	*);;
+	
+concept_the_double_drible_rule <-rrel_key_sc_element:...
+	(*
+		<-definition;;
+		=>nrel_main_idtf:
+[Опр.(правило двойного ведения)] 
+	(* 
+		<-lang_ru;;
+	*);;
+	
+<=nrel_sc_text_translation:...
+	(*
+		-> rrel_example: [баскетбольное правило, которое запрещает игроку, прекратившему <b><sc_element sys_idtf="concept_basketball_dribling">ведение</b></sc_element>, возобновлять его.]
+(* 
+<-lang_ru;; =>nrel_format: format_html;;
+*);;
+
+	*);;
+	<=nrel_using_constants: {
+	concept_basketball_dribling
+	};;
+*);;
+concept_the_double_drible_rule <- rrel_key_sc_element:...
+	(*
+        <- explanation;;
+        -> rrel_key_sc_element:output ;;
+		=> nrel_main_idtf: 
+         [Утв.(о правиле двойного ведения)](* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			    -> rrel_example: 
+		[ в случае нарушения данного правила игра останавливается и владение мячом переходит противоположной команде. ](*<- lang_ru;;*);;
+
+			*);;
+*);;
+
+concept_the_double_drible_rule<-rrel_key_sc_element:...
+	(*
+		<-illustration;;
+		<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:
+"file://double_drible.jpg"
+	(*
+		=>nrel_format:format_jpg;;
+	*);;	
+*);;
+*);;
+concept_basketball_rules=>nrel_inclusion:concept_the_double_drible_rule;;
+

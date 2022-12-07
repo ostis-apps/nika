@@ -1,0 +1,30 @@
+concept_basketball_block <- sc_node_not_relation;;
+
+concept_basketball_block => nrel_main_idtf:
+[Блок-шот] (*<-lang_ru;;*);
+[Block(basketball)] (*<-lang_en;;*);;
+
+concept_basketball_block <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Блок-шот)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[термин, означающий ситуацию, когда игрок защиты блокирует по правилам бросок соперника. ](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_basketball_block <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Блок-шот)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Основными блокирующими игроками являются игроки передней линии — центровые и тяжёлые форварды. Однако игроки других позиций, имеющие хороший прыжок и координацию, зачастую становятся лучшими в данном показателе. Блок — показатель, характеризующий действия баскетболиста в защите. ](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+concept_in_game_statistics<=nrel_inclusion:basketball_rebound;;

@@ -1,0 +1,86 @@
+concept_the_travel_rule=>nrel_idtf:[the travel rule]
+	(*
+		<-lang_en;;
+	*);;
+concept_the_travel_rule=>nrel_main_idtf:[правило пробежки]
+	(*
+		<-lang_ru;;
+	*);;
+	
+concept_the_travel_rule <-rrel_key_sc_element:...
+	(*
+		<-definition;;
+		=>nrel_main_idtf:
+[Опр.(правило пробежки)] 
+	(* 
+		<-lang_ru;;
+	*);;
+	
+<=nrel_sc_text_translation:...
+	(*
+		-> rrel_example: [баскетбольное правило, которое запрещает игроку нападения, владеющего мячом, совершать более двух шагов без выполнения ведения мяча.]
+(* 
+<-lang_ru;; 
+*);;
+
+	*);;
+	<=nrel_using_constants: {
+	concept_basketball_rules
+	};;
+*);;
+concept_the_travel_rule <- rrel_key_sc_element:...
+	(*
+        <- explanation;;
+        -> rrel_key_sc_element:output ;;
+		=> nrel_main_idtf: 
+         [Утв.(о правиле возвращения мяча)](* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			    -> rrel_example: 
+		[ в случае нарушения данного правила игра останавливается и владение мячом переходит противоположной команде. ](*<- lang_ru;;*);;
+
+			*);;
+*);;
+
+concept_the_travel_rule <- rrel_key_sc_element:...
+	(*
+        <- explanation;;
+        -> rrel_key_sc_element:output ;;
+		=> nrel_main_idtf: 
+         [Утв.(о правиле возвращения мяча)](* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			    -> rrel_example: 
+		[ Так же правило пробежки нарушается и в случае, когда неподвижный игрок, владеющий мячом, начинает движение без осуществления ведения. ](*<- lang_ru;;*);;
+
+			*);;
+*);;
+
+concept_the_travel_rule <- rrel_key_sc_element:...
+	(*
+        <- explanation;;
+        -> rrel_key_sc_element:output ;;
+		=> nrel_main_idtf: 
+         [Утв.(о правиле возвращения мяча)](* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			    -> rrel_example: 
+		[ в случае нарушения данного правила, судья подает сигнал, используя свисток и показывает жест(прим. на изображении). ](*<- lang_ru;;*);;
+
+			*);;
+*);;
+
+concept_the_travel_rule<-rrel_key_sc_element:...
+	(*
+		<-illustration;;
+		<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:
+"file://travel.png"
+	(*
+		=>nrel_format:format_jpg;;
+	*);;	
+*);;
+*);;
+concept_basketball_rules=>nrel_inclusion:concept_the_travel_rule;;
+
