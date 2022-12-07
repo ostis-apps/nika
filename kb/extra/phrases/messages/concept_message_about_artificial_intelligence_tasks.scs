@@ -1,0 +1,37 @@
+concept_message_about_artificial_intelligence_tasks
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о задачах искуственного интеллекта]
+	    (* <- lang_ru;; *);
+	[message about artificial intelligence tasks]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_artificial_intelligence_tasks];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о задачах искуственного интеллекта)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about artificial intelligence tasks)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о задачах искуственного интеллекта - атомарное сообщение, которое содержит задачи искуственного интеллекта, информацию о которых необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about artificial intelligence tasks is an atomic message that contains artificial intelligence tasks information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
