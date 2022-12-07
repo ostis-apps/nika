@@ -1,0 +1,28 @@
+macroelement_calcium_Ca
+
+<- sc_node_not_relation;
+
+=> nrel_main_idtf:
+          [макроэлемент кальций]
+          (*<-lang_ru;;*);
+          [macroelement calcium]
+          (*<-lang_en;;*);
+
+=>nrel_daily_requirement_for_adults:[800-1200 мг](*<-lang_ru;;*);
+
+=> nrel_increase_comsumption_in_case_of: osteoporosis;
+=> nrel_increase_comsumption_in_case_of: arthrisis;
+=> nrel_increase_comsumption_in_case_of: leg_cramps;
+=> nrel_increase_comsumption_in_case_of: parodontosis;
+
+<= nrel_deficit_indicator_of: increased_propensity_to_fracture;
+<= nrel_deficit_indicator_of: cramps_in_muscles;
+<= nrel_deficit_indicator_of: pain_and_weakness_in_muscles;
+<= nrel_deficit_indicator_of: nervousness;
+<= nrel_deficit_indicator_of: irritability;
+<= nrel_deficit_indicator_of: development_of_osteoporosis;
+<= nrel_deficit_indicator_of: development_of_parodontosis;
+
+=> nrel_is_contained_in: cheese;
+=> nrel_is_contained_in: nuts;
+=> nrel_is_contained_in: fish;;

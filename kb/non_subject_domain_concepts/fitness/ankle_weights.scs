@@ -1,0 +1,41 @@
+ankle_weights
+ 
+<-sc_node_not_relation;
+
+=> nrel_main_idtf:
+          [ankle weights](*<-lang_en;;*);
+          [утяжелители для ног](*<-lang_ru;;*);
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- definition;;
+		=> nrel_main_idtf: [Опр.(утяжелители для ног)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Спортивный снаряд, предназначенный для тренировки определенной группы мышц с целью увеличения показателей силы, скорости и выносливости](*<- lang_ru;;*);;
+			*);;
+		*);
+
+<=nrel_inclusion:concept_fitness_equipment;
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- statement;;
+		=> nrel_main_idtf: [Утв.(утяжелители для ног)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[При занятиях с утяжелителями организм получает нагрузку больше обычного, увеличивается интенсивность тренировок, активнее сжигаются калории](*<- lang_ru;;*);;
+			*);;
+		*);
+
+<- rrel_key_sc_element : ...
+	(*
+		<- illustration;;
+		<= nrel_sc_text_translation : ...
+		(*
+			-> "file://ankle_weights.jpg"
+			(*
+				=> nrel_format : format_jpg ;;
+			*);;
+		*);;
+	*);;

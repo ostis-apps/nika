@@ -1,0 +1,23 @@
+running
+<-sc_node_not_relation;
+->aerobic_excercise;;
+running => nrel_main_idtf:
+	[бег](* <-lang_ru;; *);
+    [running](* <-lang_en;; *);;
+running <- rrel_key_sc_element: 
+		... 
+		(*
+		<- sc_definition;;
+		=> nrel_main_idtf: [Определение: бег] (* <- lang_ru;; *);;
+		=> nrel_main_idtf: [Definition: running] (* <- lang_en;; *);;
+        <- definition;;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example: 
+				[Бег — один из способов передвижения человека, для которого характерен тот же цикл движений, что и при ходьбе, те же действующие силы и функциональные группы мышц.](*<- lang_ru;;*);;
+			-> rrel_example: 
+				[Running — one of ways of movement of the person of which the same cycle of movements is characteristic, as when walking, the same operating forces and functional groups of muscles.](*<- lang_en;;*);;
+			*);;
+		*);;
+
+concept_aerobic_excercise=>nrel_inclusion::running;;

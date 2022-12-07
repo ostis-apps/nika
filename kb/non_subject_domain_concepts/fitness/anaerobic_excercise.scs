@@ -1,0 +1,22 @@
+cncept_anaerobic_excercise
+<-sc_node_not_relation;
+->physical_excercise;;
+anaerobic_excercise => nrel_main_idtf:
+	[анаэробное упражнение](* <-lang_ru;; *);
+    [anaerobic excercise](* <-lang_en;; *);;
+anaerobic_excercise <- rrel_key_sc_element: 
+		... 
+		(*
+		<- sc_definition;;
+		=> nrel_main_idtf: [Определение: анаэробное упражнение] (* <- lang_ru;; *);;
+		=> nrel_main_idtf: [Definition: anaerobic excercise] (* <- lang_en;; *);;
+        <- definition;;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example: 
+				[Анаэробное упражнение — упражнение с относительно большим отягощением, направлено на развитие силы и скорости. ](*<- lang_ru;;*);;
+			-> rrel_example: 
+				[Anaerobic exercise, which includes strength and resistance training, can firm, strengthen, and tone muscles, as well as improve bone strength, balance, and coordination.](*<- lang_en;;*);;
+			*);;
+*);;
+

@@ -1,0 +1,21 @@
+concept_aerobic_excercise
+<-sc_node_not_relation;
+->physical_excercise;;
+aerobic_excercise => nrel_main_idtf:
+	[аэробное упражнение](* <-lang_ru;; *);
+    [aerobic excercise](* <-lang_en;; *);;
+aerobic_excercise <- rrel_key_sc_element: 
+		... 
+		(*
+		<- sc_definition;;
+		=> nrel_main_idtf: [Определение: аэробное упражнение] (* <- lang_ru;; *);;
+		=> nrel_main_idtf: [Definition: aerobic excercise] (* <- lang_en;; *);;
+        <- definition;;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example: 
+				[Аэробная упражнение — упражнение с относительно высоким числом повторений, движений направлена на улучшение выносливости. ](*<- lang_ru;;*);;
+			-> rrel_example: 
+				[Aerobic exercise is any physical activity that uses large muscle groups and causes the body to use more oxygen than it would while resting.](*<- lang_en;;*);;
+			*);;
+			*);;

@@ -1,0 +1,124 @@
+concept_amino_acid=>nrel_idtf:[amino acid] 
+	(*
+		<-lang_en;;
+	*);;
+concept_amino_acid=>nrel_idtf:[аминокислота]
+	(*
+		<-lang_ru;;	
+	*);;
+concept_amino_acid=>nrel_main_idtf:[аминокислота]
+	(*
+		<-lang_ru;;
+	*);;
+
+
+
+concept_amino_acid<-rrel_key_sc_element:...
+	(*
+		<-definition;;
+		=>nrel_main_idtf:
+			[Опр.(аминокислота)] 
+	(* 
+		<-lang_ru;;
+	*);;
+		<=nrel_sc_text_translation:...
+	(*
+		->[Аминокислота - органическое соединение, в молекуле которого одновременно содержатся карбоксильные и аминные группы, учавствующее в синтезе белка.](* <- lang_ru;; *);;
+	*);;
+	*);;
+
+
+
+
+concept_amino_acid<-rrel_key_sc_element:...
+	(*
+		<-statement;;
+		=>nrel_main_idtf:[Утверждение 1. Функции аминокислот](* <- lang_ru;; *);;
+	
+		<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Аминокислоты учавствуют в процессе создания ферментов, гормонов, белков.]
+	(*
+		<-lang_ru;; 
+	*);;
+	*);;
+	*);;
+
+
+concept_amino_acid<-rrel_key_sc_element:...
+	(*
+		<-statement;;
+		=>nrel_main_idtf:[Утверждение 2. Физические свойства аминокислот](* <- lang_ru;; *);;
+	
+		<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Аминокислоты - бесцветные, кристаллические вещества, плавящиеся обычно с разложением при сравнительно высоких температурах, сладкие, горьковатые или пресные на вкус.]
+	(*
+		<-lang_ru;; 
+	*);;
+	*);;
+	*);;
+
+
+concept_amino_acid <- rrel_key_sc_element:...
+		(*
+        <- explanation;;
+        -> rrel_key_sc_element:output ;;
+		=> nrel_main_idtf: 
+         [Утверждение 3. Ключевые элементы](* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			    -> rrel_example: 
+		[Ключевые элементы аминокислот – углерод, водород, кислород и азот. Прочие элементы находятся в боковой цепи определенных аминокислот.](*<- lang_ru;;*);;
+			*);;
+*);;
+
+
+concept_amino_acid <- rrel_key_sc_element:...
+		(*
+        <- explanation;;
+        -> rrel_key_sc_element:output ;;
+		=> nrel_main_idtf: 
+         [Утверждение 4. Применение](* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			    -> rrel_example: 
+		[Различные наборы аминокислот применяются для парентерального питания при заболеваниях кишечника и нарушениях всасывания, при некоторых заболеваниях центральной нервной системы (эпилепсии, реактивных состояниях), для лечения больных гепатитами, язвенной болезнью желудка и двенадцатиперстной кишки. Аминокислоты применяют также в качестве добавок к пищевым продуктам.](*<- lang_ru;;*);;
+			*);;
+*);;
+
+
+
+concept_amino_acid <- rrel_key_sc_element:...
+		(*
+        <- explanation;;
+        -> rrel_key_sc_element:output ;;
+		=> nrel_main_idtf: 
+         [Утверждение 5. Роль в питании](* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			    -> rrel_example: 
+		[Полноценное питание обеспечивается при сбалансированном содержании отдельных аминокислот в пище. Избыток некоторых аминокислот неблагоприятен. При несбалансированном питании избыток некоторых аминокислот может нарушать обмен веществ в организме.](*<- lang_ru;;*);;
+			*);;
+*);;
+
+
+concept_amino_acid <- rrel_key_sc_element:...
+		(*
+        <- explanation;;
+        -> rrel_key_sc_element:output ;;
+		=> nrel_main_idtf: 
+         [Утверждение 6. Виды аминокислот](* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			    -> rrel_example: 
+		[Аминокислоты подразделяются на незаменимые и заменимые. Незаменимые аминокислоты не могут синтезироваться организмом, поэтому они должны поступать с пищей. Заменимые аминокислоты могут синтезироваться организмом из других составляющих.](*<- lang_ru;;*);;
+			*);;
+*);;
+
+
+
+concept_amino_acid=>nrel_foodsource:concept_protein;;
+
+
+concept_amino_acid=>nrel_inclusion:concept_protein;;

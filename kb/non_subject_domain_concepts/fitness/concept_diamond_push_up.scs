@@ -1,0 +1,47 @@
+concept_diamond_push_up
+ 
+<-sc_node_not_relation;
+
+=> nrel_main_idtf:
+          [diamond push-up](*<-lang_en;;*);
+          [алмазные отжимания](*<-lang_ru;;*);
+=>nrel_inclusion::concept_push_up;
+=>nrel_starting_position:concept_straight_hands_plank;
+=>nrel_ending_position:concept_straight_hands_plank;
+=> nrel_target_muscle:concept_tricep;
+=>nrel_additional_muscle:
+			  concept_deltoid;
+			  concept_major_pectoral;
+<- rrel_key_sc_element: ... 
+		(*
+        <- definition;;
+		=> nrel_main_idtf: [Опр.(алмазные отжимания)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Алмазные отжимания - это отжимания с узкой постановкой ладоней, большие и указательные пальцы при этом образуют фигуру наподобие ромба.](*<- lang_ru;;*);;
+			*);;
+		*);
+
+<=nrel_species:push_ups;
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- statement;;
+		=> nrel_main_idtf: [Утв.(алмазные отжимания)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[алмазные отжимания позволяют сместить нагрузку на трицепс.](*<- lang_ru;;*);;
+			*);;
+		*);
+
+<- rrel_key_sc_element : ...
+	(*
+		<- illustration;;
+		<= nrel_sc_text_translation : ...
+		(*
+			-> "file://concept_diamond_push_ups.jpg"
+			(*
+				=> nrel_format : format_jpg ;;
+			*);;
+		*);;
+	*);;

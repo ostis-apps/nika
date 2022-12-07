@@ -1,0 +1,70 @@
+concept_cognitive_process
+<-sc_node_not_relation;
+
+=> nrel_main_idtf:
+
+ 	[познавательный процесс]
+	(*<-lang_ru;;*);
+
+	[cognitive process]
+ 	(*<-lang_en;;*);
+
+
+
+
+<-rrel_key_sc_element: ... (*
+	<- definition;;
+	=>nrel_main_idtf :
+	[Опр. (познавательный процесс) ] (*<-lang_ru;;*);;
+
+	=> nrel_using_constants: {
+    	concept_mental_process
+
+};;
+
+	 <= nrel_sc_text_translation: ... (*
+
+      -> rrel_example:
+	  
+	[ Познавательные процессы – это <b><sc_element sys_idtf="concept_mental_process">психические процессы</b></sc_element>, которые обеспечивают получение, хранение и воспроизведение информации и знаний из окружающей среды. ] (* <- lang_ru;; => nrel_format: format_html;; 
+
+	*);;
+
+    *);;
+
+ *);
+
+
+
+
+<- rrel_key_sc_element: ... (*
+	<-explanation;;
+	=>nrel_main_idtf:
+	[Утв. ] (*<-lang_ru;;*);;
+
+	=> nrel_using_constants: {
+    	intellect
+
+};;
+
+	<=nrel_sc_text_translation: ... (*
+
+	->rrel_example:
+
+	[ Можно сказать, что когда говорят о способностях, таланте, гении, <b><sc_element sys_idtf="intellect">интеллекте</b></sc_element> и уровне развития, то имеют в виду, прежде всего, познавательные процессы. ] (* <- lang_ru;; => nrel_format: format_html;; *);;
+
+    *);;
+ *);;
+
+
+
+
+concept_personality => nrel_inclusion:concept_cognitive_process;;
+
+
+
+
+
+
+
+	

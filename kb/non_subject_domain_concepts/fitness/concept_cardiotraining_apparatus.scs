@@ -1,0 +1,29 @@
+concept_cardiotraining_apparatus
+ 
+<-sc_node_not_relation;
+
+=> nrel_main_idtf:
+          [cardiotraining apparatus](*<-lang_en;;*);
+          [кардиотренажёр](*<-lang_ru;;*);
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- definition;;
+		=> nrel_main_idtf: [Опр.(кардиотренажёр)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Тренажёр, имитирующий естественные для человека движения: бег, ходьбу на лыжах, подъем по лестнице, греблю, езду на велосипеде](*<- lang_ru;;*);;
+			*);;
+		*);
+
+<=nrel_inclusion:concept_training_apparatus;
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- statement;;
+		=> nrel_main_idtf: [Утв.(кардиотренажёр)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Кардиотренажёры повышают выносливость тела, сгоняют жировые образования и оказывают укрепляющее воздействие на сердечнососудистую систему организма.](*<- lang_ru;;*);;
+			*);;
+		*);;

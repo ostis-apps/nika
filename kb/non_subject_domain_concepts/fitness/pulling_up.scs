@@ -1,0 +1,23 @@
+pulling_up
+<-sc_node_not_relation;
+->anaerobic_excercise;;
+pulling_up => nrel_main_idtf:
+	[подтягивание](* <-lang_ru;; *);
+    [push-up](* <-lang_en;; *);;
+puling_up <- rrel_key_sc_element: 
+		... 
+		(*
+		<- sc_definition;;
+		=> nrel_main_idtf: [Определение: подтягивание] (* <- lang_ru;; *);;
+		=> nrel_main_idtf: [Definition: pulling up] (* <- lang_en;; *);;
+        <- definition;;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example: 
+				[Подтягивания — базовое физическое упражнение, развивающее группы мышц верхней части тела.](*<- lang_ru;;*);;
+			-> rrel_example: 
+				[Pullings up — the general physical exercise developing groups of muscles of an upper body.](*<- lang_en;;*);;
+			*);;
+		*);;
+		
+concept_anaerobic_exercize<=nrel_inclusion::pulling_up;;

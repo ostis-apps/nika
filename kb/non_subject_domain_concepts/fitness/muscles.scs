@@ -1,0 +1,61 @@
+muscles
+ 
+<-sc_node_not_relation;
+
+=> nrel_main_idtf:
+          [muscles](*<-lang_en;;*);
+          [мышцы](*<-lang_ru;;*);
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- definition;;
+		=> nrel_main_idtf: [Опр.(мышцы)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Комплекс тканей, составляющих основу тела, характерной особенностей которых является способность сокращаться.](*<- lang_ru;;*);;
+			*);;
+		*);
+
+//<=nrel_inclusion:concept_cardiotraining_apparatus;
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- statement;;
+		=> nrel_main_idtf: [Утв.1(мышцы)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[В человеческом теле около шести с половиной сотен мышц.](*<- lang_ru;;*);;
+			*);;
+		*);
+
+<- rrel_key_sc_element: ... 
+(*
+<- statement;;
+=> nrel_main_idtf: [Утв.2(мышцы)] (* <- lang_ru;; *);;
+<= nrel_sc_text_translation: ...
+    (*
+    -> rrel_example:[Самые сильные мышцы в человеческом организме — челюстные, сила их сжатия может превышать сотню килограммов. А вообще самая сильная единичная мышца — это язык.](*<- lang_ru;;*);;
+    *);;
+*);
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- statement;;
+		=> nrel_main_idtf: [Утв.3(мышцы)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[При улыбке задействуется семнадцать различных мышц.](*<- lang_ru;;*);;
+			*);;
+		*);
+
+<- rrel_key_sc_element : ...
+	(*
+		<- illustration;;
+		<= nrel_sc_text_translation : ...
+		(*
+			-> "file://muscles.jpg"
+			(*
+				=> nrel_format : format_jpg ;;
+			*);;
+		*);;
+	*);;

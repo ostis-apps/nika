@@ -1,0 +1,65 @@
+concept_fear
+<-sc_node_not_relation;
+
+=> nrel_main_idtf:
+
+ 	[страх]
+	(*<-lang_ru;;*);
+
+	[fear]
+ 	(*<-lang_en;;*);
+
+
+
+
+<-rrel_key_sc_element: ... (*
+	<- definition;;
+	=>nrel_main_idtf :
+	[Опр. (страх) ] (*<-lang_ru;;*);;
+
+	
+
+	 <= nrel_sc_text_translation: ... (*
+
+      -> rrel_example:
+	  
+	[ Страх — внутреннее состояние, обусловленное грозящим реальным или предполагаемым бедствием. ] (* <- lang_ru;; => nrel_format: format_html;; 
+
+	*);;
+
+    *);;
+
+ *);
+
+
+
+
+<- rrel_key_sc_element: ... (*
+	<-explanation;;
+	=>nrel_main_idtf:
+	[Утв. ] (*<-lang_ru;;*);;
+
+	=> nrel_using_constants: {
+	concept_person;
+	concept_emotion
+
+};;
+
+
+	<=nrel_sc_text_translation: ... (*
+
+	->rrel_example:
+
+	[ Страх как базовая <b><sc_element sys_idtf="concept_emotion">эмоция</b></sc_element> <b><sc_element sys_idtf="concept_person">человека</b></sc_element>, сигнализируя о состоянии опасности, зависит от многих внешних, внутренних, врождённых или приобретённых причин. ] (* <- lang_ru;; => nrel_format: format_html;; *);;
+
+    *);;
+ *);;
+
+
+
+
+
+concept_excitator => nrel_inclusion:concept_fear;;
+emotion => nrel_inclusion:concept_fear;;
+
+concept_excitator=>nrel_stressor:anxiety;;

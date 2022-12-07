@@ -1,0 +1,41 @@
+kettlebell
+ 
+<-sc_node_not_relation;
+
+=> nrel_main_idtf:
+          [kettlebell](*<-lang_en;;*);
+          [гиря](*<-lang_ru;;*);
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- definition;;
+		=> nrel_main_idtf: [Опр.(гиря)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Тяжесть определенного веса, приспособленная по форме для гимнастических упражнений](*<- lang_ru;;*);;
+			*);;
+		*);
+
+<=nrel_inclusion:concept_power_sports_equipment;
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- statement;;
+		=> nrel_main_idtf: [Утв.(гиря)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Гиря используется в различных видах спорта как основной или вспомогательный спортивный снаряд для развития силы, выносливости, координации, а так же сердечно-сосудистой системы](*<- lang_ru;;*);;
+			*);;
+		*);
+
+<- rrel_key_sc_element : ...
+	(*
+		<- illustration;;
+		<= nrel_sc_text_translation : ...
+		(*
+			-> "file://kettlebell.jpg"
+			(*
+				=> nrel_format : format_jpg ;;
+			*);;
+		*);;
+	*);;

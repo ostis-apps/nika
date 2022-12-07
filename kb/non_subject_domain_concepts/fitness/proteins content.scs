@@ -1,0 +1,32 @@
+concept_protein=> nrel_main_idtf: 
+		 [белок](*<- lang_ru;;*);;
+nrel_protein_content
+ <-sc_node_norole_relation;
+=> nrel_main_idtf: 
+		 [содержание белка*](*<- lang_ru;;*);
+		 [protein content*](*<- lang_en;;*);
+
+
+=> nrel_first_domain: concept_product;
+ => nrel_second_domain: concept_protein;
+
+
+<-antireflexive_relation;
+<-antitransitive_relation ;
+<-antisymmetric_relation;
+
+=>nrel_definitional_domain:.o;;
+.o=>nrel_combination:{concept_product;concept_protein};;
+parameter -> arity;;
+arity -> binary_relation;;
+binary_relation -> nrel_calorie_content;;
+binary_relation => nrel_measurement: 2;;
+number -> 2;;
+
+
+
+relation => nrel_inclusion: binary_relation;;
+
+binary_relation => nrel_inclusion: antireflexive_relation;;
+binary_relation => nrel_inclusion: antitransitive_relation;;
+binary_relation => nrel_inclusion: antisymmetric_relation;;

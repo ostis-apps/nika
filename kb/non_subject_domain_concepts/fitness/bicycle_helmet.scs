@@ -1,0 +1,30 @@
+concept_bicycle_helmet
+ 
+<-sc_node_not_relation;
+
+=> nrel_main_idtf:
+          [bicycle helmet](*<-lang_en;;*);
+          [велосипедный шлем](*<-lang_ru;;*);
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- definition;;
+		=> nrel_main_idtf: [Опр.(велосипедный шлем)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Велосипедный шлем (велошлем) — часть экипировки велосипедиста, предназначенная для защиты головы от ударов при падениях и ДТП.](*<- lang_ru;;*);;
+			*);;
+		*);
+
+<=nrel_inclusion:concept_personal_equipment;
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- statement;;
+		=> nrel_main_idtf: [Утв. 1 (О велосипедном шлеме)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Велосипедный шлем должен сочетать в себе лёгкость, прочность и обеспечивать хорошую вентиляцию, чтобы езда на велосипеде была комфортной.](*<- lang_ru;;*);;
+			*);;
+		*);;
+

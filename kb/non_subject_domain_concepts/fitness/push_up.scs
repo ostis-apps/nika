@@ -1,0 +1,22 @@
+concept_push_up
+<-sc_node_not_relation;
+->anaerobic_excercise;;
+push_up => nrel_main_idtf:
+	[отжимание](* <-lang_ru;; *);
+    [push-up](* <-lang_en;; *);;
+push_up <- rrel_key_sc_element: 
+		... 
+		(*
+		<- sc_definition;;
+		=> nrel_main_idtf: [Определение: отжимание] (* <- lang_ru;; *);;
+		=> nrel_main_idtf: [Definition: push-up] (* <- lang_en;; *);;
+        <- definition;;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example: 
+				[Отжимания — базовое физическое упражнение, выполняемое в планке и представляющее собой опускание-поднятие тела с помощью рук от пола.](*<- lang_ru;;*);;
+			-> rrel_example: 
+				[Push-up the general physical exercise which is carried out in a level and representing lowering raising of a body by means of hands from a floor.](*<- lang_en;;*);;
+			*);;
+		*);;
+
