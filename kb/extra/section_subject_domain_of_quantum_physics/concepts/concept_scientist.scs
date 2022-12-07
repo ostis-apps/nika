@@ -1,0 +1,38 @@
+concept_scientist
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [учёный]
+   	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [scientist] 
+   	(* <-lang_en;; *);
+
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [учёный - специалист в какой-либо научной области, внёсший вклад в науку.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_human
+		};;
+	*);
+
+=> nrel_date_of_birth:
+	concept_date;
+
+=> nrel_date_of_death: 
+	concept_date;;
+
+concept_human
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [человек]
+   	(* <- lang_ru;; *);;
+
