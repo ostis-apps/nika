@@ -1,0 +1,47 @@
+concept_figurative_neural_network
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Образная нейронная сеть]
+	(* <- lang_ru;; *);
+	[Figurative neural network]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Образная нейронная сеть)]
+		(* <- lang_ru;; *);
+		[Def. (Figurative neural network)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Образная нейронная сеть  — нейронная сеть, входами и выходами которой являются образы - изображения.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Figurative neural network - neural network, the inputs and outputs of which are images - images.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Образная нейронная сеть)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Образная нейронная сеть - один из трех типов неронных сетей классифицирующихся по типу входной информации]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_neural_network;;

@@ -1,0 +1,35 @@
+section_subject_domain_of_analog_neural_network
+=> nrel_main_idtf: 
+	[Раздел. Предметная область аналоговых нейронных сетей]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of analog neural network]
+	(* <- lang_en;; *);
+	
+<- rrel_key_sc_element:
+	subject_domain_of_analog_neural_network;
+	concept_analog_neural_network;;
+
+section_subject_domain_of_analog_neural_network = [*
+subject_domain_of_analog_neural_network
+
+=> nrel_main_idtf: 
+	[Предметная область аналоговых нейронных сетей]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of analog neural network]
+	(* <- lang_en;; *);
+
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_analog_neural_network;
+		
+-> rrel_maximum_studied_object_class:
+	concept_analog_neural_network;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_analog_signal;
+	
+
+<- subject_domain;;
+*];;

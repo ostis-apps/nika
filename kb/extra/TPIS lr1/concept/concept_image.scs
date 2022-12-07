@@ -1,0 +1,47 @@
+concept_image
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Изображение]
+	(* <- lang_ru;; *);
+	[Image]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Изображение)]
+		(* <- lang_ru;; *);
+		[Def. (Image)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Изображение  — набор пикселей создающих в совокупность картинку некоего объекта или явления.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Image - a set of pixels that together create an image of an object or phenomenon.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Изображение)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Изображение используется в работе образных нейронных сетей]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_analog_neural_network;;

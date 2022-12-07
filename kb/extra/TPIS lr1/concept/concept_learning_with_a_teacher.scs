@@ -1,0 +1,47 @@
+concept_learning_with_a_teacher
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Обучение с учителем]
+	(* <- lang_ru;; *);
+	[Learning with a teacher]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Обучение с учителем)]
+		(* <- lang_ru;; *);
+		[Def. (Learning with a teacher)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Обучение с учителем  — один из способов машинного обучения, в ходе которого испытуемая система принудительно обучается с помощью примеров «стимул-реакция».]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Learning with a teacher - one of the methods of machine learning, during which the system under test is forced to learn using stimulus-response examples.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Обучение с учителем)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Для каждого прецедента задаётся пара «ситуация, требуемое решение»]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_machine_learning;;

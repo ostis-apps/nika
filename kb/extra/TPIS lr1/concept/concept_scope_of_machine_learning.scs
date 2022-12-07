@@ -1,0 +1,47 @@
+concept_scope_of_machine_learning
+<- sc_node_class;
+=> nrel_main_idtf:
+	[область применения машинного обучения]
+	(* <- lang_ru;; *);
+	[scope of machine learning]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (область применения машинного обучения)]
+		(* <- lang_ru;; *);
+		[Def. (scope of machine learning)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[область применения машинного обучения —  область в которой использование машинног обучения даст наилучшие результаты]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[scope of machine learning - area in which the use of machine learning will give the best results]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (область применения машинного обучения)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[область применения машинного обучения - применяется для решения задач классификации и регрессии]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_machine_learning_tasks;;

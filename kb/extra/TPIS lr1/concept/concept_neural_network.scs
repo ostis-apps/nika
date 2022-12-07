@@ -1,0 +1,47 @@
+concept_neural_network
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Нейронная сеть]
+	(* <- lang_ru;; *);
+	[Neural network]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Нейронная сеть)]
+		(* <- lang_ru;; *);
+		[Def. (Neural network)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Нейронная сеть  — математическая модель, а также её программное или аппаратное воплощение, построенная по принципу организации и функционирования биологических нейронных сетей.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Neural network - mathematical model, as well as its software or hardware implementation, built on the principle of organization and functioning of biological neural networks.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Нейронная сеть)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Нейронная сеть испльзует обучение с учителем]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_learning_with_a_teacher;;

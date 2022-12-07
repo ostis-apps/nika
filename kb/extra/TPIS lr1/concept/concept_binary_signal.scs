@@ -1,0 +1,47 @@
+concept_binary_signal
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Двоичный сигнал]
+	(* <- lang_ru;; *);
+	[Binary signal]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Двоичный сигнал)]
+		(* <- lang_ru;; *);
+		[Def. (Binary signal)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Двоичный сигнал  — сигнал, который можно представить в виде последовательности дискретных (цифровых) значений.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Binary signal - a signal that can be represented as a sequence of discrete (digital) values.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Двоичный сигнал)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Двоичный сигнал используется в работе двоичных нейронных сетей]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_binary_neural_network;;

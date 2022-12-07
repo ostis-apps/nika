@@ -1,0 +1,52 @@
+nrel_year_of_creation
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antransitive_relation;
+<-asymmetric_relation;
+=>nrel_main_idtf:
+	[Год создания*]
+	(* <- lang_ru;; *);
+	[Year of creation*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_artificial_intelligence_system;
+=>nrel_second_domain: number;
+=>nrel_definitional_domain: ... (*
+	<= nrel_combination:
+	{
+		concept_artificial_intelligence_system;
+		number
+	};;
+*);
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Год создания*)]
+		(* <- lang_ru;; *);
+		[Def.(Year of creation*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Год создания* - год в котором была разработана интеллектуальная система.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Year of creation* is a year in which the intelligent system was developed.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_artificial_intelligence_system;
+		number;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

@@ -1,0 +1,47 @@
+concept_mathematical_method_of machine_learning
+<- sc_node_class;
+=> nrel_main_idtf:
+	[математический метод машинного обучения]
+	(* <- lang_ru;; *);
+	[mathematical method of machine learning]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (математический метод машинного обучения)]
+		(* <- lang_ru;; *);
+		[Def. (mathematical method of machine learning)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[математический метод машинного обучения —  метод основывающийся на прикладной статистике, численных методов оптимизации, дискретном анализе]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[mathematical method of machine learning - method based on applied statistics, numerical optimization methods, discrete analysis]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (математический метод машинного обучения)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[математический метод машинного обучения - это одна из составных частей обучения без учителя]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_learning_without_a_teacher;;

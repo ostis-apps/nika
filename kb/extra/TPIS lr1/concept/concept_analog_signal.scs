@@ -1,0 +1,47 @@
+concept_analog_signal
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Аналоговый сигнал]
+	(* <- lang_ru;; *);
+	[Analog signal]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Аналоговый сигнал)]
+		(* <- lang_ru;; *);
+		[Def. (Analog signal)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Аналоговый сигнал  — сигнал данных, у которого каждый из представленных параметров описывается функцией времени и непрерывным множеством возможных значений.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Analog signal - a data signal in which each of the presented parameters is described by a function of time and a continuous set of possible values.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Аналоговый сигнал)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Аналоговый сигнал используется в работе аналоговых нейронных сетей]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_analog_neural_network;;

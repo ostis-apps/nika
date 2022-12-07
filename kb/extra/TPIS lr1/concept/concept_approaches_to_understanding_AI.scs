@@ -1,0 +1,47 @@
+concept_approaches_to_understanding_AI
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Подходы к пониманию ИИ]
+	(* <- lang_ru;; *);
+	[Approaches to understanding AI]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Подходы к пониманию ИИ)]
+		(* <- lang_ru;; *);
+		[Def. (Approaches to understanding AI)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Подходы к пониманию ИИ  — это интерпритация различными людтми своего понимания значения и целей искуственного интеллекта.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Approaches to understanding AI - it is the interpretation by different people of their understanding of the meaning and purpose of artificial intelligence.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Подходы к пониманию ИИ)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Среди подходов к пониманию ИИ выделяют следующие: биологическое моделирование искусственного интеллекта, робототехника, машинное творчество, машинное обучение]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_artificial_intelligence;;

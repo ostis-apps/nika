@@ -1,0 +1,35 @@
+section_subject_domain_of_AI_frameworks
+=> nrel_main_idtf: 
+	[Раздел. Предметная область ИИ-фреймворки]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of AI frameworks]
+	(* <- lang_en;; *);
+	
+<- rrel_key_sc_element:
+	subject_domain_of_AI_frameworks;
+	concept_AI_frameworks;;
+
+section_subject_domain_of_AI_frameworks = [*
+subject_domain_of_AI_frameworks
+
+=> nrel_main_idtf: 
+	[Предметная область ИИ-фреймворки]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of AI frameworks]
+	(* <- lang_en;; *);
+
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_AI_frameworks;
+		
+-> rrel_maximum_studied_object_class:
+	concept_AI_frameworks;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_frameworks;
+	
+
+<- subject_domain;;
+*];;

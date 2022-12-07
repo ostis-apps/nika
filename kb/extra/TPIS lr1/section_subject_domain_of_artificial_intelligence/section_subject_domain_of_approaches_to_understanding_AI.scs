@@ -1,0 +1,44 @@
+section_subject_domain_of_approaches_to_understanding_AI
+=> nrel_main_idtf: 
+	[Раздел. Предметная область подходы к пониманию ИИ]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of approaches to understanding AI]
+	(* <- lang_en;; *);
+	
+<= nrel_section_decomposition: 
+	{
+		section_subject_domain_of_robotics
+	};
+
+<- rrel_key_sc_element:
+	concept_robotics;
+	subject_domain_of_approaches_to_understanding_AI;
+	concept_approaches_to_understanding_AI;;
+
+section_subject_domain_of_approaches_to_understanding_AI= [*
+subject_domain_of_approaches_to_understanding_AI
+
+=> nrel_main_idtf: 
+	[Предметная область подходы к пониманию ИИ]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of approaches to understanding AI]
+	(* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+	section_subject_domain_of_robotics;
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_approaches_to_understanding_AI;
+		
+-> rrel_maximum_studied_object_class:
+	concept_approaches_to_understanding_AI;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_robotics;
+	
+
+	
+<- subject_domain;;
+*];;

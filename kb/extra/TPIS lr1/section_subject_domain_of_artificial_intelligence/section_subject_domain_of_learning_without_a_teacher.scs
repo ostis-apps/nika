@@ -1,0 +1,35 @@
+section_subject_domain_of_learning_without_a_teacher
+=> nrel_main_idtf: 
+	[Раздел. Предметная область обучение без учителя]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of learning without a teacher]
+	(* <- lang_en;; *);
+	
+<- rrel_key_sc_element:
+	subject_domain_of_learning_without_a_teacher;
+	concept_learning_without_a_teacher;;
+
+section_subject_domain_of_learning_without_a_teacher = [*
+subject_domain_of_learning_without_a_teacher
+
+=> nrel_main_idtf: 
+	[Предметная область обучение без учителя]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of learning without a teacher]
+	(* <- lang_en;; *);
+
+		
+<= nrel_private_subject_domain:
+	section_subject_domain_of_learning_without_a_teacher;
+		
+-> rrel_maximum_studied_object_class:
+	concept_learning_without_a_teacher;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_mathematical_method_of machine_learning;
+	
+
+<- subject_domain;;
+*];;

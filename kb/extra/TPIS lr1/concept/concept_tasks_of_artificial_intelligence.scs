@@ -1,0 +1,47 @@
+concept_tasks_of_artificial_intelligence
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Задачи ИИ]
+	(* <- lang_ru;; *);
+	[Tasks of AI]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Задачи ИИ)]
+		(* <- lang_ru;; *);
+		[Def. (Tasks of AI)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Задачи ИИ —  имитировать когнитивные (мыслительные) функции человека]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Tasks of AI - imitate human cognitive (thinking) functions]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Задачи ИИ)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Задачами ИИ могут выступать распознавание речи, компьютерное щрение, обработка естественного языка и многое другое]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_artificial_intelligence;;

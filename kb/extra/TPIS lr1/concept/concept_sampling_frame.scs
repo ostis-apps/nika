@@ -1,0 +1,46 @@
+concept_sampling_frame
+<- sc_node_class;
+=> nrel_main_idtf:
+	[выборочная совокупность]
+	(* <- lang_ru;; *);
+	[sampling frame]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (выборочная совокупность)]
+		(* <- lang_ru;; *);
+		[Def. (sampling frame)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[выборочная совокупность —  часть генеральной совокупности элементов, которая охватывается экспериментом]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[sampling frame - part of the general population of elements that is covered by the experiment]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (выборочная совокупность)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[выборочная совокупность - это одна из составных частей обучения с учителем]
+		*);;
+	*);
+<=nrel_inclusion: concept_learning_with_a_teacher;;

@@ -1,0 +1,47 @@
+concept_percpetron
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Перцпетрон]
+	(* <- lang_ru;; *);
+	[Percpetron]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Перцпетрон)]
+		(* <- lang_ru;; *);
+		[Def. (Percpetron)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Перцпетрон  — однослойная нейронная сеть.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Percpetron - single layer neural network.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Перцпетрон)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Перцпетрон состоит всего из двух слоев: входного и выходного]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_neural_network;;

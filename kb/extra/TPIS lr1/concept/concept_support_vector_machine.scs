@@ -1,0 +1,47 @@
+concept_support_vector_machine
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Метод опорных векторов]
+	(* <- lang_ru;; *);
+	[Support vector machine]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Метод опорных векторов)]
+		(* <- lang_ru;; *);
+		[Def. (Support vector machine)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Метод опорных векторов  — набор схожих алгоритмов обучения с учителем, использующихся для задач классификации и регрессионного анализа.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Support vector machine - a set of similar supervised learning algorithms used for classification and regression analysis problems.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Метод опорных векторов)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Метод опорных векторов испльзует обучение с учителем]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_learning_with_a_teacher;;

@@ -1,0 +1,47 @@
+concept_computer_vision
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Компьютерное зрение]
+	(* <- lang_ru;; *);
+	[Computer vision]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Компьютерное зрение)]
+		(* <- lang_ru;; *);
+		[Def. (Computer vision)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Компьютерное зрение  — это научное направление в области искусственного интеллекта, в частности робототехники, и связанные с ним технологии получения изображений объектов реального мира, их обработки, использования полученных данных для решения разного рода прикладных задач без участия человека.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Computer vision - this is a scientific direction in the field of artificial intelligence, in particular robotics, and related technologies for obtaining images of real world objects, processing them, using the obtained data to solve various applied problems without human intervention.]
+			(* <- lang_en;; *);;
+		*);;
+
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Утв. (Компьютерное зрение)]
+		(* <- lang_ru;; *);;
+	<- statement;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Компьютерное зрение является одной из ключевых задач ИИ]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_tasks_of_artificial_intelligence;;
