@@ -1,0 +1,37 @@
+concept_message_about_hockey
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о хоккей]
+	    (* <- lang_ru;; *);
+	[message about hockey]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_hockey];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о хоккей)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about hockey)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о хоккей - атомарное сообщение, которое содержит виды человекообразных, информацию о которых необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about о hockey is an atomic message that contains hominoidea division information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
