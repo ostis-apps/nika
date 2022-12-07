@@ -1,0 +1,14 @@
+nrel_research
+
+	=> nrel_first_domain: concept_problems_sciences;
+	=> nrel_second_domain: concept_discoveries_in_science;
+	
+	<-sc_node_norole_relation;
+	<-oriented_relation;
+	<-binary_relation;
+	<-antisymmetric_relation;
+	<-antireflexive_relation;
+
+	=> nrel_main_idtf:
+		[издатель*](* <-lang_ru;; *);
+		[publisher*](* <-lang_en;; *);;
