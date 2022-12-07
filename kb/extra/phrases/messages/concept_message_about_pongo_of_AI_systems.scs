@@ -1,0 +1,37 @@
+concept_message_about_pongo_of_AI_systems
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение об экземплярах ИИ-систем]
+	    (* <- lang_ru;; *);
+	[message about of AI systems]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_pongo_of_AI_systems];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение об экземплярах ИИ-систем)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about of AI systems)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[сообщение об экземплярах ИИ-систем - атомарное сообщение, которое содержит экземпляры ИИ-систем, информацию о которых необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about of AI systems is an atomic message that contains pongo examples information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
