@@ -1,0 +1,37 @@
+concept_message_about_examples_of_AI_systems
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение об видах ИИ-систем]
+	    (* <- lang_ru;; *);
+	[message about examples of AI systems]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_examples_of_AI_systems];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение об видах ИИ-систем)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about examples of AI systems)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о Deep Blue - атомарное сообщение, которое содержит информацию о Deep Blue которую необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about Deep Blue is an atomic message that contains Deep Blue information which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

@@ -1,0 +1,38 @@
+concept_message_about_artificial_intelligence
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о искуственном интеллекте]
+	    (* <- lang_ru;; *);
+	[message about artificial intelligence]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_artificial_intelligence];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о искуственном интеллекте)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about artificial intelligence)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о искуственном интеллекте - атомарное сообщение, которое содержит экземпляр сушности, информацию о котором необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about artificial intelligence is an atomic message that contains entity example information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
