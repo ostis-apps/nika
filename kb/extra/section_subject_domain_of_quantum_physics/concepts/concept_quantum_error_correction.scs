@@ -1,0 +1,46 @@
+concept_quantum_error_correction
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Квантовая коррекция ошибок]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Quantum error correction]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Копирование квантовой информации невозможно из-за теоремы о запрете клонирования.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Квантовая коррекция ошибок теоретически необходима для достижения отказоустойчивых квантовых вычислений, которые могут уменьшить влияние шума на хранимую квантовую информацию, ошибочные квантовые элементы.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Квантовой коррекции ошибок]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Квантовая коррекция ошибок (QEC) используется в квантовых вычислениях для защиты квантовой информации от ошибок из-за декогеренции и других квантовых шумов.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_date_of_discovering;
+			nrel_reseacher;
+			concept_wave_interference;
+			concept_atomic_theory;
+			concept_quantum_system;
+			concept_quantum_mechanics
+   	 };;
+  *);;
+

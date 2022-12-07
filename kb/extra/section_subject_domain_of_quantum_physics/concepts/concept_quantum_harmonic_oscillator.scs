@@ -1,0 +1,47 @@
+concept_quantum_harmonic_oscillator
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Квантовый гармонический осциллятор]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Quantum harmonic oscillator]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [При анализе поведения данной системы рассматриваются не силы, действующие на частицу, а гамильтониан, то есть полная энергия осциллятора, причём потенциальная энергия предполагается квадратично зависящей от координат.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Под ангармоническим осциллятором понимают осциллятор с неквадратичной зависимостью потенциальной энергии от координаты.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Квантового гармонического осциллятора]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Квантовый гармонический осциллятор — физическая модель в квантовой механике, представляющая собой параболическую потенциальную яму для частицы массой m и являющаяся аналогом простого гармонического осциллятора.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_date_of_discovering;
+   			nrel_reseacher;
+			concept_wave_interference;
+			concept_hamiltonian;
+			concept_quantum_system;
+			concept_quantum_mechanics;
+			concept_schrodinger_equation
+   	 };;
+  *);;
+

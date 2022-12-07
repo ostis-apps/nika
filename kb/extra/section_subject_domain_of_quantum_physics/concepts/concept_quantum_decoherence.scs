@@ -1,0 +1,47 @@
+concept_quantum_decoherence
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Декогеренция]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Quantum decoherence]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [С точки зрения квантовой теории декогеренция представляет собой схлопывание квантовой функции в результате взаимодействия со средой.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Декогеренция постепенна, это не скачкообразный процесс.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Декогеренции]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Декогеренция — это процесс нарушения когерентности, вызываемый взаимодействием квантовомеханической системы с окружающей средой посредством необратимого с точки зрения термодинамики процесса.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_date_of_discovering;
+			nrel_reseacher;
+			concept_wave_interference;
+			concept_atomic_theory;
+			concept_quantum_computing;
+			concept_quantum_mechanics;
+			concept_quantum_error_correction
+   	 };;
+  *);;
+

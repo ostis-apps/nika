@@ -1,0 +1,46 @@
+concept_perturbation_theory
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Стационарная теория возмущений]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Perturbation theory]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Теория применима для достаточно слабых возмущений.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Теория построена Шрёдингером в 1926 году.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Стационарной теории возмущений]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Стационарная теория возмущений в квантовой механике — теория возмущений, где гамильтониан не зависит от времени.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+			nrel_date_of_discovering;
+   			concept_electric_potential;
+			concept_hamiltonian;
+			concept_theory;
+			concept_quantum_system;
+			concept_quantum_harmonic_oscillator;
+			concept_particle_in_box
+   	 };;
+  *);;
+

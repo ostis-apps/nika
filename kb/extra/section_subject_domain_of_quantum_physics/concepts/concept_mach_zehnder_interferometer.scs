@@ -1,0 +1,47 @@
+concept_mach_zehnder_interferometer
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Интерферометр Маха — Цендера]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Mach–Zehnder interferometer]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [В интегральной оптике широко используются электрооптические модуляторы типа интерферометра Маха — Цендера, которые могут модулировать интенсивность света независимо от его поляризации на частотах до десятков ГГц.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [На входе интерферометра находится полупрозрачное зеркало, расщепляющее световой поток на два луча.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Интерферометра Маха — Цендера]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Интерферометр Маха — Цендера — модификация интерферометра Жамена, двухлучевой интерферометр, применяемый для анализа плазмы и газовых потоков в дискретном исполнении (с помощью зеркал и линз) и в электрооптических модуляторах в объемном и планарном.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_date_of_discovering;
+			nrel_reseacher;
+			concept_wave_interference;
+			concept_quantum_entanglement;
+			concept_quantum_computation;
+			concept_quantum_system;
+			concept_quantum_mechanics
+   	 };;
+  *);;
+

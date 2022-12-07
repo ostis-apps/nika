@@ -1,0 +1,48 @@
+concept_quantum_entanglement
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Квантовая запутанность]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Quantum entanglement]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Измерение параметра одной частицы сопровождается мгновенным (быстрее скорости света) прекращением запутанного состояния другой.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Согласно Хироси Оогуриен, M. Mарколли и др., квантовая запутанность порождает дополнительные измерения для гравитационной теории.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Квантовой запутанность]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Квантовая запутанность — квантовомеханическое явление, при котором квантовые состояния двух или большего числа объектов оказываются взаимозависимыми.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_date_of_discovering;
+   			nrel_quantum_informatic;
+   			nrel_quantum_chemics;
+			concept_wave_function_collapse;
+			concept_theory;
+			concept_quantum_system;
+			concept_quantum_mechanics;
+			concept_correlation
+   	 };;
+  *);;
+

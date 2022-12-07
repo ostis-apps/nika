@@ -1,0 +1,45 @@
+concept_quantum_particle
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Частица]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Particle]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Частицы также могут быть классифицированы по составу.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Концепция частиц особенно полезна при моделировании природы, так как полная обработка многих явлений может быть сложной из-за сложности вычислений.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Атомной орбитали]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [В физических науках частица представляет собой небольшой локализованный объект, которому можно приписать несколько физических или химических свойств, таких как объем, плотность или масса.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_date_of_discovering;
+			nrel_reseacher;
+			concept_atomic_theory;
+			concept_quantum_system;
+			concept_quantum_mechanics
+   	 };;
+  *);;
+

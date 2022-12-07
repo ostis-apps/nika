@@ -1,0 +1,84 @@
+section_subject_domain_of_quantum_physics
+=> nrel_main_idtf:
+      [Раздел. Предметная область квантовой физики]
+  (* <- lang_ru;; *);
+      [Section. Subject domain of quantum physics] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_quantum_physics = [*
+    subject_domain_of_quantum_physics
+<- sc_node_struct;
+    => nrel_main_idtf:
+   [Предметная область квантовой физики]
+   (* <- lang_ru;; *);
+   [Subject domain of quantum physics]
+   (* <- lang_en;; *);
+    <- subject_domain;
+    -> rrel_maximum_studied_object_class:
+   concept_quantum_physics;
+    -> rrel_not_maximum_studied_object_class:
+   concept_quantum_mechanics;
+   concept_uncertainty_principle;
+   concept_quantum_field_theory;
+   concept_wave_interference;
+   concept_quantum_tunnelling;
+   concept_quantum_entanglement;
+   concept_hidden_variable_theory;
+   concept_quantum_superposition;
+   concept_perturbation_theory;
+   concept_quantum_chaos;
+   concept_hamiltonian;
+   concept_schrodinger_equation;
+   concept_quantum_harmonic_oscillator;
+   concept_atomic_orbital;
+   concept_free_particle;
+   concept_particle_in_box;
+   concept_mach_zehnder_interferometer;
+   concept_delayed_choice_quantum_eraser;
+   concept_quantum_decoherence;
+   concept_quantum_error_correction;
+   concept_wave_particle_duality;
+   concept_quantum_particle;
+   concept_quantum_state;
+   concept_date;
+   
+    -> rrel_explored_relation:
+   nrel_date_of_discovering;
+   nrel_reseacher;
+   nrel_quantum_informatic;
+   nrel_quantum_chemics;
+   nrel_research;
+   nrel_profession;;
+*];;
+
+section_subject_domain_of_intelligent_study_systems
+-> rrel_key_sc_element:
+   subject_domain_of_quantum_physics;
+   concept_quantum_mechanics;
+   concept_uncertainty_principle;
+   concept_quantum_field_theory;
+   concept_wave_interference;
+   concept_quantum_tunnelling;
+   concept_quantum_entanglement;
+   concept_hidden_variable_theory;
+   concept_quantum_superposition;
+   concept_perturbation_theory;
+   concept_quantum_chaos;
+   concept_hamiltonian;
+   concept_schrodinger_equation;
+   concept_quantum_harmonic_oscillator;
+   concept_atomic_orbital;
+   concept_free_particle;
+   concept_particle_in_box;
+   concept_mach_zehnder_interferometer;
+   concept_delayed_choice_quantum_eraser;
+   concept_quantum_decoherence;
+   concept_transformation_theory;
+   concept_wave_particle_duality;
+   nrel_date_of_discovering;
+   nrel_reseacher;
+   nrel_quantum_informatic;
+   nrel_quantum_chemics;;

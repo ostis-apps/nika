@@ -1,0 +1,46 @@
+concept_quantum_field_theory
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Квантовая теория поля]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Quantum field theory]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Квантовая теория поля возникла в результате работы нескольких поколений физиков-теоретиков на протяжении большей части 20 века.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [В основе квантовой теории поля лежат классическая теория поля, квантовая механика и специальная теория относительности.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Квантовой теории поля]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Квантовая теория поля — раздел физики, изучающий поведение квантовых систем с бесконечно большим числом степеней свободы — квантовых полей; является теоретической основой описания микрочастиц, их взаимодействий и превращений.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_date_of_discovering;
+   			nrel_quantum_informatic;
+   			nrel_quantum_chemics;
+			concept_wave_interference;
+			concept_theory;
+			concept_quantum_system
+   	 };;
+  *);;
+

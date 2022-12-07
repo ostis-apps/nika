@@ -1,0 +1,46 @@
+concept_quantum_tunnelling
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Туннельный эффект]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Quantum tunnelling]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Туннельный эффект — явление исключительно квантовой природы, невозможное в классической механике и даже полностью противоречащее ей.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Аналогом туннельного эффекта в волновой оптике может служить проникновение световой волны внутрь отражающей среды в условиях, когда, с точки зрения геометрической оптики, происходит полное внутреннее отражение.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Туннельного эффекта]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Туннельный эффект — преодоление микрочастицей потенциального барьера в случае, когда её полная энергия (остающаяся при туннелировании неизменной) меньше высоты барьера.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_date_of_discovering;
+			concept_wave_interference;
+			concept_classical_mechanics;
+			concept_microelectronics;
+			concept_quantum_computing;
+			concept_wavefunction
+   	 };;
+  *);;
+
