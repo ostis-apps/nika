@@ -1,0 +1,55 @@
+concept_basketball_court=>nrel_idtf:[basketball_court]
+	(*<-lang_en;;*);;
+concept_basketball_court=>nrel_main_idtf:[баскетбольная площадка]
+	(*<-lang_ru;;*);;
+	concept_basketball_court=>nrel_main_idtf:[баскетбольный корт]
+	(*<-lang_ru;;*);;
+
+concept_basketball_court <-rrel_key_sc_element:...
+	(*
+		<-definition;;
+		=>nrel_main_idtf:
+[Опр.(баскетбольная площадка)] 
+	(* 
+		<-lang_ru;;
+	*);;
+	
+<=nrel_sc_text_translation:...
+	(*
+		-> rrel_example: [Баскетбольная площадка - место, подготовленное и оборудованное для игры в <b><sc_element sys_idtf="concept_basketball">баскетбол</b></sc_element>.]
+(* 
+<-lang_ru;;
+ => nrel_format: format_html;;  
+*);;
+
+	*);;
+	<=nrel_using_constants:concept_basketball;;
+*);;
+
+concept_basketball_court <- rrel_key_sc_element:...
+	(*
+        <- explanation;;
+        -> rrel_key_sc_element:output ;;
+		=> nrel_main_idtf: 
+         [Утв.(про баскетбольную площадку)](* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			    -> rrel_example: 
+		[Зачастую баскетбольный корт имеет стандартизированные размеры(28 на 15 м в Европе и 28.7 на 15.3 в Америке) и нанесенную разметку.](*<- lang_ru;;*);;
+
+			*);;
+*);;
+
+concept_basketball_court<-rrel_key_sc_element:...
+	(*
+		<-illustration;;
+		<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:
+"file://court.jpg"
+	(*
+		=>nrel_format:format_jpg;;
+	*);;	
+*);;
+*);;
+concept_basketball=>nrel_inclusion:concept_basketball_court;;

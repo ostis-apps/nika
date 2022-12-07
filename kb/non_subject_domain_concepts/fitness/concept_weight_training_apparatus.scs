@@ -1,0 +1,30 @@
+concept_weight_training_apparatus
+ 
+<-sc_node_not_relation;
+
+=> nrel_main_idtf:
+          [weight training apparatus](*<-lang_en;;*);
+          [грузоблочный тренажёр](*<-lang_ru;;*);
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- definition;;
+		=> nrel_main_idtf: [Опр.(грузоблочный тренажёр)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Тренажёр, в котором нагрузка осуществляется за счет движения фиксатора в грузоблоках.](*<- lang_ru;;*);;
+			*);;
+		*);
+
+<=nrel_inclusion:concept_training_apparatus;
+=>nrel_inclusion:concept_vertical_traction_machine;
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- statement;;
+		=> nrel_main_idtf: [Утв.(грузоблочный тренажёр)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Грузоблочный тренажер используется для развития конкретных мышечных групп.](*<- lang_ru;;*);;
+			*);;
+		*);;

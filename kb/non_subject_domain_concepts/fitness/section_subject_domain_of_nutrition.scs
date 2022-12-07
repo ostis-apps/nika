@@ -1,0 +1,37 @@
+section_subject_domain_of_nutrition
+=> nrel_main_idtf: 
+	[Раздел. Предметная область питания]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of nutrition]
+	(* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+		concept_vitamin;
+		vitamin_A;
+		guarana;;
+		
+
+section_subject_domain_of_nutrition = 
+[*
+	subject_domain_of_nutrition
+
+=> nrel_main_idtf: 
+	[Предметная область питания]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of nutrition]
+	(* <- lang_en;; *);
+
+<= nrel_private_subject_domain:
+	subject_domain_of_fitness;
+		
+-> rrel_maximum_studied_object_class:
+	concept_vitamin;
+
+-> rrel_not_maximum_studied_object_class:
+	guarana;
+	
+
+<- subject_domain;;
+*];;

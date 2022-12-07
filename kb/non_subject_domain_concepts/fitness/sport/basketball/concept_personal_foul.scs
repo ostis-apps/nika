@@ -1,0 +1,61 @@
+concept_personal_foul=>nrel_idtf:[personal_foul]
+	(*
+		<-lang_en;;
+	*);;
+concept_personal_foul=>nrel_main_idtf:[персональный фол]
+	(*
+		<-lang_ru;;
+	*);;
+
+concept_personal_foul <-rrel_key_sc_element:...
+	(*
+		<-definition;;
+		=>nrel_main_idtf:
+[Опр.(персональный фол)] 
+	(* 
+		<-lang_ru;;
+	*);;
+	
+<=nrel_sc_text_translation:...
+	(*
+		-> rrel_example: [нарушение баскетбольных правил(фол) спортсменом вызванное ошибкой при контакте с соперником]
+(* 
+<-lang_ru;; 
+*);;
+
+	*);;
+	<=nrel_using_constants: {
+	concept_basketball_foul;
+	concept_athlete;
+	concept_basketball_rules
+	};;
+*);;
+
+concept_personal_foul <- rrel_key_sc_element:...
+	(*
+        <- explanation;;
+        -> rrel_key_sc_element:output ;;
+		=> nrel_main_idtf: 
+         [Утв.(про персональный фол)](* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			    -> rrel_example: 
+		[ в зависимости от характера ошибки предусмотрена разная степень наказания: от перехода мяча во владение командой противника, до 3-х штрафных бросков](*<- lang_ru;;*);;
+
+			*);;	
+*);;
+
+concept_personal_foul<-rrel_key_sc_element:...
+	(*
+		<-illustration;;
+		<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:
+"file://personal_foul.jpg"
+	(*
+		=>nrel_format:format_jpg;;
+	*);;	
+*);;
+*);;
+
+

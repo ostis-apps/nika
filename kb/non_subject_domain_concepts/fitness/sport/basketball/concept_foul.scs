@@ -1,0 +1,63 @@
+concept_basketball_foul=>nrel_idtf:[basketball_foul]
+	(*
+		<-lang_en;;
+	*);;
+concept_basketball_foul=>nrel_main_idtf:[баскетбольный фол]
+	(*
+		<-lang_ru;;
+	*);;
+
+concept_basketball_foul <-rrel_key_sc_element:...
+	(*
+		<-definition;;
+		=>nrel_main_idtf:
+[Опр.(фол)] 
+	(* 
+		<-lang_ru;;
+	*);;
+	
+<=nrel_sc_text_translation:...
+	(*
+		-> rrel_example: [нарушение баскетбольных правил, которое наказывается некоторым образом]
+(* 
+<-lang_ru;; 
+*);;
+
+	*);;
+	<=nrel_using_constants: {
+	concept_basketball_rules
+	};;
+*);;
+
+concept_basketball_foul <- rrel_key_sc_element:...
+	(*
+        <- explanation;;
+        -> rrel_key_sc_element:output ;;
+		=> nrel_main_idtf: 
+         [Утв.(про фол)](* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			    -> rrel_example: 
+		[ при фиксировании нарушения игра останавливается судьей путем подачи зв. сигнала(свистка)](*<- lang_ru;;*);;
+
+			*);;		
+<=nrel_using_constants: {
+	referee;
+	concept_game
+	};;
+*);;
+concept_basketball_rules=>nrel_inclusion:concept_basketball_foul;;
+
+concept_basketball_foul<-rrel_key_sc_element:...
+	(*
+		<-illustration;;
+		<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:
+"file://whistle.jpg"
+	(*
+		=>nrel_format:format_jpg;;
+	*);;	
+*);;
+*);;
+

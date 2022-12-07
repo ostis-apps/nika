@@ -1,0 +1,36 @@
+concept_macroelement
+
+<-sc_node_not_relation;
+
+=> nrel_main_idtf:
+          [макроэлемент]
+          (*<-lang_ru;;*);
+          [macroelement]
+          (*<-lang_en;;*);
+ 
+=>nrel_inclusion:macroelement_calcium_Ca;
+=>nrel_inclusion:macroelement_chlorine_Cl;
+=>nrel_inclusion:macroelement_kalium_K;
+=>nrel_inclusion:macroelement_magnesium_Mg;
+=>nrel_inclusion:macroelement_natrium_Na;
+=>nrel_inclusion:macroelement_phosphorus_P;
+=>nrel_inclusion:macroelement_sulphur_S;
+
+
+<- rrel_key_sc_element:
+	...
+	(*
+		<- explanation;;
+=> nrel_main_idtf: [Опр.(макроэлемент)]  (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+				[Макроэлементы — это вещества, содержание которых превышает 0,005% массы тела. Они входят в состав основных тканей — костей, крови, мышц. В сумме основные и макроэлементы составляют 99% массы тела человека.]
+			(*
+			<- lang_ru;;
+			=> nrel_format: format_html;;
+			*);;
+		*);;
+	*);;
+

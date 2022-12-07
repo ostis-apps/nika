@@ -1,0 +1,136 @@
+concept_proline=>nrel_idtf:[proline] 
+	(*
+		<-lang_en;;
+	*);;
+concept_proline=>nrel_idtf:[пролин]
+	(*
+		<-lang_ru;;	
+	*);;
+concept_proline=>nrel_main_idtf:[пролин]
+	(*
+		<-lang_ru;;
+	*);;
+
+
+
+concept_proline<-rrel_key_sc_element:...
+	(*
+		<-definition;;
+		=>nrel_main_idtf:
+			[Опр.(пролин)] 
+	(* 
+		<-lang_ru;;
+	*);;
+		<=nrel_sc_text_translation:...
+	(*
+		->[Пролин - заменимая разветвленная аминокислота, одна из 20 протеиногенных аминокислот,  входит в состав белков всех организмов.](* <- lang_ru;; *);;
+	*);;
+	*);;
+
+
+
+concept_proline<-rrel_key_sc_element:...
+    (*
+        <-illustration;;
+        <=nrel_sc_text_translation:...
+    (*
+        ->rrel_example:
+        "file://proline-food.jpg"
+    (*
+        =>nrel_format:format_jpg;;
+    *);;
+    *);;
+    *);;
+
+
+
+concept_proline<-rrel_key_sc_element:...
+    (*
+        <-illustration;;
+        <=nrel_sc_text_translation:...
+    (*
+->rrel_example_1:
+"file://proline.jpeg"
+(*
+=>nrel_format:format_jpeg;;
+*);;
+*);;
+*);;
+
+
+
+concept_proline<-rrel_key_sc_element:...
+	(*
+		<-statement;;
+		=>nrel_main_idtf:[Утверждение 1. Роль в организме](* <- lang_ru;; *);;
+		=>nrel_using_constants:...
+	(*
+		->concept_organic_compound;;
+		->concept_protein;;
+	*);;
+	
+		<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Пролин яявляется основным элементом, который способствует образованию всех соединительных тканей в организме. Пролин обладает антиоксидантными свойствами. Пролин – это одна из главных аминокислот, которую организм использует для выработки коллагена.]
+	(*
+		<-lang_ru;; 
+	*);;
+	*);;
+	*);;
+
+
+concept_proline<-rrel_key_sc_element:...
+	(*
+		<-statement;;
+		=>nrel_main_idtf:[Утверждение 2. Суточная потребность](* <- lang_ru;; *);;
+		=>nrel_using_constants:...
+	(*
+		->concept_organic_compound;;
+		->concept_protein;;
+	*);;
+	
+		<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Суточная потребность пролина  5 грамм.]
+	(*
+		<-lang_ru;; 
+	*);;
+	*);;
+	*);;
+
+
+concept_proline <- rrel_key_sc_element:...
+		(*
+        <- explanation;;
+        -> rrel_key_sc_element:output ;;
+		=> nrel_main_idtf: 
+         [Утверждение 3. Заменимая аминокислота](* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			    -> rrel_example: 
+		[Пролин может синтезироваться организмом в достаточном количестве.](*<- lang_ru;;*);;
+			*);;
+*);;
+
+
+concept_proline <- rrel_key_sc_element:...
+		(*
+        <- explanation;;
+        -> rrel_key_sc_element:output ;;
+		=> nrel_main_idtf: 
+         [Утверждение 4. Открытие пролина](* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			    -> rrel_example: 
+		[Пролин впервые выделен из казеина в 1901 г. Э. Фишером.](*<- lang_ru;;*);;
+			*);;
+*);;
+
+
+
+
+
+
+concept_proline=>nrel_food_source:concept_protein;;
+
+concept_proline=>nrel_inclusion:concept_protein;;

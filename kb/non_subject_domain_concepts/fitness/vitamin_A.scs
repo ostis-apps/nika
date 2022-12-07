@@ -1,0 +1,40 @@
+vitamin_A
+
+<-sc_node_not_relation;
+
+=> nrel_main_idtf:
+          [витамин A]
+          (*<-lang_ru;;*);
+          [vitamin A]
+          (*<-lang_en;;*);
+
+=> nrel_is_contained_in:fish_fat;
+=> nrel_is_contained_in:vagetable;
+
+=> nrel_daily_requirement_for_adults:[600-800 мг](*<-lang_ru;;*);
+
+<- rrel_key_sc_element:
+	...
+	(*
+		<- explanation;;
+=> nrel_main_idtf: [Утв.(витамин А)]  (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Предшественниками витамина А являются каротины, их концентрация в тканях влияет на молодость их обладателя. Возникают они в процессе обмена веществ. Сам витамин А стимулирует рост и развитие зрительного пигмента, обеспечивает антиоксидантную защиту организма.]
+			(*
+			<- lang_ru;;
+			=> nrel_format: format_html;;
+			*);;
+		*);;
+	*);;
+
+
+
+
+
+
+
+
+

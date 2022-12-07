@@ -1,0 +1,50 @@
+concept_disqualification_foul=>nrel_idtf:[disqualification_foul]
+	(*<-lang_en;;*);;
+concept_disqualification_foul=>nrel_main_idtf:[дисквалифицирующий фол]
+	(*<-lang_ru;;*);;
+
+concept_disqualification_foul <-rrel_key_sc_element:...
+	(*
+		<-definition;;
+		=>nrel_main_idtf:
+[Опр.(дисквалифицирующий фол)] 
+	(* 
+		<-lang_ru;;
+	*);;
+	
+<=nrel_sc_text_translation:...
+	(*
+		-> rrel_example: [любой фол, за который спортсмен удаляется из матча]
+(* 
+<-lang_ru;; 
+*);;
+
+	*);;
+	<=nrel_using_constants: {
+	concept_basketball_foul;
+	concept_athlete
+	};;
+*);;
+
+concept_disqualification_foul <- rrel_key_sc_element:...
+	(*
+        <- explanation;;
+        -> rrel_key_sc_element:output ;;
+		=> nrel_main_idtf: 
+         [Утв.(про дисквалифицирующий фол)](* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			    -> rrel_example: 
+		[ дисквалифицирующим фолом может являться: 5й персональный фол, 2й технический или неспортивный фол, полученный одним спортсменом а так же крайне грубое нарушение, связанное с дракой, повторяющимися оскорблениями либо неподобающим поведением спортсмена](*<- lang_ru;;*);;
+
+			*);;
+	<=nrel_using_constants: {
+	concept_basketball_foul;
+	concept_athlete;
+	concept_technical_foul;
+	concept_flagrant_foul;
+	concept_personal_foul
+	};;	
+*);;
+
+concept_basketball_foul=>nrel_inclusion:concept_disqualification_foul;;

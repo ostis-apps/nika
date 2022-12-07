@@ -1,0 +1,55 @@
+section_subject_domain_of_basketball
+=> nrel_main_idtf: 
+	[Раздел. Предметная область баскетбол]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of basketball]
+	(* <- lang_en;; *);
+	
+<= nrel_section_decomposition: 
+	{
+		section_subject_domain_of_streetball;
+		section_subject_domain_of_classic_basketball
+	};
+
+<- rrel_key_sc_element:
+		concept_basketball_rules;
+		concept_basketball_team;
+		concept_basketball_uniform;
+		concept_basketball_stuff;
+		nrel_basketball_role;;
+		
+
+section_subject_domain_of_basketball = 
+[*
+	subject_domain_of_basketball
+
+=> nrel_main_idtf: 
+	[Предметная область баскетбол]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of basketball]
+	(* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+		subject_domain_of_streetball;
+		subject_domain_of_classic_basketball;
+
+<= nrel_private_subject_domain:
+	subject_domain_summer_sport;
+		
+-> rrel_maximum_studied_object_class:
+	concept_basketball_stuff;
+
+-> rrel_explored_general_subject_domain_concept:
+	nrel_award;
+	nrel_sports_rule;
+	
+-> rrel_not_maximum_studied_object_class:
+	concept_basketball_uniform;
+	
+-> rrel_explored_relation:
+	nrel_basketball_rule;
+
+<- subject_domain;;
+*];;

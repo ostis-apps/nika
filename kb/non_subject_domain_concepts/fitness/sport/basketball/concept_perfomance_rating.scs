@@ -1,0 +1,30 @@
+concept_perfomance_rating <- sc_node_not_relation;;
+
+concept_perfomance_rating => nrel_main_idtf:
+[Полезность(Баскетбол)] (*<-lang_ru;;*);
+[Perfomance rating(Basketball)] (*<-lang_en;;*);;
+
+concept_perfomance_rating <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Полезность(Баскетбол))] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Полезность является одним из главных показателей <b><sc_element_idtf="concept_in_game_statistics"> статистики матча</b></sc_element>, он включает в себя результат подсчета большинства остальных показателей <b><sc_element sys_idtf="concept_athlete">игрока</b></sc_element>.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_perfomance_rating <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Полезность(Баскетбол))] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Зачастую данный показатель не до конца дает представление о влиянии <b><sc_element sys_idtf="concept_athlete">игрока</b></sc_element> на исход <b><sc_element sys_idtf="match">матча</b></sc_element>, так как данный показатель больше сосредоточен на атакующих показателях <b><sc_element sys_idtf="concept_athlete">игрока</b></sc_element>.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+concept_in_game_statistics<=nrel_inclusion:basketball_rebound;;

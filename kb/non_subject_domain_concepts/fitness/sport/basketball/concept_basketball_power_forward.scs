@@ -1,0 +1,44 @@
+concept_basketball_power_forward<-sc_node_not_relation;
+=>nrel_main_idtf:
+[тяжелый форвард] (*<-lang_ru;;*);
+[power forward] (*<-lang_en;;*);
+
+<-rrel_key_sc_element:..(*
+<-definition;;
+=>nrel_main_idtf:
+[Опр.(тяжелый форвард)](*<-lang_ru;;*);;
+
+<=nrel_sc_text_translation:...(*
+->rrel_example:
+[ Главной задачей игрока данного амплуа является подбор мяча в нападении и защите. Поэтому мощные форварды должны обладать незаурядной физической силой и выносливостью.](* <- lang_ru;; *);;
+    *);;
+    
+            <= nrel_using_constants: {
+                concept_sport_role;
+                concept_athlete
+            };;
+*);
+<-rrel_key_sc_element:..
+(*
+<-illustration;;
+<=nrel_sc_text_translation:...
+	(*
+->rrel_example: "file://Forward.jpg"
+	(*
+=>nrel_format:format_jpg;;
+	*);;	
+*);;
+*);
+<-rrel_key_sc_element:...(*
+<-explanation;;
+=>nrel_main_idtf:
+[Утв.(тяжелый форвард)](*<-lang_ru;;*);;
+<=nrel_sc_text_translation:...(*
+->rrel_example:
+[ Тяжелые форварды как правило являются габаритными и мощными игроками(ср.рост 200-215 см), обладают внушительными габаритами, отличной выносливостью и силой.](* <- lang_ru;;*);;
+      *);;
+      
+            <= nrel_using_constants: {
+                concept_athlete
+            };;
+  *);;

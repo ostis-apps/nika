@@ -1,0 +1,52 @@
+concept_microelement
+
+<-sc_node_not_relation;
+
+=> nrel_main_idtf:
+          [микроэлемент]
+          (*<-lang_ru;;*);
+          [microelement]
+          (*<-lang_en;;*);
+ 
+
+
+<- rrel_key_sc_element:
+	...
+	(*
+		<- explanation;;
+=> nrel_main_idtf: [Опр.(микроэлемент)]  (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Микроэлементы — элементы, содержание которых в организме человека находится в пределах от 0,001 до 0,00001 % (от нескольких г до нескольких мг); другими словами, к микроэлементам относятся все элементы, содержание которых меньше 0,1 % массы тела.]
+			(*
+			<- lang_ru;;
+			=> nrel_format: format_html;;
+			*);;
+		*);;
+	*);
+
+=>nrel_inclusion:microelement_aluminium_Al;
+=>nrel_inclusion:microelement_arsenicum_As;
+=>nrel_inclusion:microelement_borum_B;
+=>nrel_inclusion:microelement_bromum_Br;
+=>nrel_inclusion:microelement_cadmium_Cd;
+=>nrel_inclusion:microelement_chromium_Cr;
+=>nrel_inclusion:microelement_cobaltum_Co;
+=>nrel_inclusion:microelement_cuprum_Cu;
+=>nrel_inclusion:microelement_ferrum_Fe;
+=>nrel_inclusion:microelement_fluor_F;
+=>nrel_inclusion:microelement_germanium_Ge;
+=>nrel_inclusion:microelement_iodum_I;
+=>nrel_inclusion:microelement_lithium_Li;
+=>nrel_inclusion:microelement_marganum_Mn;
+=>nrel_inclusion:microelement_molybdenum_Mo;
+=>nrel_inclusion:microelement_niccolum_Ni;
+=>nrel_inclusion:microelement_plumbum_Pb;
+=>nrel_inclusion:microelement_rubidium_Rb;
+=>nrel_inclusion:microelement_selenium_Se;
+=>nrel_inclusion:microelement_silicium_Si;
+=>nrel_inclusion:microelement_stannum_Sn;
+=>nrel_inclusion:microelement_vanadium_V;
+=>nrel_inclusion:microelement_zincum_Zn;;

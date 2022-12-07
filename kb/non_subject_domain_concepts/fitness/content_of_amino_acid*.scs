@@ -1,0 +1,55 @@
+nrel_content_of_amino_acid=>nrel_idtf:[content_of_amino_acid*] (* <- lang_en;; *);;
+nrel_content_of_amino_acid=>nrel_idtf:[содержание аминокислоты*] (* <- lang_ru;; *);;
+nrel_content_of_amino_acid=>nrel_main_idtf:[содержание аминокислоты*] (* <- lang_ru;; *);;
+
+nrel_content_of_amino_acid<-rrel_key_sc_element:...
+(*
+<-definition;;=>nrel_main_idtf:[Опр.(содержание аминокислоты*)] (* <- lang_ru;; *);;<=nrel_sc_text_translation:...
+(*
+->[Содержание аминокислоты* - продукт, являющийся пищевым источником незаменимой аминокислоты.](* <- lang_ru;; *);;
+*);;
+*);;
+
+
+nrel_content_of_amino_acid=>nrel_first_domain:concept_content;;
+nrel_content_of_amino_acid=>nrel_second_domain:concept_amino_acid;;
+
+
+
+nrel_content_of_amino_acid<-binary_relation;;
+parameter->arity;;
+arity->binary_relation;;
+binary_relation=>nrel_measurement:2;;
+2<-number;;
+
+
+
+nrel_content_of_amino_acid<-oriented_relation;;
+asymmetric_relation->nrel_content_of_amino_acid;;
+transitive_relation->nrel_content_of_amino_acid;;
+antireflexive_relation->nrel_content_of_amino_acid;;
+binary_relation=>nrel_inclusion:asymmetric_relation;;
+binary_relation=>nrel_inclusion:transitive_relation;;
+binary_relation=>nrel_inclusion:antireflexive_relation;;
+relation=>nrel_inclusion:binary_relation;;
+relation=>nrel_inclusion:oriented_relation;;
+
+
+
+
+concept_amino_acid<=nrel_using_constants:...
+(*
+	->rrel_key_sc_element:nrel_content_of_amino_acid;;
+	<-statement;;
+	=>nrel_idtf:[Утверждение 1. Аминокислоты в пище](* <- lang_ru;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:[Аминокислоты содержатся в животных и растительных белках.](* <- lang_ru;; *);;
+	*);;
+*);;
+
+
+
+sc_node_not_relation->asymmetric_relation;;
+asymmetric_relation=>nrel_main_idtf:
+[асимметричное отношение](* <-lang_ru;; *);;

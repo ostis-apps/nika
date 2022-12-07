@@ -1,0 +1,58 @@
+concept_the_half_court_rule=>nrel_idtf:[the_half_court_rule]
+	(*
+		<-lang_en;;
+	*);;
+concept_the_half_court_rule=>nrel_main_idtf:[правило возвращения мяча]
+	(*
+		<-lang_ru;;
+	*);;
+	
+concept_the_half_court_rule <-rrel_key_sc_element:...
+	(*
+		<-definition;;
+		=>nrel_main_idtf:
+[Опр.(правило возвращения мяча)] 
+	(* 
+		<-lang_ru;;
+	*);;
+	
+<=nrel_sc_text_translation:...
+	(*
+		-> rrel_example: [баскетбольное правило, которое запрещает игроку нападения, владеющего мячом, возвращаться с мячом на свою половину площадки после попадания на сторону защиты]
+(* 
+<-lang_ru;; 
+*);;
+
+	*);;
+	<=nrel_using_constants: {
+	concept_basketball_rules
+	};;
+*);;
+concept_the_half_court_rule <- rrel_key_sc_element:...
+	(*
+        <- explanation;;
+        -> rrel_key_sc_element:output ;;
+		=> nrel_main_idtf: 
+         [Утв.(о правиле возвращения мяча)](* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			    -> rrel_example: 
+		[ в случае нарушения данного правила игра останавливается и владение мячом переходит противоположной команде. ](*<- lang_ru;;*);;
+
+			*);;
+*);;
+
+concept_the_half_court_rule<-rrel_key_sc_element:...
+	(*
+		<-illustration;;
+		<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:
+"file://half_court_line.jpg"
+	(*
+		=>nrel_format:format_jpg;;
+	*);;	
+*);;
+*);;
+concept_basketball_rules=>nrel_inclusion:concept_the_half_court_rule;;
+

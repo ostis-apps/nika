@@ -1,0 +1,49 @@
+section_subject_domain_of_fitness
+=> nrel_main_idtf: 
+	[Раздел. Предметная область фитнесс]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Section. Subject domain of fitness]
+	(* <- lang_en;; *);
+	
+<= nrel_section_decomposition: 
+	{
+		section_subject_domain_of_nutrition;
+		section_subject_domain_of_mental_health;
+		section_subject_domain_of_exercises;
+		section_subject_domain_of_microelements
+	};
+
+<- rrel_key_sc_element:
+		concept_personal_equipment;
+		concept_fitness_equipment;;
+		
+
+section_subject_domain_of_fitness = 
+[*
+	subject_domain_of_fitness
+
+=> nrel_main_idtf: 
+	[Предметная область фитнесс]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf: 
+	[Subject domain of fitness]
+	(* <- lang_en;; *);
+
+=> nrel_private_subject_domain:
+{
+		subject_domain_of_nutrition;
+		subject_domain_of_mental_health;
+		subject_domain_of_exercises;
+		subject_domain_of_microelements
+};
+		
+-> rrel_maximum_studied_object_class:
+	concept_personal_equipment;
+
+-> rrel_not_maximum_studied_object_class:
+	concept_fitness_equipment;
+
+
+<- subject_domain;;
+*];;

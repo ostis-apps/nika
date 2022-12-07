@@ -1,0 +1,31 @@
+basketball_assist <- sc_node_not_relation;;
+
+basketball_assist => nrel_main_idtf:
+[Перехват(баск.)] (*<-lang_ru;;*);
+[Ассист(баск.)] (*<-lang_ru;;*);
+[Assist(bask.)] (*<-lang_en;;*);;
+
+basketball_assist <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Перехват(баск.))] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[в <b><sc_element sys_idtf="concept_basketbal">баскетболе</b></sc_element> передача <b><sc_element sys_idtf="concept_athlete">игроку</b></sc_element> мяча, повлекшая за собой <b><sc_element sys_idtf="concept_basketbal_goal">гол</b></sc_element>. При осуществлении результативной передачи <b><sc_element sys_idtf="concept_athlete">игроку</b></sc_element> в <b><sc_element_idtf="concept_in_game_statistics"> статистике матча</b></sc_element> записывается ассист.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+basketball_assist <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Перехват(баск.))] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Зачастую показатель результативных передач за игру наиболее ясно дает понять качество игры <b><sc_element sys_idtf="concept_basketball_point_guard">атакующего защитника</b></sc_element>](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+concept_in_game_statistics<=nrel_inclusion:basketball_assist;;

@@ -1,0 +1,48 @@
+concept_the_three_second_rule=>nrel_idtf:[the_three_second_rule]
+	(*
+		<-lang_en;;
+	*);;
+concept_the_three_second_rule=>nrel_main_idtf:[правило трех секунд]
+	(*
+		<-lang_ru;;
+	*);;
+	
+concept_the_three_second_rule <-rrel_key_sc_element:...
+	(*
+		<-definition;;
+		=>nrel_main_idtf:
+[Опр.(правило трех секунд)] 
+	(* 
+		<-lang_ru;;
+	*);;
+	
+<=nrel_sc_text_translation:...
+	(*
+		-> rrel_example: [баскетбольное правило, которое запрещает любому игроку нападения находиться в 3-х секундной зоне(трапеции/зоне штрафного броска) более 3-х секунд]
+(* 
+<-lang_ru;; 
+*);;
+
+	*);;
+	<=nrel_using_constants: {
+	concept_basketball_rules
+	};;
+*);;
+
+concept_the_three_second_rule<-rrel_key_sc_element:...
+	(*
+		<-illustration;;
+		<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:
+"file://3sec_line.jpg"
+	(*
+		=>nrel_format:format_jpg;;
+	*);;	
+*);;
+*);;
+concept_basketball_rules=>nrel_inclusion:concept_the_three_second_rule;;
+
+
+
+

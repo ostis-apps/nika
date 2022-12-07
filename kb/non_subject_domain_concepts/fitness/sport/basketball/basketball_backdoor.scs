@@ -1,0 +1,30 @@
+basketball_backdoor <- sc_node_not_relation;;
+
+basketball_backdoor => nrel_main_idtf:
+[Бэкдор(баскетбол)] (*<-lang_ru;;*);
+[Backdoor(basketball)] (*<-lang_en;;*);;
+
+basketball_backdoor <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Бэкдор(баскетбол))] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Бэкдор - одна из комбинаций в баскетболе, при которой нападающий забегает к кольцу за спиной защитника](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+basketball_backdoor <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Бэкдор(баскетбол))] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Бэкдор является базовой комбинацией в баскетболе, зачастую применяющаяся в случае отвлечения защитника от нападающего.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+concept_sport_combination<=nrel_inclusion:basketball_backdoor;;

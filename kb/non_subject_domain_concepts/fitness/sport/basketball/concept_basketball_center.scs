@@ -1,0 +1,44 @@
+concept_basketball_center<-sc_node_not_relation;
+=>nrel_main_idtf:
+[центровой] (*<-lang_ru;;*);
+[Center] (*<-lang_en;;*);
+
+<-rrel_key_sc_element:..(*
+<-definition;;
+=>nrel_main_idtf:
+[Опр.(Центровой)](*<-lang_ru;;*);;
+
+<=nrel_sc_text_translation:...(*
+->rrel_example:
+[ Самый высокий игрок в команде(ср. рост 210-225 см), основная задача которого игра под кольцом.](* <- lang_ru;; *);;
+    *);;
+    
+            <= nrel_using_constants: {
+                concept_sports_team
+            };;
+*);
+<-rrel_key_sc_element:..
+(*
+<-illustration;;
+<=nrel_sc_text_translation:...
+	(*
+->rrel_example: "file://concept_c.jpg"
+	(*
+=>nrel_format:format_jpg;;
+	*);;	
+*);;
+*);
+<-rrel_key_sc_element:...(*
+<-explanation;;
+=>nrel_main_idtf:
+[Утв.(центр)](*<-lang_ru;;*);;
+<=nrel_sc_text_translation:...(*
+->rrel_example:
+[ Спортсмены данного амплуа зачастую выделяются большими габаритами, силой, выносливостью.](* <- lang_ru;;*);;
+      *);;
+      
+            <= nrel_using_constants: {
+                concept_sport_role;
+                concept_athlete
+            };;
+  *);;

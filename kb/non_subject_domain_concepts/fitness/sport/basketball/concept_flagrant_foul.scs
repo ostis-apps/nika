@@ -1,0 +1,78 @@
+concept_flagrant_foul=>nrel_idtf:[flagrant_foul]
+	(*
+		<-lang_en;;
+	*);;
+concept_flagrant_foul=>nrel_main_idtf:[неспортивный фол]
+	(*
+		<-lang_ru;;
+	*);;
+
+concept_flagrant_foul <-rrel_key_sc_element:...
+	(*
+		<-definition;;
+		=>nrel_main_idtf:
+[Опр.(неспортивный фол)] 
+	(* 
+		<-lang_ru;;
+	*);;
+	
+<=nrel_sc_text_translation:...
+	(*
+		-> rrel_example: [нарушение баскетбольных правил, не являющееся законной попыткой сыграть в мяч, в соответствии с целью и сутью баскетбольных правил, которое наказывается 1м штрафным броском, а так же переходом мяча во владение к противнику]
+(* 
+<-lang_ru;; 
+*);;
+
+	*);;
+	<=nrel_using_constants: {
+	concept_basketball_rules
+	};;
+*);;
+
+concept_flagrant_foul<-rrel_key_sc_element:...
+	(*
+		<-illustration;;
+		<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:
+"file://ex_flag_foul.jpg"
+	(*
+		=>nrel_format:format_jpg;;
+	*);;	
+*);;
+*);;
+
+
+concept_flagrant_foul <- rrel_key_sc_element:...
+	(*
+        <- explanation;;
+        -> rrel_key_sc_element:output ;;
+		=> nrel_main_idtf: 
+         [Утв.(про неспортивный фол)](* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			    -> rrel_example: 
+		[ при фиксировании нарушения игра останавливается судьей путем подачи зв. сигнала(свистка), а так же жестом(правая кисть обхватывает левую над головой)](*<- lang_ru;;*);;
+
+			*);;		
+<=nrel_using_constants: {
+	referee;
+	concept_game
+	};;
+*);;
+concept_basketball_foul=>nrel_inclusion:concept_flagrant_foul;;
+
+concept_flagrant_foul<-rrel_key_sc_element:...
+	(*
+		<-illustration;;
+		<=nrel_sc_text_translation:...
+	(*
+		->rrel_example:
+"file://flagrant_foul.png"
+	(*
+		=>nrel_format:format_png;;
+	*);;	
+*);;
+*);;
+
+

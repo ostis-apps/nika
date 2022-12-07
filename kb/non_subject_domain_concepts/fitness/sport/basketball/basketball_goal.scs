@@ -1,0 +1,30 @@
+basketball_goal <- sc_node_not_relation;;
+
+basketball_goal => nrel_main_idtf:
+[Баскетбольный гол] (*<-lang_ru;;*);
+[Basketball goal] (*<-lang_en;;*);;
+
+basketball_goal <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Баскетбольный гол)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Ситуация, обозначающая попадание баскетбольного мяча в корзину. Является главным условием для победызабить больше, чем команда соперника.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+basketball_goal <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Баскетбольный гол)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[В баскетболе за забитый мяч команде начисляется определенное количество очков:2, если мяч был забит из внутренней площади трехочкового контура, 3, если мяч был забит извне трехочкового контура и 1 очко, вслучае штрафного броска](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+concept_basketball=>nrel_inclusion:basketball_goal;;

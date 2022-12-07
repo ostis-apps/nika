@@ -1,0 +1,29 @@
+concept_power_sports_equipment
+ 
+<-sc_node_not_relation;
+
+=> nrel_main_idtf:
+          [power sports equipment](*<-lang_en;;*);
+          [силовое спортивное оборудование](*<-lang_ru;;*);
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- definition;;
+		=> nrel_main_idtf: [Опр.(силовое спортивное оборудование)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Спортивное оборудование, которое используется для выполненя силовых упражнений](*<- lang_ru;;*);;
+			*);;
+		*);
+
+<=nrel_inclusion:concept_training_apparatus;
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- statement;;
+		=> nrel_main_idtf: [Утв.(силовое спортивное оборудование)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Тренировка с использованием силового спортивного оборудования нагружает мышцы сильнее, чем со снарядами для фитнеса ](*<- lang_ru;;*);;
+			*);;
+		*);;

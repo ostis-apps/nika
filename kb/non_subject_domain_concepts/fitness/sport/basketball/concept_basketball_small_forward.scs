@@ -1,0 +1,45 @@
+concept_basketball_small_forward<-sc_node_not_relation;
+=>nrel_main_idtf:
+[легкий форвард] (*<-lang_ru;;*);
+[small forward] (*<-lang_en;;*);
+
+<-rrel_key_sc_element:..(*
+<-definition;;
+=>nrel_main_idtf:
+[Опр.(легкий форвард)](*<-lang_ru;;*);;
+
+<=nrel_sc_text_translation:...(*
+->rrel_example:
+[ Основной задачей спортсмена данного амплуа является набор очков, а так же обеспечение защиты кольца.](* <- lang_ru;; *);;
+    *);;
+    
+            <= nrel_using_constants: {
+                concept_sport_role;
+                concept_athlete
+            };;
+*);
+<-rrel_key_sc_element:..
+(*
+<-illustration;;
+<=nrel_sc_text_translation:...
+	(*
+->rrel_example: "file://Forward.jpg"
+	(*
+=>nrel_format:format_jpg;;
+	*);;	
+*);;
+*);
+<-rrel_key_sc_element:...(*
+<-explanation;;
+=>nrel_main_idtf:
+[Утв.(легкий форвард)](*<-lang_ru;;*);;
+<=nrel_sc_text_translation:...(*
+->rrel_example:
+[ Легкие форварды как правило являются наиболее универсальными членами команды(ср.рост 195-210 см), обладают внушительными габаритами, хорошим броском со многих дистанций, нормальной подвижностью.](* <- lang_ru;;*);;
+      *);;
+      
+            <= nrel_using_constants: {
+                concept_sports_team;
+                concept_athlete
+            };;
+  *);;

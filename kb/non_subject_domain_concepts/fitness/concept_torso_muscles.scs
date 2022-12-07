@@ -1,0 +1,41 @@
+concept_torso_muscles
+ 
+<-sc_node_not_relation;
+
+=> nrel_main_idtf:
+          [torso muscles](*<-lang_en;;*);
+          [мышцы туловища](*<-lang_ru;;*);
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- definition;;
+		=> nrel_main_idtf: [Опр.(мышцы туловища)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Мышцы, которые обеспечивают вертикальное положение тела, движение позвоночного столба и ребер, образуют стенки полостей.](*<- lang_ru;;*);;
+			*);;
+		*);
+
+<=nrel_inclusion:muscles;
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- statement;;
+		=> nrel_main_idtf: [Утв.(мышцы туловища)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Делая шаг, человек приводит в действие около двухсот мышц одновременно.](*<- lang_ru;;*);;
+			*);;
+		*);
+
+<- rrel_key_sc_element : ...
+	(*
+		<- illustration;;
+		<= nrel_sc_text_translation : ...
+		(*
+			-> "file://concept_torso_muscles.jpg"
+			(*
+				=> nrel_format : format_jpg ;;
+			*);;
+		*);;
+	*);;

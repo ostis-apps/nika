@@ -1,0 +1,61 @@
+concept_intellection<-sc_node_not_relation;;
+
+concept_intellection => nrel_main_idtf: [мышление](*<- lang_ru;;*);;
+concept_intellection => nrel_main_idtf: [intellection](*<- lang_en;;*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_intellection;;
+    <= nrel_sc_text_translation:...
+        (*
+            -> [Мышле́ние — это познавательная деятельность человека. ](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Мышление)](*<- lang_ru;;*);;
+    => nrel_using_constants: ...
+        (*
+	    -> concept_activity;;
+        *);;
+*);;
+
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_intellection;;
+    <= nrel_sc_text_translation:...
+        (*
+            -> [Мышление — психический процесс моделирования закономерностей окружающего мира на основе аксиоматических положений. ](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Мышление)](*<- lang_ru;;*);;
+    => nrel_using_constants: ...
+        (*
+	    -> concept_process;;
+        *);;
+*);;
+
+concept_intellection=>nrel_inclusion::concept_cognitive_process;;
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_intellection;;
+    <= nrel_sc_text_translation:...
+        (*
+            -> [Мышление — высшая ступень человеческого познания; процесс познания окружающего реального мира, основу которого составляет образование и непрерывное пополнение запаса понятий, представлений; включает в себя вывод новых суждений (осуществление умозаключений). ](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Опр.(Мышление)](*<- lang_ru;;*);;
+  
+*);;
+
+
+statement -> ...
+(*
+  
+    -> rrel_key_sc_element: concept_intellection;;
+    <= nrel_sc_text_translation:...
+        (*
+            -> [В патопсихологии и нейропсихологии мышление относят к одной из высших психических функций.](*<- lang_ru;;*);;
+        *);;
+    => nrel_main_idtf: [Утв.(Мышление)](*<- lang_ru;;*);;*);;
+
+
+

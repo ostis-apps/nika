@@ -1,0 +1,65 @@
+concept_defence_mechanism
+<-sc_node_not_relation;
+
+=> nrel_main_idtf:
+
+ 	[защитный механизм]
+	(*<-lang_ru;;*);
+
+	[defence mechanism]
+ 	(*<-lang_en;;*);
+
+
+
+=>nrel_inclusion:concept_fear;
+
+<-rrel_key_sc_element: ... (*
+	<- definition;;
+	=>nrel_main_idtf :
+	[Опр. (защитный механизм) ] (*<-lang_ru;;*);;
+
+	=> nrel_using_constants: {
+    	concept_mental_process;
+	concept_worry
+
+};;
+
+	 <= nrel_sc_text_translation: ... (*
+
+      -> rrel_example:
+	  
+	[ Защи́тный механи́зм — понятие глубинной психологии, обозначающее неосознаваемый <b><sc_element sys_idtf="concept_mental_process">психический процесс</b></sc_element>, направленный на минимизацию отрицательных <b><sc_element sys_idtf="concept_worry">переживаний</b></sc_element>. ] (* <- lang_ru;; => nrel_format: format_html;; 
+
+	*);;
+
+    *);;
+
+ *);
+
+
+
+
+<- rrel_key_sc_element: ... (*
+	<-explanation;;
+	=>nrel_main_idtf:
+	[Утв. ] (*<-lang_ru;;*);;
+
+	<=nrel_sc_text_translation: ... (*
+
+	->rrel_example:
+
+	[ Защитные механизмы лежат в основе процессов сопротивления. ] (* <- lang_ru;; => nrel_format: format_html;; *);;
+
+    *);;
+ *);;
+
+
+
+
+
+
+
+
+
+
+	

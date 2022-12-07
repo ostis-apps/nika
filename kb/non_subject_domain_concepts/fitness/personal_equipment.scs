@@ -1,0 +1,35 @@
+concept_personal_equipment
+ 
+<-sc_node_not_relation;
+
+=> nrel_main_idtf:
+          [personal equipment](*<-lang_en;;*);
+          [личная экипировка](*<-lang_ru;;*);
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- definition;;
+		=> nrel_main_idtf: [Опр.(личная экипировка)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Личная экипировка - это индивидуальный набор предметов, обеспечивающих безопасность спортсмена (по правилам) при занятиях каким-либо видом спорта, его идентификацию с соответствующей командой.](*<- lang_ru;;*);;
+			*);;
+                        <= nrel_using_constants: {
+                concept_sport;
+                concept_team
+            };;
+		*);
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- statement;;
+		=> nrel_main_idtf: [Утв. 1 (О личной экипировке)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Экипировка включает в себя средства индивидуальной защиты спортсмена, спортивную форму и обувь.](*<- lang_ru;;*);;
+			*);;
+            <= nrel_using_constants: {
+                concept_sportwear
+            };;
+		*);;
+

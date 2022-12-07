@@ -1,0 +1,41 @@
+bicycle_machine
+ 
+<-sc_node_not_relation;
+
+=> nrel_main_idtf:
+          [bicycle_machine](*<-lang_en;;*);
+          [велотренажёр](*<-lang_ru;;*);
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- definition;;
+		=> nrel_main_idtf: [Опр.(велотренажёр)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Тренажёр, имитирующий велосипед](*<- lang_ru;;*);;
+			*);;
+		*);
+
+<=nrel_inclusion:concept_cardiotraining_apparatus;
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- statement;;
+		=> nrel_main_idtf: [Утв.(велотренажёр)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Велотренажёр направлен главным образом на развитие силы и выносливости](*<- lang_ru;;*);;
+			*);;
+		*);
+
+<- rrel_key_sc_element : ...
+	(*
+		<- illustration;;
+		<= nrel_sc_text_translation : ...
+		(*
+			-> "file://bicycle_machine.jpg"
+			(*
+				=> nrel_format : format_jpg ;;
+			*);;
+		*);;
+	*);;

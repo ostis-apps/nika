@@ -1,0 +1,39 @@
+concept_vertical_traction_machine
+ 
+<-sc_node_not_relation;
+
+=> nrel_main_idtf:
+          [vertical traction machine](*<-lang_en;;*);
+          [вертикальная тяга](*<-lang_ru;;*);
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- definition;;
+		=> nrel_main_idtf: [Опр.(вертикальная тяга)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Тренажёр, который предназначен для прокачки широчайших мышц спины.](*<- lang_ru;;*);;
+			*);;
+		*);
+
+<- rrel_key_sc_element: ... 
+		(*
+        <- statement;;
+		=> nrel_main_idtf: [Утв.(вертикальная тяга)] (* <- lang_ru;; *);;
+		<= nrel_sc_text_translation: ...
+			(*
+			-> rrel_example:[Грузоблочная машина для тяги верхнего блока к груди позволяет выбирать отягощения различной величины: как больше, так и меньше веса спортсмена.](*<- lang_ru;;*);;
+			*);;
+		*);
+
+<- rrel_key_sc_element : ...
+	(*
+		<- illustration;;
+		<= nrel_sc_text_translation : ...
+		(*
+			-> "file://concept_vertical_traction_machine.jpg"
+			(*
+				=> nrel_format : format_jpg ;;
+			*);;
+		*);;
+	*);;

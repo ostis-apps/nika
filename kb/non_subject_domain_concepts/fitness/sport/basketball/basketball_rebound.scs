@@ -1,0 +1,30 @@
+basketball_rebound <- sc_node_not_relation;;
+
+basketball_rebound => nrel_main_idtf:
+[Подбор(баск.)] (*<-lang_ru;;*);
+[Rebound(bask.)] (*<-lang_en;;*);;
+
+basketball_rebound <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Подбор(баск.))] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[в <b><sc_element sys_idtf="concept_basketbal">баскетболе</b></sc_element> действия <b><sc_element sys_idtf="concept_athlete">игрока</b></sc_element>  по завладению мячом после неудачного броска. При подборе мяча защищающийся <b><sc_element sys_idtf="concept_sports_team">командой</b></sc_element> в <b><sc_element_idtf="concept_in_game_statistics"> статистике матча</b></sc_element> записывается потеря для команды атаки.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+basketball_rebound <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Подбор(баск.))] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Зачастую показатель количества подборов за игру наиболее ясно дает понять о качествах <b><sc_element_idtf="concept_basketball_power_forward">тяжелого форварда</b></sc_element> и <b><sc_element_idtf="concept_basketball_center">центрового</b></sc_element>.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+concept_in_game_statistics<=nrel_inclusion:basketball_rebound;;

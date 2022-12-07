@@ -1,0 +1,42 @@
+slam_dunk <- sc_node_not_relation;;
+
+slam_dunk => nrel_main_idtf:
+[Слэмданк] (*<-lang_ru;;*);
+[Бросок сверху] (*<-lang_ru;;*);
+[Slam dunk] (*<-lang_en;;*);;
+
+slam_dunk <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Слэм данк)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[в <b><sc_element sys_idtf="concept_basketbal">баскетболе</b></sc_element> , бросок сверху является одним из видов <b><sc_element sys_idtf="basketbal_goal">голов</b></sc_element>, при котором мяч не бросается в кольцо, а заносится туда руками.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+slam_dunk <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Слэм данк)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Данк является самым зрелищным видом <b><sc_element sys_idtf="basketbal_goal">голов</b></sc_element> в <b><sc_element sys_idtf="concept_basketbal">баскетболе</b></sc_element>](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);
+<-rrel_key_sc_element:..
+(*
+<-illustration;;
+<=nrel_sc_text_translation:...
+	(*
+->rrel_example: "file://dunk.jpg"
+	(*
+=>nrel_format:format_jpg;;
+	*);;	
+*);;
+*);;
+basketball_goal<=nrel_inclusion:slam_dunk;;
