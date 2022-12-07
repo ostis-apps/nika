@@ -1,0 +1,37 @@
+concept_message_about_arhimed
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение об Архимеде]
+	    (* <- lang_ru;; *);
+	[message about Arhimed]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_arhimed];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение об Архимеде)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about Arhimed)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение об Архимеде - атомарное сообщение, которое содержит экземпляры орангутанов, информацию о которых необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about Arhimed is an atomic message that contains pongo examples information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

@@ -1,0 +1,41 @@
+section_subject_domain_of_problems_sciences
+<- sc_node_struct;
+=> nrel_main_idtf:
+[Раздел. Предметная область проблемы наук](* <- lang_ru;; *);
+[Section. Subject domain problems of sciences](* <- lang_en;; *);
+<-atomic_section;;
+
+section_subject_domain_of_problems_sciences = [*
+subject_domain_of_problems_sciences
+=> nrel_main_idtf:
+[Предметная область проблемы наук](* <- lang_ru;; *);
+[Subject domain of problems of sciences](* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+concept_problems_sciences;
+-> rrel_not_maximum_studied_object_class:
+concept_financial_difficulties;
+concept_a_lot_of_research;
+concept_discoveries_in_science;
+concept_nonreproducibility_of_research_results;
+concept_of_who_financed;
+concept_reproducibility_of_result;
+concept_review_not_working;
+concept_wrong_motivation;
+concept_scinetists_in_science;
+concept_message_about_arhimed;
+concept_message_about_aristotel;
+concept_message_about_pifagor;
+concept_message_about_problems_sciences;
+concept_message_about_rnf_company;
+concept_message_about_rnf;
+concept_message_about_who_financed;
+concept_message_about_genre;
+concept_intent_possible_class;
+-> rrel_explored_relation:
+nrel_data_of_birth;
+nrel_data_of_death;
+nrel_founded_date;
+nrel_gender;
+nrel_research;;
+*];;
