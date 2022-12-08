@@ -1,0 +1,29 @@
+nrel_assembling
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+  [собирать](* <- lang_ru;; *);
+  [assembling](* <- lang_eng;; *);;
+
+nrel_assembling <- rrel_key_sc_element:... 
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (собирать)](*<- lang_ru;;*);
+    [Def. (assembling)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Собирать — сводить воедино, сосредотачивать, накапливать что-либо в каком-то месте.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [To assembling — to bring together, to concentrate, to accumulate something in some place..](*<- lang_en;;*);;
+    *);;
+*);;
+
+nrel_assembling
+=>nrel_first_domain:concept_machine;
+=>nrel_second_domain:concept_detail;
+
+<- binary_relation ;
+<- antireflexive_relation ;
+<- antitransitive_relation ;;

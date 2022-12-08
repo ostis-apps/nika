@@ -1,0 +1,42 @@
+concept_material
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [материал]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [material]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Также, вещества или смеси, участвующие в процессе производства, например, придающие изготовленной продукции определённые свойства.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Материалы могут отличаться по чистоте, быть органическими или неорганическими, их классифицируют как по происхождению, так и по свойствам.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.материал]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Материал — вещество или смесь веществ, из которых изготавливается продукция.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_substance;
+			concept_product;
+			nrel_production
+   	 };;
+  *);;

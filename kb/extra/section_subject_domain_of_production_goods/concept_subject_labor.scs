@@ -1,0 +1,37 @@
+concept_subject_labor
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [предмет труда]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [subject labor]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Предмет труда, уже претерпевший воздействие человека, но предназначенный для дальнейшей обработки, называется сырым материалом, или сырьём.]
+   (* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.предмет труда]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Предмет труда — вещество природы, на которое человек воздействует в процессе труда, или перерабатываемая человеком в процессе интеллектуального труда информация.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_human;
+			nrel_influence;
+            nrel_labor_process;
+            concept_information
+   	 };;
+  *);;

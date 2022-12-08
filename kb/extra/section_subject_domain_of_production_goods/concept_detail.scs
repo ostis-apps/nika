@@ -1,0 +1,38 @@
+concept_detail
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [деталь]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [detail]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Части детали, имеющие определённое назначение, являются элементами детали, например резьбы, шпоночные пазы, фаски и т.п.]
+   (* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.деталь]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Деталь — изготовленное, изготавливаемое или же подлежащее изготовлению изделие, являющееся частью изделия, машины или же какой-либо технической конструкции, изготавливаемое из однородного по структуре и свойствам материала без применения при этом каких-либо сборочных операций.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_production;
+			concept_product;
+			concept_technical_design;
+            concept_material;
+            nrel_assembling
+   	 };;
+  *);;

@@ -1,0 +1,31 @@
+concept_machine
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [станок]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [machine]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.станок]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Станок — машина (агрегатный механизм), используемая (как правило, в промышленности) для обработки различных материалов, либо приспособление для выполнения какой-либо работы.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_material;
+            nrel_use
+   	 };;
+  *);;

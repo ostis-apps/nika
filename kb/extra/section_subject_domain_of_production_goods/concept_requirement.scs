@@ -1,0 +1,37 @@
+concept_requirement
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [потребность]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [requirement]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Потребности обнаруживаются личностью в мотивах, побуждающих её к деятельности.]
+   (* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.потребность]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Потребность — внутреннее состояние психологического или функционального ощущения недостаточности чего-либо, проявляется в зависимости от ситуационных факторов.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_internal_state;
+			concept_insufficiency;
+            nrel_dependence;
+            concept_factor
+   	 };;
+  *);;

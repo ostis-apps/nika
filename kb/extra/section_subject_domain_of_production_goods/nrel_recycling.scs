@@ -1,0 +1,29 @@
+nrel_recycling
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+  [переработка](* <- lang_ru;; *);
+  [recycling](* <- lang_eng;; *);;
+
+nrel_recycling <- rrel_key_sc_element:... 
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (переработка)](*<- lang_ru;;*);
+    [Def. (recycling)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [переработка —  превращать во что-либо в процессе работы, обработки .](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [recycling — turn into something in the process of work, processing.](*<- lang_en;;*);;
+    *);;
+*);;
+
+nrel_recycling
+=>nrel_first_domain:concept_machine;
+=>nrel_second_domain:concept_product;
+
+<- binary_relation ;
+<- antireflexive_relation ;
+<- antitransitive_relation ;;

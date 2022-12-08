@@ -1,0 +1,31 @@
+concept_sale
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Продажа]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [sale]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.продажа]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Продажа — обмен товара или услуги на деньги, подтвержденный чеком продажи, актом выполненных работ, накладной передачи товара (в последних двух случаях денежное движение фиксируется отдельным документом).]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_material;
+            nrel_use
+   	 };;
+  *);;

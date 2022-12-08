@@ -1,0 +1,35 @@
+concept_technical_design
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [технический дизайн]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [technical design]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Это возможность создать живописный образ для продукции или веб-страниц.]
+   (* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.технический дизайн]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Технический дизайн — это приведение исходного изображения в приятную для глаза иллюстрацию.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_art;
+            concept_image
+   	 };;
+  *);;

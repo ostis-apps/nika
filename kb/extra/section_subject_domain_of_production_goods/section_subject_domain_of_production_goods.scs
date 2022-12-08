@@ -1,0 +1,90 @@
+section_subject_domain_of_production_goods
+=> nrel_main_idtf:
+	[Раздел. Предметная область производственных товаров]
+   (* <- lang_ru;; *);
+	[Section. Subject domain of production goods] 
+   (* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_production_goods = [*
+	subject_domain_of_production_goods
+<- sc_node_struct;
+	=> nrel_main_idtf:
+      [Предметная область производственных товаров]
+      (* <- lang_ru;; *);
+      [Subject domain of production goods]
+      (* <- lang_en;; *);
+	<- subject_domain;
+
+	-> rrel_maximum_studied_object_class:
+      concept_capital_assets;
+      concept_consumer;
+      concept_economic_activity;
+      concept_legal_entity;
+      concept_production_good;
+      concept_private_organization;
+      concept_product;
+      concept_provider;
+      concept_technical_design;
+      concept_technological_equipment;
+
+	-> rrel_not_maximum_studied_object_class:
+      concept_agricultural_products;
+      concept_detail;
+      concept_durable_goods;
+      concept_machine;
+      concept_material;
+      concept_means_labor;
+      concept_raw_material;
+      concept_requirement;
+      concept_road_construction_equipment;
+      concept_semi_finished_product;
+      concept_service;
+      concept_short_term_goods;
+      concept_subject_labor;
+
+	-> rrel_explored_relation:
+      nrel_assembling;
+      nrel_exchange;
+      nrel_labor_process;
+      nrel_production;
+      nrel_recycling;
+      nrel_sale;
+      nrel_use;;
+*];;
+
+section_subject_domain_of_production_goods
+-> rrel_key_sc_element:
+   subject_domain_of_production_goods;
+   concept_agricultural_products;
+   concept_capital_assets;
+   concept_consumer;
+   concept_detail;
+   concept_durable_goods;
+   concept_economic_activity;
+   concept_legal_entity;
+   concept_machine;
+   concept_material;
+   concept_means_labor;
+   concept_private_organization;
+   concept_product;
+   concept_production_good;
+   concept_provider;
+   concept_raw_material;
+   concept_requirement;
+   concept_road_construction_equipment;
+   concept_semi_finished_product;
+   concept_service;
+   concept_short_term_goods;
+   concept_subject_labor;
+   concept_technical_design;
+   concept_technological_equipment;
+   nrel_assembling;
+   nrel_exchange;
+   nrel_labor_process;
+   nrel_production;
+   nrel_recycling;
+   nrel_sale;
+   nrel_use;;
+
+

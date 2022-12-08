@@ -1,0 +1,29 @@
+nrel_sale
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+  [продажа](* <- lang_ru;; *);
+  [sale](* <- lang_eng;; *);;
+
+nrel_sale <- rrel_key_sc_element:... 
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (продажа)](*<- lang_ru;;*);
+    [Def. (sale)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Продажа —  торговля, товарооборот.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [Sale — trade, turnover.](*<- lang_en;;*);;
+    *);;
+*);;
+
+nrel_sale
+=>nrel_first_domain:concept_human;
+=>nrel_second_domain:concept_product;
+
+<- binary_relation ;
+<- antireflexive_relation ;
+<- antitransitive_relation ;;

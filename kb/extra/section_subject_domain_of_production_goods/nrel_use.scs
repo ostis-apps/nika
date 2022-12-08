@@ -1,0 +1,29 @@
+nrel_use
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+  [использование](* <- lang_ru;; *);
+  [use](* <- lang_eng;; *);;
+
+nrel_use <- rrel_key_sc_element:... 
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (использование)](*<- lang_ru;;*);
+    [Def. (use)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Использование —  применение чего-либо или кого-либо в определённых целях.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [The use of something or someone for certain purposes.](*<- lang_en;;*);;
+    *);;
+*);;
+
+nrel_use
+=>nrel_first_domain:concept_human;
+=>nrel_second_domain:concept_detail;
+
+<- binary_relation ;
+<- antireflexive_relation ;
+<- antitransitive_relation ;;

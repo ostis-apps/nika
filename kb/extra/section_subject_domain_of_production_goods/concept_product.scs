@@ -1,0 +1,57 @@
+concept_product
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [товар]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [product]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Объекты, не участвующие в обмене, в экономическом смысле товарами не являются.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.товар]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Товар — любая вещь, которая участвует в свободном обмене на другие вещи.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_thing;
+			nrel_exchange
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.товар]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Товар – продукт, произведённый для продажи.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_thing;
+			nrel_sale
+   	 };;
+  *);;

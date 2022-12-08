@@ -1,0 +1,33 @@
+concept_consumer
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [потребитель]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [consumer]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.потребитель]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Потребитель — лицо или организация, потребляющие продукты чьего-н. производства.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_human;
+			concept_organization;
+            concept_product;
+            nrel_production
+   	 };;
+  *);;

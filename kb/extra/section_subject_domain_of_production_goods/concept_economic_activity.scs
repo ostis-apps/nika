@@ -1,0 +1,35 @@
+concept_economic_activity
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [хозяйственная деятельность]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [economic activity]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Причиной хозяйственной деятельности является стремление человека удовлетворять свои потребности в материальных благах.]
+   (* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.хозяйственная деятельность]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Хозяйственная деятельность — деятельность человека, направленная на наполнение запасов хозяйственных благ, которые обеспечивают полноту удовлетворения его потребностей.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_activity;
+			concept_requirement
+   	 };;
+  *);;

@@ -1,0 +1,31 @@
+concept_short_term_goods
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [товары краткосрочного пользования]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [short term goods]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.товары краткосрочного пользования]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Товары краткосрочного пользования — товары, потребляемые сразу или в несколько приёмов (зубная паста, напитки, хлеб, мыло).]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_product;
+			concept_period
+   	 };;
+  *);;

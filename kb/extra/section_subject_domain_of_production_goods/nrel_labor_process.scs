@@ -1,0 +1,29 @@
+nrel_labor_process
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+  [трудовой процесс](* <- lang_ru;; *);
+  [labor process](* <- lang_eng;; *);;
+
+nrel_labor_process <- rrel_key_sc_element:... 
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (трудовой процесс)](*<- lang_ru;;*);
+    [Def. (labor process)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Трудовой процесс —  процесс воздействия работника на предмет труда с целью изготовления продукции или выполнения работ, сопровождаемых затратами физической и нервной энергии человека.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [To labor_process — the process of an employee's influence on the subject of labor for the purpose of manufacturing products or performing works accompanied by the expenditure of physical and nervous energy of a person.](*<- lang_en;;*);;
+    *);;
+*);;
+
+nrel_labor_process
+=>nrel_first_domain:concept_human;
+=>nrel_second_domain:concept_subject_labor;
+
+<- binary_relation ;
+<- antireflexive_relation ;
+<- antitransitive_relation ;;
