@@ -1,0 +1,28 @@
+concept_tourism <- sc_node_not_relation;;
+
+concept_tourism => nrel_main_idtf:
+[Туризм] (*<-lang_ru;;*);
+[Tourism] (*<-lang_en;;*);;
+
+concept_tourism <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Туризм)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_tourism.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_tourism <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Туризм)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[выезды (путешествия) посетителей в другую страну или местность, отличную от места постоянного жительства, с любой целью, кроме трудоустройства.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

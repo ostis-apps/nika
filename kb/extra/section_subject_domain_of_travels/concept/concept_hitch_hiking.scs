@@ -1,0 +1,28 @@
+concept_hitch_hiking <- sc_node_not_relation;;
+
+concept_hitch_hiking => nrel_main_idtf:
+[Автостоп] (*<-lang_ru;;*);
+[Hitch hiking] (*<-lang_en;;*);;
+
+concept_hitch_hiking <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Автостоп] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_hitch_hiking.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_hitch_hiking <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Автостоп)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[бесплатное передвижение на попутном транспорте с согласия водителя. Изначально автостоп был возможен только на попутных автомашинах, однако позже развился автостоп на других видах транспорта. Безбилетный проезд в маршрутном транспорте не считается автостопом, если на это не получено согласие водителя (машиниста/кондуктора).](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

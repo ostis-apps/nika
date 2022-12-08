@@ -1,0 +1,23 @@
+concept_gps_navigator
+<- concept_equipment;
+
+=> nrel_main_idtf:
+   [GPS навигатор]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [GPS навигатор]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [GPS navigator]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[GPS навигатор](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [ устройство, которое получает сигналы глобальной системы позиционирования с целью определения текущего местоположения устройства на Земле. Устройства GPS обеспечивают информацию о широте и долготе, а некоторые могут вычислить и высоту.](*<-lang_ru;;*);;
+	*);;
+*);;

@@ -1,0 +1,23 @@
+concept_hiking
+<- concept_tourist_trip;
+
+=> nrel_main_idtf:
+   [Пеший поход]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Пеший поход]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Hiking]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Пеший поход](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Вид туризма. Основной целью является пешее преодоление группой маршрута по пересечённой местности.](*<-lang_ru;;*);;
+	*);;
+*);;

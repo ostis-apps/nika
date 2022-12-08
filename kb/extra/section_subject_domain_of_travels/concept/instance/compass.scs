@@ -1,0 +1,23 @@
+concept_compass
+<- concept_equipment;
+
+=> nrel_main_idtf:
+   [Компас]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Компас]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Compass]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Компас](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [устройство, облегчающее ориентирование на местности путём указания на магнитные полюса Земли и стороны света, по своей сути, компас - это очень примитивный навигатор.](*<-lang_ru;;*);;
+	*);;
+*);;

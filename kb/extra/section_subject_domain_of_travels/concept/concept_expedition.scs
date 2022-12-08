@@ -1,0 +1,28 @@
+concept_expedition <- sc_node_not_relation;;
+
+concept_expedition => nrel_main_idtf:
+[Экспедиция] (*<-lang_ru;;*);
+[Expedition] (*<-lang_en;;*);;
+
+concept_expedition <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Экспедиция] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_expedition.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_expedition <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Экспедиция)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[отправление группы людей в длительный поход (путешествие) в определённое место со специальной (научной или военной) целью, заданием.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

@@ -1,0 +1,35 @@
+section_subject_domain_of_travels
+=> nrel_main_idtf:
+	  [Раздел. Предметная область путешествий]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of travels]
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_travels = [*
+	subject_domain_of_travels
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область путешествий]
+   (* <- lang_ru;; *);
+   [Subject domain of travels]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	
+	-> rrel_maximum_studied_object_class:
+   concept_travel;
+   concept_equipment;
+   concept_tourism;
+	-> rrel_not_maximum_studied_object_class:
+	concept_expedition;
+    concept_hitch_hiking;
+    concept_territorial_study;
+    concept_tour;
+    concept_tourist;
+    concept_tourist_trip;
+    concept_walking;
+
+	-> rrel_explored_relation:
+	nrel_aiming;;
+*];;
+

@@ -1,0 +1,23 @@
+concept_kayaking
+<- concept_tourism;
+
+=> nrel_main_idtf:
+   [Каякинг]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Каякинг]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Kayaking]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Каякинг](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [— один из видов водного экстремального спорта, водного туризма или активного отдыха на воде с использованием небольшого персонального гребного судна — каяка. Человека, занимающегося каякингом, называют «каякером».](*<-lang_ru;;*);;
+	*);;
+*);;

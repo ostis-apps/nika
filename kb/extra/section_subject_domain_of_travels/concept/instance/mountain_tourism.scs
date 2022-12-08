@@ -1,0 +1,23 @@
+concept_mountain_tourism
+<- concept_tourism;
+
+=> nrel_main_idtf:
+   [Горный туризм]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Горный туризм]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Mountain tourism]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Горный туризм](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [— вид спорта и активного отдыха, суть которого заключается в прохождении линейного маршрута по горному рельефу. Один из видов туризма.](*<-lang_ru;;*);;
+	*);;
+*);;

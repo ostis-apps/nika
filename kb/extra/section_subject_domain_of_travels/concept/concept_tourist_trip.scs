@@ -1,0 +1,28 @@
+concept_tourist_trip <- sc_node_not_relation;;
+
+concept_tourist_trip => nrel_main_idtf:
+[Туристический поход] (*<-lang_ru;;*);
+[Tourist trip] (*<-lang_en;;*);;
+
+concept_tourist_trip <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Туристический поход)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_tourist_trip.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_tourist_trip <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Туристический поход)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[групповое или индивидуальное путешествие (его частный случай) по заранее определённому маршруту, осуществляемое с образовательными, оздоровительными, спортивными, исследовательскими или иными целями, главными отличительными чертами которого являются, вне зависимости от вида, активный способ передвижения, ограниченные временные рамки (в большинстве случаев от нескольких до 15-20 дней)](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

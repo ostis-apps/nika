@@ -1,0 +1,23 @@
+concept_gastronomic_tourism
+<- concept_tourism;
+
+=> nrel_main_idtf:
+   [Гастрономический туризм]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Гастрономический туризм]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Gastronikic tourism]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Гастрономический туризм](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [— вид туризма, основная цель которого знакомство с той или иной страной через призму национальной гастрономии.](*<-lang_ru;;*);;
+	*);;
+*);;
