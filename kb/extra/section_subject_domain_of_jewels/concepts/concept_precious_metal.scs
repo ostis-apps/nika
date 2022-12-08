@@ -1,0 +1,30 @@
+concept_precious_metal
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [драгоценный металл]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [precious metal]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [благородный металл]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Благородные (драгоценные) металлы — металлы, слабо подверженные коррозии и окислению, и не реагирующие с соляной кислотой, что отличает их от большинства «неблагородных» металлов. ] (* <-lang_ru;; *);; 
+		*);;
+	*); 
+
+=> nrel_probe:
+	concept_value;
+	
+=> nrel_unit_cost:
+	concept_value;;

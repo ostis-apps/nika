@@ -1,0 +1,21 @@
+concept_jeweler
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [ювелир]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [jeweler]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Ювелир  — мастер по проектированию, изготовлению и ремонту ювелирных изделий.] (* <-lang_ru;; *);; 
+		*);;
+	*);;

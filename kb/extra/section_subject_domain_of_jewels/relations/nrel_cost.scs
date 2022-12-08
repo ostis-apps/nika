@@ -1,0 +1,38 @@
+nrel_cost
+<- sc_node_norole_relation;
+
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+<- antireflexive_relation;
+
+=> nrel_main_idtf: 
+	[стоимость*] (*<-lang_ru;;*);
+=> nrel_main_idtf: 
+	[cost*] (*<-lang_en;;*);
+
+=> nrel_first_domain: 	concept_jewel;
+			concept_gemstone;
+			concept_jewelry;
+			concept_ruby;
+			concept_emerald;
+			concept_brilliant;
+			concept_diamond;
+			concept_necklace;
+			concept_brooch;
+			concept_earrings;
+			
+=> nrel_second_domain:  concept_value;
+			
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [стоимость* - бинарное ориентированное отношение, связывающее изделие и его стоимость.] (* <-lang_ru;; *);; 
+		*);;
+	*);;

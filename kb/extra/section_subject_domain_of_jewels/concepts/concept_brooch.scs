@@ -1,0 +1,45 @@
+concept_brooch
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [брошь]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [brooch]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Брошь — ювелирное изделие, прикалываемое на одежду. Обычно изготавливается из металла, часто драгоценного — золота или серебра — и украшается драгоценными камнями или эмалевыми вставками.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_precious_metal;
+		concept_gemstone;
+		concept_jewelry
+		};;
+	*);
+
+=> nrel_cost:
+	concept_value;
+
+=> nrel_material:
+	concept_ruby;
+	concept_emerald;
+	concept_brilliant;
+	concept_precious_metal;
+	concept_gemstone;
+   
+=> nrel_color: 
+	concept_color;
+	
+=> nrel_weight: 
+	concept_carat;
+
+=> nrel_manufacturer: 
+	concept_jeweler;;

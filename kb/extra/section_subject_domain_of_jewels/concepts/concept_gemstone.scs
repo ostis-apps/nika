@@ -1,0 +1,57 @@
+concept_gemstone
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [драгоценный камень]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [gemstone]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [gem]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [precious jewel]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Драгоценный камень — минерал, относимый к самым дорогим материалам.] (* <-lang_ru;; *);; 
+		*);;
+	*); 
+	
+=> nrel_inclusion:
+	concept_ruby;
+	concept_emerald;
+	concept_brilliant;
+	concept_diamond;	
+	
+=> nrel_cost:
+	concept_value;
+   
+=> nrel_cut: 
+	concept_cut;
+   
+=> nrel_color: 
+	concept_color;
+	
+=> nrel_weight: 
+	concept_carat;
+	
+=> nrel_clarity: 
+	concept_clarity;
+   
+=> nrel_manufacturer: 
+	concept_jeweler;
+	
+=> nrel_find_location: 
+	concept_place;
+	
+=> nrel_year_of_finding: 
+	concept_year;;

@@ -1,0 +1,42 @@
+concept_ruby
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [рубин]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [ruby]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Рубин — минерал, разновидность корунда, относится к классу оксидов, тригональная сингония, драгоценный камень красного цвета.] (* <-lang_ru;; *);; 
+		*);;
+	*); 	
+	
+=> nrel_cost:
+	concept_value;
+   
+=> nrel_cut: 
+	concept_cut;
+   
+=> nrel_color: 
+	concept_color;
+	
+=> nrel_weight: 
+	concept_carat;
+   
+=> nrel_manufacturer: 
+	concept_jeweler;
+	
+=> nrel_find_location: 
+	concept_place;
+	
+=> nrel_year_of_finding: 
+	concept_year;;

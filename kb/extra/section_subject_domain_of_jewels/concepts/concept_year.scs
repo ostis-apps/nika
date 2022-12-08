@@ -1,0 +1,21 @@
+concept_year
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [год]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [year]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Год — внесистемная единица измерения времени, которая исторически в большинстве культур означала однократный цикл смены сезонов (весна, лето, осень, зима).] (* <-lang_ru;; *);; 
+		*);;
+	*);;
