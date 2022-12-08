@@ -1,0 +1,36 @@
+concept_message_about_size 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о размере]
+	    (* <- lang_ru;; *);
+	[message about size]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_size];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о размере)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about size)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о размере - атомарное сообщение, которое содержит понятие размер, информацию о которой необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about size is an atomic message that contains the termin of a size information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
