@@ -1,0 +1,55 @@
+nrel_belong_to_the_country
+<- sc_node_role_relation;
+<- relation;
+<- role_relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+	[Принадлежит стране*]
+	(* <- lang_ru;; *);
+	[Belong to the country*]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+    [rrel_entity];
+=> nrel_first_domain: concept_country;
+=> nrel_second_domain: concept_astronaut;
+=> nrel_definitional_domain:
+	...
+	(*
+	<= nrel_combination:
+		{
+			concept_country;
+			concept_astronomical_object
+		};;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (принадлежит стране*)]
+		(* <- lang_ru;; *);
+		[Def. (belong to the country*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Принадлежит стране* - отношение, которое обозначает: какой стране принадлежит астронавт.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Belong to the country* - relation that denotes which country the astronaut belongs to.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_country;
+			concept_astronaut
+		};;
+	*);;

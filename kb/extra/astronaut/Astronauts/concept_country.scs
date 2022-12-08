@@ -1,0 +1,31 @@
+concept_country
+-> russia;
+<- sc_node_class;
+=> nrel_main_idtf:
+	[страна]
+	(* <- lang_ru;; *);
+	[country]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (страна)]
+		(* <- lang_ru;; *);
+		[Def. (country)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Страна́ — территория, имеющая политические, физико-географические, культурные или исторические границы, которые могут быть как чётко определёнными и зафиксированными, так и размытыми (в таком случае нередко говорят не о границах, а о «рубежах»).]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A country is a territory that has political, physical-geographical, cultural or historical boundaries, which can be either clearly defined and fixed, or blurred (in this case, they often talk not about borders, but about “frontiers”).]
+			(* <- lang_en;; *);;
+		*);;
+	*);;

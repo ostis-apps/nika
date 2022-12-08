@@ -1,0 +1,30 @@
+concept_ide 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[интегрированная среда разработки]
+	(* <- lang_ru;; <-concept_text;; *);
+	[ide]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (интегрированная среда разработки)]
+		(* <- lang_ru;; *);
+		[Def. (ide)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[интегрированная среда разработки -- омплекс программных средств, используемый программистами для разработки программного обеспечения.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[ide -- a set of software tools used by programmers to develop software.]
+			(* <- lang_en;; *);;
+		*);;
+	*);;

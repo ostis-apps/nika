@@ -1,0 +1,31 @@
+concept_system_program 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[системная программа]
+	(* <- lang_ru;; <-concept_text;; *);
+	[system program ]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (системная программа)]
+		(* <- lang_ru;; *);
+		[Def. (system program )]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[системная программа -- нужны для обеспечения нормальной работы компьютера, его обслуживания и настройки.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[system program -- necessary to ensure the normal operation of the computer, its maintenance and configuration.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<= nrel_inclusion: concept_computer_program;;

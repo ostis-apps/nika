@@ -1,0 +1,31 @@
+concept_utilities 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[утилиты]
+	(* <- lang_ru;; <-concept_text;; *);
+	[utilities ]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. ( утилиты)]
+		(* <- lang_ru;; *);
+		[Def. (utilities )]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[ утилиты -- сервисная программа, облегчающая пользование другими программами, работу с компьютером.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[ utilities -- a utility program that facilitates the use of other programs, work with a computer.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<= nrel_inclusion: concept_system_program;;

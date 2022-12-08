@@ -1,0 +1,31 @@
+concept_professional_program 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[профессиональная программа]
+	(* <- lang_ru;; <-concept_text;; *);
+	[professional program ]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (профессиональная программа)]
+		(* <- lang_ru;; *);
+		[Def. (professional program )]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[профессиональная программа -- программа для специалистов.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[professional program -- program for specialists.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<= nrel_inclusion: concept_computer_program;;

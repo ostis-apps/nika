@@ -1,0 +1,31 @@
+concept_multipass_translator 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[многопроходный транслятор]
+	(* <- lang_ru;; <-concept_text;; *);
+	[multipass translator ]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (многопроходный  транслятор)]
+		(* <- lang_ru;; *);
+		[Def. (multipass translator )]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[многопроходный  транслятор -- транслятор, преобразующий исходный код после его нескольких чтений (за несколько проходов).]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[multipass translator  -- a translator that transforms the source code after several readings of it (in several passes).]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<= nrel_inclusion: concept_translator;;

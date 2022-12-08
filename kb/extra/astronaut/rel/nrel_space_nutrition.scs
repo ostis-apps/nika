@@ -1,0 +1,52 @@
+nrel_space_nutrition
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-non_oriented_relation;
+<-reflexive_relation;
+<-transitive_relation;
+<-symmetric_relation;
+=>nrel_main_idtf:
+	[Космическое питание*]
+	(* <- lang_ru;; *);
+	[space_nutrition*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_astronaut;
+=>nrel_second_domain: concept_nutrition;
+=>nrel_definitional_domain: ... (*
+	<= nrel_combination:
+	{
+		concept_astronaut;
+		concept_nutrition
+	};;
+*);
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Космическое питание*)]
+		(* <- lang_ru;; *);
+		[Def.(space_nutrition*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Космическое питание* - отношение, показывающее чем питается астронавт.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[space_nutrition* - ratio showing what an astronaut eats.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_astronaut;
+		concept_nutrition;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

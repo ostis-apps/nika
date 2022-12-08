@@ -1,0 +1,32 @@
+concept_interstellar_ark
+-> project_orion;
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Межзвёздный ковчег]
+	(* <- lang_ru;; *);
+	[Interstellar Ark]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Межзвёздный ковчег)]
+		(* <- lang_ru;; *);
+		[Def. (Interstellar Ark)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Межзвёздный ковчег — концептуальный космический корабль, предназначенный для межзвёздных путешествий. Межзвёздный ковчег может быть наиболее экономически целесообразным способом преодоления огромных расстояний в космическом пространстве, также он был предложен в качестве потенциальной среды обитания для сохранения человеческой цивилизации и знаний в случае глобальной катастрофы.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The Interstellar Ark is a conceptual spacecraft designed for interstellar travel. An interstellar ark may be the most cost-effective way to travel the vast distances in outer space, and it has also been proposed as a potential habitat for preserving human civilization and knowledge in the event of a global catastrophe.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_spaceship_concept;;

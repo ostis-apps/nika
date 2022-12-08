@@ -1,0 +1,31 @@
+concept_simple_interpreter 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[простой интерпретатор]
+	(* <- lang_ru;; <-concept_text;; *);
+	[simple interpreter]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (простой интерпретатор)]
+		(* <- lang_ru;; *);
+		[Def. (simple interpreter)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[простой интерпретатор -- анализирует и тут же выполняет (собственно интерпретация) программу покомандно или построчно по мере поступления её исходного кода на вход интерпретатора.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[simple interpreter -- analyzes and immediately executes (interpretation itself) the program command-by-command or line-by-line as its source code arrives at the input of the interpreter.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<= nrel_inclusion: concept_interpreter;;

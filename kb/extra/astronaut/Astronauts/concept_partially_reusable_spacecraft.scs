@@ -1,0 +1,32 @@
+concept_partially_reusable_spacecraft
+-> dragon_2;
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Частично-многоразовые космические корабли]
+	(* <- lang_ru;; *);
+	[Partially reusable spacecraft]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Частично-многоразовые космические корабли)]
+		(* <- lang_ru;; *);
+		[Def. (Partially reusable spacecraft)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Частично-многоразовые космические корабли - корабли, которые можно запустить в космом повторно ограниченное количество раз.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Partially reusable spacecraft - ships that can be re-launched into space a limited number of times.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_manned_spacecraft;;

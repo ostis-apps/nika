@@ -1,0 +1,32 @@
+concept_automatic_cargo_ship
+-> jules_verne;
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Автоматический грузовой корабль]
+	(* <- lang_ru;; *);
+	[automatic cargo ship]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Автоматический грузовой корабль )]
+		(* <- lang_ru;; *);
+		[Def. (automatic cargo ship)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Автоматический грузовой космический корабль - крабль, (АГК), разработанный ЕКА. Корабль предназначен для доставки топлива, научного оборудования, продуктов, воздуха и воды на Международную космическую станцию (МКС).]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Automated Cargo Spacecraft - Krabl, (AGK), developed by ESA. The ship is designed to deliver fuel, scientific equipment, food, air and water to the International Space Station (ISS).]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_spaceship;;

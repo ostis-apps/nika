@@ -1,0 +1,31 @@
+concept_program_for_processing_and_creating_images
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Программа для обработки и создания изображений]
+	(* <- lang_ru;; <-concept_text;; *);
+	[program for processing and creating images]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. ( Программа для обработки и создания изображений)]
+		(* <- lang_ru;; *);
+		[Def. (program for processing and creating images )]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[ Программа для обработки и создания изображений -- программа для обработки и создания изображений.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[ program for processing and creating images  -- program for processing and creating images.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<= nrel_inclusion: concept_multimedia_program;;

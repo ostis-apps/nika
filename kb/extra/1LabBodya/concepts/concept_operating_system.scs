@@ -1,0 +1,31 @@
+concept_operating_system 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[операционная система]
+	(* <- lang_ru;; <-concept_text;; *);
+	[operating system ]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (операционная система)]
+		(* <- lang_ru;; *);
+		[Def. (operating system )]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[операционная система -- интерфейс.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[operating system -- inteface.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<= nrel_inclusion: concept_system_program;;

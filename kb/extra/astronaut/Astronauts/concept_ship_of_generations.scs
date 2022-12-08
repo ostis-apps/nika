@@ -1,0 +1,31 @@
+concept_ship_of_generations
+
+=> nrel_main_idtf:
+	[Корабль поколений]
+	(* <- lang_ru;; *);
+	[Ship of Generations]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Корабль поколений)]
+		(* <- lang_ru;; *);
+		[Def. (Ship of Generations)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Корабль поколений — гипотетический тип звездолёта типа «Межзвёздного ковчега» для межзвёздных путешествий. ]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The Generation Ship is a hypothetical type of Ark-type starship for interstellar travel.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<=nrel_inclusion: concept_interstellar_ark;;

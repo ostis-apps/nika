@@ -1,0 +1,31 @@
+concept_nutrition
+-> entrecote;
+<- sc_node_class;
+=> nrel_main_idtf:
+	[питание]
+	(* <- lang_ru;; *);
+	[nutrition]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (питание)]
+		(* <- lang_ru;; *);
+		[Def. (nutrition)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Пища, характер и качество пищи.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Nutrition - food, character and quality of food.]
+			(* <- lang_en;; *);;
+		*);;
+	*);;
