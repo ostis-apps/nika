@@ -1,0 +1,82 @@
+section_subject_domain_of_jewels
+=> nrel_main_idtf:
+	  [Раздел. Предметная область драгоценностей]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of jewels] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_jewels = [*
+	subject_domain_of_jewels
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область драгоценностей]
+   (* <- lang_ru;; *);
+   [Subject domain of jewels]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+   	concept_jewel;
+	-> rrel_not_maximum_studied_object_class:
+	concept_jeweler;
+	concept_ruby;
+	concept_emerald;
+	concept_brilliant;
+	concept_diamond;
+	concept_necklace;
+	concept_brooch;
+	concept_earrings;
+	concept_gemstone;
+	concept_precious_metal;
+	concept_jewelry;
+	-> rrel_explored_relation:
+	nrel_probe;
+	nrel_cost;
+	nrel_unit_cost;
+	nrel_year_of_finding;
+	nrel_country;
+	nrel_find_location;
+	nrel_manufacturer;
+	nrel_clarity;
+	nrel_cut;
+	nrel_material;
+	nrel_color;
+	nrel_weight;;
+*];;
+
+section_subject_domain_of_jewels
+-> rrel_key_sc_element:
+	subject_domain_of_jewels;
+	concept_jewel;
+	concept_gemstone;
+	concept_precious_metal;
+	concept_jewelry;
+	concept_cut;
+	concept_clarity;
+	concept_color;
+	concept_carat;
+	concept_jeweler;
+	concept_ruby;
+	concept_emerald;
+	concept_brilliant;
+	concept_diamond;
+	concept_necklace;
+	concept_brooch;
+	concept_earrings;
+	concept_place;
+	concept_country;
+	concept_year;
+	nrel_probe;
+	nrel_cost;
+	nrel_unit_cost;
+	nrel_year_of_finding;
+	nrel_country;
+	nrel_find_location;
+	nrel_manufacturer;
+	nrel_clarity;
+	nrel_cut;
+	nrel_color;
+	nrel_material;
+	nrel_weight;;

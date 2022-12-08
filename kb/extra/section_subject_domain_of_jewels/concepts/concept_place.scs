@@ -1,0 +1,27 @@
+concept_place
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+	[местоположение]
+	(* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[place]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[местонахождение]	(* <- lang_ru;; *);
+	[whereabouts]		(* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Местоположение - географическое положение исследуемого объекта, сущности.] (* <-lang_ru;; *);; 
+		*);;
+	*);
+	
+=> nrel_country: 
+	concept_country;;

@@ -1,0 +1,64 @@
+concept_jewel
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [драгоценность]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [jewel]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [treasure]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Драгоценность — термин, широко используемый в быту и в литературе для указания на материальную и культурную ценность предмета и духовную сущность человека.] (* <-lang_ru;; *);; 
+		*);;
+	*); 
+	
+=> nrel_inclusion:
+	concept_gemstone;
+	concept_precious_metal;
+	concept_jewelry;
+
+=> nrel_cost:
+	concept_value;
+   
+=> nrel_cut: 
+	concept_cut;
+   
+=> nrel_color: 
+	concept_color;
+	
+=> nrel_weight: 
+	concept_carat;
+	
+=> nrel_clarity: 
+	concept_clarity;
+   
+=> nrel_manufacturer: 
+	concept_jeweler;
+	
+=> nrel_find_location: 
+	concept_place;
+	
+=> nrel_year_of_finding: 
+	concept_year;;
+	
+concept_value
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [значение]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [value]
+   (* <- lang_en;; *);;

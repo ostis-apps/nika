@@ -1,0 +1,49 @@
+concept_jewelry
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [ювелирное изделие]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [jewelry]
+   (* <- lang_en;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Ювелирное изделие – это изделие из драгоценных металлов с использованием различных видов художественной обработки со вставками из драгоценных, полудрагоценных, поделочных цветных камней и других материалов природного или искусственного происхождения или без них, применяемое в качестве различных украшений.] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_gemstone;
+		concept_precious_metal
+		};;
+	*); 
+	
+=> nrel_inclusion:
+	concept_necklace;
+	concept_brooch;
+	concept_earrings;
+	
+=> nrel_material:
+	concept_ruby;
+	concept_emerald;
+	concept_brilliant;
+	concept_precious_metal;
+	concept_gemstone;
+
+=> nrel_cost:
+	concept_value;
+   
+=> nrel_color: 
+	concept_color;
+	
+=> nrel_weight: 
+	concept_carat;
+
+=> nrel_manufacturer: 
+	concept_jeweler;;

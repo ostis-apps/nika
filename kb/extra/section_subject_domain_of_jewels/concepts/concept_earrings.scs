@@ -1,0 +1,44 @@
+concept_earrings
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [серьги]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [earrings]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [серёжки]
+   (* <- lang_ru;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Серьги, серёжки — украшение, носимое в ушах, в которых для этого необходимо проколоть отверстия.] (* <-lang_ru;; *);; 
+		*);;
+	*); 
+	
+=> nrel_cost:
+	concept_value;
+   
+=> nrel_material:
+	concept_ruby;
+	concept_emerald;
+	concept_brilliant;
+	concept_precious_metal;
+	concept_gemstone;
+	
+
+=> nrel_color: 
+	concept_color;
+	
+=> nrel_weight: 
+	concept_carat;
+
+=> nrel_manufacturer: 
+	concept_jeweler;;

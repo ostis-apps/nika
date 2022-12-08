@@ -1,0 +1,46 @@
+concept_necklace
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [ожерелье]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [necklace]
+   (* <- lang_en;; *);
+=> nrel_idtf:
+   [колье]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [бусы]
+   (* <- lang_ru;; *);
+   
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [Ожерелье — украшение, носимое вокруг шеи. Ожерелья в виде бус являются одними из древнейших видов украшений.] (* <-lang_ru;; *);; 
+		*);;
+	*); 
+
+=> nrel_cost:
+	concept_value;
+   
+=> nrel_color: 
+	concept_color;
+
+=> nrel_material:
+	concept_ruby;
+	concept_emerald;
+	concept_brilliant;
+	concept_precious_metal;
+	concept_gemstone;
+	
+=> nrel_weight: 
+	concept_carat;
+
+=> nrel_manufacturer: 
+	concept_jeweler;;

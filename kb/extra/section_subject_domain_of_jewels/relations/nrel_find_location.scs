@@ -1,0 +1,38 @@
+nrel_find_location
+<- sc_node_norole_relation;
+
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+<- antireflexive_relation;
+
+=> nrel_main_idtf: 
+	[место нахождения*] (*<-lang_ru;;*);
+=> nrel_main_idtf: 
+	[find location*] (*<-lang_en;;*);
+
+=> nrel_first_domain: 	concept_jewel;
+			concept_gemstone;
+			concept_ruby;
+			concept_emerald;
+			concept_diamond;
+			
+=> nrel_second_domain:  concept_place;
+			concept_country;
+			
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [место нахождения* - бинарное ориентированное отношение, связывающее минерал или драгоценный камень с местом его нахождения (месторождением).] (* <-lang_ru;; *);; 
+		*);;
+		<= nrel_using_constants: {
+		concept_place;
+		concept_gemstone
+		};;
+	*);;

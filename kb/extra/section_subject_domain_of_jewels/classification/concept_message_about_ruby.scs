@@ -1,0 +1,33 @@
+concept_message_about_ruby
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о рубине]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_ruby];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о рубине)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о рубине - атомарное сообщение,
+    которое содержит сущность - рубин, информацию о котором необходимо найти.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
+	
+concept_intent_possible_class
+-> concept_message_about_ruby;
+-> concept_message_about_carat;
+-> concept_message_about_gem_variety;
+-> concept_message_about_jewels;;
