@@ -1,0 +1,31 @@
+concept_multimedia_program 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[мультимедийная программа]
+	(* <- lang_ru;; <-concept_text;; *);
+	[multimedia program  ]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (мультимедийная программа)]
+		(* <- lang_ru;; *);
+		[Def. (multimedia program )]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[мультимедийная программа -- программы, которые умеют работать с несколькими видами информации.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[multimedia program -- programs that can work with several types of information.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<= nrel_inclusion: concept_computer_program;;

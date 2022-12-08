@@ -1,0 +1,31 @@
+concept_compiler_type_interpreter 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[интерпретатор компилирующего типа]
+	(* <- lang_ru;; <-concept_text;; *);
+	[compiler type interpreter]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. ( интерпретатор компилирующего типа )]
+		(* <- lang_ru;; *);
+		[Def. (compiler type interpreter)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[ интерпретатор компилирующего типа-- это система из компилятора, переводящего исходный код программы в промежуточное представление, например, в байт-код или p-код, и собственно интерпретатора, который выполняет полученный промежуточный код (так называемая виртуальная машина).]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[compiler type interpreter -- this is a system of a compiler that translates the source code of the program into an intermediate representation, for example, bytecode or p-code, and the actual interpreter that executes the resulting intermediate code (the so-called virtual machine).]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<= nrel_inclusion: concept_interpreter;;

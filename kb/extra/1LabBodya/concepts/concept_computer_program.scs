@@ -1,0 +1,30 @@
+concept_computer_program 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[компьютерная программа]
+	(* <- lang_ru;; <-concept_text;; *);
+	[computer program]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (компьютерная программа)]
+		(* <- lang_ru;; *);
+		[Def. (computer program)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[компьютерная программа -- комбинация компьютерных инструкций и данных, позволяющая аппаратному обеспечению вычислительной системы выполнять вычисления или функции управления.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[computer program -- a combination of computer instructions and data that enables the hardware of a computing system to perform calculations or control functions.]
+			(* <- lang_en;; *);;
+		*);;
+	*);;

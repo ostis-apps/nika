@@ -1,0 +1,30 @@
+concept_programming_language 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[язык программирования]
+	(* <- lang_ru;; <-concept_text;; *);
+	[programming language]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (язык программирования)]
+		(* <- lang_ru;; *);
+		[Def. (programming language)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[язык программирования --  формальный язык, предназначенный для записи компьютерных программ.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[formal language for writing computer programs.]
+			(* <- lang_en;; *);;
+		*);;
+	*);;

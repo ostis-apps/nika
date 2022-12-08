@@ -1,0 +1,31 @@
+concept_interpreter 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[интерпретатор]
+	(* <- lang_ru;; <-concept_text;; *);
+	[interpreter]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (интерпретатор)]
+		(* <- lang_ru;; *);
+		[Def. (interpreter)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[интерпретатор -- программа (разновидность транслятора), выполняющая интерпретацию.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[interpreter -- a program (a kind of translator) that performs interpretation.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<= nrel_inclusion: concept_computer_program;;

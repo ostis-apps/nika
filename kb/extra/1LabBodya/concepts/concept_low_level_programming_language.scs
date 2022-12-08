@@ -1,0 +1,31 @@
+concept_low_level_programming_language 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[низкоуровневый язык программирования]
+	(* <- lang_ru;; <-concept_text;; *);
+	[ low level programming language]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (низкоуровневый язык программирования)]
+		(* <- lang_ru;; *);
+		[Def. (low level programming language)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[низкоуровневый язык программирования --  язык программирования, близкий к программированию непосредственно в машинных кодах используемого реального или виртуального (например, байт-код, IL) процессора.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[low level programming language -- programming language close to programming directly in the machine codes of the real or virtual (e.g. bytecode, IL) processor used.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<= nrel_inclusion: concept_programming_language;;

@@ -1,0 +1,31 @@
+concept_programming_methodology 
+-> oop;
+<- sc_node_class;
+=> nrel_main_idtf:
+	[методология программирования]
+	(* <- lang_ru;; <-concept_text;; *);
+	[programming methodology]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (методология программирования)]
+		(* <- lang_ru;; *);
+		[Def. (programming methodology)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[методология программирования -- совокупность методов, применяемых на различных стадиях жизненного цикла программного обеспечения и имеющих общий философский подход.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[programming methodology -- a set of methods applied at various stages of the software life cycle and having a common philosophical approach.]
+			(* <- lang_en;; *);;
+		*);;
+	*);;

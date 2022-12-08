@@ -1,0 +1,31 @@
+concept_entertainment_and_educational_program 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Развлекательные и образовательные программа программа]
+	(* <- lang_ru;; <-concept_text;; *);
+	[entertainment and educational program  ]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. (Развлекательные и образовательные программа программа)]
+		(* <- lang_ru;; *);
+		[Def. (entertainment and educational program )]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Развлекательные и образовательные программа программа -- программа создано для данных потребностей.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[entertainment and educational program -- programs created for its needs.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<= nrel_inclusion: concept_computer_program;;

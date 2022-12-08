@@ -1,0 +1,31 @@
+concept_financial_and_accounting_program
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Финансовая и бухгалтерская программа]
+	(* <- lang_ru;; <-concept_text;; *);
+	[financial and accounting program  ]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. ( Финансовая и бухгалтерская программа)]
+		(* <- lang_ru;; *);
+		[Def. (financial and accounting program )]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[ Финансовая и бухгалтерская программа -- программа для финансов и бухгалтерии.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[ financial and accounting program  -- finance and accounting software.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<= nrel_inclusion: concept_application_program;;

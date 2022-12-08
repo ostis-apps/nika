@@ -1,0 +1,31 @@
+concept_tools_programmer 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[инструменты программиста]
+	(* <- lang_ru;; <-concept_text;; *);
+	[tools programmer  ]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр. ( инструменты программиста)]
+		(* <- lang_ru;; *);
+		[Def. (tools programmer )]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[ инструменты программиста -- Суперсложные системы программирования, профессиональные компиляторы и многое другое.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[tools programmer -- Super-complex programming systems, professional compilers and much more.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+<= nrel_inclusion: concept_professional_program;;
