@@ -1,0 +1,36 @@
+concept_message_about_class
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о классе]
+	    (* <- lang_ru;; *);
+	[message about class]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_class];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о классе)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about class)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о классе - атомарное сообщение, которое содержит понятие класс, информацию о которой необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about class is an atomic message that contains the termin of a class information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

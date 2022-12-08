@@ -1,0 +1,36 @@
+concept_message_about_colour 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о цвете]
+	    (* <- lang_ru;; *);
+	[message about colour]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_colour];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о цвете)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about colour)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о цвете растения - атомарное сообщение, которое содержит понятие цвет, информацию о которой необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about colour is an atomic message that contains the termin of a colour information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

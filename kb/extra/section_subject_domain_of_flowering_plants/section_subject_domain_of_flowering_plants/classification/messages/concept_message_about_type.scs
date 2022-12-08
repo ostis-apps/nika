@@ -1,0 +1,36 @@
+concept_message_about_type 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о типе]
+	    (* <- lang_ru;; *);
+	[message about ]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_type];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о типе)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about type)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о типе - атомарное сообщение, которое содержит понятие тип, информацию о которой необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about type is an atomic message that contains the termin of a type information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

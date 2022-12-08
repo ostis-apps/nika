@@ -1,0 +1,36 @@
+concept_message_about_cultural
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о культуре]
+	    (* <- lang_ru;; *);
+	[message about cultural]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_cultural];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о культуре)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about cultural)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о культуре - атомарное сообщение, которое содержит понятие культура, информацию о которой необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about cultural is an atomic message that contains the termin of a cultural information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
