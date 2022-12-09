@@ -1,0 +1,36 @@
+concept_message_about_game_company
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о игровые компаны]
+	    (* <- lang_ru;; *);
+	[message about game company]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_game_company];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о игровые компаны)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about game company)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о игровые компаны - атомарное сообщение, которое содержит виды человекообразных, информацию о которых необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about о game company is an atomic message that contains hominoidea division information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
