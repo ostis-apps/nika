@@ -1,0 +1,27 @@
+esg_banking
+
+=> nrel_main_idtf:
+    [esg banking]
+    (* <- lang_ru;; *);
+    [esg banking]
+    (* <- lang_en;; *);
+=> nrel_type:
+    quantitative_finance;
+    corporate_finance;
+    personal_finance;
+    <-concept_finance_type;
+
+=> nrel_relase_date:
+    [29.10.2003]
+    (* <- lang_ru;; *);
+    [29.10.2003]
+    (* <- lang_en;;*);
+=> nrel_bank:
+    belarusbank;
+<-concept_bank;
+=>nrel_note:
+[Возможности и риски, связанные с экологическими, социальными и управленческими аспектами (ESG), становятся все более актуальными для финансовых учреждений. Соображения ESG не только важны для окружающей среды, устойчивая деятельность связана с более высокими экономическими показателями.]
+(* <-lang_ru;;*);
+
+<-binary_relation;;
+

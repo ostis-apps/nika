@@ -1,0 +1,22 @@
+audit
+
+=> nrel_main_idtf:
+    [audit]
+    (* <- lang_ru;; *);
+    <-nrel_bank;
+=> nrel_bank:
+    [alfa_bank];
+    [belarus_bank];
+    [belinvest_bank];
+    [belveb_bank];
+    [mtb_bank];
+    [vtb_bank];
+    (*<- lang_eng;;*);
+    <-nrel_bank;
+=> nrel_gender:
+    [М/Ж]
+    (*<-lang_ru;;*);
+    <-nrel_gender;
+
+<-concept_bank_employees;
+<-binary_relation;;

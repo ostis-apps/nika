@@ -1,0 +1,16 @@
+concept_bank_employees
+<- sc_node_class;
+=> nrel_main_idtf:
+	[банковские работники](* <- lang_ru;; *);
+	[bank_employees](* <- lang_en;; *);
+
+=>nrel_inclusion:
+accountant;
+audit;
+banker;
+cashier;
+credit_expert;
+financial_analyst;
+investment_specialist;
+
+<-binary_relation;;

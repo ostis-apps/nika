@@ -1,0 +1,31 @@
+section_subject_domain_of_finance
+<- sc_node_struct;
+=> nrel_main_idtf:
+[Раздел. Банковское дело](* <- lang_ru;; *);
+	[Section. Subject domain of bank](* <- lang_en;; *);
+<-atomic_section;;
+
+section_subject_domain_of_bank = [*
+	subject_domain_of_bank
+=> nrel_main_idtf:
+	[Предметная область банковское дело](* <- lang_ru;; *);
+	[Subject domain of bank](* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+concept_banking_system;
+-> rrel_not_maximum_studied_object_class:
+concept_bank;
+concept_early_history_of_banking;
+concept_financial_theory;
+concept_finance_type;
+concept_history_of_finance;
+concept_finance;
+concept_bank_employees;
+-> rrel_explored_relation:
+nrel_bank;
+nrel_type;
+nrel_theory;
+nrel_gender;
+nrel_relase_date;
+nrel_founded_date;;
+*];;
