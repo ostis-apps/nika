@@ -1,0 +1,17 @@
+concept_banking_system
+
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+	[Банковская система](* <- lang_ru;;*);
+	[banking system](* <- lang_en;; *);
+
+
+=> nrel_inclusion:
+	ecology_bank;
+	esg_banking;
+=> mrel_note:
+[Банковская система подразумевает под собой функционирование банков и кредитных учреждений как единого денежно кредитного механизма.]
+(* <-lang_ru;;*);
+<-concept_finance;
+<-binary_relation;;

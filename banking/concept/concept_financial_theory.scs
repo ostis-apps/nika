@@ -1,0 +1,14 @@
+concept_financial_theory
+
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+	[Финансовая теория ](* <- lang_ru;;*);
+	[Financial_theory](* <- lang_en;; *);
+=> nrel_inclusion:
+	managerial_finance;
+	financial_economics;
+=> mrel_note:
+[Финансы – синоним денежных средств (наличных и безналичных), а также отношений связанных с их движением и использованием. Финансы, в переводе с французского «finances» означают «деньги».]
+(* <-lang_ru;;*);
+<-binary_relation;;
