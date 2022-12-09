@@ -1,0 +1,22 @@
+Devid_tepper
+
+=> nrel_main_idtf:
+    [Devid_tepper]
+    (* <- lang_ru;; *);
+    <-nrel_bank;
+=> nrel_bank:
+    [alfa_bank]
+    (*<- lang_eng;;*);
+    <-nrel_bank;
+=> nrel_gender:
+    [М]
+    (*<-lang_ru;;*);
+    <-nrel_gender;
+=> nrel_type:
+    financial_economics;
+    personal_finance;
+    <-concept_finance_type;
+
+
+<-concept_financial_employees;
+<-binary_relation;;

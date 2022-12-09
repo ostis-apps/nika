@@ -1,0 +1,16 @@
+concept_finance_type
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+    [типы](* <- lang_ru;;*);
+    [type](* <- lang_en;; *);
+    => nrel_inclusion:
+    personal_finance;
+    corporate_finance;
+    quantitative_finance;
+    managerial_finance;
+    financial_economics;
+    =>nrel_note:
+    [Финансы определяются как управление деньгами и включают в себя такие виды деятельности, как инвестирование, заимствование, кредитование, составление бюджета, сбережения и прогнозирование.]
+    (*<- lang_ru;; *);
+<-binary_relation;;
