@@ -1,0 +1,13 @@
+nrel_date_birth
+
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [дата рождения*]
+    (* <- lang_ru;; *);
+    [date birth*]
+    (* <- lang_en;; *);
+
+<-oriented_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;
