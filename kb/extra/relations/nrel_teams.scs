@@ -1,0 +1,57 @@
+nrel_teams
+
+=>nrel_first_domain:
+    concept_of_basketball;
+=>nrel_second_domain:
+    valencia;
+    barcelona;
+    malaga;
+    tenerife;
+    saragosa;
+    instituto;
+    quimsa;
+    riachuello;
+    sanlorenzo;
+    platense;
+    eureka_blaze;
+    jacksonville_generals;
+    gateway_steam;
+    champaigne_swarm;
+    bloomington_express;
+    memphis_grizzles;
+    clippers;
+    boston_seltics;
+    chicago_bulls;
+    toronto_raptors;
+    wildcats;
+    jack_jumpers;
+    melbourne_united;
+    bullets;
+    sydney_kings;
+    metropolitans;
+    strassburg;
+    sholet;
+    lemain;
+    dijoun;
+    cska;
+    spartak;
+    lokomotiv;
+    dinamo;
+    himki;
+
+=> nrel_main_idtf:
+    [команды]
+    (* <- lang_ru;; *);
+    [teams]
+    (* <- lang_en;; *);
+    
+    => nrel_note:
+        [Баскетбольные команды]
+        (*<-lang_ru;;*);
+           
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;

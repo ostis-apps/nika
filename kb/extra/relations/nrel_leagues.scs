@@ -1,0 +1,29 @@
+nrel_leagues
+
+=>nrel_first_domain:
+    concept_of_basketball;
+=>nrel_second_domain:
+    concept_acb;
+    concept_laliga;
+    concept_mpba;
+    concept_nba;
+    concept_nbl;
+    concept_nlb_pro_a;
+    concept_rfb;
+
+=> nrel_main_idtf:
+    [лиги]
+    (* <- lang_ru;; *);
+    [leagues]
+    (* <- lang_en;; *);
+    
+    => nrel_note:
+        [Баскетбольные лига]
+        (*<-lang_ru;;*);
+           
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;
