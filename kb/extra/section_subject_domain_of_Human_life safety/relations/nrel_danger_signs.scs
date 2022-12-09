@@ -1,0 +1,17 @@
+nrel_danger_signs
+
+=>nrel_first_domain:
+    concept_sources_of_danger_formation;
+=>nrel_second_domain:
+    concept_life_safety_tasks;
+
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+=> nrel_main_idtf: 
+    [Признаки опасности.](* <- lang_ru;;*);
+    [Danger signs.](* <- lang_en;; *);
+   
+<-binary_relation;;
