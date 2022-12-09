@@ -1,0 +1,37 @@
+section_subject_domain_of_plastic_products
+<- sc_node_struct;
+=> nrel_main_idtf:
+[Раздел. Предметная область пластиковые продукты](* <- lang_ru;; *);
+[Section. Subject domain of plastic products](* <- lang_en;; *);
+<-atomic_section;;
+
+section_subject_domain_of_plastic_products = [*
+subject_domain_of_plastic_products
+=> nrel_main_idtf:
+[Предметная область пластиковые продукты](* <- lang_ru;; *);
+[Subject domain of plastic products](* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+concept_plastic_products;
+-> rrel_not_maximum_studied_object_class:
+concept_polibermeton;
+concept_company_of_plastic;
+concept_director;
+concept_aminoplast;
+concept_fenoplast;
+concept_pet;
+concept_pete;
+concept_poliamid;
+concept_poliestr;
+concept_pp;
+concept_pt;
+concept_stekloplast;
+concept_plastic_bottle;
+concept_plastic_jar;
+concept_who_open;
+-> rrel_explored_relation:
+nrel_cost2;
+nrel_foundate_date4;
+nrel_data_of_birth4;
+nrel_gender4;;
+*];;
