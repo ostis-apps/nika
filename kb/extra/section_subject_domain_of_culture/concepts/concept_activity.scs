@@ -1,0 +1,61 @@
+concept_activity
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Деятельности]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Activity]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Де́ятельность — (процессы) активного взаимодействия субъекта с объектом, во время которого субъект удовлетворяет какие-либо свои потребности, достигает цели.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Деятельности]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Работа, занятие в какой-л. области. Обшественная деятельность, Педагогическая деятельность. Общественная деятельность.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+			concept_aesthetic_activity;
+			concept_cultural_studies;
+			concept_cullective_activity;
+			concept_cellective_activity_in_primary_school;
+			concept_education_at_university_based_on_collective_activity
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.Деятельности]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Культура деятельности - человеческая деятельность в её самых разных проявлениях, включая все формы и способы человеческого самовыражения и самопознания, накопление человеком и социумом в целом навыков и умений]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			nrel_approaches_of_collective_activity;
+			concept_society;
+			rrel_form;
+			concept_human
+   	 };;
+  *);;

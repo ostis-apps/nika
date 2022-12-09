@@ -1,0 +1,37 @@
+concept_practical_activities
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [Практическая деятельность]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Practical activities]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Практическая деятельность направлена, прежде всего, на преобразование мира в соответствии с поставленными человеком целями.]
+   (* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.практическая деятельность]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Практическая деятельность —  предполагает общение людей в ходе своего труда, а также совокупность ценностей, норм, правил, которые обеспечивают целенаправленный характер деятельности.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_collective;
+         concept_collective_activities_in_primary_school;
+			concept_activity;
+			nrel_prevail
+   	 };;
+  *);;

@@ -1,0 +1,45 @@
+concept_education_at_university_based_on_collective_activity
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [доминирующая культура]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [dominant culture]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Доминирующая культура, как правило, достигает господства путём тотального контроля социальных институтов, таких как религия, брак, семья, образование, армия, коммуникации, художественная поп-культура и экономика, юридическое право и политическая активность.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Доминирующая культура может быть национальной или этнической в зависимости от сложности организации данного общества и количества населения страны]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.доминирующая культура]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Доминирующая культура — совокупность принятых в обществе социальных норм, поведения, языка, ценностей и религии]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_social_norm;
+			concept_language;
+			concept_behavior;
+			concept_totality;
+			concept_value;
+			concept_religion
+   	 };;
+  *);;

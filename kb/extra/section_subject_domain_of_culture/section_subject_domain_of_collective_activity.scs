@@ -1,0 +1,69 @@
+section_subject_domain_of_collective_activity
+=> nrel_main_idtf:
+	[Раздел. Предметная область Коллективная деятельность]
+   (* <- lang_ru;; *);
+	[Section. Subject domain of Collective activity]
+   (* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_collective_activity = [*
+	subject_domain_of_collective_activity
+<- sc_node_struct;
+	=> nrel_main_idtf:
+      [Предметная область коллективная деятельность]
+      (* <- lang_ru;; *);
+      [Subject domain of collective activity]
+      (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_collective;
+      concept_activity;
+	-> rrel_not_maximum_studied_object_class:
+      concept_society;
+      concept_collective_activities_in_primary_school;
+      concept_aesthetic_activity;
+      concept_practical_activities;
+      concept_mass_society;
+      concept_development;
+      concept_upbringing;
+      concept_cognitive_activity;
+      concept_foundation;
+      concept_human;
+      concept_traditional_society;
+	-> rrel_explored_relation:
+      nrel_activity_in_collective;
+      nrel_development_with_collective;
+      nrel_approaches_of_collective_activity;
+      nrel_prescribe;
+      nrel_prevail;
+      nrel_study;
+      nrel_unite;
+      rrel_describe;
+      rrel_form;;
+*];;
+
+section_subject_domain_of_collective_activity
+-> rrel_key_sc_element:
+   subject_domain_of_collective_activity;
+   concept_foundation;
+   concept_collective;
+   concept_human;
+   concept_activity;
+   concept_development;
+   concept_upbringing;
+   concept_society;
+   concept_collective_activities_in_primary_school;
+   concept_aesthetic_activity;
+   concept_practical_activities;
+   concept_mass_society;
+   concept_cognitive_activity;
+   concept_traditional_society;
+   nrel_activity_in_collective;
+   nrel_development_with_collective;
+   nrel_approaches_of_collective_activity;
+   nrel_prescribe;
+   nrel_prevail;
+   nrel_study;
+   nrel_unite;
+   rrel_describe;
+   rrel_form;;

@@ -1,0 +1,43 @@
+concept_mass_society
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [массовое общество]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [mass society]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Особенностью массового общества является разрыв социальных связей, обособленность отдельных индивидов, отсутствии у них индивидуальности, устойчивых и общезначимых нравственных ценностей.]
+   (* <- lang_ru;; *);
+
+
+=> nrel_note:
+   [Наиболее детально проблема массового общества исследуется в работе Хосе Ортега-и-Гассета «Восстание масс» ]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.массовое общество]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Массовое общество — теоретическая модель, описывающая социальные преобразования, вызванные модернизацией]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_modernization;
+			nrel_describe;
+			concept_theoretical_model;
+			concept_social_transformation
+   	 };;
+  *);;

@@ -1,0 +1,37 @@
+concept_message_about_study
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение об обучении]
+	(* <- lang_ru;; *);
+	[message about study]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[study];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение об обучении)]
+        (* <- lang_ru;; *);
+        [Def. (message about study)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение об обучении - атомарное сообщение, являющееся запросом на получение информации про обучение]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about study - atomic message which used to make a question about studing]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
