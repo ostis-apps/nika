@@ -1,0 +1,14 @@
+nrel_foundate_date
+
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [дата основание*]
+    (* <- lang_ru;; *);
+    [founded date*]
+    (* <- lang_en;; *);
+
+<=concept_musical_istrument;
+<-oriented_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;

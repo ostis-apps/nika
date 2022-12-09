@@ -1,0 +1,41 @@
+section_subject_domain_of_musical_instruments
+<- sc_node_struct;
+=> nrel_main_idtf:
+[Раздел. Предметная область музыкальные инструменты](* <- lang_ru;; *);
+[Section. Subject domain of musical instruments](* <- lang_en;; *);
+<-atomic_section;;
+
+section_subject_domain_of_musical_instruments = [*
+subject_domain_of_musical_intruments
+=> nrel_main_idtf:
+[Предметная область музыкальные инструменты](* <- lang_ru;; *);
+[Subject domain of musical instruments](* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+concept_musical_istrument;
+-> rrel_not_maximum_studied_object_class:
+concept_balalaika;
+concept_company_name;
+concept_diamonds;
+concept_drums;
+concept_guitar;
+concept_harmonic;
+concept_keyboards;
+concept_microphone;
+concept_musical_instruments_history;
+concept_piano;
+concept_pipe;
+concept_reed;
+concept_saxophone;
+concept_spirtual;
+concept_violin;
+concept_message_about_balalaika;
+concept_message_about_hohner;
+concept_message_about_musical;
+concept_message_about_spirt;
+concept_intent_possible_class;
+-> rrel_explored_relation:
+nrel_cost;
+nrel_foundate_date;
+nrel_author_name;;
+*];;
