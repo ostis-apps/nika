@@ -1,0 +1,17 @@
+concept_gray_box_testing
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [тестирование серого ящика]
+    (* <- lang_ru;;*);
+    [gray box testing]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [представляет собой комбинацию тестирования "белого ящика" и тестирования "черного ящика". Целью этого тестирования является поиск дефектов, если таковые имеются, из-за неправильной структуры или неправильного использования приложений.]
+	(* <- lang_ru;; *);
+
+=> nrel_subdividing:
+    concept_black_box_testing;
+    concept_white_box_testing;;

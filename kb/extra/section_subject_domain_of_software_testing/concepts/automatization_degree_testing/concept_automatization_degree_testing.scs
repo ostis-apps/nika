@@ -1,0 +1,18 @@
+concept_automatization_degree_testing
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [тестирование по степени автоматизации]
+    (* <- lang_ru;;*);
+    []
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [часть процесса тестирования на этапе контроля качества в процессе разработки программного обеспечения. Оно использует программные средства для выполнения тестов и проверки результатов выполнения, что помогает сократить время тестирования и упростить его процесс.]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+    concept_manual_testing;
+    concept_automated_testing;
+    concept_semi_automated_testing;;

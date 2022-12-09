@@ -1,0 +1,18 @@
+concept_inner_structure_testing
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [тестирование внутреннего строения системы]
+    (* <- lang_ru;;*);
+    [inner structure testing]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [тестирование пространственной модели её организации]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+   concept_black_box_testing;
+   concept_white_box_testing;
+   concept_gray_box_testing;;
