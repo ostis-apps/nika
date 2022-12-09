@@ -1,0 +1,15 @@
+nrel_spheres
+<- sc_node_norole_relation;
+
+=> nrel_first_domain: 
+	concept_objects;
+=> nrel_second_domain: 
+	concept_human_life_safety; 
+=> nrel_main_idtf:
+	[сфер](* <- lang_ru;; *);
+	[spheres](* <- lang_en;; *);
+=> nrel_note:
+[Опасность реализуется на пересечении 2 сфер.]
+(* <- lang_ru;; *);
+
+<-binary_relation;;

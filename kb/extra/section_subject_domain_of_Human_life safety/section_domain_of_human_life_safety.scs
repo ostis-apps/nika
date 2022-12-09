@@ -1,0 +1,41 @@
+section_domain_of_human_life_safety
+<- sc_node_struct;
+=> nrel_main_idtf:
+[Раздел. Предметная область безопасность жизнедеятельности человека](* <- lang_ru;; *);
+	[Section. Subject domain of human life safety](* <- lang_en;; *);
+<-atomic_section;;
+
+section_domain_of_human_life_safety = [*
+	Subject_domain_of_human_life_safety
+=> nrel_main_idtf:
+	[Предметная область безопасность жизнедеятельности человека](* <- lang_ru;; *);
+	[Subject domain of human life safety](* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+concept_human_life_safety;
+
+-> rrel_not_maximum_studied_object_class:
+concept_objects;
+concept_basic_terms_and_definitions;
+concept_danger_signs;
+concept_goals;
+concept_life_safety_tasks;
+concept_principles;
+concept_sources_of_danger_formation;
+concept_spheres;
+concept_subject_of_life_safety;
+
+-> rrel_explored_relation:
+nrel_basic_terms_and_definitions;
+nrel_danger_signs;
+nrel_goals;
+nrel_human_life_safety;
+nrel_life_safety_tasks;
+nrel_objects;
+nrel_principles;
+nrel_spheres;
+nrel_subject_of_life_safety;
+nrel_sources_of_danger_formation;;
+// nrel_lab_workshop;
+// nrel_lab_work_condition;;
+*];;

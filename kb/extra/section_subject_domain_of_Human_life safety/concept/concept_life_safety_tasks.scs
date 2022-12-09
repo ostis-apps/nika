@@ -1,0 +1,19 @@
+concept_life_safety_tasks
+
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+	[задачи безопасности жизнедеятельности](* <- lang_ru;;*);
+	[life safety tasks](* <- lang_en;; *);
+=> nrel_inclusion:
+	tasks_continuous_hazard_control_and_monitoring_in_the_technosphere;
+	tasks_development_and_use_of_means_of_protection_against_hazards;
+	tasks_development_of_measures_to_eliminate_the_consequences_of_the_manifestation_of_hazards;
+	tasks_identification;
+	tasks_training_workers_and_the_public_to_protect_against_hazards;
+=> mrel_note:
+[Важнейшими задачами учреждений общего среднего образования в области обеспечения безопасности жизнедеятельности являются:
+-   обучение учащихся умению распознавать и оценивать опасности окружающей среды;
+-   раскрытие системы знаний об опасностях различного происхождения, мерах по их предотвращению, ликвидации их последствий;]
+(* <-lang_ru;;*);
+<-binary_relation;;
