@@ -1,0 +1,13 @@
+nrel_used_building_graphs_program
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [используемая программа построения графов*]
+    (* <- lang_ru;; *);
+    [used building graphs program*]
+    (* <- lang_en;; *);
+
+=> nrel_first_domain:
+    concept_building_graphs_program;
+
+=> nrel_second_domain:
+    concept_graph;;

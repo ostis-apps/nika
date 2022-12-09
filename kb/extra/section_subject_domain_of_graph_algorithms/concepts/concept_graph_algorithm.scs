@@ -1,0 +1,18 @@
+concept_graph_algorithm
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [графовый алгоритм]
+    (* <- lang_ru;; *);
+    [graph algorithm]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [операция, применяемая на графе для определения тех или иных характеристик графа.]
+    (* <- lang_ru;; *);
+
+=> nrel_inclusion:
+    concept_minimum_spanning_tree;
+    concept_graph;
+    concept_algorithm;;

@@ -1,0 +1,18 @@
+concept_color_graph
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [раскраска графа]
+    (* <- lang_ru;; *);
+    [graph coloring]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [метод назначения цветов вершинам графа, чтобы не было двух смежных вершин одинакового цвета]
+    (* <- lang_ru;; *);
+
+=> nrel_subdividing:
+    concept_color_edge;
+    concept_color_vertex;
+    concept_color_verge;;

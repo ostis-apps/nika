@@ -1,0 +1,24 @@
+tgf_common_graph
+
+=> nrel_main_idtf:
+    [простой граф на языке TGF]
+    (* <- lang_ru;;*);
+    [common graph described by TGF]
+    (* <- lang_en;;*);
+
+=> nrel_note:
+    [Простой граф с 2 узлами и 1 ребром может выглядеть следующим образом:]
+    (* <- lang_ru;;*);
+    [1 Первый узел
+    2 Второй узел
+    #
+    1 2 Ребро между ними]
+    (* <- lang_ru;;*);
+
+=> nrel_used_description_language:
+    concept_trivial_graph_format;
+
+=> nrel_used_building_graphs_program:
+    concept_graphviz;
+
+<- concept_common_graph;;

@@ -1,0 +1,13 @@
+nrel_used_description_language
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [используемый язык описания*]
+    (* <- lang_ru;; *);
+    [used description language*]
+    (* <- lang_en;; *);
+
+=> nrel_first_domain:
+    concept_description_language;
+
+=> nrel_second_domain:
+    concept_graph;;

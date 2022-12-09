@@ -1,0 +1,20 @@
+concept_cycle
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [цикл]
+    (* <- lang_ru;; *);
+    [cycle]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [цепь, в которой первая и последняя вершины графа совпадают.]
+    (* <- lang_ru;; *);
+
+=> nrel_subdividing:
+    concept_common_cycle;
+    concept_elementary_cycle;
+
+=> nrel_inclusion:
+    concept_cycle_length;;
