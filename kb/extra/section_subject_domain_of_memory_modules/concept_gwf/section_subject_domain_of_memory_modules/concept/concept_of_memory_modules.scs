@@ -1,0 +1,25 @@
+concept_of_memory_modules
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[модули памяти]
+	(* <- lang_ru;; *);
+=> nrel_inclusion:
+concept_company_director;
+concept_ddr2;
+concept_ddr3;
+concept_early_history;
+concept_fpm;
+concept_history_of_memory;
+concept_rimm;
+concept_simm;
+concept_memory_company;
+=> nrel_note:
+     [Модуль памяти и, соответственно, разъем для установки модуля памяти в области подключения, имеют размер 133,35 мм .
+
+Для корректной установки модуля памяти необходимо: 1) выбрать модуль подходящего типа и 2) правильным способом его ориентировать.]
+            (* <- lang_ru;; *);
+=>nrel_inclusion:
+    ddr4;
+    motherboard;
+<-binary_relation;; 
