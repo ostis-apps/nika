@@ -1,0 +1,28 @@
+nrel_gender4
+
+=>nrel_first_domain:
+    concept_plastic_products;
+=>nrel_second_domain:
+    concept_director;
+    concept_who_open;
+
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+=> nrel_main_idtf:
+    [пол*]
+    (* <- lang_ru;; *);
+    [gender*]
+    (* <- lang_en;; *);
+    => nrel_note:
+        [М - Мужчина
+        Ж - Женшина]
+        (*<-lang_ru;;*);
+    => nrel_note:
+        [M - Men
+        W - Women]
+        (*<-lang_en;;*);
+
+<-binary_relation;;
