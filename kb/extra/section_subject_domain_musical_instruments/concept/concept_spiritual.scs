@@ -1,0 +1,15 @@
+concept_spirtual
+
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+            [Духовные]
+            (* <- lang_ru;; *);
+=> nrel_note:
+[Духовы́е музыка́льные инструме́нты — музыкальные инструменты, источником звука в которых является колеблющийся столб воздуха, находящийся в трубке инструмента.]
+(* <- lang_ru;; *);
+<= nrel_inclusion:
+concept_saxophone;
+concept_pipe;
+
+<-binary_relation;;

@@ -1,0 +1,37 @@
+concept_message_about_spirt
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о духовые музыкальные инструменты]
+	    (* <- lang_ru;; *);
+	[message about spirtual]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_spirt];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о духовые музыкальные инструменты)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about spirutal)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о духовые музыакльные инструменты - атомарное сообщение, которое содержит виды человекообразных, информацию о которых необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about spitrual is an atomic message that contains hominoidea division information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

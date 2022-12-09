@@ -1,0 +1,19 @@
+nrel_cost
+
+=>nrel_first_domain:
+    concept_musical_istrument;
+    
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [цена*]
+    (* <- lang_ru;; *);
+    [cost]
+    (* <- lang_en;;*);
+
+
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;
