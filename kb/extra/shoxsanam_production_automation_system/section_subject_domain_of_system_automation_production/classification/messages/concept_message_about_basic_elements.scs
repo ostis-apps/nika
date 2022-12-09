@@ -1,0 +1,46 @@
+concept_message_about_basic_elements
+
+<- sc_node_not_relation;
+
+=> nrel_main_idtf:
+    [сообщение о основные элементы]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_wit_ai_idtf:
+    [about_basic_elements];
+
+<- rrel_key_sc_element:
+    ...
+
+    (*
+        => nrel_main_idtf:
+            [Опр. (сообщение о  основные элементы)]
+
+            (* 
+                <- lang_ru;; 
+            *);;
+        
+        <- definition;;
+    
+        <= nrel_sc_text_translation:
+        ...
+        
+            (*
+                -> rrel_example:
+                    [сообщение о  основные элементы - атомарное сообщение,
+                    которое содержит понятие  основные элементы, элементы автоматизации производства которого
+                    необходимо найти.]
+
+                    (* 
+                        <- lang_ru;; 
+                    *);;
+            *);;
+
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+    *);;

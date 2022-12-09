@@ -1,0 +1,43 @@
+section_subject_domain_of_system_automation_production
+<- sc_node_struct;
+=> nrel_main_idtf:
+[Раздел. Предметная область системы автоматизации производство](* <- lang_ru;; *);
+	[Section. Subject area of automation systems production](* <- lang_en;; *);
+<-atomic_section;;
+
+section_subject_domain_of_system_automation_production = [*
+	subject_domain_of_computer_games
+=> nrel_main_idtf:
+	[Предметная область систем автоматизации производство](* <- lang_ru;; *);
+	[Subject area of automation systems production](* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+system_automation_production;
+// concept_history_computer_games;
+
+-> rrel_not_maximum_studied_object_class:
+
+concept_industry;
+concept_automation_levels;
+concept_automation_tools;
+concept_basic_elements;
+concept_company;
+concept_main_goals;
+concept_positive_and_negative_effects_of_automation;
+concept_principles;
+concept_types;
+
+-> rrel_explored_relation:
+nrel_automation_systems_equipment;
+nrel_effects_of_automation;
+nrel_founded_date;
+nrel_goals;
+nrel_implement_automation;
+nrel_principles_of_industrial;
+nrel_production_example;
+nrel_system_automation_production;
+nrel_levels;
+nrel_automation_types;;
+// nrel_lab_workshop;
+// nrel_lab_work_condition;;
+*];;

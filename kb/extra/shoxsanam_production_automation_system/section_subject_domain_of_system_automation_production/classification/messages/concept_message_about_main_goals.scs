@@ -1,0 +1,46 @@
+concept_message_about_main_goals
+
+<- sc_node_not_relation;
+
+=> nrel_main_idtf:
+    [сообщение об основные цели]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_wit_ai_idtf:
+    [about_main_goals];
+
+<- rrel_key_sc_element:
+    ...
+
+    (*
+        => nrel_main_idtf:
+            [Опр. (сообщение об  основные цели)]
+
+            (* 
+                <- lang_ru;; 
+            *);;
+        
+        <- definition;;
+    
+        <= nrel_sc_text_translation:
+        ...
+        
+            (*
+                -> rrel_example:
+                    [Сообщение об основные цели - атомарное сообщение,
+                    которое содержит  основные цели, определение которой
+                    необходимо найти.]
+
+                    (* 
+                        <- lang_ru;; 
+                    *);;
+            *);;
+
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+    *);;

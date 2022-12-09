@@ -1,0 +1,53 @@
+concept_phrase_about_automation_tools
+
+<- sc_node_class;
+
+<= nrel_inclusion:
+    concept_phrase;
+
+<- rrel_not_maximum_studied_object_class:
+    subject_domain_of_phrases;
+
+=> nrel_main_idtf:
+	[фраза про  средства автоматизации]
+
+	(* 
+        <- lang_ru;; 
+    *);
+
+	[phrase about automation tools]
+
+	(* 
+        <- lang_en;; 
+    *);
+
+<- rrel_key_sc_element:
+	...
+
+	(*
+        => nrel_main_idtf:
+            [Опр. (фраза про  средства автоматизации)]
+
+            (* 
+                <- lang_ru;; 
+            *);;
+        
+        <- definition;;
+
+        <= nrel_sc_text_translation:
+            ...
+
+            (*
+                -> rrel_example:
+                    [Фраза про средства автоматизации - фраза, содержащая некоторую информацию о разработанные приборы и устройства.]
+
+                    (* 
+                        <- lang_ru;; 
+                    *);;
+            *);;
+
+        <= nrel_using_constants:
+            {
+                concept_phrase
+            };;
+	*);;

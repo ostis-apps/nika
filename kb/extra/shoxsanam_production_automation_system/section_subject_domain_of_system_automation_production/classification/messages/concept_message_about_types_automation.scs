@@ -1,0 +1,46 @@
+concept_message_about_types_automation
+
+<- sc_node_not_relation;
+
+=> nrel_main_idtf:
+    [сообщение о типы автоматизации]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_wit_ai_idtf:
+    [about_types_automation];
+
+<- rrel_key_sc_element:
+    ...
+
+    (*
+        => nrel_main_idtf:
+            [Опр. (сообщение о типы автоматизации)]
+
+            (* 
+                <- lang_ru;; 
+            *);;
+        
+        <- definition;;
+    
+        <= nrel_sc_text_translation:
+        ...
+        
+            (*
+                -> rrel_example:
+                    [Сообщение о типы автоматизации - атомарное сообщение,
+                    которое содержит понятие типы автоматизации, определение которого
+                    необходимо найти.]
+
+                    (* 
+                        <- lang_ru;; 
+                    *);;
+            *);;
+
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+    *);;

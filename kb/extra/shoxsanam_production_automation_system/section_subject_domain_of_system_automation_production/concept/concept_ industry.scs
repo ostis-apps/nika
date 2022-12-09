@@ -1,0 +1,20 @@
+concept_industry
+
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+	[Сферы применения](* <- lang_ru;;*);
+	[Applications](* <- lang_en;; *);
+    
+=> nrel_inclusion:
+    production_directions_agriculture;
+    production_directions_energy;
+    production_directions_heavy_industry;
+    production_directions_medicine;
+    production_directions_metallurgy;
+    production_directions_trade;
+
+=> mrel_note:
+[Автоматизировать можно почти любое производство, на котором имеют место рутинные процессы. «Односложные», но цикличные операции встречаются во многих отраслях]
+(* <-lang_ru;;*);
+<-binary_relation;;
