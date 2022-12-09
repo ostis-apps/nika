@@ -1,0 +1,16 @@
+concept_number_of_cards_in_a_deck
+
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+	[Количество карт в колоде](* <- lang_ru;;*);
+	[Number of cards in a deck](* <- lang_en;; *);
+=> nrel_inclusion:
+	number_of_cards_in_a_deck_52_cards_in_a_deck;
+	number_of_cards_in_a_deck_36_cards_in_a_deck;
+    number_of_cards_in_a_deck_32_cards_in_a_deck;
+    number_of_cards_in_a_deck_24_cards_in_a_deck;
+=> mrel_note:
+[Стандартная (французская) колода включает 54 карты: 52 основных, каждая из которых относится к одной из четырёх мастей (двух цветов) и имеет одно из 13 достоинств, и 2 специальные карты, так называемые джокеры, обычно различающиеся по рисунку. Для различных игр может использоваться как вся колода, так и её сокращённые варианты, не включающие джокеров.]
+(* <-lang_ru;;*);
+<-binary_relation;;

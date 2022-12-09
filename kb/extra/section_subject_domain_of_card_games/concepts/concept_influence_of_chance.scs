@@ -1,0 +1,15 @@
+concept_influence_of_chance
+
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+	[Влияние случайности](* <- lang_ru;;*);
+	[Influence of chance](* <- lang_en;; *);
+=> nrel_inclusion:
+	high_influence_of_chance;
+	average_influence_of_chance;
+    low_influence_of_chance;
+=> mrel_note:
+[В карточных играх наиболее эффективно моделируется случайность,противодействие и содействие практически отсутствуют.]
+(* <-lang_ru;;*);
+<-binary_relation;;

@@ -1,0 +1,26 @@
+game_durak
+
+=> nrel_main_idtf:
+    [Дурак]
+    (* <- lang_ru;; *);
+    [Durak]
+    (* <- lang_en;; *);
+=> nrel_goal_of_the_game:
+    goal_of_the_game_get_rid_of_all_cards;
+    <-concept_goal_of_the_game;
+=> nrel_influence_of_chance:
+    average_influence_of_chance;
+    <-concept_influence_of_chance;
+=> nrel_deck_type:
+    standart_deck_type;
+    satin_deck_type;
+    <-concept_deck_type;
+=> nrel_number_of_cards_in_a_deck:
+    52_cards_in_a_deck;
+    36_cards_in_a_deck;
+    <-concept_number_of_cards_in_a_deck;
+=> nrel_note:
+[Дурак — карточная игра, состоящая из колоды 36 карт четырех мастей: от шести до десяти, валет, дама, король и туз. В нее одновременно играют до шести игроков, но чаще всего играют вдвоем. Участникам выдается по шесть карт. Раздающий достает одну общую карту, определяющую козырей в текущем раунде. Остальные кладутся на нее лицом вниз так, чтобы она осталась на виду.]
+(* <-lang_ru;;*);
+
+<-binary_relation;;

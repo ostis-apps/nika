@@ -1,0 +1,21 @@
+nrel_deck_type
+
+=>nrel_first_domain:
+    concept_card_games;
+=>nrel_second_domain:
+    concept_deck_type;
+
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [тип_колоды]
+    (* <- lang_ru;; *);
+    [deck type]
+    (* <- lang_en;;*);
+<=concept_company;
+
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;

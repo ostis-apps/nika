@@ -1,0 +1,17 @@
+concept_card_games
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Карточная игра]
+	(* <- lang_ru;; *);
+=> nrel_inclusion:
+    concept_early_history_of_card_games;
+    concept_game_examples;
+    concept_deck_type;
+    concept_goal_of_the_game;
+    concept_influence_of_chance;
+    concept_number_of_cards_in_a_deck;
+=> nrel_note:
+            [Игра с применением игральных карт, характеризуется случайным начальным состоянием, для определения которого используется набор (колода) карт для той или иной игры.]
+            (* <- lang_ru;; *);
+<-binary_relation;;   

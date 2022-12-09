@@ -1,0 +1,19 @@
+concept_game_list
+
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+	[список игр](* <- lang_ru;;*);
+	[game list](* <- lang_en;; *);
+
+
+=> nrel_inclusion:
+	game_blackjack;
+	game_poker;
+	game_durak;
+	game_uno;
+=> mrel_note:
+[на самом деле карточных игр очень много, поэтому в этой концепции показаны только те игры, которые доступны в системе.]
+(* <-lang_ru;;*);
+<-concept_card_games;
+<-binary_relation;;

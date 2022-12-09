@@ -1,0 +1,24 @@
+game_blackjack
+
+=> nrel_main_idtf:
+    [Блэкджек]
+    (* <- lang_ru;; *);
+    [Blackjack]
+    (* <- lang_en;; *);
+=> nrel_goal_of_the_game:
+    goal_of_the_game_score_21_points;
+    <-concept_goal_of_the_game;
+=> nrel_influence_of_chance:
+    high_influence_of_chance;
+    <-concept_influence_of_chance;
+=> nrel_deck_type:
+    standart_deck_type;
+    <-concept_deck_type;
+=> nrel_number_of_cards_in_a_deck:
+    52_cards_in_a_deck;
+    <-concept_number_of_cards_in_a_deck;
+=> nrel_note:
+[одна из самых популярных карточных игр в казино по всему миру. Большая популярность игры обуславливается простыми правилами, скоростью игры и наиболее простой стратегией в подсчёте карт. Тем не менее популярность игра завоевала не сразу.]
+(* <-lang_ru;;*);
+
+<-binary_relation;;

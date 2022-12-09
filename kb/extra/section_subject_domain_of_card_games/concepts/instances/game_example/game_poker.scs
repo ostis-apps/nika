@@ -1,0 +1,26 @@
+game_poker
+
+=> nrel_main_idtf:
+    [Покер]
+    (* <- lang_ru;; *);
+    [Poker]
+    (* <- lang_en;; *);
+=> nrel_goal_of_the_game:
+    goal_of_the_game_get_the_best_combination_of_five_cards;
+    <-concept_goal_of_the_game;
+=> nrel_influence_of_chance:
+    average_influence_of_chance;
+    <-concept_influence_of_chance;
+=> nrel_deck_type:
+    standart_deck_type;
+    <-concept_deck_type;
+=> nrel_number_of_cards_in_a_deck:
+    32_cards_in_a_deck;
+    36_cards_in_a_deck;
+    52_cards_in_a_deck;
+    <-concept_number_of_cards_in_a_deck;
+=> nrel_note:
+[ карточная игра, цель которой собрать выигрышную комбинацию или вынудить всех соперников прекратить участвовать в игре. Игра идёт с полностью или частично закрытыми картами. Конкретные правила могут варьироваться в зависимости от разновидности покера. Обобщающими элементами всех разновидностей покера являются комбинации и наличие торговли в процессе игры.]
+(* <-lang_ru;;*);
+
+<-binary_relation;;
