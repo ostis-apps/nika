@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="2057279081248" parent="0" x="-61.7307" y="340.457" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Уровни автоматизации производства:
+
+Ноль - участие человека исключено только для выполнения рабочих ходов.
+
+Автоматизация рабочего цикла первого уровня исключает участие человека при выполнении холостых ходов на конкретном оборудовании.
+
+Автоматизация второго уровня. Здесь решаются вопросы доставки и отгрузки, контроля управления системами машины и утилизации отходов.
+
+Третий уровень автоматизации. Он охватывает все этапы производственного процесса, от самых простых до испытаний и отгрузки готовой продукции.]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_answer_about_automation_levels_phrase" shapeColor="0" id="2057279077920" parent="0" left="0" top="0" right="495" bottom="33" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-574.52" y="238.019" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_answer_about_automation_levels_phrase" shapeColor="0" id="2057279067936" parent="0" left="0" top="0" right="495" bottom="33" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-289.33" y="61.0189" haveBus="false" idtf_pos="4">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="2057279071680" parent="0" left="0" top="0" right="80" bottom="33" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-643.33" y="321.519" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase" shapeColor="0" id="2057279070224" parent="0" left="0" top="0" right="162" bottom="33" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-118.83" y="60.5189" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_inclusion" shapeColor="0" id="2057279082496" parent="0" left="0" top="0" right="141" bottom="33" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-209.83" y="-7.48113" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2057279083920" parent="0" id_b="2057279077920" id_e="2057279081248" b_x="-574.52" b_y="238.019" e_x="-61.7307" e_y="340.457" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="2057279085600" parent="0" id_b="2057279070224" id_e="2057279067936" b_x="-118.83" b_y="60.5189" e_x="-289.33" e_y="61.0189" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2057279098080" parent="0" id_b="2057279082496" id_e="2057279085600" b_x="-209.83" b_y="-7.48113" e_x="-788.83" e_y="-76.9811" dotBBalance="0" dotEBalance="0.531597">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2057279094720" parent="0" id_b="2057279071680" id_e="2057279081248" b_x="-643.33" b_y="321.519" e_x="-61.7307" e_y="340.457" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>

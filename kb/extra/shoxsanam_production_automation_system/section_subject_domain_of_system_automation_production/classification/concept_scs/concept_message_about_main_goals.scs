@@ -1,0 +1,42 @@
+concept_message_about_main_goals
+
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение об основные цели]
+	    (* <- lang_ru;; *);
+	[message about main goals]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_main_goals];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение об основные цели)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about main goals)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение об основные цели - атомарное сообщение,
+                    которое содержит  основные цели, определение которой
+                    необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about the main goals - atomic message,
+            which contains the main goals, the definition of which
+            needs to be found.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

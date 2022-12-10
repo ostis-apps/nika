@@ -1,0 +1,24 @@
+concept_positive_and_negative_effects_of_automation
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+	[Положительные и отрицательные последствия автоматизации](* <- lang_ru;;*);
+	[Positive and negative effects of automation](* <- lang_en;; *);
+
+
+=> nrel_inclusion:
+    // =>  Positive effects
+	benefits_of_automation_productivity_increase;
+	benefits_of_automation_providing_security;
+	benefits_of_automation_time_reduction;
+
+	// =>  Negative effects
+	disadvantages_of_automation_lack_of_professionals;
+	disadvantages_of_automation_rising_unemployment;
+	disadvantages_of_automation_technical_vulnerability;
+	
+=> nrel_note:
+[Однако помимо положительных характеристик у данного процесса есть и отрицательные, главная среди которых – сокращение рабочих мест, и, как следствие, повышение безработицы и снижение покупательной способности людей.]
+(* <-lang_ru;;*);
+
+<-binary_relation;;

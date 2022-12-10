@@ -1,0 +1,26 @@
+nrel_automation_systems_equipment
+
+
+=>nrel_first_domain:
+    concept_automation_tools;
+=>nrel_second_domain:
+    concept_basic_elements;
+    
+
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+
+
+=> nrel_main_idtf:
+	[Средства автоматизации]
+	(* <- lang_ru;; *);
+    [Automation tools]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [Средства автоматизации производства – это специально разработанные приборы и устройства, которые могут использоваться по отдельности или в качестве элемента программно-аппаратного комплекса и выполняют ряд поставленных задач без вмешательства человека.]
+    (* <- lang_ru;; *);;
+    
