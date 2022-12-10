@@ -1,0 +1,37 @@
+concept_message_about_microservice_architecture
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о микросервисной архитектуре]
+	(* <- lang_ru;; *);
+	[message about microservice architecture]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[microservice_architecture];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о Микросервисной архитектуре)]
+        (* <- lang_ru;; *);
+        [Def. (message about Microservice architecture)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о Микросервисной архитектуре - атомарное сообщение, являющееся запросом на получение информации про Микросервисную архитектуру]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about microservice architecture - atomic message which used to make a question about microservice architecture]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

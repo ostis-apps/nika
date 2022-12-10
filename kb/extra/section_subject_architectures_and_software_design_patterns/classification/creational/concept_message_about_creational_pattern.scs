@@ -1,0 +1,37 @@
+concept_message_about_creational_pattern
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о порождающем шаблоне]
+	(* <- lang_ru;; *);
+	[message about creational pattern]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[creational_pattern];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о Порождающем шаблоне)]
+        (* <- lang_ru;; *);
+        [Def. (message about Creational pattern)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о Порождающем шаблоне - атомарное сообщение, являющееся запросом на получение информации про Порождающий шаблон]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about creational pattern - atomic message which used to make a question about creational pattern]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

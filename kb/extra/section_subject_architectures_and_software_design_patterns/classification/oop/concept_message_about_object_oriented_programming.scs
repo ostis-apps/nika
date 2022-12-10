@@ -1,0 +1,37 @@
+concept_message_about_object_oriented_programming
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о Объектно-ориентированном программировании]
+	(* <- lang_ru;; *);
+	[message about object-oriented programming]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[oop];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о объектно-ориентированном программировании)]
+        (* <- lang_ru;; *);
+        [Def. (message about Object-oriented programming)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о Объектно-ориентированном программировании - атомарное сообщение, являющееся запросом на получение информации про Объектно-ориентированном программировании]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about object-oriented programming - atomic message which used to make a question about object-oriented programming]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
