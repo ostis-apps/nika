@@ -1,0 +1,28 @@
+concept_lost_treasure
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Утерянное сокровище] (* <- lang_ru;; *);
+	[Lost treasure] (* <- lang_en;; *);
+
+<= nrel_inclusion: concept_treasure;
+<= nrel_inclusion: concept_secret_of_mankind;
+
+=> nrel_note:
+	[Многие утерянные сокровище не имеют достоверных доказательст существования.]
+	(* <- lang_ru;; *);
+
+<- rrel_key_sc_element: ... (*
+    <- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Утерянное сокровище)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		->rrel_example:
+			[Утерянное сокровище - сокровище, местоположение и которого неизвестно.]
+			(* <- lang_ru;; *);;
+	*);;
+    <= nrel_using_constants: {
+        concept_lost_treasure;
+        concept_treasure
+   	};;
+*);;

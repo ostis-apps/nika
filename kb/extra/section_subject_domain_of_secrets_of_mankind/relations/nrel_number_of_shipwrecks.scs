@@ -1,0 +1,38 @@
+nrel_number_of_shipwrecks
+<- sc_node_role_relation;
+<- relation;
+<- role_relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+	[Количество затонувших кораблей* ]
+	(* <- lang_ru;; *);
+	[Number of shipwrecks* ]
+	(* <- lang_en;; *);
+	
+=> nrel_first_domain: concept_anomalous_zone;
+=> nrel_second_domain: number;
+=> nrel_definitional_domain: ... (*
+	<= nrel_combination:{
+		concept_anomalous_zone;
+		number
+	};;
+*);
+
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Количество затонувших кораблей* )] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		-> rrel_example:
+			[Количество затонувших кораблей* - бинарное отношение, связывающее аномальную зону и количество затонувших кораблей.]
+			(* <- lang_ru;; *);;
+	*);;
+	<= nrel_using_constants:{
+        binary_relation;
+        concept_anomalous_zone
+	};;
+*);;

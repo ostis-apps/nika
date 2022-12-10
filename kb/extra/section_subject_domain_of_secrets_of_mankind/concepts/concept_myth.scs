@@ -1,0 +1,24 @@
+concept_myth
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Миф] (* <- lang_ru;; *);
+	[Myth] (* <- lang_en;; *);
+
+=> nrel_note:
+	[Первоначально под мифом понималась совокупность абсолютных истин.]
+	(* <- lang_ru;; *);
+
+<- rrel_key_sc_element: ... (*
+    <- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Миф)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		->rrel_example:
+			[Миф - повествование, передающее представления людей о мире.]
+			(* <- lang_ru;; *);;
+	*);;
+    <= nrel_using_constants: {
+        concept_myth
+   	};;
+*);;

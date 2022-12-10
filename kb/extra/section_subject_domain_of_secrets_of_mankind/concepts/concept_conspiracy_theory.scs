@@ -1,0 +1,26 @@
+concept_conspiracy_theory
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Теоия заговора] (* <- lang_ru;; *);
+	[Conspiracy theory] (* <- lang_en;; *);
+
+<= nrel_inclusion: concept_secret_of_mankind;
+
+=> nrel_note:
+	[В общественном дискурсе термин используется в отрицательном смысле, нередко — как синоним «явно некорректной теории».]
+	(* <- lang_ru;; *);
+
+<- rrel_key_sc_element: ... (*
+    <- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Теоия заговора)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		->rrel_example:
+			[Теоия заговора - концепция, объявляющая отдельные события результатом заговора со стороны некоторой группы людей.]
+			(* <- lang_ru;; *);;
+	*);;
+    <= nrel_using_constants: {
+        concept_conspiracy_theory
+   	};;
+*);;

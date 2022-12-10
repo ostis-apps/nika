@@ -1,0 +1,28 @@
+concept_ancient_statue
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Древняя статуя] (* <- lang_ru;; *);
+	[Ancient] (* <- lang_en;; *);
+
+<= nrel_inclusion: concept_statue;
+<= nrel_inclusion: concept_ancient_building;
+
+=> nrel_note:
+	[Многие древние статуи поражают своими размерами и проработкой.]
+	(* <- lang_ru;; *);
+
+<- rrel_key_sc_element: ... (*
+    <- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Древняя статуя)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		->rrel_example:
+			[Древняя статуя - статуя, возраст которой несколько тысяч лет.]
+			(* <- lang_ru;; *);;
+	*);;
+    <= nrel_using_constants: {
+        concept_statue;
+        concept_ancient_statue
+   	};;
+*);;

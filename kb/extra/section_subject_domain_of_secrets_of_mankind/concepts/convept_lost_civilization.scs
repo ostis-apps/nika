@@ -1,0 +1,29 @@
+concept_lost_civilization
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Исчезнувшая цивилизация] (* <- lang_ru;; *);
+	[Lost civilization] (* <- lang_en;; *);
+
+<= nrel_inclusion: concept_secret_of_mankind;
+<= nrel_inclusion: concept_civilization;
+
+=> nrel_note:
+	[Есть и различные мифические и гипотетические цивилизации, доказательства которых либо косвенны, либо вовсе отсутствуют.]
+	(* <- lang_ru;; *);
+
+<- rrel_key_sc_element: ... (*
+    <- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Исчезнувшая цивилизация)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		->rrel_example:
+			[Исчезнувшая цивилизация - цивилизация, которая исчезла при мифических обстоятельствах.]
+			(* <- lang_ru;; *);;
+	*);;
+    <= nrel_using_constants: {
+        concept_civilization;
+        concept_myth;
+        concept_lost_civilization
+   	};;
+*);;

@@ -1,0 +1,28 @@
+concept_anomalous_zone
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Аномальная зона] (* <- lang_ru;; *);
+	[Anomaluos zone] (* <- lang_en;; *);
+
+<= nrel_inclusion: concept_anomaly;
+<= nrel_inclusion: concept_secret_of_mankind;
+
+=> nrel_note:
+	[Традиционно принято делить аномальные зоны на места силы и гиблые места.]
+	(* <- lang_ru;; *);
+
+<- rrel_key_sc_element: ... (*
+    <- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Аномальная зона)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		->rrel_example:
+			[Аномальная зона -  область, где долгое время с некоторой регулярностью наблюдаются аномальные явления.]
+			(* <- lang_ru;; *);;
+	*);;
+    <= nrel_using_constants: {
+        concept_anomaly;
+        concept_anomalous_zone
+   	};;
+*);;

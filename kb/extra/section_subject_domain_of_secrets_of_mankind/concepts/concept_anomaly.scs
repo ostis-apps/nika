@@ -1,0 +1,23 @@
+concept_anomaly
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Аномалия] (* <- lang_ru;; *);
+	[Anomaly] (* <- lang_en;; *);
+
+<= nrel_inclusion: concept_natural_phenomenon;
+
+<- rrel_key_sc_element: ... (*
+    <- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Аномалия)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		->rrel_example:
+			[Аномалия - необъяснимое природное явления, отклонение от нормы, от общей закономерности природы.]
+			(* <- lang_ru;; *);;
+	*);;
+    <= nrel_using_constants: {
+        concept_natural_phenomenon;
+        concept_anomaly
+   	};;
+*);;

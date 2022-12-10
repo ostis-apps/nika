@@ -1,0 +1,27 @@
+concept_discoverer
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Первооткрыватель] (* <- lang_ru;; *);
+	[Discoverer] (* <- lang_en;; *);
+
+<= nrel_inclusion: concept_person;
+
+=> nrel_note:
+	[Статус первооткрывателя в некоторых отраслях человеческой деятельности даёт особые права.]
+	(* <- lang_ru;; *);
+
+<- rrel_key_sc_element: ... (*
+    <- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Первооткрыватель)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		->rrel_example:
+			[Первооткрыватель - человек, первым открывший что-либо новое.]
+			(* <- lang_ru;; *);;
+	*);;
+    <= nrel_using_constants: {
+        concept_discoverer;
+        concept_person
+   	};;
+*);;

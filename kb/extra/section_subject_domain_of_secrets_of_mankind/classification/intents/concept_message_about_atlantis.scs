@@ -1,0 +1,27 @@
+concept_message_about_atlantis
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение об Атлантиде]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_atlantis];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение об Атлантиде)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение об Атлантиде - атомарное сообщение,
+    которое содержит какую-либо информацию об Атлантиде.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

@@ -1,0 +1,27 @@
+concept_relic
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Реликвия] (* <- lang_ru;; *);
+	[Relic] (* <- lang_en;; *);
+
+<= nrel_inclusion: concept_treasure;
+
+=> nrel_note:
+	[Исторические реликвии являются своего рода документами, свидетелями былых событий.]
+	(* <- lang_ru;; *);
+
+<- rrel_key_sc_element: ... (*
+    <- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Реликвия)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		->rrel_example:
+			[Реликвия - свято хранимое, почитаемое скопровище, связанная с историческими или религиозными событиями прошлого.]
+			(* <- lang_ru;; *);;
+	*);;
+    <= nrel_using_constants: {
+        concept_treasure;
+        concept_relic
+   	};;
+*);;
