@@ -1,0 +1,20 @@
+concept_civilization
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Цивилизация] (* <- lang_ru;; *);
+	[Civilization] (* <- lang_en;; *);
+
+<- rrel_key_sc_element: ... (*
+    <- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Цивилизация)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		->rrel_example:
+			[Цивилизация - локализованное во времени и пространстве общество.]
+			(* <- lang_ru;; *);;
+	*);;
+    <= nrel_using_constants: {
+        concept_civilization
+   	};;
+*);;

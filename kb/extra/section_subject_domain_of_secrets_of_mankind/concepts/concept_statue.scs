@@ -1,0 +1,26 @@
+concept_statue
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Статуя] (* <- lang_ru;; *);
+	[Statue] (* <- lang_en;; *);
+
+<= nrel_inclusion: concept_building;
+
+=> nrel_note:
+	[Статуя, как правило, больше натуральной величины фигуры человека.]
+	(* <- lang_ru;; *);
+
+<- rrel_key_sc_element: ... (*
+    <- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Статуя)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		->rrel_example:
+			[Статуя - один из основных видов объёмной скульптуры большого размера, изображающей стоящую фигуру человека.]
+			(* <- lang_ru;; *);;
+	*);;
+    <= nrel_using_constants: {
+        concept_statue
+   	};;
+*);;

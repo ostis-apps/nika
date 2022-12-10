@@ -1,0 +1,27 @@
+concept_geoglyph
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Геоглиф] (* <- lang_ru;; *);
+	[Goglyph] (* <- lang_en;; *);
+
+<= nrel_inclusion: concept_pattern;
+
+=> nrel_note:
+	[Существует несколько способов создания геоглифов: путём снятия верхнего слоя почвы по периметру узора, путём насыпания щебня там, где должна пройти линия узора.]
+	(* <- lang_ru;; *);
+
+<- rrel_key_sc_element: ... (*
+    <- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Геоглиф)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		->rrel_example:
+			[Геоглиф - нанесённый на землю геометрический или фигурный узор, как правило, длиной свыше 4 метров.]
+			(* <- lang_ru;; *);;
+	*);;
+    <= nrel_using_constants: {
+        concept_geoglyph;
+        concept_pattern
+   	};;
+*);;

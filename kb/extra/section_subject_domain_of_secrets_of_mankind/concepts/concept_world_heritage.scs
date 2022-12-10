@@ -1,0 +1,24 @@
+concept_world_heritage
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Всемирное наследие] (* <- lang_ru;; *);
+	[World heritage] (* <- lang_en;; *);
+
+=> nrel_note:
+	[По состоянию на 2022 год в Списке всемирного наследия — 1154 объекта.]
+	(* <- lang_ru;; *);
+
+<- rrel_key_sc_element: ... (*
+    <- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Всемирное наследие)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		->rrel_example:
+			[Всемирное наследие - природные или созданные человеком объекты, приоритетными задачами по отношению к которым являются их сохранение .]
+			(* <- lang_ru;; *);;
+	*);;
+    <= nrel_using_constants: {
+        concept_world_heritage
+   	};;
+*);;

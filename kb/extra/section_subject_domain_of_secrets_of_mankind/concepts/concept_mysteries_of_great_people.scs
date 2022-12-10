@@ -1,0 +1,27 @@
+concept_mysteries_of_great_people
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Загадки великих людей] (* <- lang_ru;; *);
+	[Mysteries of great people] (* <- lang_en;; *);
+
+<= nrel_inclusion: concept_secret_of_mankind;
+
+=> nrel_note:
+	[Многие тайны связанные со смертью великих ученых/правителей до сих пор остаются не раскрыты.]
+	(* <- lang_ru;; *);
+
+<- rrel_key_sc_element: ... (*
+    <- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Загадки великих людей)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		->rrel_example:
+			[Загадки великих людей - загадки, связанные с деятельностью или смертью знаменитых людей.]
+			(* <- lang_ru;; *);;
+	*);;
+    <= nrel_using_constants: {
+        concept_secret;
+        concept_mysteries_of_great_people
+   	};;
+*);;

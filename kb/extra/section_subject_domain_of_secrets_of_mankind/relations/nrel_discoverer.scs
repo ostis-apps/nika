@@ -1,0 +1,38 @@
+nrel_discoverer
+<- sc_node_role_relation;
+<- relation;
+<- role_relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+	[Первооткрыватель* ]
+	(* <- lang_ru;; *);
+	[Discoverer* ]
+	(* <- lang_en;; *);
+
+=> nrel_first_domain: concept_ancient_building;
+=> nrel_second_domain: concept_discoverer;
+=> nrel_definitional_domain: ... (*
+	<= nrel_combination:{
+		concept_ancient_building;
+		concept_discoverer
+	};;
+*);
+
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Первооткрыватель* )] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		-> rrel_example:
+			[Первооткрыватель* - бинарное отношение, связывающее древнюю постройку и ее открывателя.]
+			(* <- lang_ru;; *);;
+	*);;
+	<= nrel_using_constants:{
+		concept_ancient_building;
+		concept_discoverer
+	};;
+*);;

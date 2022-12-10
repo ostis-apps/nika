@@ -1,0 +1,20 @@
+concept_treasure
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Сокровище] (* <- lang_ru;; *);
+	[Treasure] (* <- lang_en;; *);
+
+<- rrel_key_sc_element: ... (*
+    <- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Сокровище)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		->rrel_example:
+			[Сокровище - что-либо или что-нибудь ценное для человека, а также драгоценность, дорогая вещь.]
+			(* <- lang_ru;; *);;
+	*);;
+    <= nrel_using_constants: {
+        concept_treasure
+   	};;
+*);;

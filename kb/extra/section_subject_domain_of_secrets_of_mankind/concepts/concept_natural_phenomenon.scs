@@ -1,0 +1,24 @@
+concept_natural_phenomenon
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Природное явление] (* <- lang_ru;; *);
+	[Natural phenomenon] (* <- lang_en;; *);
+
+=> nrel_note:
+	[Лубое яление, которое произошло без вмешательства человека, является природным.]
+	(* <- lang_ru;; *);
+
+<- rrel_key_sc_element: ... (*
+    <- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Природное явление)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		->rrel_example:
+			[Природное явление - событие, которое происходит в природе естественным образом.]
+			(* <- lang_ru;; *);;
+	*);;
+    <= nrel_using_constants: {
+        concept_natural_phenomenon
+   	};;
+*);;

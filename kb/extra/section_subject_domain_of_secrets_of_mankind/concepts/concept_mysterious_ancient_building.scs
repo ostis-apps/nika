@@ -1,0 +1,29 @@
+concept_mysterious_ancient_building
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Загадочное древнее сооружение] (* <- lang_ru;; *);
+	[Mysterious ancient building] (* <- lang_en;; *);
+
+<= nrel_inclusion: concept_ancient_building;
+<= nrel_inclusion: concept_secret_of_mankind;
+
+=> nrel_note:
+	[На планете существует огромное количество загадочных сооружений, что свидетельствует о невероятных способностях человека, однако достоверной информации о предназначении построек нет.]
+	(* <- lang_ru;; *);
+
+<- rrel_key_sc_element: ... (*
+    <- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Загадочное древнее сооружение)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		->rrel_example:
+			[Загадочное древнее сооружение - древнее сооружение, существование которых остаются для человечества тайной.]
+			(* <- lang_ru;; *);;
+	*);;
+    <= nrel_using_constants: {
+        concept_mysterious_ancient_building;
+        concept_ancient_building;
+        concept_secret
+   	};;
+*);;

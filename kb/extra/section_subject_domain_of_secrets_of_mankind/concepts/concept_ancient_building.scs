@@ -1,0 +1,27 @@
+concept_ancient_building
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Древнее сооружение] (* <- lang_ru;; *);
+	[Ancient building] (* <- lang_en;; *);
+
+<=nrel_inclusion: concept_building;
+
+=> nrel_note:
+	[Древние постройки являются очень хрупкими и редкими, изучение таких построек дает лучшее понимание о древних эпохах.]
+	(* <- lang_ru;; *);
+
+<- rrel_key_sc_element: ... (*
+    <- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Древнее сооружение)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		->rrel_example:
+			[Древнее сооружение - сооружение, которое существует издавна.]
+			(* <- lang_ru;; *);;
+	*);;
+    <= nrel_using_constants: {
+        concept_ancient_building;
+        concept_building
+   	};;
+*);;

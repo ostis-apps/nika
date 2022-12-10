@@ -1,0 +1,20 @@
+concept_area
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Местность] (* <- lang_ru;; *);
+	[Area] (* <- lang_en;; *);
+
+<- rrel_key_sc_element: ... (*
+    <- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Местность)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		->rrel_example:
+			[Местность - опредленный участок земли.]
+			(* <- lang_ru;; *);;
+	*);;
+    <= nrel_using_constants: {
+        concept_area
+   	};;
+*);;

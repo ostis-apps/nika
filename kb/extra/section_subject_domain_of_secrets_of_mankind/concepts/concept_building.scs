@@ -1,0 +1,20 @@
+concept_building
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Сооружение] (* <- lang_ru;; *);
+	[Building] (* <- lang_en;; *);
+
+<- rrel_key_sc_element: ... (*
+    <- definition;;
+	=> nrel_main_idtf:
+		[Опр. (Сооружение)] (* <- lang_ru;; *);;
+	<= nrel_sc_text_translation: ... (*
+		->rrel_example:
+			[Сооружение - всякая значительная постройка.]
+			(* <- lang_ru;; *);;
+	*);;
+    <= nrel_using_constants: {
+        concept_building
+   	};;
+*);;
