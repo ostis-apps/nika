@@ -1,0 +1,37 @@
+concept_message_about_koran
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о коран]
+	    (* <- lang_ru;; *);
+	[message about koran]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_koran];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о коран)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about koran)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о Ханафитский мазхаб - атомарное сообщение, которое содержит виды человекообразных, информацию о которых необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about hanafi is an atomic message that contains hominoidea division information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
