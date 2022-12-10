@@ -1,0 +1,39 @@
+concept_message_about_automation_levels
+
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о уровни автоматизации]
+	    (* <- lang_ru;; *);
+	[message about automation levels]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_automation_levels];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о уровни автоматизации)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about automation levels)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о  уровни автоматизации - атомарное сообщение,  определение уровни автоматизации о которых необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about automation levels - an atomic message, the definition of automation levels about which you want to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
+
