@@ -1,0 +1,33 @@
+section_subject_domain_of_islam
+<- sc_node_struct;
+=> nrel_main_idtf:
+[Раздел. Предметная область ислам](* <- lang_ru;; *);
+[Section. Subject domain of isalm](* <- lang_en;; *);
+<-atomic_section;;
+
+section_subject_domain_of_islam = [*
+subject_domain_of_islam
+=> nrel_main_idtf:
+[Предметная область ислам](* <- lang_ru;; *);
+[Subject domain of islam](* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+    concept_islam;
+-> rrel_not_maximum_studied_object_class:
+    concept_a_shrine_in_islam;
+    concept_battles_for_islam;
+    concept_book_in_islam;
+    concept_caliphates_in_islam;
+    concept_currents_in_islam;
+    concept_history_of_islam;
+    concept_madhhabs_in_islam;
+    concept_prophets_in_islam;
+    concept_righteous_caliphs_in_islam;
+-> rrel_explored_relation:
+nrel_data_of_birth3;
+nrel_data_of_death3;
+nrel_book_name;
+nrel_gender3;
+nrel_years_of_battle;;
+
+*];;
