@@ -1,0 +1,37 @@
+concept_message_about_behavioral_pattern
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о поведенческом шаблоне]
+	(* <- lang_ru;; *);
+	[message about behavioral pattern]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[behavioral_pattern];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о Поведенческом шаблоне)]
+        (* <- lang_ru;; *);
+        [Def. (message about Behavioral pattern)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о Поведенческом шаблоне - атомарное сообщение, являющееся запросом на получение информации про Поведенческий шаблон]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about behavioral pattern - atomic message which used to make a question about behavioral pattern]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

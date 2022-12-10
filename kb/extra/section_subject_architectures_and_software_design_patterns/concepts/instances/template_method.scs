@@ -1,0 +1,15 @@
+template_method 
+=> nrel_main_idtf:
+    [Шаблонный метод](* <-lang_ru;; *);
+    [Template Method](* <-lang_en;; *);
+
+=> nrel_note:
+[Шаблонный метод — это поведенческий паттерн проектирования, который определяет скелет алгоритма, перекладывая ответственность за некоторые его шаги на подклассы. Паттерн позволяет подклассам переопределять шаги алгоритма, не меняя его общей структуры.](* <- lang_ru;; *);
+
+<= nrel_behavioral_pattern:
+    concept_behavioral_patterns;
+
+=> nrel_generalization:
+    concept_class;
+
+<- concept_behavioral_patterns;;

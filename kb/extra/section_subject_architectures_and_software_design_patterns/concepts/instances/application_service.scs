@@ -1,0 +1,10 @@
+domain_service 
+=> nrel_main_idtf:
+    [Сервис приложений](* <-lang_ru;; *);
+    [Application service](* <-lang_en;; *);
+
+
+<= nrel_type_of_service:
+    concept_service_oriented_architecture;
+
+<- concept_service_oriented_architecture;;

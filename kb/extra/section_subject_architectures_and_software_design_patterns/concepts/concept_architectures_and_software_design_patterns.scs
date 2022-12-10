@@ -1,0 +1,27 @@
+concept_architectures_and_software_design_patterns
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Архитектуры и шаблоны проектирования](* <-lang_ru;; *);
+    [Architectures and software design patterns](* <-lang_en;; *);
+
+=> nrel_inclusion:
+    concept_design_patterns;
+    concept_software_architecture;;
+    
+
+concept_architectures_and_software_design_patterns
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Архитектуры и шаблоны проектирования)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Architectures and software design patterns)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Шоблон проектирования — это часто встречающееся решение определённой проблемы при проектировании архитектуры программ. Архитектура программного обеспечения — совокупность важнейших решений об организации программной системы.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Design patterns are typical solutions to commonly occurring problems in software design. Software architecture refers to the fundamental structures of a software system and the discipline of creating such structures and systems.](*<- lang_en;;*);;
+        *);;   
+*);;

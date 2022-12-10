@@ -1,0 +1,16 @@
+chain_of_responsibility
+=> nrel_main_idtf:
+    [Цепочка Обязанностей](* <-lang_ru;; *);
+    [Chain of Responsibility](* <-lang_en;; *);
+
+=> nrel_note:
+[Цепочка обязанностей — это поведенческий паттерн проектирования, который позволяет передавать запросы последовательно по цепочке обработчиков. Каждый последующий обработчик решает, может ли он обработать запрос сам и стоит ли передавать запрос дальше по цепи.](* <- lang_ru;; *);
+
+=> nrel_behavioral_pattern:
+    concept_behavioral_patterns;
+
+
+=> nrel_generalization:
+    concept_class;
+
+<- concept_behavioral_patterns;;

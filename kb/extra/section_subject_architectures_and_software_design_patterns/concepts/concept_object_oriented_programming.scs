@@ -1,0 +1,28 @@
+concept_object_oriented_programming
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Объектно-ориентированное программирование](* <-lang_ru;; *);
+    [Object-oriented programming](* <-lang_en;; *);;
+
+concept_object_oriented_programming
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Объектно-ориентированное программирование)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Object-oriented programming)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Объектно-ориентированное программирование – это подход, при котором вся программа рассматривается как набор взаимодействующих друг с другом объектов.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Object-oriented programming is an approach in which the entire program is considered as a set of objects interacting with each other.](*<- lang_en;;*);;
+        *);; 
+
+    <= nrel_using_constants:
+    {
+        concept_software_architecture
+    };;
+    
+*);;

@@ -1,0 +1,17 @@
+strategy 
+=> nrel_main_idtf:
+    [Стратегия](* <-lang_ru;; *);
+    [Builder](* <-lang_en;; *);
+
+=> nrel_note:
+[Стратегия — это поведенческий паттерн проектирования, который определяет семейство схожих алгоритмов и помещает каждый из них в собственный класс, после чего алгоритмы можно взаимозаменять прямо во время исполнения программы.](* <- lang_ru;; *);
+
+<= nrel_behavioral_pattern:
+    concept_behavioral_patterns;
+
+=> nrel_generalization:
+    concept_class;
+=> nrel_compostion:
+    concept_class;
+
+<- concept_behavioral_patterns;;

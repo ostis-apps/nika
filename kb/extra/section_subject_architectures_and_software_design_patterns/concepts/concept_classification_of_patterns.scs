@@ -1,0 +1,32 @@
+concept_classification_of_patterns
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Классификация шаблонов](* <-lang_ru;; *);
+    [Classification of patterns](* <-lang_en;; *);
+
+=> nrel_inclusion:
+    concept_behavioral_patterns;
+    concept_creational_patterns;
+    concept_structural_patterns;;
+
+concept_classification_of_patterns
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Классификация шаблонов)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Classification of patterns)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Шаблоны отличаются по уровню сложности, детализации и охвата проектируемой системы.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Design patterns differ by their complexity, level of detail and scale of applicability to the entire system being designed.](*<- lang_en;;*);;
+        *);;   
+
+    <= nrel_using_constants:
+    {
+        concept_design_patterns
+    };;
+*);;

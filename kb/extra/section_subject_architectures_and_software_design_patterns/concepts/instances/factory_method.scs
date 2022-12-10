@@ -1,0 +1,17 @@
+factory_method 
+=> nrel_main_idtf:
+    [Фабричный метод](* <-lang_ru;; *);
+    [Factory method](* <-lang_en;; *);
+
+=> nrel_note:
+[Фабричный метод — это порождающий паттерн проектирования, который определяет общий интерфейс для создания объектов в суперклассе, позволяя подклассам изменять тип создаваемых объектов.](* <- lang_ru;; *);
+
+<= nrel_creational_pattern:
+    concept_creational_patterns;
+
+=> nrel_dependency:
+    concept_class;
+=> nrel_generalization:
+    concept_class;
+
+<- concept_creational_patterns;;

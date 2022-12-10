@@ -1,0 +1,15 @@
+prototype
+=> nrel_main_idtf:
+    [Прототип](* <-lang_ru;; *);
+    [Prototype](* <-lang_en;; *);
+
+=> nrel_note:
+[Прототип — это порождающий паттерн проектирования, который позволяет копировать объекты, не вдаваясь в подробности их реализации.](* <- lang_ru;; *);
+
+<= nrel_creational_pattern:
+    concept_creational_patterns;
+
+=> nrel_generalization:
+    concept_class;
+
+<- concept_creational_patterns;;

@@ -1,0 +1,26 @@
+concept_class
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Класс](* <-lang_ru;; *);
+    [Class](* <-lang_en;; *);;
+
+concept_class
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Класс)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Class] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Класс — в объектно-ориентированном программировании, модель для создания объектов определённого типа, описывающая их структуру (набор полей и их начальное состояние) и определяющая алгоритмы (функции или методы) для работы с этими объектами.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [In object-oriented programming, a class is an extensible program-code-template for creating objects, providing initial values for state (member variables) and implementations of behavior (member functions or methods).](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_object_oriented_programming
+    };;
+*);;

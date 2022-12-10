@@ -1,0 +1,46 @@
+nrel_creational_pattern
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+    [порождающий шаблон*]
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_first_domain: 
+    concept_classification_of_patterns;
+
+=> nrel_second_domain:
+    concept_classification_of_patterns;
+
+<- rrel_key_sc_element:
+    ...
+    (*
+        => nrel_main_idtf:
+            [порождающий шаблон*]
+
+            (* 
+                <- lang_ru;; 
+            *);;
+
+        <- definition;;
+
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [
+                        порождающий шаблон' - отношение, показывающее класс шаблона*
+                    ]
+
+                    (* 
+                        <- lang_ru;; 
+                    *);;
+            *);;
+    *);;

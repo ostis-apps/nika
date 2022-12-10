@@ -1,0 +1,15 @@
+proxy 
+=> nrel_main_idtf:
+    [Заместитель](* <-lang_ru;; *);
+    [Proxy](* <-lang_en;; *);
+
+=> nrel_note:
+[Заместитель — это структурный паттерн проектирования, который позволяет подставлять вместо реальных объектов специальные объекты-заменители. Эти объекты перехватывают вызовы к оригинальному объекту, позволяя сделать что-то до или после передачи вызова оригиналу.](* <- lang_ru;; *);
+
+<= nrel_structural_pattern:
+    concept_structural_patterns;
+
+=> nrel_generalization:
+    concept_class;
+
+<- concept_structural_patterns;;

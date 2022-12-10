@@ -1,0 +1,51 @@
+section_subject_architectures_and_software_design_patterns
+=> nrel_main_idtf:
+	  [Раздел. Предметная область архитектуры и паттерны проектирования программного обеспечения]
+  (* <- lang_ru;; *);
+	  [Section. Subject architectures and software design patterns] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_architectures_and_software_design_patterns =
+[*
+    subject_architectures_and_software_design_patterns
+    <- sc_node_struct;
+    => nrel_main_idtf:
+        [Предметная область архитектуры и паттерны проектирования программного обеспечения](* <- lang_ru;; *);
+        [Subject architectures and software design patterns](* <- lang_en;; *);
+    <- subject_domain;
+    -> rrel_maximum_studied_object_class:
+        concept_architectures_and_software_design_patterns;        
+    -> rrel_not_maximum_studied_object_class:
+        concept_design_patterns;
+        concept_views_of_architectures;
+        concept_behavioral_patterns;
+        concept_allocation_views;
+        concept_component_and_connector_views;
+        concept_creational_patterns;
+        concept_module_views;
+        concept_solid_design_principles;
+        concept_structural_patterns; 
+        concept_classification_of_patterns;    
+        concept_software_architecture;
+        concept_object_oriented_programming;
+        concept_class;
+        concept_service_oriented_architecture;
+        concept_layered_architecture;
+        concept_microservice_architecture;
+
+    -> rrel_explored_relation:        
+        nrel_main_idtf;
+        nrel_behavioral_pattern;
+        nrel_creational_pattern;
+        nrel_structural_pattern;
+        nrel_solid_principle;
+        nrel_type_of_architecture;
+        nrel_aggregation;
+        nrel_compostion;
+        nrel_dependency;
+        nrel_generalization;
+        nrel_type_of_service;
+        nrel_architecture_layers;
+        nrel_microservice_component;;
+*];;

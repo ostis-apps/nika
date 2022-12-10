@@ -1,0 +1,37 @@
+concept_message_about_layered_architecture
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о многослойной архитектуре]
+	(* <- lang_ru;; *);
+	[message about layared architecture]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[layared_architecture];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о Многослойной архитектуре)]
+        (* <- lang_ru;; *);
+        [Def. (message about Layared architecture)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о Многослойной архитектуре - атомарное сообщение, являющееся запросом на получение информации про Многослойную архитектуру]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about layered architecture - atomic message which used to make a question about layered architecture]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

@@ -1,0 +1,26 @@
+concept_module_views
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Модульные виды](* <-lang_ru;; *);
+    [Module views](* <-lang_en;; *);;
+
+concept_module_views
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Модульные виды)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Module views)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Модульные виды — показывают систему как структуру из различных программных блоков.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Modular views — show the system as a structure of various program blocks.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_views_of_architectures
+    };;
+*);;

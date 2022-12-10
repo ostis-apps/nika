@@ -1,0 +1,17 @@
+composite 
+=> nrel_main_idtf:
+    [Компоновщик](* <-lang_ru;; *);
+    [Composite](* <-lang_en;; *);
+
+ => nrel_note:
+[Компоновщик — это структурный паттерн проектирования, который позволяет сгруппировать множество объектов в древовидную структуру, а затем работать с ней так, как будто это единичный объект.](* <- lang_ru;; *);   
+
+<= nrel_structural_pattern:
+    concept_structural_patterns;
+
+=> nrel_compostion:
+    concept_class;
+=> nrel_generalization:
+    concept_class;
+
+<- concept_structural_patterns;;

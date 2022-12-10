@@ -1,0 +1,17 @@
+adapter 
+=> nrel_main_idtf:
+    [Адаптер](* <-lang_ru;; *);
+    [Adapter](* <-lang_en;; *);
+
+
+<= nrel_structural_pattern:
+    concept_structural_patterns;
+
+=> nrel_generalization:
+    concept_class;
+
+=> nrel_note:
+[Адаптер — это структурный паттерн проектирования, который позволяет объектам с несовместимыми интерфейсами работать вместе.](* <- lang_ru;; *);
+
+
+<- concept_structural_patterns;;

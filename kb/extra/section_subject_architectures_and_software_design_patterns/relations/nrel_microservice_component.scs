@@ -1,0 +1,46 @@
+nrel_microservice_component
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+    [компонент микросервиса*]
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_first_domain: 
+    concept_software_architecture;
+
+=> nrel_second_domain:
+    concept_software_architecture;
+
+<- rrel_key_sc_element:
+    ...
+    (*
+        => nrel_main_idtf:
+            [компонент микросервиса*]
+
+            (* 
+                <- lang_ru;; 
+            *);;
+
+        <- definition;;
+
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [
+                        компонент микросервиса' - отношение, показывающее компонент микросервиса*
+                    ]
+
+                    (* 
+                        <- lang_ru;; 
+                    *);;
+            *);;
+    *);;

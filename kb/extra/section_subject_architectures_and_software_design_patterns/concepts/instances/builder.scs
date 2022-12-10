@@ -1,0 +1,19 @@
+builder 
+=> nrel_main_idtf:
+    [Строитель](* <-lang_ru;; *);
+    [Builder](* <-lang_en;; *);
+
+=> nrel_note:
+[Строитель — это порождающий паттерн проектирования, который позволяет создавать сложные объекты пошагово. Строитель даёт возможность использовать один и тот же код строительства для получения разных представлений объектов.
+
+](* <- lang_ru;; *);
+
+<= nrel_creational_pattern:
+    concept_creational_patterns;
+
+=> nrel_compostion:
+    concept_class;
+=> nrel_generalization:
+    concept_class;
+
+<- concept_creational_patterns;;

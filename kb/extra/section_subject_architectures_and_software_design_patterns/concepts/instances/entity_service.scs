@@ -1,0 +1,10 @@
+entity_service 
+=> nrel_main_idtf:
+    [Организационные сервисы](* <-lang_ru;; *);
+    [Entity service](* <-lang_en;; *);
+
+
+<= nrel_type_of_service:
+    concept_service_oriented_architecture;
+
+<- concept_service_oriented_architecture;;

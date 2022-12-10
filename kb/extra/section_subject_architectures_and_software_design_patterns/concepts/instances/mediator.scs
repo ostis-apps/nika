@@ -1,0 +1,15 @@
+mediator 
+=> nrel_main_idtf:
+    [Посредник](* <-lang_ru;; *);
+    [Mediator](* <-lang_en;; *);
+
+=> nrel_note:
+[Посредник — это поведенческий паттерн проектирования, который позволяет уменьшить связанность множества классов между собой, благодаря перемещению этих связей в один класс-посредник.](* <- lang_ru;; *);
+
+<= nrel_behavioral_pattern:
+    concept_behavioral_patterns;
+
+=> nrel_generalization:
+    concept_class;
+
+<- concept_behavioral_patterns;;

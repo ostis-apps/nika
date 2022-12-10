@@ -1,0 +1,37 @@
+concept_message_about_service_oriented_architecture
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о сервис-ориентированной архитектуре]
+	(* <- lang_ru;; *);
+	[message about service-oriented architecture]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[service_oriented_architecture];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о Сервис-ориентированной архитектуре)]
+        (* <- lang_ru;; *);
+        [Def. (message about Service-oriented architecture)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о Сервис-ориентированной архитектуре - атомарное сообщение, являющееся запросом на получение информации про Сервис-ориентированной архитектуре]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about service-oriented architecture - atomic message which used to make a question about Service-oriented architecture]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

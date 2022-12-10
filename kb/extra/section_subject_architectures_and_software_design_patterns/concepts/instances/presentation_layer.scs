@@ -1,0 +1,12 @@
+presentation_layer 
+=> nrel_main_idtf:
+    [Слой представления](* <-lang_ru;; *);
+    [Presentation Layer](* <-lang_en;; *);
+
+=> nrel_note:
+[Слой представления - содержит пользовательский интерфейс и отвечает за обеспечение хорошего пользовательского опыта.](* <- lang_ru;; *);
+
+<= nrel_architecture_layers:
+    concept_layered_architecture;
+    
+<- concept_layered_architecture;;

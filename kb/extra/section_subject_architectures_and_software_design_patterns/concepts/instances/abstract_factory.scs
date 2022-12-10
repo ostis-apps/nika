@@ -1,0 +1,17 @@
+abstract_factory 
+=> nrel_main_idtf:
+    [Абстрактная Фабрика](* <-lang_ru;; *);
+    [Abstract Factory](* <-lang_en;; *);
+
+<= nrel_creational_pattern:
+    concept_creational_patterns;
+
+=> nrel_generalization:
+    concept_class;
+
+=> nrel_note:
+[Абстрактная фабрика — это порождающий паттерн проектирования, который позволяет создавать семейства связанных объектов, не привязываясь к конкретным классам создаваемых объектов.](* <- lang_ru;; *);
+
+
+<- concept_creational_patterns;;
+

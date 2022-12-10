@@ -1,0 +1,9 @@
+process_view 
+=> nrel_main_idtf:
+    [Процессный вид](* <-lang_ru;; *);
+    [Process view](* <-lang_en;; *);
+
+=> nrel_type_of_architecture:
+    concept_component_and_connector_views;
+
+<- concept_component_and_connector_views;;

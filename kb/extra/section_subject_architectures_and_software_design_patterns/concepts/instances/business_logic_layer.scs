@@ -1,0 +1,12 @@
+business_logic_layer 
+=> nrel_main_idtf:
+    [Слой бизнес-логики](* <-lang_ru;; *);
+    [Business Logic Layer](* <-lang_en;; *);
+
+=> nrel_note:
+[Слой бизнес-логики, как следует из названия, содержит бизнес-логику приложения. Он отделяет UI/UX от вычислений, связанных с бизнесом. Это позволяет с легкостью изменять логику в зависимости от постоянно меняющихся бизнес-требований, никак не влияя на другие слои.](* <- lang_ru;; *);
+
+<= nrel_architecture_layers:
+    concept_layered_architecture;
+    
+<- concept_layered_architecture;;

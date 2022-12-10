@@ -1,0 +1,18 @@
+bridge 
+=> nrel_main_idtf:
+    [Мост](* <-lang_ru;; *);
+    [Bridge](* <-lang_en;; *);
+
+=> nrel_note:
+[Мост — это структурный паттерн проектирования, который разделяет один или несколько классов на две отдельные иерархии — абстракцию и реализацию, позволяя изменять их независимо друг от друга.](* <- lang_ru;; *);
+
+<= nrel_structural_pattern:
+    concept_structural_patterns;
+
+=> nrel_compostion:
+    concept_class;
+
+=> nrel_generalization:
+    concept_class;
+    
+<- concept_structural_patterns;;

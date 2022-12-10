@@ -1,0 +1,28 @@
+concept_layered_architecture
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Многослойная архитектура](* <-lang_ru;; *);
+    [Layered Architecture](* <-lang_en;; *);;
+
+concept_layered_architecture
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Многослойная архитектура)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Layered Architecture] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Многослойная архитектура - клиент-серверная архитектура, где процессы представления, обработки и управления данными являются логически отделенными друг от друга процессами.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Layered architecture is a client-server architecture where the processes of data presentation, processing and management are logically separated from each other processes.](*<- lang_en;;*);;
+        *);; 
+
+    <= nrel_using_constants:
+    {
+        concept_software_architecture
+    };;
+    
+*);;

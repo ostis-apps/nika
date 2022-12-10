@@ -1,0 +1,15 @@
+iterator 
+=> nrel_main_idtf:
+    [Итератор](* <-lang_ru;; *);
+    [Iterator](* <-lang_en;; *);
+
+=> nrel_note:
+[Итератор — это поведенческий паттерн проектирования, который даёт возможность последовательно обходить элементы составных объектов, не раскрывая их внутреннего представления.](* <- lang_ru;; *);
+
+<= nrel_behavioral_pattern:
+    concept_behavioral_patterns;
+
+=> nrel_generalization:
+    concept_class;
+
+<- concept_behavioral_patterns;;

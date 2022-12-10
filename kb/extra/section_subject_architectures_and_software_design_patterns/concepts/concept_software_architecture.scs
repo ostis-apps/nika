@@ -1,0 +1,32 @@
+concept_software_architecture
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Архитектура программного обеспечения](* <-lang_ru;; *);
+    [Software Architecture](* <-lang_en;; *);
+
+=> nrel_inclusion:
+    concept_views_of_architectures;
+    concept_object_oriented_programming;
+    concept_solid_design_principles;
+    concept_service_oriented_architecture;
+    concept_layered_architecture;
+    concept_microservice_architecture;;
+
+concept_software_architecture
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Архитектура программного обеспечения)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Software architecture)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example: 
+            [Архитектура программного обеспечения — совокупность важнейших решений об организации программной системы.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Software architecture refers to the fundamental structures of a software system and the discipline of creating such structures and systems.](*<- lang_en;;*);;
+        *);; 
+
+    
+*);;
