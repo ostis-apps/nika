@@ -121,13 +121,6 @@
                     "end": 6,
                     "body": "\u0418\u0442\u0430\u043b\u0438\u044f",
                     "entities": []
-                },
-                {
-                    "entity": "which_country:which_country",
-                    "start": 7,
-                    "end": 17,
-                    "body": "\u044d\u0442\u043e \u0441\u0442\u0440\u0430\u043d\u0430",
-                    "entities": []
                 }
             ],
             "traits": [],
@@ -225,13 +218,6 @@
                     "start": 0,
                     "end": 7,
                     "body": "\u0424\u0440\u0430\u043d\u0446\u0438\u044f",
-                    "entities": []
-                },
-                {
-                    "entity": "which_country:which_country",
-                    "start": 8,
-                    "end": 18,
-                    "body": "\u044d\u0442\u043e \u0441\u0442\u0440\u0430\u043d\u0430",
                     "entities": []
                 }
             ],
@@ -359,13 +345,6 @@
                     "end": 5,
                     "body": "\u0432\u0430\u0440\u043a\u0430",
                     "entities": []
-                },
-                {
-                    "entity": "what_is:what_is",
-                    "start": 6,
-                    "end": 13,
-                    "body": "\u0447\u0442\u043e \u044d\u0442\u043e",
-                    "entities": []
                 }
             ],
             "traits": [],
@@ -373,12 +352,24 @@
         },
         {
             "text": "\u0433\u0434\u0435 \u0433\u043e\u0442\u043e\u0432\u044f\u0442",
+            "entities": [],
+            "traits": [],
+            "intent": "about_delicacy_country_of_origin"
+        },
+        {
+            "text": "\u0433\u0434\u0435 \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u044f\u0442",
+            "entities": [],
+            "traits": [],
+            "intent": "about_delicacy_country_of_origin"
+        },
+        {
+            "text": "\u0433\u0434\u0435 \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u044f\u0442 \u043f\u0435\u0440\u0435\u043f\u0435\u043b\u0438\u043d\u044b\u0435 \u044f\u0439\u0446\u0430",
             "entities": [
                 {
-                    "entity": "from_where:from_where",
-                    "start": 0,
-                    "end": 11,
-                    "body": "\u0433\u0434\u0435 \u0433\u043e\u0442\u043e\u0432\u044f\u0442",
+                    "entity": "quail_egg:quail_egg",
+                    "start": 15,
+                    "end": 31,
+                    "body": "\u043f\u0435\u0440\u0435\u043f\u0435\u043b\u0438\u043d\u044b\u0435 \u044f\u0439\u0446\u0430",
                     "entities": []
                 }
             ],
@@ -386,13 +377,13 @@
             "intent": "about_delicacy_country_of_origin"
         },
         {
-            "text": "\u0433\u0434\u0435 \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u044f\u0442",
+            "text": "\u0433\u0434\u0435 \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u044f\u0442 \u0448\u0430\u043c\u043f\u0430\u043d\u0441\u043a\u043e\u0435",
             "entities": [
                 {
-                    "entity": "from_where:from_where",
-                    "start": 0,
-                    "end": 14,
-                    "body": "\u0433\u0434\u0435 \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u044f\u0442",
+                    "entity": "champagne:champagne",
+                    "start": 15,
+                    "end": 25,
+                    "body": "\u0448\u0430\u043c\u043f\u0430\u043d\u0441\u043a\u043e\u0435",
                     "entities": []
                 }
             ],
@@ -415,15 +406,7 @@
         },
         {
             "text": "\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c",
-            "entities": [
-                {
-                    "entity": "cooking:cooking",
-                    "start": 0,
-                    "end": 8,
-                    "body": "\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c",
-                    "entities": []
-                }
-            ],
+            "entities": [],
             "traits": [],
             "intent": "about_cooking_method_delicacies"
         },
@@ -449,13 +432,6 @@
                     "start": 0,
                     "end": 9,
                     "body": "\u0434\u0435\u043b\u0438\u043a\u0430\u0442\u0435\u0441",
-                    "entities": []
-                },
-                {
-                    "entity": "is:is",
-                    "start": 10,
-                    "end": 13,
-                    "body": "\u044d\u0442\u043e",
                     "entities": []
                 }
             ],
@@ -562,56 +538,25 @@
         },
         {
             "text": "\u043a\u0430\u043a \u0432\u0430\u0440\u044f\u0442",
-            "entities": [
-                {
-                    "entity": "how_to_cook:how_to_cook",
-                    "start": 0,
-                    "end": 9,
-                    "body": "\u043a\u0430\u043a \u0432\u0430\u0440\u044f\u0442",
-                    "entities": []
-                }
-            ],
+            "entities": [],
             "traits": [],
             "intent": "about_delicacy_cooking_method"
         },
         {
             "text": "\u043a\u0430\u043a \u0433\u043e\u0442\u043e\u0432\u0438\u0442\u0441\u044f",
-            "entities": [
-                {
-                    "entity": "how_to_cook:how_to_cook",
-                    "start": 0,
-                    "end": 13,
-                    "body": "\u043a\u0430\u043a \u0433\u043e\u0442\u043e\u0432\u0438\u0442\u0441\u044f",
-                    "entities": []
-                }
-            ],
+            "entities": [],
             "traits": [],
             "intent": "about_delicacy_cooking_method"
         },
         {
             "text": "\u043a\u0430\u043a \u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c",
-            "entities": [
-                {
-                    "entity": "how_to_cook:how_to_cook",
-                    "start": 0,
-                    "end": 12,
-                    "body": "\u043a\u0430\u043a \u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c",
-                    "entities": []
-                }
-            ],
+            "entities": [],
             "traits": [],
             "intent": "about_delicacy_cooking_method"
         },
         {
             "text": "\u043a\u0430\u043a \u0433\u043e\u0442\u043e\u0432\u044f\u0442 \u043a\u0435\u0448\u044c\u044e",
             "entities": [
-                {
-                    "entity": "how_to_cook:how_to_cook",
-                    "start": 0,
-                    "end": 11,
-                    "body": "\u043a\u0430\u043a \u0433\u043e\u0442\u043e\u0432\u044f\u0442",
-                    "entities": []
-                },
                 {
                     "entity": "cashew_nuts:cashew_nuts",
                     "start": 12,
@@ -625,12 +570,32 @@
         },
         {
             "text": "\u043a\u0430\u043a \u043f\u0440\u0438\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c",
+            "entities": [],
+            "traits": [],
+            "intent": "about_delicacy_cooking_method"
+        },
+        {
+            "text": "\u043a\u0430\u043a \u043f\u0440\u0438\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c \u0434\u0443\u0440\u0438\u0430\u043d",
             "entities": [
                 {
-                    "entity": "how_to_cook:how_to_cook",
-                    "start": 0,
-                    "end": 15,
-                    "body": "\u043a\u0430\u043a \u043f\u0440\u0438\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c",
+                    "entity": "durian:durian",
+                    "start": 16,
+                    "end": 22,
+                    "body": "\u0434\u0443\u0440\u0438\u0430\u043d",
+                    "entities": []
+                }
+            ],
+            "traits": [],
+            "intent": "about_delicacy_cooking_method"
+        },
+        {
+            "text": "\u043a\u0430\u043a \u043f\u0440\u0438\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c \u043b\u043e\u0431\u0441\u0442\u0435\u0440\u0430",
+            "entities": [
+                {
+                    "entity": "lobster:lobster",
+                    "start": 16,
+                    "end": 24,
+                    "body": "\u043b\u043e\u0431\u0441\u0442\u0435\u0440\u0430",
                     "entities": []
                 }
             ],
@@ -640,13 +605,6 @@
         {
             "text": "\u043a\u0430\u043a \u043f\u0440\u0438\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c \u0443\u0441\u0442\u0440\u0438\u0446",
             "entities": [
-                {
-                    "entity": "how_to_cook:how_to_cook",
-                    "start": 0,
-                    "end": 15,
-                    "body": "\u043a\u0430\u043a \u043f\u0440\u0438\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c",
-                    "entities": []
-                },
                 {
                     "entity": "oyster:oyster",
                     "start": 16,
@@ -660,28 +618,13 @@
         },
         {
             "text": "\u043a\u0430\u043a \u0441\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c",
-            "entities": [
-                {
-                    "entity": "how_to_cook:how_to_cook",
-                    "start": 0,
-                    "end": 13,
-                    "body": "\u043a\u0430\u043a \u0441\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c",
-                    "entities": []
-                }
-            ],
+            "entities": [],
             "traits": [],
             "intent": "about_delicacy_cooking_method"
         },
         {
             "text": "\u043a\u0430\u043a \u0441\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c \u0433\u043e\u043b\u0443\u0431\u043e\u0439 \u0441\u044b\u0440",
             "entities": [
-                {
-                    "entity": "how_to_cook:how_to_cook",
-                    "start": 0,
-                    "end": 13,
-                    "body": "\u043a\u0430\u043a \u0441\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c",
-                    "entities": []
-                },
                 {
                     "entity": "blue_cheese:blue_cheese",
                     "start": 14,
@@ -1115,28 +1058,13 @@
         },
         {
             "text": "\u043e\u0442\u043a\u0443\u0434\u0430",
-            "entities": [
-                {
-                    "entity": "from_where:from_where",
-                    "start": 0,
-                    "end": 6,
-                    "body": "\u043e\u0442\u043a\u0443\u0434\u0430",
-                    "entities": []
-                }
-            ],
+            "entities": [],
             "traits": [],
             "intent": "about_delicacy_country_of_origin"
         },
         {
             "text": "\u043e\u0442\u043a\u0443\u0434\u0430 \u0434\u0435\u043b\u0438\u043a\u0430\u0442\u0435\u0441 \u0441\u044b\u0440 \u0441 \u043f\u043b\u0435\u0441\u0435\u043d\u044c\u044e",
             "entities": [
-                {
-                    "entity": "from_where:from_where",
-                    "start": 0,
-                    "end": 6,
-                    "body": "\u043e\u0442\u043a\u0443\u0434\u0430",
-                    "entities": []
-                },
                 {
                     "entity": "blue_cheese:blue_cheese",
                     "start": 17,
@@ -1151,13 +1079,6 @@
         {
             "text": "\u043e\u0442\u043a\u0443\u0434\u0430 \u0434\u0435\u043b\u0438\u043a\u0430\u0442\u0435\u0441 \u0447\u0435\u0440\u043d\u0430\u044f \u0438\u043a\u0440\u0430",
             "entities": [
-                {
-                    "entity": "from_where:from_where",
-                    "start": 0,
-                    "end": 6,
-                    "body": "\u043e\u0442\u043a\u0443\u0434\u0430",
-                    "entities": []
-                },
                 {
                     "entity": "black_caviar:black_caviar",
                     "start": 17,
@@ -1213,15 +1134,7 @@
         },
         {
             "text": "\u0441\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c",
-            "entities": [
-                {
-                    "entity": "cooking:cooking",
-                    "start": 0,
-                    "end": 9,
-                    "body": "\u0441\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c",
-                    "entities": []
-                }
-            ],
+            "entities": [],
             "traits": [],
             "intent": "about_cooking_method_delicacies"
         },
@@ -1355,13 +1268,6 @@
             "text": "\u0447\u0442\u043e \u0431\u044b \u043f\u0440\u0438\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c \u043f\u0440\u0438 \u043f\u043e\u043c\u043e\u0449\u0438 \u0432\u0430\u0440\u043a\u0438",
             "entities": [
                 {
-                    "entity": "cooking:cooking",
-                    "start": 7,
-                    "end": 18,
-                    "body": "\u043f\u0440\u0438\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c",
-                    "entities": []
-                },
-                {
                     "entity": "boiling:boiling",
                     "start": 30,
                     "end": 35,
@@ -1375,13 +1281,6 @@
         {
             "text": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u0438\u0442 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f",
             "entities": [
-                {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 11,
-                    "body": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u0438\u0442",
-                    "entities": []
-                },
                 {
                     "entity": "Brazil:Brazil",
                     "start": 12,
@@ -1397,20 +1296,6 @@
             "text": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u0438\u0442 \u0418\u043d\u0434\u0438\u044f",
             "entities": [
                 {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 3,
-                    "body": "\u0447\u0442\u043e",
-                    "entities": []
-                },
-                {
-                    "entity": "cooking:cooking",
-                    "start": 4,
-                    "end": 11,
-                    "body": "\u0433\u043e\u0442\u043e\u0432\u0438\u0442",
-                    "entities": []
-                },
-                {
                     "entity": "India:India",
                     "start": 12,
                     "end": 17,
@@ -1424,13 +1309,6 @@
         {
             "text": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u0438\u0442 \u0420\u043e\u0441\u0441\u0438\u044f",
             "entities": [
-                {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 11,
-                    "body": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u0438\u0442",
-                    "entities": []
-                },
                 {
                     "entity": "Russia:Russia",
                     "start": 12,
@@ -1458,28 +1336,13 @@
         },
         {
             "text": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442",
-            "entities": [
-                {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 11,
-                    "body": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442",
-                    "entities": []
-                }
-            ],
+            "entities": [],
             "traits": [],
             "intent": "about_country_delicacies"
         },
         {
             "text": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442 \u0432 \u0410\u043c\u0435\u0440\u0438\u043a\u0435",
             "entities": [
-                {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 11,
-                    "body": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442",
-                    "entities": []
-                },
                 {
                     "entity": "USA:USA",
                     "start": 14,
@@ -1495,13 +1358,6 @@
             "text": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442 \u0432 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u0438",
             "entities": [
                 {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 11,
-                    "body": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442",
-                    "entities": []
-                },
-                {
                     "entity": "Brazil:Brazil",
                     "start": 14,
                     "end": 22,
@@ -1515,13 +1371,6 @@
         {
             "text": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442 \u0432 \u0413\u0435\u0440\u043c\u0430\u043d\u0438\u0438",
             "entities": [
-                {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 11,
-                    "body": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442",
-                    "entities": []
-                },
                 {
                     "entity": "Germany:Germany",
                     "start": 14,
@@ -1537,13 +1386,6 @@
             "text": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442 \u0432 \u0418\u043d\u0434\u0438\u0438",
             "entities": [
                 {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 11,
-                    "body": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442",
-                    "entities": []
-                },
-                {
                     "entity": "India:India",
                     "start": 14,
                     "end": 19,
@@ -1557,13 +1399,6 @@
         {
             "text": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442 \u0432 \u0418\u0442\u0430\u043b\u0438\u0438",
             "entities": [
-                {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 11,
-                    "body": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442",
-                    "entities": []
-                },
                 {
                     "entity": "Italy:Italy",
                     "start": 14,
@@ -1579,13 +1414,6 @@
             "text": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442 \u0432 \u041a\u0438\u0442\u0430\u0435",
             "entities": [
                 {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 11,
-                    "body": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442",
-                    "entities": []
-                },
-                {
                     "entity": "China:China",
                     "start": 14,
                     "end": 19,
@@ -1599,13 +1427,6 @@
         {
             "text": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442 \u0432 \u041a\u043e\u0440\u0435\u0435",
             "entities": [
-                {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 11,
-                    "body": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442",
-                    "entities": []
-                },
                 {
                     "entity": "Korea:Korea",
                     "start": 14,
@@ -1621,13 +1442,6 @@
             "text": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442 \u0432 \u0420\u043e\u0441\u0441\u0438\u0438",
             "entities": [
                 {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 11,
-                    "body": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442",
-                    "entities": []
-                },
-                {
                     "entity": "Russia:Russia",
                     "start": 14,
                     "end": 20,
@@ -1641,13 +1455,6 @@
         {
             "text": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442 \u0432 \u0422\u0430\u0439\u043b\u0430\u043d\u0434\u0435",
             "entities": [
-                {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 11,
-                    "body": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442",
-                    "entities": []
-                },
                 {
                     "entity": "Thailand:Thailand",
                     "start": 14,
@@ -1663,13 +1470,6 @@
             "text": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442 \u0432 \u0427\u0438\u043b\u0438",
             "entities": [
                 {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 11,
-                    "body": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442",
-                    "entities": []
-                },
-                {
                     "entity": "Chile:Chile",
                     "start": 14,
                     "end": 18,
@@ -1683,13 +1483,6 @@
         {
             "text": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442 \u0432 \u042d\u043a\u0432\u0430\u0434\u043e\u0440\u0435",
             "entities": [
-                {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 11,
-                    "body": "\u0447\u0442\u043e \u0433\u043e\u0442\u043e\u0432\u044f\u0442",
-                    "entities": []
-                },
                 {
                     "entity": "Equador:Equador",
                     "start": 14,
@@ -1705,13 +1498,6 @@
             "text": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430 \u0410\u043c\u0435\u0440\u0438\u043a\u0430",
             "entities": [
                 {
-                    "entity": "which_country:which_country",
-                    "start": 0,
-                    "end": 13,
-                    "body": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430",
-                    "entities": []
-                },
-                {
                     "entity": "USA:USA",
                     "start": 14,
                     "end": 21,
@@ -1725,13 +1511,6 @@
         {
             "text": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430 \u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f",
             "entities": [
-                {
-                    "entity": "which_country:which_country",
-                    "start": 0,
-                    "end": 13,
-                    "body": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430",
-                    "entities": []
-                },
                 {
                     "entity": "Brazil:Brazil",
                     "start": 14,
@@ -1747,13 +1526,6 @@
             "text": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430 \u0413\u0435\u0440\u043c\u0430\u043d\u0438\u044f",
             "entities": [
                 {
-                    "entity": "which_country:which_country",
-                    "start": 0,
-                    "end": 13,
-                    "body": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430",
-                    "entities": []
-                },
-                {
                     "entity": "Germany:Germany",
                     "start": 14,
                     "end": 22,
@@ -1767,13 +1539,6 @@
         {
             "text": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430 \u0418\u043d\u0434\u0438\u044f",
             "entities": [
-                {
-                    "entity": "which_country:which_country",
-                    "start": 0,
-                    "end": 13,
-                    "body": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430",
-                    "entities": []
-                },
                 {
                     "entity": "India:India",
                     "start": 14,
@@ -1789,13 +1554,6 @@
             "text": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430 \u0418\u0440\u0430\u043d",
             "entities": [
                 {
-                    "entity": "which_country:which_country",
-                    "start": 0,
-                    "end": 13,
-                    "body": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430",
-                    "entities": []
-                },
-                {
                     "entity": "Iran:Iran",
                     "start": 14,
                     "end": 18,
@@ -1809,13 +1567,6 @@
         {
             "text": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430 \u0418\u0442\u0430\u043b\u0438\u044f",
             "entities": [
-                {
-                    "entity": "which_country:which_country",
-                    "start": 0,
-                    "end": 13,
-                    "body": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430",
-                    "entities": []
-                },
                 {
                     "entity": "Italy:Italy",
                     "start": 14,
@@ -1831,13 +1582,6 @@
             "text": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430 \u041a\u0438\u0442\u0430\u0439",
             "entities": [
                 {
-                    "entity": "which_country:which_country",
-                    "start": 0,
-                    "end": 13,
-                    "body": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430",
-                    "entities": []
-                },
-                {
                     "entity": "China:China",
                     "start": 14,
                     "end": 19,
@@ -1851,13 +1595,6 @@
         {
             "text": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430 \u041a\u043e\u0440\u0435\u044f",
             "entities": [
-                {
-                    "entity": "which_country:which_country",
-                    "start": 0,
-                    "end": 13,
-                    "body": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430",
-                    "entities": []
-                },
                 {
                     "entity": "Korea:Korea",
                     "start": 14,
@@ -1873,13 +1610,6 @@
             "text": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430 \u041d\u043e\u0432\u0430\u044f \u0417\u0438\u043b\u0430\u043d\u0434\u0438\u044f",
             "entities": [
                 {
-                    "entity": "which_country:which_country",
-                    "start": 0,
-                    "end": 13,
-                    "body": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430",
-                    "entities": []
-                },
-                {
                     "entity": "Zealand:Zealand",
                     "start": 20,
                     "end": 27,
@@ -1893,13 +1623,6 @@
         {
             "text": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430 \u0420\u043e\u0441\u0441\u0438\u044f",
             "entities": [
-                {
-                    "entity": "which_country:which_country",
-                    "start": 0,
-                    "end": 13,
-                    "body": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430",
-                    "entities": []
-                },
                 {
                     "entity": "Russia:Russia",
                     "start": 14,
@@ -1915,13 +1638,6 @@
             "text": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430 \u0421\u0428\u0410",
             "entities": [
                 {
-                    "entity": "which_country:which_country",
-                    "start": 0,
-                    "end": 13,
-                    "body": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430",
-                    "entities": []
-                },
-                {
                     "entity": "USA:USA",
                     "start": 14,
                     "end": 17,
@@ -1935,13 +1651,6 @@
         {
             "text": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430 \u0421\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u043d\u044b\u0435 \u0428\u0442\u0430\u0442\u044b \u0410\u043c\u0435\u0440\u0438\u043a\u0438",
             "entities": [
-                {
-                    "entity": "which_country:which_country",
-                    "start": 0,
-                    "end": 13,
-                    "body": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430",
-                    "entities": []
-                },
                 {
                     "entity": "USA:USA",
                     "start": 32,
@@ -1957,13 +1666,6 @@
             "text": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430 \u0422\u0430\u0439\u043b\u0430\u043d\u0434",
             "entities": [
                 {
-                    "entity": "which_country:which_country",
-                    "start": 0,
-                    "end": 13,
-                    "body": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430",
-                    "entities": []
-                },
-                {
                     "entity": "Thailand:Thailand",
                     "start": 14,
                     "end": 21,
@@ -1977,13 +1679,6 @@
         {
             "text": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430 \u0427\u0438\u043b\u0438",
             "entities": [
-                {
-                    "entity": "which_country:which_country",
-                    "start": 0,
-                    "end": 13,
-                    "body": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430",
-                    "entities": []
-                },
                 {
                     "entity": "Chile:Chile",
                     "start": 14,
@@ -1999,13 +1694,6 @@
             "text": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430 \u0428\u0432\u0435\u0439\u0446\u0430\u0440\u0438\u044f",
             "entities": [
                 {
-                    "entity": "which_country:which_country",
-                    "start": 0,
-                    "end": 13,
-                    "body": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430",
-                    "entities": []
-                },
-                {
                     "entity": "Switzerland:Switzerland",
                     "start": 14,
                     "end": 22,
@@ -2020,13 +1708,6 @@
             "text": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430 \u042d\u043a\u0432\u0430\u0434\u043e\u0440",
             "entities": [
                 {
-                    "entity": "which_country:which_country",
-                    "start": 0,
-                    "end": 13,
-                    "body": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430",
-                    "entities": []
-                },
-                {
                     "entity": "Equador:Equador",
                     "start": 14,
                     "end": 21,
@@ -2040,13 +1721,6 @@
         {
             "text": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430 \u042f\u043f\u043e\u043d\u0438\u044f",
             "entities": [
-                {
-                    "entity": "which_country:which_country",
-                    "start": 0,
-                    "end": 13,
-                    "body": "\u0447\u0442\u043e \u0437\u0430 \u0441\u0442\u0440\u0430\u043d\u0430",
-                    "entities": []
-                },
                 {
                     "entity": "Japan:Japan",
                     "start": 14,
@@ -2146,13 +1820,6 @@
             "text": "\u0447\u0442\u043e \u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0438\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c \u0438\u0437 \u043f\u0435\u0440\u0435\u043f\u0435\u043b\u0438\u043d\u044b\u0445 \u044f\u0438\u0446",
             "entities": [
                 {
-                    "entity": "cooking:cooking",
-                    "start": 10,
-                    "end": 21,
-                    "body": "\u043f\u0440\u0438\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c",
-                    "entities": []
-                },
-                {
                     "entity": "quail_egg:quail_egg",
                     "start": 25,
                     "end": 40,
@@ -2223,13 +1890,6 @@
             "text": "\u0447\u0442\u043e \u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0438\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c \u043f\u0440\u0438 \u043f\u043e\u043c\u043e\u0449\u0438 \u0432\u0430\u0440\u043a\u0438",
             "entities": [
                 {
-                    "entity": "cooking:cooking",
-                    "start": 10,
-                    "end": 21,
-                    "body": "\u043f\u0440\u0438\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c",
-                    "entities": []
-                },
-                {
                     "entity": "boiling:boiling",
                     "start": 33,
                     "end": 38,
@@ -2284,15 +1944,7 @@
         },
         {
             "text": "\u0447\u0442\u043e \u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0438\u0433\u043e\u0442\u043e\u0432\u043e\u0438\u0442\u044c",
-            "entities": [
-                {
-                    "entity": "cooking:cooking",
-                    "start": 10,
-                    "end": 22,
-                    "body": "\u043f\u0440\u0438\u0433\u043e\u0442\u043e\u0432\u043e\u0438\u0442\u044c",
-                    "entities": []
-                }
-            ],
+            "entities": [],
             "traits": [],
             "intent": "about_cooking_method_delicacies"
         },
@@ -2326,28 +1978,13 @@
         },
         {
             "text": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442",
-            "entities": [
-                {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 14,
-                    "body": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442",
-                    "entities": []
-                }
-            ],
+            "entities": [],
             "traits": [],
             "intent": "about_country_delicacies"
         },
         {
             "text": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442 \u0413\u0435\u0440\u043c\u0430\u043d\u0438\u044f",
             "entities": [
-                {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 14,
-                    "body": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442",
-                    "entities": []
-                },
                 {
                     "entity": "Germany:Germany",
                     "start": 15,
@@ -2363,13 +2000,6 @@
             "text": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442 \u0418\u043d\u0434\u0438\u044f",
             "entities": [
                 {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 14,
-                    "body": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442",
-                    "entities": []
-                },
-                {
                     "entity": "India:India",
                     "start": 15,
                     "end": 20,
@@ -2383,13 +2013,6 @@
         {
             "text": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442 \u041a\u0438\u0442\u0430\u0439",
             "entities": [
-                {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 14,
-                    "body": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442",
-                    "entities": []
-                },
                 {
                     "entity": "China:China",
                     "start": 15,
@@ -2405,13 +2028,6 @@
             "text": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442 \u041a\u043e\u0440\u0435\u044f",
             "entities": [
                 {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 14,
-                    "body": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442",
-                    "entities": []
-                },
-                {
                     "entity": "Korea:Korea",
                     "start": 15,
                     "end": 20,
@@ -2425,13 +2041,6 @@
         {
             "text": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442 \u0424\u0440\u0430\u043d\u0446\u0438\u044f",
             "entities": [
-                {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 14,
-                    "body": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442",
-                    "entities": []
-                },
                 {
                     "entity": "France:France",
                     "start": 15,
@@ -2447,13 +2056,6 @@
             "text": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442 \u042d\u043a\u0432\u0430\u0434\u043e\u0440",
             "entities": [
                 {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 14,
-                    "body": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442",
-                    "entities": []
-                },
-                {
                     "entity": "Equador:Equador",
                     "start": 15,
                     "end": 21,
@@ -2466,28 +2068,13 @@
         },
         {
             "text": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u044f\u0442",
-            "entities": [
-                {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 14,
-                    "body": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u044f\u0442",
-                    "entities": []
-                }
-            ],
+            "entities": [],
             "traits": [],
             "intent": "about_country_delicacies"
         },
         {
             "text": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u044f\u0442 \u0432 \u0418\u0440\u0430\u043d\u0435",
             "entities": [
-                {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 14,
-                    "body": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u044f\u0442",
-                    "entities": []
-                },
                 {
                     "entity": "Iran:Iran",
                     "start": 17,
@@ -2503,13 +2090,6 @@
             "text": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u044f\u0442 \u0432 \u0418\u0442\u0430\u043b\u0438\u0438",
             "entities": [
                 {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 14,
-                    "body": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u044f\u0442",
-                    "entities": []
-                },
-                {
                     "entity": "Italy:Italy",
                     "start": 17,
                     "end": 22,
@@ -2523,13 +2103,6 @@
         {
             "text": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u044f\u0442 \u0432 \u0420\u043e\u0441\u0441\u0438\u0438",
             "entities": [
-                {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 14,
-                    "body": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u044f\u0442",
-                    "entities": []
-                },
                 {
                     "entity": "Russia:Russia",
                     "start": 17,
@@ -2545,13 +2118,6 @@
             "text": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u044f\u0442 \u0432\u043e \u0424\u0440\u0430\u043d\u0446\u0438\u0438",
             "entities": [
                 {
-                    "entity": "what_is_cooked:what_is_cooked",
-                    "start": 0,
-                    "end": 14,
-                    "body": "\u0447\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u044f\u0442",
-                    "entities": []
-                },
-                {
                     "entity": "France:France",
                     "start": 18,
                     "end": 25,
@@ -2564,15 +2130,7 @@
         },
         {
             "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435",
-            "entities": [
-                {
-                    "entity": "what_is:what_is",
-                    "start": 0,
-                    "end": 9,
-                    "body": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435",
-                    "entities": []
-                }
-            ],
+            "entities": [],
             "traits": [],
             "intent": "about_delicacy"
         },
@@ -2585,13 +2143,6 @@
                     "end": 19,
                     "body": "\u0431\u0440\u043e\u0436\u0435\u043d\u0438\u0435",
                     "entities": []
-                },
-                {
-                    "entity": "what_is:what_is",
-                    "start": 0,
-                    "end": 9,
-                    "body": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435",
-                    "entities": []
                 }
             ],
             "traits": [],
@@ -2600,13 +2151,6 @@
         {
             "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u0431\u0440\u043e\u0436\u0435\u043d\u0438\u0435",
             "entities": [
-                {
-                    "entity": "what_is:what_is",
-                    "start": 0,
-                    "end": 9,
-                    "body": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435",
-                    "entities": []
-                },
                 {
                     "entity": "fermentation:fermentation",
                     "start": 10,
@@ -2622,13 +2166,6 @@
             "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u0432\u0430\u0440\u043a\u0430",
             "entities": [
                 {
-                    "entity": "what_is:what_is",
-                    "start": 0,
-                    "end": 9,
-                    "body": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435",
-                    "entities": []
-                },
-                {
                     "entity": "boiling:boiling",
                     "start": 10,
                     "end": 15,
@@ -2643,13 +2180,6 @@
             "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u0434\u0435\u043b\u0438\u043a\u0430\u0442\u0435\u0441",
             "entities": [
                 {
-                    "entity": "what_is:what_is",
-                    "start": 0,
-                    "end": 9,
-                    "body": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435",
-                    "entities": []
-                },
-                {
                     "entity": "delicacy:delicacy",
                     "start": 10,
                     "end": 19,
@@ -2661,15 +2191,22 @@
             "intent": "about_delicacy_meaning"
         },
         {
-            "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u0436\u0430\u0440\u043a\u0430",
+            "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u0434\u0443\u0440\u0438\u0430\u043d",
             "entities": [
                 {
-                    "entity": "what_is:what_is",
-                    "start": 0,
-                    "end": 9,
-                    "body": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435",
+                    "entity": "durian:durian",
+                    "start": 10,
+                    "end": 16,
+                    "body": "\u0434\u0443\u0440\u0438\u0430\u043d",
                     "entities": []
-                },
+                }
+            ],
+            "traits": [],
+            "intent": "about_delicacy"
+        },
+        {
+            "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u0436\u0430\u0440\u043a\u0430",
+            "entities": [
                 {
                     "entity": "frying:frying",
                     "start": 10,
@@ -2685,13 +2222,6 @@
             "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u0437\u0430\u043a\u0432\u0430\u0448\u0438\u0432\u0430\u043d\u0438\u0435",
             "entities": [
                 {
-                    "entity": "what_is:what_is",
-                    "start": 0,
-                    "end": 9,
-                    "body": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435",
-                    "entities": []
-                },
-                {
                     "entity": "pickling:pickling",
                     "start": 10,
                     "end": 22,
@@ -2705,13 +2235,6 @@
         {
             "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u0437\u0430\u043f\u0435\u043a\u0430\u043d\u0438\u0435",
             "entities": [
-                {
-                    "entity": "what_is:what_is",
-                    "start": 0,
-                    "end": 9,
-                    "body": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435",
-                    "entities": []
-                },
                 {
                     "entity": "baking:baking",
                     "start": 10,
@@ -2727,13 +2250,6 @@
             "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u0437\u0430\u0441\u043e\u043b\u043a\u0430",
             "entities": [
                 {
-                    "entity": "what_is:what_is",
-                    "start": 0,
-                    "end": 9,
-                    "body": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435",
-                    "entities": []
-                },
-                {
                     "entity": "salting:salting",
                     "start": 10,
                     "end": 17,
@@ -2747,13 +2263,6 @@
         {
             "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u043a\u0430\u043d\u0434\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435",
             "entities": [
-                {
-                    "entity": "what_is:what_is",
-                    "start": 0,
-                    "end": 9,
-                    "body": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435",
-                    "entities": []
-                },
                 {
                     "entity": "candiing:candiing",
                     "start": 10,
@@ -2783,13 +2292,6 @@
             "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u043a\u043e\u043f\u0447\u0435\u043d\u0438\u0435",
             "entities": [
                 {
-                    "entity": "what_is:what_is",
-                    "start": 0,
-                    "end": 9,
-                    "body": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435",
-                    "entities": []
-                },
-                {
                     "entity": "smoking:smoking",
                     "start": 10,
                     "end": 18,
@@ -2801,6 +2303,48 @@
             "intent": "about_cooking_method"
         },
         {
+            "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u043a\u0440\u0430\u0441\u043d\u0430\u044f \u0438\u043a\u0440\u0430",
+            "entities": [
+                {
+                    "entity": "red_caviar:red_caviar",
+                    "start": 10,
+                    "end": 22,
+                    "body": "\u043a\u0440\u0430\u0441\u043d\u0430\u044f \u0438\u043a\u0440\u0430",
+                    "entities": []
+                }
+            ],
+            "traits": [],
+            "intent": "about_delicacy"
+        },
+        {
+            "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u043a\u0440\u0435\u0432\u0435\u0442\u043a\u0430",
+            "entities": [
+                {
+                    "entity": "shrimp:shrimp",
+                    "start": 10,
+                    "end": 18,
+                    "body": "\u043a\u0440\u0435\u0432\u0435\u0442\u043a\u0430",
+                    "entities": []
+                }
+            ],
+            "traits": [],
+            "intent": "about_delicacy"
+        },
+        {
+            "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u043b\u043e\u0431\u0441\u0442\u0435\u0440",
+            "entities": [
+                {
+                    "entity": "lobster:lobster",
+                    "start": 10,
+                    "end": 17,
+                    "body": "\u043b\u043e\u0431\u0441\u0442\u0435\u0440",
+                    "entities": []
+                }
+            ],
+            "traits": [],
+            "intent": "about_delicacy"
+        },
+        {
             "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u043c\u0430\u0440\u0438\u043d\u043e\u0432\u0430\u043d\u0438\u0435",
             "entities": [
                 {
@@ -2809,28 +2353,56 @@
                     "end": 21,
                     "body": "\u043c\u0430\u0440\u0438\u043d\u043e\u0432\u0430\u043d\u0438\u0435",
                     "entities": []
-                },
-                {
-                    "entity": "what_is:what_is",
-                    "start": 0,
-                    "end": 9,
-                    "body": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435",
-                    "entities": []
                 }
             ],
             "traits": [],
             "intent": "about_cooking_method"
         },
         {
-            "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u043f\u0440\u0438\u0433\u043e\u0442\u043e\u0432\u043b\u0435\u043d\u0438\u0435 \u0432 \u043c\u0438\u043a\u0440\u043e\u0432\u043e\u043b\u043d\u043e\u0432\u043e\u0439 \u043f\u0435\u0447\u0438",
+            "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u043c\u0435\u0434\u0443\u0437\u0430",
             "entities": [
                 {
-                    "entity": "what_is:what_is",
-                    "start": 0,
-                    "end": 9,
-                    "body": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435",
+                    "entity": "jellyfish:jellyfish",
+                    "start": 10,
+                    "end": 15,
+                    "body": "\u043c\u0435\u0434\u0443\u0437",
                     "entities": []
-                },
+                }
+            ],
+            "traits": [],
+            "intent": "about_delicacy"
+        },
+        {
+            "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u043c\u0438\u0434\u0438\u044f",
+            "entities": [
+                {
+                    "entity": "mussel:mussel",
+                    "start": 10,
+                    "end": 12,
+                    "body": "\u043c\u0438",
+                    "entities": []
+                }
+            ],
+            "traits": [],
+            "intent": "about_delicacy"
+        },
+        {
+            "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u043f\u0435\u0440\u0435\u043f\u0435\u043b\u0438\u043d\u043e\u0435 \u044f\u0439\u0446\u043e",
+            "entities": [
+                {
+                    "entity": "quail_egg:quail_egg",
+                    "start": 10,
+                    "end": 26,
+                    "body": "\u043f\u0435\u0440\u0435\u043f\u0435\u043b\u0438\u043d\u043e\u0435 \u044f\u0439\u0446\u043e",
+                    "entities": []
+                }
+            ],
+            "traits": [],
+            "intent": "about_delicacy"
+        },
+        {
+            "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u043f\u0440\u0438\u0433\u043e\u0442\u043e\u0432\u043b\u0435\u043d\u0438\u0435 \u0432 \u043c\u0438\u043a\u0440\u043e\u0432\u043e\u043b\u043d\u043e\u0432\u043e\u0439 \u043f\u0435\u0447\u0438",
+            "entities": [
                 {
                     "entity": "microwave_cooking:microwave_cooking",
                     "start": 10,
@@ -2857,15 +2429,36 @@
             "intent": "about_cooking_method_delicacies"
         },
         {
-            "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u0442\u0443\u0448\u0435\u043d\u0438\u0435",
+            "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u0440\u044b\u0431\u0430 \u0424\u0443\u0433\u0443",
             "entities": [
                 {
-                    "entity": "what_is:what_is",
-                    "start": 0,
-                    "end": 9,
-                    "body": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435",
+                    "entity": "puffer:puffer",
+                    "start": 15,
+                    "end": 19,
+                    "body": "\u0424\u0443\u0433\u0443",
                     "entities": []
-                },
+                }
+            ],
+            "traits": [],
+            "intent": "about_delicacy"
+        },
+        {
+            "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u0442\u0440\u044e\u0444\u0435\u043b\u044c",
+            "entities": [
+                {
+                    "entity": "truffle:truffle",
+                    "start": 10,
+                    "end": 17,
+                    "body": "\u0442\u0440\u044e\u0444\u0435\u043b\u044c",
+                    "entities": []
+                }
+            ],
+            "traits": [],
+            "intent": "about_delicacy"
+        },
+        {
+            "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u0442\u0443\u0448\u0435\u043d\u0438\u0435",
+            "entities": [
                 {
                     "entity": "stewing:stewing",
                     "start": 10,
@@ -2876,6 +2469,48 @@
             ],
             "traits": [],
             "intent": "about_cooking_method"
+        },
+        {
+            "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u0443\u0441\u0442\u0440\u0438\u0446\u0430",
+            "entities": [
+                {
+                    "entity": "oyster:oyster",
+                    "start": 10,
+                    "end": 17,
+                    "body": "\u0443\u0441\u0442\u0440\u0438\u0446\u0430",
+                    "entities": []
+                }
+            ],
+            "traits": [],
+            "intent": "about_delicacy"
+        },
+        {
+            "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u0444\u0443\u0430-\u0433\u0440\u0430",
+            "entities": [
+                {
+                    "entity": "foie_gras:foie_gras",
+                    "start": 10,
+                    "end": 17,
+                    "body": "\u0444\u0443\u0430-\u0433\u0440\u0430",
+                    "entities": []
+                }
+            ],
+            "traits": [],
+            "intent": "about_delicacy"
+        },
+        {
+            "text": "\u0447\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u0448\u0430\u043c\u043f\u0430\u043d\u0441\u043a\u043e\u0435",
+            "entities": [
+                {
+                    "entity": "champagne:champagne",
+                    "start": 10,
+                    "end": 20,
+                    "body": "\u0448\u0430\u043c\u043f\u0430\u043d\u0441\u043a\u043e\u0435",
+                    "entities": []
+                }
+            ],
+            "traits": [],
+            "intent": "about_delicacy"
         },
         {
             "text": "\u0448\u0430\u043c\u043f\u0430\u043d\u0441\u043a\u043e\u0435",
@@ -2893,29 +2528,13 @@
         },
         {
             "text": "\u044d\u0442\u043e",
-            "entities": [
-                {
-                    "entity": "is:is",
-                    "start": 0,
-                    "end": 3,
-                    "body": "\u044d\u0442\u043e",
-                    "entities": []
-                }
-            ],
+            "entities": [],
             "traits": [],
             "intent": "about_delicacy"
         },
         {
             "text": "\u044d\u0442\u043e \u0441\u0442\u0440\u0430\u043d\u0430",
-            "entities": [
-                {
-                    "entity": "which_country:which_country",
-                    "start": 0,
-                    "end": 10,
-                    "body": "\u044d\u0442\u043e \u0441\u0442\u0440\u0430\u043d\u0430",
-                    "entities": []
-                }
-            ],
+            "entities": [],
             "traits": [],
             "intent": "about_country"
         }
