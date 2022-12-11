@@ -1,0 +1,32 @@
+concept_drainage_system
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [осушительная система] (*<-lang_ru;;*);
+    [drainage system] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (осушительная система)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_structure
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Осушительная система, избыточно увлажнённая земельная территория вместе с сетью каналов, дрен и др. гидротехническими и эксплуатационными сооружениями, обеспечивающими её осушение.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(осушительная система)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [В зависимости от способа осушения осушительные системы бывают открытые и закрытые.](*<-lang_ru;; => nrel_format: format_html;;*);;
+      *);;
+*);;

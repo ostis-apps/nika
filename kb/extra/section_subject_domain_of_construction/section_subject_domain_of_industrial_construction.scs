@@ -1,0 +1,40 @@
+section_subject_domain_of_industrial_construction
+=> nrel_main_idtf:
+	  [Раздел. Предметная область промышленного строительства]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of industrial construction] 
+  (* <- lang_en;; *);;
+
+section_subject_domain_of_industrial_construction = [*
+	subject_domain_of_industrial_construction
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область промышленного строительства]
+   (* <- lang_ru;; *);
+   [Subject domain of industrial construction]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_building;
+	-> rrel_not_maximum_studied_object_class:
+      concept_factory;
+      concept_person;
+      concept_cement;
+-> rrel_explored_relation:
+      nrel_architect;
+      nrel_designer;
+      nrel_material;
+      nrel_tenant;;
+*];;
+
+
+section_subject_domain_of_construction
+-> rrel_key_sc_element:
+    subject_domain_of_industrial_construction; 
+      concept_factory;
+      concept_person;
+      concept_cement;
+      nrel_architect;
+      nrel_designer;
+      nrel_material;
+      nrel_tenant;;

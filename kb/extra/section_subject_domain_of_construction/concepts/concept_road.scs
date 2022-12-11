@@ -1,0 +1,32 @@
+  concept_road
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [дорога] (*<-lang_ru;;*);
+    [road] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (дорога)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_building
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Дорога- путь сообщения для передвижения людей, прогона скота и транспорта, составная часть транспортной инфраструктуры государства или страны.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(дорога)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Дороги играют роль не только путей сообщения, но и выполняют функции противопожарных полос, водостоков, системы ориентации, свободных открытых площадей при спасении людей во время стихийных бедствий.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

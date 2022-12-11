@@ -1,0 +1,33 @@
+  concept_bridge
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [мост] (*<-lang_ru;;*);
+    [bridge] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (мост)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_structure;
+        concept_road
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Мост — дорожное сооружение, возведённое над каким-либо препятствием, например, через водоём, овраг.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(мост)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Мост является одним из древнейших инженерных изобретений человечества. ](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

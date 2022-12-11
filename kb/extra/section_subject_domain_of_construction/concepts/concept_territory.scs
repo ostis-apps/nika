@@ -1,0 +1,29 @@
+  concept_territory
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [территория] (*<-lang_ru;;*);
+    [territory] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (территория)] (* <- lang_ru;; *);;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Территория — часть поверхности суши с определёнными границами.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(территория)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Территорией прежде всего называется земельное пространство, на которое распространяется юрисдикция государства или административной единицы в его составе.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

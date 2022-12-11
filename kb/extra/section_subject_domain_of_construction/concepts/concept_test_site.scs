@@ -1,0 +1,32 @@
+  concept_test_site
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [полигон] (*<-lang_ru;;*);
+    [test site] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (полигон)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_building
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Полигон, в просторечии Вое́нный полигон — объект (территория) для проведения стрельб, учений (учебный полигон) или испытаний вооружений и военной техники (испытательный полигон).] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(полигон)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Военные полигоны имеются во многих государствах и странах мира.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

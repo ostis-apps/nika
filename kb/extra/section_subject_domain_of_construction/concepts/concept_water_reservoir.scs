@@ -1,0 +1,32 @@
+  concept_water_reservoir
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [водохранилище] (*<-lang_ru;;*);
+    [water reservoir] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (водохранилище)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_structure
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Водохранилище — искусственный (рукотворный) водоём, образованный, как правило, в долине реки водоподпорными сооружениями для накопления и хранения воды в целях её использования в народном хозяйстве.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(водохранилище)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Основными параметрами водохранилища являются объём, площадь зеркала и амплитуда колебания уровней воды в условиях его эксплуатации.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

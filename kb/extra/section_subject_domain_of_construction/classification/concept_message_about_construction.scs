@@ -1,0 +1,36 @@
+concept_message_about_construction
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о строительстве]
+	    (* <- lang_ru;; *);
+	[message about construction]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_construction];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о строительстве)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about construction)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о строительстве - атомарное сообщение, с запросом на рассказ о том, что такое строительство.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about construction is an atomic message that asks for a story about what a construction is.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

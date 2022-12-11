@@ -1,0 +1,34 @@
+  concept_cement
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [цемент] (*<-lang_ru;;*);
+    [cement] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (цемент)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_building;
+        nrel_material;
+        concept_structure
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Цемент — искусственное неорганическое гидравлическое вяжущее вещество, один из основных строительных материалов. ] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);
+
+//утверждение
+<- rrel_key_sc_element: ... (*
+    <- explanation;;
+    => nrel_main_idtf:
+      [Утв.(цемент)] (* <- lang_ru;; *);; 
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [При взаимодействии с водой, водными растворами солей и другими жидкостями образует пластичную массу, которая затем затвердевает и превращается в камневидное тело.](*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);;

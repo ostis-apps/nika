@@ -1,0 +1,21 @@
+concept_house
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [жилой дом] (*<-lang_ru;;*);
+    [house] (*<-lang_en;;*);
+
+
+///определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+      [Опр. (жилой дом)] (* <- lang_ru;; *);;
+    => nrel_using_constants: {
+        concept_building
+};;
+<= nrel_sc_text_translation: ... (*
+      -> rrel_example:
+        [Жилой дом – капитальное строение (здание, сооружение), половину или более половины общей площади которого составляет площадь жилых помещений.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+   *);;
