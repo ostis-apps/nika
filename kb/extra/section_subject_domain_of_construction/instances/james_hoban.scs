@@ -1,9 +1,17 @@
 james_hoban
-<- concept_person;
+<- concept_architect;
 
 => nrel_main_idtf: 
  	[Джеймс Хобан] (*<-lang_ru;;*);
 	[James Hoban] (*<-lang_en;;*);
 
-=> nrel_note:
-[Джеймс Хобан — американский архитектор, известен как дизайнер и строитель Белого дома в Вашингтоне, округ Колумбия.](* <- lang_ru;; *);;
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Джеймс Хобан](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Джеймс Хобан — американский архитектор, известен как дизайнер и строитель Белого дома в Вашингтоне, округ Колумбия.](* <- lang_ru;; *);;
+	*);;
+*);;

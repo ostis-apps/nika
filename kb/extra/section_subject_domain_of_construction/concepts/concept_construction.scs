@@ -5,19 +5,20 @@ concept_construction
     [строительство] (*<-lang_ru;;*);
     [construction] (*<-lang_en;;*);
 
+=> nrel_inclusion:
+	concept_building;
+	concept_structure;
 
 ///определение
 <- rrel_key_sc_element: ... (*
 	<- definition;;
     => nrel_main_idtf:
       [Опр. (строительство)] (* <- lang_ru;; *);;
-    => nrel_using_constants: {
-      concept_building;
-      concept_structure
-};;
+
 <= nrel_sc_text_translation: ... (*
       -> rrel_example:
-        [Строительство - создание (возведение) зданий, строений и сооружений.] (* <- lang_ru;; => nrel_format: format_html;;*);;
+      
+        [Строительство - создание (возведение) зданий, строений и сооружений.] (* <- lang_ru;;*);;
     *);;
    *);
 
@@ -29,6 +30,6 @@ concept_construction
       [Утв.(Строительство)] (* <- lang_ru;; *);; 
 <= nrel_sc_text_translation: ... (*
       -> rrel_example:
-[Продукцией строительства является законченные и подготовленные к вводу в эксплуатацию новые или реконструированные здания и сооружения.](*<-lang_ru;; => nrel_format: format_html;;*);;
+[Продукцией строительства является законченные и подготовленные к вводу в эксплуатацию новые или реконструированные здания и сооружения.](*<-lang_ru;;*);;
       *);;
 *);;

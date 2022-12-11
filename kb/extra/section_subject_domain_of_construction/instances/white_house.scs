@@ -5,9 +5,17 @@ white_house
  	[Белый дом] (*<-lang_ru;;*);
 	[White House] (*<-lang_en;;*);
 
-<- nrel_material: m500;
-<- nrel_tenant: goncharov_daniil;
+=> nrel_material: m500;
+=> nrel_tenant: goncharov_daniil;
 => nrel_architect: james_hoban;
 
-=> nrel_note:
-[Бе́лый дом — официальная резиденция президента США, расположенная в Вашингтоне по почтовому адресу: Пенсильвания-авеню, 1600.](* <- lang_ru;; *);;
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Белый Дом](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Бе́лый дом — официальная резиденция президента США, расположенная в Вашингтоне по почтовому адресу: Пенсильвания-авеню, 1600.](* <- lang_ru;; *);;
+	*);;
+*);;
