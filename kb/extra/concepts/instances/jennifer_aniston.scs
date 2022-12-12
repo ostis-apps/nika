@@ -2,6 +2,7 @@ jennifer_aniston
 <- concept_actor;
 <- concept_director;
 <- concept_producer;
+<- concept_hollywood_star;
 => nrel_main_idtf:
 	   [Дженнифер Энистон]
    (* <- lang_ru;; *);
@@ -38,5 +39,9 @@ jennifer_aniston
 <=> nrel_former_partner: justin_theroux;
 
 => nrel_imdb_id: 0000098;
+
+=> nrel_note:
+   [Дженнифер Джоанна Энистон — американская актриса, кинорежиссёр и продюсер, наиболее известна как исполнительница роли Рэйчел Грин в телевизионном сериале канала NBC «Друзья» (1994—2004), за которую она была удостоена премий «Эмми» (2002) и «Золотой глобус» (2003). Обладательница именной звезды на голливудской «Аллее славы».]
+   (* <- lang_ru;; *);
 
 => nrel_place_of_birth: sherman_oaks;;

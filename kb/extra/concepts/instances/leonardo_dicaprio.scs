@@ -1,6 +1,7 @@
 leonardo_dicaprio
 <- concept_actor;
 <- concept_producer;
+<- concept_hollywood_star;
 => nrel_main_idtf:
 	   [Леонардо Ди Каприо]
    (* <- lang_ru;; *);
@@ -46,5 +47,9 @@ leonardo_dicaprio
 <=> nrel_former_partner: camila_morrone;
 
 => nrel_imdb_id: 0000138;
+
+=> nrel_note:
+   [Леонардо Вильгельм Ди Каприо — американский актёр и продюсер. Лауреат многочисленных наград, включая премию «Оскар» (2016), BAFTA (2016), премию Гильдии киноактёров США (2016), три премии «Золотой глобус» (2005, 2014, 2016), а также «Серебряного медведя» (1997) Берлинского кинофестиваля.]
+   (* <- lang_ru;; *);
 
 => nrel_place_of_birth: los_angeles;;
