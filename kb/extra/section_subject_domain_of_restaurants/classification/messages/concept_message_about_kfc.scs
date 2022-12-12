@@ -1,0 +1,34 @@
+concept_message_about_kfc
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о КФС]
+	  (* <- lang_ru;; *);
+      [message about KFC]
+	  (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	  [about_kfc];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о КФС)]
+	   (* <- lang_ru;; *);;
+    => nrel_main_idtf:
+       [Def. (message about KFC)]
+	   (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о КФС - атомарное сообщение, которое содержит КФС, информацию о котором необходимо найти.]
+		   (* <- lang_ru;; *);;
+        -> rrel_example:
+	   [Message about KFC - atomic message that contains KFC, information about which needs to be found.]
+		   (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

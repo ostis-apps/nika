@@ -1,0 +1,44 @@
+nrel_restaurant_menu
+<- sc_node_norole_relation;
+
+=> nrel_main_idtf:
+    [меню ресторана*]
+    (*<- lang_ru;;*);
+    [restaurant menu*]
+    (*<- lang_en;;*);;
+
+nrel_restaurant_menu <- rrel_key_sc_element:
+    ... 
+    (*
+        <- sc_definition;;
+        <- definition;;
+        => nrel_main_idtf: 
+            [Опр. (меню ресторана*)]
+            (*<- lang_ru;;*);
+            [Def. (restaurant menu*)]
+            (*<- lang_en;;*);;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example: 
+                    [меню ресторана* — бинарное отношение, которое показывает какие блюда подают в ресторане.]
+                    (*<- lang_ru;;*);; 
+            *);
+            ...
+            (*
+                -> rrel_example: 
+                    [restaurant menu* - a binary relation that shows what dishes the restaurant serves.]
+                    (*<- lang_en;;*);;
+            *);;
+    *);;
+
+nrel_restaurant_menu
+=> nrel_first_domain: concept_restaurant;
+=> nrel_second_domain: concept_text_file;;
+
+nrel_restaurant_menu
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- antisymmetric_relation;
+<- antitransitive_relation;;

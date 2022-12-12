@@ -1,0 +1,34 @@
+concept_kfc
+<- sc_node_class;
+<- concept_restaurant;
+<- class;
+
+=> nrel_main_idtf:
+    [КФС]
+    (*<- lang_ru;;*);
+    [KFC]
+    (*<- lang_en;;*);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+        => nrel_main_idtf:
+            [Опр. (КФС)]
+            (*<- lang_ru;;*);
+            [Def. (KFC)]
+            (*<- lang_en;;*);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [КФС - международная сеть ресторанов общественного питания, специализирующаяся на блюдах из курицы.]
+                    (*<- lang_ru;;*);;
+            *);
+            ...
+            (*
+                -> rrel_example: 
+                    [KFС is an international chain of catering restaurants specializing in chicken dishes.]
+                    (*<- lang_en;;*);;
+            *);;
+  *);;

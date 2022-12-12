@@ -1,0 +1,34 @@
+concept_message_hinkalnia
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о Хинкальне]
+	  (* <- lang_ru;; *);
+      [message about Hinkalnia]
+	  (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	  [about_hinkalnia];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о Хинкальне)]
+	   (* <- lang_ru;; *);;
+    => nrel_main_idtf:
+       [Def. (message about Hinkalnia)]
+	   (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о Хинкальне - атомарное сообщение, которое содержит Хинкальню, информацию о которой необходимо найти.]
+		   (* <- lang_ru;; *);;
+        -> rrel_example:
+	   [Message about Hinkalnia - atomic message that contains Hinkalnia, information about which needs to be found.]
+		   (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

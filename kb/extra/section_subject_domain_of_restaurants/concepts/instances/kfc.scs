@@ -1,0 +1,39 @@
+kfc
+<- concept_restaurant;
+<- concept_kfc;
+
+=> nrel_main_idtf:
+    [КФС]
+    (*<- lang_ru;;*);
+    [KFC]
+    (*<- lang_en;;*);
+
+<- rrel_restaurant_price_range:
+    concept_cheap_restaurant;
+
+=> nrel_restaurant_kitchen_type:
+    american_kitchen;
+
+=> nrel_restaurant_menu:
+    [В меню ресторана КФС представлены бургеры, курица, сэндвичи, десерты и напитки.]
+    (*<- lang_ru;;*);
+    [The menu of the KFC restaurant includes burgers, chicken, sandwiches, desserts and drinks.]
+    (*<- lang_en;;*);
+
+=> nrel_restaurant_business_hours:
+    [Рестораны КФС открыты с 09:00 до 23:00.]
+    (*<- lang_ru;;*);
+    [KFC restaurants are open from 09:00 to 23:00.]
+    (*<- lang_en;;*);
+
+=> nrel_restaurant_attendance:
+    [Ежедневно ресторан КФС посещают около 300 гостей.]
+    (*<- lang_ru;;*);
+    [Every day the KFC restaurant is visited by about 300 guests.]
+    (*<- lang_en;;*);
+
+=> nrel_restaurant_prevalence_in_belarus:
+    [Рестораны КФС есть в Минске, Бресте, Гродно, Гомеле, Витебске, Могилёве, Бобруйске, Брилевичах, Солигорске, Калинковичах, Речице, Молодечно, Пинске, Лиде, Слуцке, Барановичах, Жодино.]
+    (*<- lang_ru;;*);
+    [There are KFC restaurants in Minsk, Brest, Grodno, Gomel, Vitebsk, Mogilev, Bobruisk, Brilevichi, Soligorsk, Kalinkovichi, Rechitsa, Molodechno, Pinsk, Lida, Slutsk, Baranovichi, Zhodino.]
+    (*<- lang_en;;*);;

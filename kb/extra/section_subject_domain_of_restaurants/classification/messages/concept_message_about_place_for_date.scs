@@ -1,0 +1,34 @@
+concept_message_about_place_for_date
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о месте для свидания]
+	  (* <- lang_ru;; *);
+      [message about place for the date]
+	  (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	  [about_place_for_date];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о месте для свидания)]
+	   (* <- lang_ru;; *);;
+    => nrel_main_idtf:
+       [Def. (message about place for the date)]
+	   (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о месте для свидания - атомарное сообщение, которое содержит место для свидания, информацию о котором необходимо найти.]
+		   (* <- lang_ru;; *);;
+        -> rrel_example:
+	   [Message about place for the date - atomic message that contains place for the date, information about which needs to be found.]
+		   (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

@@ -1,0 +1,38 @@
+pzz
+<- concept_restaurant;
+
+=> nrel_main_idtf:
+    [Пицца Лисицца]
+    (*<- lang_ru;;*);
+    [Pizza Lisizza]
+    (*<- lang_en;;*);
+
+<- rrel_restaurant_price_range:
+    concept_expensive_restaurant;
+
+=> nrel_restaurant_kitchen_type:
+    italian_kitchen;
+
+=> nrel_restaurant_menu:
+    [В меню ресторана Пицца Лисицца представлены пицца, закуски, десерты и напитки.]
+    (*<- lang_ru;;*);
+    [The menu of the Pizza Lisizza restaurant includes pizza, snacks, desserts and drinks.]
+    (*<- lang_en;;*);
+
+=> nrel_restaurant_business_hours:
+    [Рестораны Пицца Лисицца открыты с 10:00 до 03:00.]
+    (*<- lang_ru;;*);
+    [Pizza Lisizza restaurants are open from 10:00 to 03:00.]
+    (*<- lang_en;;*);
+
+=> nrel_restaurant_attendance:
+    [Ежедневно ресторан Пицца Лисицца посещают около 100 гостей.]
+    (*<- lang_ru;;*);
+    [Every day the Pizza Lisizza restaurant is visited by about 100 guests.]
+    (*<- lang_en;;*);
+
+=> nrel_restaurant_prevalence_in_belarus:
+    [Рестораны Пицца Лисицца есть только в Минске.]
+    (*<- lang_ru;;*);
+    [There are Pizza Lisizza restaurants only in Minsk.]
+    (*<- lang_en;;*);;

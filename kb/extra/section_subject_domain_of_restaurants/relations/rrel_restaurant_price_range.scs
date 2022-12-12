@@ -1,0 +1,42 @@
+rrel_restaurant_price_range
+<- sc_node_role_relation;
+
+=> nrel_main_idtf:
+    [ценовой диапазон ресторана']
+    (*<- lang_ru;;*);
+    [restaurant price range']
+    (*<- lang_eng;;*);;
+
+rrel_restaurant_price_range <- rrel_key_sc_element:
+    ... 
+    (*
+        <- sc_definition;;
+        <- definition;;
+        => nrel_main_idtf: 
+            [Опр. (ценовой диапазон ресторана')]
+            (*<- lang_ru;;*);
+            [Def. (restaurant price range')]
+            (*<- lang_en;;*);;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example: 
+                    [ценовой диапазон ресторана' — отношение, показывающее к какому ценовому диапазону принадлежит ресторан.]
+                    (*<- lang_ru;;*);;
+            *);
+            ...
+            (*
+                -> rrel_example: 
+                    [restaurant's price range' — a ratio showing which price range the restaurant belongs to.]
+                    (*<- lang_en;;*);;
+            *);;
+    *);;
+
+rrel_restaurant_price_range
+=> nrel_first_domain: concept_restaurant_price_range;
+=> nrel_second_domain: concept_restaurant;;
+
+rrel_restaurant_price_range
+<- binary_relation;
+<- antireflexive_relation;
+<- antitransitive_relation;;

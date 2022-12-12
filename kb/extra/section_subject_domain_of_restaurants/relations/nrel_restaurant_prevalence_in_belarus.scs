@@ -1,0 +1,44 @@
+nrel_restaurant_prevalence_in_belarus
+<- sc_node_norole_relation;
+
+=> nrel_main_idtf:
+    [распространенность ресторана в Беларуси*]
+    (*<- lang_ru;;*);
+    [restaurant prevalence in Belarus*]
+    (*<- lang_en;;*);;
+
+nrel_restaurant_prevalence_in_belarus <- rrel_key_sc_element:
+    ... 
+    (*
+        <- sc_definition;;
+        <- definition;;
+        => nrel_main_idtf: 
+            [Опр. (распространенность ресторана в Беларуси*)]
+            (*<- lang_ru;;*);
+            [Def. (restaurant prevalence in Belarus*)]
+            (*<- lang_en;;*);;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example: 
+                    [распространенность ресторана в Беларуси* — бинарное отношение, которое показывает в каких городах Беларуси есть филиалы ресторана.]
+                    (*<- lang_ru;;*);; 
+            *);
+            ...
+            (*
+                -> rrel_example: 
+                    [restaurant prevalence in Belarus* - a binary relation that shows in which cities of Belarus there are restaurant branches.]
+                    (*<- lang_en;;*);;
+            *);;
+    *);;
+
+nrel_restaurant_prevalence_in_belarus
+=> nrel_first_domain: concept_restaurant;
+=> nrel_second_domain: concept_text_file;;
+
+nrel_restaurant_prevalence_in_belarus
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- antisymmetric_relation;
+<- antitransitive_relation;;

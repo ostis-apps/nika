@@ -1,0 +1,35 @@
+concept_medium_restaurant
+<- sc_node_class;
+<- class;
+<- concept_restaurant_price_range;
+
+=> nrel_main_idtf:
+    [Средний ресторан]
+    (*<- lang_ru;;*);
+=> nrel_main_idtf:
+    [Medium restaurant]
+    (*<- lang_en;;*);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+        => nrel_main_idtf:
+            [Опр. (Средний ресторан)]
+            (*<- lang_ru;;*);
+            [Def. (Medium restaurant)]
+            (*<- lang_en;;*);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Средний ресторан - обычно между $10-$25.]
+                    (*<- lang_ru;;*);;
+            *);
+            ...
+            (*
+                -> rrel_example: 
+                    [Medium restaurant - usually between $10-$25.]
+                    (*<- lang_en;;*);;
+            *);;
+  *);;

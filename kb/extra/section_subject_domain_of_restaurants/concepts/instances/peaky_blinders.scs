@@ -1,0 +1,39 @@
+peaky_blinders
+<- concept_restaurant;
+<- concept_peaky_blinders;
+
+=> nrel_main_idtf:
+    [Острые Козырьки]
+    (*<- lang_ru;;*);
+    [Peaky Blinders]
+    (*<- lang_en;;*);
+
+<- rrel_restaurant_price_range:
+    concept_very_expensive_restaurant;
+
+=> nrel_restaurant_kitchen_type:
+    japanese_kitchen;
+
+=> nrel_restaurant_menu:
+    [В меню ресторана Острые Козырьки представлены суши, ролы, сашими, тартар, салаты, стейки, бургеры и напитки.]
+    (*<- lang_ru;;*);
+    [The menu of the Peaky Blinders restaurant includes sushi, rolls, sashimi, tartar, salads, steaks, burgers and drinks.]
+    (*<- lang_en;;*);
+
+=> nrel_restaurant_business_hours:
+    [Рестораны Острые Козырьки открыты круглосуточно.]
+    (*<- lang_ru;;*);
+    [Peaky Blinders restaurants are open around the clock.]
+    (*<- lang_en;;*);
+
+=> nrel_restaurant_attendance:
+    [Ежедневно ресторан Острые Козырьки посещают около 30 гостей.]
+    (*<- lang_ru;;*);
+    [Every day the Peaky Blinders restaurant is visited by about 30 guests.]
+    (*<- lang_en;;*);
+
+=> nrel_restaurant_prevalence_in_belarus:
+    [Рестораны Острые Козырьки есть только в Минске.]
+    (*<- lang_ru;;*);
+    [There are Peaky Blinders restaurants only in Minsk.]
+    (*<- lang_en;;*);;

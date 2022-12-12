@@ -1,0 +1,35 @@
+concept_cheap_restaurant
+<- sc_node_class;
+<- class;
+<- concept_restaurant_price_range;
+
+=> nrel_main_idtf:
+    [Недорогой ресторан]
+    (*<- lang_ru;;*);
+=> nrel_main_idtf:
+    [Cheap restaurant]
+    (*<- lang_en;;*);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+        => nrel_main_idtf:
+            [Опр. (Недорогой ресторан)]
+            (*<- lang_ru;;*);
+            [Def. (Cheap restaurant)]
+            (*<- lang_en;;*);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Недорогой ресторан - обычно $10 и меньше.]
+                    (*<- lang_ru;;*);;
+            *);
+            ...
+            (*
+                -> rrel_example: 
+                    [Inexpensive restaurant - usually $10 and under.]
+                    (*<- lang_en;;*);;
+            *);;
+  *);;

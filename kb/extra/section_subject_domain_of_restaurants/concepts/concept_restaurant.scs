@@ -1,0 +1,34 @@
+concept_restaurant
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+    [Ресторан]
+    (*<- lang_ru;;*);
+=> nrel_main_idtf:
+    [Restaurant]
+    (*<- lang_en;;*);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+        => nrel_main_idtf:
+            [Опр. (Ресторан)]
+            (*<- lang_ru;;*);
+            [Def. (Restaurant)]
+            (*<- lang_en;;*);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Ресторан — род столовой где подают кушанья, закуски, напитки, ви́на.]
+                    (*<- lang_ru;;*);;
+            *);
+            ...
+            (*
+                -> rrel_example: 
+                    [Restaurant - a kind of dining room where food, snacks, drinks, and wines are served.]
+                    (*<- lang_en;;*);;
+            *);;
+  *);;
