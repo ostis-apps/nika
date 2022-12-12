@@ -1,0 +1,108 @@
+concept_phrase_about_opportunity_to_tell_about_hollywood_stars
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о наличии возможности говорить о звёздах голливуда]
+	    (* <- lang_ru;; *);
+	[phrase about opportunity to tell about hollywood stars]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о наличии возможности говорить о звёздах голливуда)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о наличии возможности говорить о звёздах голливуда - фраза, содержащая информацию про возможность говорить на тему "Звёзды голливуда".]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+	*);;
+
+concept_phrase_about_hollywood_star
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о звезде голливуда]
+	    (* <- lang_ru;; *);
+	[phrase about hollywood star]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о звезде голливуда]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о звезде голливуда - фраза, содержащая информацию про то, кто такая звезда голливуда.]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+*);;
+
+concept_phrase_about_favorite_hollywood_star
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о любимой звезде голливуда]
+	    (* <- lang_ru;; *);
+	[phrase about favorite hollywood star]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза о любимой звезде голливуда)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза о любимой звезде голливуда - фраза, содержащая пример любимой звезды голливуда.]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+*);;
+
+concept_phrase_about_debut_film_of_hollywood_star
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза с ответом на вопрос, какой дебютный фильм у этой звезды голливуда]
+	    (* <- lang_ru;; *);
+	[phrase about debut film of hollywood star]
+	    (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (фраза с ответом на вопрос, какой дебютный фильм у этой звезды голливуда)]
+	        (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[фраза с ответом на вопрос, какой дебютный фильм у этой звезды голливуда - фраза, содержащая название дебютного фильма, в котором снялся актёр из вопроса.]
+			    (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;		
+*);;
+
