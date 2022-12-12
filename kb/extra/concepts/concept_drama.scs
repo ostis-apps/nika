@@ -1,0 +1,13 @@
+concept_drama
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [драма]
+   (* <- lang_ru;; *);
+
+<= nrel_inclusion: concept_film;
+
+=> nrel_note:
+   [Литературный (драматический) и сценический жанр.]
+   (* <- lang_ru;; *);;

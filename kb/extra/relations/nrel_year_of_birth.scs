@@ -1,0 +1,42 @@
+nrel_year_of_birth
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+   [год рождения*]
+   (* <- lang_ru;; *);
+=> nrel_first_domain: concept_human;
+=> nrel_second_domain: concept_year;
+=> nrel_definitional_domain:
+   ...
+   (*
+    	<= nrel_combination: {
+        	concept_human;
+   	 	concept_year
+    	};;
+   *);
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (год рождения*)]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Год рождения* - бинарное 
+               ориентированное отношение, связывающее 
+               человека и год, в который он родился.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+   	 	 concept_human;
+   	 	 concept_year
+   	 };;
+  *);;

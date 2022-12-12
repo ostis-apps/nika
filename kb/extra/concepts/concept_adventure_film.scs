@@ -1,0 +1,13 @@
+concept_adventure_film
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [приключенческий фильм]
+   (* <- lang_ru;; *);
+
+<= nrel_inclusion: concept_film;
+
+=> nrel_note:
+   [Остросюжетный вид игрового фильма, соответствующий приключенческому роману в литературе.]
+   (* <- lang_ru;; *);;

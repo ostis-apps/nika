@@ -1,0 +1,13 @@
+concept_screenwriter
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [сценарист]
+   (* <- lang_ru;; *);
+
+<= nrel_inclusion: concept_human;
+
+=> nrel_note:
+   [Автор сценария для фильма, телесериала, киносериала, мультфильма, спектакля, компьютерной игры и так далее.]
+   (* <- lang_ru;; *);;

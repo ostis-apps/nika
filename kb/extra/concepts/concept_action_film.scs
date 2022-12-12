@@ -1,0 +1,13 @@
+concept_action_film
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [боевик]
+   (* <- lang_ru;; *);
+
+<= nrel_inclusion: concept_film;
+
+=> nrel_note:
+   [Жанр кинематографа, в котором основное внимание уделяется перестрелкам, дракам, погоням и т. д.]
+   (* <- lang_ru;; *);;

@@ -1,0 +1,42 @@
+nrel_month_of_birth
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+   [месяц рождения*]
+   (* <- lang_ru;; *);
+=> nrel_first_domain: concept_human;
+=> nrel_second_domain: concept_month;
+=> nrel_definitional_domain:
+   ...
+   (*
+    	<= nrel_combination: {
+        	concept_human;
+   	 	concept_month
+    	};;
+   *);
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (месяц рождения*)]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Месяц рождения* - бинарное 
+               ориентированное отношение, связывающее 
+               человека и месяц, в который он родился.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+   	 	 concept_human;
+   	 	 concept_month
+   	 };;
+  *);;
