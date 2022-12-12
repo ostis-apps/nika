@@ -1,0 +1,37 @@
+concept_message_about_debut_film_of_hollywood_star
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение с вопросом о том, какой дебютный фильм у этой звезды голливуда]
+	    (* <- lang_ru;; *);
+	[message about debut film of hollywood star]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_debut_film_of_hollywood_star];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение с вопросом о том, какой дебютный фильм у этой звезды голливуда)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about debut film of hollywood star)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение с вопросом о том, какой дебютный фильм у этой звезды голливуда - атомарное сообщение, с запросом на ответ на вопрос, в каком фильме актёр снимался впервые?]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about director of cartoon is an atomic message, with a request for an answer to the question, in which film did the actor first appear?]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
