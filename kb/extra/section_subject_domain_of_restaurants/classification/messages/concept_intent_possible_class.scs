@@ -1,0 +1,38 @@
+concept_intent_possible_class
+<- sc_node_class;
+=> nrel_main_idtf:
+	[возможный класс цели Wit.ai]
+	(* <- lang_ru;; *);
+	[Wit.ai intent possible class]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (возможный класс цели Wit.ai)]
+		(* <- lang_ru;; *);
+		[Def. (Wit.ai intent possible class)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Возможный класс цели Wit.ai - класс, элементы которого могут быть выделены посредством Wit.ai как цели.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Wit.ai intent possible class is a class whose elements can be identified by Wit.ai as intents.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+-> concept_message_about_mcd;
+-> concept_message_hinkalnia;
+-> concept_message_about_kfc;
+-> concept_message_about_peaky_blinders;
+-> concept_message_about_favourite_restaurant;
+-> concept_message_about_place_for_date;
+-> concept_message_greetings;
+-> concept_message_goodbyes;;

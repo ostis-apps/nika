@@ -1,0 +1,34 @@
+concept_message_about_peaky_blinders
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение об Острых Козырьках]
+	  (* <- lang_ru;; *);
+      [message about Peaky Blinders]
+	  (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	  [about_peaky_blinders];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение об Острых Козырьках)]
+	   (* <- lang_ru;; *);;
+    => nrel_main_idtf:
+       [Def. (message about Peaky Blinders)]
+	   (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение об Острых Козырьках - атомарное сообщение, которое содержит Острые Козырьки, информацию о которых необходимо найти.]
+		   (* <- lang_ru;; *);;
+        -> rrel_example:
+	   [Message about Peaky Blinders - atomic message that contains Peaky Blinders, information about which needs to be found.]
+		   (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

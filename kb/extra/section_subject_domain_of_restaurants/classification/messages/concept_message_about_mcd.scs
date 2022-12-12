@@ -1,0 +1,34 @@
+concept_message_about_mcd
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о Макдональдсе]
+	  (* <- lang_ru;; *);
+      	  [message about McDonald's]
+	  (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	  [about_mcd];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о Макдональдсе)]
+	   (* <- lang_ru;; *);;
+    => nrel_main_idtf:
+       [Def. (message about McDonald's)]
+	   (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о Макдональдсе - атомарное сообщение, которое содержит Макдональдс, информацию о котором необходимо найти.]
+		   (* <- lang_ru;; *);;
+        -> rrel_example:
+	   [Message about McDonald's - atomic message that contains McDonald's, information about which needs to be found.]
+		   (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
