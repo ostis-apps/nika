@@ -1,8 +1,13 @@
 concept_karting <- sc_node_not_relation;;
+concept_karting <- concept_attraction;;
+concept_karting <- concept_wit_entity;;
 
 concept_karting => nrel_main_idtf:
-[картинг] (*<-lang_ru;;*);
-[karting] (*<-lang_en;;*);;
+[картинг] (*<-lang_ru;; <-concept_text;; *);
+[karting] (*<-lang_en;; <-concept_text;; *);;
+
+concept_karting => nrel_definition:
+[вид спорта и развлечения, гонки на картах - простейших гоночных автомобилях без кузова.] (* <- lang_ru;; <-concept_text;; *);;
 
 concept_karting <- rrel_key_sc_element: ...
 (*

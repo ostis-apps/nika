@@ -1,8 +1,13 @@
 concept_carousel <- sc_node_not_relation;;
+concept_carousel <- concept_attraction;;
+concept_carousel <- concept_wit_entity;;
 
 concept_carousel => nrel_main_idtf:
-[карусель] (*<-lang_ru;;*);
-[carousel] (*<-lang_en;;*);;
+[карусель] (* <- lang_ru;; <-concept_text;; *);
+[carousel] (* <- lang_en;; <-concept_text;; *);;
+
+concept_carousel => nrel_definition:
+[аттракцион, представляющий собой вращающуюся платформу, на которой установлены (либо подвешены к крыше, либо прикреплены к центральной стойке) сиденья, сделанные чаще всего в виде лошадок, автомобильчиков и других животных или транспортных средств.] (* <- lang_ru;; <-concept_text;; *);;
 
 concept_carousel <- rrel_key_sc_element: ...
 (*
