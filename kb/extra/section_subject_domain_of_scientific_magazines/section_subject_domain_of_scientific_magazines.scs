@@ -1,0 +1,54 @@
+section_subject_domain_of_scientific_magazines
+=> nrel_main_idtf:
+	  [Раздел. Предметная область научных журналов]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of scientific magazines] 
+  (* <- lang_en;; *);;
+
+
+
+section_subject_domain_scientific_magazines = [*
+	subject_domain_scientific_magazines
+    <- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область научных журналов]
+   (* <- lang_ru;; *);
+   [Subject domain of scientific magazines]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_person;
+      concept_publisher;
+      concept_magazine;
+	-> rrel_not_maximum_studied_object_class:
+	concept_article_topic;
+	concept_author;
+	concept_cover;
+	concept_critic;
+	concept_editor;
+	concept_reader;
+	concept_research_article;
+	-> rrel_explored_relation:
+      nrel_publish;
+      nrel_reading;
+      nrel_subscribe;
+      nrel_writes;;
+*];;
+
+
+section_subject_domain_of_scientific_magazines
+-> rrel_key_sc_element:
+	concept_article_topic;
+	concept_author;
+	concept_cover;
+	concept_critic;
+	concept_editor;
+	concept_magazine;
+	concept_publisher;
+	concept_reader;
+	concept_research_article;
+	concept_person;
+	nrel_publish;
+	nrel_reading;
+	nrel_subscribe;
+	nrel_writes;;

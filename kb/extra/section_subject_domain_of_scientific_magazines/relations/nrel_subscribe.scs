@@ -1,0 +1,36 @@
+nrel_subscribe
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+    [Подписываться](* <- lang_ru;; *);
+    [Subscribe](* <- lang_eng;; *);;
+
+nrel_subscribe
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (Подписываться)](*<- lang_ru;;*);
+    [Def. (Subscribe)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Подписываться - кто-то получает каждую работу автора.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [Subscribe - someone gets every work of the author.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_author
+    };;
+*);;
+
+nrel_subscribe
+=>nrel_first_domain:
+    concept_reader;
+=>nrel_second_domain:
+    concept_author;
+
+<- binary_relation;
+<- antireflexive_relation;
+<- antitransitive_relation;;

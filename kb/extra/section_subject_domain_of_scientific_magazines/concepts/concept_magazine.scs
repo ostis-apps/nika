@@ -1,0 +1,20 @@
+concept_magazine
+=> nrel_main_idtf:
+    [Журнал](* <-lang_ru;; *);
+    [Magazine](* <-lang_en;; *);;
+
+concept_magazine
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Журнал)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Magazine)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Журнал - популярная литература.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Magazine - popular literature.](*<- lang_en;;*);;
+    *);;
+*);;

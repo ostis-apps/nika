@@ -1,0 +1,20 @@
+concept_editor
+=> nrel_main_idtf:
+    [Редактор](* <-lang_ru;; *);
+    [Editor](* <-lang_en;; *);;
+
+concept_editor
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Редактор)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Editor)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Редактор - тот, кто работает с текстом, а именно составляет, проверяет и исправляет содержание в соответствии с требованиями определённого жанра, готовит к печати издание.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Editor - someone who works with the text, namely, composes, checks and corrects the content in accordance with the requirements of a particular genre, prepares an edition for printing.](*<- lang_en;;*);;
+    *);;
+*);;
