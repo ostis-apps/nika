@@ -1,0 +1,98 @@
+section_subject_domain_of_pets
+=> nrel_main_idtf:
+	  [Раздел. Предметная область домашние животные]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of pets world] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_pets = [*
+	subject_domain_of_pets
+<- sc_node_struct;
+=> nrel_main_idtf:
+   [Предметная область домашние животные]
+   (* <- lang_ru;; *);
+   [Subject domain of home pets]
+   (* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+   concept_pet;
+   concept_pet;
+-> rrel_not_maximum_studied_object_class:
+   concept_chordata_phylum;
+   concept_mammalia_class;
+   concept_felidae_family;
+   concept_canidae_family;
+   concept_ungulate_family;
+   concept_abyssinian_cat_genus;
+   concept_dog_genus;
+   concept_bird_chicken_species;
+   concept_savannah_cat;
+   concept_pets_class;
+   concept_pets_family;
+   concept_pets_genus;
+   concept_pet_kingdom;
+   concept_pet_order;
+   concept_pet_phylum;
+   concept_pet_species;
+   concept_domestic_order;
+   concept_hominidae_family;
+   concept_number;
+   concept_dog_bulldog_species;
+   concept_horses_species;
+   concept_cat_genus;
+   concept_cow_genus;
+   concept_bird_genus;
+-> rrel_explored_relation:
+   nrel_height;
+   nrel_weight;
+   rrel_pets_kingdom;  
+   rrel_pets_phylum;
+   rrel_pets_class;
+   rrel_pets_order;
+   rrel_pets_family;
+   rrel_pets_genus;
+   rrel_pets_species;
+   nrel_note;
+   nrel_appearance;;
+*];;
+
+section_subject_domain_of_pets
+-> rrel_key_sc_element:
+   concept_pets;
+   concept_pets;
+   concept_chordata_phylum;
+   concept_mammalia_class;
+   concept_felidae_family;
+   concept_canidae_family;
+   concept_ungulate_family;
+   concept_abyssinian_cat_genus;
+   concept_dog_genus;
+   concept_bird_chicken_species;
+   concept_savannah_cat;
+   concept_pets_class;
+   concept_pets_family;
+   concept_pets_genus;
+   concept_pets_kingdom;
+   concept_pets_order;
+   concept_pets_phylum;
+   concept_pets_species;
+   concept_domestic_order;
+   concept_hominidae_family;
+   concept_number;
+   concept_dog_bulldog_species;
+   concept_horses_species;
+   concept_cat_genus;
+   concept_cow_genus;
+   concept_bird_genus;
+   nrel_height;
+   nrel_weight;
+   rrel_pets_kingdom;  
+   rrel_pets_phylum;
+   rrel_pets_class;
+   rrel_pets_order;
+   rrel_pets_family;
+   rrel_animal_genus;
+   rrel_animal_species;
+   nrel_note;
+   nrel_appearance;;

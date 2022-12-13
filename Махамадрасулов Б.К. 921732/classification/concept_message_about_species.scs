@@ -1,0 +1,34 @@
+concept_message_about_species
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о виде]
+	  (* <- lang_ru;; *);
+      [message about species]
+	  (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	  [about_species];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о виде)]
+	   (* <- lang_ru;; *);;
+    => nrel_main_idtf:
+       [Def. (message about species)]
+	   (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о виде - атомарное сообщение, которое содержит вид, информацию о котором необходимо найти.]
+		   (* <- lang_ru;; *);;
+        -> rrel_example:
+	   [Message about species - atomic message that contains species, information about which needs to be found.]
+		   (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

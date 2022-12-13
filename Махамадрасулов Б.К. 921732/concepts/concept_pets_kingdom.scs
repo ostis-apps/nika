@@ -1,0 +1,33 @@
+concept_pets_kingdom
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Царство]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Kingdom]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Царство)]
+		(* <- lang_ru;; *);
+		[Def. (Kingdom)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Царство — это одна из самых высоких уровней классификации живых организмов.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Kingdom — is one of the highest levels of classification of living organisms.]
+			(* <- lang_en;; *);;
+		*);;
+  *);;

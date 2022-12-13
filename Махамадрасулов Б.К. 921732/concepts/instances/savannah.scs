@@ -1,0 +1,36 @@
+savannah
+<- concept_pets;
+=> nrel_main_idtf:
+	   [савана](* <- lang_ru;; *);
+       [savannah](* <-lang_en;; *);
+
+=> nrel_note:
+   [Общая численность составляет порядка 4000—6500 особей.]
+   (* <- lang_ru;; *);
+
+<= rrel_pets_kingdom:
+    concept_pets_kingdom;
+
+<= rrel_pets_phylum:
+    concept_chordata_phylum;
+
+<= rrel_pets_class:
+    concept_mammalia_class;
+
+<= rrel_pets_order:
+    concept_domestic_order;
+
+<= rrel_pets_family:
+    concept_felidae_family;
+
+<= rrel_pets_genus:
+    concept_abyssinian_cat_genus;
+
+<= rrel_pets_species:
+    concept_savannah_cat;;
+
+number -> 275;;
+savannah => nrel_weight: 275;;
+
+number -> 240;;
+savannah => nrel_height: 240;;    

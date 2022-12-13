@@ -1,0 +1,36 @@
+concept_pets
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Животное]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [pet]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Животное)]
+		(* <- lang_ru;; *);
+		[Def. (pet)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Понятие животные включает в себя совокупность всех многоклеточных, эукариотических организмов Царства Животные, обитающих на нашей планете. К миру животных относятся как дикие особи, так и одомашненные. Человек также находится в естественной систематике фауны.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The concept of petss includes the totality of all multicellular, eukaryotic organisms of the Kingdom pets that live on our planet. The pets world includes both wild individuals and domesticated ones. Man is also in the natural taxonomy of the fauna.]
+			(* <- lang_en;; *);;
+		*);;
+      <= nrel_using_constants: {
+			concept_pets_kingdom
+   	 };;
+  *);;

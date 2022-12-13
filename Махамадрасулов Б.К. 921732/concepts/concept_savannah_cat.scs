@@ -1,0 +1,39 @@
+  concept_savannah_cat
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Вид кошек савана]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [savannah cat species]
+   (* <- lang_en;; *);
+
+<- concept_pets_species;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Вид савана)]
+		(* <- lang_ru;; *);
+		[Def. (savannah cat species)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Вид савана - является крупнейшим из ныне живущих видов кошек. Он наиболее узнаваем по темным вертикальным полосам на оранжевом меху с белой нижней стороной. Высший домашних.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[savannah cat species - is the largest living cat species and a member of the genus cat. It is most recognisable for its dark vertical stripes on orange fur with a white underside. An apex predator, it primarily preys on ungulates, such as deer and wild boar.]
+			(* <- lang_en;; *);;
+		*);;
+        <= nrel_using_constants: {
+			concept_abyssinian_cat_genus
+   	    };;
+    
+  *);;

@@ -1,0 +1,36 @@
+concept_pets_class
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Класс]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Class]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Класс)]
+		(* <- lang_ru;; *);
+		[Def. (Class)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Класс — это одна из высших таксономических категорий в биологической систематике, объединяет родственные отряды.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Class — is one of the highest taxonomic categories in biological systematics, unites related orders.]
+			(* <- lang_en;; *);;
+		*);;
+        <= nrel_using_constants: {
+			concept_pets_order
+   	    };;
+  *);;

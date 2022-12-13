@@ -1,0 +1,41 @@
+concept_horses_species
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Вид лошадей]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [hors species]
+   (* <- lang_en;; *);
+
+<- concept_pets_species;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Вид лошадей)]
+		(* <- lang_ru;; *);
+		[Def. (hors species)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Вид лошадей - млекопитающее семейства лошадей; один из самых крупных наземных домашниых копытных.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[hors species - is mammal of the hors family; one of the largest land predators.]
+			(* <- lang_en;; *);;
+		*);;
+        <= nrel_using_constants: {
+			concept_mammalia_class;
+            concept_ungulate_family;
+            concept_domestic_order
+   	    };;
+    
+  *);;

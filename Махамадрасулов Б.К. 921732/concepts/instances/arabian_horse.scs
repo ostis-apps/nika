@@ -1,0 +1,36 @@
+arabian_horse
+<- concept_pets;
+=> nrel_main_idtf:
+	   [Арабская лошадьь](* <- lang_ru;; *);
+       [arabian horse](* <-lang_en;; *);
+
+=> nrel_note:
+   [Арабская лошадь]
+   (* <- lang_ru;; *);
+
+<= rrel_pets_kingdom:
+    concept_pets_kingdom;
+
+<= rrel_pets_phylum:
+    concept_chordata_phylum;
+
+<= rrel_pets_class:
+    concept_mammalia_class;
+
+<= rrel_pets_order:
+    concept_domestic_order;
+
+<= rrel_pets_family:
+    concept_ungulate_family;
+
+<= rrel_pets_genus:
+    concept_ca_genus;
+
+<= rrel_pets_species:
+    concept_horses_species;;
+
+number -> 250;;
+arabian_horse => nrel_weight: 250;;
+
+number -> 249;;
+arabian_horse => nrel_height: 249;;    

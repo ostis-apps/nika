@@ -1,0 +1,34 @@
+concept_message_about_felidae_family
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о семействе кошачьих]
+	  (* <- lang_ru;; *);
+      [message about felidae family]
+	  (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	  [about_felidae_family];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о семействе кошачьих)]
+	   (* <- lang_ru;; *);;
+    => nrel_main_idtf:
+       [Def. (message about felidae family)]
+	   (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о семействе кошачьих - атомарное сообщение, которое содержит семейство кошачьих, информацию о котором необходимо найти.]
+		   (* <- lang_ru;; *);;
+        -> rrel_example:
+	   [Message about felidae family - atomic message that contains the felidae family, information about which needs to be found.]
+		   (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

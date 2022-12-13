@@ -1,0 +1,40 @@
+concept_cow_genus
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Род Коров]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Cow genus]
+   (* <- lang_en;; *);
+
+<- concept_pets_genus;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Род Коров)]
+		(* <- lang_ru;; *);
+		[Def. (Cow genus)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Род Коров - род млекопитающих отряда домашних. Обитают представители рода везде.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Cow genus - genus of mammals of the carnivore order. Representatives of the genus live in North America and Eurasia.]
+			(* <- lang_en;; *);;
+		*);;
+        <= nrel_using_constants: {
+			concept_domestic_order;
+            concept_mammalia_class
+   	    };;
+    
+  *);;

@@ -1,0 +1,41 @@
+concept_dog_bulldog_species
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Вид Бульдок]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [dog bulldog species]
+   (* <- lang_en;; *);
+
+<- concept_pets_species;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Вид Бульдок)]
+		(* <- lang_ru;; *);
+		[Def. (dog bulldog species)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Вид Бульдок - вид домашние млекопитающих семейства кошачьих. Волосяной покров низкий. Окраска у Бульдок однотонная, и бывает двух типов: бурая с примесью рыжих, серых или тёмных тонов или ярко-рыжая.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[dog bulldog species -  is the species mammals of the cat family. The hairline is low. The color of the bulldog is monophonic, and there are two types: brown with an admixture of red, gray or dark tones, or bright red.]
+			(* <- lang_en;; *);;
+		*);;
+        <= nrel_using_constants: {
+			concept_carnivora_order;
+            concept_mammalia_class;
+            concept_felidae_family
+   	    };;
+    
+  *);;

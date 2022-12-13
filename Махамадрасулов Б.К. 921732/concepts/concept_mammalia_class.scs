@@ -1,0 +1,36 @@
+concept_mammalia_class
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Класс млекопитающих]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Mammalia class]
+   (* <- lang_en;; *);
+
+<- concept_pets_class;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Класс млекопитающих)]
+		(* <- lang_ru;; *);
+		[Def. (Mammalia class)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Класс млекопитающих - класс позвоночных животных, у которых детеныши питаются молоком из особых молочных желез матери.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Mammalia class - is the class of vertebrate petss in which the young are nourished with milk from special mammary glands of the mother. ]
+			(* <- lang_en;; *);;
+		*);;
+    
+  *);;
