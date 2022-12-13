@@ -1,0 +1,24 @@
+concept_room
+=> nrel_main_idtf:
+    [Помещение](* <-lang_ru;; *);
+    [Room](* <-lang_en;; *);;
+
+concept_room
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Помещение)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Room)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Помещение — место, простор для чего-либо; квартира, жилье, жилище, покои, где кто-то проживает.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Room — is a place, space for something; apartment, dwelling, dwelling, chambers where someone lives.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_lessee
+    };;
+*);;

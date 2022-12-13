@@ -1,0 +1,26 @@
+concept_shop
+=> nrel_main_idtf:
+    [Магазин](* <-lang_ru;; *);
+    [Shop](* <-lang_en;; *);;
+
+concept_shop
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Магазин)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Shop)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Магазин, устар. лавка — предприятие розничной торговли, размещённое в стационарном здании, оборудованном для продаж товаров и оказания услуг.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Shop outdated. shop - a retail enterprise located in a stationary building equipped for the sale of goods and the provision of services.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_customer;
+        concept_money;
+        concept_product
+    };;
+*);;

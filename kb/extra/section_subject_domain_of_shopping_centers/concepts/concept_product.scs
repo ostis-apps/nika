@@ -1,0 +1,20 @@
+concept_product
+=> nrel_main_idtf:
+    [Товар](* <-lang_ru;; *);
+    [Product](* <-lang_en;; *);;
+
+concept_product
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Товар)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Product)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Товар — любая вещь, которая участвует в свободном обмене на другие вещи; продукт, произведённый для продажи.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Product - any thing that participates in a free exchange for other things; product made for sale](*<- lang_en;;*);;
+    *);;
+*);;

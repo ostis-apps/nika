@@ -1,0 +1,25 @@
+concept_premium
+=> nrel_main_idtf:
+    [Скидка](* <-lang_ru;; *);
+    [Discount](* <-lang_en;; *);;
+
+concept_premium
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Скидка)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Discount)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Премиум относится к сегменту брендов, продуктов или услуг компании, которые несут реальную или воображаемую прибавочную стоимость в верхней части среднего и высокого ценового диапазона. ](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Premium refers to the segment of a company's brands, products or services that provide real or perceived added value at the top of the mid to high price range.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_product;
+        concept_service
+    };;
+*);;

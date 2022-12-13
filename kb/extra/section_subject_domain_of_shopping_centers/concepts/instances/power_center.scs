@@ -1,0 +1,25 @@
+power_center
+=> nrel_main_idtf:
+    [Power Center](* <-lang_en;; *);
+    [Пауэр центр](* <-lang_ru;; *);
+<- concept_customer;
+<- concept_lessee;
+<- concept_person;
+<- concept_shop;
+<- concept_discount;
+<- concept_room;
+
+
+=> nrel_square:
+    square_between_tf_fs_m;
+
+=> nrel_main_type_of_shops:
+    big_universal_shop;
+
+
+=> nrel_trades:
+    product_of_light_industry;
+    product_of_heavy_industry;
+    product_of_food_industry;
+    product_of_medical_industry;
+    product_of_chemical_industry;;

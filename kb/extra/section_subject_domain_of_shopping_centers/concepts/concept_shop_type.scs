@@ -1,0 +1,24 @@
+concept_shop_type
+=> nrel_main_idtf:
+    [Тип магазина](* <-lang_ru;; *);
+    [Shop type](* <-lang_en;; *);;
+
+concept_shop_type
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Тип магазина)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Shop type)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_shop
+    };;
+*);;

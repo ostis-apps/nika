@@ -1,0 +1,24 @@
+concept_square
+=> nrel_main_idtf:
+    [Площадь](* <-lang_ru;; *);
+    [Square](* <-lang_en;; *);;
+
+concept_square
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Площадь)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Square)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_shop
+    };;
+*);;

@@ -1,0 +1,15 @@
+off_price_center
+=> nrel_main_idtf:
+    [Off-Price Center](* <-lang_en;; *);
+    [Центр торговли со скидками](* <-lang_ru;; *);
+<- concept_customer;
+<- concept_lessee;
+<- concept_person;
+<- concept_shop;
+<- concept_discount;
+<- concept_room;
+
+=> nrel_trades:
+    product_of_light_industry;
+    product_of_heavy_industry;
+    product_of_food_industry;;

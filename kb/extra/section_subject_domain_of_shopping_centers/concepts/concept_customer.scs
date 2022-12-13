@@ -1,0 +1,24 @@
+concept_customer
+=> nrel_main_idtf:
+    [Покупатель](* <-lang_ru;; *);
+    [Сustomer](* <-lang_en;; *);;
+
+concept_customer
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Покупатель)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Сustomer)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Покупатель — человек или организация, осуществляющее оплату деньгами и являющееся приобретателем товара или услуги.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Сustomer - a person or organization that pays with money and is the purchaser of a product or service.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_person
+    };;
+*);;
