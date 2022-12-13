@@ -1,0 +1,20 @@
+concept_publisher
+=> nrel_main_idtf:
+    [Издатель](* <-lang_ru;; *);
+    [Publisher](* <-lang_en;; *);;
+
+concept_publisher
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Издатель)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Publisher)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Издатель - лицо, осуществляющее в порядке, установленном законодательством, с согласия автора или иного правообладателя деятельность по опубликованию литературных и других произведений.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Publisher - a person who, in accordance with the procedure established by law, with the consent of the author or other right holder, publishes literary and other works.](*<- lang_en;;*);;
+    *);;
+*);;

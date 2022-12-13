@@ -1,0 +1,20 @@
+concept_author
+=> nrel_main_idtf:
+    [Автор](* <-lang_ru;; *);
+    [Author](* <-lang_en;; *);;
+
+concept_author
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Автор)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Author)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Автор - создатель журнала.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Author - magazine creator.](*<- lang_en;;*);;
+    *);;
+*);;

@@ -1,0 +1,20 @@
+concept_cover
+=> nrel_main_idtf:
+    [Обложка](* <-lang_ru;; *);
+    [Обложка](* <-lang_en;; *);;
+
+concept_cover
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Обложка)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Cover)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Обложка - мягкое бумажное и иное покрытие книги, документов и так далее, а также элемент их художественного оформления.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Cover - soft paper and other covering of a book, documents, etc., as well as an element of their decoration.](*<- lang_en;;*);;
+    *);;
+*);;

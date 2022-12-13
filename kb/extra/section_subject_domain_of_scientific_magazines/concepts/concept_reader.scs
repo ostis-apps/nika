@@ -1,0 +1,20 @@
+concept_reader
+=> nrel_main_idtf:
+    [Читатель](* <-lang_ru;; *);
+    [Reader](* <-lang_en;; *);;
+
+concept_reader
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Читатель)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Reader)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Читатель - тот, кто читает журнал.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Reader - someone who reads a magazine.](*<- lang_en;;*);;
+    *);;
+*);;

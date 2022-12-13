@@ -1,0 +1,27 @@
+concept_message_about_reader
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о читателе]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_reader];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о читателе)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о журнале - атомарное сообщение,
+    которое содержит какую-либо информацию о читателе.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

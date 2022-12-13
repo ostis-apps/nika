@@ -1,0 +1,20 @@
+concept_article_topic
+=> nrel_main_idtf:
+    [Тема статьи](* <-lang_ru;; *);
+    [Article topic](* <-lang_en;; *);;
+
+concept_article_topic
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Тема статьи)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Article topic)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Тема статьи - главная мысль статьи.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Article topic - the main idea of the article.](*<- lang_en;;*);;
+    *);;
+*);;

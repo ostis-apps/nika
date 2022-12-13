@@ -1,0 +1,27 @@
+concept_message_about_publisher
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение об издателе]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_publisher];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о журнале)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о журнале - атомарное сообщение,
+    которое содержит какую-либо информацию об издателе.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
