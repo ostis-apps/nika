@@ -1,0 +1,25 @@
+concept_shopping_center
+=> nrel_main_idtf:
+    [Торговый центр](* <-lang_ru;; *);
+    [Shopping center](* <-lang_en;; *);;
+
+concept_shopping_center
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Торговый центр)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Shopping center)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Торговый центр — группа предприятий торговли, управляемых как единое целое и находящихся в одном здании или комплексе зданий.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Shopping center - a group of trading enterprises, managed as a whole and located in the same building or complex of buildings.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_shop;
+        concept_customer
+    };;
+*);;

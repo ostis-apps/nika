@@ -1,0 +1,24 @@
+concept_lessee
+=> nrel_main_idtf:
+    [Арендатор](* <-lang_ru;; *);
+    [Lessee](* <-lang_en;; *);;
+
+concept_lessee
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Арендатор)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Lessee)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Арендатор — физическое или юридическое лицо, заключившее с собственником какого-либо имущества договор аренды и получившее во временное владение и пользование такое имущество.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Lessee - an individual or legal entity that has concluded a lease agreement with the owner of any property and received such property for temporary possession and use.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_person
+    };;
+*);;

@@ -1,0 +1,16 @@
+convenience_center
+=> nrel_main_idtf:
+    [Convenience Center](* <-lang_en;; *);
+    [Центр торговли товарами повседневного спроса](* <-lang_ru;; *);
+<- concept_customer;
+<- concept_lessee;
+<- concept_person;
+<- concept_shop;
+<- concept_room;
+
+=> nrel_trades:
+    product_of_food_industry;
+    product_of_medical_industry;
+    
+=> nrel_service:    
+    concept_customer;;

@@ -1,0 +1,52 @@
+section_subject_domain_of_shopping_centers
+=> nrel_main_idtf:
+	  [Раздел. Предметная область торговые центры]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of shopping centers] 
+  (* <- lang_en;; *);;
+
+
+
+section_subject_domain_of_shopping_centers = [*
+	subject_domain_of_shopping_centers
+    <- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область торговые центры]
+   (* <- lang_ru;; *);
+   [Subject domain of shopping centers]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_product;
+      concept_person;
+      concept_money;
+	-> rrel_not_maximum_studied_object_class:
+      concept_customer;
+      concept_discount;
+      concept_lessee;
+      concept_premium;
+      concept_room;
+      concept_service;
+      concept_shop;
+      concept_shopping_center;
+	-> rrel_explored_relation:
+      nrel_service;
+      nrel_trades;;
+*];;
+
+
+section_subject_domain_of_board_games
+-> rrel_key_sc_element:
+       concept_product;
+      concept_person;
+      concept_money;
+      concept_customer;
+      concept_discount;
+      concept_lessee;
+      concept_premium;
+      concept_room;
+      concept_service;
+      concept_shop;
+      concept_shopping_center;
+      nrel_service;
+      nrel_trades;;

@@ -1,0 +1,25 @@
+concept_discount
+=> nrel_main_idtf:
+    [Скидка](* <-lang_ru;; *);
+    [Discount](* <-lang_en;; *);;
+
+concept_discount
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Скидка)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Discount)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Скидка — добровольное, одностороннее снижение стоимости товара (услуги) продавцом (поставщиком услуги) от первоначальной стоимости товара (услуги).](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Discount - a voluntary, unilateral reduction in the cost of goods (services) by the seller (service provider) from the initial cost of goods (services).](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_product;
+        concept_service
+    };;
+*);;

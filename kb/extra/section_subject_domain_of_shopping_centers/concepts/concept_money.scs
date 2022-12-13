@@ -1,0 +1,20 @@
+concept_money
+=> nrel_main_idtf:
+    [Деньги](* <-lang_ru;; *);
+    [Money](* <-lang_en;; *);;
+
+concept_money
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Деньги)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Money)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Деньги — всеобщий эквивалент, выступающий измерителем стоимости товаров или услуг, легко на них обменивающийся.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Money — is a universal equivalent, acting as a measure of the value of goods or services, easily exchanging for them.](*<- lang_en;;*);;
+    *);;
+*);;
