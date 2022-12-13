@@ -1,0 +1,32 @@
+nrel_appearance
+<- sc_node_norole_relation;
+
+=> nrel_main_idtf:
+    [appearance*](*<- lang_en;;*);
+    [внешний вид*](*<- lang_ru;;*);;
+
+nrel_appearance <- rrel_key_sc_element:... 
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (внешний вид*)](*<- lang_ru;;*);
+    [Def. (appearance*)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [внешний вид* — бинарное отношение, которое представляет собой совокупность внешних признаков, характеризующих телосложение, упитанность, положение тела, темперамент и конституцию.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [appearance* is a binary relation, which is a set of external features that characterize the physique, fatness, body position, temperament and constitution.](*<- lang_en;;*);;
+    *);;
+*);;
+
+nrel_appearance
+=>nrel_first_domain:concept_pet;
+=>nrel_second_domain:concept_text_file;
+
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- antisymmetric_relation;
+<- antitransitive_relation;;

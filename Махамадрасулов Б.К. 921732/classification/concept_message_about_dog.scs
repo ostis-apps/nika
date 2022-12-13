@@ -1,0 +1,34 @@
+concept_message_about_dog
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о собаке]
+	  (* <- lang_ru;; *);
+      [message about dog]
+	  (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	  [about_dog];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о собаке)]
+	   (* <- lang_ru;; *);;
+    => nrel_main_idtf:
+       [Def. (message about dog)]
+	   (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о собаке - атомарное сообщение, которое содержит собаке, информацию о которой необходимо найти.]
+		   (* <- lang_ru;; *);;
+        -> rrel_example:
+	   [Message about dog - atomic message that contains the dog, information about which needs to be found.]
+		   (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

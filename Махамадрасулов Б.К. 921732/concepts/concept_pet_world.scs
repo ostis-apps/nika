@@ -1,0 +1,40 @@
+concept_pets
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Домашние животные]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [pets world]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Понятию домашние животные синонимично понятие фауна — исторически сложившаяся совокупность видов животных, обитающих в определенной области и являющаяся частью всех ее биогеоценозов.]
+   (* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Домашние животные)]
+		(* <- lang_ru;; *);
+		[Def. (pets world)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Домашние животные — исторически сложившаяся совокупность животных всей Земли или ее произвольно выбранной части.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The pets world is a historically established set of petss of the whole Earth or its arbitrarily chosen part.]
+			(* <- lang_en;; *);;
+		*);;
+      <= nrel_using_constants: {
+			concept_pets
+   	 };;
+  *);;

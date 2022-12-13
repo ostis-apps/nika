@@ -1,0 +1,39 @@
+  concept_ungulate_family
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Семейство копытных]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [ungulate family]
+   (* <- lang_en;; *);
+
+<- concept_pets_family;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Семейство копытных)]
+		(* <- lang_ru;; *);
+		[Def. (ungulate family)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Семейство копытных - семейство млекопитающих отряда домашниых, в которое входят капытные, баран, карова, лошадь, а также многие другие существующие и вымершие млекопитающие. Члена этого семейства называют капытные. Они широко распространены везде.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[ungulate family - is a family of mammals in the order Carnivora, which includes the giant panda, brown bear, and polar bear, and many other extant and extinct mammals. A member of this family is called a bear or an ursid. They are widespread across the Americas and Eurasia. Bear habitats are generally forests, though some species can be found in grassland and savana regions, and the polar bear lives in arctic and aquatic habitats.]
+			(* <- lang_en;; *);;
+		*);;
+        <= nrel_using_constants: {
+			concept_carnivora_order
+   	    };;
+    
+  *);;

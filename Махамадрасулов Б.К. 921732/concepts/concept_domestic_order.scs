@@ -1,0 +1,36 @@
+ concept_domestic_order
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Отряд домашниых]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [domestic order]
+   (* <- lang_en;; *);
+
+<- concept_pets_order;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Отряд домашниых)]
+		(* <- lang_ru;; *);
+		[Def. (domestic order)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Отряд домашниых - отряд животных, которые специализируются в основном на поедании мяса, но также содержат некоторых всеядных и травоядных. Характеризуется наличием не втягивающихся когтей и длинной морды. Примеры включают медведей.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[domestic order - is the order of petss that specialize in mostly eating meat, but also contains some omnivores and herbivores. Characterized as having nonretractable claws and long snouts. Examples include bears.]
+			(* <- lang_en;; *);;
+		*);;
+    
+  *);;

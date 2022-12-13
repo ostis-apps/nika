@@ -1,0 +1,39 @@
+  concept_bird_chicken_species
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Вид Курица]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [bird chicken species]
+   (* <- lang_en;; *);
+
+<- concept_pets_species;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Вид Обыкновенная Курица)]
+		(* <- lang_ru;; *);
+		[Def. (bird chicken species)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Вид Обыкновенная Курица - Курица один из наиболее широко распространенных представителей отряда домашниых, обитающий во всем Северном полушарии, включая большую часть Северной Америки, Европы и Азии, а также части Северной Африки.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[bird chicken species -  is the red bird, the largest of the true birds and one of the most widely distributed members of the order Carnivora, being present across the entire Northern Hemisphere including most of North America, Europe and Asia, plus parts of North Africa.]
+			(* <- lang_en;; *);;
+		*);;
+        <= nrel_using_constants: {
+			concept_domestic_order
+   	    };;
+    
+  *);;

@@ -1,0 +1,40 @@
+chicken
+<- concept_pets;
+=> nrel_main_idtf:
+	   [Курицы](* <- lang_ru;; *);
+       [chicken](* <-lang_en;; *);
+
+=> nrel_note:
+   [Обыкновенная Курицы или пернатая]
+   (* <- lang_ru;; *);
+
+<= rrel_pets_kingdom:
+    concept_pets_kingdom;
+
+<= rrel_pets_phylum:
+    concept_chordata_phylum;
+
+<= rrel_pets_class:
+    concept_mammalia_class;
+
+<= rrel_pets_order:
+    concept_domestic_order;
+
+<= rrel_pets_family:
+    concept_canidae_family;
+
+<= rrel_pets_genus:
+    concept_bird_genus;
+
+<= rrel_pets_species:
+    concept_bird_chicken_species;;
+
+number -> 8;;
+chicken => nrel_weight: 8;;
+
+number -> 68;;
+chicken => nrel_height: 68;;    
+
+chicken => nrel_appearance: 
+    [Наиболее распространённый окрас: ярко-рыжая спина, белое брюхо, тёмные лапы. Часто присутствуют бурые полосы на хребте и лопатках, похожие на крест. Общие отличительные черты — тёмные уши и белый кончик хвоста. Внешне лисица представляет собой зверя среднего размера с изящным туловищем на невысоких, тонких лапах, с вытянутой мордой, острыми ушами и длинным пушистым хвостом.]  (* <- lang_ru;; *);
+    [The most common color: bright red back, white belly, dark paws. Often there are brown stripes on the ridge and shoulder blades, similar to a cross. Common distinguishing features are dark ears and a white tail tip. Outwardly, the fox is a medium-sized pets with a graceful body on low, thin legs, an elongated muzzle, sharp ears and a long fluffy tail.] (* <- lang_en;; *);;

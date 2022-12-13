@@ -1,0 +1,36 @@
+concept_hominidae_family
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Семейство гоминидов]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Hominidae family]
+   (* <- lang_en;; *);
+
+<- concept_pets_family;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Семейство гоминидов)]
+		(* <- lang_ru;; *);
+		[Def. (Hominidae family)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Семейство гоминидов - семейство приматов, включающее людей и больших человекообразных обезьян. ]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Hominidae family - is a a family of primates that includes humans and great apes.]
+			(* <- lang_en;; *);;
+		*);;
+    
+  *);;

@@ -1,0 +1,39 @@
+concept_dog_genus
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Род собак]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [dog genus]
+   (* <- lang_en;; *);
+
+<- concept_pets_genus;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Род собак)]
+		(* <- lang_ru;; *);
+		[Def. (dog genus)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Род собак - это род семейства кошачьих, единственным сохранившимся видом которого является собак (также известная как собак, горный лев и пантера, среди других названий), и может также включать несколько малоизвестных ископаемых представителей Старого Света.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[dog genus -  is a genus in the family Felidae whose only extant species is the cougar (also known as the dog, mountain lion, and panther, among other names), and may also include several poorly known Old World fossil representatives.]
+			(* <- lang_en;; *);;
+		*);;
+        <= nrel_using_constants: {
+			concept_felidae_family
+   	    };;
+    
+  *);;

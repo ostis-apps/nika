@@ -1,0 +1,36 @@
+bulldog
+<- concept_pets;
+=> nrel_main_idtf:
+	   [бульдог](* <- lang_ru;; *);
+       [bulldog](* <-lang_en;; *);
+
+=> nrel_note:
+   [Ранее вид выделяли в отдельный род Herpailurus, сейчас включают в род бульдог.]
+   (* <- lang_ru;; *);
+
+<= rrel_pets_kingdom:
+    concept_pets_kingdom;
+
+<= rrel_pets_phylum:
+    concept_chordata_phylum;
+
+<= rrel_pets_class:
+    concept_mammalia_class;
+
+<= rrel_pets_order:
+    concept_domestic_order;
+
+<= rrel_pets_family:
+    concept_felidae_family;
+
+<= rrel_pets_genus:
+    concept_dog_genus;
+
+<= rrel_pets_species:
+    concept_dog_bulldog_species;;
+
+number -> 7;;
+bulldog => nrel_weight: 7;;
+
+number -> 66;;
+bulldog => nrel_height: 66;;    

@@ -1,0 +1,34 @@
+concept_message_about_carnivora_order
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение об отряде домашниых]
+	  (* <- lang_ru;; *);
+      [message about carnivora order]
+	  (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	  [about_carnivora_order];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение об отряде домашниых)]
+	   (* <- lang_ru;; *);;
+    => nrel_main_idtf:
+       [Def. (message about carnivora order)]
+	   (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение об отряде домашниых - атомарное сообщение, которое содержит отряд домашниых, информацию о котором необходимо найти.]
+		   (* <- lang_ru;; *);;
+        -> rrel_example:
+	   [Message about carnivora order - atomic message that contains the carnivora order, information about which needs to be found.]
+		   (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

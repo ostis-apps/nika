@@ -1,0 +1,36 @@
+concept_pets_family
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+   [Семейство]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Family]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	    [Опр. (Семейство)]
+		(* <- lang_ru;; *);
+		[Def. (Family)]
+		(* <- lang_en;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+		...
+		(*
+		->rrel_example:
+			[Семейство — это таксономическая категория в биологической систематике. В семейство объединяют близкие роды.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Family — is a taxonomic category in biological systematics. Close genuses are combined into a family.]
+			(* <- lang_en;; *);;
+		*);;
+        <= nrel_using_constants: {
+			concept_pets_genus
+   	    };;
+  *);;
