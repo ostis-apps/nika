@@ -1,0 +1,30 @@
+concept_swing <- sc_node_not_relation;;
+
+concept_swing => nrel_main_idtf:
+[качели] (*<-lang_ru;;*);
+[swing] (*<-lang_en;;*);;
+
+concept_swing <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (качели)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Качели - сооружение для качания для забавы или развлечения. ](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_swing <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (качели)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Качели часто встречались у южных и восточных славянских народностей и крайне редко - у западных. ](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

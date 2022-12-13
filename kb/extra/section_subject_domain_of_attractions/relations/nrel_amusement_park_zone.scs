@@ -1,0 +1,72 @@
+nrel_amusement_park_zone <- sc_node_norole_relation;;
+
+nrel_amusement_park_zone => nrel_main_idtf:
+[зона парка развлечений] (*<-lang_ru;;*);
+[amusement park_zone] (*<-lang_en;;*);;
+
+nrel_amusement_park_zone <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (зона парка развлечений)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Зона парка развлечений - это зона, для определённого круга лиц, с установленными возрастными ограничениями](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_amusement_park_zone <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (зона парка развлечений)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Зоны классифицируются по нескольким критериям: возраст, рост, физические ограничения.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_amusement_park_zone
+=> nrel_first_domain: concept_amusement_park;
+=> nrel_second_domain: concept_amusement_zone_type;
+
+=> nrel_definitional_domain: ...
+(*
+	<= nrel_combination:
+	{
+		concept_amusement_park;
+		concept_amusement_zone_type
+	};;
+*);;
+
+arity -> ...
+(*
+	-> nrel_amusement_park_zone;;
+	=> nrel_measurement: 2;;
+*);;
+
+relation => nrel_inclusion: oriented_relation
+(*
+	-> nrel_amusement_park_zone;;
+*);;
+
+relation => nrel_inclusion: binary_relation
+(*
+	 => nrel_inclusion: symmetric_relation
+	(*
+		-|> nrel_amusement_park_zone;;
+	*);;
+
+	 => nrel_inclusion: transitive_relation
+	(*
+		-|> nrel_amusement_park_zone;;
+	*);;
+
+	 => nrel_inclusion: reflexive_relation
+	(*
+		-|> nrel_amusement_park_zone;;
+	*);;
+
+*);;

@@ -1,0 +1,30 @@
+concept_roller_coaster <- sc_node_not_relation;;
+
+concept_roller_coaster => nrel_main_idtf:
+[американские горки] (*<-lang_ru;;*);
+[roller coaster] (*<-lang_en;;*);;
+
+concept_roller_coaster <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (американские горки)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Американские горки представляют собой железнодорожную систему специальной конструкции, спроектированной так, чтобы состав вагонеток с пассажирами, проходящий по ней, резко изменял направление и скорость движения.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_roller_coaster <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (американские горки)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Для ускорения вагонеток используется преобразование потенциальной энергии состава в кинетическую и наоборот.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

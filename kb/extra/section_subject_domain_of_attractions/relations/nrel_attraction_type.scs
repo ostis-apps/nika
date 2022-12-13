@@ -1,0 +1,78 @@
+nrel_attraction_type <- sc_node_norole_relation;;
+
+nrel_attraction_type => nrel_main_idtf:
+[тип аттракциона] (*<-lang_ru;;*);
+[attraction type] (*<-lang_en;;*);;
+
+nrel_attraction_type <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (тип аттракциона)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Тип аттракциона описывает принцип его работы](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_attraction_type <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (тип аттракциона)] (*<-lang_ru;;*);;
+=> nrel_using_constants:
+	{
+		concept_water_attraction;
+		concept_pneumatic_attraction;
+		concept_mechanical_attraction
+	};;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Аттракционы делятся на: <b><sc_element sys_idtf="сoncept_water_attraction">водные</b>, <b><sc_element sys_idtf="concept_pneumatic_attraction">пневматические</b> и <b><sc_element sys_idtf="concept_mechanical_attraction">механические</b>](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_attraction_type
+=> nrel_first_domain: concept_attraction;
+=> nrel_second_domain: concept_attraction_type;
+
+=> nrel_definitional_domain: ...
+(*
+	<= nrel_combination:
+	{
+		concept_attraction;
+		concept_attraction_type
+	};;
+*);;
+
+arity -> ...
+(*
+	-> nrel_attraction_type;;
+	=> nrel_measurement: 2;;
+*);;
+
+relation => nrel_inclusion: oriented_relation
+(*
+	-> nrel_attraction_type;;
+*);;
+
+relation => nrel_inclusion: binary_relation
+(*
+	 => nrel_inclusion: symmetric_relation
+	(*
+		-|> nrel_attraction_type;;
+	*);;
+
+	 => nrel_inclusion: transitive_relation
+	(*
+		-|> nrel_attraction_type;;
+	*);;
+
+	 => nrel_inclusion: reflexive_relation
+	(*
+		-|> nrel_attraction_type;;
+	*);;
+
+*);;

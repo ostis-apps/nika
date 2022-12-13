@@ -1,0 +1,30 @@
+concept_autotrack <- sc_node_not_relation;;
+
+concept_autotrack => nrel_main_idtf:
+[автотрек] (*<-lang_ru;;*);
+[autotrack] (*<-lang_en;;*);;
+
+concept_autotrack <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (автотрек)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Автотрек – это своеобразная гоночная трасса с несколькими машинками для соревнований.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_autotrack <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (автотрек)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Автотрек даёт возможность проходить захватывающие виражи сложных трасс, выполнять крутые скачки и преодолевать пропасти.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

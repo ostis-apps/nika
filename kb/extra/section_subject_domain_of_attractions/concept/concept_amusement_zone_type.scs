@@ -1,0 +1,30 @@
+concept_amusement_zone_type <- sc_node_not_relation;;
+
+concept_amusement_zone_type => nrel_main_idtf:
+[тип развлекательная зоны] (*<-lang_ru;;*);
+[amusement zone type] (*<-lang_en;;*);;
+
+concept_amusement_zone_type <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (тип развлекательная зоны)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Зона парка - это часть парка, в которой существуют определенные ограничения.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_amusement_zone_type <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (тип развлекательная зоны)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Зоны подразделяются на: семейные, экстремальные и детские.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

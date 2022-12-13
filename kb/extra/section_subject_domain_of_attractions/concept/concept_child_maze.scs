@@ -1,0 +1,30 @@
+concept_child_maze <- sc_node_not_relation;;
+
+concept_child_maze => nrel_main_idtf:
+[детский лабиринт] (*<-lang_ru;;*);
+[child maze] (*<-lang_en;;*);;
+
+concept_child_maze <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (детский лабиринт)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Детский лабиринт - это яркая и безопасная конструкция из труб, дополненная разнообразными игровыми элементами: кольцами, туннелями, лесенками, подвесными конструкциями, горками и сухим бассейном с шариками.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_child_maze <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (детский лабиринт)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Трубы лабиринта очень прочные и защищены от контакта с детьми специальными «рукавами» из мягкой основы и ткани ПВХ, а игровые элементы выполнены из пластичных поверхностей без острых углов.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

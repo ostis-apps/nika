@@ -1,0 +1,30 @@
+concept_tyr <- sc_node_not_relation;;
+
+concept_tyr => nrel_main_idtf:
+[тир] (*<-lang_ru;;*);
+[tyr] (*<-lang_en;;*);;
+
+concept_tyr <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (тир)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Тир - место, специально приспособленное для целевой и учебной стрельбы из персонального стрелкового оружия; обычно помещение, в котором есть стрелковые позиции и учебные мишени.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_tyr <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (тир)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Наиболее распространённые варианты тиров — для целевой стрельбы из пневматического оружия и для огнестрельного оружия. Тиры для огнестрельного оружия отличаются наличием рикошетного канала и пулеприёмника за линией мишеней.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

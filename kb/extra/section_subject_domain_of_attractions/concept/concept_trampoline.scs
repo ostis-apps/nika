@@ -1,0 +1,30 @@
+concept_trampoline <- sc_node_not_relation;;
+
+concept_trampoline => nrel_main_idtf:
+[батут] (*<-lang_ru;;*);
+[trampoline] (*<-lang_en;;*);;
+
+concept_trampoline <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (батут)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Батут - устройство для прыжков, представляющее собой прочную плетёную сетку, натянутую на металлическую раму при помощи резиновых или металлических пружин.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_trampoline <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (батут)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Материал, который используется для изготовления поверхности батута, не является эластичным сам по себе. Эластичность достигается за счёт пружин, расположенных по периметру сетки.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+

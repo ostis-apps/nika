@@ -1,0 +1,72 @@
+nrel_amusement_zone_part <- sc_node_norole_relation;;
+
+nrel_amusement_zone_part => nrel_main_idtf:
+[часть зоны*] (*<-lang_ru;;*);
+[zone part*] (*<-lang_en;;*);;
+
+nrel_amusement_zone_part <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (часть зоны*)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Часть зоны - аттракционы представленные в данной зоне.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_amusement_zone_part <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (часть зоны*)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Аттракционы одного типа формируют зону.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+nrel_amusement_zone_part
+=> nrel_first_domain: concept_attraction;
+=> nrel_second_domain: concept_amusement_zone_type;
+
+=> nrel_definitional_domain: ...
+(*
+	<= nrel_combination:
+	{
+		concept_attraction;
+		concept_amusement_zone_type
+	};;
+*);;
+
+arity -> ...
+(*
+	-> nrel_amusement_zone_part;;
+	=> nrel_measurement: 2;;
+*);;
+
+relation => nrel_inclusion: oriented_relation
+(*
+	-> nrel_amusement_zone_part;;
+*);;
+
+relation => nrel_inclusion: binary_relation
+(*
+	 => nrel_inclusion: symmetric_relation
+	(*
+		-|> nrel_amusement_zone_part;;
+	*);;
+
+	 => nrel_inclusion: transitive_relation
+	(*
+		-|> nrel_amusement_zone_part;;
+	*);;
+
+	 => nrel_inclusion: reflexive_relation
+	(*
+		-|> nrel_amusement_zone_part;;
+	*);;
+
+*);;
