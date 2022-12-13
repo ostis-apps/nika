@@ -1,0 +1,67 @@
+section_subject_domain_of_horse_racing
+=> nrel_main_idtf:
+    [Раздел. Предметная область конных скачек]
+  (* <- lang_ru;; *);
+    [Section. Subject domain of horse racing] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_horse_racing = [*
+  section_subject_domain_of_horse_racing
+<- sc_node_struct;
+  => nrel_main_idtf:
+   [Предметная область конных скачек]
+   (* <- lang_ru;; *);
+   [Subject domain of horse rasing]
+   (* <- lang_en;; *);
+  <- subject_domain;
+  -> rrel_maximum_studied_object_class:
+   concept_horse_racing;
+   concept_horse;
+   concept_jockey;
+   concept_hippodrome;
+   concept_obstacle;
+  -> rrel_not_maximum_studied_object_class:
+   concept_lab_work;
+   concept_saddle;
+   concept_stable;
+   concept_racehorse_owner;
+   concept_smooth_horse_rasing;
+   concept_handicap;
+   concept_steeplechase;
+   concept_cavaletti;
+   concept_finn;
+   concept_gate;
+   concept_kross;
+   concept_barrier;
+   concept_tee;
+   concept_okser;
+   concept_ditch;
+   concept_git;
+   concept_bell;
+   concept_jumping;
+   concept_wall;
+   concept_route;
+   concept_judges;
+   concept_fall;
+   concept_run_out;
+   concept_penalty_points;
+  -> rrel_explored_relation:
+   nrel_knowledge_base;
+   nrel_aim;
+   nrel_lab_workshop;
+   nrel_lab_work_condition;;
+*];;
+
+section_subject_domain_of_intelligent_study_systems
+-> rrel_key_sc_element:
+   subject_domain_of_intelligent_study_systems;
+   concept_intelligent_study_system;
+   concept_intelligent_study_ostis_system;
+   nrel_knowledge_base;
+   nrel_aim;
+   nrel_lab_workshop;
+   nrel_lab_work_condition;
+   concept_lab_work;;

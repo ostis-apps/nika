@@ -1,0 +1,25 @@
+concept_tee <- concept_obstacle;
+
+=> nrel_main_idtf:[Тройник] (* <- lang_ru;; *);
+=> nrel_main_idtf:[Tee] (* <- lang_en;; *);
+
+=> nrel_idtf:[Tee] (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+    <-definition;;
+    =>nrel_main_idtf:
+        [Опр. (Тройник)](*<-lang_ru;;*);
+        [Def. (Tee)](*<-lang_en;;*);;
+
+    <=nrel_sc_text_translation:...
+    (*
+        ->rrel_example: "file://HTML/concept_tee_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+        ->rrel_example: "file://HTML/concept_tee_en.html"(*<-lang_en;;=>nrel_format:format_html;;*);;
+    *);;
+    <=nrel_using_constants:
+    {
+        concept_horse_racing;
+        concept_jockey
+    };;
+*);;

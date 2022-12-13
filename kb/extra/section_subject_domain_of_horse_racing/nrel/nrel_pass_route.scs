@@ -1,0 +1,45 @@
+nrel_pass_route
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antransitive_relation;
+<-asymmetric_relation;
+=>nrel_main_idtf:
+	[Проходить маршрут*]
+	(* <- lang_ru;; *);
+	[Pass Route*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_horse;
+=>nrel_second_domain: concept_route;
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Проходить маршрут*)]
+		(* <- lang_ru;; *);
+		[Def.(Pass route*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Проходить маршрут* - выполнять последовательность упражнений и прыжков.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Pass the route* - perform a sequence of exercises and jumps.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_horse;
+		concept_route;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;
