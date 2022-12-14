@@ -1,0 +1,26 @@
+concept_potter
+<- sc_node_class;
+=> nrel_main_idtf: nrel_profession_name:
+    [гончар](* <-lang_ru;; <-concept_text;; *);
+    [potter](* <-lang_en;; <-concept_text;; *);;
+
+concept_potter
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (гончар)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (potter)] (* <- lang_en;; *);;
+  <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example:
+            [Гончар - это человек, занимающийся керамикой.](*<- lang_ru;;*);;
+        -> rrel_example:
+            [A potter - is a person whose profession is ceramics.](*<- lang_en;;*);;
+    *);;
+    <= nrel_using_constants:
+    {
+        concept_human;
+        concept_ceramics
+    };;
+*);;
