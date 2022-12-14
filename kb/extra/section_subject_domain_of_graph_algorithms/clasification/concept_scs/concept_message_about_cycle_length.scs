@@ -1,0 +1,37 @@
+concept_message_about_cycle_length
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о измерение цикл ]
+	    (* <- lang_ru;; *);
+	[message about cycle length]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_cycle_length];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение об измерение цикл)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about cycle length)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[число составляющих граф рёбер]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[the number of edges that make up the graph]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

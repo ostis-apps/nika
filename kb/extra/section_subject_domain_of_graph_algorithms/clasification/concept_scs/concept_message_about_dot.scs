@@ -1,0 +1,39 @@
+concept_message_about_dot
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о дот ]
+	    (* <- lang_ru;; *);
+	[message about dot]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_dot];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о дот)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about dot)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Ориентированный граф в языке DOT описывается списком вершин и рёбер,
+    представленных названием вершин и стилизованной тире и треугольной скобкой стрелочкой (->) между связанными вершинами]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[A directed graph in the DOT language is described by a list of vertices and edges,
+    represented by the name of the vertices and a stylized dash and triangle bracket arrow (->) between the associated vertices]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
