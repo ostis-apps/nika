@@ -1,0 +1,24 @@
+action_get_timezone_from_message
+<- sc_node_class;
+=> nrel_main_idtf:
+	[действие. получить часовой пояс из сообщения](* <- lang_ru;; *);
+	[action. get timezone from message](* <- lang_en;; *);
+<- actions_class;
+<- atomic_action_class;
+<= nrel_inclusion: information_action;
+<- rrel_key_sc_element:
+	...
+	(*
+	<- explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+			-> rrel_example:
+				[Действие. получить часовой пояс из сообщения - действие по извлечению часового пояса из сообщения.](* <- lang_ru;;	*);;
+		*);
+		...
+		(*
+			-> rrel_example:
+				[Action. get timezone from message is an action for extracting timezone from message.](* <- lang_en;; *);;
+		*);;
+	*);;

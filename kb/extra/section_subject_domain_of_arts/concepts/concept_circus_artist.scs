@@ -1,0 +1,26 @@
+concept_circus_artist
+<- sc_node_class;
+=> nrel_main_idtf: nrel_profession_name:
+    [цирковой артист](* <-lang_ru;; <-concept_text;; *);
+    [circus artist](* <-lang_en;; <-concept_text;; *);;
+
+concept_circus_artist
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (цирковой артист)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (circus artist)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Цирковой артист - это человек, занимающийся цирком.](*<- lang_ru;;*);;
+        -> rrel_example:
+            [A circus artist - is a person whose profession is circus arts.](*<- lang_en;;*);;
+        *);;
+    <= nrel_using_constants:
+    {
+        concept_human;
+        concept_circus_arts
+    };;
+*);;

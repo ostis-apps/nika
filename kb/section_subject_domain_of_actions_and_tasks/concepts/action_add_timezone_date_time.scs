@@ -1,0 +1,24 @@
+action_add_timezone_date_time
+<- sc_node_class;
+=> nrel_main_idtf:
+	[действие. добавить дату и время к часовому поясу](* <- lang_ru;; *);
+	[action. add date and time to timezone](* <- lang_en;; *);
+<- actions_class;
+<- atomic_action_class;
+<= nrel_inclusion: information_action;
+<- rrel_key_sc_element:
+	...
+	(*
+	<- explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+			-> rrel_example:
+				[Действие. добавить дату и время к часовому поясу - действие по определению даты и времени у часового пояса.](* <- lang_ru;;	*);;
+		*);
+		...
+		(*
+			-> rrel_example:
+				[Action. add date and time to timezone is an action for definig of timzone's date and time.](* <- lang_en;; *);;
+		*);;
+	*);;

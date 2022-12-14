@@ -1,0 +1,25 @@
+section_subject_domain_of_timezones
+=> nrel_main_idtf:
+    [Раздел. Предметная область часовых поясов](* <- lang_ru;; *);
+    [Section. Subject domain of timezones](* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_timezones =
+[*
+    subject_domain_of_timezones
+    <- sc_node_struct;
+    => nrel_main_idtf:
+        [Предметная область часовых поясов](* <- lang_ru;; *);
+        [Subject domain of timezones](* <- lang_en;; *);
+    <- subject_domain;
+    -> rrel_maximum_studied_object_class:
+        concept_timezone;
+    -> rrel_explored_relation:
+        nrel_date;
+        nrel_time;
+        nrel_timezone_name;;
+*];;
+
+section_subject_domain_of_timezones
+-> rrel_key_sc_element:
+    concept_timezone;;
