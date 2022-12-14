@@ -1,0 +1,27 @@
+concept_message_about_spring_framework
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о фреймворке Спринг]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_spring_framework];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о фреймворке Спринг)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о фреймворке Спринг - атомарное сообщение,
+    которое содержит информацию о данном фреймворке.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
