@@ -1,0 +1,34 @@
+concept_variable
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [переменная]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [variable]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Область видимости и/или время существования переменной в некоторых языках задаётся классом памяти.]
+   (* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.переменная]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Переменная - это именованная или адресуемая иным образом область памяти, которая используется для получения доступа к данным в программе.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+         concept_data;
+         concept_program
+   	 };;
+  *);;

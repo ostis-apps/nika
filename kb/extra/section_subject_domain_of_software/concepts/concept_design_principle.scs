@@ -1,0 +1,33 @@
+concept_design_principle
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [принцип проектирования]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [design principle]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Одними из наиболее популярных принципов проектирования являются 5 принципов Роберта Мартина - SOLID.]
+   (* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.принцип проектирования]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Принцип проектирования - это правило, которому необходимо следовать для создания гибкого, масштабируемого и качественного программного обеспечения.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+         concept_software
+   	 };;
+  *);;

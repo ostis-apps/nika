@@ -1,0 +1,37 @@
+concept_operating_system
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [операционная система]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [operating system]
+   (* <- lang_en;; *);
+
+
+=> nrel_note:
+   [Некоторые операционные системы требуют установки или могут быть предварительно установлены на приобретенных компьютерах (установка OEM), в то время как другие могут запускаться непосредственно с носителя]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.операционная система]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Операционная система (ОС) — это системное программное обеспечение, которое управляет компьютерным оборудованием, программными ресурсами и предоставляет общие службы для компьютерных программ.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+			concept_system_software;
+			concept_software;
+			concept_program
+   	 };;
+  *);;

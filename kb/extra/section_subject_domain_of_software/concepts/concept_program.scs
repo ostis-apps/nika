@@ -1,0 +1,36 @@
+concept_program
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [программа]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [program]
+   (* <- lang_en;; *);
+
+
+=> nrel_note:
+   [Программы содержат инструкции доступа к числам и строкам в оперативной памяти.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.программа]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Программа — это последовательность или набор инструкций на языке программирования, которые должен выполнить компьютер.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+			concept_computer;
+			concept_programming_language
+   	 };;
+  *);;

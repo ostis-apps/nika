@@ -1,0 +1,30 @@
+nrel_interface
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+    [интерфейс](* <- lang_ru;; *);
+    [interface](* <- lang_eng;; *);;
+
+nrel_interface
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (интерфейс)](*<- lang_ru;;*);
+    [Def. (interface)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Интерфейс - это совокупность средств, методов и правил взаимодействия между системами и/или их элементами.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [Interface is a combination of means, methods and rules of interaction between systems and/or their respective elements.](*<- lang_en;;*);;
+    *);;
+*);;
+
+nrel_interface
+=>nrel_first_domain:concept_operating_system;
+=>nrel_second_domain:concept_driver;
+
+<- binary_relation ;
+<- antireflexive_relation ;
+<- antitransitive_relation ;;

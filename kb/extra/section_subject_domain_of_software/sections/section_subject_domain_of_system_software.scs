@@ -1,0 +1,33 @@
+section_subject_domain_of_system_software => nrel_main_idtf:
+	[Раздел. Предметная область системного программного обеспечения]
+	(* <- lang_ru;; *);
+	[Section. Subject domain of system software]
+	(* <- lang_en;; *);;
+
+section_subject_domain_of_system_software -> rrel_key_sc_element:
+    subject_domain_of_system_software;
+    concept_system_software;
+    concept_operating_system;
+    concept_file_system;
+    concept_file;
+    concept_process;
+    concept_driver;
+    concept_process;;   
+    
+
+subject_domain_of_system_software
+=> nrel_main_idtf:
+	[Предметная область системного программного обеспечения]
+	(* <- lang_ru;; *);
+	[Subject domain of system software]
+	(* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class: 
+    concept_system_software;
+-> rrel_not_maximum_studied_object_class:
+    concept_operating_system;
+    concept_file_system;
+    concept_file;
+    concept_process;
+    concept_driver;
+    concept_process;;

@@ -1,0 +1,35 @@
+concept_driver
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [драйвер]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [driver]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [С операционными системами часто поставляются драйверы для ключевых компонентов аппаратного обеспечения, без которых система не сможет работать.]
+   (* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.драйвер]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Драйвер - это системное программное обеспечение, использующееся для обеспечения взаимодействия компьютера(его операционной системы) с каким-либо внешним аппаратным устройством.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+         concept_system_software;
+         concept_operating_system;
+         concept_computer
+   	 };;
+  *);;

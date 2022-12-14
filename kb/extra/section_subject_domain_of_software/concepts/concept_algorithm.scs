@@ -1,0 +1,34 @@
+concept_algorithm
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [алгоритм]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [algorithm]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Типичным примером алгоритма является алгоритм Евклида, который используется для определения максимального общего делителя двух целых чисел.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.алгоритм]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Алгоритм - конечная последовательность строгих инструкций в программе, обычно используемых для решения класса конкретных задач или для выполнения вычислений.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+			concept_program
+   	 };;
+  *);;

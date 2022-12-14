@@ -1,0 +1,26 @@
+concept_data
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [данные]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [data]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.данные]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Данные - набор дискретных значений, которые передают информацию, описывающую количество, качество, факт, статистику, другие основные единицы значения или просто последовательности символов.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+  *);;

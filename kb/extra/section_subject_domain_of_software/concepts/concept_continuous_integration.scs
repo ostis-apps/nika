@@ -1,0 +1,35 @@
+concept_continuous_integration
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [непрерывная интеграция]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [continuous integration]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Непрерывная интеграция требует того, чтобы разработчики отправляли измененный код в репозиторий исходного кода.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.непрерывная интеграция]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Непрерывная интеграция (CI) — это практика объединения рабочих копий всех разработчиков в общую основную ветку несколько раз в день, а также практика сборки этих изменений с помощью сервера сборки.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+			concept_software;
+         concept_build_server
+   	 };;
+  *);;

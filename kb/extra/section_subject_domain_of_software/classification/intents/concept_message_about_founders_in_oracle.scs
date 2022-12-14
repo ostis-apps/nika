@@ -1,0 +1,27 @@
+concept_message_about_founders_in_oracle
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение об основателях компании Оракл]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_founders_in_oracle];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение об основателях компании Оракл)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение об основателях компании Оракл - атомарное сообщение,
+    которое содержит информацию об основателях данной компании.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

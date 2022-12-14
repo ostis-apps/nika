@@ -1,0 +1,35 @@
+concept_access_modifier
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [модификатор доступа]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [access modifier]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Типичным примером модификаторов доступа являются public, protected и private.]
+   (* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.модификатор доступа]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Модификатор доступа - это ключевые слова в коде программы, которые задают уровень доступности члена или типа(например, какой-либо переменной).]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+         concept_program;
+         concept_variable;
+         concept_data_type
+   	 };;
+  *);;

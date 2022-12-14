@@ -1,0 +1,104 @@
+section_subject_domain_of_software => nrel_main_idtf:
+	[Раздел. Предметная область программного обеспечения]
+	(* <- lang_ru;; *);
+	[Section. Subject domain of software]
+	(* <- lang_en;; *);
+
+
+=> nrel_private_subject_domain:
+                  section_subject_domain_of_system_software;
+                  section_subject_domain_of_application_software;
+                  section_subject_domain_of_software_architecture;
+                  section_subject_domain_of_software_development;
+                  section_subject_domain_of_software_lifecycle;;
+
+section_subject_domain_of_software -> rrel_key_sc_element:  
+    concept_computer;
+    concept_data;
+    concept_software;
+    concept_system_software;
+    concept_operating_system;
+    concept_file_system;
+    concept_file;
+    concept_process;
+    concept_driver;
+    concept_process;
+
+    concept_application_software;
+    concept_web_browser;
+    concept_video_game;
+    concept_text_editor;
+    concept_database_management_system;
+    concept_program;
+
+    concept_software_architecture;
+    concept_algorithm;
+    concept_data_structure;
+    concept_design_pattern;
+    concept_design_principle;
+
+    concept_programming_paradigm;
+    concept_programming_language;
+    concept_data_type;
+    concept_access_modifier;
+    concept_variable;
+
+    concept_software_lifecycle;
+    concept_build_server;
+    concept_software_development_methodology;
+    concept_continuous_integration;
+    concept_continuous_delivery;
+
+    nrel_implementation;
+    nrel_interface;;
+
+section_subject_domain_of_software = [*
+	subject_domain_of_software
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область программного обеспечения]
+   (* <- lang_ru;; *);
+   [Subject domain of software]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_software;
+    concept_computer;
+    concept_data;
+	-> rrel_not_maximum_studied_object_class:
+        concept_system_software;
+    concept_operating_system;
+    concept_file_system;
+    concept_file;
+    concept_process;
+    concept_driver;
+    concept_process;
+
+    concept_application_software;
+    concept_web_browser;
+    concept_video_game;
+    concept_text_editor;
+    concept_database_management_system;
+    concept_program;
+
+    concept_software_architecture;
+    concept_algorithm;
+    concept_data_structure;
+    concept_design_pattern;
+    concept_design_principle;
+
+    concept_programming_paradigm;
+    concept_programming_language;
+    concept_data_type;
+    concept_access_modifier;
+    concept_variable;
+
+    concept_software_lifecycle;
+    concept_build_server;
+    concept_software_development_methodology;
+    concept_continuous_integration;
+    concept_continuous_delivery;
+    -> rrel_explored_relation:
+    nrel_implementation;
+    nrel_interface;;
+*];;
