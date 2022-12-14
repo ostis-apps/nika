@@ -1,7 +1,8 @@
 concept_practical_arts
+<- sc_node_class;
 => nrel_main_idtf:
-    [неизобразительное искусство](* <-lang_ru;; *);
-    [practical arts](* <-lang_en;; *);;
+    [неизобразительное искусство](* <-lang_ru;; <-concept_text;; *);
+    [practical arts](* <-lang_en;; <-concept_text;; *);;
 
 concept_practical_arts
 <- rrel_key_sc_element: ...

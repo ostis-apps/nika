@@ -1,7 +1,8 @@
 concept_musician
-=> nrel_main_idtf:
-    [музыкант](* <-lang_ru;; *);
-    [musician](* <-lang_en;; *);;
+<- sc_node_class;
+=> nrel_main_idtf: nrel_profession_name:
+    [музыкант](* <-lang_ru;; <-concept_text;; *);
+    [musician](* <-lang_en;; <-concept_text;; *);;
 
 concept_musician
 <- rrel_key_sc_element: ...

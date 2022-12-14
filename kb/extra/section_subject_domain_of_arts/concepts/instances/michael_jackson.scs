@@ -1,5 +1,8 @@
 michael_jackson
-=> nrel_main_idtf:
+=> nrel_main_idtf: nrel_artist_name:
+    [Майкл Джексон](* <-lang_ru;; <-concept_text;; *);
+    [Michael Jackson](* <-lang_en;; <-concept_text;; *);
+=> nrel_idtf:
     [Майкл Джексон](* <-lang_ru;; *);
     [Michael Jackson](* <-lang_en;; *);
 <- concept_dancer;
@@ -7,4 +10,5 @@ michael_jackson
 => nrel_artwork:
     billie_jean;
     moonwalk;
+<- concept_human;
 <- concept_wit_entity;;

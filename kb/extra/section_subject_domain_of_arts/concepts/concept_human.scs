@@ -1,7 +1,8 @@
 concept_human
+<- sc_node_class;
 => nrel_main_idtf:
-    [человек](* <-lang_ru;; *);
-    [human](* <-lang_en;; *);;
+    [человек](* <-lang_ru;; <-concept_text;; *);
+    [human](* <-lang_en;; <-concept_text;; *);;
 
 concept_human
 <- rrel_key_sc_element: ...

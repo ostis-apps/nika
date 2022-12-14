@@ -1,7 +1,8 @@
 concept_engraver
-=> nrel_main_idtf:
-    [гравёр](* <-lang_ru;; *);
-    [engraver](* <-lang_en;; *);;
+<- sc_node_class;
+=> nrel_main_idtf: nrel_profession_name:
+    [гравёр](* <-lang_ru;; <-concept_text;; *);
+    [engraver](* <-lang_en;; <-concept_text;; *);;
 
 concept_engraver
 <- rrel_key_sc_element: ...

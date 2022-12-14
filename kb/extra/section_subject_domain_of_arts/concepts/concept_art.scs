@@ -1,7 +1,8 @@
 concept_art
+<- sc_node_class;
 => nrel_main_idtf:
-    [искусство](* <-lang_ru;; *);
-    [art](* <-lang_en;; *);;
+    [искусство](* <-lang_ru;; <-concept_text;; *);
+    [art](* <-lang_en;; <-concept_text;; *);;
 
 concept_art 
 <- rrel_key_sc_element: ...
@@ -27,3 +28,5 @@ concept_art <= nrel_subdividing: ...
 		[Subdividing based on types of art](*<-lang_en;; *);;
 	-> concept_plastic_arts; concept_performing_arts; concept_practical_arts;;
 *);;
+
+concept_text <- sc_node_class;;

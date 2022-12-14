@@ -1,7 +1,8 @@
 concept_opera_singer
-=> nrel_main_idtf:
-    [оперный певец](* <-lang_ru;; *);
-    [opera singer](* <-lang_en;; *);;
+<- sc_node_class;
+=> nrel_main_idtf: nrel_profession_name:
+    [оперный певец](* <-lang_ru;; <-concept_text;; *);
+    [opera singer](* <-lang_en;; <-concept_text;; *);;
 
 concept_opera_singer
 <- rrel_key_sc_element: ...

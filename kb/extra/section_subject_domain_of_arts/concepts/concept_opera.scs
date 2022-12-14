@@ -1,7 +1,8 @@
 concept_opera
-=> nrel_main_idtf:
-    [опера](* <-lang_ru;; *);
-    [opera](* <-lang_en;; *);;
+<- sc_node_class;
+=> nrel_main_idtf: nrel_art_name:
+    [опера](* <-lang_ru;; <-concept_text;; *);
+    [opera](* <-lang_en;; <-concept_text;; *);;
 
 concept_opera
 <- rrel_key_sc_element: ...

@@ -1,10 +1,10 @@
 nrel_artwork
 <- sc_node_norole_relation;
 =>nrel_main_idtf:
-	[произведение искусства](* <- lang_ru;; *);
-	[artwork](* <- lang_eng;; *);;
+	[произведение искусства* ](* <- lang_ru;; *);
+	[artwork* ](* <- lang_eng;; *);;
 
-nrel_profession <- rrel_key_sc_element:... 
+nrel_artwork <- rrel_key_sc_element:... 
 (*
     <- sc_definition;;
     <- definition;;

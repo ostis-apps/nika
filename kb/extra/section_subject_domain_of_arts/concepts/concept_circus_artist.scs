@@ -1,7 +1,8 @@
 concept_circus_artist
-=> nrel_main_idtf:
-    [цирковой артист](* <-lang_ru;; *);
-    [circus artist](* <-lang_en;; *);;
+<- sc_node_class;
+=> nrel_main_idtf: nrel_profession_name:
+    [цирковой артист](* <-lang_ru;; <-concept_text;; *);
+    [circus artist](* <-lang_en;; <-concept_text;; *);;
 
 concept_circus_artist
 <- rrel_key_sc_element: ...

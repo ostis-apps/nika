@@ -1,7 +1,8 @@
 concept_plastic_arts
+<- sc_node_class;
 => nrel_main_idtf:
-    [изобразительное искусство](* <-lang_ru;; *);
-    [plastic arts](* <-lang_en;; *);;
+    [изобразительное искусство](* <-lang_ru;; <-concept_text;; *);
+    [plastic arts](* <-lang_en;; <-concept_text;; *);;
 
 concept_plastic_arts
 <- rrel_key_sc_element: ...

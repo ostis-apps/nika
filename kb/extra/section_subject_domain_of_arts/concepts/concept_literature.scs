@@ -1,7 +1,8 @@
 concept_literature
-=> nrel_main_idtf:
-    [литература](* <-lang_ru;; *);
-    [literature](* <-lang_en;; *);;
+<- sc_node_class;
+=> nrel_main_idtf: nrel_art_name:
+    [литература](* <-lang_ru;; <-concept_text;; *);
+    [literature](* <-lang_en;; <-concept_text;; *);;
 
 concept_literature
 <- rrel_key_sc_element: ...

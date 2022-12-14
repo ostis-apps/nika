@@ -1,7 +1,8 @@
 concept_painter
-=> nrel_main_idtf:
-    [живописец](* <-lang_ru;; *);
-    [painter](* <-lang_en;; *);;
+<- sc_node_class;
+=> nrel_main_idtf: nrel_profession_name:
+    [живописец](* <-lang_ru;; <-concept_text;; *);
+    [painter](* <-lang_en;; <-concept_text;; *);;
 
 concept_painter
 <- rrel_key_sc_element: ...

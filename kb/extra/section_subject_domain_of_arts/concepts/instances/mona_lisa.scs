@@ -1,6 +1,11 @@
 mona_lisa
-=> nrel_main_idtf:
+=> nrel_main_idtf: nrel_artwork_name:
+    [Мона Лиза](* <-lang_ru;; <-concept_text;; *);
+    [Mona Lisa](* <-lang_en;; <-concept_text;; *);
+=> nrel_idtf:
     [Мона Лиза](* <-lang_ru;; *);
     [Mona Lisa](* <-lang_en;; *);
 <- concept_painting;
+<- concept_art;
+<- concept_plastic_arts;
 <- concept_wit_entity;;

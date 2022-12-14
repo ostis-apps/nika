@@ -1,0 +1,29 @@
+nrel_artwork_name
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+	[название произведения искусства* ](* <- lang_ru;; *);
+	[artwork name* ](* <- lang_eng;; *);;
+
+nrel_artwork_name <- rrel_key_sc_element:... 
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (название произведения искусства* )](*<- lang_ru;;*);
+    [Def. (artwork name* )](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Название произведения искусства* - это бинарное неролевое отношение, связывающее произведение искусства и его название.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [Artwork name* - is a binary norole relation between an artwork and its name.](*<- lang_en;;*);;
+    *);;
+*);;
+
+nrel_artwork_name
+=>nrel_first_domain:concept_art;
+=>nrel_second_domain:file;
+
+<- binary_relation ;
+<- antireflexive_relation ;
+<- antitransitive_relation ;;

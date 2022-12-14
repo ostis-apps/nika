@@ -1,7 +1,8 @@
 concept_architecture
-=> nrel_main_idtf:
-    [архитектура](* <-lang_ru;; *);
-    [architecture](* <-lang_en;; *);;
+<- sc_node_class;
+=> nrel_main_idtf: nrel_art_name:
+    [архитектура](* <-lang_ru;; <-concept_text;; *);
+    [architecture](* <-lang_en;; <-concept_text;; *);;
 
 concept_architecture
 <- rrel_key_sc_element: ...

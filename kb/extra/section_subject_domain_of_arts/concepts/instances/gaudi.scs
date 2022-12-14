@@ -1,11 +1,12 @@
 gaudi
-=> nrel_main_idtf:
-    [Антони Пласид Гильeм Гауди-и-Корнет](* <-lang_ru;; *);
-    [Antonio Plácido Guillermo Gaudi y Cornet](* <-lang_en;; *);
+=> nrel_main_idtf: nrel_artist_name:
+    [Антони Пласид Гильeм Гауди-и-Корнет](* <-lang_ru;; <-concept_text;; *);
+    [Antonio Plácido Guillermo Gaudi y Cornet](* <-lang_en;; <-concept_text;; *);
 => nrel_idtf:
     [Гауди](* <-lang_ru;; *);
     [Gaudi](* <-lang_en;; *);
 <- concept_architect;
 => nrel_artwork:
     sagrada_familia;
+<- concept_human;
 <- concept_wit_entity;;

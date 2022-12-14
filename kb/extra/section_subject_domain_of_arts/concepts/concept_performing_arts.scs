@@ -1,7 +1,8 @@
 concept_performing_arts
+<- sc_node_class;
 => nrel_main_idtf:
-    [исполнительское искусство](* <-lang_ru;; *);
-    [performing arts](* <-lang_en;; *);;
+    [исполнительское искусство](* <-lang_ru;; <-concept_text;; *);
+    [performing arts](* <-lang_en;; <-concept_text;; *);;
 
 concept_performing_arts
 <- rrel_key_sc_element: ...

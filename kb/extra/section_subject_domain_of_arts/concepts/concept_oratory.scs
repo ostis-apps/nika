@@ -1,7 +1,8 @@
 concept_oratory
-=> nrel_main_idtf:
-    [ораторскоеое искусство](* <-lang_ru;; *);
-    [oratory](* <-lang_en;; *);;
+<- sc_node_class;
+=> nrel_main_idtf: nrel_art_name:
+    [ораторскоеое искусство](* <-lang_ru;; <-concept_text;; *);
+    [oratory](* <-lang_en;; <-concept_text;; *);;
 
 concept_oratory
 <- rrel_key_sc_element: ...
