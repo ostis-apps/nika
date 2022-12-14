@@ -1,0 +1,45 @@
+nrel_jump_through
+<-sc_node_norole_relation;
+<-relation;
+<-binary_relation;
+<-oriented_relation;
+<-antireflexive_relation;
+<-antransitive_relation;
+<-asymmetric_relation;
+=>nrel_main_idtf:
+	[Прыгать через*]
+	(* <- lang_ru;; *);
+	[Jump through*]
+	(* <- lang_en;; *);
+=>nrel_first_domain: concept_horse;
+=>nrel_second_domain: concept_obstacle;
+<-rrel_key_sc_element:
+	...
+	(*
+	=>nrel_main_idtf:
+		[Опр.(Прыгать через*)]
+		(* <- lang_ru;; *);
+		[Def.(Jump through*)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Прыгать через* - прыжок лошади через препятствие]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Jump through* - Horse jump over an obstacle.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+		concept_horse;
+		concept_obstacle;
+		oriented_relation;
+		binary_relation
+		};;
+	*);;

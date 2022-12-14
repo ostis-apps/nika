@@ -1,0 +1,25 @@
+concept_kross <- concept_obstacle;
+
+=> nrel_main_idtf:[Крестовина] (* <- lang_ru;; *);
+=> nrel_main_idtf:[kross] (* <- lang_en;; *);
+
+=> nrel_idtf:[kross] (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+    <-definition;;
+    =>nrel_main_idtf:
+        [Опр. (Кресовина)](*<-lang_ru;;*);
+        [Def. (kross)](*<-lang_en;;*);;
+
+    <=nrel_sc_text_translation:...
+    (*
+        ->rrel_example: "file://HTML/concept_kross_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+        ->rrel_example: "file://HTML/concept_kross_en.html"(*<-lang_en;;=>nrel_format:format_html;;*);;
+    *);;
+    <=nrel_using_constants:
+    {
+        concept_horse_racing;
+        concept_jockey
+    };;
+*);;

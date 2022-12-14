@@ -1,0 +1,25 @@
+concept_obstacle <- sc_node_not_relation;
+
+=> nrel_main_idtf:[Препятствие] (* <- lang_ru;; *);
+=> nrel_main_idtf:[Obstacle] (* <- lang_en;; *);
+
+=> nrel_idtf:[Obstacle] (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+    <-definition;;
+    =>nrel_main_idtf:
+        [Опр. (Кавалетти)](*<-lang_ru;;*);
+        [Def. (Obstacle)](*<-lang_en;;*);;
+
+    <=nrel_sc_text_translation:...
+    (*
+        ->rrel_example: "file://HTML/concept_cavaletti_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+        ->rrel_example: "file://HTML/concept_cavaletti_en.html"(*<-lang_en;;=>nrel_format:format_html;;*);;
+    *);;
+    <=nrel_using_constants:
+    {
+        concept_horse_racing;
+        concept_jockey
+    };;
+*);;

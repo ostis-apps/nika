@@ -1,0 +1,25 @@
+concept_run_out <- sc_node_not_relation;
+
+=> nrel_main_idtf:[Обнос] (* <- lang_ru;; *);
+=> nrel_main_idtf:[Run out] (* <- lang_en;; *);
+
+=> nrel_idtf:[Excess of the norm of time] (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+    <-definition;;
+    =>nrel_main_idtf:
+        [Опр. (Обнос)](*<-lang_ru;;*);
+        [Def. (Run out)](*<-lang_en;;*);;
+
+    <=nrel_sc_text_translation:...
+    (*
+        ->rrel_example: "file://HTML/concept_run_out_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+        ->rrel_example: "file://HTML/concept_run_out_en.html"(*<-lang_en;;=>nrel_format:format_html;;*);;
+    *);;
+    <=nrel_using_constants:
+    {
+        concept_horse_racing;
+        concept_jockey
+    };;
+*);;
