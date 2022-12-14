@@ -14,6 +14,9 @@
     * [Message reply agent](agents/messageReplyAgent.md)
     * [Standard message reply agent](agents/standardMessageReplyAgent.md)
     * [Message topic classification agent](agents/messageTopicClassificationAgent.md)
+    * [Get timezone from message agent](agents/getTimezoneFromMessageAgent.md)
+    * [Add timezone date time agent](agents/addDateAndTimeAgent.md)
+    * [Remove timezone date time agent](agents/removeDateAndTimeAgent.md)
 
 - **Subsystems**
     * [Inference agent](subsystems/ostis-inference.md)
