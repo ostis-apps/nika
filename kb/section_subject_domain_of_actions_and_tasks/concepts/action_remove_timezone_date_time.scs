@@ -1,0 +1,24 @@
+action_remove_timezone_date_time
+<- sc_node_class;
+=> nrel_main_idtf:
+	[действие. удалить дату и время у часового пояса](* <- lang_ru;; *);
+	[action. remove date and time to timezone](* <- lang_en;; *);
+<- actions_class;
+<- atomic_action_class;
+<= nrel_inclusion: information_action;
+<- rrel_key_sc_element:
+	...
+	(*
+	<- explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+			-> rrel_example:
+				[Действие. удалить дату и время у часового пояса - действие по удалению информации о дате и времени у часового пояса.](* <- lang_ru;;	*);;
+		*);
+		...
+		(*
+			-> rrel_example:
+				[Action. remove date and time to timezone is an action for deleting timzone's date and time information.](* <- lang_en;; *);;
+		*);;
+	*);;
