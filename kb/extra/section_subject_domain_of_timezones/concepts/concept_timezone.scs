@@ -1,0 +1,21 @@
+concept_timezone
+<- sc_node_class;
+=> nrel_main_idtf:
+    [административный часовой пояс](* <-lang_ru;; <-concept_text;; *);
+    [time zone](* <-lang_en;; <-concept_text;; *);;
+
+concept_timezone
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (временная зона)] (* <- lang_ru;; *);;
+    => nrel_main_idtf: [Def. (time zone)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Административный часовой пояс — участок земной поверхности, на котором в соответствии с некоторым законом установлено определённое официальное время.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [A time zone is an area which observes a uniform standard time for legal, commercial and social purposes.](*<- lang_en;;*);;
+    *);;
+*);;
