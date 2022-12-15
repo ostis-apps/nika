@@ -1,0 +1,19 @@
+nrel_date_of_birth
+
+=>nrel_first_domain:
+    concept_basketball;
+=>nrel_second_domain:
+    concept_players;
+    
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [дата рождения *]
+    (* <- lang_ru;; *);
+    [date of birth *]
+    (* <- lang_en;; *);
+
+<-oriented_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;
+	

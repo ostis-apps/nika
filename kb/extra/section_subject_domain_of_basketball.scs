@@ -1,0 +1,70 @@
+section_subject_domain_of_basketball
+<- sc_node_struct;
+=> nrel_main_idtf:
+[Раздел. Предметная область баскетбол](* <- lang_ru;; *);
+[Section. Subject domain of basketball](* <- lang_en;; *);
+<-atomic_section;;
+
+section_subject_domain_of_basketball = [*
+subject_domain_of_basketball
+=> nrel_main_idtf:
+[Предметная область баскетбол](* <- lang_ru;; *);
+[Subject domain of basketball](* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+   concept_of_basketball;
+-> rrel_not_maximum_studied_object_class:
+   concept_basketball;
+   concept_nba;
+   concept_mpba;
+   concept_acb;
+   concept_laliga;
+   concept_nbl;
+   concept_nbl_pro_a;
+   concept_rfb;
+   concept_players;
+    valencia;
+    barcelona;
+    malaga;
+    tenerife;
+    saragosa;
+    instituto;
+    quimsa;
+    riachuello;
+    sanlorenzo;
+    platense;
+    eureka_blaze;
+    jacksonville_generals;
+    gateway_steam;
+    champaigne_swarm;
+    bloomington_express;
+    memphis_grizzles;
+    clippers;
+    boston_seltics;
+    chicago_bulls;
+    toronto_raptors;
+    wildcats;
+    jack_jumpers;
+    melbourne_united;
+    bullets;
+    sydney_kings;
+    metropolitans;
+    strassburg;
+    sholet;
+    lemain;
+    dijoun;
+    cska;
+    spartak;
+    lokomotiv;
+    dinamo;
+    himki;
+
+-> rrel_explored_relation:
+   nrel_date_of_birth;
+   nrel_height;
+   nrel_gender;
+   nrel_nation;
+   nrel_teams;
+   nrel_leagues;
+   nrel_power;;
+*];;

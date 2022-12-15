@@ -1,0 +1,36 @@
+concept_message_about_date_of_birth 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о дате рождения]
+	    (* <- lang_ru;; *);
+	[message about date of birth]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_date_of_birth];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о концепте )]
+	        (* <- lang_ru;; *);
+	    [Def. (message about date of birth)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о дате рождения - атомарное сообщение, которое содержит понятие концепт, информацию о которой необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about date of birth is an atomic message that contains the termin of a concept information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
