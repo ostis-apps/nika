@@ -1,0 +1,37 @@
+concept_message_about_entity
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение сущности]
+	    (* <- lang_ru;; *);
+	[message about entity]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_entity];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о сущности)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about entity)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о сущности - атомарное сообщение, которое содержит виды сушности, информацию о которых необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about entity is an atomic message that contains entity division information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

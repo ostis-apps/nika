@@ -1,0 +1,73 @@
+section_subject_domain_of_conference
+=> nrel_main_idtf:
+	  [Раздел. Предметная область конференций]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of conference] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_conference = [*
+	section_subject_domain_of_conference
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область конференций]
+   (* <- lang_ru;; *);
+   [Subject domain of conference]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+    concept_conference;
+	-> rrel_not_maximum_studied_object_class:
+   concept_idea;
+	-> rrel_explored_relation:
+      concept_meeting;
+      concept_session;
+      concept_discussion;
+      concept_topic;
+      concept_problem;
+      concept_question;
+      concept_dispute;
+      concept_true;
+      concept_reasoned;
+      concept_essence;
+      concept_reasoning;
+      concept_reflections;
+      concept_theory;
+      concept_controversial;
+      concept_opposite;
+      concept_position;
+      concept_adequacy;
+      concept_thought;
+      concept_information;
+      concept_task;
+      concept_OSTIS_conference;;
+*];;
+
+section_subject_domain_of_conference
+-> rrel_key_sc_element:
+   section_subject_domain_of_conference;
+   concept_conference;
+   concept_meeting;
+   concept_session;
+   concept_discussion;
+   concept_topic;
+   concept_problem;
+   concept_question;
+   concept_dispute;
+   concept_true;
+   concept_reasoned;
+   concept_essence;
+   concept_idea;
+   concept_reasoning;
+   concept_reflections;
+   concept_theory;
+   concept_controversial;
+   concept_opposite;
+   concept_position;
+   concept_adequacy;
+   concept_thought;
+   concept_information;
+   concept_task;
+   concept_OSTIS_conference;;
