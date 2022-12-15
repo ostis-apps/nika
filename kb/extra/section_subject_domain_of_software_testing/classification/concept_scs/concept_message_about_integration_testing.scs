@@ -1,0 +1,43 @@
+concept_message_about_integration_testing
+
+
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о интеграционное тестирование]
+	    (* <- lang_ru;; *);
+	[message about integration testing]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_integration_testing];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о интеграционное тестирование)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about integration testing)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о интеграционное тестирование - атомарное сообщение,
+                    которое содержит  интеграционное тестирование, определение которой
+                    необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about integration testing - atomic message,
+            which contains integration testing, the definition of which
+            needs to be found.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

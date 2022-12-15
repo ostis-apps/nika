@@ -1,0 +1,42 @@
+concept_message_about_automated_testing
+
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о автоматизированное тестирование]
+	    (* <- lang_ru;; *);
+	[message about automated testing]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_automated_testing];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о автоматизированное тестирование)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about automated testing)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[сообщение о  автоматизированное тестирование - атомарное сообщение,
+                    которое содержит понятие  автоматизированное тестирование, фокусники которого
+                    необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[message aboutautomated testing - atomic message,
+            which contains the concept of the automated testing, the elements of magicians of which
+            needs to be found.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

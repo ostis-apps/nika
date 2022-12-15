@@ -1,0 +1,39 @@
+concept_message_about_white_box_testing
+
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о тестирование белого ящика]
+	    (* <- lang_ru;; *);
+	[message about white box testing]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_white_box_testing];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о тестирование белого ящика)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about white box testing)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о  тестирование белого ящика - атомарное сообщение,  определение тестирование белого ящика о которых необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about white box testing - an atomic message, the definition of white box testing about which you want to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
+
