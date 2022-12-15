@@ -8,14 +8,21 @@ _compound_action_message_processing
     _<= nrel_decomposition_of_action:: .._decomposition_tuple;;
 
 .._decomposition_tuple
-    _-> rrel_1:: .._topic_classify;
+    _-> rrel_1:: .._topic_classify; .._get_math_constant_value;
     _-> .._standard_message_reply;;
 
 .._topic_classify
-    _=> nrel_goto:: .._standard_message_reply;
+    _=> nrel_goto:: .._get_math_constant_value;
     _<- action_message_topic_classification;
     _<- question;
     _-> rrel_1:: _message;;
+
+.._get_math_constant_value
+    _=> nrel_goto:: .._standard_message_reply;
+    _<- action_get_math_constant_value;
+    _<- question;
+    _-> rrel_1:: _message;
+    _-> rrel_2:: rrel_dynamic_argument:: _math_constant;;
 
 .._standard_message_reply
     _<- action_standard_message_reply;

@@ -37,6 +37,8 @@ ScAddrVector MessageTopicClassifier::classifyMessage(ScAddr const & messageAddr)
   messageClassificationElements.insert(
       messageClassificationElements.cend(), messageEntitiesElements.cbegin(), messageEntitiesElements.cend());
 
+  SC_LOG_INFO("response = " + witResponse.dump(2));
+
   return messageClassificationElements;
 }
 

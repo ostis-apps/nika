@@ -1,0 +1,23 @@
+section_subject_domain_of_math_constants
+=> nrel_main_idtf:
+    [Раздел. Предметная область математических констант](* <- lang_ru;; *);
+    [Section. Subject domain of math constants](* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_math_constants =
+[*
+    subject_domain_of_timezones
+    <- sc_node_struct;
+    => nrel_main_idtf:
+        [Предметная область математических констант](* <- lang_ru;; *);
+        [Subject domain of math constants](* <- lang_en;; *);
+    <- subject_domain;
+    -> rrel_maximum_studied_object_class:
+        concept_math_constant;
+    -> rrel_explored_relation:
+        nrel_math_constant_name;;
+*];;
+
+section_subject_domain_of_math_constants
+-> rrel_key_sc_element:
+    concept_math_constant;;
