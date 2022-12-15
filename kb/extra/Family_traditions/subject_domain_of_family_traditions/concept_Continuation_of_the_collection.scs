@@ -1,0 +1,21 @@
+concept_Continuation_of_the_collection <- sc_node_not_relation;
+
+=> nrel_main_idtf:[Продолжение коллекции] (* <- lang_ru;; *);
+=> nrel_main_idtf:[Continuation of the collection] (* <- lang_en;; *);
+
+=> nrel_idtf:[concept_Continuation_of_the_collection] (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+    <-definition;;
+    =>nrel_main_idtf:
+        [Опр. (Продолжение коллекции)](*<-lang_ru;;*);
+        [Def. (Continuation of the collection)](*<-lang_en;;*);;
+
+    <=nrel_sc_text_translation:...
+    (*
+        ->rrel_example: "file://HTML/concept_Continuation_of_the_collection_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+        ->rrel_example: "file://HTML/concept_Continuation_of_the_collection_en.html"(*<-lang_en;;=>nrel_format:format_html;;*);;
+    *);;
+*);;
+

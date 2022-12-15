@@ -1,0 +1,21 @@
+concept_General_meeting_point <- sc_node_not_relation;
+
+=> nrel_main_idtf:[Общее «место встречи»] (* <- lang_ru;; *);
+=> nrel_main_idtf:[General "meeting point"] (* <- lang_en;; *);
+
+=> nrel_idtf:[concept_General_meeting_point] (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+    <-definition;;
+    =>nrel_main_idtf:
+        [Опр. (Общее «место встречи»)](*<-lang_ru;;*);
+        [Def. (General "meeting point")](*<-lang_en;;*);;
+
+    <=nrel_sc_text_translation:...
+    (*
+        ->rrel_example: "file://HTML/concept_General_meeting_point_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+        ->rrel_example: "file://HTML/concept_General_meeting_point_en.html"(*<-lang_en;;=>nrel_format:format_html;;*);;
+    *);;
+*);;
+

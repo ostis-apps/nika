@@ -1,0 +1,77 @@
+section_subject_domain_of_family_traditions
+=> nrel_main_idtf:
+	  [Раздел. Предметная область семейных традиций]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of family traditions] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_family_traditions = [*
+	section_subject_domain_of_family_traditions
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область семейных традиций]
+   (* <- lang_ru;; *);
+   [Subject domain of family traditions]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+   concept_family_traditions;
+   concept_family;
+	-> rrel_not_maximum_studied_object_class:
+   concept_spiritual;
+	-> rrel_explored_relation:
+   concept_society;  
+   concept_marriage;
+   concept_spouses;
+   concept_children;
+   concept_Relative;
+   concept_life;   
+   concept_General_meeting_point;
+   concept_Transfer_of_skills;
+   concept_Household_duties;
+   concept_Joint_games;
+   concept_Bedtime_stories;
+   concept_Joint_cultural_trips;
+   concept_Photos_for_memory;
+   concept_Joint_travel;
+   concept_family_council;
+   concept_Meeting_important_events_in_life;
+   concept_joint_holyday;
+   concept_household;
+   concept_morality;
+   concept_symbolic;
+   concept_rite;
+   concept_ritual;
+   concept_stereotype;;
+*];;
+
+section_subject_domain_of_family_traditions
+-> rrel_key_sc_element:
+   section_subject_domain_of_family_traditions;
+   concept_society;  
+   concept_marriage;
+   concept_spouses;
+   concept_children;
+   concept_spiritual;
+   concept_life;   
+   concept_General_meeting_point;
+   concept_Transfer_of_skills;
+   concept_Household_duties;
+   concept_Joint_games;
+   concept_Bedtime_stories;
+   concept_Joint_cultural_trips;
+   concept_Photos_for_memory;
+   concept_Joint_travel;
+   concept_family_council;
+   concept_Meeting_important_events_in_life;
+   concept_joint_holyday;
+   concept_household;
+   concept_morality;
+   concept_family;
+   concept_family_traditions;
+   concept_rite;
+   concept_ritual;
+   concept_stereotype;;
