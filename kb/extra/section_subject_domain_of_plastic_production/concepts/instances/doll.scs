@@ -1,0 +1,19 @@
+doll
+
+=> nrel_main_idtf:
+    [кукла]
+    (* <- lang_ru;;*);
+    [doll]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [предмет (фигура) в виде человека или животного, сделанный из ткани, бумаги, дерева, фарфора, пластика и других материалов]
+	(* <- lang_ru;; *);
+
+<- concept_plastic_production;
+
+=> nrel_used_material:
+    concept_polyvinylchloryd;
+
+=> nrel_recycling_method:
+    concept_pvc;;

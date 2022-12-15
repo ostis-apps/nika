@@ -1,0 +1,22 @@
+concept_material_type
+
+=> nrel_main_idtf:
+    [тип материала]
+    (* <- lang_ru;;*);
+    [material type]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [разновидность материалов, используемых в изготовлении изделий]
+	(* <- lang_ru;; *);
+
+=> nrel_basic_decomposition:
+    concept_plastic;
+    concept_carbon;
+    concept_poliuretan;
+    concept_fiberglass;
+    concept_microfiber;
+    concept_polymer;
+    concept_polyethilene;
+    concept_polyvinylchloryd;
+    concept_polypropilene;;
