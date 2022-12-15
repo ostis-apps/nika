@@ -1,0 +1,24 @@
+nrel_recycling_method
+
+<-sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=>nrel_main_idtf:
+    [метод утилизации*]
+    (* <- lang_ru;; *);
+    [recycling method*]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [метод утилизации, рекомендуемый для пластикового изделия]
+    (* <-lang_ru;;*);
+
+=> nrel_first_domain:
+    concept_plastic_marking;
+=> nrel_second_domain:
+    concept_plastic_production;;

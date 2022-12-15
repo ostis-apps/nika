@@ -1,0 +1,16 @@
+concept_plastic_production
+
+=> nrel_main_idtf:
+    [пластиковое изделие]
+    (* <- lang_ru;;*);
+    [plastic production]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [продукт, в основании которого лежит такой зимический материал как пластик]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+    concept_material_type;
+    concept_plastic_marking;
+    concept_processing_methods;;

@@ -1,0 +1,25 @@
+nrel_processing
+
+<-sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=>nrel_main_idtf:
+    [обработка*]
+    (* <- lang_ru;; *);
+    [processing*]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [отношение, указывающее на метод обработки пластика при изготовлении продукта]
+    (* <-lang_ru;;*);
+
+=> nrel_first_domain:
+    concept_processing_methods;
+
+=> nrel_second_domain:
+    concept_plastic_production;;

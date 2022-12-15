@@ -1,0 +1,22 @@
+nrel_basic_clock_frequency
+
+<-sc_node_norole_relation;
+<- relation;
+<- nonbinary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=>nrel_main_idtf:
+    [тактовая частота*]
+    (* <- lang_ru;; *);
+    [clock frequency*]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [отношение, описывающее тактовую частоту вычислительного элемента в ГГц]
+    (* <-lang_ru;;*);
+
+=> nrel_first_domain:
+    concept_cpu;;

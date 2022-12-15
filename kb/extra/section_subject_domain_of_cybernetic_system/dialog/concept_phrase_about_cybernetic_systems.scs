@@ -1,0 +1,28 @@
+concept_message_about_cybernetic_system
+
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о кибернетической системе]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_cybernetic_system];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Сообщение, рассказывающее о кибернетической системе]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о кибернетической системе - атомарное сообщение,
+    которое не содержит сушностей.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

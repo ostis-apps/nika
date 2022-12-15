@@ -1,0 +1,77 @@
+section_subject_domain_of_plastic_production
+
+=> nrel_main_idtf:
+[Раздел. Предметная область пластиковых изделий] (*<-lang_ru;;*);
+[Section. Subject domain of plastic production] (*<-lang_en;;*);
+<- atomic_class;;
+section_subject_domain_of_plastic_production = [*
+	subject_domain_of_plastic_production
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область пластиковых изделий]
+   (* <- lang_ru;; *);
+   [Subject domain of plastic production]
+   (* <- lang_en;; *);
+	<- subject_domain;
+
+	-> rrel_maximum_studied_object_class:
+   concept_plastic_production;
+	-> rrel_not_maximum_studied_object_class:
+   concept_carbon;
+   concept_casting;
+   concept_extrusion;
+   concept_fiberglass;
+   concept_ldpe;
+   concept_material_type;
+   concept_microfiber;
+   concept_moulding;
+   concept_pehd;
+   concept_pet;
+   concept_plastic_marking;
+   concept_plastic_production;
+   concept_plastic;
+   concept_poliuretan;
+   concept_polyethilene;
+   concept_polymer;
+    concept_polypropilene;
+   concept_polyvinylchloryd;
+   concept_pp;
+   concept_pressing;
+   concept_ps;
+   concept_pvc;
+   concept_processing_methods;
+	-> rrel_explored_relation:
+    nrel_processing;
+	nrel_recycling_method;
+	nrel_used_material;;
+*];;
+
+section_subject_domain_of_plastic_production
+-> rrel_key_sc_element:
+   concept_plastic_production;
+concept_carbon;
+   concept_casting;
+   concept_extrusion;
+   concept_fiberglass;
+   concept_ldpe;
+   concept_material_type;
+   concept_microfiber;
+   concept_moulding;
+   concept_pehd;
+   concept_pet;
+   concept_plastic_marking;
+   concept_plastic_production;
+   concept_plastic;
+   concept_poliuretan;
+   concept_polyethilene;
+   concept_polymer;
+    concept_polypropilene;
+   concept_polyvinylchloryd;
+   concept_pp;
+   concept_pressing;
+   concept_ps;
+   concept_pvc;
+   concept_processing_methods;
+nrel_processing;
+	nrel_recycling_method;
+	nrel_used_material;;

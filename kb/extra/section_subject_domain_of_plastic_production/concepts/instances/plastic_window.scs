@@ -1,0 +1,19 @@
+plastic_window
+
+=> nrel_main_idtf:
+    [пластиковое окно]
+    (* <- lang_ru;;*);
+    [plastic window]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [конструкции с высокими характеристиками тепло- и звукоизоляции, в основе которых ПВХ-профиль. Оконная система дополняется стеклопакетом, фурнитурой и уплотнителями. Окна ПВХ изготавливаются разных форм, размеров и конфигураций.]
+	(* <- lang_ru;; *);
+
+<- concept_plastic_production;
+
+=> nrel_recycling_method:
+    concept_pvc;
+
+=> nrel_used_material:
+    concept_polyvinylchloryd;;

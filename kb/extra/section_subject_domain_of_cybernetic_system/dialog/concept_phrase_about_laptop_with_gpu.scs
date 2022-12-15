@@ -1,0 +1,28 @@
+concept_message_about_laptop_with_gpu
+
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о ноутбуке, в который встроен процессор]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_laptop_with_gpu];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Сообщение, в котором указывается модель процессора, встроенного в тот или иной ноутбук]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о ноутбуке, в который встроен процессор - атомарное сообщение,
+	   содержащее сущность процессора.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
