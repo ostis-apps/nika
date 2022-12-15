@@ -1,0 +1,46 @@
+concept_message_about_cooking_method_delicacies
+
+<- sc_node_not_relation;
+
+=> nrel_main_idtf:
+    [сообщение о деликатесах, готовящихся определенным способом]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_wit_ai_idtf:
+    [about_animal_food_preferences];
+
+<- rrel_key_sc_element:
+    ...
+
+    (*
+        => nrel_main_idtf:
+            [Опр. (сообщение о деликатесах, готовящихся определенным способом)]
+
+            (* 
+                <- lang_ru;; 
+            *);;
+        
+        <- definition;;
+    
+        <= nrel_sc_text_translation:
+        ...
+        
+            (*
+                -> rrel_example:
+                    [сообщение о деликатесах, готовящихся определенным способом - атомарное сообщение,
+                    которое содержит понятие способа готовки, деликатесов которые
+                    необходимо найти.]
+
+                    (* 
+                        <- lang_ru;; 
+                    *);;
+            *);;
+
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+    *);;

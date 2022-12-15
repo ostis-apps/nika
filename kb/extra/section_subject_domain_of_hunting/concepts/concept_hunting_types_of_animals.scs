@@ -1,0 +1,32 @@
+concept_hunting_types_of_animals
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+    [животные на которых можно охотиться]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_note:
+    [
+        Млекопитающие или птицы, обитающие в дикой природе у которох потребляются мясо, шкура или другие части, 
+        причем охота на них должна быть разрешена законом.
+    ]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+<= nrel_subdividing:
+    concept_animal;
+
+=> nrel_animal_food_preferences:
+    concept_predatory_animal;
+    concept_herbivorous_animal;
+
+=> nrel_animal_class:
+    concept_bird;
+    concept_mammal;;

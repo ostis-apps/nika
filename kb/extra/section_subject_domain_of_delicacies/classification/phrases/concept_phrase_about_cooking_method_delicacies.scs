@@ -1,0 +1,53 @@
+concept_phrase_about_cooking_method_delicacies
+
+<- sc_node_class;
+
+<= nrel_inclusion:
+    concept_phrase;
+
+<- rrel_not_maximum_studied_object_class:
+    subject_domain_of_phrases;
+
+=> nrel_main_idtf:
+	[фраза про деликатесы, готовящиеся определенным способом]
+
+	(* 
+        <- lang_ru;; 
+    *);
+
+	[phrase about delicacies cooked in certain way]
+
+	(* 
+        <- lang_en;; 
+    *);
+
+<- rrel_key_sc_element:
+	...
+
+	(*
+        => nrel_main_idtf:
+            [Опр. (фраза про деликатесы, готовящиеся определенным способом)]
+
+            (* 
+                <- lang_ru;; 
+            *);;
+        
+        <- definition;;
+
+        <= nrel_sc_text_translation:
+            ...
+
+            (*
+                -> rrel_example:
+                    [фраза про деликатесы, готовящиеся определенным способом - фраза, содержащая информацию о деликатесах, готовящихся определенным способом.]
+
+                    (* 
+                        <- lang_ru;; 
+                    *);;
+            *);;
+
+        <= nrel_using_constants:
+            {
+                concept_phrase
+            };;
+	*);;

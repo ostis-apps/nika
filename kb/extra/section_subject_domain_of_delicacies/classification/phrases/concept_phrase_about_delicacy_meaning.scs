@@ -1,0 +1,53 @@
+concept_phrase_about_delicacy_meaning
+
+<- sc_node_class;
+
+<= nrel_inclusion:
+    concept_phrase;
+
+<- rrel_not_maximum_studied_object_class:
+    subject_domain_of_phrases;
+
+=> nrel_main_idtf:
+	[фраза про определение слова деликатес]
+
+	(* 
+        <- lang_ru;; 
+    *);
+
+	[phrase about definition fo delicacy]
+
+	(* 
+        <- lang_en;; 
+    *);
+
+<- rrel_key_sc_element:
+	...
+
+	(*
+        => nrel_main_idtf:
+            [Опр. (фраза про определение слова деликатес)]
+
+            (* 
+                <- lang_ru;; 
+            *);;
+        
+        <- definition;;
+
+        <= nrel_sc_text_translation:
+            ...
+
+            (*
+                -> rrel_example:
+                    [фраза про определение слова деликатес - фраза, содержащая некоторую информацию о значении слова деликатес.]
+
+                    (* 
+                        <- lang_ru;; 
+                    *);;
+            *);;
+
+        <= nrel_using_constants:
+            {
+                concept_phrase
+            };;
+	*);;

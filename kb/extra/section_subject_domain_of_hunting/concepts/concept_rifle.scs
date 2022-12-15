@@ -1,0 +1,27 @@
+concept_rifle
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+    [винтовка]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_note:
+    [
+        Стрелковое оружие, конструктивно предназначенное для удержания и управления
+        при стрельбе двумя руками с упором приклада в плечо.
+    ]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_weapon_type:
+    concept_smoothbore_weapons;
+
+=> nrel_weapon_type:
+    concept_weapons_with_rifling;;

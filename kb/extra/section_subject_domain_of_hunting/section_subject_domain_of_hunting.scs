@@ -1,0 +1,65 @@
+section_subject_domain_of_hunting
+
+=> nrel_main_idtf:
+    [Раздел. Предметная область охоты]
+
+    (* 
+        <- lang_ru;; 
+        *);
+
+    [Section. Subject domain of hunting]
+
+    (* 
+        <- lang_en;; 
+        *);
+
+<- atomic_section;;
+
+section_subject_domain_of_hunting = [*
+    subject_domain_of_hunting
+
+    => nrel_main_idtf:
+        [Предметная область охоты]
+
+        (* 
+            <- lang_ru;; 
+        *);
+
+        [Subject domain of hunting]
+
+        (* 
+            <- lang_en;; 
+        *);
+
+    <- subject_domain;
+    
+    -> rrel_maximum_studied_object_class:
+        concept_hunting;
+
+    -> rrel_not_maximum_studied_object_class:
+        concept_animal;
+        concept_rifle;
+        concept_ammo;
+
+    -> rrel_explored_relation:
+        nrel_ammo_type;
+        nrel_habitat;
+        nrel_weapon_type;
+        nrel_material;
+        nrel_animal_class;
+        nrel_recommended_type_of_cartridges;;
+*];;
+
+section_subject_domain_of_hunting
+
+-> rrel_key_sc_element:
+    subject_domain_of_hunting;
+    concept_animal;
+    concept_rifle;
+    concept_ammo;
+    nrel_ammo_type;
+    nrel_habitat;
+    nrel_weapon_type;
+    nrel_material;
+    nrel_animal_class;
+    nrel_recommended_type_of_cartridges;;
