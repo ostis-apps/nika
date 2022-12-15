@@ -1,0 +1,28 @@
+concept_hunting_areas
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+    [места для охоты]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_note:
+    [
+        Природные регионы особенности которых влияют на процесс охоты.
+    ]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+<= nrel_subdividing:
+    concept_biocoenosis;
+
+=> nrel_biocoenosis_type:
+    concept_forest;
+    concept_taiga;
+    concept_savanna;;

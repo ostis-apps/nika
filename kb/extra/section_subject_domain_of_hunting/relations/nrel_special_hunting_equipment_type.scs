@@ -1,0 +1,46 @@
+nrel_special_hunting_equipment_type
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+    [тип специального охотничьего снаряжения*]
+    (* 
+        <- lang_ru;; 
+    *);
+    
+=> nrel_first_domain: 
+    concept_special_hunting_equipment;
+
+=> nrel_second_domain:
+    concept_special_hunting_equipment;
+
+<- rrel_key_sc_element:
+    ...
+    (*
+        => nrel_main_idtf:
+            [тип специального охотничего снаряжения*]
+
+            (* 
+                <- lang_ru;; 
+            *);;
+        
+        <- definition;;
+        
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [
+                        Тип специального охотничего снаряжения*
+                    ]
+
+                    (* 
+                        <- lang_ru;; 
+                    *);;
+            *);;
+    *);;

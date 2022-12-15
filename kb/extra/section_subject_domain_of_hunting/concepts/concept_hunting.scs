@@ -1,0 +1,26 @@
+concept_hunting
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+    [охота]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_note:
+    [процесс отлова или добычи диких животных и птиц, обычно для пропитания, 
+    получения продуктов животного происхождения, контроля популяции 
+    животных либо для получения трофеев.]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+<= nrel_subdividing:
+    concept_hunting_equipment;
+    concept_hunting_types_of_animals;
+    concept_hunting_areas;;
+    

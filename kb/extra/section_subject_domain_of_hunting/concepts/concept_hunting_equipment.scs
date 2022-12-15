@@ -1,0 +1,27 @@
+concept_hunting_equipment
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+    [cнаряжение для охоты]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_note:
+    [
+        Набор принадлежностей, который призван сделать саму охоту, 
+        пребывание в полевых условиях и лагерный быт более лёгким.
+    ]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+<= nrel_subdividing:
+    concept_rifle;
+    concept_ammo;
+    concept_camouflage;
+    concept_special_hunting_equipment;;
