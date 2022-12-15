@@ -1,0 +1,26 @@
+concept_Joint_cultural_trips <- sc_node_not_relation;
+
+=> nrel_main_idtf:[Совместные культпоходы] (* <- lang_ru;; *);
+=> nrel_main_idtf:[Joint cultural trips] (* <- lang_en;; *);
+
+=> nrel_idtf:[concept_Joint_cultural_trips] (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+    <-definition;;
+    =>nrel_main_idtf:
+        [Опр. (Совместные культпоходы)](*<-lang_ru;;*);
+        [Def. (Joint cultural trips)](*<-lang_en;;*);;
+
+    <=nrel_sc_text_translation:...
+    (*
+        ->rrel_example: "file://HTML/concept_Joint_cultural_trips_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+        ->rrel_example: "file://HTML/concept_Joint_cultural_trips_en.html"(*<-lang_en;;=>nrel_format:format_html;;*);;
+    *);;
+    <=nrel_using_constants:
+    {
+        concept_family
+    };;
+
+*);;
+

@@ -1,0 +1,21 @@
+concept_Household_duties <- sc_node_not_relation;
+
+=> nrel_main_idtf:[Обязанности по дому] (* <- lang_ru;; *);
+=> nrel_main_idtf:[Household duties] (* <- lang_en;; *);
+
+=> nrel_idtf:[concept_Household_duties] (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+    <-definition;;
+    =>nrel_main_idtf:
+        [Опр. (Обязанности по дому)](*<-lang_ru;;*);
+        [Def. (Household duties)](*<-lang_en;;*);;
+
+    <=nrel_sc_text_translation:...
+    (*
+        ->rrel_example: "file://HTML/concept_Household_duties_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+        ->rrel_example: "file://HTML/concept_Household_duties_en.html"(*<-lang_en;;=>nrel_format:format_html;;*);;
+    *);;
+*);;
+

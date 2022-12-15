@@ -1,0 +1,26 @@
+concept_family_council <- sc_node_not_relation;
+
+=> nrel_main_idtf:[Семейный совет] (* <- lang_ru;; *);
+=> nrel_main_idtf:[family council] (* <- lang_en;; *);
+
+=> nrel_idtf:[concept_family_council] (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+    <-definition;;
+    =>nrel_main_idtf:
+        [Опр. (Семейный совет)](*<-lang_ru;;*);
+        [Def. (family council)](*<-lang_en;;*);;
+
+    <=nrel_sc_text_translation:...
+    (*
+        ->rrel_example: "file://HTML/concept_family_council_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+        ->rrel_example: "file://HTML/concept_family_council_en.html"(*<-lang_en;;=>nrel_format:format_html;;*);;
+    *);;
+    <=nrel_using_constants:
+    {
+        concept_family
+    };;
+
+*);;
+

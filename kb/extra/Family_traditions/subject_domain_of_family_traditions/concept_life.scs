@@ -1,0 +1,21 @@
+concept_life <- sc_node_not_relation;
+
+=> nrel_main_idtf:[Быт] (* <- lang_ru;; *);
+=> nrel_main_idtf:[Life] (* <- lang_en;; *);
+
+=> nrel_idtf:[concept_life] (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+    <-definition;;
+    =>nrel_main_idtf:
+        [Опр. (Быт)](*<-lang_ru;;*);
+        [Def. (Life)](*<-lang_en;;*);;
+
+    <=nrel_sc_text_translation:...
+    (*
+        ->rrel_example: "file://HTML/concept_life_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+        ->rrel_example: "file://HTML/concept_life_en.html"(*<-lang_en;;=>nrel_format:format_html;;*);;
+    *);;
+
+*);;
