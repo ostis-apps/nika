@@ -1,0 +1,85 @@
+section_subject_domain_of_cybersport
+
+=> nrel_main_idtf:
+[Раздел. Предметная область киберспорта] (*<-lang_ru;;*);
+[Section. Subject domain of cybersport] (*<-lang_en;;*);
+<- atomic_class;;
+section_subject_domain_of_cybersport = [*
+	subject_domain_of_cybersport
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область киберспорта]
+   (* <- lang_ru;; *);
+   [Subject domain of cybersport]
+   (* <- lang_en;; *);
+	<- subject_domain;
+
+	-> rrel_maximum_studied_object_class:
+   concept_cybersport;
+	-> rrel_not_maximum_studied_object_class:
+concept_discipline;
+concept_sport;
+concept_team;
+concept_first_person_shooter;
+concept_strategy;
+concept_flight_simulator;
+concept_auto_simulator;
+concept_fighting;
+concept_moba;
+concept_federation;
+concept_isf;
+concept_nesc;
+concept_g_7;
+concept_wesa;
+concept_sports_simulator;
+concept_captain;
+concept_pro_gamer;
+concept_coach;
+concept_game;
+concept_dota_2;
+concept_cs_go;
+concept_starcraft;
+concept_apex_legends;
+concept_rocket_league;
+concept_message_about_navi;
+concept_message_about_dota;
+concept_message_about_sport;
+concept_intent_possible_class;
+	-> rrel_explored_relation:
+nrel_estimation_year;
+nrel_is_champion_at;;
+*];;
+
+section_subject_domain_of_cybersport
+-> rrel_key_sc_element:
+concept_discipline;
+concept_sport;
+concept_team;
+concept_first_person_shooter;
+concept_strategy;
+concept_flight_simulator;
+concept_auto_simulator;
+concept_fighting;
+concept_moba;
+concept_federation;
+concept_isf;
+concept_message_about_sport;
+concept_nesc;
+concept_g_7;
+concept_wesa;
+concept_sports_simulator;
+concept_captain;
+concept_pro_gamer;
+concept_coach;
+concept_message_about_csgo;
+concept_game;
+concept_dota_2;
+concept_cs_go;
+concept_starcraft;
+concept_message_about_dota;
+concept_apex_legends;
+concept_rocket_league;
+concept_intent_possible_class;
+concept_message_about_navi;
+nrel_estimation_year;
+nrel_is_champion_at;;

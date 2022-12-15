@@ -1,0 +1,20 @@
+concept_discipline
+
+=> nrel_main_idtf:
+    [дисциплина]
+    (* <- lang_ru;;*);
+    [discipline]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [жанр игры, в которой предстоит соревноваться командам. нельзя использовать любые игры. Например, для соревнований не подойдут игры, которые содержат в себе элемент случайности, преобладающий над фактором умения игры]
+	(* <- lang_ru;; *);
+
+=> nrel_basic_decomposition:
+    concept_first_person_shooter;
+    concept_strategy;
+    concept_sports_simulator;
+    concept_auto_simulator;
+    concept_flight_simulator;
+    concept_fighting;
+    concept_moba;;
