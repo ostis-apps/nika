@@ -1,0 +1,24 @@
+nrel_estimation_year
+
+<-sc_node_norole_relation;
+<- relation;
+<- nonbinary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=>nrel_main_idtf:
+    [год основания*]
+    (* <- lang_ru;; *);
+    [estimation year*]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [год основания федерации]
+    (* <-lang_ru;;*);
+
+=> nrel_first_domain:
+    concept_federation;
+    concept_game;
+    concept_team;;
