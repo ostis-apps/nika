@@ -1,0 +1,27 @@
+concept_message_about_math_constant
+<- sc_node_class;
+<- concept_intent_possible_class;
+=> nrel_main_idtf:
+      [сообщение о математической константе](* <- lang_ru;; *);
+      [message about math constant](* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+      [math_expression];;
+
+concept_message_about_math_constant
+<- rrel_key_sc_element: ...
+(*
+    => nrel_main_idtf:[Опр. (сообщение о математической константе)](* <- lang_ru;; *);;
+    => nrel_main_idtf:[Def. (message about math constant)](* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Сообщение о математической константе - атомарное сообщение, которое содержит имя константы, значение которой нужно найти.](* <- lang_ru;; *);;
+        -> rrel_example:
+            [The mathematical constant message is an atomic message that contains the name of the constant whose value you want to find](* <- lang_en;; *);;
+        *);;
+    <= nrel_using_constants:
+        {
+            concept_atomic_message
+        };;
+*);;

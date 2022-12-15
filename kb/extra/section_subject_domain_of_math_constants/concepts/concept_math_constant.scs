@@ -1,0 +1,21 @@
+concept_math_constant
+<- sc_node_class;
+=> nrel_main_idtf:
+    [математическая константа](* <-lang_ru;; <-concept_text;; *);
+    [math constant](* <-lang_en;; <-concept_text;; *);;
+
+concept_math_constant
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (математическая константа)] (* <- lang_ru;; *);;
+    => nrel_main_idtf: [Def. (math constant)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Математическая константа — величина, значение которой не меняется; в этом она противоположна переменной. В отличие от физических постоянных, математические постоянные определены независимо от каких бы то ни было физических измерений.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [A mathematical constant is a key number whose value is fixed by an unambiguous definition, often referred to by a symbol, or by mathematicians' names to facilitate using it across multiple mathematical problems.](*<- lang_en;;*);;
+    *);;
+*);;

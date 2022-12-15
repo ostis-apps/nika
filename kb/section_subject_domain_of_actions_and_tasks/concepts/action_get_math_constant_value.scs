@@ -1,0 +1,24 @@
+action_get_math_constant_value
+<- sc_node_class;
+=> nrel_main_idtf:
+	[действие. получить значение математический константы](* <- lang_ru;; *);
+	[action. get the value of math constant](* <- lang_en;; *);
+<- actions_class;
+<- atomic_action_class;
+<= nrel_inclusion: information_action;
+<- rrel_key_sc_element:
+	...
+	(*
+	<- explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+			-> rrel_example:
+				[Действие. получить значение математический константы - действие по получению занчения математической константы.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+			-> rrel_example:
+				[Action. get the value of math constant - the action of getting the value of a mathematical constant.](* <- lang_en;; *);;
+		*);;
+	*);;
