@@ -1,0 +1,27 @@
+concept_meeting <- sc_node_not_relation;
+
+=> nrel_main_idtf:[встреча] (* <- lang_ru;; *);
+=> nrel_main_idtf:[meeting] (* <- lang_en;; *);
+
+=> nrel_idtf:[concept_meeting] (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+    <-definition;;
+    =>nrel_main_idtf:
+        [Опр. (встреча)](*<-lang_ru;;*);
+        [Def. (meeting)](*<-lang_en;;*);;
+
+    <=nrel_sc_text_translation:...
+    (*
+        ->rrel_example: "file://HTML/concept_meeting_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+        ->rrel_example: "file://HTML/concept_meeting_en.html"(*<-lang_en;;=>nrel_format:format_html;;*);;
+    *);;
+    <=nrel_using_constants:
+    {
+        concept_discussion;
+        concept_topic;
+        concept_problem
+    
+    };;
+*);;
