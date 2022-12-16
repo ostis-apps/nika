@@ -1,0 +1,36 @@
+concept_message_about_condition
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о состоянии]
+	    (* <- lang_ru;; *);
+	[message about condition]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_condition];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о состоянии )]
+	        (* <- lang_ru;; *);
+	    [Def. (message about condition)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о состоянии - атомарное сообщение, которое содержит понятие состояние, информацию о которой необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about condition is an atomic message that contains the termin of a concept information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

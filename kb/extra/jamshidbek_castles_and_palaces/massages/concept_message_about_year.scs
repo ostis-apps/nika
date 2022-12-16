@@ -1,0 +1,36 @@
+concept_message_about_year
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о году]
+	    (* <- lang_ru;; *);
+	[message about year]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_year];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о году)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about году)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о году - атомарное сообщение, которое содержит понятие год, информацию о которой необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about year is an atomic message that contains the termin of a year information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

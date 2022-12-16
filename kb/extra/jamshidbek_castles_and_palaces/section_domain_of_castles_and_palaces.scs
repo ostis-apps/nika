@@ -1,0 +1,55 @@
+section_subject_domain_of_castles_and_palaces
+<- sc_node_struct;
+=> nrel_main_idtf:
+[Раздел. Предметная область дворцы и замки](* <- lang_ru;; *);
+[Section. Subject domain of castles and palaces](* <- lang_en;; *);
+<-atomic_section;;
+
+section_subject_domain_of_castles_and_palaces = [*
+subject_domain_of_castles_and_palaces
+=> nrel_main_idtf:
+[Предметная область дворцы и замки](* <- lang_ru;; *);
+[Subject domain of castles and palaces](* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+   concept_of_castles_and_palaces;
+-> rrel_not_maximum_studied_object_class:
+   concept_intent_possible_class;
+   concept_castles_and_palaces;
+   concept_spain;
+   concept_uruguay;
+   concept_germany;
+   concept_belarus;
+   concept_china;
+   concept_france;
+   concept_russia;
+   concept_uzbekistan;
+    castle_potala;
+    castle_musica_catalana;
+    castle_salvo;
+    castle_neuschwanstein;
+    castle_mirskiy;
+    castle_saint_michel;
+    castle_kronshtad;
+    castle_al_bukhari;
+	castle_zimniy;
+    yuriy_ivanovich_ilinich;
+    arxiyepiskop_obel;
+    ludvig_2;
+    lorenco_salva;
+    gosudarstvo;
+    dalai_lama;
+    al_bukhari;
+    petr_1;
+    romanov;
+
+-> rrel_explored_relation:
+   nrel_area;
+   nrel_color;
+   nrel_condition;
+   nrel_height;
+   nrel_location;
+   nrel_material;
+   nrel_owner;
+   nrel_year;;
+*];;
