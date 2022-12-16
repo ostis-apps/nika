@@ -1,0 +1,25 @@
+mono_liza
+
+=> nrel_main_idtf:
+    [Моно лиза]
+    (* <- lang_ru;; *);
+    [Mono Liza]
+    (* <- lang_en;; *);
+
+=> nrel_storage:
+    Louvre;
+    <-nrel_storage;
+=> nrel_authors:
+    [Давинчи]
+    (* <- lang_ru;; *);
+    [Davinchi]
+    (* <- lang_en;;*);
+=> nrel_cost_of_paintings:
+    [100 000 000$](* <- lang_ru;;*);
+    [100 000 000$](* <- lang_en;; *);
+=>nrel_note:
+[<<Моно лиза>>или <<Джоконда>>-Картина Леонардо да Винчи одного из самых известных произвндений живописи Точная дата написания неизвестна Ныне храниться в Лувре]
+(* <-lang_ru;;*);
+
+<-binary_relation;;
+

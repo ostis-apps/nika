@@ -1,0 +1,37 @@
+concept_message_about_painting
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о картине]
+	(* <- lang_ru;; *);
+	[message about painting]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[painting_about];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о картине)]
+        (* <- lang_ru;; *);
+        [Def. (message about painting)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о картине - атомарное сообщение, являющееся запросом на получение информации про картину]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about painting - atomic message which used to make a question about painting]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

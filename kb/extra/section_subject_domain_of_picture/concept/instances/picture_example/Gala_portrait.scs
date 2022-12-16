@@ -1,0 +1,29 @@
+Gala
+
+=> nrel_main_idtf:
+    [портрет галы]
+    (* <- lang_ru;; *);
+    [gala portrait]
+    (* <- lang_en;; *);
+=> nrel_genre:
+    [пейзаж]
+    (* <- lang_ru;; *);
+=> nrel_storage:
+    Hermitage;
+    <-nrel_storage;
+=> nrel_authors:
+    [Сальвадор Дали]
+    (* <- lang_ru;; *);
+    [Salvador Dali]
+    (* <- lang_en;;*);
+=> nrel_cost_of_paintings:
+    [20 000 000$](* <- lang_ru;;*);
+    [20 000 000$](* <- lang_en;; *);
+    <-nrel_cost_of_paintings;
+=>nrel_note:
+[В работе присутствуют бивни носорога как в картине Взрыв рафаэлевской головы По мнению Дали в природе не существует лучшего примера спирали чем кривые оброзования бивнями носорогам В этом портрете голова Галы появляется над испанским заливом](* <-lang_ru;;*);
+
+<-binary_relation;;
+
+
+

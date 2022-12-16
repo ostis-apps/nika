@@ -1,0 +1,11 @@
+concept_authors
+<- sc_node_class;
+
+=> nrel_main_idtf: 
+    [авторы](* <- lang_ru;;*);
+    [authors](* <- lang_en;; *);
+    => nrel_inclusion:
+    Gustav_klimt;
+    Jan_vermeer;
+    Salvador_Dali;
+    <-binary_relation;;

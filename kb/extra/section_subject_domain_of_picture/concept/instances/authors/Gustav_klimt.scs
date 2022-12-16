@@ -1,0 +1,25 @@
+Gustav_klimt
+
+
+=> nrel_main_idtf:
+    [Густов Климт]
+    (* <- lang_ru;; *);
+=> nrel_storage:
+    storage_louvre;
+    <-nrel_storage;
+=> nrel_cost_of_paintings:
+    [240 000](* <- lang_ru;;*);
+    [240 000](* <- lang_en;; *);
+    <-nrel_cost_of_paintings;
+=> nrel_gender2:
+    [М]
+    (*<-lang_ru;;*);
+    <-nrel_gender;
+=> nrel_genre:
+    genre_modern;
+    <-concept_genre;
+=> nrel_picture_name:
+    painting_kiss;
+    <-concept_picture_examples;
+<-concept_famous_authors;
+<-binary_relation;;

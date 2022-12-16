@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="2445992303280" parent="0" x="662.889" y="414.333" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Художники внесшие вклад в развитие направления:]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_answer_about_painting_artists_phrase" shapeColor="0" id="2445992302448" parent="0" left="0" top="0" right="275" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="254.31" y="335" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_answer_about_painting_artists_phrase" shapeColor="0" id="2445992305360" parent="0" left="0" top="0" right="275" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="539.5" y="157" haveBus="false" idtf_pos="4">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase" shapeColor="0" id="2445992303904" parent="0" left="0" top="0" right="95" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="710" y="156.5" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="2445992302032" parent="0" left="0" top="0" right="52" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="185.5" y="417.5" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_inclusion" shapeColor="0" id="2445991071168" parent="0" left="0" top="0" right="88" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="619" y="88.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2445990767424" parent="0" id_b="2445992302032" id_e="2445992303280" b_x="185.5" b_y="417.5" e_x="662.889" e_y="414.333" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2445990773424" parent="0" id_b="2445992302448" id_e="2445992303280" b_x="254.31" b_y="335" e_x="662.889" e_y="414.333" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="2445990770544" parent="0" id_b="2445992303904" id_e="2445992305360" b_x="710" b_y="156.5" e_x="539.5" e_y="157" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2445990768864" parent="0" id_b="2445991071168" id_e="2445990770544" b_x="619" b_y="88.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.531597">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>

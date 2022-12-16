@@ -1,0 +1,18 @@
+concept_picture
+
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+	[картины](* <- lang_ru;;*);
+	[picture](* <- lang_en;; *);
+
+
+=> nrel_inclusion:
+	Gala;
+	Starlight_Night;
+	mono_liza;
+=> nrel_note:
+[на самом деле картин как известных так и новых тысячи но в системе указаны лишь одни из самых известных картин современости.]
+(* <-lang_ru;;*);
+
+<-binary_relation;;

@@ -1,0 +1,25 @@
+Salvador_Dali
+
+
+=> nrel_main_idtf:
+    [Сальвадор Дали]
+    (* <- lang_ru;; *);
+=> nrel_storage:
+    storage_louvre;
+    <-nrel_storage;
+=> nrel_cost_of_paintings:
+    [1 426 000](* <- lang_ru;;*);
+    [1 426 000](* <- lang_en;; *);
+    <-nrel_cost_of_paintings;
+=> nrel_gender2:
+    [М]
+    (*<-lang_ru;;*);
+    <-nrel_gender;
+=> nrel_genre:
+    genre_modern;
+    <-concept_genre;
+=> nrel_picture_name:
+    gala;
+    <-concept_picture_examples;
+<-concept_famous_authors;
+<-binary_relation;;

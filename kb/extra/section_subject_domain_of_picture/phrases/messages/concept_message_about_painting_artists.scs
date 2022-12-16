@@ -1,0 +1,37 @@
+concept_message_about_painting_artists
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о художниках]
+	(* <- lang_ru;; *);
+	[message about painting artists]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[painting_artists];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о художниках)]
+        (* <- lang_ru;; *);
+        [Def. (message about painting artists)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о художниках - атомарное сообщение, являющееся запросом на получение информации про художников]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about painting_artists - atomic message which used to make a question about painting artists]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
