@@ -1,0 +1,17 @@
+concept_unisexual
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [однополый]
+    (* <- lang_ru;; *);
+    [unisexual]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [цветки, обладающие либо пестиком, либо тычинкой]
+    (* <- lang_ru;; *);
+
+=> nrel_subdividing:
+    concept_male_flower;
+    concept_female_flower;;

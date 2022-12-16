@@ -1,0 +1,18 @@
+concept_perianth
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [околоцветник]
+    (* <- lang_ru;; *);
+    [perianth]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [это нерепродуктивная часть цветка и структура, которая образует оболочку,
+    окружающую половые органы, состоящую из чашечки и венчика или листочков околоцветника, когда их называют перигоном.]
+    (* <- lang_ru;; *);
+
+=> nrel_basic_decomposition:
+    concept_petal;
+    concept_calyx;;

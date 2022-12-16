@@ -1,0 +1,19 @@
+concept_stirp
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [семейство]
+    (* <- lang_ru;; *);
+    [stirp]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [один из основных рангов иерархической классификации
+    в биологической систематике.]
+    (* <- lang_ru;; *);
+
+=> nrel_inclusion:
+    concept_cruciferae;
+    concept_cactaceae;
+    concept_campanulaceae;;

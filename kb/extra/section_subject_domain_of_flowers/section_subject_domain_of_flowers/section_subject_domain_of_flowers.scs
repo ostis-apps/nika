@@ -1,0 +1,98 @@
+section_subject_domain_of_flowers
+
+=> nrel_main_idtf:
+[Раздел. Предметная область цветов] (*<-lang_ru;;*);
+[Section. Subject domain of flowers] (*<-lang_en;;*);
+<- atomic_class;;
+section_subject_domain_of_flowers = [*
+	subject_domain_of_flowers
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область цветов]
+   (* <- lang_ru;; *);
+   [Subject domain of flowers]
+   (* <- lang_en;; *);
+	<- subject_domain;
+
+	-> rrel_maximum_studied_object_class:
+   concept_flower;
+	-> rrel_not_maximum_studied_object_class:
+   concept_hypothesis_of_origin;
+   concept_body_theory;
+   concept_evant_theory;
+   concept_foliaric_theory;
+   concept_pseudoantist_theory;
+   concept_bud;
+   concept_calyx;
+   concept_carpel;
+   concept_perianth;
+   concept_pestle;
+   concept_petal;
+   concept_stamen;
+   concept_place_of_growth;
+   concept_desert;
+   concept_forest;
+   concept_mountain;
+   concept_plain;
+   concept_swamp;
+   concept_stirp;
+   concept_cruciferae;
+   concept_cactaceae;
+   concept_campanulaceae;
+   concept_flower_symmetry;
+   concept_actinomorph;
+   concept_assymetry;
+   concept_zyigomorph;
+   concept_flower_gender;
+   concept_female_flower;
+   concept_hermaphroditic;
+   concept_male_flower;
+   concept_unisexual;
+	-> rrel_explored_relation:
+   nrel_stirp_volume;
+   nrel_belong_to_gender;
+   nrel_belong_to_stirp;
+   nrel_have_symmetry;
+   nrel_place_of_growth;;
+
+*];;
+
+section_subject_domain_of_flowers
+-> rrel_key_sc_element:
+      concept_flower;
+      concept_bud;
+      concept_perianth;
+      concept_stamen;
+      concept_pestle;
+      concept_carpel;
+      concept_petal;
+      concept_calyx;
+      concept_place_of_growth;
+      concept_desert;
+      concept_forest;
+      concept_mountain;
+      concept_plain;
+      concept_swamp;
+      concept_hypothesis_of_origin;
+      concept_body_theory;
+      concept_evant_theory;
+      concept_foliaric_theory;
+      concept_pseudoantist_theory;
+      concept_stirp;
+      concept_cruciferae;
+      concept_cactaceae;
+      concept_campanulaceae;
+      concept_flower_symmetry;
+      concept_actinomorph;
+      concept_assymetry;
+      concept_zyigomorph;
+      concept_flower_gender;
+      concept_female_flower;
+      concept_hermaphroditic;
+      concept_male_flower;
+      concept_unisexual;
+      nrel_stirp_volume;
+      nrel_belong_to_gender;
+      nrel_belong_to_stirp;
+      nrel_have_symmetry;
+      nrel_place_of_growth;;
