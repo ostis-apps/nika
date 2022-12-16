@@ -1,0 +1,37 @@
+concept_message_about_elementary_cycle
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о  элементарном цикле ]
+	    (* <- lang_ru;; *);
+	[message about elementary cycle]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_elementary_cycle];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о  элементарном цикле)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about elementary cycle)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[цикл в котором не повторяются рёбра, но повторяются вершины графа]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[a cycle in which edges are not repeated, but graph vertices are repeated]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

@@ -1,0 +1,25 @@
+dot_orgraph
+
+=> nrel_main_idtf:
+    [орграф на языке DOT]
+    (* <- lang_ru;;*);
+    [oriented graph described by DOT]
+    (* <- lang_en;;*);
+
+=> nrel_note:
+    [Ориентированный граф в языке DOT описывается списком вершин и рёбер,
+    представленных названием вершин и стилизованной тире и треугольной скобкой стрелочкой (->) между связанными вершинами:]
+    (* <- lang_ru;;*);
+    [digraph graphname {
+     a -> b -> c;
+     b -> d;
+    }]
+    (* <- lang_ru;;*);
+
+=> nrel_used_description_language:
+    concept_dot;
+
+=> nrel_used_building_graphs_program:
+    concept_graphviz;
+
+<- concept_oriented_graph;;

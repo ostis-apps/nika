@@ -1,0 +1,31 @@
+concept_graph
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [граф]
+    (* <- lang_ru;; *);
+    [graph]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [математическая абстракция реальной системы любой природы, объекты
+    которой обладают парными связями. Граф как математический объект
+    есть совокупность двух множеств — множества самих объектов,
+    называемого множеством вершин, и множества их парных связей, называемого множеством рёбер.
+    Элемент множества рёбер есть пара элементов множества вершин.]
+    (* <- lang_ru;; *);
+
+=> nrel_basic_decomposition:
+    concept_vertex;
+    concept_verge;
+
+=> nrel_subdividing:
+    concept_oriented_graph;
+    concept_undirected_graph;
+    concept_common_graph;
+    concept_pseudograph;
+    concept_multigraph;
+    concept_pseudomultigraph;
+    concept_mixed_graph;
+    concept_isomorphic_graph;;

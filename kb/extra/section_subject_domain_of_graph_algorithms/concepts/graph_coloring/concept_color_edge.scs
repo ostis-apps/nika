@@ -1,0 +1,13 @@
+concept_color_edge
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [раскраска краёв]
+    (* <- lang_ru;; *);
+    [edge coloring]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [метод назначения цвета каждому ребру, чтобы два соседних ребра не имели одинаковый цвет]
+    (* <- lang_ru;; *);;
