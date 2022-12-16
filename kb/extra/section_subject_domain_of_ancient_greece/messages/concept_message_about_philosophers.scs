@@ -1,0 +1,36 @@
+concept_message_about_philosophers
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о философах]
+	    (* <- lang_ru;; *);
+	[message about philosophers]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_philosophers];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о философах )]
+	        (* <- lang_ru;; *);
+	    [Def. (message about philosophers)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о философах - атомарное сообщение, которое содержит понятие концепт, информацию о которой необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about philosophers is an atomic message that contains the termin of a concept information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

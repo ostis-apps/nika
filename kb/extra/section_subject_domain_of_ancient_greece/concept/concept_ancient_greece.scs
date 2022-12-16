@@ -1,0 +1,18 @@
+concept_ancient_greece
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+    [Древняя Греция]
+    (* <- lang_ru;; *);
+=> nrel_inclusion:
+    concept_geography;
+    concept_natural_conditions;
+    concept_history;
+    concept_culture;
+    concept_art;
+    concept_cities;
+
+=> nrel_note:
+            [Это сравнительно маленькое государство сделало просто таки огромный вклад в общемировую культуру: медицину, политику, искусство, литературу, театр.]
+            (* <- lang_ru;; *);
+<-binary_relation;;
