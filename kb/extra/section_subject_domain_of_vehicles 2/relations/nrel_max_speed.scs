@@ -1,0 +1,22 @@
+nrel_max_speed
+
+<-sc_node_norole_relation;
+<- relation;
+<- nonbinary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=>nrel_main_idtf:
+    [максимальная скорость*]
+    (* <- lang_ru;; *);
+    [max speed*]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [максимальная скорость, которую способен развить автомобиль]
+    (* <-lang_ru;;*);
+
+=> nrel_first_domain:
+    concept_vehicle;;

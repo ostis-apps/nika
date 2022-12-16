@@ -1,0 +1,17 @@
+concept_chassis
+
+=> nrel_main_idtf:
+    [шасси]
+    (* <- lang_ru;;*);
+    [chassis]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [ представляет собой совокупность механизмов, предназначенных для передачи крутящего момента от двигателя к ведущим колесам, для передвижения автомобиля и управления им.]
+	(* <- lang_ru;; *);
+
+=> nrel_basic_decomposition:
+    concept_transmission;
+    concept_carrier;
+    concept_suspension;
+    concept_wheel;;

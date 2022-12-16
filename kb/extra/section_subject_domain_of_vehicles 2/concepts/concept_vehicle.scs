@@ -1,0 +1,26 @@
+concept_vehicle
+
+=> nrel_main_idtf:
+    [автомобиль]
+    (* <- lang_ru;;*);
+    [vehicle]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [моторное безрельсовое дорожное и/или внедорожное, чаще всего автономное, транспортное средство, используемое для перевозки людей и/или грузов, имеющее от четырёх колёс.]
+	(* <- lang_ru;; *);
+
+=> nrel_basic_decomposition:
+    concept_chassis;
+    concept_body;
+    concept_engine;
+
+=> nrel_inclusion:
+    concept_fuel;
+    concept_country;
+    concept_company_manufacturer;
+
+=> nrel_subdividing:
+    concept_tipper;
+    concept_hypercar;
+    concept_sedan;;
