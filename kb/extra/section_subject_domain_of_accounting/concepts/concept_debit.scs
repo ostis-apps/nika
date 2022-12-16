@@ -1,0 +1,15 @@
+concept_debit
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [дебет]
+    (* <- lang_ru;; *);
+    [debit]
+    (* <- lang_en;;*);
+
+=> nrel_note:
+    [по активным и активно-пассивным счетам: увеличение дебета означает увеличение стоимости имущества или имущественных прав организации. По пассивным счетам: увеличение дебета означает уменьшение собственных средств организации]
+    (* <- lang_ru;;*);
+    [for active and active-passive accounts: an increase in debit means an increase in the value of the property or property rights of the organization. For passive accounts: an increase in debit means a decrease in the organization's own funds]
+    (* <- lang_en;;*);;

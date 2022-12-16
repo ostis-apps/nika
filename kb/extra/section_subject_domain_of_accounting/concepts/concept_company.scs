@@ -1,0 +1,15 @@
+concept_company
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [компания]
+    (* <- lang_ru;; *);
+    [company]
+    (* <- lang_en;;*);
+
+=> nrel_note:
+    [это единица предпринимательской деятельности, оформленная юридически и реализующая собственные интересы посредством производства и продажи товаров и услуг с использованием различных факторов производства]
+    (* <- lang_ru;;*);
+    [is a unit of business activity, legally registered and realizing its own interests through the production and sale of goods and services using various factors of production]
+    (* <- lang_en;;*);;

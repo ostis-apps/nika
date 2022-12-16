@@ -1,0 +1,28 @@
+concept_message_about_money
+
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о деньгах]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [concept_message_about_money];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Сообщение, в котором рассказывается что такое деньги]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о объяснении причастности денег к бухгалтерскому учету - атомарное сообщение,
+    не содержащее сущностей.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

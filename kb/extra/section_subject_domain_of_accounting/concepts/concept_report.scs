@@ -1,0 +1,21 @@
+concept_report
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [отчет]
+    (* <- lang_ru;; *);
+    [report]
+    (* <- lang_en;;*);
+
+=> nrel_note:
+    [это совокупность данных об имущественном и финансовом положении организации и о результатах ее хозяйственной деятельности за конкретный отчетный период]
+    (* <- lang_ru;; *);
+    [this is a set of data on the property and financial position of the organization and on the establishment of its economic activity for a specific reporting period]
+    (* <- lang_en;;*);
+
+    => nrel_inclusion:
+        concept_weekly_report;
+        concept_monthly_report;
+        concept_annual_report;;
+

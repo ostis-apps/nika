@@ -1,0 +1,28 @@
+concept_message_about_company
+
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о компании]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about company];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Сообщение, описывающее термин компании]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о компании - атомарное сообщение,
+    которое содержит сушность компании, информацию о которой необходимо найти.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
