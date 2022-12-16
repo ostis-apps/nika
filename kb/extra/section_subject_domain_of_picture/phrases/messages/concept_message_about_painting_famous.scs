@@ -1,0 +1,37 @@
+concept_message_about_painting_famous
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о популярных картинах]
+	(* <- lang_ru;; *);
+	[message about painting famous]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[painting_famous];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о популярных картинах)]
+        (* <- lang_ru;; *);
+        [Def. (message about painting famous)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о популярных картинах- атомарное сообщение, являющееся запросом на получение информации про популярные картины]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about painting famous - atomic message which used to make a question about painting famous]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
