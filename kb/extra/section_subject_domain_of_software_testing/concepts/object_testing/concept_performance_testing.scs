@@ -1,0 +1,18 @@
+concept_performance_testing
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [тестирование производительности]
+    (* <- lang_ru;;*);
+    [performance testing]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [ тестирование, которое проводится с целью определения, как быстро работает вычислительная система или её часть под определённой нагрузкой. Также может служить для проверки и подтверждения других атрибутов качества системы, таких как масштабируемость, надёжность и потребление ресурсов.]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+   concept_exercise_testing;
+   concept_stress_testing;
+   concept_stability_testing;;

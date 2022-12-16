@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/general" idtf="" shapeColor="193" id="2765247288080" parent="0" x="130.722" y="310.268" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[два основных подхода к автоматизации тестирования: тестирование на уровне кода и тестирование пользовательского интерфейса (в частности, GUI-тестирование). К первому типу относится, в частности, модульное тестирование. Ко второму — имитация действий пользователя - функциональное тестирование (с помощью специальных тестовых фреймворков.)]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_answer_about_automated_testing_phrase" shapeColor="0" id="2765247288496" parent="0" left="0" top="0" right="498" bottom="33" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-382.067" y="207.83" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_answer_about_automated_testing_phrase" shapeColor="0" id="2765247290992" parent="0" left="0" top="0" right="498" bottom="33" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-96.8774" y="30.8302" haveBus="false" idtf_pos="4">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase" shapeColor="0" id="2765247285168" parent="0" left="0" top="0" right="162" bottom="33" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="73.6226" y="30.3302" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="2765247283712" parent="0" left="0" top="0" right="80" bottom="33" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-450.877" y="291.33" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_inclusion" shapeColor="0" id="2765247290368" parent="0" left="0" top="0" right="141" bottom="33" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-17.3774" y="-37.6698" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2765188685808" parent="0" id_b="2765247288496" id_e="2765247288080" b_x="-382.067" b_y="207.83" e_x="130.722" e_y="310.268" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="2765188685568" parent="0" id_b="2765247285168" id_e="2765247290992" b_x="73.6226" b_y="30.3302" e_x="-96.8774" e_y="30.8302" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2765188685328" parent="0" id_b="2765247283712" id_e="2765247288080" b_x="-450.877" b_y="291.33" e_x="130.722" e_y="310.268" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2765188684368" parent="0" id_b="2765247290368" id_e="2765188685568" b_x="-17.3774" b_y="-37.6698" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.531597">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>

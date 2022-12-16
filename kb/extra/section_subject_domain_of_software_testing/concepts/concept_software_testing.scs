@@ -1,0 +1,22 @@
+concept_software_testing
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [тестирование программного обеспечения]
+    (* <- lang_ru;;*);
+    [software testing]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [процесс исследования, испытания программного продукта, имеющий
+    своей целью проверку соответствия между реальным поведением программы
+    и её ожидаемым поведением на конечном наборе тестов, выбранных определённым образом ]
+	(* <- lang_ru;; *);
+
+=> nrel_basic_decomposition:
+   concept_object_testing;
+   concept_inner_structure_testing;
+   concept_automatization_degree_testing;
+   concept_isolation_degree_testing;
+   concept_time_spended_testing;;

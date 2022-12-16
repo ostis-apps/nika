@@ -1,0 +1,42 @@
+concept_message_about_system_testing
+
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о системное тестирование]
+	    (* <- lang_ru;; *);
+	[message about system testing]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_system_testing];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о системное тестирование)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about educational institution)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщениесообщение о системное тестирование - атомарное сообщение,
+            которое содержит понятие системное тестирование, определение которого
+            необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[The message message about system testing is an atomic message.
+             which contains the concept of system testing, the definition of which
+             need to be found.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

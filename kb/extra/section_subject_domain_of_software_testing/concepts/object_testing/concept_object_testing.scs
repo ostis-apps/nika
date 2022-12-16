@@ -1,0 +1,26 @@
+concept_object_testing
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [объектное тестирование]
+    (* <- lang_ru;;*);
+    [object testing]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [объекты - компоненты, группы компонентов, подсистемы и система.
+    Для каждого из них формируется стратегия проведения тестирования.
+    Если объект тестирования относится к "белому ящику" или "черному ящику",
+    состав компонентов которого неизвестный, то тестирование проводится посредством
+    ввода внего входных тестовых данных для получения выходных данных.]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+   concept_funcional_testing;
+   concept_performance_testing;
+   concept_configurational_testing;
+   concept_usability_testing;
+   concept_security_testing;
+   concept_localization_testing;
+   concept_compatibility_testing;;

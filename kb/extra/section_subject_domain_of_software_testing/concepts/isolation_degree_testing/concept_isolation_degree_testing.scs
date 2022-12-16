@@ -1,0 +1,18 @@
+concept_isolation_degree_testing
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [тестирование по степени изолированности]
+    (* <- lang_ru;;*);
+    [isolation degree testing]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [Тестирование компонетов по степени изолированности. По степени изолированности от окружающей среды системы подразделяются на два класса: закрытые– изолированные системы, не взаимодействующие со средой; открытые– системы, взаимодействующие со средой, обменивающиеся с ней информацией.]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+    concept_unit_testing;
+    concept_integratin_testing;
+    concept_system_testing;;

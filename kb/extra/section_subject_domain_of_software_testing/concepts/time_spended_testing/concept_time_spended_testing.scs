@@ -1,0 +1,17 @@
+concept_time_spended_testing
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [тестирование по времени проведения]
+    (* <- lang_ru;;*);
+    [time spended testing]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [тестирование, учитывающее необходимое время для проведения всех необходимых для полноценной работы системы тестов]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+    concept_alfa_testing;
+    concept_beta_testing;;

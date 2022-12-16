@@ -1,0 +1,18 @@
+concept_project
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [проект]
+    (* <- lang_ru;;*);
+    [project]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [ограниченное во времени предприятие (мероприятие), направленное на создание уникальных продуктов и услуг или получение принципиально новых результатов.]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+    concept_android_application;
+    concept_crm_system;
+    concept_web_site;;

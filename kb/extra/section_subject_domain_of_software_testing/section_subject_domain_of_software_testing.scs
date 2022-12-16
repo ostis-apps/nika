@@ -1,0 +1,87 @@
+section_subject_domain_of_software_testing
+
+=> nrel_main_idtf:
+[Раздел. Предметная область тестирования программного обеспечения] (*<-lang_ru;;*);
+[Section. Subject domain of software testing] (*<-lang_en;;*);
+<- atomic_class;;
+section_subject_domain_of_software_testing = [*
+	subject_domain_of_software_testing
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область тестирования программного обеспечения]
+   (* <- lang_ru;; *);
+   [Subject domain of software testing]
+   (* <- lang_en;; *);
+	<- subject_domain;
+
+	-> rrel_maximum_studied_object_class:
+   concept_software_testing;
+	-> rrel_not_maximum_studied_object_class:
+   concept_funcional_testing;
+   concept_performance_testing;
+   concept_exercise_testing;
+   concept_stress_testing;
+   concept_stability_testing;
+   concept_configurational_testing;
+   concept_usability_testing;
+   concept_security_testing;
+   concept_localization_testing;
+   concept_compatibility_testing;
+   concept_black_box_testing;
+   concept_white_box_testing;
+   concept_gray_box_testing;
+   concept_manual_testing;
+   concept_automated_testing;
+   concept_semi_automated_testing;
+   concept_unit_testing;
+   concept_integration_testing;
+   concept_system_testing;
+   concept_alfa_testing;
+   concept_beta_testing;
+   concept_object_testing;
+   concept_inner_structure_testing;
+   concept_automatization_degree_testing;
+   concept_isolation_degree_testing;
+   concept_time_spended_testing;
+   concept_project;
+   concept_android_application;
+   concept_crm_system;
+   concept_web_site;
+	-> rrel_explored_relation:
+    nrel_tests_provided;;
+*];;
+
+section_subject_domain_of_software_testing
+-> rrel_key_sc_element:
+   concept_software_testing;
+   concept_funcional_testing;
+   concept_performance_testing;
+   concept_exercise_testing;
+   concept_stress_testing;
+   concept_stability_testing;
+   concept_configurational_testing;
+   concept_usability_testing;
+   concept_security_testing;
+   concept_localization_testing;
+   concept_compatibility_testing;
+   concept_black_box_testing;
+   concept_white_box_testing;
+   concept_gray_box_testing;
+   concept_manual_testing;
+   concept_automated_testing;
+   concept_semi_automated_testing;
+   concept_unit_testing;
+   concept_integration_testing;
+   concept_system_testing;
+   concept_alfa_testing;
+   concept_beta_testing;
+   concept_object_testing;
+   concept_inner_structure_testing;
+   concept_automatization_degree_testing;
+   concept_isolation_degree_testing;
+   concept_time_spended_testing;
+   concept_project;
+   concept_android_application;
+   concept_crm_system;
+   concept_web_site;
+   nrel_tests_provided;;
