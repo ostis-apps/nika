@@ -1,0 +1,9 @@
+concept_director_of_company
+
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+	[имя директор](* <- lang_ru;;*);
+	[company director](* <- lang_en;; *);
+
+<-binary_relation;;

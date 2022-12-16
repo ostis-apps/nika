@@ -1,0 +1,33 @@
+section_subject_domain_of_robotics
+<- sc_node_struct;
+=> nrel_main_idtf:
+[Раздел. Предметная область робототехника](* <- lang_ru;; *);
+[Section. Subject domain robotics](* <- lang_en;; *);
+<-atomic_section;;
+
+section_subject_domain_of_robotics = [*
+subject_domain_of_problems_robotics
+=> nrel_main_idtf:
+[Предметная область робототехника](* <- lang_ru;; *);
+[Subject domain of problems of robotics](* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+     concept_of_robotics;
+-> rrel_not_maximum_studied_object_class:
+    concept_director_of_company;
+    concept_history_of_robotics;
+	concept_biotechnical_robots;
+	concept_of_company;
+	concept_of_industrial_robot;
+	concept_of_opening_robotics;
+	concept_of_robotics;
+	concept_of_specification;
+	concept_the_beginning_of_the_development_of_industrial_robots;
+	concept_intent_possible_class;
+-> rrel_explored_relation:
+nrel_company2;
+nrel_founded_date;
+nrel_specification;
+nrel_gender5;
+nrel_robotics;;
+*];;
