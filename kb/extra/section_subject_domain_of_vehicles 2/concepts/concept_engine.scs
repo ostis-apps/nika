@@ -1,0 +1,19 @@
+concept_engine
+
+=> nrel_main_idtf:
+    [двигатель]
+    (* <- lang_ru;;*);
+    [engine]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [устройство, преобразующее какой-либо вид энергии в механическую работу.]
+	(* <- lang_ru;; *);
+
+=> nrel_basic_decomposition:
+    concept_piston;
+    concept_spark_plug;
+    concept_cylinder;
+    concept_flywheel;
+    concept_valve;
+    concept_crankshaft;;
