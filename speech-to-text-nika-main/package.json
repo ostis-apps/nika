@@ -1,0 +1,76 @@
+{
+  "name": "react-hook-speech-to-text",
+  "type": "module",
+  "version": "0.8.0",
+  "private": false,
+  "main": "dist/index.js",
+  "license": "MIT",
+  "author": "Riley Brown",
+  "repository": "Riley-Brown/react-speech-to-text",
+  "description": "Simple cross-browser speech to text using react hooks.",
+  "dependencies": {
+    "react-hook-speech-to-text": "^0.8.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "rollup -c",
+    "build:react-app": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-react": "^7.12.10",
+    "@types/hark": "^1.2.1",
+    "@types/node": "^14.14.22",
+    "@types/react": "^17.0.1",
+    "@types/react-dom": "^17.0.0",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0",
+    "hark": "^1.2.3",
+    "inline-worker": "^1.1.0",
+    "prettier": "^2.0.5",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "^4.0.1",
+    "rollup": "^2.38.4",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-sass": "^1.2.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "typescript": "^4.1.3"
+  },
+  "keywords": [
+    "react",
+    "speech",
+    "to",
+    "text",
+    "cross",
+    "browser"
+  ]
+  
+}
