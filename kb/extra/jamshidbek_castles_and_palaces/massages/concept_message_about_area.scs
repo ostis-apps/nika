@@ -1,0 +1,36 @@
+concept_message_about_area 
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о площади]
+	    (* <- lang_ru;; *);
+	[message about area]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_area];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о площади )]
+	        (* <- lang_ru;; *);
+	    [Def. (message about area)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о площади - атомарное сообщение, которое содержит понятие площадь, информацию о которой необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about area is an atomic message that contains the termin of a area information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

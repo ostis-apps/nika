@@ -1,0 +1,36 @@
+concept_message_about_height
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о высоте]
+	    (* <- lang_ru;; *);
+	[message about height]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_height];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о высоте )]
+	        (* <- lang_ru;; *);
+	    [Def. (message about height)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о высоте - атомарное сообщение, которое содержит понятие высоте, информацию о которой необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about height is an atomic message that contains the termin of a height information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
