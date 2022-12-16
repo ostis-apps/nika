@@ -1,0 +1,15 @@
+nrel_country
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- antitransitive_relation;
+<- asymmetric_relation;
+=> nrel_main_idtf:
+	[страна*]
+	(* <- lang_ru;; *);
+	[country*]
+	(* <- lang_en;; *);
+=> nrel_first_domain: concept_fairytale;
+=> nrel_second_domain: structure;;

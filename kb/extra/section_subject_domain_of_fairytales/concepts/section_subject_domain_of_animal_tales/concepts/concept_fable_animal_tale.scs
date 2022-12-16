@@ -1,0 +1,25 @@
+concept_fable_animal_tale
+<-sc_node_class;
+<-concept_animal_tale;
+=>nrel_main_idtf:
+	[басня о животных](* <- lang_ru;; *);
+	[fable animal tale](* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+            [Опр. (Басня о животных)](* <- lang_ru;; *);
+            [Def. (Fable animal tale)](* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+        	...
+        	(*
+            	-> rrel_example:
+                	[Басня о животных — короткий рассказ в стихах или прозе о животных.](* <- lang_ru;; *);;
+	    	*);
+		...
+		(*
+		-> rrel_example: 
+			[Fable animal tale is a short tale with animals as poems or texts.](* <- lang_en;; *);;
+		*);;
+	*);;

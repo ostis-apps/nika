@@ -1,0 +1,30 @@
+concept_fiction_tale
+<-sc_node_class;
+=>nrel_main_idtf:
+	[литературная сказка]
+	(* <- lang_ru;; *);
+	[fiction tale]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+            [Опр. (Литературная сказка)]
+            (* <- lang_ru;; *);
+            [Def. (Fiction tale)]
+            (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+        	...
+        	(*
+            	-> rrel_example:
+                	[Народная сказка прозаический устный рассказ о вымышленных событиях написанная писателем.]
+                	(* <- lang_ru;; *);;
+	    	*);
+		...
+		(*
+		-> rrel_example: 
+			[Fiction tale is epic tale about not real events written by famous writers.]
+			(* <- lang_en;; *);;
+		*);;
+	*);;

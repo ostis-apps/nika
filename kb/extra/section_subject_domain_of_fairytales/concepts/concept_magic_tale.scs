@@ -1,0 +1,30 @@
+concept_magic_tale
+<-sc_node_class;
+=>nrel_main_idtf:
+	[волшебная сказка]
+	(* <- lang_ru;; *);
+	[magic tale]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+            [Опр. (Волшебная сказка)]
+            (* <- lang_ru;; *);
+            [Def. (Magic tale)]
+            (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+        	...
+        	(*
+            	-> rrel_example:
+                	[В основе сюжета волшебной сказки находится повествование о преодолении потери или недостачи, при помощи чудесных средств, или волшебных помощников.]
+                	(* <- lang_ru;; *);;
+	    	*);
+		...
+		(*
+		-> rrel_example: 
+			[Magic tale is epic tale where heros overcome difficulties through using magic things or helpers.]
+			(* <- lang_en;; *);;
+		*);;
+	*);;

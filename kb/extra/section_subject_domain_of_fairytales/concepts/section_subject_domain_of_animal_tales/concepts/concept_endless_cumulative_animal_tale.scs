@@ -1,0 +1,25 @@
+concept_endless_cumulative_animal_tale
+<-sc_node_class;
+<-concept_cumulative_animal_tale;
+=>nrel_main_idtf:
+	[кумулятивная сказка о животных с бесконечным повторением](* <- lang_ru;; *);
+	[cumulative animal tale with endless repeat](* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+            [Опр. (Кумулятивная сказка о животных с бесконечным повторением)](* <- lang_ru;; *);
+            [Def. (Cumulative animal tale with endless repeat)](* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+        	...
+        	(*
+            	-> rrel_example:
+                	[Кумулятивная сказка с бесконечным повторением - это сказка о животных с конечным повторением одного и того же действия.](* <- lang_ru;; *);;
+	    	*);
+		...
+		(*
+		-> rrel_example: 
+			[Cumulative animal tale with endless repeat is a tale with animals as main heros.](* <- lang_en;; *);;
+		*);;
+	*);;
