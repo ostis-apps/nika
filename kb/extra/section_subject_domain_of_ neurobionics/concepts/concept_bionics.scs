@@ -1,0 +1,29 @@
+concept_bionics
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+    [Бионика]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+=> nrel_note:
+    [
+        прикладная наука о применении в технических устройствах и системах принципов организации, свойств, 
+        функций и структур живой природы, то есть формах живого в природе и их промышленных аналогах.
+:
+    ]
+
+    (* 
+        <- lang_ru;; 
+    *);
+
+<= nrel_concept:
+    concept_name_of_bionics;
+
+<= nrel_about_bionics_type:
+    concept_an_approach;
+    concept_study;;

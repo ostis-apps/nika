@@ -1,0 +1,75 @@
+section_subject_domain_of_neurobionics
+
+=> nrel_main_idtf:
+    [Раздел. Предметная область нейробионика]
+
+    (* 
+        <- lang_ru;; 
+        *);
+
+    [Section. Subject domain of neurobionics]
+
+    (* 
+        <- lang_en;; 
+        *);
+
+<- atomic_section;;
+
+section_subject_domain_of_neurobionics = [*
+    subject_domain_of_neurobionics
+
+    => nrel_main_idtf:
+        [Предметная область нейробионика]
+
+        (* 
+            <- lang_ru;; 
+        *);
+
+        [Subject domain of hunting]
+
+        (* 
+            <- lang_en;; 
+        *);
+
+    <- subject_domain;
+
+    -> rrel_maximum_studied_object_class:
+        concept_neurobionics;
+        concept_bionics;
+        concept_open_nurobionics;
+        concept_possibilities_of_neurobionics;
+
+    -> rrel_not_maximum_studied_object_class:
+        concept_an_approach;
+        concept_chapter;
+        concept_biocybernetics;
+        concept_computer;
+        consept_cybernetic;
+        consept_discoveries;
+        consept_elements;
+        concept_eyes;
+        concept_futire;
+        concept_knowledge;
+        concept_muscles;
+        concept_name_of_bionics;
+        concept_predictions;
+        concept_reactions;
+        concept_rebuilding;
+        concept_stage;
+        concept_study;
+        concept_symbiosis;
+        concept_systems;
+        concept_technique;
+        concept_tembos;
+        concept_thought_transmission;
+        concept_bioelectric;
+        concept_brain;
+        concept_brainputer;
+
+    -> rrel_explored_relation:
+        nrel_applications_type;;
+        
+ *];;
+
+        
+        
