@@ -1,0 +1,43 @@
+concept_message_about_neyrobionic
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о нейробионике]
+	    (* <- lang_ru;; *);
+	[message about neyrobionic]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_bank];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о нейробионике)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about neyrobionic)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[нейробионике (Нейробионика - научное направление, изучающее возможность использования принципов строения и функционирования мозга с целью создания более совершенных технических устройств и технологических процессов.
+					Нейробионика произошла от слово био, что в переводе с латинского жизнь, открытие в изучении коры головного
+					мозга под влияниям интрополитных цепей произвел Фэн Коррол доказав что человек 
+					способствующий здраво мыслить может всё. В 1993 году была востановлина лабаратория Уэстоном Горданом
+					прежде работавшим под командыванием Сурчалова Ильи Дмитриевича И Миронова Павла Сергеевича, 
+					русскими учеными разработавшими первыми в мире нанотехнологические флюиды, распространяющиеся в
+					зараженном мозге..]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Bank () -  (license) for which both specific opportunities for cash transactions and restrictions are legally established for types of activities.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
