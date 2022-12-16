@@ -1,0 +1,61 @@
+section_subject_domain_of_history
+=> nrel_main_idtf:
+	  [Раздел. Предметная область истории]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of history] 
+  (* <- lang_en;; *);;
+
+section_subject_domain_of_history = [*
+	subject_domain_of_history
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область истории]
+   (* <- lang_ru;; *);
+   [Subject domain of history]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_history;
+	-> rrel_not_maximum_studied_object_class:
+      concept_chain_of_events;
+      concept_historical_event;
+      concept_oral_tradition;
+      concept_outline_of_history;
+      concept_past;
+      concept_recorded_history;
+      concept_research_object;
+      concept_study_of_history;
+	-> rrel_explored_relation:
+      nrel_facet_of;
+      nrel_has_parts_of_the_class;
+      nrel_on_focus_list_of_Wikimedia_project;
+      nrel_permanent_duplicated_item;
+      nrel_studied_by;
+      nrel_subclass_of;
+      nrel_topics_main_category;
+      nrel_topics_main_Wikimedia_portal;
+      nrel_Wikimedia_outline;;
+*];;
+
+
+section_subject_domain_of_history
+-> rrel_key_sc_element:
+    subject_domain_of_history;
+    concept_history;
+    concept_chain_of_events;
+    concept_historical_event;
+    concept_oral_tradition;
+    concept_outline_of_history;
+    concept_past;
+    concept_recorded_history;
+    concept_research_object;
+    concept_study_of_history;
+    nrel_facet_of;
+    nrel_has_parts_of_the_class;
+    nrel_on_focus_list_of_Wikimedia_project;
+    nrel_permanent_duplicated_item;
+    nrel_studied_by;
+    nrel_subclass_of;
+    nrel_topics_main_category;
+    nrel_topics_main_Wikimedia_portal;
+    nrel_Wikimedia_outline;;

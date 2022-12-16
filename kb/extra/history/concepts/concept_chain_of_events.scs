@@ -1,0 +1,25 @@
+concept_chain_of_events
+=> nrel_main_idtf:
+    [Ereigniskette] (*<-lang_de;;*);
+    [череда событий] (*<-lang_ru;;*);
+    [chain of events] (*<-lang_en;;*);
+    [chaîne d'évènements] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Ereigniskette)] (*<-lang_de;;*);
+       [Опр. (череда событий)] (*<-lang_ru;;*);
+       [Def. (chain of events)] (*<-lang_en;;*);
+       [Def. (chaîne d'évènements)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [ряд действий и их последствий] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [a number of actions and their effects] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

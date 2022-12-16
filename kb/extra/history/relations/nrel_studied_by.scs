@@ -1,0 +1,44 @@
+nrel_studied_by
+
+//идентификаторы
+=> nrel_main_idtf:
+    [Forschungsthema in] (*<-lang_de;;*);
+    [изучается в] (*<-lang_ru;;*);
+    [наука, що вивчає об'єкт] (*<-lang_uk;;*);
+    [studied by] (*<-lang_en;;*);
+    [discipline dont c'est l'objet] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Def. (Forschungsthema in)] (*<-lang_de;;*);
+       [Опр. (изучается в)] (*<-lang_ru;;*);
+       [Def. (наука, що вивчає об'єкт)] (*<-lang_uk;;*);
+       [Def. (studied by)] (*<-lang_en;;*);
+       [Def. (discipline dont c'est l'objet)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Wissenschaft oder Forschungsbereich, in der der Gegenstand untersucht wird] (*<-lang_de;; => nrel_format: format_html;;*);
+                [какой наукой или дисциплиной изучается или исследуется предмет] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [предмет вивчається чи досліджується такою наукою чи дисципліною] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [subject is studied by this science or domain] (*<-lang_en;; => nrel_format: format_html;;*);
+                [le sujet est étudié par cette science ou ce domaine] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_history;
+
+
+=> nrel_second_domain:
+    concept_study_of_history;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

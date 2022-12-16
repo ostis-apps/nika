@@ -1,0 +1,27 @@
+concept_message_suggest_history_read
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение об историческом событии]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [suggest_history_read];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о совете прочтения книги по истории.)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о совете прочтения книги по истории - атомарное сообщение,
+    которое содержит информацию о какой-либо книге по истории.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

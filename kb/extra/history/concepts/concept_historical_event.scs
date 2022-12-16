@@ -1,0 +1,29 @@
+concept_historical_event
+<- concept_wit_entity;
+=> nrel_main_idtf:
+    [historisches Ereignis] (*<-lang_de;;*);
+    [историческое событие] (*<-lang_ru;;*);
+    [історична подія] (*<-lang_uk;;*);
+    [historical event] (*<-lang_en;;*);
+    [événement historique] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (historisches Ereignis)] (*<-lang_de;;*);
+       [Опр. (историческое событие)] (*<-lang_ru;;*);
+       [Def. (історична подія)] (*<-lang_uk;;*);
+       [Def. (historical event)] (*<-lang_en;;*);
+       [Def. (événement historique)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Begebenheit, die eine geschichtliche Veränderung herbeiführt] (*<-lang_de;; => nrel_format: format_html;;*);
+                [particular incident in history that brings about a historical change] (*<-lang_en;; => nrel_format: format_html;;*);
+                [incident particulier dans l'histoire qui entraîne un changement historique] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

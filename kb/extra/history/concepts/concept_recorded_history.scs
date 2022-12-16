@@ -1,0 +1,25 @@
+concept_recorded_history
+=> nrel_main_idtf:
+    [письменная история] (*<-lang_ru;;*);
+    [Письмова історія] (*<-lang_uk;;*);
+    [recorded history] (*<-lang_en;;*);
+    [histoire] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (письменная история)] (*<-lang_ru;;*);
+       [Def. (Письмова історія)] (*<-lang_uk;;*);
+       [Def. (recorded history)] (*<-lang_en;;*);
+       [Def. (histoire)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [historical narrative based on a written record or other documented communication] (*<-lang_en;; => nrel_format: format_html;;*);
+                [narration des événements passées qui s'appuie sur des traces écrites ou tout autre type de documentation] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

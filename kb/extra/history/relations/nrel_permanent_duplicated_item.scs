@@ -1,0 +1,36 @@
+nrel_permanent_duplicated_item
+
+//идентификаторы
+=> nrel_main_idtf:
+    [dauerhaftes Duplikat von] (*<-lang_de;;*);
+    [постоянный дубликат] (*<-lang_ru;;*);
+    [постійний дублікат] (*<-lang_uk;;*);
+    [permanent duplicated item] (*<-lang_en;;*);
+    [élément doublon permanent] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Def. (dauerhaftes Duplikat von)] (*<-lang_de;;*);
+       [Опр. (постоянный дубликат)] (*<-lang_ru;;*);
+       [Def. (постійний дублікат)] (*<-lang_uk;;*);
+       [Def. (permanent duplicated item)] (*<-lang_en;;*);
+       [Def. (élément doublon permanent)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [dieser Eintrag ist ein Duplikat eines anderen. Sie können nicht zusammengeführt werden, weil ein Wikimedia-Projekt dauerhaft unterschiedliche Seiten dazu hat, z. B. in unterschiedlichen Schriften oder Sprachen] (*<-lang_de;; => nrel_format: format_html;;*);
+                [обычно для связи двух статей в одном проекте Викимедиа об одном и том же (но на другом диалекте или в другом алфавите)] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [зазвичай для зв'язку двох статей в одному проекті Вікімедіа про одне й те ж (але на іншому діалекті або в іншому алфавіті)] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [this item duplicates another item and the two can't be merged, as one Wikimedia project includes two pages, e. g. in different scripts or languages (applies to some wiki, e.g.: cdowiki, gomwiki, nanwiki). Use "duplicate item" for other wikis.] (*<-lang_en;; => nrel_format: format_html;;*);
+                [cet élément est un doublon d'un autre élément et les deux ne peuvent pas être fusionnés, étant donné que l'un des projets Wikimédia inclut deux pages, par exemple dans deux alphabets ou langues différents] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;
