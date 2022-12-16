@@ -1,0 +1,265 @@
+satellite_Moon
+<- concept_heavenly_body;
+<- concept_satellite;
+<- concept_natural_satellite;
+
+=> nrel_main_idtf:
+   [спутник Луна]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Луна]
+   (* <- lang_ru;; *);   
+=> nrel_main_idtf:
+   [satellite Moon]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Луна](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://satellite_Moon.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);
+
+<= nrel_satellite: planet_Earth;
+=> nrel_satellite_average_radius: [1737,10 km];
+=> nrel_satellite_surface_area:[3,793*10^7 км^2];
+=> nrel_satellite_volum:[2,1958*10^10 км^3];
+=> nrel_satellite_weight:[7,3477*10^22 кг];
+
+
+=> nrel_satellite_orbit_semi_major_axis:[384 399 км];
+=> nrel_satellite_orbit_speed:[1,023 км/с (средняя)];
+=> nrel_satellite_orbit_circulation_period:[27 д 7 ч 43 мин 11,5 сек];;
+
+satellite_Callisto
+<- concept_heavenly_body;
+<- concept_satellite;
+<- concept_natural_satellite;
+<- concept_galilean_satellites; 
+
+=> nrel_main_idtf:
+   [спутник Каллисто]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Каллисто]
+   (* <- lang_ru;; *);   
+=> nrel_main_idtf:
+   [satellite Callisto]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Каллисто](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://satellite_Callisto.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);
+
+<= nrel_satellite: planet_Jupiter;
+=> nrel_satellite_average_radius: [2410,3 km];
+=> nrel_satellite_surface_area:[7,3*10^7 км^2];
+=> nrel_satellite_volum:[5,9*10^10 км^3];
+=> nrel_satellite_weight:[1,075*10^23 кг];
+
+=> nrel_satellite_orbit_semi_major_axis:[1 882 700 км];
+=> nrel_satellite_orbit_speed:[8,204 км/с];
+=> nrel_satellite_orbit_circulation_period:[16,6890184 д];
+
+=> nrel_satellite_discoverer: Galileo_Galileo;
+=> nrel_satellite_date_of_discover:[7 января 1610];;
+
+satellite_Io
+<- concept_heavenly_body;
+<- concept_satellite;
+<- concept_natural_satellite;
+<- concept_galilean_satellites; 
+
+=> nrel_main_idtf:
+   [спутник Ио]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Ио]
+   (* <- lang_ru;; *);   
+=> nrel_main_idtf:
+   [satellite Iо]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Ио](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://satellite_Io.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);
+
+<= nrel_satellite: planet_Jupiter;
+=> nrel_satellite_average_radius: [1 821,3 km];
+=> nrel_satellite_surface_area:[41 910 000 км^2];
+=> nrel_satellite_volum:[2,53*10^10 км^3];
+=> nrel_satellite_weight:[8,9319*10^22 кг];
+
+=> nrel_satellite_orbit_semi_major_axis:[421 700км];
+=> nrel_satellite_orbit_speed:[17,334 км/с];
+=> nrel_satellite_orbit_circulation_period:[1 д 18 ч 28 мин];
+
+=> nrel_satellite_discoverer: Galileo_Galileo;
+=> nrel_satellite_date_of_discover:[8 января 1610];;
+
+satellite_Europe
+<- concept_heavenly_body;
+<- concept_satellite;
+<- concept_natural_satellite;
+<- concept_galilean_satellites; 
+
+=> nrel_main_idtf:
+   [спутник Европа]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Европа]
+   (* <- lang_ru;; *);   
+=> nrel_main_idtf:
+   [satellite Europe]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Европа](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://satellite_Europe.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);
+
+<= nrel_satellite: planet_Jupiter;
+=> nrel_satellite_average_radius: [1560,8±0,5 км];
+=> nrel_satellite_surface_area:[30,61 млн км^2];
+=> nrel_satellite_volum:[15,93 млрд км^3];
+=> nrel_satellite_weight:[4,8017*10^22 кг];
+
+=> nrel_satellite_orbit_semi_major_axis:[671 100 км];
+=> nrel_satellite_orbit_speed:[13,740 км/с];
+=> nrel_satellite_orbit_circulation_period:[3,551 земных суток];
+
+=> nrel_satellite_discoverer: Galileo_Galileo;
+=> nrel_satellite_date_of_discover:[8 января 1610];;
+
+satellite_Gunnymede
+<- concept_heavenly_body;
+<- concept_satellite;
+<- concept_natural_satellite;
+<- concept_galilean_satellites; 
+
+=> nrel_main_idtf:
+   [спутник Ганимед]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Ганимед]
+   (* <- lang_ru;; *);   
+=> nrel_main_idtf:
+   [satellite Gunnymede]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Ганимед](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://satellite_Gunnymede.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);
+
+<= nrel_satellite: planet_Jupiter;
+=> nrel_satellite_average_radius: [2634,1 ± 0,3 км];
+=> nrel_satellite_surface_area:[87,0 миллионов км^2];
+=> nrel_satellite_volum:[7,6*10^10 км^3];
+=> nrel_satellite_weight:[1,4819*10^23 кг];
+
+=> nrel_satellite_orbit_semi_major_axis:[1 070 400 км];
+=> nrel_satellite_orbit_speed:[10,880 км/с];
+=> nrel_satellite_orbit_circulation_period:[7,15455296 д];
+
+=> nrel_satellite_discoverer: Galileo_Galileo;
+=> nrel_satellite_date_of_discover:[7 января 1610];;
+
+Galileo_Galileo
+<-concept_satellite_discoverer;
+
+=> nrel_main_idtf:
+   [Галилео Галилей]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Galileo Galileo]
+   (* <- lang_en;; *);;
+
+
+satellite_Sputnik_1
+<- concept_satellite;
+<- concept_artificial_satellite;
+
+=> nrel_main_idtf:
+   [спутник Спутник 1]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Спутник-1]
+   (* <- lang_ru;; *);   
+=> nrel_main_idtf:
+   [satellite Sputnik-1]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. Спутник-1](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://satellite_Sputnik_1.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);
+
+<= nrel_satellite: planet_Earth;
+
+=> nrel_count_of_loop_around_the_orbit:[1440];
+=> nrel_satellite_date_of_launch:[4 октября 1957 19:28:34 UTC];
+=> nrel_satellite_trip_time:[3 месяца];
+=> nrel_satellite_date_of_deorbit:[4 января 1958];
+=> nrel_satellite_manufacturer:[СССР, «ОКБ-1»];
+=> nrel_satellite_operator:[СССР];
+=> nrel_satellite_launchpad:[СССР, Байконур, площадка № 1];
+=> nrel_satellite_max_diameter:[0,58 м];
+=> nrel_satellite_weight:[83,6 кг];;
+
+orbit_of_the_moon
+<-concept_orbit;
+
+=> nrel_main_idtf:
+   [орбита Луны]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [orbit of the moon]
+   (* <- lang_en;; *);
+   
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. планета Земля](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [орбита Луны - траектория, по которой Луна вращается вокруг общего с Землёй центра масс, располагающегося примерно в 4700 км от центра Земли.](*<-lang_ru;;*);;
+	*);;
+*);;

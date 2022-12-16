@@ -1,0 +1,40 @@
+concept_artificial_satellite
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [искусственный спутник]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [artificial satellite]
+   (* <- lang_en;; *);
+   
+=> nrel_inclusion:
+	concept_military_satellite;
+	concept_research_satellite;
+	concept_weather_satellite;
+	concept_communications_satellite;
+	concept_broadcast_satellite;
+	concept_navigation_satellite;
+	concept_subsatellite;
+	
+=> nrel_note:
+   [Искусственные спутники бывают военные, исследовательские, метеорологические, геолокационные, спутники связи, широковещательные, навигационные.]
+   (* <- lang_ru;; *);
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. искусственный спутник](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://HTML/concept_artificial_satellite_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+	object;
+	concept_orbit;
+	concept_outer_space;
+	concept_heavenly_body
+	};;
+*);;

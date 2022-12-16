@@ -1,0 +1,34 @@
+concept_weather_satellite
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [метеорологический спутник]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [метеоспутник]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [weather satellite]
+   (* <- lang_en;; *);
+   
+=> nrel_note:
+   [Спутники этого типа несут на борту приборы, с помощью которых наблюдают в частности за температурой поверхности Земли и облачным, снеговым и ледовым покровом.]
+   (* <- lang_ru;; *);
+=> nrel_note:
+   [Методы получения метеоинформации и способы её обработки с помощью метеоспутников изучает спутниковая метеорология.]
+   (* <- lang_ru;; *);
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. метеорологический спутник](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://HTML/concept_weather_satellite_ru.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+	concept_artificial_satellite
+	};;
+*);;
