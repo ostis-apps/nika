@@ -1,0 +1,27 @@
+nrel_gender5
+
+=>nrel_first_domain:
+    concept_computer_games;
+=>nrel_second_domain:
+    nika_game_developer;
+
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+=> nrel_main_idtf:
+    [пол*]
+    (* <- lang_ru;; *);
+    [gender*]
+    (* <- lang_en;; *);
+    => nrel_note:
+        [М - Мужчина
+        Ж - Женшина]
+        (*<-lang_ru;;*);
+    => nrel_note:
+        [M - Men
+        W - Women]
+        (*<-lang_en;;*);
+
+<-binary_relation;;
