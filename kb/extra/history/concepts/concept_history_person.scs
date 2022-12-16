@@ -1,0 +1,21 @@
+concept_history_person
+<- concept_wit_entity;
+=> nrel_main_idtf:
+    [историческая персона] (*<-lang_ru;;*);
+    [history person] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (историческое событие)] (*<-lang_ru;;*);
+       [Def. (history person)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [значимая в истории персона] (*<-lang_ru;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

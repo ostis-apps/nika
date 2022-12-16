@@ -1,0 +1,44 @@
+nrel_facet_of
+
+//идентификаторы
+=> nrel_main_idtf:
+    [Aspekt von] (*<-lang_de;;*);
+    [тематически относится к] (*<-lang_ru;;*);
+    [підтема для] (*<-lang_uk;;*);
+    [facet of] (*<-lang_en;;*);
+    [aspect de] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Def. (Aspekt von)] (*<-lang_de;;*);
+       [Опр. (тематически относится к)] (*<-lang_ru;;*);
+       [Def. (підтема для)] (*<-lang_uk;;*);
+       [Def. (facet of)] (*<-lang_en;;*);
+       [Def. (aspect de)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Thema, von dem dieses Element ein Aspekt ist. Element, das eine weitere Perspektive auf dasselbe Thema bietet] (*<-lang_de;; => nrel_format: format_html;;*);
+                [тема, в которой данный элемент — один из аспектов, представляющих разносторонний взгляд на тему] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [головна (ширша) тема предмету] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [topic of which this item is an aspect, item that offers a broader perspective on the same topic] (*<-lang_en;; => nrel_format: format_html;;*);
+                [le sujet dont cet élément est un aspect ; élément plus général offrant une perspective élargie sur le même sujet] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_history;
+
+
+=> nrel_second_domain:
+    concept_past;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

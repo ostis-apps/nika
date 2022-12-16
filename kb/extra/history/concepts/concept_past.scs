@@ -1,0 +1,29 @@
+concept_past
+=> nrel_main_idtf:
+    [Vergangenheit] (*<-lang_de;;*);
+    [прошедшее время] (*<-lang_ru;;*);
+    [минуле] (*<-lang_uk;;*);
+    [past] (*<-lang_en;;*);
+    [passé] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Vergangenheit)] (*<-lang_de;;*);
+       [Опр. (прошедшее время)] (*<-lang_ru;;*);
+       [Def. (минуле)] (*<-lang_uk;;*);
+       [Def. (past)] (*<-lang_en;;*);
+       [Def. (passé)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Menge aller zeitlich zurückliegenden Ereignisse] (*<-lang_de;; => nrel_format: format_html;;*);
+                [множество событий, хронологически предшествующих данному моменту] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [частина лінії часу, що складається з подій, які вже відбулися] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [historic time - subdivision of time] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,43 @@
+concept_history
+<- concept_wit_entity;
+=> nrel_main_idtf:
+    [Geschichte] (*<-lang_de;;*);
+    [история] (*<-lang_ru;;*);
+    [історія] (*<-lang_uk;;*);
+    [history] (*<-lang_en;;*);
+    [histoire] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Geschichte)] (*<-lang_de;;*);
+       [Опр. (история)] (*<-lang_ru;;*);
+       [Def. (історія)] (*<-lang_uk;;*);
+       [Def. (history)] (*<-lang_en;;*);
+       [Def. (histoire)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [vergangene Ereignisse und ihre Überlieferung, wie sie von der Geschichtswissenschaft und Geschichtsschreibung betrachtet werden] (*<-lang_de;; => nrel_format: format_html;;*);
+                [прошлые события и их записи] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [наука, яка займається вивченням минулого людства] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [past events and their tracks or records] (*<-lang_en;; => nrel_format: format_html;;*);
+                [événements passés et leurs traces ou publications, étudiés par diverses branches des sciences humaines de l'histoire] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_different_from: concept_study_of_history;
+=> nrel_facet_of: concept_past;
+=> nrel_studied_by: concept_study_of_history;
+=> nrel_Wikimedia_outline: concept_outline_of_history;
+=> nrel_has_parts_of_the_class: concept_historical_event;
+=> nrel_has_parts_of_the_class: concept_recorded_history;
+=> nrel_has_parts_of_the_class: concept_oral_tradition;
+=> nrel_inclusion: concept_history;
+
+<- concept_research_object;
+<- concept_chain_of_events;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

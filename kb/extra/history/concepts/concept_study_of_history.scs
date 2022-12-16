@@ -1,0 +1,30 @@
+concept_study_of_history
+=> nrel_main_idtf:
+    [Geschichtswissenschaft] (*<-lang_de;;*);
+    [история как наука] (*<-lang_ru;;*);
+    [історія (наука)] (*<-lang_uk;;*);
+    [study of history] (*<-lang_en;;*);
+    [histoire] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Geschichtswissenschaft)] (*<-lang_de;;*);
+       [Опр. (история как наука)] (*<-lang_ru;;*);
+       [Def. (історія (наука))] (*<-lang_uk;;*);
+       [Def. (study of history)] (*<-lang_en;;*);
+       [Def. (histoire)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [methodisch gesicherte Erforschung vergangenen menschlichen Handelns auf Basis kritisch geprüfter Überlieferung unter einer spezifischen Fragestellung] (*<-lang_de;; => nrel_format: format_html;;*);
+                [наука, изучающая общество в прошлом] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [наукознавча дисципліна] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [academic discipline that studies what happened in the past] (*<-lang_en;; => nrel_format: format_html;;*);
+                [discipline scientifique étudiant le passé historique] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

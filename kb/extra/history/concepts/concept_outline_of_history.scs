@@ -1,0 +1,24 @@
+concept_outline_of_history
+=> nrel_main_idtf:
+    [Обзор истории] (*<-lang_ru;;*);
+    [outline of history] (*<-lang_en;;*);
+    [esquisse de l'histoire] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Обзор истории)] (*<-lang_ru;;*);
+       [Def. (outline of history)] (*<-lang_en;;*);
+       [Def. (esquisse de l'histoire)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Wikimedia-Gliederungsartikel] (*<-lang_de;; => nrel_format: format_html;;*);
+                [Wikimedia outline article] (*<-lang_en;; => nrel_format: format_html;;*);
+                [articles d'esquisses sur Wikimedia] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

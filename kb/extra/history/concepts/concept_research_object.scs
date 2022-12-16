@@ -1,0 +1,27 @@
+concept_research_object
+=> nrel_main_idtf:
+    [Forschungsgegenstand] (*<-lang_de;;*);
+    [предмет исследования] (*<-lang_ru;;*);
+    [об'єкт дослідження] (*<-lang_uk;;*);
+    [research object] (*<-lang_en;;*);
+    [objet de la recherche] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Forschungsgegenstand)] (*<-lang_de;;*);
+       [Опр. (предмет исследования)] (*<-lang_ru;;*);
+       [Def. (об'єкт дослідження)] (*<-lang_uk;;*);
+       [Def. (research object)] (*<-lang_en;;*);
+       [Def. (objet de la recherche)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Jemand oder Etwas, das wissenschaftlich beobachtet oder experimentell getestet wird.] (*<-lang_de;; => nrel_format: format_html;;*);
+                [something that undergoes testing or observation in a scientific experiment] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

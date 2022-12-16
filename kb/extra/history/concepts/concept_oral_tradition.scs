@@ -1,0 +1,28 @@
+concept_oral_tradition
+=> nrel_main_idtf:
+    [mündliche Überlieferung] (*<-lang_de;;*);
+    [Устная традиция] (*<-lang_ru;;*);
+    [Усна традиція] (*<-lang_uk;;*);
+    [oral tradition] (*<-lang_en;;*);
+    [tradition orale] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (mündliche Überlieferung)] (*<-lang_de;;*);
+       [Опр. (Устная традиция)] (*<-lang_ru;;*);
+       [Def. (Усна традиція)] (*<-lang_uk;;*);
+       [Def. (oral tradition)] (*<-lang_en;;*);
+       [Def. (tradition orale)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Art und Weise der Überlieferung von Wissen, Ideen, Techniken, Überzeugungen u. Ä.] (*<-lang_de;; => nrel_format: format_html;;*);
+                [form of human communication wherein knowledge, art, ideas and cultural material is received, preserved, and transmitted orally from one generation to another] (*<-lang_en;; => nrel_format: format_html;;*);
+                [façon de transmettre l'histoire, de génération en génération dans les sociétés qui n'ont pas de système d'écriture] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;
