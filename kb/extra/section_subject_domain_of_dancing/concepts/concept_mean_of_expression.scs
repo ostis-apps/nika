@@ -1,0 +1,14 @@
+concept_mean_of_expression
+    <- sc_node_class;
+    <- class;
+    => nrel_main_idtf:
+        [танцы]
+        (* <- lang_ru;; *);
+        [dancing]
+        (* <- lang_en;; *);
+    => nrel_note:
+        [это набор характерных черт разновидности направления развится танцев.]
+        (* <- lang_ru;; *);;
+    => nrel_inclusion:
+        concept_expressiveness;
+        concept_plastic;;
