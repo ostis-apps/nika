@@ -1,0 +1,46 @@
+section_subject_domain_of_coffee
+=> nrel_main_idtf:
+	  [Раздел. Предметная область кофе]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of coffee] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_coffee = [*
+	subject_domain_of_coffee
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область кофе]
+   (* <- lang_ru;; *);
+   [Subject domain of coffee]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	
+	-> rrel_maximum_studied_object_class:
+   concept_coffee;
+	-> rrel_not_maximum_studied_object_class:
+	concept_intent_possible_class;
+	concept_coffee_arabica;
+	concept_coffee_robusta;
+	concept_coffee_liberica;
+	concept_coffee_americano;
+	jardin;
+	Just_coffee;
+	paulig_arabica;
+	starbucks;
+	coffee_expresso;
+	coffee_latte;
+	coffee_cappuccino;
+	coffee_long_black;
+
+	-> rrel_explored_relation:
+	nrel_country_of_origin;
+	nrel_distribution_countries;
+	nrel_ingredients;
+	nrel_serving_temperature;
+	nrel_variation;;
+*];;
+
+
