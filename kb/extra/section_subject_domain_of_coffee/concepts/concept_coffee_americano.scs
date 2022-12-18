@@ -1,0 +1,24 @@
+concept_coffee_americano
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [кофе американо]
+   (* <- lang_ru;; *);
+    
+=> nrel_inclusion:
+	coffee_latte;
+	concept_cappuccino_coffee;
+	concept__americano_coffee;
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. (кофе)](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [кофе американо-способ приготовления кофе, заключающийся в соединении определённого количества горячей воды и эспрессо.](*<-lang_ru;;*);;
+	*);;
+
+*);;
