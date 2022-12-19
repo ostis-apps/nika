@@ -1,0 +1,14 @@
+nrel_foundade_date
+
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [дата основаня*]
+    (* <- lang_ru;; *);
+    [foundade date*]
+    (* <- lang_en;; *);
+
+<=concept_company_zazerkale;
+<-oriented_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;

@@ -1,0 +1,37 @@
+concept_message_about_shaltay_boltay
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о шалтай болтай]
+	    (* <- lang_ru;; *);
+	[message about shaltay boltay]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_shaltay];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о шалтай болтай)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about shaltay boltay)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о шалтай болтай- атомарное сообщение, которое содержит виды человекообразных, информацию о которых необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about exxon is an atomic message that contains hominoidea division information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+
