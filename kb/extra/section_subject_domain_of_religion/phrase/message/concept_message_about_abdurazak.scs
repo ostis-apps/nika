@@ -1,0 +1,37 @@
+concept_message_about_abdurazak
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о Абдураззак аль Бадр]
+	    (* <- lang_ru;; *);
+	[message about abdurazak]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_abdurazak];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о Абдураззак аль Бадр)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about abdurazak)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о Абдураззак аль Бадр - атомарное сообщение, которое содержит виды человекообразных, информацию о которых необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about о hockey is an atomic message that contains hominoidea division information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
+

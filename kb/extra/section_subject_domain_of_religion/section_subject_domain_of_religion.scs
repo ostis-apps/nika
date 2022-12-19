@@ -1,0 +1,88 @@
+section_subject_domain_of_religion
+
+=> nrel_main_idtf:
+[Раздел. Предметная область религии] (*<-lang_ru;;*);
+[Section. Subject domain of religion] (*<-lang_en;;*);
+<- atomic_class;;
+section_subject_domain_of_religion = [*
+	subject_domain_of_religion
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область религии]
+   (* <- lang_ru;; *);
+   [Subject domain of religion]
+   (* <- lang_en;; *);
+	<- subject_domain;
+
+	-> rrel_maximum_studied_object_class:
+   concept_religion;
+	-> rrel_not_maximum_studied_object_class:
+   concept_theism;
+concept_agnosticism;
+concept_polytheism;
+concept_apatheism;
+concept_deism;
+concept_ignosticism;
+concept_itsism;
+concept_omnism;
+concept_panentheism;
+concept_pantheism;
+concept_pandeism;
+concept_monotheism;
+concept_islam;
+concept_christianity;
+concept_judaism;
+concept_god;
+concept_daosizm;
+concept_shintoism;
+concept_buddhism;
+concept_jainism;
+concept_hinduism;
+concept_temple;
+concept_clergyman;
+concept_holy_book;
+concept_religious;
+concept_mullah;
+concept_priest;
+concept_kohen;
+	-> rrel_explored_relation:
+nrel_practices_religion;
+nrel_population;
+nrel_confess_at;;
+
+*];;
+
+section_subject_domain_of_religion
+-> rrel_key_sc_element:
+concept_religion;
+concept_theism;
+concept_agnosticism;
+concept_polytheism;
+concept_apatheism;
+concept_deism;
+concept_ignosticism;
+concept_itsism;
+concept_omnism;
+concept_panentheism;
+concept_pantheism;
+concept_pandeism;
+concept_monotheism;
+concept_islam;
+concept_christianity;
+concept_judaism;
+concept_god;
+concept_daosizm;
+concept_shintoism;
+concept_buddhism;
+concept_jainism;
+concept_hinduism;
+concept_temple;
+concept_clergyman;
+concept_holy_book;
+concept_religious;
+concept_mullah;
+concept_priest;
+concept_kohen;
+nrel_practices_religion;
+nrel_population;
+nrel_confess_at;;
