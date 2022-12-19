@@ -1,0 +1,31 @@
+concept_durable_goods
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [товары длительного пользования]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [durable goods]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.товары длительного пользования]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Товары длительного пользования — товары, используемые в течении длительного периода (автомобили, электроника, станки, холодильники и др.).]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_product;
+			concept_period
+   	 };;
+  *);;

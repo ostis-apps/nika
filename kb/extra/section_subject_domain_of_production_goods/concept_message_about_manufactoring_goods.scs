@@ -1,0 +1,37 @@
+concept_message_about_manufactoring_goods
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о производсвтенных товарах]
+	(* <- lang_ru;; *);
+	[message about manufactoring goods]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[culture];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о производственных товарах)]
+        (* <- lang_ru;; *);
+        [Def. (message about manufactoring goods)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о производественны товарах - атомарное сообщение, являющееся запросом на получение информации про производственные товары]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about manufactoring goods - atomic message which used to make a question about manufactoring goods]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

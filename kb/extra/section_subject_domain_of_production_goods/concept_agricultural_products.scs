@@ -1,0 +1,37 @@
+concept_agricultural_products
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [сельскохозяйственные продукты]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [agricultural products]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Также сельскохозяйственные продукты отличает неинтенсивная реклама и продвижение на рынке.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.сельскохозяйственные продукты]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Сельскохозяйственные продукты – это скоропортящиеся и сезонные продукты, которые не имеют торговой марки, так как если сельскохозяйственный продукт получит торговую марку, то станет потребительским продуктом.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_product;
+			concept_consumer_product;
+			concept_brand_name
+   	 };;
+  *);;

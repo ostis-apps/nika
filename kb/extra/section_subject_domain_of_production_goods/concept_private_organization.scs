@@ -1,0 +1,35 @@
+concept_private_organization
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [частная организация]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [private_organization]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Частные компании являются одной из самых распространённых форм предпринимательской деятельности в мире.]
+   (* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.частная организация]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Частная организация — коммерческая организация, созданная на основе частной, а не государственной собственности. ]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_organization;
+			concept_state_property
+   	 };;
+  *);;

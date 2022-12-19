@@ -1,0 +1,37 @@
+concept_capital_assets
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [основные средства]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [capital assets]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Предназначаются для нужд основной деятельности организации и должны иметь срок использования более года.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.основные средства]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Основные средства — это средства труда, участвующие в производственном процессе, сохраняя при этом свою натуральную форму.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_means_labor;
+			nrel_production;
+			concept_natural_form
+   	 };;
+  *);;

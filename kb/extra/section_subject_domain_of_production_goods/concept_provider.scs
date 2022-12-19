@@ -1,0 +1,36 @@
+concept_provider
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [поставщик]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [provider]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Поставщик осуществляет предпринимательскую деятельность в соответствии с условиями заключённого договора поставки, который является одним из видов договора купли-продажи.]
+   (* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.поставщик]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Поставщик — это любое юридическое (организация, предприятие, учреждение) или физическое лицо, поставляющее товары или услуги заказчикам.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_legal_entity;
+			concept_customer;
+            concept_product
+   	 };;
+  *);;

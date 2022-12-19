@@ -1,0 +1,35 @@
+concept_technological_equipment
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [технологическое оборудование]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [technological equipment]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [К нему относятся посудомоечные машины, блендеры, миксеры, хлеборезки, мясорубки, слайсеры, фаршемесы, тестомесы, взбивальные машины, аппараты для чистки и резки овощей.]
+   (* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.технологическое оборудование]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Технологическое оборудование – средства технологического оснащения, в которых для выполнения определенной части технологического процесса размещают материалы или заготовки, средства воздействия на них, а также технологическая оснастка.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_production;
+            concept_means_technological_equipment
+   	 };;
+  *);;

@@ -1,0 +1,29 @@
+nrel_production
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+  [производство](* <- lang_ru;; *);
+  [production](* <- lang_eng;; *);;
+
+nrel_production <- rrel_key_sc_element:... 
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (производство)](*<- lang_ru;;*);
+    [Def. (production)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Производство —  изготовление, выработка, создание какой-н. продукции.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [Production — manufacture, development, creation of some kind of products.](*<- lang_en;;*);;
+    *);;
+*);;
+
+nrel_production
+=>nrel_first_domain:concept_human;
+=>nrel_second_domain:concept_product;
+
+<- binary_relation ;
+<- antireflexive_relation ;
+<- antitransitive_relation ;;

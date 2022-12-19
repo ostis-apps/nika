@@ -1,0 +1,63 @@
+concept_production_good
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [производственный товар]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [production good]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [К производственным товарам относятся: технологическое оборудование, строительно-дорожная техника, транспортные машины общего пользования, топливно-сырьевые товары и т.п.]
+   (* <- lang_ru;; *);
+
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.производственный товар]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Производственный товар - товар, предназначенный для продажи юридическим лицам и индивидуальным предпринимателям с целью их использования в хозяйственной деятельности.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_product;
+			nrel_sale;
+			concept_legal_entity;
+			concept_economic_activity
+   	 };;
+  *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.производственный товар]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Производственный товар - товар, приобретаемый частными лицами или организациями для дальнейшей переработки или использования в хозяйственной деятельности.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_product;
+			concept_legal_entity;
+			concept_private_organization;
+			nrel_recycling;
+			nrel_use;
+			concept_economic_activity
+   	 };;
+  *);;

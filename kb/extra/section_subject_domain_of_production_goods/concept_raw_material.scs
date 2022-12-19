@@ -1,0 +1,37 @@
+concept_raw_material
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [сырье]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [raw material]
+   (* <- lang_en;; *);
+
+=> nrel_note:
+   [Сырьё является в первую очередь продуктом добывающей промышленности и сельского хозяйства.]
+   (* <- lang_ru;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.сырье]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Сырьё — предмет труда, претерпевший незначительное воздействие человека и предназначенный для дальнейшей обработки.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_subject_labor;
+			nrel_influence;
+            concept_human;
+			nrel_recycling
+   	 };;
+  *);;

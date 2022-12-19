@@ -1,0 +1,37 @@
+concept_message_about_goods
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о товаре]
+	(* <- lang_ru;; *);
+	[message about goods]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[goods];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о товаре)]
+        (* <- lang_ru;; *);
+        [Def. (message about goods]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о товаре  - атомарное сообщение, являющееся запросом на получение информации про товар]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about goods - atomic message which used to make a question about goods]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
