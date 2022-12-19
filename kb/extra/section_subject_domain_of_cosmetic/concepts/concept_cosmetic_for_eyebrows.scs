@@ -1,0 +1,23 @@
+concept_cosmetic_for_eyebrows
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:     
+	 [косметика для бровей]   (*<-lang_ru;;*);
+      [cosmetic for eyebrows]  (*<-lang_en;;*);  
+
+<-sc_node_not_relation;
+
+=> nrel_inclusion: concept_crayon; concept_eyebrow_gel; concept_eyebrow_shadows;
+
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	
+	<= nrel_sc_text_translation:...
+	(*
+		-> rrel_example:[косметика для бровей - инструмент, с помощью которого декорируются брови. ](* <- lang_ru;;
+		     => nrel_format: format_html;; *);;
+	*);;
+*);;

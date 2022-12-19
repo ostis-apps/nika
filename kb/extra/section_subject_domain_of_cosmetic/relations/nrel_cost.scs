@@ -1,0 +1,41 @@
+nrel_cost
+<- sc_node_norole_relation;
+
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+<- antireflexive_relation;
+
+=> nrel_main_idtf: 
+	[стоимость*] (*<-lang_ru;;*);
+=> nrel_main_idtf: 
+	[cost*] (*<-lang_en;;*);
+
+=> nrel_first_domain: 	concept_eyebrow_gel;
+			concept_eye_mascara;
+			concept_eyeliner;
+			concept_lipstick;
+			concept_concealer;	
+			concept_crayon;
+			concept_eyebrow_shadows;
+			concept_eye_shimmer;
+			concept_lip_gloss;
+			concept_corrector;
+			concept_highlighter;
+			concept_sponge;
+			concept_brush;
+			
+=> nrel_second_domain:  concept_value;
+			
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [стоимость* - бинарное ориентированное отношение, связывающее изделие и его стоимость.] (* <-lang_ru;; *);; 
+		*);;
+	*);;

@@ -1,0 +1,27 @@
+concept_message_about_varieties_of_cosmetics_for_face
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о разновидностях косметики для лица]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_varieties_of_cosmetics_for_face];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о разновидностях косметики для лица)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о разновидностях косметики для лица - атомарное сообщение,
+    которое содержит разновидности косметики для лица, имеющиеся в системе.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

@@ -1,0 +1,23 @@
+concept_cosmetic_for_body
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:     
+	 [косметика для тела]   (*<-lang_ru;;*);
+      [cosmetic for body]  (*<-lang_en;;*);  
+
+<-sc_node_not_relation;
+
+
+
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	
+	<= nrel_sc_text_translation:...
+	(*
+		-> rrel_example:[косметика для тела - инструмент, с помощью которого осуществляется увлажнение и лечение кожи тела. ](* <- lang_ru;;
+		     => nrel_format: format_html;; *);;
+	*);;
+*);;

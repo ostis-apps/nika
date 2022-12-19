@@ -1,0 +1,20 @@
+concept_cosmetic
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:     
+	 [Косметика]   (*<-lang_ru;;*);
+      [cosmetic]  (*<-lang_en;;*);  
+
+=> nrel_inclusion: concept_cosmetic_for_face; concept_cosmetic_for_eyes; concept_cosmetic_for_lips; concept_cosmetic_for_body; concept_cosmetic_for_eyebrows; concept_makeup_instrument;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	
+	<= nrel_sc_text_translation:...
+	(*
+		-> rrel_example:[Косметика — учение о средствах и методах улучшения внешности человека. Косметикой также называют средства и способы ухода за кожей, волосами и ногтями, также ротовой полостью, применяемые с целью улучшения внешности человека, а также вещества, применяемые для придания свежести и красоты лицу и телу.  ](* <- lang_ru;;
+		     => nrel_format: format_html;; *);;
+	*);;
+*);;

@@ -1,0 +1,36 @@
+nrel_weight
+<- sc_node_norole_relation;
+
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+<- antireflexive_relation;
+
+=> nrel_main_idtf: 
+	[вес*] (*<-lang_ru;;*);
+=> nrel_main_idtf: 
+	[weight*] (*<-lang_en;;*);
+
+=> nrel_first_domain: 	concept_crayon;
+			concept_eyebrow_shadows;
+			concept_eye_shimmer;
+			concept_lip_gloss;
+			concept_corrector;
+			concept_highlighter;
+			concept_sponge;
+			concept_brush;
+			
+=> nrel_second_domain:  concept_weight;
+			
+-> rrel_key_sc_element:
+	...  
+	(* 
+	<- sc_explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(* 
+		-> [вес* - бинарное ориентированное отношение, связывающее изделие и его вес (для косметики измеряется в граммах).] (* <-lang_ru;; *);; 
+		*);;
+	*);;

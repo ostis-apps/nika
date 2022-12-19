@@ -1,0 +1,23 @@
+concept_cosmetic_for_lips
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:     
+	 [косметика для губ]   (*<-lang_ru;;*);
+      [cosmetic for lips]  (*<-lang_en;;*);  
+
+<-sc_node_not_relation;
+
+
+=> nrel_inclusion: concept_lipstick; concept_lip_gloss;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	
+	<= nrel_sc_text_translation:...
+	(*
+		-> rrel_example:[косметика для губ - инструмент, с помощью которого декорируются губы. ](* <- lang_ru;;
+		     => nrel_format: format_html;; *);;
+	*);;
+*);;

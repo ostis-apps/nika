@@ -1,0 +1,23 @@
+concept_lipstick
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:     
+	 [блеск для губ]   (*<-lang_ru;;*);
+      [lipstick]  (*<-lang_en;;*);  
+
+<-sc_node_not_relation;
+
+
+
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	
+	<= nrel_sc_text_translation:...
+	(*
+		-> rrel_example:[блеск для губ - косметический продукт, придающий губам блеск и едва различимый цвет.  ](* <- lang_ru;;
+		     => nrel_format: format_html;; *);;
+	*);;
+*);;

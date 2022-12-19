@@ -1,0 +1,23 @@
+concept_eye_mascara
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:     
+	 [тушь для глаз]   (*<-lang_ru;;*);
+      [mascara for eye]  (*<-lang_en;;*);  
+
+<-sc_node_not_relation;
+
+
+
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	
+	<= nrel_sc_text_translation:...
+	(*
+		-> rrel_example:[тушь для глаз - декоративная косметика, предназначенная для подчёркивания, выделения и изменения естественного цвета ресниц.  ](* <- lang_ru;;
+		     => nrel_format: format_html;; *);;
+	*);;
+*);;
