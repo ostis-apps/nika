@@ -1,0 +1,24 @@
+game_uno
+
+=> nrel_main_idtf:
+    [Уно]
+    (* <- lang_ru;; *);
+    [UNO]
+    (* <- lang_en;; *);
+=> nrel_goal_of_the_game:
+    goal_of_the_game_first_500_points;
+    <-concept_goal_of_the_game;
+=> nrel_influence_of_chance:
+    low_influence_of_chance;
+    <-concept_influence_of_chance;
+=> nrel_deck_type:
+    special_uno_deck_type;
+    <-concept_deck_type;
+=> nrel_number_of_cards_in_a_deck:
+    52_cards_in_a_deck;
+    <-concept_number_of_cards_in_a_deck;
+=> nrel_note:
+[ карточная игра; первоначально была разработана в 1971 году парикмахером Мерлом Роббинсом в городке Реддинг, в пригороде Цинциннати, штат Огайо, США.]
+(* <-lang_ru;;*);
+
+<-binary_relation;;

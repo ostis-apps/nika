@@ -1,0 +1,17 @@
+standart_deck_type
+
+<-sc_node_class;
+<-class;
+=>nrel_main_idtf:
+    [стандартная_французкая_колода](* <- lang_ru;;*);
+	[standart_deck](* <- lang_en;; *);
+
+=>nrel_inclusion:
+    game_durak;
+    game_blackjack;
+    game_poker;
+=>nrel_note:
+[Стандартная (французская) колода включает 54 карты: 52 основных, каждая из которых относится к одной из четырёх мастей (двух цветов) и имеет одно из 13 достоинств, и 2 специальные карты, так называемые джокеры, обычно различающиеся по рисунку.]
+(*<-lang_ru;;*);
+<-concept_deck_type;
+<-binary_relation;;
