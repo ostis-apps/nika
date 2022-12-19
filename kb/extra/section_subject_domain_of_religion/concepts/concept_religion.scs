@@ -1,0 +1,32 @@
+concept_religion
+
+=> nrel_main_idtf:
+    [религия]
+    (* <- lang_ru;;*);
+    [religion]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [ определённая система взглядов, обусловленная верой в сверхъестественное, включающая в себя свод моральных норм и типов поведения, обрядов, культовых действий и объединение людей в организацию]
+	(* <- lang_ru;; *);
+
+=> nrel_subdividing:
+    concept_theism;
+    concept_agnosticism;
+    concept_polytheism;
+    concept_apatheism;
+    concept_deism;
+    concept_ignosticism;
+    concept_itsism;
+    concept_omnism;
+    concept_panentheism;
+    concept_pantheism;
+    concept_pandeism;
+    concept_monotheism;
+
+=> nrel_inclusion:
+    concept_god;
+    concept_temple;
+    concept_clergyman;
+    concept_holy_book;
+    concept_religious;;

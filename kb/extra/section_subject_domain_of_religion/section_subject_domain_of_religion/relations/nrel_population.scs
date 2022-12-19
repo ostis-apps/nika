@@ -1,0 +1,22 @@
+nrel_population
+
+<-sc_node_norole_relation;
+<- relation;
+<- nonbinary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=>nrel_main_idtf:
+    [численность*]
+    (* <- lang_ru;; *);
+    [population*]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [отношение, описывающее численность приверженцев религии]
+    (* <-lang_ru;;*);
+
+=> nrel_first_domain:
+    concept_religion;;
