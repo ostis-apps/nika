@@ -1,0 +1,20 @@
+concept_getting_knowledge
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [освоение нового]
+    (* <- lang_ru;;*);
+    [getting knowledge]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [процесс освоения новой и полезной для индивида информации из различных источников]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+    concept_reading;
+
+=> nrel_benefit:
+    concept_imagination_development;
+    concept_mental_state_enhancement;;

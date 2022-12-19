@@ -1,0 +1,16 @@
+concept_cold_hot_shower
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [контрастный душ]
+    (* <- lang_ru;;*);
+    [cold and hot shower]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [гигиеническая процедура, суть которой заключается в обливании тела холодной и горячей водой, в течении коротких промежутков времени, по очереди.]
+	(* <- lang_ru;; *);
+
+=> nrel_benefit:
+    concept_mental_state_enhancement;;

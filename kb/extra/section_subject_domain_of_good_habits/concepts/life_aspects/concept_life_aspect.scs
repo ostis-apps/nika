@@ -1,0 +1,21 @@
+concept_life_aspect
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [жизненный аспект]
+    (* <- lang_ru;;*);
+    [life aspect]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [различные перспективы жизни и результат переживаний.]
+	(* <- lang_ru;; *);
+
+=> nrel_basic_decomposition:
+    concept_health;
+    concept_beauty;
+    concept_self_development;
+    concept_productivity;
+    concept_good_attitude;
+    concept_finances;;

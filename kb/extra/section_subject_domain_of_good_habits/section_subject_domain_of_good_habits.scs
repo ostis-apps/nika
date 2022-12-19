@@ -1,0 +1,79 @@
+section_subject_domain_of_good_habits
+
+=> nrel_main_idtf:
+[Раздел. Предметная область полезных привычек] (*<-lang_ru;;*);
+[Section. Subject domain of good habits] (*<-lang_en;;*);
+<- atomic_class;;
+section_subject_domain_of_good_habits = [*
+	subject_domain_of_good_habits
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область полезных привычек]
+   (* <- lang_ru;; *);
+   [Subject domain of good habits]
+   (* <- lang_en;; *);
+	<- subject_domain;
+
+	-> rrel_maximum_studied_object_class:
+   concept_good_habit;
+	-> rrel_not_maximum_studied_object_class:
+   concept_habit;
+   concept_discipline;
+   concept_life_aspect;
+   concept_health;
+   concept_beauty;
+   concept_productivity;
+   concept_self_development;
+   concept_good_attitude;
+   concept_finances;
+   concept_utility_activity;
+   concept_sleep;
+   concept_physical_activity;
+   concept_proper_nutrition;
+   concept_cold_hot_shower;
+   concept_smile;
+   concept_meditation;
+   concept_getting_knowledge;
+   concept_reading;
+   concept_time_management;
+   concept_investment;
+   concept_home_accounting;
+   concept_benefit;
+   concept_imagination_development;
+   concept_mental_state_enhancement;
+   concept_weight_losing_aid;
+   concept_aging_slowly;
+	-> rrel_explored_relation:
+    nrel_benefit;;
+*];;
+
+section_subject_domain_of_good_habits
+-> rrel_key_sc_element:
+   concept_good_habit;
+   concept_habit;
+   concept_discipline;
+   concept_life_aspect;
+   concept_health;
+   concept_beauty;
+   concept_productivity;
+   concept_self_development;
+   concept_good_attitude;
+   concept_finances;
+   concept_utility_activity;
+   concept_sleep;
+   concept_physical_activity;
+   concept_proper_nutrition;
+   concept_cold_hot_shower;
+   concept_smile;
+   concept_meditation;
+   concept_getting_knowledge;
+   concept_reading;
+   concept_time_management;
+   concept_investment;
+   concept_home_accounting;
+   concept_benefit;
+   concept_imagination_development;
+   concept_mental_state_enhancement;
+   concept_weight_losing_aid;
+   concept_aging_slowly;
+   nrel_benefit;;

@@ -1,0 +1,25 @@
+nrel_benefit
+
+<-sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=>nrel_main_idtf:
+    [польза*]
+    (* <- lang_ru;; *);
+    [benefit*]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [благоприятное последствие при соблюдении регулярности в тех или иных действиях]
+    (* <-lang_ru;;*);
+
+=> nrel_first_domain:
+    concept_utility_activity;
+
+=> nrel_second_domain:
+    concept_benefit;;

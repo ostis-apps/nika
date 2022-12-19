@@ -1,0 +1,18 @@
+concept_productivity
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [продуктивность]
+    (* <- lang_ru;;*);
+    [productivity]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [выполнение работы с минимальными затратами времени, сил и средств. Это – кратчайшее расстояние между постановкой цели и отметкой о ее выполнении.]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+    concept_getting_knowledge;
+    concept_reading;
+    concept_time_management;;

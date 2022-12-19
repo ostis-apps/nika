@@ -1,0 +1,18 @@
+concept_good_habit
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [хорошая привычка]
+    (* <- lang_ru;;*);
+    [good habit]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [способ конструктивного поведения, который стал для человека в определенной ситуации потребностью. Благодаря ранее сформированным нейронным связям в мозге, эти действия осуществляются на автомате, т. е. практически без участия сознания.]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+    concept_habit;
+    concept_discipline;
+    concept_utility_activity;;

@@ -1,0 +1,17 @@
+concept_good_attitude
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [хорошие отношение]
+    (* <- lang_ru;;*);
+    [good attitude]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [психологическое спокойствие и позитивное отношение к окружающему миру]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+    concept_smile;
+    concept_meditation;;

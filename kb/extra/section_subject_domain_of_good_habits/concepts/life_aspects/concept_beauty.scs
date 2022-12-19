@@ -1,0 +1,19 @@
+concept_beauty
+
+<- sc_node_class;
+
+=> nrel_main_idtf:
+    [красота]
+    (* <- lang_ru;;*);
+    [beauty]
+	(* <- lang_en;; *);
+
+=> nrel_note:
+    [Эстетическая категория, обозначающая совершенство, гармоничное сочетание аспектов объекта, при котором последний вызывает у наблюдателя эстетическое наслаждение. Красота является одной из важнейших категорий культуры.]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+    concept_sleep;
+    concept_physical_activity;
+    concept_proper_nutrition;
+    concept_cold_hot_shower;;
