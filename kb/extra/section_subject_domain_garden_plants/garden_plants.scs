@@ -1,0 +1,37 @@
+section_subject_domain_of_garden_plants
+<- sc_node_struct;
+=> nrel_main_idtf:
+[Раздел. Предметная область садовые растения](* <- lang_ru;; *);
+[Section. Subject domain of garden plants](* <- lang_en;; *);
+<-atomic_section;;
+
+section_subject_domain_of_garden_plants = [*
+subject_domain_of_garden_plants
+=> nrel_main_idtf:
+[Предметная область садовые растения](* <- lang_ru;; *);
+[Subject domain of garden plants](* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+concept_garden_plants;
+-> rrel_not_maximum_studied_object_class:
+concept_apple_trees;
+concept_apple_barbaris;
+concept_apple_cherry;
+concept_apple_currant;
+concept_apple_dahlias;
+concept_lilac;
+concept_lilies;
+concept_apple_maples;
+concept_apple_marigod;
+concept_apple_pine;
+concept_apple_raspberry;
+concept_apple_roses;
+concept_apple_snowdrops;
+concept_apple_spruce;
+concept_apple_starwberry;
+concept_apple_tulips;
+concept_apple_when_they_grown;
+-> rrel_explored_relation:
+nrel_country;
+nrel_where_grow;;
+*];;

@@ -1,0 +1,19 @@
+nrel_where_grow
+
+=>nrel_first_domain:
+    concept_garden_plants;
+    
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [когда растут*]
+    (* <- lang_ru;; *);
+    [when grow]
+    (* <- lang_en;;*);
+
+
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;
