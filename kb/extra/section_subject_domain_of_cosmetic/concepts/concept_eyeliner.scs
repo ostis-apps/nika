@@ -1,0 +1,23 @@
+concept_eyeliner
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:     
+	 [лайнер для глаз]   (*<-lang_ru;;*);
+      [eyeliner]  (*<-lang_en;;*);  
+
+<-sc_node_not_relation;
+
+
+
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	
+	<= nrel_sc_text_translation:...
+	(*
+		-> rrel_example:[лайнер для глаз - высокопигментированный косметический продукт, предназначенный для прорисовывания четких линий разной толщины в виде стрелок на веках.  ](* <- lang_ru;;
+		     => nrel_format: format_html;; *);;
+	*);;
+*);;

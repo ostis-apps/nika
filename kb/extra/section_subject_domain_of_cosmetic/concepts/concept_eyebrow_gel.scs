@@ -1,0 +1,23 @@
+concept_eyebrow_gel
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:     
+	 [гель для бровей]   (*<-lang_ru;;*);
+      [gel for eyebrows]  (*<-lang_en;;*);  
+
+<-sc_node_not_relation;
+
+
+
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	
+	<= nrel_sc_text_translation:...
+	(*
+		-> rrel_example:[гель для бровей - косметическое средство для фиксации бровей.  ](* <- lang_ru;;
+		     => nrel_format: format_html;; *);;
+	*);;
+*);;

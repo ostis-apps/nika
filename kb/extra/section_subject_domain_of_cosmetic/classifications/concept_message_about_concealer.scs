@@ -1,0 +1,33 @@
+concept_message_about_concealer
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о консилере]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_concealer];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о консилере)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о консилере - атомарное сообщение,
+    которое содержит сущность - консилер, информацию о котором нужно найти.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
+	
+concept_intent_possible_class
+-> concept_message_about_concealer;
+-> concept_message_about_cosmetics;
+-> concept_message_about_crayon;
+-> concept_message_about_varieties_of_cosmetics_for_face;;

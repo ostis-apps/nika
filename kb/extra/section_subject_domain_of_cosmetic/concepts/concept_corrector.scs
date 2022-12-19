@@ -1,0 +1,23 @@
+concept_corrector
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:     
+	 [корректор]   (*<-lang_ru;;*);
+      [corrector]  (*<-lang_en;;*);  
+
+<-sc_node_not_relation;
+
+
+
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	
+	<= nrel_sc_text_translation:...
+	(*
+		-> rrel_example:[корректор - это тональное средство, чаще с плотной текстурой, предназначенное для маскировки локальных несовершенств.  ](* <- lang_ru;;
+		     => nrel_format: format_html;; *);;
+	*);;
+*);;

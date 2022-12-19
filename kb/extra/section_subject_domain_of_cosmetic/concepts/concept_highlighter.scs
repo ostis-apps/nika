@@ -1,0 +1,23 @@
+concept_highlighter
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:     
+	 [хайлайтер]   (*<-lang_ru;;*);
+      [highlighter]  (*<-lang_en;;*);  
+
+<-sc_node_not_relation;
+
+
+
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	
+	<= nrel_sc_text_translation:...
+	(*
+		-> rrel_example:[хайлайтер - популярное бьюти-средство, которое выделяет определенные области лица за счет светоотражающего эффекта и сияния.  ](* <- lang_ru;;
+		     => nrel_format: format_html;; *);;
+	*);;
+*);;

@@ -1,0 +1,23 @@
+concept_concealer
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:     
+	 [консилер]   (*<-lang_ru;;*);
+      [concealer]  (*<-lang_en;;*);  
+
+<-sc_node_not_relation;
+
+
+
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	
+	<= nrel_sc_text_translation:...
+	(*
+		-> rrel_example:[консилер - средство для маскировки локальных несовершенств кожи.  ](* <- lang_ru;;
+		     => nrel_format: format_html;; *);;
+	*);;
+*);;

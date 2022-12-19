@@ -1,0 +1,23 @@
+concept_lip_gloss
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:     
+	 [помада для губ]   (*<-lang_ru;;*);
+      [lip gloss]  (*<-lang_en;;*);  
+
+<-sc_node_not_relation;
+
+
+
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	
+	<= nrel_sc_text_translation:...
+	(*
+		-> rrel_example:[помада для губ - косметический продукт для яркой окраски, защиты и/или увлажнения губ.  ](* <- lang_ru;;
+		     => nrel_format: format_html;; *);;
+	*);;
+*);;

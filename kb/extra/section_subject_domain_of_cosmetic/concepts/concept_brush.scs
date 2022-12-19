@@ -1,0 +1,23 @@
+concept_brush
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:     
+	 [кисть]   (*<-lang_ru;;*);
+      [sponge]  (*<-lang_en;;*);  
+
+<-sc_node_not_relation;
+
+
+
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	
+	<= nrel_sc_text_translation:...
+	(*
+		-> rrel_example:[кисть - это инструмент с щетиной, используемый для нанесения макияжа или раскрашивания лица.  ](* <- lang_ru;;
+		     => nrel_format: format_html;; *);;
+	*);;
+*);;

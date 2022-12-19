@@ -1,0 +1,23 @@
+concept_eyebrow_shadows
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:     
+	 [тени для бровей]   (*<-lang_ru;;*);
+      [shadows for eyebrows]  (*<-lang_en;;*);  
+
+<-sc_node_not_relation;
+
+
+
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	
+	<= nrel_sc_text_translation:...
+	(*
+		-> rrel_example:[тени для бровей - декоративное средство для создания формы и цвета бровей.  ](* <- lang_ru;;
+		     => nrel_format: format_html;; *);;
+	*);;
+*);;

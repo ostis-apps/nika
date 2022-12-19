@@ -1,0 +1,23 @@
+concept_cosmetic_for_face
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:     
+	 [косметика для лица]   (*<-lang_ru;;*);
+      [cosmetic for face]  (*<-lang_en;;*);  
+
+<-sc_node_not_relation;
+
+=> nrel_inclusion: concept_concealer; concept_corrector; concept_highlighter;
+
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	
+	<= nrel_sc_text_translation:...
+	(*
+		-> rrel_example:[косметика для лица - инструмент, с помощью которого декорируется лицо. ](* <- lang_ru;;
+		     => nrel_format: format_html;; *);;
+	*);;
+*);;

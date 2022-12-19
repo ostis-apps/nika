@@ -1,0 +1,27 @@
+concept_crayon
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:     
+	 [карандаш для бровей]   (*<-lang_ru;;*);
+      [crayon for eyebrows]  (*<-lang_en;;*);  
+
+<-sc_node_not_relation;
+
+
+
+
+
+<- rrel_key_sc_element: 
+ ...   
+ (*  
+ => nrel_main_idtf: 
+    [Опр. (Карандаш для бровей)] 
+    (* <- lang_ru;; *);; 
+ <- definition;; 
+ <= nrel_sc_text_translation: 
+  ... 
+  (*  
+  -> [Карандаш для бровей - косметическое средство, помогающее сделать брови более выразительными и придать им желаемую форму.] (* <-lang_ru;; *);;  
+  *);; 
+ *);;

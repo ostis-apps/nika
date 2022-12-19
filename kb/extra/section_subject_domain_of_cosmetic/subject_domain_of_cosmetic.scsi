@@ -1,0 +1,41 @@
+subject_domain -> subject_domain_of_cosmetic;;
+subject_domain_of_cosmetic => nrel_main_idtf:
+[Предметная область косметика](*<-lang_ru;;*);
+	[Subject domain of cosmetic](*<-lang_en;;*);;
+
+subject_domain_of_cosmetic -> rrel_explored_relation: 
+				nrel_volume;
+				nrel_expiration_date;
+				nrel_manufacturer_country;
+				nrel_weight;
+				nrel_composition;
+				nrel_cost;
+				nrel_color;;
+
+subject_domain_of_cosmetic -> rrel_maximum_studied_object_class: concept_cosmetic;;
+
+
+subject_domain_of_cosmetic -> rrel_not_maximum_studied_object_class:
+				concept_cosmetic_for_body;
+				concept_cosmetic_for_face;
+				concept_cosmetic_for_eyes;
+				concept_cosmetic_for_lips;
+				concept_cosmetic_for_eyebrows;
+				concept_makeup_instrument;
+				concept_crayon;
+				concept_eyebrow_gel;
+				concept_eyebrow_shadows;
+				concept_eye_mascara;
+				concept_eye_shimmer;
+				concept_eyeliner;
+				concept_lipstick;
+				concept_lip_gloss;
+				concept_concealer;
+				concept_corrector;
+				concept_highlighter;
+				concept_sponge;
+				concept_brush;
+				concept_weight;
+				concept_volume;
+				concept_country;
+				concept_color;;

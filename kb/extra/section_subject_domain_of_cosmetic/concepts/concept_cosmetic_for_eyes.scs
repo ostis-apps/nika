@@ -1,0 +1,25 @@
+concept_cosmetic_for_eyes
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:     
+	 [косметика для глаз]   (*<-lang_ru;;*);
+      [cosmetic for eyes]  (*<-lang_en;;*);  
+
+<-sc_node_not_relation;
+
+=> nrel_inclusion: concept_eye_mascara; concept_eye_shimmer; concept_eyeliner;
+
+
+
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	
+	<= nrel_sc_text_translation:...
+	(*
+		-> rrel_example:[косметика для глаз - инструмент, с помощью которого декорируются глаза. ](* <- lang_ru;;
+		     => nrel_format: format_html;; *);;
+	*);;
+*);;

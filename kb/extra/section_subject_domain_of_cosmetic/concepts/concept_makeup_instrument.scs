@@ -1,0 +1,23 @@
+concept_makeup_instrument
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:     
+	 [инструменты для макияжа]   (*<-lang_ru;;*);
+      [makeup instrument]  (*<-lang_en;;*);  
+
+<-sc_node_not_relation;
+
+
+=> nrel_inclusion: concept_sponge; concept_brush;
+
+<- rrel_key_sc_element: ...
+(*
+	<- definition;;
+	
+	<= nrel_sc_text_translation:...
+	(*
+		-> rrel_example:[инструменты для макияжа - инструменты для нанесения косметики. ](* <- lang_ru;;
+		     => nrel_format: format_html;; *);;
+	*);;
+*);;
