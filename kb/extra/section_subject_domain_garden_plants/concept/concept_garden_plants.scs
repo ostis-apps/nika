@@ -1,0 +1,30 @@
+concept_garden_plants
+
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+            [Садовые растения]
+            (* <- lang_ru;; *);
+=> nrel_note:
+[отрасль растениеводства, занимающаяся возделыванием многолетних плодовых или ягодных культур для получения фруктов, ягод и орехов; и выращиванием декоративных растений.]
+(* <- lang_ru;; *);
+<= nrel_inclusion:
+concept_apple_trees;
+concept_apple_barbaris;
+concept_apple_cherry;
+concept_apple_currant;
+concept_apple_dahlias;
+concept_lilac;
+concept_lilies;
+concept_apple_maples;
+concept_apple_marigod;
+concept_apple_pine;
+concept_apple_raspberry;
+concept_apple_roses;
+concept_apple_snowdrops;
+concept_apple_spruce;
+concept_apple_starwberry;
+concept_apple_tulips;
+concept_apple_when_they_grown;
+
+<-binary_relation;;
