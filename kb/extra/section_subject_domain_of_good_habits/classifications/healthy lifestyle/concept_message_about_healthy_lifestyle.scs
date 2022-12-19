@@ -1,0 +1,37 @@
+concept_message_about_object_oriented_programming
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о Здоровом образе жизни]
+	(* <- lang_ru;; *);
+	[message about Healthy lifestyle]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_healthy_lifestyle];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о Здоровый образе жизни)]
+        (* <- lang_ru;; *);
+        [Def. (message about Object-oriented programming)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о Здоровый образе жизни (ЗОЖ) — образ жизни человека, помогающий сохранить здоровье и снизить риск неинфекционных заболеваний (НИЗ) путём контроля над поведенческими факторами риска]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about Healthy lifestyle - is a way of life that helps to maintain health and reduce the risk of non-communicable diseases by controlling behavioral risk factors]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

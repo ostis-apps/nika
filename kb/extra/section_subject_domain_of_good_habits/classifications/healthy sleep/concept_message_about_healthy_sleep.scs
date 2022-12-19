@@ -1,0 +1,38 @@
+concept_message_about_layered_architecture
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о Здоровом сне]
+	(* <- lang_ru;; *);
+	[message about Healthy sleep]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_healthy_sleep];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о Здоровом сне)]
+        (* <- lang_ru;; *);
+        [Def. (message about Healthy sleep)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о Здоровом сне -физиологически необходим человеку и является важным условием физического и душевного здоровья]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about Healthy sleep - is physiologically necessary for a person and is an important condition for physical and mental health.
+]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

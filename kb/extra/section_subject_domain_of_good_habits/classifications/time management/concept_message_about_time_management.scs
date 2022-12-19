@@ -1,0 +1,37 @@
+concept_message_about_solid_design_principles
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о Тайм менеджменте]
+	(* <- lang_ru;; *);
+	[message about Time management]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_time_management];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о Тайм менеджменте)]
+        (* <- lang_ru;; *);
+        [Def. (message about Time management)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о Тайм менеджменте — технология организации времени и повышения эффективности его использования.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about Time management — technology of organizing time and increasing the efficiency of its use.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

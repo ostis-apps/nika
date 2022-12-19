@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="2853048390480" parent="0" x="587.889" y="678.784" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Чтение – это форма познания и общения. Понимание прочитанного – основная задача чтения. Чтение – это феномен человеческой жизни, речевой онтогенез. Активная речь есть основа развития и обучения человека. Существуют разные виды чтения: вслух, «про себя», скорочтение и т.д.]]></content>
+        </node>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="2853042506512" parent="0" x="596.889" y="356.333" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Чтение — совокупность практик и процедур работы с письменным текстом и непосредственно процесс работы с текстом, направленный на извлечение из него информации, на восприятие текста и его понимание. В широком смысле — процесс извлечения информации также из любой символьной системы (символов Брайля, нотного письма и так далее).]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_answer_about_reading_phrase" shapeColor="0" id="2853048396512" parent="0" left="0" top="0" right="251" bottom="24" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="153.31" y="637.451" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_answer_about_reading_phrase" shapeColor="0" id="2853048392976" parent="0" left="0" top="0" right="251" bottom="24" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="235.31" y="328" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase" shapeColor="0" id="2853048397344" parent="0" left="0" top="0" right="105" bottom="24" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="691" y="150.5" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_answer_about_reading_phrase" shapeColor="0" id="2853042505056" parent="0" left="0" top="0" right="251" bottom="24" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="520.5" y="151" haveBus="false" idtf_pos="4">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="2853048395056" parent="0" left="0" top="0" right="55" bottom="24" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="166.5" y="411.5" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_inclusion" shapeColor="0" id="2853042502976" parent="0" left="0" top="0" right="96" bottom="24" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="600" y="82.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="2853048393808" parent="0" left="0" top="0" right="55" bottom="24" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="84.5" y="720.951" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2853086161376" parent="0" id_b="2853048395056" id_e="2853042506512" b_x="166.5" b_y="411.5" e_x="596.889" e_y="356.333" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2853042484336" parent="0" id_b="2853048392976" id_e="2853042506512" b_x="235.31" b_y="328" e_x="596.889" e_y="356.333" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="2853086158016" parent="0" id_b="2853048397344" id_e="2853042505056" b_x="691" b_y="150.5" e_x="520.5" e_y="151" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2853086163776" parent="0" id_b="2853042502976" id_e="2853086158016" b_x="600" b_y="82.5" e_x="21" e_y="13" dotBBalance="0" dotEBalance="0.531597">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2853042484576" parent="0" id_b="2853048393808" id_e="2853048390480" b_x="84.5" b_y="720.951" e_x="587.889" e_y="678.784" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2853086159456" parent="0" id_b="2853048396512" id_e="2853048390480" b_x="153.31" b_y="637.451" e_x="587.889" e_y="678.784" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>

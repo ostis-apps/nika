@@ -1,0 +1,38 @@
+concept_message_about_creational_pattern
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о Фитнессе]
+	(* <- lang_ru;; *);
+	[message about Fitness]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_fitness];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о Фитнессе)]
+        (* <- lang_ru;; *);
+        [Def. (message about Fitness)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о Фитнессе — вид физической активности, который направлен на поддержание хорошей общей физической формы, достигаемой за счёт правильного питания, отдыха и умеренных физических нагрузок.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about Fitness - a type of physical activity that aims to maintain good overall physical fitness, achieved through proper nutrition, rest and moderate physical activity.
+]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

@@ -1,0 +1,37 @@
+concept_message_about_service_oriented_architecture
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о Саморазвитие]
+	(* <- lang_ru;; *);
+	[message about self development]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_self_development];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о Саморазвитие)]
+        (* <- lang_ru;; *);
+        [Def. (message about Self development)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о Саморазвитие – это осознанная работа над собой, развитие определенных качеств, навыков, умений, понимание своего характера, личностных качеств, постановка и достижение определенных целей.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about Self development - of a person is a conscious work on oneself, the development of certain qualities, skills, abilities, understanding one's character, personal qualities, setting and achieving certain goals.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
