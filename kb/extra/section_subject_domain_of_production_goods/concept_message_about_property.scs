@@ -1,0 +1,37 @@
+concept_message_about_property
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о хозяйстве]
+	(* <- lang_ru;; *);
+	[message about property]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[property];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о хозяйстве)]
+        (* <- lang_ru;; *);
+        [Def. (message about property]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о хозяйстве - атомарное сообщение, являющееся запросом на получение информации про хозяйство]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about property - atomic message which used to make a question about property]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

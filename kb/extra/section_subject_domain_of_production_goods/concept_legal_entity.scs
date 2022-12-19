@@ -1,0 +1,32 @@
+concept_legal_entity
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [юридическое лицо]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [legal entity]
+   (* <- lang_en;; *);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр.юридическое лицо]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Юридическое лицо — организация, которая имеет в собственности, хозяйственном ведении или оперативном управлении обособленное имущество, отвечает по своим обязательствам этим имуществом, может от своего имени приобретать и осуществлять имущественные и личные неимущественные права, отвечать по своим обязанностям, быть истцом и ответчиком в суде.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+
+			concept_organization;
+			concept_property;
+            concept_court
+   	 };;
+  *);;
