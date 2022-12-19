@@ -1,0 +1,44 @@
+section_subject_domain_of_zazerkale
+
+=> nrel_main_idtf:
+[Раздел. Предметная область зазеркалье] (*<-lang_ru;;*);
+[Section. Subject domain of zazerkale] (*<-lang_en;;*);
+<- atomic_class;;
+section_subject_domain_of_zazerkale = [*
+	section_subject_domain_of_zazerkale
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область зазеркалье]
+   (* <- lang_ru;; *);
+   [Subject domain of zazerkale]
+   (* <- lang_en;; *);
+	<- subject_domain;
+
+	-> rrel_maximum_studied_object_class:
+   concept_zazekale;
+	-> rrel_not_maximum_studied_object_class:
+   concept_alfida;
+concept_alisa_zazerkale;
+concept_arrog;
+concept_black_king;
+concept_black_quen;
+concept_book_zazerkale;
+concept_company_zazerkale;
+concept_film_zazerkale;
+concept_gerda;
+concept_kay;
+concept_lilit;
+concept_master_vegard;
+concept_morj_and_plotnik;
+concept_orm;
+concept_rollan;
+concept_shaltay_boltay;
+concept_white_queen;
+concept_snow_queen;
+	-> rrel_explored_relation:
+    nrel_country1;
+	nrel_foundade_date;
+	nrel_who_write;
+	nrel_gendeer;;
+*];;
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/general" idtf="" shapeColor="193" id="1989409924608" parent="0" x="622.889" y="395.333" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Сказка Ханса Кристиана Андерсена в 7 главах, впервые опубликованная 21 декабря 1844 года в томе «Новые сказки. Первый том. Вторая коллекция. 1845.». Это одна из самых длинных и самых популярных сказок Андерсена. Согласно биографу Кэрол Роузен, прототипом Снежной Королевы с её холодным сердцем стала неразделённая любовь Андерсена к оперной певице Енни Линд.]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_answer_about_gerda_phrase" shapeColor="0" id="1989409923776" parent="0" left="0" top="0" right="219" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="213.31" y="315" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="1989409925024" parent="0" left="0" top="0" right="52" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="144.5" y="398.5" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_inclusion" shapeColor="0" id="1989409928560" parent="0" left="0" top="0" right="88" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="578" y="69.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase" shapeColor="0" id="1989409925232" parent="0" left="0" top="0" right="95" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="669" y="137.5" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_answer_about_gerda_phrase" shapeColor="0" id="1989409927936" parent="0" left="0" top="0" right="219" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="498.5" y="138" haveBus="false" idtf_pos="4">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="1989327198352" parent="0" id_b="1989409925232" id_e="1989409927936" b_x="669" b_y="137.5" e_x="498.5" e_y="138" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1989327195472" parent="0" id_b="1989409928560" id_e="1989327198352" b_x="578" b_y="69.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.531597">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1989327197152" parent="0" id_b="1989409925024" id_e="1989409924608" b_x="144.5" b_y="398.5" e_x="622.889" e_y="395.333" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1989327195952" parent="0" id_b="1989409923776" id_e="1989409924608" b_x="213.31" b_y="315" e_x="622.889" e_y="395.333" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>
