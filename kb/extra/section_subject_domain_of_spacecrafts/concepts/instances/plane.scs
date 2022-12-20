@@ -1,0 +1,25 @@
+plane_An225
+<- concept_transport;
+<- concept_carrier_plane;
+
+=> nrel_main_idtf:
+   [Ан-225]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [An-225]
+   (* <- lang_en;; *);
+
+=> nrel_definition:
+	[самолет-носитель Ан-225 - транспортный реактивный самолет сверхбольшой грузоподъемности разработки ОКб имени О. К. Антонова.]
+	(*<-lang_ru;;<-concept_spacecraft_definition;;*);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. самолет-носитель Ан-225](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [самолет-носитель Ан-225 - транспортный реактивный самолет сверхбольшой грузоподъемности разработки ОКб имени О. К. Антонова. ](*<-lang_ru;;*);;
+	*);;
+*);;

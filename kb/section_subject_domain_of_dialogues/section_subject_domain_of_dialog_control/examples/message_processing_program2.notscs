@@ -9,7 +9,9 @@ _compound_action_message_processing
 
 .._decomposition_tuple
     _-> rrel_1:: .._topic_classify;
-    _-> .._standard_message_reply;;
+    _-> .._add_date_time_info;
+    _-> .._standard_message_reply;
+    _-> .._remove_date_time_info;;
 
 .._topic_classify
     _=> nrel_goto:: .._standard_message_reply;
@@ -23,6 +25,10 @@ _compound_action_message_processing
     _-> rrel_1:: _message;
     _-> rrel_2:: rrel_dynamic_argument:: _answer_message;;
 
+*];;
+
+message_is_about_date = [*
+concept_message_about_date _-> _message;;
 *];;
 
 message_processing_program

@@ -1,0 +1,30 @@
+natural_satellite_Moon
+<- concept_celestial_object;
+<- concept_natural_satellite;
+
+=> nrel_main_idtf:
+   [спутник Луна]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Луна]
+   (* <- lang_ru;; *);   
+=> nrel_main_idtf:
+   [natural satellite Moon]
+   (* <- lang_en;; *);
+   
+=> nrel_count_of_artificial_satellite: [12500] (* <- number;; *);
+
+=> nrel_note:
+   [Самый близкий к Солнцу спутник планеты, так как у ближайших к Солнцу планет их нет.]
+   (* <- lang_ru;; *);	
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. спутник луна](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [спутник Луна - единственный естественный спутник Земли.](*<-lang_ru;;*);;
+	*);;
+*);;

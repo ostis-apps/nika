@@ -1,0 +1,41 @@
+purpose_astronomical_research
+<- concept_purpose;
+
+=> nrel_main_idtf:
+   [астрономическое исследование]
+   (* <- lang_ru;; *); 
+=> nrel_main_idtf:
+   [astronomical research]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. астрономическое исследование](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Изучение Солнца и другие звёзд, планет Солнечной системы и их спутников, экзопланет, астероидов, комет, метеороидов, межпланетного вещества, межзвёздного вещества, пульсаров, чёрных дыр, туманностей, галактик и их скоплений, квазаров и многого другого](*<-lang_ru;;*);;
+	*);;
+*);;
+
+purpose_collecting_samples
+<- concept_purpose;
+
+=> nrel_main_idtf:
+   [сбор образцов]
+   (* <- lang_ru;; *); 
+=> nrel_main_idtf:
+   [collecting samples]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. сбор образцов](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [сбор образцов - изъятие предметов и объектов в целях получения сведений, необходимых для выполнения задач научной деятельности.](*<-lang_ru;;*);;
+	*);;
+*);;

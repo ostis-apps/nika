@@ -1,0 +1,33 @@
+section_subject_domain_of_celestial_objects
+=> nrel_main_idtf:
+	  [Раздел. Предметная область астрономических объектов]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of celestial objects] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_celestial_objects = [*
+	subject_domain_of_celestial_objects
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область астрономических объектов]
+   (* <- lang_ru;; *);
+   [Subject domain of celestial objects]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+		concept_celestial_object;
+	-> rrel_not_maximum_studied_object_class:
+		concept_planet;
+        concept_planetoid;
+        concept_star;
+        concept_natural_satellite;;
+*];;
+
+section_subject_domain_of_celestial_objects
+-> rrel_key_sc_element:
+        concept_celestial_object;
+		concept_planet;
+        concept_planetoid;
+        concept_star;
+        concept_natural_satellite;;

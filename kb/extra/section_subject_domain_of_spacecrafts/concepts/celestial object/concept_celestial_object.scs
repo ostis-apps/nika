@@ -1,0 +1,27 @@
+concept_celestial_object
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [астрономический объект]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [celestial object]
+   (* <- lang_en;; *);
+
+=> nrel_inclusion:
+		concept_planet;
+		concept_planetoid;
+		concept_star;
+		concept_natural_satellite;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. (астрономический объект)](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Астрономический объект - естественное физическое тело, ассоциация, или структура, которую современная наука определяет как расположенную в наблюдаемой Вселенной.](*<-lang_ru;;*);;
+	*);;
+*);;

@@ -1,0 +1,25 @@
+concept_transport
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [транспорт]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [transport]
+   (* <- lang_en;; *);
+   
+=> nrel_inclusion:
+		concept_carrier_plane;
+		concept_carrier_rocket;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. (транспорт)](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Транспорт — совокупность всех видов путей сообщения, транспортных средств, технических устройств и сооружений на путях сообщения, обеспечивающих процесс перемещения людей и грузов различного назначения из одного места в другое.](*<-lang_ru;;*);;
+	*);;
+*);;

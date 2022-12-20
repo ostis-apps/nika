@@ -1,0 +1,29 @@
+concept_rover
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [планетоход]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [rover]
+   (* <- lang_en;; *);
+   
+<= nrel_inclusion:
+   concept_uncrewed_spacecraft;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. (планетоход)](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Планетоход — аппарат, предназначенный для передвижения по поверхности другой планеты, карликовой планеты, спутника.](*<-lang_ru;;*);;
+		<= nrel_using_constants: {
+			concept_planet;
+			concept_planetoid;
+			concept_natural_satellite
+		};;
+	*);;
+*);;

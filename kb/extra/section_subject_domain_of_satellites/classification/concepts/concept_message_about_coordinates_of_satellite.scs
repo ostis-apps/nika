@@ -1,0 +1,26 @@
+concept_message_about_coordinates_of_satellite
+<- sc_node_class;
+<- concept_intent_possible_class;
+=> nrel_main_idtf:
+      [сообщение о координатах спутника](* <- lang_ru;; *);
+      [message about coordinates of satellites](* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+      [about_coordinates];
+
+<- rrel_key_sc_element: ...
+(*
+    => nrel_main_idtf:[Опр. (сообщение о координатах спутника)](* <- lang_ru;; *);;
+    => nrel_main_idtf:[Def. (message about coordinates of satellites)](* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Сообщение о координатах спутника - атомарное сообщение, которое содержит спутник, координаты которого необходимо найти.](* <- lang_ru;; *);;
+        -> rrel_example:
+            [A message about coordinates of satellites is an atomic message that contains the satellite which coordinates you want to find.](* <- lang_en;; *);;
+        *);;
+    <= nrel_using_constants:
+        {
+            concept_atomic_message
+        };;
+*);;

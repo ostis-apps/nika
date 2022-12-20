@@ -1,0 +1,24 @@
+concept_orbit
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [орбита]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [orbit]
+   (* <- lang_en;; *);
+
+<= nrel_inclusion:
+   concept_charasteristic;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. (орбита)](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Орбита - траектория движения материальной точки в заданной системе пространственных координат для заданной конфигурации поля сил, которые на точку действуют.](*<-lang_ru;;*);;
+	*);;
+*);;

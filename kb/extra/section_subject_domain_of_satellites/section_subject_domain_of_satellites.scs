@@ -1,0 +1,23 @@
+section_subject_domain_of_satellites
+=> nrel_main_idtf:
+    [Раздел. Предметная область спутников](* <- lang_ru;; *);
+    [Section. Subject domain of satellites](* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_satellites =
+[*
+    subject_domain_of_satellites
+    <- sc_node_struct;
+    => nrel_main_idtf:
+        [Предметная область спутников](* <- lang_ru;; *);
+        [Subject domain of satellites](* <- lang_en;; *);
+    <- subject_domain;
+    -> rrel_maximum_studied_object_class:
+        concept_artificial_satellite;
+    -> rrel_explored_relation:
+        nrel_id;;
+*];;
+
+section_subject_domain_of_satellites
+-> rrel_key_sc_element:
+    concept_artificial_satellite;;

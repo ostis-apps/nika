@@ -1,0 +1,24 @@
+action_get_satellite_from_message
+<- sc_node_class;
+=> nrel_main_idtf:
+	[действие. получить спутник из сообщения](* <- lang_ru;; *);
+	[action. get satellite from message](* <- lang_en;; *);
+<- actions_class;
+<- atomic_action_class;
+<= nrel_inclusion: information_action;
+<- rrel_key_sc_element:
+	...
+	(*
+	<- explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+			-> rrel_example:
+				[Действие. получить спутник из сообщения - действие по извлечению спутника из сообщения.](* <- lang_ru;;	*);;
+		*);
+		...
+		(*
+			-> rrel_example:
+				[Action. get satellite from message is an action for extracting satellite from message.](* <- lang_en;; *);;
+		*);;
+	*);;

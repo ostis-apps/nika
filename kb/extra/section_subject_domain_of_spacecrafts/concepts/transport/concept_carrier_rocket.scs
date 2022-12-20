@@ -1,0 +1,29 @@
+concept_carrier_rocket
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [ракета-носитель]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [carrier rocket]
+   (* <- lang_en;; *);
+
+<= nrel_inclusion:
+   concept_transport;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. (ракета-носитель)](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Ракета-носитель может переносить полезную нагрузку с поверхности планеты в космическое пространство, такую как космические аппараты и спутники.](*<-lang_ru;;*);;
+		<= nrel_using_constants: {
+			concept_planet;
+			concept_spacecraft;
+			concept_artificial_satellite
+		};;
+	*);;
+*);;

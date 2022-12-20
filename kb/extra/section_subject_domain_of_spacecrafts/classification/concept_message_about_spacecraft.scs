@@ -1,0 +1,27 @@
+concept_message_about_spacecraft
+<- sc_node_not_relation;
+<- concept_intent_possible_class;
+=> nrel_main_idtf:
+      [сообщение о космическом аппарате](* <- lang_ru;; *);
+      [message about spacecraft](* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+      [about_spacecraft];;
+
+concept_message_about_artwork
+<- rrel_key_sc_element: ...
+(*
+    => nrel_main_idtf:[Опр. (сообщение о космическом аппарате)](* <- lang_ru;; *);;
+    => nrel_main_idtf:[Def. (message about spacecraft)](* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Сообщение о космическом аппарате - атомарное сообщение, которое содержит космический аппарат, информацию о котором необходимо найти.](* <- lang_ru;; *);;
+        -> rrel_example:
+            [A message about spacecraft is an atomic message that contains the spacecraft whose information you want to find.](* <- lang_en;; *);;
+        *);;
+    <= nrel_using_constants:
+        {
+            concept_atomic_message
+        };;
+*);;

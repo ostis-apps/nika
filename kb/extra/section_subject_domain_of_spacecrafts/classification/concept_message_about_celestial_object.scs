@@ -1,0 +1,27 @@
+concept_message_about_celestial_object
+<- sc_node_not_relation;
+<- concept_intent_possible_class;
+=> nrel_main_idtf:
+      [сообщение об астрономическом объекте](* <- lang_ru;; *);
+      [message about celestial object](* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+      [about_celestial_object];;
+
+concept_message_about_artwork
+<- rrel_key_sc_element: ...
+(*
+    => nrel_main_idtf:[Опр. (сообщение об астрономическом объекте)](* <- lang_ru;; *);;
+    => nrel_main_idtf:[Def. (message about celestial object)](* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+        (*
+        -> rrel_example:
+            [Сообщение об астрономическом объекте - атомарное сообщение, которое содержит астрономический объект, информацию о котором необходимо найти.](* <- lang_ru;; *);;
+        -> rrel_example:
+            [A message about celestial object is an atomic message that contains the celestial object whose information you want to find.](* <- lang_en;; *);;
+        *);;
+    <= nrel_using_constants:
+        {
+            concept_atomic_message
+        };;
+*);;

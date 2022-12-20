@@ -1,0 +1,31 @@
+concept_satellite
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [спутник]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [satellite]
+   (* <- lang_en;; *);
+    
+<= nrel_inclusion:
+	concept_uncrewed_spacecraft;
+	
+=> nrel_inclusion:
+	concept_artificial_satellite;
+	concept_natural_satellite;
+	
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. (спутник)](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Спутник - объект, обращающийся по определённой траектории (<sc_element sys_idtf = "concept_orbit">орбите</sc_element>) вокруг другого объекта](*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+	<= nrel_using_constants:{ 
+		concept_orbit
+	};;
+*);;

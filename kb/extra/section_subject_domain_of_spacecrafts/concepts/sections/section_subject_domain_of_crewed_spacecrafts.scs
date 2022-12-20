@@ -1,0 +1,31 @@
+section_subject_domain_of_crewed_spacecrafts
+=> nrel_main_idtf:
+	  [Раздел. Предметная область пилотируемых космических аппаратов]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of crewed spacecrafts] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_crewed_spacecrafts = [*
+	subject_domain_of_crewed_spacecrafts
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область пилотируемых космических аппаратов]
+   (* <- lang_ru;; *);
+   [Subject domain of crewed spacecrafts]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+		concept_crewed_spacecraft;
+	-> rrel_not_maximum_studied_object_class:
+		concept_space_station;
+		concept_spaceplane;
+		concept_space_capsule;;
+*];;
+
+section_subject_domain_of_crewed_spacecrafts
+-> rrel_key_sc_element:
+	concept_crewed_spacecraft;
+	concept_space_station;
+	concept_spaceplane;
+	concept_space_capsule;;

@@ -1,0 +1,28 @@
+concept_planetoid
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [планетоид]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [planetoid]
+   (* <- lang_en;; *);
+
+<= nrel_inclusion:
+		concept_celestial_object;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. (планетоид)](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Планетоид (малая планета) - небесное тело, движущееся по орбите вокруг Солнца и не классифицированное ни как планета, ни как комета.](*<-lang_ru;;*);;
+        <= nrel_using_constants: {
+                concept_celestial_object;
+                concept_orbit
+		};;
+	*);;
+*);;

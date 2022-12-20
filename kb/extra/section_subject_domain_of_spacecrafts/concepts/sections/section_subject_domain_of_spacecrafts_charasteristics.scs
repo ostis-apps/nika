@@ -1,0 +1,33 @@
+section_subject_domain_of_spacecrafts_charasteristics
+=> nrel_main_idtf:
+	  [Раздел. Предметная область характеристик космических аппаратов]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of spacecrafts charasteristics] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_spacecrafts_charasteristics = [*
+	subject_domain_of_spacecrafts_charasteristics
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область характеристик космических аппаратов]
+   (* <- lang_ru;; *);
+   [Subject domain of spacecrafts charasteristics]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+		concept_charasteristic;
+	-> rrel_not_maximum_studied_object_class:
+		concept_orbit;
+        concept_speed;
+        concept_mass;
+        concept_purpose;;
+*];;
+
+section_subject_domain_of_spacecrafts_charasteristics
+-> rrel_key_sc_element:
+        concept_charasteristic;
+		concept_orbit;
+        concept_speed;
+        concept_mass;
+        concept_purpose;;

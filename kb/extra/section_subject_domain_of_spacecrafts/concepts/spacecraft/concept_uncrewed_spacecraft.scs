@@ -1,0 +1,38 @@
+concept_uncrewed_spacecraft
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [беспилотный космический аппарат]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [uncrewed spacecraft]
+   (* <- lang_en;; *);
+   
+<= nrel_inclusion:
+   concept_spacecraft;
+
+=> nrel_inclusion:
+		concept_satellite;
+		concept_space_probe;
+		concept_descent_vehicle;
+		concept_rover;
+	
+=> nrel_note:
+   [Наиболее распространенными категориями беспилотных космических аппаратов являются роботизированные космические аппараты, беспилотные космические аппараты для пополнения запасов, космические зонды и космические обсерватории.]
+   (* <- lang_ru;; *);
+   
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. (беспилотный космический аппарат)](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Беспилотный космический корабль - это космический корабль без людей на борту, используемый для роботизированных космических полетов.](*<-lang_ru;;*);;
+		<= nrel_using_constants: {
+			 concept_spacecraft;
+			 concept_purpose
+		};;
+	*);;
+*);;

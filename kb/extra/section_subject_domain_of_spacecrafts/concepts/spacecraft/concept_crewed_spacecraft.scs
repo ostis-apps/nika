@@ -1,0 +1,33 @@
+concept_crewed_spacecraft
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf:
+   [пилотируемый космический аппарат]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [crewed spacecraft]
+   (* <- lang_en;; *);
+   
+<= nrel_inclusion:
+   concept_spacecraft;
+
+=> nrel_inclusion:
+	concept_space_station;
+	concept_spaceplane;
+	concept_space_capsule;
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Опр. (пилотируемый космический аппарат)](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Пилотируемый космический аппарат — космический аппарат, снабжённый системами жизнеобеспечения и управления полётом, и предназначенный для жизни, выполнение поставленных задач или иной деятельности одного или нескольких человек в космическом пространстве.](*<-lang_ru;;*);;
+		<= nrel_using_constants: {
+			 concept_spacecraft;
+			 concept_purpose
+		};;
+	*);;
+*);;

@@ -1,0 +1,52 @@
+nrel_location
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [местоположение* ]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [location* ]
+   (* <- lang_en;; *);
+   
+=> nrel_first_domain: 
+      concept_satellite;
+      concept_artificial_satellite;
+      concept_spacecraft;
+      concept_crewed_spacecraft;
+      concept_uncrewed_spacecraft;
+      concept_space_station;
+      concept_spaceplane;
+      concept_rover;
+      concept_space_probe;
+=> nrel_second_domain: 
+      concept_planet;
+      concept_planetoid;
+      concept_natural_satellite;
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+   	   [Опр. (местоположение* )]
+   	   (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+   	    ...
+   	    (*
+   	       -> rrel_example:
+   		    [Местоположение* - бинарное 
+               ориентированное отношение, связывающее 
+               космический аппарат и его расположение в космосе на данный момент.]
+   		    (* <- lang_ru;; *);;
+   	    *);;
+      <= nrel_using_constants: {
+		      concept_spacecraft
+   	 };;
+*);;

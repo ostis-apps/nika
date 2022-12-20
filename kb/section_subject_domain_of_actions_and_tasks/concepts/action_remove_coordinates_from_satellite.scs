@@ -1,0 +1,24 @@
+action_remove_coordinates_from_satellite
+<- sc_node_class;
+=> nrel_main_idtf:
+	[действие. удалить координаты у спутника](* <- lang_ru;; *);
+	[action. remove coordinates from satellite](* <- lang_en;; *);
+<- actions_class;
+<- atomic_action_class;
+<= nrel_inclusion: information_action;
+<- rrel_key_sc_element:
+	...
+	(*
+	<- explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+			-> rrel_example:
+				[Действие. удалить координаты у спутника - действие по удалению информации о координатах у спутника.](* <- lang_ru;;	*);;
+		*);
+		...
+		(*
+			-> rrel_example:
+				[Action. remove coordinates from satellite is an action for deleting satellites's coordinates information.](* <- lang_en;; *);;
+		*);;
+	*);;
