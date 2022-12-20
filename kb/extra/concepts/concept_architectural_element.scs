@@ -1,0 +1,29 @@
+concept_architectural_element
+=> nrel_main_idtf:
+    [Bauteil] (*<-lang_de;;*);
+    [строительный блок] (*<-lang_ru;;*);
+    [архітектурний елемент] (*<-lang_uk;;*);
+    [architectural element] (*<-lang_en;;*);
+    [élément d'architecture] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Bauteil)] (*<-lang_de;;*);
+       [Опр. (строительный блок)] (*<-lang_ru;;*);
+       [Def. (архітектурний елемент)] (*<-lang_uk;;*);
+       [Def. (architectural element)] (*<-lang_en;;*);
+       [Def. (élément d'architecture)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [einzelne Komponente eines Bauwerks, z. B. Fenster, Tür, Wand, Dach] (*<-lang_de;; => nrel_format: format_html;;*);
+                [полуфабрикат для строительства] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [forms primarily as components of architecture] (*<-lang_en;; => nrel_format: format_html;;*);
+                [formes élémentaires qui composent une architecture] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,44 @@
+nrel_opposite_of
+
+//идентификаторы
+=> nrel_main_idtf:
+    [Gegenteil von] (*<-lang_de;;*);
+    [противоположно] (*<-lang_ru;;*);
+    [протилежно] (*<-lang_uk;;*);
+    [opposite of] (*<-lang_en;;*);
+    [contraire] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Def. (Gegenteil von)] (*<-lang_de;;*);
+       [Опр. (противоположно)] (*<-lang_ru;;*);
+       [Def. (протилежно)] (*<-lang_uk;;*);
+       [Def. (opposite of)] (*<-lang_en;;*);
+       [Def. (contraire)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Objekt, das das Gegenteil dieses Objekts ist] (*<-lang_de;; => nrel_format: format_html;;*);
+                [элемент, являющийся антонимом данному элементу] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [елемент, який є антонімом цього елемента] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [item that is the opposite of this item] (*<-lang_en;; => nrel_format: format_html;;*);
+                [objet contraire au sujet] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_floor;
+
+
+=> nrel_second_domain:
+    concept_ceiling;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

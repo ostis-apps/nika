@@ -1,0 +1,47 @@
+nrel_described_by_source
+
+//идентификаторы
+=> nrel_main_idtf:
+    [beschrieben in] (*<-lang_de;;*);
+    [описывается в источниках] (*<-lang_ru;;*);
+    [описано в] (*<-lang_uk;;*);
+    [described by source] (*<-lang_en;;*);
+    [décrit par] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Def. (beschrieben in)] (*<-lang_de;;*);
+       [Опр. (описывается в источниках)] (*<-lang_ru;;*);
+       [Def. (описано в)] (*<-lang_uk;;*);
+       [Def. (described by source)] (*<-lang_en;;*);
+       [Def. (décrit par)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Werk, in dem das Objekt beschrieben wird] (*<-lang_de;; => nrel_format: format_html;;*);
+                [авторитетные источники (словари и энциклопедии), описывающие элемент целиком] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [авторитетні джерела (словники й енциклопедії), що описують елемент цілком] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [work where this item is described] (*<-lang_en;; => nrel_format: format_html;;*);
+                [dictionnaire, encyclopédie ou autre document qui décrit l'entité] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_floor;
+
+
+=> nrel_second_domain:
+    concept_Armenian_Soviet_Encyclopedia;
+
+=> nrel_second_domain:
+    concept_Brockhaus_and_Efron_Encyclopedic_Dictionary;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

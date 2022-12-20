@@ -1,0 +1,27 @@
+concept_number_of_floors
+=> nrel_main_idtf:
+    [Anzahl an Stockwerken] (*<-lang_de;;*);
+    [количество этажей] (*<-lang_ru;;*);
+    [кількість поверхів] (*<-lang_uk;;*);
+    [number of floors] (*<-lang_en;;*);
+    [nombre de niveaux] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Anzahl an Stockwerken)] (*<-lang_de;;*);
+       [Опр. (количество этажей)] (*<-lang_ru;;*);
+       [Def. (кількість поверхів)] (*<-lang_uk;;*);
+       [Def. (number of floors)] (*<-lang_en;;*);
+       [Def. (nombre de niveaux)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [узагальнена характеристика структури, конструкції, споруди незалежно від їх розміщення відносно умовних точок відліку (землі)] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [nombre d'étages que possède une structure architecturale] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

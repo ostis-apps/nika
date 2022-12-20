@@ -1,0 +1,29 @@
+concept_use
+=> nrel_main_idtf:
+    [Nutzung] (*<-lang_de;;*);
+    [использование] (*<-lang_ru;;*);
+    [використання] (*<-lang_uk;;*);
+    [use] (*<-lang_en;;*);
+    [usage] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Nutzung)] (*<-lang_de;;*);
+       [Опр. (использование)] (*<-lang_ru;;*);
+       [Def. (використання)] (*<-lang_uk;;*);
+       [Def. (use)] (*<-lang_en;;*);
+       [Def. (usage)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Verwendung eines Betriebsmittels zur Erfüllung einer Arbeitsaufgabe] (*<-lang_de;; => nrel_format: format_html;;*);
+                [використання ресурсу для виконання завдання] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [use of a resource to perform a task] (*<-lang_en;; => nrel_format: format_html;;*);
+                [utilisation d'une ressource pour remplir une tâche] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,29 @@
+concept_bottom
+=> nrel_main_idtf:
+    [Unterseite] (*<-lang_de;;*);
+    [низ] (*<-lang_ru;;*);
+    [низ] (*<-lang_uk;;*);
+    [bottom] (*<-lang_en;;*);
+    [bas] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Unterseite)] (*<-lang_de;;*);
+       [Опр. (низ)] (*<-lang_ru;;*);
+       [Def. (низ)] (*<-lang_uk;;*);
+       [Def. (bottom)] (*<-lang_en;;*);
+       [Def. (bas)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Unterseite von etwas] (*<-lang_de;; => nrel_format: format_html;;*);
+                [нижня частина чогось] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [lower side of something] (*<-lang_en;; => nrel_format: format_html;;*);
+                [la partie inférieure de quelque chose] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

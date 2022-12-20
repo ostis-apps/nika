@@ -1,0 +1,36 @@
+nrel_on_focus_list_of_Wikimedia_project
+
+//идентификаторы
+=> nrel_main_idtf:
+    [auf der Arbeitsliste des Wikimedia-Projektes] (*<-lang_de;;*);
+    [рабочий список проекта Викимедиа] (*<-lang_ru;;*);
+    [робочий список проєкту Вікімедіа] (*<-lang_uk;;*);
+    [on focus list of Wikimedia project] (*<-lang_en;;*);
+    [projet Wikimédia s’intéressant à l'élément] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Def. (auf der Arbeitsliste des Wikimedia-Projektes)] (*<-lang_de;;*);
+       [Опр. (рабочий список проекта Викимедиа)] (*<-lang_ru;;*);
+       [Def. (робочий список проєкту Вікімедіа)] (*<-lang_uk;;*);
+       [Def. (on focus list of Wikimedia project)] (*<-lang_en;;*);
+       [Def. (projet Wikimédia s’intéressant à l'élément)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [die Eigenschaft signalisiert, dass das Objekt auf einer Arbeitsliste eines Wikimedia-Projektes (WikiProjekt, Redaktion, Portal, etc.) enthalten ist.  Siehe auch P6104, P972, P2354.] (*<-lang_de;; => nrel_format: format_html;;*);
+                [свойство, указывающее на то, что элемент является частью группы элементов, представляющих особый интерес для обслуживания, управлений или разработки. См. также P6104, P972, P2354.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [властивість, яка вказує на те, що елемент є частиною групи елементів, що представляють особливий інтерес для обслуговування, управління або розробки] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [property to indicate that an item is of particular interest for a Wikimedia project. This property does not add notability. Items should not be created with this property if they are not notable for Wikidata. See also P6104, P972, P2354.] (*<-lang_en;; => nrel_format: format_html;;*);
+                [propriété qui indique que l'élément fait partie d'un groupe d'éléments qui retient particulièrement l'attention du projet Wikimedia. Voir aussi P6104, P972, P2354.] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

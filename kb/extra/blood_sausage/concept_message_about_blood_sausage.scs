@@ -1,0 +1,37 @@
+concept_message_about_blood_sausage
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о кровяная колбаса ]
+	(* <- lang_ru;; *);
+	[message about blood sausage]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[blood_sausage];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о кровяная колбаса)]
+        (* <- lang_ru;; *);
+        [Def. (message about blood sausage)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о кровяная колбаса  - атомарное сообщение, являющееся запросом на получение информации про кровяная колбаса]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about blood sausage - atomic message which used to make a question about sights of blood sausage]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
