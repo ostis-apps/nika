@@ -1,0 +1,24 @@
+concept_microbiology
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Микробиология]
+	(* <- lang_ru;; *);
+=> nrel_inclusion:
+    concept_history_microbiology;
+    concept_algae_class;
+    concept_bacteria_class;
+    concept_classification;
+    concept_protozoa_class;
+    concept_history_microorganisms;
+    concept_viruses_class;
+    concept_fungus_class;
+=> nrel_note:
+[Мы живем в огромном мире. Нас окружает природа. И вот эта природа может быть:
+неживая и живая. Живая природа включает в себя макромир (то, что видно
+невооруженным глазом) и микромир (то, что можно разглядеть только в микроскоп).
+Вопросами строения и жизни микроорганизмов занимается наука под названием
+микробиология. Micros – маленький, bio – жизнь, logia – наука. Делаем вывод.
+Микробиология – это наука о строении и жизнедеятельности микробов.]
+            (* <- lang_ru;; *);
+<-binary_relation;;    
