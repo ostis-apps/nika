@@ -1,0 +1,21 @@
+nrel_company
+
+=>nrel_first_domain:
+    concept_of_drinks;
+=>nrel_second_domain:
+    concept_company_drink;
+
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [компания*]
+    (* <- lang_ru;; *);
+    [company*]
+    (* <- lang_en;;*);
+<=concept_company;
+
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;

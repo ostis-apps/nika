@@ -1,0 +1,37 @@
+concept_message_about_water
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о воде]
+	(* <- lang_ru;; *);
+	[message about water]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[water];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о воде)]
+        (* <- lang_ru;; *);
+        [Def. (message about water)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о воде - атомарное сообщение, являющееся запросом на получение информации про воду]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about water - atomic message which used to make a question about water]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
