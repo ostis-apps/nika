@@ -1,0 +1,36 @@
+section_subject_domain_of_microorganismis
+<- sc_node_struct;
+=> nrel_main_idtf:
+[Раздел. Предметная область микроорганизмы](* <- lang_ru;; *);
+	[Section. Subject domain of microorganismis](* <- lang_en;; *);
+<-atomic_section;;
+
+section_subject_domain_of_microorganismis = [*
+	subject_domain_of_microorganismis
+=> nrel_main_idtf:
+	[Предметная область микроорганизмы](* <- lang_ru;; *);
+	[Subject domain of microorganismus](* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+concept_microbiology;
+// concept_history_computer_games;
+-> rrel_not_maximum_studied_object_class:
+concept_classification;
+concept_history_microorganisms;
+concept_algae_class;
+concept_bacteria_class;
+concept_fungus_class;
+concept_protozoa_class;
+concept_viruses_class;
+-> rrel_explored_relation:
+nrel_algae;
+nrel_bacteria;
+nrel_breeding;
+nrel_classification;
+nrel_exams;
+nrel_fungus;
+nrel_opening_date;
+nrel_protozoa;
+nrel_viruses;
+
+*];;
