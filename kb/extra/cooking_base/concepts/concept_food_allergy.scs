@@ -1,0 +1,33 @@
+concept_food_allergy
+=> nrel_main_idtf:
+    [пищевая аллергия] (*<-lang_ru;;*);
+    [food allergy] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (пищевая аллергия)] (*<-lang_ru;;*);
+       [Def. (food allergy)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [аномальная иммунная реакция на пищу] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [hypersensitivity reaction type I disease that is an abnormal response to a food, triggered by the body's immune system] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_drug_or_therapy_used_for_treatment: concept_cromoglicic_acid;
+=> nrel_drug_or_therapy_used_for_treatment: concept_epinephrine;
+=> nrel_on_focus_list_of_Wikimedia_project: concept_WikiProject_Medicine;
+=> nrel_health_specialty: concept_immunology;
+=> nrel_has_cause: concept_food;
+=> nrel_has_cause: concept_food_allergen;
+=> nrel_instance_of: concept_class_of_disease;
+
+<- concept_food_hypersensitivity;
+<- concept_gastrointestinal_allergy;
+<- concept_particular_disease;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,21 @@
+concept_pizzaiolo
+=> nrel_main_idtf:
+    [повар пиццы] (*<-lang_ru;;*);
+    [pizzaiolo] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (повар пиццы)] (*<-lang_ru;;*);
+       [Def. (pizzaiolo)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [человек, ответственный за приготовление и приготовление пиццы] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [person responsible for preparing and cooking pizzas] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,46 @@
+concept_eating
+=> nrel_main_idtf:
+    [поедание] (*<-lang_ru;;*);
+    [eating] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (поедание)] (*<-lang_ru;;*);
+       [Def. (eating)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [введение пищи в организм через пищевод] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [ingestion of food to provide for all organisms their nutritional or medicinal needs] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_location: concept_kitchen;
+=> nrel_location: concept_restaurant;
+=> nrel_location: concept_dining_room;
+=> nrel_location: concept_workplace;
+=> nrel_follows: concept_cooking;
+=> nrel_follows: concept_hunting;
+=> nrel_follows: concept_food_and_drink_preparation;
+=> nrel_follows: concept_butchering;
+=> nrel_has_use: concept_pleasure;
+=> nrel_has_use: concept_homeostasis;
+=> nrel_has_use: concept_nutrition;
+=> nrel_different_from: concept_grazing;
+=> nrel_has_cause: concept_hunger;
+=> nrel_has_effect: concept_satiety;
+=> nrel_described_by_source: concept_controlled_vocabulary;
+=> nrel_described_by_source: concept_online_database;
+=> nrel_described_by_source: concept_thesaurus;
+=> nrel_instance_of: concept_activity;
+=> nrel_uses: concept_food;
+=> nrel_uses: concept_human_digestive_system;
+=> nrel_practiced_by: concept_eater;
+=> nrel_opposite_of: concept_excretion;
+
+<- concept_ingestion;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

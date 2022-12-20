@@ -1,0 +1,41 @@
+nrel_practiced_by
+
+//идентификаторы
+=> nrel_main_idtf:
+    [практикуется] (*<-lang_ru;;*);
+    [practiced by] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (практикуется)] (*<-lang_ru;;*);
+       [Def. (practiced by)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [кем] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [type of agents that study this subject or work in this profession] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_eating;
+
+=> nrel_first_domain:
+    concept_food_science;
+
+
+=> nrel_second_domain:
+    concept_eater;
+
+=> nrel_second_domain:
+    concept_food_scientist;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

@@ -1,0 +1,95 @@
+nrel_part_of
+
+//идентификаторы
+=> nrel_main_idtf:
+    [часть от] (*<-lang_ru;;*);
+    [part of] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (часть от)] (*<-lang_ru;;*);
+       [Def. (part of)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [объект, частью которого является субъект (бесполезно связывать объекты, которые сами являются частями других объектов, уже перечисленных как части объекта). Обратное свойство «состоит из» (P527, см. Также «состоит из представителей класса» (P2670)).] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [object of which the subject is a part (if this subject is already part of object A which is a part of object B, then please only make the subject part of object A). Inverse property of "has part" (P527, see also "has parts of the class" (P2670)).] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_physical_object;
+
+=> nrel_first_domain:
+    concept_organism;
+
+=> nrel_first_domain:
+    concept_food_science;
+
+=> nrel_first_domain:
+    concept_controlled_vocabulary;
+
+=> nrel_first_domain:
+    concept_online_database;
+
+=> nrel_first_domain:
+    concept_thesaurus;
+
+=> nrel_first_domain:
+    concept_food_ingredient;
+
+=> nrel_first_domain:
+    concept_food_energy;
+
+=> nrel_first_domain:
+    concept_odor;
+
+
+=> nrel_second_domain:
+    concept_physical_system;
+
+=> nrel_second_domain:
+    concept_population;
+
+=> nrel_second_domain:
+    concept_group_of_living_things;
+
+=> nrel_second_domain:
+    concept_biota;
+
+=> nrel_second_domain:
+    concept_taxon;
+
+=> nrel_second_domain:
+    concept_biology;
+
+=> nrel_second_domain:
+    concept_chemistry;
+
+=> nrel_second_domain:
+    concept_sociology;
+
+=> nrel_second_domain:
+    concept_Open_Access_at_The_Met;
+
+=> nrel_second_domain:
+    concept_Metropolitan_Museum_of_Art_Tagging_Initiative;
+
+=> nrel_second_domain:
+    concept_dish;
+
+=> nrel_second_domain:
+    concept_nutrition_information;
+
+=> nrel_second_domain:
+    concept_smell;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

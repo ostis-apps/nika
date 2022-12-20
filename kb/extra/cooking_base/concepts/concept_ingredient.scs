@@ -1,0 +1,21 @@
+concept_ingredient
+=> nrel_main_idtf:
+    [ингредиент] (*<-lang_ru;;*);
+    [ingredient] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (ингредиент)] (*<-lang_ru;;*);
+       [Def. (ingredient)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [составное вещество] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [substance which is part of some product] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

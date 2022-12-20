@@ -1,0 +1,21 @@
+concept_dining_room
+=> nrel_main_idtf:
+    [столовая комната] (*<-lang_ru;;*);
+    [dining room] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (столовая комната)] (*<-lang_ru;;*);
+       [Def. (dining room)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [комната в квартире или доме, где обычно принимают пищу] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [room for consuming food] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

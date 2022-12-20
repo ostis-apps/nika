@@ -1,0 +1,27 @@
+concept_nutriment
+=> nrel_main_idtf:
+    [пища] (*<-lang_ru;;*);
+    [nutriment] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (пища)] (*<-lang_ru;;*);
+       [Def. (nutriment)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [the role of some chemicals as energy storage for life, obtained via eating] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_said_to_be_the_same_as: concept_food;
+=> nrel_said_to_be_the_same_as: concept_nutrient;
+=> nrel_has_use: concept_nutrition;
+=> nrel_different_from: concept_Pokarm;
+
+<- concept_energy_storage;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;
