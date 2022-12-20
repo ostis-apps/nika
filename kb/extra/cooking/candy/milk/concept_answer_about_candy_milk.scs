@@ -1,0 +1,35 @@
+concept_answer_about_candy_milk_phrase
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Информация о конфете Птичье молоко]
+	(* <- lang_ru;; *);
+	[info about candy mad milk]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (Информация о конфете Птичье молоко)]
+		(* <- lang_ru;; *);
+		[Def. (Information about candy milk)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Ответ на вопрос про конфету Птичье молоко]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example:
+			[Answer for question about candy milk]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;
+	*);;
+
