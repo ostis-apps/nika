@@ -1,0 +1,25 @@
+concept_nutritional_value
+=> nrel_main_idtf:
+    [Пищевая ценность] (*<-lang_ru;;*);
+    [nutritional value] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Пищевая ценность)] (*<-lang_ru;;*);
+       [Def. (nutritional value)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [property of substances] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_facet_of: concept_nutrition;
+=> nrel_instance_of: concept_measure;
+
+<- concept_food_quality;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

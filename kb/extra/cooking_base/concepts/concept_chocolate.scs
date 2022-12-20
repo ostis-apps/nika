@@ -1,0 +1,21 @@
+concept_chocolate
+=> nrel_main_idtf:
+    [шоколад] (*<-lang_ru;;*);
+    [chocolate] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (шоколад)] (*<-lang_ru;;*);
+       [Def. (chocolate)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [кондитерские продукты, изготавливаемые с использованием плодов какао] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [nutritionally dense or sweet food product from the seed of Theobroma cacao - cocoa bean] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

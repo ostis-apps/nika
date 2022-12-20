@@ -1,0 +1,31 @@
+concept_animal_feed
+=> nrel_main_idtf:
+    [корм] (*<-lang_ru;;*);
+    [animal feed] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (корм)] (*<-lang_ru;;*);
+       [Def. (animal feed)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [пища, которую едят животные (сами добывают или им дают)] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [food for various animals] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_said_to_be_the_same_as: concept_fodder;
+=> nrel_different_from: concept_food;
+=> nrel_described_by_source: concept_universal_encyclopedia;
+=> nrel_described_by_source: concept_national_encyclopedia;
+
+<- concept_energy_storage;
+<- concept_nutriment;
+<- concept_disposable_product;
+<- concept_food;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

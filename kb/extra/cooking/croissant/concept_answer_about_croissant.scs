@@ -1,0 +1,35 @@
+concept_answer_about_croissant_phrase
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Информация о приготовлении круассана]
+	(* <- lang_ru;; *);
+	[info about croissant]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (Информация о приготовлении круассана)]
+		(* <- lang_ru;; *);
+		[Def. (Information about croissant)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Ответ на вопрос про приготовление круассана]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example:
+			[Answer for question about croissant]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;
+	*);;
+

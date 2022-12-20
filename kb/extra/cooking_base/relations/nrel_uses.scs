@@ -1,0 +1,53 @@
+nrel_uses
+
+//идентификаторы
+=> nrel_main_idtf:
+    [использует] (*<-lang_ru;;*);
+    [uses] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (использует)] (*<-lang_ru;;*);
+       [Def. (uses)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [что: используемые предметы или принципы] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [item or concept used by the subject or in the operation (see also instrument P1303 and armament P520)] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_eating;
+
+=> nrel_first_domain:
+    concept_organism;
+
+
+=> nrel_second_domain:
+    concept_food;
+
+=> nrel_second_domain:
+    concept_human_digestive_system;
+
+=> nrel_second_domain:
+    concept_energy;
+
+=> nrel_second_domain:
+    concept_water;
+
+=> nrel_second_domain:
+    concept_oxygen;
+
+=> nrel_second_domain:
+    concept_fertilizer;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

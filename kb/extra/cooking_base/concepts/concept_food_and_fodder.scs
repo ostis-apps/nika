@@ -1,0 +1,26 @@
+concept_food_and_fodder
+=> nrel_main_idtf:
+    [пища и корм] (*<-lang_ru;;*);
+    [food and fodder] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (пища и корм)] (*<-lang_ru;;*);
+       [Def. (food and fodder)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [nutriment] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_said_to_be_the_same_as: concept_fodder;
+=> nrel_said_to_be_the_same_as: concept_food;
+
+<- concept_energy_storage;
+<- concept_physical_object;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;
