@@ -1,0 +1,37 @@
+concept_message_about_beer
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о пиве]
+	(* <- lang_ru;; *);
+	[message about beer]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[beer];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о пиве)]
+        (* <- lang_ru;; *);
+        [Def. (message about beer)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о пиве - атомарное сообщение, являющееся запросом на получение информации про пиво]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about beer - atomic message which used to make a question about beer]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

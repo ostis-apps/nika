@@ -1,0 +1,37 @@
+concept_message_about_drink
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о напитке]
+	(* <- lang_ru;; *);
+	[message about drink]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[drink];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о напитке)]
+        (* <- lang_ru;; *);
+        [Def. (message about drink)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о напитке- атомарное сообщение, являющееся запросом на получение информации про напиток]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about drink - atomic message which used to make a question about drink]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

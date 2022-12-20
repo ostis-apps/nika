@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/relation" idtf="nrel_inclusion" shapeColor="193" id="1506943951056" parent="0" left="0" top="0" right="88" bottom="25" textColor="244" text_angle="0" text_font="Times New Roman" font_size="10" x="619" y="88.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="193" id="1506943952928" parent="0" left="0" top="0" right="52" bottom="25" textColor="244" text_angle="0" text_font="Times New Roman" font_size="10" x="185.5" y="417.5" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase" shapeColor="193" id="1506943951472" parent="0" left="0" top="0" right="95" bottom="25" textColor="244" text_angle="0" text_font="Times New Roman" font_size="10" x="710" y="156.5" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_answer_about_water_phrase" shapeColor="193" id="1506943950848" parent="0" left="0" top="0" right="218" bottom="25" textColor="244" text_angle="0" text_font="Times New Roman" font_size="10" x="254.31" y="334" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/general" idtf="" shapeColor="193" id="1506943950640" parent="0" x="662.889" y="414.333" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Вода:
+
+
+
+бинарное неорганическое соединение, молекула которого состоит из двух атомов водорода и одного — кислорода, которые соединены между собой ковалентной связью. При нормальных условиях представляет собой прозрачную жидкость, не имеющую цвета, запаха и вкуса.]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_answer_about_water_phrase" shapeColor="193" id="1506942728672" parent="0" left="0" top="0" right="218" bottom="25" textColor="244" text_angle="0" text_font="Times New Roman" font_size="10" x="539.5" y="157" haveBus="false" idtf_pos="4">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="193" id="1506941767552" parent="0" id_b="1506943951056" id_e="1506941768992" b_x="619" b_y="88.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.531597">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="193" id="1506941768992" parent="0" id_b="1506943951472" id_e="1506942728672" b_x="710" b_y="156.5" e_x="539.5" e_y="157" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="193" id="1506941764672" parent="0" id_b="1506943950848" id_e="1506943950640" b_x="254.31" b_y="334" e_x="662.889" e_y="414.333" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="193" id="1506941770192" parent="0" id_b="1506943952928" id_e="1506943950640" b_x="185.5" b_y="417.5" e_x="662.889" e_y="414.333" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>

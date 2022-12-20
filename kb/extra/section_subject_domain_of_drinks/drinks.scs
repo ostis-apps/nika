@@ -1,0 +1,41 @@
+section_subject_domain_of_drinks
+<- sc_node_struct;
+=> nrel_main_idtf:
+[Раздел. Предметная область напитки](* <- lang_ru;; *);
+[Section. Subject domain drinks](* <- lang_en;; *);
+<-atomic_section;;
+
+section_subject_domain_of_drinks = [*
+subject_domain_of_drinks
+=> nrel_main_idtf:
+[Раздел.Предметная область напитки](* <- lang_ru;; *);
+[Subject domain of drinks](* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+concept_of_drinks;
+-> rrel_not_maximum_studied_object_class:
+concept_18;
+concept_beverages;
+concept_borjomi;
+concept_cognas;
+concept_cola;
+concept_company_drink;
+concept_country1;
+concept_dirctor1;
+concept_fanta;
+concept_flash;
+concept_gorilla;
+concept_monster;
+concept_rccola;
+concept_redbull;
+concept_sprite;
+concept_tekila;
+concept_vodka;
+-> rrel_explored_relation:
+nrel_company;
+nrel_data_of_birth;
+nrel_foundate_date;
+nrel_gender;
+nrel_publisher;
+nrel_relase_date;;
+*];;
