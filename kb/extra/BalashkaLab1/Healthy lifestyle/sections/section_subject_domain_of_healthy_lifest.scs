@@ -1,0 +1,40 @@
+section_subject_domain_of_healthy_lifestyle
+
+        => nrel_main_idtf:
+            [Раздел. Предметная область ЗОЖ](*<- lang_ru;;*);
+            [Section. Subject domain of ZOJ](*<- lang_en;;*);
+        <-not_enough_formed_structure;
+        <-non_atomic_section;
+        <-ui_start_sc_element;
+
+        <= nrel_section_decomposition:
+        {
+            section_subject_domain_of_quitting_tobacco
+            (*
+                    => nrel_section_base_order:
+                        section_subject_domain_of_refusal_to_drink_alcohol;;
+
+            *)
+            section_subject_domain_of_refusal_to_drink_alcohol
+            (*
+                    => nrel_section_base_order:
+                        section_subject_domain_of_balanced_diet;;
+
+            *)
+            section_subject_domain_of_balanced_diet
+            (*
+                    => nrel_section_base_order:
+                        section_subject_domain_of_physical_activity;;
+
+            *)
+            section_subject_domain_of_physical_activity
+            (*
+                    => nrel_section_base_order:
+                        section_subject_domain_of_mental_health_promotion;;
+
+            *)
+            section_subject_domain_of_mental_health_promotion
+            
+        }
+
+        -> rrel_key_sc_element: subject_domain_of_healthy_lifestyle;;
