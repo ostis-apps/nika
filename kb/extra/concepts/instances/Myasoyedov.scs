@@ -1,0 +1,33 @@
+Myasoyedov
+=> nrel_main_idtf:
+    [Mjassojedow] (*<-lang_de;;*);
+    [Мясоедов] (*<-lang_ru;;*);
+    [Мясоєдов] (*<-lang_uk;;*);
+    [Myasoyedov] (*<-lang_en;;*);
+    [Miassoïedov] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Mjassojedow)] (*<-lang_de;;*);
+       [Опр. (Мясоедов)] (*<-lang_ru;;*);
+       [Def. (Мясоєдов)] (*<-lang_uk;;*);
+       [Def. (Myasoyedov)] (*<-lang_en;;*);
+       [Def. (Miassoïedov)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Familienname (Мясоедов)] (*<-lang_de;; => nrel_format: format_html;;*);
+                [фамилия - Мясоедов] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [прізвище (Мясоедов)] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [family name (Мясоедов)] (*<-lang_en;; => nrel_format: format_html;;*);
+                [nom de famille (Мясоедов)] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_writing_system: concept_Cyrillic_script;
+=> nrel_different_from: concept_Mjassojedow;
+
+<- concept_family_name;
+
+<-sc_node_not_relation;;

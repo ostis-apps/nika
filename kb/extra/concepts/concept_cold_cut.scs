@@ -1,0 +1,34 @@
+concept_cold_cut
+=> nrel_main_idtf:
+    [Aufschnitt] (*<-lang_de;;*);
+    [колбасные изделия] (*<-lang_ru;;*);
+    [Ковбасні вироби] (*<-lang_uk;;*);
+    [cold cut] (*<-lang_en;;*);
+    [assiette anglaise] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Aufschnitt)] (*<-lang_de;;*);
+       [Опр. (колбасные изделия)] (*<-lang_ru;;*);
+       [Def. (Ковбасні вироби)] (*<-lang_uk;;*);
+       [Def. (cold cut)] (*<-lang_en;;*);
+       [Def. (assiette anglaise)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [bereits geschnittene Wurstwaren oder Schnittkäse] (*<-lang_de;; => nrel_format: format_html;;*);
+                [готовые к употреблению колбасные изделия и сыры] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [precooked or cured meat, often sausages or meat loaves, that are sliced and served cold or hot on sandwiches or on party trays] (*<-lang_en;; => nrel_format: format_html;;*);
+                [plat froid regroupant plusieurs sortes de charcuteries accompagnées de condiments] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_made_from_material: concept_meat;
+
+<- concept_meat_product;
+<- concept_convenience_food;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,26 @@
+concept_convenience_food
+=> nrel_main_idtf:
+    [Convenience Food] (*<-lang_de;;*);
+    [кулинарные полуфабрикаты] (*<-lang_ru;;*);
+    [convenience food] (*<-lang_en;;*);
+    [aliment industriel] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Convenience Food)] (*<-lang_de;;*);
+       [Опр. (кулинарные полуфабрикаты)] (*<-lang_ru;;*);
+       [Def. (convenience food)] (*<-lang_en;;*);
+       [Def. (aliment industriel)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [vorgefertigte Lebensmittel, die die Zubereitung von Speisen erleichtern] (*<-lang_de;; => nrel_format: format_html;;*);
+                [продукты питания, поступающие в продажу подготовленными для кулинарной обработки] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [processed food designed for ease of preparation and consumption] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,37 @@
+concept_message_about_meat
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о мясе]
+	(* <- lang_ru;; *);
+	[message about meat]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[meat];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о мясе)]
+        (* <- lang_ru;; *);
+        [Def. (message about meat)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о мясе - атомарное сообщение, являющееся запросом на получение информации про мясо]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about meat - atomic message which used to make a question about sights of meat]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

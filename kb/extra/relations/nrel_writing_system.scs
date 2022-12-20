@@ -1,0 +1,44 @@
+nrel_writing_system
+
+//идентификаторы
+=> nrel_main_idtf:
+    [Schrift] (*<-lang_de;;*);
+    [письменность] (*<-lang_ru;;*);
+    [абетка] (*<-lang_uk;;*);
+    [writing system] (*<-lang_en;;*);
+    [système d'écriture] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Def. (Schrift)] (*<-lang_de;;*);
+       [Опр. (письменность)] (*<-lang_ru;;*);
+       [Def. (абетка)] (*<-lang_uk;;*);
+       [Def. (writing system)] (*<-lang_en;;*);
+       [Def. (système d'écriture)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Schreibsystem, das für eine Sprache oder ein Schriftwerk benutzt wird] (*<-lang_de;; => nrel_format: format_html;;*);
+                [письменность, используемая языком] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [абетка (азбука, алфавіт), яку використовує мова] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [alphabet, character set or other system of writing used by a language, word, or text, supported by a typeface] (*<-lang_en;; => nrel_format: format_html;;*);
+                [système d'écriture utilisé par une langue, permis par une police d'écriture] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_family_name;
+
+
+=> nrel_second_domain:
+    concept_Cyrillic_script;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

@@ -1,0 +1,26 @@
+concept_meat_product
+=> nrel_main_idtf:
+    [Fleischerzeugnis] (*<-lang_de;;*);
+    [Мясные продукты] (*<-lang_ru;;*);
+    [meat product] (*<-lang_en;;*);
+    [produit de viande] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Fleischerzeugnis)] (*<-lang_de;;*);
+       [Опр. (Мясные продукты)] (*<-lang_ru;;*);
+       [Def. (meat product)] (*<-lang_en;;*);
+       [Def. (produit de viande)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Erzeugnis aus frischem Fleisch von Tieren] (*<-lang_de;; => nrel_format: format_html;;*);
+                [product derived from fresh meat of animals] (*<-lang_en;; => nrel_format: format_html;;*);
+                [produit dérivé de viandes fraîches d'animaux] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,50 @@
+nrel_instance_of
+
+//идентификаторы
+=> nrel_main_idtf:
+    [ist ein(e)] (*<-lang_de;;*);
+    [это частный случай понятия] (*<-lang_ru;;*);
+    [є одним із] (*<-lang_uk;;*);
+    [instance of] (*<-lang_en;;*);
+    [nature de l'élément] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Def. (ist ein(e))] (*<-lang_de;;*);
+       [Опр. (это частный случай понятия)] (*<-lang_ru;;*);
+       [Def. (є одним із)] (*<-lang_uk;;*);
+       [Def. (instance of)] (*<-lang_en;;*);
+       [Def. (nature de l'élément)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Ausprägung oder Exemplar einer Sache, Mitglied einer Klasse. Zu unterscheiden von P279 (Unterklasse von), z.B. der K2 „ist ein“ Berg; Vulkan ist eine „Unterklasse von“ Berg (aber Vulkan „ist eine“ vulkanogene Landform)] (*<-lang_de;; => nrel_format: format_html;;*);
+                [данный элемент представляет собой конкретный объект (экземпляр / частный случай) класса, категории. Не путать с Property:P279 ("подкласс от").] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [цей елемент є конкретним прикладом об'єкта (окремим випадком) такого класу, категорії чи групи об'єктів] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [that class of which this subject is a particular example and member; different from P279 (subclass of); for example: K2 is an instance of mountain; volcano is a subclass of mountain (and an instance of volcanic landform)] (*<-lang_en;; => nrel_format: format_html;;*);
+                [cet élément est un exemple spécifique de cette classe qui en précise la nature. Ne pas confondre avec la propriété P279 (sous-classe de)] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_floor;
+
+=> nrel_first_domain:
+    concept_family_name;
+
+
+=> nrel_second_domain:
+    concept_use;
+
+=> nrel_second_domain:
+    concept_family_name;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

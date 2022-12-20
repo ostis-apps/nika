@@ -1,0 +1,27 @@
+concept_flooring
+=> nrel_main_idtf:
+    [Bodenbelag] (*<-lang_de;;*);
+    [напольное покрытие] (*<-lang_ru;;*);
+    [долівка] (*<-lang_uk;;*);
+    [flooring] (*<-lang_en;;*);
+    [revêtement de sol] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Bodenbelag)] (*<-lang_de;;*);
+       [Опр. (напольное покрытие)] (*<-lang_ru;;*);
+       [Def. (долівка)] (*<-lang_uk;;*);
+       [Def. (flooring)] (*<-lang_en;;*);
+       [Def. (revêtement de sol)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Nutzbelag des Fußbodens eines Gebäudes] (*<-lang_de;; => nrel_format: format_html;;*);
+                [permanent indoor walking surface] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,30 @@
+concept_Brockhaus_and_Efron_Encyclopedic_Dictionary
+=> nrel_main_idtf:
+    [Brockhaus-Efron] (*<-lang_de;;*);
+    [Энциклопедический словарь Брокгауза и Ефрона, 1890—1907] (*<-lang_ru;;*);
+    [Енциклопедичний словник Брокгауза і Єфрона] (*<-lang_uk;;*);
+    [Brockhaus and Efron Encyclopedic Dictionary] (*<-lang_en;;*);
+    [Dictionnaire encyclopédique Brockhaus et Efron] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Brockhaus-Efron)] (*<-lang_de;;*);
+       [Опр. (Энциклопедический словарь Брокгауза и Ефрона, 1890—1907)] (*<-lang_ru;;*);
+       [Def. (Енциклопедичний словник Брокгауза і Єфрона)] (*<-lang_uk;;*);
+       [Def. (Brockhaus and Efron Encyclopedic Dictionary)] (*<-lang_en;;*);
+       [Def. (Dictionnaire encyclopédique Brockhaus et Efron)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [russische Enzyklopädie] (*<-lang_de;; => nrel_format: format_html;;*);
+                [российская энциклопедия, изданная в 1890—1907 годах] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [російська енциклопедія] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [comprehensive multi-volume encyclopedia in Russian] (*<-lang_en;; => nrel_format: format_html;;*);
+                [encyclopédie russe] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

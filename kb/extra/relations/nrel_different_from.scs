@@ -1,0 +1,56 @@
+nrel_different_from
+
+//идентификаторы
+=> nrel_main_idtf:
+    [verschieden von] (*<-lang_de;;*);
+    [не путать с] (*<-lang_ru;;*);
+    [не плутати з] (*<-lang_uk;;*);
+    [different from] (*<-lang_en;;*);
+    [à ne pas confondre avec] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Def. (verschieden von)] (*<-lang_de;;*);
+       [Опр. (не путать с)] (*<-lang_ru;;*);
+       [Def. (не плутати з)] (*<-lang_uk;;*);
+       [Def. (different from)] (*<-lang_en;;*);
+       [Def. (à ne pas confondre avec)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Objekt das sich von einem anderen Objekt unterscheidet, die aber oft verwechselt werden] (*<-lang_de;; => nrel_format: format_html;;*);
+                [ссылка на элемент с другим смыслом, но который часто путается с этим] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [посилання на елемент з іншим змістом, але який часто плутають із цим] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [item that is different from another item, with which it may be confused] (*<-lang_en;; => nrel_format: format_html;;*);
+                [élément différent d'un autre élément mais qui sont souvent confondus ou peuvent l'être] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_floor;
+
+=> nrel_first_domain:
+    concept_family_name;
+
+
+=> nrel_second_domain:
+    concept_Aikku_Jokinen;
+
+=> nrel_second_domain:
+    concept_story;
+
+=> nrel_second_domain:
+    concept_sex;
+
+=> nrel_second_domain:
+    concept_Mjassojedow;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

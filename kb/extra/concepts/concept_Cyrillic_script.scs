@@ -1,0 +1,30 @@
+concept_Cyrillic_script
+=> nrel_main_idtf:
+    [kyrillisches Alphabet] (*<-lang_de;;*);
+    [кириллица] (*<-lang_ru;;*);
+    [кирилиця] (*<-lang_uk;;*);
+    [Cyrillic script] (*<-lang_en;;*);
+    [alphabet cyrillique] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (kyrillisches Alphabet)] (*<-lang_de;;*);
+       [Опр. (кириллица)] (*<-lang_ru;;*);
+       [Def. (кирилиця)] (*<-lang_uk;;*);
+       [Def. (Cyrillic script)] (*<-lang_en;;*);
+       [Def. (alphabet cyrillique)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Buchstabenschrift vorwiegend slawischer Sprachen] (*<-lang_de;; => nrel_format: format_html;;*);
+                [алфавит и тип письменности во многих славянских и некоторых азиатских языках] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [алфавітна система письма в країнах Східної Європи, Північної і Центральної Азії] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [writing system developed in Bulgaria and used for various languages of Eurasia] (*<-lang_en;; => nrel_format: format_html;;*);
+                [alphabet bicaméral de trente lettres] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

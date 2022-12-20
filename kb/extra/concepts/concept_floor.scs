@@ -1,0 +1,43 @@
+concept_floor
+=> nrel_main_idtf:
+    [Fußboden] (*<-lang_de;;*);
+    [пол] (*<-lang_ru;;*);
+    [підлога] (*<-lang_uk;;*);
+    [floor] (*<-lang_en;;*);
+    [plancher] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Fußboden)] (*<-lang_de;;*);
+       [Опр. (пол)] (*<-lang_ru;;*);
+       [Def. (підлога)] (*<-lang_uk;;*);
+       [Def. (floor)] (*<-lang_en;;*);
+       [Def. (plancher)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [begehbare Fläche in einem Gebäude] (*<-lang_de;; => nrel_format: format_html;;*);
+                [внутренняя поверхность помещения, по которой ходят] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [верхній або опоряджувальний шар, що накладається на тримальну конструкцію перекриття або на ґрунт у будинку] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [walking surface of a room] (*<-lang_en;; => nrel_format: format_html;;*);
+                [plate-forme horizontale] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_location: concept_bottom;
+=> nrel_different_from: concept_Aikku_Jokinen;
+=> nrel_different_from: concept_story;
+=> nrel_different_from: concept_sex;
+=> nrel_opposite_of: concept_ceiling;
+=> nrel_described_by_source: concept_Armenian_Soviet_Encyclopedia;
+=> nrel_described_by_source: concept_Brockhaus_and_Efron_Encyclopedic_Dictionary;
+=> nrel_basic_decomposition: concept_flooring;
+=> nrel_inclusion: concept_number_of_floors;
+=> nrel_instance_of: concept_use;
+
+<- concept_architectural_element;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,21 @@
+concept_Aikku_Jokinen
+=> nrel_main_idtf:
+    [Aikku Jokinen] (*<-lang_en;;*);
+    [Aikku Jokinen] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Aikku Jokinen)] (*<-lang_en;;*);
+       [Def. (Aikku Jokinen)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [персонаж из комиксов Marvel] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [personnage de bande-dessinée] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

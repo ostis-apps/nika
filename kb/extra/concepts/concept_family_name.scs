@@ -1,0 +1,30 @@
+concept_family_name
+=> nrel_main_idtf:
+    [Familienname] (*<-lang_de;;*);
+    [фамилия] (*<-lang_ru;;*);
+    [прізвище] (*<-lang_uk;;*);
+    [family name] (*<-lang_en;;*);
+    [nom de famille] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Familienname)] (*<-lang_de;;*);
+       [Опр. (фамилия)] (*<-lang_ru;;*);
+       [Def. (прізвище)] (*<-lang_uk;;*);
+       [Def. (family name)] (*<-lang_en;;*);
+       [Def. (nom de famille)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Ergänzung zum Vornamen zur besseren Unterscheidbarkeit von Personen] (*<-lang_de;; => nrel_format: format_html;;*);
+                [часть полного имени человека, общая у семьи] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [частина повного імені людини, спільна для родини] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [part of a naming scheme for individuals, used in many cultures worldwide] (*<-lang_en;; => nrel_format: format_html;;*);
+                [partie d'un nom de personne qui est transmise à un enfant par l'un de ses parents] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

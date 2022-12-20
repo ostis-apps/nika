@@ -1,0 +1,26 @@
+concept_Mjassojedow
+=> nrel_main_idtf:
+    [Mjassojedow] (*<-lang_de;;*);
+    [Mjassojedow] (*<-lang_en;;*);
+    [Mjassojedow] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Mjassojedow)] (*<-lang_de;;*);
+       [Def. (Mjassojedow)] (*<-lang_en;;*);
+       [Def. (Mjassojedow)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Wikimedia-Begriffsklärungsseite] (*<-lang_de;; => nrel_format: format_html;;*);
+                [страница значений в проекте Викимедиа] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [сторінка значень у проєкті Вікімедіа] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [Wikimedia disambiguation page] (*<-lang_en;; => nrel_format: format_html;;*);
+                [page d'homonymie de Wikimedia] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

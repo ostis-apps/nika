@@ -1,0 +1,30 @@
+concept_ceiling
+=> nrel_main_idtf:
+    [Decke] (*<-lang_de;;*);
+    [Потолок] (*<-lang_ru;;*);
+    [стеля] (*<-lang_uk;;*);
+    [ceiling] (*<-lang_en;;*);
+    [plafond] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Decke)] (*<-lang_de;;*);
+       [Опр. (Потолок)] (*<-lang_ru;;*);
+       [Def. (стеля)] (*<-lang_uk;;*);
+       [Def. (ceiling)] (*<-lang_en;;*);
+       [Def. (plafond)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [horizontales Bauteil, das einen Raum nach oben abschließt] (*<-lang_de;; => nrel_format: format_html;;*);
+                [Определённая плоскость сверху] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [верхня внутрішня поверхня, яка покриває верхню межу кімнати] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [overhead interior surface that covers the upper limit of a room] (*<-lang_en;; => nrel_format: format_html;;*);
+                [surface constituant la partie supérieure d'une pièce] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

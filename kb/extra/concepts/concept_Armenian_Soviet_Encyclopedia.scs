@@ -1,0 +1,30 @@
+concept_Armenian_Soviet_Encyclopedia
+=> nrel_main_idtf:
+    [Armenian Encyclopedia] (*<-lang_de;;*);
+    [Армянская советская энциклопедия] (*<-lang_ru;;*);
+    [Вірменська радянська енциклопедія] (*<-lang_uk;;*);
+    [Armenian Soviet Encyclopedia] (*<-lang_en;;*);
+    [encyclopédie soviétique arménienne] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Armenian Encyclopedia)] (*<-lang_de;;*);
+       [Опр. (Армянская советская энциклопедия)] (*<-lang_ru;;*);
+       [Def. (Вірменська радянська енциклопедія)] (*<-lang_uk;;*);
+       [Def. (Armenian Soviet Encyclopedia)] (*<-lang_en;;*);
+       [Def. (encyclopédie soviétique arménienne)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Enzyklopädie] (*<-lang_de;; => nrel_format: format_html;;*);
+                [первая универсальная энциклопедия на армянском языке] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [перша універсальна енциклопедія вірменською мовою] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [encyclopedia] (*<-lang_en;; => nrel_format: format_html;;*);
+                [encyclopédie] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

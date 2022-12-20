@@ -1,0 +1,30 @@
+concept_story
+=> nrel_main_idtf:
+    [Geschoss] (*<-lang_de;;*);
+    [этаж] (*<-lang_ru;;*);
+    [поверх] (*<-lang_uk;;*);
+    [story] (*<-lang_en;;*);
+    [étage] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Geschoss)] (*<-lang_de;;*);
+       [Опр. (этаж)] (*<-lang_ru;;*);
+       [Def. (поверх)] (*<-lang_uk;;*);
+       [Def. (story)] (*<-lang_en;;*);
+       [Def. (étage)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Gesamtheit aller Räume in einem Gebäude, die auf einer Zugangsebene liegen und horizontal verbunden sind] (*<-lang_de;; => nrel_format: format_html;;*);
+                [часть пространства здания между двумя горизонтальными перекрытиями] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [частина простору будівлі (споруди), відокремлена від інших горизонтальним перекриттям (підлогою та стелею)] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [level part of a building that could be used by people] (*<-lang_en;; => nrel_format: format_html;;*);
+                [espace compris entre le plancher et le plafond dans un bâtiment] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

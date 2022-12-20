@@ -1,0 +1,36 @@
+nrel_topics_main_category
+
+//идентификаторы
+=> nrel_main_idtf:
+    [Hauptkategorie zum Artikel] (*<-lang_de;;*);
+    [основная категория по теме] (*<-lang_ru;;*);
+    [категорія за темою сторінки] (*<-lang_uk;;*);
+    [topic's main category] (*<-lang_en;;*);
+    [catégorie] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Def. (Hauptkategorie zum Artikel)] (*<-lang_de;;*);
+       [Опр. (основная категория по теме)] (*<-lang_ru;;*);
+       [Def. (категорія за темою сторінки)] (*<-lang_uk;;*);
+       [Def. (topic's main category)] (*<-lang_en;;*);
+       [Def. (catégorie)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Hauptkategorie des Themas] (*<-lang_de;; => nrel_format: format_html;;*);
+                [категория Викимедиа, соответствующая данной теме] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [головна категорія Вікімедіа на відповідну тему] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [main Wikimedia category] (*<-lang_en;; => nrel_format: format_html;;*);
+                [catégorie Wikimédia principale de l'élément] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

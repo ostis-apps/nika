@@ -1,0 +1,29 @@
+concept_meat
+=> nrel_main_idtf:
+    [Fleisch] (*<-lang_de;;*);
+    [мясо] (*<-lang_ru;;*);
+    [м’ясо] (*<-lang_uk;;*);
+    [meat] (*<-lang_en;;*);
+    [viande] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (Fleisch)] (*<-lang_de;;*);
+       [Опр. (мясо)] (*<-lang_ru;;*);
+       [Def. (м’ясо)] (*<-lang_uk;;*);
+       [Def. (meat)] (*<-lang_en;;*);
+       [Def. (viande)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Nahrungsmittel, bestehend aus tierischer Skelettmuskulatur und Fett] (*<-lang_de;; => nrel_format: format_html;;*);
+                [продукт питания, плоть животных] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [animal flesh eaten as food] (*<-lang_en;; => nrel_format: format_html;;*);
+                [chair animale utilisée pour la nourriture] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

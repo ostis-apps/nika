@@ -1,0 +1,44 @@
+nrel_made_from_material
+
+//идентификаторы
+=> nrel_main_idtf:
+    [Material] (*<-lang_de;;*);
+    [сделано из] (*<-lang_ru;;*);
+    [з матеріалу] (*<-lang_uk;;*);
+    [made from material] (*<-lang_en;;*);
+    [matériau] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Def. (Material)] (*<-lang_de;;*);
+       [Опр. (сделано из)] (*<-lang_ru;;*);
+       [Def. (з матеріалу)] (*<-lang_uk;;*);
+       [Def. (made from material)] (*<-lang_en;;*);
+       [Def. (matériau)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Stoff, aus dem das Objekt besteht oder gefertigt wurde (nicht zu verwechseln mit P10672, das für Prozesse verwendet wird)] (*<-lang_de;; => nrel_format: format_html;;*);
+                [материал, из которого сделан объект] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [матеріал, з якого зроблено, чи з якого походить об'єкт] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [material the subject or the object is made of or derived from (do not confuse with P10672 which is used for processes)] (*<-lang_en;; => nrel_format: format_html;;*);
+                [matériau dont est constitué le sujet ou l'objet (ne pas confondre avec P10672 qui est utilisé pour les processus)] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_cold_cut;
+
+
+=> nrel_second_domain:
+    concept_meat;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

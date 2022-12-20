@@ -1,0 +1,30 @@
+concept_sex
+=> nrel_main_idtf:
+    [biologisches Geschlecht] (*<-lang_de;;*);
+    [пол особи] (*<-lang_ru;;*);
+    [стать] (*<-lang_uk;;*);
+    [sex] (*<-lang_en;;*);
+    [sexe] (*<-lang_fr;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Def. (biologisches Geschlecht)] (*<-lang_de;;*);
+       [Опр. (пол особи)] (*<-lang_ru;;*);
+       [Def. (стать)] (*<-lang_uk;;*);
+       [Def. (sex)] (*<-lang_en;;*);
+       [Def. (sexe)] (*<-lang_fr;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Merkmal eines Individuums in der Biologie] (*<-lang_de;; => nrel_format: format_html;;*);
+                [роль особи в оплодотворении] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [генетично зумовлений поділ живих організмів на самців та самиць] (*<-lang_uk;; => nrel_format: format_html;;*);
+                [trait that determines an individual's sexually reproductive function] (*<-lang_en;; => nrel_format: format_html;;*);
+                [spécialisation biologique d'organismes vivants entre masculin et féminin (généralement)] (*<-lang_fr;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;
