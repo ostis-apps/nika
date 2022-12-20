@@ -1,0 +1,23 @@
+concept_cycling_tourism
+<- concept_tourism;
+
+=> nrel_main_idtf:
+   [Велосипедный туризм]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Велосипедный туризм]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Cycling tourism]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Велосипедный туризм](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [ - один из видов туризма, в том числе спортивного, заключающийся в преодолении маршрута группой велосипедистов.](*<-lang_ru;;*);;
+	*);;
+*);;

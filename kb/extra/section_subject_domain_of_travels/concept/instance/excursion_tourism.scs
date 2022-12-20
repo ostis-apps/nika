@@ -1,0 +1,23 @@
+concept_excursion_tourism
+<- concept_tourism;
+
+=> nrel_main_idtf:
+   [Экскурсионный туризм]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Экскурсионный туризм]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Excursion tourism]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Экскурсионный туризм](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [ - это одна из разновидностей туристической отрасли, путешествия с целью ознакомления с памятниками истории и культуры, природными достопримечательностями, музеями, театрами, традициями народов на определенной территории.](*<-lang_ru;;*);;
+	*);;
+*);;

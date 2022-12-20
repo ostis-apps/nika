@@ -1,0 +1,23 @@
+concept_extreme_tourism
+<- concept_tourism;
+
+=> nrel_main_idtf:
+   [Экстремальный туризм]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Экстремальный туризм]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Extreme tourism]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Экстремальный туризм](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [в широком смысле один из видов туристического отдыха, в той или иной степени связанный с риском.](*<-lang_ru;;*);;
+	*);;
+*);;

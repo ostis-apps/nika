@@ -1,0 +1,28 @@
+concept_tourist <- sc_node_not_relation;;
+
+concept_tourist => nrel_main_idtf:
+[Турист] (*<-lang_ru;;*);
+[Tourist] (*<-lang_en;;*);;
+
+concept_tourist <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Турист)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_tourist.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_tourist <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Турист)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[лицо, посещающее страну (место) временного пребывания в лечебно-оздоровительных, рекреационных, познавательных, физкультурно-спортивных, профессионально-деловых, религиозных и иных целях без занятия деятельностью, связанной с получением дохода от источников в стране (месте) временного пребывания, на период от 24 часов до 6 месяцев подряд или осуществляющее не менее одной ночевки в стране (месте) временного пребывания.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

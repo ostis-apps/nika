@@ -1,0 +1,23 @@
+concept_medical_tourism
+<- concept_tourism;
+
+=> nrel_main_idtf:
+   [Медицинский туризм]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Медицинский туризм]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Medical tourism]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Медицинский туризм](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [ - термин, обозначающий практику предоставления плановых медицинских услуг за пределами региона проживания, совмещение отдыха за рубежом с получением высококвалифицированной медицинской помощи.](*<-lang_ru;;*);;
+	*);;
+*);;

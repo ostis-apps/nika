@@ -1,0 +1,23 @@
+concept_sleeping_bag
+<- concept_equipment;
+
+=> nrel_main_idtf:
+   [Спальный мешок]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Спальный мешок]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Sleeping bag]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Спальный мешок](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [Спàльный мешòк — предмет походного быта, предназначенный для отдыха и сна.Используется туристами, альпинистами, спелеологами и другими живущими в походных условиях людьми.](*<-lang_ru;;*);;
+	*);;
+*);;

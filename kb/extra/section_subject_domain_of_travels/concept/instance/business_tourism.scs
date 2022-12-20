@@ -1,0 +1,23 @@
+concept_business_tourism
+<- concept_tourism;
+
+=> nrel_main_idtf:
+   [Деловой туризм]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Деловой туризм]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Business tourism]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Деловой туризм](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [ Деловой туризм, также корпоративный туризм — область индустрии туризма, обеспечивающая организацию и управление командировками сотрудников различных компаний.](*<-lang_ru;;*);;
+	*);;
+*);;

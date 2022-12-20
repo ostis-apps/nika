@@ -1,0 +1,28 @@
+concept_territorial_study <- sc_node_not_relation;;
+
+concept_territorial_study => nrel_main_idtf:
+[Территориальное исследование] (*<-lang_ru;;*);
+[Territorial study] (*<-lang_en;;*);;
+
+concept_territorial_study <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Территориальное исследование] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_territorial_study.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_territorial_study <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Территориальное изучение)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[основной метод получения первичных географических материалов, используемых в географических исследованиях.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

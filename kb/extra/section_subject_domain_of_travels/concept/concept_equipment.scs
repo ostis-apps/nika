@@ -1,0 +1,28 @@
+concept_equipment <- sc_node_not_relation;;
+
+concept_equipment => nrel_main_idtf:
+[Снаряжение] (*<-lang_ru;;*);
+[Equipment] (*<-lang_en;;*);;
+
+concept_equipment <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Снаряжение] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_equipment.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_equipment <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Снаряжение)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Сейчас существует масса специализированного снаряжения для пешеходного туризма: туристические палатки, спальные мешки, треккинговые палки, треккинговые ботинки, котелки, газовые горелки, компас, GPS-навигаторы и так далее.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

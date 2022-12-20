@@ -1,0 +1,28 @@
+concept_travel <- sc_node_not_relation;;
+
+concept_travel => nrel_main_idtf:
+[Путеше́ствие] (*<-lang_ru;;*);
+[Travel] (*<-lang_en;;*);;
+
+concept_travel <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Путеше́ствие)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_travel.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_travel <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Путешествие)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[передвижение по какой-либо территории или акватории с целью их изучения, а также с общеобразовательными, познавательными, спортивными и другими целями.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

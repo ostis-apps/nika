@@ -1,0 +1,28 @@
+concept_walking <- sc_node_not_relation;;
+
+concept_walking => nrel_main_idtf:
+[Хождение] (*<-lang_ru;;*);
+[Walking] (*<-lang_en;;*);;
+
+concept_walking <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Хождение)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_walking.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_walking <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Хождение)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[жанр средневековой русской литературы, форма путевых записок, в которых русские путешественники описывали свои впечатления от посещения иностранных земель.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;

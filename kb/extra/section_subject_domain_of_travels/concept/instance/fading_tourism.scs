@@ -1,0 +1,23 @@
+concept_fading_tourism
+<- concept_tourism;
+
+=> nrel_main_idtf:
+   [Трощобный туризм]
+   (* <- lang_ru;; *);
+=> nrel_idtf:
+   [Трущобный туризм]
+   (* <- lang_ru;; *);
+=> nrel_main_idtf:
+   [Fading tourism]
+   (* <- lang_en;; *);
+
+<-rrel_key_sc_element:...
+(*
+	<-definition;;
+	=>nrel_main_idtf:
+		[Трущобный туризм](*<-lang_ru;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: [ — посещение районов проживания бедноты обеспеченными людьми.](*<-lang_ru;;*);;
+	*);;
+*);;

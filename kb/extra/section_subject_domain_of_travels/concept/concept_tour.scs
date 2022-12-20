@@ -1,0 +1,28 @@
+concept_tour <- sc_node_not_relation;;
+
+concept_tour => nrel_main_idtf:
+[Гастроли] (*<-lang_ru;;*);
+[Tour] (*<-lang_en;;*);;
+
+concept_tour <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (Гастроли)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		->rrel_example: "file://HTML/concept_tour.html"(*<-lang_ru;;=>nrel_format:format_html;;*);;
+	*);;
+*);;
+
+concept_tour <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (Гастроли)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[выступление артиста или коллектива артистов вне места его постоянной деятельности — на чужой сцене, в другом районе, городе, регионе или государстве.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
