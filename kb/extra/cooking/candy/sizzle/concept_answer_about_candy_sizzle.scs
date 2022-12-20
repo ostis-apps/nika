@@ -1,0 +1,35 @@
+concept_answer_about_candy_sizzle_phrase
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Информация о конфете шипучка]
+	(* <- lang_ru;; *);
+	[info about candy mad sizzle]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (Информация о конфете шипучка)]
+		(* <- lang_ru;; *);
+		[Def. (Information about candy mad sizzle)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Ответ на вопрос про конфету шипучка]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example:
+			[Answer for question about candy mad sizzle]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;
+	*);;
+

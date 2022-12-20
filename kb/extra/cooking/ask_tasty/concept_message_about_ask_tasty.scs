@@ -1,0 +1,38 @@
+concept_message_about_ask_tasty
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о вкунностях]
+	(* <- lang_ru;; *);
+	[message about ask_tasty]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[something_tasty];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о вкусностях)]
+        (* <- lang_ru;; *);
+        [Def. (message about ask_tasty)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о вкусностях - атомарное сообщение, являющееся запросом на получение рекомендаций кондитерских изделий]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about ask_tasty - atomic message which used to make a question about ask_tasty]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
+

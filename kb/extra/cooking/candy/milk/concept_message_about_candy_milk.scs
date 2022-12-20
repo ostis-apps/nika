@@ -1,0 +1,40 @@
+concept_message_about_candy_milk
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о конфете Птичье молоко]
+	(* <- lang_ru;; *);
+	[message about candy mad milk]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[candy_pigeons_milk];
+-> rrel_entity:
+    candy_milk_instance_1;
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о конфете Птичье молоко)]
+        (* <- lang_ru;; *);
+        [Def. (message about candy mad milk)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о конфете Птичье молоко - атомарное сообщение, являющееся запросом на получение информации про конфету]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about candy mad milk - atomic message which used to make a question about candy mad milk]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
+
