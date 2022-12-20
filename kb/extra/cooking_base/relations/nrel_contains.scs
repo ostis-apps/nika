@@ -1,0 +1,27 @@
+nrel_contains
+
+//идентификаторы
+=> nrel_main_idtf:
+    [содержит] (*<-lang_ru;;*);
+    [contains] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (содержит)] (*<-lang_ru;;*);
+       [Def. (contains)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [физический предмет или вещество, расположенное внутри данного объекта] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [item or substance located within this item but not part of it] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

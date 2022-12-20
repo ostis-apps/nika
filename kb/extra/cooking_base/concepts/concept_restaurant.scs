@@ -1,0 +1,21 @@
+concept_restaurant
+=> nrel_main_idtf:
+    [ресторан] (*<-lang_ru;;*);
+    [restaurant] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (ресторан)] (*<-lang_ru;;*);
+       [Def. (restaurant)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [единое заведение, которое готовит и сервирует еду] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [single establishment which prepares and serves food, located in building] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,62 @@
+concept_food
+=> nrel_main_idtf:
+    [пища] (*<-lang_ru;;*);
+    [food] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (пища)] (*<-lang_ru;;*);
+       [Def. (food)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [то, что употребляют в пищу, чем утоляют голод] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [any substance consumed to provide nutritional support for the body; form of energy stored in chemical] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_has_use: concept_eating;
+=> nrel_different_from: concept_animal_feed;
+=> nrel_used_by: concept_organism;
+=> nrel_geography_of_topic: concept_geography_of_food;
+=> nrel_studied_by: concept_culinary_art;
+=> nrel_studied_by: concept_food_science;
+=> nrel_has_effect: concept_food_allergy;
+=> nrel_has_effect: concept_satiety;
+=> nrel_present_in_work: concept_video_game;
+=> nrel_present_in_work: concept_video_game_series;
+=> nrel_present_in_work: concept_video_game_series;
+=> nrel_described_by_source: concept_universal_encyclopedia;
+=> nrel_described_by_source: concept_national_encyclopedia;
+=> nrel_described_by_source: concept_encyclopedic_dictionary;
+=> nrel_described_by_source: concept_Jewish_encyclopedia;
+=> nrel_described_by_source: concept_encyclopedia;
+=> nrel_described_by_source: concept_controlled_vocabulary;
+=> nrel_described_by_source: concept_online_database;
+=> nrel_described_by_source: concept_thesaurus;
+=> nrel_basic_decomposition: concept_food_ingredient;
+=> nrel_maintained_by_WikiProject: concept_WikiProject;
+=> nrel_inclusion: concept_food_energy;
+=> nrel_inclusion: concept_shelf_life;
+=> nrel_inclusion: concept_type_of_food_or_dish;
+=> nrel_inclusion: concept_property;
+=> nrel_inclusion: concept_nutritional_value;
+=> nrel_inclusion: concept_measure;
+=> nrel_inclusion: concept_odor;
+=> nrel_inclusion: concept_mouthfeel;
+=> nrel_inclusion: concept_flavoring;
+=> nrel_inclusion: concept_visual_appeal;
+=> nrel_inclusion: concept_property;
+=> nrel_inclusion: concept_food_ingredient;
+=> nrel_made_from_material: concept_food_ingredient;
+=> nrel_opposite_of: concept_concept;
+=> nrel_said_to_be_the_same_as: concept_food_and_fodder;
+=> nrel_said_to_be_the_same_as: concept_nutriment;
+
+<- concept_disposable_product;
+<- concept_physical_object;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

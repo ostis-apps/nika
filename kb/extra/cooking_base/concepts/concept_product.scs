@@ -1,0 +1,21 @@
+concept_product
+=> nrel_main_idtf:
+    [продукт] (*<-lang_ru;;*);
+    [product] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (продукт)] (*<-lang_ru;;*);
+       [Def. (product)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [результат труда, предлагаемый на рынке] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [anything that can be offered to a market] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,38 @@
+nrel_distributed_by
+
+//идентификаторы
+=> nrel_main_idtf:
+    [распространяется] (*<-lang_ru;;*);
+    [distributed by] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (распространяется)] (*<-lang_ru;;*);
+       [Def. (distributed by)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [распространитель работы] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [distributor of a creative work; distributor for a record label; news agency; film distributor] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_video_game;
+
+
+=> nrel_second_domain:
+    concept_Take_Two_Interactive;
+
+=> nrel_second_domain:
+    concept_Steam;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

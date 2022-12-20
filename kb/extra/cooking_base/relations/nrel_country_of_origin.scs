@@ -1,0 +1,44 @@
+nrel_country_of_origin
+
+//идентификаторы
+=> nrel_main_idtf:
+    [страна происхождения] (*<-lang_ru;;*);
+    [country of origin] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (страна происхождения)] (*<-lang_ru;;*);
+       [Def. (country of origin)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [страна происхождения творческого произведения или другого продукта] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [country of origin of this item (creative work, food, phrase, product, legislation, etc.)] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_video_game;
+
+=> nrel_first_domain:
+    concept_universal_encyclopedia;
+
+=> nrel_first_domain:
+    concept_national_encyclopedia;
+
+
+=> nrel_second_domain:
+    concept_United_States_of_America;
+
+=> nrel_second_domain:
+    concept_Soviet_Union;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

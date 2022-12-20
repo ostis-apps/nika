@@ -1,0 +1,27 @@
+nrel_category_combines_topics
+
+//идентификаторы
+=> nrel_main_idtf:
+    [категория объединяет темы] (*<-lang_ru;;*);
+    [category combines topics] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (категория объединяет темы)] (*<-lang_ru;;*);
+       [Def. (category combines topics)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [данная категория соответствует пересечению нескольких тем] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [this category combines (intersects) these two or more topics] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

@@ -1,0 +1,40 @@
+concept_message_about_candy_sizzle
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о конфете шипучка]
+	(* <- lang_ru;; *);
+	[message about candy mad sizzle]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[candy_sizzle];
+-> rrel_entity:
+    candy_sizzle_instance_1;
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о конфете шипучка)]
+        (* <- lang_ru;; *);
+        [Def. (message about candy mad sizzle)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о конфете шипучка - атомарное сообщение, являющееся запросом на получение информации про конфету]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about candy mad sizzle - atomic message which used to make a question about candy mad sizzle]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
+

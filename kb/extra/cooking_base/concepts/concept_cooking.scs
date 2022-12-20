@@ -1,0 +1,21 @@
+concept_cooking
+=> nrel_main_idtf:
+    [кулинария] (*<-lang_ru;;*);
+    [cooking] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (кулинария)] (*<-lang_ru;;*);
+       [Def. (cooking)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [человеческая деятельность по приготовлению пищи] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [preparing food for consumption by the application of heat] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

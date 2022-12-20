@@ -1,0 +1,33 @@
+concept_food_science
+=> nrel_main_idtf:
+    [наука о еде] (*<-lang_ru;;*);
+    [food science] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (наука о еде)] (*<-lang_ru;;*);
+       [Def. (food science)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [прикладная наука] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [applied science devoted to the study of food] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_on_focus_list_of_Wikimedia_project: concept_WikiProject_Zika_Corpus;
+=> nrel_practiced_by: concept_food_scientist;
+=> nrel_is_the_study_of: concept_food;
+=> nrel_part_of: concept_biology;
+=> nrel_part_of: concept_chemistry;
+=> nrel_part_of: concept_sociology;
+=> nrel_instance_of: concept_applied_science;
+=> nrel_instance_of: concept_academic_discipline;
+
+<- concept_science;
+<- concept_Agricultural_veterinary_and_food_sciences;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,38 @@
+concept_message_about_croissant
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о рецепте круассана]
+	(* <- lang_ru;; *);
+	[message about croissant]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[croissant];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о рецепте круассана)]
+        (* <- lang_ru;; *);
+        [Def. (message about croissant)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о круассане - атомарное сообщение, являющееся запросом на получение информации про приготовление круассана]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about croissant - atomic message which used to make a question about croissant]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
+

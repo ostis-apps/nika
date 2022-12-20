@@ -1,0 +1,21 @@
+concept_gastrointestinal_allergy
+=> nrel_main_idtf:
+    [желудочно -кишечная аллергия] (*<-lang_ru;;*);
+    [gastrointestinal allergy] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (желудочно -кишечная аллергия)] (*<-lang_ru;;*);
+       [Def. (gastrointestinal allergy)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Гиперчувствительность реакции типа I болезнь, расположенная в желудочно -кишечном тракте] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [hypersensitivity reaction type I disease located in the gastrointestinal tract] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

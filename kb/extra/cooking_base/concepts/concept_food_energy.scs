@@ -1,0 +1,28 @@
+concept_food_energy
+=> nrel_main_idtf:
+    [энергетическая ценность] (*<-lang_ru;;*);
+    [food energy] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (энергетическая ценность)] (*<-lang_ru;;*);
+       [Def. (food energy)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Химическая энергия, которую животные (включая людей) получают из пищи и молекулярного кислорода посредством процесса клеточного дыхания] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [chemical energy that animals (including humans) derive from food and molecular oxygen through the process of cellular respiration] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_facet_of: concept_food;
+=> nrel_part_of: concept_nutrition_information;
+=> nrel_described_by_source: concept_universal_encyclopedia;
+=> nrel_described_by_source: concept_national_encyclopedia;
+
+<- concept_chemical_energy;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

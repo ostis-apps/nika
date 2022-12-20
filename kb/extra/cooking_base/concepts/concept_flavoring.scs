@@ -1,0 +1,27 @@
+concept_flavoring
+=> nrel_main_idtf:
+    [ароматизаторы] (*<-lang_ru;;*);
+    [flavoring] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (ароматизаторы)] (*<-lang_ru;;*);
+       [Def. (flavoring)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Пищевая добавка используется для изменения вкуса или запаха пищи.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Food additive used to change the taste or smell of food.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_facet_of: concept_taste;
+=> nrel_different_from: concept_smell;
+=> nrel_described_by_source: concept_Gujin_Tushu_Jicheng;
+
+<- concept_sensation;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

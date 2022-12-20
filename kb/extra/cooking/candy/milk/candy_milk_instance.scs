@@ -1,0 +1,26 @@
+candy_milk_instance
+=> nrel_main_idtf:
+    [Экземпляр текстового сообщения для конфеты Птичье молоко]
+    (* <- lang_ru;; *);
+<= nrel_candy_instance: nika;
+-> rrel_1: candy_milk_instance_1;;
+
+candy_milk_instance_1
+<- concept_candy_milk;
+<- concept_wit_entity;
+=> nrel_main_idtf:
+    [Информация про конфету Птичье молоко]
+    (* <- lang_ru;; *);
+=> nrel_idtf:
+    [Информация про конфету Птичье молоко]
+    (* <- lang_ru;; *);
+=> nrel_candy_consistency:
+    [мягкая]
+    (* <- lang_ru;; *);
+=> nrel_candy_filling:
+   [присутствует]
+    (* <- lang_ru;; *);
+=> nrel_candy_taste:
+    [сладкая]
+    (* <- lang_ru;; *);;
+

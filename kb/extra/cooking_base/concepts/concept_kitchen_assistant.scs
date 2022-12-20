@@ -1,0 +1,20 @@
+concept_kitchen_assistant
+=> nrel_main_idtf:
+    [помощник повара] (*<-lang_ru;;*);
+    [kitchen assistant] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (помощник повара)] (*<-lang_ru;;*);
+       [Def. (kitchen assistant)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [person who helps preparing food and keeping the kitchen area clean] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

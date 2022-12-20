@@ -1,0 +1,35 @@
+concept_answer_about_ask_tasty_phrase
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Информация о вкусностях]
+	(* <- lang_ru;; *);
+	[info about ask_tasty]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (Информация о вкусностях)]
+		(* <- lang_ru;; *);
+		[Def. (Information about candy)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Ответ на вопрос про вкусности]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example:
+			[Answer for question about candy]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;
+	*);;
+

@@ -1,0 +1,71 @@
+nrel_opposite_of
+
+//идентификаторы
+=> nrel_main_idtf:
+    [противоположно] (*<-lang_ru;;*);
+    [opposite of] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (противоположно)] (*<-lang_ru;;*);
+       [Def. (opposite of)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [элемент, являющийся антонимом данному элементу] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [item that is the opposite of this item] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_food;
+
+=> nrel_first_domain:
+    concept_physical_object;
+
+=> nrel_first_domain:
+    concept_eating;
+
+=> nrel_first_domain:
+    concept_satiety;
+
+=> nrel_first_domain:
+    concept_property;
+
+=> nrel_first_domain:
+    concept_concept;
+
+
+=> nrel_second_domain:
+    concept_concept;
+
+=> nrel_second_domain:
+    concept_mental_object;
+
+=> nrel_second_domain:
+    concept_abstract_being;
+
+=> nrel_second_domain:
+    concept_excretion;
+
+=> nrel_second_domain:
+    concept_starvation;
+
+=> nrel_second_domain:
+    concept_hunger;
+
+=> nrel_second_domain:
+    concept_toxicity;
+
+=> nrel_second_domain:
+    concept_food;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

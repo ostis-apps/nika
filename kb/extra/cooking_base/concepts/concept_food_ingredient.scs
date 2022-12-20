@@ -1,0 +1,34 @@
+concept_food_ingredient
+=> nrel_main_idtf:
+    [пищевой ингредиент] (*<-lang_ru;;*);
+    [food ingredient] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (пищевой ингредиент)] (*<-lang_ru;;*);
+       [Def. (food ingredient)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [ингредиент, используемый в пищевом продукте] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [ingredient used in food product] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_has_use: concept_cooking;
+=> nrel_has_use: concept_meal;
+=> nrel_different_from: concept_ingredient;
+=> nrel_used_by: concept_cook;
+=> nrel_used_by: concept_kitchen_assistant;
+=> nrel_used_by: concept_quick_service_restaurant_crew_member;
+=> nrel_used_by: concept_pizzaiolo;
+=> nrel_part_of: concept_dish;
+=> nrel_instance_of: concept_class_of_chemical_substances_by_use;
+
+<- concept_ingredient;
+<- concept_food;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

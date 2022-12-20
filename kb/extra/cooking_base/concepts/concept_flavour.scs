@@ -1,0 +1,21 @@
+concept_flavour
+=> nrel_main_idtf:
+    [Аромат] (*<-lang_ru;;*);
+    [flavour] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Аромат)] (*<-lang_ru;;*);
+       [Def. (flavour)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Тип элементарных частиц, встречающихся в стандартной модели] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [type of elementary particles occurring in the Standard Model] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

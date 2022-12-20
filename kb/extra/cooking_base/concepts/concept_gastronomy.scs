@@ -1,0 +1,21 @@
+concept_gastronomy
+=> nrel_main_idtf:
+    [гастрономия] (*<-lang_ru;;*);
+    [gastronomy] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (гастрономия)] (*<-lang_ru;;*);
+       [Def. (gastronomy)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Изучение еды] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [study of food] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

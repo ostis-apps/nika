@@ -1,0 +1,35 @@
+nrel_health_specialty
+
+//идентификаторы
+=> nrel_main_idtf:
+    [медицинская специальность] (*<-lang_ru;;*);
+    [health specialty] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (медицинская специальность)] (*<-lang_ru;;*);
+       [Def. (health specialty)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [специализация в области медицины] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [main specialty that diagnoses, prevent human illness, injury and other physical and mental impairments] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_food_allergy;
+
+
+=> nrel_second_domain:
+    concept_immunology;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;
