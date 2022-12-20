@@ -1,0 +1,21 @@
+concept_food_quality
+=> nrel_main_idtf:
+    [качества продуктов питания] (*<-lang_ru;;*);
+    [food quality] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (качества продуктов питания)] (*<-lang_ru;;*);
+       [Def. (food quality)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [сложная мера, которая оценивает конкретные случаи пищи] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [complex measure that rates specific instances of food] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

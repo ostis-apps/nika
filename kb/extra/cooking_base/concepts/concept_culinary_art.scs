@@ -1,0 +1,23 @@
+concept_culinary_art
+=> nrel_main_idtf:
+    [кулинарное искусство] (*<-lang_ru;;*);
+    [culinary art] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (кулинарное искусство)] (*<-lang_ru;;*);
+       [Def. (culinary art)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [art of the preparation, cooking and presentation of food, usually in the form of meals] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<- concept_art;
+<- concept_skill;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

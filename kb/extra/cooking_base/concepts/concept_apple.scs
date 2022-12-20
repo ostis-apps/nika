@@ -1,0 +1,21 @@
+concept_apple
+=> nrel_main_idtf:
+    [яблоко] (*<-lang_ru;;*);
+    [apple] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (яблоко)] (*<-lang_ru;;*);
+       [Def. (apple)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [плод яблони] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [fruit of the apple tree] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

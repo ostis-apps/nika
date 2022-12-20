@@ -1,0 +1,20 @@
+concept_nutrition_information
+=> nrel_main_idtf:
+    [пищевая ценность] (*<-lang_ru;;*);
+    [nutrition information] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (пищевая ценность)] (*<-lang_ru;;*);
+       [Def. (nutrition information)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [information or data that provides nutritional facts of food] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

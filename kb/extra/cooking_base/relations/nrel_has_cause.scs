@@ -1,0 +1,56 @@
+nrel_has_cause
+
+//идентификаторы
+=> nrel_main_idtf:
+    [причиной является] (*<-lang_ru;;*);
+    [has cause] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (причиной является)] (*<-lang_ru;;*);
+       [Def. (has cause)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [основная причина данного являения] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [underlying cause, thing that ultimately resulted in this effect] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_eating;
+
+=> nrel_first_domain:
+    concept_food_allergy;
+
+=> nrel_first_domain:
+    concept_satiety;
+
+=> nrel_first_domain:
+    concept_odor;
+
+
+=> nrel_second_domain:
+    concept_hunger;
+
+=> nrel_second_domain:
+    concept_food;
+
+=> nrel_second_domain:
+    concept_food_allergen;
+
+=> nrel_second_domain:
+    concept_eating;
+
+=> nrel_second_domain:
+    concept_aroma_compound;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

@@ -1,0 +1,21 @@
+concept_eater
+=> nrel_main_idtf:
+    [поедатель] (*<-lang_ru;;*);
+    [eater] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (поедатель)] (*<-lang_ru;;*);
+       [Def. (eater)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Человеческое или другое живое существо, кто что -то ест] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [human or other live being who eats something] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

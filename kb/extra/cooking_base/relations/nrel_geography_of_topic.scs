@@ -1,0 +1,35 @@
+nrel_geography_of_topic
+
+//идентификаторы
+=> nrel_main_idtf:
+    [география темы] (*<-lang_ru;;*);
+    [geography of topic] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (география темы)] (*<-lang_ru;;*);
+       [Def. (geography of topic)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [описание географии данного объекта] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [item that deals with the geography of the subject. Sample: "Rio de Janeiro" uses this property with value "geography of Rio de Janeiro" (Q10288853). For the location of a subject, use "location" (P276).] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_food;
+
+
+=> nrel_second_domain:
+    concept_geography_of_food;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

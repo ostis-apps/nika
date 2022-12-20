@@ -1,0 +1,44 @@
+nrel_follows
+
+//идентификаторы
+=> nrel_main_idtf:
+    [предыдущее по порядку] (*<-lang_ru;;*);
+    [follows] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (предыдущее по порядку)] (*<-lang_ru;;*);
+       [Def. (follows)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [элемент, непосредственно предшествующий данному в некоторой последовательности. Используйте P1365, если предшественник был заменён, т.е. в политических должностях, государствах, организациях] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [immediately prior item in a series of which the subject is a part, preferably use as qualifier of P179 if the subject has replaced the preceding item, e.g. political offices, use "replaces" (P1365)] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_eating;
+
+
+=> nrel_second_domain:
+    concept_cooking;
+
+=> nrel_second_domain:
+    concept_hunting;
+
+=> nrel_second_domain:
+    concept_food_and_drink_preparation;
+
+=> nrel_second_domain:
+    concept_butchering;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

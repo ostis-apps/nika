@@ -1,0 +1,41 @@
+nrel_has_effect
+
+//идентификаторы
+=> nrel_main_idtf:
+    [вызывает] (*<-lang_ru;;*);
+    [has effect] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (вызывает)] (*<-lang_ru;;*);
+       [Def. (has effect)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [является причиной (вызванного последствия)] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [effect of this item] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_food;
+
+=> nrel_first_domain:
+    concept_eating;
+
+
+=> nrel_second_domain:
+    concept_food_allergy;
+
+=> nrel_second_domain:
+    concept_satiety;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;
