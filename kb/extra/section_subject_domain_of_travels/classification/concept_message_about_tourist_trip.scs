@@ -1,0 +1,27 @@
+concept_message_about_tourist_trip
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о туристическом походе]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_tourist_trip];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о туристическом походе)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о туристическом походе - атомарное сообщение,
+    которое содержит определение данной сущности.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

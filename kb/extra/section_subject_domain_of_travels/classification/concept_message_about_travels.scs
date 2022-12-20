@@ -1,0 +1,33 @@
+concept_message_about_travels
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о путешествиях]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_travels];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о путешествиях)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о путешествиях - атомарное сообщение,
+    являющееся вводным для данной предметной области.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
+	
+concept_intent_possible_class
+-> concept_message_about_travels;
+-> concept_message_about_tourist_trip;
+-> concept_message_about_types_of_tourism;
+-> concept_message_about_kayaking;;

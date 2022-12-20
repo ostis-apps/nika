@@ -1,0 +1,27 @@
+concept_message_about_types_of_tourism
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о разновидностях туризма]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_types_of_tourism];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о разновидностях туризма)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о разновидностях туризма - атомарное сообщение,
+    которое содержит разновидности видов туристической активности, имеющиеся в системе.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
