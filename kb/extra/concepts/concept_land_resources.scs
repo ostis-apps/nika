@@ -1,0 +1,30 @@
+concept_land_resources <- sc_node_not_relation;;
+
+concept_land_resources => nrel_main_idtf:
+[земельные ресурсы] (*<-lang_ru;;*);
+[land resources] (*<-lang_en;;*);;
+
+concept_land_resources <- rrel_key_sc_element: ...
+(*
+<- definition;;
+=> nrel_main_idtf:
+	[Опр. (земельные ресурсы)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Деятельность по сбору, обработке и распространению информации с помощью СМИ](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
+concept_land_resources <- rrel_key_sc_element: ...
+(*
+<- statement;;
+=> nrel_main_idtf:
+	[Утв. (земельные ресурсы)] (*<-lang_ru;;*);;
+<= nrel_sc_text_translation: ...
+	(*
+		-> rrel_example:
+		[Журналистика институционально является частью средств массовой информации, то есть входит в многофункциональные институты общества, такие, как пресса, телевидение, радио, интернет и др.](*<- lang_ru;; =>nrel_format: format_html;;*);;
+	*);;
+*);;
+
