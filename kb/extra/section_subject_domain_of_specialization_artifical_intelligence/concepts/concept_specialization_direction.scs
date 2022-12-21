@@ -1,0 +1,28 @@
+concept_specialization_direction
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf: 
+	[Специализация] (*<- lang_ru;;*);
+	
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Специализация)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Специализация - это углублённое изучение относительно узкого поля деятельности, в рамках специальности, обеспечивающее необходимый уровень компетенции специалиста, предназначенной для выполнения некоторой работы. ]
+               (* <- lang_ru;; *);;
+           *);;
+       <= nrel_using_constants: 
+       		{
+             	concept_specialization
+             
+        	};;
+  *);;

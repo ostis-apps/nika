@@ -1,0 +1,98 @@
+mrzwis
+<-concept_academic_discipline;
+=> nrel_main_idtf: 
+	[Модели решения задач в интеллектуальных системах] (*<- lang_ru;;*);
+	[МРЗвИС] (*<- lang_ru;;*);
+<= nrel_study:
+	information_protection;
+	geoinformation_technologies;
+	
+=> nrel_inclusion:
+	mrzwis_1;
+	mrzwis_2;;
+
+mrzwis_1
+<-concept_academic_discipline;
+=> nrel_main_idtf: 
+	[Модели решения задач в интеллектуальных системах (1-й сесместр)] (*<- lang_ru;;*);
+	[МРЗвИС (1-й сесместр)] (*<- lang_ru;;*);
+	
+=>nrel_type_of_lesson:
+	mrzwis_1_lk
+		(*
+			<-concept_lesson;;
+			<-concept_lecture;;
+			=> nrel_main_idtf: 
+				[Лекция по МРЗвИСу (1-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_give_lectures: 
+				IvashenkoVP;;
+		*);
+	mrzwis_1_lr
+		(*
+			<-concept_lesson;;
+			<-concept_laboratory_work;;
+			=> nrel_main_idtf: 
+				[Лабораторная работа по МРЗвИСу(1-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_accept_laboratory_work:
+				BrutskiD;;
+		*);
+		
+=>nrel_semester_of_study:
+	4sem;
+	
+=>nrel_type_of_certificaton:
+	exam_mrzwis_1
+		(*
+			<-concept_certificaton;;
+			<-concept_exam;;
+			=> nrel_main_idtf: 
+				[Экзамен по МРЗвИСу (1-й семестр)] (*<- lang_ru;;*);;
+		*);;
+		
+
+mrzwis_2
+<-concept_academic_discipline;
+=> nrel_main_idtf: 
+	[Модели решения задач в интеллектуальных системах (2-й сесместр)] (*<- lang_ru;;*);
+	[МРЗвИС (2-й сесместр)] (*<- lang_ru;;*);
+	
+=>nrel_type_of_lesson:
+	mrzwis_2_lk
+		(*
+			<-concept_lesson;;
+			<-concept_lecture;;
+			=> nrel_main_idtf: 
+				[Лекция по МРЗвИСу (2-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_give_lectures: 
+				IvashenkoVP;;
+		*);
+	mrzwis_2_lr
+		(*
+			<-concept_lesson;;
+			<-concept_laboratory_work;;
+			=> nrel_main_idtf: 
+				[Лабораторная работа по МРЗвИСу (2-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_accept_laboratory_work:
+				ZhukAA;;
+		*);
+		
+	mrzwis_2_pz
+		(*
+			<-concept_practical_class;;
+			<-concept_lesson;;
+			=> nrel_main_idtf: 
+				[Практическое занятие по МРЗвИСу (2-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_conduct_practical_classes:
+				IvashenkoVP;;
+		*);
+		
+=>nrel_semester_of_study:
+	5sem;
+=>nrel_type_of_certificaton:
+	exam_mrzwis_2
+		(*
+			<-concept_certificaton;;
+			<-concept_exam;;
+			=> nrel_main_idtf: 
+				[Экзамен по МРЗвИСу (2-й семестр)] (*<- lang_ru;;*);;
+		*);;

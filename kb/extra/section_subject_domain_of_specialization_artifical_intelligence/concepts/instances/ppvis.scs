@@ -1,0 +1,141 @@
+ppvis
+<-concept_academic_discipline;
+=> nrel_main_idtf: 
+	[Проектирование программ в интеллектуальных системах] (*<- lang_ru;;*);
+	[ППвИС] (*<- lang_ru;;*);
+<= nrel_study:
+	information_protection;
+	geoinformation_technologies;
+	
+=> nrel_inclusion:
+	ppvis_1;
+	ppvis_2;
+	ppvis_3;;
+
+
+ppvis_1
+<-concept_academic_discipline;
+=> nrel_main_idtf: 
+	[Проектирование программ в интеллектуальных системах(1-й сесместр)] (*<- lang_ru;;*);
+	[ППвИС (1-й сесместр)] (*<- lang_ru;;*);
+	
+=>nrel_type_of_lesson:
+	ppvis_1_lk
+		(*
+			<-concept_lesson;;
+			<-concept_lecture;;
+			=> nrel_main_idtf: 
+				[Лекция по ППвИСу (1-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_give_lectures: 
+				SerdyukovRE;;
+		*);
+	ppvis_1_lr
+		(*
+			<-concept_lesson;;
+			<-concept_laboratory_work;;
+			=> nrel_main_idtf: 
+				[Лабораторная работа по ППвИСу (1-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_accept_laboratory_work:
+				SadovskyME;
+				KovalevMV;;
+		*);
+	ppvis_1_pz
+		(*
+			<-concept_practical_class;;
+			<-concept_lesson;;
+			=> nrel_main_idtf: 
+				[Практическое занятие по ППвИСу (1-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_conduct_practical_classes:
+				KovalevMV;;
+		*);
+		
+=>nrel_semester_of_study:
+	3sem;
+
+=>nrel_type_of_certificaton:
+	exam_ppvis_1
+		(*
+			<-concept_certificaton;;
+			<-concept_exam;;
+			=> nrel_main_idtf: 
+				[Экзамен по ППвИСу (1-й семестр)] (*<- lang_ru;;*);;
+		*);;
+
+
+ppvis_2
+<-concept_academic_discipline;
+=> nrel_main_idtf: 
+	[Проектирование программ в интеллектуальных системах(2-й сесместр)] (*<- lang_ru;;*);
+	[ППвИС (2-й сесместр)] (*<- lang_ru;;*);
+	
+=>nrel_type_of_lesson:
+	ppvis_2_lk
+		(*
+			<-concept_lesson;;
+			<-concept_lecture;;
+			=> nrel_main_idtf: 
+				[Лекция по ППвИСу (2-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_give_lectures: 
+				SerdyukovRE;;
+		*);
+	ppvis_2_lr
+		(*
+			<-concept_lesson;;
+			<-concept_laboratory_work;;
+			=> nrel_main_idtf: 
+				[Лабораторная работа по ППвИСу (2-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_accept_laboratory_work:
+				ZhukAA;;
+		*);
+		
+=>nrel_semester_of_study:
+	4sem;
+
+=>nrel_type_of_certificaton:
+	exam_ppvis_2
+		(*
+			<-concept_certificaton;;
+			<-concept_exam;;
+			=> nrel_main_idtf: 
+				[Экзамен по ППвИСу (2-й семестр)] (*<- lang_ru;;*);;
+		*);;
+
+
+
+ppvis_3
+<-concept_academic_discipline;
+=> nrel_main_idtf: 
+	[Проектирование программ в интеллектуальных системах (3-й сесместр)] (*<- lang_ru;;*);
+	[ППвИС(3-й сесместр)] (*<- lang_ru;;*);
+	
+=>nrel_type_of_lesson:
+	ppvis_3_lk
+		(*
+			<-concept_lesson;;
+			<-concept_lecture;;
+			=> nrel_main_idtf: 
+				[Лекция по ППвИСу (3-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_give_lectures: 
+				SerdyukovRE;;
+		*);
+	ppvis_3_lr
+		(*
+			<-concept_lesson;;
+			<-concept_laboratory_work;;
+			=> nrel_main_idtf: 
+				[Лабораторная работа по ППвИСу (3-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_accept_laboratory_work:
+				BasninaAP;;
+		*);
+	
+=>nrel_semester_of_study:
+	5sem;
+
+=>nrel_type_of_certificaton:
+	exam_ppvis_3
+		(*
+			<-concept_certificaton;;
+			<-concept_exam;;
+			=> nrel_main_idtf: 
+				[Экзамен по ППвИСу (3-й семестр)] (*<- lang_ru;;*);;
+		*);;

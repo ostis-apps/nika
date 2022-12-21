@@ -1,0 +1,31 @@
+concept_study_course
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf: 
+	[Курс (в системе образования)] (*<- lang_ru;;*);
+	
+=> nrel_note:
+   [Также может использоватеся для обозначения группы людей, поступивших в высшее учебное заведение в один год.]
+   (* <- lang_ru;; *);
+   
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Курс (в системе образования))]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Курс (в системе образования) - этап обучения при курсовой системе обучения.]
+               (* <- lang_ru;; *);;
+           *);;
+       <= nrel_using_constants: 
+       		{
+             	concept_education
+        	};;
+  *);;

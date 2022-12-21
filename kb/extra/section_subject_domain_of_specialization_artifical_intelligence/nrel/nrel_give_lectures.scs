@@ -1,0 +1,46 @@
+nrel_give_lectures
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [читать лекции*]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: concept_academic_discipline;
+=> nrel_second_domain: concept_teacher;
+=> nrel_definitional_domain:
+   ...
+   (*
+        <= nrel_combination: {
+            concept_academic_discipline;
+            concept_teacher
+        };;
+   *);
+   
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (читать лекции*)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [читать лекции* - бинарное отношение между учебной дисциплиной и преподавателем, которое демонстрирует, какой преподаватель читает лекции по данному предмету.]
+               (* <- lang_ru;; *);;
+           *);;
+      <= nrel_using_constants: {
+             concept_academic_discipline;
+             concept_teacher
+             
+        };;
+  *);;
+

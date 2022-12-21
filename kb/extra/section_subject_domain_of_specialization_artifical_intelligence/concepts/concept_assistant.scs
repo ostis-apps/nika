@@ -1,0 +1,28 @@
+concept_assistant
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf: 
+	[Ассистент кафедры] (*<- lang_ru;;*);
+	
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Ассистент кафедры)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Ассистент кафедры - начальная преподавательская должность в высших учебных заведениях]
+               (* <- lang_ru;; *);;
+           *);;
+       <= nrel_using_constants: 
+       		{
+             	concept_higher_education_institution;
+             	concept_teacher
+        	};;
+  *);;

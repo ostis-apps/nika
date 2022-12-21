@@ -1,0 +1,36 @@
+concept_teacher
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf: 
+	[Преподаватель] (*<- lang_ru;;*);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Преподаватель)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Преподаватель - работник учебного заведения, который ведет какую-либо учебную дисциплину.]
+               (* <- lang_ru;; *);;
+           *);;
+       <= nrel_using_constants: 
+       		{
+             	concept_employee;
+             	concept_education_institution;
+             	concept_academic_discipline
+             
+        	};;
+  *);
+ 
+<= nrel_inclusion:
+	concept_professor;
+	concept_docent;
+	concept_aspirant;
+	concept_master;;

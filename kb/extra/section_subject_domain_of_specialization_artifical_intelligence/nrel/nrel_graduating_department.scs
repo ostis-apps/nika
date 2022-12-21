@@ -1,0 +1,46 @@
+nrel_graduating_department
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [выпускающая кафедра*]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: concept_specialization;
+=> nrel_second_domain: concept_department;
+=> nrel_definitional_domain:
+   ...
+   (*
+        <= nrel_combination: {
+            concept_specialization;
+            concept_department
+        };;
+   *);
+   
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (выпускающая кафедра*)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [выпускающая кафедра* - бинарное неролевое отношение между специализацией и кафедрой, которое демонстрирует, какая кафедра явнется выпускающей для той или иной специальности.]
+               (* <- lang_ru;; *);;
+           *);;
+      <= nrel_using_constants: {
+            concept_specialization;
+            concept_department
+             
+        };;
+  *);;
+

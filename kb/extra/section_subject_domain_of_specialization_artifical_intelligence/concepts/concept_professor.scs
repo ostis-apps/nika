@@ -1,0 +1,28 @@
+concept_professor
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf: 
+	[Профессор] (*<- lang_ru;;*);
+	
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Профессор)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Профессор - высшее ученое звание преподавателя высших учебных заведений, а так же лицо обладающее этим званием]
+               (* <- lang_ru;; *);;
+           *);;
+       <= nrel_using_constants: 
+       		{
+             	concept_teacher;
+             	concept_higher_education_institution
+        	};;
+  *);;

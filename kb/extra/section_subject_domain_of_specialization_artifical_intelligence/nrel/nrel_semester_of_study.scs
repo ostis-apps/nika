@@ -1,0 +1,47 @@
+nrel_semester_of_study
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+   [семестр изучения*]
+   (* <- lang_ru;; *);
+   
+=> nrel_first_domain: concept_academic_discipline;
+=> nrel_second_domain: concept_semester;
+=> nrel_definitional_domain:
+   ...
+   (*
+        <= nrel_combination: {
+            concept_academic_discipline;
+            concept_semester
+            
+        };;
+   *);
+   
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (семестр изучения*)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [семестр изучения* - бинарное неролевое отношение между учебной дисциплиной и семестром, которой показывает, в каком семесте изучается данный предмет]
+               (* <- lang_ru;; *);;
+           *);;
+      <= nrel_using_constants: {
+             concept_academic_discipline;
+             concept_semester;
+             relation
+        };;
+  *);;
+

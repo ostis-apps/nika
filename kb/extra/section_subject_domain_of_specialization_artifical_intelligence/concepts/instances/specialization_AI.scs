@@ -1,0 +1,16 @@
+specialization_AI
+<-concept_specialization;
+=> nrel_main_idtf: 
+	[Специальность "Искуственный интеллект"] (*<- lang_ru;;*);
+=> nrel_inclusion:
+	information_protection;
+	geoinformation_technologies;
+=> nrel_graduating_department: IIT_department;
+=> nrel_training_stage: 
+	... 
+	(*
+		->bachelor_course_of_specialization_AI;;
+		->magistracy_of_specialization_AI;;
+		->postgraduate_study_of_specialization_AI;;
+	*);;
+

@@ -1,0 +1,92 @@
+tiit
+<-concept_academic_discipline;
+=> nrel_main_idtf: 
+	[Традиционные и интеллектуальные информационный технологии] (*<- lang_ru;;*);
+	[ТиИИнфТ] (*<- lang_ru;;*);
+<= nrel_study:
+	information_protection;
+	geoinformation_technologies;
+=> nrel_inclusion:
+	tiit_1;
+	tiit_2;;
+	
+tiit_1
+<-concept_academic_discipline;
+=> nrel_main_idtf: 
+	[Традиционные и интеллектуальные информационный технологии (1-й сесместр)] (*<- lang_ru;;*);
+	[ТиИИнфТ (1-й сесместр)] (*<- lang_ru;;*);
+=>nrel_type_of_lesson:
+	tiit_1_lk
+		(*
+			<- concept_lesson;;
+			<- concept_lecture;;
+			=> nrel_main_idtf: 
+				[Лекция по ТиИИнфТу (1-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_give_lectures: 
+				ShunkevichDV;;
+		*);
+	tiit_1_lr
+		(*
+			<-concept_lesson;;
+			<-concept_laboratory_work;;
+			=> nrel_main_idtf: 
+				[Лабораторная работа по ТиИИнфТу (1-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_accept_laboratory_work:
+				VityazVS;;
+		*);
+=>nrel_semester_of_study:
+	1sem;
+=>nrel_type_of_certificaton:
+	test_tiit
+		(*
+			<-concept_certificaton;;
+			<-concept_test;;
+			=> nrel_main_idtf: 
+				[Зачет по ТиИИнфТу] (*<- lang_ru;;*);;
+		*);;
+
+
+
+tiit_2
+<-concept_academic_discipline;
+=> nrel_main_idtf: 
+	[Традиционные и интеллектуальные информационный технологии (2-й сесместр)] (*<- lang_ru;;*);
+	[ТиИИнфт (2-й сесместр)] (*<- lang_ru;;*);
+=>nrel_type_of_lesson:
+	tiit_2_lk
+		(*
+			<-concept_lesson;;
+			<-concept_lecture;;
+			=> nrel_main_idtf: 
+				[Лекция по ТиИИнфТу (2-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_give_lectures: 
+				GolenkovVV;;
+		*);
+	tiit_2_lr
+		(*
+			<-concept_lesson;;
+			<-concept_laboratory_work;;
+			=> nrel_main_idtf: 
+				[Лабораторная работа по ТиИИнфТу (2-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_accept_laboratory_work:
+				VityazVS;;
+		*);
+	tiit_2_pz
+		(*
+			<- concept_practical_class;;
+			<-concept_lesson;;
+			=> nrel_main_idtf: 
+				[Практическое занятие по ТиИИнфТу (2-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_conduct_practical_classes:
+				VityazVS;;
+		*);
+=>nrel_semester_of_study:
+	2sem;
+=>nrel_type_of_certificaton:
+	exam_tiit
+		(*
+			<-concept_certificaton;;
+			<-concept_exam;;
+			=> nrel_main_idtf: 
+				[Экзамен по ТиИИнфТу] (*<- lang_ru;;*);;
+		*);;

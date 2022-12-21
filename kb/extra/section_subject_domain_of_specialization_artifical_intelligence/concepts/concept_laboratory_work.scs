@@ -1,0 +1,31 @@
+concept_laboratory_work
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf: 
+	[Лабораторная работа] (*<- lang_ru;;*);
+	
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Лабораторная работа)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Лабораторная работа - это занятие, проводимое под руководством преподавателя в учебной аудитории, направленное на применение полученный на лекцих знаний на практике.]
+               (* <- lang_ru;; *);;
+           *);;
+       <= nrel_using_constants: 
+       		{
+             	concept_lecture;
+             	concept_teacher;
+             	concept_educational_auditorium;
+             	concept_lesson;
+             	concept_knowledge
+        	};;
+  *);;

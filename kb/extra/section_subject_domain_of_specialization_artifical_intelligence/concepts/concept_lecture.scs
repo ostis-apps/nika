@@ -1,0 +1,28 @@
+concept_lecture
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf: 
+	[Лекция] (*<- lang_ru;;*);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Лекция)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Лекция - устное изложение учебной дисциплины, а также запись этого изложения.]
+               (* <- lang_ru;; *);;
+           *);;
+       <= nrel_using_constants: 
+       		{
+             	concept_academic_discipline
+        	};;
+  *);;
+

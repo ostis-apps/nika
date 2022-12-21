@@ -1,0 +1,34 @@
+concept_department
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf: 
+	[Кафедра] (*<- lang_ru;;*);
+
+=> nrel_note:
+   [Также на кафедре находятся учебные аудитории, в которых проводятся занятия]
+   (* <- lang_ru;; *);
+	
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Кафедра)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Кафедра - это объединение преподавателей учебных дисциплин, относящихся к одной отрасли науки в высших учебных заведениях.]
+               (* <- lang_ru;; *);;
+           *);;
+	   <= nrel_using_constants: 
+	   {
+             concept_teacher;
+             concept_academic_discipline;
+             concept_higher_education_institution
+             
+        };;
+  *);;

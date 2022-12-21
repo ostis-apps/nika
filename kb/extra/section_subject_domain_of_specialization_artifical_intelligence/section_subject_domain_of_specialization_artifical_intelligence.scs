@@ -1,0 +1,95 @@
+section_subject_domain_of_specialization_artifical_intelligence
+=> nrel_main_idtf:
+      [Раздел. Предметная область специальности искусственный интеллект]
+  (* <- lang_ru;; *);
+      [Section. Subject domain of specialization artifical intelligence] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_specialization_artifical_intelligence = [*
+    subject_domain_of_specialization_artifical_intelligence
+<- sc_node_struct;
+    => nrel_main_idtf:
+   [Предметная область специальности искусственный интеллект]
+   (* <- lang_ru;; *);
+   [Subject domain of specialization artifical intelligence]
+   (* <- lang_en;; *);
+   
+    <- subject_domain;
+
+    -> rrel_maximum_studied_object_class:
+		concept_specialization;
+   
+    -> rrel_not_maximum_studied_object_class:
+		concept_academic_discipline;
+		concept_teacher;
+		concept_study_week;
+		concept_study_course;
+		concept_senior_teacher;
+		concept_semester;
+		concept_professor;
+		concept_lesson;
+		concept_docent;
+		concept_assistant;
+		concept_department;
+		concept_certificaton;
+		concept_lecture;
+		concept_practical_class;
+		concept_laboratory_work;
+		concept_exam;
+		concept_test;
+		concept_bachelor_course;	
+		concept_magistracy;
+		concept_postgraduate_study;
+		concept_specialization_direction;
+
+    -> rrel_explored_relation:
+   		nrel_graduating_department;
+		nrel_study;
+		nrel_work_at_the_department;
+		nrel_give_lectures;
+		nrel_conduct_practical_class;
+		nrel_accept_laboratory_work;
+		nrel_type_of_lesson;
+		nrel_semester_of_study;
+		nrel_type_of_certificaton;
+		nrel_number_of_study_week;
+		nrel_training_stage;;
+*];;
+
+section_subject_domain_of_specialization_artifical_intelligence
+-> rrel_key_sc_element:
+		subject_domain_of_specialization_artifical_intelligence;
+		concept_academic_discipline;
+		concept_teacher;
+		concept_study_week;
+		concept_study_course;
+		concept_senior_teacher;
+		concept_semester;
+		concept_professor;
+		concept_lesson;
+		concept_docent;
+		concept_assistant;
+		concept_department;
+		concept_certificaton;
+		concept_lecture;
+		concept_practical_class;
+		concept_laboratory_work;
+		concept_exam;
+		concept_test;
+		concept_bachelor_course;	
+		concept_magistracy;
+		concept_postgraduate_study;
+		concept_specialization_direction;
+   		nrel_graduating_department;
+		nrel_study;
+		nrel_work_at_the_department;
+		nrel_give_lectures;
+		nrel_conduct_practical_classes;
+		nrel_accept_laboratory_work;
+		nrel_type_of_lesson;
+		nrel_semester_of_study;
+		nrel_type_of_certificaton;
+		nrel_number_of_study_week;
+		nrel_training_stage;;
+

@@ -1,0 +1,30 @@
+concept_docent
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf: 
+	[Доцент] (*<- lang_ru;;*);
+	
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Доцент)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Доцент - ученое звание преподавателя высшего учебного заведения (ниже профессора, но выше ассистента), а также лицо, имеющее это звание]
+               (* <- lang_ru;; *);;
+           *);;
+       <= nrel_using_constants: 
+       		{
+             	concept_higher_education_institution;
+             	concept_teacher;
+             	concept_professor;
+             	concept_assistant
+        	};;
+  *);;

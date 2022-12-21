@@ -1,0 +1,37 @@
+os
+<-concept_academic_discipline;
+=> nrel_main_idtf: 
+	[Операционные системы] (*<- lang_ru;;*);
+	[ОС] (*<- lang_ru;;*);
+<= nrel_study:
+	information_protection;
+	geoinformation_technologies;
+=>nrel_type_of_lesson:
+	os_lk
+		(*
+			<- concept_lesson;;
+			<- concept_lecture;;
+			=> nrel_main_idtf: 
+				[Лекция по ОС] (*<- lang_ru;;*);;
+			=>nrel_give_lectures: 
+				SobolAM;;
+		*);
+	os_lr
+		(*
+			<-concept_lesson;;
+			<-concept_laboratory_work;;
+			=> nrel_main_idtf: 
+				[Лабораторная работа по ОС] (*<- lang_ru;;*);;
+			=>nrel_accept_laboratory_work: 
+				ZirukVA;;
+		*);
+=>nrel_semester_of_study:
+	5sem;
+=>nrel_type_of_certificaton:
+	exam_os
+		(*
+			<-concept_certificaton;;
+			<-concept_exam;;
+			=> nrel_main_idtf: 
+				[Экзамен по ОC] (*<- lang_ru;;*);;
+		*);;

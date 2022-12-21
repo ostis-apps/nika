@@ -1,0 +1,30 @@
+concept_certificaton
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf: 
+	[Аттестация] (*<- lang_ru;;*);
+	
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Аттестация)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Аттестация - подтведждениия квалификации, уровня знаний и умений.]
+               (* <- lang_ru;; *);;
+           *);;
+       <= nrel_using_constants: 
+       		{
+             	concept_knowledge;
+             	concept_qualification;
+             	concept_skill
+             
+        	};;
+  *);;
