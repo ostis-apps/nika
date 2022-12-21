@@ -1,0 +1,22 @@
+concept_intent_possible_class
+<- sc_node_class;
+=> nrel_main_idtf:
+	   [возможный класс цели Wit.ai]
+	   (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (возможный класс цели Wit.ai)]
+		(* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Возможный класс цели Wit.ai - класс, элементы которого могут быть выделены посредством Wit.ai как цели.]
+			(* <- lang_ru;; *);;
+		*);;
+	*);
+-> concept_beginning_message;	
+-> concept_message_about_profession;;

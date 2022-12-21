@@ -1,0 +1,21 @@
+concept_position
+=> nrel_main_idtf:
+    [Должность](* <-lang_ru;; *);
+    [Position](* <-lang_en;; *);;
+
+concept_position
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Должность)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Position)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Должность - занимаемое место человеком в компании.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Position - a petson's position in a company.](*<- lang_en;;*);;
+    *);;
+*);;
+

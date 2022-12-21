@@ -1,0 +1,36 @@
+nrel_works
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+    [Работает](* <- lang_ru;; *);
+    [Works](* <- lang_eng;; *);;
+
+nrel_works
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (Работает)](*<- lang_ru;;*);
+    [Def. (Works)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Работает - функционирует в соответствии с ожиданиями.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [Works - functioning as expected.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_profession
+    };;
+*);;
+
+nrel_works
+=>nrel_first_domain:
+    concept_human;
+=>nrel_second_domain:
+    concept_profession;
+
+<- binary_relation ;
+<- antireflexive_relation ;
+<- antitransitive_relation ;;

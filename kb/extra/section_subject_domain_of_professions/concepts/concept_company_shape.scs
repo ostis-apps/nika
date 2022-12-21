@@ -1,0 +1,21 @@
+concept_company_shape
+=> nrel_main_idtf:
+    [Форма компании](* <-lang_ru;; *);
+    [Company shape](* <-lang_en;; *);;
+
+concept_company_shape
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Форма компании)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Company shape)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Форма компании - юридическая форма организации работы компании.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Company shape - legal form of organization of the company.](*<- lang_en;;*);;
+    *);;
+*);;
+

@@ -1,0 +1,20 @@
+concept_education
+=> nrel_main_idtf:
+    [Образование](* <-lang_ru;; *);
+    [Education](* <-lang_en;; *);;
+
+concept_profession
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Образование)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Education)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Образование - совокупность знаний, полученных специальным обучением.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Education - body of knowledge acquired by special training.](*<- lang_en;;*);;
+    *);;
+*);;

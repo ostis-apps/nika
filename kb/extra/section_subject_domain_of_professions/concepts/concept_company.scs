@@ -1,0 +1,20 @@
+concept_company
+=> nrel_main_idtf:
+    [Компания](* <-lang_ru;; *);
+    [Company](* <-lang_en;; *);;
+
+concept_company
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Компания)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Company)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Компания - организация осуществяющая трудовую деятельность.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Company - organization carrying out labor activity.](*<- lang_en;;*);;
+    *);;
+*);;
