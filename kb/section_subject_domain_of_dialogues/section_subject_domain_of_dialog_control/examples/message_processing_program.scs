@@ -9,7 +9,8 @@ _compound_action_message_processing
 
 .._decomposition_tuple
     _-> rrel_1:: .._topic_classify;
-    _-> .._standard_message_reply;;
+    _-> .._standard_message_reply;
+    _-> .._example_agent_work;;
 
 .._topic_classify
     _=> nrel_goto:: .._standard_message_reply;
@@ -18,10 +19,16 @@ _compound_action_message_processing
     _-> rrel_1:: _message;;
 
 .._standard_message_reply
+    _=> nrel_goto:: .._example_agent_work;
     _<- action_standard_message_reply;
     _<- question;
     _-> rrel_1:: _message;
     _-> rrel_2:: rrel_dynamic_argument:: _answer_message;;
+
+.._example_agent_work
+    _<- action_example;
+    _<- question;
+    _-> rrel_1:: _message;;
 
 *];;
 
