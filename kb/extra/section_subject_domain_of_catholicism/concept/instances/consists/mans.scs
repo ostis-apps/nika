@@ -1,0 +1,13 @@
+mans_consists
+
+=>nrel_main_idtf:
+    [Состав клира](* <- lang_ru;; *);
+
+=>nrel_consists: 
+    [Мужчины](* <- lang_ru;; *);
+    <-concept_clergy;
+
+=> nrel_note:
+    [Состоит только из мужчин]
+    (* <- lang_ru;; *);
+<-binary_relation;;
