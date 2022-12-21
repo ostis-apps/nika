@@ -1,0 +1,29 @@
+concept_academic_discipline
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf: 
+	[Учебная дисциплина] (*<- lang_ru;;*);
+
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Учебная дисциплина)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Учебная дисциплина - фрагмент содержания образования, выделенная с учетом его научной, методической специфики, самостоятельно обозначенный в учебном плане.]
+               (* <- lang_ru;; *);;
+           *);;
+       <= nrel_using_constants: 
+       		{
+             	concept_education;
+             	concept_curriculum
+
+        	};;
+  *);;

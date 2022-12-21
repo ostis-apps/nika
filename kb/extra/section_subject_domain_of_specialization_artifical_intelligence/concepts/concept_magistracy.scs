@@ -1,0 +1,28 @@
+concept_magistracy
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf: 
+	[Магистратура] (*<- lang_ru;;*);
+	
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Магистратура)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Магистратура - система подготовки магистрантов в высших учебных заведениях.]
+               (* <- lang_ru;; *);;
+           *);;
+       <= nrel_using_constants: 
+       		{
+             	concept_higher_education_institution
+             
+        	};;
+  *);;

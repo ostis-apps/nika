@@ -1,0 +1,82 @@
+simoib
+<-concept_academic_discipline;
+=> nrel_main_idtf: 
+	[Средства и методы обеспечения информационной безопасности] (*<- lang_ru;;*);
+	[СиМОИБ] (*<- lang_ru;;*);
+<= nrel_study:
+	information_protection;
+=> nrel_inclusion:
+	simoib_1;
+	simoib_2;;
+	
+simoib_1
+<-concept_academic_discipline;
+=> nrel_main_idtf: 
+	[Средства и методы обеспечения информационной безопасности (1-й сесместр)] (*<- lang_ru;;*);
+	[СиМОИБ (1-й сесместр)] (*<- lang_ru;;*);
+=>nrel_type_of_lesson:
+	simoib_1_lk
+		(*
+			<-concept_lesson;;
+			<-concept_lecture;;
+			=> nrel_main_idtf: 
+				[Лекция по СиМОИБу (1-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_give_lectures: 
+				ZakharovVV;;
+		*);
+	simoib_1_lr
+		(*
+			<-concept_lesson;;
+			<-concept_laboratory_work;;
+			=> nrel_main_idtf: 
+				[Лабораторная работа по СиМОИБу (1-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_accept_laboratory_work:
+				KolyachkoVV;;
+		*);
+		
+=>nrel_semester_of_study:
+	4sem;
+=>nrel_type_of_certificaton:
+	exam_simoib
+		(*
+			<-concept_certificaton;;
+			<-concept_exam;;
+			=> nrel_main_idtf: 
+				[Экзамен по СиМОИБу] (*<- lang_ru;;*);;
+		*);;
+		
+
+simoib_2
+<-concept_academic_discipline;
+=> nrel_main_idtf: 
+	[Средства и методы обеспечения информационной безопасности (2-й сесместр)] (*<- lang_ru;;*);
+	[СиМОИБ (2-й сесместр)] (*<- lang_ru;;*);
+=>nrel_type_of_lesson:
+	simoib_2_lk
+		(*
+			<-concept_lesson;;
+			<-concept_lecture;;
+			=> nrel_main_idtf: 
+				[Лекция по СиМОИБу (2-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_give_lectures: 
+				ZakharovVV;;
+		*);
+	simoib_2_lr
+		(*
+			<-concept_lesson;;
+			<-concept_laboratory_work;;
+			=> nrel_main_idtf: 
+				[Лабораторная работа по СиМОИБу (2-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_accept_laboratory_work:
+				ZakharovVV;;
+		*);
+=>nrel_semester_of_study:
+	5sem;
+=>nrel_type_of_certificaton:
+	test_simoib
+		(*
+			<-concept_certificaton;;
+			<-concept_test;;
+			=> nrel_main_idtf: 
+				[Зачет по СиМОИБу] (*<- lang_ru;;*);;
+		*);;

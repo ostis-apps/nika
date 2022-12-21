@@ -1,0 +1,29 @@
+concept_specialization
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf: 
+	[Специальность] (*<- lang_ru;;*);
+	
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Специальность)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Специальность - это комплекс приобретенных с ходе обучения знаний, необходимых для определённого вида деятельности в рамках той или инной профессии.]
+               (* <- lang_ru;; *);;
+           *);;
+      <= nrel_using_constants: 
+      {
+            concept_knowledge;
+            concept_profession
+             
+       };;
+  *);;

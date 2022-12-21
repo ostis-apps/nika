@@ -1,0 +1,32 @@
+concept_exam
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf: 
+	[Экзамен] (*<- lang_ru;;*);
+	
+=> nrel_note:
+   [Обычно дифференцированный (с выставлением оценки)]
+   (* <- lang_ru;; *);
+   
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Экзамен)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Экзамен -  тип проверочного испытания по какой-либо учебной дисциплине.]
+               (* <- lang_ru;; *);;
+           *);;
+       <= nrel_using_constants: 
+       		{
+             	concept_academic_discipline
+             
+        	};;
+  *);;

@@ -1,0 +1,39 @@
+aois
+<-concept_academic_discipline;
+=> nrel_main_idtf: 
+	[Аппаратные основы интеллектуальных систем] (*<- lang_ru;;*);
+	[АОИС] (*<- lang_ru;;*);
+<= nrel_study:
+	information_protection;
+	geoinformation_technologies;
+=>nrel_type_of_lesson:
+	aois_lk
+		(*
+			<-concept_lesson;;
+			<-concept_lecture;;
+			=> nrel_main_idtf: 
+				[Лекция по АОИСу (1-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_give_lectures: 
+				ZakharovVV;;
+		*);
+	aois_lr
+		(*
+			<-concept_lesson;;
+			<-concept_laboratory_work;;
+			=> nrel_main_idtf: 
+				[Лабораторная работа по АОИСу (1-й семестр)] (*<- lang_ru;;*);;
+			=>nrel_accept_laboratory_work:
+				ZakharovVV;
+				ZhukAA;;
+		*);
+		
+=>nrel_semester_of_study:
+	3sem;
+=>nrel_type_of_certificaton:
+	exam_aois
+		(*
+			<-concept_certificaton;;
+			<-concept_exam;;
+			=> nrel_main_idtf: 
+				[Экзамен по АОИСу] (*<- lang_ru;;*);;
+		*);;

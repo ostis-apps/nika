@@ -1,0 +1,37 @@
+odm
+<-concept_academic_discipline;
+=> nrel_main_idtf: 
+	[Основы дискретной математики] (*<- lang_ru;;*);
+	[ОДМ] (*<- lang_ru;;*);
+<= nrel_study:
+	information_protection;
+	geoinformation_technologies;
+=>nrel_type_of_lesson:
+	odm_lk
+		(*
+			<- concept_lesson;;
+			<- concept_lecture;;
+			=> nrel_main_idtf: 
+				[Лекция по ОДМ] (*<- lang_ru;;*);;
+			=>nrel_give_lectures: 
+				GuliakinaNA;;
+		*);
+	odm_pz
+		(*
+			<-concept_lesson;;
+			<-concept_practical_class;;
+			=> nrel_main_idtf: 
+				[Практическое занятие по ОДМ] (*<- lang_ru;;*);;
+			=>nrel_conduct_practical_classes: 
+				GuliakinaNA;;
+		*);
+=>nrel_semester_of_study:
+	2sem;
+=>nrel_type_of_certificaton:
+	exam_odm
+		(*
+			<-concept_certificaton;;
+			<-concept_exam;;
+			=> nrel_main_idtf: 
+				[Экзамен по ОДМ] (*<- lang_ru;;*);;
+		*);;

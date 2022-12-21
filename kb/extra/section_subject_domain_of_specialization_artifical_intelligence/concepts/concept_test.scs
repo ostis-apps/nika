@@ -1,0 +1,33 @@
+concept_test
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf: 
+	[Зачет] (*<- lang_ru;;*);
+	
+=> nrel_note:
+   [Обычно недифференцированный (без выставления оценки)]
+   (* <- lang_ru;; *);
+	
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Зачет)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Зачет - тип проверочного испытания по какой-либо учебной дисциплине.]
+               (* <- lang_ru;; *);;
+           *);;
+       <= nrel_using_constants: 
+       		{
+             	concept_academic_discipline
+             
+        	};;
+  *);;
+	

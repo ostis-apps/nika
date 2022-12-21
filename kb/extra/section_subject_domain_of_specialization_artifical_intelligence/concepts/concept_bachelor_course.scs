@@ -1,0 +1,30 @@
+concept_bachelor_course
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf: 
+	[Бакалавриат] (*<- lang_ru;;*);
+	
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Бакалавриат)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Бакалавриат - система подготовки бакалавров в высших учебных заведениях.]
+               (* <- lang_ru;; *);;
+           *);;
+       <= nrel_using_constants: 
+       		{
+             	concept_higher_education_institution
+             
+        	};;
+  *);;
+	
+

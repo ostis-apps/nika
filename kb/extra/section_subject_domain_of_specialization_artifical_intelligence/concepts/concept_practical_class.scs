@@ -1,0 +1,31 @@
+concept_practical_class
+
+<- sc_node_class;
+<- class;
+
+=> nrel_main_idtf: 
+	[Практическое занятие] (*<- lang_ru;;*);
+	
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Практическое занятие)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Практическое занятие - это занятие, проводимое под руководством преподавателя в учебной аудитории, направленное на углубление научно-теоретических знаний и овладение определенными методами самостоятельной работы.]
+               (* <- lang_ru;; *);;
+           *);;
+       <= nrel_using_constants: 
+       		{
+             	concept_teacher;
+             	concept_educational_auditorium;
+             	concept_knowledge;
+             	concept_lesson
+             
+        	};;
+  *);;
