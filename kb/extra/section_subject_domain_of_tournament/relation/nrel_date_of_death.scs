@@ -1,0 +1,15 @@
+nrel_data_of_death
+
+
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [дата смерти*]
+    (* <- lang_ru;; *);
+    [date of death *]
+    (* <- lang_en;; *);
+
+<=concept_of_tournament;
+<-oriented_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;

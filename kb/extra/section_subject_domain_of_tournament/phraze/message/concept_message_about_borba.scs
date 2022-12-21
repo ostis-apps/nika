@@ -1,0 +1,36 @@
+concept_message_about_borba
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение об борьбе]
+	    (* <- lang_ru;; *);
+	[message about diesel]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_borba];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение об борьбе)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about borba)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о дизель - атомарное сообщение, которое содержит экземпляры орангутанов, информацию о которых необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example:
+			[Message about csgo is an atomic message that contains pongo examples information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
