@@ -1,0 +1,20 @@
+concept_profession
+=> nrel_main_idtf:
+    [Профессия](* <-lang_ru;; *);
+    [Profession](* <-lang_en;; *);;
+
+concept_profession
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Профессия)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Profession)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Профессия - род трудовой деятельности человека, обычно его источник существования.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Profession - type of labor activity of a person, usually his source of livelihood.](*<- lang_en;;*);;
+    *);;
+*);;

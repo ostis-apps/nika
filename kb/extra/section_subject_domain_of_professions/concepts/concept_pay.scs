@@ -1,0 +1,20 @@
+concept_pay
+=> nrel_main_idtf:
+    [Зарплата](* <-lang_ru;; *);
+    [Pay](* <-lang_en;; *);;
+
+concept_pay
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Зарплата)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Pay)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Зарплата - материально довольствие получаемое работником за проделанную работу.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Pay - material allowance received by the employee.](*<- lang_en;;*);;
+    *);;
+*);;

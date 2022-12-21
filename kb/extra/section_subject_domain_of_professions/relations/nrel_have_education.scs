@@ -1,0 +1,37 @@
+nrel_have_education
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+    [Образование](* <- lang_ru;; *);
+    [Have education](* <- lang_eng;; *);;
+
+nrel_have_education
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (Образование)](*<- lang_ru;;*);
+    [Def. (Have education)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Образование - уровень образования, который имеет человек.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [Required education - the level of education of human.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_education
+    };;
+*);;
+
+nrel_required_education
+=>nrel_first_domain:
+    concept_human;
+=>nrel_second_domain:
+    concept_education;
+
+<- binary_relation ;
+<- antireflexive_relation ;
+<- antitransitive_relation ;;
+

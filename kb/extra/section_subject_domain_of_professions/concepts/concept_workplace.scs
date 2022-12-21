@@ -1,0 +1,20 @@
+concept_workplace
+=> nrel_main_idtf:
+    [Рабочее место](* <-lang_ru;; *);
+    [Workplace](* <-lang_en;; *);;
+
+concept_workplace
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Рабочее место)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Workplace)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Рабочее место - место на котором работник выполняет работу.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Workplace - the place where the worker performs work](*<- lang_ru;;*);;
+    *);;
+*);;
