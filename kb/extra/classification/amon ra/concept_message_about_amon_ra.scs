@@ -1,0 +1,37 @@
+concept_message_about_amon_ra
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о Амон Ра]
+	(* <- lang_ru;; *);
+	[message about amon ra]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_amon_ra];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о Амон Ра)]
+        (* <- lang_ru;; *);
+        [Def. (message about Amon Ra)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о Амон-Ра - бог солнца, ветра и жизни в древнем Египте.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about Amon-Ra is the god of the sun, wind and life in ancient Egypt.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

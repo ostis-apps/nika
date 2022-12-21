@@ -1,0 +1,21 @@
+nrel_definition_of_the_god
+
+=>nrel_first_domain:
+    concept_definition_of_the_gods;
+=>nrel_second_domain:
+    concept_gods_of_the_ancient_world;
+
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [обозначение  богов]
+    (* <- lang_ru;; *);
+    [definition of the god]
+    (* <- lang_en;;*);
+<=concept_definition_of_the_gods;
+
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;

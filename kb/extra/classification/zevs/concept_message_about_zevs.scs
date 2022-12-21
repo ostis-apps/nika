@@ -1,0 +1,37 @@
+concept_message_about_zevs
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о Зевсе]
+	(* <- lang_ru;; *);
+	[message about Zevs]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_zevs];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о Зевсе)]
+        (* <- lang_ru;; *);
+        [Def. (message about Zevs)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о ЗЕВС - Дий (Ζεύς, род. п. Διός), в греч. религии и мифологии верховное божество, отец богов и людей, глава олимпийской семьи богов.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about ZEUS - Diy (Ζεύς, genus p. Διός), in Greek. religion and mythology the supreme deity, the father of gods and people, the head of the Olympian family of gods.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
