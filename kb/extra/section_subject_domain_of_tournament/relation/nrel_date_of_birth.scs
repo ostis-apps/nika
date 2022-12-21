@@ -1,0 +1,16 @@
+nrel_data_of_birth
+
+
+
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [дата рождения *]
+    (* <- lang_ru;; *);
+    [date of birth *]
+    (* <- lang_en;; *);
+
+<=concept_of_tournament;
+<-oriented_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;

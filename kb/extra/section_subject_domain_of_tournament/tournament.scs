@@ -1,0 +1,36 @@
+section_subject_domain_of_tournament
+<- sc_node_struct;
+=> nrel_main_idtf:
+[Раздел. Предметная область турниры](* <- lang_ru;; *);
+[Section. Subject domain of tournament](* <- lang_en;; *);
+<-atomic_section;;
+
+section_subject_domain_of_tournament = [*
+subject_domain_of_tournament
+=> nrel_main_idtf:
+[Предметная область турниры](* <- lang_ru;; *);
+[Subject domain of tournament](* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+concept_of_tournament;
+-> rrel_not_maximum_studied_object_class:
+concept_bosketball_tournament;
+concept_weightlifting_tournament;
+concept_volleyball_tournament;
+concept_struggle;
+concept_mma_tournament;
+concept_hockey_tournament;
+concept_football_tournament;
+concept_dota;
+concept_cs_go;
+concept_chess;
+concept_boxing;
+concept_athletics;
+-> rrel_explored_relation:
+nrel_data_of_birth;
+nrel_data_of_death;
+nrel_foundate_date;
+nrel_gender1;
+nrel_league_name;
+nrel_best_hockey_players;;
+*];;

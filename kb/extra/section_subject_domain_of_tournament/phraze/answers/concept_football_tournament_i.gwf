@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="2559202031248" parent="0" x="672.225" y="304.5" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Футбол]]></content>
+        </node>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="2559202030208" parent="0" x="654.225" y="497.5" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Англия]]></content>
+        </node>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="2559202037904" parent="0" x="404.225" y="505.5" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[1904]]></content>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_foundate_date" shapeColor="0" id="2559205188704" parent="0" left="0" top="0" right="155" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="604.738" y="663.5" haveBus="false" idtf_pos="3">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_tournament_place" shapeColor="0" id="2559205189952" parent="0" left="0" top="0" right="185" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="621.738" y="381.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_tournament_name" shapeColor="0" id="2559202034368" parent="0" left="0" top="0" right="187" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="560.738" y="222.5" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/general" idtf="concept_football_tournament_instance_i" shapeColor="0" id="2559202035200" parent="0" left="0" top="0" right="321" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="412.225" y="323.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/general" idtf="concept_message_about_football_tournament" shapeColor="0" id="2559202030624" parent="0" left="0" top="0" right="364" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="42.2255" y="335.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_football_tournament" shapeColor="0" id="2559202033536" parent="0" left="0" top="0" right="234" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="315.225" y="102.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_message" shapeColor="0" id="2559202033328" parent="0" left="0" top="0" right="146" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="34.2255" y="186.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="2559202034160" parent="0" left="0" top="0" right="67" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="787.225" y="583.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/role" idtf="rrel_entity" shapeColor="0" id="2559202035616" parent="0" left="0" top="0" right="87" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="257.225" y="267.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2558736523136" parent="0" id_b="2559202033536" id_e="2559202035200" b_x="315.225" b_y="102.5" e_x="412.225" e_y="323.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2558736520736" parent="0" id_b="2559202034160" id_e="2559202030208" b_x="787.225" b_y="583.5" e_x="654.225" e_y="497.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="2558733703600" parent="0" id_b="2559202035200" id_e="2559202030208" b_x="412.225" b_y="323.5" e_x="654.225" e_y="497.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="2558733703360" parent="0" id_b="2559202035200" id_e="2559202031248" b_x="412.225" b_y="323.5" e_x="672.225" e_y="304.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2558732364016" parent="0" id_b="2559202035616" id_e="2559205772816" b_x="257.225" b_y="267.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.288332">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="2558732363536" parent="0" id_b="2559202035200" id_e="2559202037904" b_x="412.225" b_y="323.5" e_x="404.225" e_y="505.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2558732363296" parent="0" id_b="2559205188704" id_e="2559205384432" b_x="604.738" b_y="663.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.659457">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2559205387792" parent="0" id_b="2559202034368" id_e="2558733703360" b_x="560.738" b_y="222.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.568195">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2559205388992" parent="0" id_b="2559202034160" id_e="2559202031248" b_x="787.225" b_y="583.5" e_x="672.225" e_y="304.5" dotBBalance="0" dotEBalance="0">
+            <points>
+                <point x="803.225" y="313.5"/>
+            </points>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2559205384432" parent="0" id_b="2559202034160" id_e="2559202037904" b_x="787.225" b_y="583.5" e_x="404.225" e_y="505.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2559205385632" parent="0" id_b="2559205189952" id_e="2558733703600" b_x="621.738" b_y="381.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.700183">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2559205384192" parent="0" id_b="2559202033328" id_e="2559202030624" b_x="34.2255" b_y="186.5" e_x="42.2255" e_y="335.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2559205772816" parent="0" id_b="2559202030624" id_e="2559202035200" b_x="42.2255" b_y="335.5" e_x="412.225" e_y="323.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>

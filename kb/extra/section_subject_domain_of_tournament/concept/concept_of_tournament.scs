@@ -1,0 +1,23 @@
+concept_of_tournament
+
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+            [Турниры]
+            (* <- lang_ru;; *);
+=> nrel_note:
+[В 1980 году Турнир прошел в форме «Олимпиады трех городов» (Москва, Ленинград, Киев). В следующем году к нему добавились новые города-участники, и соревнование приобрело свое нынешнее название — «Турнир Городов». Сначала Турнир не имел официального статуса, но в 1984 г. был официально признан, а оргкомитет Турнира стал подкомитетом Академии Наук СССР.]
+(* <- lang_ru;; *);
+=> nrel_inclusion:
+    concept_bosketball_tournament;
+    concept_cs_go;
+    concept_weightlifting_tournament;
+    concept_volleyball_tournament;
+    concept_struggle;
+    concept_mma_tournament;
+    concept_hockey_tournament;
+    concept_football_tournament;
+    concept_dota;
+    concept_chess;
+    concept_athletics;
+<-binary_relation;;

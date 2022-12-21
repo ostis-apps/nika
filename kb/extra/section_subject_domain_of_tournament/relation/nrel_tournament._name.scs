@@ -1,0 +1,32 @@
+nrel_tournament_name
+
+=>nrel_first_domain:
+    concept_of_tournament;
+=>nrel_second_domain:
+    concept_bosketball_tournament;
+    concept_cs_go;
+    concept_weightlifting_tournament;
+    concept_volleyball_tournament;
+    concept_struggle;
+    concept_of_tournament;
+    concept_mma_tournament;
+    concept_hockey_tournament;
+    concept_football_tournament;
+    concept_dota;
+    concept_chess;
+    concept_athletics;
+
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [название турнира*]
+    (* <- lang_ru;; *);
+    [tournament name*]
+    (* <- lang_en;;*);
+<=concept_league_name;
+
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;
