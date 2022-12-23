@@ -1,0 +1,37 @@
+concept_message_about_poseydon
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о Посейдоне]
+	(* <- lang_ru;; *);
+	[message about Poseydon]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_poseydon];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о Посейдоне)]
+        (* <- lang_ru;; *);
+        [Def. (message about Poseydon)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о - Посейдо́н (др. -греч. Ποσειδῶν) — в древнегреческой мифологии верховный морской бог, один из трёх главных богов-олимпийцев вместе с Зевсом и Аидом]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about Poseidon - (dr. -Greek Ποσειδῶν) - in ancient Greek mythology, the supreme sea god, one of the three main Olympian gods, along with Zeus and Hades]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

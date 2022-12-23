@@ -1,0 +1,37 @@
+concept_message_about_osiris
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о Асирисе]
+	(* <- lang_ru;; *);
+	[message about osiris]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_osiris];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о Осирисе)]
+        (* <- lang_ru;; *);
+        [Def. (message about Osirise)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о Осирис — бог возрождения, царь загробного мира в древнеегипетской мифологии и судья душ усопших. ]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about Osiris is the god of rebirth, the king of the underworld in ancient Egyptian mythology and the judge of the souls of the dead.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

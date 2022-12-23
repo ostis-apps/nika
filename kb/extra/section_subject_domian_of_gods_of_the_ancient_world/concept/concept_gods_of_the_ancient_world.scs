@@ -1,0 +1,17 @@
+concept_gods_of_the_ancient_world
+
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Боги древнего мира]
+	(* <- lang_ru;; *);
+
+=> nrel_inclusion:
+    concept_gods_of_ancient_egypt;
+    concept_gods_of_ancient_rome;
+    concept_gods_of_ancient_greece;
+
+=> nrel_note:
+        [Боги древнего мира — это боги взятые с мифов и сказаний древних народв как рим греция и т.д.]
+        (* <- lang_ru;; *);
+<-binary_relation;;

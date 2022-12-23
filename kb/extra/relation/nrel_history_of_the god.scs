@@ -1,0 +1,21 @@
+nrel_history_of_the_god
+
+=>nrel_first_domain:
+    concept_history_of_the_gods;
+=>nrel_second_domain:
+    concept_gods_of_the_ancient_world;
+
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [история богов]
+    (* <- lang_ru;; *);
+    [history of the gods]
+    (* <- lang_en;;*);
+<=concept_history_of_the_gods;
+
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;

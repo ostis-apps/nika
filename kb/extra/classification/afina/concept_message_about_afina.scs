@@ -1,0 +1,37 @@
+concept_message_about_afina
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о Афина]
+	(* <- lang_ru;; *);
+	[message about Afina]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_afina];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о Афине)]
+        (* <- lang_ru;; *);
+        [Def. (message about Afina)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о Афине — древнегреческая богиня, одна из Троицы. Древнегреческая богиня, которую римляне отождествляли с Минервой ]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about Afina is an ancient Greek goddess, one of the Trinity. An ancient Greek goddess whom the Romans identified with Minerva]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

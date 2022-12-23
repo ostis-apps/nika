@@ -1,0 +1,37 @@
+concept_message_about_anubis
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о Анубис]
+	(* <- lang_ru;; *);
+	[message about anubis]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_anubis];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о Анубисе)]
+        (* <- lang_ru;; *);
+        [Def. (message about Anubis)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о Анубис -древнеегипетский бог погребальных ритуалов и мумификации ]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about Anubis - Ancient Egyptian god of burial rituals and mummification]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

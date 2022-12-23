@@ -1,0 +1,21 @@
+nrel_classification_of_god
+
+=>nrel_first_domain:
+    concept_classification_of_gods;
+=>nrel_second_domain:
+    concept_gods_of_the_ancient_world;
+
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [Классификация богов]
+    (* <- lang_ru;; *);
+    [classification of gods]
+    (* <- lang_en;;*);
+<=concept_classification_of_gods;
+
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;

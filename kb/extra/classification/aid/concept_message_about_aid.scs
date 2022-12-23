@@ -1,0 +1,41 @@
+concept_message_about_aid
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о Аид]
+	(* <- lang_ru;; *);
+	[message about aid]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_aid];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о Аиду)]
+        (* <- lang_ru;; *);
+        [Def. (message about Aid)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о Аид — второй по величине бог в древнегреческой мифологии.
+			В древнегреческой мифологии Аид — бог войны, сын Зевса и Херы. 
+			Вместе с Аресом и Афродитой он является одним из трех богов, которые не умерли во время Троянской войны.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about Aid is the second largest god in ancient Greek mythology.
+			In ancient Greek mythology, Hades is the god of war, the son of Zeus and Hera.
+			Along with Ares and Aphrodite, he is one of the three gods who did not die during the Trojan War.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
