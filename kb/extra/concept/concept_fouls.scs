@@ -1,0 +1,19 @@
+concept_fouls
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Фолы]
+	(* <- lang_ru;; *);
+=> nrel_foul:
+     striking_or_attempting_to_strike_an_opponent;
+     pushing_an_opponent_with_your_hands;
+     opponent_attack;
+     jump_on_an_opponent;
+     tripping_or_attempting_to_trip_an_opponent;
+     an_opponents_kick_or_attempt;
+
+=> nrel_note:
+     [Фол — это нарушение существующих канонов игры, чаще всего направленное на остановку соперника или ограничение его возможности набирать очки. Такие действия могут быть преднамеренными или случайными, но и в том и в другом случае они фиксируются судейским свистком.]
+            (* <- lang_ru;; *);
+
+<-binary_relation;;

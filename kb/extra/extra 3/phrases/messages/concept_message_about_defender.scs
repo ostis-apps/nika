@@ -1,0 +1,37 @@
+concept_message_about_defender
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о защитнике]
+	(* <- lang_ru;; *);
+	[message about defender]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_defender];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о защитнике)]
+        (* <- lang_ru;; *);
+        [Def. (message about defender)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Защиитник — игрок, специализирующийся на выполнении оборонительных функций. В футболе действует между вратарём и полузащитниками, преимущественно на своей половине поля и чаще всего вблизи своей штрафной площади. Его основная цель — не давать нападающим противника возможности забить гол, обработать мяч, подойти к воротам, ударить по воротам.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Defender - a player who specializes in performing defensive functions. In football, it operates between the goalkeeper and midfielders, mainly in its own half of the field and most often near its own penalty area. Its main goal is to prevent the attackers of the enemy from scoring a goal, handling the ball, approaching the goal, hitting the goal.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

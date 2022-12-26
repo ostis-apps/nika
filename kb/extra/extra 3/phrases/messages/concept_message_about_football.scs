@@ -1,0 +1,37 @@
+concept_message_about_football
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о футболе]
+	(* <- lang_ru;; *);
+	[message about football]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_football];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о футболе)]
+        (* <- lang_ru;; *);
+        [Def. (message about football)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Футбол — командный вид спорта, в котором целью является забить мяч в ворота соперника ногами или другими частями тела (кроме рук) большее количество раз, чем команда соперника. В настоящее время самый популярный и массовый вид спорта в мире]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Football is a team sport in which the goal is to kick the ball into the opponent's goal with the feet or other parts of the body (except the arms) more times than the opposing team. Currently the most popular and massive sport in the world.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

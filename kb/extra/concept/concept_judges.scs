@@ -1,0 +1,16 @@
+concept_judges
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[Судьи]
+	(* <- lang_ru;; *);
+=> nrel_judges:
+     chief_arbiter;
+     side_referees;
+
+=> nrel_note:
+     [Судьи следят за порядком на футбольном поле. Их работа заключается в определении нарушения правил.]
+            (* <- lang_ru;; *);
+
+
+<-binary_relation;; 

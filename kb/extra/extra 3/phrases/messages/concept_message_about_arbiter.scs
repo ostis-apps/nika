@@ -1,0 +1,37 @@
+concept_message_about_arbiter
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о арбитре]
+	(* <- lang_ru;; *);
+	[message about arbiter]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_arbiter];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о арбитре)]
+        (* <- lang_ru;; *);
+        [Def. (message about arbiter)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Во время игры судья должен определять, например, сколько времени будет добавлено к основному или пересёк мяч линию ворот или нет. Если игрок на усмотрение рефери нарушил правило, он должен назначить штрафной. Судья может вынести игроку предупреждение или остановить матч по каким-либо причинам.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [During the game, the referee must determine, for example, how much time will be added to the main or whether the ball crossed the goal line or not. If a player, at the discretion of the referee, has broken a rule, he must award a penalty kick. The referee may issue a warning to the player or stop the match for any reason.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

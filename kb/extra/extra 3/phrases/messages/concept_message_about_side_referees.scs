@@ -1,0 +1,37 @@
+concept_message_about_side_referees
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о судья]
+	(* <- lang_ru;; *);
+	[message about side_referees]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_side_referees];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о судья)]
+        (* <- lang_ru;; *);
+        [Def. (message about side_referees)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Они помогают определить положение «вне игры», а также выход мяча за боковую и лицевую линии поля. Также они могут сказать главному судье в ситуации, когда он не увидел нарушение правил или гол.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [They help to determine the position of "offside", as well as the exit of the ball over the touch and end lines of the field. They can also tell the chief referee in a situation where he did not see a violation of the rules or a goal.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

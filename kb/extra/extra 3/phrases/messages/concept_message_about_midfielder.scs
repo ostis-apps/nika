@@ -1,0 +1,37 @@
+concept_message_about_midfielder
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о полузащитниками]
+	(* <- lang_ru;; *);
+	[message about midfielder]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_midfielder];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о полузащитниками)]
+        (* <- lang_ru;; *);
+        [Def. (message about midfielder)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Полузащиитник - игрок футбольной команды, действующий между защитой и нападением. Основной задачей полузащитников является помощь игрокам обороны и нападения, в зависимости от игровой ситуации.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [A midfielder is a football team player who acts between defense and attack. The main task of the midfielders is to help the players in defense and attack, depending on the game situation.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

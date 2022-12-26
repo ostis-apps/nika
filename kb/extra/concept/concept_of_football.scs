@@ -1,0 +1,19 @@
+concept_of_football
+<- sc_node_class;
+<- class;
+=> nrel_main_idtf:
+	[ Футбол]
+	(* <- lang_ru;; *);
+=> nrel_inclusion:
+     concept_rules;
+     concept_teams;
+     concept_fouls;
+     concept_participants;
+     concept_standard_provisions;
+     concept_judges;
+
+=> nrel_note:
+     [Футбол — командный вид спорта, в котором целью является забить мяч в ворота соперника ногами или другими частями тела (кроме рук) большее количество раз, чем команда соперника. В настоящее время самый популярный и массовый вид спорта в мире]
+            (* <- lang_ru;; *);
+
+<-binary_relation;; 
