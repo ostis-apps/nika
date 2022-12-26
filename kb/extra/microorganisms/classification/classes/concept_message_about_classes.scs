@@ -1,0 +1,43 @@
+concept_message_about_classes
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о царстве микроорганизмов]
+	(* <- lang_ru;; *);
+	[message about classes of microorganismis]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_classes];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о царстве микроорганизмов)]
+        (* <- lang_ru;; *);
+        [Def. (message about classes of microorganismis)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о царстве микроорганизмов — Классифицировать обитателей микромира можно по разным признакам. Ниже будут
+приведены несколько классификаций. В основу классификации микробов пожжены
+морфологические, физиологические, биохимические и молекулярно-биологические
+свойства.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about classes of microorganismis — The inhabitants of the microworld can be classified according to various criteria. Below will be
+several classifications are given. The basis of the classification of microbes burned
+morphological, physiological, biochemical and molecular biological
+properties.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

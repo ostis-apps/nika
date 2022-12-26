@@ -1,0 +1,40 @@
+concept_message_about_algae
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о водорослях]
+	(* <- lang_ru;; *);
+	[message about algae]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_algae];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о водорослях)]
+        (* <- lang_ru;; *);
+        [Def. (message about algae)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о водорослях — гетерогенная экологическая группа преимущественно фотоавтотрофных одноклеточных, 
+                    колониальных или многоклеточных организмов, обитающих, как правило, в водной среде, в систематическом отношении
+                     представляющая собой совокупность многих отделов.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about algae —a heterogeneous ecological group of predominantly photoautotrophic unicellular,
+                     colonial or multicellular organisms, usually living in an aquatic environment, systematically representing a combination of many departments.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
