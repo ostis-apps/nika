@@ -1,0 +1,21 @@
+nrel_type
+
+=>nrel_first_domain:
+    concept_production_automation_systems;
+=>nrel_second_domain:
+    concept_type;
+    nika_founder;
+
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+=> nrel_main_idtf:
+    [тип*]
+    (* <- lang_ru;; *);
+    [type*]
+    (* <-lang_en;;*);
+    =>nrel_note:
+    [Замена человеческого труда машинным осуществляется в разных направлениях. При этом используется соответствующее оборудование – оно может быть относительно простым или представлять собой целые программно-технические комплексы. Различают несколько типов автоматизации.]
+    (*<- lang_ru;; *);;

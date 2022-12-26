@@ -1,0 +1,37 @@
+concept_message_about_company
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о company]
+	(* <- lang_ru;; *);
+	[message about company]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_company];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о company)]
+        (* <- lang_ru;; *);
+        [Def. (message about company)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Лидеры рынка неизменны на протяжении многих лет, их решения проверены временем и используются на многих предприятиях. Несменяемость позиций во многом связана с тем, что производители предлагают законченную инфраструктуру, и с точки зрения эксплуатации клиентам выгодно иметь оборудование одного вендора, так как это облегчает поиск и замену комплектующих, а также подготовку обслуживающего персонала.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Market leaders have been unchanged for many years, their solutions are time-tested and used in many enterprises. The irremovability of positions is largely due to the fact that manufacturers offer a complete infrastructure, and from the point of view of operation, it is beneficial for customers to have equipment from one vendor, as this facilitates the search and replacement of components, as well as the training of maintenance personnel.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

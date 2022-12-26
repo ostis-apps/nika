@@ -1,0 +1,38 @@
+concept_message_about_1c
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о 1c]
+	(* <- lang_ru;; *);
+	[message about 1c]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_1c];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о 1c)]
+        (* <- lang_ru;; *);
+        [Def. (message about 1c)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [1С:Предприятие — программный продукт компании «1С», предназначенный для автоматизации деятельности на предприятии.
+                    «1С:Предприятие» предназначено для автоматизации любого бизнес-процесса предприятия. Наиболее известны продукты по автоматизации бухгалтерского и управленческого учётов (включая начисление зарплаты и управление кадрами), экономической и организационной деятельности предприятия.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Market leaders have been unchanged for many years, their solutions are time-tested and used in many enterprises. The irremovability of positions is largely due to the fact that manufacturers offer a complete infrastructure, and from the point of view of operation, it is beneficial for customers to have equipment from one vendor, as this facilitates the search and replacement of components, as well as the training of maintenance personnel.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

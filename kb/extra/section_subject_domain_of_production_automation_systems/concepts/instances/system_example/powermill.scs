@@ -1,0 +1,29 @@
+system_powermill
+
+=> nrel_main_idtf:
+    [PowerMILL]
+    (* <- lang_ru;; *);
+    [PowerMILL]
+    (* <- lang_en;; *);
+=> nrel_type:
+    type_cam;
+    type_it;
+    type_cim;
+    type_it;
+    <-concept_type;
+=> nrel_level:
+    third_level;
+    <-concept_level;
+=> nrel_founder:
+    john_walker;
+=> nrel_company:
+    autodesk_company;
+=> nrel_relase_date:
+    [22 июля 1995]
+    (* <- lang_ru;; *);
+=>nrel_note:
+[PowerMILL - это решение 3D CAM (автоматизированное производство), работающее на Microsoft Windows для программирования траекторий движения инструмента от 2 до 5 осей CNC (ЧПУ) Фрезерные станки, разработанные Autodesk Inc. Программное обеспечение используется в различных отраслях машиностроения для определения оптимальных траекторий движения инструмента с целью сокращения времени и производственных затрат, а также снижения нагрузки на инструмент и получения гладкой поверхности. Более 15000 организаций по всему миру используют PowerMILL для обработки 2,3 и 5 осей.]
+(* <-lang_ru;;*);
+
+<-binary_relation;;
+

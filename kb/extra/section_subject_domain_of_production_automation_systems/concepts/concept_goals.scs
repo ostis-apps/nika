@@ -1,0 +1,17 @@
+concept_goals
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+    [Цели автоматизации производства](* <- lang_ru;;*);
+    [Goals of factory automation](* <- lang_en;; *);
+    => nrel_inclusion:
+    goals_staff_reduction;
+    goals_range_expansion;
+    goals_increase_in_volumes;
+    goals_improving_safety;
+    goals_increasing_production_quantity;
+    =>nrel_note:
+    [Повышение производительности и желание получить конкурентное преимущество, как правило, является основной причиной для старта проекта по автоматизации на многих предприятиях. 
+    Другие причины автоматизации могут быть обусловлены не «надеждами на будущее», а наличием конкретных причин – например, опасной рабочей средой или высокой стоимостью человеческого труда.]
+    (*<- lang_ru;; *);
+<-binary_relation;;

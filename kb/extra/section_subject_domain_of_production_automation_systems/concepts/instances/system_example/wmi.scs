@@ -1,0 +1,29 @@
+system_wmi
+
+=> nrel_main_idtf:
+    [Windows Management Instrumentation (WMI)]
+    (* <- lang_ru;; *);
+    [Windows Management Instrumentation (WMI)]
+    (* <- lang_en;; *);
+=> nrel_type:
+    type_cam;
+    type_fms;
+    type_it;
+    <-concept_type;
+=> nrel_level:
+    zero_level;
+    <-concept_level;
+=> nrel_relase_date:
+    [29.10.2003]
+    (* <- lang_ru;; *);
+    [29.10.2003]
+    (* <- lang_en;;*);
+=> nrel_company:
+    microsoft_company;
+<-concept_production_automation_systems_company;
+=>nrel_note:
+[Технология WMI — это расширенная и адаптированная под Windows реализация стандарта WBEM (на англ.), принятого многими компаниями, в основе которого лежит идея создания универсального интерфейса мониторинга и управления различными системами и компонентами распределённой информационной среды предприятия с использованием объектно-ориентированных идеологий и протоколов HTML и XML.]
+(* <-lang_ru;;*);
+
+<-binary_relation;;
+
