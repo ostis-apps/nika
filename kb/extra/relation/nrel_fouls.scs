@@ -1,0 +1,21 @@
+nrel_fouls
+
+=>nrel_first_domain:
+    concept_fouls;
+=>nrel_second_domain:
+    concept_rules;
+
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [Фолы]
+    (* <- lang_ru;; *);
+    [fouls]
+    (* <- lang_en;;*);
+<=concept_fouls;
+
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;

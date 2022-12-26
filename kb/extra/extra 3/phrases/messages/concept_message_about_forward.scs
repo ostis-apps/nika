@@ -1,0 +1,37 @@
+concept_message_about_forward
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о нападающим]
+	(* <- lang_ru;; *);
+	[message about forward]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_forward];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о нападающим)]
+        (* <- lang_ru;; *);
+        [Def. (message about forward)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Фол — это нарушение существующих канонов игры, чаще всего направленное на остановку соперника или ограничение его возможности набирать очки. Такие действия могут быть преднамеренными или случайными, но и в том и в другом случае они фиксируются судейским свистком.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [A foul is a violation of the existing canons of the game, most often aimed at stopping an opponent or limiting his ability to score points. Such actions may be deliberate or accidental, but in both cases they are recorded by the referee's whistle.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

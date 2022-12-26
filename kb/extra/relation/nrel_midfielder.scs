@@ -1,0 +1,21 @@
+nrel_midfielder
+
+=>nrel_first_domain:
+    concept_of_football;
+=>nrel_second_domain:
+    concept_teams;
+
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [полузащитник]
+    (* <- lang_ru;; *);
+    [midfielder]
+    (* <- lang_en;;*);
+<=concept_of_football;
+
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;

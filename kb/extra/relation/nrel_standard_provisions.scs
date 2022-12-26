@@ -1,0 +1,21 @@
+nrel_standard_provisions
+
+=>nrel_first_domain:
+    concept_standard_provisions;
+=>nrel_second_domain:
+    concept_rules;
+
+<- sc_node_norole_relation;
+=> nrel_main_idtf:
+    [Стандартные положения]
+    (* <- lang_ru;; *);
+    [standard_provisions]
+    (* <- lang_en;;*);
+<=concept_standard_provisions;
+
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+<-binary_relation;;

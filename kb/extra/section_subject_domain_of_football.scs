@@ -1,0 +1,32 @@
+section_subject_domain_of_football
+<- sc_node_struct;
+=> nrel_main_idtf:
+[Раздел. Предметная область футбол](* <- lang_ru;; *);
+[Section. Subject domain football](* <- lang_en;; *);
+<-atomic_section;;
+
+section_subject_domain_of_football = [*
+subject_domain_of_football
+=> nrel_main_idtf:
+[Раздел.Предметная область футбол](* <- lang_ru;; *);
+[Subject domain of football](* <- lang_en;; *);
+<- subject_domain;
+-> rrel_maximum_studied_object_class:
+    concept_of_football;
+-> rrel_not_maximum_studied_object_class:
+    concept_fouls;
+    concept_judges;
+    concept_participants;
+    concept_rules;
+    concept_standard_provisions;
+    concept_teams;
+-> rrel_explored_relation:
+    nrel_defender;
+    nrel_forward;
+    nrel_fouls;
+    nrel_goalkeeper;
+    nrel_judges;
+    nrel_player;
+    nrel_standard_provisions;
+    nrel_midfielder;;
+*];;
