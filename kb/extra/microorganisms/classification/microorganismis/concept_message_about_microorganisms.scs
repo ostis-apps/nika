@@ -1,0 +1,37 @@
+concept_message_about_microorganisms
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о микроорганизмах]
+	(* <- lang_ru;; *);
+	[message about microorganisms]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_microorganisms];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о микроорганизмах)]
+        (* <- lang_ru;; *);
+        [Def. (message about microorganisms)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о Микроорганизмы – это одноклеточные живые организмы, нахождение которых определяется только с помощью микроскопа. Для определения этих организмов 26 февраля в 1878 году французский филолог Эмиль Литтре по предложению французского военного врача-хирурга Шарля-Эммануэля Седийо ввел понятие «микроб»]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about microorganisms — Microorganisms are single-celled living organisms, the location of which is determined only with the help of a microscope. To determine these organisms, on February 26, 1878, the French philologist Emile Littre, at the suggestion of the French military surgeon Charles Emmanuel Sedillo, introduced the concept of "microbe".]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

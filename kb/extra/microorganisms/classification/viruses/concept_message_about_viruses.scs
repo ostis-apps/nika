@@ -1,0 +1,41 @@
+concept_message_about_viruses
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о вирусе]
+	(* <- lang_ru;; *);
+	[message about viruses]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_viruses];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о вирусе)]
+        (* <- lang_ru;; *);
+        [Def. (message about viruses)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о вирусах — Вирусы (лат. virus яд) - самые примитивные организмы на земле размером 20-300 нм.
+Воспроизводятся только внутри живых клеток организма. Не имеют клеточного строения.
+В свободном состоянии в них не происходят никакие обменные процессы.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about Viruses — Viruses (lat. virus poison) are the most primitive organisms on earth with a size of 20-300 nm.
+They reproduce only inside the living cells of the body. They do not have a cellular structure.
+In the free state, no metabolic processes occur in them.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

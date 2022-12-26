@@ -1,0 +1,47 @@
+concept_message_about_microbiology
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о микробиологии]
+	(* <- lang_ru;; *);
+	[message about microbiology]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_microbiology];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о микробиологии)]
+        (* <- lang_ru;; *);
+        [Def. (message about microbiology)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о микробиологии — Мы живем в огромном мире. Нас окружает природа. И вот эта природа может быть:
+неживая и живая. Живая природа включает в себя макромир (то, что видно
+невооруженным глазом) и микромир (то, что можно разглядеть только в микроскоп).
+Вопросами строения и жизни микроорганизмов занимается наука под названием
+микробиология. Micros – маленький, bio – жизнь, logia – наука. Делаем вывод.
+Микробиология – это наука о строении и жизнедеятельности микробов.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about microbiology — We live in a huge world. We are surrounded by nature. And this nature can be:
+inanimate and alive. Living nature includes the macrocosm (what is visible
+naked eye) and the microcosm (what can only be seen with a microscope).
+The questions of the structure and life of microorganisms are dealt with by science called
+microbiology. Micros - small, bio - life, logia - science. We draw a conclusion.
+Microbiology is the science of the structure and activity of microbes.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

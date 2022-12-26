@@ -1,0 +1,24 @@
+nrel_classification
+
+=>nrel_first_domain:
+    concept_microbiology;
+=>nrel_second_domain:
+    concept_classification;
+    
+
+<-sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+=> nrel_main_idtf:
+    [классификация]
+    (* <- lang_ru;; *);
+    [classification]
+    (* <-lang_en;;*);
+    =>nrel_note:
+    [Современная классификация (группировка) микроорганизмов была предложена в 1980 г. американским микробиологом Берджи. 
+    По этой классификации весь мир микробов делится на три царства: бактерии, грибы, вирусы и т.д. Название микроорганизмы произошло 
+    от латинского слова микрос – малый. Следовательно, микроорганизмы (микробы) - одноклеточные организмы размером менее 0,1 мм., 
+    которые невозможно увидеть невооруженным глазом.]
+    (*<- lang_ru;; *);;

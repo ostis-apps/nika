@@ -1,0 +1,20 @@
+concept_classification
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+    [классификация](* <- lang_ru;;*);
+    [classification](* <- lang_en;; *);
+    => nrel_inclusion:
+    classification_aerob;
+    classification_anaerob;
+    classification_pathogenic;
+    classification_non_pathogenic;
+    classification_conditionally_pathogenic;
+    =>nrel_note:
+    [Микроорганизмы  в основном классифицируются по воздействию на окружаюшую среду, а также по их среде обитания.
+    Классифицировать обитателей микромира можно по разным признакам. Ниже будут
+приведены несколько классификаций. В основу классификации микробов пожжены
+морфологические, физиологические, биохимические и молекулярно-биологические
+свойства.]
+    (*<- lang_ru;; *);
+<-binary_relation;;

@@ -1,0 +1,26 @@
+tim_sweeney
+
+=> nrel_main_idtf:
+    [Tim Sweeney]
+    (* <- lang_ru;; *);
+=> nrel_platform:
+    pc_platform;
+    <-nrel_platform;
+=> nrel_company:
+    [Epic Games]
+    (*<- lang_eng;;*);
+    <-nrel_company;
+=> nrel_gender:
+    [М]
+    (*<-lang_ru;;*);
+    <-nrel_gender;
+=> nrel_genre:
+    genre_action;
+    genre_platformer;
+    <-concept_genre;
+=> nrel_game_name:
+    [Peace Maker, Super ZZT]
+    (*<-lang_eng;;*);
+
+<-concept_game_developer;
+<-binary_relation;;

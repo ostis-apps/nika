@@ -1,0 +1,43 @@
+concept_message_about_protozoa
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о простейших]
+	(* <- lang_ru;; *);
+	[message about protozoa]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_protozoa];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о простейших)]
+        (* <- lang_ru;; *);
+        [Def. (message about protozoa)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о Тайм менеджменте — Простéйшие (лат.Protozoa, от др.-греч. πρῶτος — первый и ζῷα, формы множественного числа от др.-греч.
+ ζῷον — живое существо)— полифилетическая группа, царство или подцарство животных одноклеточных или колониальных эукариот, 
+которые имеют гетеротрофный тип питания. В русскоязычной литературе, как правило, используется термин гетеротрофные протисты,
+представителями гетеротрофных протистов являются фораминиферы и инфузории.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about protozoa — The simplest (lat. Protozoa, from other Greek πρῶτος - the first and ζῷα, plural forms from other Greek.
+ ζῷον - a living being) - a polyphyletic group, a kingdom or sub-kingdom of animals of unicellular or colonial eukaryotes,
+that have a heterotrophic type of nutrition. In Russian-language literature, as a rule, the term heterotrophic protists is used,
+representatives of heterotrophic protists are foraminifera and ciliates.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

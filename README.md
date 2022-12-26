@@ -12,6 +12,17 @@ NIKA is an ostis-system designed with [OSTIS Technology principles](https://gith
 
 You can learn more about it by asking the assistant: "What's NIKA?"
 
+## Run documentation
+
+```sh
+#Terminal
+cd nika
+pip3 install mkdocs markdown-include mkdocs-material
+mkdocs serve
+```
+
+Then open http://127.0.0.1:8000/ in your browser
+
 ## ✨ Demo
 ![demo.png](docs/images/demo.png)
 

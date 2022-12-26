@@ -1,0 +1,39 @@
+concept_message_about_bacterias
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о бактериях]
+	(* <- lang_ru;; *);
+	[message about bacterias]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_bacterias];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о бактериях)]
+        (* <- lang_ru;; *);
+        [Def. (message about bacterias)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о бактериях — актерии обычно достигают нескольких микрометров в длину, их клетки могут иметь разнообразную форму: от шарообразной до палочковидной и спиралевидной.
+                     Бактерии — одна из первых форм жизни на Земле и встречаются почти во всех земных местообитаниях.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about bacterias Bacteria usually reach several micrometers in length, their cells can have a variety of shapes: from spherical to rod-shaped and spiral.
+                     Bacteria are one of the first forms of life on Earth and are found in almost all terrestrial habitats.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

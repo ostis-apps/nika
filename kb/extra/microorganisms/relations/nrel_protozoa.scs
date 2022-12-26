@@ -1,0 +1,22 @@
+nrel_protozoa
+
+=>nrel_first_domain:
+    concept_microbiology;
+=>nrel_second_domain:
+    concept_protozoa_class;
+
+<- sc_node_norole_relation;
+<-oriented_relation;
+<-binary_relation;
+<-antisymmetric_relation;
+<-antireflexive_relation;
+=> nrel_main_idtf:
+    [простейшие оргнанизмы]
+    (* <- lang_ru;; *);
+    [Protozoa]
+    (*<-lang_en;;*);
+    => nrel_note:
+    [Мир микробов можно разделить на клеточные и неклеточные формы. Клеточные формы микробов представлены 
+    бактериями, грибами и простейшими. Их можно называть микроорганизмами. 
+    Неклеточные формы представлены вирусами, вироидами и прионами.]
+(*<-lang_ru;;*);;
