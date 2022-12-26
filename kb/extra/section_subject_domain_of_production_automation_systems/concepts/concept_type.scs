@@ -1,0 +1,17 @@
+concept_type
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+    [Тип](* <- lang_ru;;*);
+    [type](* <- lang_en;; *);
+    => nrel_inclusion:
+    type_it;
+    type_cam;
+    type_nc;
+    type_robot;
+    type_fms;
+    type_cim;
+    =>nrel_note:
+    [Хотя автоматизация может играть важную роль в повышении производительности и сокращении издержек в сфере услуг, автоматизация управления производством наиболее распространена в обрабатывающих отраслях.]
+    (*<- lang_ru;; *);
+<-binary_relation;;

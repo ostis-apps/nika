@@ -1,0 +1,26 @@
+system_1c
+
+=> nrel_main_idtf:
+    [1С]
+    (* <- lang_ru;; *);
+    [1C]
+    (* <- lang_en;; *);
+=> nrel_type:
+    type_it;
+    type_cam;
+    <-concept_type;
+=> nrel_level:
+    zero_level;
+    <-concept_level;
+=> nrel_company:
+    1c_company;
+    <-concept_production_automation_systems_company;
+=> nrel_relase_date:
+    [29 октября 1995]
+    (* <- lang_ru;; *);
+=>nrel_note:
+[1С:Предприятие — программный продукт компании «1С», предназначенный для автоматизации деятельности на предприятии.]
+(* <-lang_ru;;*);
+
+<-binary_relation;;
+

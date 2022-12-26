@@ -1,0 +1,23 @@
+boris_nuraliev
+
+=> nrel_main_idtf:
+    [Нуралиев Борис]
+    (* <- lang_ru;; *);
+=> nrel_company:
+    [1С]
+    (*<- lang_eng;;*);
+    <-nrel_company;
+=> nrel_gender:
+    [М]
+    (*<-lang_ru;;*);
+    <-nrel_gender;
+=> nrel_type:
+    type_cam;
+    type_it;
+    <-concept_type;
+=> nrel_system_name:
+    system_1c
+    (*<-lang_eng;;*);
+
+<-concept_founder;
+<-binary_relation;;

@@ -1,0 +1,20 @@
+concept_production_automation_systems_examples
+
+<-sc_node_not_relation;
+
+=> nrel_main_idtf: 
+	[список систем автоматизации производства](* <- lang_ru;;*);
+	[production automation systems list](* <- lang_en;; *);
+
+
+=> nrel_inclusion:
+	system_1c;
+	system_powermill;
+	system_deskproto;
+	system_wmi;
+	system_uchpunc400;
+=> mrel_note:
+[на самом деле систем автоматизации производства очень много, поэтому в этой концепции показаны только те системы, которые доступны в системе.]
+(* <-lang_ru;;*);
+<-concept_production_automation_systems;
+<-binary_relation;;

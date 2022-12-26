@@ -1,0 +1,40 @@
+section_subject_production_automation_systems
+=> nrel_main_idtf:
+	  [Раздел. Предметная область системы автоматизации производства]
+  (* <- lang_ru;; *);
+	  [Section. Subject production automation systems] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_production_automation_systems =
+[*
+    subject_production_automation_systems
+    <- sc_node_struct;
+    => nrel_main_idtf:
+        [Предметная область системы автоматизации производства](* <- lang_ru;; *);
+        [Subject production automation systems](* <- lang_en;; *);
+    <- subject_domain;
+    -> rrel_maximum_studied_object_class:
+        concept_production_automation_systems;        
+    -> rrel_not_maximum_studied_object_class:
+        concept_intent_possible_class;
+        concept_goals;
+        concept_the_reason_for_the_emergence_of_production_automation_systems;
+        concept_history_production_automation_systems;
+        concept_early_history_production_automation_systems;
+        concept_production_automation_systems_company;
+        concept_type;
+        concept_founder;
+        concept_production_automation_systems_examples;
+        concept_level;
+
+
+    -> rrel_explored_relation:        
+        nrel_company;
+        nrel_founded_date;
+        nrel_system_name;
+        nrel_gender;
+        nrel_type;
+        nrel_relase_date;
+        nrel_level;;
+*];;

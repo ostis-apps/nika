@@ -1,0 +1,22 @@
+john_walker
+
+
+=> nrel_main_idtf:
+    [Джон Энтони Уокер]
+    (* <- lang_ru;; *);
+=> nrel_company:
+    autodesk_company;
+    <-nrel_company;
+=> nrel_gender:
+    [М]
+    (*<-lang_ru;;*);
+    <-nrel_gender;
+=> nrel_type:
+    type_it;
+    type_cam;
+    <-concept_genre;
+=> nrel_system_name:
+    system_powermill;
+    <-concept_production_automation_systems_examples;
+<-concept_founder;
+<-binary_relation;;

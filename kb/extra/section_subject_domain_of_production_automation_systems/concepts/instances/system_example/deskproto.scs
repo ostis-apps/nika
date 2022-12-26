@@ -1,0 +1,24 @@
+system_deskproto
+
+=> nrel_main_idtf:
+    [DeskProto]
+    (* <- lang_ru;; *);
+    [DeskProto]
+    (* <- lang_en;; *);
+=> nrel_type:
+    type_cam;
+    <-concept_type;
+=> nrel_level:
+    second_level;
+    <-concept_level;
+=> nrel_relase_date:
+    [21 июль 1995]
+    (* <- lang_ru;; *);
+    [21 July 1995]
+    (* <- lang_en;;*);
+=>nrel_note:
+[DeskProto – CAM-система автоподборки УП для обработки сложных изделий на токарных и фрезерных станках с CNC. Трехмерная модель заготовки экспортируется из любого 3D-редактора в виде файла STL, а чертеж 2D-формата – как файл DXF.]
+(* <-lang_ru;;*);
+
+<-binary_relation;;
+
