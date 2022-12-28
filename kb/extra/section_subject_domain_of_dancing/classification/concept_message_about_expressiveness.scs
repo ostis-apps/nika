@@ -1,0 +1,28 @@
+concept_message_about_expressiveness
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о выразительности танца]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_expressiveness];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о выразительности танца)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о сущности - атомарное сообщение,
+    которое содержит сушность, информацию о которой
+    необходимо найти.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

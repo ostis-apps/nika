@@ -1,0 +1,30 @@
+nrel_means_of_expression
+	<- sc_node_norole_relation;
+	<- relation;
+	<- binary_relation;
+	<- oriented_relation;
+	<- asymmetric_relation;
+	<- antitransitive_relation;
+	<- antireflexive_relation;
+	=> nrel_main_idtf: 
+		[Опр. (средство выразительности*)]
+		(*<-lang_ru;;*);
+	=> nrel_first_domain: concept_dance_direction;
+	=> nrel_second_domain:  concept_mean_of_expression;
+	-> rrel_key_sc_element:
+		...  
+		(* 
+			<- sc_explanation;;
+			<= nrel_sc_text_translation:
+				...
+				(* 
+					-> rrel_example:
+					[средство выразительности* - отношение, связывающее направление танцев
+					и средства выразительности, характерного для направления.]
+					(* <-lang_ru;; *);; 
+				*);;
+				<= nrel_using_constants: {
+					concept_dance_direction;
+					concept_mean_of_expression
+				};;
+		*);;

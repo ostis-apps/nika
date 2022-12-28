@@ -1,0 +1,18 @@
+concept_dancing
+    <- sc_node_class;
+    <- class;
+    => nrel_main_idtf:
+        [танцы]
+        (* <- lang_ru;; *);
+        [dancing]
+        (* <- lang_en;; *);
+    => nrel_note:
+        [это ритмичные, выразительные движения тела,обычно выстраиваемые в
+        определённую композицию и исполняемые с музыкальным сопровождением.]
+        (* <- lang_ru;; *);
+    => nrel_inclusion:
+        concept_folk_dance;
+        concept_ballroom_dance;
+        concept_ballet;
+        concept_modern_dance;
+        concept_ritual_dance;;

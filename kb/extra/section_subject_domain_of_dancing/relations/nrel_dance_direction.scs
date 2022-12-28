@@ -1,0 +1,37 @@
+nrel_dance_direction
+    <- sc_node_norole_relation;
+    <- relation;
+    <- binary_relation;
+    <- oriented_relation;
+    <- antireflexive_relation;
+    <- asymmetric_relation;
+    <- antitransitive_relation;
+    => nrel_main_idtf:
+        [Опр. (направление танцев*)]
+        (* <- lang_ru;; *);
+    => nrel_first_domain: concept_dancing;
+    => nrel_second_domain: concept_dance_direction;
+    => nrel_definitional_domain:
+        ...
+        (*
+            <= nrel_combination: {
+                concept_dancing;
+                concept_dance_direction
+            };;
+        *);
+    <- rrel_key_sc_element:
+        ...
+        (*
+            <- sc_explanation;;
+            <= nrel_sc_text_translation:
+                ...
+                (*
+                    -> rrel_example:
+                        [направление танцев* - отношение связывающее танцы и его разновидность.]
+                        (* <- lang_ru;; *);;
+                *);;
+            <= nrel_using_constants: {
+                concept_dancing;
+                concept_dance_direction
+            };;
+        *);;
