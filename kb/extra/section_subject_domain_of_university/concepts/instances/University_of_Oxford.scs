@@ -1,0 +1,19 @@
+University_of_Oxford
+=> nrel_main_idtf:
+    [Оксфордский университет] (*<-lang_ru;;*);
+    [University of Oxford] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Оксфордский университет)] (*<-lang_ru;;*);
+       [Def. (University of Oxford)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [университет в городе Оксфорд, Англия, Великобритания] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [collegiate research university in Oxford, England] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_not_relation;;

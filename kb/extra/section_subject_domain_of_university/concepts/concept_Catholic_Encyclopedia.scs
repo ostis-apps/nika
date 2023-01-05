@@ -1,0 +1,21 @@
+concept_Catholic_Encyclopedia
+=> nrel_main_idtf:
+    [Католическая энциклопедия, 1913] (*<-lang_ru;;*);
+    [Catholic Encyclopedia] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Католическая энциклопедия, 1913)] (*<-lang_ru;;*);
+       [Def. (Catholic Encyclopedia)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Английская энциклопедия] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [English-language encyclopedia] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

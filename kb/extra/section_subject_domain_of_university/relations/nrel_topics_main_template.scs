@@ -1,0 +1,27 @@
+nrel_topics_main_template
+
+//идентификаторы
+=> nrel_main_idtf:
+    [основной шаблон по теме] (*<-lang_ru;;*);
+    [topic's main template] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (основной шаблон по теме)] (*<-lang_ru;;*);
+       [Def. (topic's main template)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [карточка или навигационный] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [the main template relating to a topic] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

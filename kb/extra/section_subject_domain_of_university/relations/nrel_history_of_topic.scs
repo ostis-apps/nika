@@ -1,0 +1,35 @@
+nrel_history_of_topic
+
+//идентификаторы
+=> nrel_main_idtf:
+    [история темы] (*<-lang_ru;;*);
+    [history of topic] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (история темы)] (*<-lang_ru;;*);
+       [Def. (history of topic)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [элемент, в котором описана история объекта] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [item about the historical development of an subject's topic, sample: "history of Argentina" for "Argentina". To list key events of the topic, use "significant event" (P793)] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_university;
+
+
+=> nrel_second_domain:
+    concept_university_history;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

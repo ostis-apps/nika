@@ -1,0 +1,19 @@
+Keio_University
+=> nrel_main_idtf:
+    [Университет Кэйо] (*<-lang_ru;;*);
+    [Keio University] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Университет Кэйо)] (*<-lang_ru;;*);
+       [Def. (Keio University)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Частный университет в Токио, Япония] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [private university in Tokyo, Japan] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_not_relation;;

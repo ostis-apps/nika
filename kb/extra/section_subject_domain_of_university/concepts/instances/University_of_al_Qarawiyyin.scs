@@ -1,0 +1,19 @@
+University_of_al_Qarawiyyin
+=> nrel_main_idtf:
+    [Аль-Карауин] (*<-lang_ru;;*);
+    [University of al-Qarawiyyin] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Аль-Карауин)] (*<-lang_ru;;*);
+       [Def. (University of al-Qarawiyyin)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [университет в Марокко] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [University in Morocco] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_not_relation;;

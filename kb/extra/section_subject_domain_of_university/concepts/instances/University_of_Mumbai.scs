@@ -1,0 +1,19 @@
+University_of_Mumbai
+=> nrel_main_idtf:
+    [Мумбайский университет] (*<-lang_ru;;*);
+    [University of Mumbai] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Мумбайский университет)] (*<-lang_ru;;*);
+       [Def. (University of Mumbai)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Государственный университет в Мумбаи, Махараштра, Индия] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [state university in Mumbai, Maharashtra, India] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_not_relation;;

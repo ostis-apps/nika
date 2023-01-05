@@ -1,0 +1,21 @@
+concept_Armenian_Soviet_Encyclopedia
+=> nrel_main_idtf:
+    [Армянская советская энциклопедия] (*<-lang_ru;;*);
+    [Armenian Soviet Encyclopedia] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Армянская советская энциклопедия)] (*<-lang_ru;;*);
+       [Def. (Armenian Soviet Encyclopedia)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [первая универсальная энциклопедия на армянском языке] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [encyclopedia] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

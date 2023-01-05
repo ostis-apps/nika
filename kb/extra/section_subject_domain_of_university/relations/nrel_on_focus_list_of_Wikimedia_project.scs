@@ -1,0 +1,27 @@
+nrel_on_focus_list_of_Wikimedia_project
+
+//идентификаторы
+=> nrel_main_idtf:
+    [рабочий список проекта Викимедиа] (*<-lang_ru;;*);
+    [on focus list of Wikimedia project] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (рабочий список проекта Викимедиа)] (*<-lang_ru;;*);
+       [Def. (on focus list of Wikimedia project)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [свойство, указывающее на то, что элемент является частью группы элементов, представляющих особый интерес для обслуживания, управлений или разработки. См. также P6104, P972, P2354.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [property to indicate that an item is of particular interest for a Wikimedia project. This property does not add notability. Items should not be created with this property if they are not notable for Wikidata. See also P6104, P972, P2354.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

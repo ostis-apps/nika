@@ -1,0 +1,21 @@
+concept_higher_education
+=> nrel_main_idtf:
+    [высшее образование] (*<-lang_ru;;*);
+    [higher education] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (высшее образование)] (*<-lang_ru;;*);
+       [Def. (higher education)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [высший уровень профессионального образования, следующий после среднего общего или профессионального образования] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [academic tertiary education, such as from colleges and universities] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

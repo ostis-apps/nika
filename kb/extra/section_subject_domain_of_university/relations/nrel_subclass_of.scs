@@ -1,0 +1,38 @@
+nrel_subclass_of
+
+//идентификаторы
+=> nrel_main_idtf:
+    [подкласс от] (*<-lang_ru;;*);
+    [subclass of] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (подкласс от)] (*<-lang_ru;;*);
+       [Def. (subclass of)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [каждый экземпляр данного класса является также экземпляром следующего(-их) класса(-ов). Не путать с P31 ("это частный случай понятия")] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [this item is a subclass (subset) of that item; all instances of these items are instances of those items; different from P31 (instance of), e.g.: K2 is an instance of mountain; volcano is a subclass of mountain (and an instance of volcanic landform).] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_university;
+
+
+=> nrel_second_domain:
+    concept_higher_education_institution;
+
+=> nrel_second_domain:
+    concept_academic_institution;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;
