@@ -1,0 +1,21 @@
+concept_higher_education_institution
+=> nrel_main_idtf:
+    [высшее учебное заведение] (*<-lang_ru;;*);
+    [higher education institution] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (высшее учебное заведение)] (*<-lang_ru;;*);
+       [Def. (higher education institution)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [учебное заведение, дающее высшее профессиональное образование и осуществляющее научную деятельность] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [institution that provides higher education (e.g., universities, vocational universities, community colleges, liberal arts colleges, institutes of technology, and others)] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

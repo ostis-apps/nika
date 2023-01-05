@@ -1,0 +1,50 @@
+section_subject_domain_of_hobby
+=> nrel_main_idtf:
+	  [Раздел. Предметная область университет]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of university] 
+  (* <- lang_en;; *);;
+
+/* Структура предметной области (классы объектов исследования и
+ исследуемые отношения) */
+section_subject_domain_of_university = [*
+	subject_domain_of_university
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область университет]
+   (* <- lang_ru;; *);
+   [Subject domain of university]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_university;
+	-> rrel_not_maximum_studied_object_class:
+      concept_academict_institution;
+      concept_Armenian_Soviet_Encyclopedia;
+      concept_Catholic_Encyclopedia;
+      concept_college;
+      concept_higher_education_institution;
+      concept_higher_education;
+      concept_High_school;
+      concept_Jewish_Encyclopedia_of_Brockhaus_and_Efron;
+      concept_professional_and_vocational_university;
+      concept_university_building;
+      concept_university_history;
+      concept_Keio_University;
+      concept_University_of_al_Qarawiyyin;
+      concept_University_of_Bologna;
+      concept_University_of_Mumbai;
+      concept_University_of_Oxford;
+	-> rrel_explored_relation:
+      rrel_replica;
+      nrel_described_by_source;
+      nrel_different_from;
+      nrel_field_of_work;
+      nrel_follows;
+      nrel_model_item;
+      nrel_subclass_of;
+      nrel_topics_main_category;
+      nrel_topics_main_template;
+      nrel_history_of_topic;
+      nrel_uses;;
+*];;

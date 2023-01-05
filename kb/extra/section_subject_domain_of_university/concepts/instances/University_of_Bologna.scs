@@ -1,0 +1,19 @@
+University_of_Bologna
+=> nrel_main_idtf:
+    [Болонский университет] (*<-lang_ru;;*);
+    [University of Bologna] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Болонский университет)] (*<-lang_ru;;*);
+       [Def. (University of Bologna)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [ВУЗ в Италии; старейший университет в мире] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [university in Bologna, Italy] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_not_relation;;

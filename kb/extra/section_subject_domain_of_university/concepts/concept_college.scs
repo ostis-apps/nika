@@ -1,0 +1,21 @@
+concept_college
+=> nrel_main_idtf:
+    [колледж] (*<-lang_ru;;*);
+    [college] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (колледж)] (*<-lang_ru;;*);
+       [Def. (college)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [учебное заведение] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [higher education institution] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

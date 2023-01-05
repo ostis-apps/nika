@@ -1,0 +1,47 @@
+nrel_model_item
+
+//идентификаторы
+=> nrel_main_idtf:
+    [модельный элемент] (*<-lang_ru;;*);
+    [model item] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (модельный элемент)] (*<-lang_ru;;*);
+       [Def. (model item)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Определяет, какой элемент является примером наилучшего практики моделирования субъекта, который описывается значением этого свойства, инструкции по использованию в Wikidata: модели элементы] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [defines which item is a best practice example of modelling a subject, which is described by the value of this property, usage instructions at Wikidata:Model items] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_university;
+
+
+=> nrel_second_domain:
+    concept_university;
+
+=> nrel_second_domain:
+    concept_university;
+
+=> nrel_second_domain:
+    concept_university;
+
+=> nrel_second_domain:
+    concept_university;
+
+=> nrel_second_domain:
+    concept_university;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

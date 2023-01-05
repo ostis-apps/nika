@@ -1,0 +1,21 @@
+concept_High_school
+=> nrel_main_idtf:
+    [высшая школа в Мексике] (*<-lang_ru;;*);
+    [High school] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (высшая школа в Мексике)] (*<-lang_ru;;*);
+       [Def. (High school)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [ступень обучения в Мексике после средней школы] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [organization in Mexico that succeedes junior high school (secondary education)] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

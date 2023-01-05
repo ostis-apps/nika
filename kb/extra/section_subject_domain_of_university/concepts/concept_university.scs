@@ -1,0 +1,40 @@
+concept_university
+=> nrel_main_idtf:
+    [университет] (*<-lang_ru;;*);
+    [university] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (университет)] (*<-lang_ru;;*);
+       [Def. (university)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [высшее учебное заведение] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [academic institution for further education] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_follows: concept_High_school;
+=> nrel_different_from: concept_college;
+=> nrel_different_from: concept_professional_and_vocational_university;
+=> nrel_field_of_work: concept_higher_education;
+=> nrel_described_by_source: concept_Catholic_Encyclopedia;
+=> nrel_described_by_source: concept_Armenian_Soviet_Encyclopedia;
+=> nrel_described_by_source: concept_Jewish_Encyclopedia_of_Brockhaus_and_Efron;
+=> nrel_maintained_by_WikiProject: concept_WikiProject_Higher_education;
+=> nrel_history_of_topic: concept_university_history;
+=> nrel_uses: concept_university_building;
+=> nrel_model_item: concept_university;
+=> nrel_model_item: concept_university;
+=> nrel_model_item: concept_university;
+=> nrel_model_item: concept_university;
+=> nrel_model_item: concept_university;
+
+<- concept_higher_education_institution;
+<- concept_academic_institution;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,35 @@
+nrel_maintained_by_WikiProject
+
+//идентификаторы
+=> nrel_main_idtf:
+    [относится к вики-проекту] (*<-lang_ru;;*);
+    [maintained by WikiProject] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (относится к вики-проекту)] (*<-lang_ru;;*);
+       [Def. (maintained by WikiProject)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Википроект, который поддерживает это свойство, элемент или связанные страницы. ] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [WikiProject that maintains this property, item, or linked pages. If the WikiProject is hosted outside of Wikidata, define the scope using the qualifier "of (P642)"] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_university;
+
+
+=> nrel_second_domain:
+    concept_WikiProject_Higher_education;
+
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;
