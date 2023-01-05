@@ -1,0 +1,20 @@
+concept_screenwriter
+=> nrel_main_idtf:
+    [Сценарист](* <-lang_ru;; *);
+    [Screenwriter](* <-lang_en;; *);;
+
+concept_screenwriter
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Сценарист)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Screenwriter)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Сценарист - автор сценариев для кинофильмов, телевизионных серий, постановок, комиксов, компьютерных игр.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Screenwriter - writer who writes for films, TV shows, comics and games.](*<- lang_en;;*);;
+    *);;
+*);;

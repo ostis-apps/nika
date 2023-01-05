@@ -1,0 +1,20 @@
+concept_film_budget
+=> nrel_main_idtf:
+    [Бюджет фильма](* <-lang_ru;; *);
+    [Film budget](* <-lang_en;; *);;
+
+concept_film_budget
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Бюджет фильма)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Film budget)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Бюджет фильма - это суммарные затраты студии или производственной компании на фильм по двум основным направлениям: производство и маркетинг.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Film budget - is the total cost of a film by a studio or production company in two main areas: production and marketing.](*<- lang_en;;*);;
+    *);;
+*);;

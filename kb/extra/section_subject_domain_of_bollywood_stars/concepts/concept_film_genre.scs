@@ -1,0 +1,20 @@
+concept_film_genre
+=> nrel_main_idtf:
+    [Жанр фильма](* <-lang_ru;; *);
+    [Film genre](* <-lang_en;; *);;
+
+concept_film_genre
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Жанр фильма)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Film genre)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Жанр фильма - класс фильмов, объединяющий на основе способов построения и повествования.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Film genre - classification of films based on similarities in narrative elements.](*<- lang_en;;*);;
+    *);;
+*);;

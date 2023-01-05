@@ -1,0 +1,20 @@
+concept_actor
+=> nrel_main_idtf:
+    [Актёр](* <-lang_ru;; *);
+    [Actor](* <-lang_en;; *);;
+
+concept_actor
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Актёр)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Actor)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Актёр - исполнитель ролей в нарративных искусствах.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Actor - person who acts in a dramatic or comic production and works in film, television, theatre, or radio.](*<- lang_en;;*);;
+    *);;
+*);;
