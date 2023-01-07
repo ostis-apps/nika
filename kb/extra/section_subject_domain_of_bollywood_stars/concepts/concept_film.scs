@@ -1,0 +1,20 @@
+concept_film
+=> nrel_main_idtf:
+    [Фильм](* <-lang_ru;; *);
+    [Film](* <-lang_en;; *);;
+
+concept_film
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Фильм)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Film)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Фильм - совокупность движущихся изображений, связанных единым сюжетом.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Film - sequence of images that give the impression of movement, stored on film stock.](*<- lang_en;;*);;
+    *);;
+*);;

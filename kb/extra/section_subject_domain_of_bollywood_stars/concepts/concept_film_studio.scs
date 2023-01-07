@@ -1,0 +1,20 @@
+concept_film_studio
+=> nrel_main_idtf:
+    [Киностудия](* <-lang_ru;; *);
+    [Film studio](* <-lang_en;; *);;
+
+concept_film_studio
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Киностудия)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Film studio)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Киностудия - организация, предоставляющая технические и иные средства, необходимые для фильмопроизводства.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Film studio - an organization that produces technical and other means necessary for film production.](*<- lang_en;;*);;
+    *);;
+*);;

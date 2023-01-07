@@ -1,0 +1,36 @@
+nrel_produce
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+    [Продюсирует](* <- lang_ru;; *);
+    [Produce](* <- lang_eng;; *);;
+
+nrel_produce
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (Продюсирует)](*<- lang_ru;;*);
+    [Def. (Produce)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Продюсирует - кто-то управляет финансовыми, административными, технологическими, творческими и юридическими аспектами при выполнении кинопроекта.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [Produce - someone manages the financial, administrative, technological, creative and legal aspects of a film project.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_film
+    };;
+*);;
+
+nrel_produce
+=>nrel_first_domain:
+    concept_film_producer;
+=>nrel_second_domain:
+    concept_film;
+
+<- binary_relation;
+<- antireflexive_relation;
+<- antitransitive_relation;;

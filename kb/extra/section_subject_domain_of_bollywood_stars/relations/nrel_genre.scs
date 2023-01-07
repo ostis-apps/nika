@@ -1,0 +1,36 @@
+nrel_genre
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+    [Снято в жанре](* <- lang_ru;; *);
+    [Filmed in the genre](* <- lang_eng;; *);;
+
+nrel_genre
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (Снято в жанре)](*<- lang_ru;;*);
+    [Def. (Filmed in the genre)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Снято в жанре - фильм снят в соответствии с требованиями какого-либо жанра.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [Filmed in the genre - the film was shot in accordance with the requirements of any genre.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_film_genre
+    };;
+*);;
+
+nrel_genre
+=>nrel_first_domain:
+    concept_film;
+=>nrel_second_domain:
+    concept_film_genre;
+
+<- binary_relation;
+<- antireflexive_relation;
+<- antitransitive_relation;;

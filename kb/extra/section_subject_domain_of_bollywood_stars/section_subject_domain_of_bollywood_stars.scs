@@ -1,0 +1,50 @@
+section_subject_domain_of_bollywood_stars
+=> nrel_main_idtf:
+	  [Раздел. Предметная область звёзд Болливуда]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of Bollywood stars] 
+  (* <- lang_en;; *);;
+
+
+
+section_subject_domain_of_bollywood_stars = [*
+	subject_domain_of_bollywood_stars
+    <- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область звёзд Болливуда]
+   (* <- lang_ru;; *);
+   [Subject domain of Bollywood stars]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_human;
+      concept_film_studio;
+      concept_film;
+	-> rrel_not_maximum_studied_object_class:
+	concept_actor;
+	concept_film_budget;
+	concept_film_duration;
+	concept_film_genre;
+	concept_film_producer;
+	concept_screenwriter;
+	-> rrel_explored_relation:
+      nrel_acting;
+      nrel_produce;
+      nrel_genre;;
+*];;
+
+
+section_subject_domain_of_bollywood_stars
+-> rrel_key_sc_element:
+	concept_human;
+        concept_film_studio;
+        concept_film;
+	concept_actor;
+	concept_film_budget;
+	concept_film_duration;
+	concept_film_genre;
+	concept_film_producer;
+	concept_screenwriter;
+	nrel_acting;
+        nrel_produce;
+        nrel_genre;;
