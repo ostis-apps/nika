@@ -1,0 +1,20 @@
+concept_teacher
+=> nrel_main_idtf:
+    [Преподаватель](* <-lang_ru;; *);
+    [Teacher](* <-lang_en;; *);;
+
+concept_teacher
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Преподаватель)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Teacher)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Преподаватель - педагог, который занимается преподаванием чего-либо.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Teacher - a person who teaches something.](*<- lang_en;;*);;
+    *);;
+*);;

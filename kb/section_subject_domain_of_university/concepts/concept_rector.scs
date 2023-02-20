@@ -1,0 +1,20 @@
+concept_rector
+=> nrel_main_idtf:
+    [Ректор](* <-lang_ru;; *);
+    [Rector](* <-lang_en;; *);;
+
+concept_rector
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Ректор)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Rector)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Ректор - руководитель высшего учебного заведения.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Rector - head of a higher educational institution.](*<- lang_en;;*);;
+    *);;
+*);;

@@ -1,0 +1,20 @@
+concept_course
+=> nrel_main_idtf:
+    [Курс](* <-lang_ru;; *);
+    [Course](* <-lang_en;; *);;
+
+concept_course
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Курс)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Course)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Курс - серия учебных занятий по одному предмету.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Course - a series of training sessions in one subject.](*<- lang_en;;*);;
+    *);;
+*);;

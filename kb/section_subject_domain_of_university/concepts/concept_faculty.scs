@@ -1,0 +1,20 @@
+concept_faculty
+=> nrel_main_idtf:
+    [Факультет](* <-lang_ru;; *);
+    [Faculty](* <-lang_en;; *);;
+
+concept_faculty
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Факультет)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Faculty)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Факультет - учебно-научное и административное структурное подразделение высшего учебного заведения, осуществляющее подготовку студентов и аспирантов по одной или нескольким родственным специальностям.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Faculty - educational, scientific and administrative structural unit of a higher educational institution that trains students and graduate students in one or more related specialties.](*<- lang_en;;*);;
+    *);;
+*);;

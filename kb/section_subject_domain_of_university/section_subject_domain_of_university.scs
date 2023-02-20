@@ -1,0 +1,56 @@
+section_subject_domain_of_university
+=> nrel_main_idtf:
+	  [Раздел. Предметная область университет]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of university] 
+  (* <- lang_en;; *);;
+
+
+
+section_subject_domain_of_university = [*
+	subject_domain_of_university
+    <- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область университет]
+   (* <- lang_ru;; *);
+   [Subject domain of university]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+      concept_human;
+      concept_course;
+      concept_university;
+	-> rrel_not_maximum_studied_object_class:
+	concept_assistant_professor;
+	concept_dean;
+	concept_department;
+	concept_faculty;
+	concept_professor;
+	concept_rector;
+	concept_speciality;
+	concept_student;
+	concept_teacher;
+	-> rrel_explored_relation:
+      nrel_getting_specialty;
+      nrel_teach;
+      nrel_university_studies;;
+*];;
+
+
+section_subject_domain_of_university
+-> rrel_key_sc_element:
+	concept_assistant_professor;
+        concept_course;
+	concept_dean;
+	concept_department;
+	concept_faculty;
+	concept_human;
+	concept_professor;
+	concept_rector;
+	concept_speciality;
+	concept_student;
+	concept_teacher;
+	concept_university;
+	nrel_getting_specialty;
+        nrel_teach;
+        nrel_university_studies;;

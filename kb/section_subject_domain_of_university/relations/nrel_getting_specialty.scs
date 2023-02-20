@@ -1,0 +1,36 @@
+nrel_getting_specialty
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+    [Получение специальности](* <- lang_ru;; *);
+    [Getting specialty](* <- lang_eng;; *);;
+
+nrel_getting_specialty
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (Получение специальности)](*<- lang_ru;;*);
+    [Def. (Getting specialty)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Получение специальности - приобретение знаний необходимых для определённого вида деятельности.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [Getting specialty - acquisition of knowledge necessary for a certain type of activity.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_speciality
+    };;
+*);;
+
+nrel_getting_specialty
+=>nrel_first_domain:
+    concept_student;
+=>nrel_second_domain:
+    concept_speciality;
+
+<- binary_relation;
+<- antireflexive_relation;
+<- antitransitive_relation;;

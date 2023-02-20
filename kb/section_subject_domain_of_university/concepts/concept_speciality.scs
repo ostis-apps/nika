@@ -1,0 +1,20 @@
+concept_speciality
+=> nrel_main_idtf:
+    [Специальность](* <-lang_ru;; *);
+    [Speciality](* <-lang_en;; *);;
+
+concept_speciality
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Специальность)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Speciality)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Специальность - комплекс приобретённых путём специальной подготовки и опыта работы знаний, умений и навыков, необходимых для определённого вида деятельности в рамках той или иной профессии.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Speciality - a complex of knowledge, skills and abilities acquired through special training and work experience necessary for a certain type of activity within a particular profession.](*<- lang_en;;*);;
+    *);;
+*);;

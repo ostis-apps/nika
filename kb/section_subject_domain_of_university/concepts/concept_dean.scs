@@ -1,0 +1,20 @@
+concept_dean
+=> nrel_main_idtf:
+    [Декан](* <-lang_ru;; *);
+    [Dean](* <-lang_en;; *);;
+
+concept_dean
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Декан)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Dean)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Декан - высшая административная должность факультета в учреждении высшего образовани.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Dean - the highest administrative position of a faculty in an institution of higher education.](*<- lang_en;;*);;
+    *);;
+*);;

@@ -1,0 +1,36 @@
+nrel_teach
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+    [Преподавать](* <- lang_ru;; *);
+    [Teach](* <- lang_eng;; *);;
+
+nrel_teach
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (Преподавать)](*<- lang_ru;;*);
+    [Def. (Teach)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Преподавать - обучая, сообщать, передавать сведения о чём-нибудь.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [Teach - teaching, informing, conveying information about something.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_course
+    };;
+*);;
+
+nrel_teach
+=>nrel_first_domain:
+    concept_teacher;
+=>nrel_second_domain:
+    concept_course;
+
+<- binary_relation;
+<- antireflexive_relation;
+<- antitransitive_relation;;

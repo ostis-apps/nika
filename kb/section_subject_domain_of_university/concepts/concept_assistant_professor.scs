@@ -1,0 +1,20 @@
+concept_assistant_professor
+=> nrel_main_idtf:
+    [Доцент](* <-lang_ru;; *);
+    [Assistant professor](* <-lang_en;; *);;
+
+concept_assistant_professor
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Доцент)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Assistant professor)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Доцент - учёное звание преподавателей высших учебных заведений, выполняющих функцию университетских лекторов или другую педагогическую работу сопоставимого уровня.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Assistant professor - the academic title of teachers of higher educational institutions performing the function of university lecturers or other pedagogical work of a comparable level.](*<- lang_en;;*);;
+    *);;
+*);;

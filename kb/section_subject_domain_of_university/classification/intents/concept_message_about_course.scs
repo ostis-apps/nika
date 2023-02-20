@@ -1,0 +1,27 @@
+concept_message_about_course
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о курсе]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [about_course];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о курсе)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о курсе - атомарное сообщение,
+    которое содержит какую-либо информацию о курсе, который ведёт какой-либо преподаватель.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;

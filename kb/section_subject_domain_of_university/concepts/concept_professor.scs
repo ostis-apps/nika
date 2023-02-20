@@ -1,0 +1,20 @@
+concept_professor
+=> nrel_main_idtf:
+    [Профессор](* <-lang_ru;; *);
+    [Professor](* <-lang_en;; *);;
+
+concept_professor
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Профессор)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Professor)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Профессор - высшее учёное звание преподавателя высших учебных заведений, а также лицо, обладающее этим званием.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Professor - the highest academic title of a teacher of higher educational institutions, as well as a person with this title.](*<- lang_en;;*);;
+    *);;
+*);;

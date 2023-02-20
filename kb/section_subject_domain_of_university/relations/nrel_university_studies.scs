@@ -1,0 +1,36 @@
+nrel_university_studies
+<- sc_node_norole_relation;
+=>nrel_main_idtf:
+    [Учиться в университете](* <- lang_ru;; *);
+    [University studies](* <- lang_eng;; *);;
+
+nrel_university_studies
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    <- definition;;
+    => nrel_main_idtf: 
+    [Опр. (Учиться в университете)](*<- lang_ru;;*);
+    [Def. (University studies)](*<- lang_en;;*);;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Учиться в университете - проходить обучении в каком-либо высшем учебном заведении.](*<- lang_ru;;*);; 
+        -> rrel_example: 
+            [University studies - attend a higher education institution.](*<- lang_en;;*);;
+    *);;
+    => nrel_using_constants:
+    {
+        concept_university
+    };;
+*);;
+
+nrel_university_studies
+=>nrel_first_domain:
+    concept_student;
+=>nrel_second_domain:
+    concept_university;
+
+<- binary_relation;
+<- antireflexive_relation;
+<- antitransitive_relation;;

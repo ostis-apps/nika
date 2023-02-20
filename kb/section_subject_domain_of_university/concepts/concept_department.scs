@@ -1,0 +1,20 @@
+concept_department
+=> nrel_main_idtf:
+    [Кафедра](* <-lang_ru;; *);
+    [Department](* <-lang_en;; *);;
+
+concept_department
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Кафедра)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Department)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Кафедра - основная структурная единица факультета в высшем учебном заведении, осуществляющая подготовку слушателей, студентов и курсантов в рамках определённой специализации.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Department - the main structural unit of the faculty in a higher educational institution, which trains listeners, students and cadets within a certain specialization.](*<- lang_en;;*);;
+    *);;
+*);;

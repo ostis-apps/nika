@@ -1,0 +1,20 @@
+concept_student
+=> nrel_main_idtf:
+    [Студент](* <-lang_ru;; *);
+    [Student](* <-lang_en;; *);;
+
+concept_student
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Студент)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (Student)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Студент - учащийся высшего учебного заведения.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [Student - a person who studies at a higher educational institution.](*<- lang_en;;*);;
+    *);;
+*);;

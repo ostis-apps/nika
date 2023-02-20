@@ -1,0 +1,20 @@
+concept_university
+=> nrel_main_idtf:
+    [Университет](* <-lang_ru;; *);
+    [University](* <-lang_en;; *);;
+
+concept_university
+<- rrel_key_sc_element: ...
+(*
+    <- sc_definition;;
+    => nrel_main_idtf: [Опр. (Университет)] (* <- lang_ru;; *);; 
+    => nrel_main_idtf: [Def. (University)] (* <- lang_en;; *);;
+    <- definition;;
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: 
+            [Университет - высшее учебное заведение, где готовятся специалисты по фундаментальным и многим прикладным наукам.](*<- lang_ru;;*);;
+        -> rrel_example: 
+            [University - a higher educational institution where specialists in fundamental and many applied sciences are trained.](*<- lang_en;;*);;
+    *);;
+*);;
