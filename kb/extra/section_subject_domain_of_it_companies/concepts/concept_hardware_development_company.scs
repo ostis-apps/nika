@@ -1,0 +1,27 @@
+concept_hardware_development_company
+=> nrel_main_idtf:
+    [Компания разработки аппаратного обеспечения] (*<-lang_ru;;*);
+    [Hardware development cimpany company] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Компания разработки аппаратного обеспечения)] (*<-lang_ru;;*);
+       [Def. (Hardware development cimpany company)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Компания по разработке аппаратного обеспечения — это компания, которая 
+                проектирует, разрабатывает и производит компьютерные аппаратные 
+                компоненты и системы, такие как процессоры, устройства памяти, 
+                устройства хранения и сетевое оборудование.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [A hardware development company is a business that designs, develops, 
+                and manufactures computer hardware components and systems, such 
+                as processors, memory devices, storage devices, 
+                and networking equipment.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

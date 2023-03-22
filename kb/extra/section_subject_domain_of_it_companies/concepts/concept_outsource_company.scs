@@ -1,0 +1,27 @@
+concept_outsource_company
+=> nrel_main_idtf:
+    [Аутсорсинговая компания] (*<-lang_ru;;*);
+    [Outsource company] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Аутсорсинговая компания)] (*<-lang_ru;;*);
+       [Def. (Outsource company)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [ИТ-аутсорсинговая компания — это бизнес, который предоставляет ИТ-услуги 
+                и решения другим компаниям на контрактной основе, что позволяет 
+                им передать свои ИТ-потребности на аутсорсинг и сосредоточиться 
+                на своих основных бизнес-операциях.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [An IT outsource company is a business that provides 
+                IT services and solutions to other companies on a contract basis, 
+                allowing them to outsource their IT needs and focus on their 
+                core business operations.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

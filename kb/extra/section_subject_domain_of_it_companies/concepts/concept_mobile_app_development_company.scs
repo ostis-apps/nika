@@ -1,0 +1,26 @@
+concept_mobile_app_development_company
+=> nrel_main_idtf:
+    [Компания разработки мобильных приложений] (*<-lang_ru;;*);
+    [Mobile app development company] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Компания разработки мобильных приложений)] (*<-lang_ru;;*);
+       [Def. (Mobile app development company)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Компания по разработке мобильных приложений — это бизнес, 
+                который специализируется на создании программных приложений 
+                для мобильных устройств, таких как смартфоны и 
+                планшеты.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [A mobile app development company is a business that specializes 
+                in creating software applications for mobile devices such as 
+                smartphones and tablets.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,25 @@
+concept_web_development_company
+=> nrel_main_idtf:
+    [Компания разработки веб сервисов] (*<-lang_ru;;*);
+    [Web development company] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Компания разработки веб сервисов)] (*<-lang_ru;;*);
+       [Def. (Web development company)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Компания веб-разработки — это бизнес, который 
+                специализируется на проектировании, разработке и обслуживании 
+                веб-сайтов и веб-приложений для клиентов.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [A web development company is a business that specializes 
+                in designing, developing, and maintaining websites and 
+                web applications for clients.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

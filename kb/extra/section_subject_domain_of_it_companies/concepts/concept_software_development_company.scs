@@ -1,0 +1,29 @@
+concept_software_development_company
+=> nrel_main_idtf:
+    [Компания разработки программного обеспечения] (*<-lang_ru;;*);
+    [Software development company] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Компания разработки программного обеспечения)] (*<-lang_ru;;*);
+       [Def. (Software development company)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Компания по разработке программного обеспечения — это бизнес, 
+                который проектирует, разрабатывает и производит программные 
+                приложения для различных целей и платформ, таких как настольные 
+                компьютеры, мобильные устройства и веб-приложения.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [A software development company is a business that designs, 
+                develops, and produces software applications for a variety 
+                of purposes and platforms, such as desktop computers, mobile devices, 
+                and web applications.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+->nrel_develop: concept_software;
+->concept_game_development_company;
+->concept_mobile_app_development_company;
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

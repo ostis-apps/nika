@@ -1,0 +1,78 @@
+section_subject_domain_of_it_companies
+=> nrel_main_idtf:
+	  [Раздел. Предметная область IT-компаний]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of IT-companies] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_it_companies = [*
+	subject_domain_of_it_companies
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область IT-компаний]
+   (* <- lang_ru;; *);
+   [Subject domain of IT-companies]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+   concept_it_company;
+	-> rrel_not_maximum_studied_object_class:
+   concept_software_development_company;
+   concept_hardware_development_company;
+   concept_outsource_company; 
+   concept_electronic_commerce_company;
+   concpet_telecommunication_company;
+   concept_game_development_company;
+   concept_ai_company;
+   concept_cybersecurity_company;
+   concept_big_data_company;
+   concept_mobile_app_development_company;
+   concept_web_development_company;
+   concept_software;
+   concept_antivirus;
+   concept_hardware;
+   concept_mobile_app;
+	-> rrel_explored_relation:
+   nrel_date_of_foundation;
+   nrel_founder;
+   nrel_headquarters_country;
+   nrel_workers_amount;
+   nrel_subsidiary;
+   nrel_product;
+   nrel_develop;
+   nrel_release_date;
+   nrel_revenue;
+   nrel_produce;
+   nrel_ceo;;
+*];;
+
+section_subject_domain_of_it_companies
+-> rrel_key_sc_element:
+   concept_it_company;
+   concept_software_development_company;
+   concept_hardware_development_company;
+   concept_outsource_company; 
+   concept_electronic_commerce_company;
+   concpet_telecommunication_company;
+   concept_game_development_company;
+   concept_ai_company;
+   concept_cybersecurity_company;
+   concept_big_data_company;
+   concept_mobile_app_development_company;
+   concept_web_development_company;
+   concept_software;
+   concept_antivirus;
+   concept_hardware;
+   concept_mobile_app;
+   nrel_date_of_foundation;
+   nrel_founder;
+   nrel_headquarters_country;
+   nrel_workers_amount;
+   nrel_subsidiary;
+   nrel_product;
+   nrel_produce;
+   nrel_develop;
+   nrel_release_date;
+   nrel_revenue;
+   nrel_ceo;;

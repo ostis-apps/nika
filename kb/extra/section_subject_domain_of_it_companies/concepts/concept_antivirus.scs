@@ -1,0 +1,28 @@
+concept_antivirus
+=> nrel_main_idtf:
+    [Антивирус] (*<-lang_ru;;*);
+    [Antivirus] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Антивирус)] (*<-lang_ru;;*);
+       [Def. (Antivirus)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Антивирус - это специализированная программа для обнаружения компьютерных вирусов, 
+                а также нежелательных (считающихся вредоносными) программ и восстановления заражённых 
+                (модифицированных) такими программами файлов и профилактики — предотвращения заражения 
+                (модификации) файлов или операционной системы вредоносным кодом. ] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Antivirus is a specialized program for detecting computer viruses, 
+                as well as special (considered viruses) programs and restoring infected 
+                (modified) program manufacturers by programs and prevention - preventing 
+                infection (modification) of viruses or detecting a system with a 
+                virus code.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

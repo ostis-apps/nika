@@ -1,0 +1,34 @@
+nrel_product
+
+//идентификаторы
+=> nrel_main_idtf:
+    [Продукт* ] (*<-lang_ru;;*);
+    [Product* ] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (Продукт* )] (*<-lang_ru;;*);
+       [Def. (Product* )] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Быть произведенным кем-то] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [To be produced by someone ] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_it_company;
+
+
+=> nrel_second_domain:
+    concept_software;
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

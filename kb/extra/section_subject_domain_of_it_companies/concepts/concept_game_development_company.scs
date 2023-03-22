@@ -1,0 +1,25 @@
+concept_game_development_company
+=> nrel_main_idtf:
+    [Компания разработки игр] (*<-lang_ru;;*);
+    [Game development company] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Компания разработки игр)] (*<-lang_ru;;*);
+       [Def. (Game development company)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Компания по разработке игр — это компания, которая создает видеоигры 
+                для различных платформ, включая консоли, персональные 
+                компьютеры и мобильные устройства.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [A game development company is a company that creates video games for various 
+                platforms, including consoles, personal computers, 
+                and mobile devices. ] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

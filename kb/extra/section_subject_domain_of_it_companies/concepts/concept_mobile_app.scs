@@ -1,0 +1,31 @@
+concept_mobile_app
+=> nrel_main_idtf:
+    [Мобильное приложение] (*<-lang_ru;;*);
+    [Mobile app] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Мобильное приложение)] (*<-lang_ru;;*);
+       [Def. (Mobile app)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Мобильное приложение — это программное обеспечение, 
+                специально разработанное под определенную мобильную 
+                платформу. Предназначено для использования на смартфонах, 
+                фаблетах, планшетах, умных часах и 
+                других мобильных устройствах. ] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [A mobile application is software
+                specially designed for a specific mobile
+                platform. Designed for use on smartphones,
+                phablets, tablets, smart watches and
+                other mobile devices. ] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,27 @@
+concept_hardware
+=> nrel_main_idtf:
+    [Аппаратное обеспечение] (*<-lang_ru;;*);
+    [Hardware] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Аппаратное обеспечение)] (*<-lang_ru;;*);
+       [Def. (Hardware)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Электронные и механические части вычислительного устройства, 
+                входящие в состав системы или сети, исключая программное
+                 обеспечение и данные (информацию, которую вычислительная
+                  система хранит и обрабатывает) ] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Electronic and mechanical parts of a computing device 
+                that make up a system or network, excluding software and 
+                data (information that a computing system stores 
+                and processes) ] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+->nrel_produce: concept_hardware;
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;
