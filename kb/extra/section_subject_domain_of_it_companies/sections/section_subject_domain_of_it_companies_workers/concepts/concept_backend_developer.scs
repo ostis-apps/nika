@@ -1,0 +1,37 @@
+concept_backend_developer
+=> nrel_main_idtf:
+    [Бэкенд разработчик] (*<-lang_ru;;*);
+    [Backend developer] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Бэкенд разработчик)] (*<-lang_ru;;*);
+       [Def. (Backend developer)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Специалист, работающий на стороне сервера 
+                веб-приложений. Они отвечают за разработку и 
+                поддержку систем и архитектуры, поддерживающих 
+                внешний интерфейс приложения.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Specialist who work on the server-side of web applications. 
+                They are responsible for developing and maintaining the systems 
+                and architecture that support the frontend 
+                of an application.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+
+=>nrel_have_skill:
+    PHP;
+    networking;
+    Java;
+    server_side_frameworks;
+    API;
+    databases;
+
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

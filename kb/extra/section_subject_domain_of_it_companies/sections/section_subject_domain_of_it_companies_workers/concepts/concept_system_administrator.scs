@@ -1,0 +1,36 @@
+concept_system_administrator
+=> nrel_main_idtf:
+    [Системный администратор] (*<-lang_ru;;*);
+    [System administrator] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Системный администратор)] (*<-lang_ru;;*);
+       [Def. (System administrator)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Специалист, который управляет и поддерживает ИТ-инфраструктуру 
+                организации. Он отвечает за настройку, установку и устранение 
+                неполадок в компьютерных системах, серверах и сетевом 
+                оборудовании. ] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Specialist who manage and maintain 
+                the IT infrastructure of an organization. 
+                He's responsible for configuring, installing, and 
+                troubleshooting computer systems, servers, and network 
+                equipment. System administrator also ensure the security 
+                and availability of IT systems and 
+                data.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=>nrel_have_skill:
+    operating_systems;
+    security_tools;
+    Networking;
+
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,35 @@
+concept_it_worker
+=> nrel_main_idtf:
+    [Работник IT-сферы] (*<-lang_ru;;*);
+    [IT-worker] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Работник IT-сферы)] (*<-lang_ru;;*);
+       [Def. (IT-worker)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Someone who specializes in information technology (IT) and works in the field of technology] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [кто-то, кто специализируется на информационных технологиях (ИТ) и работает в области технологий] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;
+
+concept_it_worker <= nrel_subdividing:
+	...
+  	(* 
+    	->concept_backend_developer;;
+        ->concept_system_administrator;;
+        ->concept_qa;;
+        ->concept_project_manager;;
+        ->concept_cyber_security_specialist;;
+        ->concept_data_scientist;;
+        ->concept_backend_developer;;
+        ->concept_frontend_developer;;
+        ->concept_devops;;
+	*);;

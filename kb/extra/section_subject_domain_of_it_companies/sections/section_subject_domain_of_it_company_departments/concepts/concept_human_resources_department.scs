@@ -1,0 +1,26 @@
+concept_human_resources_department
+=> nrel_main_idtf:
+    [Отдел кадров] (*<-lang_ru;;*);
+    [Human resources department] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Отдел кадров)] (*<-lang_ru;;*);
+       [Def. (Human resources department)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Этот отдел отвечает за управление человеческими 
+                ресурсами компании, включая набор, обучение и 
+                отношения между сотрудниками.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [This department is responsible for managing 
+                the company's human resources, including 
+                recruitment, training, compensation, 
+                and employee relations. ] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

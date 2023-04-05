@@ -1,0 +1,30 @@
+concept_cybersecurity_company
+=> nrel_main_idtf:
+    [Компания кибербезопасности] (*<-lang_ru;;*);
+    [Cybersecurity company] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Rомпания кибербезопасности)] (*<-lang_ru;;*);
+       [Def. (Cybersecurity company)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Компании кибербезопасности - это компании, которые специализируются 
+                на предоставлении решений по безопасности для защиты от киберугроз, 
+                таких как хакерство, вирусы, вредоносное ПО, программы-вымогатели и 
+                других типов кибератак.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Cybersecurity company is a company that specialize in providing 
+                security solutions to protect against cyber threats such as hacking, 
+                viruses, malware, ransomware, and other types of 
+                cyber attacks.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_have_department: concept_cybersecurity_department;
+
+=>nrel_develop: concept_antivirus;
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

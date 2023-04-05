@@ -1,0 +1,31 @@
+concept_project_manager
+=> nrel_main_idtf:
+    [Управляющий проектом] (*<-lang_ru;;*);
+    [Project manager] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Управляющий проектом)] (*<-lang_ru;;*);
+       [Def. (Project manager)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Специалист, курирующий ИТ-проекты от начала до конца.
+                Он отвечает за обеспечение завершения проектов
+                вовремя, в рамках бюджета и с удовлетворением
+                заинтересованных сторон.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Specialist who oversee IT projects from start to finish. 
+                He's responsible for ensuring that projects are completed 
+                on time, within budget, and to the satisfaction 
+                of the stakeholders.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=>nrel_have_skill:
+    project_managment_tools;
+    risk_managment;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,36 @@
+concept_cyber_security_specialist
+=> nrel_main_idtf:
+    [Специалист по кибербезопасности] (*<-lang_ru;;*);
+    [Cybersecurity specialist] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Специалист по кибербезопасности)] (*<-lang_ru;;*);
+       [Def. (Cybersecurity specialist)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Специалист по защите ИТ-систем и
+                данных от кибератак. Он отвечает за
+                внедрение протоколов безопасности, мониторинг
+                потенциальных угрозы и реагирование на инциденты безопасности.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Specialist who protect IT systems and 
+                data from cyber attacks. He's responsible for 
+                implementing security protocols, monitoring for 
+                potential threats, and responding to security incidents.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=>nrel_have_skill:
+    operating_systems;
+    networking;
+    penetration_testing;
+    programming_languages;
+    encription;
+    security_tools;
+
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,46 @@
+nrel_skill
+
+//идентификаторы
+=> nrel_main_idtf:
+    [Наличие навыка* ] (*<-lang_ru;;*);
+    [Having a skill* ] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (Наличие навыка* )] (*<-lang_ru;;*);
+       [Def. (Having a skill* )] (*<-lang_en;;*);;
+       <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Наличие навыка означает, что вы обладаете определенной 
+                способностью или опытом в 
+                определенной области] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Having a skill means that you possess a 
+                particular ability or expertise in a 
+                specific area or field] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+
+
+
+
+
+=> nrel_first_domain:
+    concept_worker;
+
+
+=> nrel_second_domain:
+    concept_programming_language;
+
+=> nrel_second_domain:
+    concept_operating_system;
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

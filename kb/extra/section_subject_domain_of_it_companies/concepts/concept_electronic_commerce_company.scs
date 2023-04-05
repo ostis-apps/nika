@@ -1,0 +1,27 @@
+concept_electronic_commerce_company
+=> nrel_main_idtf:
+    [Компания электронной коммерции] (*<-lang_ru;;*);
+    [E-commerce company] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Компания электронной коммерции)] (*<-lang_ru;;*);
+       [Def. (E-commerce company)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Компания электронной коммерции - это бизнес, который работает в 
+                Интернете, продавая товары или услуги клиентам через 
+                веб-сайт или мобильное приложение.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [An e-commerce company is a business that operates online, selling 
+                products or services to customers through a website or mobile 
+                application. ] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_have_department: concept_project_managment_department;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

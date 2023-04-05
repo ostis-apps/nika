@@ -1,0 +1,38 @@
+concept_it_company
+=> nrel_main_idtf:
+    [IT-компания] (*<-lang_ru;;*);
+    [IT-company] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (IT-компания)] (*<-lang_ru;;*);
+       [Def. (IT-company)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Компания работающая в сфере 
+                информационных технологий] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Company operating in the field 
+                of information technology] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;
+
+concept_it_company <= nrel_subdividing:
+	...
+  	(* 
+    	->concept_software_development_company;;
+        ->concept_hardware_development_company;;
+        ->concept_outsource_company;;
+        ->concept_electronic_commerce_company;;
+        ->concpet_telecommunication_company;;
+        ->concept_game_development_company;;
+        ->concept_ai_company;;
+        ->concept_cybersecurity_company;;
+        ->concept_big_data_company;;
+        ->concept_mobile_app_development_company;;
+        ->concept_web_development_company;;
+	*);;

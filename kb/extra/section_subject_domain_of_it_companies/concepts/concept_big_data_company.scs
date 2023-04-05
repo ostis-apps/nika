@@ -1,0 +1,27 @@
+concept_big_data_company
+=> nrel_main_idtf:
+    [Компания работы c большими данными] (*<-lang_ru;;*);
+    [Big data company] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Компания работы c большими данными)] (*<-lang_ru;;*);
+       [Def. (Big data company)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Компании, работающие c большими данными - это компании
+                 специализируются на управлении, анализе и обработке 
+                 больших и сложных наборов данных.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Big data company is a company that specialize in the management, 
+                analysis, and processing of large and complex data 
+                sets.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_have_department: concept_data_science_department;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

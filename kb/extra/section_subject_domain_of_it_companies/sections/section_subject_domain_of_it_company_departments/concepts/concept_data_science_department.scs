@@ -1,0 +1,29 @@
+concept_data_science_department
+=> nrel_main_idtf:
+    [Отдел науки о данных] (*<-lang_ru;;*);
+    [Data science department] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Отдел науки о данных)] (*<-lang_ru;;*);
+       [Def. (Data science department)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Этот отдел отвечает за анализ и 
+                интерпретацию данных компании для получения 
+                информации, которая может улучшить бизнес-процессы 
+                и процесс принятия решений.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [This department is responsible for analyzing 
+                and interpreting the company's data to gain 
+                insights that can improve business processes 
+                and decision-making. ] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=>nrel_have_worker: concept_data_scientist;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

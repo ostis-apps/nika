@@ -1,0 +1,27 @@
+concept_ai_company
+=> nrel_main_idtf:
+    [Компания разработки искусственного интеллекта] (*<-lang_ru;;*);
+    [Artificial Intelligence Company] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Компания разработки искусственного интеллекта)] (*<-lang_ru;;*);
+       [Def. (Artificial Intelligence Company)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Компания разработки искусственного интеллекта - это компании, которые 
+                специализируются на разработке, внедрении и использовании технологий ИИ 
+                для различных целей.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Artificial Intelligence (AI) company is company that specialize in 
+                developing, implementing, and using AI technologies for various 
+                purposes] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_have_department: concept_data_science_department;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

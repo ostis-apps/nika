@@ -1,0 +1,49 @@
+section_subject_domain_of_it_company_departments
+=> nrel_main_idtf:
+	  [Раздел. Предметная область отделов IT-компаний]
+  (* <- lang_ru;; *);
+	  [Section. Subject domain of IT-companiey departments] 
+  (* <- lang_en;; *);
+<- atomic_section;;
+
+section_subject_domain_of_it_company_departments = [*
+	subject_domain_of_it_company_departments
+<- sc_node_struct;
+	=> nrel_main_idtf:
+   [Предметная область отделов IT-компаний]
+   (* <- lang_ru;; *);
+   [Subject domain of IT-company departments]
+   (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+    concept_it_department;
+	-> rrel_not_maximum_studied_object_class:
+    concept_software_development_department;
+    concept_quality_control_department;
+    concept_project_managment_department;
+    concept_cybersecurity_department;
+    concept_data_science_department;
+    concept_human_resources_department;
+    concept_web_development_department;
+    concept_backend_development_department;
+    concept_frontend_development_deprtment;
+    -> rrel_explored_relation:
+    nrel_have_worker;;
+*];;
+
+section_subject_domain_of_it_company_departments
+-> rrel_key_sc_element:
+    concept_it_department;
+    concept_software_development_department;
+    concept_quality_control_department;
+    concept_project_managment_department;
+    concept_cybersecurity_department;
+    concept_data_science_department;
+    concept_human_resources_department;
+    concept_web_development_department;
+    concept_backend_development_department;
+    concept_frontend_development_deprtment;
+    nrel_have_worker;;
+	
+
+

@@ -1,0 +1,36 @@
+concept_devops
+=> nrel_main_idtf:
+    [Девопс] (*<-lang_ru;;*);
+    [Devops] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Девопс)] (*<-lang_ru;;*);
+       [Def. (Devops)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Cпециалист, которы1 занимаются автоматизацией и 
+                улучшением процессов разработки, тестирования и 
+                внедрения программного обеспечения. Он работает
+                 на стыке разработки и эксплуатации, чтобы ускорить процессы 
+                 разработки, улучшить качество кода и увеличить 
+                 эффективность бизнес-процессов.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Specialist who bridge the gap between 
+                software development and IT operations. He work 
+                with software developers and system administrators 
+                to automate the process of software deployment 
+                and infrastructure management. ] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=>nrel_have_skill:
+    programming_languages;
+    databases;
+    cloud_computing;
+    Containerization;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

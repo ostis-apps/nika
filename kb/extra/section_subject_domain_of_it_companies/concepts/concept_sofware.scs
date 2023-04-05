@@ -1,0 +1,21 @@
+concept_software
+=> nrel_main_idtf:
+    [Программное обеспесение] (*<-lang_ru;;*);
+    [Software] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Программное обеспесение)] (*<-lang_ru;;*);
+       [Def. (Software)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Программа или множество программ, используемых для управления компьютером. ] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [A program or set of programs used to operate a computer. ] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

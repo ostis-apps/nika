@@ -1,0 +1,35 @@
+concept_it_department
+=> nrel_main_idtf:
+    [IT-отдел] (*<-lang_ru;;*);
+    [IT-department] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (IT-отдел)] (*<-lang_ru;;*);
+       [Def. (IT-department)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Cтруктурное подразделение организации, которое специализируется на конкретных функциях или задачах внутри компании] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [A company department is a structural unit within an organization that is responsible for carrying out specific functions or tasks.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;
+
+concept_it_department <= nrel_subdividing:
+	...
+  	(* 
+    	->concept_backend_development_department;;
+        ->concept_cybersecurity_department;;
+        ->concept_data_science_department;;
+        ->concept_frontend_development_deprtment;;
+        ->concept_human_resources_department;;
+        ->concept_project_managment_department;;
+        ->concept_quality_control_department;;
+        ->concept_software_development_department;;
+        ->concept_web_development_department;;
+	*);;

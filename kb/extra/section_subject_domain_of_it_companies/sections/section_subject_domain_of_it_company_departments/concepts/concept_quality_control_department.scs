@@ -1,0 +1,30 @@
+concept_quality_control_department
+=> nrel_main_idtf:
+    [Отдел контроля качества] (*<-lang_ru;;*);
+    [Quality assurance department] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Отдел контроля качества)] (*<-lang_ru;;*);
+       [Def. (Quality assurance department)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Этот отдел отвечает за обеспечение качества 
+                продуктов и услуг компании путем тестирования 
+                и проверки их соответствия требуемым 
+                спецификациям и стандартам.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [This department is responsible for 
+                ensuring the quality of the company's 
+                products and services by testing and 
+                verifying that they meet the required 
+                specifications and standards. ] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=>nrel_have_worker: concept_qa;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

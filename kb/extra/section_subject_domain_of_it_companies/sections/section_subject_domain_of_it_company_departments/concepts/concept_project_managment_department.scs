@@ -1,0 +1,27 @@
+concept_project_managment_department
+=> nrel_main_idtf:
+    [Отдел управления проектами] (*<-lang_ru;;*);
+    [Project managment department] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Отдел управления проектами)] (*<-lang_ru;;*);
+       [Def. (Project managment department)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Этот департамент отвечает за планирование, 
+                выполнение и мониторинг проектов в рамках 
+                организации.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [This department is responsible for 
+                planning, executing, and monitoring 
+                projects within the organization.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=>nrel_have_worker: concept_project_manager;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

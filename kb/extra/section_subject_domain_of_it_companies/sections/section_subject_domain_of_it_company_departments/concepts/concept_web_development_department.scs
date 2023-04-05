@@ -1,0 +1,28 @@
+concept_web_development_department
+=> nrel_main_idtf:
+    [Отдел веб-разработки] (*<-lang_ru;;*);
+    [Web development department] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Отдел веб-разработки)] (*<-lang_ru;;*);
+       [Def. (Web development department)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Этот отдел отвечает за проектирование, разработку 
+                и обслуживание веб-сайта компании 
+                и веб-приложений.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [This department is responsible for designing, 
+                developing, and maintaining the company's 
+                website and web-based applications.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=>nrel_have_worker: concept_backaend_developer;
+=>nrel_have_worker: concept_frontend_developer;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

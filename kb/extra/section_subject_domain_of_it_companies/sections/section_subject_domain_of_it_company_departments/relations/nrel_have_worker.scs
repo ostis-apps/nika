@@ -1,0 +1,29 @@
+nrel_have_worker
+
+//идентификаторы
+=> nrel_main_idtf:
+    [Наличие работника* ] (*<-lang_ru;;*);
+    [Presence of a worker* ] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (Наличие работника* )] (*<-lang_ru;;*);
+       [Def. (Presence of a worker* )] (*<-lang_en;;*);;
+*);
+
+=> nrel_first_domain:
+    concept_it_department;
+
+
+=> nrel_second_domain:
+    concept_it_worker;
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;

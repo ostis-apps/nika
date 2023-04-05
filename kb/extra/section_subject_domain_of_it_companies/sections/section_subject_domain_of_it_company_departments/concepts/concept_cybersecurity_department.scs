@@ -1,0 +1,28 @@
+concept_cybersecurity_department
+=> nrel_main_idtf:
+    [Отдел кибербезопасности] (*<-lang_ru;;*);
+    [Сybersecurity department] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Отдел кибербезопасности)] (*<-lang_ru;;*);
+       [Def. (Сybersecurity department)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Этот отдел отвечает за обеспечение безопасности и
+                 целостности цифровых активов компании, таких 
+                 как данные, сети и системы.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [This department is responsible for ensuring the security 
+                and integrity of the company's digital assets, such as data, 
+                networks, and systems. ] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+
+=>nrel_have_worker: concept_cyber_security_specialist;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

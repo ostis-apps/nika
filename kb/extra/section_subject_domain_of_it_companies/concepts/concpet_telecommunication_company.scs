@@ -1,0 +1,26 @@
+concpet_telecommunication_company
+=> nrel_main_idtf:
+    [Telecommunication company] (*<-lang_en;;*);
+    [Телекоммуникационная комания] (*<-lang_ru;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Telecommunication_company)] (*<-lang_ru;;*);
+       [Def. (Телекоммуникационная комания)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Телекоммуникационная компания — это бизнес, который предоставляет 
+                услуги связи, такие как передача голоса и данных, частным лицам, 
+                предприятиям и правительствам с использованием различных 
+                технологий и платформ.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [A telecommunications company is a business that provides communication services, 
+                such as voice and data transmission, to individuals, businesses, and governments 
+                using a variety of technologies and platforms.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

@@ -1,0 +1,28 @@
+concept_computer_game
+=> nrel_main_idtf:
+    [Компьютерная игра] (*<-lang_ru;;*);
+    [Computer game] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Компьютерная игра)] (*<-lang_ru;;*);
+       [Def. (Computer game)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Компьютерная программа, служащая для организации игрового процесса 
+                (геймплея), связи с партнёрами по игре, 
+                или сама выступающая в качестве партнёра ] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [A computer game is an interactive software program that allows 
+                players to engage in virtual environments or storylines using 
+                input devices to control characters or objects 
+                within the game. ] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+<- nrel_develop: concept_computer_game;
+
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

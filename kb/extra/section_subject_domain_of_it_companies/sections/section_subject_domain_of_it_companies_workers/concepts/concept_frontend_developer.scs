@@ -1,0 +1,35 @@
+concept_frontend_developer
+=> nrel_main_idtf:
+    [Фронтенд разработчик] (*<-lang_ru;;*);
+    [Frontend developer] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Фронтенд разработчик)] (*<-lang_ru;;*);
+       [Def. (Frontend developer)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Специалист, который работает на клиентской 
+                стороне веб-приложений. Он несёт ответственность 
+                за создание и поддержку пользовательского интерфейса 
+                и взаимодействия с пользователем 
+                веб-приложений.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Specialist who work on the client-side of web applications. 
+                He's responsible for creating and maintaining 
+                the user interface and user experience of 
+                web applications.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+
+=>nrel_have_skill:
+    html;
+    css;
+    java_script;
+    web_design;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

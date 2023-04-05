@@ -1,0 +1,30 @@
+cocept_data_scientist
+=> nrel_main_idtf:
+    [Специалист по данным] (*<-lang_ru;;*);
+    [Data scientist] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Специалист по данным)] (*<-lang_ru;;*);
+       [Def. (Data scientist)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Специалист, использующий статистические и аналитические
+                 методы извлечения идей и знаний
+                 из больших наборов данных.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Specialist who use statistical and analytical 
+                 methods to extract insights and knowledge
+                 from large sets of data.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=>nrel_have_skill:
+    programming_languages;
+    databases;
+    machine_learnibg;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

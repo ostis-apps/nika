@@ -1,0 +1,38 @@
+concept_qa
+=> nrel_main_idtf:
+    [QA] (*<-lang_ru;;*);
+    [QA] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (QA)] (*<-lang_ru;;*);
+       [Def. (QA)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Специалист, отвечающий за тестирование и обеспечение 
+                качества программных продуктов. Он создает планы тестирования, 
+                разрабатывает тестовые примеры и выполняет их для выявления дефектов 
+                и проблем в программном обеспечении. Специалист по 
+                обеспечению качества тесно сотрудничает с разработчиками 
+                программного обеспечения, чтобы убедиться, что программные 
+                продукты не содержат ошибок и соответствуют требуемым 
+                стандартам качества.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [Specialist who is responsible for testing and ensuring the 
+                quality of software products. He create test plans, develop 
+                test cases, and execute them to identify defects and issues 
+                in software. QA specialist work closely with software developers 
+                to ensure that software products are free of bugs and meet the 
+                required standards of quality.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=>nrel_have_skill:
+    programming_languages;
+    databases;
+    softwate_testing;
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

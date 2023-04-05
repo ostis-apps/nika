@@ -1,0 +1,28 @@
+concept_software_development_department
+=> nrel_main_idtf:
+    [Отдел разработки программного обеспечения] (*<-lang_ru;;*);
+    [Software Development Department] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- definition;;
+    => nrel_main_idtf:
+       [Опр. (Отдел разработки программного обеспечения)] (*<-lang_ru;;*);
+       [Def. (Software Development Department)] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Этот отдел отвечает за разработку и поддержку 
+                программных приложений для продуктов или услуг 
+                компании.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [This department is responsible
+                 for developing and maintaining software 
+                 applications for the company's products or 
+                 services.] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+
+
+<-sc_node_class;
+<-class;
+<-sc_node_not_relation;;

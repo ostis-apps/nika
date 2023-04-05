@@ -1,0 +1,34 @@
+nrel_develop
+
+//идентификаторы
+=> nrel_main_idtf:
+    [Разрабатывать* ] (*<-lang_ru;;*);
+    [Develop* ] (*<-lang_en;;*);
+
+//определение
+<- rrel_key_sc_element: ... (*
+	<- sc_definition;;
+    => nrel_main_idtf:
+       [Опр. (Разрабатывать* )] (*<-lang_ru;;*);
+       [Def. (Develop* )] (*<-lang_en;;*);;
+    <= nrel_sc_text_translation: ... (*
+          -> rrel_example:
+                [Находиться в процессе создания или проектирования чего-либо.] (*<-lang_ru;; => nrel_format: format_html;;*);
+                [To be in the process of creating or designing something. ] (*<-lang_en;; => nrel_format: format_html;;*);;
+    *);;
+*);
+
+=> nrel_first_domain:
+    concept_it_company;
+
+
+=> nrel_second_domain:
+    concept_software;
+
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;;
