@@ -1,0 +1,39 @@
+concept_user_interface_component
+<- sc_node_class;
+=> nrel_main_idtf:
+	[компонент пользовательского интерфейса]
+	(* <- lang_ru;; *);
+	[user interface component]
+	(* <- lang_en;; *);
+=> nrel_subdividing:
+{
+    concept_atomic_user_interface_component;
+    concept_non_atomic_user_interface_component
+};
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (компонент пользовательского интерфейса)]
+        (* <- lang_ru;; *);
+        [Def. (user interface component)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Компонент пользовательского интерфейса - это знак фрагмента базы знаний, имеющий определённую форму внешнего представления на экране.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [The user interface component is a sign of a fragment of the knowledge base that has a certain form of external representation on the screen.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_user_interface
+            };;
+	*);;
