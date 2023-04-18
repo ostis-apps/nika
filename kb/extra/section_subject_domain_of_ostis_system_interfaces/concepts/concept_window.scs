@@ -1,0 +1,34 @@
+concept_window
+<- sc_node_class;
+=> nrel_main_idtf:
+	[окно]
+	(* <- lang_ru;; *);
+	[window]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (окно)]
+        (* <- lang_ru;; *);
+        [Def. (window)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Окно – обособленная область экрана, содержащая различные элементы пользовательского интерфейса. Окна могут располагаться поверх друг друга.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [A window is a separate area of the screen containing various user interface elements. Windows can be placed on top of each other.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_user_interface_component
+            };;
+	*);;
