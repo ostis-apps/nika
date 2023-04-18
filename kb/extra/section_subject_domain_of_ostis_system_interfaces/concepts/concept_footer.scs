@@ -1,0 +1,34 @@
+concept_footer
+<- sc_node_class;
+=> nrel_main_idtf:
+	[футер]
+	(* <- lang_ru;; *);
+	[footer]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (футер)]
+        (* <- lang_ru;; *);
+        [Def. (footer)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Футер — это элемент интерфейса, который находится в нижней части сайта, расположенной ниже блока с основным контентом и отображаемая на всех страницах.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [A footer is an interface element that is located in the lower part of the site, located after the block with the main content and displayed on all pages.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_user_interface
+            };;
+	*);;

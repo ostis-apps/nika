@@ -1,0 +1,36 @@
+concept_user_interface
+<- sc_node_class;
+=> nrel_main_idtf:
+	[пользовательский интерфейс]
+	(* <- lang_ru;; *);
+	[user interface]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (пользовательский интерфейс)]
+        (* <- lang_ru;; *);
+        [Def. (user interface)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Пользовательский интерфейс - это один из наиболее важных компонентов компьютерной системы. Представляет собой совокупность аппаратных и программных средств, обеспечивающих обмен информацией между пользователем и компьютерной системой.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [The user interface is one of the most important components of a computer system. It is a set of hardware and software tools that ensure the exchange of information between the user and the computer system.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                computer_system
+            };;
+	*);;
+
+    
