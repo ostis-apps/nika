@@ -113,7 +113,7 @@ export const Footer = styled.div`
     padding-bottom: 9px;
 `;
 export const FooterInput = styled.input`
-    width: 100%;
+    width: 85%;
     padding: 15px 15px 15px 18px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
     border: 2px solid rgba(100, 150, 150, 0.2);
@@ -143,7 +143,28 @@ export const FooterSend = styled.button`
         box-shadow: 0px 0px 10px #627599;
     }
 `;
+export const FooterRecord = styled.button`
+    padding: 13px 12px 13px 6px;
+    margin-left: 12px;
+    border-radius: 50%;
+    box-shadow: 1.44px 1.44px 1.44px rgba(0, 0, 0, 0.25);
+    border: 2px solid rgba(100, 150, 150, 0.2);
+    cursor: pointer;
+    &:hover {
+        background: #849299;
+    }
+    &:hover path {
+        stroke: white;
+    }
+    &:active {
+        box-shadow: 0px 0px 10px #627599;
+    }
+`;
 export const WrapperSendIcon = styled.div`
     width: 33px;
     height: 27px;
 `;
+export const WrapperRecordIcon = styled.div`
+    width: 32px;
+    heights: 30px;
+`

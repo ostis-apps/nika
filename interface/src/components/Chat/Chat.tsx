@@ -23,16 +23,21 @@ import {
     WrapperWaitingSpinner,
     AnswerSpinnerText,
     WrapperSendIcon,
+    WrapperRecordIcon,
     WrapperIcon,
     WrapperAgentAnswer,
     WrapperFooter,
+    FooterRecord,
 } from './styled';
 import { ReactComponent as SendIcon } from '@assets/icon/send-icon.svg';
 import { ReactComponent as ArrowIcon } from '@assets/icon/arrowBackToLastMessage.svg';
+import { ReactComponent as RecordIcon } from '@assets/icon/micro.svg';
 import { Spinner } from '@components/Spinners/LoadSpinner';
 import { WaitingSpinner } from '@components/Spinners/WaitingSpinner';
 import { refSetter, throttle } from '@utils';
 import { useLanguage } from '@hooks/useLanguage';
+import useSpeechToText, { ResultType } from '../../speech_hooks';
+
 
 interface IProps {
     onSend: (message: string) => void;
@@ -58,7 +63,21 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
     ({ onSend, onFetching, isAgentAnswer, children, className, isLoading: isFetchingChatLoading }, chatRef) => {
         const [messageInput, setMessageInput] = useState('');
         const [isDisabled, setIsDisabled] = useState(false);
+        const {
+            error,
+            interimResult,
+            isRecording,
+            results,
+            startSpeechToText,
+            stopSpeechToText,
 
+        } = useSpeechToText({
+            continuous: true,
+            crossBrowser: true,
+            googleApiKey: process.env.REACT_APP_API_KEY,
+            speechRecognitionProperties: { interimResults: true },
+            useLegacyResults: false
+        });
         const [showArrow, setShowArrow] = useState(false);
         const [scrollHappened, setScrollHappened] = useState(false);
         const [shouldLoadMoreMessages, setShouldLoadMoreMessages] = useState(false);
@@ -81,6 +100,17 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
 
         const onButtonClick = () => {
             throttleSendMessage(messageInput);
+            results.length = 0;
+        };
+
+        const onRecordButtonClick = () => {
+            if (isRecording) {
+                stopSpeechToText();
+                results.length = 0;
+            }
+            else {
+                startSpeechToText();
+            }
         };
 
         const scrollToLastMessage = () => mainRef.current?.lastElementChild?.scrollIntoView(false);
@@ -166,10 +196,10 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
         }, [children]);
 
         useEffect(() => {
-            const empty = !messageInput.trim();
-            setIsDisabled(empty);
-            if (empty) setMessageInput('');
-        }, [messageInput]);
+            setMessageInput(messageInput + ' ' + (results.slice(-1) as any).map((result) => (String(result.transcript))))
+        }, [results]);
+
+
 
         return (
             <Wrapper className={className}>
@@ -214,12 +244,20 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
                             type="text"
                             placeholder={textPlaceholder[hookLanguage]}
                         />
-                        <FooterSend onClick={onButtonClick} type="submit" disabled={isDisabled}>
+                        {console.log("Message - " + messageInput)}
+                        <FooterSend onClick={onButtonClick} type="submit">
                             <WrapperSendIcon>
                                 <SendIcon />
                             </WrapperSendIcon>
                         </FooterSend>
+                        {console.log("Is recording - " + isRecording)}
+                        <FooterRecord onClick={onRecordButtonClick} type="button">
+                            <WrapperRecordIcon>
+                                <RecordIcon />
+                            </WrapperRecordIcon>
+                        </FooterRecord>
                     </WrapperFooter>
+
                 </Footer>
             </Wrapper>
         );
