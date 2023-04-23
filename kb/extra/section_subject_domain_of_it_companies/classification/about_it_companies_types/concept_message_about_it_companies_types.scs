@@ -1,0 +1,37 @@
+concept_message_about_it_companies_types
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о типах it-компаниий]
+	(* <- lang_ru;; *);
+	[message about it-companies types]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_it_companies_types];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о типах it-компаниий)]
+        (* <- lang_ru;; *);
+        [Def. (message about it-companies types)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о типах it-компаниий - атомарное сообщение, являющееся запросом на получение информации о типах it-компаниий]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about it-companies types - atomic message which used to make a question about it-companies types]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

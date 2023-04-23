@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="94319939646112" parent="0" x="851.405" y="541.334" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Существует несколько типов IT-компаний, включая компании, которые занимаются разработкой программного обеспечения, аппаратного обеспечения, искусственного интеллекта, аналитики больших данных, кибербезопасности, мобильной разработки, аутсорсинга, разработки веб-сервисов и игр.]]></content>
+        </node>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="94319939717296" parent="0" x="993.667" y="293.012" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Выделяют следующие виды IT-компаний: компании разработки программного обеспечения, компании разработки аппаратного обеспечения, компании разработки искусственного интеллекта, компании больших данных, компании кибербезопасности, компании мобильной разработки, аутсорсинговые коспании, компании разработки веб-сервисов, компании разработки игр.
+]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="94319938171632" parent="0" left="0" top="0" right="55.7969" bottom="26" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="405.095" y="305.489" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_it_companies_types" shapeColor="0" id="94319938277664" parent="0" left="0" top="0" right="282.641" bottom="26" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="835.405" y="423.774" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_it_companies_types" shapeColor="0" id="94319943959040" parent="0" left="0" top="0" right="282.641" bottom="26" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="305.022" y="695.164" haveBus="false" idtf_pos="4">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="94319939147072" parent="0" left="0" top="0" right="55.7969" bottom="26" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="400.405" y="526.334" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_inclusion" shapeColor="0" id="94319944013184" parent="0" left="0" top="0" right="97.0469" bottom="26" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="384.522" y="626.664" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase" shapeColor="0" id="94319943996240" parent="0" left="0" top="0" right="108.563" bottom="26" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="475.522" y="694.664" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="94319941810112" parent="0" id_b="94319938277664" id_e="94319939717296" b_x="835.405" b_y="423.774" e_x="993.667" e_y="293.012" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="94319938144256" parent="0" id_b="94319939147072" id_e="94319939646112" b_x="400.405" b_y="526.334" e_x="851.405" e_y="541.334" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="94319941798992" parent="0" id_b="94319938277664" id_e="94319939646112" b_x="835.405" b_y="423.774" e_x="851.405" e_y="541.334" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="94319946264864" parent="0" id_b="94319938171632" id_e="94319939717296" b_x="405.095" b_y="305.489" e_x="993.667" e_y="293.012" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="94319944496016" parent="0" id_b="94319943996240" id_e="94319943959040" b_x="475.522" b_y="694.664" e_x="305.022" e_y="695.164" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="94319944495040" parent="0" id_b="94319944013184" id_e="94319944496016" b_x="384.522" b_y="626.664" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.531597">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>

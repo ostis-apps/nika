@@ -1,0 +1,37 @@
+concept_message_about_it_company
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о it-компании]
+	(* <- lang_ru;; *);
+	[message about it-company]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_it_company];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о it-компании)]
+        (* <- lang_ru;; *);
+        [Def. (message about it-company)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о it-компании - атомарное сообщение, являющееся запросом на получение информации о it-компании]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about it-company - atomic message which used to make a question about it-company]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

@@ -1,0 +1,37 @@
+concept_message_about_microsoft
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о microsoft]
+	(* <- lang_ru;; *);
+	[message about microsoft]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_microsoft];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о Порождающем шаблоне)]
+        (* <- lang_ru;; *);
+        [Def. (message about microsoft)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о microsoft - атомарное сообщение, являющееся запросом на получение информации про microsoft]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about microsoft - atomic message which used to make a question about microsoft]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
