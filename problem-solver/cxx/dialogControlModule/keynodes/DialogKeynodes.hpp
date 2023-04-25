@@ -3,11 +3,11 @@
 #include "sc-memory/sc_addr.hpp"
 #include "sc-memory/sc_object.hpp"
 
-#include "CoreKeynodes.generated.hpp"
+#include "DialogKeynodes.generated.hpp"
 
 namespace dialogControlModule
 {
-class CoreKeynodes : public ScObject
+class DialogKeynodes : public ScObject
 {
   SC_CLASS()
   SC_GENERATED_BODY()

@@ -2,7 +2,7 @@
 
 #include "handler/LinkHandler.hpp"
 #include "manager/TemplateManager.hpp"
-#include "keynodes/CoreKeynodes.hpp"
+#include "keynodes/DialogKeynodes.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 #include "searcher/LanguageSearcher.hpp"
 #include "utils/ActionUtils.hpp"
@@ -49,7 +49,7 @@ SC_AGENT_IMPLEMENTATION(PhraseGenerationAgent)
   }
 
   ScAddr templateNode =
-      IteratorUtils::getAnyByOutRelation(&m_memoryCtx, phraseLink, CoreKeynodes::nrel_phrase_template);
+      IteratorUtils::getAnyByOutRelation(&m_memoryCtx, phraseLink, DialogKeynodes::nrel_phrase_template);
   ScAddr parametersNode =
       IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionNode, scAgentsCommon::CoreKeynodes::rrel_3);
 
