@@ -7,5 +7,6 @@ packagelist=(
 	cmake
 	nlohmann-json3-dev
 	libssl-dev
+	file
 )
 sudo apt-get install -y --no-install-recommends "${packagelist[@]}"
