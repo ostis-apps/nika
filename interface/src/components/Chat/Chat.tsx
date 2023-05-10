@@ -199,6 +199,18 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
             setMessageInput(messageInput + ' ' + (results.slice(-1) as any).map((result) => (String(result.transcript))))
         }, [results]);
 
+        useEffect(() => {
+            const timer = setTimeout(() => {
+                stopSpeechToText();
+                results.length = 0;
+            }, 10000);
+            return () => clearTimeout(timer);
+        }, [results]);
+
+        useEffect(() => {
+            startSpeechToText()
+        }, []);
+
 
 
         return (

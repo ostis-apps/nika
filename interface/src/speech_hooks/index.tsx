@@ -195,60 +195,35 @@ export default function useSpeechToText({
       chromeSpeechRecognition();
       return;
     }
-
-
-
     if (!crossBrowser && !useOnlyGoogleCloud) {
       return;
     }
-      
-    // Resume audio context due to google auto play policy
-    // https://developers.google.com/web/updates/2017/09/autoplay-policy-changes#webaudio
     if (audioContextRef.current?.state === 'suspended') {
       audioContextRef.current?.resume();
     }
-
     const stream = await startRecording({
       errHandler: () => setError('Microphone permission was denied'),
       audioContext: audioContextRef.current as AudioContext
     });
 
     setIsRecording(true);
-
-
-    // Stop recording if timeout
     if (timeout) {
       clearTimeout(timeoutId.current);
       handleRecordingTimeout();
     }
-
-    // stop previous mediaStream track if exists
     if (mediaStream.current) {
       stopMediaStream();
     }
-
-    // Clones stream to fix hark bug on Safari
     mediaStream.current = stream.clone();
-
     const speechEvents = Hark(mediaStream.current!, {
       audioContext: audioContextRef.current as AudioContext
     });
-
     speechEvents.on('speaking', () => {
       if (onStartSpeaking) onStartSpeaking();
-
-      // Clear previous recording timeout on every speech event
       clearTimeout(timeoutId.current);
     });
-
-    
     speechEvents.on('stopped_speaking', () => {
       if (onStoppedSpeaking) onStoppedSpeaking();
-
-      // Stops current recording and sends audio string to google cloud.
-      // recording will start again after google cloud api
-      // call if `continuous` prop is true. Until the api result
-      // returns, technically the microphone is not being captured again
       stopRecording({
         exportWAV: true,
         wavCallback: (blob) =>
