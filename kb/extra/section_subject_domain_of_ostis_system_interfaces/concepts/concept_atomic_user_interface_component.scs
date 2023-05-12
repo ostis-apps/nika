@@ -1,0 +1,39 @@
+concept_atomic_user_interface_component
+<- sc_node_class;
+=> nrel_main_idtf:
+	[атомарный компонент пользовательского интерфейса]
+	(* <- lang_ru;; *);
+	[atomic user interface component]
+	(* <- lang_en;; *);
+=> nrel_subdividing:
+{
+    concept_atomic_user_interface_component;
+    concept_non_atomic_user_interface_component
+};
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (атомарный компонент пользовательского интерфейса)]
+        (* <- lang_ru;; *);
+        [Def. (atomic user interface component)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Атомарный компонент пользовательского интерфейса - это компонент пользовательского интерфейса, не содержащий в своём составе других компонентов пользовательского интерфейса.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [The atomic user interface component is a user interface component that does not contain other user interface components in its composition.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_user_interface_component
+            };;
+	*);;

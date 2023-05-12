@@ -1,0 +1,93 @@
+section_subject_domain_ostis_system_interfaces
+=> nrel_main_idtf:
+    [Раздел. Предметная область интерфейсов ostis-систем] 
+    (* <- lang_ru;; *);
+    [Section. Subject domain of ostis-system interfaces]
+    (* <- lang_en;; *);
+<- sc_node_class;
+<- atomic_section;;
+
+subject_domain_ostis_system_interfaces
+<- structure;
+<- subject_domain;
+=> nrel_main_idtf:
+    [Предметная область интерфейсов ostis-систем] 
+    (* <- lang_ru;; *);
+    [Subject domain of ostis-system interfaces] 
+    (* <- lang_en;; *);
+
+-> rrel_maximum_studied_object_class:
+    concept_user_interface;
+-> rrel_explored_relation:
+	nrel_component_color;
+    nrel_visual_interface;
+-> rrel_not_maximum_studied_object_class:
+	concept_user_interface_component;
+    concept_non_atomic_user_interface_component;
+    concept_atomic_user_interface_component;
+    concept_visual_part_of_user_interface;
+    concept_decorative_user_interface_component;
+    concept_menu;
+    concept_menu_item;
+    concept_button;
+    concept_data_input_component;
+    concept_data_output_component;
+    concept_window;
+    concept_header;
+    concept_footer;
+    concept_main_part;;
+
+rrel_key_sc_element -> (section_subject_domain_ostis_system_interfaces -> subject_domain_ostis_system_interfaces)
+(*
+	=> nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_user_interface)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_user_interface_component)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> nrel_component_color)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_non_atomic_user_interface_component)
+(*
+    <- rrel_key_sc_element;; 
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_atomic_user_interface_component)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_visual_part_of_user_interface)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_decorative_user_interface_component)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> nrel_visual_interface)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_menu)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_menu_item)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_button)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_data_input_component)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_data_output_component)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_window)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_header)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_footer)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_main_part)
+(*
+    <- rrel_key_sc_element;;
+*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;
