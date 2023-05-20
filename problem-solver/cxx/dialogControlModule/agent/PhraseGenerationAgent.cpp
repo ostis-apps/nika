@@ -1,7 +1,7 @@
 #include <regex>
 
 #include "handler/LinkHandler.hpp"
-#include "manager/TemplateManager.hpp"
+#include "manager/templateManager/TemplateManager.hpp"
 #include "keynodes/DialogKeynodes.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 #include "searcher/LanguageSearcher.hpp"
@@ -147,11 +147,12 @@ vector<ScTemplateParams> PhraseGenerationAgent::findParametersList(
     const ScAddr & parametersNode)
 {
   TemplateManager manager(&m_memoryCtx);
+  ScAddrVector arguments = IteratorUtils::getAllWithType(&m_memoryCtx, parametersNode, ScType::Node);
+  manager.setArguments(arguments);
   vector<ScTemplateParams> parametersList;
   if (parametersNode.IsValid())
   {
-    ScAddrVector arguments = IteratorUtils::getAllWithType(&m_memoryCtx, parametersNode, ScType::Node);
-    parametersList = manager.createTemplateParamsList(templateNode, arguments);
+    parametersList = manager.createTemplateParams(templateNode);
   }
   if (parametersList.empty())
   {
