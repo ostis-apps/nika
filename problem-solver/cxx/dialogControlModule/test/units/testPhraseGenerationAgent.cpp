@@ -1,7 +1,7 @@
 #include "agent/PhraseGenerationAgent.hpp"
 #include "sc-builder/src/scs_loader.hpp"
 #include "handler/LinkHandler.cpp"
-#include "keynodes/CoreKeynodes.hpp"
+#include "keynodes/DialogKeynodes.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 #include "keynodes/Keynodes.hpp"
 #include "sc_test.hpp"
@@ -24,7 +24,7 @@ using PhraseGenerationTest = ScMemoryTest;
 void initializeClasses()
 {
   scAgentsCommon::CoreKeynodes::InitGlobal();
-  CoreKeynodes::InitGlobal();
+  DialogKeynodes::InitGlobal();
   MessageKeynodes::InitGlobal();
   Keynodes::InitGlobal();
 }

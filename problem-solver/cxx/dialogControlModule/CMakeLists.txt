@@ -1,4 +1,4 @@
-set(INFERENCE_MODULE_SRC "${SUBSYSTEMS_PATH}/ostis-inference/problem-solver/cxx/inferenceModule")
+set(INFERENCE_MODULE_SRC "${SUBSYSTEMS_PATH}/scl-machine/problem-solver/cxx/inferenceModule")
 
 set(SOURCES
     "DialogControlModule.cpp"
