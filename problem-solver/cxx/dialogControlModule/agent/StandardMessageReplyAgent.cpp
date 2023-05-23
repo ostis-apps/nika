@@ -95,16 +95,11 @@ ScAddr StandardMessageReplyAgent::generateReplyMessage(const ScAddr & messageNod
   bool const result = ActionUtils::waitAction(&m_memoryCtx, actionDirectInference, DIRECT_INFERENCE_AGENT_WAIT_TIME);
   if (result)
   {
-    SC_LOG_WARNING("result=" << result);
     ScAddr answer = IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionDirectInference, scAgentsCommon::CoreKeynodes::nrel_answer);
-    SC_LOG_WARNING("answer=" << answer.IsValid());
     ScAddr solutionNode = IteratorUtils::getAnyFromSet(&m_memoryCtx, answer);
-    SC_LOG_WARNING("solutionNode=" << solutionNode.IsValid());
     ScAddr solutionTreeRoot = IteratorUtils::getAnyByOutRelation(&m_memoryCtx, solutionNode, scAgentsCommon::CoreKeynodes::rrel_1);
-    SC_LOG_WARNING("solutionTreeRoot=" << solutionTreeRoot.IsValid());
     logicRuleNode = IteratorUtils::getAnyByOutRelation(&m_memoryCtx, solutionTreeRoot, scAgentsCommon::CoreKeynodes::rrel_1);
   }
-  SC_LOG_WARNING("logicRuleNode=" << logicRuleNode.IsValid());
   return logicRuleNode;
 }
 
