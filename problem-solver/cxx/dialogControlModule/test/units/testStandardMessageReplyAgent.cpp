@@ -2,7 +2,7 @@
 #include "agent/StandardMessageReplyAgent.hpp"
 #include "agent/PhraseGenerationAgent.hpp"
 #include "sc-builder/src/scs_loader.hpp"
-#include "keynodes/Keynodes.hpp"
+#include "keynodes/DialogKeynodes.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 #include "sc-agents-common/utils/CommonUtils.hpp"
 #include "sc-agents-common/utils/IteratorUtils.hpp"
@@ -28,7 +28,7 @@ using StandardMessageReplyTest = ScMemoryTest;
 
 void initializeClasses()
 {
-  CoreKeynodes::InitGlobal();
+  DialogKeynodes::InitGlobal();
   InferenceKeynodes::InitGlobal();
   commonModule::Keynodes::InitGlobal();
   MessageKeynodes::InitGlobal();

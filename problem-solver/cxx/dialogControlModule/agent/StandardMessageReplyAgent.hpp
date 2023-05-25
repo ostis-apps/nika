@@ -23,7 +23,5 @@ private:
   ScAddr generateReplyMessage(const ScAddr & messageNode);
 
   ScAddr wrapInSet(ScAddr const & addr);
-
-  ScAddr getLogicRule(const ScAddr & messageNode);
 };
 }  // namespace dialogControlModule

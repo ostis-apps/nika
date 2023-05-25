@@ -1,8 +1,8 @@
-set(INFERENCE_MODULE_SRC "${SUBSYSTEMS_PATH}/ostis-inference/problem-solver/cxx/inferenceModule")
+set(INFERENCE_MODULE_SRC "${SUBSYSTEMS_PATH}/scl-machine/problem-solver/cxx/inferenceModule")
 
 set(SOURCES
     "DialogControlModule.cpp"
-    "keynodes/CoreKeynodes.cpp"
+    "keynodes/DialogKeynodes.cpp"
     "keynodes/MessageKeynodes.cpp"
     "generator/MessageConstructionsGenerator.cpp"
     "agent/PhraseGenerationAgent.cpp"
@@ -16,7 +16,7 @@ set(SOURCES
 
 set(HEADERS
     "DialogControlModule.hpp"
-    "keynodes/CoreKeynodes.hpp"
+    "keynodes/DialogKeynodes.hpp"
     "keynodes/MessageKeynodes.hpp"
     "generator/MessageConstructionsGenerator.hpp"
     "agent/PhraseGenerationAgent.hpp"

@@ -30,7 +30,10 @@ SC_AGENT_IMPLEMENTATION(StandardMessageReplyAgent)
     return SC_RESULT_ERROR_INVALID_PARAMS;
   }
 
-  ScAddr replyMessageNode = generateReplyMessage(messageNode);
+  ScAddr logicRuleNode = generateReplyMessage(messageNode);
+  ScAddr replyMessageNode = IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageNode, MessageKeynodes::nrel_reply);
+  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyMessageNode);
+
   if (!replyMessageNode.IsValid())
   {
     SC_LOG_ERROR("StandardMessageReplyAgent: the reply message isn't generated");
@@ -39,8 +42,6 @@ SC_AGENT_IMPLEMENTATION(StandardMessageReplyAgent)
     return SC_RESULT_ERROR;
   }
   SC_LOG_DEBUG("StandardMessageReplyAgent: the reply message is generated");
-
-  ScAddr logicRuleNode = getLogicRule(messageNode);
 
   auto * langSearcher = new LanguageSearcher(&m_memoryCtx);
   ScAddr langNode = langSearcher->getMessageLanguage(messageNode);
@@ -83,6 +84,7 @@ bool StandardMessageReplyAgent::checkActionClass(const ScAddr & actionNode)
 
 ScAddr StandardMessageReplyAgent::generateReplyMessage(const ScAddr & messageNode)
 {
+  ScAddr logicRuleNode;
   ScAddrVector argsVector = {
       MessageKeynodes::template_reply_target,
       MessageKeynodes::concept_answer_on_standard_message_rule_class_by_priority,
@@ -90,12 +92,15 @@ ScAddr StandardMessageReplyAgent::generateReplyMessage(const ScAddr & messageNod
   ScAddr actionDirectInference =
       utils::AgentUtils::initAgent(&m_memoryCtx, inference::InferenceKeynodes::action_direct_inference, argsVector);
 
-  ActionUtils::waitAction(&m_memoryCtx, actionDirectInference, DIRECT_INFERENCE_AGENT_WAIT_TIME);
-
-  ScAddr replyMessageNode = IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageNode, MessageKeynodes::nrel_reply);
-  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyMessageNode);
-
-  return replyMessageNode;
+  bool const result = ActionUtils::waitAction(&m_memoryCtx, actionDirectInference, DIRECT_INFERENCE_AGENT_WAIT_TIME);
+  if (result)
+  {
+    ScAddr answer = IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionDirectInference, scAgentsCommon::CoreKeynodes::nrel_answer);
+    ScAddr solutionNode = IteratorUtils::getAnyFromSet(&m_memoryCtx, answer);
+    ScAddr solutionTreeRoot = IteratorUtils::getAnyByOutRelation(&m_memoryCtx, solutionNode, scAgentsCommon::CoreKeynodes::rrel_1);
+    logicRuleNode = IteratorUtils::getAnyByOutRelation(&m_memoryCtx, solutionTreeRoot, scAgentsCommon::CoreKeynodes::rrel_1);
+  }
+  return logicRuleNode;
 }
 
 ScAddr StandardMessageReplyAgent::wrapInSet(ScAddr const & addr)
@@ -103,50 +108,6 @@ ScAddr StandardMessageReplyAgent::wrapInSet(ScAddr const & addr)
   ScAddr set = m_memoryCtx.CreateNode(ScType::NodeConstTuple);
   m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, set, addr);
   return set;
-}
-
-ScAddr StandardMessageReplyAgent::getLogicRule(const ScAddr & messageNode)
-{
-  const std::string VAR_TUPLE = "_tuple", VAR_NODE_1 = "_node1", VAR_NODE_2 = "_node2", VAR_NODE_3 = "_node3",
-                    VAR_LR = "_lr";
-  ScTemplate templ;
-  templ.Triple(ScType::NodeVarTuple >> VAR_TUPLE, ScType::EdgeAccessVarPosPerm, messageNode);
-  templ.TripleWithRelation(
-      ScType::NodeVar >> VAR_NODE_1,
-      ScType::EdgeAccessVarPosPerm,
-      VAR_TUPLE,
-      ScType::EdgeAccessVarPosPerm,
-      scAgentsCommon::CoreKeynodes::rrel_3);
-  templ.TripleWithRelation(
-      VAR_NODE_1,
-      ScType::EdgeDCommonVar,
-      ScType::NodeVar >> VAR_NODE_2,
-      ScType::EdgeAccessVarPosPerm,
-      scAgentsCommon::CoreKeynodes::nrel_answer);
-  templ.Triple(ScType::NodeVar >> VAR_NODE_3, ScType::EdgeAccessVarPosPerm, VAR_NODE_2);
-  templ.TripleWithRelation(
-      VAR_NODE_3,
-      ScType::EdgeAccessVarPosPerm,
-      ScType::NodeVar >> VAR_LR,
-      ScType::EdgeAccessVarPosPerm,
-      scAgentsCommon::CoreKeynodes::rrel_1);
-  templ.Triple(MessageKeynodes::concept_answer_on_standard_message_rule, ScType::EdgeAccessVarPosPerm, VAR_LR);
-
-  ScTemplateSearchResult result;
-  m_memoryCtx.HelperSearchTemplate(templ, result);
-
-  ScAddr resultRuleNode;
-  if (result.Size() > 0)
-  {
-    resultRuleNode = result[0][VAR_LR];
-    SC_LOG_DEBUG("StandardMessageReplyAgent: logic rule found");
-  }
-  else
-  {
-    SC_LOG_DEBUG("StandardMessageReplyAgent: logic rule not found");
-  }
-
-  return resultRuleNode;
 }
 
 ScAddr StandardMessageReplyAgent::generatePhraseAgentParametersNode(const ScAddr & messageNode)

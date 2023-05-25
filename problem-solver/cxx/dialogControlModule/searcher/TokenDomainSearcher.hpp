@@ -3,7 +3,7 @@
 #include "sc-memory/sc_addr.hpp"
 
 #include "handler/LinkHandler.hpp"
-#include "keynodes/CoreKeynodes.hpp"
+#include "keynodes/DialogKeynodes.hpp"
 
 namespace dialogControlModule
 {

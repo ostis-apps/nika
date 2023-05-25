@@ -22,7 +22,7 @@ TokenDomainSearcher::~TokenDomainSearcher()
 ScAddr TokenDomainSearcher::getMessageText(const ScAddr & message)
 {
   ScAddr translationNode =
-      utils::IteratorUtils::getFirstByInRelation(context, message, CoreKeynodes::nrel_sc_text_translation);
+      utils::IteratorUtils::getFirstByInRelation(context, message, DialogKeynodes::nrel_sc_text_translation);
   if (!translationNode.IsValid())
   {
     throw std::runtime_error("Invalid params: the text of the message is not specified.");
