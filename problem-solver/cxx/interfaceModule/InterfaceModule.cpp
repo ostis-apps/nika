@@ -18,7 +18,7 @@ sc_result InterfaceModule::InitializeImpl()
   }
   else
   {
-    SC_AGENT_REGISTER(InterfaceAgent);
+    SC_AGENT_REGISTER(ChangeInterfaceColorAgent);
   }
 
   return SC_RESULT_OK;
@@ -26,7 +26,7 @@ sc_result InterfaceModule::InitializeImpl()
 
 sc_result InterfaceModule::ShutdownImpl()
 {
-  SC_AGENT_UNREGISTER(InterfaceAgent);
+  SC_AGENT_UNREGISTER(ChangeInterfaceColorAgent);
 
   return SC_RESULT_OK;
 }

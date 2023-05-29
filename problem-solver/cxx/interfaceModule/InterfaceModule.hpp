@@ -4,7 +4,7 @@
 #include "sc-memory/sc_module.hpp"
 
 #include "keynodes/InterfaceKeynodes.hpp"
-#include "agent/InterfaceAgent.hpp"
+#include "agent/ChangeInterfaceColorAgent.hpp"
 #include "utils/ActionUtils.hpp"
 
 #include "InterfaceModule.generated.hpp"
