@@ -56,6 +56,8 @@ bool MessageHandler::processReplyMessage(
             ScAddr phraseClassNode = phraseSearcher->getFirstPhraseClass(logicRuleNode);
             if (phraseClassNode.IsValid())
               result = processAtomicMessage(replyMessageNode, phraseClassNode, parametersNode, langNode);
+            else
+              SC_LOG_DEBUG("MessageHandler: the first phrase class isn't found");
           }
           else
           {
