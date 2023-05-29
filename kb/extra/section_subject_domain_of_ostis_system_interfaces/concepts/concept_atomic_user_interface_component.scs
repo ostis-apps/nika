@@ -37,3 +37,11 @@ concept_atomic_user_interface_component
                 concept_user_interface_component
             };;
 	*);;
+
+concept_user_interface_component_class
+	<- sc_node_class;
+	=> nrel_main_idtf:
+    	[класс компонента пользовательского интерфейса]
+    	(* <- lang_ru;; *);
+    	[user interface component class]
+    	(* <- lang_en;; *);;
