@@ -15,16 +15,24 @@ class InterfaceKeynodes : public ScObject
 public:
   SC_PROPERTY(Keynode("action_change_interface"), ForceCreate)
   static ScAddr action_change_interface;
+
   SC_PROPERTY(Keynode("concept_header"), ForceCreate)
   static ScAddr concept_header;
+
   SC_PROPERTY(Keynode("concept_main_part"), ForceCreate)
   static ScAddr concept_main_part;
+
   SC_PROPERTY(Keynode("concept_footer"), ForceCreate)
   static ScAddr concept_footer;
+
   SC_PROPERTY(Keynode("nrel_component_color"), ForceCreate)
   static ScAddr nrel_component_color;
+
   SC_PROPERTY(Keynode("rrel_entity"), ForceCreate)
   static ScAddr rrel_entity;
+
+  SC_PROPERTY(Keynode("rrel_color"), ForceCreate)
+  static ScAddr rrel_color;
 };
 
 }  // namespace interfaceModule

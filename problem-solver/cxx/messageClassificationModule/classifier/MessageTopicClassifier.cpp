@@ -5,6 +5,7 @@
 
 #include "constants/MessageClassificationConstants.hpp"
 #include "keynodes/MessageClassificationKeynodes.hpp"
+#include "keynodes/Keynodes.hpp"
 #include "searcher/MessageSearcher.hpp"
 
 namespace messageClassificationModule
@@ -303,7 +304,18 @@ ScAddrVector MessageTopicClassifier::processEntities(
     ScAddr const & messageAddr)
 {
   std::string entityIdtf;
-  std::set<std::string> entitySameRoleIdtfs;
+  std::map<std::string, std::string> entityIdtfToRole;
+
+  std::string entityRoleIdtf;
+  for (auto const & [key, value] : messageEntity.items())
+  {
+    entityRoleIdtf = key.substr(key.find(':') + 1);
+    for (auto const & valueItem : value)
+    {
+      entityIdtf = valueItem.at(WitAiConstants::VALUE);
+      entityIdtfToRole.insert({entityIdtf, entityRoleIdtf});
+    }
+  }
 
   ScTemplate entityTemplate;
   ScAddr possibleEntityClass;
@@ -328,20 +340,6 @@ ScAddrVector MessageTopicClassifier::processEntities(
       std::string const & entityRoleWitAiIdtf = utils::CommonUtils::getLinkContent(context, entityRoleLink);
       std::string entitiesKey = entityWitAiIdtf.append(":").append(entityRoleWitAiIdtf);
 
-      try
-      {
-        json const & messageEntitiesArray = messageEntity.at(entitiesKey);
-        for (size_t i = 0; i < messageEntitiesArray.size(); i++)
-        {
-          entityIdtf = messageEntity.at(entitiesKey).at(i).at(WitAiConstants::VALUE);
-          entitySameRoleIdtfs.insert(entityIdtf);
-        }
-      }
-      catch (...)
-      {
-        continue;
-      }
-
       ScIterator3Ptr const entityClassIterator =
           context->Iterator3(possibleEntityClass, ScType::EdgeAccessConstPosPerm, ScType::NodeConst);
       ScAddr entityAddr;
@@ -350,23 +348,47 @@ ScAddrVector MessageTopicClassifier::processEntities(
         entityAddr = entityClassIterator->Get(2);
         std::string const & idtf =
             utils::CommonUtils::getMainIdtf(context, entityAddr, {scAgentsCommon::CoreKeynodes::lang_ru});
-        for (std::string const & entitySameRoleIdtf : entitySameRoleIdtfs)
+        for (auto const & [entitySameIdtf, entitySameRoleIdtf] : entityIdtfToRole)
         {
-          if (idtf == entitySameRoleIdtf)
+          if (idtf == entitySameIdtf)
           {
             SC_LOG_DEBUG("MessageTopicClassifier: found " + context->HelperGetSystemIdtf(entityAddr) + " entity");
             ScAddr messageEntityEdge = context->CreateEdge(ScType::EdgeAccessConstPosPerm, messageAddr, entityAddr);
             ScAddr messageEntityRoleEdge =
                 context->CreateEdge(ScType::EdgeAccessConstPosPerm, entityRole, messageEntityEdge);
+
             messageEntitiesElements.push_back(entityAddr);
             messageEntitiesElements.push_back(entityRole);
             messageEntitiesElements.push_back(messageEntityEdge);
             messageEntitiesElements.push_back(messageEntityRoleEdge);
+
+            entityIdtfToRole.erase(entitySameIdtf);
           }
         }
       }
     }
   }
+
+  for (auto const & [notFoundEntitiesIdtf, notFoundEntitiesRoles] : entityIdtfToRole)
+  {
+    ScAddr const & createdEntity = context->CreateLink();
+    context->SetLinkContent(createdEntity, notFoundEntitiesIdtf);
+    ScAddr const & createdEntityEdge = context->CreateEdge(ScType::EdgeAccessConstPosPerm, commonModule::Keynodes::lang_en, createdEntity);
+    ScAddr const & messageEntityEdge = context->CreateEdge(ScType::EdgeAccessConstPosPerm, messageAddr, createdEntity);
+    ScAddr const & entityRole = context->HelperResolveSystemIdtf(notFoundEntitiesRoles, ScType::NodeConstRole);
+    ScAddr const & messageEntityRoleEdge = context->CreateEdge(ScType::EdgeAccessConstPosPerm, entityRole, messageEntityEdge);
+
+    SC_LOG_DEBUG("MessageTopicClassifier: generated " << notFoundEntitiesIdtf << " entity");
+    SC_LOG_DEBUG("MessageTopicClassifier: generated " << notFoundEntitiesRoles << " role");
+
+    messageEntitiesElements.push_back(createdEntity);
+    messageEntitiesElements.push_back(createdEntityEdge);
+    messageEntitiesElements.push_back(messageEntityEdge);
+    messageEntitiesElements.push_back(messageEntityRoleEdge);
+    messageEntitiesElements.push_back(entityRole);
+    messageEntitiesElements.push_back(commonModule::Keynodes::lang_en);
+  }
+
   return messageEntitiesElements;
 }
 
