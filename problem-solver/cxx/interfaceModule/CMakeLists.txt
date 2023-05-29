@@ -1,13 +1,13 @@
 set(SOURCES
     "InterfaceModule.cpp"
     "keynodes/InterfaceKeynodes.cpp"
-    "agent/InterfaceAgent.cpp"
+    "agent/ChangeInterfaceColorAgent.cpp"
 )
 
 set(HEADERS
     "InterfaceModule.hpp"
     "keynodes/InterfaceKeynodes.hpp"
-    "agent/InterfaceAgent.hpp"
+    "agent/ChangeInterfaceColorAgent.hpp"
 )
 
 include_directories(

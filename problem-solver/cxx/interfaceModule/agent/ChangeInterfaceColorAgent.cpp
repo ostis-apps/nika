@@ -4,26 +4,26 @@
 
 #include "keynodes/InterfaceKeynodes.hpp"
 
-#include "InterfaceAgent.hpp"
+#include "ChangeInterfaceColorAgent.hpp"
 
 using namespace interfaceModule;
 using namespace scAgentsCommon;
 
-SC_AGENT_IMPLEMENTATION(InterfaceAgent)
+SC_AGENT_IMPLEMENTATION(ChangeInterfaceColorAgent)
 {
   ScAddr const & questionNode = otherAddr;
   if (!checkActionClass(questionNode))
   {
     return SC_RESULT_OK;
   }
-  SC_LOG_DEBUG("InterfaceAgent started");
+  SC_LOG_DEBUG("ChangeInterfaceColorAgent started");
 
   ScAddr const & messageAddr = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, questionNode, scAgentsCommon::CoreKeynodes::rrel_1);
   if (!messageAddr.IsValid())
   {
      SC_LOG_ERROR("Message Addr not found.");
      utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, false);
-     SC_LOG_DEBUG("InterfaceAgent finished");
+     SC_LOG_DEBUG("ChangeInterfaceColorAgent finished");
      return SC_RESULT_ERROR;
   }
 
@@ -32,7 +32,7 @@ SC_AGENT_IMPLEMENTATION(InterfaceAgent)
   {
      SC_LOG_INFO("Component Addr not found.");
      utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, false);
-     SC_LOG_DEBUG("InterfaceAgent finished");
+     SC_LOG_DEBUG("ChangeInterfaceColorAgent finished");
      return SC_RESULT_ERROR;
   }
 
@@ -41,10 +41,12 @@ SC_AGENT_IMPLEMENTATION(InterfaceAgent)
   if (!componentColorAddr.IsValid())
   {
     componentColor = createColor();
+    SC_LOG_DEBUG("ChangeInterfaceColorAgent: component color is changed to random " << componentColor);
   }
   else
   {
     ms_context->GetLinkContent(componentColorAddr, componentColor);
+    SC_LOG_DEBUG("ChangeInterfaceColorAgent: component color is changed to " << componentColor);
   }
 
   bool isSuccess = setComponentColor(componentAddr, componentColor);
@@ -54,13 +56,13 @@ SC_AGENT_IMPLEMENTATION(InterfaceAgent)
   return SC_RESULT_OK;
 }
 
-bool InterfaceAgent::checkActionClass(ScAddr const & actionAddr)
+bool ChangeInterfaceColorAgent::checkActionClass(ScAddr const & actionAddr)
 {
   return m_memoryCtx.HelperCheckEdge(
       InterfaceKeynodes::action_change_interface, actionAddr, ScType::EdgeAccessConstPosPerm);
 }
 
-std::string InterfaceAgent::createColor()
+std::string ChangeInterfaceColorAgent::createColor()
 {
   std::string colorItems[16]
   {"0", "1", "2", "3",
@@ -78,7 +80,7 @@ std::string InterfaceAgent::createColor()
   return color;
 }
 
-bool InterfaceAgent::setComponentColor(ScAddr const & componentAddr, std::string const & componentColor)
+bool ChangeInterfaceColorAgent::setComponentColor(ScAddr const & componentAddr, std::string const & componentColor)
 {
   bool result = false;
   ScAddr componentElementColorLink;
