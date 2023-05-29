@@ -98,7 +98,8 @@ ScAddr StandardMessageReplyAgent::generateReplyMessage(const ScAddr & messageNod
     ScAddr answer = IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionDirectInference, scAgentsCommon::CoreKeynodes::nrel_answer);
     ScAddr solutionNode = IteratorUtils::getAnyFromSet(&m_memoryCtx, answer);
     ScAddr solutionTreeRoot = IteratorUtils::getAnyByOutRelation(&m_memoryCtx, solutionNode, scAgentsCommon::CoreKeynodes::rrel_1);
-    logicRuleNode = IteratorUtils::getAnyByOutRelation(&m_memoryCtx, solutionTreeRoot, scAgentsCommon::CoreKeynodes::rrel_1);
+    if (solutionTreeRoot.IsValid())
+      logicRuleNode = IteratorUtils::getAnyByOutRelation(&m_memoryCtx, solutionTreeRoot, scAgentsCommon::CoreKeynodes::rrel_1);
   }
   return logicRuleNode;
 }

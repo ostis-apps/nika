@@ -1,6 +1,7 @@
 #include "PhraseSearcher.hpp"
 
 #include "sc-agents-common/keynodes/coreKeynodes.hpp"
+#include "sc-agents-common/utils/IteratorUtils.hpp"
 
 #include "keynodes/MessageKeynodes.hpp"
 #include <algorithm>
@@ -40,33 +41,13 @@ ScAddrVector PhraseSearcher::getPhrases(const ScAddr & phraseClassNode, const Sc
 
 ScAddr PhraseSearcher::getFirstPhraseClass(const ScAddr & logicRuleNode)
 {
-  const std::string VAR_TUPLE = "_tuple", VAR_PHRASE_CLASS = "_class";
-  ScTemplate templ;
-  templ.TripleWithRelation(
-      logicRuleNode,
-      ScType::EdgeDCommonVar,
-      ScType::NodeVarTuple >> VAR_TUPLE,
-      ScType::EdgeAccessVarPosPerm,
-      MessageKeynodes::nrel_answer_pattern);
-  templ.TripleWithRelation(
-      VAR_TUPLE,
-      ScType::EdgeAccessVarPosPerm,
-      ScType::NodeVar >> VAR_PHRASE_CLASS,
-      ScType::EdgeAccessVarPosPerm,
-      scAgentsCommon::CoreKeynodes::rrel_1);
-
-  ScTemplateSearchResult result;
-  context->HelperSearchTemplate(templ, result);
-
   ScAddr firstPhraseNode;
-  if (result.Size() == 1)
+  ScAddr const & answerPatternTuple = utils::IteratorUtils::getAnyByOutRelation(
+        context, logicRuleNode, MessageKeynodes::nrel_answer_pattern);
+  if (answerPatternTuple.IsValid())
   {
-    firstPhraseNode = result[0][VAR_PHRASE_CLASS];
-    SC_LOG_DEBUG("MessageSearcher: the first phrase class found");
-  }
-  else
-  {
-    SC_LOG_DEBUG("MessageSearcher: the first phrase class not found");
+    firstPhraseNode = utils::IteratorUtils::getAnyByOutRelation(
+          context, answerPatternTuple, scAgentsCommon::CoreKeynodes::rrel_1);
   }
 
   return firstPhraseNode;

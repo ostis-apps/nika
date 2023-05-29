@@ -13,11 +13,11 @@ class InterfaceAgent : public ScAgent
   SC_GENERATED_BODY()
 
 private:
-  int WAIT_TIME = 50000;
-
   bool checkActionClass(ScAddr const & actionAddr);
 
-  std::string createColor();
+  static std::string createColor();
+
+  bool setComponentColor(ScAddr const & componentAddr, std::string const & componentColor);
 };
 
 }  // namespace interfaceModule
