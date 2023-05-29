@@ -1,0 +1,14 @@
+concept_идентификатор_класса
+<- sc_node_class;
+<- class;
+
+<= nrel_inclusion: 
+	concept_идентификатор_высшего_класса;
+=> nrel_inclusion:
+	oncept_идентификатор_низшего_класса;
+
+=> nrel_main_idtf: 
+	[Идентификатор] (*<- lang_ru;;*);
+
+=> nrel_note:
+	[Описание] (*<- lang_ru;;*);;
