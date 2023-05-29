@@ -6,7 +6,7 @@ SC_IMPLEMENT_MODULE(DialogControlModule)
 
 sc_result DialogControlModule::InitializeImpl()
 {
-  if (!dialogControlModule::CoreKeynodes::InitGlobal())
+  if (!dialogControlModule::DialogKeynodes::InitGlobal())
   {
     return SC_RESULT_ERROR;
   }

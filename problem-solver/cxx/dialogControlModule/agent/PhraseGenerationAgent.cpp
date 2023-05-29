@@ -1,8 +1,8 @@
 #include <regex>
 
 #include "handler/LinkHandler.hpp"
-#include "manager/TemplateManager.hpp"
-#include "keynodes/CoreKeynodes.hpp"
+#include "manager/templateManager/TemplateManager.hpp"
+#include "keynodes/DialogKeynodes.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 #include "searcher/LanguageSearcher.hpp"
 #include "utils/ActionUtils.hpp"
@@ -49,7 +49,7 @@ SC_AGENT_IMPLEMENTATION(PhraseGenerationAgent)
   }
 
   ScAddr templateNode =
-      IteratorUtils::getAnyByOutRelation(&m_memoryCtx, phraseLink, CoreKeynodes::nrel_phrase_template);
+      IteratorUtils::getAnyByOutRelation(&m_memoryCtx, phraseLink, DialogKeynodes::nrel_phrase_template);
   ScAddr parametersNode =
       IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionNode, scAgentsCommon::CoreKeynodes::rrel_3);
 
@@ -147,11 +147,12 @@ vector<ScTemplateParams> PhraseGenerationAgent::findParametersList(
     const ScAddr & parametersNode)
 {
   TemplateManager manager(&m_memoryCtx);
+  ScAddrVector arguments = IteratorUtils::getAllWithType(&m_memoryCtx, parametersNode, ScType::Node);
+  manager.setArguments(arguments);
   vector<ScTemplateParams> parametersList;
   if (parametersNode.IsValid())
   {
-    ScAddrVector arguments = IteratorUtils::getAllWithType(&m_memoryCtx, parametersNode, ScType::Node);
-    parametersList = manager.createTemplateParamsList(templateNode, arguments);
+    parametersList = manager.createTemplateParams(templateNode);
   }
   if (parametersList.empty())
   {
