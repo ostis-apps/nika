@@ -5,6 +5,7 @@
 namespace messageClassificationModule
 {
 ScAddr MessageClassificationKeynodes::action_message_topic_classification;
+ScAddr MessageClassificationKeynodes::action_alternative_message_topic_classification;
 ScAddr MessageClassificationKeynodes::concept_intent_possible_class;
 ScAddr MessageClassificationKeynodes::concept_trait_possible_class;
 ScAddr MessageClassificationKeynodes::concept_entity_possible_class;
@@ -12,5 +13,6 @@ ScAddr MessageClassificationKeynodes::nrel_wit_ai_idtf;
 ScAddr MessageClassificationKeynodes::nrel_entity_possible_role;
 ScAddr MessageClassificationKeynodes::concept_not_classified_by_intent_message;
 ScAddr MessageClassificationKeynodes::concept_not_classified_by_trait_message;
+ScAddr MessageClassificationKeynodes::concept_classify_message_rule;
 
 }  // namespace messageClassificationModule

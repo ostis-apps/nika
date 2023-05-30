@@ -1,7 +1,10 @@
+set(INFERENCE_MODULE_SRC "${SUBSYSTEMS_PATH}/scl-machine/problem-solver/cxx/inferenceModule")
+
 set(SOURCES
     "MessageClassificationModule.cpp"
     "keynodes/MessageClassificationKeynodes.cpp"
     "agent/MessageTopicClassificationAgent.cpp"
+    "agent/AlternativeMessageTopicClassificationAgent.cpp"
     "classifier/MessageTopicClassifier.cpp"
     "client/WitAiClient.cpp"
     "keynodes/MessageClassificationKeynodes.cpp"
@@ -13,6 +16,7 @@ set(HEADERS
     "MessageClassificationModule.hpp"
     "keynodes/MessageClassificationKeynodes.hpp"
     "agent/MessageTopicClassificationAgent.hpp"
+    "agent/AlternativeMessageTopicClassificationAgent.hpp"
     "classifier/MessageTopicClassifier.hpp"
     "client/WitAiClient.hpp"
     "keynodes/MessageClassificationKeynodes.hpp"
@@ -29,6 +33,7 @@ include_directories(
     ${DIALOG_CONTROL_MODULE_SRC}
     ${SC_TOOLS_SRC}/sc-config-utils
     ${GLIB2_INCLUDE_DIRS}
+    ${INFERENCE_MODULE_SRC}
 )
 
 add_library(messageClassification SHARED ${SOURCES} ${HEADERS})
@@ -40,6 +45,7 @@ target_link_libraries(
     dialogControlModule
     messageReply
     sc-config-utils
+	inferenceModule
 )
 
 sc_codegen_ex(messageClassification ${CMAKE_CURRENT_LIST_DIR} ${CMAKE_CURRENT_LIST_DIR}/generated)
