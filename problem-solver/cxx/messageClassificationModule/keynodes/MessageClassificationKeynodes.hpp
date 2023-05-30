@@ -16,6 +16,9 @@ public:
   SC_PROPERTY(Keynode("action_message_topic_classification"), ForceCreate)
   static ScAddr action_message_topic_classification;
 
+  SC_PROPERTY(Keynode("action_alternative_message_topic_classification"), ForceCreate)
+  static ScAddr action_alternative_message_topic_classification;
+
   SC_PROPERTY(Keynode("concept_intent_possible_class"), ForceCreate)
   static ScAddr concept_intent_possible_class;
 
@@ -36,6 +39,9 @@ public:
 
   SC_PROPERTY(Keynode("concept_not_classified_by_trait_message"), ForceCreate)
   static ScAddr concept_not_classified_by_trait_message;
+
+  SC_PROPERTY(Keynode("concept_classify_message_rule"), ForceCreate)
+  static ScAddr concept_classify_message_rule;
 };
 
 }  // namespace messageClassificationModule
