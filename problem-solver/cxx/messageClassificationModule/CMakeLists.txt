@@ -33,7 +33,7 @@ include_directories(
     ${DIALOG_CONTROL_MODULE_SRC}
     ${SC_TOOLS_SRC}/sc-config-utils
     ${GLIB2_INCLUDE_DIRS}
-	${INFERENCE_MODULE_SRC}
+    ${INFERENCE_MODULE_SRC}
 )
 
 add_library(messageClassification SHARED ${SOURCES} ${HEADERS})
