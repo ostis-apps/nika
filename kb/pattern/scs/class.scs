@@ -3,12 +3,15 @@ concept_идентификатор_класса
 <- class;
 
 <= nrel_inclusion: 
-	concept_идентификатор_высшего_класса;
+	concept_идентификатор_надкласса;
 => nrel_inclusion:
-	oncept_идентификатор_низшего_класса;
+	concept_идентификатор_подкласса;
 
 => nrel_main_idtf: 
-	[Идентификатор] (*<- lang_ru;;*);
+	[идентификатор] (*<- lang_ru;;*);
+	
+=> nrel_main_idtf: 
+	[identifier] (*<- lang_en;;*);
 
 => nrel_note:
-	[Описание] (*<- lang_ru;;*);;
+	[Примечание] (*<- lang_ru;;*);;

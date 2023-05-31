@@ -9,17 +9,19 @@ nrel_идентификатор
 <- antitransitive_relation;
 
 => nrel_main_idtf:
-   [изучать*]
-   (* <- lang_ru;; *);
+   [идентификатор*] (* <- lang_ru;; *);
    
-=> nrel_first_domain:  concept_идентификатор_класса_1;
-=> nrel_second_domain: concept_идентификатор_класса_2;
+=> nrel_main_idtf: 
+	[identifier] (*<- lang_en;;*);
+   
+=> nrel_first_domain:  concept_идентификатор_первого_домена;
+=> nrel_second_domain: concept_идентификатор_второго_домена;
 => nrel_definitional_domain:
    ...
    (*
         <= nrel_combination: {
-            concept_идентификатор_класса_1;
-            concept_идентификатор_класса_2
+            concept_идентификатор_первого_домена;
+            concept_идентификатор_второго_домена
         };;
    *);
    
