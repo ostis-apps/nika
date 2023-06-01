@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/group" idtf="concept_phrase" shapeColor="193" id="1429255988224" parent="0" left="0" top="0" right="84.5156" bottom="20" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="375.28" y="268.759" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="1429255991344" parent="0" x="490" y="521.259" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[SC-узел обозначающий класс. 
+Данный тип sc-узлов используется для обозначения класса понятий.
+Изображается окружностью (константный постоянный узел) или квадратом (переменный постоянный узел) с "решёткой" внутри.]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="193" id="1429255990720" parent="0" left="0" top="0" right="44.1094" bottom="20" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="658.24" y="441.259" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_node_class" shapeColor="193" id="1429255992800" parent="0" left="0" top="0" right="177.094" bottom="20" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="380.71" y="443.352" haveBus="false" idtf_pos="1">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_inclusion" shapeColor="193" id="1429255989680" parent="0" left="0" top="0" right="75.6094" bottom="20" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="462.05" y="202.611" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_node_class" shapeColor="193" id="1429255988640" parent="0" left="0" top="0" right="177.094" bottom="20" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="371.45" y="141.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1429256269216" parent="0" id_b="1429255992800" id_e="1429255991344" b_x="380.71" b_y="443.352" e_x="490" e_y="521.259" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1429256266336" parent="0" id_b="1429255989680" id_e="1429256264176" b_x="462.05" b_y="202.611" e_x="-1596.17" e_y="70.6152" dotBBalance="0" dotEBalance="0.531597">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1429256269696" parent="0" id_b="1429255990720" id_e="1429255991344" b_x="658.24" b_y="441.259" e_x="490" e_y="521.259" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="1429256264176" parent="0" id_b="1429255988224" id_e="1429255988640" b_x="375.28" b_y="268.759" e_x="371.45" e_y="141.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>

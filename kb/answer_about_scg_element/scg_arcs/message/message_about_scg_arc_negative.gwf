@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/relation" idtf="nrel_main_idtf" shapeColor="193" id="1335542812320" parent="0" left="0" top="0" right="77.5781" bottom="20" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="431.5" y="149.39" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_wit_ai_idtf" shapeColor="193" id="1335542815232" parent="0" left="0" top="0" right="82" bottom="20" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="612" y="152.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="193" id="1335542811488" parent="0" left="0" top="0" right="44.1094" bottom="20" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="544.5" y="263.39" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_intent_possible_class" shapeColor="193" id="1335542809616" parent="0" left="0" top="0" right="155.453" bottom="20" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="542" y="37.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_message_about_entity_of_sc_arc_negative" shapeColor="193" id="1335542810864" parent="0" left="0" top="0" right="257.531" bottom="20" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="542.5" y="109" haveBus="false" idtf_pos="2">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="1335542811072" parent="0" x="734" y="108.5" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[about_sc_arc_negative]]></content>
+        </node>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="1335542809408" parent="0" x="543.5" y="195.39" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Сообщение о сущности негативной дуги]]></content>
+        </node>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1335580035312" parent="0" id_b="1335542809616" id_e="1335542810864" b_x="542" b_y="37.5" e_x="542.5" e_y="109" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1335580033872" parent="0" id_b="1335542812320" id_e="1335580034352" b_x="431.5" b_y="149.39" e_x="-1252.62" e_y="-727.08" dotBBalance="0" dotEBalance="0.644157">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1335580034832" parent="0" id_b="1335542811488" id_e="1335542809408" b_x="544.5" b_y="263.39" e_x="543.5" e_y="195.39" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="1335580036512" parent="0" id_b="1335542810864" id_e="1335542811072" b_x="542.5" b_y="109" e_x="734" e_y="108.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="1335580034352" parent="0" id_b="1335542810864" id_e="1335542809408" b_x="542.5" b_y="109" e_x="543.5" e_y="195.39" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1335580036992" parent="0" id_b="1335542815232" id_e="1335580036512" b_x="612" b_y="152.5" e_x="-1252.62" e_y="-727.08" dotBBalance="0" dotEBalance="0.47386">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>
