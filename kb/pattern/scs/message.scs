@@ -2,8 +2,7 @@ concept_your_message_class_name
 <- sc_node_class;
 <- concept_intent_possible_class;
 => nrel_main_idtf:
-	  [Сообщение о сущности *название класса сообщения*]
-	  (* <- lang_ru;; *);
+	[Название класса сообщений]
+	(* <- lang_ru;; *);
 => nrel_wit_ai_idtf:
-	  [название intent'а из wit.ai];;
-
+	[Название intent'а из wit.ai];;
