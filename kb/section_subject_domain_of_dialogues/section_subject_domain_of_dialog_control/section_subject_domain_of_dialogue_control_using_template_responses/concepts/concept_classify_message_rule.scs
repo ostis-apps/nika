@@ -4,6 +4,21 @@ concept_classify_message_rule
         [set of rules for classification messages] (* <- lang_en;; *);
     <- sc_node_class;;
 
+concept_classify_message_rule_priority_1
+	=> nrel_main_idtf:
+        [множество правил классификации сообщения первого приоритета] (* <- lang_ru;; *);
+        [set of rules for classification messages the first priority] (* <- lang_en;; *);;
+
+concept_classify_message_rule_priority_2
+	=> nrel_main_idtf:
+        [множество правил классификации сообщения второго приоритета] (* <- lang_ru;; *);
+        [set of rules for classification messages the second priority] (* <- lang_en;; *);;
+
+concept_classify_message_rule_priority_3
+	=> nrel_main_idtf:
+        [ммножество правил классификации сообщения третьего приоритета] (* <- lang_ru;; *);
+        [set of rules for classification messages the third priority] (* <- lang_en;; *);;
+
 @access_arc_1 = (concept_classify_message_rule -> rrel_1: concept_classify_message_rule_priority_1);;
 @access_arc_2 = (concept_classify_message_rule -> concept_classify_message_rule_priority_2);;
 @access_arc_3 = (concept_classify_message_rule -> concept_classify_message_rule_priority_3);;
