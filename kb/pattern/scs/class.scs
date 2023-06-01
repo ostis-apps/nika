@@ -1,13 +1,12 @@
 concept_your_class_identifier
 <- sc_node_class;
-<- class;
-<= nrel_inclusion: 
+<= nrel_inclusion:
 	concept_superclass_identifier;
 => nrel_inclusion:
 	concept_subclass_identifier;
-=> nrel_main_idtf: 
-	[идентификатор] (*<- lang_ru;;*);
-=> nrel_main_idtf: 
-	[identifier] (*<- lang_en;;*);
+=> nrel_main_idtf:
+	[Идентификатор] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Identifier] (* <- lang_en;; *);
 => nrel_note:
-	[Примечание] (*<- lang_ru;;*);;
+	[Примечание] (* <- lang_ru;; *);;
