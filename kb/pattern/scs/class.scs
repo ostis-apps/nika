@@ -1,17 +1,13 @@
-concept_идентификатор_класса
+concept_your_class_identifier
 <- sc_node_class;
 <- class;
-
 <= nrel_inclusion: 
-	concept_идентификатор_надкласса;
+	concept_superclass_identifier;
 => nrel_inclusion:
-	concept_идентификатор_подкласса;
-
+	concept_subclass_identifier;
 => nrel_main_idtf: 
 	[идентификатор] (*<- lang_ru;;*);
-	
 => nrel_main_idtf: 
 	[identifier] (*<- lang_en;;*);
-
 => nrel_note:
 	[Примечание] (*<- lang_ru;;*);;
