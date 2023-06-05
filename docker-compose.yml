@@ -45,7 +45,7 @@ services:
     environment:
       # Use the commented env variable if you need to rebuild KB every startup.
       - "REBUILD_KB=1"
-      - "KB_PATH=../repo.path"
+      - "KB_PATH=/nika/repo.path"
     command:
       - "serve"
 

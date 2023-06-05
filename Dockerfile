@@ -23,5 +23,5 @@ COPY --from=builder /nika/bin /nika/bin
 COPY --from=builder /nika/scripts /nika/scripts
 COPY --from=builder /nika/nika.ini /nika/nika.ini
 
-WORKDIR /nika/scripts
-ENTRYPOINT ["tini", "--", "/nika/scripts/docker_entrypoint.sh"]
+WORKDIR /nika/problem-solver/sc-machine/scripts
+ENTRYPOINT ["tini", "--", "/nika/problem-solver/sc-machine/scripts/docker_entrypoint.sh"]
