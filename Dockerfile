@@ -4,7 +4,7 @@ ENV TZ=Europe/Moscow
 # install dependencies
 COPY ./scripts/install_deps_ubuntu.sh /tmp/install_deps_ubuntu.sh
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends sudo ccache tzdata git && \ 
+    apt-get install -y --no-install-recommends sudo ccache tzdata git && \
     /tmp/install_deps_ubuntu.sh
 
 FROM base as builder
@@ -23,5 +23,7 @@ COPY --from=builder /nika/bin /nika/bin
 COPY --from=builder /nika/scripts /nika/scripts
 COPY --from=builder /nika/nika.ini /nika/nika.ini
 
-WORKDIR /nika/problem-solver/sc-machine/scripts
-ENTRYPOINT ["tini", "--", "/nika/problem-solver/sc-machine/scripts/docker_entrypoint.sh"]
+WORKDIR /nika/scripts
+
+EXPOSE 8090
+ENTRYPOINT ["tini", "--", "/nika/scripts/docker_entrypoint.sh"]

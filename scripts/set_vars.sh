@@ -21,5 +21,6 @@ if [ "$1" == "-ci" ];
         export APP_ROOT_PATH
         export REPO_PATH_FILE="repo.path"
         export SCRIPTS_PATH="${APP_ROOT_PATH}"/scripts
+        export BINARY_PATH="${APP_ROOT_PATH}/bin"
         export KB_PATH="${APP_ROOT_PATH}"/kb
     fi
