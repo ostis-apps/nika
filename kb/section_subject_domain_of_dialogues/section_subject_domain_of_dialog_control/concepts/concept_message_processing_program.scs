@@ -29,15 +29,4 @@ concept_message_processing_program
 				concept_message;
 				question
 			};;
-	*);
-<- rrel_key_sc_element:
-	...
-	(*
-		<- description_of_a_typical_instance;;
-		<= nrel_sc_text_translation:
-		...
-		(*
-			-> rrel_example: "file://../content_img/example_of_concept_message_processing_program.png";;
-		*);;
 	*);;
-
