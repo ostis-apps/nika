@@ -191,11 +191,13 @@ string PhraseGenerationAgent::processScTemplate(
   if (m_memoryCtx.HelperBuildTemplate(templateOption, templateNode, parameters))
   {
     ScTemplateSearchResult phraseSemanticResult;
-    if (m_memoryCtx.HelperSearchTemplate(templateOption, phraseSemanticResult))
-    {
-      textResult = this->generatePhraseAnswer(phraseSemanticResult, variables, text);
-      this->updateSemanticAnswer(phraseSemanticResult);
-    }
+    m_memoryCtx.HelperSmartSearchTemplate(
+          templateOption,
+          [this, &variables, &textResult, &text](ScTemplateSearchResultItem const & item) -> ScTemplateSearchRequest {
+            textResult = generatePhraseAnswer(item, variables, text);
+            updateSemanticAnswer(item);
+            return ScTemplateSearchRequest::STOP;
+          });
   }
   return textResult;
 }
@@ -223,14 +225,14 @@ void PhraseGenerationAgent::generateSemanticEquivalent(const ScAddr & replyMessa
 }
 
 string PhraseGenerationAgent::generatePhraseAnswer(
-    const ScTemplateSearchResult & phraseSemanticResult,
+    const ScTemplateSearchResultItem & phraseSemanticResult,
     const std::vector<std::string> & variables,
     const std::string & text)
 {
   string textResult = text;
   for (auto & variable : variables)
   {
-    ScAddr link = phraseSemanticResult[0][variable];
+    ScAddr link = phraseSemanticResult[variable];
     string linkValue = utils::CommonUtils::getLinkContent(&m_memoryCtx, link);
     string variableRegular =
         regex_replace(PhraseGenerationAgent::VAR_REGULAR, regex(PhraseGenerationAgent::VAR_CONST), variable);
@@ -239,14 +241,14 @@ string PhraseGenerationAgent::generatePhraseAnswer(
   return textResult;
 }
 
-void PhraseGenerationAgent::updateSemanticAnswer(const ScTemplateSearchResult & phraseSemanticResult)
+void PhraseGenerationAgent::updateSemanticAnswer(const ScTemplateSearchResultItem & phraseSemanticResult)
 {
   ScAddr phraseStruct = m_memoryCtx.CreateNode(ScType::NodeStruct);
   ScAddrVector phraseElements;
-  for (size_t i = 0; i < phraseSemanticResult[0].Size(); i++)
+  for (size_t i = 0; i < phraseSemanticResult.Size(); i++)
   {
-    m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, phraseStruct, phraseSemanticResult[0][i]);
-    phraseElements.push_back(phraseSemanticResult[0][i]);
+    m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, phraseStruct, phraseSemanticResult[i]);
+    phraseElements.push_back(phraseSemanticResult[i]);
   }
 
   ScAddrVector toRemoveNodes;
