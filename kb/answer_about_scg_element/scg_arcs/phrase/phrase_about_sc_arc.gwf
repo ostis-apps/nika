@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_arc" shapeColor="193" id="1874533524560" parent="0" left="0" top="0" right="137.828" bottom="20" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="226.66" y="26.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_inclusion" shapeColor="193" id="1874533520192" parent="0" left="0" top="0" right="75.6094" bottom="20" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="317.26" y="87.611" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase" shapeColor="193" id="1874533524768" parent="0" left="0" top="0" right="84.5156" bottom="20" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="230.49" y="153.759" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_arc" shapeColor="193" id="1874533524144" parent="0" left="0" top="0" right="137.828" bottom="20" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="235.92" y="328.352" haveBus="false" idtf_pos="1">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="1874533523936" parent="0" x="359.5" y="469.524" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[SC-дуга общего вида.
+
+Данная дуга является обозначением бинарной ориентированной связки между двумя сущностями.
+
+Изображается двумя параллельными непрерывными (константная постоянная дуга) или пунктирными (переменная постоянная дуга) параллельными линиями с общей стрелкой на одном из концов. ]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="193" id="1874533519984" parent="0" left="0" top="0" right="44.1094" bottom="20" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="513.45" y="326.259" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="1874564113680" parent="0" id_b="1874533524768" id_e="1874533524560" b_x="230.49" b_y="153.759" e_x="226.66" e_y="26.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1874564112480" parent="0" id_b="1874533520192" id_e="1874564113680" b_x="317.26" b_y="87.611" e_x="-1617.96" e_y="-82.385" dotBBalance="0" dotEBalance="0.531597">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1874564115840" parent="0" id_b="1874533524144" id_e="1874533523936" b_x="235.92" b_y="328.352" e_x="359.5" e_y="469.524" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1874564118240" parent="0" id_b="1874533519984" id_e="1874533523936" b_x="513.45" b_y="326.259" e_x="359.5" e_y="469.524" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>
