@@ -53,13 +53,13 @@ private:
       const std::string & text);
 
   std::string generatePhraseAnswer(
-      const ScTemplateSearchResult & phraseSemanticResult,
+      const ScTemplateSearchResultItem & phraseSemanticResult,
       const std::vector<std::string> & variables,
       const std::string & text);
 
   void generateSemanticEquivalent(const ScAddr & replyMessageNode, const ScAddr & structure);
 
-  void updateSemanticAnswer(const ScTemplateSearchResult & phraseSemanticResult);
+  void updateSemanticAnswer(const ScTemplateSearchResultItem & phraseSemanticResult);
 
   void updateSemanticAnswer(const ScAddr & phraseAddr);
 
