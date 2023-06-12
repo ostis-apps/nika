@@ -1,0 +1,22 @@
+example_entity
+<- concept_wit_entity;
+=> nrel_definition:
+    [сообщение про первый пример]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [пример]
+    (* <- lang_ru;; *);;
+
+example_entity2
+<- concept_wit_entity;
+=> nrel_definition:
+    [сообщение про второй пример]
+    (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [пример2]
+    (* <- lang_ru;; *);;
+
+
+
+concept_example_entity -> example_entity;;  
+concept_example_entity <- sc_node_class;;
