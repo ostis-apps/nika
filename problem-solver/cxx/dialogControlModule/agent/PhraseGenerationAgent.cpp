@@ -36,6 +36,7 @@ SC_AGENT_IMPLEMENTATION(PhraseGenerationAgent)
   if (!replyMessageNode.IsValid())
   {
     SC_LOG_ERROR("Action doesn't have a reply message node.");
+    SC_LOG_DEBUG("PhraseGenerationAgent finished");
     AgentUtils::finishAgentWork(&m_memoryCtx, actionNode, false);
     return SC_RESULT_ERROR_INVALID_PARAMS;
   }
@@ -44,6 +45,7 @@ SC_AGENT_IMPLEMENTATION(PhraseGenerationAgent)
   if (!phraseLink.IsValid())
   {
     SC_LOG_ERROR("Action doesn't have a link with a text template.");
+    SC_LOG_DEBUG("PhraseGenerationAgent finished");
     AgentUtils::finishAgentWork(&m_memoryCtx, actionNode, false);
     return SC_RESULT_ERROR_INVALID_PARAMS;
   }
@@ -57,6 +59,7 @@ SC_AGENT_IMPLEMENTATION(PhraseGenerationAgent)
   if (!linkResult.IsValid())
   {
     SC_LOG_ERROR("Answer isn't found.");
+    SC_LOG_DEBUG("PhraseGenerationAgent finished");
     AgentUtils::finishAgentWork(&m_memoryCtx, actionNode, false);
     return SC_RESULT_ERROR;
   }

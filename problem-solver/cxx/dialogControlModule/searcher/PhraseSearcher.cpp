@@ -18,8 +18,8 @@ PhraseSearcher::PhraseSearcher(ScMemoryContext * ms_context)
 ScAddrVector PhraseSearcher::getPhrases(const ScAddr & phraseClassNode, const ScAddr & langNode)
 {
   ScTemplate phraseTemplate;
-  const std::string VAR_PHRASE = "_phrase", VAR_LANG = "_lang";
-  phraseTemplate.Triple(phraseClassNode, ScType::EdgeAccessVarPosPerm, ScType::LinkVar >> VAR_PHRASE);
+  const std::string VAR_PHRASE = "_phrase";
+  phraseTemplate.Triple(phraseClassNode, ScType::EdgeAccessVarPosPerm, ScType::Link >> VAR_PHRASE);
   phraseTemplate.Triple(langNode, ScType::EdgeAccessVarPosPerm, VAR_PHRASE);
 
   ScTemplateSearchResult result;
