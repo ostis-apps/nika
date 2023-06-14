@@ -97,7 +97,7 @@ ScAddr PhraseGenerationAgent::generateLinkByTemplate(
   ScAddr linkResult;
 
   string text = CommonUtils::getLinkContent(&m_memoryCtx, textTemplateLink);
-  vector<string> variables = findTemplateVariables(text);
+  std::map<VariableType, std::vector<std::string>> variables = getTemplateVariables(text);
   if (!variables.empty())
   {
     textResult = findResultText(templateNode, parametersNode, variables, text);
@@ -116,10 +116,23 @@ ScAddr PhraseGenerationAgent::generateLinkByTemplate(
   return linkResult;
 }
 
+std::map<VariableType, std::vector<std::string>> PhraseGenerationAgent::getTemplateVariables(std::string const & text)
+{
+  std::map<VariableType, std::vector<std::string>> variables;
+
+  std::vector<std::string> linksIdentifiers = getTemplateLinksVariables(text);
+  variables.insert(std::make_pair(LINK, linksIdentifiers));
+
+  std::vector<std::string> setElementsIdentifiers = getTemplateSetElementsVariables(text);
+  variables.insert(std::make_pair(SET_ELEMENTS, setElementsIdentifiers));
+
+  return variables;
+}
+
 string PhraseGenerationAgent::findResultText(
     const ScAddr & templateNode,
     const ScAddr & parametersNode,
-    const vector<string> & variables,
+    std::map<VariableType, std::vector<std::string>> const & variables,
     const string & text)
 {
   string textResult;
@@ -161,7 +174,7 @@ vector<ScTemplateParams> PhraseGenerationAgent::findParametersList(
   return parametersList;
 }
 
-vector<string> PhraseGenerationAgent::findTemplateVariables(const string & text)
+vector<string> PhraseGenerationAgent::getTemplateLinksVariables(std::string const & text)
 {
   vector<string> variables;
   regex regular(PhraseGenerationAgent::MAIN_VAR_REGULAR);
@@ -179,18 +192,35 @@ vector<string> PhraseGenerationAgent::findTemplateVariables(const string & text)
   return variables;
 }
 
+vector<string> PhraseGenerationAgent::getTemplateSetElementsVariables(std::string const & text)
+{
+  vector<string> variables;
+  regex regularSetElements(PhraseGenerationAgent::SET_ELEMENTS_VAR_REGULAR);
+  smatch setElementsResult;
+
+  string::const_iterator searchSetElementsStart(text.begin());
+  while (regex_search(searchSetElementsStart, text.cend(), setElementsResult, regularSetElements))
+  {
+    string variable = setElementsResult[0].str();
+    variable = variable.substr(5, variable.length() - 6);
+    variables.push_back(variable);
+    searchSetElementsStart = setElementsResult.suffix().first;
+  }
+
+  return variables;
+}
+
 string PhraseGenerationAgent::processScTemplate(
-    const ScAddr & templateNode,
-    const ScTemplateParams & parameters,
-    const vector<string> & variables,
-    const string & text)
+    ScAddr const & templateNode,
+    ScTemplateParams const & parameters,
+    std::map<VariableType, std::vector<std::string>> const & variables,
+    std::string const & text)
 {
   string textResult;
 
   ScTemplate templateOption;
   if (m_memoryCtx.HelperBuildTemplate(templateOption, templateNode, parameters))
   {
-    ScTemplateSearchResult phraseSemanticResult;
     m_memoryCtx.HelperSmartSearchTemplate(
           templateOption,
           [this, &variables, &textResult, &text](ScTemplateSearchResultItem const & item) -> ScTemplateSearchRequest {
@@ -225,20 +255,73 @@ void PhraseGenerationAgent::generateSemanticEquivalent(const ScAddr & replyMessa
 }
 
 string PhraseGenerationAgent::generatePhraseAnswer(
-    const ScTemplateSearchResultItem & phraseSemanticResult,
-    const std::vector<std::string> & variables,
-    const std::string & text)
+    ScTemplateSearchResultItem const & phraseSemanticResult,
+    std::map<VariableType, std::vector<std::string>> const & variables,
+    std::string const & text)
 {
   string textResult = text;
-  for (auto & variable : variables)
+
+  std::vector<std::string> linksIdentifiers = variables.at(LINK);
+  replaceLinksVariables(phraseSemanticResult, linksIdentifiers, textResult);
+
+  std::vector<std::string> setElementsIdentifiers = variables.at(SET_ELEMENTS);
+  replaceSetElementsVariables(phraseSemanticResult, setElementsIdentifiers, textResult);
+
+  return textResult;
+}
+
+void PhraseGenerationAgent::replaceLinksVariables(
+    ScTemplateSearchResultItem const & phraseSemanticResult,
+    std::vector<std::string> const & variables,
+    std::string & text)
+{
+  for (std::string const & variable : variables)
   {
+    if (!phraseSemanticResult.Has(variable))
+    {
+      text = "";
+      break;
+    }
     ScAddr link = phraseSemanticResult[variable];
     string linkValue = utils::CommonUtils::getLinkContent(&m_memoryCtx, link);
     string variableRegular =
-        regex_replace(PhraseGenerationAgent::VAR_REGULAR, regex(PhraseGenerationAgent::VAR_CONST), variable);
-    textResult = regex_replace(textResult, regex(variableRegular), linkValue);
+          regex_replace(PhraseGenerationAgent::VAR_REGULAR, regex(PhraseGenerationAgent::VAR_CONST), variable);
+    text = regex_replace(text, regex(variableRegular), linkValue);
   }
-  return textResult;
+}
+
+void PhraseGenerationAgent::replaceSetElementsVariables(
+    ScTemplateSearchResultItem const & phraseSemanticResult,
+    std::vector<std::string> const & variables,
+    std::string & text)
+{
+  std::stringstream setElementsTextStream;
+  for (std::string const & variable : variables)
+  {
+    if (!phraseSemanticResult.Has(variable))
+    {
+      text = "";
+      break;
+    }
+    ScAddr set = phraseSemanticResult[variable];
+    ScIterator3Ptr const & setElementsIterator = ms_context->Iterator3(set, ScType::EdgeAccessConstPosPerm, ScType::NodeConst);
+    if (setElementsIterator->Next())
+    {
+      setElementsTextStream << CommonUtils::getMainIdtf(&m_memoryCtx, setElementsIterator->Get(2), {scAgentsCommon::CoreKeynodes::lang_ru});
+      m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, setElementsIterator->Get(1));
+      m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, setElementsIterator->Get(2));
+    }
+    while (setElementsIterator->Next())
+    {
+      setElementsTextStream << ", " << CommonUtils::getMainIdtf(&m_memoryCtx, setElementsIterator->Get(2), {scAgentsCommon::CoreKeynodes::lang_ru});
+      m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, setElementsIterator->Get(1));
+      m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, setElementsIterator->Get(2));
+    }
+
+    string variableRegular =
+          regex_replace(PhraseGenerationAgent::SET_ELEMENTS_VAR_REGULAR, regex(PhraseGenerationAgent::VAR_CONST), variable);
+    text = regex_replace(text, regex(variableRegular), setElementsTextStream.str());
+  }
 }
 
 void PhraseGenerationAgent::updateSemanticAnswer(const ScTemplateSearchResultItem & phraseSemanticResult)
