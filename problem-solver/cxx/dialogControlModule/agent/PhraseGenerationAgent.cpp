@@ -124,10 +124,16 @@ std::map<VariableType, std::vector<std::string>> PhraseGenerationAgent::getTempl
   std::map<VariableType, std::vector<std::string>> variables;
 
   std::vector<std::string> linksIdentifiers = getTemplateLinksVariables(text);
-  variables.insert(std::make_pair(LINK, linksIdentifiers));
+  if (!linksIdentifiers.empty())
+  {
+    variables.insert(std::make_pair(LINK, linksIdentifiers));
+  }
 
   std::vector<std::string> setElementsIdentifiers = getTemplateSetElementsVariables(text);
-  variables.insert(std::make_pair(SET_ELEMENTS, setElementsIdentifiers));
+  if (!setElementsIdentifiers.empty())
+  {
+    variables.insert(std::make_pair(LINK, setElementsIdentifiers));
+  }
 
   return variables;
 }
@@ -264,11 +270,17 @@ string PhraseGenerationAgent::generatePhraseAnswer(
 {
   string textResult = text;
 
-  std::vector<std::string> linksIdentifiers = variables.at(LINK);
-  replaceLinksVariables(phraseSemanticResult, linksIdentifiers, textResult);
+  auto const & linksIdentifiers = variables.find(LINK);
+  if (linksIdentifiers != variables.cend())
+  {
+    replaceLinksVariables(phraseSemanticResult, linksIdentifiers->second, textResult);
+  }
 
-  std::vector<std::string> setElementsIdentifiers = variables.at(SET_ELEMENTS);
-  replaceSetElementsVariables(phraseSemanticResult, setElementsIdentifiers, textResult);
+  auto const & setElementsIdentifiers = variables.find(SET_ELEMENTS);
+  if (setElementsIdentifiers != variables.cend())
+  {
+    replaceSetElementsVariables(phraseSemanticResult, setElementsIdentifiers->second, textResult);
+  }
 
   return textResult;
 }
