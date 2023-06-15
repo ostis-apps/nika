@@ -1,0 +1,21 @@
+section_subject_domain_of_your_theme
+    => nrel_main_idtf:
+        [Раздел. Предметная область по Вашей теме] (* <- lang_ru;; *);
+<- sc_node_class;
+<- atomic_section;;
+
+section_subject_domain_of_your_theme = [*
+    subject_domain_of_your_theme
+        => nrel_main_idtf: 
+            [Предметная область по Вашей теме] (* <- lang_ru;; *);
+        <- subject_domain;
+        -> rrel_maximum_studied_object_class:
+            concept_your_maximum_object_class;
+        -> rrel_explored_relation:
+            nrel_your_relation_1;
+            nrel_your_relation_2;
+            rrel_your_relation_1;
+        -> rrel_not_maximum_studied_object_class:
+            concept_your_not_maximum_object_class_1;
+            concept_your_not_maximum_object_class_1;;
+*];;
