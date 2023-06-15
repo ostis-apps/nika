@@ -1,0 +1,37 @@
+concept_message_about_subdividing
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о разбиении]
+	(* <- lang_ru;; *);
+	[message about subdividing]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[subdividing];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о разбиении)]
+        (* <- lang_ru;; *);
+        [Def. (message about subdividing)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [сообщение о разбиении - атомарное сообщение, в котором говорится о разбиении какой-то сущности.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [message about subdividing is an atomic message, that is about of an entity subdivision.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message;
+                nrel_subdividing
+            };;
+	*);;

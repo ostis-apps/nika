@@ -8,7 +8,7 @@ concept_message
 <- rrel_key_sc_element:
 	...
 	(*
-	=>nrel_main_idtf:
+	=> nrel_main_idtf:
 		[Опр. (сообщение)]
 		(* <- lang_ru;; *);
 		[Def. (message)]
@@ -33,8 +33,7 @@ concept_message
 		process
 		};;
 	*);
-<=nrel_inclusion: sc_element; 
-<=nrel_subdividing:
+<= nrel_subdividing:
 	{
 	concept_non_atomic_message;
 	concept_atomic_message
