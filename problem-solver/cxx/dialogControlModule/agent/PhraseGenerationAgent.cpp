@@ -132,7 +132,7 @@ std::map<VariableType, std::vector<std::string>> PhraseGenerationAgent::getTempl
   std::vector<std::string> setElementsIdentifiers = getTemplateSetElementsVariables(text);
   if (!setElementsIdentifiers.empty())
   {
-    variables.insert(std::make_pair(LINK, setElementsIdentifiers));
+    variables.insert(std::make_pair(SET_ELEMENTS, setElementsIdentifiers));
   }
 
   return variables;
