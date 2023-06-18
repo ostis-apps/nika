@@ -12,6 +12,7 @@ public:
   static std::string const ENTITIES;
   static std::string const NAME;
   static std::string const VALUE;
+  static std::string const BODY;
 };
 
 class MessageClassificationAliasConstants
