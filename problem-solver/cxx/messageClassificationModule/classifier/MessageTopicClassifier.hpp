@@ -6,6 +6,7 @@
 #include "client/WitAiClient.hpp"
 #include "client/WitAiClientInterface.hpp"
 #include "searcher/MessageSearcher.hpp"
+#include "sc-agents-common/keynodes/coreKeynodes.hpp"
 
 namespace messageClassificationModule
 {
@@ -18,6 +19,8 @@ public:
 
 protected:
   ScMemoryContext * context;
+
+  ScAddrVector relationsToFindEntity {scAgentsCommon::CoreKeynodes::nrel_main_idtf, scAgentsCommon::CoreKeynodes::nrel_idtf};
 
   std::unique_ptr<dialogControlModule::MessageSearcher> messageSearcher;
 
