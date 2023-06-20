@@ -303,7 +303,8 @@ ScAddrVector MessageTopicClassifier::processEntities(
     ScAddrVector & messageEntitiesElements,
     ScAddr const & messageAddr)
 {
-  std::string entityIdtf;
+  std::string entityIdtfBody;
+  std::string entityIdtfValue;
   std::map<std::string, std::string> entityIdtfToRole;
 
   std::string entityRoleIdtf;
@@ -312,8 +313,13 @@ ScAddrVector MessageTopicClassifier::processEntities(
     entityRoleIdtf = key.substr(key.find(':') + 1);
     for (auto const & valueItem : value)
     {
-      entityIdtf = valueItem.at(WitAiConstants::BODY);
-      entityIdtfToRole.insert({entityIdtf, entityRoleIdtf});
+      entityIdtfBody = valueItem.at(WitAiConstants::BODY);
+      entityIdtfValue = valueItem.at(WitAiConstants::VALUE);
+      if (entityIdtfBody != entityIdtfValue)
+      {
+        entityIdtfToRole.insert({entityIdtfValue, entityRoleIdtf});
+      }
+      entityIdtfToRole.insert({entityIdtfBody, entityRoleIdtf});
     }
   }
 
