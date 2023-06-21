@@ -1,0 +1,25 @@
+example
+<- concept_wit_entity;
+<- concept_example;
+=> nrel_main_idtf:
+    [Пример]
+        (* <- lang_ru;; *);
+=> nrel_main_idtf:
+    [примере]
+        (* <- lang_ru;; *);;
+
+
+concept_example <- sc_node_class;;
+example -> Aword;;
+example -> Mword;;
+
+
+Aword
+=> nrel_main_idtf:
+    [Апельсин]
+        (* <- lang_ru;; *);;
+
+Mword
+=> nrel_main_idtf:
+    [Мандарин]
+        (* <- lang_ru;; *);;

@@ -1,0 +1,24 @@
+action_letter_search
+<- sc_node_class;
+=> nrel_main_idtf:
+	[действие. найти слова с определенной буквы](* <- lang_ru;; *);
+	[action. find words starts with special letter](* <- lang_en;; *);
+<- actions_class;
+<- atomic_action_class;
+<= nrel_inclusion: information_action;
+<- rrel_key_sc_element:
+	...
+	(*
+	<- explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+			-> rrel_example:
+				[Действие. найти слова с определенной буквы.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+			-> rrel_example:
+				[Action. find words starts with special letter.](* <- lang_en;; *);;
+		*);;
+	*);;
