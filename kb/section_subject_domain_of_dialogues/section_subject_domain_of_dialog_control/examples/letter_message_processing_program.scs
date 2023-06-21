@@ -23,7 +23,7 @@ _compound_action_message_processing
     _<- action_letter_search;
     _<- question;
     _-> rrel_1:: _message;
-    _-> rrel_2:: rrel_dynamic_argument:: _math_constant;;
+    _-> rrel_2:: rrel_dynamic_argument:: _answer_letter_message;;
 
 .._standard_message_reply
     _<- action_standard_message_reply;
