@@ -1,32 +1,36 @@
-concept_menu
+concept_container
 <- sc_node_class;
 => nrel_main_idtf:
-	[меню]
+	[контейнер]
 	(* <- lang_ru;; *);
-	[menu]
+	[container]
 	(* <- lang_en;; *);
 => nrel_inclusion:
+    concept_menu;
     concept_menu_bar;
+    concept_window;
+    concept_tool_bar;
+    concept_tab_bar;
 <- rrel_key_sc_element:
 	...
 	(*
         => nrel_main_idtf:
-        [Опр. (меню)]
+        [Опр. (контейнер)]
         (* <- lang_ru;; *);
-        [Def. (menu)]
+        [Def. (container)]
         (* <- lang_en;; *);;
         <- definition;;
         <= nrel_sc_text_translation:
             ...
             (*
                 -> rrel_example:
-                    [Меню - компонент пользовательского интерфейса, содержащий несколько вариантов для выбора пользователем.]
+                    [Контейнер - компонент пользовательского интерфейса, задача которого состоит в размещении набора компонентов, включённых в его состав.]
                     (* <- lang_ru;; *);;
             *);
             ...
             (*
                 -> rrel_example:
-                    [A menu is a component of the user interface that contains several options for the user to select.]
+                    [The container is a user interface component whose task is to place a set of components included in its composition.]
                     (* <- lang_en;; *);;
             *);;
         <= nrel_using_constants:

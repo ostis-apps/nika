@@ -1,32 +1,30 @@
-concept_menu
+concept_radio_button
 <- sc_node_class;
 => nrel_main_idtf:
-	[меню]
+	[радиокнопка]
 	(* <- lang_ru;; *);
-	[menu]
+	[radio-button]
 	(* <- lang_en;; *);
-=> nrel_inclusion:
-    concept_menu_bar;
 <- rrel_key_sc_element:
 	...
 	(*
         => nrel_main_idtf:
-        [Опр. (меню)]
+        [Опр. (радиокнопка)]
         (* <- lang_ru;; *);
-        [Def. (menu)]
+        [Def. (radio-button)]
         (* <- lang_en;; *);;
         <- definition;;
         <= nrel_sc_text_translation:
             ...
             (*
                 -> rrel_example:
-                    [Меню - компонент пользовательского интерфейса, содержащий несколько вариантов для выбора пользователем.]
+                    [Радиокнопка - компонент пользовательского интерфейса, который позволяет пользователю выбрать одну опцию из предопределенного набора.]
                     (* <- lang_ru;; *);;
             *);
             ...
             (*
                 -> rrel_example:
-                    [A menu is a component of the user interface that contains several options for the user to select.]
+                    [The radio-button is a component of the user interface that allows the user to select one option from a predefined set.]
                     (* <- lang_en;; *);;
             *);;
         <= nrel_using_constants:

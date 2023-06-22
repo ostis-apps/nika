@@ -1,0 +1,40 @@
+concept_output_component
+<- sc_node_class;
+=> nrel_main_idtf:
+	[компонент вывода]
+	(* <- lang_ru;; *);
+	[output component]
+	(* <- lang_en;; *);
+=> nrel_inclusion:
+    concept_image_output_component;
+    concept_graphical_output_component;
+    concept_video_output_component;
+    concept_sound_output_component;
+    concept_text_output_component;
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (компонент вывода)]
+        (* <- lang_ru;; *);
+        [Def. (output component)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Компонент вывода - компонент пользовательского интерфейса, предназначенный для представления информации.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [The output component is a user interface component designed to represent information.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_user_interface_component
+            };;
+	*);;

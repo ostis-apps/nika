@@ -1,0 +1,10 @@
+concept_command_selection_component
+<- sc_node_class;
+=> nrel_main_idtf:
+	[компонент выбора команд]
+	(* <- lang_ru;; *);
+	[command-selection-component]
+	(* <- lang_en;; *);
+=> nrel_inclusion:
+	concept_button;
+	concept_menu_item;;

@@ -1,32 +1,30 @@
-concept_menu
+concept_toggle_button
 <- sc_node_class;
 => nrel_main_idtf:
-	[меню]
+	[переключатель]
 	(* <- lang_ru;; *);
-	[menu]
+	[toggle-button]
 	(* <- lang_en;; *);
-=> nrel_inclusion:
-    concept_menu_bar;
 <- rrel_key_sc_element:
 	...
 	(*
         => nrel_main_idtf:
-        [Опр. (меню)]
+        [Опр. (переключатель)]
         (* <- lang_ru;; *);
-        [Def. (menu)]
+        [Def. (toggle-button)]
         (* <- lang_en;; *);;
         <- definition;;
         <= nrel_sc_text_translation:
             ...
             (*
                 -> rrel_example:
-                    [Меню - компонент пользовательского интерфейса, содержащий несколько вариантов для выбора пользователем.]
+                    [Переключатель - компонент пользовательского интерфейса, который позволяет пользователю переключаться между двумя состояниями.]
                     (* <- lang_ru;; *);;
             *);
             ...
             (*
                 -> rrel_example:
-                    [A menu is a component of the user interface that contains several options for the user to select.]
+                    [The toggle-button is a component of the user interface that allows the user to switch between two states.]
                     (* <- lang_en;; *);;
             *);;
         <= nrel_using_constants:

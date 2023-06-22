@@ -5,6 +5,11 @@ concept_button
 	(* <- lang_ru;; *);
 	[button]
 	(* <- lang_en;; *);
+=> nrel_inclusion:
+    concept_spin_button;
+    concept_radio_button;
+    concept_toggle_button;
+    concept_check_box;
 <- rrel_key_sc_element:
 	...
 	(*
@@ -18,13 +23,13 @@ concept_button
             ...
             (*
                 -> rrel_example:
-                    [Кнопка – компонент пользовательского интерфейса, при нажатии на который происходит программно связанное с этим нажатием действие либо событие.]
+                    [Кнопка - компонент пользовательского интерфейса, при нажатии на который происходит программно связанное с этим нажатием действие либо событие.]
                     (* <- lang_ru;; *);;
             *);
             ...
             (*
                 -> rrel_example:
-                    [A button is a component of the user interface, when clicked, an action or event programmatically associated with this click occurs.]
+                    [The button is a component of the user interface, when clicked, an action or event programmatically associated with this click occurs.]
                     (* <- lang_en;; *);;
             *);;
         <= nrel_using_constants:

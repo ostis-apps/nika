@@ -1,0 +1,35 @@
+concept_non_modal_window
+<- sc_node_class;
+=> nrel_main_idtf:
+	[немодальное окно]
+	(* <- lang_ru;; *);
+	[non-modal window]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (немодальное окно)]
+        (* <- lang_ru;; *);
+        [Def. (non-modal window)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Немодальное окно - окно, которое позволяет выполнять переключение между данным окном и другим окном без необходимости закрытия окна.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [A non-modal window is a window that allows you to switch between this window and another window without having to close the window.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_user_interface_component;
+                concept_window
+            };;
+	*);;

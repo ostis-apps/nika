@@ -1,0 +1,36 @@
+concept_speech_interface
+<- sc_node_class;
+=> nrel_main_idtf:
+	[речевой интерфейс]
+	(* <- lang_ru;; *);
+	[speech interface]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (речевой интерфейс)]
+        (* <- lang_ru;; *);
+        [Def. (speech interface)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Речевой интерфейс - SILK-интерфейс, обмен информацией в котором происходит за счёт диалога, в процессе которого компьютерная система и пользователь общаются с помощью речи. Данный вид интерфейса наиболее приближен к естественному общению между людьми.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [The speech interface is a SILK interface, the exchange of information in which occurs through a dialogue, during which the computer system and the user communicate using speech. This type of interface is the closest to natural communication between people.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                computer_system;
+                concept_silk_interface
+            };;
+	*);;
+

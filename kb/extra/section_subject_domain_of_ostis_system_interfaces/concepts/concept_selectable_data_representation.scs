@@ -1,0 +1,11 @@
+concept_selectable_data_representation
+<- sc_node_class;
+=> nrel_main_idtf:
+	[компонент выбора данных]
+	(* <- lang_ru;; *);
+	[selectable-data-representation]
+	(* <- lang_en;; *);
+=> nrel_inclusion:
+	concept_check_box;
+	concept_radio_button;
+	concept_toogle_button;;

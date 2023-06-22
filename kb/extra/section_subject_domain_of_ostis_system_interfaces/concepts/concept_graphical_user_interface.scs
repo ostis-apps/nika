@@ -1,0 +1,39 @@
+concept_graphical_user_interface
+<- sc_node_class;
+=> nrel_main_idtf:
+	[графический пользовательский интерфейс]
+	(* <- lang_ru;; *);
+	[graphical user interface]
+	(* <- lang_en;; *);
+=> nrel_inclusion:
+    concept_wimp_interface;
+    concept_silk_interface;
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (графический пользовательский интерфейс)]
+        (* <- lang_ru;; *);
+        [Def. (graphical user interface)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Графический пользовательский интерфейс - пользовательский интерфейс, при котором обмен информацией между компьютерной системой и пользователем осуществляется при помощи графических компонентов компьютерной системы.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [The graphical user interface is a user interface in which information is exchanged between a computer system and a user using graphical components of a computer system.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                computer_system;
+                concept_user_interface
+            };;
+	*);;
+
