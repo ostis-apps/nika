@@ -1,0 +1,24 @@
+action_show_weather
+<- sc_node_class;
+=> nrel_main_idtf:
+	[действие. узнать погоду](* <- lang_ru;; *);
+	[action. show weather](* <- lang_en;; *);
+<- actions_class;
+<- atomic_action_class;
+<= nrel_inclusion: information_action;
+<- rrel_key_sc_element:
+	...
+	(*
+	<- explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+			-> rrel_example:
+				[Действие. узнать погоду.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+			-> rrel_example:
+				[Action. show weather.](* <- lang_en;; *);;
+		*);;
+	*);;

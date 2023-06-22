@@ -1,0 +1,38 @@
+.._decomposition_tuple <- sc_node_tuple;;
+
+message_processing_program = [*
+_compound_action_message_processing
+    _<- action_process_message;
+    _<- question;
+    _-> rrel_1:: _message;
+    _<= nrel_decomposition_of_action:: .._decomposition_tuple;;
+
+.._decomposition_tuple
+    _-> rrel_1:: .._topic_classify;
+    _-> .._show_weather; .._standard_message_reply;;
+
+.._topic_classify
+    _=> nrel_goto:: .._show_weather;
+    // _<- action_message_topic_classification;
+    _<- action_alternative_message_topic_classification;
+    _<- question;
+    _-> rrel_1:: _message;;
+
+.._show_weather
+    _=> nrel_goto:: .._standard_message_reply;
+    _<- action_show_weather;
+    _<- question;
+    _-> rrel_1:: _message;
+    _-> rrel_2:: rrel_dynamic_argument:: _answer_weather_message;;
+
+.._standard_message_reply
+    _<- action_standard_message_reply;
+    _<- question;
+    _-> rrel_1:: _message;
+    _-> rrel_2:: rrel_dynamic_argument:: _answer_message;;
+
+*];;
+
+message_processing_program
+    -> rrel_key_sc_element: _compound_action_message_processing;
+    <- concept_message_processing_program;;
