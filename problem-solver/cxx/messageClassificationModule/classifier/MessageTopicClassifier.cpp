@@ -356,7 +356,7 @@ ScAddrVector MessageTopicClassifier::processEntities(
             utils::CommonUtils::getMainIdtf(context, entityAddr, {scAgentsCommon::CoreKeynodes::lang_ru});
         for (auto const & [entitySameIdtf, entitySameRoleIdtf] : entityIdtfToRole)
         {
-          if (idtf == entitySameIdtf)
+          if (idtf == entitySameIdtf && !context->HelperCheckEdge(messageAddr, entityAddr, ScType::EdgeAccessConstPosPerm))
           {
             SC_LOG_DEBUG("MessageTopicClassifier: found " + context->HelperGetSystemIdtf(entityAddr) + " entity");
             ScAddr messageEntityEdge = context->CreateEdge(ScType::EdgeAccessConstPosPerm, messageAddr, entityAddr);
