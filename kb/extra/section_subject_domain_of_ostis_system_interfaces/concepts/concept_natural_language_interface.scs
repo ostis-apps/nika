@@ -1,0 +1,38 @@
+concept_natural_language_interface
+<- sc_node_class;
+=> nrel_main_idtf:
+	[естественно-языковой интерфейс]
+	(* <- lang_ru;; *);
+	[natural language interface]
+	(* <- lang_en;; *);
+=> nrel_inclusion:
+    concept_speech_interface;
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (естественно-языковой интерфейс)]
+        (* <- lang_ru;; *);
+        [Def. (natural language interface)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Естественно-языковой интерфейс - SILK-интерфейс, обмен информацией между компьютерной системой и пользователем в котором происходит за счёт диалога. Диалог ведётся на одном из естественных языков.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Natural language interface is a SILK interface, the exchange of information between a computer system and a user in which occurs through dialogue. The dialogue is conducted in one of the natural languages.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                computer_system;
+                concept_silk_interface
+            };;
+	*);;
+

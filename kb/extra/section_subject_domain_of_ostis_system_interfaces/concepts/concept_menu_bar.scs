@@ -1,0 +1,36 @@
+concept_menu_bar
+<- sc_node_class;
+=> nrel_main_idtf:
+	[строка меню]
+	(* <- lang_ru;; *);
+	[menu-bar]
+	(* <- lang_en;; *);
+=> nrel_inclusion:
+    concept_menu_item;
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (строка меню)]
+        (* <- lang_ru;; *);
+        [Def. (menu-bar)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Строка меню - горизонтальная полоса, содержащая ярлыки меню. Строка меню предоставляет пользователю место в окне, где можно найти большинство основных функций программы.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [The menu bar is a horizontal bar containing menu shortcuts. The menu bar provides the user with a place in the window where most of the main functions of the program can be found.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_user_interface_component
+            };;
+	*);;

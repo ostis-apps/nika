@@ -1,0 +1,37 @@
+concept_silk_interface
+<- sc_node_class;
+=> nrel_main_idtf:
+	[SILK-интерфейс]
+	(* <- lang_ru;; *);
+	[SILK interface]
+	(* <- lang_en;; *);
+=> nrel_inclusion:
+    concept_natural_language_interface;
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (SILK-интерфейс)]
+        (* <- lang_ru;; *);
+        [Def. (SILK interface)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [SILK-интерфейс - пользовательский интерфейс, наиболее приближенный к естественной для человека форме общения. Компьютерная система находит для себя команды, анализируя человеческую речь и находя в ней ключевые фразы. Результат выполнения команд преобразуется в понятную человеку форму, например, в естественно-языковую форму или изображение.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [SILK-interface is a user interface that is the closest to a natural form of communication for a person. The computer system finds commands for itself by analyzing human speech and finding key phrases in it. The result of executing commands is converted into a form understandable to a person, for example, into a natural language form or an image.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                computer_system;
+                concept_user_interface
+            };;
+	*);;

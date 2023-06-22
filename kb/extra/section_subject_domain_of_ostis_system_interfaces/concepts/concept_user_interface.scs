@@ -5,6 +5,9 @@ concept_user_interface
 	(* <- lang_ru;; *);
 	[user interface]
 	(* <- lang_en;; *);
+=> nrel_inclusion:
+    concept_command_user_interface;
+    concept_graphical_user_interface;
 <- rrel_key_sc_element:
 	...
 	(*
