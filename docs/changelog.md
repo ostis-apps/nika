@@ -20,6 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Change interface color agent
 - Move to the latest platform
 - Replace ostis-inference with scl-machine
+- Find word in set by first letter agent
+- Weather agent 
 - Russian version for documentation
 
 ### Changed
