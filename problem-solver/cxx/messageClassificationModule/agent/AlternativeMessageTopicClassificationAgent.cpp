@@ -49,7 +49,9 @@ SC_AGENT_IMPLEMENTATION(AlternativeMessageTopicClassificationAgent)
   if (!utils::IteratorUtils::getAnyFromSet(&m_memoryCtx, outputStructure).IsValid())
   {
     SC_LOG_DEBUG("Message is not classified.");
-    m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageClassificationKeynodes::concept_not_classified_by_intent_message, messageAddr);
+    utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, answerElements, false);
+    SC_LOG_DEBUG("AlternativeMessageTopicClassificationAgent finished");
+    return SC_RESULT_ERROR;
   }
   else
   {

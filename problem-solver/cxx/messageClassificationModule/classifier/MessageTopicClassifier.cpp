@@ -346,11 +346,16 @@ ScAddrVector MessageTopicClassifier::processEntities(
       while (entityClassIterator->Next())
       {
         entityAddr = entityClassIterator->Get(2);
-        std::string const & idtf =
-            utils::CommonUtils::getMainIdtf(context, entityAddr, {scAgentsCommon::CoreKeynodes::lang_ru});
+        std::vector<std::string> identifiers;
+        for (ScAddr const & relationToFindEntity : relationsToFindEntity)
+        {
+          identifiers.push_back(utils::CommonUtils::getIdtf(
+                context, entityAddr, relationToFindEntity, {scAgentsCommon::CoreKeynodes::lang_ru}));
+        }
+
         for (auto const & [entitySameIdtf, entitySameRoleIdtf] : entityIdtfToRole)
         {
-          if (idtf == entitySameIdtf)
+          if (std::find(identifiers.begin(), identifiers.end(), entitySameIdtf) != identifiers.end())
           {
             SC_LOG_DEBUG("MessageTopicClassifier: found " + context->HelperGetSystemIdtf(entityAddr) + " entity");
             ScAddr messageEntityEdge = context->CreateEdge(ScType::EdgeAccessConstPosPerm, messageAddr, entityAddr);
