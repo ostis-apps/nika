@@ -12,20 +12,15 @@ namespace exampleModule
 {
 class LetterAgent : public ScAgent
 {
-  // условие инициирования агента (появление в sc-памяти
-  // выходящей дуги из `question_initiated` к экземпляру  
-  // агента
+  // Тип события условия инициирования sc-агента -- появление в sc-памяти выходящей дуги из `question_initiated` к действию
   SC_CLASS(Agent, Event(scAgentsCommon::CoreKeynodes::question_initiated, ScEvent::Type::AddOutputEdge))
 
-  // описывает логику работы агента
   SC_GENERATED_BODY();
 
 private:
-  // вспомогательный метод проверки принадлежности экземпляра 
-  // агента к его классу
   bool checkActionClass(ScAddr const & actionAddr);
 
-	ScAddrVector addTempLinkWithRelation(ScAddr addr, const std::string & linkContent, ScAddr relation) const;
+	ScAddrVector createAnswer(ScAddr const & messageAddr, std::string const & linkContent, ScAddr const & relation) const;
 
   std::string getMessageText(ScAddr const & messageAddr) const;
 
