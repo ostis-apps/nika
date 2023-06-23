@@ -1,6 +1,11 @@
 #pragma once
 
+#include "sc-memory/sc_memory.hpp"
 #include "sc-memory/sc_module.hpp"
+
+#include "keynodes/LetterKeynodes.hpp"
+#include "agent/LetterAgent.hpp"
+#include "utils/ActionUtils.hpp"
 
 #include "ExampleModule.generated.hpp"
 

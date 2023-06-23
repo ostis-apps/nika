@@ -1,10 +1,5 @@
 #include "ExampleModule.hpp"
 
-#include "sc-memory/sc_memory.hpp"
-
-#include "keynodes/Keynodes.hpp"
-#include "agent/LetterAgent.hpp"
-
 namespace exampleModule
 {
 	// регистрация модуля
@@ -12,10 +7,19 @@ namespace exampleModule
 
 	sc_result ExampleModule::InitializeImpl()
 	{
-		if (!Keynodes::InitGlobal())
+		if (!LetterKeynodes::InitGlobal())
     		return SC_RESULT_ERROR;
 		// регистрация агентов модуля
-		SC_AGENT_REGISTER(LetterAgent);
+    ScMemoryContext ctx(sc_access_lvl_make_min, "ExampleModule");
+    if (ActionUtils::isActionDeactivated(&ctx, LetterKeynodes::action_letter_search))
+    {
+      SC_LOG_ERROR("action_letter_search is deactivated");
+    }
+    else
+    {
+      SC_AGENT_REGISTER(LetterAgent);
+    }
+
 		return SC_RESULT_OK;
 	}
 
@@ -23,6 +27,7 @@ namespace exampleModule
 	{
 		// дерегистрация агентов модуля
 		SC_AGENT_UNREGISTER(LetterAgent);
+
 		return SC_RESULT_OK;
 	}
 }

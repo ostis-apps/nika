@@ -1,11 +1,12 @@
 #pragma once
 
-#include "sc-agents-common/keynodes/coreKeynodes.hpp"
 #include "sc-memory/kpm/sc_agent.hpp"
+#include "sc-agents-common/keynodes/coreKeynodes.hpp"
+
+#include "searcher/MessageSearcher.hpp"
 
 #include "LetterAgent.generated.hpp"
 
-#include "searcher/MessageSearcher.hpp"
 
 namespace exampleModule
 {

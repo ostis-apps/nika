@@ -2,11 +2,11 @@
 
 #include "sc-memory/sc_addr.hpp"
 #include "sc-memory/sc_object.hpp"
-#include "Keynodes.generated.hpp"
+#include "LetterKeynodes.generated.hpp"
 
 namespace exampleModule
 {
-    class Keynodes : public ScObject
+    class LetterKeynodes : public ScObject
     {
         SC_CLASS()
         SC_GENERATED_BODY()
