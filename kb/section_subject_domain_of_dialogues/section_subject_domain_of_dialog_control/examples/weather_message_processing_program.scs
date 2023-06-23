@@ -12,9 +12,15 @@ _compound_action_message_processing
     _-> .._show_weather; .._standard_message_reply;;
 
 .._topic_classify
-    _=> nrel_goto:: .._show_weather;
-    // _<- action_message_topic_classification;
+    _=> nrel_then:: .._show_weather;
+    _=> nrel_else:: .._topic_classify_wit;
     _<- action_alternative_message_topic_classification;
+    _<- question;
+    _-> rrel_1:: _message;;
+
+.._topic_classify_wit
+    _=> nrel_goto:: .._show_weather;
+    _<- action_message_topic_classification;
     _<- question;
     _-> rrel_1:: _message;;
 
@@ -24,6 +30,8 @@ _compound_action_message_processing
     _<- question;
     _-> rrel_1:: _message;
     _-> rrel_2:: rrel_dynamic_argument:: _answer_weather_message;;
+
+
 
 .._standard_message_reply
     _<- action_standard_message_reply;
