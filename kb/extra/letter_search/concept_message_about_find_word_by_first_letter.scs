@@ -1,0 +1,32 @@
+concept_message_about_find_word_by_first_letter
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о поиске слова по букве]
+	(* <- lang_ru;; *);
+	[message about word searching by letter]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_letter_search];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о поиске слова по букве)]
+        (* <- lang_ru;; *);
+        [Def. (message about word searching by letter)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [сообщение о поиске слова по букве - атомарное сообщение, в котором говорится о словах принадлежащих сущности и начинающихся с определенной буквы.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [message about word searching by letter is an atomic message, which refers to words belonging to the entity and beginning with a certain letter.]
+                    (* <- lang_en;; *);;
+            *);;
+	*);;
