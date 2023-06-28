@@ -14,8 +14,8 @@ ScAddr MessageReplyKeynodes::languages;
 ScAddr MessageReplyKeynodes::concept_sound_file;
 ScAddr MessageReplyKeynodes::concept_text_file;
 ScAddr MessageReplyKeynodes::concept_dialogue;
-ScAddr MessageReplyKeynodes::rrel_last;
 ScAddr MessageReplyKeynodes::nrel_message_sequence;
 ScAddr MessageReplyKeynodes::myself;
+ScAddr MessageReplyKeynodes::nika;
 
 }  // namespace messageReplyModule

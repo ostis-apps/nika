@@ -96,7 +96,7 @@ SC_AGENT_IMPLEMENTATION(MessageReplyAgent)
 
     ScAddr const & replyMessageAddr = searchResult[0]["_reply_message"];
     utils::GenerationUtils::generateRelationBetween(
-        &m_memoryCtx, replyMessageAddr, MessageReplyKeynodes::myself, MessageReplyKeynodes::nrel_authors);
+        &m_memoryCtx, replyMessageAddr, MessageReplyKeynodes::nika, MessageReplyKeynodes::nrel_authors);
 
     generator.addMessageToDialog(chatAddr, replyMessageAddr);
   }

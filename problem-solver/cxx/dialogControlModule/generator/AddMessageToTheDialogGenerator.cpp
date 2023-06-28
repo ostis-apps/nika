@@ -1,22 +1,20 @@
-#include "MessageHistoryGenerator.hpp"
-
 #include "sc-agents-common/utils/IteratorUtils.hpp"
-
-#include "keynodes/MessageReplyKeynodes.hpp"
+#include "sc-agents-common/utils/GenerationUtils.hpp"
 #include "keynodes/Keynodes.hpp"
-#include "templates/MessageReplyTemplates.hpp"
+#include "AddMessageToTheDialogGenerator.hpp"
+#include "keynodes/MessageKeynodes.hpp"
 
 using namespace utils;
 using namespace std;
 
-namespace messageReplyModule
+namespace dialogControlModule
 {
-MessageHistoryGenerator::MessageHistoryGenerator(ScMemoryContext * context)
+AddMessageToTheDialogGenerator::AddMessageToTheDialogGenerator(ScMemoryContext * context)
   : context(context)
 {
 }
 
-void MessageHistoryGenerator::addMessageToDialog(const ScAddr & dialogAddr, const ScAddr & messageAddr)
+void AddMessageToTheDialogGenerator::addMessageToDialog(ScAddr const & dialogAddr, ScAddr const & messageAddr)
 {
   auto scTemplate = std::make_unique<ScTemplate>();
   ScAddr lastMessageAddr;
@@ -25,7 +23,7 @@ void MessageHistoryGenerator::addMessageToDialog(const ScAddr & dialogAddr, cons
       dialogAddr,
       ScType::EdgeAccessConstPosPerm,
       ScType::NodeConst,
-      ScType::EdgeAccessConstPosPerm,
+      ScType::EdgeAccessConstPosTemp,
       commonModule::Keynodes::rrel_last);
 
   if (iterator5Ptr->Next())
@@ -37,7 +35,7 @@ void MessageHistoryGenerator::addMessageToDialog(const ScAddr & dialogAddr, cons
         dialogAddr,
         ScType::EdgeAccessConstPosPerm,
         lastMessageAddr,
-        ScType::EdgeAccessConstPosPerm,
+        ScType::EdgeAccessConstPosTemp,
         commonModule::Keynodes::rrel_last);
 
     if (it5->Next())
@@ -49,14 +47,14 @@ void MessageHistoryGenerator::addMessageToDialog(const ScAddr & dialogAddr, cons
     scTemplate = createFirstMessageInDialogTemplate(dialogAddr, messageAddr);
 
   ScTemplateGenResult genResult;
-  if (!context->HelperGenTemplate(*scTemplate, genResult))
+  if (context->HelperGenTemplate(*scTemplate, genResult) == SC_FALSE)
     throw std::runtime_error("Unable to generate structure for next dialog message.");
 }
 
-std::unique_ptr<ScTemplate> MessageHistoryGenerator::createNotFirstMessageInDialogTemplate(
-    const ScAddr & dialogAddr,
-    const ScAddr & lastMessageAddr,
-    const ScAddr & messageAddr)
+std::unique_ptr<ScTemplate> AddMessageToTheDialogGenerator::createNotFirstMessageInDialogTemplate(
+    ScAddr const & dialogAddr,
+    ScAddr const & lastMessageAddr,
+    ScAddr const & messageAddr)
 {
   string const NEXT_MESSAGE_ARC_ALIAS = "_next_message_arc";
 
@@ -70,21 +68,21 @@ std::unique_ptr<ScTemplate> MessageHistoryGenerator::createNotFirstMessageInDial
       dialogAddr,
       ScType::EdgeAccessVarPosPerm >> NEXT_MESSAGE_ARC_ALIAS,
       messageAddr,
-      ScType::EdgeAccessVarPosPerm,
+      ScType::EdgeAccessVarPosTemp,
       commonModule::Keynodes::rrel_last);
   scTemplate->TripleWithRelation(
       messageEdge,
       ScType::EdgeDCommonVar,
       NEXT_MESSAGE_ARC_ALIAS,
       ScType::EdgeAccessVarPosPerm,
-      MessageReplyKeynodes::nrel_message_sequence);
+      MessageKeynodes::nrel_message_sequence);
 
   return scTemplate;
 }
 
-std::unique_ptr<ScTemplate> MessageHistoryGenerator::createFirstMessageInDialogTemplate(
-    const ScAddr & dialogAddr,
-    const ScAddr & messageAddr)
+std::unique_ptr<ScTemplate> AddMessageToTheDialogGenerator::createFirstMessageInDialogTemplate(
+    ScAddr const & dialogAddr,
+    ScAddr const & messageAddr)
 {
   auto scTemplate = std::make_unique<ScTemplate>();
   scTemplate->TripleWithRelation(
@@ -97,9 +95,9 @@ std::unique_ptr<ScTemplate> MessageHistoryGenerator::createFirstMessageInDialogT
       dialogAddr,
       ScType::EdgeAccessVarPosPerm,
       messageAddr,
-      ScType::EdgeAccessVarPosPerm,
+      ScType::EdgeAccessVarPosTemp,
       commonModule::Keynodes::rrel_last);
   return scTemplate;
 }
 
-}  // namespace messageReplyModule
+}  // namespace dialogControlModule
