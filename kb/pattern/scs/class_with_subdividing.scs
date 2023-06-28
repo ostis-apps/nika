@@ -1,0 +1,22 @@
+concept_your_class_identifier
+<- sc_node_class;
+<- concept_wit_entity;
+=> nrel_main_idtf:
+	[Идентификатор] (* <- lang_ru;; *);
+=> nrel_note:
+	[Примечание] (* <- lang_ru;; *);
+<= nrel_subdividing: 
+	...
+   (*
+   		<- sc_node_tuple;;
+   		-> ..instance_1;;
+   		-> ..instance_2;;
+   *);;
+   
+..instance_1
+=> nrel_main_idtf:
+	[Идентификатор] (* <- lang_ru;; *);;
+
+..instance_2
+=> nrel_main_idtf:
+	[Идентификатор] (* <- lang_ru;; *);;
