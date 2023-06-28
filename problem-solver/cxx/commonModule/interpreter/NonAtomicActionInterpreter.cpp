@@ -28,6 +28,13 @@ void NonAtomicActionInterpreter::interpret(ScAddr const & nonAtomicActionAddr)
     }
     applyAction(action);
     action = getNextAction(action);
+    ScIterator3Ptr classesIterator = context->Iterator3(ScType::NodeConst, ScType::EdgeAccessConstPosPerm, action);
+    std::stringstream classesStream;
+    while(classesIterator->Next())
+    {
+      classesStream << " " << context->HelperGetSystemIdtf(classesIterator->Get(2));
+    }
+    SC_LOG_WARNING(classesStream);
   }
 }
 

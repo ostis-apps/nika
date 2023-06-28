@@ -6,11 +6,16 @@ namespace dialogControlModule
 {
 ScAddr MessageKeynodes::action_phrase_generation;
 ScAddr MessageKeynodes::action_standard_message_reply;
+ScAddr MessageKeynodes::action_message_history_generation;
 ScAddr MessageKeynodes::concept_answer_on_standard_message_rule;
 ScAddr MessageKeynodes::concept_answer_on_standard_message_rule_class_by_priority;
 ScAddr MessageKeynodes::concept_atomic_message;
 ScAddr MessageKeynodes::concept_non_atomic_message;
 ScAddr MessageKeynodes::concept_message;
+ScAddr MessageKeynodes::concept_sent_dialog_message;
+ScAddr MessageKeynodes::concept_dialog_history;
+ScAddr MessageKeynodes::nika;
+ScAddr MessageKeynodes::user;
 ScAddr MessageKeynodes::nrel_answer_pattern;
 ScAddr MessageKeynodes::nrel_authors;
 ScAddr MessageKeynodes::nrel_message_key_elements;

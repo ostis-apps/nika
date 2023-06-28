@@ -19,6 +19,9 @@ public:
   SC_PROPERTY(Keynode("action_standard_message_reply"), ForceCreate)
   static ScAddr action_standard_message_reply;
 
+  SC_PROPERTY(Keynode("concept_non_atomic_message"), ForceCreate)
+  static ScAddr action_message_history_generation;
+
   SC_PROPERTY(Keynode("concept_answer_on_standard_message_rule"), ForceCreate)
   static ScAddr concept_answer_on_standard_message_rule;
 
@@ -35,8 +38,20 @@ public:
   static ScAddr concept_message;
 
   SC_PROPERTY(Keynode("nrel_answer_pattern"), ForceCreate)
-  static ScAddr nrel_answer_pattern;
+  static ScAddr concept_sent_dialog_message;
 
+  SC_PROPERTY(Keynode("nrel_answer_pattern"), ForceCreate)
+  static ScAddr concept_dialog_history;
+
+  SC_PROPERTY(Keynode("concept_non_atomic_message"), ForceCreate)
+  static ScAddr nika;
+
+  SC_PROPERTY(Keynode("concept_non_atomic_message"), ForceCreate)
+  static ScAddr user;
+
+  SC_PROPERTY(Keynode("nrel_answer_pattern"), ForceCreate)
+  static ScAddr nrel_answer_pattern;
+  
   SC_PROPERTY(Keynode("nrel_authors"), ForceCreate)
   static ScAddr nrel_authors;
 

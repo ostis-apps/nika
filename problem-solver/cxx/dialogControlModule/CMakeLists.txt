@@ -7,6 +7,8 @@ set(SOURCES
     "generator/MessageConstructionsGenerator.cpp"
     "agent/PhraseGenerationAgent.cpp"
     "agent/StandardMessageReplyAgent.cpp"
+    "agent/MessageHistoryGenerationAgent.cpp"
+    "generator/MessageHistoryGenerator.cpp"
     "searcher/LanguageSearcher.cpp"
     "searcher/MessageSearcher.cpp"
     "searcher/PhraseSearcher.cpp"
@@ -21,6 +23,8 @@ set(HEADERS
     "generator/MessageConstructionsGenerator.hpp"
     "agent/PhraseGenerationAgent.hpp"
     "agent/StandardMessageReplyAgent.hpp"
+    "agent/MessageHistoryGenerationAgent.hpp"
+    "generator/MessageHistoryGenerator.hpp"
     "searcher/LanguageSearcher.hpp"
     "searcher/MessageSearcher.hpp"
     "searcher/PhraseSearcher.hpp"
@@ -36,6 +40,8 @@ include_directories(
     ${INFERENCE_MODULE_SRC}
     ${SC_COMMON_MODULE_SRC}
 )
+
+
 
 add_library(dialogControlModule SHARED ${SOURCES} ${HEADERS})
 target_link_libraries(dialogControlModule sc-memory sc-agents-common common sc-builder-lib inferenceModule)

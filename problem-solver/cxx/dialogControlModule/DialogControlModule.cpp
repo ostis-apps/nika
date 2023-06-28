@@ -34,6 +34,15 @@ sc_result DialogControlModule::InitializeImpl()
     SC_AGENT_REGISTER(StandardMessageReplyAgent);
   }
 
+  if (ActionUtils::isActionDeactivated(&ctx, MessageKeynodes::action_message_history_generation))
+  {
+    SC_LOG_DEBUG("action_message_history_generation is deactivated");
+  }
+  else
+  {
+    SC_AGENT_REGISTER(MessageHistoryGenerationAgent);
+  }
+
   return SC_RESULT_OK;
 }
 
@@ -41,6 +50,7 @@ sc_result DialogControlModule::ShutdownImpl()
 {
   SC_AGENT_UNREGISTER(PhraseGenerationAgent);
   SC_AGENT_UNREGISTER(StandardMessageReplyAgent);
+  SC_AGENT_UNREGISTER(MessageHistoryGenerationAgent);
 
   return SC_RESULT_OK;
 }
