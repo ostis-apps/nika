@@ -13,23 +13,19 @@ Some tips:
 
 - After update c++ code you need to rebuild problem-solver. Just run:
 ```
-cd nika/scripts
-./build_problem_solver.sh
+./scripts/build_problem_solver.sh
 ```
 For a full rebuild with the deleting of the *bin* and *build* folders run:
 ```
-cd nika/scripts
-./build_problem_solver.sh -f
+./scripts/build_problem_solver.sh -f
 ```
 For build tests run:
 ```
-cd nika/scripts
-./build_problem_solver.sh -t
+./scripts/build_problem_solver.sh -t
 ```
 For a full rebuild with build tests and the deleting of the *bin* and *build* folders run:
 ```
-cd nika/scripts
-./build_problem_solver.sh -f -t
+./scripts/build_problem_solver.sh -f -t
 ```
 
 - Add an action deactivation check by using a function *ActionUtils::isActionDeactivated()* from the common module. Identifiers of actions for deactivating are stored in *kb/non_subject_domain_concepts/action_deactivated.scs*. Example:
@@ -54,6 +50,12 @@ sc_result MyModule::InitializeImpl()
 ### Logging
 You can change log mode and level in nika.ini configuration file.
 
+## sc-web
+- After update js code you need to rebuild sc-web. Just run:
+```
+./scripts/build_sc_web.sh
+```
+
 ## interface
 Place for your interface modules.
 
@@ -67,7 +69,7 @@ Build the problem-solver of your app. Use an argument *-f* or *--full* for a com
 Run the interface of your app.
 
 ### install_project.sh
-Install or update the OSTIS platform.
+Install or update the ostis-web-platform.
 
 ### install_subsystems.sh
 Building a problem solver and a knowledge base of subsystems.
