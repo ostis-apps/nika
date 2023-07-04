@@ -13,3 +13,5 @@ packagelist=(
 	file
 )
 sudo apt-get install -y --no-install-recommends "${packagelist[@]}"
+
+"${SC_MACHINE_PATH}/scripts/install_deps_ubuntu.sh" --dev
