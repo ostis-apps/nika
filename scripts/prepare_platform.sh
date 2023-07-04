@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
+source "$(cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd)/set_vars.sh"
+
 install_problem_solver()
 {
   "${APP_ROOT_PATH}/scripts/install_deps_ubuntu.sh"
