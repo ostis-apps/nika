@@ -12,7 +12,7 @@ ENV CCACHE_DIR=/ccache
 
 WORKDIR /nika
 COPY . .
-RUN --mount=type=cache,target=/ccache/ cd /nika/scripts && ./install_project.sh --no_build_kb --no_build_sc_web
+RUN --mount=type=cache,target=/ccache/ cd /nika/scripts && ./prepare_platform.sh
 
 FROM base as final
 COPY --from=builder /nika/problem-solver/sc-machine/scripts /nika/problem-solver/sc-machine/scripts
@@ -24,4 +24,4 @@ COPY --from=builder /nika/scripts /nika/scripts
 COPY --from=builder /nika/nika.ini /nika/nika.ini
 
 WORKDIR /nika/scripts
-ENTRYPOINT ["tini", "--", "/nika/scripts/docker_entrypoint.sh"]
+ENTRYPOINT ["tini", "--", "/nika/problem-solver/sc-machine/scripts/docker_entrypoint.sh"]
