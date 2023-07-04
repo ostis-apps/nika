@@ -12,7 +12,6 @@ install_problem_solver()
 install_sc_web()
 {
   "${SC_WEB_PATH}/scripts/install_deps_ubuntu.sh"
-  "${APP_ROOT_PATH}/build_sc_web.sh"
 }
 
 git submodule update --init --recursive
