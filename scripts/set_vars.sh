@@ -6,6 +6,7 @@ export APP_ROOT_PATH="${APP_ROOT_PATH}"
 export ROOT_CMAKE_PATH="${APP_ROOT_PATH}"
 export PROBLEM_SOLVER_PATH="${APP_ROOT_PATH}/problem-solver"
 export REPO_PATH_FILE="${APP_ROOT_PATH}/repo.path"
+export CONFIG_PATH="${APP_ROOT_PATH}/nika.ini"
 export SCRIPTS_PATH="${APP_ROOT_PATH}/scripts"
 export KB_PATH="${APP_ROOT_PATH}/kb"
 

@@ -19,6 +19,10 @@ For a full rebuild with the deleting of the *bin* and *build* folders run:
 ```
 ./scripts/build_problem_solver.sh -f
 ```
+For build project in release mode run:
+```
+./scripts/build_problem_solver.sh -r
+```
 For build tests run:
 ```
 ./scripts/build_problem_solver.sh -t
