@@ -21,6 +21,8 @@ subject_domain_ostis_system_interfaces
 -> rrel_explored_relation:
 	nrel_component_color;
     nrel_visual_interface;
+    nrel_copyright_text;
+    nrel_system_name;
 -> rrel_not_maximum_studied_object_class:
 	concept_command_user_interface;
     concept_graphical_user_interface;
@@ -246,5 +248,11 @@ rrel_key_sc_element -> (section_subject_domain_ostis_system_interfaces -> subjec
     => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_spin_button)
 (*
     <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> nrel_copyright_text)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> nrel_system_name)
+(*
+    <- rrel_key_sc_element;;
 *);;
-*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;
+*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;
