@@ -6,12 +6,10 @@ COPY ./scripts /tmp/scripts
 COPY ./problem-solver/sc-machine/scripts /tmp/problem-solver/sc-machine/scripts
 COPY ./problem-solver/sc-machine/requirements.txt /tmp/problem-solver/sc-machine/requirements.txt
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends sudo ccache tzdata && \
+    apt-get install -y --no-install-recommends sudo ccache tini tzdata && \
     /tmp/scripts/install_problem_solver_deps.sh
 
 FROM base as builder
-ENV CCACHE_DIR=/ccache
-
 ENV CCACHE_DIR=/ccache
 
 RUN apt-get install -y --no-install-recommends git && \
@@ -30,4 +28,4 @@ COPY --from=builder /nika/scripts /nika/scripts
 COPY --from=builder /nika/nika.ini /nika/nika.ini
 
 WORKDIR /nika/scripts
-ENTRYPOINT ["tini", "--", "/nika/problem-solver/sc-machine/scripts/docker_entrypoint.sh"]
+ENTRYPOINT ["/usr/bin/tini", "--", "/nika/problem-solver/sc-machine/scripts/docker_entrypoint.sh"]
