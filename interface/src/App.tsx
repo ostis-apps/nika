@@ -3,7 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 import { loadingComponent } from '@components/LoadingComponent';
 import { routes } from '@constants';
 import { client } from "@api";
-import { ScAddr, ScEventParams, ScEventType, ScTemplate, ScType } from "ts-sc-client";
+import { ScEventParams, ScEventType, ScTemplate, ScType } from "ts-sc-client";
 
 import 'antd/dist/antd.css';
 import './assets/main.css';
@@ -38,6 +38,8 @@ export const App = () => {
         const [headerBgColor, setHeaderBgColor] = useState<string>('#39494C');
         const [mainBgColor, setMainBgColor] = useState<string>('#fcfafa');
         const [footerBgColor, setFooterBgColor] = useState<string>('#39494C');
+
+        const [fontFamily, setFontFamily] = useState<string>('Roboto');
         
         const funcChange = [setHeaderBgColor, setMainBgColor, setFooterBgColor]
 
@@ -91,13 +93,60 @@ export const App = () => {
                 }    
             }
         }
-    
+        
+        async function fetchFontFamily() {
+            const fontType = 'nrel_font_type';
+            const visualInter = 'nrel_visual_interface'
+
+            const helpKeynodes = [
+                { id: fontType, type: ScType.NodeConstNoRole },
+                { id: visualInter, type: ScType.NodeConstNoRole },
+            ];
+
+            const fontAlias = '_font';
+            const componentAlias = '_component';
+            
+            const hKeynodes = await client.resolveKeynodes(helpKeynodes);
+
+            
+            const template = new ScTemplate();
+            template.tripleWithRelation(
+                ScType.NodeVar,
+                ScType.EdgeDCommonVar,
+                [ScType.NodeVar, componentAlias],
+                ScType.EdgeAccessVarPosPerm,
+                hKeynodes[visualInter],
+            );
+            template.tripleWithRelation(
+                componentAlias,
+                ScType.EdgeDCommonVar,
+                [ScType.LinkVar, fontAlias],
+                ScType.EdgeAccessVarPosPerm,
+                hKeynodes[fontType],
+            );
+            const resultFontLink = await client.templateSearch(template);
+            
+            if (resultFontLink.length) {
+                const fontLink = resultFontLink[0].get(fontAlias);
+                const resultFont = await client.getLinkContents([fontLink]);
+                if (resultFont.length) {
+                    let font = resultFont[0].data;
+                    setFontFamily(font as any);
+                    const eventParams = new ScEventParams(fontLink, ScEventType.ChangeContent, fetchFontFamily);
+                    await client.eventsCreate([eventParams]); 
+                }
+            }    
+        
+        }
+
         useEffect(() => {
             fetchColorValue();
+            fetchFontFamily();
         }, []);
     
         const headerStyles = {
             background: headerBgColor,
+            'font-family': fontFamily,
         };
         
         const mainStyles = {
@@ -106,6 +155,7 @@ export const App = () => {
 
         const footerStyles = {
             background: footerBgColor,
+            'font-family': fontFamily,
         };
 
     return (
