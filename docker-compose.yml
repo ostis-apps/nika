@@ -45,6 +45,10 @@ services:
     environment:
       # Use the commented env variable if you need to rebuild KB every startup.
       - "REBUILD_KB=1"
+      - "ROOT_CMAKE_PATH=/patient-care"
+      - "BINARY_PATH=/nika/bin"
+      - "BUILD_PATH=/nika/build"
+      - "CONFIG_PATH=/nika/nika.ini"
       - "KB_PATH=../repo.path"
     command:
       - "serve"
