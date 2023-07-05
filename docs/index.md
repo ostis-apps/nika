@@ -15,7 +15,11 @@
     * [Message reply agent](agents/messageReplyAgent.md)
     * [Standard message reply agent](agents/standardMessageReplyAgent.md)
     * [Message topic classification agent](agents/messageTopicClassificationAgent.md)
+    * [Alternative message topic classification agent](agents/alternativeMessageTopicClassificationAgent.md)
     * [Change interface color agent](agents/changeInterfaceColorAgent.md)
+
+- **Patterns**
+    * [Knowledge base patterns](patterns/kb-patterns.md)
 
 - **Subsystems**
     * [scl-machine](subsystems/scl-machine.md)
