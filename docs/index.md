@@ -1,6 +1,7 @@
 # Documentation
 
-- **Building**
+- **Build**
+    * [Docker](build/docker-build.md)
     * [Linux](build/linux-build.md)
    
 - **Development**
@@ -16,5 +17,4 @@
     * [Message topic classification agent](agents/messageTopicClassificationAgent.md)
 
 - **Subsystems**
-    * [Inference agent](subsystems/ostis-inference.md)
-
+    * [scl-machine](subsystems/scl-machine.md)
