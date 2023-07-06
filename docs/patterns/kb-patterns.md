@@ -1,4 +1,4 @@
-You can find some usefully patterns to design knowledge base fast and accurate in `kb/pattern`.
+You can find some useful knowledge base constructions patterns in `kb/pattern`.
 There are examples to formalize classes, relations, instances, answer rules, classification rules and structures to answer to new messages.
 
 In the `gwf` subdirectory you can find examples in scg. You can load `gwf` files to the scg-editor, synchronize and get new answers online.
@@ -9,5 +9,5 @@ and `lr_message_about_your_class` to your actual nodes. Also, you can change any
 
 In the `scs` subdirectory you can find the same examples in scs.
 
-In the `science` subdirectory you can find examples about science in scg. If you build this files (add to `repo.path`) you will get answer to the message about science.
+In the `science` subdirectory you can find KB fragments in scg that serve as an example ontology. If you'll build these files (add this directory to `repo.path`), you'll get answers to the questions related to science.
 Use it as a concrete example.
