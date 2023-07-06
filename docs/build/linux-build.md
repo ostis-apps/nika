@@ -3,7 +3,9 @@
 ```sh
 git clone https://github.com/ostis-apps/nika
 cd nika
-./scripts/prepare_platform.sh
+./scripts/install_submodules.sh
+./scripts/install_problem_solver_deps.sh
+./scripts/install_interface_deps.sh
 ```
 
 ## Build
@@ -15,6 +17,11 @@ cd nika
 - Build problem solver
   ```sh
   ./scripts/build_problem_solver.sh
+  ```
+
+- Build sc-web
+  ```sh
+  ./scripts/build_sc_web.sh
   ```
 
 ## 🚀 Run
