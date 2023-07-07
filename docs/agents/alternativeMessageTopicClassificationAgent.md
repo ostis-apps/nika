@@ -14,9 +14,12 @@ Examples of an input structure:
 
 <img src="../images/alternativeMessageTopicClassificationAgentInput.png"></img>
 
-Example of a logic rule to classify message:
+Example of a logic formula to classify message:
 
 <img src="../images/lr_greeting_message.png"></img>
+
+The output of the agent depends on the inference agent results. If any formula has been applied successfully, `message node` will have a class according to the formula.
+Otherwise, `message node` has `concept_not_classified_by_intent_message` class.
 
 ### Agent implementation language
 C++
