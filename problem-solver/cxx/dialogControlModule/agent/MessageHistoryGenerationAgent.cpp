@@ -22,15 +22,50 @@ SC_AGENT_IMPLEMENTATION(MessageHistoryGenerationAgent)
   MessageHistoryGenerator generator(&m_memoryCtx);
   if (!checkActionClass(actionNode))
   {
-
-  SC_LOG_DEBUG("NOT MessageHistoryGenerationAgent started");
-
     return SC_RESULT_OK;
   }
   SC_LOG_DEBUG("MessageHistoryGenerationAgent started");
-
-  ScAddr messageUser =
+  
+  ScAddr messageUser = 
       IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionNode, scAgentsCommon::CoreKeynodes::rrel_1);
+
+
+
+
+  ScIterator5Ptr translationIterator = m_memoryCtx.Iterator5(
+      ScType::NodeConst,
+      ScType::EdgeDCommonConst,
+      messageUser,
+      ScType::EdgeAccessConstPosPerm,
+      DialogKeynodes::nrel_sc_text_translation);
+
+    ScAddr translationMessage;
+
+  if (translationIterator->Next())
+  {
+    SC_LOG_WARNING("Found translation");
+    translationMessage = translationIterator->Get(0);
+  }
+ 
+  ScIterator3Ptr translationText = m_memoryCtx.Iterator3(
+  translationMessage,
+  ScType::EdgeAccessConstPosPerm,
+  ScType::Link
+  );
+
+  ScAddr messageText;
+
+  if (translationText->Next())
+  {
+    SC_LOG_WARNING("Found link");
+    messageText = translationText->Get(2);
+  };
+
+  std::string text;
+  m_memoryCtx.GetLinkContent(messageText, text);
+  SC_LOG_WARNING(text);
+
+
 
   if (!messageUser.IsValid())
   {
@@ -39,8 +74,6 @@ SC_AGENT_IMPLEMENTATION(MessageHistoryGenerationAgent)
     AgentUtils::finishAgentWork(&m_memoryCtx, actionNode, false);
     return SC_RESULT_ERROR_INVALID_PARAMS;
   }
-
-  generator.addMessageToDialog(MessageKeynodes::concept_dialog_history, messageUser, MessageKeynodes::user);
 
   ScAddr messageNika =
       IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionNode, scAgentsCommon::CoreKeynodes::rrel_2);
@@ -53,9 +86,11 @@ SC_AGENT_IMPLEMENTATION(MessageHistoryGenerationAgent)
     return SC_RESULT_ERROR_INVALID_PARAMS;
   }
 
+  generator.addMessageToDialog(MessageKeynodes::concept_dialog_history, messageUser, MessageKeynodes::user);
+
   generator.addMessageToDialog(MessageKeynodes::concept_dialog_history, messageNika, MessageKeynodes::nika);
 
-  AgentUtils::finishAgentWork(&m_memoryCtx, actionNode, true);
+  AgentUtils::finishAgentWork(&m_memoryCtx, actionNode,  true);
   SC_LOG_DEBUG("MessageHistoryGenerationAgent finished");
   return SC_RESULT_OK;
 }

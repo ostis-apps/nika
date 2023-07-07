@@ -22,14 +22,14 @@ void MessageHistoryGenerator::addMessageToDialog(
   auto scTemplate = std::make_unique<ScTemplate>();
   ScAddr lastMessageAddr;
 
-  if (dialogAddr.IsValid() == SC_FALSE)
-    SC_THROW_EXCEPTION(ExceptionItemNotFound, "Can't add message to dialog. Dialog addr is not valid");
-  if (messageAddr.IsValid() == SC_FALSE)
-    SC_THROW_EXCEPTION(ExceptionItemNotFound, "Can't add message to dialog. Message addr is not valid");
-  if (authorsAddr.IsValid() == SC_FALSE)
-    SC_THROW_EXCEPTION(ExceptionItemNotFound, "Can't add message to dialog. Authors addr is not valid");
-  if (IteratorUtils::getAnyFromSet(context, authorsAddr).IsValid() == SC_FALSE)
-    SC_THROW_EXCEPTION(ExceptionItemNotFound, "Can't add message to dialog. Author addr is not valid");
+  // if (!dialogAddr.IsValid())
+  //   SC_THROW_EXCEPTION(ExceptionItemNotFound, "Can't add message to dialog. Dialog addr is not valid");
+  // if (!messageAddr.IsValid())
+  //   SC_THROW_EXCEPTION(ExceptionItemNotFound, "Can't add message to dialog. Message addr is not valid");
+  // if (!authorsAddr.IsValid())
+  //   SC_THROW_EXCEPTION(ExceptionItemNotFound, "Can't add message to dialog. Authors addr is not valid");
+  // if (IteratorUtils::getAnyFromSet(context, authorsAddr).IsValid() == SC_FALSE)
+  //   SC_THROW_EXCEPTION(ExceptionItemNotFound, "Can't add message to dialog. Author addr is not valid"); 
 
   utils::GenerationUtils::generateRelationBetween(context, messageAddr, authorsAddr, MessageKeynodes::nrel_authors);
 
@@ -63,8 +63,6 @@ void MessageHistoryGenerator::addMessageToDialog(
   ScTemplateGenResult genResult;
   if (context->HelperGenTemplate(*scTemplate, genResult) == SC_FALSE)
     throw std::runtime_error("Unable to generate structure for next dialog message.");
-
-  context->CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_sent_dialog_message, messageAddr);
 }
 
 std::unique_ptr<ScTemplate> MessageHistoryGenerator::createNotFirstMessageInDialogTemplate(
@@ -100,6 +98,7 @@ std::unique_ptr<ScTemplate> MessageHistoryGenerator::createFirstMessageInDialogT
     const ScAddr & dialogAddr,
     const ScAddr & messageAddr)
 {
+  SC_LOG_DEBUG("first message");
   auto scTemplate = std::make_unique<ScTemplate>();
   scTemplate->TripleWithRelation(
       dialogAddr,
@@ -113,7 +112,7 @@ std::unique_ptr<ScTemplate> MessageHistoryGenerator::createFirstMessageInDialogT
       messageAddr,
       ScType::EdgeAccessVarPosTemp,
       commonModule::Keynodes::rrel_last);
-  return scTemplate;
+   return scTemplate;
 }
 
 }  // namespace dialogControlModule
