@@ -1,5 +1,7 @@
 site_name: NIKA
 
+dev_addr: 127.0.0.1:8002
+
 extra_css:
   - _assets/main.css
 extra_javascript:
@@ -9,20 +11,27 @@ extra_javascript:
 nav:
   - Home: index.md
   - Build:
-    - Build on Linux: build/linux-build.md
+    - Docker: build/docker-build.md
+    - Debian-based distros / Linux: build/linux-build.md
   - Development:
     - Git-workflow: dev/git-workflow.md
     - Pull requests: dev/pr.md
     - Codestyle: dev/codestyle.md
     - Project structure: dev/project_structure.md
-  - NIKA agents:
+  - Agents:
     - Message reply agent: agents/messageReplyAgent.md
     - Non-atomic action interpretation agent: agents/nonAtomicActionInterpretationAgent.md
     - Message topic classification agent: agents/messageTopicClassificationAgent.md
+    - Alternative message topic classification agent: agents/alternativeMessageTopicClassificationAgent.md
     - Standard message reply agent: agents/standardMessageReplyAgent.md
-  - License: license.md
+    - Change interface color agent: agents/changeInterfaceColorAgent.md
+  - Subsystems:
+     - scl-machine: subsystems/scl-machine.md
+  - Patterns:
+      - Knowledge base patterns: patterns/kb-patterns.md
   - Changelog: changelog.md
   - Thirdparty: thirdparty.md
+  - License: license.md
 
 theme: material
 

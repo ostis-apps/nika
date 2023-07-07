@@ -6,7 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+### Added
+
+- Rules to answer if we don't know about asked entity
+- Find entity by identifiers relation set, not only main idtf
+- Common rule to answer "На что декомпозируется ...?" with any formalized entity
+- Common rule to answer "Что такое ...?" with any formalized entity
+- Phrase pattern to get all entities from set $...{_set}
+- Pattern to design knowledge base
+- Alternative message classification agent using logic rules
+- Change interface color agent
+- Move to the latest platform
+- Replace ostis-inference with scl-machine
+
 ### Changed
+- Message processing program tries to classify message with rules first, then with wit.ai
 - Simplify platform prepare
 - Reuse scripts from platform
 - Rename script `run_scweb.sh` to `run_sc_web.sh`

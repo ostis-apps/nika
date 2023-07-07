@@ -1,6 +1,7 @@
 # Documentation
 
-- **Building**
+- **Build**
+    * [Docker](build/docker-build.md)
     * [Linux](build/linux-build.md)
    
 - **Development**
@@ -14,7 +15,11 @@
     * [Message reply agent](agents/messageReplyAgent.md)
     * [Standard message reply agent](agents/standardMessageReplyAgent.md)
     * [Message topic classification agent](agents/messageTopicClassificationAgent.md)
+    * [Alternative message topic classification agent](agents/alternativeMessageTopicClassificationAgent.md)
+    * [Change interface color agent](agents/changeInterfaceColorAgent.md)
+
+- **Patterns**
+    * [Knowledge base patterns](patterns/kb-patterns.md)
 
 - **Subsystems**
-    * [Inference agent](subsystems/ostis-inference.md)
-
+    * [scl-machine](subsystems/scl-machine.md)
