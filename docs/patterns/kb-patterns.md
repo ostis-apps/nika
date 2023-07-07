@@ -9,5 +9,6 @@ and `lr_message_about_your_class` to your actual nodes. Also, you can change any
 
 In the `scs` subdirectory you can find the same examples in scs.
 
-In the `science` subdirectory you can find KB fragments in scg that serve as an example ontology. If you'll build these files (add this directory to `repo.path`), you'll get answers to the questions related to science.
-Use it as a specific example.
+In the `science` subdirectory you can find KB fragments in scg that serve as an example ontology. 
+If you build these files (add this directory to `repo.path`), you'll get answers to the questions related to science.
+You can use constructions in this folder as a reference on how to apply patterns from the `kb/pattern` folder.
