@@ -29,44 +29,6 @@ SC_AGENT_IMPLEMENTATION(MessageHistoryGenerationAgent)
   ScAddr messageUser = 
       IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionNode, scAgentsCommon::CoreKeynodes::rrel_1);
 
-
-
-
-  ScIterator5Ptr translationIterator = m_memoryCtx.Iterator5(
-      ScType::NodeConst,
-      ScType::EdgeDCommonConst,
-      messageUser,
-      ScType::EdgeAccessConstPosPerm,
-      DialogKeynodes::nrel_sc_text_translation);
-
-    ScAddr translationMessage;
-
-  if (translationIterator->Next())
-  {
-    SC_LOG_WARNING("Found translation");
-    translationMessage = translationIterator->Get(0);
-  }
- 
-  ScIterator3Ptr translationText = m_memoryCtx.Iterator3(
-  translationMessage,
-  ScType::EdgeAccessConstPosPerm,
-  ScType::Link
-  );
-
-  ScAddr messageText;
-
-  if (translationText->Next())
-  {
-    SC_LOG_WARNING("Found link");
-    messageText = translationText->Get(2);
-  };
-
-  std::string text;
-  m_memoryCtx.GetLinkContent(messageText, text);
-  SC_LOG_WARNING(text);
-
-
-
   if (!messageUser.IsValid())
   {
     SC_LOG_DEBUG("MessageHistoryGenerationAgent: the action doesn't have a message node");
@@ -75,10 +37,10 @@ SC_AGENT_IMPLEMENTATION(MessageHistoryGenerationAgent)
     return SC_RESULT_ERROR_INVALID_PARAMS;
   }
 
-  ScAddr messageNika =
+  ScAddr answerMessage =
       IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionNode, scAgentsCommon::CoreKeynodes::rrel_2);
 
-  if (!messageNika.IsValid())
+  if (!answerMessage.IsValid())
   {
     SC_LOG_DEBUG("MessageHistoryGenerationAgent: the action doesn't have a message node");
     SC_LOG_DEBUG("MessageHistoryGenerationAgent finished");
@@ -86,9 +48,27 @@ SC_AGENT_IMPLEMENTATION(MessageHistoryGenerationAgent)
     return SC_RESULT_ERROR_INVALID_PARAMS;
   }
 
-  generator.addMessageToDialog(MessageKeynodes::concept_dialog_history, messageUser, MessageKeynodes::user);
+  ScIterator3Ptr message = m_memoryCtx.Iterator3(
+  answerMessage,
+  ScType::EdgeAccessConstPosTemp,
+  ScType::NodeConst
+  );
 
-  generator.addMessageToDialog(MessageKeynodes::concept_dialog_history, messageNika, MessageKeynodes::nika);
+  ScAddr messageNika;
+
+  if (message->Next())
+  {
+    messageNika = message->Get(2);
+  };
+
+  ScAddr dialogAddr = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionNode, scAgentsCommon::CoreKeynodes::rrel_3);
+
+  ScAddr concept_user = m_memoryCtx.HelperFindBySystemIdtf("concept_user");
+  ScAddr nika = m_memoryCtx.HelperFindBySystemIdtf("nika");
+
+  generator.addMessageToDialog(dialogAddr, messageUser, concept_user);
+
+  generator.addMessageToDialog(dialogAddr, messageNika, nika);
 
   AgentUtils::finishAgentWork(&m_memoryCtx, actionNode,  true);
   SC_LOG_DEBUG("MessageHistoryGenerationAgent finished");

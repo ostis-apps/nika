@@ -5,6 +5,7 @@ _compound_action_message_processing
     _<- action_process_message;
     _<- question;
     _-> rrel_1:: _message;
+    _-> rrel_2:: test_dialog;
     _<= nrel_decomposition_of_action:: .._decomposition_tuple;;
 
 .._decomposition_tuple
@@ -30,10 +31,13 @@ _compound_action_message_processing
     _<- action_message_history_generation;
     _<- question;
     _-> rrel_1:: _message;
-    _-> rrel_2:: rrel_dynamic_argument:: _answer_message;;
+    _-> rrel_2:: rrel_dynamic_argument:: _answer_message;
+    _-> rrel_3:: test_dialog;;
     
 *];;
 
 message_processing_program
     -> rrel_key_sc_element: _compound_action_message_processing;
     <- concept_message_processing_program;;
+
+

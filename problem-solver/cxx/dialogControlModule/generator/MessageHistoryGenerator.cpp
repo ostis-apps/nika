@@ -98,7 +98,6 @@ std::unique_ptr<ScTemplate> MessageHistoryGenerator::createFirstMessageInDialogT
     const ScAddr & dialogAddr,
     const ScAddr & messageAddr)
 {
-  SC_LOG_DEBUG("first message");
   auto scTemplate = std::make_unique<ScTemplate>();
   scTemplate->TripleWithRelation(
       dialogAddr,

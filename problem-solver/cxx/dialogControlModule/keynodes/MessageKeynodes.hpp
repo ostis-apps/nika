@@ -37,9 +37,6 @@ public:
   SC_PROPERTY(Keynode("concept_message"), ForceCreate)
   static ScAddr concept_message;
 
-  SC_PROPERTY(Keynode("nika"), ForceCreate)
-  static ScAddr nika;
-
   SC_PROPERTY(Keynode("nrel_answer_pattern"), ForceCreate)
   static ScAddr nrel_answer_pattern;
   
