@@ -51,6 +51,9 @@ public:
 
   SC_PROPERTY(Keynode("myself"), ForceCreate(ScType::NodeConst))
   static ScAddr myself;
+
+  SC_PROPERTY(Keynode("nika"), ForceCreate(ScType::NodeConst))
+  static ScAddr nika;
 };
 
 }  // namespace messageReplyModule

@@ -34,9 +34,9 @@ sc_result DialogControlModule::InitializeImpl()
     SC_AGENT_REGISTER(StandardMessageReplyAgent);
   }
 
-  if (ActionUtils::isActionDeactivated(&ctx, MessageKeynodes::action_message_history_generation))
+  if (ActionUtils::isActionDeactivated(&ctx, MessageKeynodes::action_add_message_to_the_dialog))
   {
-    SC_LOG_DEBUG("action_message_history_generation is deactivated");
+    SC_LOG_DEBUG("action_add_message_to_the_dialog is deactivated");
   }
   else
   {

@@ -9,9 +9,6 @@
 
 #include "MessageHistoryGenerationAgent.hpp"
 
-using namespace std;
-
-// using namespace inference;
 using namespace utils;
 
 namespace dialogControlModule
@@ -19,17 +16,16 @@ namespace dialogControlModule
 SC_AGENT_IMPLEMENTATION(MessageHistoryGenerationAgent)
 {
   ScAddr actionNode = m_memoryCtx.GetEdgeTarget(edgeAddr);
-  MessageHistoryGenerator generator(&m_memoryCtx);
   if (!checkActionClass(actionNode))
   {
     return SC_RESULT_OK;
   }
   SC_LOG_DEBUG("MessageHistoryGenerationAgent started");
   
-  ScAddr messageUser = 
+  ScAddr message = 
       IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionNode, scAgentsCommon::CoreKeynodes::rrel_1);
 
-  if (!messageUser.IsValid())
+  if (!message.IsValid())
   {
     SC_LOG_DEBUG("MessageHistoryGenerationAgent: the action doesn't have a message node");
     SC_LOG_DEBUG("MessageHistoryGenerationAgent finished");
@@ -37,47 +33,19 @@ SC_AGENT_IMPLEMENTATION(MessageHistoryGenerationAgent)
     return SC_RESULT_ERROR_INVALID_PARAMS;
   }
 
-  ScAddr answerMessage =
-      IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionNode, scAgentsCommon::CoreKeynodes::rrel_2);
+  ScAddr dialogAddr = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionNode, scAgentsCommon::CoreKeynodes::rrel_2);
 
-  if (!answerMessage.IsValid())
-  {
-    SC_LOG_DEBUG("MessageHistoryGenerationAgent: the action doesn't have a message node");
-    SC_LOG_DEBUG("MessageHistoryGenerationAgent finished");
-    AgentUtils::finishAgentWork(&m_memoryCtx, actionNode, false);
-    return SC_RESULT_ERROR_INVALID_PARAMS;
-  }
-
-  ScIterator3Ptr message = m_memoryCtx.Iterator3(
-  answerMessage,
-  ScType::EdgeAccessConstPosTemp,
-  ScType::NodeConst
-  );
-
-  ScAddr messageNika;
-
-  if (message->Next())
-  {
-    messageNika = message->Get(2);
-  };
-
-  ScAddr dialogAddr = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionNode, scAgentsCommon::CoreKeynodes::rrel_3);
-
-  ScAddr concept_user = m_memoryCtx.HelperFindBySystemIdtf("concept_user");
-  ScAddr nika = m_memoryCtx.HelperFindBySystemIdtf("nika");
-
-  generator.addMessageToDialog(dialogAddr, messageUser, concept_user);
-
-  generator.addMessageToDialog(dialogAddr, messageNika, nika);
+  MessageHistoryGenerator generator(&m_memoryCtx);
+  generator.addMessageToDialog(dialogAddr, message);
 
   AgentUtils::finishAgentWork(&m_memoryCtx, actionNode,  true);
   SC_LOG_DEBUG("MessageHistoryGenerationAgent finished");
   return SC_RESULT_OK;
 }
 
-bool MessageHistoryGenerationAgent::checkActionClass(const ScAddr & actionNode)
+bool MessageHistoryGenerationAgent::checkActionClass(ScAddr const & actionNode)
 {
   return m_memoryCtx.HelperCheckEdge(
-      MessageKeynodes::action_message_history_generation, actionNode, ScType::EdgeAccessConstPosPerm);
+      MessageKeynodes::action_add_message_to_the_dialog, actionNode, ScType::EdgeAccessConstPosPerm);
 }
 }  // namespace dialogControlModule

@@ -12,7 +12,7 @@ class MessageHistoryGenerator
 public:
   explicit MessageHistoryGenerator(ScMemoryContext * ms_context);
 
-  void addMessageToDialog(const ScAddr & dialogAddr, const ScAddr & messageAddr, const ScAddr & authorsAddr);
+  void addMessageToDialog(const ScAddr & dialogAddr, const ScAddr & messageAddr);
 
   std::unique_ptr<ScTemplate> createNotFirstMessageInDialogTemplate(
       const ScAddr & dialogAddr,

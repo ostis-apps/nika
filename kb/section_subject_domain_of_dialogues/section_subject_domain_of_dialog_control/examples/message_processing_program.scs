@@ -28,7 +28,7 @@ _compound_action_message_processing
     _-> rrel_2:: rrel_dynamic_argument:: _answer_message;;
 
 .._message_history_generation
-    _<- action_message_history_generation;
+    _<- action_add_message_to_the_dialog;
     _<- question;
     _-> rrel_1:: _message;
     _-> rrel_2:: rrel_dynamic_argument:: _answer_message;

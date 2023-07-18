@@ -41,8 +41,6 @@ include_directories(
     ${SC_COMMON_MODULE_SRC}
 )
 
-
-
 add_library(dialogControlModule SHARED ${SOURCES} ${HEADERS})
 target_link_libraries(dialogControlModule sc-memory sc-agents-common common sc-builder-lib inferenceModule)
 

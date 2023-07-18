@@ -16,22 +16,10 @@ MessageHistoryGenerator::MessageHistoryGenerator(ScMemoryContext * context)
 
 void MessageHistoryGenerator::addMessageToDialog(
     const ScAddr & dialogAddr,
-    const ScAddr & messageAddr,
-    const ScAddr & authorsAddr)
+    const ScAddr & messageAddr)
 {
   auto scTemplate = std::make_unique<ScTemplate>();
   ScAddr lastMessageAddr;
-
-  // if (!dialogAddr.IsValid())
-  //   SC_THROW_EXCEPTION(ExceptionItemNotFound, "Can't add message to dialog. Dialog addr is not valid");
-  // if (!messageAddr.IsValid())
-  //   SC_THROW_EXCEPTION(ExceptionItemNotFound, "Can't add message to dialog. Message addr is not valid");
-  // if (!authorsAddr.IsValid())
-  //   SC_THROW_EXCEPTION(ExceptionItemNotFound, "Can't add message to dialog. Authors addr is not valid");
-  // if (IteratorUtils::getAnyFromSet(context, authorsAddr).IsValid() == SC_FALSE)
-  //   SC_THROW_EXCEPTION(ExceptionItemNotFound, "Can't add message to dialog. Author addr is not valid"); 
-
-  utils::GenerationUtils::generateRelationBetween(context, messageAddr, authorsAddr, MessageKeynodes::nrel_authors);
 
   ScIterator5Ptr iterator5Ptr = context->Iterator5(
       dialogAddr,
