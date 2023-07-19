@@ -7,10 +7,10 @@
 
 namespace dialogControlModule
 {
-class MessageHistoryGenerator
+class AddMessageToTheDialogGenerator
 {
 public:
-  explicit MessageHistoryGenerator(ScMemoryContext * ms_context);
+  explicit AddMessageToTheDialogGenerator(ScMemoryContext * ms_context);
 
   void addMessageToDialog(const ScAddr & dialogAddr, const ScAddr & messageAddr);
 

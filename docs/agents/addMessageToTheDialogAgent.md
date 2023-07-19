@@ -4,7 +4,6 @@ Is an agent that adds message to the dialog,.
 
 `action_add_message_to_the_dialog`
 
-
 **Parameters:**
 
 1. `message node` - an element of `concept_message` and `concept_atomic_message` or `concept_non_atomic_message`;
@@ -19,17 +18,17 @@ Is an agent that adds message to the dialog,.
 
 Example of an input structures to add a user message to the dialog:
 
-<img src="../images/messageHistoryGenerationAgentUser.png"></img>
-<img src="../images/messageHistoryGenerationAgentTestDialogUser.png"></img>
+<img src="../images/addMessageToTheDialogAgentInputUser.png"></img>
+<img src="../images/addMessageToTheDialogAgentInputTestDialogUser.png"></img>
 
 Example of an input structures to add a systems message to the dialog:
 
-<img src="../images/messageHistoryGenerationAgentNika.png"></img>
-<img src="../images/messageHistoryGenerationAgentTestDialogNika.png"></img>
+<img src="../images/addMessageToTheDialogAgentInputNika.png"></img>
+<img src="../images/addMessageToTheDialogAgentInputTestDialogNika.png"></img>
 
 Example of an output structure:
 
-<img src="../images/messageHistoryGenerationAgentDialog.png"></img>
+<img src="../images/addMessageToTheDialogAgentOutputDialog.png"></img>
 
 ### Result
 

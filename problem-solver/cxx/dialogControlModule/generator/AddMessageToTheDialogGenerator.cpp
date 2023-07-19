@@ -1,7 +1,7 @@
 #include "sc-agents-common/utils/IteratorUtils.hpp"
 #include "sc-agents-common/utils/GenerationUtils.hpp"
 #include "keynodes/Keynodes.hpp"
-#include "MessageHistoryGenerator.hpp"
+#include "AddMessageToTheDialogGenerator.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 
 using namespace utils;
@@ -9,12 +9,12 @@ using namespace std;
 
 namespace dialogControlModule
 {
-MessageHistoryGenerator::MessageHistoryGenerator(ScMemoryContext * context)
+AddMessageToTheDialogGenerator::AddMessageToTheDialogGenerator(ScMemoryContext * context)
   : context(context)
 {
 }
 
-void MessageHistoryGenerator::addMessageToDialog(
+void AddMessageToTheDialogGenerator::addMessageToDialog(
     const ScAddr & dialogAddr,
     const ScAddr & messageAddr)
 {
@@ -53,7 +53,7 @@ void MessageHistoryGenerator::addMessageToDialog(
     throw std::runtime_error("Unable to generate structure for next dialog message.");
 }
 
-std::unique_ptr<ScTemplate> MessageHistoryGenerator::createNotFirstMessageInDialogTemplate(
+std::unique_ptr<ScTemplate> AddMessageToTheDialogGenerator::createNotFirstMessageInDialogTemplate(
     const ScAddr & dialogAddr,
     const ScAddr & lastMessageAddr,
     const ScAddr & messageAddr)
@@ -82,7 +82,7 @@ std::unique_ptr<ScTemplate> MessageHistoryGenerator::createNotFirstMessageInDial
   return scTemplate;
 }
 
-std::unique_ptr<ScTemplate> MessageHistoryGenerator::createFirstMessageInDialogTemplate(
+std::unique_ptr<ScTemplate> AddMessageToTheDialogGenerator::createFirstMessageInDialogTemplate(
     const ScAddr & dialogAddr,
     const ScAddr & messageAddr)
 {

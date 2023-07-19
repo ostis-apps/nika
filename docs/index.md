@@ -14,7 +14,7 @@
     * [Message reply agent](agents/messageReplyAgent.md)
     * [Standard message reply agent](agents/standardMessageReplyAgent.md)
     * [Message topic classification agent](agents/messageTopicClassificationAgent.md)
-    * [Message history generation agent](agents/messageHistoryGenerationAgent.md)
+    * [Add message to the dialog agent](agents/addMessageToTheDialogAgent.md)
 
 - **Subsystems**
     * [Inference agent](subsystems/ostis-inference.md)

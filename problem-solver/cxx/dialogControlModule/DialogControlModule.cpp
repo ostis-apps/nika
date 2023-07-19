@@ -40,7 +40,7 @@ sc_result DialogControlModule::InitializeImpl()
   }
   else
   {
-    SC_AGENT_REGISTER(MessageHistoryGenerationAgent);
+    SC_AGENT_REGISTER(AddMessageToTheDialogAgent);
   }
 
   return SC_RESULT_OK;
@@ -50,7 +50,7 @@ sc_result DialogControlModule::ShutdownImpl()
 {
   SC_AGENT_UNREGISTER(PhraseGenerationAgent);
   SC_AGENT_UNREGISTER(StandardMessageReplyAgent);
-  SC_AGENT_UNREGISTER(MessageHistoryGenerationAgent);
+  SC_AGENT_UNREGISTER(AddMessageToTheDialogAgent);
 
   return SC_RESULT_OK;
 }

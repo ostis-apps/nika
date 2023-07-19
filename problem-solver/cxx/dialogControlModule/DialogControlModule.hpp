@@ -6,7 +6,7 @@
 #include "keynodes/MessageKeynodes.hpp"
 #include "agent/PhraseGenerationAgent.hpp"
 #include "agent/StandardMessageReplyAgent.hpp"
-#include "agent/MessageHistoryGenerationAgent.hpp"
+#include "agent/AddMessageToTheDialogAgent.hpp"
 #include "utils/ActionUtils.hpp"
 
 #include "DialogControlModule.generated.hpp"
