@@ -17,6 +17,7 @@
     * [Message topic classification agent](agents/messageTopicClassificationAgent.md)
     * [Alternative message topic classification agent](agents/alternativeMessageTopicClassificationAgent.md)
     * [Change interface color agent](agents/changeInterfaceColorAgent.md)
+    * [Find word in set by first letter agent](agents/findWordInSetByFirstLetter.md)
     * [Add message to the dialog agent](agents/addMessageToTheDialogAgent.md)
 
 - **Patterns**
