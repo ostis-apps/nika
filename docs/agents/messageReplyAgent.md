@@ -7,12 +7,14 @@ Is an agent that generates the response message, associates with the original re
 
 **Parameters:**
 
-1. `sound or text file`
-2. `author` of the message.
+1. `linkAddr` -- sc-link with user message text;
+2. `dialogAddr` -- dialog node, an element of `concept_dialogue`.
+
+Also there is the `author` of the message.
 
 **Workflow:**
 
-* The agent generates a message node in the knowledge base, identifying the author of the action as the author of the message and the received sound/text file as the sound/text of that message;
+* The agent generates a message node in the knowledge base, identifying the author of the action as the author of the message and the received text file as the text of that message;
 * Then the necessary construction is generated to call the agent of non-atomic action interpretation. An example of this construction is shown below.
 
 <img src="../images/messageReplyAgentGener.png"></img>
@@ -33,5 +35,5 @@ Example of an output structure:
 
 Possible result codes:
  
-* `sc_result_ok` - answer message generated;
-* `sc_result_error`- internal error.
+* `SC_RESULT_OK` - answer message generated;
+* `SC_RESULT_ERROR`- internal error.
