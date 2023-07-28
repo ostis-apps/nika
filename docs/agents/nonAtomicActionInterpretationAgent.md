@@ -6,8 +6,8 @@ Is an agent that generates an action description in the knowlendge base based on
 
 **Parameters:**
 
-1. `template` containing a description of a non-atomic action;
-2. **(optional)** `set of arguments`.
+1. `nonAtomicActionTemplateAddr` containing a description of a non-atomic action;
+2. **(optional)** `argumentsSet` -- action argument set.
 
 
 **Comment:**
@@ -37,5 +37,5 @@ Example of an output structure:
 
 Possible result codes:
  
-* `sc_result_ok`- interpretation completed;
-* `sc_result_error`- internal error.
+* `SC_RESULT_OK`- interpretation completed;
+* `SC_RESULT_ERROR`- internal error.

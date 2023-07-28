@@ -38,6 +38,7 @@ git submodule update --init --recursive
   ./scripts/run_interface.sh
   ```
   This commands will launch 2 Web UIs on your machine:
+  
     - sc-web - `localhost:8000`
     - dialogue web UI - `localhost:3033`
 
