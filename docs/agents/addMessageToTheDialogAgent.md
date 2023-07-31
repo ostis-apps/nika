@@ -19,12 +19,12 @@ Is an agent that adds message to the dialog,.
 Example of an input structures to add a user message to the dialog:
 
 <img src="../images/addMessageToTheDialogAgentInputUser.png"></img>
-<img src="../images/addMessageToTheDialogAgentInputTestDialogUser.png"></img>
+<img src="../images/addMessageToTheDialogAgentInputDialogUser.png"></img>
 
 Example of an input structures to add a systems message to the dialog:
 
 <img src="../images/addMessageToTheDialogAgentInputNika.png"></img>
-<img src="../images/addMessageToTheDialogAgentInputTestDialogNika.png"></img>
+<img src="../images/addMessageToTheDialogAgentInputDialogNika.png"></img>
 
 Example of an output structure:
 
