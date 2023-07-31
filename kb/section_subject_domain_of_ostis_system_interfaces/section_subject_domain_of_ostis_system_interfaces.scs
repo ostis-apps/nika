@@ -19,12 +19,13 @@ subject_domain_ostis_system_interfaces
 -> rrel_maximum_studied_object_class:
     concept_user_interface;
 -> rrel_explored_relation:
-	nrel_component_color;
+    nrel_component_color;
     nrel_visual_interface;
     nrel_copyright_text;
     nrel_system_name;
+    nrel_menu_button_text;
 -> rrel_not_maximum_studied_object_class:
-	concept_command_user_interface;
+    concept_command_user_interface;
     concept_graphical_user_interface;
     concept_wimp_interface;
     concept_silk_interface;
@@ -41,7 +42,6 @@ subject_domain_ostis_system_interfaces
     concept_image_output_component;
     concept_graphical_output_component;
     concept_chart;
-    concept_map;
     concept_progress_bar;
     concept_video_output_component;
     concept_sound_output_component;
@@ -53,15 +53,15 @@ subject_domain_ostis_system_interfaces
     concept_blank_space;
     concept_tool_bar;
     concept_tab_bar;
-	concept_command_selection_component;
-	concept_command_input_component;
+    concept_command_selection_component;
+    concept_command_input_component;
     concept_selectable_data_representation;
     concept_data_input_component_with_direct_feedback;
     concept_data_input_component_without_direct_feedback;
-	concept_check_box;
-	concept_radio_button;
+    concept_check_box;
+    concept_radio_button;
     concept_spin_button;
-	concept_toogle_button;
+    concept_toogle_button;
     concept_non_atomic_user_interface_component;
     concept_atomic_user_interface_component;
     concept_visual_part_of_user_interface;
@@ -188,9 +188,6 @@ rrel_key_sc_element -> (section_subject_domain_ostis_system_interfaces -> subjec
     => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_progress_bar)
 (*
     <- rrel_key_sc_element;;
-    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_map)
-(*
-    <- rrel_key_sc_element;;
     => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_headline)
 (*
     <- rrel_key_sc_element;;
@@ -254,5 +251,7 @@ rrel_key_sc_element -> (section_subject_domain_ostis_system_interfaces -> subjec
     => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> nrel_system_name)
 (*
     <- rrel_key_sc_element;;
-*);;
-*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> nrel_menu_button_text)
+(*
+    <- rrel_key_sc_element;;
+*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;

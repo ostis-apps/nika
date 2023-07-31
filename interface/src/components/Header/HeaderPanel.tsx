@@ -75,7 +75,7 @@ export const HeaderPanel = () => {
 
     async function fetchMenuValues() {
         const conceptMenu = 'concept_menu';
-        const systemNameRel = 'nrel_system_name';
+        const menuButtonTextRel = 'nrel_menu_button_text';
         const decompositionRel = 'nrel_decomposition';
         const rrel1 = 'rrel_1';
         const rrel2 = 'rrel_2';
@@ -85,7 +85,7 @@ export const HeaderPanel = () => {
         ];
 
         const helpKeynodes = [
-            { id: systemNameRel, type: ScType.NodeConstNoRole },
+            { id: menuButtonTextRel, type: ScType.NodeConstNoRole },
             { id: decompositionRel, type: ScType.NodeConstNoRole },
             { id: rrel1, type: ScType.NodeConstRole },
             { id: rrel2, type: ScType.NodeConstRole },
@@ -128,7 +128,7 @@ export const HeaderPanel = () => {
                 ScType.EdgeDCommonVar,
                 [ScType.LinkVar, textFirstAlias],
                 ScType.EdgeAccessVarPosPerm,
-                hKeynodes[systemNameRel],
+                hKeynodes[menuButtonTextRel],
             );
             template.tripleWithRelation(
                 decompTuple,
@@ -142,7 +142,7 @@ export const HeaderPanel = () => {
                 ScType.EdgeDCommonVar,
                 [ScType.LinkVar, textSecondAlias],
                 ScType.EdgeAccessVarPosPerm,
-                hKeynodes[systemNameRel],
+                hKeynodes[menuButtonTextRel],
             );
             const resultTextLink = await client.templateSearch(template);
             
