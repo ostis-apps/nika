@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Change interface color agent
 - Move to the latest platform
 - Replace ostis-inference with scl-machine
+- Russian version for documentation
 
 ### Changed
 - Message processing program tries to classify message with rules first, then with wit.ai
@@ -30,7 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Script `install_ostis.sh`
 - Script `set_vars.sh` part for ci
 
-## [0.1.0] - 12.09.2022
+## 12.09.2022
 
 ### Added
 

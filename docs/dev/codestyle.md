@@ -6,7 +6,7 @@ In general, [Google's coding standard](https://google.github.io/styleguide/cppgu
 
 Below are our specific (but not all!) exceptions to the Google's coding standard:
 
-- All code should conform to C++11 standard.
+- All code should conform to C++17 standard.
 - We use `.cpp` and `.hpp` files, not `.cc` and `.h` (`.c` and `.h` are used for C code), in UTF-8 encoding.
 - File names are lowercase with underscores, like `sc_memory.cpp`.
 - We use `#pragma once` instead of the `#define` Guard in header files.
@@ -30,7 +30,7 @@ Below are our specific (but not all!) exceptions to the Google's coding standard
 ```
 
 - We ARE using C++ exceptions.
-- We are using all features of C++11.
+- We are using all features of C++17.
 
 Naming and formatting
 
@@ -67,7 +67,7 @@ for (ScAddr const & addr : listOfAddr)
     Note that macros complicate debugging, and old-style enums have dangerous implicit conversions to integers, and tend to clutter
     containing namespaces. Avoid them when possible - use `const` or `constexpr` instead of macros, and enum classes instead of enums.
 
-**Code should compile without warnings! Just deprecated warning could be present for a short time. But if you see them, then try to fix it in a separate commit**
+**Code should compile without warnings! Just deprecated warning could be present for a short time. But if you see them, then try to fix it in a separate commit.**
 
 ## ClangFormat
 
@@ -76,6 +76,10 @@ To automatically format a file, install `clang-format` and run:
 
     clang-format -i file.cpp file.hpp other_file.cpp
 
+To automatically format all C/C++ files, run: 
+
+    ./scripts/clang/format_code.sh
+    
 ## Formatting Example/Guide/Reference
 
 ```cpp
@@ -230,7 +234,7 @@ v = w * (x + z);
 - Cover your code with unit tests.
 - If you don't have enough time to make it right, leave a `// TODO(DeveloperName): need to fix it` comment.
 
-### Some useful macros:
+### Some useful macros
 
 - macroses to check compilation platform
 
@@ -285,14 +289,14 @@ SC_CHECK_LESS(a, b, ()); // equal to SC_CHECK(a < b, ());
 SC_CHECK_LESS_EQ(a, b, ()); // equal to SC_CHECK(a <= b, ());
 ```
 
-- Logging:
+### Logging
   * `SC_LOG_DEBUG(msg)` - print message in Debug builds. Prefix: `[Debug]`
   * `SC_LOG_INFO(msg)`
   * `SC_LOG_WARNING(msg)`
   * `SC_LOG_ERROR(msg)`
   * `SC_LOG_INFO_COLOR(msg, color)` - print colored info message. Look color constants in `ScConsole::Color`
 
-- Declare your own exceptions:
+### Declare your own exceptions
 
 ```cpp
 class MyException final : public ScException
@@ -302,13 +306,14 @@ public:
 };
 ```
 
-- Throw exceptions with `SC_THROW_EXCEPTION(exceptionName, message)`:
+### Throw exceptions
 
+Throw exceptions with `SC_THROW_EXCEPTION(exceptionName, message)`:
 ```cpp
 SC_THROW_EXCEPTION(MyException, "my message")
 ```
 
-- Exception for a non implemented parts of code
+### Exception for a non implemented parts of code
 ```cpp
 SC_NOT_IMPLEMENTED("message")
 ```
