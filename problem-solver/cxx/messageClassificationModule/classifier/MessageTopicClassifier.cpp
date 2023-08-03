@@ -312,7 +312,7 @@ ScAddrVector MessageTopicClassifier::processEntities(
     entityRoleIdtf = key.substr(key.find(':') + 1);
     for (auto const & valueItem : value)
     {
-      entityIdtf = valueItem.at(WitAiConstants::BODY);
+      entityIdtf = valueItem.at(WitAiConstants::VALUE);
       entityIdtfToRole.insert({entityIdtf, entityRoleIdtf});
     }
   }
