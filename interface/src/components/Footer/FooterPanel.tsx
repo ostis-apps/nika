@@ -6,7 +6,7 @@ import { ScEventParams, ScEventType, ScTemplate, ScType } from "ts-sc-client";
 export const FooterPanel = () => {
 
     const [footerText, setFooterText] = useState<string>('Авторское право © Intelligent Semantic Systems LLC, Все права защищены');
-    const [systemNameSize, setSystemNameSize] = useState<number>(22);
+    const [systemNameSize, setSystemNameSize] = useState<string>("22px");
 
     async function fetchTextValue() {
         const conceptFooter = 'concept_footer';
@@ -61,7 +61,7 @@ export const FooterPanel = () => {
                     let text = resultText[0].data;
                     let size = resultText[0].data;
                     setFooterText(text as any);
-                    setSystemNameSize(size as number);
+                    setSystemNameSize(size as string);
                     const eventParams = new ScEventParams(textLink, ScEventType.ChangeContent, fetchTextValue);
                     await client.eventsCreate([eventParams]); 
                 }
@@ -79,7 +79,7 @@ export const FooterPanel = () => {
 
     return (
         <span className="copyright" /*style={copyrightStyles}*/>
-            {footerText}
+            { footerText }
         </span>
     );
 }

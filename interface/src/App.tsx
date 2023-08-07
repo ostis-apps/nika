@@ -136,7 +136,6 @@ export const App = () => {
                     await client.eventsCreate([eventParams]); 
                 }
             }    
-        
         }
 
         useEffect(() => {

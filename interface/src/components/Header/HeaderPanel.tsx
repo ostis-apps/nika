@@ -6,10 +6,11 @@ import { ScEventParams, ScEventType, ScTemplate, ScType } from "ts-sc-client";
 
 export const HeaderPanel = () => {
     const [systemName, setSystemName] = useState<string>('NIKA');
-    const [systemNameSize, setSystemNameSize] = useState<number>(22);
+    const [systemNameSize, setSystemNameSize] = useState<string>('22px');
 
     const [menuFirst, setMenuFirst] = useState<string>('Главное');
     const [menuSecond, setMenuSecond] = useState<string>('О нас');
+    const [menuFontSize, setMenuFontSize] = useState<string>('22px');
 
     async function fetchSystemNameValue() {
         const conceptSysName = 'concept_decorative_user_interface_component';
@@ -65,7 +66,7 @@ export const HeaderPanel = () => {
                     let text = resultText[0].data;
                     let size = resultText[0].data;
                     setSystemName(text as any);
-                    setSystemNameSize(size as number);
+                    setSystemNameSize(size as any);
                     const eventParams = new ScEventParams(textLink, ScEventType.ChangeContent, fetchSystemNameValue);
                     await client.eventsCreate([eventParams]); 
                 }
@@ -76,6 +77,7 @@ export const HeaderPanel = () => {
     async function fetchMenuValues() {
         const conceptMenu = 'concept_menu';
         const menuButtonTextRel = 'nrel_menu_button_text';
+        const fontSizeRel = 'nrel_font_size';
         const decompositionRel = 'nrel_decomposition';
         const rrel1 = 'rrel_1';
         const rrel2 = 'rrel_2';
@@ -87,6 +89,7 @@ export const HeaderPanel = () => {
         const helpKeynodes = [
             { id: menuButtonTextRel, type: ScType.NodeConstNoRole },
             { id: decompositionRel, type: ScType.NodeConstNoRole },
+            { id: fontSizeRel, type: ScType.NodeConstNoRole },
             { id: rrel1, type: ScType.NodeConstRole },
             { id: rrel2, type: ScType.NodeConstRole },
         ];
@@ -96,77 +99,90 @@ export const HeaderPanel = () => {
         const secondNode = '_second_node';
         const textFirstAlias = '_text_first';
         const textSecondAlias = '_text_second';
+        const fontSizeAlias = '_fot_size';
         const decompTuple = '_tuple';
         const componentAlias = '_component'
          
         const keynodes = await client.resolveKeynodes(baseKeynodes);
         const hKeynodes = await client.resolveKeynodes(helpKeynodes);
 
-        for (var i = 0; i < baseKeynodes.length; i++) {
-            const template = new ScTemplate();
-            template.triple(
-                keynodes[baseKeynodes[i].id],
-                ScType.EdgeAccessVarPosPerm,
-                [ScType.NodeVar, componentAlias],
-            );
-            template.tripleWithRelation(
-                [ScType.NodeVarTuple, decompTuple],
-                ScType.EdgeDCommonVar,
-                componentAlias,
-                ScType.EdgeAccessVarPosPerm,
-                hKeynodes[decompositionRel],
-            );
-            template.tripleWithRelation(
-                decompTuple,
-                ScType.EdgeAccessVarPosPerm,
-                [ScType.NodeVar, firstNode],
-                ScType.EdgeAccessVarPosPerm,
-                hKeynodes[rrel1],
-            );
-            template.tripleWithRelation(
-                firstNode,
-                ScType.EdgeDCommonVar,
-                [ScType.LinkVar, textFirstAlias],
-                ScType.EdgeAccessVarPosPerm,
-                hKeynodes[menuButtonTextRel],
-            );
-            template.tripleWithRelation(
-                decompTuple,
-                ScType.EdgeAccessVarPosPerm,
-                [ScType.NodeVar, secondNode],
-                ScType.EdgeAccessVarPosPerm,
-                hKeynodes[rrel2],
-            );
-            template.tripleWithRelation(
-                secondNode,
-                ScType.EdgeDCommonVar,
-                [ScType.LinkVar, textSecondAlias],
-                ScType.EdgeAccessVarPosPerm,
-                hKeynodes[menuButtonTextRel],
-            );
-            const resultTextLink = await client.templateSearch(template);
-            
-            if (resultTextLink.length) {
-                const textFirstLink = resultTextLink[0].get(textFirstAlias);
-                const resultFirstText = await client.getLinkContents([textFirstLink]);
-                const textSecondLink = resultTextLink[0].get(textSecondAlias);
-                const resultSecondText = await client.getLinkContents([textSecondLink]);
+        const template = new ScTemplate();
+        template.triple(
+            keynodes[conceptMenu],
+            ScType.EdgeAccessVarPosPerm,
+            [ScType.NodeVar, componentAlias],
+        );
+        template.tripleWithRelation(
+            componentAlias,
+            ScType.EdgeDCommonVar,
+            [ScType.LinkVar, fontSizeAlias],
+            ScType.EdgeAccessVarPosPerm,
+            hKeynodes[fontSizeRel],
+        );
+        template.tripleWithRelation(
+            [ScType.NodeVarTuple, decompTuple],
+            ScType.EdgeDCommonVar,
+            componentAlias,
+            ScType.EdgeAccessVarPosPerm,
+            hKeynodes[decompositionRel],
+        );
+        template.tripleWithRelation(
+            decompTuple,
+            ScType.EdgeAccessVarPosPerm,
+            [ScType.NodeVar, firstNode],
+            ScType.EdgeAccessVarPosPerm,
+            hKeynodes[rrel1],
+        );
+        template.tripleWithRelation(
+            firstNode,
+            ScType.EdgeDCommonVar,
+            [ScType.LinkVar, textFirstAlias],
+            ScType.EdgeAccessVarPosPerm,
+            hKeynodes[menuButtonTextRel],
+        );
+        template.tripleWithRelation(
+            decompTuple,
+            ScType.EdgeAccessVarPosPerm,
+            [ScType.NodeVar, secondNode],
+            ScType.EdgeAccessVarPosPerm,
+            hKeynodes[rrel2],
+        );
+        template.tripleWithRelation(
+            secondNode,
+            ScType.EdgeDCommonVar,
+            [ScType.LinkVar, textSecondAlias],
+            ScType.EdgeAccessVarPosPerm,
+            hKeynodes[menuButtonTextRel],
+        );
+        const resultTextLink = await client.templateSearch(template);
+        
+        if (resultTextLink.length) {
+            const textFirstLink = resultTextLink[0].get(textFirstAlias);
+            const resultFirstText = await client.getLinkContents([textFirstLink]);
+            const textSecondLink = resultTextLink[0].get(textSecondAlias);
+            const resultSecondText = await client.getLinkContents([textSecondLink]);
+            const fontSizeLink = resultTextLink[0].get(fontSizeAlias);
+            const fontSizeText = await client.getLinkContents([fontSizeLink]);
 
-                if (resultFirstText.length && resultSecondText.length) {
-                    let firstText = resultFirstText[0].data;
-                    let secondText = resultSecondText[0].data;
-                    setMenuFirst(firstText as any);
-                    setMenuSecond(secondText as any);
-                    const eventParams = new ScEventParams(textFirstLink, ScEventType.ChangeContent, fetchMenuValues) || new ScEventParams(textSecondLink, ScEventType.ChangeContent, fetchMenuValues);
-                    await client.eventsCreate([eventParams]); 
-                }
-            }    
-        }
+            if (resultFirstText.length && resultSecondText.length && fontSizeText.length) {
+                let firstText = resultFirstText[0].data;
+                let secondText = resultSecondText[0].data;
+                let fontSize = fontSizeText[0].data;
+                setMenuFirst(firstText as any);
+                setMenuSecond(secondText as any);
+                setMenuFontSize(fontSize as any);
+                const eventParams = new ScEventParams(textFirstLink, ScEventType.ChangeContent, fetchMenuValues) || new ScEventParams(textSecondLink, ScEventType.ChangeContent, fetchMenuValues) || new ScEventParams(fontSizeLink, ScEventType.ChangeContent, fetchMenuValues);
+                await client.eventsCreate([eventParams]); 
+            }
+        }    
     }
-
-
-    const headerLogoStyles = {
+    
+    const systemNameStyles = {
         'font-size': systemNameSize,
+    };
+
+    const menuStyles = {
+        'font-size': menuFontSize,
     };
 
     useEffect(() => {
@@ -177,14 +193,16 @@ export const HeaderPanel = () => {
 
     return (
         <div className="header">
-            <h1 className="header-logo-text" /*style={headerLogoStyles}*/>{systemName}</h1>
+            <h1 className="header-logo-text" /*style={ systemNameStyles }*/>
+                { systemName }
+            </h1>
             <div className="nav-container">
                 <ul className="nav">
-                    <li>
-                        <NavLink to={routes.MAIN}>{menuFirst}</NavLink>
+                    <li /*style={ menuStyles }*/>
+                        <NavLink to={routes.MAIN}> { menuFirst } </NavLink>
                     </li>
-                    <li>
-                        <NavLink to={routes.ABOUT}>{menuSecond}</NavLink>
+                    <li /*style={ menuStyles }*/>
+                        <NavLink to={routes.ABOUT}> { menuSecond } </NavLink> 
                     </li>
                 </ul>
             </div>
