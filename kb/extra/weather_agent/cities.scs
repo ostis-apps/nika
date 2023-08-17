@@ -1,0 +1,43 @@
+concept_city
+<- sc_node_class;
+=> nrel_main_idtf:
+    [Город]
+    (* <- lang_ru;; *);
+    [City]
+    (* <- lang_en;; *);;
+
+Minsk
+<- concept_wit_entity;
+<- concept_city;
+=> nrel_main_idtf:
+	[Минск]
+	(* <- lang_ru;; *);
+	[Minsk]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Минске]
+	(* <- lang_ru;; *);;
+
+Brest
+<- concept_wit_entity;
+<- concept_city;
+=> nrel_main_idtf:
+	[Брест]
+	(* <- lang_ru;; *);
+	[Brest]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Бресте]
+	(* <- lang_ru;; *);;
+
+Moscow
+<- concept_wit_entity;
+<- concept_city;
+=> nrel_main_idtf:
+	[Москва]
+	(* <- lang_ru;; *);
+	[Moscow]
+	(* <- lang_en;; *);
+=> nrel_idtf:
+	[Москве]
+	(* <- lang_ru;; *);;

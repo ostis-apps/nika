@@ -18,6 +18,7 @@
     * [Alternative message topic classification agent](agents/alternativeMessageTopicClassificationAgent.md)
     * [Change interface color agent](agents/changeInterfaceColorAgent.md)
     * [Find word in set by first letter agent](agents/findWordInSetByFirstLetter.md)
+    * [Weather agent](agents/weatherAgent.md)
 
 - **Шаблоны**
     * [Knowledge base patterns](patterns/kb-patterns.md)

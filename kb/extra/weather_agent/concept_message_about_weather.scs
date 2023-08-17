@@ -1,0 +1,32 @@
+concept_message_about_weather
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о погоде]
+	(* <- lang_ru;; *);
+	[message about weather]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_weather];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о погоде)]
+        (* <- lang_ru;; *);
+        [Def. (message about weather)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [сообщение о погоде - атомарное сообщение, в котором говорится о погоде.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [message about weather is an atomic message, which shows a weather.]
+                    (* <- lang_en;; *);;
+            *);;
+	*);;

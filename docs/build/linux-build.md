@@ -7,6 +7,7 @@ git submodule update --init --recursive
 ./scripts/install_submodules.sh
 ./scripts/install_problem_solver_deps.sh
 ./scripts/install_interface_deps.sh
+./scripts/install_py_sc_server.sh
 ```
 
 ## Build
@@ -30,11 +31,14 @@ git submodule update --init --recursive
   ```sh
   # Terminal 1
   ./scripts/run_sc_server.sh
-  
+
   # Terminal 2
-  ./scripts/run_sc_web.sh
+  ./scripts/run_py_sc_server.sh
   
   # Terminal 3
+  ./scripts/run_sc_web.sh
+  
+  # Terminal 4
   ./scripts/run_interface.sh
   ```
   This commands will launch 2 Web UIs on your machine:
