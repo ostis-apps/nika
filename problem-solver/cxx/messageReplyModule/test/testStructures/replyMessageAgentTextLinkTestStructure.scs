@@ -6,7 +6,8 @@ test_action_node
 		(*
 			<- concept_text_file;;
 			<- lang_en;;
-		*);;
+		*);
+	-> rrel_2: chat_node;;
 
 message_processing_program <- sc_node_struct;;
 

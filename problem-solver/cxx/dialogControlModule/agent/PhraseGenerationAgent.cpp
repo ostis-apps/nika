@@ -54,6 +54,13 @@ SC_AGENT_IMPLEMENTATION(PhraseGenerationAgent)
       IteratorUtils::getAnyByOutRelation(&m_memoryCtx, phraseLink, DialogKeynodes::nrel_phrase_template);
   ScAddr parametersNode =
       IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionNode, scAgentsCommon::CoreKeynodes::rrel_3);
+  if (!parametersNode.IsValid())
+  {
+    SC_LOG_ERROR("Action doesn't have a parameters node.");
+    SC_LOG_DEBUG("PhraseGenerationAgent finished");
+    AgentUtils::finishAgentWork(&m_memoryCtx, actionNode, false);
+    return SC_RESULT_ERROR_INVALID_PARAMS;
+  }
 
   ScAddr linkResult = generateLinkByTemplate(templateNode, parametersNode, phraseLink);
   if (!linkResult.IsValid())
