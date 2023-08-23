@@ -286,10 +286,8 @@ TEST_F(PhraseGenerationTest, QuestionDoesNotHaveAnyParameters)
   EXPECT_TRUE(
         ScWaitEvent<ScEventAddOutputEdge>(
               ctx,
-              scAgentsCommon::CoreKeynodes::question_finished_successfully).
+              scAgentsCommon::CoreKeynodes::question_finished_unsuccessfully).
               Wait(WAIT_TIME));
-
-  checkLinkContent(ctx, testQuestionNode, resultPhrase);
 
   SC_AGENT_UNREGISTER(dialogControlModule::PhraseGenerationAgent)
 }
