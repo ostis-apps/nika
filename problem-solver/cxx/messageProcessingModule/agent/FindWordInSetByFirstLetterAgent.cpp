@@ -41,7 +41,7 @@ SC_AGENT_IMPLEMENTATION(FindWordInSetByFirstLetterAgent)
           messageAddr,
           ScType::EdgeAccessConstPosPerm))
   {
-    SC_LOG_ERROR("FindWordInSetByFirstLetterAgent: the message isn’t about letter search");
+    SC_LOG_DEBUG("FindWordInSetByFirstLetterAgent: the message isn’t about letter search");
     utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
     return SC_RESULT_ERROR;
   }
@@ -60,10 +60,8 @@ SC_AGENT_IMPLEMENTATION(FindWordInSetByFirstLetterAgent)
 
     messageSearcher = std::make_unique<dialogControlModule::MessageSearcher>(&m_memoryCtx);
     std::string messageText = getMessageText(messageAddr);
-
     ScAddr const & entityAddr = utils::IteratorUtils::getAnyByOutRelation(
         &m_memoryCtx, messageAddr, dialogControlModule::MessageKeynodes::rrel_entity);
-
     // Создание итератора для поиска элементов к котором есть связь с entity
     ScIterator3Ptr const & entityNodesIterator =
         m_memoryCtx.Iterator3(entityAddr, ScType::EdgeAccessConstPosPerm, ScType::NodeConst);
@@ -83,7 +81,7 @@ SC_AGENT_IMPLEMENTATION(FindWordInSetByFirstLetterAgent)
       firstWordLetter = word.substr(0, 2);
       if (firstLetter == firstWordLetter)
       {
-        resultStream << word + ' ';
+        resultStream << word;
         SC_LOG_DEBUG("FindWordInSetByFirstLetterAgent: found word " << word);
       }
     }
@@ -94,7 +92,10 @@ SC_AGENT_IMPLEMENTATION(FindWordInSetByFirstLetterAgent)
       firstWordLetter = word.substr(0, 2);
       if (firstLetter == firstWordLetter)
       {
-        resultStream << ' ' << word;
+        if (resultStream.str().size() == 0)
+          resultStream << word;
+        else
+          resultStream << ", " << word;
         SC_LOG_DEBUG("FindWordInSetByFirstLetterAgent: found word " << word);
       }
     }
