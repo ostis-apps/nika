@@ -1,0 +1,19 @@
+test_message_city_and_country
+<- concept_message;
+<- concept_message_about_weather;
+-> rrel_entity: Minsk;
+-> rrel_entity: Belarus;;
+
+Minsk
+<- concept_city;
+=> nrel_main_idtf:
+	[Минск];
+=> nrel_idtf:
+	[Минске];;
+
+Belarus
+<- concept_country;
+=> nrel_main_idtf:
+    [Беларусь];
+=> nrel_include_city:
+    Minsk;;

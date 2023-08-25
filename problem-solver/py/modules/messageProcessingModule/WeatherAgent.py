@@ -13,6 +13,7 @@ from sc_kpm.utils import (
     create_link,
     get_link_content_data,
     check_edge, create_edge,
+    delete_edges,
     get_element_by_role_relation,
     get_element_by_norole_relation,
     get_system_idtf,
@@ -62,34 +63,35 @@ class WeatherAgent(ScAgentClassic):
             idtf = ScKeynodes.resolve("nrel_idtf", sc_types.NODE_CONST_NOROLE)
             answer_phrase = ScKeynodes.resolve(
                 "show_weather_answer_phrase", sc_types.NODE_CONST_CLASS)
+            rrel_entity = ScKeynodes.resolve("rrel_entity", sc_types.NODE_ROLE)
+            nrel_temperature = ScKeynodes.resolve(
+                "nrel_temperature", sc_types.NODE_NOROLE)
 
-            # delete previous answer
-            message_answer_set = ScSet(set_node=answer_phrase)
-            message_answer_set.clear()
+            city_addr, country_addr = self.get_entity_addr(
+                message_addr, rrel_entity)
+
+            self.clear_previous_answer(
+                city_addr, nrel_temperature, answer_phrase)
+
+            # if there is no such сity in country
+            if not country_addr is None:
+                if not get_edge(country_addr, city_addr, sc_types.EDGE_D_COMMON_VAR):
+                    self.set_unknown_city_link(action_node, answer_phrase)
+                    return ScResult.OK
+
+            # if there is no such сity
+            if not city_addr.is_valid():
+                self.set_unknown_city_link(action_node, answer_phrase)
+                return ScResult.OK
+            city_idtf_link = self.get_ru_idtf(city_addr)
+            answer_city_idtf_link = get_element_by_norole_relation(
+                src=city_addr, nrel_node=idtf)
+            if not city_idtf_link.is_valid():
+                self.set_unknown_city_link(action_node, answer_phrase)
+                return ScResult.OK
         except:
             self.logger.info(f"WeatherAgent: finished with an error")
             return ScResult.ERROR
-        rrel_entity = ScKeynodes.resolve("rrel_entity", sc_types.NODE_ROLE)
-
-        city_addr, country_addr = self.get_entity_addr(
-            message_addr, rrel_entity)
-
-        #if there is no such сity in country
-        if not country_addr is None:
-            if not get_edge(country_addr, city_addr, sc_types.EDGE_D_COMMON_VAR):
-                self.set_unknown_city_link(action_node, answer_phrase)
-                return ScResult.OK
-
-        #if there is no such сity
-        if not city_addr.is_valid():
-            self.set_unknown_city_link(action_node, answer_phrase)
-            return ScResult.OK
-        city_idtf_link = self.get_ru_idtf(city_addr)
-        answer_city_idtf_link = get_element_by_norole_relation(
-            src=city_addr, nrel_node=idtf)
-        if not city_idtf_link.is_valid():
-            self.set_unknown_city_link(action_node, answer_phrase)
-            return ScResult.OK
 
         entity_idtf = get_link_content_data(city_idtf_link)
         try:
@@ -102,12 +104,10 @@ class WeatherAgent(ScAgentClassic):
             str(temperature), ScLinkContentType.STRING, link_type=sc_types.LINK_CONST)
         temperature_edge = create_edge(
             sc_types.EDGE_D_COMMON_CONST, city_addr, link)
-        nrel_temperature = ScKeynodes.resolve(
-                "nrel_temperature",sc_types.NODE_NOROLE)
         create_edge(
             sc_types.EDGE_ACCESS_CONST_POS_PERM, nrel_temperature, temperature_edge)
         create_action_answer(action_node, link)
-        
+
         return ScResult.OK
 
     def get_weather(self, entity_idtf: ScAddr, city_addr: ScAddr, country_addr: ScAddr) -> float:
@@ -134,7 +134,9 @@ class WeatherAgent(ScAgentClassic):
 
     def set_unknown_city_link(self, action_node: ScAddr, answer_phrase: ScAddr) -> None:
         unknown_city_link = ScKeynodes.resolve(
-            "unknown_city_for_weather_agent_message_text", sc_types.LINK)
+            "unknown_city_for_weather_agent_message_text", None)
+        if not unknown_city_link.is_valid():
+            raise
         create_edge(
             sc_types.EDGE_ACCESS_CONST_POS_PERM, answer_phrase, unknown_city_link)
         create_action_answer(action_node, unknown_city_link)
@@ -167,7 +169,7 @@ class WeatherAgent(ScAgentClassic):
         concept_country = ScKeynodes.resolve(
             "concept_country", sc_types.NODE_CONST_CLASS)
         template = ScTemplate()
-        #entity node or link
+        # entity node or link
         template.triple_with_relation(
             message_addr,
             sc_types.EDGE_ACCESS_VAR_POS_PERM,
@@ -181,10 +183,28 @@ class WeatherAgent(ScAgentClassic):
         entity = search_results[0][2]
         if len(search_results) == 1:
             return entity, None
-        #check country position in search_results
+        # check country position in search_results
         country_edge = get_edge(
             concept_country, entity, sc_types.EDGE_ACCESS_VAR_POS_PERM)
         if country_edge:
             return search_results[1][2], entity
         else:
             return entity, search_results[1][2]
+
+    def clear_previous_answer(self, entity, nrel_temperature, answer_phrase):
+        message_answer_set = ScSet(set_node=answer_phrase)
+        message_answer_set.clear()
+        if not entity.is_valid():
+            return
+
+        template = ScTemplate()
+        template.triple_with_relation(
+            entity,
+            sc_types.EDGE_D_COMMON_VAR,
+            sc_types.LINK,
+            sc_types.EDGE_ACCESS_VAR_POS_PERM,
+            nrel_temperature
+        )
+        search_results = template_search(template)
+        for result in search_results:
+            delete_edges(result[0], result[2], sc_types.EDGE_D_COMMON_VAR)
