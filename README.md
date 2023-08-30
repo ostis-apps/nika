@@ -17,7 +17,7 @@ You can learn more about it by asking the assistant: "What's NIKA?"
 ```sh
 #Terminal
 cd nika
-pip3 install mkdocs markdown-include mkdocs-material mkdocs-static-i18n
+pip3 install mkdocs markdown-include mkdocs-material mkdocs-i18n
 mkdocs serve
 ```
 
