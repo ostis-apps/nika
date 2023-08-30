@@ -3,12 +3,16 @@ import { client } from '@api/sc';
 
 const conceptUser = 'concept_user';
 const conceptDialog = 'concept_dialogue';
-const rrelDialogParticipant = 'rrel_dialog_participant';
+const nrelDialogParticipant = 'nrel_dialog_participants';
+const nika = 'nika';
+const nrelDialogueHistory = 'nrel_dialogue_history';
 
 const baseKeynodes = [
     { id: conceptUser, type: ScType.NodeConstClass },
     { id: conceptDialog, type: ScType.NodeConstClass },
-    { id: rrelDialogParticipant, type: ScType.NodeConstRole },
+    { id: nrelDialogParticipant, type: ScType.NodeConstNoRole },
+    { id: nika, type: ScType.NodeConst },
+    { id: nrelDialogueHistory, type: ScType.NodeConstNoRole },
 ];
 
 const getUser = async () => {
@@ -32,8 +36,21 @@ const createUser = async () => {
     const keynodes = await client.resolveKeynodes(baseKeynodes);
     const user = '_user';
     const dialog = '_dialog';
+    const tuple = '_tuple';
+    const tupleUser = '_tuple_user';
+    const tupleNika = '_tuple_nika';
 
     const template = new ScTemplate();
+    template.triple(
+        [ScType.NodeVarTuple, tuple],
+        ScType.EdgeAccessVarPosPerm,
+        [ScType.NodeVar, user],
+    );
+    template.triple(
+        tuple,
+        ScType.EdgeAccessVarPosPerm,
+        keynodes[nika],
+    );
     template.triple(
         keynodes[conceptUser],
         ScType.EdgeAccessVarPosPerm,
@@ -45,11 +62,35 @@ const createUser = async () => {
         [ScType.NodeVar, dialog],
     );
     template.tripleWithRelation(
+        tuple,
+        ScType.EdgeDCommonVar,
         dialog,
         ScType.EdgeAccessVarPosPerm,
+        keynodes[nrelDialogParticipant],
+    );
+    template.triple(
+        [ScType.NodeVarTuple, tupleUser],
+        ScType.EdgeAccessVarPosPerm,
+        dialog,
+    );
+    template.triple(
+        [ScType.NodeVarTuple, tupleNika],
+        ScType.EdgeAccessVarPosPerm,
+        dialog,
+    );
+    template.tripleWithRelation(
+        tupleUser,
+        ScType.EdgeDCommonVar,
         user,
         ScType.EdgeAccessVarPosPerm,
-        keynodes[rrelDialogParticipant],
+        keynodes[nrelDialogueHistory],
+    );
+    template.tripleWithRelation(
+        tupleNika,
+        ScType.EdgeDCommonVar,
+        keynodes[nika],
+        ScType.EdgeAccessVarPosPerm,
+        keynodes[nrelDialogueHistory],
     );
     const result = await client.templateGenerate(template, {});
     return result?.get(user);

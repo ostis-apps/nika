@@ -2,11 +2,11 @@ import { ScAddr, ScTemplate, ScType } from 'ts-sc-client';
 import { client } from '@api/sc/client';
 
 const conceptDialog = 'concept_dialogue';
-const rrelDialogParticipant = 'rrel_dialog_participant';
+const nrelDialogParticipant = 'nrel_dialog_participants';
 
 const baseKeynodes = [
     { id: conceptDialog, type: ScType.NodeConstClass },
-    { id: rrelDialogParticipant, type: ScType.NodeConstRole },
+    { id: nrelDialogParticipant, type: ScType.NodeConstNoRole },
 ];
 
 const findDialogNode = async (user: ScAddr) => {
@@ -24,7 +24,7 @@ const findDialogNode = async (user: ScAddr) => {
         ScType.EdgeAccessVarPosPerm,
         user,
         ScType.EdgeAccessVarPosPerm,
-        keynodes[rrelDialogParticipant],
+        keynodes[nrelDialogParticipant],
     );
     const resultDialogNode = await client.templateSearch(template);
 
