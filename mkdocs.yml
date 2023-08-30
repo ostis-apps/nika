@@ -15,38 +15,96 @@ plugins:
       languages:
         en: English
         ru: Русский
+      no_translation:
+        ru: "Эта страница не переведена на русский язык"
+        en: "This page isn't translated to English"
+      translate_nav:
+        ru:
+          Home: "Главная"
+          Build: "Сборка"
+          Development: "Разработка"
+          Project structure: "Структура проекта"
+          Agents: "Агенты"
+          Patterns: "Шаблоны"
+          Knowledge base patterns: "Шаблоны для базы знаний"
+          Message reply agent: "Агент ответа на сообщение"
+          Non-atomic action interpretation agent: "Агент интерпретации неатомарных действий"
+          Alternative message topic classification agent: "Агент классификации сообщений с помощью логических правил"
+          Message topic classification agent: "Агент классификации сообщений с помощью Wit.ai"
+          Standard message reply agent: "Агент генерации ответа на сообщение"
+          Phrase generation agent: "Агент генерации фраз"
+          Change interface color agent: "Агент смены цвета компонента интерфейса"
+          Weather agent: "Агент прогноза погоды"
+          Find word in set by first letter agent: "Агент поиска слова по первой букве"
+          Changelog: "Список изменений"
+          Subsystems: "Подсистемы"          
+
 
 nav:
   - Home: index.md
+  - Home: index.ru.md
   - Build:
     - Docker: build/docker-build.md
+    - Docker: build/docker-build.ru.md
     - Debian-based distros / Linux: build/linux-build.md
+    - Debian-based distros / Linux: build/linux-build.ru.md
   - Development:
     - Git-workflow: dev/git-workflow.md
+    - Git-workflow: dev/git-workflow.ru.md
     - Pull requests: dev/pr.md
+    - Pull requests: dev/pr.ru.md
     - Codestyle: dev/codestyle.md
+    - Codestyle: dev/codestyle.ru.md
     - Project structure: dev/project_structure.md
+    - Project structure: dev/project_structure.ru.md
   - Agents:
     - Message reply agent: agents/messageReplyAgent.md
+    - Message reply agent: agents/messageReplyAgent.ru.md
     - Non-atomic action interpretation agent: agents/nonAtomicActionInterpretationAgent.md
+    - Non-atomic action interpretation agent: agents/nonAtomicActionInterpretationAgent.ru.md
     - Alternative message topic classification agent: agents/alternativeMessageTopicClassificationAgent.md
+    - Alternative message topic classification agent: agents/alternativeMessageTopicClassificationAgent.ru.md
     - Message topic classification agent: agents/messageTopicClassificationAgent.md
+    - Message topic classification agent: agents/messageTopicClassificationAgent.ru.md
     - Standard message reply agent: agents/standardMessageReplyAgent.md
+    - Standard message reply agent: agents/standardMessageReplyAgent.ru.md
     - Phrase generation agent: agents/phraseGenerationAgent.md
+    - Phrase generation agent: agents/phraseGenerationAgent.ru.md
     - Change interface color agent: agents/changeInterfaceColorAgent.md
+    - Change interface color agent: agents/changeInterfaceColorAgent.ru.md
     - Weather agent: agents/weatherAgent.md
+    - Weather agent: agents/weatherAgent.ru.md
     - Find word in set by first letter agent: agents/findWordInSetByFirstLetter.md
+    - Find word in set by first letter agent: agents/findWordInSetByFirstLetter.ru.md
   - Subsystems:
      - scl-machine: subsystems/scl-machine.md
+     - scl-machine: subsystems/scl-machine.ru.md
   - Patterns:
       - Knowledge base patterns: patterns/kb-patterns.md
+      - Knowledge base patterns: patterns/kb-patterns.ru.md
   - Changelog: changelog.md
   - Thirdparty: thirdparty.md
+  - Thirdparty: thirdparty.ru.md
   - License: license.md
 
 theme: 
     name: material
     language: en
+
+extra:
+  # Default mkdocs-material alternate links for untranslated pages
+  # https://squidfunk.github.io/mkdocs-material/setup/changing-the-language/#site-language-selector
+  # For translated pages the language name is replaced by the string configured in i18n plugin
+  # secction and link is replaced by the link to the translated page
+  alternate:
+    - name: "Home"
+      link: ""
+      lang: en
+
+    - name: "Главная"
+      link: index.ru.md
+      lang: ru
+
 
 markdown_extensions:
   - admonition
