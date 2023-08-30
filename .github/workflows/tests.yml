@@ -18,24 +18,16 @@ jobs:
 
       - name: Update
         run: |
-          sudo apt-get update
+          ./scripts/install_submodules.sh
       - name: Install Ubuntu dependencies
         run: |
-          git submodule update --init --recursive
-          ./scripts/install_deps_ubuntu.sh
-          ./problem-solver/sc-machine/scripts/install_deps_ubuntu.sh --dev
-      - name: Setting variables
-        run: |
-          ./scripts/set_vars.sh -ci
+          ./scripts/install_problem_solver_deps.sh
       - name: Build problem solver
         run: |
-          cd scripts
           ./build_problem_solver.sh --tests
       - name: Run cpp tests
         run: |
-          cd scripts
-          ./run_cpp_tests.sh
+          ./scripts/run_cpp_tests.sh
       - name: Build knowledge base
         run: |
-          cd scripts
-          ./build_kb.sh
+          ./scripts/build_kb.sh
