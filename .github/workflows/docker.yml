@@ -17,9 +17,12 @@ jobs:
 
       - name: Pull the Docker images
         run: |
-          git submodule update --init --recursive
-          docker compose pull
+          docker compose pull web
 
-      - name: Run the Docker compose
+      - name: Build the Docker images
         run: |
-          docker compose up -d --wait --no-build
+          docker compose build py-sc-server nika-ui problem-solver
+
+      - name: Run Docker Compose
+        run: |
+          docker compose run -d --wait

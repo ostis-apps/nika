@@ -2,19 +2,21 @@ name: CI
 
 on:
   pull_request:
-    branches: [ main, release/** ]
+    branches: [ main, release/**, develop ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
   install-n-lint:
-    name: Install & Lint
+    name: Run tests
     runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
 
       - name: Update
         run: |
@@ -24,7 +26,7 @@ jobs:
           ./scripts/install_problem_solver_deps.sh
       - name: Build problem solver
         run: |
-          ./build_problem_solver.sh --tests
+          ./scripts/build_problem_solver.sh --tests
       - name: Run cpp tests
         run: |
           ./scripts/run_cpp_tests.sh
