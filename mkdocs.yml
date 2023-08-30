@@ -8,6 +8,14 @@ extra_javascript:
   - _assets/scg.min.js
   - _assets/main.js
 
+plugins:
+  - search                                       
+  - i18n:
+      default_language: en
+      languages:
+        en: English
+        ru: Русский
+
 nav:
   - Home: index.md
   - Build:
@@ -21,10 +29,12 @@ nav:
   - Agents:
     - Message reply agent: agents/messageReplyAgent.md
     - Non-atomic action interpretation agent: agents/nonAtomicActionInterpretationAgent.md
-    - Message topic classification agent: agents/messageTopicClassificationAgent.md
     - Alternative message topic classification agent: agents/alternativeMessageTopicClassificationAgent.md
+    - Message topic classification agent: agents/messageTopicClassificationAgent.md
     - Standard message reply agent: agents/standardMessageReplyAgent.md
+    - Phrase generation agent: agents/phraseGenerationAgent.md
     - Change interface color agent: agents/changeInterfaceColorAgent.md
+    - Weather agent: agents/weatherAgent.md
     - Find word in set by first letter agent: agents/findWordInSetByFirstLetter.md
     - Add message to the dialog agent: agents/addMessageToTheDialogAgent.md
   - Subsystems:
@@ -35,7 +45,9 @@ nav:
   - Thirdparty: thirdparty.md
   - License: license.md
 
-theme: material
+theme: 
+    name: material
+    language: en
 
 markdown_extensions:
   - admonition

@@ -13,12 +13,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Find entity by identifiers relation set, not only main idtf
 - Common rule to answer "На что декомпозируется ...?" with any formalized entity
 - Common rule to answer "Что такое ...?" with any formalized entity
+- Rule to answer "Что умеет Ника?"
 - Phrase pattern to get all entities from set $...{_set}
 - Pattern to design knowledge base
 - Alternative message classification agent using logic rules
 - Change interface color agent
 - Move to the latest platform
 - Replace ostis-inference with scl-machine
+- Find word in set by first letter agent
+- Weather agent 
+- Russian version for documentation
 
 ### Changed
 - Message processing program tries to classify message with rules first, then with wit.ai
@@ -30,7 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Script `install_ostis.sh`
 - Script `set_vars.sh` part for ci
 
-## [0.1.0] - 12.09.2022
+## 12.09.2022
 
 ### Added
 

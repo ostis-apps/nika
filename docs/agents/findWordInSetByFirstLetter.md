@@ -1,13 +1,15 @@
 This is an agent added as an example to show how to add new agents to the system.  
 The agent can be used as a template to write other agents, for example to cities game where we need to search words by last letter of previous word or for other suitable purposes.
 
+To test you can use message like `Что в примере начинается на букву А?` or use any other letter.
+
 **Action class:**
 
 `action_find_word_in_set_by_first_letter`
 
 **Parameters:**
 
-1. `message node` - an element of `concept_message` and `concept_message_about_find_word_by_first_letter`;
+1. `messageAddr` -- an element of `concept_message` and `concept_message_about_find_word_by_first_letter`.
 
 **Workflow:**
 
@@ -27,11 +29,9 @@ Example of an input structure:
 
 <img src="../images/FindWordInSetByLetterExample.png"></img>
 
-To test you can use message like `Что в примере начинается на букву А?` or use any other letter.
-
 ### Result
 
 Possible result codes:
 
 * `SC_RESULT_OK` - agent successfully found elements and generate phrase;
-* `SC_RESULT_ERROR`- `message node` or `entity` is not found.
+* `SC_RESULT_ERROR`- `message` or `entity` is not found.
