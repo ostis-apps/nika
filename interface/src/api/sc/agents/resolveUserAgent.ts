@@ -54,7 +54,7 @@ const createUser = async () => {
     template.triple(
         keynodes[conceptUser],
         ScType.EdgeAccessVarPosPerm,
-        [ScType.NodeVar, user],
+        user,
     );
     template.triple(
         keynodes[conceptDialog],

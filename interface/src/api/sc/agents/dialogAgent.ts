@@ -13,16 +13,23 @@ const findDialogNode = async (user: ScAddr) => {
     const keynodes = await client.resolveKeynodes(baseKeynodes);
 
     const dialog = '_dialog';
+    const tuple = '_tuple';
+
     const template = new ScTemplate();
     template.triple(
         keynodes[conceptDialog],
         ScType.EdgeAccessVarPosPerm,
         [ScType.NodeVar, dialog],
     );
-    template.tripleWithRelation(
-        dialog,
+    template.triple(
+        [ScType.NodeVarTuple, tuple],
         ScType.EdgeAccessVarPosPerm,
         user,
+    );
+    template.tripleWithRelation(
+        tuple,
+        ScType.EdgeDCommonVar,
+        dialog,
         ScType.EdgeAccessVarPosPerm,
         keynodes[nrelDialogParticipant],
     );
