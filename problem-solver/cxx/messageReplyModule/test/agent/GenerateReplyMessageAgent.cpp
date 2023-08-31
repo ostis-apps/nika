@@ -16,7 +16,7 @@ SC_AGENT_IMPLEMENTATION(GenerateReplyMessageAgent)
   {
     return SC_RESULT_OK;
   }
-
+  SC_LOG_DEBUG("GenerateMessageReplyAgent started");
   if(!actionIsValid(actionAddr))
   {
     utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
@@ -41,7 +41,7 @@ SC_AGENT_IMPLEMENTATION(GenerateReplyMessageAgent)
   ScTemplateParams templateParams;
   ScTemplateGenResult templateGenResult;
   m_memoryCtx.HelperGenTemplate(scTemplate, templateGenResult, templateParams);
-
+  SC_LOG_DEBUG("GenerateMessageReplyAgent finished");
   utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, true);
   return SC_RESULT_OK;
 }

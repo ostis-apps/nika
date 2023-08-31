@@ -70,6 +70,21 @@ services:
       - SC_WEB_URL=http://web:8000
     depends_on:
       - web
+
+  py-sc-server:
+    build:
+      context: ./
+      dockerfile: ./problem-solver/py/Dockerfile
+    container_name: py-sc-server
+    restart: unless-stopped
+    depends_on:
+      problem-solver:
+        condition: service_healthy
+    command:
+      - "--host=problem-solver"
+    networks:
+      - nika
+
 volumes:
   kb-binary: {}
 

@@ -8,7 +8,7 @@ The agent classifies a message using Wit.ai.
 
 **Parameters:**
 
-1. `message node` - an element of `concept_message`;
+1. `messageAddr` -- an element of `concept_message`.
 
 **Libraries used:**
 
@@ -45,8 +45,10 @@ Example of a structure needed to get message entity:
 
 1. `concept_greeting_message`
 2. `concept_message_about_entity`
-3. `concept_message_about_lab_work_condition`
-4. `concept_message_about_lab_work_deadline`
+3. `concept_message_about_subdividing`
+4. `concept_message_about_study_system`
+5. `concept_message_about_lab_work_condition`
+6. `concept_message_about_lab_work_deadline`
 
 ### Agent implementation language
 C++

@@ -1,5 +1,7 @@
 Is an agent that changes a color of an interface component.
 
+To test you can use messages like `Измени цвет хедера на #001122`, `Поменяй цвет компонента футер на #CC1122` or `Измени цвет компонента основная часть на #00AAFF`.
+
 **Action class:**
 
 `action_change_interface`
@@ -7,7 +9,7 @@ Is an agent that changes a color of an interface component.
 
 **Parameters:**
 
-1. `message` node has `interface component` as `rrel_entity` and optionally `component color` as `rrel_color`.
+1. `messageAddr` has `interface component` as `rrel_entity` and optionally `component color` as `rrel_color`.
 
 **Workflow:**
 
@@ -28,8 +30,6 @@ The random interface component color rule:
 Example of an input structure:
 
 <img src="../images/changeInterfaceColorAgentInput.png"></img>
-
-To test you can use messages like `Измени цвет хедера на #001122`, `Поменяй цвет компонента футер на #CC1122` or `Измени цвет компонента основная часть на #00AAFF`.
 
 ### Result
 

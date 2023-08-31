@@ -42,8 +42,8 @@ interface IProps {
     isAgentAnswer?: boolean;
 }
 const textPlaceholder = {
-    en: 'Enter your message here...',
-    ru: 'Введите сообщение...',
+    en: 'What Nika can?',
+    ru: 'Что умеет Ника?',
 };
 const textLoad = {
     en: 'Load messages',
@@ -57,7 +57,6 @@ const textAgentAnswer = {
 export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
     ({ onSend, onFetching, isAgentAnswer, children, className, isLoading: isFetchingChatLoading }, chatRef) => {
         const [messageInput, setMessageInput] = useState('');
-        const [isDisabled, setIsDisabled] = useState(false);
 
         const [showArrow, setShowArrow] = useState(false);
         const [scrollHappened, setScrollHappened] = useState(false);
@@ -80,7 +79,11 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
         const throttleSendMessage = useMemo(() => throttle(sendMessage, 500), [sendMessage]);
 
         const onButtonClick = () => {
-            throttleSendMessage(messageInput);
+            if (!messageInput) {
+                throttleSendMessage(textPlaceholder[hookLanguage]);
+            } else {
+                throttleSendMessage(messageInput);
+            }
         };
 
         const scrollToLastMessage = () => mainRef.current?.lastElementChild?.scrollIntoView(false);
@@ -118,8 +121,11 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
 
         const onInputKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
             if (e.key === 'Enter') {
-                if (!messageInput) return;
-                throttleSendMessage(messageInput);
+                if (!messageInput) {
+                    throttleSendMessage(textPlaceholder[hookLanguage]);
+                } else {
+                    throttleSendMessage(messageInput);
+                }
             }
         };
         const hookLanguage = useLanguage();
@@ -167,7 +173,6 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
 
         useEffect(() => {
             const empty = !messageInput.trim();
-            setIsDisabled(empty);
             if (empty) setMessageInput('');
         }, [messageInput]);
 
@@ -207,6 +212,7 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
                     </WrapperAgentAnswer>
                     <WrapperFooter>
                         <FooterInput
+                            autoFocus={true}
                             ref={inputRef}
                             value={messageInput}
                             onChange={onInputChange}
@@ -214,7 +220,7 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
                             type="text"
                             placeholder={textPlaceholder[hookLanguage]}
                         />
-                        <FooterSend onClick={onButtonClick} type="submit" disabled={isDisabled}>
+                        <FooterSend onClick={onButtonClick} type="submit">
                             <WrapperSendIcon>
                                 <SendIcon />
                             </WrapperSendIcon>

@@ -16,8 +16,10 @@
     * [Standard message reply agent](agents/standardMessageReplyAgent.md)
     * [Message topic classification agent](agents/messageTopicClassificationAgent.md)
     * [Alternative message topic classification agent](agents/alternativeMessageTopicClassificationAgent.md)
+    * [Phrase generation agent](agents/phraseGenerationAgent.md)
     * [Change interface color agent](agents/changeInterfaceColorAgent.md)
     * [Find word in set by first letter agent](agents/findWordInSetByFirstLetter.md)
+    * [Weather agent](agents/weatherAgent.md)
 
 - **Interface**
     * [Features in interface](interface/features_in_interface.md)

@@ -1,0 +1,36 @@
+concept_message_about_skill
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о навыке]
+	    (* <- lang_ru;; *);
+	[message about skill]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[about_skill];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о навыке)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about skill)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о навыке - атомарное сообщение, которое содержит навык, информацию о котором необходимо найти.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about skill is an atomic message that contains skill information about which you need to find.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;
