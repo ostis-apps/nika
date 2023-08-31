@@ -43,14 +43,14 @@ public:
   SC_PROPERTY(Keynode("concept_dialogue"), ForceCreate)
   static ScAddr concept_dialogue;
 
-  SC_PROPERTY(Keynode("rrel_last"), ForceCreate)
-  static ScAddr rrel_last;
-
   SC_PROPERTY(Keynode("nrel_message_sequence"), ForceCreate)
   static ScAddr nrel_message_sequence;
 
   SC_PROPERTY(Keynode("myself"), ForceCreate(ScType::NodeConst))
   static ScAddr myself;
+
+  SC_PROPERTY(Keynode("nika"), ForceCreate(ScType::NodeConst))
+  static ScAddr nika;
 };
 
 }  // namespace messageReplyModule

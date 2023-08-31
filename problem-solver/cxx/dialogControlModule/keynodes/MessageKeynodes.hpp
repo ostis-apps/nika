@@ -19,6 +19,9 @@ public:
   SC_PROPERTY(Keynode("action_standard_message_reply"), ForceCreate)
   static ScAddr action_standard_message_reply;
 
+  SC_PROPERTY(Keynode("action_add_message_to_the_dialog"), ForceCreate)
+  static ScAddr action_add_message_to_the_dialog;
+
   SC_PROPERTY(Keynode("concept_answer_on_standard_message_rule"), ForceCreate)
   static ScAddr concept_answer_on_standard_message_rule;
 
