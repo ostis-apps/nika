@@ -1,4 +1,6 @@
-This is an agent added as an example to show how to add new agents to the system.  
+# Find word in set by first letter agent
+
+This is an agent added as an example to show how to add new agents to the system.
 The agent can be used as a template to write other agents, for example to cities game where we need to search words by last letter of previous word or for other suitable purposes.
 
 To test you can use message like `Что в примере начинается на букву А?` or use any other letter.
@@ -13,7 +15,7 @@ To test you can use message like `Что в примере начинается 
 
 **Workflow:**
 
-* The agent extracts an entity and a letter from the message finds all entities associated with it and starts with the found letter. 
+* The agent extracts an entity and a letter from the message finds all entities associated with it and starts with the found letter.
 * After finding associated entities agent generate phrase that consist of identifiers of entities.
 * If there are no words that start with the found letter, the agent displays a message about their absence.
 

@@ -1,4 +1,4 @@
-#  CodeStyle
+# Руководство по написанию кода
 
 ## C++ Styles
 
@@ -8,7 +8,7 @@
 
 - Весь код должен соответствовать стандарту C++17.
 - Мы используем файлы `.cpp` и `.hpp`, а не `.cc` и `.h` (`.c` и `.h` используются для языка C) в кодировке UTF-8.
-- Имена файлов пишутся в нижнем регистре с подчеркиванием, например `sc_memory.cpp `.
+- Имена файлов пишутся в нижнем регистре с подчеркиванием, например `sc_memory.cpp`.
 - Мы используем `#pragma once` вместо `#define` в заголовочных файлах.
 - Includes сортируются и группируются по каталогам, между разными каталогами должны быть пустые строки.
 - Порядок каталогов в includes: `current_dir/current_file.hpp`, другие файлы из того же каталога, файлы из других каталогов, сортируются по имени.
@@ -72,11 +72,15 @@ for (ScAddr const & addr : listOfAddr)
 Большая часть нашей стилистики кода указана в файле конфигурации для [ClangFormat](http://clang.llvm.org/docs/ClangFormat.html).
 Чтобы автоматически отформатировать файл, установите `clang-format` и запустите:
 
-    clang-format -i file.cpp file.hpp other_file.cpp
+```sh
+clang-format -i file.cpp file.hpp other_file.cpp
+```
 
-Чтобы отформатировать все C/C++ файлы проекта автоматически, используйте следующий скрипт: 
+Чтобы отформатировать все C/C++ файлы проекта автоматически, используйте следующий скрипт:
 
-    ./scripts/clang/format_code.sh
+```sh
+./scripts/clang/format_code.sh
+```
 
 ## Примеры форматирования
 
@@ -288,11 +292,12 @@ SC_CHECK_LESS_EQ(a, b, ()); // equal to SC_CHECK(a <= b, ());
 ```
 
 ### Логирование
-  * `SC_LOG_DEBUG(msg)` - вывод сообщения в Debug сборке. Префикс: `[Debug]`
-  * `SC_LOG_INFO(msg)`
-  * `SC_LOG_WARNING(msg)`
-  * `SC_LOG_ERROR(msg)`
-  * `SC_LOG_INFO_COLOR(msg, color)` - Вывод цветного информационного сообщения. Посмотреть цветовые константы можно в `ScConsole::Color`
+
+- `SC_LOG_DEBUG(msg)` - вывод сообщения в Debug сборке. Префикс: `[Debug]`
+- `SC_LOG_INFO(msg)`
+- `SC_LOG_WARNING(msg)`
+- `SC_LOG_ERROR(msg)`
+- `SC_LOG_INFO_COLOR(msg, color)` - Вывод цветного информационного сообщения. Посмотреть цветовые константы можно в `ScConsole::Color`
 
 ### Объявление своих собственных исключений
 
@@ -300,18 +305,20 @@ SC_CHECK_LESS_EQ(a, b, ()); // equal to SC_CHECK(a <= b, ());
 class MyException final : public ScException
 {
 public:
-	explicit MyException(std::string const & msg) : ScException("My: " + msg) {}
+ explicit MyException(std::string const & msg) : ScException("My: " + msg) {}
 };
 ```
 
-### Генерация исключений 
+### Генерация исключений
 
 Генерация исключений с помощью `SC_THROW_EXCEPTION(exceptionName, message)`
+
 ```cpp
 SC_THROW_EXCEPTION(MyException, "my message")
 ```
 
 ### Исключение для нереализованных частей кода
+
 ```cpp
 SC_NOT_IMPLEMENTED("message")
 ```
@@ -335,6 +342,7 @@ SC_NOT_IMPLEMENTED("message")
 `black` форматировщик используется для форматирования кода на Python.
 
 Чтобы показать рекомендуемые изменения:
+
 ```sh
 black --diff --color --line-length 120 path/to/your/files
 ```
@@ -344,6 +352,7 @@ black --diff --color --line-length 120 path/to/your/files
 ```sh
 black --line-length 120 path/to/your/files
 ```
+
 Для проверки кода используются утилиты `pylint`.
 
 Используйте скрипт `local_ci.sh`  для самопроверки. Этот скрипт позволяет Вам выполнять большинство проверок, которые присутствуют в CI локально.

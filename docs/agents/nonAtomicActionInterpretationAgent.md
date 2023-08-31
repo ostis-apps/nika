@@ -1,3 +1,5 @@
+# Non-atomic action interpretation agent
+
 Is an agent that generates an action description in the knowlendge base based on the template received. If there are sets of arguments then it performs a role mapping before generation.
 
 **Action class:**
@@ -9,12 +11,10 @@ Is an agent that generates an action description in the knowlendge base based on
 1. `nonAtomicActionTemplateAddr` containing a description of a non-atomic action;
 2. **(optional)** `argumentsSet` -- action argument set.
 
-
 **Comment:**
 
 * If there is no need for a `set of arguments`, then an empty `set of arguments` or no set is allowed;
 * The transition to the next action depends on the result of the previous one.
-
 
 **Workflow:**
 
@@ -36,6 +36,6 @@ Example of an output structure:
 ### Result
 
 Possible result codes:
- 
+
 * `SC_RESULT_OK`- interpretation completed;
 * `SC_RESULT_ERROR`- internal error.

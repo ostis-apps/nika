@@ -1,3 +1,5 @@
+# Interface component color changer agent
+
 Is an agent that changes a color of an interface component.
 
 To test you can use messages like `Измени цвет хедера на #001122`, `Поменяй цвет компонента футер на #CC1122` or `Измени цвет компонента основная часть на #00AAFF`.
