@@ -1,0 +1,38 @@
+concept_wimp_interface
+<- sc_node_class;
+=> nrel_main_idtf:
+	[WIMP-интерфейс]
+	(* <- lang_ru;; *);
+	[WIMP interface]
+	(* <- lang_en;; *);
+=> nrel_inclusion:
+    concept_ostis_system_user_interface;
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (WIMP-интерфейс)]
+        (* <- lang_ru;; *);
+        [Def. (WIMP interface)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [WIMP-интерфейс - пользовательский интерфейс, при котором обмен информацией между компьютерной системой и пользователем осуществляется в форме диалога при помощью окон, меню и других элементов управления.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [WIMP interface is a user interface in which information is exchanged between a computer system and a user in the form of a dialog using windows, menus and other controls.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                computer_system;
+                concept_user_interface
+            };;
+	*);;
+

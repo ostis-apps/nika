@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Find word in set by first letter agent
 - Weather agent 
 - Russian version for documentation
+- Add SD of ostis-system interfaces
 
 ### Changed
 - Message processing program tries to classify message with rules first, then with wit.ai

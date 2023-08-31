@@ -21,6 +21,9 @@
     * [Find word in set by first letter agent](agents/findWordInSetByFirstLetter.md)
     * [Weather agent](agents/weatherAgent.md)
 
+- **Interface**
+    * [Features in interface](interface/features_in_interface.md)
+
 - **Patterns**
     * [Knowledge base patterns](patterns/kb-patterns.md)
 

@@ -1,0 +1,38 @@
+concept_presentation_user_interface_component
+<- sc_node_class;
+=> nrel_main_idtf:
+	[компонент пользовательского интерфейса для отображения]
+	(* <- lang_ru;; *);
+	[presentation user interface component]
+	(* <- lang_en;; *);
+=> nrel_inclusion:
+    concept_output_component;
+    concept_decorative_user_interface_component;
+    concept_container;
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (компонент пользовательского интерфейса для отображения)]
+        (* <- lang_ru;; *);
+        [Def. (presentation user interface component)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Компонент пользовательского интерфейса для отображения – компонент пользовательского интерфейса, не подразумевающий взаимодействия с пользователем.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [The user interface component for display is a user interface component that does not imply interaction with the user.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_user_interface_component
+            };;
+	*);;

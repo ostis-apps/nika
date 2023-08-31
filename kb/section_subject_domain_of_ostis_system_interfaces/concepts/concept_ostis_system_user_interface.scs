@@ -1,0 +1,38 @@
+concept_ostis_system_user_interface
+<- sc_node_class;
+=> nrel_main_idtf:
+	[пользовательский интерфейс ostis-системы]
+	(* <- lang_ru;; *);
+	[user interface of the ostis-system]
+	(* <- lang_en;; *);
+=> nrel_inclusion:
+    ostis_system;
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (пользовательский интерфейс ostis-системы)]
+        (* <- lang_ru;; *);
+        [Def. (user interface of the ostis-system)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Пользовательский интерфейс ostis-системы представляет собой специализированную ostis-систему, ориентированную на решение интерфейсных задач, и имеющую в своем составе базу знаний и решатель задач пользовательского интерфейса ostis-системы. Для решения задачи построения пользовательского интерфейса в базе знаний пользовательского интерфейса ostis-системы необходимо наличие sc-модели компонентов пользовательского интерфейса, интерфейсных действий пользователей, а также классификации пользовательских интерфейсов в целом. При проектировании интерфейса используется компонентный подход,который предполагает представление всего интерфейса приложения в виде отдельных специфицированных компонентов, которые могут разрабатываться и совершенствоваться независимо.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [The user interface of the ostis system is a specialized ostis system focused on solving interface problems, and having in its composition a knowledge base and a solver of the user interface of the ostis system. To solve the problem of building a user interface in the ostis system user interface knowledge base, it is necessary to have a sc-model of user interface components, user interface actions, as well as a classification of user interfaces in general. When designing the interface, a component approach is used, which assumes the representation of the entire application interface in the form of separate specified components that can be developed and improved independently.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                computer_system;
+                ostis_system
+            };;
+	*);;
+

@@ -1,0 +1,36 @@
+concept_tab_bar
+<- sc_node_class;
+=> nrel_main_idtf:
+	[панель вкладок]
+	(* <- lang_ru;; *);
+	[tab-bar]
+	(* <- lang_en;; *);
+=> nrel_inclusion:
+    concept_menu_item;
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (панель вкладок)]
+        (* <- lang_ru;; *);
+        [Def. (tab-bar)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Панель вкладок - контейнер, который может содержать несколько вкладок внутри, которые могут быть отображены, нажав на вкладке с названием в верхней части панели. Одновременно отображается только одна вкладка.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [The tab-bar is a container that can contain several tabs inside, which can be displayed by clicking on the tab with the name at the top of the panel. Only one tab is displayed at a time.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_user_interface_component
+            };;
+	*);;

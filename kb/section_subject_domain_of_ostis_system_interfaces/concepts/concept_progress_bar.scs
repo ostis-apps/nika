@@ -1,0 +1,34 @@
+concept_progress_bar
+<- sc_node_class;
+=> nrel_main_idtf:
+	[индикатор выполнения]
+	(* <- lang_ru;; *);
+	[progress-bar]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (индикатор выполнения)]
+        (* <- lang_ru;; *);
+        [Def. (progress-bar)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Индикатор выполнения - компонент пользовательского интерфейса, предназначенный для отображения процента выполнения какой-либо задачи.]
+					(* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [The progress-bar is a component of the user interface designed to display the percentage of completion of a task.]
+					(* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_user_interface_component
+            };;
+	*);;

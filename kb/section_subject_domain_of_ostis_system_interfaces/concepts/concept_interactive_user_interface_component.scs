@@ -1,0 +1,38 @@
+concept_interactive_user_interface_component
+<- sc_node_class;
+=> nrel_main_idtf:
+	[интерактивный компонент пользовательского интерфейса]
+	(* <- lang_ru;; *);
+	[interactive user interface component]
+	(* <- lang_en;; *);
+=> nrel_inclusion:
+    concept_data_input_component;
+    concept_presentation_manipulation_component;
+    concept_operation_trigger_component;
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (интерактивный компонент пользовательского интерфейса)]
+        (* <- lang_ru;; *);
+        [Def. (interactive user interface component)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Интерактивный компонент пользовательского интерфейса – компонент пользовательского интерфейса, с помощью которого осуществляется взаимодействие с пользователем.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [interactive component of the user interface is a component of the user interface through which interaction with the user is carried out.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_user_interface_component
+            };;
+	*);;

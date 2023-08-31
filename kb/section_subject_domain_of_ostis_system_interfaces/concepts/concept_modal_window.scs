@@ -1,0 +1,35 @@
+concept_modal_window
+<- sc_node_class;
+=> nrel_main_idtf:
+	[модальное окно]
+	(* <- lang_ru;; *);
+	[modal window]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (модальное окно)]
+        (* <- lang_ru;; *);
+        [Def. (modal window)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Модальное окно - окно, которое блокирует работу пользователя с системой до тех пор, пока  пользователь окно не закроет.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [A modal window is a window that blocks the user from working with the system until the user closes the window.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_user_interface_component;
+                concept_window
+            };;
+	*);;

@@ -19,20 +19,61 @@ subject_domain_ostis_system_interfaces
 -> rrel_maximum_studied_object_class:
     concept_user_interface;
 -> rrel_explored_relation:
-	nrel_component_color;
+    nrel_component_color;
     nrel_visual_interface;
+    nrel_copyright_text;
+    nrel_system_name;
+    nrel_menu_button_text;
 -> rrel_not_maximum_studied_object_class:
-	concept_user_interface_component;
+    concept_command_user_interface;
+    concept_graphical_user_interface;
+    concept_wimp_interface;
+    concept_silk_interface;
+    concept_natural_language_interface;
+    concept_speech_interface;
+    concept_ostis_system_user_interface;
+    concept_user_interface_component;
+    concept_presentation_user_interface_component;
+    concept_output_component;
+    concept_container;
+    concept_interactive_user_interface_component;
+    concept_presentation_manipulation_component;
+    concept_operation_trigger_component;
+    concept_image_output_component;
+    concept_graphical_output_component;
+    concept_chart;
+    concept_progress_bar;
+    concept_video_output_component;
+    concept_sound_output_component;
+    concept_text_output_component;
+    concept_headline;
+    concept_paragraph;
+    concept_message;
+    concept_separator;
+    concept_blank_space;
+    concept_tool_bar;
+    concept_tab_bar;
+    concept_command_selection_component;
+    concept_command_input_component;
+    concept_selectable_data_representation;
+    concept_data_input_component_with_direct_feedback;
+    concept_data_input_component_without_direct_feedback;
+    concept_check_box;
+    concept_radio_button;
+    concept_spin_button;
+    concept_toogle_button;
     concept_non_atomic_user_interface_component;
     concept_atomic_user_interface_component;
     concept_visual_part_of_user_interface;
     concept_decorative_user_interface_component;
     concept_menu;
+    concept_menu_bar;
     concept_menu_item;
     concept_button;
     concept_data_input_component;
-    concept_data_output_component;
     concept_window;
+    concept_non_modal_window;
+    concept_modal_window;
     concept_header;
     concept_footer;
     concept_main_part;;
@@ -75,9 +116,6 @@ rrel_key_sc_element -> (section_subject_domain_ostis_system_interfaces -> subjec
     => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_data_input_component)
 (*
     <- rrel_key_sc_element;;
-    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_data_output_component)
-(*
-    <- rrel_key_sc_element;;
     => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_window)
 (*
     <- rrel_key_sc_element;;
@@ -90,4 +128,130 @@ rrel_key_sc_element -> (section_subject_domain_ostis_system_interfaces -> subjec
     => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_main_part)
 (*
     <- rrel_key_sc_element;;
-*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_command_user_interface)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_graphical_user_interface)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_silk_interface)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_wimp_interface)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_natural_language_interface)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_speech_interface)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_ostis_system_user_interface)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_presentation_user_interface_component)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_interactive_user_interface_component)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_output_component)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_container)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_presentation_manipulation_component)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_operation_trigger_component)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_image_output_component)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_graphical_output_component)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_video_output_component)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_sound_output_component)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_text_output_component)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_chart)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_progress_bar)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_headline)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_paragraph)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_message)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_separator)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_blank_space)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_menu_bar)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_tool_bar)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_tab_bar)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_non_modal_window)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_modal_window)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_command_input_component)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_command_selection_component)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_data_input_component_with_direct_feedback)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_data_input_component_without_direct_feedback)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_selectable_data_representation)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_check_box)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_radio_button)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_toggle_button)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> concept_spin_button)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> nrel_copyright_text)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> nrel_system_name)
+(*
+    <- rrel_key_sc_element;;
+    => nrel_key_sc_element_order: (subject_domain_ostis_system_interfaces -> nrel_menu_button_text)
+(*
+    <- rrel_key_sc_element;;
+*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;*);;

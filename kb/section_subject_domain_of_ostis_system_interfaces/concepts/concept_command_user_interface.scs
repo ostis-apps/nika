@@ -1,0 +1,36 @@
+concept_command_user_interface
+<- sc_node_class;
+=> nrel_main_idtf:
+	[командный пользовательский интерфейс]
+	(* <- lang_ru;; *);
+	[command user interface]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (командный пользовательский интерфейс)]
+        (* <- lang_ru;; *);
+        [Def. (command user interface)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Командный пользовательский интерфейс - пользовательский интерфейс, при котором обмен информацией между компьютерной системой и пользователем осуществляется путем написания текстовых инструкций или команд.]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [The command user interface is a user interface in which information is exchanged between a computer system and a user by writing text instructions or commands.]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                computer_system;
+                concept_user_interface
+            };;
+	*);;
+
