@@ -34,15 +34,6 @@ sc_result DialogControlModule::InitializeImpl()
     SC_AGENT_REGISTER(StandardMessageReplyAgent);
   }
 
-  if (ActionUtils::isActionDeactivated(&ctx, MessageKeynodes::action_add_message_to_the_dialog))
-  {
-    SC_LOG_DEBUG("action_add_message_to_the_dialog is deactivated");
-  }
-  else
-  {
-    SC_AGENT_REGISTER(AddMessageToTheDialogAgent);
-  }
-
   return SC_RESULT_OK;
 }
 
@@ -50,7 +41,6 @@ sc_result DialogControlModule::ShutdownImpl()
 {
   SC_AGENT_UNREGISTER(PhraseGenerationAgent);
   SC_AGENT_UNREGISTER(StandardMessageReplyAgent);
-  SC_AGENT_UNREGISTER(AddMessageToTheDialogAgent);
 
   return SC_RESULT_OK;
 }

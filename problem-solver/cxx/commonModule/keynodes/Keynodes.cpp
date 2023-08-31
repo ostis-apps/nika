@@ -11,7 +11,6 @@ ScAddr Keynodes::nrel_decomposition_of_action;
 ScAddr Keynodes::nrel_then;
 ScAddr Keynodes::nrel_else;
 ScAddr Keynodes::nrel_goto;
-ScAddr Keynodes::rrel_last;
 ScAddr Keynodes::file;
 ScAddr Keynodes::power_of_set;
 ScAddr Keynodes::nrel_measurement;

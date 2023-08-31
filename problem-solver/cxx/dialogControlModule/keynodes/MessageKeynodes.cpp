@@ -6,7 +6,6 @@ namespace dialogControlModule
 {
 ScAddr MessageKeynodes::action_phrase_generation;
 ScAddr MessageKeynodes::action_standard_message_reply;
-ScAddr MessageKeynodes::action_add_message_to_the_dialog;
 ScAddr MessageKeynodes::concept_answer_on_standard_message_rule;
 ScAddr MessageKeynodes::concept_answer_on_standard_message_rule_class_by_priority;
 ScAddr MessageKeynodes::concept_atomic_message;

@@ -21,6 +21,8 @@ private:
 
   ScAddr generateMessage(ScAddr const & authorAddr, ScAddr const & linkAddr);
 
+  ScAddr generateNonAtomicActionArgsSet(ScAddr const & messageAddr);
+
   ScAddr generateAnswer(ScAddr const & messageAddr);
 
   bool linkIsValid(ScAddr const & linkAddr);
