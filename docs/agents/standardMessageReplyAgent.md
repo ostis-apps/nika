@@ -1,3 +1,5 @@
+# Standard message reply agent
+
 Is an agent that generates a reply message based on existing rules in the knowledge base.
 The agent uses phrase generation and direct inference agents.
 
@@ -54,7 +56,7 @@ Then it calls the PhraseGenerationAgent to generate a sc-link with the reply mes
 ### Result
 
 Possible result codes:
- 
+
 * `SC_RESULT_OK` - the reply message is generated.
 * `SC_RESULT_ERROR` - internal error.
 * `SC_RESULT_ERROR_invalid_params` - the action has no incoming message.
