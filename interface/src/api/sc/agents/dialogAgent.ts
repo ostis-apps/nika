@@ -2,29 +2,36 @@ import { ScAddr, ScTemplate, ScType } from 'ts-sc-client';
 import { client } from '@api/sc/client';
 
 const conceptDialog = 'concept_dialogue';
-const rrelDialogParticipant = 'rrel_dialog_participant';
+const nrelDialogParticipant = 'nrel_dialog_participants';
 
 const baseKeynodes = [
     { id: conceptDialog, type: ScType.NodeConstClass },
-    { id: rrelDialogParticipant, type: ScType.NodeConstRole },
+    { id: nrelDialogParticipant, type: ScType.NodeConstNoRole },
 ];
 
 const findDialogNode = async (user: ScAddr) => {
     const keynodes = await client.resolveKeynodes(baseKeynodes);
 
     const dialog = '_dialog';
+    const tuple = '_tuple';
+
     const template = new ScTemplate();
     template.triple(
         keynodes[conceptDialog],
         ScType.EdgeAccessVarPosPerm,
         [ScType.NodeVar, dialog],
     );
-    template.tripleWithRelation(
-        dialog,
+    template.triple(
+        [ScType.NodeVarTuple, tuple],
         ScType.EdgeAccessVarPosPerm,
         user,
+    );
+    template.tripleWithRelation(
+        tuple,
+        ScType.EdgeDCommonVar,
+        dialog,
         ScType.EdgeAccessVarPosPerm,
-        keynodes[rrelDialogParticipant],
+        keynodes[nrelDialogParticipant],
     );
     const resultDialogNode = await client.templateSearch(template);
 
