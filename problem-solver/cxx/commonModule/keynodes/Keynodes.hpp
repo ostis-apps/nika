@@ -34,9 +34,6 @@ public:
   SC_PROPERTY(Keynode("nrel_goto"), ForceCreate)
   static ScAddr nrel_goto;
 
-  SC_PROPERTY(Keynode("rrel_last"), ForceCreate)
-  static ScAddr rrel_last;
-
   SC_PROPERTY(Keynode("file"), ForceCreate)
   static ScAddr file;
 
