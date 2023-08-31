@@ -30,6 +30,9 @@ jobs:
       - name: Run cpp tests
         run: |
           ./scripts/run_cpp_tests.sh
+      - name: Run Python tests
+        run: |
+          ./scripts/run_py_tests.sh
       - name: Build knowledge base
         run: |
           ./scripts/build_kb.sh
