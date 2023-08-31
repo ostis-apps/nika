@@ -1,6 +1,6 @@
 services:
   web:
-    image: ostis/sc-web:0.7.0-Rebirth
+    image: ostis/sc-web:prerelease-0.8.0
     build:
       context: ./sc-web
       dockerfile: ./Dockerfile
@@ -54,7 +54,7 @@ services:
       - "serve"
 
   nika-ui:
-    image: ostis/nika-ui:0.1.0
+    image: ostis/nika-ui:latest
     build:
       context: ./interface
       dockerfile: ./Dockerfile
