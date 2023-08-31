@@ -1,3 +1,5 @@
+# Message topic classification agent
+
 This is an agent that performs the message classification by topic (greeting, about lab work condition, about entity etc.).
 Also, the agent classifies message by trait (neutral, positive, negative emotional coloring) and gets message entities.
 The agent classifies a message using Wit.ai.

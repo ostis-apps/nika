@@ -1,3 +1,5 @@
+# Message classification agent
+
 This is an agent that performs the message classification using [logic rules](../subsystems/scl-machine.md).
 
 **Action class:**

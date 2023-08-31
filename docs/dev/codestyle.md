@@ -74,12 +74,16 @@ for (ScAddr const & addr : listOfAddr)
 Most of our coding style is specified in a configuration file for [ClangFormat](http://clang.llvm.org/docs/ClangFormat.html).
 To automatically format a file, install `clang-format` and run:
 
-    clang-format -i file.cpp file.hpp other_file.cpp
+```sh
+clang-format -i file.cpp file.hpp other_file.cpp
+```
 
-To automatically format all C/C++ files, run: 
+To automatically format all C/C++ files, run:
 
-    ./scripts/clang/format_code.sh
-    
+```sh
+./scripts/clang/format_code.sh
+```
+
 ## Formatting Example/Guide/Reference
 
 ```cpp
@@ -290,11 +294,12 @@ SC_CHECK_LESS_EQ(a, b, ()); // equal to SC_CHECK(a <= b, ());
 ```
 
 ### Logging
-  * `SC_LOG_DEBUG(msg)` - print message in Debug builds. Prefix: `[Debug]`
-  * `SC_LOG_INFO(msg)`
-  * `SC_LOG_WARNING(msg)`
-  * `SC_LOG_ERROR(msg)`
-  * `SC_LOG_INFO_COLOR(msg, color)` - print colored info message. Look color constants in `ScConsole::Color`
+
+- `SC_LOG_DEBUG(msg)` - print message in Debug builds. Prefix: `[Debug]`
+- `SC_LOG_INFO(msg)`
+- `SC_LOG_WARNING(msg)`
+- `SC_LOG_ERROR(msg)`
+- `SC_LOG_INFO_COLOR(msg, color)` - print colored info message. Look color constants in `ScConsole::Color`
 
 ### Declare your own exceptions
 
@@ -302,18 +307,20 @@ SC_CHECK_LESS_EQ(a, b, ()); // equal to SC_CHECK(a <= b, ());
 class MyException final : public ScException
 {
 public:
-	explicit MyException(std::string const & msg) : ScException("My: " + msg) {}
+ explicit MyException(std::string const & msg) : ScException("My: " + msg) {}
 };
 ```
 
 ### Throw exceptions
 
 Throw exceptions with `SC_THROW_EXCEPTION(exceptionName, message)`:
+
 ```cpp
 SC_THROW_EXCEPTION(MyException, "my message")
 ```
 
 ### Exception for a non implemented parts of code
+
 ```cpp
 SC_NOT_IMPLEMENTED("message")
 ```
