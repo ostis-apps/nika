@@ -30,6 +30,9 @@ jobs:
       - name: Run cpp tests
         run: |
           ./scripts/run_cpp_tests.sh
+      - name: Install deps for Python tests
+        run: |
+          ./scripts/install_py_sc_server_deps.sh
       - name: Run Python tests
         run: |
           ./scripts/run_py_tests.sh
