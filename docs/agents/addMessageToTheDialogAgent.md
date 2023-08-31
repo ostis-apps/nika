@@ -1,4 +1,4 @@
-Is an agent that adds message to the dialog,.
+Is an agent that adds message to the dialog.
 
 **Action class:**
 
@@ -12,7 +12,7 @@ Is an agent that adds message to the dialog,.
 **Workflow:**
 
 * The message node received by the agent is added to the message sequence in the dialog history. 
-* If the dialog history is empty, then a relation `rrel_1` will be added to the first added message. The last message always has a relation `rrel_last` . There is a relation `nrel_message_sequence` between messages that defines the sequence of messages in the dialog. 
+* If the dialog history is empty, then a relation `rrel_1` will be added to the first added message. The last message always has a relation `rrel_last`. There is a relation `nrel_message_sequence` between messages that defines the sequence of messages in the dialog. 
 
 ### Example
 
