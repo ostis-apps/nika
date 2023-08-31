@@ -19,10 +19,7 @@ const About = loadingComponent(lazy(() => import('@pages/About')));
 
 const DemoRoutes = () => (
     <>
-        <Route path={routes.MAIN}>
-            <Demo />
-        </Route>
-        <Redirect to={routes.MAIN} />
+        <Route exact path={routes.MAIN} component={Demo} />
     </>
 );
 
