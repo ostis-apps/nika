@@ -1,0 +1,14 @@
+test_message
+<- concept_message;
+<- concept_message_about_weather;
+-> rrel_entity: Brest;
+-> rrel_entity: unknown_country;;
+
+concept_country -> unknown_country;;
+
+Brest
+<- concept_city;
+=> nrel_main_idtf:
+	[Брест];
+=> nrel_idtf:
+	[Бресте];;

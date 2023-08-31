@@ -1,0 +1,10 @@
+show_weather_answer_phrase
+<- sc_node_class;
+=> nrel_main_idtf:
+    [ответ на вопрос о погоде];;
+
+[Я не знаю такого города]
+<- sc_link;
+<- lang_ru;
+=> nrel_system_identifier:
+    [unknown_city_for_weather_agent_message_text];;
