@@ -25,4 +25,4 @@ jobs:
 
       - name: Run Docker Compose
         run: |
-          docker compose run -d --wait
+          docker compose up -d --wait
