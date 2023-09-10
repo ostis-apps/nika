@@ -43,7 +43,7 @@ docker compose pull
 ## 🚀 Usage
 - Launch
   ```sh
-  docker compose up --no-build
+  docker compose up
   ```
     This command will launch 2 Web UIs on your machine: 
   - sc-web - `localhost:8000`
