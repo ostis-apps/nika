@@ -86,3 +86,32 @@ jobs:
           platforms: linux/amd64,linux/arm64
           cache-from: type=registry,ref=ostis/nika-ui:buildcache
           cache-to: type=registry,ref=ostis/nika-ui:buildcache,mode=max
+
+  py_agents_docker:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          file: ./problem-solver/py/Dockerfile
+          push: true
+          tags: ostis/nika-py-agents:latest,ostis/nika-py-agents:${{ github.ref_name }}
+          platforms: linux/amd64,linux/arm64
+          cache-from: type=registry,ref=ostis/nika-py-agents:buildcache
+          cache-to: type=registry,ref=ostis/nika-py-agents:buildcache,mode=max
