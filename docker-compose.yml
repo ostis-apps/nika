@@ -71,6 +71,7 @@ services:
       - web
 
   py-sc-server:
+    image: ostis/nika-py-agents:0.1.0
     build:
       context: ./
       dockerfile: ./problem-solver/py/Dockerfile
