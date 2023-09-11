@@ -27,7 +27,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./kb:/nika/kb
-      - kb-binary:/kb.bin
+      - kb-binary:/nika/kb.bin
       - ./repo.path:/nika/repo.path
       - ./nika.ini:/nika/nika.ini
     networks:
