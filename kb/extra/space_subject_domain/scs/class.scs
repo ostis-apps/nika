@@ -10,16 +10,16 @@ concept_astronomical_body
 	concept_meteoroid;
 	concept_jet;
 => nrel_main_idtf:
-	[Астрономическое тело] (* <- lang_ru;; *);
+	[астрономическое тело] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Astronomical body] (* <- lang_en;; *);
+	[astronomical body] (* <- lang_en;; *);
 => nrel_note:
-	[Максимальный класс предметной области] (* <- lang_ru;; *);
+	[максимальный класс предметной области] (* <- lang_ru;; *);
 <- rrel_key_sc_element:
    ...
    (*
       => nrel_main_idtf:
-          [Опр. (Астрономическое тело)]
+          [Опр. (астрономическое тело)]
           (* <- lang_ru;; *);;
       <- definition;;
       <= nrel_sc_text_translation:
@@ -39,14 +39,14 @@ concept_star
 	concept_hypernova;
 	concept_neutron_star;
 => nrel_main_idtf:
-	[Звезда] (* <- lang_ru;; *);
+	[звезда] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Star] (* <- lang_en;; *);
+	[star] (* <- lang_en;; *);
 <- rrel_key_sc_element:
 	...
 	(*
 		=> nrel_main_idtf:
-			[Опр. (Звезда)]
+			[Опр. (звезда)]
 			(* <- lang_ru;; *);;
 		<- definition;;
 		<= nrel_sc_text_translation:
@@ -65,14 +65,14 @@ concept_planet
 	concept_solid_planet;
 	concept_gas_giant;
 => nrel_main_idtf:
-	[Планета] (* <- lang_ru;; *);
+	[планета] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Planet] (* <- lang_en;; *);
+	[planet] (* <- lang_en;; *);
 <- rrel_key_sc_element:
 	...
 	(*
 		=> nrel_main_idtf:
-			[Опр. (Планета)]
+			[Опр. (планета)]
 			(* <- lang_ru;; *);;
 		<- definition;;
 		<= nrel_sc_text_translation:
@@ -88,14 +88,14 @@ concept_planet
 concept_galaxy
 <- sc_node_class;
 => nrel_main_idtf:
-	[Галактика] (* <- lang_ru;; *);
+	[галактика] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Galaxy] (* <- lang_en;; *);
+	[galaxy] (* <- lang_en;; *);
 <- rrel_key_sc_element:
 	...
 	(*
 		=> nrel_main_idtf:
-			[Опр. (Галактика)]
+			[Опр. (галактика)]
 			(* <- lang_ru;; *);;
 		<- definition;;
 		<= nrel_sc_text_translation:
@@ -113,14 +113,14 @@ concept_anomaly
 => nrel_inclusion:
 	concept_quasar;
 => nrel_main_idtf:
-	[Космическая аномалия] (* <- lang_ru;; *);
+	[космическая аномалия] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Space anomaly] (* <- lang_en;; *);
+	[space anomaly] (* <- lang_en;; *);
 <- rrel_key_sc_element:
 	...
 	(*
 		=> nrel_main_idtf:
-			[Опр. (Космическая аномалия)]
+			[Опр. (космическая аномалия)]
 			(* <- lang_ru;; *);;
 		<- definition;;
 		<= nrel_sc_text_translation:
@@ -136,14 +136,14 @@ concept_anomaly
 concept_quasar
 <- sc_node_class;
 => nrel_main_idtf:
-	[Квазар] (* <- lang_ru;; *);
+	[квазар] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Quasar] (* <- lang_en;; *);
+	[quasar] (* <- lang_en;; *);
 <- rrel_key_sc_element:
 	...
 	(*
 		=> nrel_main_idtf:
-			[Опр. (Квазар)]
+			[Опр. (квазар)]
 			(* <- lang_ru;; *);;
 		<- definition;;
 		<= nrel_sc_text_translation:
@@ -159,14 +159,14 @@ concept_quasar
 concept_jet
 <- sc_node_class;
 => nrel_main_idtf:
-	[Джет] (* <- lang_ru;; *);
+	[джет] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Jet] (* <- lang_en;; *);
+	[jet] (* <- lang_en;; *);
 <- rrel_key_sc_element:
 	...
 	(*
 		=> nrel_main_idtf:
-			[Опр. (Джет)]
+			[Опр. (джет)]
 			(* <- lang_ru;; *);;
 		<- definition;;
 		<= nrel_sc_text_translation:
@@ -185,14 +185,14 @@ concept_interstellar_medium
 	concept_nebula;
 	concept_void;
 => nrel_main_idtf:
-	[Межзвёздная среда] (* <- lang_ru;; *);
+	[межзвёздная среда] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Interstellar medium] (* <- lang_en;; *);
+	[interstellar medium] (* <- lang_en;; *);
 <- rrel_key_sc_element:
 	...
 	(*
 		=> nrel_main_idtf:
-			[Опр. (Межзвёздная среда)]
+			[Опр. (межзвёздная среда)]
 			(* <- lang_ru;; *);;
 		<- definition;;
 		<= nrel_sc_text_translation:
@@ -208,14 +208,14 @@ concept_interstellar_medium
 concept_nebula
 <- sc_node_class;
 => nrel_main_idtf:
-	[Туманность] (* <- lang_ru;; *);
+	[туманность] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Nebula] (* <- lang_en;; *);
+	[nebula] (* <- lang_en;; *);
 <- rrel_key_sc_element:
 	...
 	(*
 		=> nrel_main_idtf:
-			[Опр. (Туманность)]
+			[Опр. (туманность)]
 			(* <- lang_ru;; *);;
 		<- definition;;
 		<= nrel_sc_text_translation:
@@ -231,14 +231,14 @@ concept_nebula
 concept_void
 <- sc_node_class;
 => nrel_main_idtf:
-	[Войд] (* <- lang_ru;; *);
+	[войд] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Void] (* <- lang_en;; *);
+	[void] (* <- lang_en;; *);
 <- rrel_key_sc_element:
 	...
 	(*
 		=> nrel_main_idtf:
-			[Опр. (Войд)]
+			[Опр. (войд)]
 			(* <- lang_ru;; *);;
 		<- definition;;
 		<= nrel_sc_text_translation:
@@ -254,14 +254,14 @@ concept_void
 concept_black_hole
 <- sc_node_class;
 => nrel_main_idtf:
-	[Чёрная дыра] (* <- lang_ru;; *);
+	[чёрная дыра] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Black hole] (* <- lang_en;; *);
+	[black hole] (* <- lang_en;; *);
 <- rrel_key_sc_element:
 	...
 	(*
 		=> nrel_main_idtf:
-			[Опр. (Чёрная дыра)]
+			[Опр. (чёрная дыра)]
 			(* <- lang_ru;; *);;
 		<- definition;;
 		<= nrel_sc_text_translation:
@@ -281,14 +281,14 @@ concept_star_system
 	concept_star;
 	concept_planet;
 => nrel_main_idtf:
-	[Звёздная система] (* <- lang_ru;; *);
+	[звёздная система] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Star system] (* <- lang_en;; *);
+	[star system] (* <- lang_en;; *);
 <- rrel_key_sc_element:
 	...
 	(*
 		=> nrel_main_idtf:
-			[Опр. (Звёздная система)]
+			[Опр. (звёздная система)]
 			(* <- lang_ru;; *);;
 		<- definition;;
 		<= nrel_sc_text_translation:
@@ -306,14 +306,14 @@ concept_meteoroid
 => nrel_inclusion:
 	concept_comet;
 => nrel_main_idtf:
-	[Метеороид] (* <- lang_ru;; *);
+	[метеороид] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Meteoroid] (* <- lang_en;; *);
+	[meteoroid] (* <- lang_en;; *);
 <- rrel_key_sc_element:
 	...
 	(*
 		=> nrel_main_idtf:
-			[Опр. (Метеороид)]
+			[Опр. (метеороид)]
 			(* <- lang_ru;; *);;
 		<- definition;;
 		<= nrel_sc_text_translation:
@@ -329,14 +329,14 @@ concept_meteoroid
 concept_comet
 <- sc_node_class;
 => nrel_main_idtf:
-	[Комета] (* <- lang_ru;; *);
+	[комета] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Comet] (* <- lang_en;; *);
+	[comet] (* <- lang_en;; *);
 <- rrel_key_sc_element:
 	...
 	(*
 		=> nrel_main_idtf:
-			[Опр. (Комета)]
+			[Опр. (комета)]
 			(* <- lang_ru;; *);;
 		<- definition;;
 		<= nrel_sc_text_translation:
@@ -352,14 +352,14 @@ concept_comet
 concept_supernova
 <- sc_node_class;
 => nrel_main_idtf:
-	[Сверхновая] (* <- lang_ru;; *);
+	[сверхновая] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Supernova] (* <- lang_en;; *);
+	[supernova] (* <- lang_en;; *);
 <- rrel_key_sc_element:
 	...
 	(*
 		=> nrel_main_idtf:
-			[Опр. (Сверхновая)]
+			[Опр. (сверхновая)]
 			(* <- lang_ru;; *);;
 		<- definition;;
 		<= nrel_sc_text_translation:
@@ -375,14 +375,14 @@ concept_supernova
 concept_hypernova
 <- sc_node_class;
 => nrel_main_idtf:
-	[Гиперновая] (* <- lang_ru;; *);
+	[гиперновая] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Hypernova] (* <- lang_en;; *);
+	[hypernova] (* <- lang_en;; *);
 <- rrel_key_sc_element:
 	...
 	(*
 		=> nrel_main_idtf:
-			[Опр. (Гиперновая)]
+			[Опр. (гиперновая)]
 			(* <- lang_ru;; *);;
 		<- definition;;
 		<= nrel_sc_text_translation:
@@ -398,14 +398,14 @@ concept_hypernova
 concept_neutron_star
 <- sc_node_class;
 => nrel_main_idtf:
-	[Нейтронная звезда] (* <- lang_ru;; *);
+	[нейтронная звезда] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Neutron star] (* <- lang_en;; *);
+	[neutron star] (* <- lang_en;; *);
 <- rrel_key_sc_element:
 	...
 	(*
 		=> nrel_main_idtf:
-			[Опр. (Нейтронная звезда)]
+			[Опр. (нейтронная звезда)]
 			(* <- lang_ru;; *);;
 		<- definition;;
 		<= nrel_sc_text_translation:
@@ -421,14 +421,14 @@ concept_neutron_star
 concept_exosolar_system
 <- sc_node_class;
 => nrel_main_idtf:
-	[Экзосолнечная система] (* <- lang_ru;; *);
+	[экзосолнечная система] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Exosolar system] (* <- lang_en;; *);
+	[exosolar system] (* <- lang_en;; *);
 <- rrel_key_sc_element:
 	...
 	(*
 		=> nrel_main_idtf:
-			[Опр. (Экзосолнечная система)]
+			[Опр. (экзосолнечная система)]
 			(* <- lang_ru;; *);;
 		<- definition;;
 		<= nrel_sc_text_translation:
@@ -444,14 +444,14 @@ concept_exosolar_system
 concept_solid_planet
 <- sc_node_class;
 => nrel_main_idtf:
-	[Твёрдая планета] (* <- lang_ru;; *);
+	[твёрдая планета] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Solid planet] (* <- lang_en;; *);
+	[solid planet] (* <- lang_en;; *);
 <- rrel_key_sc_element:
 	...
 	(*
 		=> nrel_main_idtf:
-			[Опр. (Твёрдая планета)]
+			[Опр. (твёрдая планета)]
 			(* <- lang_ru;; *);;
 		<- definition;;
 		<= nrel_sc_text_translation:
@@ -467,14 +467,14 @@ concept_solid_planet
 concept_gas_giant
 <- sc_node_class;
 => nrel_main_idtf:
-	[Газовый гигант] (* <- lang_ru;; *);
+	[газовый гигант] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Gas giant] (* <- lang_en;; *);
+	[gas giant] (* <- lang_en;; *);
 <- rrel_key_sc_element:
 	...
 	(*
 		=> nrel_main_idtf:
-			[Опр. (Газовый гигант)]
+			[Опр. (газовый гигант)]
 			(* <- lang_ru;; *);;
 		<- definition;;
 		<= nrel_sc_text_translation:
@@ -490,14 +490,14 @@ concept_gas_giant
 concept_constellation
 <- sc_node_class;
 => nrel_main_idtf:
-	[Созвездие] (* <- lang_ru;; *);
+	[созвездие] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Constellation] (* <- lang_en;; *);
+	[constellation] (* <- lang_en;; *);
 <- rrel_key_sc_element:
    ...
    (*
       => nrel_main_idtf:
-          [Опр. (Созвездие)]
+          [Опр. (созвездие)]
           (* <- lang_ru;; *);;
       <- definition;;
       <= nrel_sc_text_translation:

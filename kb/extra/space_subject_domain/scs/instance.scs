@@ -1,5 +1,6 @@
 sun
 <- concept_star;
+<- concept_astronomical_body;
 => nrel_is_in: solar_system;
 => nrel_is_seen_from: earth;
 => nrel_main_idtf:
@@ -11,6 +12,8 @@ sun
 
 earth
 <- concept_planet;
+<- concept_solid_planet;
+<- concept_astronomical_body;
 => nrel_is_in: solar_system;
 => nrel_orbits: sun;
 => nrel_meteorite: hoba_meteorite;
@@ -24,6 +27,7 @@ earth
 
 solar_system
 <- concept_star_system;
+<- concept_astronomical_body;
 => nrel_is_in: milky_way;
 -> rrel_planet: 
 			earth; 
@@ -39,6 +43,7 @@ solar_system
 
 milky_way
 <- concept_galaxy;
+<- concept_astronomical_body;
 => nrel_main_idtf:
 	[Млечный путь] (* <- lang_ru;; *);
 => nrel_main_idtf:
@@ -48,6 +53,7 @@ milky_way
 
 comet_encke
 <- concept_comet;
+<- concept_astronomical_body;
 => nrel_is_seen_from: earth;
 => nrel_main_idtf:
 	[Комета Энке] (* <- lang_ru;; *);
@@ -58,6 +64,7 @@ comet_encke
 
 hoba_meteorite
 <- concept_meteoroid;
+<- concept_astronomical_body;
 => nrel_main_idtf:
 	[Метеорит Гоба] (* <- lang_ru;; *);
 => nrel_main_idtf:
@@ -67,6 +74,7 @@ hoba_meteorite
 
 us19720810 
 <- concept_meteoroid;
+<- concept_astronomical_body;
 => nrel_main_idtf:
 	[Астероид US19720810] (* <- lang_ru;; *);
 => nrel_main_idtf:
@@ -77,6 +85,7 @@ us19720810
 
 alpha_centauri_system
 <- concept_exosolar_system;
+<- concept_astronomical_body;
 => nrel_main_idtf:
 	[Звёздная система Альфа Центавры] (* <- lang_ru;; *);
 => nrel_main_idtf:
@@ -86,6 +95,8 @@ alpha_centauri_system
 
 jupiter
 <- concept_gas_giant;
+<- concept_planet;
+<- concept_astronomical_body;
 => nrel_is_in: solar_system;
 => nrel_main_idtf:
 	[Юпитер] (* <- lang_ru;; *);
@@ -96,6 +107,8 @@ jupiter
 
 mars
 <- concept_solid_planet;
+<- concept_planet;
+<- concept_astronomical_body;
 => nrel_is_in: solar_system;
 => nrel_is_seen_from: earth;
 => nrel_satellite: deimos;
@@ -108,6 +121,7 @@ mars
 
 deimos
 <- concept_meteoroid;
+<- concept_astronomical_body;
 => nrel_is_in: solar_system;
 => nrel_is_seen_from: mars;
 => nrel_orbits: mars;
@@ -121,15 +135,18 @@ deimos
 
 saggitarius_a_asterisk
 <- concept_black_hole;
+<- concept_astronomical_body;
 => nrel_main_idtf:
-	[Стрелец А* ] (* <- lang_ru;; *);
+	[Стрелец А со звёздочкой ] (* <- lang_ru;; *);
 => nrel_main_idtf:
-	[Saggitarius A* ] (* <- lang_en;; *);
+	[Saggitarius A with an asterisk ] (* <- lang_en;; *);
 => nrel_note:
-	[Стрелец А* - сверхмассивная чёрная дыра, находящаяся в центре Млечного Пути; входит в состав радиоисточника Стрелец А.] (* <- lang_ru;; *);;
+	[Стрелец А со звёздочкой - сверхмассивная чёрная дыра, находящаяся в центре Млечного Пути; входит в состав радиоисточника Стрелец А.] (* <- lang_ru;; *);;
 
 sn_1572
 <- concept_supernova;
+<- concept_star;
+<- concept_astronomical_body;
 => nrel_main_idtf:
 	[SN 1572] (* <- lang_ru;; *);
 => nrel_main_idtf:
@@ -139,6 +156,8 @@ sn_1572
 
 sn_2006gy
 <- concept_hypernova;
+<- concept_star;
+<- concept_astronomical_body;
 => nrel_main_idtf:
 	[SN 2006gy] (* <- lang_ru;; *);
 => nrel_main_idtf:
@@ -148,6 +167,8 @@ sn_2006gy
 
 vela_x_1
 <- concept_neutron_star;
+<- concept_star;
+<- concept_astronomical_body;
 => nrel_main_idtf:
 	[Пульсар Паруса X-1] (* <- lang_ru;; *);
 => nrel_main_idtf:
@@ -157,6 +178,8 @@ vela_x_1
 
 twin_qso
 <- concept_quasar;
+<- concept_anomaly;
+<- concept_astronomical_body;
 => nrel_main_idtf:
 	[Двойной квазар Q0957+561] (* <- lang_ru;; *);
 => nrel_main_idtf:
@@ -166,6 +189,8 @@ twin_qso
 
 3c_273_quasar
 <- concept_quasar;
+<- concept_anomaly;
+<- concept_astronomical_body;
 => nrel_produces: 3c_273_jet;
 => nrel_main_idtf:
 	[3C 273] (* <- lang_ru;; *);
@@ -176,6 +201,7 @@ twin_qso
 
 3c_273_jet
 <- concept_jet;
+<- concept_astronomical_body;
 => nrel_main_idtf:
 	[Джет 3C 273] (* <- lang_ru;; *);
 => nrel_main_idtf:
@@ -185,6 +211,8 @@ twin_qso
 
 bootes_void
 <- concept_void;
+<- concept_interstellar_medium;
+<- concept_astronomical_body;
 => nrel_main_idtf:
 	[Войд Волопаса] (* <- lang_ru;; *);
 => nrel_main_idtf:
@@ -194,6 +222,7 @@ bootes_void
 
 dark_matter
 <- concept_anomaly;
+<- concept_astronomical_body;
 => nrel_main_idtf:
 	[Тёмная материя] (* <- lang_ru;; *);
 => nrel_main_idtf:
@@ -203,6 +232,7 @@ dark_matter
 
 southern_coalsack
 <- concept_interstellar_medium;
+<- concept_astronomical_body;
 => nrel_main_idtf:
 	[Южный Угольный Мешок] (* <- lang_ru;; *);
 => nrel_main_idtf:
@@ -212,6 +242,8 @@ southern_coalsack
 
 orion_nebula
 <- concept_nebula;
+<- concept_interstellar_medium;
+<- concept_astronomical_body;
 => nrel_is_seen_from: earth;
 => nrel_main_idtf:
 	[Туманность Ориона] (* <- lang_ru;; *);
