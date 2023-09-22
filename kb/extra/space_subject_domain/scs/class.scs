@@ -1,0 +1,510 @@
+// 1
+concept_astronomical_body
+<- sc_node_class;
+=> nrel_inclusion:
+	concept_galaxy;
+	concept_interstellar_medium;
+	concept_anomaly;
+	concept_black_hole;
+	concept_star_system;
+	concept_meteoroid;
+	concept_jet;
+=> nrel_main_idtf:
+	[Астрономическое тело] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Astronomical body] (* <- lang_en;; *);
+=> nrel_note:
+	[Максимальный класс предметной области] (* <- lang_ru;; *);
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Астрономическое тело)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Астрономическое тело - это любой объект в космосе, который изучается в рамках предметной области космоса.]
+               (* <- lang_ru;; *);;
+           *);;
+  *);;
+
+// 2
+concept_star
+<- sc_node_class;
+=> nrel_inclusion:
+	concept_supernova;
+	concept_hypernova;
+	concept_neutron_star;
+=> nrel_main_idtf:
+	[Звезда] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Star] (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+		=> nrel_main_idtf:
+			[Опр. (Звезда)]
+			(* <- lang_ru;; *);;
+		<- definition;;
+		<= nrel_sc_text_translation:
+			...
+			(*
+				-> rrel_example:
+				[Звезда - это светящийся астрономический объект, который излучает свет и тепло благодаря ядерным реакциям, происходящим в её глубоких слоях.]
+				(* <- lang_ru;; *);;
+			*);;
+	*);;
+
+// 3
+concept_planet
+<- sc_node_class;
+=> nrel_inclusion:
+	concept_solid_planet;
+	concept_gas_giant;
+=> nrel_main_idtf:
+	[Планета] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Planet] (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+		=> nrel_main_idtf:
+			[Опр. (Планета)]
+			(* <- lang_ru;; *);;
+		<- definition;;
+		<= nrel_sc_text_translation:
+			...
+			(*
+				-> rrel_example:
+				[Планета - это астрономическое тело, двигающееся по орбите вокруг звезды и имеет достаточную массу, чтобы сохранять сферическую форму.]
+				(* <- lang_ru;; *);;
+			*);;
+	*);;
+
+// 4
+concept_galaxy
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Галактика] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Galaxy] (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+		=> nrel_main_idtf:
+			[Опр. (Галактика)]
+			(* <- lang_ru;; *);;
+		<- definition;;
+		<= nrel_sc_text_translation:
+			...
+			(*
+				-> rrel_example:
+				[Галактика - это огромное скопление звёзд, межзвёздного газа, планет и других космических объектов, связанных гравитацией и движущихся вместе как одна система.]
+				(* <- lang_ru;; *);;
+			*);;
+	*);;
+
+// 5
+concept_anomaly
+<- sc_node_class;
+=> nrel_inclusion:
+	concept_quasar;
+=> nrel_main_idtf:
+	[Космическая аномалия] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Space anomaly] (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+		=> nrel_main_idtf:
+			[Опр. (Космическая аномалия)]
+			(* <- lang_ru;; *);;
+		<- definition;;
+		<= nrel_sc_text_translation:
+			...
+			(*
+				-> rrel_example:
+				[Космическая аномалия - неожиданное, необъяснимое, или непредсказуемое явление, происходящее в космосе или связанное с космическими исследованиями.]
+				(* <- lang_ru;; *);;
+			*);;
+	*);;
+
+// 6
+concept_quasar
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Квазар] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Quasar] (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+		=> nrel_main_idtf:
+			[Опр. (Квазар)]
+			(* <- lang_ru;; *);;
+		<- definition;;
+		<= nrel_sc_text_translation:
+			...
+			(*
+				-> rrel_example:
+				[Квазар - космическая аномалия, класс астрономических объектов, являющихся одними из самых ярких в видимой Вселенной.]
+				(* <- lang_ru;; *);;
+			*);;
+	*);;
+
+// 7
+concept_jet
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Джет] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Jet] (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+		=> nrel_main_idtf:
+			[Опр. (Джет)]
+			(* <- lang_ru;; *);;
+		<- definition;;
+		<= nrel_sc_text_translation:
+			...
+			(*
+				-> rrel_example:
+				[Джет - выбросы газа и плазмы из центров астрономических объектов, таких как квазары, наблюдаемые вдоль оси их вращения.]
+				(* <- lang_ru;; *);;
+			*);;
+	*);;
+
+// 8
+concept_interstellar_medium
+<- sc_node_class;
+=> nrel_inclusion:
+	concept_nebula;
+	concept_void;
+=> nrel_main_idtf:
+	[Межзвёздная среда] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Interstellar medium] (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+		=> nrel_main_idtf:
+			[Опр. (Межзвёздная среда)]
+			(* <- lang_ru;; *);;
+		<- definition;;
+		<= nrel_sc_text_translation:
+			...
+			(*
+				-> rrel_example:
+				[Межзвёздная среда - это разреженный газ, плазма и микроскопические частицы, которые находятся между звёздами в галактиках.]
+				(* <- lang_ru;; *);;
+			*);;
+	*);;
+
+// 9
+concept_nebula
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Туманность] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Nebula] (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+		=> nrel_main_idtf:
+			[Опр. (Туманность)]
+			(* <- lang_ru;; *);;
+		<- definition;;
+		<= nrel_sc_text_translation:
+			...
+			(*
+				-> rrel_example:
+				[Туманность - это облако газа, пыли и других микроскопических частиц в космосе.]
+				(* <- lang_ru;; *);;
+			*);;
+	*);;
+
+// 10
+concept_void
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Войд] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Void] (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+		=> nrel_main_idtf:
+			[Опр. (Войд)]
+			(* <- lang_ru;; *);;
+		<- definition;;
+		<= nrel_sc_text_translation:
+			...
+			(*
+				-> rrel_example:
+				[Войд - область космоса, в которой плотность галактик и других космических объектов намного ниже, чем в окружающих областях.]
+				(* <- lang_ru;; *);;
+			*);;
+	*);;
+
+// 11
+concept_black_hole
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Чёрная дыра] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Black hole] (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+		=> nrel_main_idtf:
+			[Опр. (Чёрная дыра)]
+			(* <- lang_ru;; *);;
+		<- definition;;
+		<= nrel_sc_text_translation:
+			...
+			(*
+				-> rrel_example:
+				[Чёрная дыра - это астрономическое тело, гравитационное притяжение которого настолько велико, что покинуть её не могут даже объекты, движущиеся со скоростью света, в том числе кванты самого света.]
+				(* <- lang_ru;; *);;
+			*);;
+	*);;
+
+// 12
+concept_star_system
+<- sc_node_class;
+=> nrel_inclusion:
+	concept_exosolar_system;
+	concept_star;
+	concept_planet;
+=> nrel_main_idtf:
+	[Звёздная система] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Star system] (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+		=> nrel_main_idtf:
+			[Опр. (Звёздная система)]
+			(* <- lang_ru;; *);;
+		<- definition;;
+		<= nrel_sc_text_translation:
+			...
+			(*
+				-> rrel_example:
+				[Звездная система - это система, состоящая, по крайней мере, из одной звезды и других объектов, которые находятся под её гравитационным воздействием.]
+				(* <- lang_ru;; *);;
+			*);;
+	*);;
+
+// 13
+concept_meteoroid
+<- sc_node_class;
+=> nrel_inclusion:
+	concept_comet;
+=> nrel_main_idtf:
+	[Метеороид] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Meteoroid] (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+		=> nrel_main_idtf:
+			[Опр. (Метеороид)]
+			(* <- lang_ru;; *);;
+		<- definition;;
+		<= nrel_sc_text_translation:
+			...
+			(*
+				-> rrel_example:
+				[Метеороид - это космический объект, состоящий из твёрдого вещества, удерживаемого гравитацией, недостаточно большой для того, чтобы считаться планетой.]
+				(* <- lang_ru;; *);;
+			*);;
+	*);;
+
+// 14
+concept_comet
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Комета] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Comet] (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+		=> nrel_main_idtf:
+			[Опр. (Комета)]
+			(* <- lang_ru;; *);;
+		<- definition;;
+		<= nrel_sc_text_translation:
+			...
+			(*
+				-> rrel_example:
+				[Комета - это небольшое астрономическое тело, состоящее в основном из замерзших газов, пыли и камней и видное с поверхности планеты.]
+				(* <- lang_ru;; *);;
+			*);;
+	*);;
+
+// 15
+concept_supernova
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Сверхновая] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Supernova] (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+		=> nrel_main_idtf:
+			[Опр. (Сверхновая)]
+			(* <- lang_ru;; *);;
+		<- definition;;
+		<= nrel_sc_text_translation:
+			...
+			(*
+				-> rrel_example:
+				[Сверхновая - звезда, резко увеличившая свою светимость на 4-8 порядков в конце своей эволюции.]
+				(* <- lang_ru;; *);;
+			*);;
+	*);;
+
+// 16
+concept_hypernova
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Гиперновая] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Hypernova] (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+		=> nrel_main_idtf:
+			[Опр. (Гиперновая)]
+			(* <- lang_ru;; *);;
+		<- definition;;
+		<= nrel_sc_text_translation:
+			...
+			(*
+				-> rrel_example:
+				[Гиперновая - сверхмощная сверхновая; звезда, чьё ядро коллапсировало в конце своей эволюции, выделяя на порядок больше энергии, чем сверхновая.]
+				(* <- lang_ru;; *);;
+			*);;
+	*);;
+
+// 17
+concept_neutron_star
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Нейтронная звезда] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Neutron star] (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+		=> nrel_main_idtf:
+			[Опр. (Нейтронная звезда)]
+			(* <- lang_ru;; *);;
+		<- definition;;
+		<= nrel_sc_text_translation:
+			...
+			(*
+				-> rrel_example:
+				[Нейтронная звезда - это крайне плотное и компактное астрономическое тело, которое образуется после взрыва сверхновой звезды и состоящее в основном из нейтронов.]
+				(* <- lang_ru;; *);;
+			*);;
+	*);;
+
+// 18
+concept_exosolar_system
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Экзосолнечная система] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Exosolar system] (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+		=> nrel_main_idtf:
+			[Опр. (Экзосолнечная система)]
+			(* <- lang_ru;; *);;
+		<- definition;;
+		<= nrel_sc_text_translation:
+			...
+			(*
+				-> rrel_example:
+				[Экзосолнечная система - звёздная система, не являющаяся Солнечной системой.]
+				(* <- lang_ru;; *);;
+			*);;
+	*);;
+
+// 19
+concept_solid_planet
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Твёрдая планета] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Solid planet] (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+		=> nrel_main_idtf:
+			[Опр. (Твёрдая планета)]
+			(* <- lang_ru;; *);;
+		<- definition;;
+		<= nrel_sc_text_translation:
+			...
+			(*
+				-> rrel_example:
+				[Твёрдая планета - это планета, которая имеет твёрдую поверхность и состоит в основном из скальных или минеральных материалов.]
+				(* <- lang_ru;; *);;
+			*);;
+	*);;
+
+// 20
+concept_gas_giant
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Газовый гигант] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Gas giant] (* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+		=> nrel_main_idtf:
+			[Опр. (Газовый гигант)]
+			(* <- lang_ru;; *);;
+		<- definition;;
+		<= nrel_sc_text_translation:
+			...
+			(*
+				-> rrel_example:
+				[Газовый гигант - это тип планеты, который характеризуется большой массой и объемом, а также отсутствием твёрдой поверхности.]
+				(* <- lang_ru;; *);;
+			*);;
+	*);;
+
+// 21
+concept_constellation
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Созвездие] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Constellation] (* <- lang_en;; *);
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Созвездие)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Созвездие - это группа звёзд, которые образуют определенный узор или фигуру на ночном небе]
+               (* <- lang_ru;; *);;
+           *);;
+  *);;

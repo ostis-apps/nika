@@ -1,0 +1,231 @@
+sun
+<- concept_star;
+=> nrel_is_in: solar_system;
+=> nrel_is_seen_from: earth;
+=> nrel_main_idtf:
+	[Солнце] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Sun] (* <- lang_en;; *);
+=> nrel_note:
+	[Основная звезда Солнечной системы] (* <- lang_ru;; *);;
+
+earth
+<- concept_planet;
+=> nrel_is_in: solar_system;
+=> nrel_orbits: sun;
+=> nrel_meteorite: hoba_meteorite;
+=> nrel_meteor: us19720810;
+=> nrel_main_idtf:
+	[Земля] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Earth] (* <- lang_en;; *);
+=> nrel_note:
+	[Третья планета Солнечной системы; планета, поддерживающая жизнь.] (* <- lang_ru;; *);;
+
+solar_system
+<- concept_star_system;
+=> nrel_is_in: milky_way;
+-> rrel_planet: 
+			earth; 
+			mars;
+			jupiter;
+-> rrel_primary_star: sun;
+=> nrel_main_idtf:
+	[Солнечная система] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Solar system] (* <- lang_en;; *);
+=> nrel_note:
+	[Звёздная система, основной звездой которой является Солнце.] (* <- lang_ru;; *);;
+
+milky_way
+<- concept_galaxy;
+=> nrel_main_idtf:
+	[Млечный путь] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Milky way] (* <- lang_en;; *);
+=> nrel_note:
+	[Галактика спирального типа, в которой находится Солнечная система.] (* <- lang_ru;; *);;
+
+comet_encke
+<- concept_comet;
+=> nrel_is_seen_from: earth;
+=> nrel_main_idtf:
+	[Комета Энке] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Comet Encke] (* <- lang_en;; *);
+=> nrel_note:
+	[Короткопериодическая комета из семейства Юпитера, которая была открыта 17 января 1786 года французским астрономом Пьером Мешеном в Парижской обсерватории.] (* <- lang_ru;; *);;
+
+hoba_meteorite
+<- concept_meteoroid;
+=> nrel_main_idtf:
+	[Метеорит Гоба] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Hoba meteoroid] (* <- lang_en;; *);
+=> nrel_note:
+	[Крупнейший из найденных метеоритов.] (* <- lang_ru;; *);;
+
+us19720810 
+<- concept_meteoroid;
+=> nrel_main_idtf:
+	[Астероид US19720810] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[US19720810 asteroid] (* <- lang_en;; *);
+=> nrel_note:
+	[Известен также как Большой дневной болид 1972 года, он был настолько ярок, что его пролёт был виден на дневном небе.] (* <- lang_ru;; *);;
+
+
+alpha_centauri_system
+<- concept_exosolar_system;
+=> nrel_main_idtf:
+	[Звёздная система Альфа Центавры] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Alpha Centauri star system] (* <- lang_en;; *);
+=> nrel_note:
+	[Ближайшая к Солнечной системе звёздная система.] (* <- lang_ru;; *);;
+
+jupiter
+<- concept_gas_giant;
+=> nrel_is_in: solar_system;
+=> nrel_main_idtf:
+	[Юпитер] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Jupiter] (* <- lang_en;; *);
+=> nrel_note:
+	[Юпитер — крупнейшая планета Солнечной системы, пятая по удалённости от Солнца. Классифицируется как газовый гигант.] (* <- lang_ru;; *);;
+
+mars
+<- concept_solid_planet;
+=> nrel_is_in: solar_system;
+=> nrel_is_seen_from: earth;
+=> nrel_satellite: deimos;
+=> nrel_main_idtf:
+	[Марс] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Mars] (* <- lang_en;; *);
+=> nrel_note:
+	[Марс — четвёртая по удалённости от Солнца и седьмая по размеру планета Солнечной системы.] (* <- lang_ru;; *);;
+
+deimos
+<- concept_meteoroid;
+=> nrel_is_in: solar_system;
+=> nrel_is_seen_from: mars;
+=> nrel_orbits: mars;
+=> nrel_main_idtf:
+	[Деймос] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Deimos] (* <- lang_en;; *);
+=> nrel_note:
+	[Деймос - один из двух спутников Марса наряду с Фобосом. Был открыт американским астрономом Асафом Холлом в 1877 году и назван им в честь древнегреческого бога ужаса Деймоса, сына бога войны Ареса.] (* <- lang_ru;; *);;
+
+
+saggitarius_a_asterisk
+<- concept_black_hole;
+=> nrel_main_idtf:
+	[Стрелец А* ] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Saggitarius A* ] (* <- lang_en;; *);
+=> nrel_note:
+	[Стрелец А* - сверхмассивная чёрная дыра, находящаяся в центре Млечного Пути; входит в состав радиоисточника Стрелец А.] (* <- lang_ru;; *);;
+
+sn_1572
+<- concept_supernova;
+=> nrel_main_idtf:
+	[SN 1572] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[SN 1572] (* <- lang_en;; *);
+=> nrel_note:
+	[SN 1572 - сверхновая звезда в Млечном Пути, вспыхнувшая осенью 1572 года в созвездии Кассиопеи.] (* <- lang_ru;; *);;
+
+sn_2006gy
+<- concept_hypernova;
+=> nrel_main_idtf:
+	[SN 2006gy] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[SN 2006gy] (* <- lang_en;; *);
+=> nrel_note:
+	[SN 2006gy - необычно яркая сверхновая, вспышка которой наблюдалась 18 сентября 2006 года в галактике NGC 1260.] (* <- lang_ru;; *);;
+
+vela_x_1
+<- concept_neutron_star;
+=> nrel_main_idtf:
+	[Пульсар Паруса X-1] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Vela X-1's Pulsar] (* <- lang_en;; *);
+=> nrel_note:
+	[Пульсар Паруса X-1 - пульсар, образующий совместно со сверхгигантом HD 77581 массивную рентгеновская двойную систему Парус Х-1.] (* <- lang_ru;; *);;
+
+twin_qso
+<- concept_quasar;
+=> nrel_main_idtf:
+	[Двойной квазар Q0957+561] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Twin quasar Q0957+561] (* <- lang_en;; *);
+=> nrel_note:
+	[Q0957+561 первым идентифицированным объектом с гравитационной линзой. Это квазар, который появляется в виде двух изображений в результате гравитационного линзирования, вызванного галактикой YGKOW G1, расположенной непосредственно между Землей и квазаром.] (* <- lang_ru;; *);;
+
+3c_273_quasar
+<- concept_quasar;
+=> nrel_produces: 3c_273_jet;
+=> nrel_main_idtf:
+	[3C 273] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[3C 273] (* <- lang_en;; *);
+=> nrel_note:
+	[3C 273 - первое астрономическое тело, идентифицированное как квазар.] (* <- lang_ru;; *);;
+
+3c_273_jet
+<- concept_jet;
+=> nrel_main_idtf:
+	[Джет 3C 273] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[3C 273 Jet] (* <- lang_en;; *);
+=> nrel_note:
+	[Джет 3C 273 - джет длиной в ~200 тысяч световых лет, изображения которого были получены в 1995 с помощью телескопа "Хаббл".] (* <- lang_ru;; *);;
+
+bootes_void
+<- concept_void;
+=> nrel_main_idtf:
+	[Войд Волопаса] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Boötes void] (* <- lang_en;; *);
+=> nrel_note:
+	[Крупная, почти сферически-симметричная область пространства, содержащая малое количество галактик, расположенная в созвездии Волопаса.] (* <- lang_ru;; *);;
+
+dark_matter
+<- concept_anomaly;
+=> nrel_main_idtf:
+	[Тёмная материя] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Dark matter] (* <- lang_en;; *);
+=> nrel_note:
+	[Тёмная материя - в астрономии и космологии, а также в теоретической физике форма материи, не участвующая в электромагнитном взаимодействии и поэтому недоступная прямому наблюдению.] (* <- lang_ru;; *);;
+
+southern_coalsack
+<- concept_interstellar_medium;
+=> nrel_main_idtf:
+	[Южный Угольный Мешок] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Southern Coalsack] (* <- lang_en;; *);
+=> nrel_note:
+	[Южный Угольный Мешок - тёмная туманность, расположенная в созвездии Южного Креста.] (* <- lang_ru;; *);;
+
+orion_nebula
+<- concept_nebula;
+=> nrel_is_seen_from: earth;
+=> nrel_main_idtf:
+	[Туманность Ориона] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Orion Nebula] (* <- lang_en;; *);
+=> nrel_note:
+	[Туманность Ориона - эмиссионная и отражательная туманность, а также область звездообразования в созвездии Ориона.] (* <- lang_ru;; *);;
+
+ursa_major
+<- concept_constellation;
+=> nrel_is_seen_from: earth;
+=> nrel_main_idtf:
+	[Большая Медведица] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Ursa Major] (* <- lang_en;; *);
+=> nrel_note:
+	[Большая Медведица - созвездие северного полушария неба. Семь звёзд Большой Медведицы составляют фигуру, напоминающую ковш с ручкой.] (* <- lang_ru;; *);;

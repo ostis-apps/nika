@@ -1,0 +1,17 @@
+concept_your_wit_entity_class
+<- sc_node_class;
+<- concept_entity_possible_class;
+=> nrel_main_idtf:
+	[Название класса сущностей]
+	(* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	[Название entity из wit.ai];
+-> your_entity;
+=> nrel_entity_possible_role:
+    ..roles;;
+
+..roles
+<- sc_node_role_relation;
+=> nrel_wit_ai_idtf:
+	[Название entity из wit.ai];;
+
