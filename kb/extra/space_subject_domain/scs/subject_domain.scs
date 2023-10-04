@@ -1,0 +1,47 @@
+section_subject_domain_of_space
+    => nrel_main_idtf:
+        [Раздел. Предметная область по космосу] (* <- lang_ru;; *);
+<- sc_node_class;
+<- atomic_section;;
+
+section_subject_domain_of_spcae = [*
+    subject_domain_of_space
+        => nrel_main_idtf: 
+            [Предметная область по космосу] (* <- lang_ru;; *);
+        <- subject_domain;
+        -> rrel_maximum_studied_object_class:
+            concept_astronomical_body;
+            concept_constellation;
+        -> rrel_explored_relation:
+            nrel_produces;
+            nrel_orbits;
+            nrel_turns_into; 
+            rrel_planet;
+            rrel_primary_star;
+            nrel_satellite;
+            nrel_meteorite;
+            nrel_meteor;
+            nrel_is_in;
+            nrel_is_seen_from;
+        -> rrel_not_maximum_studied_object_class:
+            concept_star;
+            concept_planet;
+            concept_galaxy;
+            concept_comet;
+            concept_meteoroid;
+            concept_star_system;
+            concept_exosolar_system;
+            concept_gas_giant;
+            concept_solid_planet;
+            concept_black_hole;
+            concept_supernova;
+            concept_hypernova;
+            concept_neutron_star;
+            concept_quasar;
+            concept_jet;
+            concept_void;
+            concept_anomaly;
+            concept_interstellar_medium;
+            concept_constellation;
+            concept_nebula;;
+*];;

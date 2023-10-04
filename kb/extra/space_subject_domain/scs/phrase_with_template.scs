@@ -1,0 +1,17 @@
+@pattern = [* 
+	_message _<- concept_message;
+	_-> rrel_entity:: _entity;;
+	_entity _<- concept_your_class_identifier;
+		_=> nrel_main_idtf: [ ]
+			(*
+				=> nrel_main_idtf: [_id];;
+				_<- lang_ru;;
+			*);;
+*];;
+
+concept_phrase_about_your_theme
+<= nrel_inclusion:
+	concept_phrase;
+-> [Фраза ответа с использованием ${_id} из базы знаний]
+	(* <- lang_ru;; *);
+=> nrel_phrase_template: @pattern;;

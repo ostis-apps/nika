@@ -1,0 +1,360 @@
+// 1
+nrel_produces
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- transitive_relation;
+=> nrel_main_idtf:
+	[Производит* ] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Produces* ] (* <- lang_en;; *);
+=> nrel_first_domain: concept_quasar;
+=> nrel_second_domain: concept_jet;
+=> nrel_definitional_domain:
+   ...
+   (*
+        <= nrel_combination:
+        	{
+            	concept_quasar;
+            	concept_jet
+        	};;
+   *);
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Производит* )]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Вызывает, является причиной или осуществляет]
+               (* <- lang_ru;; *);;
+           *);;
+  *);;
+
+// 2
+nrel_orbits
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+	[Вращается вокруг* ] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Orbits* ] (* <- lang_en;; *);
+=> nrel_first_domain: concept_astronomical_body;
+=> nrel_second_domain: concept_astronomical_body;
+=> nrel_definitional_domain: concept_astronomical_body;
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Вращается вокруг* )]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Находится на орбите космического тела, притягивается к нему из-за гравитации и при этом не врезается в него из-за тангенсального ускорения]
+               (* <- lang_ru;; *);;
+           *);;
+  *);;
+
+
+// 3
+nrel_turns_into
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+	[Превращается в* ] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Turns into* ] (* <- lang_en;; *);
+=> nrel_first_domain: concept_astronomical_body;
+=> nrel_second_domain: concept_astronomical_body;
+=> nrel_definitional_domain: concept_astronomical_body;
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Превращается в* )]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Меняет своё состояние так, что начинает соответствовать другому понятию]
+               (* <- lang_ru;; *);;
+           *);;
+  *);;
+
+// 4
+rrel_planet
+<- sc_node_role_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+	[Планета' ] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Planet' ] (* <- lang_en;; *);
+=> nrel_first_domain: concept_star_system;
+=> nrel_second_domain: concept_planet;
+=> nrel_definitional_domain:
+   ...
+   (*
+        <= nrel_combination:
+        	{
+            	concept_star_system;
+            	concept_planet
+        	};;
+   *);
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Планета' )]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Является планетой в определённой звёздной системы]
+               (* <- lang_ru;; *);;
+           *);;
+  *);;
+
+// 5
+rrel_primary_star
+<- sc_node_role_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+	[Основная звезда' ] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Primary star' ] (* <- lang_en;; *);
+=> nrel_first_domain: concept_star_system;
+=> nrel_second_domain: concept_star;
+=> nrel_definitional_domain:
+   ...
+   (*
+        <= nrel_combination:
+        	{
+            	concept_star_system;
+            	concept_star
+        	};;
+   *);
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Основная звезда' )]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Является основной звездой в определённой звёздной системы]
+               (* <- lang_ru;; *);;
+           *);;
+  *);;
+
+// 6
+nrel_satellite
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+	[Спутник* ] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Satellite* ] (* <- lang_en;; *);
+=> nrel_first_domain: concept_planet;
+=> nrel_second_domain: concept_astronomical_body;
+=> nrel_definitional_domain: concept_astronomical_body;
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Спутник* )]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Является спутником для определённой планеты]
+               (* <- lang_ru;; *);;
+           *);;
+  *);;
+
+// 7
+nrel_meteorite
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+	[Метеорит* ] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Meteorite* ] (* <- lang_en;; *);
+=> nrel_first_domain: concept_planet;
+=> nrel_second_domain: concept_meteoroid;
+=> nrel_definitional_domain: 
+   ...
+   (*
+        <= nrel_combination:
+        	{
+            	concept_planet;
+            	concept_meteoroid
+        	};;
+   *);
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Метеорит* )]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Является метеоритом, упавшим на определённую планету]
+               (* <- lang_ru;; *);;
+           *);;
+  *);;
+
+// 8
+nrel_meteor
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+	[Метеор* ] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Meteor* ] (* <- lang_en;; *);
+=> nrel_first_domain: concept_planet;
+=> nrel_second_domain: concept_meteoroid;
+=> nrel_definitional_domain: 
+   ...
+   (*
+        <= nrel_combination:
+        	{
+            	concept_planet;
+            	concept_meteoroid
+        	};;
+   *);
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Метеор* )]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Является метеором, вошедшим в атмосферу определённой планеты]
+               (* <- lang_ru;; *);;
+           *);;
+  *);;
+
+// 9
+nrel_is_in
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+	[Находится в* ] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Is in* ] (* <- lang_en;; *);
+=> nrel_first_domain: concept_astronomical_body;
+=> nrel_second_domain: concept_astronomical_body;
+=> nrel_definitional_domain: concept_astronomical_body;
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Находится в* )]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Является частью более широкой космической системы]
+               (* <- lang_ru;; *);;
+           *);;
+  *);;
+
+// 10
+nrel_is_seen_from
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+	[Виден из* ] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Is seen from* ] (* <- lang_en;; *);
+=> nrel_first_domain: concept_astronomical_body;
+=> nrel_second_domain: concept_astronomical_body;
+=> nrel_definitional_domain: concept_astronomical_body;
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Виден из* )]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Может быть распознан невооружённым глазом наблюдателем, находящимся на определённом месте]
+               (* <- lang_ru;; *);;
+           *);;
+  *);;
