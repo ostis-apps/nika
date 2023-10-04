@@ -1,0 +1,36 @@
+concept_wit_entity
+<- sc_node_class;
+<- concept_entity_possible_class;
+=> nrel_main_idtf:
+	[Сущность Wit] // ???
+	(* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	[rrel_entity];
+-> earth;
+-> sun;
+-> milky_way;
+-> comet_encke;
+-> hoba_meteorite;
+-> solar_system;
+-> us19720810;
+-> alpha_centauri_system;
+-> jupiter;
+-> mars;
+-> deimos;
+-> saggitarius_a_asterisk;
+-> sn_1572;
+-> sn_1572;
+-> vela_x_1;
+-> twin_qso;
+-> 3c_273_jet;
+-> 3c_273_quasar;
+-> bootes_void;
+-> dark_matter;
+=> nrel_entity_possible_role:
+    ..roles;;
+
+..roles
+<- sc_node_role_relation;
+=> nrel_wit_ai_idtf:
+	[rrel_entity];;
+

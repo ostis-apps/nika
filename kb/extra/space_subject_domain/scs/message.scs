@@ -1,0 +1,27 @@
+concept_message_entity_examples
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	  [сообщение о примерах сущности]
+	  (* <- lang_ru;; *);
+=> nrel_wit_ai_idtf:
+	  [entity_examples];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о примерах сущности)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о примерах сущности - атомарное сообщение,
+    которое содержит сущности, информацию о которой нужно найти.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
