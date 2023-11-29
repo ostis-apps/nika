@@ -106,8 +106,7 @@ class FindSomePlacesAgent(ScAgentClassic):
                 self.set_unknown_city_link(action_node, answer_phrase)
                 return ScResult.OK
             print(desire_idtf_link)
-            print(desire)
-            print()
+
         except:
             self.logger.info(f"FindSomPlacesAgent: finished with an error")
             return ScResult.ERROR
