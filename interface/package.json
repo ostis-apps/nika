@@ -20,6 +20,7 @@
         "url": "git+https://github.com/ostis-apps/nika"
     },
     "devDependencies": {
+        "@2gis/mapgl": "^1.40.0",
         "@babel/core": "^7.14.3",
         "@babel/plugin-transform-runtime": "^7.17.0",
         "@pmmmwh/react-refresh-webpack-plugin": "0.5.4",
@@ -61,16 +62,19 @@
         "@babel/preset-typescript": "^7.13.0",
         "@reduxjs/toolkit": "^1.8.0",
         "@types/react-dom": "^17.0.0",
+        "ant-design": "^1.0.0",
+        "antd": "^4.10.2",
         "babel-plugin-react-transform": "^3.0.0",
         "babel-preset-es2015": "^6.24.1",
         "dotenv": "^8.2.0",
-        "ant-design": "^1.0.0",
-        "antd": "^4.10.2",
         "ejs": "^3.1.6",
+        "eslint-plugin-sonarjs": "^0.15.0",
+        "mapbox-gl": "^2.15.0",
         "mini-css-extract-plugin": "^1.6.0",
         "nanoid": "^3.3.1",
         "react": "17.0.2",
         "react-dom": "^17.0.1",
+        "react-map-gl": "^7.1.6",
         "react-redux": "^7.2.2",
         "react-router": "^5.2.0",
         "react-router-dom": "^5.3.0",
@@ -78,8 +82,7 @@
         "redux-devtools-extension": "^2.13.8",
         "socket.io-client": "^4.4.1",
         "styled-components": "^5.3.0",
-        "ts-sc-client": "^0.1.3",
-        "eslint-plugin-sonarjs": "^0.15.0"
+        "ts-sc-client": "^0.1.3"
     },
     "husky": {
         "hooks": {

@@ -1,4 +1,4 @@
-
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap');
 
 body {
     display: flex;
@@ -6,13 +6,18 @@ body {
 
 div#content {
     flex: 1;
-    background: #fcfafa;
+    background: rgb(51, 47, 47);
     display: flex;
 }
 
+.ant-layout-content {
+    background-color: #242426 !important;
+}
 .ant-layout-header {
+    font-family: 'Montserrat';
     flex: 0.04;
-    background: #39494C;
+    background: linear-gradient(347deg, rgba(52,91,102,1) 0%, rgba(100,158,157,1) 100%) !important;
+    backdrop-filter: blur(20px);
     display: flex;
     padding: 10px 40px;
     line-height: normal;
@@ -23,11 +28,18 @@ div#content {
     background: #fcfafa;
     color: #e6e6fa !important;
     display: flex;
+    
 }
 
+.copyright {
+    font-weight: 700 !important;
+    opacity: 0.6;
+}
 .ant-layout-footer {
+    font-family: 'Montserrat';
     flex: 0.04;
-    background: #39494C;
+    background: #181818 !important;
+    backdrop-filter: blur(20px);
     color: #ffffff !important;
     text-align: center;
     font-size: medium;
@@ -473,4 +485,25 @@ html, body, .backdrop {
         height: var(--max-size);
         border-radius: calc(var(--max-size) / 2);
     }
+}
+
+.sc-iBkjds {
+    color: white;
+    border-radius: 100px;
+    background: rgb(52,91,102);
+    background: linear-gradient(347deg, rgba(52,91,102,1) 0%, rgba(100,158,157,1) 100%); 
+}
+
+.weather-image {
+    width: 150px;
+    margin: 0 auto;
+}
+
+.weather_wrapper {
+    width: 200px;
+}
+
+.weather_wrapper p {
+    margin: 0;
+    font-size: 20px;
 }
