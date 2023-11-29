@@ -76,7 +76,6 @@ class FindSomePlacesAgent(ScAgentClassic):
                 message_addr, rrel_desire)
 
 
-            self.logger.info(f"{city_addr} - {desire_addr}")
             self.clear_previous_answer(
                 city_addr, nrel_attractions, answer_phrase)
                 
@@ -99,13 +98,16 @@ class FindSomePlacesAgent(ScAgentClassic):
                 self.set_unknown_city_link(action_node, answer_phrase)
                 return ScResult.OK
             self.logger.info(f"2")
-            desire_idtf_link = self.get_ru_idtf(desire_addr)
+            desire_idtf_link = self.get_en_idtf(desire_addr)
             self.logger.info(f"3")
             self.logger.info(f"{desire_idtf_link}")
             if not desire_idtf_link.is_valid():
                 self.logger.info(f"desire_idtf not valid")
                 self.set_unknown_city_link(action_node, answer_phrase)
                 return ScResult.OK
+            print(desire_idtf_link)
+            print(desire)
+            print()
         except:
             self.logger.info(f"FindSomPlacesAgent: finished with an error")
             return ScResult.ERROR
@@ -120,29 +122,38 @@ class FindSomePlacesAgent(ScAgentClassic):
 
         entity_idtf = get_link_content_data(city_idtf_link)
         desire = get_link_content_data(desire_idtf_link)
-        self.logger.info(f"{desire}")
+        print(f"1- {desire} {entity_idtf}")
         try:
             
             coordinates = requests.get(
                     f'https://geocode.maps.co/search?city={entity_idtf}&country=Беларусь').json()[0]
 
+            print(desire)
+            api_key = "5ae2e3f221c38a28845f05b6c5d9bf667efa63f94dcb0e435b058e95"
+            places = requests.get(
+                f"https://api.opentripmap.com/0.1/ru/places/radius?radius={2000}&lon={coordinates['lon']}&lat={coordinates['lat']}&kinds={desire},&apikey={api_key}"
+            ).json()['features']
             
-            places = requests.get(f'https://catalog.api.2gis.com/3.0/items?q={desire}&sort_point={coordinates["lon"]},{coordinates["lat"]}&key=c365c827-18a1-4e9a-9bf2-c4c509ac28a4&fields=items.point').json()["result"]["items"]
+            print(places)
 
             for item in places:
-                lat.append(item['point']['lat'])
-                lon.append(item['point']['lon'])
-                name.append(item['name'])
+                place = item['properties']['xid']
+
+                inf = requests.get(f'https://api.opentripmap.com/0.1/ru/places/xid/{place}?apikey={api_key}').json()
+
+                lat.append(inf['point']['lat'])
+                lon.append(inf['point']['lon'])
+                name.append(item['properties']['name'])
                 try:
-                    adr.append(item['address_name'])
+                    adr.append(f"{inf['address']['road']} {inf['address']['house_number']}")
                 except:
                     adr.append('-')
 
                 self.logger.info(f"{item}")
-                attractions += f"{item['name']}<br>"
+                attractions += f"{item['properties']['name']}<br>"
 
                 try:
-                    attractions += f'<p style="opacity: 0.7">{item["address_name"]}</p><br>'
+                    attractions += f"<p style='opacity: 0.7'>{inf['address']['road']} {inf['address']['house_number']}</p><br>"
                 except:
                     pass
 
@@ -174,7 +185,32 @@ class FindSomePlacesAgent(ScAgentClassic):
     def get_ru_idtf(self, entity_addr: ScAddr) -> ScAddr:
         main_idtf = ScKeynodes.resolve(
             "nrel_main_idtf", sc_types.NODE_CONST_NOROLE)
+        
         lang_ru = ScKeynodes.resolve("lang_ru", sc_types.NODE_CONST_CLASS)
+
+        template = ScTemplate()
+        template.triple_with_relation(
+            entity_addr,
+            sc_types.EDGE_D_COMMON_VAR,
+            sc_types.LINK,
+            sc_types.EDGE_ACCESS_VAR_POS_PERM,
+            main_idtf,
+        )
+        search_results = template_search(template)
+        for result in search_results:
+            idtf = result[2]
+            lang_edge = get_edge(
+                lang_ru, idtf, sc_types.EDGE_ACCESS_VAR_POS_PERM)
+            if lang_edge:
+                return idtf
+        return get_element_by_norole_relation(
+            src=entity_addr, nrel_node=main_idtf)
+    
+    def get_en_idtf(self, entity_addr: ScAddr) -> ScAddr:
+        main_idtf = ScKeynodes.resolve(
+            "nrel_main_idtf", sc_types.NODE_CONST_NOROLE)
+        
+        lang_ru = ScKeynodes.resolve("lang_en", sc_types.NODE_CONST_CLASS)
 
         template = ScTemplate()
         template.triple_with_relation(
@@ -204,7 +240,7 @@ class FindSomePlacesAgent(ScAgentClassic):
             rrel_entity,
         )
         search_results = template_search(template)
-        self.logger.info(search_results)
+        
         if len(search_results) == 0:
             return ScAddr(0)
         
