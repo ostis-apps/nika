@@ -1,0 +1,122 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getPlaceholder = getPlaceholder;
+exports.getRangePlaceholder = getRangePlaceholder;
+exports.transPlacement2DropdownAlign = transPlacement2DropdownAlign;
+
+function getPlaceholder(picker, locale, customizePlaceholder) {
+  if (customizePlaceholder !== undefined) {
+    return customizePlaceholder;
+  }
+
+  if (picker === 'year' && locale.lang.yearPlaceholder) {
+    return locale.lang.yearPlaceholder;
+  }
+
+  if (picker === 'quarter' && locale.lang.quarterPlaceholder) {
+    return locale.lang.quarterPlaceholder;
+  }
+
+  if (picker === 'month' && locale.lang.monthPlaceholder) {
+    return locale.lang.monthPlaceholder;
+  }
+
+  if (picker === 'week' && locale.lang.weekPlaceholder) {
+    return locale.lang.weekPlaceholder;
+  }
+
+  if (picker === 'time' && locale.timePickerLocale.placeholder) {
+    return locale.timePickerLocale.placeholder;
+  }
+
+  return locale.lang.placeholder;
+}
+
+function getRangePlaceholder(picker, locale, customizePlaceholder) {
+  if (customizePlaceholder !== undefined) {
+    return customizePlaceholder;
+  }
+
+  if (picker === 'year' && locale.lang.yearPlaceholder) {
+    return locale.lang.rangeYearPlaceholder;
+  }
+
+  if (picker === 'quarter' && locale.lang.quarterPlaceholder) {
+    return locale.lang.rangeQuarterPlaceholder;
+  }
+
+  if (picker === 'month' && locale.lang.monthPlaceholder) {
+    return locale.lang.rangeMonthPlaceholder;
+  }
+
+  if (picker === 'week' && locale.lang.weekPlaceholder) {
+    return locale.lang.rangeWeekPlaceholder;
+  }
+
+  if (picker === 'time' && locale.timePickerLocale.placeholder) {
+    return locale.timePickerLocale.rangePlaceholder;
+  }
+
+  return locale.lang.rangePlaceholder;
+}
+
+function transPlacement2DropdownAlign(direction, placement) {
+  var overflow = {
+    adjustX: 1,
+    adjustY: 1
+  };
+
+  switch (placement) {
+    case 'bottomLeft':
+      {
+        return {
+          points: ['tl', 'bl'],
+          offset: [0, 4],
+          overflow: overflow
+        };
+      }
+
+    case 'bottomRight':
+      {
+        return {
+          points: ['tr', 'br'],
+          offset: [0, 4],
+          overflow: overflow
+        };
+      }
+
+    case 'topLeft':
+      {
+        return {
+          points: ['bl', 'tl'],
+          offset: [0, -4],
+          overflow: overflow
+        };
+      }
+
+    case 'topRight':
+      {
+        return {
+          points: ['br', 'tr'],
+          offset: [0, -4],
+          overflow: overflow
+        };
+      }
+
+    default:
+      {
+        return direction === 'rtl' ? {
+          points: ['tr', 'br'],
+          offset: [0, 4],
+          overflow: overflow
+        } : {
+          points: ['tl', 'bl'],
+          offset: [0, 4],
+          overflow: overflow
+        };
+      }
+  }
+}

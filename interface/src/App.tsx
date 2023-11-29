@@ -1,5 +1,5 @@
-import { lazy, useEffect, useState } from "react";
-import { Route, Redirect } from "react-router-dom";
+import React, { lazy, useEffect, useState } from "react";
+import { Route } from "react-router-dom";
 import { loadingComponent } from '@components/LoadingComponent';
 import { routes } from '@constants';
 import { client } from "@api";
@@ -19,7 +19,9 @@ const About = loadingComponent(lazy(() => import('@pages/About')));
 
 const DemoRoutes = () => (
     <>
-        <Route exact path={routes.MAIN} component={Demo} />
+        <Route path={routes.MAIN}>
+            <Demo />
+        </Route>
     </>
 );
 
@@ -105,18 +107,18 @@ export const App = () => {
             background: footerBgColor,
         };
 
-    return (
-        <Layout>
-            <Header style={ headerStyles }>
-                <HeaderPanel />
-            </Header>
-            <Content style={ mainStyles }>
-                <DemoRoutes />
-                <AboutRoutes />
-            </Content>
-            <Footer style={ footerStyles }>
-                <FooterPanel />
-            </Footer>
-        </Layout>
-    );
-};
+        return (
+            <Layout>
+                <Header style={ headerStyles }>
+                    <HeaderPanel />
+                </Header>
+                <Content style={ mainStyles }>
+                    <DemoRoutes />
+                    <AboutRoutes />
+                </Content>
+                <Footer style={ footerStyles }>
+                    <FooterPanel />
+                </Footer>
+            </Layout>
+        );
+    };
