@@ -60,7 +60,7 @@ class FindSomePlacesAgent(ScAgentClassic):
                 self.logger.info(
                     f"FindSomePlacesAgent: the message isn't about weather")
                 return ScResult.OK
-
+            
             idtf = ScKeynodes.resolve("nrel_idtf", sc_types.NODE_CONST_NOROLE)
             answer_phrase = ScKeynodes.resolve(
                 "show_find_some_places_answer_phrase", sc_types.NODE_CONST_CLASS)
@@ -75,6 +75,7 @@ class FindSomePlacesAgent(ScAgentClassic):
             desire_addr = self.get_entity_addr(
                 message_addr, rrel_desire)
 
+            print(desire_addr)
 
             self.clear_previous_answer(
                 city_addr, nrel_attractions, answer_phrase)
@@ -91,6 +92,7 @@ class FindSomePlacesAgent(ScAgentClassic):
                 self.logger.info(f"City_idtf not valid")
                 self.set_unknown_city_link(action_node, answer_phrase)
                 return ScResult.OK
+            
             
             self.logger.info(f"{desire_addr} {city_addr}")
             if not desire_addr.is_valid():
@@ -160,7 +162,7 @@ class FindSomePlacesAgent(ScAgentClassic):
         except requests.exceptions.ConnectionError:
             self.logger.info(f"FindSomePlacesAgent: finished with connection error")
             return ScResult.ERROR
-        self.logger.info(f"{attractions}")
+        
         link = create_link(
             str(attractions), ScLinkContentType.STRING, link_type=sc_types.LINK_CONST)
         temperature_edge = create_edge(
@@ -230,6 +232,7 @@ class FindSomePlacesAgent(ScAgentClassic):
             src=entity_addr, nrel_node=main_idtf)
 
     def get_entity_addr(self, message_addr: ScAddr, rrel_entity: ScAddr):
+        
         template = ScTemplate()
         template.triple_with_relation(
             message_addr,
