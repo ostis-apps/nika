@@ -5,14 +5,15 @@ interface IProps {
 }
 const Wrapper = styled.div`
     width: 140px;
+    font-family: 'Montserrat';
     margin: auto;
     margin-top: 8px;
     margin-bottom: 16px;
     padding: 6px 10px;
-    background: #8fc1cf;
+    background: #ffffff49;
     border-radius: 10px;
-    color: black;
-    font-weight: 400;
+    color: white;
+    font-weight: 700;
     font-size: 14px;
     line-height: 16px;
 `;
