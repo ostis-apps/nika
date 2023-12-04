@@ -6,8 +6,6 @@ import logging
 from sc_client.models import ScAddr, ScLinkContentType, ScTemplate
 from sc_client.constants import sc_types
 from sc_client.client import template_search
-from random import choice, random
-from math import floor
 
 from sc_kpm import ScAgentClassic, ScModule, ScResult, ScServer
 from sc_kpm.sc_sets import ScSet
@@ -43,64 +41,59 @@ class TravellingAgent(ScAgentClassic):
         super().__init__("action_show_travelling")
 
     def on_event(self, event_element: ScAddr, event_edge: ScAddr, action_element: ScAddr) -> ScResult:
-        try:
-            result = self.run(action_element)
-        except:
-            self.logger.info(f"TravellingAgent: finished with an error")
-            return ScResult.ERROR
-
+        result = self.run(action_element)
         is_successful = result == ScResult.OK
         finish_action_with_status(action_element, is_successful)
-        self.logger.info("TravellingAgent finished %s",
+        self.logger.info("FindSomePlacesAgent finished %s",
                          "successfully" if is_successful else "unsuccessfully")
         return result
 
     def run(self, action_node: ScAddr) -> ScResult:
-        self.logger.info("TravellingAgent started")
+        self.logger.info("FindSomePlacesAgent started")
 
-        message_addr = get_action_arguments(action_node, 1)[0]
-        message_type = ScKeynodes.resolve("concept_message_about_travelling", sc_types.NODE_CONST_CLASS)
+        try:
+            message_addr = get_action_arguments(action_node, 1)[0]
+            message_type = ScKeynodes.resolve(
+                "concept_message_about_travelling", sc_types.NODE_CONST_CLASS)
 
-        if not check_edge(sc_types.EDGE_ACCESS_VAR_POS_PERM, message_type, message_addr):
-            self.logger.info(
-                f"TravellingAgent: the message isn't about weather")
-            return ScResult.OK
+            if not check_edge(sc_types.EDGE_ACCESS_VAR_POS_PERM, message_type, message_addr):
+                self.logger.info(
+                    f"FindSomePlacesAgent: the message isn't about weather")
+                return ScResult.OK
+            
+            idtf = ScKeynodes.resolve("nrel_idtf", sc_types.NODE_CONST_NOROLE)
+            answer_phrase = ScKeynodes.resolve(
+                "show_travelling_answer_phrase", sc_types.NODE_CONST_CLASS)
+            rrel_city_place = ScKeynodes.resolve("rrel_city_place", sc_types.NODE_ROLE)
+            nrel_attractions = ScKeynodes.resolve(
+                "nrel_attraction_message", sc_types.NODE_NOROLE)
 
-        city_addr = self.get_entity_addr(message_addr)
-        city_idtf_link = self.get_ru_idtf(city_addr)
-        city_idtf = get_link_content_data(city_idtf_link)
+            city_addr = self.get_entity_addr(
+                message_addr, rrel_city_place)
 
-        # Будет браться у пользователя
-        # desiers = ['театр', "кинотеатр", "заповедники", "парки",  "библиотека", "музей-усадьба"]
-        concept_user = ScKeynodes.resolve("concept_tourist", sc_types.NODE_NOROLE)
-        nrel_user_desiers = ScKeynodes.resolve("nrel_user_desiers", sc_types.NODE_NOROLE)
-        template = ScTemplate()
-        template.triple(concept_user, sc_types.EDGE_ACCESS_VAR_POS_PERM, sc_types.NODE_VAR >> "_user")
-        template.triple_with_relation(
-            "_user",
-            sc_types.EDGE_D_COMMON_VAR,
-            sc_types.NODE_VAR >> "_desiers",
-            sc_types.EDGE_ACCESS_VAR_POS_PERM,
-            nrel_user_desiers,
-        )
-        template.triple("_desiers", sc_types.EDGE_ACCESS_VAR_POS_PERM, sc_types.NODE_VAR >> "_desier")
-        search_results = template_search(template)
-
-        desiers = []
-        for result in search_results:
-            disier = result.get("_desier")
-            idtf_link = self.get_ru_idtf(disier)
-            idtf = get_link_content_data(idtf_link)
-            desiers.append(idtf)
-
-        print(desiers)
+            self.clear_previous_answer(
+                city_addr, nrel_attractions, answer_phrase)
+                
+            # if there is no such сity
+            if not city_addr.is_valid():
+                self.logger.info(f"City not valid")
+                self.set_unknown_city_link(action_node, answer_phrase)
+                return ScResult.OK
+            city_idtf_link = self.get_ru_idtf(city_addr)
+            if not city_idtf_link.is_valid():
+                self.logger.info(f"City_idtf not valid")
+                self.set_unknown_city_link(action_node, answer_phrase)
+                return ScResult.OK
+        except:
+            self.logger.info(f"FindSomPlacesAgent: finished with an error")
+            return ScResult.ERROR
 
         lat = []
         lon = []
         name = []
         adr = []
         attractions = '<br><br>'
-
+        city_idtf = get_link_content_data(city_idtf_link)
         desiers = ['pools', 'fast_food', 'cinemas', 'historical_places', 'concert_halls', 'amusements']
         try:
             coordinates = requests.get(
@@ -152,23 +145,41 @@ class TravellingAgent(ScAgentClassic):
             attractions += '<style>a:hover {background\: rgb(96, 178, 202);}</style><a class="build_map" href="http://localhost:3033/map?x=' + str(coordinates["lon"]) + "," + str(coordinates["lat"]) + "," + coordString + '" style="transition: all .6s ease; display: inline-block; padding: 10px 20px; margin: auto; background: blue; background: #262626; text-decoration: none; border-radius: 10px;">Построить карту</a>'
 
         except requests.exceptions.ConnectionError:
-            self.logger.info(f"TravellingAgent: finished with connection error")
+            self.logger.info(f"FindSomePlacesAgent: finished with connection error")
             return ScResult.ERROR
-        self.logger.info(f"{attractions}")
-
-        nrel_attractions = ScKeynodes.resolve("nrel_attraction", sc_types.NODE_NOROLE)
-        self.clear_previous_answer(city_addr, nrel_attractions)
-
-        link = create_link(str(attractions), ScLinkContentType.STRING, link_type=sc_types.LINK_CONST)
-        attractions_edge = create_edge(sc_types.EDGE_D_COMMON_CONST, city_addr, link)
-        create_edge(sc_types.EDGE_ACCESS_CONST_POS_PERM, nrel_attractions, attractions_edge)
+        
+        print(attractions)
+        link = create_link(
+            str(attractions), ScLinkContentType.STRING, link_type=sc_types.LINK_CONST)
+        nrel_format = ScKeynodes.resolve(
+                "nrel_format", sc_types.NODE_NOROLE)
+        format_html = ScKeynodes.resolve(
+                "format_html", sc_types.NODE_CONST)
+        format_edge = create_edge(
+            sc_types.EDGE_D_COMMON_CONST, link, format_html)
+        create_edge(
+            sc_types.EDGE_ACCESS_CONST_POS_PERM, nrel_format, format_edge)
+        
+        history_edge = create_edge(
+            sc_types.EDGE_D_COMMON_CONST, city_addr, link)
+        create_edge(
+            sc_types.EDGE_ACCESS_CONST_POS_PERM, nrel_attractions, history_edge)
         create_action_answer(action_node, link)
-
         return ScResult.OK
+
+    def set_unknown_city_link(self, action_node: ScAddr, answer_phrase: ScAddr) -> None:
+        unknown_city_link = ScKeynodes.resolve(
+            "unknown_city_for_weather_agent_message_text", None)
+        if not unknown_city_link.is_valid():
+            raise
+        create_edge(
+            sc_types.EDGE_ACCESS_CONST_POS_PERM, answer_phrase, unknown_city_link)
+        create_action_answer(action_node, unknown_city_link)
 
     def get_ru_idtf(self, entity_addr: ScAddr) -> ScAddr:
         main_idtf = ScKeynodes.resolve(
             "nrel_main_idtf", sc_types.NODE_CONST_NOROLE)
+        
         lang_ru = ScKeynodes.resolve("lang_ru", sc_types.NODE_CONST_CLASS)
 
         template = ScTemplate()
@@ -188,9 +199,33 @@ class TravellingAgent(ScAgentClassic):
                 return idtf
         return get_element_by_norole_relation(
             src=entity_addr, nrel_node=main_idtf)
+    
+    def get_en_idtf(self, entity_addr: ScAddr) -> ScAddr:
+        main_idtf = ScKeynodes.resolve(
+            "nrel_main_idtf", sc_types.NODE_CONST_NOROLE)
+        
+        lang_ru = ScKeynodes.resolve("lang_en", sc_types.NODE_CONST_CLASS)
 
-    def get_entity_addr(self, message_addr: ScAddr):
-        rrel_entity = ScKeynodes.resolve("rrel_city_place", sc_types.NODE_ROLE)
+        template = ScTemplate()
+        template.triple_with_relation(
+            entity_addr,
+            sc_types.EDGE_D_COMMON_VAR,
+            sc_types.LINK,
+            sc_types.EDGE_ACCESS_VAR_POS_PERM,
+            main_idtf,
+        )
+        search_results = template_search(template)
+        for result in search_results:
+            idtf = result[2]
+            lang_edge = get_edge(
+                lang_ru, idtf, sc_types.EDGE_ACCESS_VAR_POS_PERM)
+            if lang_edge:
+                return idtf
+        return get_element_by_norole_relation(
+            src=entity_addr, nrel_node=main_idtf)
+
+    def get_entity_addr(self, message_addr: ScAddr, rrel_entity: ScAddr):
+        
         template = ScTemplate()
         template.triple_with_relation(
             message_addr,
@@ -200,11 +235,18 @@ class TravellingAgent(ScAgentClassic):
             rrel_entity,
         )
         search_results = template_search(template)
+        
         if len(search_results) == 0:
             return ScAddr(0)
+        
         return search_results[0][2]
 
-    def clear_previous_answer(self, entity, nrel_attractions):
+    def clear_previous_answer(self, entity, nrel_attractions, answer_phrase):
+        message_answer_set = ScSet(set_node=answer_phrase)
+        message_answer_set.clear()
+        if not entity.is_valid():
+            return
+
         template = ScTemplate()
         template.triple_with_relation(
             entity,
