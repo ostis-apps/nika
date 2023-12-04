@@ -67,7 +67,7 @@ class FindSomePlacesAgent(ScAgentClassic):
             rrel_city_place = ScKeynodes.resolve("rrel_city_place", sc_types.NODE_ROLE)
             rrel_desire = ScKeynodes.resolve("desire", sc_types.NODE_ROLE)
             nrel_attractions = ScKeynodes.resolve(
-                "nrel_attractions", sc_types.NODE_NOROLE)
+                "nrel_attractions_message", sc_types.NODE_NOROLE)
 
             city_addr = self.get_entity_addr(
                 message_addr, rrel_city_place)
@@ -131,7 +131,7 @@ class FindSomePlacesAgent(ScAgentClassic):
             ).json()['features']
             
             print(places)
-
+            kol = 0
             for item in places:
                 place = item['properties']['xid']
 
@@ -150,21 +150,35 @@ class FindSomePlacesAgent(ScAgentClassic):
 
                 try:
                     attractions += f"<p style='opacity: 0.7'>{inf['address']['road']} {inf['address']['house_number']}</p><br>"
+                    kol += 1
                 except:
                     pass
+                
+                if kol == 5:
+                    break
+
 
         except requests.exceptions.ConnectionError:
             self.logger.info(f"FindSomePlacesAgent: finished with connection error")
             return ScResult.ERROR
         
+        print(attractions)
         link = create_link(
             str(attractions), ScLinkContentType.STRING, link_type=sc_types.LINK_CONST)
-        temperature_edge = create_edge(
+        nrel_format = ScKeynodes.resolve(
+                "nrel_format", sc_types.NODE_NOROLE)
+        format_html = ScKeynodes.resolve(
+                "format_html", sc_types.NODE_CONST)
+        format_edge = create_edge(
+            sc_types.EDGE_D_COMMON_CONST, link, format_html)
+        create_edge(
+            sc_types.EDGE_ACCESS_CONST_POS_PERM, nrel_format, format_edge)
+        
+        history_edge = create_edge(
             sc_types.EDGE_D_COMMON_CONST, city_addr, link)
         create_edge(
-            sc_types.EDGE_ACCESS_CONST_POS_PERM, nrel_attractions, temperature_edge)
+            sc_types.EDGE_ACCESS_CONST_POS_PERM, nrel_attractions, history_edge)
         create_action_answer(action_node, link)
-
         return ScResult.OK
 
     def set_unknown_city_link(self, action_node: ScAddr, answer_phrase: ScAddr) -> None:

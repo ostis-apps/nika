@@ -8,5 +8,5 @@ from .FindSomePlacesAgent import FindSomePlacesAgent
 
 class MessageProcessingModule(ScModule):
     def __init__(self):
-        super().__init__(HistoryAgent(), RandomAgent(), WeatherAgent(), TravellingAgent(), FindSomePlacesAgent())
+        super().__init__(HistoryAgent(), RandomAgent(), WeatherAgent(), FindSomePlacesAgent(), TravellingAgent())
 
