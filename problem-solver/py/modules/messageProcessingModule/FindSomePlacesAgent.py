@@ -65,7 +65,7 @@ class FindSomePlacesAgent(ScAgentClassic):
             answer_phrase = ScKeynodes.resolve(
                 "show_find_some_places_answer_phrase", sc_types.NODE_CONST_CLASS)
             rrel_city_place = ScKeynodes.resolve("rrel_city_place", sc_types.NODE_ROLE)
-            rrel_desire = ScKeynodes.resolve("rrel_desire", sc_types.NODE_ROLE)
+            rrel_desire = ScKeynodes.resolve("desire", sc_types.NODE_ROLE)
             nrel_attractions = ScKeynodes.resolve(
                 "nrel_attractions", sc_types.NODE_NOROLE)
 
@@ -86,21 +86,18 @@ class FindSomePlacesAgent(ScAgentClassic):
                 self.set_unknown_city_link(action_node, answer_phrase)
                 return ScResult.OK
             city_idtf_link = self.get_ru_idtf(city_addr)
-            answer_city_idtf_link = get_element_by_norole_relation(
-                src=city_addr, nrel_node=idtf)
             if not city_idtf_link.is_valid():
                 self.logger.info(f"City_idtf not valid")
                 self.set_unknown_city_link(action_node, answer_phrase)
                 return ScResult.OK
-            
-            
+
             self.logger.info(f"{desire_addr} {city_addr}")
             if not desire_addr.is_valid():
                 self.logger.info(f"Desire not valid")
                 self.set_unknown_city_link(action_node, answer_phrase)
                 return ScResult.OK
             self.logger.info(f"2")
-            desire_idtf_link = self.get_en_idtf(desire_addr)
+            desire_idtf_link = desire_addr
             self.logger.info(f"3")
             self.logger.info(f"{desire_idtf_link}")
             if not desire_idtf_link.is_valid():
@@ -112,8 +109,6 @@ class FindSomePlacesAgent(ScAgentClassic):
         except:
             self.logger.info(f"FindSomPlacesAgent: finished with an error")
             return ScResult.ERROR
-
-
 
         lat = []
         lon = []
@@ -158,7 +153,6 @@ class FindSomePlacesAgent(ScAgentClassic):
                 except:
                     pass
 
-
         except requests.exceptions.ConnectionError:
             self.logger.info(f"FindSomePlacesAgent: finished with connection error")
             return ScResult.ERROR
@@ -172,7 +166,6 @@ class FindSomePlacesAgent(ScAgentClassic):
         create_action_answer(action_node, link)
 
         return ScResult.OK
-
 
     def set_unknown_city_link(self, action_node: ScAddr, answer_phrase: ScAddr) -> None:
         unknown_city_link = ScKeynodes.resolve(

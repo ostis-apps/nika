@@ -70,8 +70,6 @@ class TravellingAgent(ScAgentClassic):
         city_idtf_link = self.get_ru_idtf(city_addr)
         city_idtf = get_link_content_data(city_idtf_link)
 
-        
-
         # Будет браться у пользователя
         # desiers = ['театр', "кинотеатр", "заповедники", "парки",  "библиотека", "музей-усадьба"]
         concept_user = ScKeynodes.resolve("concept_tourist", sc_types.NODE_NOROLE)
