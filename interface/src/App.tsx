@@ -108,17 +108,9 @@ export const App = () => {
         };
 
         return (
-            <Layout>
-                <Header style={ headerStyles }>
-                    <HeaderPanel />
-                </Header>
-                <Content style={ mainStyles }>
-                    <DemoRoutes />
-                    <AboutRoutes />
-                </Content>
-                <Footer style={ footerStyles }>
-                    <FooterPanel />
-                </Footer>
-            </Layout>
+            <Content style={ mainStyles }>
+                <DemoRoutes />
+                <AboutRoutes />
+            </Content>
         );
     };
