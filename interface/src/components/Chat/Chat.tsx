@@ -42,8 +42,8 @@ interface IProps {
     isAgentAnswer?: boolean;
 }
 const textPlaceholder = {
-    en: 'What Nika can?',
-    ru: 'Что умеет Ника?',
+    en: 'What Ragneda can?',
+    ru: 'Что умеет Рагнеда?',
 };
 const textLoad = {
     en: 'Load messages',
