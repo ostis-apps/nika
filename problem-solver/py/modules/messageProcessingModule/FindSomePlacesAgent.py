@@ -118,7 +118,12 @@ class FindSomePlacesAgent(ScAgentClassic):
 
         entity_idtf = get_link_content_data(city_idtf_link)
         desire = get_link_content_data(desire_idtf_link)
-        print(f"1- {desire} {entity_idtf}")
+        s1 = f'<p>В городе {entity_idtf} есть:</p>'
+        s2 = f'<p>По запросу в городе {entity_idtf} было найдено:</p>'
+        phrases = [s1, s2]
+        n = randint(0, len(phrases)-1)
+        
+        attractions = phrases[n]
         try:
             
             coordinates = requests.get(
@@ -149,10 +154,10 @@ class FindSomePlacesAgent(ScAgentClassic):
                 attractions += f"{item['properties']['name']}<br>"
 
                 try:
-                    attractions += f"<p style='opacity: 0.7'>{inf['address']['road']} {inf['address']['house_number']}</p><br>"
+                    attractions += f"<p style='opacity: 0.7'>{inf['address']['road']} {inf['address']['house_number']}</p>"
                     kol += 1
                 except:
-                    pass
+                    attractions += f"<p style='opacity: 0.7'> -</p>"
                 
                 if kol == 5:
                     break

@@ -88,21 +88,12 @@ class HistoryAgent(ScAgentClassic):
         except requests.exceptions.ConnectionError:
             self.logger.info(f"HistoryAgent: finished with connection error")
             return ScResult.ERROR
+        
         link = create_link(
             str(history), ScLinkContentType.STRING, link_type=sc_types.LINK_CONST)
-        nrel_format = ScKeynodes.resolve(
-                "nrel_format", sc_types.NODE_NOROLE)
-        format_html = ScKeynodes.resolve(
-                "format_html", sc_types.NODE_CONST)
-        format_edge = create_edge(
-            sc_types.EDGE_D_COMMON_CONST, link, format_html)
-        create_edge(
-            sc_types.EDGE_ACCESS_CONST_POS_PERM, nrel_format, format_edge)
         
-        history_edge = create_edge(
-            sc_types.EDGE_D_COMMON_CONST, city_addr, link)
-        create_edge(
-            sc_types.EDGE_ACCESS_CONST_POS_PERM, nrel_history, history_edge)
+
+        random_city_edge = create_edge(sc_types.EDGE_ACCESS_CONST_POS_PERM, answer_phrase, link)
         create_action_answer(action_node, link)
 
         return ScResult.OK

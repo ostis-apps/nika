@@ -28,7 +28,7 @@ from sc_kpm.utils.action_utils import (
 from sc_kpm import ScKeynodes
 
 import requests
-from random import randint
+from random import randint, choice
 
 
 logging.basicConfig(
@@ -92,8 +92,13 @@ class TravellingAgent(ScAgentClassic):
         lon = []
         name = []
         adr = []
-        attractions = '<br><br>'
         city_idtf = get_link_content_data(city_idtf_link)
+        s1 = f'<p>В городе {city_idtf} вы можете посетить:</p>'
+        s2 = f'<p>Места города {city_idtf}, которые вы можкете посетить:</p>'
+        phrases = [s1, s2]
+        n = randint(0, len(phrases)-1)
+        
+        attractions = phrases[n]
         desiers = ['pools', 'fast_food', 'cinemas', 'historical_places', 'concert_halls', 'amusements']
         try:
             coordinates = requests.get(
@@ -133,16 +138,17 @@ class TravellingAgent(ScAgentClassic):
                     attractions += f"~ {name}"
 
                     try:
-                        attractions += f"<p style='opacity: 0.7'>{inf['address']['road']} {inf['address']['house_number']}</p>"
+                        attractions += f"<p style='opacity: 0.7'>  {inf['address']['road']} {inf['address']['house_number']}</p>"
                     except:
-                        attractions += ""
+                        attractions += f"<p style='opacity: 0.7'>  - </p>"
+
                 except:
                     print("~ ERROR ~")
 
             for i in range(0, len(lat)):
                 coordString += str(lon[i]) + ',' + str(lat[i]) + ','
                     
-            attractions += '<style>a:hover {background\: rgb(96, 178, 202);}</style><a class="build_map" href="http://localhost:3033/map?x=' + str(coordinates["lon"]) + "," + str(coordinates["lat"]) + "," + coordString + '" style="transition: all .6s ease; display: inline-block; padding: 10px 20px; margin: auto; background: blue; background: #262626; text-decoration: none; border-radius: 10px;">Построить карту</a>'
+            attractions += '<a class="build_map" href="http://localhost:3033/map?x=' + str(coordinates["lon"]) + "," + str(coordinates["lat"]) + "," + coordString + '" style="transition: all .6s ease; display: inline-block; padding: 10px 20px; margin: auto; background: blue; background: #262626; text-decoration: none; border-radius: 10px;">Построить карту</a>'
 
         except requests.exceptions.ConnectionError:
             self.logger.info(f"FindSomePlacesAgent: finished with connection error")
