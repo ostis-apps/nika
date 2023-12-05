@@ -88,13 +88,12 @@ class TravellingAgent(ScAgentClassic):
             self.logger.info(f"FindSomPlacesAgent: finished with an error")
             return ScResult.ERROR
 
-        lat = []
-        lon = []
+        xids = []
         name = []
         adr = []
         city_idtf = get_link_content_data(city_idtf_link)
         s1 = f'<p>В городе {city_idtf} вы можете посетить:</p>'
-        s2 = f'<p>Места города {city_idtf}, которые вы можкете посетить:</p>'
+        s2 = f'<p>Места города {city_idtf}, которые вы можете посетить:</p>'
         phrases = [s1, s2]
         n = randint(0, len(phrases)-1)
         
@@ -113,7 +112,7 @@ class TravellingAgent(ScAgentClassic):
                         f"https://api.opentripmap.com/0.1/ru/places/radius?radius={2000}&lon={coordinates['lon']}&lat={coordinates['lat']}&kinds={item},&apikey={api_key}"
                     ).json()['features']
 
-
+                    print(places)
                     l = places
                     j = 0
                     f = False
@@ -131,10 +130,9 @@ class TravellingAgent(ScAgentClassic):
                     places = places[j]['properties']['xid']
 
                     inf = requests.get(f'https://api.opentripmap.com/0.1/ru/places/xid/{places}?apikey={api_key}').json()
-                    
-                    lon.append(inf['point']['lon'])
-                    lat.append(inf['point']['lat'])
-                    
+                    print(1)
+                    xids.append(str(places))
+                    print(2)
                     attractions += f"~ {name}"
 
                     try:
@@ -145,10 +143,10 @@ class TravellingAgent(ScAgentClassic):
                 except:
                     print("~ ERROR ~")
 
-            for i in range(0, len(lat)):
-                coordString += str(lon[i]) + ',' + str(lat[i]) + ','
+            for i in range(0, len(xids)):
+                coordString += xids[i] + ','
                     
-            attractions += '<a class="build_map" href="http://localhost:3033/map?x=' + str(coordinates["lon"]) + "," + str(coordinates["lat"]) + "," + coordString + '" style="transition: all .6s ease; display: inline-block; padding: 10px 20px; margin: auto; background: blue; background: #262626; text-decoration: none; border-radius: 10px;">Построить карту</a>'
+            attractions += '<a class="build_map" href="http://c3337100.beget.tech/index.html?x=' + str(coordinates["lon"]) + "&y=" + str(coordinates["lat"]) + "&id=" + coordString + '" style="transition: all .6s ease; display: inline-block; padding: 10px 20px; margin: auto; background: blue; background: #262626; text-decoration: none; border-radius: 10px;">Построить карту</a>'
 
         except requests.exceptions.ConnectionError:
             self.logger.info(f"FindSomePlacesAgent: finished with connection error")

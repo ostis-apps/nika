@@ -110,8 +110,7 @@ class FindSomePlacesAgent(ScAgentClassic):
             self.logger.info(f"FindSomPlacesAgent: finished with an error")
             return ScResult.ERROR
 
-        lat = []
-        lon = []
+        xids = []
         name = []
         adr = []
         attractions = ''
@@ -139,12 +138,12 @@ class FindSomePlacesAgent(ScAgentClassic):
             kol = 0
             for item in places:
                 place = item['properties']['xid']
-
+                print(place)
                 inf = requests.get(f'https://api.opentripmap.com/0.1/ru/places/xid/{place}?apikey={api_key}').json()
 
-                lat.append(inf['point']['lat'])
-                lon.append(inf['point']['lon'])
+                xids.append(str(place))
                 name.append(item['properties']['name'])
+
                 try:
                     adr.append(f"{inf['address']['road']} {inf['address']['house_number']}")
                 except:
@@ -161,6 +160,12 @@ class FindSomePlacesAgent(ScAgentClassic):
                 
                 if kol == 5:
                     break
+
+            coordString = ''
+            for i in range(0, len(xids)):
+                coordString += str(xids[i]) + ','
+                    
+            attractions += '<a class="build_map" href="http://c3337100.beget.tech/index.html?x=' + str(coordinates["lon"]) + "&y=" + str(coordinates["lat"]) + "&id=" + coordString + '" style="transition: all .6s ease; display: inline-block; padding: 10px 20px; margin: auto; background: blue; background: #262626; text-decoration: none; border-radius: 10px;">Построить карту</a>'
 
 
         except requests.exceptions.ConnectionError:
