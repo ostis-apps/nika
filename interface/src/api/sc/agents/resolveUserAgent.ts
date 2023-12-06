@@ -4,11 +4,13 @@ import { client } from '@api/sc';
 const conceptUser = 'concept_user';
 const conceptDialog = 'concept_dialogue';
 const rrelDialogParticipant = 'rrel_dialog_participant';
+const conceptAuthorizationStatus = 'concept_authorization_status';
 
 const baseKeynodes = [
     { id: conceptUser, type: ScType.NodeConstClass },
     { id: conceptDialog, type: ScType.NodeConstClass },
     { id: rrelDialogParticipant, type: ScType.NodeConstRole },
+    { id: conceptAuthorizationStatus, type: ScType.NodeConstClass },
 ];
 
 const getUser = async () => {
@@ -43,6 +45,11 @@ const createUser = async () => {
         keynodes[conceptDialog],
         ScType.EdgeAccessVarPosPerm,
         [ScType.NodeVar, dialog],
+    );
+    template.triple(
+        keynodes[conceptAuthorizationStatus],
+        ScType.EdgeAccessVarPosPerm,
+        dialog,
     );
     template.tripleWithRelation(
         dialog,

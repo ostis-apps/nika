@@ -69,7 +69,7 @@ SC_AGENT_IMPLEMENTATION(MessageReplyAgent)
     utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
     return SC_RESULT_ERROR;
   }
-  ScAddrVector argsVector = {processingProgramAddr, generateNonAtomicActionArgsSet(messageAddr)};
+  ScAddrVector argsVector = {processingProgramAddr, generateNonAtomicActionArgsSet(messageAddr, chatAddr)};
   ScAddr actionToInterpret = utils::AgentUtils::initAgent(
       &m_memoryCtx, commonModule::Keynodes::action_interpret_non_atomic_action, argsVector);
   ScAddr answerAddr;
@@ -163,6 +163,32 @@ ScAddr MessageReplyAgent::generateNonAtomicActionArgsSet(ScAddr const & messageA
       messageAddr,
       ScType::EdgeAccessVarPosPerm,
       CoreKeynodes::rrel_1);
+  ScTemplateGenResult templateGenResult;
+  if (!m_memoryCtx.HelperGenTemplate(argsSetTemplate, templateGenResult))
+  {
+    throw std::runtime_error("Unable to generate arguments set for interpreter agent action");
+  }
+  return templateGenResult[ARGS_SET_ALIAS];
+}
+
+ScAddr MessageReplyAgent::generateNonAtomicActionArgsSet(ScAddr const & messageAddr, ScAddr const & dialogAddr)
+{
+  std::string const ARGS_SET_ALIAS = "_args_set";
+
+  ScTemplate argsSetTemplate;
+  argsSetTemplate.TripleWithRelation(
+      ScType::NodeVar >> ARGS_SET_ALIAS,
+      ScType::EdgeAccessVarPosPerm,
+      messageAddr,
+      ScType::EdgeAccessVarPosPerm,
+      CoreKeynodes::rrel_1);
+  argsSetTemplate.TripleWithRelation(
+      ARGS_SET_ALIAS,
+      ScType::EdgeAccessVarPosPerm,
+      dialogAddr,
+      ScType::EdgeAccessVarPosPerm,
+      CoreKeynodes::rrel_2);
+
   ScTemplateGenResult templateGenResult;
   if (!m_memoryCtx.HelperGenTemplate(argsSetTemplate, templateGenResult))
   {
