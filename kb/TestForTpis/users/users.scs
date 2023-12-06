@@ -1,0 +1,11 @@
+concept_users
+    =>nrel_main_idtf:[Список пользователей] (* <-lang_ru;; *);
+    <-sc_node_class;;
+    
+...
+    =>nrel_main_idtf:[name] (* <-lang_ru;; *);
+    =>nrel_login: [example@mail.ru];
+    =>nrel_password: [12345];
+    <-concept_users;;
+
+    

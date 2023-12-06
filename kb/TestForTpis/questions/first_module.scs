@@ -1,0 +1,27 @@
+concept_questions
+    =>nrel_main_idtf:[Вопросы] (* <-lang_ru;; *);
+    <- sc_node_class;;
+
+concept_correct_answer
+    => nrel_main_idtf:
+        [Правильный ответ]
+        (* <- lang_ru;; *);
+    <- sc_node_class;;
+
+concept_unasked_questions
+    => nrel_main_idtf:
+        [Незаданные вопросы]
+        (* <- lang_ru;; *);
+    <- sc_node_class;;
+
+rrel_answer
+    => nrel_main_idtf:
+        [Вариант ответа]
+        (* <- lang_ru;; *);
+<-sc_node_role_relation;;
+
+rrel_question_formulation
+    => nrel_main_idtf:
+        [Формулировка вопроса]
+        (* <- lang_ru;; *);
+<-sc_node_role_relation;;
