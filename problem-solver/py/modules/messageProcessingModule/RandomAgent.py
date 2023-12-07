@@ -78,9 +78,11 @@ class RandomAgent(ScAgentClassic):
         try:
             set_lang("ru")
             city = choice(cities)
+            print(city)
             try:
                 array = page("Город " + city + " (Беларусь)").images
                 random_city =  f'<img src="{array[-1]}" style="width: 100%; border-radius: 10px; margin-bottom: 10px;">' + "<br>" + f"<b><p style='text-align: center'>{city}</p></b>" + summary("Город " + city + " (Беларусь)", sentences = 4)
+                print(random_city)
             except:
                 array = page(city).images
                 random_city =  f'<img src="{array[-1]}" style="width: 100%; border-radius: 10px; margin-bottom: 10px;">' + "<br>" + f"<b><p style='text-align: center'>{city}</p></b>" + summary(city, sentences = 4)
