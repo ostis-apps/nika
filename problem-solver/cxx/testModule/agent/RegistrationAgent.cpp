@@ -69,6 +69,7 @@ SC_AGENT_IMPLEMENTATION(RegistrationAgent)
   
   if(m_memoryCtx.HelperCheckEdge(TestKeynodes::concept_absence_of_authorized_user, dialog, ScType::EdgeAccessConstPosPerm) && messageText.find("Пройти регистрацию.") == 0)
   {
+    SC_LOG_ERROR("ПАРАША ЕБАННАЯ");
     ScAddr const &link_login = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageAddr, TestKeynodes::email);
     ScAddr const &link_password = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageAddr, TestKeynodes::password);
     ScAddr const & replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);

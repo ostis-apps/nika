@@ -84,15 +84,12 @@ SC_AGENT_IMPLEMENTATION(AuthorizationAgent)
     
     ScAddrVector const & possiblePasswordLinks = m_memoryCtx.FindLinksByContent(textPassword);
     
+    
+    
     m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
 
     auto userWasFound = false;
-    if(possibleLoginLinks.IsEmpty() == SC_TRUE || possiblePasswordLinks.IsEmpty() == SC_TRUE)
-    {
-      messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Неверно введённый логин и/или пароль.");
-    }
-    else
-    {
+    
       for(ScAddr const & possibleLoginLink : possibleLoginLinks)
       {
         if(!userWasFound)
@@ -131,25 +128,26 @@ SC_AGENT_IMPLEMENTATION(AuthorizationAgent)
                 SC_LOG_ERROR("if");
                 m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, TestKeynodes::concept_authorized_user, getUser[0]["_user"]);
                 SC_LOG_ERROR("if");
-                messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Авторизация успешна.");
+                /*messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Авторизация успешна.");
                 SC_LOG_ERROR("12456456");
                 ScIterator3Ptr it3 = m_memoryCtx.Iterator3(TestKeynodes::concept_absence_of_authorized_user, ScType::EdgeAccessConstPosPerm, dialog);
                 SC_LOG_ERROR("if");
                 if (it3->Next())
-                  m_memoryCtx.EraseElement(it3->Get(1));
+                  m_memoryCtx.EraseElement(it3->Get(1));*/
                 
-                SC_LOG_ERROR("if");
+                /*SC_LOG_ERROR("if");
                 m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, TestKeynodes::concept_success_authorization_status, dialog);
-                SC_LOG_ERROR("if");
+                SC_LOG_ERROR("if");*/
               }
             }
           }
         }
       }
+    
+    if (!userWasFound)
+    {
+      messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Неверно введённый логин и/или пароль.");
     }
-      
-    
-    
     
     SC_LOG_ERROR("if");
     utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
