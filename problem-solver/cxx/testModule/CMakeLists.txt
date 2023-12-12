@@ -2,12 +2,16 @@ set(SOURCES
     "TestModule.cpp"
     "keynodes/TestKeynodes.cpp"
     "agent/TestAgent.cpp"
+    "agent/AuthorizationAgent.cpp"
+    "agent/RegistrationAgent.cpp"
 )
 
 set(HEADERS
     "TestModule.hpp"
     "keynodes/TestKeynodes.hpp"
     "agent/TestAgent.hpp"
+    "agent/AuthorizationAgent.hpp"
+    "agent/RegistrationAgent.hpp"
 )
 
 include_directories(

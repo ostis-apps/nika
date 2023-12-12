@@ -1,14 +1,15 @@
 ...
 <-concept_questions;
 <-concept_unasked_questions;
-->rrel_answer: [1] (*<-concept_correct_answer;; *);
+->rrel_answer: [1];
 ->rrel_answer: [2];
-->rrel_answer: [3];
+->rrel_answer: [3](*<-concept_correct_answer;; *);
 ->rrel_answer: [4];
-->rrel_question_formulation: [Топ спецуха?
-<li> ИИ</li>
-<li> Гейдиз</li>
-<li> СУИ</li>
-<li> ПЭ</li>
+->rrel_question_formulation: [Что не является компонентом любой ostis-системы?
+<ol>
+<li> База знаний</li>
+<li> Ядро системы</li>
+<li> Открытый исходный код</li>
+<li> Редакторы</li>
 </ol>
-Пример ответа: "1" (без кавычек).];;
+Пример ответа: "Ответ: 1" (без кавычек).];;

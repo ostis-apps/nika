@@ -5,6 +5,8 @@
 
 #include "keynodes/TestKeynodes.hpp"
 #include "agent/TestAgent.hpp"
+#include "agent/AuthorizationAgent.hpp"
+#include "agent/RegistrationAgent.hpp"
 #include "utils/ActionUtils.hpp"
 
 #include "TestModule.generated.hpp"

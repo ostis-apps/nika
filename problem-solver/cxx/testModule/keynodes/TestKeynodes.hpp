@@ -16,6 +16,12 @@ public:
   SC_PROPERTY(Keynode("action_test_for_tpis"), ForceCreate)
   static ScAddr action_test_for_tpis;
 
+  SC_PROPERTY(Keynode("action_authorization"), ForceCreate)
+  static ScAddr action_authorization;
+
+  SC_PROPERTY(Keynode("action_registration"), ForceCreate)
+  static ScAddr action_registration;
+
   SC_PROPERTY(Keynode("concept_authorization_status"), ForceCreate)
   static ScAddr concept_authorization_status;
 
@@ -93,6 +99,9 @@ public:
 
   SC_PROPERTY(Keynode("rrel_correct"), ForceCreate)
   static ScAddr rrel_correct;
+
+  SC_PROPERTY(Keynode("concept_absence_of_authorized_user"), ForceCreate)
+  static ScAddr concept_absence_of_authorized_user;
 };
 
 }  // namespace interfaceModule
