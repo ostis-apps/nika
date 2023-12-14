@@ -36,4 +36,5 @@ ScAddr TestKeynodes::rrel_correct;
 /////////////////////
 ScAddr TestKeynodes::concept_absence_of_authorized_user;
 ScAddr TestKeynodes::concept_users;
+ScAddr TestKeynodes::nrel_report;
 }  // namespace interfaceModule

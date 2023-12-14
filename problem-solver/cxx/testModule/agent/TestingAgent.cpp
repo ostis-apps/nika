@@ -73,6 +73,16 @@ SC_AGENT_IMPLEMENTATION(TestingAgent)
     ScAddr const &countOfQuestionsLinkFromMessage = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageAddr, TestKeynodes::count);
     ScAddr const &countOfQuestionsLinkConstruction = m_memoryCtx.CreateNode(ScType::NodeConst);
     std::string countOfQuestions = utils::CommonUtils::getLinkContent(&m_memoryCtx, countOfQuestionsLinkFromMessage);
+    if(countOfQuestions > 20 && countOfQuestions < 5)
+    {
+      ScAddr const &replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);
+      m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
+      messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Количество вопросов должно быть от 5 до 20.");
+      utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
+      SC_LOG_DEBUG("TestingAgent finished");
+      utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, true);
+      return SC_RESULT_OK;
+    }
     SC_LOG_ERROR(countOfQuestions);
     messageConstructionGenerator.generateTextTranslationConstruction(countOfQuestionsLinkConstruction, Keynodes::lang_ru, std::to_string(std::atoi(countOfQuestions.c_str()) - 1));
     utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, dialog, countOfQuestionsLinkConstruction, TestKeynodes::rrel_count_of_questions);
@@ -410,7 +420,18 @@ SC_AGENT_IMPLEMENTATION(TestingAgent)
         m_memoryCtx.EraseElement(it5_deleteTemporaryNodes->Get(2));
         m_memoryCtx.EraseElement(it5_deleteTemporaryNodes->Get(3));
       }
+
+      utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, user, LinkHandler.createLink(countOfCorrectAnswers + "/" + totalCountOfAnswers), TestKeynodes::nrel_report);
+      m_memoryCtx.EraseElement(utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, user, TestKeynodes::rrel_correct));
+      m_memoryCtx.EraseElement(utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, user, TestKeynodes::rrel_total));
     }
+  }
+  else if(m_memoryCtx.HelperCheckEdge(TestKeynodes::concept_absence_of_authorized_user, dialog, ScType::EdgeAccessConstPosPerm) && messageText.find("Пройти тест по ТПИС") == 0)
+  {
+    ScAddr const &replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);
+    m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
+    messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Требуется авторизация!");
+    utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
   }
   
   SC_LOG_DEBUG("TestingAgent finished");

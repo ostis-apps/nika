@@ -103,6 +103,9 @@ public:
   SC_PROPERTY(Keynode("rrel_correct"), ForceCreate)
   static ScAddr rrel_correct;
 
+  SC_PROPERTY(Keynode("nrel_report"), ForceCreate)
+  static ScAddr nrel_report;
+
   SC_PROPERTY(Keynode("concept_absence_of_authorized_user"), ForceCreate)
   static ScAddr concept_absence_of_authorized_user;
 };
