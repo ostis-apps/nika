@@ -40,12 +40,13 @@ SC_AGENT_IMPLEMENTATION(TestAgent)
 
    dialogControlModule::MessageConstructionsGenerator messageConstructionGenerator = MessageConstructionsGenerator(&m_memoryCtx);
    auto LinkHandler = commonModule:: LinkHandler(&m_memoryCtx); 
-
+  //std::unique_ptr<dialogControlModule::MessageConstructionsGenerator> messageConstructionGenerator = std::make_unique<dialogControlModule::MessageConstructionsGenerator>;
   ScAddr const & dialog = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, questionNode, scAgentsCommon::CoreKeynodes::rrel_2);
 
   if(m_memoryCtx.HelperCheckEdge(TestKeynodes::concept_authorization_status, dialog, ScType::EdgeAccessConstPosPerm))
   {
     ScAddr const &count_quest = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageAddr, TestKeynodes::count);
+   
 
     ScAddr const &link = m_memoryCtx.CreateNode(ScType::NodeConst);
     
@@ -53,11 +54,13 @@ SC_AGENT_IMPLEMENTATION(TestAgent)
 
     utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, dialog, link, TestKeynodes::rrel_count_of_questions);
 
+    SC_LOG_ERROR("help");
     ScAddr const & replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);
     m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
     messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Введите логин: ");
     utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
-
+    //1. Используем ScIterator3Ptr. С помощью итератора находите дугу. Есди итератор  it3->Next(), то удаляете дугу.
+    //2. m_memoryCtx.EraseElement(it3.Get(1));
     ScIterator3Ptr it3 = m_memoryCtx.Iterator3(TestKeynodes::concept_authorization_status, ScType::EdgeAccessConstPosPerm, dialog);
     if (it3->Next())
       m_memoryCtx.EraseElement(it3->Get(1));
@@ -68,27 +71,35 @@ SC_AGENT_IMPLEMENTATION(TestAgent)
   else if(m_memoryCtx.HelperCheckEdge(TestKeynodes::concept_login_waiting_status, dialog, ScType::EdgeAccessConstPosPerm))
   {
     ScAddr const &link_login = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageAddr, TestKeynodes::email);
-
+    //добавить хэдер
     std::string login_from_message = utils::CommonUtils::getLinkContent(&m_memoryCtx, link_login);
-
+    SC_LOG_ERROR(login_from_message);
+    
+    SC_LOG_ERROR("1");
     ScAddr const &user = getLinkConstructionLogin(login_from_message);
-
+    SC_LOG_ERROR("2");
     if(user.IsValid())
-    {      
+    {
+      SC_LOG_ERROR("3");
+      
       ScIterator3Ptr it3 = m_memoryCtx.Iterator3(TestKeynodes::concept_login_waiting_status, ScType::EdgeAccessConstPosPerm, dialog);
-
+      SC_LOG_ERROR("4");
       if (it3->Next())
         m_memoryCtx.EraseElement(it3->Get(1));
-
+      SC_LOG_ERROR("5");
       m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, TestKeynodes::concept_password_waiting_status, dialog);
-
+      SC_LOG_ERROR("6");
       ScAddr const & replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);
-
+      SC_LOG_ERROR("7");
       m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
-
+      SC_LOG_ERROR("8");
+      //проверить везде
       messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Введите пароль: ");
+      SC_LOG_ERROR("9");
+      utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
+      SC_LOG_ERROR("10");
 
-      utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);      
+      
     }
     else
     {
@@ -104,18 +115,21 @@ SC_AGENT_IMPLEMENTATION(TestAgent)
   }
   else if (m_memoryCtx.HelperCheckEdge(TestKeynodes::concept_login_not_found_status, dialog, ScType::EdgeAccessConstPosPerm))
   {
+    SC_LOG_ERROR("1");
     ScAddr const &link_login = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageAddr, TestKeynodes::email);
+    SC_LOG_ERROR("2");
     ScAddr const &link_password = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageAddr, TestKeynodes::password);
+    SC_LOG_ERROR("3");
     ScAddr const & replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);
-
+    SC_LOG_ERROR("4");
     ScTemplate createTemplate;
-
+    SC_LOG_ERROR("5");
     createTemplate.Triple(
       TestKeynodes::concept_users,
       ScType::EdgeAccessVarPosPerm,
       ScType::NodeVar >> "_user"
     );
-
+    SC_LOG_ERROR("6");
     createTemplate.TripleWithRelation(
       "_user",
       ScType::EdgeDCommonVar,
@@ -123,7 +137,7 @@ SC_AGENT_IMPLEMENTATION(TestAgent)
       ScType::EdgeAccessVarPosPerm,
       TestKeynodes::nrel_login
     );
-
+    SC_LOG_ERROR("7");
     createTemplate.TripleWithRelation(
       "_user",
       ScType::EdgeDCommonVar,
@@ -131,21 +145,22 @@ SC_AGENT_IMPLEMENTATION(TestAgent)
       ScType::EdgeAccessVarPosPerm,
       TestKeynodes::nrel_password
     );
-
+    SC_LOG_ERROR("8");
     ScTemplateGenResult templateGenResult;
-
+    SC_LOG_ERROR("9");
     m_memoryCtx.HelperGenTemplate(createTemplate, templateGenResult);
-
+    SC_LOG_ERROR("10");
     ScIterator3Ptr it3 = m_memoryCtx.Iterator3(TestKeynodes::concept_login_not_found_status, ScType::EdgeAccessConstPosPerm, dialog);
-
+    SC_LOG_ERROR("11");
     if(it3->Next())
       m_memoryCtx.EraseElement(it3->Get(1));
-
+    SC_LOG_ERROR("12");
     m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, TestKeynodes::concept_success_authorization_status, dialog);
+    SC_LOG_ERROR("13");
     messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Авторизация успешна. Приступить к тестированию?");
-
+    SC_LOG_ERROR("14");
     utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
-
+    SC_LOG_ERROR("15");
     ScAddr const &user = getLinkConstructionLogin(utils::CommonUtils::getLinkContent(&m_memoryCtx, link_login));
     m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, TestKeynodes::concept_authorized_user, user);
     
@@ -159,15 +174,11 @@ SC_AGENT_IMPLEMENTATION(TestAgent)
     if (user.IsValid())
     {
       ScIterator3Ptr it3 = m_memoryCtx.Iterator3(TestKeynodes::concept_password_waiting_status, ScType::EdgeAccessConstPosPerm, dialog);
-
       if (it3->Next())
         m_memoryCtx.EraseElement(it3->Get(1));
-
       m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, TestKeynodes::concept_success_authorization_status, dialog);
       ScAddr const & replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);
-
       m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
-
       messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Авторизация успешна. Приступить к тестированию?");
       utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
       m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, TestKeynodes::concept_authorized_user, user);
@@ -183,10 +194,11 @@ SC_AGENT_IMPLEMENTATION(TestAgent)
   {
       ScAddr user = m_memoryCtx.CreateNode(ScType::NodeVar); 
       ScIterator3Ptr it3 = m_memoryCtx.Iterator3(TestKeynodes::concept_authorized_user, ScType::EdgeAccessConstPosPerm, ScType::NodeConst);
-
       if (it3->Next())
         user = it3->Get(2);
       
+      //ScAddr const &number_of_questions = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, dialog, TestKeynodes::rrel_count_of_questions);
+      //std::string num_of_quest = utils::CommonUtils::getLinkContent(&m_memoryCtx, number_of_questions);
       ScTemplate getLink;
       getLink.TripleWithRelation(
         dialog,
@@ -213,7 +225,7 @@ SC_AGENT_IMPLEMENTATION(TestAgent)
       if (getLink.IsEmpty() == SC_FALSE)
       {
         num_of_quest = utils::CommonUtils::getLinkContent(&m_memoryCtx, getCount[0]["_link"]);
-
+        SC_LOG_ERROR(num_of_quest);
       }
     
     m_memoryCtx.EraseElement(getCount[0]["_node"]);
@@ -224,9 +236,13 @@ SC_AGENT_IMPLEMENTATION(TestAgent)
       utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, user, total_count, TestKeynodes::rrel_total);
       messageConstructionGenerator.generateTextTranslationConstruction(correct_count, Keynodes::lang_ru, "0");
       utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, user, correct_count, TestKeynodes::rrel_correct);
+      //m_memoryCtx.EraseElement(number_of_questions);
       ScAddr const &link = m_memoryCtx.CreateNode(ScType::NodeConst);
+      SC_LOG_ERROR("1");
       messageConstructionGenerator.generateTextTranslationConstruction(link, Keynodes::lang_ru, std::to_string(std::atoi(num_of_quest.c_str()) - 1));
+      SC_LOG_ERROR("num" + num_of_quest);
       utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, dialog, link, TestKeynodes::rrel_count_of_questions);
+      SC_LOG_ERROR("1");
       std::string question_form;
       ScTemplate getQuestion;
       getQuestion.Triple(
@@ -247,26 +263,32 @@ SC_AGENT_IMPLEMENTATION(TestAgent)
         question_form = utils::CommonUtils::getLinkContent(&m_memoryCtx, searchResult[std::atoi(num_of_quest.c_str()) - 1]["_link"]);
       ScAddr const & replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);
     
+
       m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
       messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, question_form);
       utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
       m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, TestKeynodes::concept_current_question, searchResult[0]["_question"]);
+      SC_LOG_ERROR("1");
       ScIterator3Ptr it3_2 = m_memoryCtx.Iterator3(TestKeynodes::concept_success_authorization_status, ScType::EdgeAccessConstPosPerm, dialog);
-
+      SC_LOG_ERROR("2");
       if (it3_2->Next())
         m_memoryCtx.EraseElement(it3_2->Get(1));
-
+      SC_LOG_ERROR("3");
       m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, TestKeynodes::concept_waiting_answer, dialog);
-
+      SC_LOG_ERROR("4");
   }
   else if(m_memoryCtx.HelperCheckEdge(TestKeynodes::concept_waiting_answer, dialog, ScType::EdgeAccessConstPosPerm))
   {
     ScAddr user = m_memoryCtx.CreateNode(ScType::NodeConst);
     ScIterator3Ptr it3 = m_memoryCtx.Iterator3(TestKeynodes::concept_authorized_user, ScType::EdgeAccessConstPosPerm, ScType::NodeConst);
-
       if (it3->Next())
         user = it3->Get(2);
-
+   // ScAddr const &number_of_question = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, dialog, TestKeynodes::rrel_count_of_questions);
+    SC_LOG_ERROR("4");
+    //ScIterator3Ptr it3_2 = m_memoryCtx.Iterator3(TestKeynodes::concept_current_question, ScType::EdgeAccessConstPosPerm, ScType::NodeConst);
+    SC_LOG_ERROR("2");
+    //if (it3_2->Next())
+     // m_memoryCtx.EraseElement(it3_2->Get(2));
     ScTemplate getLink;
       getLink.TripleWithRelation(
         dialog,
@@ -293,12 +315,13 @@ SC_AGENT_IMPLEMENTATION(TestAgent)
       if (getLink.IsEmpty() == SC_FALSE)
       {
         num_of_quest = utils::CommonUtils::getLinkContent(&m_memoryCtx, getCount[0]["_link"]);
-
+        SC_LOG_ERROR(num_of_quest);
       }
     
     m_memoryCtx.EraseElement(getCount[0]["_node"]);
     ScAddr const &link = m_memoryCtx.CreateNode(ScType::NodeConst);
-
+    SC_LOG_ERROR("ffdg" + num_of_quest + "8");
+    SC_LOG_ERROR("num" + num_of_quest);
     messageConstructionGenerator.generateTextTranslationConstruction(link, Keynodes::lang_ru, std::to_string(std::atoi(num_of_quest.c_str()) - 1));
     utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, dialog, link, TestKeynodes::rrel_count_of_questions);
    
@@ -583,6 +606,40 @@ ScAddr TestAgent::getLinkConstructionPassword(std::string const & text)
       }
       return ScAddr::Empty;
     }
+
+/*std::string GetTextAnswer(ScAddr const &questionTpisNode)
+{
+  ScTemplate textQuestion;
+  textQuestion.TripleWithRelation(
+    ScType::NodeVar >> "_node",
+    ScType::EdgeAccessVarPosPerm,
+    questionTpisNode,
+    ScType::EdgeAccessVarPosPerm,
+    DialogKeynodes::rrel_key_sc_element
+  );
+  textQuestion.TripleWithRelation(
+   ScType::NodeVar >> "_node_1",
+   ScType::EdgeDCommonVar,
+   "_node",
+   ScType::EdgeAccessVarPosPerm,
+   DialogKeynodes::nrel_sc_text_translation
+  );
+  textQuestion.TripleWithRelation(
+   "_node_1",
+   ScType::EdgeAccessVarPosPerm,
+    ScType::LinkVar >> "link_text",
+   ScType::EdgeAccessVarPosPerm,
+   Keynodes::rrel_example
+  );
+
+  ScTemplateSearchResult result;
+  ScAddr link;
+  if (m_memoryCtx.HelperSearchTemplate(textQuestion, result))
+     link = result[0]["link_text"];
+
+
+  return utils::CommonUtils::getLinkContent(&m_memoryCtx, link);
+}*/
 
 bool TestAgent::checkActionClass(ScAddr const & actionAddr)
 {
