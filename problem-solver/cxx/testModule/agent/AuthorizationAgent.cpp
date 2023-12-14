@@ -1,5 +1,9 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
+#include <sstream>
+#include <openssl/ssl.h>
+#include <openssl/evp.h>
 #include "sc-agents-common/utils/AgentUtils.hpp"
 #include "sc-agents-common/utils/IteratorUtils.hpp"
 #include "sc-agents-common/utils/CommonUtils.hpp"
@@ -79,10 +83,10 @@ SC_AGENT_IMPLEMENTATION(AuthorizationAgent)
     std::string textLogin = utils::CommonUtils::getLinkContent(&m_memoryCtx, loginLink);
     
     std::string textPassword = utils::CommonUtils::getLinkContent(&m_memoryCtx, passwordLink);
-
+    std::string encryptedPasswordFromMessage = encryptor(textPassword);
     ScAddrVector const & possibleLoginLinks = m_memoryCtx.FindLinksByContent(textLogin);
     
-    ScAddrVector const & possiblePasswordLinks = m_memoryCtx.FindLinksByContent(textPassword);
+    ScAddrVector const & possiblePasswordLinks = m_memoryCtx.FindLinksByContent(encryptedPasswordFromMessage);
     
     
     
@@ -269,4 +273,41 @@ bool AuthorizationAgent::checkActionClass(ScAddr const & actionAddr)
 {
   return m_memoryCtx.HelperCheckEdge(
       TestKeynodes::action_authorization, actionAddr, ScType::EdgeAccessConstPosPerm);
+}
+
+std::string AuthorizationAgent::hashToString(const unsigned char* hash, size_t hashLength) {
+    std::stringstream ss;
+    ss << std::hex << std::setfill('0');
+    for (size_t i = 0; i < hashLength; ++i) {
+        ss << std::setw(2) << static_cast<unsigned int>(hash[i]);
+    }
+    return ss.str();
+}
+
+std::string AuthorizationAgent::encryptor(std::string password){
+    const char *q = password.c_str();
+    EVP_MD_CTX *mdctx = EVP_MD_CTX_new();
+    const EVP_MD *md = EVP_sha256();
+
+    unsigned char hash[EVP_MAX_MD_SIZE];
+    unsigned int hash_len;
+
+    // Инициализация хеширования
+    EVP_DigestInit_ex(mdctx, md, NULL);
+
+    // Добавление пароля в хеширование
+    EVP_DigestUpdate(mdctx, q, strlen(q));
+
+    // Получение хеша
+    EVP_DigestFinal_ex(mdctx, hash, &hash_len);
+
+    // Освобождение контекста хеширования
+    EVP_MD_CTX_free(mdctx);
+    std::string result=hashToString(hash, hash_len);
+    SC_LOG_ERROR("Hash: ");
+    for (int i = 0; i < hash_len; i++) {
+        SC_LOG_ERROR(hash[i]);
+        
+    }
+    return result;
 }

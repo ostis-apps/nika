@@ -362,7 +362,7 @@ SC_AGENT_IMPLEMENTATION(TestingAgent)
       if(utils::CommonUtils::getLinkContent(&m_memoryCtx, userAnswer) == correctAnswer)
       {
         m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
-        messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Верно!<br><br>Отчёт по пройденному тесту:<br>" + countOfCorrectAnswers + "правильных ответов из " + totalCountOfAnswers + ".");
+        messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Верно!<br><br>Отчёт по пройденному тесту:<br>" + countOfCorrectAnswers + " правильных ответов из " + totalCountOfAnswers + ".");
         SC_LOG_ERROR("Верно!<br><br>Отчёт по пройденному тесту:<br>" + countOfCorrectAnswers + "правильных ответов из " + totalCountOfAnswers + ".");
         utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
 
@@ -485,5 +485,5 @@ ScAddr TestingAgent::getLinkConstructionLogin(std::string const & text)
 bool TestingAgent::checkActionClass(ScAddr const & actionAddr)
 {
   return m_memoryCtx.HelperCheckEdge(
-      TestKeynodes::action_registration, actionAddr, ScType::EdgeAccessConstPosPerm);
+      TestKeynodes::action_testing, actionAddr, ScType::EdgeAccessConstPosPerm);
 }
