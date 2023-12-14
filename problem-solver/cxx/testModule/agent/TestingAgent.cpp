@@ -73,6 +73,7 @@ SC_AGENT_IMPLEMENTATION(TestingAgent)
     ScAddr const &countOfQuestionsLinkFromMessage = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageAddr, TestKeynodes::count);
     ScAddr const &countOfQuestionsLinkConstruction = m_memoryCtx.CreateNode(ScType::NodeConst);
     std::string countOfQuestions = utils::CommonUtils::getLinkContent(&m_memoryCtx, countOfQuestionsLinkFromMessage);
+    SC_LOG_ERROR(countOfQuestions);
     messageConstructionGenerator.generateTextTranslationConstruction(countOfQuestionsLinkConstruction, Keynodes::lang_ru, std::to_string(std::atoi(countOfQuestions.c_str()) - 1));
     utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, dialog, countOfQuestionsLinkConstruction, TestKeynodes::rrel_count_of_questions);
 
@@ -398,17 +399,16 @@ SC_AGENT_IMPLEMENTATION(TestingAgent)
       {
         m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
         messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Неверно. Правильный ответ " + correctAnswer + ".<br><br>Отчёт по пройденному тесту:<br>" + countOfCorrectAnswers + "правильных ответов из " + totalCountOfAnswers + ".");
-        SC_LOG_ERROR("Неверно. Правильный ответ " + correctAnswer + ".<br><br>Отчёт по пройденному тесту:<br>" + countOfCorrectAnswers + "правильных ответов из " + totalCountOfAnswers + ".");
+        SC_LOG_ERROR("Неверно. Правильный ответ " + correctAnswer + ".<br><br>Отчёт по пройденному тесту:<br>" + countOfCorrectAnswers + " правильных ответов из " + totalCountOfAnswers + ".");
         utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
       }
       
-      ScIterator5Ptr const it5_deleteTemporaryNodes = m_memoryCtx.Iterator5(user, ScType::EdgeAccessConstPosPerm, ScType::LinkConst, ScType::EdgeAccessConstPosPerm, TestKeynodes::rrel_correct);
+      ScIterator5Ptr const it5_deleteTemporaryNodes = m_memoryCtx.Iterator5(dialog, ScType::EdgeAccessConstPosPerm, ScType::NodeConst, ScType::EdgeAccessConstPosPerm, TestKeynodes::rrel_count_of_questions);
       while(it5_deleteTemporaryNodes->Next())
       {
         m_memoryCtx.EraseElement(it5_deleteTemporaryNodes->Get(1));
         m_memoryCtx.EraseElement(it5_deleteTemporaryNodes->Get(2));
         m_memoryCtx.EraseElement(it5_deleteTemporaryNodes->Get(3));
-        m_memoryCtx.EraseElement(it5_deleteTemporaryNodes->Get(4));
       }
     }
   }
