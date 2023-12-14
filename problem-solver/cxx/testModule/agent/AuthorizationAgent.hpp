@@ -15,6 +15,9 @@ class AuthorizationAgent : public ScAgent
 private:
   ScAddrVector getAnswer(ScAddr const & user);
   bool checkActionClass(ScAddr const & actionAddr);
+  std::string encryptor(std::string password);
+  std::string hashToString(const unsigned char* hash, size_t hashLength);
 };
 
 }  // namespace interfaceModule
+
