@@ -13,11 +13,8 @@ class AuthorizationAgent : public ScAgent
   SC_GENERATED_BODY()
 
 private:
+  ScAddrVector getAnswer(ScAddr const & user);
   bool checkActionClass(ScAddr const & actionAddr);
-
-  static std::string createColor();
-
-  bool setComponentColor(ScAddr const & componentAddr, std::string const & componentColor);
 };
 
 }  // namespace interfaceModule
