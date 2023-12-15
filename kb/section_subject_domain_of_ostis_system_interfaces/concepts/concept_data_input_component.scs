@@ -1,5 +1,6 @@
 concept_data_input_component
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[компонент ввода данных]
 	(* <- lang_ru;; *);
@@ -9,6 +10,7 @@ concept_data_input_component
 
 concept_data_output_component
 <- sc_node_class;
+<- concept_wit_entity;
 => nrel_main_idtf:
 	[компонент вывода данных]
 	(* <- lang_ru;; *);

@@ -33,6 +33,8 @@ import { Spinner } from '@components/Spinners/LoadSpinner';
 import { WaitingSpinner } from '@components/Spinners/WaitingSpinner';
 import { refSetter, throttle } from '@utils';
 import { useLanguage } from '@hooks/useLanguage';
+import { ScEventParams, ScEventType, ScTemplate, ScType } from "ts-sc-client";
+import { client } from "@api";
 
 interface IProps {
     onSend: (message: string) => void;
@@ -64,6 +66,13 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
         const [hasMoreMessages, setHasMoreMessages] = useState(true);
         const [isLoading, setIsLoading] = useState(false);
         const [beforeFetchingScrollHeight, setBeforeFetchingScrollHeight] = useState<number | null>(null);
+
+        const [mainBgColor, setMainBgColor] = useState<string>('#ffffff');
+        const [inputBgColor, setInputBgColor] = useState<string>('#ffffff');
+        const [buttonBgColor, setButtonBgColor] = useState<string>('#ffffff');
+        const [buttonActiveColor, setButtonActiveColor] = useState<string>('#ffffff');
+        const [inputTextColor, setInputTextColor] = useState<string>('#ffffff');
+        const funcChange = [setMainBgColor, setInputBgColor, setButtonBgColor, setInputTextColor, setButtonActiveColor]
 
         const inputRef = useRef<HTMLInputElement | null>(null);
         const mainRef = useRef<HTMLDivElement>(null);
@@ -130,6 +139,61 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
         };
         const hookLanguage = useLanguage();
 
+        async function fetchColorValue() {
+            const conceptMain = 'concept_data_output_component';
+            const conceptDataInputComponent = 'concept_data_input_component';
+            const conceptButton = 'concept_button'
+            const conceptActiveButton = 'concept_active_button'
+            const conceptInputText = 'concept_input_text'
+            const componentColor = 'nrel_component_color';
+        
+            const baseKeynodes = [
+                { id: conceptMain, type: ScType.NodeConstClass },
+                { id: conceptDataInputComponent, type: ScType.NodeConstClass },
+                { id: conceptButton, type: ScType.NodeConstClass },
+                { id: conceptInputText, type: ScType.NodeConstClass },
+                { id: conceptActiveButton, type: ScType.NodeConstClass },
+            ];
+        
+            const helpKeynodes = [
+                { id: componentColor, type: ScType.NodeConstNoRole },
+            ];
+        
+            const colorAlias = '_color';
+            const componentAlias = '_component'
+             
+            const keynodes = await client.resolveKeynodes(baseKeynodes);
+            const hKeynodes = await client.resolveKeynodes(helpKeynodes);
+        
+            for (var i = 0; i < baseKeynodes.length; i++) {
+                const template = new ScTemplate();
+                template.triple(
+                    keynodes[baseKeynodes[i].id],
+                    ScType.EdgeAccessVarPosPerm,
+                    [ScType.NodeVar, componentAlias],
+                );
+                template.tripleWithRelation(
+                    componentAlias,
+                    ScType.EdgeDCommonVar,
+                    [ScType.LinkVar, colorAlias],
+                    ScType.EdgeAccessVarPosPerm,
+                    hKeynodes[componentColor],
+                );
+                const resultColorLink = await client.templateSearch(template);
+                
+                if (resultColorLink.length) {
+                    const colorLink = resultColorLink[0].get(colorAlias);
+                    const resultColor = await client.getLinkContents([colorLink]);
+                    if (resultColor.length) {
+                        let color = resultColor[0].data;
+                        funcChange[i](color as any);
+                        const eventParams = new ScEventParams(colorLink, ScEventType.ChangeContent, fetchColorValue);
+                        await client.eventsCreate([eventParams]); 
+                    }
+                }    
+            }
+        }
+
         useEffect(() => {
             const LOADING_HEIGHT = 43;
             const heightOnScroll = mainRef.current?.scrollHeight;
@@ -176,9 +240,27 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
             if (empty) setMessageInput('');
         }, [messageInput]);
 
+        useEffect(() => {
+            fetchColorValue();
+        }, []);
+    
+        const mainStyles = {
+            background: mainBgColor,
+        };
+
+        const inputStyles = {
+            background: inputBgColor,
+            color: inputTextColor,
+        };
+
+        const buttonStyles = {
+            background: buttonBgColor,
+            stroke: buttonActiveColor,
+        };
+
         return (
-            <Wrapper className={className}>
-                <SearchBar />
+            <Wrapper className={className} style={ mainStyles }>
+                <SearchBar/>
                 <Main ref={refSetter(mainRef, chatRef)} onScroll={onScroll}>
                     {isLoading && (
                         <WrapperSpinner>
@@ -212,6 +294,7 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
                     </WrapperAgentAnswer>
                     <WrapperFooter>
                         <FooterInput
+                            style={ inputStyles }
                             autoFocus={true}
                             ref={inputRef}
                             value={messageInput}
@@ -220,7 +303,7 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
                             type="text"
                             placeholder={textPlaceholder[hookLanguage]}
                         />
-                        <FooterSend onClick={onButtonClick} type="submit">
+                        <FooterSend onClick={onButtonClick} type="submit" style={ buttonStyles }>
                             <WrapperSendIcon>
                                 <SendIcon />
                             </WrapperSendIcon>
