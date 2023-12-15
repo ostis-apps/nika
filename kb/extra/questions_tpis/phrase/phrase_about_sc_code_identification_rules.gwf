@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="1481447893328" parent="0" x="500.188" y="538.524" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Semantic Code (семантический код) не имеет строго определенных правил идентификации элементов, так как это понятие широко применяется в контексте семантических технологий, где идентификация элементов может зависеть от конкретного семантического формата или языка.
+Однако, в контексте семантических технологий, обычно применяют следующие подходы для идентификации элементов:
+URI (Uniform Resource Identifier): URI - это уникальный идентификатор, который используется для идентификации ресурсов в сети. В семантических технологиях URI часто используются для идентификации понятий, классов, свойств и индивидуальных экземпляров. URI может быть представлен в виде URL (Uniform Resource Locator) или URN (Uniform Resource Name).
+Идентификаторы имен: В некоторых семантических форматах, таких как RDF и OWL, элементы могут быть идентифицированы с помощью имен или идентификаторов, которые обычно представляются в виде строковых значений. Имена могут быть уникальными в рамках определенного пространства имен или онтологии.
+Комбинация свойств: В некоторых случаях, элементы могут быть идентифицированы путем комбинации значений и свойств. Например, в RDF элемент может быть идентифицирован с помощью уникального значения свойства "rdf:about" или "rdf:ID", которые определяют его отношение к другим элементам.
+В целом, идентификация элементов в Semantic Code зависит от используемого семантического формата, языка или стандарта. Они определяют специфические правила идентификации, которые обычно документированы в соответствующей спецификации или документации.]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="1481447896032" parent="0" left="0" top="0" right="52" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="654.138" y="398.259" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_inclusion" shapeColor="0" id="1481447898944" parent="0" left="0" top="0" right="88" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="457.948" y="159.611" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase" shapeColor="0" id="1481447897904" parent="0" left="0" top="0" right="95" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="371.178" y="225.759" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_sc_code_identification_rules" shapeColor="0" id="1481447893120" parent="0" left="0" top="0" right="301" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="376.608" y="400.352" haveBus="false" idtf_pos="4">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_sc_code_identification_rules" shapeColor="0" id="1481444820592" parent="0" left="0" top="0" right="301" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="367.348" y="98.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1481446514144" parent="0" id_b="1481447893120" id_e="1481447893328" b_x="376.608" b_y="400.352" e_x="500.188" e_y="538.524" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="1481446512464" parent="0" id_b="1481447897904" id_e="1481444820592" b_x="371.178" b_y="225.759" e_x="367.348" e_y="98.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1481446512944" parent="0" id_b="1481447898944" id_e="1481446512464" b_x="457.948" b_y="159.611" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.531597">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1481446513664" parent="0" id_b="1481447896032" id_e="1481447893328" b_x="654.138" b_y="398.259" e_x="500.188" e_y="538.524" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>
