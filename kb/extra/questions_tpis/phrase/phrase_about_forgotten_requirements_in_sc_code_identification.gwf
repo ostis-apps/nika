@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="1182299402672" parent="0" x="359.5" y="469.524" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Понятно, спасибо за уточнение. При идентификации элементов в семантическом коде, разработчики иногда могут забывать определенные требования. Вот несколько примеров таких требований, которые могут быть упущены:
+Уникальность идентификаторов: Каждый элемент в семантическом коде должен иметь уникальный идентификатор. Разработчики могут случайно использовать один и тот же идентификатор для разных элементов, что может привести к конфликтам и непредсказуемому поведению системы.
+Однозначность семантики: Идентификация элементов должна быть ясной и однозначной, чтобы избежать двусмысленности и неправильного понимания. Разработчики могут забывать уточнять семантику элементов или использовать неоднозначные имена, что затрудняет их понимание и использование.
+Документация и комментарии: Важно документировать и комментировать идентификацию элементов в семантическом коде для облегчения понимания и последующего сопровождения кода. Разработчики могут забывать добавлять достаточное количество комментариев и документации, что затрудняет работу с кодом другим разработчикам.
+Согласованность идентификаторов: Идентификаторы элементов должны быть согласованы и последовательны во всем коде. Разработчики могут забывать придерживаться определенных соглашений и стандартов идентификации, что делает код менее понятным и согласованным.
+Обновление идентификаторов: Если в процессе разработки меняются элементы или добавляются новые, необходимо обновить идентификаторы соответствующим образом. Разработчики могут забывать обновлять идентификаторы при изменении кода, что может привести к несоответствию и неправильной идентификации элементов.
+Это лишь несколько примеров требований, которые могут быть упущены при идентификации элементов в семантическом коде. Всегда важно тщательно проверять и обеспечивать правильность идентификации элементов для правильной работы системы и облегчения сопровождения кода.]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_forgotten_requirements_in_sc_code_identification" shapeColor="0" id="1182299402880" parent="0" left="0" top="0" right="422" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="226.66" y="29.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_inclusion" shapeColor="0" id="1182299398512" parent="0" left="0" top="0" right="88" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="317.26" y="90.611" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase" shapeColor="0" id="1182299396848" parent="0" left="0" top="0" right="95" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="230.49" y="156.759" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="1182299400800" parent="0" left="0" top="0" right="52" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="513.45" y="329.259" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_forgotten_requirements_in_sc_code_identification" shapeColor="0" id="1182297138624" parent="0" left="0" top="0" right="422" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="235.92" y="331.352" haveBus="false" idtf_pos="1">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="1182252114896" parent="0" id_b="1182299396848" id_e="1182299402880" b_x="230.49" b_y="156.759" e_x="226.66" e_y="29.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1182252114176" parent="0" id_b="1182299398512" id_e="1182252114896" b_x="317.26" b_y="90.611" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.531597">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1182252112496" parent="0" id_b="1182297138624" id_e="1182299402672" b_x="235.92" b_y="331.352" e_x="359.5" e_y="469.524" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1182252114416" parent="0" id_b="1182299400800" id_e="1182299402672" b_x="513.45" b_y="329.259" e_x="359.5" e_y="469.524" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>

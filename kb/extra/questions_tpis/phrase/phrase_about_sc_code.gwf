@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="3057285475616" parent="0" x="528.188" y="531.524" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Semantic Code (семантический код) - это специальный код или язык программирования, который используется для представления и обработки семантической информации в компьютерных системах. Он позволяет описывать и оперировать семантическими концепциями, такими как понятия, отношения и атрибуты, для более точного и понятного представления данных и знаний.
+Semantic Code обычно применяется в контексте семантических технологий и семантического веба. Он может быть использован для создания онтологий, которые определяют семантическую структуру и смысловые связи между данными и понятиями в определенной области.
+Semantic Code может быть представлен в различных форматах, таких как RDF (Resource Description Framework), OWL (Web Ontology Language), SPARQL (SPARQL Protocol and RDF Query Language), OSTIS (Open Semantic Technology for Intelligent Systems) и другие. Он позволяет компьютерным системам понимать и обрабатывать семантическую информацию, а также делать выводы и рассуждения на основе этой информации.
+Семантический код играет важную роль в различных областях, включая семантический поиск, интеллектуальные системы, обработку естественного языка и многие другие, где точное понимание семантики данных и знаний является ключевым фактором.]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_sc_code" shapeColor="0" id="3057288329248" parent="0" left="0" top="0" right="185" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="404.608" y="393.352" haveBus="false" idtf_pos="1">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_sc_code" shapeColor="0" id="3057288331536" parent="0" left="0" top="0" right="185" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="395.348" y="91.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase" shapeColor="0" id="3057288326752" parent="0" left="0" top="0" right="95" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="399.178" y="218.759" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_inclusion" shapeColor="0" id="3057288331328" parent="0" left="0" top="0" right="88" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="485.948" y="152.611" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="3057288326128" parent="0" left="0" top="0" right="52" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="682.138" y="391.259" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="3057287427360" parent="0" id_b="3057288326128" id_e="3057285475616" b_x="682.138" b_y="391.259" e_x="528.188" e_y="531.524" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="3057287431200" parent="0" id_b="3057288331328" id_e="3057287427600" b_x="485.948" b_y="152.611" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.531597">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="3057287427600" parent="0" id_b="3057288326752" id_e="3057288331536" b_x="399.178" b_y="218.759" e_x="395.348" e_y="91.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="3057287429280" parent="0" id_b="3057288329248" id_e="3057285475616" b_x="404.608" b_y="393.352" e_x="528.188" e_y="531.524" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>

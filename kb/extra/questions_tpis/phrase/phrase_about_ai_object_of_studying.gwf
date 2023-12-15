@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/general" idtf="" shapeColor="193" id="2142940257472" parent="0" x="465" y="522.259" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[В контексте искусственного интеллекта (ИИ), объект обучения относится к тому, на чем модель ИИ тренируется и улучшается. Объект обучения представляет собой данные или информацию, которая подается на вход модели для того, чтобы она могла извлекать закономерности, обучаться на основе этих данных и делать предсказания или принимать решения.
+Объект обучения может иметь различные формы в зависимости от типа задачи и типа данных. Вот несколько примеров объектов обучения в различных областях ИИ:
+В задачах классификации и регрессии объектом обучения могут быть наборы данных, содержащие признаки (features) и соответствующие им целевые переменные (labels). Например, для классификации изображений объектами обучения могут быть наборы изображений и соответствующие им метки классов.
+В задачах обработки естественного языка объектом обучения могут быть текстовые данные, такие как предложения или документы. Например, для задачи анализа тональности текстов объектами обучения могут быть отзывы пользователей и их соответствующие метки положительного или отрицательного тона.
+В задачах компьютерного зрения объектами обучения могут быть изображения или видео. Например, для задачи распознавания лиц объектами обучения могут быть наборы изображений лиц людей и соответствующие им метки идентификации.
+В экспертных системах объектом обучения может быть база знаний, состоящая из правил и фактов, на основе которых модель ИИ делает выводы и рекомендации.
+В каждом конкретном случае объект обучения должен быть представлен в формате, понятном для модели ИИ, и должен содержать достаточное количество информации, чтобы модель могла обучиться и выявить закономерности в данных.]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_ai_object_of_studying" shapeColor="0" id="2142940260592" parent="0" left="0" top="0" right="265" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="345.45" y="66.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="2142940254768" parent="0" left="0" top="0" right="52" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="627.24" y="366.259" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase" shapeColor="0" id="2142940256848" parent="0" left="0" top="0" right="95" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="344.28" y="193.759" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_inclusion" shapeColor="0" id="2142940257680" parent="0" left="0" top="0" right="88" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="431.05" y="127.611" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_ai_object_of_studying" shapeColor="0" id="2142939552912" parent="0" left="0" top="0" right="265" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="349.71" y="368.352" haveBus="false" idtf_pos="1">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2142940911072" parent="0" id_b="2142940254768" id_e="2142940257472" b_x="627.24" b_y="366.259" e_x="465" e_y="522.259" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2142940914672" parent="0" id_b="2142940257680" id_e="2142940912512" b_x="431.05" b_y="127.611" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.531597">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="2142940912512" parent="0" id_b="2142940256848" id_e="2142940260592" b_x="344.28" b_y="193.759" e_x="345.45" e_y="66.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2142940908432" parent="0" id_b="2142939552912" id_e="2142940257472" b_x="349.71" b_y="368.352" e_x="465" e_y="522.259" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>

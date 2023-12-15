@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-export const WrapperMessage = styled.div<{ isLeft: boolean }>`
+export const WrapperMessage = styled.div<{ isLeft: boolean; color1: string; color2: string}>`
     position: relative;
     width: fit-content;
     max-width: 65%;
     margin: 0px 18px 8px 16px;
     padding: 8px 8px 8px 8px;
     align-self: ${(props) => (props.isLeft ? 'start' : 'end')};
-    background: ${(props) => (props.isLeft ? '#DFDBD0' : '#E2E9E7')};
+    background: ${(props) => (props.isLeft ? props.color1 : props.color2)};
     border-radius: 10px;
     word-break: break-word;
 

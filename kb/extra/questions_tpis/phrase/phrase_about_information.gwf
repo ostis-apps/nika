@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="1610621283456" parent="0" x="359.5" y="469.524" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Информация - это набор данных или фактов, представленных в структурированной или неструктурированной форме. Информация может быть представлена в виде текста, чисел, графиков, звуковых записей и других форматов.]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_information" shapeColor="0" id="1610621282416" parent="0" left="0" top="0" right="207" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="235.92" y="332.352" haveBus="false" idtf_pos="1">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_inclusion" shapeColor="0" id="1610621288240" parent="0" left="0" top="0" right="88" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="317.26" y="91.611" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase" shapeColor="0" id="1610621285744" parent="0" left="0" top="0" right="95" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="230.49" y="157.759" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="1610621281792" parent="0" left="0" top="0" right="52" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="513.45" y="330.259" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_information" shapeColor="0" id="1610618370432" parent="0" left="0" top="0" right="207" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="227.66" y="30.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="1610621710336" parent="0" id_b="1610621285744" id_e="1610618370432" b_x="230.49" b_y="157.759" e_x="227.66" e_y="30.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1610621711056" parent="0" id_b="1610621288240" id_e="1610621710336" b_x="317.26" b_y="91.611" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.531597">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1610621711776" parent="0" id_b="1610621282416" id_e="1610621283456" b_x="235.92" b_y="332.352" e_x="359.5" e_y="469.524" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1610621708176" parent="0" id_b="1610621281792" id_e="1610621283456" b_x="513.45" b_y="330.259" e_x="359.5" e_y="469.524" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>

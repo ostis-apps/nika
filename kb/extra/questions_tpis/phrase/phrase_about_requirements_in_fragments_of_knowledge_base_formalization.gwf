@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/general" idtf="" shapeColor="193" id="1533167534656" parent="0" x="472.188" y="635.524" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[При формализации базы знаний в искусственном интеллекте необходимо определить несколько ключевых фрагментов. Вот некоторые из них:
+Факты: Факты представляют собой утверждения или знания о мире, которые являются основой базы знаний. Они обычно записываются в формате "предикат(аргументы)", где предикат - это отношение или свойство, а аргументы - это сущности, к которым это отношение или свойство применяется. Например, факт "Человек(Джон)" утверждает, что "Джон" является человеком.
+Правила: Правила представляют собой логические высказывания, которые определяют отношения между фактами или позволяют делать логические выводы. Они обычно записываются в формате "если <условие>, то <заключение>". Например, правило "Если Человек(X), то Имеет_Домашнего_Животного(X)" утверждает, что если X является человеком, то X имеет домашнего животного.
+Запросы: Запросы представляют собой вопросы или запросы на получение информации из базы знаний. Они обычно записываются в формате "Запрос(аргументы)", где запрос - это вопрос или цель, а аргументы - это сущности, к которым запрос применяется. Например, запрос "Есть_Ли_Домашнее_Животное(Джон)" спрашивает, есть ли у Джона домашнее животное.
+Примеры: Примеры представляют собой конкретные случаи, которые иллюстрируют знания или правила в базе. Они могут использоваться для обучения модели или для проверки ее работы.
+Ограничения и предположения: База знаний может содержать ограничения или предположения, которые определяют контекст или условия, в которых знания применяются. Например, предположение "Все люди могут дышать" устанавливает общее свойство для всех людей.
+Это лишь некоторые из фрагментов, которые могут присутствовать при формализации базы знаний. Фактические фрагменты и их формат зависят от используемого формализма или языка программирования для представления базы знаний.]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="1533167537776" parent="0" left="0" top="0" right="52" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="626.138" y="495.259" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_inclusion" shapeColor="0" id="1533167534240" parent="0" left="0" top="0" right="88" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="429.948" y="256.611" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase" shapeColor="0" id="1533167536528" parent="0" left="0" top="0" right="95" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="343.178" y="322.759" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_requirements_in_fragments_of_knowledge_base_formalization" shapeColor="0" id="1533167534448" parent="0" left="0" top="0" right="492" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="339.348" y="195.5" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_requirements_in_fragments_of_knowledge_base_formalization" shapeColor="0" id="1533164620800" parent="0" left="0" top="0" right="492" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="348.608" y="497.352" haveBus="false" idtf_pos="1">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1533167809056" parent="0" id_b="1533164620800" id_e="1533167534656" b_x="348.608" b_y="497.352" e_x="472.188" e_y="635.524" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="1533167803296" parent="0" id_b="1533167536528" id_e="1533167534448" b_x="343.178" b_y="322.759" e_x="339.348" e_y="195.5" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1533167806656" parent="0" id_b="1533167534240" id_e="1533167803296" b_x="429.948" b_y="256.611" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.531597">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="1533167806416" parent="0" id_b="1533167537776" id_e="1533167534656" b_x="626.138" b_y="495.259" e_x="472.188" e_y="635.524" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>
