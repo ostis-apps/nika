@@ -1,43 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GWF version="2.0">
     <staticSector>
-        <node type="node/const/perm/role" idtf="rrel_total" shapeColor="193" id="1783112087072" parent="0" left="0" top="0" right="78" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-19" y="629" haveBus="false" idtf_pos="0">
+        <node type="node/const/perm/relation" idtf="nrel_report" shapeColor="0" id="1993887032944" parent="0" left="0" top="0" right="72" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="260" y="599" haveBus="false" idtf_pos="0">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
-        <node type="node/const/perm/role" idtf="rrel_correct" shapeColor="0" id="1783112081664" parent="0" left="0" top="0" right="101" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-16" y="659" haveBus="false" idtf_pos="0">
+        <node type="node/const/perm/group" idtf="concept_status_finish" shapeColor="0" id="1993887032528" parent="0" left="0" top="0" right="128" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="30" y="557" haveBus="false" idtf_pos="0">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
-        <node type="node/const/perm/group" idtf="concept_answer_waiting" shapeColor="0" id="1783112086656" parent="0" left="0" top="0" right="199" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-52" y="446" haveBus="false" idtf_pos="0">
+        <node type="node/const/perm/role" idtf="rrel_count_of_questions" shapeColor="0" id="1993887035232" parent="0" left="0" top="0" right="143" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="-6" y="510" haveBus="false" idtf_pos="0">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
-        <node type="node/const/perm/group" idtf="concept_authorized_user" shapeColor="0" id="1783112079376" parent="0" left="0" top="0" right="205" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-62" y="288" haveBus="false" idtf_pos="0">
+        <node type="node/const/perm/group" idtf="concept_current_question" shapeColor="0" id="1993887034400" parent="0" left="0" top="0" right="152" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="-69" y="343" haveBus="false" idtf_pos="0">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
-        <node type="node/const/perm/group" idtf="concept_success_authorization_status" shapeColor="0" id="1783112080624" parent="0" left="0" top="0" right="309" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-60" y="240" haveBus="false" idtf_pos="0">
+        <node type="node/const/perm/group" idtf="concept_success_registration_status" shapeColor="0" id="1993887040432" parent="0" left="0" top="0" right="209" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="-60" y="210" haveBus="false" idtf_pos="0">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
-        <node type="node/const/perm/group" idtf="concept_authorization_status" shapeColor="0" id="1783112083952" parent="0" left="0" top="0" right="236" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-60" y="90" haveBus="false" idtf_pos="0">
+        <node type="node/const/perm/group" idtf="concept_login_not_found_status" shapeColor="0" id="1993886098080" parent="0" left="0" top="0" right="190" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="-60" y="180" haveBus="false" idtf_pos="0">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
-        <node type="node/const/perm/group" idtf="concept_login_waiting_status" shapeColor="0" id="1783112081248" parent="0" left="0" top="0" right="234" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-60" y="120" haveBus="false" idtf_pos="0">
+        <node type="node/const/perm/group" idtf="concept_password_waiting_status" shapeColor="0" id="1993886102240" parent="0" left="0" top="0" right="198" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="-60" y="150" haveBus="false" idtf_pos="0">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
-        <node type="node/const/perm/group" idtf="concept_password_waiting_status" shapeColor="0" id="1783112085408" parent="0" left="0" top="0" right="272" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-60" y="150" haveBus="false" idtf_pos="0">
+        <node type="node/const/perm/group" idtf="concept_login_waiting_status" shapeColor="0" id="1993886097664" parent="0" left="0" top="0" right="175" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="-60" y="120" haveBus="false" idtf_pos="0">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
-        <node type="node/const/perm/group" idtf="concept_login_not_found_status" shapeColor="0" id="1783112085200" parent="0" left="0" top="0" right="258" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-60" y="180" haveBus="false" idtf_pos="0">
+        <node type="node/const/perm/group" idtf="concept_authorization_status" shapeColor="0" id="1993886099536" parent="0" left="0" top="0" right="172" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="-60" y="90" haveBus="false" idtf_pos="0">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
-        <node type="node/const/perm/group" idtf="concept_success_registration_status" shapeColor="0" id="1783112083120" parent="0" left="0" top="0" right="295" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-60" y="210" haveBus="false" idtf_pos="0">
+        <node type="node/const/perm/group" idtf="concept_success_authorization_status" shapeColor="0" id="1993886097248" parent="0" left="0" top="0" right="219" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="-60" y="240" haveBus="false" idtf_pos="0">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
-        <node type="node/const/perm/group" idtf="concept_current_question" shapeColor="0" id="1783112080000" parent="0" left="0" top="0" right="210" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-69" y="343" haveBus="false" idtf_pos="0">
+        <node type="node/const/perm/group" idtf="concept_authorized_user" shapeColor="0" id="1993886100576" parent="0" left="0" top="0" right="147" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="-62" y="288" haveBus="false" idtf_pos="0">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
-        <node type="node/const/perm/role" idtf="rrel_count_of_questions" shapeColor="0" id="1783112085616" parent="0" left="0" top="0" right="196" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="-6" y="510" haveBus="false" idtf_pos="0">
+        <node type="node/const/perm/group" idtf="concept_answer_waiting" shapeColor="0" id="1993886098912" parent="0" left="0" top="0" right="146" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="-52" y="446" haveBus="false" idtf_pos="0">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
-        <node type="node/const/perm/group" idtf="concept_status_finish" shapeColor="0" id="1783109017248" parent="0" left="0" top="0" right="176" bottom="28" textColor="164" text_angle="0" text_font="Times New Roman [Arial]" font_size="10" x="30" y="557" haveBus="false" idtf_pos="0">
+        <node type="node/const/perm/role" idtf="rrel_correct" shapeColor="0" id="1993886096832" parent="0" left="0" top="0" right="75" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="-16" y="659" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/role" idtf="rrel_total" shapeColor="0" id="1993884229712" parent="0" left="0" top="0" right="61" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="-19" y="629" haveBus="false" idtf_pos="0">
             <content type="0" mime_type="" content_visibility="false" file_name=""/>
         </node>
     </staticSector>

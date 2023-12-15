@@ -73,8 +73,10 @@ SC_AGENT_IMPLEMENTATION(TestingAgent)
     ScAddr const &countOfQuestionsLinkFromMessage = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageAddr, TestKeynodes::count);
     ScAddr const &countOfQuestionsLinkConstruction = m_memoryCtx.CreateNode(ScType::NodeConst);
     std::string countOfQuestions = utils::CommonUtils::getLinkContent(&m_memoryCtx, countOfQuestionsLinkFromMessage);
-    if(countOfQuestions > 20 && countOfQuestions < 5)
+    SC_LOG_ERROR(countOfQuestions);
+    if(std::atoi(countOfQuestions.c_str()) > 20 || std::atoi(countOfQuestions.c_str()) < 5)
     {
+      
       ScAddr const &replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);
       m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
       messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Количество вопросов должно быть от 5 до 20.");
@@ -374,7 +376,7 @@ SC_AGENT_IMPLEMENTATION(TestingAgent)
       {
         m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
         messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Верно!<br><br>Отчёт по пройденному тесту:<br>" + countOfCorrectAnswers + " правильных ответов из " + totalCountOfAnswers + ".");
-        SC_LOG_ERROR("Верно!<br><br>Отчёт по пройденному тесту:<br>" + countOfCorrectAnswers + "правильных ответов из " + totalCountOfAnswers + ".");
+        SC_LOG_ERROR("Верно!<br><br>Отчёт по пройденному тесту:<br>" + countOfCorrectAnswers + " правильных ответов из " + totalCountOfAnswers + ".");
         utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
 
         ScTemplate searchCountOfCorrectAnswers;

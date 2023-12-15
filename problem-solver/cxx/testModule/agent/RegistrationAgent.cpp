@@ -230,16 +230,12 @@ std::string RegistrationAgent::encryptor(std::string password){
     unsigned char hash[EVP_MAX_MD_SIZE];
     unsigned int hash_len;
 
-    // Инициализация хеширования
     EVP_DigestInit_ex(mdctx, md, NULL);
 
-    // Добавление пароля в хеширование
     EVP_DigestUpdate(mdctx, q, strlen(q));
 
-    // Получение хеша
     EVP_DigestFinal_ex(mdctx, hash, &hash_len);
 
-    // Освобождение контекста хеширования
     EVP_MD_CTX_free(mdctx);
     std::string result=hashToString(hash, hash_len);
     SC_LOG_ERROR("Hash: ");
