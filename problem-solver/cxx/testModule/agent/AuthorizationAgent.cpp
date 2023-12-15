@@ -34,24 +34,22 @@ SC_AGENT_IMPLEMENTATION(AuthorizationAgent)
   SC_LOG_DEBUG("AuthorizationAgent started");
 
   
-  SC_LOG_ERROR("GG");
+  
   ScAddr const & messageAddr = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, questionNode, scAgentsCommon::CoreKeynodes::rrel_1);
-  SC_LOG_ERROR("GG");
+
   if (!messageAddr.IsValid())
   {
-     SC_LOG_ERROR("Message Addr not found.");
      utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, false);
      SC_LOG_DEBUG("AuthorizationAgent finished");
      return SC_RESULT_ERROR;
   }
-  SC_LOG_ERROR("GG");
   dialogControlModule::MessageConstructionsGenerator messageConstructionGenerator = MessageConstructionsGenerator(&m_memoryCtx);
-  SC_LOG_ERROR("GG");
+
   
   ScAddr const & dialog = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, questionNode, scAgentsCommon::CoreKeynodes::rrel_2);
-  SC_LOG_ERROR("GG");
+
   ScTemplate findMessageTextLink;
-  SC_LOG_ERROR("GG");
+ 
   findMessageTextLink.TripleWithRelation(
     ScType::NodeVar >> "_tuple",
     ScType::EdgeDCommonVar,
@@ -68,11 +66,11 @@ SC_AGENT_IMPLEMENTATION(AuthorizationAgent)
   
   ScTemplateSearchResult messageTextLink;
   m_memoryCtx.HelperSearchTemplate(findMessageTextLink, messageTextLink);
-  SC_LOG_ERROR("GG");
+
   std::string messageText = utils::CommonUtils::getLinkContent(&m_memoryCtx, messageTextLink[0]["_message_text_link"]);
-  SC_LOG_ERROR("GG");
+
   
-  SC_LOG_ERROR("GG");
+
   if(m_memoryCtx.HelperCheckEdge(TestKeynodes::concept_absence_of_authorized_user, dialog, ScType::EdgeAccessConstPosPerm) && messageText.find("Пройти авторизацию.") == 0)
   {
     ScAddr const & replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);
@@ -98,12 +96,10 @@ SC_AGENT_IMPLEMENTATION(AuthorizationAgent)
       {
         if(!userWasFound)
         {
-          SC_LOG_ERROR("for1");
           for(ScAddr const & possiblePasswordLink : possiblePasswordLinks)
           {
             if(!userWasFound)
             {
-              SC_LOG_ERROR("for2");
               ScTemplate findUser;
               findUser.Triple(
                 TestKeynodes::concept_users,
@@ -129,19 +125,18 @@ SC_AGENT_IMPLEMENTATION(AuthorizationAgent)
               if(getUser.IsEmpty() == SC_FALSE)
               {
                 userWasFound = true;
-                SC_LOG_ERROR("if");
+
                 m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, TestKeynodes::concept_authorized_user, getUser[0]["_user"]);
-                SC_LOG_ERROR("if");
+
                 messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Авторизация успешна.");
-                SC_LOG_ERROR("12456456");
+       
                 ScIterator3Ptr it3 = m_memoryCtx.Iterator3(TestKeynodes::concept_absence_of_authorized_user, ScType::EdgeAccessConstPosPerm, dialog);
-                SC_LOG_ERROR("if");
+      
                 if (it3->Next())
                   m_memoryCtx.EraseElement(it3->Get(1));
-                
-                SC_LOG_ERROR("if");
+
                 m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, TestKeynodes::concept_success_authorization_status, dialog);
-                SC_LOG_ERROR("if");
+
               }
             }
           }
@@ -153,9 +148,8 @@ SC_AGENT_IMPLEMENTATION(AuthorizationAgent)
       messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Неверно введённый логин и/или пароль.");
     }
     
-    SC_LOG_ERROR("if");
     utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
-    SC_LOG_ERROR("if");
+
     ScIterator3Ptr it3_user = m_memoryCtx.Iterator3(TestKeynodes::concept_authorized_user, ScType::EdgeAccessConstPosPerm, ScType::NodeConst);
     if (it3_user->Next())
     {
@@ -167,11 +161,11 @@ SC_AGENT_IMPLEMENTATION(AuthorizationAgent)
   else if(m_memoryCtx.HelperCheckEdge(TestKeynodes::concept_success_authorization_status, dialog, ScType::EdgeAccessConstPosPerm) && messageText.find("Пройти авторизацию.") == 0)
   {
     ScAddr const & replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);
-    SC_LOG_ERROR("!!!");
+  
     m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
-    SC_LOG_ERROR("!!!");
+
     messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "В системе уже авторизован пользователь! <br> Выйдите из системы, чтобы по новому авторизоваться.");
-    SC_LOG_ERROR("!!!");
+
     utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
     ScIterator3Ptr it3_user = m_memoryCtx.Iterator3(TestKeynodes::concept_authorized_user, ScType::EdgeAccessConstPosPerm, ScType::NodeConst);
     if (it3_user->Next())
@@ -182,25 +176,25 @@ SC_AGENT_IMPLEMENTATION(AuthorizationAgent)
   else if(m_memoryCtx.HelperCheckEdge(TestKeynodes::concept_success_authorization_status, dialog, ScType::EdgeAccessConstPosPerm) && messageText == "Выйти из аккаунта")
   {
     ScAddr const & replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);
-    SC_LOG_ERROR("???");
+
     ScIterator3Ptr it3_exit = m_memoryCtx.Iterator3(TestKeynodes::concept_authorized_user, ScType::EdgeAccessConstPosPerm, ScType::NodeConst);
-    SC_LOG_ERROR("???");
+
     if (it3_exit->Next())
       m_memoryCtx.EraseElement(it3_exit->Get(1));
-    SC_LOG_ERROR("???");
+
     m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, TestKeynodes::concept_absence_of_authorized_user, dialog);
-    SC_LOG_ERROR("???");
+
     ScIterator3Ptr it3_status = m_memoryCtx.Iterator3(TestKeynodes::concept_success_authorization_status, ScType::EdgeAccessConstPosPerm, dialog);
-    SC_LOG_ERROR("???");
+
     if(it3_status->Next())
       m_memoryCtx.EraseElement(it3_status->Get(1));
-    SC_LOG_ERROR("???");
+
     m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
-    SC_LOG_ERROR("???");
+
     messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Успешный выход из аккаунта.");
-    SC_LOG_ERROR("???");
+
     utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
-    SC_LOG_ERROR("???");
+
     ScIterator3Ptr it3_user = m_memoryCtx.Iterator3(TestKeynodes::concept_authorized_user, ScType::EdgeAccessConstPosPerm, ScType::NodeConst);
     if (it3_user->Next())
       SC_LOG_DEBUG("AuthorizationAgent finished");
@@ -210,7 +204,7 @@ SC_AGENT_IMPLEMENTATION(AuthorizationAgent)
   else if(m_memoryCtx.HelperCheckEdge(TestKeynodes::concept_absence_of_authorized_user, dialog, ScType::EdgeAccessConstPosPerm) && messageText == "Выйти из аккаунта")
   {
     ScAddr const & replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);
-    SC_LOG_ERROR("...");
+
     
     m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
 
@@ -292,22 +286,13 @@ std::string AuthorizationAgent::encryptor(std::string password){
     unsigned char hash[EVP_MAX_MD_SIZE];
     unsigned int hash_len;
 
-    // Инициализация хеширования
     EVP_DigestInit_ex(mdctx, md, NULL);
 
-    // Добавление пароля в хеширование
     EVP_DigestUpdate(mdctx, q, strlen(q));
 
-    // Получение хеша
     EVP_DigestFinal_ex(mdctx, hash, &hash_len);
 
-    // Освобождение контекста хеширования
     EVP_MD_CTX_free(mdctx);
     std::string result=hashToString(hash, hash_len);
-    SC_LOG_ERROR("Hash: ");
-    for (int i = 0; i < hash_len; i++) {
-        SC_LOG_ERROR(hash[i]);
-        
-    }
     return result;
 }

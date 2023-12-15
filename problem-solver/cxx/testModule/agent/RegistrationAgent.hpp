@@ -20,4 +20,4 @@ private:
   std::string hashToString(const unsigned char* hash, size_t hashLength);
 };
 
-}  // namespace interfaceModule
+} 

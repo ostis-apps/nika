@@ -79,7 +79,6 @@ SC_AGENT_IMPLEMENTATION(RegistrationAgent)
     
     if(getLinkConstructionLogin(utils::CommonUtils::getLinkContent(&m_memoryCtx, link_login)) == ScAddr::Empty)
     {
-      SC_LOG_ERROR("if1");
       ScTemplate createTemplate;
       createTemplate.Triple(
         TestKeynodes::concept_users,
@@ -115,7 +114,6 @@ SC_AGENT_IMPLEMENTATION(RegistrationAgent)
     }
     else
     {
-      SC_LOG_ERROR("if2");
       m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
       messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Данный логин уже зарегистрирован в системе.");
       utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
@@ -238,10 +236,5 @@ std::string RegistrationAgent::encryptor(std::string password){
 
     EVP_MD_CTX_free(mdctx);
     std::string result=hashToString(hash, hash_len);
-    SC_LOG_ERROR("Hash: ");
-    for (int i = 0; i < hash_len; i++) {
-        SC_LOG_ERROR(hash[i]);
-        
-    }
     return result;
 }

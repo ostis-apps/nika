@@ -69,11 +69,10 @@ SC_AGENT_IMPLEMENTATION(TestingAgent)
   
   if (m_memoryCtx.HelperCheckEdge(TestKeynodes::concept_success_authorization_status, dialog, ScType::EdgeAccessConstPosPerm) && messageText.find("Пройти тест по ТПИС") == 0)
   {
-    SC_LOG_ERROR("zashol");
     ScAddr const &countOfQuestionsLinkFromMessage = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageAddr, TestKeynodes::count);
     ScAddr const &countOfQuestionsLinkConstruction = m_memoryCtx.CreateNode(ScType::NodeConst);
     std::string countOfQuestions = utils::CommonUtils::getLinkContent(&m_memoryCtx, countOfQuestionsLinkFromMessage);
-    SC_LOG_ERROR(countOfQuestions);
+
     if(std::atoi(countOfQuestions.c_str()) > 20 || std::atoi(countOfQuestions.c_str()) < 5)
     {
       
@@ -85,7 +84,6 @@ SC_AGENT_IMPLEMENTATION(TestingAgent)
       utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, true);
       return SC_RESULT_OK;
     }
-    SC_LOG_ERROR(countOfQuestions);
     messageConstructionGenerator.generateTextTranslationConstruction(countOfQuestionsLinkConstruction, Keynodes::lang_ru, std::to_string(std::atoi(countOfQuestions.c_str()) - 1));
     utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, dialog, countOfQuestionsLinkConstruction, TestKeynodes::rrel_count_of_questions);
 
@@ -96,7 +94,6 @@ SC_AGENT_IMPLEMENTATION(TestingAgent)
     if (it3->Next())
     {
       user = it3->Get(2);
-      SC_LOG_ERROR("nashel");
     }
     
 
@@ -126,11 +123,9 @@ SC_AGENT_IMPLEMENTATION(TestingAgent)
     m_memoryCtx.HelperSearchTemplate(searchQuestionFormulationLink, getQuestionFormulationLink);
     if(getQuestionFormulationLink.IsEmpty() == SC_FALSE)
     {
-      SC_LOG_ERROR("tozhe_zashel");
       questionFormulationText = utils::CommonUtils::getLinkContent(&m_memoryCtx, getQuestionFormulationLink[std::atoi(countOfQuestions.c_str()) - 1]["_questionLink"]);
-      SC_LOG_ERROR(questionFormulationText);
+
     }
-    SC_LOG_ERROR(questionFormulationText);
     ScAddr const &replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);
     m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
     messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, questionFormulationText);
@@ -144,13 +139,12 @@ SC_AGENT_IMPLEMENTATION(TestingAgent)
     if (it3->Next())
     {
       user = it3->Get(2);
-      SC_LOG_ERROR("1");
+
     }
-    SC_LOG_ERROR("2");
     ScAddr const &replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);
-    SC_LOG_ERROR("3");
+
     ScTemplate searchCountOfQuestions;
-    SC_LOG_ERROR("4");
+
     searchCountOfQuestions.TripleWithRelation(
       dialog,
       ScType::EdgeAccessVarPosPerm,
@@ -170,35 +164,30 @@ SC_AGENT_IMPLEMENTATION(TestingAgent)
       ScType::EdgeAccessVarPosPerm,
       ScType::LinkVar >> "_questionCountLink"
     );
-    SC_LOG_ERROR("5");
+
     ScTemplateSearchResult getCountOfQuestions;
-    SC_LOG_ERROR("6");
+
     std::string countOfQuestions;
-    SC_LOG_ERROR("7");
+
     m_memoryCtx.HelperSearchTemplate(searchCountOfQuestions, getCountOfQuestions);
-    SC_LOG_ERROR("8");
+
     if(getCountOfQuestions.IsEmpty() == SC_FALSE)
     {
-      SC_LOG_ERROR("9");
       countOfQuestions = utils::CommonUtils::getLinkContent(&m_memoryCtx, getCountOfQuestions[0]["_questionCountLink"]);
-      SC_LOG_ERROR("10");
+
       m_memoryCtx.EraseElement(getCountOfQuestions[0]["_questionCountConstruction"]);
     }
-    SC_LOG_ERROR("11");
     ScAddr const &countOfQuestionsLinkConstruction = m_memoryCtx.CreateNode(ScType::NodeConst);
-    SC_LOG_ERROR("12");
+
     messageConstructionGenerator.generateTextTranslationConstruction(countOfQuestionsLinkConstruction, Keynodes::lang_ru, std::to_string(std::atoi(countOfQuestions.c_str()) - 1));
-    SC_LOG_ERROR("13");
+
     utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, dialog, countOfQuestionsLinkConstruction, TestKeynodes::rrel_count_of_questions);
-    SC_LOG_ERROR("14");
+
 
     if(std::atoi(countOfQuestions.c_str()) - 1 != -1)
     {
-      SC_LOG_ERROR("15");
       ScAddr const &userAnswer = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageAddr, TestKeynodes::answer);
-      SC_LOG_ERROR("16");
       ScTemplate searchCorrectAnswer;
-      SC_LOG_ERROR("17");
       searchCorrectAnswer.TripleWithRelation(
         ScType::NodeVar >> "_questionConstruction",
         ScType::EdgeAccessVarPosPerm,
@@ -212,13 +201,9 @@ SC_AGENT_IMPLEMENTATION(TestingAgent)
         "_linkCorrectAnswer"
       );
       ScTemplateSearchResult getCorrectAnswer;
-      SC_LOG_ERROR("18");
       m_memoryCtx.HelperSearchTemplate(searchCorrectAnswer, getCorrectAnswer);
-      SC_LOG_ERROR("19");
       std::string correctAnswer = utils::CommonUtils::getLinkContent(&m_memoryCtx, getCorrectAnswer[std::atoi(countOfQuestions.c_str())]["_linkCorrectAnswer"]);
-      SC_LOG_ERROR("20");
       ScTemplate searchQuestionFormulationLink;
-      SC_LOG_ERROR("21");
       searchQuestionFormulationLink.Triple(
         TestKeynodes::concept_questions,
         ScType::EdgeAccessVarPosPerm,
@@ -232,29 +217,20 @@ SC_AGENT_IMPLEMENTATION(TestingAgent)
         TestKeynodes::rrel_question_formulation
       );
       ScTemplateSearchResult getQuestionFormulationLink;
-      SC_LOG_ERROR("22");
+
       std::string questionFormulationText;
-      SC_LOG_ERROR("23");
       m_memoryCtx.HelperSearchTemplate(searchQuestionFormulationLink, getQuestionFormulationLink);
-      SC_LOG_ERROR("24");
       if(getQuestionFormulationLink.IsEmpty() == SC_FALSE)
       {
-        SC_LOG_ERROR("25");
         questionFormulationText = utils::CommonUtils::getLinkContent(&m_memoryCtx, getQuestionFormulationLink[std::atoi(countOfQuestions.c_str()) - 1]["_questionLink"]);
       }
-      SC_LOG_ERROR("26");
       if(utils::CommonUtils::getLinkContent(&m_memoryCtx, userAnswer) == correctAnswer)
       {
-        SC_LOG_ERROR("27");
+
         m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
-        SC_LOG_ERROR("28");
         messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Верно!<br><br>" + questionFormulationText);
-        SC_LOG_ERROR("Верно!<br><br>" + questionFormulationText);
         utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
-        SC_LOG_ERROR("30");
         ScTemplate searchCountOfCorrectAnswers;
-        SC_LOG_ERROR("31");
-        SC_LOG_ERROR(user.IsValid());
         searchCountOfCorrectAnswers.TripleWithRelation(
           user,
           ScType::EdgeAccessVarPosPerm,
@@ -262,7 +238,6 @@ SC_AGENT_IMPLEMENTATION(TestingAgent)
           ScType::EdgeAccessVarPosPerm,
           TestKeynodes::rrel_correct
         );
-        SC_LOG_ERROR("91");
         searchCountOfCorrectAnswers.TripleWithRelation(
           ScType::NodeVar >> "_tuple",
           ScType::EdgeDCommonVar,
@@ -270,35 +245,23 @@ SC_AGENT_IMPLEMENTATION(TestingAgent)
           ScType::EdgeAccessVarPosPerm,
           DialogKeynodes::nrel_sc_text_translation
         );
-        SC_LOG_ERROR("92");
         searchCountOfCorrectAnswers.Triple(
           "_tuple",
           ScType::EdgeAccessVarPosPerm,
           ScType::LinkVar >> "_countOfCorrectAnswersLink"
         );
-        SC_LOG_ERROR("93");
         ScTemplateSearchResult getCountOfCorrectAnswers;
-        SC_LOG_ERROR("32");
         m_memoryCtx.HelperSearchTemplate(searchCountOfCorrectAnswers, getCountOfCorrectAnswers);
-        SC_LOG_ERROR("33");
         std::string countOfCorrectAnswers = utils::CommonUtils::getLinkContent(&m_memoryCtx, getCountOfCorrectAnswers[0]["_countOfCorrectAnswersLink"]);
-        SC_LOG_ERROR("34");
         m_memoryCtx.EraseElement(utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, user, TestKeynodes::rrel_correct));
-        SC_LOG_ERROR("35");
         ScAddr const &newCorrectAnswersConstruction = m_memoryCtx.CreateNode(ScType::NodeConst);
-        SC_LOG_ERROR("36");
         messageConstructionGenerator.generateTextTranslationConstruction(newCorrectAnswersConstruction, Keynodes::lang_ru, std::to_string(std::atoi(countOfCorrectAnswers.c_str()) + 1));
-        SC_LOG_ERROR("37");
         utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, user, newCorrectAnswersConstruction, TestKeynodes::rrel_correct);
-        SC_LOG_ERROR("38");
       }
       else
       {
-        SC_LOG_ERROR("39");
         m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
-        SC_LOG_ERROR("40");
         messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Неверно. Правильный ответ " + correctAnswer + ".<br><br>" + questionFormulationText);
-        SC_LOG_ERROR("Неверно. Правильный ответ " + correctAnswer + ".<br><br>" + questionFormulationText);
         utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
       }
     }
@@ -376,7 +339,6 @@ SC_AGENT_IMPLEMENTATION(TestingAgent)
       {
         m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
         messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Верно!<br><br>Отчёт по пройденному тесту:<br>" + countOfCorrectAnswers + " правильных ответов из " + totalCountOfAnswers + ".");
-        SC_LOG_ERROR("Верно!<br><br>Отчёт по пройденному тесту:<br>" + countOfCorrectAnswers + " правильных ответов из " + totalCountOfAnswers + ".");
         utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
 
         ScTemplate searchCountOfCorrectAnswers;
@@ -411,7 +373,7 @@ SC_AGENT_IMPLEMENTATION(TestingAgent)
       {
         m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
         messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Неверно. Правильный ответ " + correctAnswer + ".<br><br>Отчёт по пройденному тесту:<br>" + countOfCorrectAnswers + "правильных ответов из " + totalCountOfAnswers + ".");
-        SC_LOG_ERROR("Неверно. Правильный ответ " + correctAnswer + ".<br><br>Отчёт по пройденному тесту:<br>" + countOfCorrectAnswers + " правильных ответов из " + totalCountOfAnswers + ".");
+    
         utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
       }
       
