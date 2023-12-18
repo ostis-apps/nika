@@ -1,4 +1,4 @@
-section_subject_domain_of_cities
+section_subject_domain_of_city
 => nrel_main_idtf:
   [Раздел. Предметная область различных типов городов Республики Беларусь.]
   (* <- lang_ru;; *);
@@ -7,17 +7,17 @@ section_subject_domain_of_cities
 <- non_atomic_section;;
 
  
-section_subject_domain_of_cities = [*
-	section_subject_domain_of_cities
+section_subject_domain_of_city = [*
+	subject_domain_of_city
 <- sc_node_struct;
 	=> nrel_main_idtf:
-	  [Раздел. Предметная область различных типов городов Республики Беларусь.]
+	  [Предметная область различных типов городов Республики Беларусь.]
 	  (* <- lang_ru;; *);
-	  [Section. Subject domain of different cities in Belarus.] 
+	  [Subject domain of different cities in Belarus.] 
 	  (* <- lang_en;; *);
 	<- subject_domain;
 	-> rrel_maximum_studied_object_class:
-   		concept_cities;
+   		concept_city;
    	-> rrel_not_maximum_studied_object_class:
 		concept_minskaja;
 		concept_grodnenskaja;
@@ -29,6 +29,6 @@ section_subject_domain_of_cities = [*
 
 section_subject_domain_of_infrastructure
 -> rrel_key_sc_element:
-   subject_domain_of_cities;
-   concept_cities;;
+   subject_domain_of_city;
+   concept_city;;
 
