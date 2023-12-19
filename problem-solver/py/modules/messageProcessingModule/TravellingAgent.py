@@ -113,7 +113,6 @@ class TravellingAgent(ScAgentClassic):
                     ).json()['features']
 
                     print(places)
-                    l = places
                     j = 0
                     f = False
 
@@ -136,7 +135,7 @@ class TravellingAgent(ScAgentClassic):
                     attractions += f"~ {name}"
 
                     try:
-                        attractions += f"<p style='opacity: 0.7'>  {inf['address']['road']} {inf['address']['house_number']}</p>"
+                        attractions += f"<p style='opacity: 0.7'>{inf['address']['road']} {inf['address']['house_number']}</p>"
                     except:
                         attractions += f"<p style='opacity: 0.7'>  - </p>"
 

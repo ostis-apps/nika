@@ -19,12 +19,14 @@ from sc_kpm.utils import (
     get_system_idtf,
     get_edge
 )
+
 from sc_kpm.utils.action_utils import (
     create_action_answer,
     finish_action_with_status,
     get_action_arguments,
     get_element_by_role_relation
 )
+
 from wikipedia import *
 from sc_kpm import ScKeynodes
 
@@ -79,20 +81,19 @@ class HistoryAgent(ScAgentClassic):
         self.clear_previous_answer(
                 city_addr, nrel_history, answer_phrase)
         try:
+
             set_lang("ru")
-            # history = f'<img src="{page("Город " + entity_idtf + " (Беларусь)").images[0]}<br>">'
             array = page("Город " + entity_idtf + " (Беларусь)").images
             history =  f'<img src="{array[-1]}" style="width: 100%; border-radius: 10px; margin-bottom: 10px;">' + "<br>" + summary("Город " + entity_idtf + " (Беларусь)", sentences = 4)
             self.logger.info(f"HistoryAgent: The temperature in {get_system_idtf(city_addr)} is {history}")
             self.logger.info(f"{history}")
+
         except requests.exceptions.ConnectionError:
             self.logger.info(f"HistoryAgent: finished with connection error")
             return ScResult.ERROR
         
         link = create_link(
             str(history), ScLinkContentType.STRING, link_type=sc_types.LINK_CONST)
-        
-
         random_city_edge = create_edge(sc_types.EDGE_ACCESS_CONST_POS_PERM, answer_phrase, link)
         create_action_answer(action_node, link)
 
