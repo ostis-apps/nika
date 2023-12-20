@@ -1,0 +1,37 @@
+concept_message_about_music_style_hip-hop
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о музыкальном стиле Хип-хоп]
+	(* <- lang_ru;; *);
+	[message about music style hip-hop]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[music_style_hip-hop];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о музыкальном стиле Хип-хоп)]
+        (* <- lang_ru;; *);
+        [Def. (message about music style hip-hop)]
+        (* <- lang en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о музыкальном стиле Хип-хоп - атомарное сообщение, являющееся запросом на получение информации про Хип-хоп]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about music style hip-hop - atomic message which used to make a question about music style hip-hop]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

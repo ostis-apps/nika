@@ -1,0 +1,37 @@
+concept_message_about_ask_artist
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о типах артистов]
+	(* <- lang_ru;; *);
+	[message about ask_artist]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[ask_artist];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о типах артистов)]
+        (* <- lang_ru;; *);
+        [Def. (message about ask_artist)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о типах артистов - атомарное сообщение, являющееся запросом на получение информации про типы артистов]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about ask_artist - atomic message which used to make a question about ask_artist]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

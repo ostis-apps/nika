@@ -1,0 +1,34 @@
+concept_answer_about_music_phrase
+<- sc_node_class;
+=> nrel_main_idtf:
+	[Информация о музыке]
+	(* <- lang_ru;; *);
+	[info about music]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (Информация о музыке)]
+		(* <- lang_ru;; *);
+		[Def. (Information about music)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Ответ на вопрос о музыке]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example:
+			[Answer for question about music]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;
+	*);;

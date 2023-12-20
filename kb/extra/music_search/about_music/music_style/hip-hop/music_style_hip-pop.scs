@@ -1,0 +1,25 @@
+music_style_hip-pop
+=> nrel_main_idtf:
+    [Экземпляр текстового сообщения для музыкального стиля Хип-поп]
+    (* <- lang_ru;; *);
+<= nrel_music_style_hip-hop: nika;
+-> rrel_1: music_style_hip-pop1;;
+
+music_style_hip-pop1
+<- concept_music_style_hip-hop;
+<- concept_wit_entity;
+=> nrel_main_idtf:
+    [Информация про музыкальный стиль Хип-поп]
+    (* <- lang_ru;; *);
+=> nrel_idtf:
+    [Информация про музыкальный стиль Хип-поп]
+    (* <- lang_ru;; *);
+=> nrel_music_style_feature:
+    [ритм и ритмический акцент]
+    (* <- lang_ru;; *);
+=> nrel_music_style_content:
+   [рэп и тексты]
+    (* <- lang_ru;; *);
+=> nrel_music_style_highlights:
+    [диджейские техники и сэмплирование]
+    (* <- lang_ru;; *);;

@@ -1,0 +1,37 @@
+concept_message_about_ask_music_style
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о музыкальных стилях]
+	(* <- lang_ru;; *);
+	[message about ask_music_style]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[ask_music_style];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о музыкальных стилях)]
+        (* <- lang_ru;; *);
+        [Def. (message about ask_music_style)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о музыкальных стилях - атомарное сообщение, являющееся запросом на получение информации про виды музыкальных стилей]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about ask_music_style - atomic message which used to make a question about ask_music_style]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

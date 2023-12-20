@@ -1,0 +1,37 @@
+concept_message_about_music
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о музыке]
+	(* <- lang_ru;; *);
+	[message about music]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[music];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о музыке)]
+        (* <- lang_ru;; *);
+        [Def. (message about music)]
+        (* <- lang_en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о музыке - атомарное сообщение, являющееся запросом на получение информации о музыкальном произвидении]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about music - atomic message which used to make a question about music]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
