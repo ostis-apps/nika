@@ -1,0 +1,37 @@
+concept_message_about_music_style_jazz
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о музыкальном стиле Джаз]
+	(* <- lang_ru;; *);
+	[message about music style jazz]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[music_style_jazz];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о музыкальном стиле Джаз)]
+        (* <- lang_ru;; *);
+        [Def. (message about music style jazz)]
+        (* <- lang en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о музыкальном стиле Джаз - атомарное сообщение, являющееся запросом на получение информации про Джаз]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about music style jazz - atomic message which used to make a question about music style jazz]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;

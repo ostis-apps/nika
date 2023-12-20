@@ -1,0 +1,25 @@
+music_style_rock
+=> nrel_main_idtf:
+    [Экземпляр текстового сообщения для музыкального стиля Рок]
+    (* <- lang_ru;; *);
+<= nrel_music_style_rock: nika;
+-> rrel_1: music_style_rock1;;
+
+music_style_rock1
+<- concept_music_style_rock;
+<- concept_wit_entity;
+=> nrel_main_idtf:
+    [Информация про музыкальный стиль Рок]
+    (* <- lang_ru;; *);
+=> nrel_idtf:
+    [Информация про музыкальный стиль Рок]
+    (* <- lang_ru;; *);
+=> nrel_music_style_feature:
+    [Гитарное звучание]
+    (* <- lang_ru;; *);
+=> nrel_music_style_content:
+   [Энергия и агрессивность]
+    (* <- lang_ru;; *);
+=> nrel_music_style_highlights:
+    [Живые выступления и рок-концерты]
+    (* <- lang_ru;; *);;

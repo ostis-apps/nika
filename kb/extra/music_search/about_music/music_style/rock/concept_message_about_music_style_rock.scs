@@ -1,0 +1,37 @@
+concept_message_about_music_style_rock
+<- sc_node_class;
+<- concept_tokens_category;
+=> nrel_main_idtf:
+	[сообщение о музыкальном стиле Рок]
+	(* <- lang_ru;; *);
+	[message about music style rock]
+	(* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[music_style_rock];
+<- rrel_key_sc_element:
+	...
+	(*
+        => nrel_main_idtf:
+        [Опр. (сообщение о музыкальном стиле Рок)]
+        (* <- lang_ru;; *);
+        [Def. (message about music style rock)]
+        (* <- lang en;; *);;
+        <- definition;;
+        <= nrel_sc_text_translation:
+            ...
+            (*
+                -> rrel_example:
+                    [Сообщение о музыкальном стиле Рок - атомарное сообщение, являющееся запросом на получение информации про Рок]
+                    (* <- lang_ru;; *);;
+            *);
+            ...
+            (*
+                -> rrel_example:
+                    [Message about music style rock - atomic message which used to make a question about music style rock]
+                    (* <- lang_en;; *);;
+            *);;
+        <= nrel_using_constants:
+            {
+                concept_atomic_message
+            };;
+	*);;
