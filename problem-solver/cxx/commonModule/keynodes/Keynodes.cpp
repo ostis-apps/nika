@@ -15,3 +15,5 @@ ScAddr Keynodes::file;
 ScAddr Keynodes::power_of_set;
 ScAddr Keynodes::nrel_measurement;
 ScAddr Keynodes::lang_en;
+ScAddr Keynodes::lang_ru;
+ScAddr Keynodes::rrel_example;

@@ -45,6 +45,12 @@ public:
 
   SC_PROPERTY(Keynode("lang_en"), ForceCreate)
   static ScAddr lang_en;
+
+  SC_PROPERTY(Keynode("lang_ru"), ForceCreate)
+  static ScAddr lang_ru;
+
+  SC_PROPERTY(Keynode("rrel_example"), ForceCreate)
+  static ScAddr rrel_example;
 };
 
 }  // namespace commonModule

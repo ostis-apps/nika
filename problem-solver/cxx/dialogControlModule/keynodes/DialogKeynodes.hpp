@@ -18,6 +18,9 @@ public:
 
   SC_PROPERTY(Keynode("nrel_phrase_template"), ForceCreate)
   static ScAddr nrel_phrase_template;
+
+  SC_PROPERTY(Keynode("rrel_key_sc_element"), ForceCreate)
+  static ScAddr rrel_key_sc_element;
 };
 
 }  // namespace dialogControlModule
