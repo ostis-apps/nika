@@ -108,6 +108,36 @@ public:
 
   SC_PROPERTY(Keynode("concept_absence_of_authorized_user"), ForceCreate)
   static ScAddr concept_absence_of_authorized_user;
+  
+  SC_PROPERTY(Keynode("concept_bus"), ForceCreate)
+  static ScAddr concept_bus;
+
+  SC_PROPERTY(Keynode("concept_station"), ForceCreate)
+  static ScAddr concept_station;
+
+  SC_PROPERTY(Keynode("nrel_number_of_route"), ForceCreate)
+  static ScAddr nrel_number_of_route;
+
+  SC_PROPERTY(Keynode("nrel_route"), ForceCreate)
+  static ScAddr nrel_route;
+
+  SC_PROPERTY(Keynode("rrel_latitude"), ForceCreate)
+  static ScAddr rrel_latitude;
+
+  SC_PROPERTY(Keynode("rrel_longitude"), ForceCreate)
+  static ScAddr rrel_longitude;
+
+  SC_PROPERTY(Keynode("nrel_time"), ForceCreate)
+  static ScAddr nrel_time;
+
+  SC_PROPERTY(Keynode("first"), ForceCreate)
+  static ScAddr first;
+
+  SC_PROPERTY(Keynode("second"), ForceCreate)
+  static ScAddr second;
+
+  SC_PROPERTY(Keynode("nrel_main_idtf"), ForceCreate)
+  static ScAddr nrel_main_idtf;
 };
 
 }  // namespace interfaceModule

@@ -49,161 +49,109 @@ SC_AGENT_IMPLEMENTATION(RegistrationAgent)
   auto LinkHandler = commonModule:: LinkHandler(&m_memoryCtx); 
   
   ScAddr const & dialog = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, questionNode, scAgentsCommon::CoreKeynodes::rrel_2);
-  
-  ScTemplate findMessageTextLink;
-  
-  findMessageTextLink.TripleWithRelation(
-    ScType::NodeVar >> "_tuple",
-    ScType::EdgeDCommonVar,
-    messageAddr,
-    ScType::EdgeAccessVarPosPerm,
-    DialogKeynodes::nrel_sc_text_translation
-  );
-  
-  findMessageTextLink.Triple(
-    "_tuple",
-    ScType::EdgeAccessVarPosPerm,
-    ScType::LinkVar >> "_message_text_link"
-  );
-  
-  ScTemplateSearchResult messageTextLink;
-  m_memoryCtx.HelperSearchTemplate(findMessageTextLink, messageTextLink);
-  
-  std::string messageText = utils::CommonUtils::getLinkContent(&m_memoryCtx, messageTextLink[0]["_message_text_link"]);
-  
-  if(m_memoryCtx.HelperCheckEdge(TestKeynodes::concept_absence_of_authorized_user, dialog, ScType::EdgeAccessConstPosPerm) && messageText.find("Пройти регистрацию.") == 0)
+
+  ScAddr const & firstStation = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageAddr, TestKeynodes::first);
+  ScAddr const & secondStation = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageAddr, TestKeynodes::second);
+
+  if(utils::CommonUtils::getLinkContent(&m_memoryCtx, firstStation) == utils::CommonUtils::getLinkContent(&m_memoryCtx, secondStation))
   {
-    ScAddr const &link_login = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageAddr, TestKeynodes::email);
-    ScAddr const &link_password = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageAddr, TestKeynodes::password);
-    ScAddr const & replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);
-    
-    if(getLinkConstructionLogin(utils::CommonUtils::getLinkContent(&m_memoryCtx, link_login)) == ScAddr::Empty)
-    {
-      ScTemplate createTemplate;
-      createTemplate.Triple(
-        TestKeynodes::concept_users,
-        ScType::EdgeAccessVarPosPerm,
-        ScType::NodeVar >> "_user"
-      );
-      createTemplate.TripleWithRelation(
-        "_user",
-        ScType::EdgeDCommonVar,
-        LinkHandler.createLink(utils::CommonUtils::getLinkContent(&m_memoryCtx, link_login)),
-        ScType::EdgeAccessVarPosPerm,
-        TestKeynodes::nrel_login
-      );
-      createTemplate.TripleWithRelation(
-        "_user",
-        ScType::EdgeDCommonVar,
-        LinkHandler.createLink(encryptor(utils::CommonUtils::getLinkContent(&m_memoryCtx, link_password))),
-        ScType::EdgeAccessVarPosPerm,
-        TestKeynodes::nrel_password
-      );
-      ScTemplateGenResult templateGenResult;
-      m_memoryCtx.HelperGenTemplate(createTemplate, templateGenResult);
-
-      m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
-      messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Регистрация успешна!");
-      utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
-
-      ScAddr const &user = getLinkConstructionLogin(utils::CommonUtils::getLinkContent(&m_memoryCtx, link_login));
-
-      SC_LOG_DEBUG("RegistrationAgent finished");
-      utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode,getAnswer(user), true);
-      return SC_RESULT_OK;
-    }
-    else
-    {
-      m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
-      messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Данный логин уже зарегистрирован в системе.");
-      utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
-
-      SC_LOG_DEBUG("RegistrationAgent finished");
-      utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, true);
-      return SC_RESULT_OK;
-    }
-
-
-  }
-  else if(m_memoryCtx.HelperCheckEdge(TestKeynodes::concept_success_authorization_status, dialog, ScType::EdgeAccessConstPosPerm) && messageText.find("Пройти регистрацию.") == 0)
-  {
-    ScAddr const & replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);
-    m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
-    messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Чтобы пройти регистрацию, выйдите из аккаунта.");
+    messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Смешно -_-");
     utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
-    
     SC_LOG_DEBUG("RegistrationAgent finished");
     utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, true);
     return SC_RESULT_OK;
   }
+
+  ScAddrVector const & possibleFirstLinks = m_memoryCtx.FindLinksByContent(utils::CommonUtils::getLinkContent(&m_memoryCtx, firstStation));
+    
+  ScAddrVector const & possibleSecondLinks = m_memoryCtx.FindLinksByContent(utils::CommonUtils::getLinkContent(&m_memoryCtx, secondStation));
+
+  auto busWosFound = false;
+    
+      for(ScAddr const & possibleFirstLink : possibleFirstLinks)
+      {
+        if(!busWosFound)
+        {
+          for(ScAddr const & possibleSecondLink : possibleSecondLinks)
+          {
+            if(!busWosFound)
+            {
+              ScTemplate getBus;
+              getBus.Triple(
+                TestKeynodes::concept_bus,
+                ScType::EdgeAccessVarPosPerm,
+                ScType::NodeConst >> "_bus"
+              );
+              getBus.TripleWithRelation(
+                "_bus",
+                ScType::EdgeDCommonVar,
+                ScType::NodeConst >> "_busNumber",
+                ScType::EdgeAccessVarPosPerm,
+                TestKeynodes::nrel_number_of_route
+              );
+              getBus.TripleWithRelation(
+                "_bus",
+                ScType::EdgeDCommonVar,
+                ScType::NodeConstStruct >> "_frame",
+                ScType::EdgeAccessVarPosPerm,
+                TestKeynodes::nrel_route
+              );
+              getBus.TripleWithRelation(
+                "_bus",
+                ScType::EdgeDCommonVar,
+                ScType::NodeConstStruct >> "_timeTable",
+                ScType::EdgeAccessVarPosPerm,
+                TestKeynodes::nrel_time
+              );
+              getBus.Triple(
+                "_frame",
+                ScType::EdgeAccessVarPosPerm,
+                ScType::NodeConst >> "_firstStation"
+              );
+              getBus.TripleWithRelation(
+                "_firstStation",
+                ScType::EdgeDCommonVar,
+                possibleFirstLink,
+                ScType::EdgeAccessVarPosPerm,
+                TestKeynodes::nrel_main_idtf
+              );
+              getBus.Triple(
+                "_frame",
+                ScType::EdgeAccessVarPosPerm,
+                ScType::NodeConst >> "_secondStation"
+              );
+              getBus.TripleWithRelation(
+                "_secondStation",
+                ScType::EdgeDCommonVar,
+                possibleSecondLink,
+                ScType::EdgeAccessVarPosPerm,
+                TestKeynodes::nrel_main_idtf
+              );
+              ScTemplateSearchResult getUser;
+              m_memoryCtx.HelperSearchTemplate(getBus, getUser);
+              if(getUser.IsEmpty() == SC_FALSE)
+              {
+                busWosFound = true;
+                std::string busNumber = utils::CommonUtils::getLinkContent(&m_memoryCtx, getUser[0]["_busNumber"]);
+                std::string timeTable = utils::CommonUtils::getLinkContent(&m_memoryCtx, getUser[0]["_timeTable"]);
+
+                messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Для вас был подобран " + busNumber + " автобус.<br><br>" + timeTable);
+
+              }
+            }
+          }
+        }
+      }
+    
+    if (!busWosFound)
+    {
+      messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, Keynodes::lang_ru, "Извините, я не смог найти подходящий для вас транспорт(");
+    }
+    utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
   SC_LOG_DEBUG("RegistrationAgent finished");
   utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, true);
   return SC_RESULT_OK;
 }
-
-ScAddrVector RegistrationAgent::getAnswer(ScAddr const & user)
-{
-  ScTemplate answerTemplate;
-  answerTemplate.Triple(
-    TestKeynodes::concept_authorized_user,
-    ScType::EdgeAccessVarPosPerm >> "_edge1",
-    user
-  );
-  answerTemplate.Triple(
-    TestKeynodes::concept_users,
-    ScType::EdgeAccessVarPosPerm >> "_edge2",
-    user
-  );
-  answerTemplate.TripleWithRelation(
-    user,
-    ScType::EdgeDCommonVar >> "_edge3",
-    ScType::LinkVar >> "_login",
-    ScType::EdgeAccessVarPosPerm >> "_edge4",
-    TestKeynodes::nrel_login
-  );
-  answerTemplate.TripleWithRelation(
-    user,
-    ScType::EdgeDCommonVar >> "_edge5",
-    ScType::LinkVar >> "_password",
-    ScType::EdgeAccessVarPosPerm >> "_edge6",
-    TestKeynodes::nrel_password
-  );
-  ScTemplateSearchResult answer;
-  m_memoryCtx.HelperSearchTemplate(answerTemplate, answer);
-  if (answer.IsEmpty() == SC_FALSE)
-    return {answer[0]["_edge1"],answer[0]["_edge2"],answer[0]["_edge3"],answer[0]["_edge4"],
-    answer[0]["_edge5"],answer[0]["_edge6"],answer[0]["_login"],
-    answer[0]["_password"],user,
-    TestKeynodes::concept_authorized_user, TestKeynodes::concept_users, TestKeynodes::nrel_login, 
-    TestKeynodes::nrel_password};
-  return {};                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-}
-
-ScAddr RegistrationAgent::getLinkConstructionLogin(std::string const & text)
-    {
-      ScAddrVector const & possibleLinks = m_memoryCtx.FindLinksByContent(text); 
-      for (ScAddr const & possibleLink : possibleLinks)
-      {
-        ScTemplate scTemplate;
-        scTemplate.Triple(
-          TestKeynodes::concept_users,
-          ScType::EdgeAccessVarPosPerm,
-          ScType::NodeVar >> "_user"
-        );
-        scTemplate.TripleWithRelation(
-          "_user",
-          ScType::EdgeDCommonVar,
-          possibleLink,
-          ScType::EdgeAccessVarPosPerm,
-          TestKeynodes::nrel_login
-        );
-        ScTemplateSearchResult searchResult;
-        m_memoryCtx.HelperSearchTemplate(scTemplate, searchResult);
-        if (searchResult.IsEmpty() == SC_FALSE)
-          return searchResult[0]["_user"];
-      }
-      return ScAddr::Empty;
-    }
 
 bool RegistrationAgent::checkActionClass(ScAddr const & actionAddr)
 {

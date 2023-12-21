@@ -26,4 +26,14 @@ ScAddr TestKeynodes::rrel_correct;
 ScAddr TestKeynodes::concept_absence_of_authorized_user;
 ScAddr TestKeynodes::concept_users;
 ScAddr TestKeynodes::nrel_report;
+ScAddr TestKeynodes::concept_bus;
+ScAddr TestKeynodes::concept_station;
+ScAddr TestKeynodes::nrel_number_of_route;
+ScAddr TestKeynodes::nrel_route;
+ScAddr TestKeynodes::rrel_latitude;
+ScAddr TestKeynodes::rrel_longitude;
+ScAddr TestKeynodes::nrel_time;
+ScAddr TestKeynodes::first;
+ScAddr TestKeynodes::second;
+ScAddr TestKeynodes::nrel_main_idtf;
 }  
