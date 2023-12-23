@@ -23,5 +23,24 @@ section_subject_domain_of_users = [*
 section_subject_domain_of_users
 -> rrel_key_sc_element:
    subject_domain_of_users;
-   concept_users;;
+   concept_users;
+   concept_registered_user;
+   concept_authorised_user;;
+   
+concept_registered_user
+<- sc_node_class;;
 
+concept_authorised_user
+<- sc_node_class;;
+
+action_register_user
+<- sc_node_class;;
+
+action_authorise_user
+<- sc_node_class;;
+
+nrel_email
+<- sc_node_norole_relation;;
+
+nrel_password
+<- sc_node_norole_relation;;

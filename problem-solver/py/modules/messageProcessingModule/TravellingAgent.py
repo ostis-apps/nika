@@ -29,6 +29,7 @@ from sc_kpm import ScKeynodes
 
 import requests
 from random import randint, choice
+API_KEY = '5b3ce3597851110001cf62484e61be75f1be4fd19569f26fa1371ce0'
 
 
 logging.basicConfig(
@@ -44,12 +45,12 @@ class TravellingAgent(ScAgentClassic):
         result = self.run(action_element)
         is_successful = result == ScResult.OK
         finish_action_with_status(action_element, is_successful)
-        self.logger.info("FindSomePlacesAgent finished %s",
+        self.logger.info("TravellingAgent finished %s",
                          "successfully" if is_successful else "unsuccessfully")
         return result
 
     def run(self, action_node: ScAddr) -> ScResult:
-        self.logger.info("FindSomePlacesAgent started")
+        self.logger.info("TravellingPlacesAgent started")
 
         try:
             message_addr = get_action_arguments(action_node, 1)[0]
@@ -85,12 +86,11 @@ class TravellingAgent(ScAgentClassic):
                 self.set_unknown_city_link(action_node, answer_phrase)
                 return ScResult.OK
         except:
-            self.logger.info(f"FindSomPlacesAgent: finished with an error")
+            self.logger.info(f"TravellingAgent: finished with an error")
             return ScResult.ERROR
 
         xids = []
         name = []
-        adr = []
         city_idtf = get_link_content_data(city_idtf_link)
         s1 = f'<p>В городе {city_idtf} вы можете посетить:</p>'
         s2 = f'<p>Места города {city_idtf}, которые вы можете посетить:</p>'
@@ -98,54 +98,77 @@ class TravellingAgent(ScAgentClassic):
         n = randint(0, len(phrases)-1)
         
         attractions = phrases[n]
-        desiers = ['pools', 'fast_food', 'cinemas', 'historical_places', 'concert_halls', 'amusements']
+        # Will need take desiers from user
+        desiers = ['памятник', 'макдональдс', 'театр', 'музей', 'библиотека', 'колесо-обозрения']
+        latCoordString = ''
+        lonCoordString = ''
+        attraction = []
+        kol = 0
         try:
             coordinates = requests.get(
                     f'https://geocode.maps.co/search?city={city_idtf}&country=Беларусь').json()[0]
+            
+            # We need take from kb a city with english lang
+            city = coordinates['display_name'].split(',')[0]
 
-            coordString = ''
+            
+            minx = coordinates['boundingbox'][0]
+            maxx = coordinates['boundingbox'][1]
+            miny = coordinates['boundingbox'][2]
+            maxy = coordinates['boundingbox'][3]
+
             for item in desiers:
                 try:
-                    print(item)
-                    api_key = "5ae2e3f221c38a28845f05b6c5d9bf667efa63f94dcb0e435b058e95"
                     places = requests.get(
-                        f"https://api.opentripmap.com/0.1/ru/places/radius?radius={2000}&lon={coordinates['lon']}&lat={coordinates['lat']}&kinds={item},&apikey={api_key}"
+                        f"https://api.openrouteservice.org/geocode/search?api_key={API_KEY}&text={item}&sources=openstreetmap,openaddresses,geonames,whosonfirst&boundary.rect.min_lat={minx}&boundary.rect.max_lat={maxx}&boundary.rect.min_lon={miny}&boundary.rect.max_lon={maxy}"
                     ).json()['features']
 
-                    print(places)
-                    j = 0
-                    f = False
-
-                    while places[j]['properties']['name'] == '':
-                        j += 1
-
-                        if j >= len(places):
-                            f = True
-                            break
-
-                    if f:
-                        continue
-                    name = places[j]['properties']['name'] 
-                    places = places[j]['properties']['xid']
-
-                    inf = requests.get(f'https://api.opentripmap.com/0.1/ru/places/xid/{places}?apikey={api_key}').json()
-                    print(1)
-                    xids.append(str(places))
-                    print(2)
-                    attractions += f"~ {name}"
-
-                    try:
-                        attractions += f"<p style='opacity: 0.7'>{inf['address']['road']} {inf['address']['house_number']}</p>"
-                    except:
-                        attractions += f"<p style='opacity: 0.7'>  - </p>"
-
+                    # Code for choosing place 
+                    fl = 1
+                    for item in places:
+                        try:
+                            a = item['properties']['street']
+                            if (fl == 1):
+                                attraction.append([])
+                                fl = 0
+                            attraction[len(attraction) - 1].append(item)
+                            kol += 1
+                        except:
+                            continue
                 except:
                     print("~ ERROR ~")
+            print(kol)
+            if (kol < 5):
+                attractions = 'Извините, произошла какая-то ошибка. Не найдено никаких достопримечаьельностей по вашим предпочтениям.'
+                # Updating KB
+            else:
+                print(attraction)
+                kol = 0
+                for j in range(0, len(desiers)):
+                    for i in range(0, len(attraction)):
+                        if (kol <= len(desiers)):
+                            try:
+                                place = attraction[i][-1]
+                                attraction[i].pop(-1)
+                                print(place)
+                                print()
+                                attractions += f"~ {place['properties']['name']}"
+                                latCoordString += f"{place['geometry']['coordinates'][0]},"
+                                lonCoordString += f"{place['geometry']['coordinates'][1]}," 
 
-            for i in range(0, len(xids)):
-                coordString += xids[i] + ','
-                    
-            attractions += '<a class="build_map" href="http://c3337100.beget.tech/index.html?x=' + str(coordinates["lon"]) + "&y=" + str(coordinates["lat"]) + "&id=" + coordString + '" style="transition: all .6s ease; display: inline-block; padding: 10px 20px; margin: auto; background: blue; background: #262626; text-decoration: none; border-radius: 10px;">Построить карту</a>'
+                                try:
+                                    attractions += f"<p style='opacity: 0.7'>{place['properties']['street']} {place['properties']['housenumber']}</p>"
+
+                                except:
+                                    attractions += f"<p style='opacity: 0.7'> - </p>"
+
+                                kol += 1
+                            except:
+                                continue
+                        else:
+                            break
+
+                attractions += '<a class="build_map" href="http://c3337100.beget.tech/index.html?x=' + str(coordinates["lon"]) + "&y=" + str(coordinates["lat"]) + "&x=" + latCoordString + "&y=" + lonCoordString + '" style="transition: all .6s ease; display: inline-block; padding: 10px 20px; margin: auto; background: blue; background: #262626; text-decoration: none; border-radius: 10px; color: #538689;">Построить карту</a>'
 
         except requests.exceptions.ConnectionError:
             self.logger.info(f"FindSomePlacesAgent: finished with connection error")
