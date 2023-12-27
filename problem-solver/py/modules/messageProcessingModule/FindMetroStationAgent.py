@@ -53,44 +53,13 @@ class AuthoriseUserAgent(ScAgentClassic):
     def run(self, action_node: ScAddr) -> ScResult:
         self.logger.info("AuthoriseUserAgent started")
 
-        # Получение введенных почты и пароля
-        [email_link_addr, password_link_addr] = get_action_arguments(action_node, 2)
-        
-        # Поиск пользователя в бз
-        
-        # Искать ссылку по содержимому, а не по аддресу
-        template = ScTemplate()
-        template.triple_with_relation(
-            sc_types.NODE_VAR >> '_user_addr',
-            sc_types.EDGE_D_COMMON_VAR,
-            email_link_addr,
-            sc_types.EDGE_ACCESS_VAR_POS_PERM,
-            ScKeynodes['nrel_email'],
-        )
-        
-        result = template_search(template)
-        if len(result) == 0:
-            self.logger.error('AuthoriseUserAgent: There is no user with such email in kb.')
-            return ScResult.ERROR
-        user_addr = result[0]['_user_addr']
-
-        template = ScTemplate()
-        template.triple_with_relation(
-            user_addr,
-            sc_types.EDGE_D_COMMON_VAR,
-            password_link_addr,
-            sc_types.EDGE_ACCESS_VAR_POS_PERM,
-            ScKeynodes['nrel_password'],
-        )
-        result = template_search(template)
-        if len(result) == 0:
-            self.logger.error('AuthoriseUserAgent: There is no user with such password in kb.')
-            return ScResult.ERROR
-        
-        # Добавление пользователя в класс авторизированных пользователей
-        create_edge(sc_types.EDGE_ACCESS_CONST_POS_PERM, ScKeynodes['concept_authorised_user'], user_addr)
+        # Получение данных (места от которого и до которого надо добраться)
+        # Получение координат мест
+        # Поиск ближайших точек входа в метро
+        # Поиск ближайших точек выхода из метро
+        # Оформление вывода
+      
         
         
-        
-        create_action_answer(action_node, user_addr)
+        create_action_answer()
         return ScResult.OK
