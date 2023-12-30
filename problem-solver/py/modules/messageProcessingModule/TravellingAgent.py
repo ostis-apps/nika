@@ -117,10 +117,10 @@ class TravellingAgent(ScAgentClassic):
             self.logger.info('TravellingAgent: There is no desires in user.')
             return ScResult.ERROR
         
-        desires = []
+        desiers = []
         for desire in result:
             desire_addr = desire.get('_desire_addr')
-            desires.append(self.get_ru_idtf(desire_addr))
+            desiers.append(self.get_ru_idtf(desire_addr))
             
         latCoordString = ''
         lonCoordString = ''
