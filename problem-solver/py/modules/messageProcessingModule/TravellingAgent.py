@@ -53,7 +53,7 @@ class TravellingAgent(ScAgentClassic):
         self.logger.info("TravellingPlacesAgent started")
 
         try:
-            message_addr = get_action_arguments(action_node, 1)[0]
+            [message_addr, user_addr] = get_action_arguments(action_node, 2)
             message_type = ScKeynodes.resolve(
                 "concept_message_about_travelling", sc_types.NODE_CONST_CLASS)
 
@@ -89,8 +89,6 @@ class TravellingAgent(ScAgentClassic):
             self.logger.info(f"TravellingAgent: finished with an error")
             return ScResult.ERROR
 
-        xids = []
-        name = []
         city_idtf = get_link_content_data(city_idtf_link)
         s1 = f'<p>В городе {city_idtf} вы можете посетить:</p>'
         s2 = f'<p>Места города {city_idtf}, которые вы можете посетить:</p>'
@@ -98,12 +96,37 @@ class TravellingAgent(ScAgentClassic):
         n = randint(0, len(phrases)-1)
         
         attractions = phrases[n]
-        # Will need take desiers from user
-        desiers = ['памятник', 'макдональдс', 'театр', 'музей', 'библиотека', 'колесо-обозрения']
+        
+
+        template = ScTemplate()
+        template.triple_with_relation(
+            user_addr,
+            sc_types.EDGE_D_COMMON_VAR,
+            sc_types.NODE_VAR >> '_desires_addr',
+            sc_types.EDGE_ACCESS_VAR_POS_PERM,
+            ScKeynodes['nrel_desires'],
+        )
+        template.triple(
+            '_desires_addr',
+            sc_types.EDGE_ACCESS_VAR_POS_PERM,
+            sc_types.NODE_VAR_CLASS >> '_desire_addr',
+        )
+
+        result = template_search(template)
+        if len(result) == 0:
+            self.logger.info('TravellingAgent: There is no desires in user.')
+            return ScResult.ERROR
+        
+        desires = []
+        for desire in result:
+            desire_addr = desire.get('_desire_addr')
+            desires.append(self.get_ru_idtf(desire_addr))
+            
         latCoordString = ''
         lonCoordString = ''
         attraction = []
         kol = 0
+        
         try:
             coordinates = requests.get(
                     f'https://geocode.maps.co/search?city={city_idtf}&country=Беларусь').json()[0]

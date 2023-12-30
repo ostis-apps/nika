@@ -54,12 +54,19 @@ class AuthoriseUserAgent(ScAgentClassic):
         self.logger.info("AuthoriseUserAgent started")
 
         # Получение данных (места от которого и до которого надо добраться)
+
+
         # Получение координат мест
+
+
         # Поиск ближайших точек входа в метро
+
+
         # Поиск ближайших точек выхода из метро
+
+
         # Оформление вывода
-      
-        
-        
+
+
         create_action_answer()
         return ScResult.OK
