@@ -65,7 +65,7 @@ class RegisterUserAgent(ScAgentClassic):
             sc_types.EDGE_ACCESS_VAR_POS_PERM,
             ScKeynodes['nrel_email'],
         )
-        result = template.template_search()
+        result = template_search(template)
         if len(result) != 0:
             self.logger.error('RegisterUserAgent: There is email in kb.')
             return ScResult.ERROR

@@ -5,7 +5,7 @@ For this we wait for SIGINT.
 import logging
 from sc_client.models import ScAddr, ScLinkContentType, ScTemplate
 from sc_client.constants import sc_types
-from sc_client.client import template_search
+from sc_client.client import template_search, get_links_by_content
 
 from sc_kpm import ScAgentClassic, ScModule, ScResult, ScServer
 from sc_kpm.sc_sets import ScSet
@@ -55,35 +55,48 @@ class AuthoriseUserAgent(ScAgentClassic):
 
         # Получение введенных почты и пароля
         [email_link_addr, password_link_addr] = get_action_arguments(action_node, 2)
-        
-        # Поиск пользователя в бз
-        
-        # Искать ссылку по содержимому, а не по аддресу
-        template = ScTemplate()
-        template.triple_with_relation(
-            sc_types.NODE_VAR >> '_user_addr',
-            sc_types.EDGE_D_COMMON_VAR,
-            email_link_addr,
-            sc_types.EDGE_ACCESS_VAR_POS_PERM,
-            ScKeynodes['nrel_email'],
-        )
-        
-        result = template_search(template)
-        if len(result) == 0:
+        email = get_link_content_data(email_link_addr)
+        password = get_link_content_data(password_link_addr)
+
+        [links_with_email] = get_links_by_content(email)
+        user_addr = ScAddr(0)
+        for email_link_addr in links_with_email:
+            template = ScTemplate()
+            template.triple_with_relation(
+                sc_types.NODE_VAR >> '_user_addr',
+                sc_types.EDGE_D_COMMON_VAR,
+                email_link_addr,
+                sc_types.EDGE_ACCESS_VAR_POS_PERM,
+                ScKeynodes['nrel_email'],
+            )
+            result = template_search(template)
+            if len(result) == 0:
+                continue
+            user_addr = result[0].get('_user_addr')
+            break
+
+        if not user_addr.is_valid():
             self.logger.error('AuthoriseUserAgent: There is no user with such email in kb.')
             return ScResult.ERROR
-        user_addr = result[0]['_user_addr']
 
-        template = ScTemplate()
-        template.triple_with_relation(
-            user_addr,
-            sc_types.EDGE_D_COMMON_VAR,
-            password_link_addr,
-            sc_types.EDGE_ACCESS_VAR_POS_PERM,
-            ScKeynodes['nrel_password'],
-        )
-        result = template_search(template)
-        if len(result) == 0:
+        [links_with_password] = get_links_by_content(password)
+        is_found = False
+        for password_link_addr in links_with_password:
+            template = ScTemplate()
+            template.triple_with_relation(
+                user_addr,
+                sc_types.EDGE_D_COMMON_VAR,
+                password_link_addr,
+                sc_types.EDGE_ACCESS_VAR_POS_PERM,
+                ScKeynodes['nrel_password'],
+            )
+            result = template_search(template)
+            if len(result) == 0:
+                continue
+            is_found = True
+            break
+
+        if not is_found:
             self.logger.error('AuthoriseUserAgent: There is no user with such password in kb.')
             return ScResult.ERROR
         
