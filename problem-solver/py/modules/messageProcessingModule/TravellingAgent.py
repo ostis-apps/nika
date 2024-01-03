@@ -239,6 +239,7 @@ class TravellingAgent(ScAgentClassic):
             sc_types.EDGE_ACCESS_VAR_POS_PERM,
             main_idtf,
         )
+        
         search_results = template_search(template)
         for result in search_results:
             idtf = result[2]
