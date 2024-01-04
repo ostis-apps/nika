@@ -1,4 +1,4 @@
-
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap');
 
 body {
     display: flex;
@@ -6,28 +6,39 @@ body {
 
 div#content {
     flex: 1;
-    background: #fcfafa;
+    background: rgb(51, 47, 47);
     display: flex;
 }
 
+.ant-layout-content {
+    background-color: #242426 !important;
+}
 .ant-layout-header {
+    font-family: 'Montserrat';
     flex: 0.04;
-    background: #39494C;
+    background: linear-gradient(347deg, rgba(52,91,102,1) 0%, rgba(100,158,157,1) 100%) !important;
+    backdrop-filter: blur(20px);
     display: flex;
     padding: 10px 40px;
     line-height: normal;
 }
 
 .ant-layout-content {
-    flex: 0.95;
     background: #fcfafa;
     color: #e6e6fa !important;
     display: flex;
+    
 }
 
+.copyright {
+    font-weight: 700 !important;
+    opacity: 0.6;
+}
 .ant-layout-footer {
+    font-family: 'Montserrat';
     flex: 0.04;
-    background: #39494C;
+    background: #181818 !important;
+    backdrop-filter: blur(20px);
     color: #ffffff !important;
     text-align: center;
     font-size: medium;
@@ -473,4 +484,77 @@ html, body, .backdrop {
         height: var(--max-size);
         border-radius: calc(var(--max-size) / 2);
     }
+}
+
+.sc-iBkjds {
+    color: white;
+    border-radius: 100px;
+    background: rgb(52,91,102);
+    background: linear-gradient(347deg, rgba(52,91,102,1) 0%, rgba(100,158,157,1) 100%); 
+}
+
+.weather-image {
+    width: 150px;
+    margin: 0 auto;
+}
+
+.weather_wrapper {
+    width: 200px;
+}
+
+.weather_wrapper p {
+    margin: 0;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .iBkjds {
+        width: 100%;
+    }
+
+    * {
+        font-size: 12px !important;
+    }
+}
+
+.djgayP, .dkXyPK, .gtzULA {
+    border-radius: 0 !important;
+}
+
+.cUpwIN {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.djgayP {
+    padding: 0 !important;
+    max-height: 100vh !important;
+}
+
+.dQXuNy {
+    border-radius: 10px;
+    background: rgb(39, 39, 39) !important;
+    margin: 0 !important;
+    padding: 2px 5px 10px 5px !important;
+    margin: 5px !important;
+}
+
+.gxDCfl {
+    height: 12px !important;
+}
+
+.jpdrw {
+    opacity: 0.8;
+    
+}
+
+.jQToCC {
+    border-radius: 10px;
+    margin-left: 5px !important;
+}
+
+.dWagGp {
+    border-radius: 10px !important;
+    background-color: #43494b !important;
 }
