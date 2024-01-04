@@ -73,28 +73,79 @@ class RandomAgent(ScAgentClassic):
             return ScResult.ERROR
 
         # Прописаны все города
-        cities = ['Минск', 'Борисов', 'Солигорск', 'Молодечно', 'Жодино', 'Слуцк', 'Дзержинск', 'Вилейка', 'Смолевичи', 'Марьина Горка', 'Фаниполь', 'Столбцы', 'Заславль', 'Несвиж', 'Логойск', 'Березино', 'Любань', 'Клецк', 'Старые Дороги', 'Узда', 'Червень', 'Копыль', 'Воложин', 'Крупки', 'Мядель', 'Витебск', 'Орша', 'Новополоцк', 'Полоцк', 'Поставы', 'Глубокое', 'Лепель', 'Мир', 'Новолукомль', 'Городок', 'Барань', 'Толочин', 'Браслав', 'Чашники', 'Миоры', 'Сенно', 'Верхнедвинск', 'Дубровно', 'Докшицы', 'Дисна', 'Могилев', 'Бобруйск', 'Осиповичи', 'Горки', 'Кричев', 'Быхов', 'Климовичи', 'Костюковичи', 'Шклов', 'Чаусы', 'Мстиславь', 'Белыничи', 'Кировск', 'Чериков', 'Славгород', 'Круглое', 'Кличев', 'Гомель', 'Мозырь', 'Жлобин', 'Речица', 'Светлогорск', 'Калинковичи', 'Рогачев', 'Добруш', 'Житковичи', 'Хойники', 'Петриков', 'Ельск', 'Чечерск', 'Буда-Кошелево', 'Ветка', 'Наровля', 'Василевичи', 'Туров', 'Брест', 'Барановичи', 'Пинск', 'Кобрин', 'Береза', 'Лунинец', 'Ивацевичи', 'Пружаны', 'Иваново', 'Дрогичин', 'Жабинка', 'Столин', 'Ганцевичи', 'Малорита', 'Микашевичи', 'Белоозерск', 'Ляховичи', 'Каменецк', 'Давид-Городок', 'Высокое', 'Коссово', 'Гродно', 'Лида', 'Слоним', 'Волковыск', 'Сморгонь', 'Новогрудок', 'Ошмяны', 'Щучин', 'Островец', 'Мосты', 'Скидель', 'Березовка', 'Дятлово', 'Ивье', 'Свислочь']
+        template = ScTemplate()
+        template.triple(
+            ScKeynodes['concept_city_place'],
+            sc_types.EDGE_ACCESS_VAR_POS_PERM,
+            sc_types.NODE_VAR >> "_city_addr",
+        )
+        result = template_search(template)
 
-        try:
+        no_city = False
+        cities = []
+        for item in result:
+            cities.append(item.get("_city_addr"))
+
+        if len(cities) == 0:
+            no_city = True
+            cities = ['Минск', 'Борисов', 'Солигорск', 'Молодечно', 'Жодино', 'Слуцк', 'Дзержинск', 'Вилейка',
+                      'Смолевичи', 'Марьина Горка', 'Фаниполь', 'Столбцы', 'Заславль', 'Несвиж', 'Логойск', 'Березино',
+                      'Любань', 'Клецк', 'Старые Дороги', 'Узда', 'Червень', 'Копыль', 'Воложин', 'Крупки', 'Мядель',
+                      'Витебск', 'Орша', 'Новополоцк', 'Полоцк', 'Поставы', 'Глубокое', 'Лепель', 'Мир', 'Новолукомль',
+                      'Городок', 'Барань', 'Толочин', 'Браслав', 'Чашники', 'Миоры', 'Сенно', 'Верхнедвинск',
+                      'Дубровно', 'Докшицы', 'Дисна', 'Могилев', 'Бобруйск', 'Осиповичи', 'Горки', 'Кричев', 'Быхов',
+                      'Климовичи', 'Костюковичи', 'Шклов', 'Чаусы', 'Мстиславь', 'Белыничи', 'Кировск', 'Чериков',
+                      'Славгород', 'Круглое', 'Кличев', 'Гомель', 'Мозырь', 'Жлобин', 'Речица', 'Светлогорск',
+                      'Калинковичи', 'Рогачев', 'Добруш', 'Житковичи', 'Хойники', 'Петриков', 'Ельск', 'Чечерск',
+                      'Буда-Кошелево', 'Ветка', 'Наровля', 'Василевичи', 'Туров', 'Брест', 'Барановичи', 'Пинск',
+                      'Кобрин', 'Береза', 'Лунинец', 'Ивацевичи', 'Пружаны', 'Иваново', 'Дрогичин', 'Жабинка', 'Столин',
+                      'Ганцевичи', 'Малорита', 'Микашевичи', 'Белоозерск', 'Ляховичи', 'Каменецк', 'Давид-Городок',
+                      'Высокое', 'Коссово', 'Гродно', 'Лида', 'Слоним', 'Волковыск', 'Сморгонь', 'Новогрудок', 'Ошмяны',
+                      'Щучин', 'Островец', 'Мосты', 'Скидель', 'Березовка', 'Дятлово', 'Ивье', 'Свислочь']
+
+        if not no_city:
+            city_addr = choice(cities)
+
+            template = ScTemplate()
+            template.triple_with_relation(
+                city_addr,
+                sc_types.EDGE_D_COMMON_VAR,
+                sc_types.LINK_VAR >> '_description',
+                sc_types.EDGE_ACCESS_VAR_POS_PERM,
+                ScKeynodes['nrel_description'],
+            )
+
+            result = template_search(template)
+        else:
+            result = []
+
+        if not len(result) == 0:
+            description_link_addr = result[0].get('_description')
+            description = get_link_content_data(description_link_addr)
+        else:
+
+            if no_city:
+                city = choice(cities)
+            else:
+                city_link_idtf = self.get_ru_idtf(city_addr)
+                city = get_link_content_data(city_link_idtf)
+
+
             set_lang("ru")
-            city = choice(cities)
-            print(city)
             try:
-                array = page("Город " + city + " (Беларусь)").images
-                random_city =  f'<img src="{array[-1]}" style="width: 100%; border-radius: 10px; margin-bottom: 10px;">' + "<br>" + f"<b><p style='text-align: center'>{city}</p></b>" + summary("Город " + city + " (Беларусь)", sentences = 4)
-                print(random_city)
+                array = page(f"Город {city} (Беларусь)").images
+                description = f'<img src="{array[-1]}" style="width: 100%; border-radius: 10px; margin-bottom: 10px;">' + "<br>" + f"<b><p style='text-align: center'>{city}</p></b>" + summary("Город " + city + " (Беларусь)", sentences = 4)
             except:
                 array = page(city).images
-                random_city =  f'<img src="{array[-1]}" style="width: 100%; border-radius: 10px; margin-bottom: 10px;">' + "<br>" + f"<b><p style='text-align: center'>{city}</p></b>" + summary(city, sentences = 4)
-            self.logger.info(f"RandomAgent: {random_city}")
-        except requests.exceptions.ConnectionError:
-            self.logger.info(f"RandomAgent: finished with connection error")
-            return ScResult.ERROR
-        link = create_link(
-            str(random_city), ScLinkContentType.STRING, link_type=sc_types.LINK_CONST)
-        
+                description = f'<img src="{array[-1]}" style="width: 100%; border-radius: 10px; margin-bottom: 10px;">' + "<br>" + f"<b><p style='text-align: center'>{city}</p></b>" + summary(city, sentences = 4)
 
-        random_city_edge = create_edge(sc_types.EDGE_ACCESS_CONST_POS_PERM, answer_phrase, link)
+        self.logger.info(f"RandomAgent: {description}")
+
+        link = create_link(
+            str(description), ScLinkContentType.STRING, link_type=sc_types.LINK_CONST)
+
+
+        create_edge(sc_types.EDGE_ACCESS_CONST_POS_PERM, answer_phrase, link)
         create_action_answer(action_node, link)
 
         return ScResult.OK

@@ -27,7 +27,7 @@ from sc_kpm.utils.action_utils import (
     get_element_by_role_relation
 )
 
-from wikipedia import *
+from wikipedia import set_lang, summary, page
 from sc_kpm import ScKeynodes
 
 import requests
@@ -63,7 +63,6 @@ class HistoryAgent(ScAgentClassic):
                     f"HistoryAgent: the message isn’t about weather")
                 return ScResult.OK
 
-            idtf = ScKeynodes.resolve("nrel_idtf", sc_types.NODE_CONST_NOROLE)
             answer_phrase = ScKeynodes.resolve(
                 "show_history_answer_phrase", sc_types.NODE_CONST_CLASS)
             rrel_city_place = ScKeynodes.resolve("rrel_city_place", sc_types.NODE_ROLE)
@@ -72,29 +71,42 @@ class HistoryAgent(ScAgentClassic):
         except:
             self.logger.info(f"HistoryAgent: finished with an error")
             return ScResult.ERROR
-    
+
         city_addr = self.get_entity_addr(
-                message_addr, rrel_city_place)
-        city_idtf_link = self.get_ru_idtf(city_addr)
-        entity_idtf = get_link_content_data(city_idtf_link)
+            message_addr, rrel_city_place)
 
         self.clear_previous_answer(
-                city_addr, nrel_history, answer_phrase)
-        try:
+            city_addr, nrel_history, answer_phrase)
 
-            set_lang("ru")
-            array = page("Город " + entity_idtf + " (Беларусь)").images
-            history =  f'<img src="{array[-1]}" style="width: 100%; border-radius: 10px; margin-bottom: 10px;">' + "<br>" + summary("Город " + entity_idtf + " (Беларусь)", sentences = 4)
-            self.logger.info(f"HistoryAgent: The temperature in {get_system_idtf(city_addr)} is {history}")
-            self.logger.info(f"{history}")
+        template = ScTemplate()
+        template.triple_with_relation(
+            city_addr,
+            sc_types.EDGE_D_COMMON_VAR,
+            sc_types.LINK_VAR >> '_description',
+            sc_types.EDGE_ACCESS_VAR_POS_PERM,
+            ScKeynodes['nrel_description'],
+        )
 
-        except requests.exceptions.ConnectionError:
-            self.logger.info(f"HistoryAgent: finished with connection error")
-            return ScResult.ERROR
-        
+        result = template_search(template)
+
+        if not len(result) == 0:
+            description_link_addr = result[0].get('_description')
+            description = get_link_content_data(description_link_addr)
+        else:
+            city_idtf = get_link_content_data(city_addr)
+            try:
+                set_lang("ru")
+                array = page("Город " + city_idtf + " (Беларусь)").images
+                description = f'<img src="{array[0]}" style="width: 100%; border-radius: 10px; margin-bottom: 10px;">' + "<br>" + summary(
+                    "Город " + city_idtf + " (Беларусь)", sentences=4)
+            except:
+                description = 'Извините, я не могу найти информацию по вашему запросу.'
+        self.logger.info(f"HistoryAgent: The temperature in {get_system_idtf(city_addr)} is {description}")
+        self.logger.info(f"{description}")
+
         link = create_link(
-            str(history), ScLinkContentType.STRING, link_type=sc_types.LINK_CONST)
-        random_city_edge = create_edge(sc_types.EDGE_ACCESS_CONST_POS_PERM, answer_phrase, link)
+            description, ScLinkContentType.STRING, link_type=sc_types.LINK_CONST)
+        create_edge(sc_types.EDGE_ACCESS_CONST_POS_PERM, answer_phrase, link)
         create_action_answer(action_node, link)
 
         return ScResult.OK

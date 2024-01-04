@@ -79,11 +79,11 @@ class AuthoriseUserAgent(ScAgentClassic):
         ip_second_place = f"{response2['features'][0]['geometry']['coordinates'][0]}, {response2['features'][0]['geometry']['coordinates'][1]}"
 
         # Поиск ближайших точек входа и выхода в метро
-        concept_mestro_station = ScKeynodes.resolve('concept_mestro_station', sc_types.NODE_CONST_CLASS)
+        concept_metro_station = ScKeynodes.resolve('concept_metro_station', sc_types.NODE_CONST_CLASS)
         
         template = ScTemplate()
         template.triple(
-            concept_mestro_station,
+            concept_metro_station,
             sc_types.EDGE_ACCESS_VAR_POS_PERM,
             sc_types.NODE_VAR << "_station",
         )
@@ -128,7 +128,7 @@ class AuthoriseUserAgent(ScAgentClassic):
 
             # Получение расстояний до точки 
             d_in = requests.get(f"https://api.openrouteservice.org/v2/directions/driving-car?api_key={API_KEY}&start={ip_first_place}&end={coordinates}").json()['features'][0]['properties']['segments'][0]['distance']
-            d_out= requests.get(f"https://api.openrouteservice.org/v2/directions/driving-car?api_key={API_KEY}&start={coordinates}&end={ip_second_place}").json()['features'][0]['properties']['segments'][0]['distance']
+            d_out = requests.get(f"https://api.openrouteservice.org/v2/directions/driving-car?api_key={API_KEY}&start={coordinates}&end={ip_second_place}").json()['features'][0]['properties']['segments'][0]['distance']
             
 
             if d_in < min_d_in:
