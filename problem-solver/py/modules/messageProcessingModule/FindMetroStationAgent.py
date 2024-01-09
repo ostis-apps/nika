@@ -30,29 +30,32 @@ from wikipedia import *
 from random import *
 from sc_kpm import ScKeynodes
 
+import haversine as hs
+from haversine import Unit
 import requests
 API_KEY = '5b3ce3597851110001cf62484e61be75f1be4fd19569f26fa1371ce0'
-
+import json
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s | %(name)s | %(message)s", datefmt="[%d-%b-%y %H:%M:%S]"
 )
 
-class AuthoriseUserAgent(ScAgentClassic):
+
+class FindMetroStationAgent(ScAgentClassic):
     def __init__(self):
-        super().__init__("action_authorise_user")
-        self.logger.info("AuthoriseUserAgent Open %s")
+        super().__init__("action_show_find_metro_station")
+        self.logger.info("FindMetroStationAgent Open %s")
 
     def on_event(self, event_element: ScAddr, event_edge: ScAddr, action_element: ScAddr) -> ScResult:
         result = self.run(action_element)
         is_successful = result == ScResult.OK
         finish_action_with_status(action_element, is_successful)
-        self.logger.info("AuthoriseUserAgent finished %s",
+        self.logger.info("FindMetroStationAgent finished %s",
                          "successfully" if is_successful else "unsuccessfully")
         return result
 
     def run(self, action_node: ScAddr) -> ScResult:
-        self.logger.info("AuthoriseUserAgent started")
+        self.logger.info("FindMetroStationAgent started")
         [message_addr] = get_action_arguments(action_node, 1)
         rrel_first_place = ScKeynodes.resolve('rrel_first_place', sc_types.NODE_CONST_ROLE)
         rrel_second_place = ScKeynodes.resolve('rrel_second_place', sc_types.NODE_CONST_ROLE)
@@ -64,20 +67,29 @@ class AuthoriseUserAgent(ScAgentClassic):
         second_place = get_link_content_data(second_place_link_addr)
 
         # Получение координат мест
+
         try:
-            response1 = requests.get(f"https://api.openrouteservice.org/geocode/search?api_key={API_KEY}&text={first_place}&sources=openstreetmap,openaddresses,geonames,whosonfirst&boundary.rect.min_lat={minx}&boundary.rect.max_lat={maxx}&boundary.rect.min_lon={miny}&boundary.rect.max_lon={maxy}").json()
-            response2 = requests.get(f"https://api.openrouteservice.org/geocode/search?api_key={API_KEY}&text={second_place}&sources=openstreetmap,openaddresses,geonames,whosonfirst&boundary.rect.min_lat={minx}&boundary.rect.max_lat={maxx}&boundary.rect.min_lon={miny}&boundary.rect.max_lon={maxy}").json()
-        except:
+            first = first_place
+            second = second_place
+
+            first_place = self.change_translate(first_place[3:].lower())
+            second_place = self.change_translate(second_place[3:].lower())
+            print(second_place)
+            
+            response1 = requests.get(f"https://nominatim.openstreetmap.org/search.php?q={first_place}, Минск&format=json").json()
+            response2 = requests.get(f"https://nominatim.openstreetmap.org/search.php?q={second_place}, Минск&format=json").json()
+        except Exception as e:
+            print(e)
             answer = choice([f'К сожалению, не удалось распознать, куда вам надо.'])
 
             link = create_link(
                 answer, ScLinkContentType.STRING, link_type=sc_types.LINK_CONST)
-            create_action_answer(action_node, link)
+            edge = create_edge(sc_types.EDGE_D_COMMON_CONST, message_addr, link)
+            create_edge(sc_types.EDGE_ACCESS_CONST_POS_PERM, ScKeynodes['nrel_answer'], edge)
             return ScResult.OK
-    
-        ip_first_place = f"{response1['features'][0]['geometry']['coordinates'][0]}, {response1['features'][0]['geometry']['coordinates'][1]}"
-        ip_second_place = f"{response2['features'][0]['geometry']['coordinates'][0]}, {response2['features'][0]['geometry']['coordinates'][1]}"
 
+        ip_first_place = f"{response1[0]['lon']}, {response1[0]['lat']}"
+        ip_second_place = f"{response2[0]['lon']}, {response2[0]['lat']}"
         # Поиск ближайших точек входа и выхода в метро
         concept_metro_station = ScKeynodes.resolve('concept_metro_station', sc_types.NODE_CONST_CLASS)
         
@@ -85,27 +97,27 @@ class AuthoriseUserAgent(ScAgentClassic):
         template.triple(
             concept_metro_station,
             sc_types.EDGE_ACCESS_VAR_POS_PERM,
-            sc_types.NODE_VAR << "_station",
+            sc_types.NODE_VAR >> "_station",
         )
 
         template.triple_with_relation(
             '_station',
             sc_types.EDGE_D_COMMON_VAR,
-            sc_types.NODE_VAR << "_station_inputs",
+            sc_types.NODE_VAR >> "_station_inputs",
             sc_types.EDGE_ACCESS_VAR_POS_PERM,
             ScKeynodes['nrel_inputs'],
         )
 
         template.triple(
             '_station_inputs',
-            sc_types.EDGE_D_COMMON_VAR,
-            sc_types.NODE_VAR << "_station_input",
+            sc_types.EDGE_ACCESS_VAR_POS_PERM,
+            sc_types.NODE_VAR >> "_station_input",
         )
 
         template.triple_with_relation(
             '_station_input',
             sc_types.EDGE_D_COMMON_VAR,
-            sc_types.LINK_VAR << "_coordinates",
+            sc_types.LINK_VAR >> "_coordinates",
             sc_types.EDGE_ACCESS_VAR_POS_PERM,
             ScKeynodes['nrel_coordinates'],
         )
@@ -124,27 +136,33 @@ class AuthoriseUserAgent(ScAgentClassic):
         for metro_input in result:
             coordinates_addr = metro_input.get('_coordinates')
             coordinates = get_link_content_data(coordinates_addr)
+            metro_station_addr = metro_input.get('_station')
             metro_input_addr = metro_input.get('_station_input')
 
-            # Получение расстояний до точки 
-            d_in = requests.get(f"https://api.openrouteservice.org/v2/directions/driving-car?api_key={API_KEY}&start={ip_first_place}&end={coordinates}").json()['features'][0]['properties']['segments'][0]['distance']
-            d_out = requests.get(f"https://api.openrouteservice.org/v2/directions/driving-car?api_key={API_KEY}&start={coordinates}&end={ip_second_place}").json()['features'][0]['properties']['segments'][0]['distance']
-            
+            # Получение расстояний до точки
+            d_in = hs.haversine(self.return_coord(coordinates, 1), self.return_coord(ip_first_place), unit=Unit.KILOMETERS)
+            d_out = hs.haversine(self.return_coord(coordinates, 1), self.return_coord(ip_second_place), unit=Unit.KILOMETERS)
+
+
 
             if d_in < min_d_in:
                 min_d_in = d_in
-                station_in = metro_input_addr
+                station_in = metro_station_addr
 
             if d_out < min_d_out:
                 min_d_out = d_out
-                station_out = metro_input_addr
-
+                station_out = metro_station_addr
+        print(station_in)
         # Оформление вывода
-        answer = choice([f'Для того, чтобы добраться от {first_place} до {second_place} вым необходимо пройти к станции {self.get_ru_idtf(station_in)} и ехать до {self.get_ru_idtf(station_out)}'])
+        answer = choice([f'Для того, чтобы добраться {first} {second} вам необходимо пройти к станции {get_link_content_data(self.get_ru_idtf(station_in))} и ехать до станции {get_link_content_data(self.get_ru_idtf(station_out))}'])
+
+        self.logger.info(f"FindMetroStationAgent: Answer: {answer}")
 
         link = create_link(
             answer, ScLinkContentType.STRING, link_type=sc_types.LINK_CONST)
-        create_action_answer(action_node, link)
+        edge = create_edge(sc_types.EDGE_D_COMMON_CONST, message_addr, link)
+        create_edge(sc_types.EDGE_ACCESS_CONST_POS_PERM, ScKeynodes['nrel_answer'], edge)
+
         return ScResult.OK
 
     def get_entity_addr(self, message_addr: ScAddr, rrel_entity: ScAddr):
@@ -187,4 +205,32 @@ class AuthoriseUserAgent(ScAgentClassic):
                 return idtf
         return get_element_by_norole_relation(
             src=entity_addr, nrel_node=main_idtf)
+
+
+
+    def return_coord(self, str, oper = 0):
+        ans = str.split(', ')
+
+        if oper == 1:
+            return float(ans[1]), float(ans[0])
+        return float(ans[0]), float(ans[1])
     
+    def change_translate(self, s):
+        print(s)
+        if s.find('улицы') > -1:
+            print("Found")
+            s = s.replace('улицы', "улица")
+        if s.find('проезда') > -1:
+            s = s.replace('проезда', 'проезд')
+        if s.find('проспекта') > -1:
+            print("Found")
+            s = s.replace('проспекта', 'проспект')
+        if s.find('площади') > -1:
+            s = s.replace('площади', 'площадь')
+        if s.find('переулка') > -1:
+            s = s.replace('переулка', 'переулок')
+
+        if s.find('университетского') > -1:
+            s = s.replace('университетского', 'университетский')
+        return s
+                
