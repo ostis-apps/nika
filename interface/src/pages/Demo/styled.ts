@@ -8,7 +8,3 @@ export const Wrapper = styled(ChatPageWrapper)`
 export const ChatWrapper = styled.div`
     grid-area: chat;
 `;
-
-export const SCgViewerWrapper = styled.div`
-    display: none;
-`;

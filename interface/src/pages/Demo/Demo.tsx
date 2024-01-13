@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState, Fragment } from 'react';
-import { Wrapper, ChatWrapper, SCgViewerWrapper } from "./styled";
+import { Wrapper, ChatWrapper } from "./styled";
 import { Message } from '@components/Chat/Message';
 import { Chat } from '@components/Chat';
 import { Date } from '@components/Chat/Date';
@@ -21,8 +21,6 @@ export const Demo = () => {
         },
         [user, sendMessage],
     );
-
-    const url = SC_WEB_URL + '/?sys_id=answer_structure&scg_structure_view_only=true';
 
     useEffect(() => {
         (async () => {
@@ -69,9 +67,6 @@ export const Demo = () => {
                     })}
                 </Chat>
             </ChatWrapper>
-            <SCgViewerWrapper>
-                <iframe src={url} style={{width: '100%', height: '100%', border: 0, borderRadius: '15px'}}/>
-            </SCgViewerWrapper>
         </Wrapper>
     );
 };

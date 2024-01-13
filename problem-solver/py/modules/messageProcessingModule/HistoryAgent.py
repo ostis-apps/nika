@@ -106,8 +106,8 @@ class HistoryAgent(ScAgentClassic):
 
         link = create_link(
             description, ScLinkContentType.STRING, link_type=sc_types.LINK_CONST)
-        create_edge(sc_types.EDGE_ACCESS_CONST_POS_PERM, answer_phrase, link)
-        create_action_answer(action_node, link)
+        edge = create_edge(sc_types.EDGE_D_COMMON_CONST, message_addr, link)
+        create_edge(sc_types.EDGE_ACCESS_CONST_POS_PERM, ScKeynodes['nrel_answer'], edge)
 
         return ScResult.OK
 

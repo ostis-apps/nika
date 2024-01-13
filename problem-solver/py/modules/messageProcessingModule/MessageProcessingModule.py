@@ -11,5 +11,5 @@ from .FindMetroStationAgent import FindMetroStationAgent
 
 class MessageProcessingModule(ScModule):
     def __init__(self):
-        super().__init__(HistoryAgent(), RandomAgent(), WeatherAgent(), FindSomePlacesAgent(), TravellingAgent(), AuthoriseUserAgent(), RegisterUserAgent(), FindMetroStationAgent())
+        super().__init__(HistoryAgent(), RandomAgent(), WeatherAgent(), FindSomePlacesAgent(), TravellingAgent(), AuthoriseUserAgent(), RegisterUserAgent())
 
