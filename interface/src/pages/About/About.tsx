@@ -1,32 +1,30 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
+import { load } from '@2gis/mapgl';
 
 export const About = () => {
-    return (
-        <div className="about-page-container">
-            <div className="about-page">
-                <h1 className="about-page-text" style={{textAlign: "justify", marginLeft: "100px", marginRight: "100px"}}>
-                    Обучающая диалоговая экспертная система <b>NIKA</b> (<b>N</b>ika is an <b>I</b>ntelligent <b>K</b>nowledge-driven <b>A</b>ssistant),
-                    разработанный на основе технологии{' '}
-                        <a href="http://ims.ostis.net/" className="text">
-                          OSTIS
-                        </a>
-                    . Обучающая диалоговая экспертная ostis-система NIKA полностью заменяет участие Обучающей
-                    диалоговой экспертной системы ЭКО в образовательном процессе по обучению студентов
-                    специальностей Белорусского государственного университета информатики и радиоэлектроники
-                    интеллектуальным экспертным системам. Новый вариант реализации системы такого класса позволяет
-                    расширить круг решаемых задач, устраняет недостатки ранее использованного своего аналога и
-                    упрощает и автоматизирует процесс обучения студентов специальностей Белорусского
-                    государственного университета информатики и радиоэлектроники в контексте дисциплин, в которых
-                    изучаются интеллектуальные экспертные системы.
-                </h1>
-                <h1 className="about-page-text">
-                    Разработано{' '}
-                        <a href="https://sem.systems/" className="text">
-                          Intelligent Semantic Systems LLC
-                        </a>
-                    , Все права защищены.{' '}
-                </h1>
-            </div>
-        </div>
-    );
-}
+    const queryParams = new URLSearchParams(window.location.search)
+    const coordinatesString = queryParams.get("x") ?? "27.668021,53.931986"
+    const coordinates = coordinatesString.split(',')
+    
+    useEffect(() => {
+        // Initialize the map
+        load().then((mapglAPI) => {
+            const map = new mapglAPI.Map('container', {
+                center: [parseFloat(coordinates[0]), parseFloat(coordinates[1])],
+                zoom: 13,
+                key: 'cff13584-2b22-4186-9b1d-14d703c594c2',
+                style: 'e05ac437-fcc2-4845-ad74-b1de9ce07555',
+            });
+
+            for (var i = 2; i < coordinates.length; i += 2) {
+                const marker = new mapglAPI.Marker(map, {
+                    coordinates: [parseFloat(coordinates[i]), parseFloat(coordinates[i+1])],
+                });
+            }
+
+
+        });
+    }, [parseFloat(coordinates[0]), parseFloat(coordinates[1])]);
+
+    return <div id="container" style={{ width: '100%', height: '100vh' }} />;
+};

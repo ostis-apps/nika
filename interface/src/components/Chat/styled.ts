@@ -12,16 +12,15 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: white;
+    background: #101514;
     box-sizing: border-box;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(10px);
     border-radius: 15px;
 `;
 export const SearchBar = styled.div`
     display: flex;
     justify-content: flex-end;
-    background: rgba(99, 132, 102, 0.43);
+    background-color: rgba(255, 255, 255, 0.415);
 `;
 export const Main = styled.div`
     height: 100%;
@@ -58,22 +57,23 @@ export const WrapperSpinner = styled.div`
 `;
 export const FetchingSpinnerText = styled.div`
     margin-left: 6px;
-    font-family: 'Roboto';
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
-    color: #707070;
+    color: #ffffff;
 `;
 
 export const AnswerSpinnerText = styled.div`
     margin-left: 8px;
-    font-family: 'Robot';
+    font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
+    opaciity: 0.8;
     font-size: 14px;
     line-height: 18px;
-    color: #949494;
+    color: #ffffff;
 `;
 export const ArrowWrapper = styled.div`
     position: absolute;
@@ -115,29 +115,27 @@ export const Footer = styled.div`
 export const FooterInput = styled.input`
     width: 100%;
     padding: 15px 15px 15px 18px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
-    border: 2px solid rgba(100, 150, 150, 0.2);
-    border-radius: 60px;
+    border-radius: 20px;
+    border: none;
+    background-color: #4b5b64;
     outline: 0;
-    font-family: 'Roboto';
+    font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 16px;
     line-height: 10px;
-    color: #000000;
+    color: #ffffff;
 `;
 export const FooterSend = styled.button`
+    transition: all .5s ease;
     padding: 13px 12px 13px 6px;
     margin-left: 12px;
-    border-radius: 50%;
-    box-shadow: 1.44px 1.44px 1.44px rgba(0, 0, 0, 0.25);
-    border: 2px solid rgba(100, 150, 150, 0.2);
+    border-radius: 20px;
+    border: none;
+    background: #6CB4BA;
     cursor: pointer;
     &:hover {
-        background: #849299;
-    }
-    &:hover path {
-        stroke: white;
+        background: #4E7F83;
     }
     &:active {
         box-shadow: 0px 0px 10px #627599;
