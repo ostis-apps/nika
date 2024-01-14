@@ -12,10 +12,15 @@ export const ChatWrapper = styled.div`
 export const DesireButton = styled.button`
     position: relative;
     width: 49%;
+    margin: 5px 0;
     cursor: pointer;
+    border: none;
     height: 150px;
     border-radius: 40px;
     overflow: hidden;
+    &hover {
+        opacity: 0.4;
+    }
 `;
 
 export const SaveButton = styled.button`
@@ -42,7 +47,6 @@ export const NameInput = styled.input`
     color: white;
     font-weight: 800;
     font-size: 16px;
-    margin-bottom: 5px;
 `;
 
 export const IntroWrapper = styled.div`
@@ -102,6 +106,7 @@ export const TextButton = styled.div`
     bottom: 10px;
     left: 50%;
     color: white;
+    font-size: 0.8em;
     font-weight: 800;
     z-index: 10;
     transform: translate(-50%, 0);
@@ -116,5 +121,5 @@ export const SelectMask = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0;
+    backdrop-filter: blur(100px);
 `; 

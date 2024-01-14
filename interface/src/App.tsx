@@ -118,7 +118,8 @@ export const App = () => {
 
         return (
             <Content style={ mainStyles }>
-                
+                <DemoRoutes />
+                <AboutRoutes />
                 <IntroRoutes />
             </Content>
         );
