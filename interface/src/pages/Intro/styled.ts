@@ -33,7 +33,7 @@ export const SaveButton = styled.button`
 `;
 
 export const NameInput = styled.input`
-    width: calc(100% - 30px);
+    width: 100%;
     background: #333436;
     border-radius: 15px;
     border: none;
@@ -42,6 +42,7 @@ export const NameInput = styled.input`
     color: white;
     font-weight: 800;
     font-size: 16px;
+    margin-bottom: 5px;
 `;
 
 export const IntroWrapper = styled.div`
@@ -73,6 +74,7 @@ export const WrapperContentIntro = styled.div`
 
 export const HelloTextIntro = styled.h2`
     font-weight: 900;
+    color: white;
     font-size: 30px;
     margin-bottom: 10px;
     margin: 80px 0 20px 0;

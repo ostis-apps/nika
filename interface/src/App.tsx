@@ -16,6 +16,7 @@ import { FooterPanel } from "@components/Footer";
 
 const Demo = loadingComponent(lazy(() => import('@pages/Demo')));
 const About = loadingComponent(lazy(() => import('@pages/About')));
+const Intro = loadingComponent(lazy(() => import('@pages/Intro')));
 
 const DemoRoutes = () => (
     <>
@@ -29,6 +30,14 @@ const AboutRoutes = () => (
     <>
         <Route path={routes.ABOUT}>
             <About />
+        </Route>
+    </>
+);
+
+const IntroRoutes = () => (
+    <>
+        <Route path={routes.INTRO}>
+            <Intro />
         </Route>
     </>
 );
@@ -109,8 +118,8 @@ export const App = () => {
 
         return (
             <Content style={ mainStyles }>
-                <DemoRoutes />
-                <AboutRoutes />
+                
+                <IntroRoutes />
             </Content>
         );
     };
