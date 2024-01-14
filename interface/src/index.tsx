@@ -8,12 +8,17 @@ import { store } from '@store';
 import { App } from './App';
 
 const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap');
   body {
     margin: 0;
     display: flex;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     /* For firefox full height */
     height: 100%;
+    background: #101514;
+    padding: 0;
+    transition: all .6s ease;
+    overflow: hidden;
   }
   #content {
     flex-grow: 1;
