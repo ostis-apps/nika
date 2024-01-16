@@ -101,7 +101,7 @@ export const Intro = () => {
     }
 
     const opacity = {
-        opacity: 1;
+        "opacity": "1",
     }
    
     return (<div>
@@ -117,7 +117,7 @@ export const Intro = () => {
                         <DesireButton key={ index } onClick={() => select(item, index)}>
                             <TextButton>{ item.title }</TextButton>
                             <LinerBtns></LinerBtns>
-                            <SelectMask { item.isSelected ? opacity, undefined }>✓</SelectMask>
+                            <SelectMask style={ item.isSelected ? opacity:undefined}>✓</SelectMask>
                         </DesireButton>  )
                     }) }
                 </MainBtnsIntro>
