@@ -99,6 +99,10 @@ export const Intro = () => {
         desires[index].isSelected = true;
         forceUpdate();
     }
+
+    const opacity = {
+        opacity: 1;
+    }
    
     return (<div>
     <BackgroundCircle/>
@@ -113,7 +117,7 @@ export const Intro = () => {
                         <DesireButton key={ index } onClick={() => select(item, index)}>
                             <TextButton>{ item.title }</TextButton>
                             <LinerBtns></LinerBtns>
-                            {item.isSelected && <SelectMask>✓</SelectMask>}
+                            <SelectMask { item.isSelected ? opacity, undefined }>✓</SelectMask>
                         </DesireButton>  )
                     }) }
                 </MainBtnsIntro>
