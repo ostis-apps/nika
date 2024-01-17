@@ -28,7 +28,7 @@ export const Intro = () => {
     const [, forceUpdate] = useReducer(x => x+1, 0);
 
     const findKb = async () => {
-        const conceptInfrastructure = 'concept_infrastructure';
+            const conceptInfrastructure = 'concept_infrastructure';
             const langRu = 'lang_ru';
             const componentInclusion = 'nrel_inclusion'
             const componentNrelMainIdtf = 'nrel_main_idtf'
@@ -93,18 +93,30 @@ export const Intro = () => {
         (async () => {
             findKb()   
         })();
+    }, []);
+
+    useEffect(() => {
+        (async () => {
+            forceUpdate()   
+        })();
     }, [desires]);
 
     const select = (item, index) => {
-        desires[index].isSelected = true;
+        desires[index].isSelected = desires[index].isSelected ? false : true;
         forceUpdate();
     }
 
     const opacity = {
         "opacity": "1",
     }
+
+    const overflow = {
+        "overflow":"auto",
+    }
+
+    
    
-    return (<div>
+    return (<div style={overflow}>
     <BackgroundCircle/>
         <IntroWrapper>
             <WrapperContentIntro>

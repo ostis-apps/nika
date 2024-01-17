@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
     /* For firefox full height */
     height: 100%;
     background: #101514;
+    height: 100%;
     padding: 0;
     transition: all .6s ease;
     overflow: hidden;
@@ -26,6 +27,18 @@ const GlobalStyle = createGlobalStyle`
   }
   * {
     box-sizing: border-box;
+  }
+
+  @-webkit-keyframes zoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+  
+    50% {
+      opacity: 1;
+    }
   }
 `;
 

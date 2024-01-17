@@ -35,6 +35,7 @@ export const SaveButton = styled.button`
     &hover {
         background-color: #47969a;
     }
+    margin-bottom: 20px;
 `;
 
 export const NameInput = styled.input`
@@ -53,8 +54,7 @@ export const IntroWrapper = styled.div`
     position: relative;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100vw;    
     backdrop-filter: blur(100px);
 `;
 
@@ -82,6 +82,14 @@ export const HelloTextIntro = styled.h2`
     font-size: 30px;
     margin-bottom: 10px;
     margin: 80px 0 20px 0;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-duration: var(--animate-duration);
+    animation-duration: var(--animate-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
 `;
 
 export const MainBtnsIntro = styled.h2`
@@ -118,9 +126,15 @@ export const SelectMask = styled.div`
     justify-content: center;
     width: 100%;
     height: 100%;
+    color: white;
+    font-size: 50px;
+    font-family: "Montserrat";
+    font-weight: 700;
     position: absolute;
+    z-index: 100;
     top: 0;
     left: 0;
     opacity: 0;
     backdrop-filter: blur(100px);
+    transition: all .5s ease;
 `; 
