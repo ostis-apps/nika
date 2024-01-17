@@ -32,8 +32,9 @@ export const SaveButton = styled.button`
     color: white;
     cursor: pointer;
     background-color: #538689;
-    &hover {
-        background-color: #47969a;
+    transition: all .5s ease;
+    :hover {
+        opacity: 0.6;
     }
     margin-bottom: 20px;
 `;

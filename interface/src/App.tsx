@@ -17,6 +17,8 @@ import { FooterPanel } from "@components/Footer";
 const Demo = loadingComponent(lazy(() => import('@pages/Demo')));
 const About = loadingComponent(lazy(() => import('@pages/About')));
 const Intro = loadingComponent(lazy(() => import('@pages/Intro')));
+const Reg = loadingComponent(lazy(() => import('@pages/Registration')));
+const Login = loadingComponent(lazy(() => import('@pages/Login')));
 
 const DemoRoutes = () => (
     <>
@@ -25,6 +27,23 @@ const DemoRoutes = () => (
         </Route>
     </>
 );
+
+const RegRoutes = () => (
+    <>
+        <Route path={routes.REGISTRATION}>
+            <Reg />
+        </Route>
+    </>
+);
+
+const LoginRoutes = () => (
+    <>
+        <Route path={routes.LOGIN}>
+            <Login />
+        </Route>
+    </>
+);
+
 
 const AboutRoutes = () => (
     <>
@@ -120,6 +139,8 @@ export const App = () => {
             <Content style={ mainStyles }>
                 <DemoRoutes />
                 <AboutRoutes />
+                <LoginRoutes />
+                <RegRoutes />
                 <IntroRoutes />
             </Content>
         );
