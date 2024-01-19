@@ -98,3 +98,9 @@ export const Link = styled.a`
         color: white;
     }
 `;
+
+export const Error = styled.p`
+    color: rgb(184, 67, 67);
+    font-weight: 700;
+    margin-bottom: 0;
+`;

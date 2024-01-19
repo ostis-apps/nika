@@ -33,15 +33,17 @@ export const Registration = () => {
         )
     }
 
-    useEffect(async () => {
-        const baseKeynodes = [
-            { id: "nrel_answer", type: ScType.NodeConstNoRole },
-        ];
-        const keynodes = await client.resolveKeynodes(baseKeynodes);
+    // Need to write this code for authorise user 
+    
+    // useEffect(async () => {
+    //     const baseKeynodes = [
+    //         { id: "nrel_answer", type: ScType.NodeConstNoRole },
+    //     ];
+    //     const keynodes = await client.resolveKeynodes(baseKeynodes);
 
-        const eventParams = new ScEventParams(keynodes['nrel_answer'], ScEventType.AddOutgoingEdge, onRegisterResult);
-        await client.eventsCreate([eventParams]); 
-    }, [])
+    //     const eventParams = new ScEventParams(keynodes['nrel_answer'], ScEventType.AddOutgoingEdge, onRegisterResult);
+    //     await client.eventsCreate([eventParams]); 
+    // }, [])
 
 
     const registerUser = async (name:string, password:string) => {
