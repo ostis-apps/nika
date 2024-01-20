@@ -9,7 +9,7 @@ export const HeaderPanel = () => {
             <div className="nav-container">
                 <ul className="nav">
                     <li>
-                        <NavLink exact to={routes.MAIN}>Главная</NavLink>
+                        <NavLink exact to={routes.HOME}>Главная</NavLink>
                     </li>
                     <li>
                         <NavLink to={routes.ABOUT}>Карта</NavLink>

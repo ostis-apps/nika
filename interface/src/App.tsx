@@ -19,10 +19,11 @@ const About = loadingComponent(lazy(() => import('@pages/About')));
 const Intro = loadingComponent(lazy(() => import('@pages/Intro')));
 const Reg = loadingComponent(lazy(() => import('@pages/Registration')));
 const Login = loadingComponent(lazy(() => import('@pages/Login')));
+const Home = loadingComponent(lazy(() => import('@pages/Home')));
 
 const DemoRoutes = () => (
     <>
-        <Route path={routes.MAIN}>
+        <Route path={routes.CHAT}>
             <Demo />
         </Route>
     </>
@@ -57,6 +58,14 @@ const IntroRoutes = () => (
     <>
         <Route path={routes.INTRO}>
             <Intro />
+        </Route>
+    </>
+);
+
+const HomeRoutes = () => (
+    <>
+        <Route path={routes.HOME}>
+            <Home />
         </Route>
     </>
 );
@@ -141,6 +150,7 @@ export const App = () => {
                 <AboutRoutes />
                 <LoginRoutes />
                 <RegRoutes />
+                <HomeRoutes />
                 <IntroRoutes />
             </Content>
         );

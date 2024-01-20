@@ -15,35 +15,67 @@ import { client } from "@api";
 import { routes } from '@constants';
 import { ScAddr, ScConstruction, ScLinkContent, ScTemplate, ScType, ScLinkContentType, ScEventType, ScEventParams } from 'ts-sc-client';
 import Password from 'antd/lib/input/Password';
+import { Redirect } from "react-router";
 
 export const Registration = () => {
+    if (document.cookie != '') 
+        return (
+            <div>
+                <Redirect to={{ pathname: routes.HOME }}/>
+            </div>
+        )
+
+    
     const [pass, setPass] = useState<string>("");
+    const [userAddr, setUserAddr] = useState<ScAddr>(new ScAddr(0));
     const [repeatPass, setRepeatPass] = useState<string>("");
     const [username, setUsername] = useState<string>("");
     const [errorNotEqual, setErrorNotEqual] = useState<boolean>(false);
     const [errorPassLength, setErrorPassLength] = useState<boolean>(false);
     const [errorUsernameLength, setErrorUsernameLength] = useState<boolean>(false);
 
-    const onRegisterResult = (addr:ScAddr, edgeAddr:ScAddr, resultAddr:ScAddr)=> {
+    const onRegisterResult = async (addr:ScAddr, edgeAddr:ScAddr, edgeToResultAddr:ScAddr)=> {
+        const baseKeynodes = [
+            { id: "nrel_password", type: ScType.NodeConstNoRole },
+        ];
+        const keynodes = await client.resolveKeynodes(baseKeynodes);
+
         let template = new ScTemplate();
         template.triple(
-            resultAddr, 
-            ScType.EdgeAccessVarPosPerm, 
             ScType.NodeVar,
+            edgeToResultAddr, 
+            [ScType.NodeVar, '_result'],
         )
+        template.triple(
+            '_result',
+            ScType.EdgeAccessVarPosPerm,
+            [ScType.NodeVar, '_user'],
+        )
+        template.tripleWithRelation(
+            '_user',
+            ScType.EdgeDCommonVar,
+            [ScType.LinkVar, '_password'],
+            ScType.EdgeAccessVarPosPerm,
+            keynodes['nrel_password'],
+        )
+        const result = await client.templateSearch(template);
+        if (result.length > 0) {
+            document.cookie = `{"userAddr":${result[0].get('_user').value},"pass":${(await client.getLinkContents([result[0].get('_password')]))[0].data}}`;
+            setUserAddr(result[0].get('_user'));
+        }
     }
 
-    // Need to write this code for authorise user 
-    
-    // useEffect(async () => {
-    //     const baseKeynodes = [
-    //         { id: "nrel_answer", type: ScType.NodeConstNoRole },
-    //     ];
-    //     const keynodes = await client.resolveKeynodes(baseKeynodes);
+    useEffect(() =>  { 
+        (async () => {
+            const baseKeynodes = [
+                { id: "nrel_answer", type: ScType.NodeConstNoRole },
+            ];
+            const keynodes = await client.resolveKeynodes(baseKeynodes);
 
-    //     const eventParams = new ScEventParams(keynodes['nrel_answer'], ScEventType.AddOutgoingEdge, onRegisterResult);
-    //     await client.eventsCreate([eventParams]); 
-    // }, [])
+            const eventParams = new ScEventParams(keynodes['nrel_answer'], ScEventType.AddOutgoingEdge, onRegisterResult);
+            await client.eventsCreate([eventParams]); 
+        })();
+    }, [])
 
 
     const registerUser = async (name:string, password:string) => {
@@ -74,8 +106,6 @@ export const Registration = () => {
         construction.createEdge(ScType.EdgeAccessConstPosPerm, hKeynodes['rrel_2'], "pass_edge");
         
         await client.createElements(construction);
-
-
     }
 
     
@@ -114,23 +144,28 @@ export const Registration = () => {
 
     return (
         <div>
-            <Circle></Circle>
-            <Circle1></Circle1>
-            <Wrapper>
-                <WrapperContent>
-                    <Form>
-                        <FormText>Регистрация</FormText>
-                        <Input type="string" name="username" placeholder="Имя пользователя" onChange={updateUsername} required></Input>
-                        {errorUsernameLength ? (<Error>Имя пользователя должно состоять как минимум из 4 символов.</Error>) : ""}
-                        <Input type="password" name="pass1" id="pass1" placeholder="Пароль" onChange={updateChangePassword} required></Input>
-                        {errorPassLength ? (<Error>Пароль должен состоять как минимум из 6 символов.</Error>) : ""}
-                        <Input type="password" name="pass2" id="pass2" placeholder="Повторите пароль" onChange={updateChangeRepeatPassword} required></Input>
-                        {errorNotEqual ? (<Error>Пароли не совпадают</Error>) : ""}
-                        <FormBtn type="submit" id="submit" key="1"  onClick={check}>Войти</FormBtn>
-                        <Link href={routes.LOGIN}>Уже есть аккаунт?</Link>
-                    </Form>
-                </WrapperContent>
-            </Wrapper>
+            { userAddr.isValid() ? <Redirect to={{ pathname: routes.INTRO }}/> : (
+                <div>
+                    <Circle></Circle>
+                    <Circle1></Circle1>
+                    <Wrapper>
+                        <WrapperContent>
+                            <Form>
+                                <FormText>Регистрация</FormText>
+                                <Input type="string" name="username" placeholder="Имя пользователя" onChange={updateUsername} required></Input>
+                                {errorUsernameLength ? (<Error>Имя пользователя должно состоять как минимум из 4 символов.</Error>) : ""}
+                                <Input type="password" name="pass1" id="pass1" placeholder="Пароль" onChange={updateChangePassword} required></Input>
+                                {errorPassLength ? (<Error>Пароль должен состоять как минимум из 6 символов.</Error>) : ""}
+                                <Input type="password" name="pass2" id="pass2" placeholder="Повторите пароль" onChange={updateChangeRepeatPassword} required></Input>
+                                {errorNotEqual ? (<Error>Пароли не совпадают</Error>) : ""}
+                                <FormBtn type="submit" id="submit" key="1"  onClick={check}>Войти</FormBtn>
+                                <Link href={routes.LOGIN}>Уже есть аккаунт?</Link>
+                            </Form>
+                        </WrapperContent>
+                    </Wrapper>
+                </div>
+            )}
         </div>
     );
 }
+

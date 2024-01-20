@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useReducer } from 'react';
+import React, { useEffect, useState, useReducer, ChangeEvent } from 'react';
 import {
     BackgroundCircle,
     IntroWrapper,
@@ -10,11 +10,16 @@ import {
     LinerBtns,
     TextButton,
     SelectMask,
-    SaveButton,    
+    SaveButton,   
+    Error,
 } from './styled'
 import { client } from "@api";
-import { ScAddr } from 'ts-sc-client';
-import { ScTemplate, ScType } from 'ts-sc-client';
+import { routes } from '@constants';
+import { ScAddr, ScConstruction, ScLinkContent, ScLinkContentType } from 'ts-sc-client';
+import { ScTemplate, ScType, ScEventType } from 'ts-sc-client';
+import { Redirect } from 'react-router';
+import { checkUser } from '@api/sc/checkUser';
+
 
 type DesireDesc = {
     title: string;
@@ -23,7 +28,33 @@ type DesireDesc = {
     isSelected: boolean;
 };
 
+
+
 export const Intro = () => {
+    // Check 
+    const [nameUser, setNameUser] = useState<string>("");
+    const [redirectError, setRedirectError] = useState<boolean>(false);
+    const [savedDesires, setSavedDesires] = useState<boolean>(false);
+    const [nameUserEmpty, setErrorUserEmpty] = useState<boolean>(false);
+    console.log(document.cookie)
+    const cookieParams = JSON.parse( document.cookie );
+    const userAddr = new ScAddr(parseInt(cookieParams.userAddr));
+    const password = cookieParams.pass;
+
+    
+
+    
+    const check = async () => {
+        if (document.cookie == '') {
+            setRedirectError(true);
+        } else
+            if (!(await checkUser(userAddr, password))) {
+                setRedirectError(true);
+            }
+    }
+
+    check();
+
     const [desires, setDesires] = useState<DesireDesc[]>([]);
     const [, forceUpdate] = useReducer(x => x+1, 0);
 
@@ -86,7 +117,7 @@ export const Intro = () => {
                 const desireObj: DesireDesc = {title:title, img:'', desireAddr:desireAddr, isSelected:false};
                 a.push(desireObj);
             }
-            setDesires( a )
+            setDesires( a );
     }
 
     useEffect(() => {
@@ -114,27 +145,72 @@ export const Intro = () => {
         "overflow":"auto",
     }
 
+    const changeUserName = (e:ChangeEvent<HTMLInputElement>) => {
+        setNameUser(e.target.value);
+    }
+
+    const saveDesires = async(e) => {
+        e.preventDefault();
+        if (nameUser != '') {
+            const construction = new ScConstruction();
+            const baseKeynodes = [
+                { id: "nrel_desires", type: ScType.NodeConstNoRole },
+                { id: "nrel_name", type: ScType.NodeConstNoRole},
+            ];
+            const keynodes = await client.resolveKeynodes(baseKeynodes);
+
+            construction.createNode(ScType.NodeConst, "desires");
+            for (let i = 0; i < desires.length; i++) 
+                if (desires[i].isSelected)
+                    construction.createEdge(ScType.EdgeAccessConstPosPerm, 'desires', desires[i].desireAddr);
+            
+            construction.createEdge(ScType.EdgeDCommonConst, userAddr, 'desires', 'desiresEdge');
+            construction.createEdge(ScType.EdgeAccessConstPosPerm, keynodes['nrel_desires'], 'desiresEdge');
+            construction.createLink(ScType.LinkConst, new ScLinkContent(nameUser, ScLinkContentType.String), 'nameLink');
+            construction.createEdge(ScType.EdgeDCommonConst, userAddr, 'nameLink', 'nameEdge');
+            construction.createEdge(ScType.EdgeAccessConstPosPerm, keynodes['nrel_name'], 'nameEdge');
+
+            await client.createElements(construction);
+
+            setSavedDesires(true);
+        } else {
+            setErrorUserEmpty(true);
+        }
+    }
+
     
    
-    return (<div style={overflow}>
-    <BackgroundCircle/>
-        <IntroWrapper>
-            <WrapperContentIntro>
-                <div>
-                    <HelloTextIntro>Здравствуйте</HelloTextIntro>
-                    <NameInput type="text" placeholder="Имя"></NameInput>
+    return (
+        <div style={overflow}>
+            { savedDesires ? <Redirect to={{ pathname: routes.HOME }}/> : (
+                <div style={overflow}>
+                    {redirectError ? <Redirect to={{ pathname: routes.LOGIN }}/> : (
+                        <div style={overflow}>
+                            <BackgroundCircle/>
+                            <IntroWrapper>
+                                <WrapperContentIntro>
+                                    <div>
+                                        <HelloTextIntro>Здравствуйте</HelloTextIntro>
+                                        <NameInput type="text" placeholder="Имя" onChange={changeUserName}></NameInput>
+                                        {nameUserEmpty ? (<Error>Поле должно быть заполнено!</Error>) : ""}
+                                    </div>
+                                    <MainBtnsIntro>
+                                        { desires.map((item, index) => { return (
+                                            <DesireButton key={ index } onClick={() => select(item, index)}>
+                                                <TextButton>{ item.title }</TextButton>
+                                                <LinerBtns></LinerBtns>
+                                                <SelectMask style={ item.isSelected ? opacity:undefined}>✓</SelectMask>
+                                            </DesireButton>  )
+                                        }) }
+                                    </MainBtnsIntro>
+                                    <SaveButton onClick={ saveDesires }>Сохранить</SaveButton>
+                                </WrapperContentIntro>
+                            </IntroWrapper>
+                        </div>
+                    )}
                 </div>
-                <MainBtnsIntro>
-                    { desires.map((item, index) => { return (
-                        <DesireButton key={ index } onClick={() => select(item, index)}>
-                            <TextButton>{ item.title }</TextButton>
-                            <LinerBtns></LinerBtns>
-                            <SelectMask style={ item.isSelected ? opacity:undefined}>✓</SelectMask>
-                        </DesireButton>  )
-                    }) }
-                </MainBtnsIntro>
-                <SaveButton>Сохранить</SaveButton>
-            </WrapperContentIntro>
-        </IntroWrapper>
-    </div>);
+            )}
+        </div>
+    );
 };
+

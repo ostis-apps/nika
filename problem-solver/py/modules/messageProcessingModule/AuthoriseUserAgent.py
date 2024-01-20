@@ -59,6 +59,7 @@ class AuthoriseUserAgent(ScAgentClassic):
         password = get_link_content_data(password_link_addr)
 
         [links_with_email] = get_links_by_content(email)
+        print(links_with_email)
         user_addr = ScAddr(0)
         for email_link_addr in links_with_email:
             template = ScTemplate()
