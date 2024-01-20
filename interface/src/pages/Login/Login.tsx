@@ -15,16 +15,18 @@ import { client } from "@api";
 import { routes } from '@constants';
 import { ScAddr, ScConstruction, ScLinkContent, ScTemplate, ScType, ScLinkContentType, ScEventType, ScEventParams } from 'ts-sc-client';
 import { Redirect } from 'react-router';
+import { setCookie, getCookie, removeCookie } from "typescript-cookie";
 
 
 export const Login = () => {
-    if (document.cookie != '') 
+    if (getCookie('userAddr')) {
         return (
             <div>
-                <Redirect to={{ pathname: routes.HOME }}/>
+                <Redirect to={{ pathname: routes.HOME }} />
             </div>
-        )
-        
+        );
+    }
+
     const [userAuthorised, setUserAuthorised] = useState<boolean>(false); 
     const [pass, setPass] = useState<string>("");
     const [username, setUsername] = useState<string>("");
@@ -33,6 +35,11 @@ export const Login = () => {
     const [errorEmpty, setErrorEmpty] = useState<boolean>(false);
 
     const onAuthorisedResult = async (addr:ScAddr, edgeAddr:ScAddr, edgeToResultAddr:ScAddr)=> {
+        const baseKeynodes = [
+            { id: "nrel_password", type: ScType.NodeConstNoRole },
+        ];
+        const keynodes = await client.resolveKeynodes(baseKeynodes);
+    
         let template = new ScTemplate();
         template.triple(
             ScType.NodeVar,
@@ -44,12 +51,28 @@ export const Login = () => {
             ScType.EdgeAccessVarPosPerm,
             [ScType.NodeVar, '_user'],
         )
+        template.tripleWithRelation(
+            '_user',
+            ScType.EdgeDCommonVar,
+            [ScType.LinkVar, '_password'],
+            ScType.EdgeAccessVarPosPerm,
+            keynodes['nrel_password'],
+        )
         const result = await client.templateSearch(template);
         if (result.length > 0) {
-            // loginUser(result);
+            setCookie("userAddr", result[0].get('_user').value);
+            setCookie("pass", (await client.getLinkContents([result[0].get('_password')]))[0].data);
             setUserAuthorised(true);
         }
     }
+    const [, forceUpdate] = useReducer(x => x+1, 0);
+
+
+    useEffect(() => {
+        (async () => {
+            forceUpdate()   
+        })();
+    }, [userAuthorised]);
 
     // Need to write this code for authorise user 
     

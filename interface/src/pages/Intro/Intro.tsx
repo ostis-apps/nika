@@ -19,6 +19,7 @@ import { ScAddr, ScConstruction, ScLinkContent, ScLinkContentType } from 'ts-sc-
 import { ScTemplate, ScType, ScEventType } from 'ts-sc-client';
 import { Redirect } from 'react-router';
 import { checkUser } from '@api/sc/checkUser';
+import { setCookie, getCookie, removeCookie } from "typescript-cookie";
 
 
 type DesireDesc = {
@@ -29,28 +30,25 @@ type DesireDesc = {
 };
 
 
-
 export const Intro = () => {
     // Check 
     const [nameUser, setNameUser] = useState<string>("");
     const [redirectError, setRedirectError] = useState<boolean>(false);
     const [savedDesires, setSavedDesires] = useState<boolean>(false);
     const [nameUserEmpty, setErrorUserEmpty] = useState<boolean>(false);
-    console.log(document.cookie)
-    const cookieParams = JSON.parse( document.cookie );
-    const userAddr = new ScAddr(parseInt(cookieParams.userAddr));
-    const password = cookieParams.pass;
 
-    
+    const userAddr = getCookie('userAddr') ? new ScAddr(parseInt(String(getCookie('userAddr')))) : new ScAddr(0)
+    const password = getCookie('pass')
 
-    
+    console.log(getCookie('userAddr'), getCookie('pass'))
+  
     const check = async () => {
-        if (document.cookie == '') {
-            setRedirectError(true);
-        } else
+        if (userAddr.isValid() && password) {
             if (!(await checkUser(userAddr, password))) {
                 setRedirectError(true);
             }
+        } else
+            setRedirectError(true);     
     }
 
     check();
@@ -111,7 +109,7 @@ export const Intro = () => {
             for (let i = 0; i < result.length; i++) {
                 const linkTitle = result[i].get(desireText);
                 const resTitle = await client.getLinkContents([linkTitle]);
-                const title = resTitle[0].data.toString();
+                const title = String(resTitle[0].data);
 
                 const desireAddr = result[i].get(desire);
                 const desireObj: DesireDesc = {title:title, img:'', desireAddr:desireAddr, isSelected:false};

@@ -19,36 +19,35 @@ import { ScAddr, ScConstruction, ScLinkContent, ScLinkContentType } from 'ts-sc-
 import { ScTemplate, ScType, ScEventType } from 'ts-sc-client';
 import { Redirect } from 'react-router';
 import { checkUser } from '@api/sc/checkUser';
+import { setCookie, getCookie, removeCookie } from "typescript-cookie";
+
 
 export const Home = () => {
-    const [redirectError, setRedirectError] = useState<boolean>(false);
-    const [userName, setUserName] = useState<string | number>('');
-
-    console.log(document.cookie)
-    const cookieParams = JSON.parse( document.cookie );
-    const userAddr = new ScAddr(parseInt(cookieParams.userAddr));
-    const password = cookieParams.pass;
-
+    const [redirectError, setRedirectError] = useState<boolean | undefined>(undefined);
+    const [userName, setUserName] = useState<string | undefined>(undefined);
+    const userAddr = getCookie('userAddr') ? new ScAddr(parseInt(String(getCookie('userAddr')))) : new ScAddr(0)
+    const password = getCookie('pass')
+  
     const check = async () => {
-        if (document.cookie == '') {
-            setRedirectError(true);
-        } else
+        if (userAddr.isValid() && password) {
             if (!(await checkUser(userAddr, password))) {
                 setRedirectError(true);
             }
+        } else
+            setRedirectError(true);     
     }
-
     check();
 
     const logoutUser = (e) => {
-        e.preventDefault();
-        document.cookie = '';
+        e.preventDefault(); 
+        removeCookie('userAddr', {path: ''});
+        removeCookie('pass', {path: ''});
         setRedirectError(true);
     }
 
     const getUserName = async () => {
         const baseKeynodes = [
-            { id: "nrel_password", type: ScType.NodeConstNoRole },
+            { id: "nrel_name", type: ScType.NodeConstNoRole },
         ];
         const keynodes = await client.resolveKeynodes(baseKeynodes);
 
@@ -61,10 +60,12 @@ export const Home = () => {
             keynodes['nrel_name'],
         )
         const result = await client.templateSearch(template);
+        console.log(result.length)
         if (result.length > 0) {
-            setUserName((await client.getLinkContents([result[0].get('_userName')]))[0].data);
+            setUserName(String((await client.getLinkContents([result[0].get('_userName')]))[0].data));
         }
     }     
+    getUserName()
 
     return (
         <div>

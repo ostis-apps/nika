@@ -16,16 +16,17 @@ import { routes } from '@constants';
 import { ScAddr, ScConstruction, ScLinkContent, ScTemplate, ScType, ScLinkContentType, ScEventType, ScEventParams } from 'ts-sc-client';
 import Password from 'antd/lib/input/Password';
 import { Redirect } from "react-router";
+import { setCookie, getCookie, removeCookie } from "typescript-cookie";
 
 export const Registration = () => {
-    if (document.cookie != '') 
+    if (getCookie('userAddr')) {
         return (
             <div>
-                <Redirect to={{ pathname: routes.HOME }}/>
+                <Redirect to={{ pathname: routes.HOME }} />
             </div>
-        )
+        );
+    }
 
-    
     const [pass, setPass] = useState<string>("");
     const [userAddr, setUserAddr] = useState<ScAddr>(new ScAddr(0));
     const [repeatPass, setRepeatPass] = useState<string>("");
@@ -60,7 +61,10 @@ export const Registration = () => {
         )
         const result = await client.templateSearch(template);
         if (result.length > 0) {
-            document.cookie = `{"userAddr":${result[0].get('_user').value},"pass":${(await client.getLinkContents([result[0].get('_password')]))[0].data}}`;
+            setCookie("userAddr", result[0].get('_user').value);
+            setCookie("pass", (await client.getLinkContents([result[0].get('_password')]))[0].data);
+
+
             setUserAddr(result[0].get('_user'));
         }
     }
