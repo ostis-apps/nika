@@ -6,6 +6,7 @@ import { createGlobalStyle } from 'styled-components';
 import { store } from '@store';
 
 import { App } from './App';
+import { CookiesProvider } from 'react-cookie';
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap');
@@ -44,7 +45,9 @@ ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
             <GlobalStyle />
-            <App />
+            <CookiesProvider>
+                <App />
+            </CookiesProvider>
         </BrowserRouter>
     </Provider>,
     document.getElementById('content'),

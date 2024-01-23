@@ -9,57 +9,7 @@ export const ChatWrapper = styled.div`
     grid-area: chat;
 `;
 
-export const DesireButton = styled.button`
-    position: relative;
-    width: 49%;
-    margin: 5px 0;
-    cursor: pointer;
-    border: none;
-    height: 150px;
-    border-radius: 40px;
-    overflow: hidden;
-    &hover {
-        opacity: 0.4;
-    }
-`;
-
-export const SaveButton = styled.button`
-    padding: 10px 15px;
-    border: none;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 900;
-    color: white;
-    cursor: pointer;
-    background-color: #538689;
-    transition: all .5s ease;
-    :hover {
-        opacity: 0.6;
-    }
-    margin-bottom: 20px;
-`;
-
-export const NameInput = styled.input`
-    width: 100%;
-    background: #333436;
-    border-radius: 15px;
-    border: none;
-    padding: 15px;
-    outline: none;
-    color: white;
-    font-weight: 800;
-    font-size: 16px;
-`;
-
-export const IntroWrapper = styled.div`
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100vw;    
-    backdrop-filter: blur(100px);
-`;
-
-export const BackgroundCircle = styled.div`
+export const WrapperCircle = styled.div`
     position: absolute;
     top: -20%;
     right: -15%;
@@ -69,79 +19,68 @@ export const BackgroundCircle = styled.div`
     background: #538689;
 `;
 
-export const WrapperContentIntro = styled.div`
-    color: white;
-    text-align: center;
-    max-width: 500px;
-    margin: auto;
-    padding: 5px;
-`;
-
-export const HelloTextIntro = styled.h2`
-    font-weight: 900;
-    color: white;
-    font-size: 30px;
-    margin-bottom: 10px;
-    margin: 80px 0 20px 0;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-duration: var(--animate-duration);
-    animation-duration: var(--animate-duration);
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-name: zoomIn;
-    animation-name: zoomIn;
-`;
-
-export const MainBtnsIntro = styled.h2`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1%;
-    margin: 10px 0;
-`;
-
-export const LinerBtns = styled.div`
-    width: 100%;
-    height: 100%;
-    position: absolute;
+export const WrapperInf = styled.div`
+    width: 100vw;
+    height: 100vh;
+    position: relative;
     top: 0;
     left: 0;
-    background: linear-gradient(180deg, rgba(52,91,102,0) 0%, rgba(0,0,0,1) 91%); 
+    backdrop-filter: blur(100px);
 `;
 
-export const TextButton = styled.div`
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
+export const ContainerInf = styled.div`
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px 0;
+    width: 100%;
+`;
+
+export const WrapperHead = styled.div`
+    display: flex;
+    background: rgba(51, 52, 54, 50%);
+    backdrop-filter: blur(10px);
+    border-radius: 0 0 10px 10px;
     color: white;
-    font-size: 0.8em;
-    font-weight: 800;
-    z-index: 10;
-    transform: translate(-50%, 0);
 `;
 
-export const SelectMask = styled.div`
+export const WrapperBtns = styled.div``;
+
+export const WrapperWidget = styled.div``;
+
+export const ContentHead = styled.div`
     display: flex;
     align-items: center;
-    justify-content: center;
+    padding: 5px;
+    justify-content: space-between;
     width: 100%;
-    height: 100%;
-    color: white;
-    font-size: 50px;
-    font-family: "Montserrat";
-    font-weight: 700;
-    position: absolute;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    backdrop-filter: blur(100px);
-    transition: all .5s ease;
-`; 
-
-export const Error = styled.p`
-    color: rgb(184, 67, 67);
-    font-weight: 700;
-    margin-bottom: 0;
 `;
+
+export const LangBtn = styled.button`
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: all 0.5s ease;
+    :hover {
+        opacity: 0.5;
+    }
+`;
+
+export const UserName = styled.a`
+    // Colour
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 5px;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 900;
+    transition: all 0.5s ease;
+    :hover {
+        opacity: 0.5;
+    }
+`;
+
+export const BtnChat = styled.a``;
+export const BtnSaved = styled.a``;
+export const BtnGames = styled.a``;

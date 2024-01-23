@@ -1,81 +1,97 @@
 import React, { useEffect, useState, useReducer, ChangeEvent } from 'react';
 import {
-    BackgroundCircle,
-    IntroWrapper,
-    WrapperContentIntro,
-    HelloTextIntro,
-    NameInput,
-    MainBtnsIntro,
-    DesireButton,
-    LinerBtns,
-    TextButton,
-    SelectMask,
-    SaveButton,   
-    Error,
-} from './styled'
-import { client } from "@api";
+    WrapperCircle,
+    WrapperInf,
+    ContainerInf,
+    WrapperBtns,
+    WrapperHead,
+    WrapperWidget,
+    ContentHead,
+    LangBtn,
+    UserName,
+    BtnChat,
+    BtnSaved,
+    BtnGames,
+} from './styled';
+import { client } from '@api';
 import { routes } from '@constants';
 import { ScAddr, ScConstruction, ScLinkContent, ScLinkContentType } from 'ts-sc-client';
 import { ScTemplate, ScType, ScEventType } from 'ts-sc-client';
 import { Redirect } from 'react-router';
-import { checkUser } from '@api/sc/checkUser';
-import { setCookie, getCookie, removeCookie } from "typescript-cookie";
-
+import { checkUser, getUserName } from '@api/sc/checkUser';
+import { setCookie, getCookie, removeCookie } from 'typescript-cookie';
+import { ReactComponent as LangIcon } from '@assets/icon/lang.svg';
 
 export const Home = () => {
     const [redirectError, setRedirectError] = useState<boolean | undefined>(undefined);
+    const [noDesireError, setNoDesireError] = useState<boolean | undefined>(undefined);
     const [userName, setUserName] = useState<string | undefined>(undefined);
-    const userAddr = getCookie('userAddr') ? new ScAddr(parseInt(String(getCookie('userAddr')))) : new ScAddr(0)
-    const password = getCookie('pass')
-  
+    const userAddr = getCookie('userAddr') ? new ScAddr(parseInt(String(getCookie('userAddr')))) : new ScAddr(0);
+    const password = getCookie('password');
+
     const check = async () => {
         if (userAddr.isValid() && password) {
+            const name = await getUserName(userAddr);
             if (!(await checkUser(userAddr, password))) {
                 setRedirectError(true);
+                return;
+            } else if (!name) {
+                setNoDesireError(true);
+                return;
+            } else {
+                setUserName(name);
             }
-        } else
-            setRedirectError(true);     
-    }
-    check();
+        } else setRedirectError(true);
+    };
+
+    useEffect(() => {
+        (async () => {
+            check();
+        })();
+    }, []);
 
     const logoutUser = (e) => {
-        e.preventDefault(); 
-        removeCookie('userAddr', {path: ''});
-        removeCookie('pass', {path: ''});
+        e.preventDefault();
+        removeCookie('userAddr', { path: '' });
+        removeCookie('pass', { path: '' });
         setRedirectError(true);
-    }
+    };
 
-    const getUserName = async () => {
-        const baseKeynodes = [
-            { id: "nrel_name", type: ScType.NodeConstNoRole },
-        ];
-        const keynodes = await client.resolveKeynodes(baseKeynodes);
-
-        const template = new ScTemplate();
-        template.tripleWithRelation(
-            userAddr,
-            ScType.EdgeDCommonVar,
-            [ScType.LinkVar, '_userName'],
-            ScType.EdgeAccessVarPosPerm,
-            keynodes['nrel_name'],
-        )
-        const result = await client.templateSearch(template);
-        console.log(result.length)
-        if (result.length > 0) {
-            setUserName(String((await client.getLinkContents([result[0].get('_userName')]))[0].data));
-        }
-    }     
-    getUserName()
+    const langStyles = {
+        width: '30px',
+        height: '30px',
+    };
 
     return (
         <div>
-            {redirectError ? <Redirect to={{ pathname: routes.LOGIN }}/> : (
-                <div>
-                    <h2>{ userName }</h2>
-                    <button onClick={logoutUser}>Logout</button>    
-                </div>
-            )}
+            {redirectError ? <Redirect to={{ pathname: routes.LOGIN }} /> : ''}
+            {noDesireError ? <Redirect to={{ pathname: routes.INTRO }} /> : ''}
+
+            <div>
+                <WrapperCircle></WrapperCircle>
+
+                <WrapperInf>
+                    <WrapperHead>
+                        <ContainerInf>
+                            <ContentHead>
+                                <UserName href="#">{userName}</UserName>
+                                <LangBtn>
+                                    <LangIcon style={langStyles} />
+                                </LangBtn>
+                            </ContentHead>
+                        </ContainerInf>
+                    </WrapperHead>
+
+                    <WrapperBtns>
+                        <BtnChat></BtnChat>
+                        <BtnSaved></BtnSaved>
+                        <BtnGames></BtnGames>
+                    </WrapperBtns>
+
+                    <WrapperWidget></WrapperWidget>
+                </WrapperInf>
+            </div>
+            <button onClick={logoutUser}>Logout</button>
         </div>
-        
     );
 };
