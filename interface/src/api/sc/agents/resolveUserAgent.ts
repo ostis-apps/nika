@@ -1,5 +1,6 @@
-import {ScTemplate, ScType} from 'ts-sc-client';
+import { ScTemplate, ScType, ScAddr } from 'ts-sc-client';
 import { client } from '@api/sc';
+import Cookie from 'universal-cookie';
 
 const conceptUser = 'concept_user';
 const conceptDialog = 'concept_dialogue';
@@ -12,21 +13,9 @@ const baseKeynodes = [
 ];
 
 const getUser = async () => {
-    const keynodes = await client.resolveKeynodes(baseKeynodes);
-    const user = '_user';
-
-    const template = new ScTemplate();
-    template.triple(
-        keynodes[conceptUser],
-        ScType.EdgeAccessVarPosPerm,
-        [ScType.NodeVar, user],
-    );
-    const result = await client.templateSearch(template);
-    if (result.length === 1) {
-        return result[0].get(user);
-    }
-    return null;
-}
+    const cookie = new Cookie();
+    return new ScAddr(parseInt(cookie.get('userAddr')));
+};
 
 const createUser = async () => {
     const keynodes = await client.resolveKeynodes(baseKeynodes);
@@ -34,16 +23,8 @@ const createUser = async () => {
     const dialog = '_dialog';
 
     const template = new ScTemplate();
-    template.triple(
-        keynodes[conceptUser],
-        ScType.EdgeAccessVarPosPerm,
-        [ScType.NodeVar, user],
-    );
-    template.triple(
-        keynodes[conceptDialog],
-        ScType.EdgeAccessVarPosPerm,
-        [ScType.NodeVar, dialog],
-    );
+    template.triple(keynodes[conceptUser], ScType.EdgeAccessVarPosPerm, [ScType.NodeVar, user]);
+    template.triple(keynodes[conceptDialog], ScType.EdgeAccessVarPosPerm, [ScType.NodeVar, dialog]);
     template.tripleWithRelation(
         dialog,
         ScType.EdgeAccessVarPosPerm,
@@ -53,7 +34,7 @@ const createUser = async () => {
     );
     const result = await client.templateGenerate(template, {});
     return result?.get(user);
-}
+};
 
 export const resolveUserAgent = async () => {
     const user = await getUser();
