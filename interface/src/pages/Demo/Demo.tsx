@@ -1,13 +1,14 @@
 import { useCallback, useEffect, useState, Fragment } from 'react';
-import { Wrapper, ChatWrapper } from "./styled";
+import { Wrapper, ChatWrapper, BackBtn } from './styled';
 import { Message } from '@components/Chat/Message';
 import { Chat } from '@components/Chat';
 import { Date } from '@components/Chat/Date';
+import { routes } from '@constants';
 import { ScAddr } from 'ts-sc-client';
 import { resolveUserAgent } from '@agents/resolveUserAgent';
 import { useChat } from '@hooks/useChat';
-import * as React from "react";
-import { SC_WEB_URL } from "@constants";
+import * as React from 'react';
+import { SC_WEB_URL } from '@constants';
 
 export const Demo = () => {
     const [user, setUser] = useState<ScAddr | null>(null);
@@ -35,6 +36,7 @@ export const Demo = () => {
 
     return (
         <Wrapper>
+            <BackBtn href={routes.HOME}></BackBtn>
             <ChatWrapper>
                 <Chat
                     ref={chatRef}
@@ -55,12 +57,10 @@ export const Demo = () => {
                                     isLoading={item.isLoading}
                                 >
                                     {typeof item.text === 'string' ? (
-                                        <div dangerouslySetInnerHTML={{__html: item.text}} />
-                    
+                                        <div dangerouslySetInnerHTML={{ __html: item.text }} />
                                     ) : (
-                                    <div>{item.text}</div>
+                                        <div>{item.text}</div>
                                     )}
-
                                 </Message>
                             </Fragment>
                         );

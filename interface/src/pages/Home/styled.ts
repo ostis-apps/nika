@@ -43,9 +43,20 @@ export const WrapperHead = styled.div`
     color: white;
 `;
 
-export const WrapperBtns = styled.div``;
+export const WrapperBtns = styled.div`
+    display: flex;
+    gap: 5px;
+`;
 
-export const WrapperWidget = styled.div``;
+export const BtnsContainer = styled.div`
+    max-width: 1000px;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    padding: 5px;
+`;
 
 export const ContentHead = styled.div`
     display: flex;
@@ -81,6 +92,92 @@ export const UserName = styled.a`
     }
 `;
 
-export const BtnChat = styled.a``;
-export const BtnSaved = styled.a``;
-export const BtnGames = styled.a``;
+export const BtnChat = styled.a`
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    background: rgba(51, 52, 54, 50%);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    :hover {
+        color: white;
+        opacity: 0.5;
+    }
+`;
+export const BtnSaved = styled.a`
+    padding: 10px;
+    text-align: center;
+    flex-basis: content;
+    background: rgba(51, 52, 54, 50%);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    :hover {
+        color: white;
+        opacity: 0.5;
+    }
+`;
+export const BtnGames = styled.a`
+    padding: 20px;
+    text-align: center;
+    flex-basis: 100%;
+    background: rgba(51, 52, 54, 50%);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    :hover {
+        color: white;
+        opacity: 0.5;
+    }
+`;
+
+export const WrapperWidget = styled.div`
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    gap: 5px;
+    max-height: 500px;
+    height: 100%;
+    padding: 5px;
+`;
+
+export const WidgetWeather = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    width: 100%;
+    border-radius: 10px;
+    background: rgba(51, 52, 54, 50%);
+    backdrop-filter: blur(10px);
+`;
+export const WidgetMap = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    width: 100%;
+    border-radius: 10px;
+    background: rgba(51, 52, 54, 50%);
+    backdrop-filter: blur(10px);
+`;
+
+export const langStyles = {
+    width: '30px',
+    height: '30px',
+};
+
+export const savedStyles = {
+    height: '100%',
+    width: '30px',
+};
+
+export const WrapperSaved = styled.div``;

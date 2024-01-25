@@ -12,15 +12,18 @@ import {
     SelectMask,
     SaveButton,
     Error,
+    opacity,
+    overflow,
 } from './styled';
 import { client } from '@api';
 import { routes } from '@constants';
 import { ScAddr, ScConstruction, ScLinkContent, ScLinkContentType } from 'ts-sc-client';
-import { ScTemplate, ScType, ScEventType } from 'ts-sc-client';
+import { ScTemplate, ScType } from 'ts-sc-client';
 import { Redirect } from 'react-router';
 import { checkUser } from '@api/sc/checkUser';
 import Cookie from 'universal-cookie';
 import { getUserName } from '@api/sc/checkUser';
+import Alert from 'react-bootstrap';
 
 type DesireDesc = {
     title: string;
@@ -30,16 +33,17 @@ type DesireDesc = {
 };
 
 export const Intro = () => {
+    // Get Cookies
     const cookie = new Cookie();
-
-    const [nameUser, setNameUser] = useState<string>('');
-    const [checkUserName, setCheckUserName] = useState<string>('');
-    const [redirectError, setRedirectError] = useState<boolean>(false);
-    const [savedDesires, setSavedDesires] = useState<boolean>(false);
-    const [nameUserEmpty, setErrorUserEmpty] = useState<boolean>(false);
-
     const userAddr = cookie.get('userAddr') ? new ScAddr(parseInt(String(cookie.get('userAddr')))) : new ScAddr(0);
     const password = cookie.get('password');
+
+    const [redirectError, setRedirectError] = useState<boolean>(false);
+    const [savedDesires, setSavedDesires] = useState<boolean>(false);
+    const [errorNameUserEmpty, setErrorNameUserEmpty] = useState<boolean>(false);
+    const [desiresCountError, setDesiresCountError] = useState<boolean>(false);
+
+    const [nameUser, setNameUser] = useState<string>('');
 
     const check = async () => {
         if (userAddr.isValid() && password) {
@@ -54,6 +58,8 @@ export const Intro = () => {
     };
 
     const [desires, setDesires] = useState<DesireDesc[]>([]);
+    const [desiresCount, setDesiresCount] = useState<number>(0);
+
     const [, forceUpdate] = useReducer((x) => x + 1, 0);
 
     const findKb = async () => {
@@ -125,15 +131,10 @@ export const Intro = () => {
 
     const select = (item, index) => {
         desires[index].isSelected = desires[index].isSelected ? false : true;
+        if (desires[index].isSelected) setDesiresCount(desiresCount + 1);
+        else setDesiresCount(desiresCount - 1);
+
         forceUpdate();
-    };
-
-    const opacity = {
-        opacity: '1',
-    };
-
-    const overflow = {
-        overflow: 'auto',
     };
 
     const changeUserName = (e: ChangeEvent<HTMLInputElement>) => {
@@ -142,7 +143,14 @@ export const Intro = () => {
 
     const saveDesires = async (e) => {
         e.preventDefault();
+        setDesiresCountError(false);
+        setErrorNameUserEmpty(false);
+        console.log(desiresCount);
         if (nameUser != '') {
+            if (desiresCount < 7) {
+                setDesiresCountError(true);
+                return;
+            }
             const construction = new ScConstruction();
             const baseKeynodes = [
                 { id: 'nrel_desires', type: ScType.NodeConstNoRole },
@@ -169,7 +177,7 @@ export const Intro = () => {
 
             setSavedDesires(true);
         } else {
-            setErrorUserEmpty(true);
+            setErrorNameUserEmpty(true);
         }
     };
 
@@ -183,7 +191,6 @@ export const Intro = () => {
                     <div>
                         <HelloTextIntro>Здравствуйте</HelloTextIntro>
                         <NameInput type="text" placeholder="Имя" onChange={changeUserName}></NameInput>
-                        {nameUserEmpty ? <Error>Поле должно быть заполнено!</Error> : ''}
                     </div>
                     <MainBtnsIntro>
                         {desires.map((item, index) => {
@@ -196,6 +203,8 @@ export const Intro = () => {
                             );
                         })}
                     </MainBtnsIntro>
+                    {errorNameUserEmpty ? <Error>Поле должно быть заполнено!</Error> : ''}
+                    {desiresCountError ? <Error>Выберете больше достопрмечательностей!</Error> : ''}
                     <SaveButton onClick={saveDesires}>Сохранить</SaveButton>
                 </WrapperContentIntro>
             </IntroWrapper>

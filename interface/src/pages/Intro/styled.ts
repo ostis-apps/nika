@@ -32,7 +32,7 @@ export const SaveButton = styled.button`
     color: white;
     cursor: pointer;
     background-color: #538689;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
     :hover {
         opacity: 0.6;
     }
@@ -55,7 +55,7 @@ export const IntroWrapper = styled.div`
     position: relative;
     top: 0;
     left: 0;
-    width: 100vw;    
+    width: 100vw;
     backdrop-filter: blur(100px);
 `;
 
@@ -107,7 +107,7 @@ export const LinerBtns = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    background: linear-gradient(180deg, rgba(52,91,102,0) 0%, rgba(0,0,0,1) 91%); 
+    background: linear-gradient(180deg, rgba(52, 91, 102, 0) 0%, rgba(0, 0, 0, 1) 91%);
 `;
 
 export const TextButton = styled.div`
@@ -129,7 +129,7 @@ export const SelectMask = styled.div`
     height: 100%;
     color: white;
     font-size: 50px;
-    font-family: "Montserrat";
+    font-family: 'Montserrat';
     font-weight: 700;
     position: absolute;
     z-index: 100;
@@ -137,11 +137,20 @@ export const SelectMask = styled.div`
     left: 0;
     opacity: 0;
     backdrop-filter: blur(100px);
-    transition: all .5s ease;
-`; 
+    transition: all 0.5s ease;
+`;
 
 export const Error = styled.p`
     color: rgb(184, 67, 67);
     font-weight: 700;
     margin-bottom: 0;
+    margin: 0 0 5px 0;
 `;
+
+export const opacity = {
+    opacity: '1',
+};
+
+export const overflow = {
+    overflow: 'auto',
+};

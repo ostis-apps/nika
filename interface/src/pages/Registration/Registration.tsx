@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useReducer, ChangeEvent } from 'react';
+import React, { useEffect, useState, ChangeEvent } from 'react';
 import { Circle, Circle1, Wrapper, WrapperContent, Form, FormText, Input, FormBtn, Error, Link } from './styled';
 import { client } from '@api';
 import { routes } from '@constants';
@@ -12,19 +12,29 @@ import {
     ScEventType,
     ScEventParams,
 } from 'ts-sc-client';
-import Password from 'antd/lib/input/Password';
 import { Redirect } from 'react-router';
 import Cookie from 'universal-cookie';
+import { encryptPassword, decryptPassword } from '@api/sc/password';
+import { checkEmail } from '@api/sc/checkUser';
 
 export const Registration = () => {
+    // Get Cookies
     const cookie = new Cookie();
-    const [pass, setPass] = useState<string>('');
-    const [userAddr, setUserAddr] = useState<ScAddr>(new ScAddr(0));
-    const [repeatPass, setRepeatPass] = useState<string>('');
+    const cookieUserAddr = cookie.get('userAddr')
+        ? new ScAddr(parseInt(String(cookie.get('userAddr'))))
+        : new ScAddr(0);
+    const cookiePassword = cookie.get('password');
+
     const [username, setUsername] = useState<string>('');
+    const [pass, setPass] = useState<string>('');
+    const [repeatPass, setRepeatPass] = useState<string>('');
+
+    const [userAddr, setUserAddr] = useState<ScAddr>(new ScAddr(0));
+
     const [errorNotEqual, setErrorNotEqual] = useState<boolean>(false);
     const [errorPassLength, setErrorPassLength] = useState<boolean>(false);
     const [errorUsernameLength, setErrorUsernameLength] = useState<boolean>(false);
+    const [errorUserNameInUse, setErrorUserNameInUse] = useState<boolean>(false);
     const [redirectError, setRedirectError] = useState<boolean>(false);
 
     const onRegisterResult = async (addr: ScAddr, edgeAddr: ScAddr, edgeToResultAddr: ScAddr) => {
@@ -43,24 +53,15 @@ export const Registration = () => {
         );
         const result = await client.templateSearch(template);
         if (result.length > 0) {
-            document.cookie = encodeURIComponent('userAddr') + '=' + encodeURIComponent(result[0].get('_user').value);
-            document.cookie =
-                encodeURIComponent('password') +
-                '=' +
-                encodeURIComponent((await client.getLinkContents([result[0].get('_password')]))[0].data);
-
+            cookie.set('userAddr', result[0].get('_user').value);
+            cookie.set('password', (await client.getLinkContents([result[0].get('_password')]))[0].data);
             setUserAddr(result[0].get('_user'));
         }
     };
 
     useEffect(() => {
         (async () => {
-            const userAddr = cookie.get('userAddr')
-                ? new ScAddr(parseInt(String(cookie.get('userAddr'))))
-                : new ScAddr(0);
-            const password = cookie.get('password');
-
-            if (userAddr.isValid() && password) {
+            if (cookieUserAddr.isValid() && cookiePassword) {
                 setRedirectError(true);
             }
 
@@ -77,6 +78,9 @@ export const Registration = () => {
     }, []);
 
     const registerUser = async (name: string, password: string) => {
+        name = encryptPassword(name);
+        password = encryptPassword(password);
+
         const baseKeynodes = [
             { id: 'action_register_user', type: ScType.NodeConstClass },
             { id: 'question_initiated', type: ScType.NodeConstClass },
@@ -106,7 +110,7 @@ export const Registration = () => {
         await client.createElements(construction);
     };
 
-    const check = (e) => {
+    const check = async (e) => {
         e.preventDefault();
 
         setErrorNotEqual(false);
@@ -114,16 +118,19 @@ export const Registration = () => {
 
         if (username.length < 3) {
             setErrorUsernameLength(true);
-            return 1;
+            return;
         } else if (pass !== repeatPass) {
             setErrorNotEqual(true);
-            return 1;
+            return;
         } else if (pass.length < 6) {
             setErrorPassLength(true);
-            return 1;
+            return;
+        } else if (await checkEmail(username)) {
+            setErrorUserNameInUse(true);
+            return;
+        } else {
+            registerUser(username, pass);
         }
-
-        registerUser(username, pass);
     };
 
     const updateChangePassword = (e: ChangeEvent<HTMLInputElement>) => {
@@ -141,6 +148,7 @@ export const Registration = () => {
     return (
         <div>
             {userAddr.isValid() ? <Redirect to={{ pathname: routes.INTRO }} /> : ''}
+            {redirectError ? <Redirect to={{ pathname: routes.HOME }} /> : ''}
 
             <Circle></Circle>
             <Circle1></Circle1>
@@ -160,6 +168,7 @@ export const Registration = () => {
                         ) : (
                             ''
                         )}
+                        {errorUserNameInUse ? <Error>Имя пользователя уже занято! Используйте другое.</Error> : ''}
                         <Input
                             type="password"
                             name="pass1"
@@ -178,8 +187,14 @@ export const Registration = () => {
                             required
                         ></Input>
                         {errorNotEqual ? <Error>Пароли не совпадают</Error> : ''}
-                        <FormBtn type="submit" id="submit" key="1" onClick={check}>
-                            Войти
+                        <FormBtn
+                            type="submit"
+                            id="submit"
+                            onClick={(e) => {
+                                check(e);
+                            }}
+                        >
+                            Создать
                         </FormBtn>
                         <Link href={routes.LOGIN}>Уже есть аккаунт?</Link>
                     </Form>

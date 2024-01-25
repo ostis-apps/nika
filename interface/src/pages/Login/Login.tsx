@@ -13,16 +13,22 @@ import {
     ScEventParams,
 } from 'ts-sc-client';
 import { Redirect } from 'react-router';
-import { setCookie, getCookie, removeCookie } from 'typescript-cookie';
 import Cookie from 'universal-cookie';
+import { encryptPassword, decryptPassword } from '@api/sc/password';
 
 export const Login = () => {
+    // Get Cookies
+    const cookie = new Cookie();
+    const cookieUserAddr = cookie.get('userAddr')
+        ? new ScAddr(parseInt(String(cookie.get('userAddr'))))
+        : new ScAddr(0);
+    const cookiePassword = cookie.get('password');
+
     const [userAuthorised, setUserAuthorised] = useState<boolean>(false);
     const [redirectError, setRedirectError] = useState<boolean>(false);
     const [pass, setPass] = useState<string>('');
     const [username, setUsername] = useState<string>('');
-    const [errorPass, setErrorPass] = useState<boolean>(false);
-    const [errorUserNotFound, setErrorUserNotFound] = useState<boolean>(false);
+    const [errorLogin, setErrorLogin] = useState<boolean>(false);
     const [errorEmpty, setErrorEmpty] = useState<boolean>(false);
 
     const onAuthorisedResult = async (addr: ScAddr, edgeAddr: ScAddr, edgeToResultAddr: ScAddr) => {
@@ -41,9 +47,11 @@ export const Login = () => {
         );
         const result = await client.templateSearch(template);
         if (result.length > 0) {
-            setCookie('userAddr', result[0].get('_user').value);
-            setCookie('password', (await client.getLinkContents([result[0].get('_password')]))[0].data);
+            cookie.set('userAddr', result[0].get('_user').value);
+            cookie.set('password', (await client.getLinkContents([result[0].get('_password')]))[0].data);
             setUserAuthorised(true);
+        } else {
+            setErrorLogin(true);
         }
     };
     const [, forceUpdate] = useReducer((x) => x + 1, 0);
@@ -54,17 +62,9 @@ export const Login = () => {
         })();
     }, [userAuthorised]);
 
-    // Need to write this code for authorise user
-
     useEffect(() => {
         (async () => {
-            const cookie = new Cookie();
-            const userAddr = cookie.get('userAddr')
-                ? new ScAddr(parseInt(String(cookie.get('userAddr'))))
-                : new ScAddr(0);
-            const password = cookie.get('password');
-
-            if (userAddr.isValid() && password) {
+            if (cookieUserAddr.isValid() && cookiePassword) {
                 setRedirectError(true);
             }
 
@@ -100,8 +100,16 @@ export const Login = () => {
         construction.createEdge(ScType.EdgeAccessConstPosPerm, keynodes['action_authorise_user'], 'action_node');
         construction.createEdge(ScType.EdgeAccessConstPosPerm, keynodes['question_initiated'], 'action_node');
         construction.createEdge(ScType.EdgeAccessConstPosPerm, keynodes['question'], 'action_node');
-        construction.createLink(ScType.LinkConst, new ScLinkContent(name, ScLinkContentType.String), 'username');
-        construction.createLink(ScType.LinkConst, new ScLinkContent(password, ScLinkContentType.String), 'password');
+        construction.createLink(
+            ScType.LinkConst,
+            new ScLinkContent(encryptPassword(name), ScLinkContentType.String),
+            'username',
+        );
+        construction.createLink(
+            ScType.LinkConst,
+            new ScLinkContent(encryptPassword(password), ScLinkContentType.String),
+            'password',
+        );
         construction.createEdge(ScType.EdgeAccessConstPosPerm, 'action_node', 'username', 'name_edge');
         construction.createEdge(ScType.EdgeAccessConstPosPerm, 'action_node', 'password', 'pass_edge');
         construction.createEdge(ScType.EdgeAccessConstPosPerm, hKeynodes['rrel_1'], 'name_edge');
@@ -122,10 +130,8 @@ export const Login = () => {
         e.preventDefault();
 
         setErrorEmpty(false);
-        setErrorUserNotFound(false);
-        setErrorPass(false);
+        setErrorLogin(false);
 
-        // Need to write code for check other errors
         if (username == '' || pass == '') {
             setErrorEmpty(true);
             return 1;
@@ -161,6 +167,7 @@ export const Login = () => {
                             required
                         ></Input>
                         {errorEmpty ? <Error>Поля должны быть заполнены!</Error> : ''}
+                        {errorLogin ? <Error>Неверное имя пользоватлеься или пароль!</Error> : ''}
                         <FormBtn type="submit" id="submit" onClick={check}>
                             Войти
                         </FormBtn>

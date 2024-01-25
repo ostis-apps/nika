@@ -40,3 +40,25 @@ export const getUserName = async (userAddr) => {
     }
     return '';
 };
+
+export const checkEmail = async (username: string) => {
+    const baseKeynodes = [{ id: 'nrel_email', type: ScType.NodeConstNoRole }];
+    const keynodes = await client.resolveKeynodes(baseKeynodes);
+
+    const template = new ScTemplate();
+    const userNameLink = (await client.getLinksByContents([username]))[0][0];
+
+    template.tripleWithRelation(
+        ScType.NodeVar,
+        ScType.EdgeDCommonVar,
+        userNameLink,
+        ScType.EdgeAccessVarPosPerm,
+        keynodes['nrel_email'],
+    );
+    const result = await client.templateSearch(template);
+    if (result.length > 0) {
+        console.log(1);
+        return true;
+    }
+    return false;
+};

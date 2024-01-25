@@ -12,6 +12,12 @@ import {
     BtnChat,
     BtnSaved,
     BtnGames,
+    WidgetWeather,
+    WidgetMap,
+    langStyles,
+    BtnsContainer,
+    savedStyles,
+    WrapperSaved,
 } from './styled';
 import { client } from '@api';
 import { routes } from '@constants';
@@ -19,20 +25,26 @@ import { ScAddr, ScConstruction, ScLinkContent, ScLinkContentType } from 'ts-sc-
 import { ScTemplate, ScType, ScEventType } from 'ts-sc-client';
 import { Redirect } from 'react-router';
 import { checkUser, getUserName } from '@api/sc/checkUser';
-import { setCookie, getCookie, removeCookie } from 'typescript-cookie';
 import { ReactComponent as LangIcon } from '@assets/icon/lang.svg';
+import { ReactComponent as SavedIcon } from '@assets/icon/saved.svg';
+import Cookie from 'universal-cookie';
 
 export const Home = () => {
+    // Get Cookies
+    const cookie = new Cookie();
+    const cookieUserAddr = cookie.get('userAddr')
+        ? new ScAddr(parseInt(String(cookie.get('userAddr'))))
+        : new ScAddr(0);
+    const cookiePassword = cookie.get('password');
+
     const [redirectError, setRedirectError] = useState<boolean | undefined>(undefined);
     const [noDesireError, setNoDesireError] = useState<boolean | undefined>(undefined);
     const [userName, setUserName] = useState<string | undefined>(undefined);
-    const userAddr = getCookie('userAddr') ? new ScAddr(parseInt(String(getCookie('userAddr')))) : new ScAddr(0);
-    const password = getCookie('password');
 
     const check = async () => {
-        if (userAddr.isValid() && password) {
-            const name = await getUserName(userAddr);
-            if (!(await checkUser(userAddr, password))) {
+        if (cookieUserAddr.isValid() && cookiePassword) {
+            const name = await getUserName(cookieUserAddr);
+            if (!(await checkUser(cookieUserAddr, cookiePassword))) {
                 setRedirectError(true);
                 return;
             } else if (!name) {
@@ -52,14 +64,9 @@ export const Home = () => {
 
     const logoutUser = (e) => {
         e.preventDefault();
-        removeCookie('userAddr', { path: '' });
-        removeCookie('pass', { path: '' });
+        cookie.remove('userAddr');
+        cookie.remove('pass');
         setRedirectError(true);
-    };
-
-    const langStyles = {
-        width: '30px',
-        height: '30px',
     };
 
     return (
@@ -74,7 +81,9 @@ export const Home = () => {
                     <WrapperHead>
                         <ContainerInf>
                             <ContentHead>
-                                <UserName href="#">{userName}</UserName>
+                                <UserName href="#" onClick={logoutUser}>
+                                    {userName}
+                                </UserName>
                                 <LangBtn>
                                     <LangIcon style={langStyles} />
                                 </LangBtn>
@@ -82,16 +91,24 @@ export const Home = () => {
                         </ContainerInf>
                     </WrapperHead>
 
-                    <WrapperBtns>
-                        <BtnChat></BtnChat>
-                        <BtnSaved></BtnSaved>
-                        <BtnGames></BtnGames>
-                    </WrapperBtns>
+                    <BtnsContainer>
+                        <BtnChat href={routes.CHAT}>Chat</BtnChat>
+                        <WrapperBtns>
+                            <BtnGames href={routes.CHAT}>Games</BtnGames>
+                            <BtnSaved href={routes.CHAT}>
+                                <WrapperSaved>
+                                    <SavedIcon style={savedStyles} />
+                                </WrapperSaved>
+                            </BtnSaved>
+                        </WrapperBtns>
+                    </BtnsContainer>
 
-                    <WrapperWidget></WrapperWidget>
+                    <WrapperWidget>
+                        <WidgetWeather>Weather</WidgetWeather>
+                        <WidgetMap>Map</WidgetMap>
+                    </WrapperWidget>
                 </WrapperInf>
             </div>
-            <button onClick={logoutUser}>Logout</button>
         </div>
     );
 };
