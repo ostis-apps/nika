@@ -27,6 +27,7 @@ SC_AGENT_IMPLEMENTATION(MessageReplyAgent)
 
   ScAddr linkAddr = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionAddr, CoreKeynodes::rrel_1);
   ScAddr chatAddr = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionAddr, CoreKeynodes::rrel_2);
+  ScAddr userAddr = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionAddr, CoreKeynodes::rrel_3);
   ScAddr processingProgramAddr = getMessageProcessingProgram();
   ScAddr authorAddr =
       utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionAddr, MessageReplyKeynodes::nrel_authors);
@@ -69,7 +70,7 @@ SC_AGENT_IMPLEMENTATION(MessageReplyAgent)
     utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
     return SC_RESULT_ERROR;
   }
-  ScAddrVector argsVector = {processingProgramAddr, generateNonAtomicActionArgsSet(messageAddr)};
+  ScAddrVector argsVector = {processingProgramAddr, generateNonAtomicActionArgsSet(messageAddr, userAddr)};
   ScAddr actionToInterpret = utils::AgentUtils::initAgent(
       &m_memoryCtx, commonModule::Keynodes::action_interpret_non_atomic_action, argsVector);
   ScAddr answerAddr;
@@ -152,7 +153,7 @@ ScAddr MessageReplyAgent::generateMessage(ScAddr const & authorAddr, ScAddr cons
   return templateGenResult[USER_MESSAGE_ALIAS];
 }
 
-ScAddr MessageReplyAgent::generateNonAtomicActionArgsSet(ScAddr const & messageAddr)
+ScAddr MessageReplyAgent::generateNonAtomicActionArgsSet(ScAddr const & messageAddr, ScAddr const & userAddr)
 {
   std::string const ARGS_SET_ALIAS = "_args_set";
 
@@ -163,7 +164,14 @@ ScAddr MessageReplyAgent::generateNonAtomicActionArgsSet(ScAddr const & messageA
       messageAddr,
       ScType::EdgeAccessVarPosPerm,
       CoreKeynodes::rrel_1);
+  argsSetTemplate.TripleWithRelation(
+      ARGS_SET_ALIAS,
+      ScType::EdgeAccessVarPosPerm,
+      userAddr,
+      ScType::EdgeAccessVarPosPerm,
+      CoreKeynodes::rrel_2);
   ScTemplateGenResult templateGenResult;
+  
   if (!m_memoryCtx.HelperGenTemplate(argsSetTemplate, templateGenResult))
   {
     throw std::runtime_error("Unable to generate arguments set for interpreter agent action");

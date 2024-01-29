@@ -54,6 +54,7 @@ class TravellingAgent(ScAgentClassic):
 
         try:
             [message_addr, user_addr] = get_action_arguments(action_node, 2)
+            print(user_addr)
             message_type = ScKeynodes.resolve(
                 "concept_message_about_travelling", sc_types.NODE_CONST_CLASS)
 
@@ -126,6 +127,7 @@ class TravellingAgent(ScAgentClassic):
         lonCoordString = ''
         attraction = []
         kol = 0
+        print(desiers)
         
         try:
             coordinates = requests.get(
@@ -162,7 +164,7 @@ class TravellingAgent(ScAgentClassic):
                     print("~ ERROR ~")
             print(kol)
             if (kol < 5):
-                attractions = 'Извините, произошла какая-то ошибка. Не найдено никаких достопримечаьельностей по вашим предпочтениям.'
+                attractions = 'Извините, произошла какая-то ошибка. Не найдено никаких достопримечательностей по вашим предпочтениям.'
                 # Updating KB
             else:
                 print(attraction)
@@ -209,12 +211,11 @@ class TravellingAgent(ScAgentClassic):
         create_edge(
             sc_types.EDGE_ACCESS_CONST_POS_PERM, nrel_format, format_edge)
         
-        history_edge = create_edge(
-            sc_types.EDGE_D_COMMON_CONST, city_addr, link)
-        create_edge(
-            sc_types.EDGE_ACCESS_CONST_POS_PERM, nrel_attractions, history_edge)
-        create_action_answer(action_node, link)
+        edge = create_edge(sc_types.EDGE_D_COMMON_CONST, message_addr, link)
+        create_edge(sc_types.EDGE_ACCESS_CONST_POS_PERM, ScKeynodes['nrel_answer'], edge)
+
         return ScResult.OK
+
 
     def set_unknown_city_link(self, action_node: ScAddr, answer_phrase: ScAddr) -> None:
         unknown_city_link = ScKeynodes.resolve(

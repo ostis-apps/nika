@@ -55,8 +55,15 @@ class FindMetroStationAgent(ScAgentClassic):
         return result
 
     def run(self, action_node: ScAddr) -> ScResult:
-        self.logger.info("FindMetroStationAgent started")
         [message_addr] = get_action_arguments(action_node, 1)
+        message_type = ScKeynodes.resolve(
+                "concept_message_about_find_metro_station", sc_types.NODE_CONST_CLASS)
+        self.logger.info("FindMetroStationAgent started")
+        if not check_edge(sc_types.EDGE_ACCESS_VAR_POS_PERM, message_type, message_addr):
+            self.logger.info(
+                f"FindMetroStationsAgent: the message isn’t about metro")
+            return ScResult.OK
+
         rrel_first_place = ScKeynodes.resolve('rrel_first_place', sc_types.NODE_CONST_ROLE)
         rrel_second_place = ScKeynodes.resolve('rrel_second_place', sc_types.NODE_CONST_ROLE)
 
@@ -78,8 +85,10 @@ class FindMetroStationAgent(ScAgentClassic):
             
             response1 = requests.get(f"https://nominatim.openstreetmap.org/search.php?q={first_place}, Минск&format=json").json()
             response2 = requests.get(f"https://nominatim.openstreetmap.org/search.php?q={second_place}, Минск&format=json").json()
-        except Exception as e:
-            print(e)
+
+            ip_first_place = f"{response1[0]['lon']}, {response1[0]['lat']}"
+            ip_second_place = f"{response2[0]['lon']}, {response2[0]['lat']}"
+        except:
             answer = choice([f'К сожалению, не удалось распознать, куда вам надо.'])
 
             link = create_link(
@@ -88,8 +97,6 @@ class FindMetroStationAgent(ScAgentClassic):
             create_edge(sc_types.EDGE_ACCESS_CONST_POS_PERM, ScKeynodes['nrel_answer'], edge)
             return ScResult.OK
 
-        ip_first_place = f"{response1[0]['lon']}, {response1[0]['lat']}"
-        ip_second_place = f"{response2[0]['lon']}, {response2[0]['lat']}"
         # Поиск ближайших точек входа и выхода в метро
         concept_metro_station = ScKeynodes.resolve('concept_metro_station', sc_types.NODE_CONST_CLASS)
         
