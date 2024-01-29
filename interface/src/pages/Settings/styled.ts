@@ -32,6 +32,9 @@ export const Setting = styled.div`
         border: 1px solid white;
         padding: 5px;
     }
+    input {
+        accent-color: #538689;
+    }
 `;
 
 export const Container = styled.div`

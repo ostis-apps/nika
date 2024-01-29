@@ -81,9 +81,7 @@ export const Home = () => {
                     <WrapperHead>
                         <ContainerInf>
                             <ContentHead>
-                                <UserName href="#" onClick={logoutUser}>
-                                    {userName}
-                                </UserName>
+                                <UserName href={routes.SETTINGS}>{userName}</UserName>
                                 <LangBtn>
                                     <LangIcon style={langStyles} />
                                 </LangBtn>

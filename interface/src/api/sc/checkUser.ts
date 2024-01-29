@@ -62,3 +62,5 @@ export const checkEmail = async (username: string) => {
     }
     return false;
 };
+
+export const findSetting = async () => {};
