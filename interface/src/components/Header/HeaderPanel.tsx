@@ -9,13 +9,15 @@ export const HeaderPanel = () => {
             <div className="nav-container">
                 <ul className="nav">
                     <li>
-                        <NavLink exact to={routes.HOME}>Главная</NavLink>
+                        <NavLink exact to={routes.HOME}>
+                            Главная
+                        </NavLink>
                     </li>
                     <li>
-                        <NavLink to={routes.ABOUT}>Карта</NavLink>
+                        <NavLink to={routes.MAP}>Карта</NavLink>
                     </li>
                 </ul>
             </div>
         </div>
     );
-}
+};

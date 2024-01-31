@@ -51,6 +51,7 @@ export const Home = () => {
                 setNoDesireError(true);
                 return;
             } else {
+                console.log(name);
                 setUserName(name);
             }
         } else setRedirectError(true);
@@ -81,8 +82,8 @@ export const Home = () => {
                     <WrapperHead>
                         <ContainerInf>
                             <ContentHead>
-                                <UserName href={routes.SETTINGS}>{userName}</UserName>
-                                <LangBtn>
+                                <UserName onClick={(e) => logoutUser(e)}>{userName}</UserName>
+                                <LangBtn href={routes.SETTINGS}>
                                     <LangIcon style={langStyles} />
                                 </LangBtn>
                             </ContentHead>

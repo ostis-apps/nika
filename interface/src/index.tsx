@@ -16,9 +16,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     /* For firefox full height */
     height: 100%;
-    background: #101514;
+    width: 100%;
     padding: 0;
     overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
   }
   #content {
     flex-grow: 1;

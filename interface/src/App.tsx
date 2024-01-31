@@ -15,17 +15,35 @@ import { HeaderPanel } from '@components/Header';
 import { FooterPanel } from '@components/Footer';
 
 const Demo = loadingComponent(lazy(() => import('@pages/Demo')));
-const About = loadingComponent(lazy(() => import('@pages/About')));
+const MapPage = loadingComponent(lazy(() => import('@pages/MapPage')));
 const Intro = loadingComponent(lazy(() => import('@pages/Intro')));
 const Reg = loadingComponent(lazy(() => import('@pages/Registration')));
 const Login = loadingComponent(lazy(() => import('@pages/Login')));
 const Home = loadingComponent(lazy(() => import('@pages/Home')));
+const Profile = loadingComponent(lazy(() => import('@pages/Profile')));
 const Settings = loadingComponent(lazy(() => import('@pages/Settings')));
+const Saved = loadingComponent(lazy(() => import('@pages/Saved')));
 
 const DemoRoutes = () => (
     <>
         <Route path={routes.CHAT}>
             <Demo />
+        </Route>
+    </>
+);
+
+const SavedRoutes = () => (
+    <>
+        <Route path={routes.SAVED}>
+            <Saved />
+        </Route>
+    </>
+);
+
+const ProfileRoutes = () => (
+    <>
+        <Route path={routes.PROFILE}>
+            <Profile />
         </Route>
     </>
 );
@@ -54,10 +72,10 @@ const LoginRoutes = () => (
     </>
 );
 
-const AboutRoutes = () => (
+const MapPageRoutes = () => (
     <>
-        <Route path={routes.ABOUT}>
-            <About />
+        <Route path={routes.MAP}>
+            <MapPage />
         </Route>
     </>
 );
@@ -144,10 +162,12 @@ export const App = () => {
     return (
         <Content style={mainStyles}>
             <DemoRoutes />
-            <AboutRoutes />
+            <MapPageRoutes />
             <LoginRoutes />
             <RegRoutes />
             <HomeRoutes />
+            <SavedRoutes />
+            <ProfileRoutes />
             <SettingsRoutes />
             <IntroRoutes />
         </Content>

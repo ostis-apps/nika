@@ -66,7 +66,7 @@ export const ContentHead = styled.div`
     width: 100%;
 `;
 
-export const LangBtn = styled.button`
+export const LangBtn = styled.a`
     cursor: pointer;
     background: none;
     border: none;
@@ -76,7 +76,7 @@ export const LangBtn = styled.button`
     }
 `;
 
-export const UserName = styled.a`
+export const UserName = styled.button`
     // Colour
     cursor: pointer;
     background: rgba(255, 255, 255, 0.3);
