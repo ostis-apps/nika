@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
     /* For firefox full height */
     height: 100%;
     width: 100%;
+    background: #101514;
     padding: 0;
     overflow: hidden;
     -webkit-tap-highlight-color: transparent;
@@ -24,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
   #content {
     flex-grow: 1;
     display: flex;
+    background: black;
   }
   * {
     box-sizing: border-box;
@@ -40,6 +42,33 @@ const GlobalStyle = createGlobalStyle`
       opacity: 1;
     }
   }
+
+
+@media screen and (max-width: 500px) {
+  .container_menu {
+      width: 100vw !important;
+      border-radius: 0 !important;
+  }
+}
+
+@media screen and (max-width: 370px) {
+   .nav {
+      width: 24px;
+   }
+
+   .nav .title {
+      display: none;
+   }
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 `;
 
 ReactDOM.render(

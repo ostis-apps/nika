@@ -1,54 +1,108 @@
-import React, { useEffect } from 'react';
-import { YMaps, Map } from '@pbe/react-yandex-maps';
+import { routes } from '@constants';
+import React, { useEffect, useState } from 'react';
+import { YMaps, Map, Placemark } from 'react-yandex-maps';
+import {
+    Arrow,
+    Linktitle,
+    NavLink,
+    Menu,
+    Information,
+    InformationHeader,
+    Inf,
+    CloseBtn,
+    InformationText,
+    openStyle,
+    nothinTitleStyles,
+    Loading,
+    SpanLoader,
+} from './styled';
+import { getUserSettings } from '@api/sc/checkUser';
+import Cookie from 'universal-cookie';
+import { ScAddr } from 'ts-sc-client';
 
 export const MapPage = () => {
-    // const queryParams = new URLSearchParams(window.location.search);
-    // const coordinatesString = queryParams.get('x') ?? '27.668021,53.931986';
-    // const coordinates = coordinatesString.split(',');
+    const cookie = new Cookie();
+    const cookieUserAddr = cookie.get('userAddr')
+        ? new ScAddr(parseInt(String(cookie.get('userAddr'))))
+        : new ScAddr(0);
 
-    // useEffect(() => {
-    //     // Initialize the map
-    //     load().then((mapglAPI) => {
-    //         const map = new mapglAPI.Map('container', {
-    //             center: [parseFloat(coordinates[0]), parseFloat(coordinates[1])],
-    //             zoom: 13,
-    //             key: 'cff13584-2b22-4186-9b1d-14d703c594c2',
-    //             style: 'e05achttps://api-maps.yandex.ru/2.1/?lang=en_RU&amp;apikey=b3b592a1-27f8-4994-a2a0-5e83e5c5c2af437-fcc2-4845-ad74-b1de9ce07555',
-    //         });
+    const [openMenu, setOpenMenu] = useState<boolean>(false);
 
-    //         for (var i = 2; i < coordinates.length; i += 2) {
-    //             const marker = new mapglAPI.Marker(map, {
-    //                 coordinates: [parseFloat(coordinates[i]), parseFloat(coordinates[i + 1])],
-    //             });
-    //         }
-    //     });
-    // }, [parseFloat(coordinates[0]), parseFloat(coordinates[1])]);
+    const [coordinates, setCoordinates] = useState<String[][]>([[]]);
+    const [coordCenter, setCoordCenter] = useState<String[]>([]);
+    const [zoomValue, setZoomValue] = useState<Number>(10);
+
+    const [accentColor, setAccentColor] = useState<string | undefined>('black');
+    const [pageTitle, setPageTitle] = useState<String>('');
+
+
+    useEffect(() => {
+        const queryParams = new URLSearchParams(window.location.search);
+        const coordinatesString = (queryParams.get('coord') ?? '53.931986, 27.668021').split(',');
+        setCoordCenter([coordinatesString[0], coordinatesString[1]]);
+
+        let resultCoordinates: String[][] = [];
+        for (let i = 2; i < coordinatesString.length; i += 2)
+            resultCoordinates.push([coordinatesString[i], coordinatesString[i + 1]]);
+
+        setCoordinates(resultCoordinates);
+    }, []);
+
+    useEffect(() => {
+        (async () => {
+            setAccentColor((await getUserSettings(cookieUserAddr))['nrel_accent_color']);
+        })();
+    }, []);
+
+    
+    const getInformation = async (coords: String[]) => {
+        let title = '';
+        let description = '';
+        let image = '';
+
+
+    };
+
+    const open = (index: number) => async (event: React.MouseEvent<HTMLDivElement>) => {
+        const desireCoordinates = coordinates[index];
+        setPageTitle('');
+        await getInformation(desireCoordinates);
+        setOpenMenu(true);
+    };
+
+    const close = () => {
+        setOpenMenu(false);
+    };
 
     return (
         <>
-            {/* <a href="../index.html" onclick="javascript:history.back(); return false;" class="nav">
-                <div class="arrow"></div>
-                <p id="title">Назад</p>
-            </a>
-            <div id="map"></div>
-            <div class="container_menu" id="menu">
-                <div class="information">
-                    <div class="information_header">
-                        <div class="inf"></div>
-                        <div class="close-btn" id="close-btn"></div>
-                    </div>
-                    <div class="information_text"></div>
-                </div>
-            </div>
-            <script src="https://api-maps.yandex.ru/2.1/?lang=en_RU&amp;apikey=b3b592a1-27f8-4994-a2a0-5e83e5c5c2af"></script>
-            <script src="https://yandex.st/jquery/2.2.3/jquery.min.js"></script> */}
-
+            <NavLink href={routes.HOME} className="nav">
+                <Arrow></Arrow>
+                <Linktitle className="title">Назад</Linktitle>
+            </NavLink>
             <YMaps>
-                <div>
-                    This is a page.
-                    <Map defaultState={{ center: [55.75, 37.57], zoom: 9 }} />
-                </div>
+                <Map defaultState={{ center: coordCenter, zoom: zoomValue }} width="100%" height="100%">
+                    {coordinates.map((coordinate, index) => (
+                        <Placemark key={index} geometry={coordinate} onClick={open(index)} />
+                    ))}
+                </Map>
             </YMaps>
+            <Menu style={openMenu ? openStyle : {}} className="container_menu">
+                <Loading style={pageTitle == '' ? { opacity: 1 } : { opacity: 0 }}>
+                    <SpanLoader style={{ background: accentColor }}></SpanLoader>
+                </Loading>
+                <Information>
+                    <InformationHeader>
+                        <Inf>
+                            <p style={pageTitle == '' ? nothinTitleStyles : {}}>{pageTitle}</p>
+                        </Inf>
+                        <CloseBtn onClick={close}></CloseBtn>
+                    </InformationHeader>
+                    <InformationText></InformationText>
+                </Information>
+            </Menu>
         </>
     );
 };
+
+export default MapPage;

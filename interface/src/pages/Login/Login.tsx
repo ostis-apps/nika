@@ -51,6 +51,7 @@ export const Login = () => {
             cookie.set('password', (await client.getLinkContents([result[0].get('_password')]))[0].data);
             setUserAuthorised(true);
         } else {
+            console.log('Error with authorise');
             setErrorLogin(true);
         }
     };

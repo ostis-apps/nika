@@ -91,9 +91,9 @@ export const Home = () => {
                     </WrapperHead>
 
                     <BtnsContainer>
-                        <BtnChat href={routes.CHAT}>Chat</BtnChat>
+                        <BtnChat href={routes.CHAT}>Чат</BtnChat>
                         <WrapperBtns>
-                            <BtnGames href={routes.CHAT}>Games</BtnGames>
+                            <BtnGames href={routes.CHAT}>Развлечения</BtnGames>
                             <BtnSaved href={routes.CHAT}>
                                 <WrapperSaved>
                                     <SavedIcon style={savedStyles} />

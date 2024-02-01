@@ -17,6 +17,7 @@ export const WrapperCircle = styled.div`
     width: 80vmin;
     border-radius: 50%;
     background: #538689;
+
 `;
 
 export const WrapperInf = styled.div`

@@ -91,25 +91,10 @@ export const Settings = () => {
         location.reload();
     };
 
-    const dark = `
-        background: black;
-        h1 {
-            color: white;
-        }
-    `;
-
-    const light = `
-        background: white;
-        * {
-            color: black;
-        }
-    `;
-
     const Main = styled.div`
         display: flex;
         width: 100%;
         height: 100%;
-        ${settings['nrel_theme'] == 'dark' ? dark : light};
     `;
 
     return (

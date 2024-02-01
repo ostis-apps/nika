@@ -83,6 +83,7 @@ export const UserName = styled.button`
     backdrop-filter: blur(10px);
     padding: 5px;
     color: white;
+    border: none;
     border-radius: 10px;
     font-size: 20px;
     font-weight: 900;

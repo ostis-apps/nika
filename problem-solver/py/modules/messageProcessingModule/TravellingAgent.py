@@ -118,16 +118,15 @@ class TravellingAgent(ScAgentClassic):
             self.logger.info('TravellingAgent: There is no desires in user.')
             return ScResult.ERROR
         
-        desiers = []
+        desires = []
         for desire in result:
             desire_addr = desire.get('_desire_addr')
-            desiers.append(self.get_ru_idtf(desire_addr))
+            desires.append(get_link_content_data(self.get_ru_idtf(desire_addr)))
             
-        latCoordString = ''
-        lonCoordString = ''
+        CoordString = ''
         attraction = []
         kol = 0
-        print(desiers)
+        print(desires)
         
         try:
             coordinates = requests.get(
@@ -142,7 +141,14 @@ class TravellingAgent(ScAgentClassic):
             miny = coordinates['boundingbox'][2]
             maxy = coordinates['boundingbox'][3]
 
-            for item in desiers:
+            desire_kol = choice([9, 10, 11, 12])
+
+            for i in range(desire_kol):
+                print(i)
+                ind = randint(0, len(desires)-1);
+                item = desires[ind];
+                desires.pop(ind);
+
                 try:
                     places = requests.get(
                         f"https://api.openrouteservice.org/geocode/search?api_key={API_KEY}&text={item}&sources=openstreetmap,openaddresses,geonames,whosonfirst&boundary.rect.min_lat={minx}&boundary.rect.max_lat={maxx}&boundary.rect.min_lon={miny}&boundary.rect.max_lon={maxy}"
@@ -160,26 +166,26 @@ class TravellingAgent(ScAgentClassic):
                             kol += 1
                         except:
                             continue
+                        finally:
+                            break
+                
                 except:
-                    print("~ ERROR ~")
-            print(kol)
+                    print(item)
+
             if (kol < 5):
                 attractions = 'Извините, произошла какая-то ошибка. Не найдено никаких достопримечательностей по вашим предпочтениям.'
                 # Updating KB
             else:
-                print(attraction)
                 kol = 0
-                for j in range(0, len(desiers)):
+                for j in range(0, len(desires)):
                     for i in range(0, len(attraction)):
-                        if (kol <= len(desiers)):
+                        if (kol <= len(desires)):
                             try:
                                 place = attraction[i][-1]
                                 attraction[i].pop(-1)
-                                print(place)
-                                print()
+
                                 attractions += f"~ {place['properties']['name']}"
-                                latCoordString += f"{place['geometry']['coordinates'][0]},"
-                                lonCoordString += f"{place['geometry']['coordinates'][1]}," 
+                                CoordString += f"{place['geometry']['coordinates'][1]},{place['geometry']['coordinates'][0]}," 
 
                                 try:
                                     attractions += f"<p style='opacity: 0.7'>{place['properties']['street']} {place['properties']['housenumber']}</p>"
@@ -193,7 +199,7 @@ class TravellingAgent(ScAgentClassic):
                         else:
                             break
 
-                attractions += '<a class="build_map" href="http://c3337100.beget.tech/index.html?x=' + str(coordinates["lon"]) + "&y=" + str(coordinates["lat"]) + "&x=" + latCoordString + "&y=" + lonCoordString + '" style="transition: all .6s ease; display: inline-block; padding: 10px 20px; margin: auto; background: blue; background: #262626; text-decoration: none; border-radius: 10px; color: #538689;">Построить карту</a>'
+                attractions += f'<a class="build_map" href="../map?coord={coordinates["lat"]},{coordinates["lon"]},{CoordString}&type=des_list" style="transition: all .6s ease; display: inline-block; padding: 10px 20px; margin: auto; background: blue; background: #262626; text-decoration: none; border-radius: 10px; color: #538689;">Построить карту</a>'
 
         except requests.exceptions.ConnectionError:
             self.logger.info(f"FindSomePlacesAgent: finished with connection error")
