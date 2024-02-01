@@ -12,13 +12,14 @@ import {
     CloseBtn,
     InformationText,
     openStyle,
-    nothinTitleStyles,
     Loading,
     SpanLoader,
+    Error,
 } from './styled';
 import { getUserSettings } from '@api/sc/checkUser';
 import Cookie from 'universal-cookie';
 import { ScAddr } from 'ts-sc-client';
+const API_KEY = '5ae2e3f221c38a28845f05b6c5d9bf667efa63f94dcb0e435b058e95';
 
 export const MapPage = () => {
     const cookie = new Cookie();
@@ -29,23 +30,20 @@ export const MapPage = () => {
     const [openMenu, setOpenMenu] = useState<boolean>(false);
 
     const [coordinates, setCoordinates] = useState<String[][]>([[]]);
+    const [xids, setXids] = useState<String[]>([]);
     const [coordCenter, setCoordCenter] = useState<String[]>([]);
     const [zoomValue, setZoomValue] = useState<Number>(10);
 
     const [accentColor, setAccentColor] = useState<string | undefined>('black');
     const [pageTitle, setPageTitle] = useState<String>('');
-
+    const [loadError, setLoadError] = useState<Boolean>(false);
 
     useEffect(() => {
         const queryParams = new URLSearchParams(window.location.search);
         const coordinatesString = (queryParams.get('coord') ?? '53.931986, 27.668021').split(',');
         setCoordCenter([coordinatesString[0], coordinatesString[1]]);
-
-        let resultCoordinates: String[][] = [];
-        for (let i = 2; i < coordinatesString.length; i += 2)
-            resultCoordinates.push([coordinatesString[i], coordinatesString[i + 1]]);
-
-        setCoordinates(resultCoordinates);
+        // Get details and other information
+        const urlXids = (queryParams.get('xids') ?? '').split(',');
     }, []);
 
     useEffect(() => {
@@ -54,20 +52,31 @@ export const MapPage = () => {
         })();
     }, []);
 
-    
     const getInformation = async (coords: String[]) => {
-        let title = '';
-        let description = '';
-        let image = '';
+        try {
+            let title = '';
+            let description = '';
+            let image = '';
 
+            const url = `https://api.openrouteservice.org/geocode/reverse?api_key=${API_KEY}&point.lon=${coords[1]}&point.lat=${coords[0]}`;
 
+            const response = await fetch(url),
+                result = (await response.json())['features'];
+            console.log(result);
+
+            title = result[0]['properties']['label'].split(',')[0];
+            setPageTitle(title);
+        } catch {
+            setLoadError(true);
+        }
     };
 
     const open = (index: number) => async (event: React.MouseEvent<HTMLDivElement>) => {
+        setLoadError(false);
         const desireCoordinates = coordinates[index];
         setPageTitle('');
-        await getInformation(desireCoordinates);
         setOpenMenu(true);
+        await getInformation(desireCoordinates);
     };
 
     const close = () => {
@@ -90,11 +99,12 @@ export const MapPage = () => {
             <Menu style={openMenu ? openStyle : {}} className="container_menu">
                 <Loading style={pageTitle == '' ? { opacity: 1 } : { opacity: 0 }}>
                     <SpanLoader style={{ background: accentColor }}></SpanLoader>
+                    <Error style={loadError ? { opacity: 1 } : { opacity: 0 }}>Ошибка сети.</Error>
                 </Loading>
                 <Information>
                     <InformationHeader>
                         <Inf>
-                            <p style={pageTitle == '' ? nothinTitleStyles : {}}>{pageTitle}</p>
+                            <p style={{ color: 'black', fontSize: '20px' }}>{pageTitle}</p>
                         </Inf>
                         <CloseBtn onClick={close}></CloseBtn>
                     </InformationHeader>

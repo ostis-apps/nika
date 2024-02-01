@@ -29,7 +29,7 @@ from sc_kpm import ScKeynodes
 
 import requests
 from random import randint, choice
-API_KEY = '5b3ce3597851110001cf62484e61be75f1be4fd19569f26fa1371ce0'
+api_key = '5ae2e3f221c38a28845f05b6c5d9bf667efa63f94dcb0e435b058e95'
 
 
 logging.basicConfig(
@@ -123,7 +123,7 @@ class TravellingAgent(ScAgentClassic):
             desire_addr = desire.get('_desire_addr')
             desires.append(get_link_content_data(self.get_ru_idtf(desire_addr)))
             
-        CoordString = ''
+        xids = ''
         attraction = []
         kol = 0
         print(desires)
@@ -134,41 +134,35 @@ class TravellingAgent(ScAgentClassic):
             
             # We need take from kb a city with english lang
             city = coordinates['display_name'].split(',')[0]
-
+            print(coordinates)
             
-            minx = coordinates['boundingbox'][0]
-            maxx = coordinates['boundingbox'][1]
-            miny = coordinates['boundingbox'][2]
-            maxy = coordinates['boundingbox'][3]
+            lat = coordinates['lat']
+            lon = coordinates['lon']
 
             desire_kol = choice([9, 10, 11, 12])
 
             for i in range(desire_kol):
                 print(i)
+                if (len(desires) == 0):
+                    break
                 ind = randint(0, len(desires)-1);
                 item = desires[ind];
                 desires.pop(ind);
 
-                try:
-                    places = requests.get(
-                        f"https://api.openrouteservice.org/geocode/search?api_key={API_KEY}&text={item}&sources=openstreetmap,openaddresses,geonames,whosonfirst&boundary.rect.min_lat={minx}&boundary.rect.max_lat={maxx}&boundary.rect.min_lon={miny}&boundary.rect.max_lon={maxy}"
-                    ).json()['features']
 
+                places = requests.get(
+                    f'http://api.opentripmap.com/0.1/ru/places/autosuggest?lang=ru_RU&name={item}&radius=100000&lon={lon}&lat={lat}&apikey={api_key}'
+                ).json()['features']
+
+                print(places)
+
+                try:
                     # Code for choosing place 
-                    fl = 1
-                    for item in places:
-                        try:
-                            a = item['properties']['street']
-                            if (fl == 1):
-                                attraction.append([])
-                                fl = 0
-                            attraction[len(attraction) - 1].append(item)
-                            kol += 1
-                        except:
-                            continue
-                        finally:
-                            break
-                
+                    index_place = len(places) % 3;
+                    for i in range(index_place):
+                        attraction.append(places[i])
+
+                    kol += 1
                 except:
                     print(item)
 
@@ -177,29 +171,32 @@ class TravellingAgent(ScAgentClassic):
                 # Updating KB
             else:
                 kol = 0
-                for j in range(0, len(desires)):
-                    for i in range(0, len(attraction)):
-                        if (kol <= len(desires)):
-                            try:
-                                place = attraction[i][-1]
-                                attraction[i].pop(-1)
+                
+                while kol < desire_kol and len(attraction) > 0:
+                    placeID = randint(0, len(attraction)-1)
+                    place = attraction[placeID]
+                    attraction.pop(placeID) 
 
-                                attractions += f"~ {place['properties']['name']}"
-                                CoordString += f"{place['geometry']['coordinates'][1]},{place['geometry']['coordinates'][0]}," 
+                    xid = place['properties']['xid']
 
-                                try:
-                                    attractions += f"<p style='opacity: 0.7'>{place['properties']['street']} {place['properties']['housenumber']}</p>"
+                    try:
+                        details = requests.get(f'http://api.opentripmap.com/0.1/ru/places/xid/{xid}?apikey={api_key}').json()
 
-                                except:
-                                    attractions += f"<p style='opacity: 0.7'> - </p>"
+                        attractions += f"~ {details['name']}"
+                        xids += f'{xid},'
 
-                                kol += 1
-                            except:
-                                continue
-                        else:
-                            break
+                        try:
+                            attractions += f"<p style='opacity: 0.7'>{details['address']['road']} {details['address']['house_number']}</p>"
 
-                attractions += f'<a class="build_map" href="../map?coord={coordinates["lat"]},{coordinates["lon"]},{CoordString}&type=des_list" style="transition: all .6s ease; display: inline-block; padding: 10px 20px; margin: auto; background: blue; background: #262626; text-decoration: none; border-radius: 10px; color: #538689;">Построить карту</a>'
+                        except:
+                            attractions += f"<p style='opacity: 0.7'> - </p>"
+
+                        kol += 1
+                    except:
+                        continue
+
+
+                attractions += f'<a class="build_map" href="../map?coord={coordinates["lat"]},{coordinates["lon"]}&xids={xids}&type=des_list" style="transition: all .6s ease; display: inline-block; padding: 10px 20px; margin: auto; background: blue; background: #262626; text-decoration: none; border-radius: 10px; color: #538689;">Построить карту</a>'
 
         except requests.exceptions.ConnectionError:
             self.logger.info(f"FindSomePlacesAgent: finished with connection error")

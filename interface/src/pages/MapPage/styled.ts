@@ -84,7 +84,13 @@ export const InformationHeader = styled.div`
         font-weight: 700;
     }
 `;
-export const Inf = styled.div``;
+export const Inf = styled.div`
+    display: flex;
+    align-items: center;
+    p {
+        margin: 0;
+    }
+`;
 export const CloseBtn = styled.div`
     position: absolute;
     top: 10px;
@@ -119,8 +125,6 @@ export const openStyle = {
     right: 0,
 };
 
-export const nothinTitleStyles = {};
-
 export const Loading = styled.div`
     position: absolute;
     width: 100%;
@@ -130,6 +134,8 @@ export const Loading = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 5px;
 `;
 
 export const SpanLoader = styled.span`
@@ -157,4 +163,9 @@ export const SpanLoader = styled.span`
         background: rgba(255, 255, 255, 0.4);
         animation: wave 5s linear infinite;
     }
+`;
+
+export const Error = styled.p`
+    color: red;
+    font-weight: 700;
 `;
