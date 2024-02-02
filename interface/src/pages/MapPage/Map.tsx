@@ -10,15 +10,22 @@ import {
     InformationHeader,
     Inf,
     CloseBtn,
+    CloseBtnModal,
     InformationText,
     openStyle,
     Loading,
     SpanLoader,
     Error,
+    SaveMap,
+    WrapperSavingName,
+    ModalName,
+    NameInput,
+    SaveNameButton,
 } from './styled';
 import { getUserSettings } from '@api/sc/checkUser';
 import Cookie from 'universal-cookie';
-import { ScAddr } from 'ts-sc-client';
+import { ScAddr, ScConstruction, ScTemplate, ScType, ScLinkContent, ScLinkContentType } from 'ts-sc-client';
+import { client } from '@api/sc';
 const API_KEY = '5ae2e3f221c38a28845f05b6c5d9bf667efa63f94dcb0e435b058e95';
 
 export const MapPage = () => {
@@ -35,52 +42,196 @@ export const MapPage = () => {
     const [zoomValue, setZoomValue] = useState<Number>(10);
 
     const [accentColor, setAccentColor] = useState<string | undefined>('black');
-    const [pageTitle, setPageTitle] = useState<String>('');
     const [loadError, setLoadError] = useState<Boolean>(false);
+    const [startPr, setStartPr] = useState<Boolean>(false);
 
-    useEffect(() => {
-        const queryParams = new URLSearchParams(window.location.search);
-        const coordinatesString = (queryParams.get('coord') ?? '53.931986, 27.668021').split(',');
-        setCoordCenter([coordinatesString[0], coordinatesString[1]]);
-        // Get details and other information
-        const urlXids = (queryParams.get('xids') ?? '').split(',');
-    }, []);
+    const [pageInform, setPageInform] = useState<String[][]>([]);
+    const [activeTitle, setActiveTitle] = useState<String>('');
+    const [activeDescription, setActiveDescription] = useState<string>('');
+    const [imageStyles, setImageStyles] = useState<{}>({});
+    const [imageTextStyles, setTextImageStyles] = useState<{}>({});
 
-    useEffect(() => {
-        (async () => {
-            setAccentColor((await getUserSettings(cookieUserAddr))['nrel_accent_color']);
-        })();
-    }, []);
+    const [modalSave, setModalSave] = useState<Boolean>(false);
+    const [mapName, setMapName] = useState<String>('');
 
-    const getInformation = async (coords: String[]) => {
+    const getDataFromXids = async (xid: String) => {
         try {
-            let title = '';
-            let description = '';
-            let image = '';
-
-            const url = `https://api.openrouteservice.org/geocode/reverse?api_key=${API_KEY}&point.lon=${coords[1]}&point.lat=${coords[0]}`;
-
-            const response = await fetch(url),
-                result = (await response.json())['features'];
-            console.log(result);
-
-            title = result[0]['properties']['label'].split(',')[0];
-            setPageTitle(title);
+            const url = `http://api.opentripmap.com/0.1/ru/places/xid/${xid}?apikey=${API_KEY}`;
+            const response = await fetch(url);
+            return response.json();
         } catch {
-            setLoadError(true);
+            return {};
         }
     };
 
+    const des_list = async (urlXids: String[]) => {
+        let pageInf: String[][] = [];
+        let coords: String[][] = [];
+        for (let ind = 0; ind < urlXids.length; ind++) {
+            if (urlXids[ind]) {
+                const result = await getDataFromXids(urlXids[ind]);
+
+                console.log(result);
+                let name = '',
+                    description = '',
+                    image = '',
+                    coord = '';
+
+                try {
+                    name = result['name'];
+                } catch {}
+
+                try {
+                    coord = `${result['point']['lat']},${result['point']['lon']}`;
+                    coords.push(coord.split(','));
+                } catch {}
+
+                try {
+                    description = `<p><b>Улица:</b>`;
+                    description += `${result['address']['city_district']}, `;
+                } catch {}
+
+                try {
+                    description += `${result['address']['road'] ? result['address']['road'] + ',' : ''} `;
+                    description += `${result['address']['house_number'] ? result['address']['house_number'] : ''}`;
+                } catch {}
+
+                if (description == '<b>Улица: </b>') description = '<p>';
+
+                try {
+                    description += result['wikipedia_extracts']['html'];
+                } catch {}
+
+                try {
+                    description += `<p style="disply: block;"><b>Сайт: </b><a style="text-decoration: underline;" href="${result['url']}">Ознакомиться</a></p>`;
+                } catch {}
+
+                try {
+                    description += `<p><b><a style="text-align: center;" href="${result['wikipedia']}">Больше информации</a></b></p>`;
+                } catch {}
+
+                description += '</p>';
+
+                try {
+                    image = result['preview']['source'];
+                } catch {}
+
+                pageInf.push([urlXids[ind], name, description, image]);
+            }
+        }
+        return [pageInf, coords];
+    };
+
+    useEffect(() => {
+        (async () => {
+            // Get Settings
+            setAccentColor((await getUserSettings(cookieUserAddr))['nrel_accent_color']);
+
+            const queryParams = new URLSearchParams(window.location.search);
+            const coordinatesString = (queryParams.get('coord') ?? '53.931986, 27.668021').split(',');
+            setCoordCenter([coordinatesString[0], coordinatesString[1]]);
+
+            if (queryParams.get('type') == 'des_list') {
+                const urlXids = (queryParams.get('xids') ?? '').split(',');
+                const ans = await des_list(urlXids);
+                setPageInform(ans[0]);
+                setCoordinates(ans[1]);
+                setStartPr(true);
+            } else {
+            }
+        })();
+    }, []);
+
     const open = (index: number) => async (event: React.MouseEvent<HTMLDivElement>) => {
         setLoadError(false);
-        const desireCoordinates = coordinates[index];
-        setPageTitle('');
+        const desireCoordinates = index;
+        console.log(pageInform[index]);
+        setActiveTitle(pageInform[index][1]);
+        setActiveDescription(pageInform[index][2] as string);
+
+        if (pageInform[index][3] != '') {
+            const st = {
+                backgroundImage: `url(${pageInform[index][3]})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                minHeight: '350px',
+                alignItems: 'end',
+                backgroundSize: '100%',
+            };
+            console.log(st);
+            setImageStyles(st);
+            setTextImageStyles({
+                marginBottom: '10px',
+                color: 'white',
+            });
+        } else {
+            setImageStyles({});
+            setTextImageStyles({ color: 'black' });
+        }
+
         setOpenMenu(true);
-        await getInformation(desireCoordinates);
     };
 
     const close = () => {
         setOpenMenu(false);
+    };
+
+    const saveMap = async () => {
+        const template = new ScTemplate();
+        const baseKeynodes = [
+            { id: 'nrel_saved', type: ScType.NodeConstNoRole },
+            { id: 'nrel_main_idtf', type: ScType.NodeConstNoRole },
+            { id: 'nrel_link', type: ScType.NodeConstNoRole },
+        ];
+        const keynodes = await client.resolveKeynodes(baseKeynodes);
+
+        template.tripleWithRelation(
+            cookieUserAddr,
+            ScType.EdgeDCommonVar,
+            [ScType.NodeVar, '_saved'],
+            ScType.EdgeAccessVarPosPerm,
+            keynodes['nrel_saved'],
+        );
+        const result = await client.templateSearch(template);
+        if (result.length == 0) return;
+
+        if (mapName == '') setMapName('Карта');
+
+        const savedAddr = result[0].get('_saved');
+        console.log(savedAddr);
+
+        const construction = new ScConstruction();
+        construction.createNode(ScType.NodeConst, 'saved_maps');
+        construction.createEdge(ScType.EdgeDCommonConst, savedAddr, 'saved_maps');
+        construction.createLink(
+            ScType.LinkConst,
+            new ScLinkContent(mapName as string, ScLinkContentType.String),
+            'name_link',
+        );
+        construction.createLink(
+            ScType.LinkConst,
+            new ScLinkContent(window.location.href as string, ScLinkContentType.String),
+            'href_link',
+        );
+        construction.createEdge(ScType.EdgeDCommonConst, 'saved_maps', 'name_link', 'edge1');
+        construction.createEdge(ScType.EdgeDCommonConst, 'saved_maps', 'href_link', 'edge2');
+        construction.createEdge(ScType.EdgeAccessConstPosPerm, keynodes['nrel_main'], 'edge1');
+        construction.createEdge(ScType.EdgeAccessConstPosPerm, keynodes['nrel_link'], 'edge2');
+        await client.createElements(construction);
+        setMapName('');
+        setModalSave(false);
+    };
+
+    const openModal = () => {
+        setModalSave(true);
+    };
+
+    const closeModal = () => {
+        setModalSave(false);
+    };
+
+    const updateInputName = (e) => {
+        setMapName(e.target.value);
     };
 
     return (
@@ -89,6 +240,27 @@ export const MapPage = () => {
                 <Arrow></Arrow>
                 <Linktitle className="title">Назад</Linktitle>
             </NavLink>
+            <SaveMap onClick={openModal}>S</SaveMap>
+            <WrapperSavingName style={modalSave ? { zIndex: 1 } : { zIndex: -1 }}>
+                <CloseBtnModal onClick={closeModal} style={{ zIndex: 11 }}></CloseBtnModal>
+                <ModalName>
+                    <h2>Сохранить карту</h2>
+                    <NameInput placeholder="Название" onChange={(e) => updateInputName(e)}></NameInput>
+                    <SaveNameButton style={{ background: accentColor }} onClick={() => saveMap()}>
+                        Сохранить
+                    </SaveNameButton>
+                </ModalName>
+            </WrapperSavingName>
+            <Loading
+                style={
+                    !startPr
+                        ? { opacity: 1, background: 'rgba(0, 0, 0, 0.8)' }
+                        : { opacity: 0, background: 'rgba(0, 0, 0, 0.8)', zIndex: 0 }
+                }
+            >
+                <SpanLoader style={{ background: accentColor }}></SpanLoader>
+                <Error style={loadError ? { opacity: 1 } : { opacity: 0 }}>Ошибка сети.</Error>
+            </Loading>
             <YMaps>
                 <Map defaultState={{ center: coordCenter, zoom: zoomValue }} width="100%" height="100%">
                     {coordinates.map((coordinate, index) => (
@@ -97,18 +269,20 @@ export const MapPage = () => {
                 </Map>
             </YMaps>
             <Menu style={openMenu ? openStyle : {}} className="container_menu">
-                <Loading style={pageTitle == '' ? { opacity: 1 } : { opacity: 0 }}>
+                <Loading style={!startPr ? { opacity: 1, zIndex: 100 } : { opacity: 0, zIndex: -1 }}>
                     <SpanLoader style={{ background: accentColor }}></SpanLoader>
                     <Error style={loadError ? { opacity: 1 } : { opacity: 0 }}>Ошибка сети.</Error>
                 </Loading>
                 <Information>
-                    <InformationHeader>
-                        <Inf>
-                            <p style={{ color: 'black', fontSize: '20px' }}>{pageTitle}</p>
+                    <InformationHeader style={imageStyles}>
+                        <Inf style={imageTextStyles}>
+                            <p style={{ fontSize: '20px' }}>{activeTitle}</p>
                         </Inf>
                         <CloseBtn onClick={close}></CloseBtn>
                     </InformationHeader>
-                    <InformationText></InformationText>
+                    <InformationText>
+                        <div dangerouslySetInnerHTML={{ __html: activeDescription }} />
+                    </InformationText>
                 </Information>
             </Menu>
         </>

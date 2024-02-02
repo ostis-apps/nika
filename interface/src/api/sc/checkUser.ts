@@ -162,7 +162,6 @@ export const getUserSettings = async (userAddr: ScAddr) => {
             const idtf = String(await healper.getSystemIdentifier(result[i].get('_setting_rel')));
             settings[idtf] = String((await client.getLinkContents([result[i].get('_setting_value')]))[0].data);
         }
-        console.log(settings);
         return settings;
     }
     return '';
