@@ -24,7 +24,7 @@ import { routes } from '@constants';
 import { ScAddr, ScConstruction, ScLinkContent, ScLinkContentType } from 'ts-sc-client';
 import { ScTemplate, ScType, ScEventType } from 'ts-sc-client';
 import { Redirect } from 'react-router';
-import { checkUser, getUserName } from '@api/sc/checkUser';
+import { checkUser, getUserName, getUserSettings } from '@api/sc/checkUser';
 import { ReactComponent as LangIcon } from '@assets/icon/lang.svg';
 import { ReactComponent as SavedIcon } from '@assets/icon/saved.svg';
 import Cookie from 'universal-cookie';
@@ -40,6 +40,8 @@ export const Home = () => {
     const [redirectError, setRedirectError] = useState<boolean | undefined>(undefined);
     const [noDesireError, setNoDesireError] = useState<boolean | undefined>(undefined);
     const [userName, setUserName] = useState<string | undefined>(undefined);
+
+    const [params, setParams] = useState<{}>({});
 
     const check = async () => {
         if (cookieUserAddr.isValid() && cookiePassword) {
@@ -60,6 +62,7 @@ export const Home = () => {
     useEffect(() => {
         (async () => {
             check();
+            setParams(await getUserSettings(cookieUserAddr));
         })();
     }, []);
 
@@ -75,11 +78,13 @@ export const Home = () => {
             {redirectError ? <Redirect to={{ pathname: routes.LOGIN }} /> : ''}
             {noDesireError ? <Redirect to={{ pathname: routes.INTRO }} /> : ''}
 
-            <div>
+            <div style={params['nrel_theme'] == 'light' ? { background: 'white' } : {}}>
                 <WrapperCircle></WrapperCircle>
 
                 <WrapperInf>
-                    <WrapperHead>
+                    <WrapperHead
+                        style={params['nrel_theme'] == 'light' ? { background: params['nrel_accent_color'] } : {}}
+                    >
                         <ContainerInf>
                             <ContentHead>
                                 <UserName onClick={(e) => logoutUser(e)}>{userName}</UserName>
