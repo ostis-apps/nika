@@ -75,9 +75,6 @@ export const InformationHeader = styled.div`
     display: flex;
     min-height: 50px;
     background: #b3b3b3;
-    background-repeat: 'no-repeat';
-    background-position: 'center';
-    background-size: 'cover';
     border-radius: 0 0 10px 10px;
     p {
         padding-left: 10px;
@@ -114,9 +111,37 @@ export const CloseBtn = styled.div`
         transform: translate(-50%, -50%) rotate(-45deg);
     }
 `;
+
+export const CloseBtnModal = styled.div`
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 101;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    :before,
+    :after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 2px;
+        background-color: white;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    :after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+`;
+
 export const InformationText = styled.div`
     p {
         margin: 10px;
+    }
+    * {
+        color: black;
     }
 `;
 
@@ -130,7 +155,7 @@ export const Loading = styled.div`
     width: 100%;
     height: 100%;
     z-index: 100;
-    // background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -168,4 +193,77 @@ export const SpanLoader = styled.span`
 export const Error = styled.p`
     color: red;
     font-weight: 700;
+`;
+
+export const SaveMap = styled.button`
+    border: none;
+    background: red;
+    position: absolute;
+    text-decoration: none;
+    z-index: 1;
+    top: 60px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const WrapperSavingName = styled.div`
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    z-index: 10;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+`;
+
+export const ModalName = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px auto;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+    padding: 10px;
+    background: black;
+    h2 {
+        color: white;
+        text-align: center;
+        font-weight: 700;
+        font-size: 20px;
+    }
+`;
+
+export const NameInput = styled.input`
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    color: black;
+`;
+
+export const SaveNameButton = styled.button`
+    disply: block;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.5s ease;
+    :hover {
+        opacity: 0.5;
+    }
 `;
