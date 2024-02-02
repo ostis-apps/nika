@@ -267,3 +267,16 @@ export const SaveNameButton = styled.button`
         opacity: 0.5;
     }
 `;
+
+export const Line = styled.div`
+    width: 100%;
+    background: black;
+    height: 2px;
+`;
+
+export const BtnSavePoint = styled.div`
+    display: inline-block;
+    margin: 10px;
+    padding: 20px;
+    background: red;
+`;

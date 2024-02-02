@@ -21,6 +21,8 @@ import {
     ModalName,
     NameInput,
     SaveNameButton,
+    Line,
+    BtnSavePoint,
 } from './styled';
 import { getUserSettings } from '@api/sc/checkUser';
 import Cookie from 'universal-cookie';
@@ -87,8 +89,8 @@ export const MapPage = () => {
                 } catch {}
 
                 try {
-                    description = `<p><b>Улица:</b>`;
-                    description += `${result['address']['city_district']}, `;
+                    description = `<p><b>Улица: </b>`;
+                    if (result['address']['city_district']) description += `${result['address']['city_district']}, `;
                 } catch {}
 
                 try {
@@ -103,7 +105,8 @@ export const MapPage = () => {
                 } catch {}
 
                 try {
-                    description += `<p style="disply: block;"><b>Сайт: </b><a style="text-decoration: underline;" href="${result['url']}">Ознакомиться</a></p>`;
+                    if (result['url'])
+                        description += `<p style="disply: block;"><b>Сайт: </b><a style="text-decoration: underline;" href="${result['url']}">Ознакомиться</a></p>`;
                 } catch {}
 
                 try {
@@ -165,7 +168,10 @@ export const MapPage = () => {
                 color: 'white',
             });
         } else {
-            setImageStyles({});
+            setImageStyles({
+                background: accentColor,
+                backdropFilter: 'opacity(30%)',
+            });
             setTextImageStyles({ color: 'black' });
         }
 
@@ -268,7 +274,7 @@ export const MapPage = () => {
                     ))}
                 </Map>
             </YMaps>
-            <Menu style={openMenu ? openStyle : {}} className="container_menu">
+            <Menu style={openMenu ? { top: 0, right: 0 } : {}} className="container_menu">
                 <Loading style={!startPr ? { opacity: 1, zIndex: 100 } : { opacity: 0, zIndex: -1 }}>
                     <SpanLoader style={{ background: accentColor }}></SpanLoader>
                     <Error style={loadError ? { opacity: 1 } : { opacity: 0 }}>Ошибка сети.</Error>
@@ -282,6 +288,10 @@ export const MapPage = () => {
                     </InformationHeader>
                     <InformationText>
                         <div dangerouslySetInnerHTML={{ __html: activeDescription }} />
+                        <Line></Line>
+                        <div style={{ width: '100%', display: 'flex', justifyContent: 'right' }}>
+                            <BtnSavePoint>L</BtnSavePoint>
+                        </div>
                     </InformationText>
                 </Information>
             </Menu>

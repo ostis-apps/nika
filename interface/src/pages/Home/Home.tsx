@@ -53,7 +53,6 @@ export const Home = () => {
                 setNoDesireError(true);
                 return;
             } else {
-                console.log(name);
                 setUserName(name);
             }
         } else setRedirectError(true);
@@ -63,6 +62,7 @@ export const Home = () => {
         (async () => {
             check();
             setParams(await getUserSettings(cookieUserAddr));
+            console.log(params);
         })();
     }, []);
 
@@ -78,13 +78,11 @@ export const Home = () => {
             {redirectError ? <Redirect to={{ pathname: routes.LOGIN }} /> : ''}
             {noDesireError ? <Redirect to={{ pathname: routes.INTRO }} /> : ''}
 
-            <div style={params['nrel_theme'] == 'light' ? { background: 'white' } : {}}>
+            <div style={params['nrel_theme'] == 'light' ? { background: params['nrel_accent_color'] } : {}}>
                 <WrapperCircle></WrapperCircle>
 
                 <WrapperInf>
-                    <WrapperHead
-                        style={params['nrel_theme'] == 'light' ? { background: params['nrel_accent_color'] } : {}}
-                    >
+                    <WrapperHead style={params['nrel_theme'] == 'light' ? { border: '1ps solid white' } : {}}>
                         <ContainerInf>
                             <ContentHead>
                                 <UserName onClick={(e) => logoutUser(e)}>{userName}</UserName>

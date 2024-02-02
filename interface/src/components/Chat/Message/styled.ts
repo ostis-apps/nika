@@ -8,7 +8,8 @@ export const WrapperMessage = styled.div<{ isLeft: boolean }>`
     padding: 12px 12px 12px 12px;
     align-self: ${(props) => (props.isLeft ? 'start' : 'end')};
     background: ${(props) => (props.isLeft ? '#202221' : 'rgb(52,91,102);')};
-    background: ${(props) => (props.isLeft ? '#333436' : 'linear-gradient(347deg, rgba(52,91,102,1) 0%, rgba(100,158,157,1) 100%); ')};
+    background: ${(props) =>
+        props.isLeft ? '#333436' : 'linear-gradient(347deg, rgba(52,91,102,1) 0%, rgba(100,158,157,1) 100%); '};
     border-radius: 20px;
     word-break: break-word;
 

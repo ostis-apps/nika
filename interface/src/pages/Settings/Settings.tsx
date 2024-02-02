@@ -28,6 +28,8 @@ export const Settings = () => {
     const [savedSettings, setSavedSettings] = useState<boolean>(false);
     const [redirectError, setRedirectError] = useState<boolean>(false);
 
+    const [params, setParams] = useState<{}>({});
+
     const logoutUser = () => {
         cookie.remove('userAddr');
         cookie.remove('pass');
@@ -87,18 +89,18 @@ export const Settings = () => {
         await updateSettings(userAddr, 'nrel_accent_color', settingAccentColor);
         await updateSettings(userAddr, 'nrel_lang', settingLang);
         await updateSettings(userAddr, 'nrel_invalid', settingInvalideMode);
-
-        location.reload();
+        setSettings(await getUserSettings(userAddr));
     };
 
     const Main = styled.div`
         display: flex;
         width: 100%;
         height: 100%;
+        transition: all 0.5s ease;
     `;
 
     return (
-        <Main>
+        <Main style={settings['nrel_theme'] == 'light' ? { background: settings['nrel_accent_color'] } : {}}>
             {savedSettings ? <Redirect to={{ pathname: routes.HOME }} /> : ''}
             {redirectError ? <Redirect to={{ pathname: routes.LOGIN }} /> : ''}
 
@@ -139,7 +141,16 @@ export const Settings = () => {
                             checked={settingInvalideMode == 'on' ? true : false}
                         />
                     </Setting>
-                    <SaveSettings onClick={saveSettings}>Сохранить</SaveSettings>
+                    <SaveSettings
+                        style={
+                            settings['nrel_theme'] == 'light'
+                                ? { background: 'rgb(51, 47, 47)' }
+                                : { background: settings['nrel_accent_color'] }
+                        }
+                        onClick={saveSettings}
+                    >
+                        Сохранить
+                    </SaveSettings>
                 </WrapperSettings>
             </Container>
         </Main>

@@ -58,7 +58,6 @@ export const SaveSettings = styled.button`
     border-radius: 10px;
     cursor: pointer;
     font-weight: 900;
-    background: #538689;
     color: white;
     font-size: 14px;
     transition: all 0.5s ease;
