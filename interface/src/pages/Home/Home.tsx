@@ -97,7 +97,7 @@ export const Home = () => {
                         <BtnChat href={routes.CHAT}>Чат</BtnChat>
                         <WrapperBtns>
                             <BtnGames href={routes.CHAT}>Развлечения</BtnGames>
-                            <BtnSaved href={routes.CHAT}>
+                            <BtnSaved href={routes.SAVED}>
                                 <WrapperSaved>
                                     <SavedIcon style={savedStyles} />
                                 </WrapperSaved>

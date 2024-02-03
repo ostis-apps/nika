@@ -1,24 +1,5 @@
 import React, { useEffect, useState, useReducer, ChangeEvent } from 'react';
-import {
-    WrapperCircle,
-    WrapperInf,
-    ContainerInf,
-    WrapperBtns,
-    WrapperHead,
-    WrapperWidget,
-    ContentHead,
-    LangBtn,
-    UserName,
-    BtnChat,
-    BtnSaved,
-    BtnGames,
-    WidgetWeather,
-    WidgetMap,
-    langStyles,
-    BtnsContainer,
-    savedStyles,
-    WrapperSaved,
-} from './styled';
+import { Wrapper, Container, WrapperLinks, Link } from './styled';
 import { client } from '@api';
 import { routes } from '@constants';
 import { ScAddr, ScConstruction, ScLinkContent, ScLinkContentType } from 'ts-sc-client';
@@ -41,6 +22,9 @@ export const Saved = () => {
     const [noDesireError, setNoDesireError] = useState<boolean | undefined>(undefined);
     const [userName, setUserName] = useState<string | undefined>(undefined);
 
+    const [links, setLinks] = useState<String[]>([]);
+    const [linkNames, setLinkNames] = useState<String[]>([]);
+
     const check = async () => {
         if (cookieUserAddr.isValid() && cookiePassword) {
             const name = await getUserName(cookieUserAddr);
@@ -59,54 +43,71 @@ export const Saved = () => {
     useEffect(() => {
         (async () => {
             check();
+
+            const template = new ScTemplate();
+            const baseKeynodes = [
+                { id: 'nrel_saved', type: ScType.NodeConstNoRole },
+                { id: 'nrel_main_idtf', type: ScType.NodeConstNoRole },
+                { id: 'nrel_link', type: ScType.NodeConstNoRole },
+            ];
+            const keynodes = await client.resolveKeynodes(baseKeynodes);
+            let varNameLinks: String[] = [],
+                varLinks: String[] = [];
+
+            template.tripleWithRelation(
+                cookieUserAddr,
+                ScType.EdgeDCommonVar,
+                [ScType.NodeVar, '_saved'],
+                ScType.EdgeAccessVarPosPerm,
+                keynodes['nrel_saved'],
+            );
+
+            template.triple('_saved', ScType.EdgeDCommonVar, [ScType.NodeVar, '_saved_map']);
+
+            template.tripleWithRelation(
+                '_saved_map',
+                ScType.EdgeDCommonVar,
+                [ScType.LinkVar, '_link_name'],
+                ScType.EdgeAccessVarPosPerm,
+                keynodes['nrel_main_idtf'],
+            );
+
+            template.tripleWithRelation(
+                '_saved_map',
+                ScType.EdgeDCommonVar,
+                [ScType.LinkVar, '_link_href'],
+                ScType.EdgeAccessVarPosPerm,
+                keynodes['nrel_link'],
+            );
+            const result = await client.templateSearch(template);
+
+            if (result.length > 0) {
+                for (let i = 0; i < result.length; i++) {
+                    const element = result[i];
+                    const href = String((await client.getLinkContents([element.get('_link_href')]))[0].data);
+                    const name = String((await client.getLinkContents([element.get('_link_name')]))[0].data);
+                    varNameLinks.push(name);
+                    varLinks.push(href);
+                }
+            }
+
+            setLinkNames(varNameLinks);
+            setLinks(varLinks);
         })();
     }, []);
 
-    const logoutUser = (e) => {
-        e.preventDefault();
-        cookie.remove('userAddr');
-        cookie.remove('pass');
-        setRedirectError(true);
-    };
-
     return (
-        <div>
-            {redirectError ? <Redirect to={{ pathname: routes.LOGIN }} /> : ''}
-            {noDesireError ? <Redirect to={{ pathname: routes.INTRO }} /> : ''}
-
-            <div>
-                <WrapperCircle></WrapperCircle>
-
-                <WrapperInf>
-                    <WrapperHead>
-                        <ContainerInf>
-                            <ContentHead>
-                                <UserName href={routes.SETTINGS}>{userName}</UserName>
-                                <LangBtn>
-                                    <LangIcon style={langStyles} />
-                                </LangBtn>
-                            </ContentHead>
-                        </ContainerInf>
-                    </WrapperHead>
-
-                    <BtnsContainer>
-                        <BtnChat href={routes.CHAT}>Chat</BtnChat>
-                        <WrapperBtns>
-                            <BtnGames href={routes.CHAT}>Games</BtnGames>
-                            <BtnSaved href={routes.CHAT}>
-                                <WrapperSaved>
-                                    <SavedIcon style={savedStyles} />
-                                </WrapperSaved>
-                            </BtnSaved>
-                        </WrapperBtns>
-                    </BtnsContainer>
-
-                    <WrapperWidget>
-                        <WidgetWeather>Weather</WidgetWeather>
-                        <WidgetMap>Map</WidgetMap>
-                    </WrapperWidget>
-                </WrapperInf>
-            </div>
-        </div>
+        <>
+            <Wrapper>
+                <Container>
+                    <h2>Сохраненное</h2>
+                    <WrapperLinks>
+                        {linkNames.map((item, index) => {
+                            return <Link href={links[index] as string}>{item}</Link>;
+                        })}
+                    </WrapperLinks>
+                </Container>
+            </Wrapper>
+        </>
     );
 };

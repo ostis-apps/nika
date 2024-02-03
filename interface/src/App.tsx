@@ -23,6 +23,7 @@ const Home = loadingComponent(lazy(() => import('@pages/Home')));
 const Profile = loadingComponent(lazy(() => import('@pages/Profile')));
 const Settings = loadingComponent(lazy(() => import('@pages/Settings')));
 const Saved = loadingComponent(lazy(() => import('@pages/Saved')));
+const OwnMap = loadingComponent(lazy(() => import('@pages/OwnMap')));
 
 const DemoRoutes = () => (
     <>
@@ -36,6 +37,14 @@ const SavedRoutes = () => (
     <>
         <Route path={routes.SAVED}>
             <Saved />
+        </Route>
+    </>
+);
+
+const OwnMapRoutes = () => (
+    <>
+        <Route path={routes.OWNMAP}>
+            <OwnMap />
         </Route>
     </>
 );
@@ -170,6 +179,7 @@ export const App = () => {
             <ProfileRoutes />
             <SettingsRoutes />
             <IntroRoutes />
+            <OwnMapRoutes />
         </Content>
     );
 };

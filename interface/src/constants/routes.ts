@@ -7,3 +7,4 @@ export const HOME = '/home' as const;
 export const SETTINGS = '/settings' as const;
 export const PROFILE = '/profile' as const;
 export const SAVED = '/saved' as const;
+export const OWNMAP = '/own_map' as const;
