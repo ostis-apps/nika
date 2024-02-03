@@ -2,19 +2,24 @@ import styled from 'styled-components';
 import { ChatPageWrapper } from '@components/ChatPageWrapper';
 
 export const Wrapper = styled(ChatPageWrapper)`
-    grid-template-areas:
-        'chat scgViewer'
-        'chat scgViewer';
-    grid-gap: 11px;
+    display: block;
 `;
 
 export const ChatWrapper = styled.div`
     grid-area: chat;
 `;
 
-export const SCgViewerWrapper = styled.div`
-    grid-area: scgViewer;
-    height: 100%;
-    box-shadow: 10px 4px 15px rgb(0 0 0 / 25%);
-    border-radius: 15px;
+export const BackBtn = styled.a`
+    z-index: 100;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    background: red;
+    transition: all 0.5s ease;
+    border-radius: 10px;
+    :hover {
+        opacity: 0.5;
+    }
 `;
