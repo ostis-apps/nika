@@ -42,6 +42,7 @@ export const Intro = () => {
     const [savedDesires, setSavedDesires] = useState<boolean>(false);
     const [errorNameUserEmpty, setErrorNameUserEmpty] = useState<boolean>(false);
     const [desiresCountError, setDesiresCountError] = useState<boolean>(false);
+    const [desireImages, setDesireImages] = useState<String[]>([]);
 
     const [nameUser, setNameUser] = useState<string>('');
 
@@ -63,57 +64,63 @@ export const Intro = () => {
     const [, forceUpdate] = useReducer((x) => x + 1, 0);
 
     const findKb = async () => {
-        const conceptInfrastructure = 'concept_infrastructure';
-        const langRu = 'lang_ru';
-        const componentInclusion = 'nrel_inclusion';
-        const componentNrelMainIdtf = 'nrel_main_idtf';
+        let desireImages: String[] = [];
 
         const baseKeynodes = [
-            { id: conceptInfrastructure, type: ScType.NodeConstClass },
-            { id: langRu, type: ScType.NodeConstClass },
+            { id: 'concept_infrastructure', type: ScType.NodeConstClass },
+            { id: 'lang_ru', type: ScType.NodeConstClass },
         ];
 
         const helpKeynodes = [
-            { id: componentInclusion, type: ScType.NodeConstNoRole },
-            { id: componentNrelMainIdtf, type: ScType.NodeConstNoRole },
+            { id: 'nrel_inclusion', type: ScType.NodeConstNoRole },
+            { id: 'nrel_main_idtf', type: ScType.NodeConstNoRole },
+            { id: 'nrel_image', type: ScType.NodeConstNoRole },
         ];
         const keynodes = await client.resolveKeynodes(baseKeynodes);
         const hKeynodes = await client.resolveKeynodes(helpKeynodes);
 
-        const typeDesiresClass = '_type_desires';
-        const desire = '_desire';
-        const desireText = '_desire_text';
-
         const template = new ScTemplate();
         template.tripleWithRelation(
-            keynodes[conceptInfrastructure],
+            keynodes['concept_infrastructure'],
             ScType.EdgeDCommonVar,
-            [ScType.NodeVarClass, typeDesiresClass],
+            [ScType.NodeVarClass, '_type_desires'],
             ScType.EdgeAccessVarPosPerm,
-            hKeynodes[componentInclusion],
+            hKeynodes['nrel_inclusion'],
         );
-        template.triple(typeDesiresClass, ScType.EdgeAccessVarPosPerm, [ScType.NodeVarClass, desire]);
+        template.triple('_type_desires', ScType.EdgeAccessVarPosPerm, [ScType.NodeVarClass, '_desire']);
         template.tripleWithRelation(
-            desire,
+            '_desire',
             ScType.EdgeDCommonVar,
-            [ScType.LinkVar, desireText],
+            [ScType.LinkVar, '_desire_text'],
             ScType.EdgeAccessVarPosPerm,
-            hKeynodes[componentNrelMainIdtf],
+            hKeynodes['nrel_main_idtf'],
         );
-        template.triple(keynodes[langRu], ScType.EdgeAccessVarPosPerm, desireText);
+        template.tripleWithRelation(
+            '_desire',
+            ScType.EdgeDCommonVar,
+            [ScType.LinkVar, 'desireImage'],
+            ScType.EdgeAccessVarPosPerm,
+            hKeynodes['nrel_image'],
+        );
+
+        template.triple(keynodes['lang_ru'], ScType.EdgeAccessVarPosPerm, '_desire_text');
         const result = await client.templateSearch(template);
 
         let a: DesireDesc[] = [];
         for (let i = 0; i < result.length; i++) {
-            const linkTitle = result[i].get(desireText);
+            const linkTitle = result[i].get('_desire_text');
             const resTitle = await client.getLinkContents([linkTitle]);
             const title = String(resTitle[0].data);
+            desireImages.push(String((await client.getLinkContents([result[i].get('desireImage')]))[0].data));
 
-            const desireAddr = result[i].get(desire);
+            console.log(await client.getLinkContents([result[i].get('desireImage')]));
+
+            const desireAddr = result[i].get('_desire');
             const desireObj: DesireDesc = { title: title, img: '', desireAddr: desireAddr, isSelected: false };
             a.push(desireObj);
         }
         setDesires(a);
+        setDesireImages(desireImages);
     };
 
     useEffect(() => {
@@ -160,8 +167,10 @@ export const Intro = () => {
 
             construction.createNode(ScType.NodeConst, 'desires');
             for (let i = 0; i < desires.length; i++)
-                if (desires[i].isSelected)
+                if (desires[i].isSelected) {
+                    console.log(desires[i].desireAddr);
                     construction.createEdge(ScType.EdgeAccessConstPosPerm, 'desires', desires[i].desireAddr);
+                }
 
             construction.createEdge(ScType.EdgeDCommonConst, userAddr, 'desires', 'desiresEdge');
             construction.createEdge(ScType.EdgeAccessConstPosPerm, keynodes['nrel_desires'], 'desiresEdge');
@@ -195,7 +204,14 @@ export const Intro = () => {
                     <MainBtnsIntro>
                         {desires.map((item, index) => {
                             return (
-                                <DesireButton key={index} onClick={() => select(item, index)}>
+                                <DesireButton
+                                    style={{
+                                        backgroundImage: `url(${desireImages[index]}) `,
+                                        backgroundSize: 'cover',
+                                    }}
+                                    key={index}
+                                    onClick={() => select(item, index)}
+                                >
                                     <TextButton>{item.title}</TextButton>
                                     <LinerBtns></LinerBtns>
                                     <SelectMask style={item.isSelected ? opacity : undefined}>✓</SelectMask>

@@ -29,7 +29,8 @@ from sc_kpm import ScKeynodes
 
 import requests
 from random import randint
-API_KEY = '5b3ce3597851110001cf62484e61be75f1be4fd19569f26fa1371ce0'
+api_key = '5ae2e3f221c38a28845f05b6c5d9bf667efa63f94dcb0e435b058e95'
+import pymorphy2
 
 
 logging.basicConfig(
@@ -90,14 +91,7 @@ class FindSomePlacesAgent(ScAgentClassic):
                 self.set_unknown_city_link(action_node, answer_phrase)
                 return ScResult.OK
 
-            self.logger.info(f"{desire_addr} {city_addr}")
-            if not desire_addr.is_valid():
-                self.logger.info(f"Desire not valid")
-                self.set_unknown_city_link(action_node, answer_phrase)
-                return ScResult.ERROR
-            self.logger.info(f"2")
-            desire_idtf_link = desire_addr
-
+            desire = get_link_content_data(self.get_entity_addr(message_addr, rrel_desire))
         except:
             self.logger.info(f"FindSomPlacesAgent: finished with an error")
             return ScResult.ERROR
@@ -108,7 +102,6 @@ class FindSomePlacesAgent(ScAgentClassic):
         attractions = ''
 
         city_idtf = get_link_content_data(city_idtf_link)
-        desire = get_link_content_data(desire_idtf_link)
         s1 = f'<p>В городе {city_idtf} есть:</p>'
         s2 = f'<p>По запросу в городе {city_idtf} было найдено:</p>'
         phrases = [s1, s2]
@@ -118,56 +111,57 @@ class FindSomePlacesAgent(ScAgentClassic):
         try:
 
             coordinates = requests.get(
-                f'https://geocode.maps.co/search?city={city_idtf}&country=Беларусь').json()[0]
+                    f'https://geocode.maps.co/search?city={city_idtf}&country=Беларусь').json()[0]
 
             # We need take from kb a city with english lang
-            city = coordinates['display_name'].split(',')[0]
+            lat = coordinates['lat']
+            lon = coordinates['lon']
+            xids = ''
 
-            minx = coordinates['boundingbox'][0]
-            maxx = coordinates['boundingbox'][1]
-            miny = coordinates['boundingbox'][2]
-            maxy = coordinates['boundingbox'][3]
-            print(desire)
             places = requests.get(
-                f"https://api.openrouteservice.org/geocode/search?api_key={API_KEY}&text={desire}&sources=openstreetmap,openaddresses,geonames,whosonfirst&boundary.rect.min_lat={minx}&boundary.rect.max_lat={maxx}&boundary.rect.min_lon={miny}&boundary.rect.max_lon={maxy}"
+                f"http://api.opentripmap.com/0.1/ru/places/autosuggest?lang=ru_RU&name={desire}&radius=100000&lon={lon}&lat={lat}&apikey={api_key}"
             ).json()['features']
 
-            print(places)
+
+            if (len(places) == 0):
+                morph = pymorphy2.MorphAnalyzer()
+                simple = ((morph.parse(desire)[0]).inflect({'accs'})).normal_form
+
+                places1 = requests.get(f"http://api.opentripmap.com/0.1/ru/places/autosuggest?lang=ru_RU&name={simple}&radius=100000&lon={lon}&lat={lat}&apikey={api_key}").json()['features']
+
+                for item in places1:
+                    places.append(item)
             
+
+            print(places)
             kol = 0
             for item in places:
+                print()
                 print(item)
-                name.append(item['properties']['name'])
+                xid = item['properties']['xid']
+
+                details = requests.get(f'http://api.opentripmap.com/0.1/ru/places/xid/{xid}?apikey={api_key}').json()
+
+                attractions += f"~ {details['name']}"
+
+                xids += f'{xid},'
 
                 try:
-                    adr.append(f"{item['properties']['street']} {item['properties']['housenumber']}")
-                except:
-                    adr.append('-')
+                    attractions += f"<p style='opacity: 0.7'>{details['address']['road']} {details['address']['house_number']}</p>"
 
-                self.logger.info(f"{item}")
-                attractions += f"{item['properties']['name']}<br>"
-
-                try:
-                    attractions += f"<p style='opacity: 0.7'>{item['properties']['street']} {item['properties']['housenumber']}</p>"
-                    kol += 1
                 except:
-                    attractions += f"<p style='opacity: 0.7'> -</p>"
+                    attractions += f"<p style='opacity: 0.7'> - </p>"
                 
-                if kol == 5:
+                if kol == 7:
                     break
 
-            coordString = ''
-            for i in range(0, len(xids)):
-                coordString += str(xids[i]) + ','
-                    
-            attractions += '<a class="build_map" href="http://c3337100.beget.tech/index.html?x=' + str(coordinates["lon"]) + "&y=" + str(coordinates["lat"]) + "&id=" + coordString + '" style="transition: all .6s ease; display: inline-block; padding: 10px 20px; margin: auto; background: blue; background: #262626; text-decoration: none; border-radius: 10px;">Построить карту</a>'
+            attractions += f'<a class="build_map" href="../map?coord={coordinates["lat"]},{coordinates["lon"]}&xids={xids}&type=des_list" style="transition: all .6s ease; display: inline-block; padding: 10px 20px; margin: auto; background: blue; background: #262626; text-decoration: none; border-radius: 10px; color: #538689;">Построить карту</a>'
 
 
         except requests.exceptions.ConnectionError:
             self.logger.info(f"FindSomePlacesAgent: finished with connection error")
             return ScResult.ERROR
         
-        print(attractions)
         link = create_link(
             str(attractions), ScLinkContentType.STRING, link_type=sc_types.LINK_CONST)
         nrel_format = ScKeynodes.resolve(

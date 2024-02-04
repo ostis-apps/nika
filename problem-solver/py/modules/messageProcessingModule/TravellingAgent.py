@@ -121,7 +121,18 @@ class TravellingAgent(ScAgentClassic):
         desires = []
         for desire in result:
             desire_addr = desire.get('_desire_addr')
-            desires.append(get_link_content_data(self.get_ru_idtf(desire_addr)))
+            content = get_link_content_data(self.get_ru_idtf(desire_addr))
+            desires.append(content)
+
+            if (content == 'отель'):
+                desires.append('гостиница')
+            elif (content == 'сауна'):
+                desires.append('баня')
+            elif (content == 'сауна'):
+                desires.append('баня')
+            elif (content == 'скульптура'):
+                desires.append('памятник')
+
             
         xids = ''
         attraction = []
@@ -140,11 +151,9 @@ class TravellingAgent(ScAgentClassic):
             lon = coordinates['lon']
 
             desire_kol = choice([9, 10, 11, 12])
+            d_kol = desire_kol
 
-            for i in range(desire_kol):
-                print(i)
-                if (len(desires) == 0):
-                    break
+            while desire_kol > 0 and len(desires) > 0:
                 ind = randint(0, len(desires)-1);
                 item = desires[ind];
                 desires.pop(ind);
@@ -154,15 +163,14 @@ class TravellingAgent(ScAgentClassic):
                     f'http://api.opentripmap.com/0.1/ru/places/autosuggest?lang=ru_RU&name={item}&radius=100000&lon={lon}&lat={lat}&apikey={api_key}'
                 ).json()['features']
 
-                print(places)
-
                 try:
                     # Code for choosing place 
-                    index_place = len(places) % 3;
-                    for i in range(index_place):
-                        attraction.append(places[i])
-
-                    kol += 1
+                    if len(places) > 0:
+                        index_place = len(places) % 4;
+                        for i in range(index_place):
+                            attraction.append(places[i])
+                        kol += 1;
+                        desire_kol -= 1
                 except:
                     print(item)
 
@@ -172,17 +180,20 @@ class TravellingAgent(ScAgentClassic):
             else:
                 kol = 0
                 
-                while kol < desire_kol and len(attraction) > 0:
+                while kol < d_kol and len(attraction)>  0:
                     placeID = randint(0, len(attraction)-1)
                     place = attraction[placeID]
                     attraction.pop(placeID) 
 
                     xid = place['properties']['xid']
+                    print(len(attraction))
+                    print(1)
 
                     try:
                         details = requests.get(f'http://api.opentripmap.com/0.1/ru/places/xid/{xid}?apikey={api_key}').json()
 
                         attractions += f"~ {details['name']}"
+                        print(attractions)
                         xids += f'{xid},'
 
                         try:
@@ -194,6 +205,7 @@ class TravellingAgent(ScAgentClassic):
                         kol += 1
                     except:
                         continue
+                    print(1)
 
 
                 attractions += f'<a class="build_map" href="../map?coord={coordinates["lat"]},{coordinates["lon"]}&xids={xids}&type=des_list" style="transition: all .6s ease; display: inline-block; padding: 10px 20px; margin: auto; background: blue; background: #262626; text-decoration: none; border-radius: 10px; color: #538689;">Построить карту</a>'

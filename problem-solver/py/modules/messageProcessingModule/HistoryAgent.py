@@ -94,6 +94,7 @@ class HistoryAgent(ScAgentClassic):
             description = get_link_content_data(description_link_addr)
         else:
             city_idtf = get_link_content_data(city_addr)
+            print(city_idtf)
             try:
                 set_lang("ru")
                 array = page("Город " + city_idtf + " (Беларусь)").images

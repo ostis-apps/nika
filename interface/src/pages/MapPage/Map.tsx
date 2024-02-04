@@ -41,7 +41,7 @@ export const MapPage = () => {
     const [coordinates, setCoordinates] = useState<String[][]>([[]]);
     const [xids, setXids] = useState<String[]>([]);
     const [coordCenter, setCoordCenter] = useState<String[]>([]);
-    const [zoomValue, setZoomValue] = useState<Number>(10);
+    const [zoomValue, setZoomValue] = useState<Number>(12);
 
     const [accentColor, setAccentColor] = useState<string | undefined>('black');
     const [loadError, setLoadError] = useState<Boolean>(false);

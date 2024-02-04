@@ -86,6 +86,8 @@ class RandomAgent(ScAgentClassic):
         for item in result:
             cities.append(item.get("_city_addr"))
 
+        print(cities)
+
         if len(cities) == 0:
             no_city = True
             cities = ['Минск', 'Борисов', 'Солигорск', 'Молодечно', 'Жодино', 'Слуцк', 'Дзержинск', 'Вилейка',
