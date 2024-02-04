@@ -206,7 +206,7 @@ export const Intro = () => {
                             return (
                                 <DesireButton
                                     style={{
-                                        backgroundImage: `url(${desireImages[index]}) `,
+                                        backgroundImage: `url(data:image/jpeg;base64,${desireImages[index]}) `,
                                         backgroundSize: 'cover',
                                     }}
                                     key={index}

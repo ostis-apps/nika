@@ -7,7 +7,6 @@ import {
     WrapperHead,
     WrapperWidget,
     ContentHead,
-    LangBtn,
     UserName,
     BtnChat,
     BtnSaved,
@@ -28,6 +27,7 @@ import { checkUser, getUserName, getUserSettings } from '@api/sc/checkUser';
 import { ReactComponent as LangIcon } from '@assets/icon/lang.svg';
 import { ReactComponent as SavedIcon } from '@assets/icon/saved.svg';
 import Cookie from 'universal-cookie';
+import styled from 'styled-components';
 
 export const Home = () => {
     // Get Cookies
@@ -73,13 +73,26 @@ export const Home = () => {
         setRedirectError(true);
     };
 
+    const LangBtn = styled.a`
+        cursor: pointer;
+        background: none;
+        border: none;
+        transition: all 0.5s ease;
+        :hover {
+            opacity: 0.5;
+        }
+        path {
+            fill: ${params['nrel_accent_color'] as string};
+        }
+    `;
+
     return (
         <div>
             {redirectError ? <Redirect to={{ pathname: routes.LOGIN }} /> : ''}
             {noDesireError ? <Redirect to={{ pathname: routes.INTRO }} /> : ''}
 
             <div style={params['nrel_theme'] == 'light' ? { background: params['nrel_accent_color'] } : {}}>
-                <WrapperCircle></WrapperCircle>
+                <WrapperCircle style={{ background: params['nrel_accent_color'] as string }}></WrapperCircle>
 
                 <WrapperInf>
                     <WrapperHead style={params['nrel_theme'] == 'light' ? { border: '1ps solid white' } : {}}>

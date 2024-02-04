@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useReducer, ChangeEvent } from 'react';
-import { WrapperSettings, Container, Setting, SettingsText, SaveSettings } from './styled';
+import { WrapperSettings, Container, Setting, SettingsText, SaveSettings, NavLink, Arrow, Linktitle } from './styled';
 import { client } from '@api';
 import { routes } from '@constants';
 import { ScAddr, ScConstruction, ScLinkContent, ScLinkContentType } from 'ts-sc-client';
@@ -100,10 +100,26 @@ export const Settings = () => {
     `;
 
     return (
-        <Main style={settings['nrel_theme'] == 'light' ? { background: settings['nrel_accent_color'] } : {}}>
+        <Main style={settingTheme == 'light' ? { background: settings['nrel_accent_color'] } : {}}>
             {savedSettings ? <Redirect to={{ pathname: routes.HOME }} /> : ''}
             {redirectError ? <Redirect to={{ pathname: routes.LOGIN }} /> : ''}
 
+            <NavLink
+                href={routes.HOME}
+                style={settingTheme == 'dark' ? { background: '#413d3d' } : { background: 'white' }}
+                className="nav"
+            >
+                <Arrow
+                    style={
+                        settingTheme == 'dark'
+                            ? { border: 'solid white', borderWidth: '0 3px 3px 0' }
+                            : { border: 'solid #413d3d', borderWidth: '0 3px 3px 0' }
+                    }
+                ></Arrow>
+                <Linktitle style={settingTheme == 'dark' ? { color: 'white' } : { color: 'black' }} className="title">
+                    Назад
+                </Linktitle>
+            </NavLink>
             <Container>
                 <SettingsText>Настройки</SettingsText>
                 <WrapperSettings>
@@ -143,7 +159,7 @@ export const Settings = () => {
                     </Setting>
                     <SaveSettings
                         style={
-                            settings['nrel_theme'] == 'light'
+                            settingTheme == 'light'
                                 ? { background: 'rgb(51, 47, 47)' }
                                 : { background: settings['nrel_accent_color'] }
                         }

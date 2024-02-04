@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState, Fragment } from 'react';
-import { Wrapper, ChatWrapper, BackBtn } from './styled';
+import { Wrapper, ChatWrapper, BackBtn, Linktitle, NavLink } from './styled';
 import { Message } from '@components/Chat/Message';
 import { Chat } from '@components/Chat';
 import { Date } from '@components/Chat/Date';
@@ -8,10 +8,11 @@ import { ScAddr } from 'ts-sc-client';
 import { resolveUserAgent } from '@agents/resolveUserAgent';
 import { useChat } from '@hooks/useChat';
 import * as React from 'react';
-import { checkUser, getUserName } from '@api/sc/checkUser';
+import { checkUser, getUserName, getUserSettings } from '@api/sc/checkUser';
 import { Redirect } from 'react-router';
 import Cookie from 'universal-cookie';
 import { SC_WEB_URL } from '@constants';
+import styled from 'styled-components';
 
 export const Demo = () => {
     // Get Cookies
@@ -21,6 +22,7 @@ export const Demo = () => {
 
     const [user, setUser] = useState<ScAddr | null>(null);
     const [isLoading, setIsLoading] = useState(false);
+    const [userTheme, setUserTheme] = useState<String>('dark');
 
     const { initChat, sendMessage, isAgentAnswer, onFetching, messages, chatRef } = useChat(user);
     const onSend = useCallback(
@@ -61,6 +63,13 @@ export const Demo = () => {
 
     useEffect(() => {
         (async () => {
+            const userSettings = await getUserSettings(userAddr);
+            setUserTheme(userSettings['nrel_theme']);
+        })();
+    }, []);
+
+    useEffect(() => {
+        (async () => {
             if ((await check()) == 1) {
                 setIsLoading(true);
                 const user = await resolveUserAgent();
@@ -72,12 +81,39 @@ export const Demo = () => {
         })();
     }, [initChat]);
 
+    const Arrow = styled.div`
+        ${userTheme == 'dark' ? 'border: solid #413d3d' : 'border: solid white'};
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        width: 5px;
+        height: 5px;
+        margin-right: 5px;
+        transform: translate(100%, 0) rotate(135deg);
+        -webkit-transform: translate(100%, 0) rotate(135deg);
+        cursor: pointer;
+    `;
+
     return (
         <>
             {redirectError ? <Redirect to={{ pathname: routes.LOGIN }} /> : ''}
-
+            <NavLink
+                href={routes.HOME}
+                style={userTheme == 'dark' ? { background: '#413d3d' } : { background: 'white' }}
+                className="nav"
+            >
+                <Arrow
+                    style={
+                        userTheme == 'dark'
+                            ? { border: 'solid white', borderWidth: '0 3px 3px 0' }
+                            : { border: 'solid #413d3d', borderWidth: '0 3px 3px 0' }
+                    }
+                ></Arrow>
+                <Linktitle style={userTheme == 'dark' ? { color: 'white' } : { color: 'black' }} className="title">
+                    Назад
+                </Linktitle>
+            </NavLink>
             <Wrapper>
-                <BackBtn href={routes.HOME}></BackBtn>
                 <ChatWrapper>
                     <Chat
                         ref={chatRef}

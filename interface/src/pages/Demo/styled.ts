@@ -23,3 +23,31 @@ export const BackBtn = styled.a`
         opacity: 0.5;
     }
 `;
+
+export const NavLink = styled.a`
+    display: flex;
+    position: absolute;
+    text-decoration: none;
+    z-index: 1;
+    top: 10px;
+    left: 10px;
+    gap: 12px;
+    border-radius: 10px;
+    align-items: center;
+    height: 40px;
+    color: white;
+    margin-right: 10px;
+    background: #413d3d;
+    -webkit-box-shadow: 0px 0px 46px 21px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 0px 46px 21px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 0px 46px 21px rgba(34, 60, 80, 0.2);
+    transition: all 0.5s ease-out;
+    :hover {
+        transform: translate(-5%, 0);
+`;
+
+export const Linktitle = styled.div`
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    padding: 0 10px 0 0;
+`;

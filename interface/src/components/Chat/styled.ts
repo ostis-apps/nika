@@ -15,7 +15,6 @@ export const Wrapper = styled.div`
     background: #101514;
     box-sizing: border-box;
     backdrop-filter: blur(10px);
-    border-radius: 15px;
 `;
 export const SearchBar = styled.div`
     display: flex;
@@ -117,25 +116,24 @@ export const FooterInput = styled.input`
     padding: 15px 15px 15px 18px;
     border-radius: 20px;
     border: none;
-    background-color: #4b5b64;
+    background-color: #ffffff50;
     outline: 0;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 10px;
-    color: #ffffff;
+    color: white;
 `;
 export const FooterSend = styled.button`
-    transition: all .5s ease;
+    transition: all 0.5s ease;
     padding: 13px 12px 13px 6px;
     margin-left: 12px;
     border-radius: 20px;
     border: none;
-    background: #6CB4BA;
     cursor: pointer;
     &:hover {
-        background: #4E7F83;
+        opacity: 0.6;
     }
     &:active {
         box-shadow: 0px 0px 10px #627599;

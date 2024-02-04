@@ -33,6 +33,10 @@ import { Spinner } from '@components/Spinners/LoadSpinner';
 import { WaitingSpinner } from '@components/Spinners/WaitingSpinner';
 import { refSetter, throttle } from '@utils';
 import { useLanguage } from '@hooks/useLanguage';
+import { ScAddr } from 'ts-sc-client';
+import { getUserSettings } from '@api/sc/checkUser';
+import Cookie from 'universal-cookie';
+import styled from 'styled-components';
 
 interface IProps {
     onSend: (message: string) => void;
@@ -64,6 +68,8 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
         const [hasMoreMessages, setHasMoreMessages] = useState(true);
         const [isLoading, setIsLoading] = useState(false);
         const [beforeFetchingScrollHeight, setBeforeFetchingScrollHeight] = useState<number | null>(null);
+        const [userTheme, setUserTheme] = useState<String>('');
+        const [accentColor, setAccentColor] = useState<String>('');
 
         const inputRef = useRef<HTMLInputElement | null>(null);
         const mainRef = useRef<HTMLDivElement>(null);
@@ -146,6 +152,14 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
 
         useEffect(() => {
             (async () => {
+                const cookie = new Cookie();
+                const userAddr = cookie.get('userAddr')
+                    ? new ScAddr(parseInt(String(cookie.get('userAddr'))))
+                    : new ScAddr(0);
+
+                const userSettings = await getUserSettings(userAddr);
+                setUserTheme(userSettings['nrel_theme']);
+                setAccentColor(userSettings['nrel_accent_color']);
                 if (shouldLoadMoreMessages && hasMoreMessages && !isLoading) {
                     setIsLoading(true);
                     setBeforeFetchingScrollHeight(mainRef.current?.scrollHeight || null);
@@ -176,8 +190,48 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
             if (empty) setMessageInput('');
         }, [messageInput]);
 
+        const Loading = styled.div`
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 5px;
+        `;
+
+        const SpanLoader = styled.span`
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 0 30px 4px rgba(0, 0, 0, 0.5) inset, 0 5px 12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+
+            :before,
+            :after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 45%;
+                top: -40%;
+                background-color: #fff;
+                animation: wave 5s linear infinite;
+            }
+
+            :before {
+                border-radius: 30%;
+                background: rgba(255, 255, 255, 0.4);
+                animation: wave 5s linear infinite;
+            }
+        `;
+
         return (
-            <Wrapper className={className}>
+            <Wrapper style={userTheme == 'dark' ? {} : { background: accentColor as string }} className={className}>
                 <SearchBar />
                 <Main ref={refSetter(mainRef, chatRef)} onScroll={onScroll}>
                     {isLoading && (
@@ -189,9 +243,9 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
 
                     {children}
                     {isFetchingChatLoading && (
-                        <WrapperGlobalSpinner>
-                            <Spinner />
-                        </WrapperGlobalSpinner>
+                        <Loading style={{ opacity: 1, background: 'rgba(0, 0, 0, 0.8)' }}>
+                            <SpanLoader style={{ background: accentColor as string }}></SpanLoader>
+                        </Loading>
                     )}
                 </Main>
                 {showArrow && (
@@ -220,7 +274,7 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
                             type="text"
                             placeholder={textPlaceholder[hookLanguage]}
                         />
-                        <FooterSend onClick={onButtonClick} type="submit">
+                        <FooterSend style={{ background: accentColor as string }} onClick={onButtonClick} type="submit">
                             <WrapperSendIcon>
                                 <SendIcon />
                             </WrapperSendIcon>

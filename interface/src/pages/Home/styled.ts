@@ -16,7 +16,6 @@ export const WrapperCircle = styled.div`
     height: 80vmin;
     width: 80vmin;
     border-radius: 50%;
-    background: #538689;
 `;
 
 export const WrapperInf = styled.div`
@@ -64,16 +63,6 @@ export const ContentHead = styled.div`
     padding: 5px;
     justify-content: space-between;
     width: 100%;
-`;
-
-export const LangBtn = styled.a`
-    cursor: pointer;
-    background: none;
-    border: none;
-    transition: all 0.5s ease;
-    :hover {
-        opacity: 0.5;
-    }
 `;
 
 export const UserName = styled.button`

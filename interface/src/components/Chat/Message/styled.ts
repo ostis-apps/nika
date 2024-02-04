@@ -1,23 +1,5 @@
 import styled from 'styled-components';
 
-export const WrapperMessage = styled.div<{ isLeft: boolean }>`
-    position: relative;
-    width: fit-content;
-    max-width: 70%;
-    margin: 0px 18px 8px 16px;
-    padding: 12px 12px 12px 12px;
-    align-self: ${(props) => (props.isLeft ? 'start' : 'end')};
-    background: ${(props) => (props.isLeft ? '#202221' : 'rgb(52,91,102);')};
-    background: ${(props) =>
-        props.isLeft ? '#333436' : 'linear-gradient(347deg, rgba(52,91,102,1) 0%, rgba(100,158,157,1) 100%); '};
-    border-radius: 20px;
-    word-break: break-word;
-
-    &:first-child {
-        margin-top: auto;
-    }
-`;
-
 export const TextWrapper = styled.div`
     display: flex;
 `;
