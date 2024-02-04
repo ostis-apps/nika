@@ -7,6 +7,7 @@ const questionInitiated = 'question_initiated';
 const actionReplyToMessage = 'action_reply_to_message';
 const rrel1 = 'rrel_1';
 const rrel2 = 'rrel_2';
+const rrel3 = 'rrel_3';
 const nrelAuthors = 'nrel_authors';
 const conceptTextFile = 'concept_text_file';
 const langEn = 'lang_en';
@@ -20,6 +21,7 @@ const baseKeynodes = [
     { id: actionReplyToMessage, type: ScType.NodeConstClass },
     { id: rrel1, type: ScType.NodeConstRole },
     { id: rrel2, type: ScType.NodeConstRole },
+    { id: rrel3, type: ScType.NodeConstRole },
     { id: nrelAuthors, type: ScType.NodeConstNoRole },
     { id: conceptTextFile, type: ScType.NodeConstClass },
     { id: langEn, type: ScType.NodeConstClass },
@@ -50,7 +52,7 @@ const describeAgent = async (
 
     template.triple(keynodes[question], ScType.EdgeAccessVarPosPerm, [ScType.NodeVar, actionNodeAlias]);
     template.triple(keynodes[actionReplyToMessage], ScType.EdgeAccessVarPosPerm, actionNodeAlias);
-
+    console.log('start');
     template.tripleWithRelation(
         actionNodeAlias,
         ScType.EdgeAccessVarPosPerm,
@@ -67,6 +69,13 @@ const describeAgent = async (
     );
     template.tripleWithRelation(
         actionNodeAlias,
+        ScType.EdgeAccessVarPosPerm,
+        author,
+        ScType.EdgeAccessVarPosPerm,
+        keynodes[rrel3],
+    );
+    template.tripleWithRelation(
+        actionNodeAlias,
         ScType.EdgeDCommonVar,
         author,
         ScType.EdgeAccessVarPosPerm,
@@ -74,6 +83,7 @@ const describeAgent = async (
     );
     template.triple(keynodes[conceptTextFile], ScType.EdgeAccessVarPosPerm, linkAddr);
     template.triple(keynodes[langRu], ScType.EdgeAccessVarPosPerm, linkAddr);
+    console.log('end');
 
     return [template, actionNodeAlias] as const;
 };

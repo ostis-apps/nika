@@ -1,30 +1,15 @@
 import styled from 'styled-components';
 
-export const WrapperMessage = styled.div<{ isLeft: boolean }>`
-    position: relative;
-    width: fit-content;
-    max-width: 65%;
-    margin: 0px 18px 8px 16px;
-    padding: 8px 8px 8px 8px;
-    align-self: ${(props) => (props.isLeft ? 'start' : 'end')};
-    background: ${(props) => (props.isLeft ? '#DFDBD0' : '#E2E9E7')};
-    border-radius: 10px;
-    word-break: break-word;
-
-    &:first-child {
-        margin-top: auto;
-    }
-`;
 export const TextWrapper = styled.div`
     display: flex;
 `;
 export const Text = styled.div`
-    font-family: 'Roboto';
+    font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 16px;
     line-height: 21px;
-    color: #000000;
+    color: #ffffff;
     text-align: justify;
 `;
 export const Info = styled.div`
@@ -36,12 +21,13 @@ export const Info = styled.div`
 export const Time = styled.div`
     display: flex;
     align-items: center;
-    font-family: 'Roboto';
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
-    color: #696969;
+    color: #ffffff;
+    opacity: 0.8;
 `;
 export const WrapperLoadingIcon = styled.div`
     position: absolute;
