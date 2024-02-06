@@ -7,7 +7,7 @@ import { ScTemplate, ScType } from 'ts-sc-client';
 import { Redirect } from 'react-router';
 import { checkUser } from '@api/sc/checkUser';
 import Cookie from 'universal-cookie';
-import { getUserName, findSettings, updateSettings, getUserSettings } from '@api/sc/checkUser';
+import { getUserName, findSettings, updateSettings, getUserSettings, getFontSizeFromSettings } from '@api/sc/checkUser';
 import styled from 'styled-components';
 import { ChatPageWrapper } from '@components/ChatPageWrapper';
 
@@ -99,60 +99,118 @@ export const Settings = () => {
         transition: all 0.5s ease;
     `;
 
-    return (
-        <Main style={settings['nrel_theme'] == 'light' ? { background: settings['nrel_accent_color'] } : {}}>
-            {savedSettings ? <Redirect to={{ pathname: routes.HOME }} /> : ''}
-            {redirectError ? <Redirect to={{ pathname: routes.LOGIN }} /> : ''}
+    const Select = styled.select`
+        option {
+            background: rgb(51, 47, 47);
+        }
+    `;
 
-            <Container>
-                <SettingsText>Настройки</SettingsText>
-                <WrapperSettings>
-                    <Setting>
-                        <p>Тема</p>
-                        <select onChange={(e) => changeTheme(e)} value={settingTheme}>
-                            <option value="dark">Темная</option>
-                            <option value="light">Светлая</option>
-                        </select>
-                    </Setting>
-                    <Setting>
-                        <p>Размер текста</p>
-                        <select onChange={(e) => changeFontSize(e)} value={settingFontSize}>
-                            <option value="small">Мелкий</option>
-                            <option value="medium">Средний</option>
-                            <option value="big">Большой</option>
-                        </select>
-                    </Setting>
-                    <Setting>
-                        <p>Цвет интерфейса</p>
-                        <input type="color" onChange={(e) => changeAccentColor(e)} value={settingAccentColor} />
-                    </Setting>
-                    <Setting>
-                        <p>Язык</p>
-                        <select onChange={(e) => changeLang(e)} value={settingLang}>
-                            <option value="ru">Русский</option>
-                            <option value="en">Английский</option>
-                        </select>
-                    </Setting>
-                    <Setting>
-                        <p>Режим для людей с ограниченными возможностями</p>
-                        <input
-                            type="checkbox"
-                            onChange={(e) => changeInvalideMode(e)}
-                            checked={settingInvalideMode == 'on' ? true : false}
-                        />
-                    </Setting>
-                    <SaveSettings
-                        style={
-                            settings['nrel_theme'] == 'light'
-                                ? { background: 'rgb(51, 47, 47)' }
-                                : { background: settings['nrel_accent_color'] }
-                        }
-                        onClick={saveSettings}
-                    >
-                        Сохранить
-                    </SaveSettings>
-                </WrapperSettings>
-            </Container>
-        </Main>
+    const NavLink = styled.a`
+        display: flex;
+        position: absolute;
+        text-decoration: none;
+        z-index: 1;
+        top: 10px;
+        left: 10px;
+        gap: 12px;
+        border-radius: 10px;
+        align-items: center;
+        height: 40px;
+        color: white;
+        margin-right: 10px;
+        background: #413d3d;
+        -webkit-box-shadow: 0px 0px 46px 21px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 0px 0px 46px 21px rgba(34, 60, 80, 0.2);
+        box-shadow: 0px 0px 46px 21px rgba(34, 60, 80, 0.2);
+        transition: all 0.5s ease-out;
+        :hover {
+            transform: translate(-1%, 0);
+    `;
+
+    const Arrow = styled.div`
+        border: solid rgb(255, 255, 255);
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        width: 5px;
+        height: 5px;
+        margin-right: 5px;
+        transform: translate(100%, 0) rotate(135deg);
+        -webkit-transform: translate(100%, 0) rotate(135deg);
+        cursor: pointer;
+    `;
+
+    const Linktitle = styled.div`
+        color: rgb(255, 255, 255);
+        font-weight: 700;
+        padding: 0 10px 0 0;
+    `;
+
+    return (
+        <>
+            <NavLink href={routes.HOME} className="nav">
+                <Arrow></Arrow>
+                <Linktitle className="title">Назад</Linktitle>
+            </NavLink>
+            <Main style={settingTheme == 'light' ? { background: settingAccentColor } : {}}>
+                {savedSettings ? <Redirect to={{ pathname: routes.HOME }} /> : ''}
+                {redirectError ? <Redirect to={{ pathname: routes.LOGIN }} /> : ''}
+
+                <Container>
+                    <SettingsText style={{ fontSize: getFontSizeFromSettings(settingFontSize) }}>
+                        Настройки
+                    </SettingsText>
+                    <WrapperSettings>
+                        <Setting>
+                            <p style={{ fontSize: getFontSizeFromSettings(settingFontSize) }}>Тема</p>
+                            <Select onChange={(e) => changeTheme(e)} value={settingTheme}>
+                                <option value="dark">Темная</option>
+                                <option value="light">Светлая</option>
+                            </Select>
+                        </Setting>
+                        <Setting>
+                            <p style={{ fontSize: getFontSizeFromSettings(settingFontSize) }}>Размер текста</p>
+                            <Select onChange={(e) => changeFontSize(e)} value={settingFontSize}>
+                                <option value="small">Мелкий</option>
+                                <option value="medium">Средний</option>
+                                <option value="big">Большой</option>
+                            </Select>
+                        </Setting>
+                        <Setting>
+                            <p style={{ fontSize: getFontSizeFromSettings(settingFontSize) }}>Цвет интерфейса</p>
+                            <input type="color" onChange={(e) => changeAccentColor(e)} value={settingAccentColor} />
+                        </Setting>
+                        <Setting>
+                            <p style={{ fontSize: getFontSizeFromSettings(settingFontSize) }}>Язык</p>
+                            <Select onChange={(e) => changeLang(e)} value={settingLang}>
+                                <option value="ru">Русский</option>
+                                <option value="en">Английский</option>
+                            </Select>
+                        </Setting>
+                        <Setting>
+                            <p style={{ fontSize: getFontSizeFromSettings(settingFontSize) }}>
+                                Режим для людей с ограниченными возможностями
+                            </p>
+                            <input
+                                style={{ transform: 'scale(1.2)' }}
+                                type="checkbox"
+                                onChange={(e) => changeInvalideMode(e)}
+                                checked={settingInvalideMode == 'on' ? true : false}
+                            />
+                        </Setting>
+                        <SaveSettings
+                            style={
+                                settingTheme == 'light'
+                                    ? { background: 'rgb(51, 47, 47)' }
+                                    : { background: settingAccentColor }
+                            }
+                            onClick={saveSettings}
+                        >
+                            Сохранить
+                        </SaveSettings>
+                    </WrapperSettings>
+                </Container>
+            </Main>
+        </>
     );
 };

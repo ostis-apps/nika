@@ -167,8 +167,12 @@ export const getUserSettings = async (userAddr: ScAddr) => {
     return '';
 };
 
-export const getFontSize = (value: string) => {
-    if (value == 'little') return;
-    if (value == 'medium') return;
-    return;
+export const getFontSizeFromSettings = (value: string) => {
+    if (value == 'small') return '80%';
+    if (value == 'medium') return '100%';
+    return '150%';
+};
+
+export const translateWord = (st: string, lang: string) => {
+    return st;
 };
