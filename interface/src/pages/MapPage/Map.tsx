@@ -5,7 +5,6 @@ import {
     Arrow,
     Linktitle,
     NavLink,
-    Menu,
     Information,
     InformationHeader,
     Inf,
@@ -22,12 +21,15 @@ import {
     NameInput,
     SaveNameButton,
     Line,
-    BtnSavePoint,
+    Gradient,
+    Menu,
 } from './styled';
-import { getUserSettings } from '@api/sc/checkUser';
+import { getFontSizeFromSettings, getUserSettings } from '@api/sc/checkUser';
 import Cookie from 'universal-cookie';
 import { ScAddr, ScConstruction, ScTemplate, ScType, ScLinkContent, ScLinkContentType } from 'ts-sc-client';
 import { client } from '@api/sc';
+import styled from 'styled-components';
+import { overflow } from '@pages/Intro/styled';
 const API_KEY = '5ae2e3f221c38a28845f05b6c5d9bf667efa63f94dcb0e435b058e95';
 
 export const MapPage = () => {
@@ -59,6 +61,11 @@ export const MapPage = () => {
 
     const [liked, setLiked] = useState<Boolean>(false);
     const [index, setIndex] = useState<number>(0);
+
+    const [userTheme, setUserTheme] = useState<String>('dark');
+    const [useGradient, setUseGradient] = useState<Boolean>(false);
+
+    const [params, setParams] = useState<{}>({});
 
     const getDataFromXids = async (xid: String) => {
         try {
@@ -132,7 +139,10 @@ export const MapPage = () => {
     useEffect(() => {
         (async () => {
             // Get Settings
-            setAccentColor((await getUserSettings(cookieUserAddr))['nrel_accent_color']);
+            const userSettings = await getUserSettings(cookieUserAddr);
+            setParams(userSettings);
+            setAccentColor(userSettings['nrel_accent_color']);
+            setUserTheme(userSettings['nrel_theme']);
 
             const queryParams = new URLSearchParams(window.location.search);
             const coordinatesString = (queryParams.get('coord') ?? '53.931986, 27.668021').split(',');
@@ -151,7 +161,10 @@ export const MapPage = () => {
 
     const checkLikedXid = async (xidF: String) => {
         const template = new ScTemplate();
-        const baseKeynodes = [{ id: 'nrel_saved_points', type: ScType.NodeConstNoRole }];
+        const baseKeynodes = [
+            { id: 'nrel_saved_points', type: ScType.NodeConstNoRole },
+            { id: 'nrel_point_xid', type: ScType.NodeConstNoRole },
+        ];
         const keynodes = await client.resolveKeynodes(baseKeynodes);
 
         template.tripleWithRelation(
@@ -161,28 +174,39 @@ export const MapPage = () => {
             ScType.EdgeAccessVarPosPerm,
             keynodes['nrel_saved_points'],
         );
-        template.triple('_saved_points', ScType.EdgeAccessVarPosPerm, [ScType.LinkVar, '_xid']);
+        template.triple('_saved_points', ScType.EdgeDCommonVar, [ScType.NodeVar, '_point']);
+        template.tripleWithRelation(
+            '_point',
+            ScType.EdgeDCommonVar,
+            [ScType.LinkVar, '_xid'],
+            ScType.EdgeAccessVarPosPerm,
+            keynodes['nrel_point_xid'],
+        );
         const result = await client.templateSearch(template);
 
-        if (result.length == 0) return false;
+        if (result.length == 0) {
+            console.log('I');
+            return false;
+        }
 
         for (let i = 0; i < result.length; i++) {
             const element = result[i];
             const xid = String((await client.getLinkContents([element.get('_xid')]))[0].data);
-            console.log(xid);
+            console.log('>', xid);
 
             if (xid === xidF) {
-                console.log('found');
+                console.log('find');
                 return true;
             }
+            return false;
         }
-        console.log('didnt find');
 
         return false;
     };
 
     const open = (index: number) => async (event: React.MouseEvent<HTMLDivElement>) => {
         setLoadError(false);
+        setUseGradient(false);
         const desireCoordinates = index;
         setActiveTitle(pageInform[index][1]);
         setActiveDescription(pageInform[index][2] as string);
@@ -199,21 +223,22 @@ export const MapPage = () => {
                 minHeight: '350px',
                 alignItems: 'end',
                 backgroundSize: '100%',
+                overflow: 'hidden',
             };
             console.log(st);
             setImageStyles(st);
+            setUseGradient(true);
             setTextImageStyles({
                 marginBottom: '10px',
                 color: 'white',
             });
         } else {
             setImageStyles({
-                background: accentColor,
+                background: '#00000010',
                 backdropFilter: 'opacity(30%)',
             });
-            setTextImageStyles({ color: 'black' });
+            setTextImageStyles({ color: 'black', marginRight: '50px' });
         }
-
         setOpenMenu(true);
     };
 
@@ -355,16 +380,63 @@ export const MapPage = () => {
         }
     };
 
+    const SaveB = styled.div`
+        padding: 10px;
+        border-radius: 100px;
+        cursor: pointer;
+
+        path {
+            fill: #00000050;
+            transition: all 0.5s ease;
+        }
+        svg {
+            transform: translate(1px, 1px);
+            width: 50px;
+            height: 50px;
+        }
+        :hover svg path {
+            fill: red;
+        }
+    `;
+    const Theme = styled.div`
+        height: 100%;
+        background: ${userTheme == 'dark' ? '#413d3d' : 'white'};
+        * {
+            color: ${userTheme == 'dark' ? 'white' : 'black'};
+        }
+    `;
+
     return (
         <>
-            <NavLink href={routes.HOME} className="nav">
-                <Arrow></Arrow>
-                <Linktitle className="title">Назад</Linktitle>
+            <NavLink
+                href={routes.HOME}
+                style={userTheme == 'dark' ? { background: '#413d3d' } : { background: 'white' }}
+                className="nav"
+            >
+                <Arrow
+                    style={
+                        userTheme == 'dark'
+                            ? { border: 'solid white', borderWidth: '0 3px 3px 0' }
+                            : { border: 'solid #413d3d', borderWidth: '0 3px 3px 0' }
+                    }
+                ></Arrow>
+                <Linktitle style={userTheme == 'dark' ? { color: 'white' } : { color: 'black' }} className="title">
+                    Назад
+                </Linktitle>
             </NavLink>
-            <SaveMap onClick={openModal}>S</SaveMap>
+            <SaveMap
+                style={
+                    userTheme == 'dark'
+                        ? { background: '#413d3d', color: 'white' }
+                        : { background: 'white', color: 'black' }
+                }
+                onClick={openModal}
+            >
+                +
+            </SaveMap>
             <WrapperSavingName style={modalSave ? { zIndex: 1 } : { zIndex: -1 }}>
                 <CloseBtnModal onClick={closeModal} style={{ zIndex: 11 }}></CloseBtnModal>
-                <ModalName>
+                <ModalName style={{ background: '#413d3d' }}>
                     <h2>Сохранить карту</h2>
                     <NameInput placeholder="Название" onChange={(e) => updateInputName(e)}></NameInput>
                     <SaveNameButton style={{ background: accentColor }} onClick={() => saveMap()}>
@@ -389,28 +461,62 @@ export const MapPage = () => {
                     ))}
                 </Map>
             </YMaps>
-            <Menu style={openMenu ? { top: 0, right: 0 } : {}} className="container_menu">
-                <Loading style={!startPr ? { opacity: 1, zIndex: 100 } : { opacity: 0, zIndex: -1 }}>
-                    <SpanLoader style={{ background: accentColor }}></SpanLoader>
-                    <Error style={loadError ? { opacity: 1 } : { opacity: 0 }}>Ошибка сети.</Error>
-                </Loading>
-                <Information>
-                    <InformationHeader style={imageStyles}>
-                        <Inf style={imageTextStyles}>
-                            <p style={{ fontSize: '20px' }}>{activeTitle}</p>
-                        </Inf>
-                        <CloseBtn onClick={close}></CloseBtn>
-                    </InformationHeader>
-                    <InformationText>
-                        <div dangerouslySetInnerHTML={{ __html: activeDescription }} />
-                        <Line></Line>
-                        <div style={{ width: '100%', display: 'flex', justifyContent: 'right' }}>
-                            <BtnSavePoint style={liked ? { background: 'red' } : {}} onClick={savePoint}>
-                                L
-                            </BtnSavePoint>
-                        </div>
-                    </InformationText>
-                </Information>
+            <Menu style={openMenu ? { right: 0 } : { right: '-800px' }} className="container_menu">
+                <Theme>
+                    <Loading style={!startPr ? { opacity: 1, zIndex: 100 } : { opacity: 0, zIndex: -1 }}>
+                        <SpanLoader style={{ background: accentColor }}></SpanLoader>
+                        <Error style={loadError ? { opacity: 1 } : { opacity: 0 }}>Ошибка сети.</Error>
+                    </Loading>
+                    <Information>
+                        <InformationHeader style={imageStyles}>
+                            <Inf style={imageTextStyles}>
+                                <p
+                                    style={{
+                                        zIndex: 2,
+                                        fontSize: getFontSizeFromSettings(params['nrel_font_size'], 'h'),
+                                    }}
+                                >
+                                    {activeTitle}
+                                </p>
+                            </Inf>
+                            <Gradient style={useGradient ? { opacity: 1 } : {}}></Gradient>
+                            <CloseBtn onClick={close}></CloseBtn>
+                        </InformationHeader>
+                        <InformationText>
+                            <div
+                                style={{ fontSize: getFontSizeFromSettings(params['nrel_font_size']) }}
+                                dangerouslySetInnerHTML={{ __html: activeDescription }}
+                            />
+                            <div style={{ padding: '10px' }}>
+                                <Line></Line>
+                            </div>
+                            <div style={{ width: '100%', display: 'flex', justifyContent: 'right' }}>
+                                <SaveB onClick={savePoint}>
+                                    <svg
+                                        id="Capa_1"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        x="0px"
+                                        y="0px"
+                                        width="533.333px"
+                                        height="533.334px"
+                                        viewBox="0 0 533.333 533.334"
+                                    >
+                                        <path
+                                            style={
+                                                liked
+                                                    ? { fill: 'red' }
+                                                    : { fill: params['nrel_theme'] == 'dark' ? 'white' : '' }
+                                            }
+                                            d="M533.333,186.54c0,44.98-19.385,85.432-50.256,113.46h0.256L316.667,466.667C300,483.333,283.333,500,266.667,500
+		c-16.667,0-33.333-16.667-50-33.333L50,300h0.255C19.384,271.972,0,231.52,0,186.54C0,101.926,68.593,33.333,153.206,33.333
+		c44.98,0,85.432,19.384,113.46,50.255c28.028-30.871,68.48-50.255,113.46-50.255C464.74,33.333,533.333,101.926,533.333,186.54z"
+                                        />
+                                    </svg>
+                                </SaveB>
+                            </div>
+                        </InformationText>
+                    </Information>
+                </Theme>
             </Menu>
         </>
     );

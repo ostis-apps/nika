@@ -28,7 +28,7 @@ export const NavLink = styled.a`
     box-shadow: 0px 0px 46px 21px rgba(34, 60, 80, 0.2);
     transition: all 0.5s ease-out;
     :hover {
-        transform: translate(-1%, 0);
+        transform: translate(-5%, 0);
 `;
 
 export const Arrow = styled.div`
@@ -50,31 +50,16 @@ export const Linktitle = styled.div`
     padding: 0 10px 0 0;
 `;
 
-export const Menu = styled.div`
-    display: block;
-    position: absolute;
-    z-index: 1000;
-    right: -800px;
-    top: 0;
-    background: white;
-    width: 700px;
-    height: 100vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    border-radius: 15px 0px 0 15px;
-    box-shadow: -8px 10px 89px -20px rgba(89, 89, 89, 0.75);
-    -webkit-box-shadow: -8px 10px 89px -20px rgba(89, 89, 89, 0.75);
-    -moz-box-shadow: -8px 10px 89px -20px rgba(89, 89, 89, 0.75);
-    transition: all 0.5s ease-in-out;
-`;
 export const Information = styled.div`
     display: block;
     width: 100%;
 `;
 export const InformationHeader = styled.div`
     display: flex;
+    position: relative;
     min-height: 50px;
     background: #b3b3b3;
+    overhlow: hidden;
     border-radius: 0 0 10px 10px;
     p {
         padding-left: 10px;
@@ -143,6 +128,14 @@ export const InformationText = styled.div`
     * {
         color: black;
     }
+    a {
+        transition: all 0.5s ease;
+    }
+    a:hover {
+        color: inherit;
+        opacity: 0.6;
+        text-decoration: underline;
+    }
 `;
 
 export const openStyle = {
@@ -200,7 +193,11 @@ export const SaveMap = styled.button`
     background: red;
     position: absolute;
     text-decoration: none;
+    padding: 15px;
+    border-radius: 10px;
     z-index: 1;
+    font-weight: 900;
+
     top: 60px;
     left: 10px;
     width: 30px;
@@ -209,6 +206,12 @@ export const SaveMap = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
+    -webkit-box-shadow: 0px 0px 46px 21px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 0px 46px 21px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 0px 46px 21px rgba(34, 60, 80, 0.2);
+    transition: all 0.5s ease-out;
+    :hover {
+        transform: translate(-5%, 0);
 `;
 
 export const WrapperSavingName = styled.div`
@@ -270,14 +273,36 @@ export const SaveNameButton = styled.button`
 
 export const Line = styled.div`
     width: 100%;
-    background: black;
+    background: #00000010;
+    border-rodius: 20px;
     height: 2px;
 `;
 
-export const BtnSavePoint = styled.div`
-    display: inline-block;
-    margin: 10px;
-    padding: 20px;
-    background: gray;
-    transition: all 0.5s ease;
+export const Gradient = styled.div`
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 000%, rgba(255, 255, 255, 0) 51%);
+    z-index: 1;
+    opacity: 0;
+`;
+
+export const Menu = styled.div`
+    display: block;
+    position: absolute;
+    z-index: 1000;
+    right: -800px;
+    top: 0;
+    width: 700px;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 15px 0px 0 15px;
+    box-shadow: -8px 10px 89px -20px rgba(89, 89, 89, 0.75);
+    -webkit-box-shadow: -8px 10px 89px -20px rgba(89, 89, 89, 0.75);
+    -moz-box-shadow: -8px 10px 89px -20px rgba(89, 89, 89, 0.75);
+
+    transition: all 0.5s ease-in-out;
 `;
