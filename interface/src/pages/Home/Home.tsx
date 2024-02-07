@@ -138,7 +138,7 @@ export const Home = () => {
 
                     <WrapperWidget>
                         <WidgetWeather>Weather</WidgetWeather>
-                        <WidgetMap href={routes.OWNMAP}>L</WidgetMap>
+                        <WidgetMap href={routes.OWNMAP}></WidgetMap>
                     </WrapperWidget>
                 </WrapperInf>
             </div>
