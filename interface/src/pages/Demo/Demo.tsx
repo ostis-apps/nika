@@ -8,7 +8,7 @@ import { ScAddr } from 'ts-sc-client';
 import { resolveUserAgent } from '@agents/resolveUserAgent';
 import { useChat } from '@hooks/useChat';
 import * as React from 'react';
-import { checkUser, getUserName } from '@api/sc/checkUser';
+import { checkUser, getUserName, getUserSettings } from '@api/sc/checkUser';
 import { Redirect } from 'react-router';
 import Cookie from 'universal-cookie';
 import { SC_WEB_URL } from '@constants';
@@ -20,6 +20,7 @@ export const Demo = () => {
     const password = cookie.get('password');
 
     const [user, setUser] = useState<ScAddr | null>(null);
+    const [params, setParams] = useState<{}>({});
     const [isLoading, setIsLoading] = useState(false);
 
     const { initChat, sendMessage, isAgentAnswer, onFetching, messages, chatRef } = useChat(user);
@@ -56,6 +57,7 @@ export const Demo = () => {
     useEffect(() => {
         (async () => {
             check();
+            setParams(await getUserSettings(userAddr));
         })();
     }, []);
 
@@ -88,6 +90,9 @@ export const Demo = () => {
                         onSend={onSend}
                         onFetching={onFetching}
                         isAgentAnswer={isAgentAnswer}
+                        accentColor={params['nrel_accent_color']}
+                        theme={params['nrel_theme']}
+                        fontSize={params['nrel_font_size']}
                     >
                         {messages.map((item, ind) => {
                             const prevItem = messages[ind - 1];
@@ -99,6 +104,9 @@ export const Demo = () => {
                                         isLeft={!!user && !item.author.equal(user)}
                                         time={item.time}
                                         isLoading={item.isLoading}
+                                        accentColor={params['nrel_accent_color']}
+                                        theme={params['nrel_theme']}
+                                        fontSize={params['nrel_font_size']}
                                     >
                                         {typeof item.text === 'string' ? (
                                             <div dangerouslySetInnerHTML={{ __html: item.text }} />

@@ -190,7 +190,7 @@ export const Error = styled.p`
 
 export const SaveMap = styled.button`
     border: none;
-    background: red;
+    background: #413d3d;
     position: absolute;
     text-decoration: none;
     padding: 15px;

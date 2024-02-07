@@ -86,12 +86,23 @@ class HistoryAgent(ScAgentClassic):
             sc_types.EDGE_ACCESS_VAR_POS_PERM,
             ScKeynodes['nrel_description'],
         )
-
         result = template_search(template)
 
         if not len(result) == 0:
+            city_idtf = get_link_content_data(self.get_ru_idtf(city_addr))
+            try:
+                set_lang("ru")
+                print(1)
+                array = page("Город " + city_idtf + " (Беларусь)").images
+                print(2)
+                description1 = f'<img src="{array[0]}" style="width: 100%; border-radius: 10px; margin-bottom: 10px;">' + "<br>" + summary(
+                    "Город " + city_idtf + " (Беларусь)", sentences=4)
+                print(3)
+            except:
+                print('Error')
+
             description_link_addr = result[0].get('_description')
-            description = get_link_content_data(description_link_addr)
+            description = description1 + '<br><br>Интересно:' + (get_link_content_data(description_link_addr).split("Интересно:")[-1])
         else:
             city_idtf = get_link_content_data(city_addr)
             print(city_idtf)

@@ -33,6 +33,7 @@ import { Spinner } from '@components/Spinners/LoadSpinner';
 import { WaitingSpinner } from '@components/Spinners/WaitingSpinner';
 import { refSetter, throttle } from '@utils';
 import { useLanguage } from '@hooks/useLanguage';
+import { getFontSizeFromSettings } from '@api/sc/checkUser';
 
 interface IProps {
     onSend: (message: string) => void;
@@ -40,6 +41,9 @@ interface IProps {
     className?: string;
     isLoading?: boolean;
     isAgentAnswer?: boolean;
+    accentColor?: string;
+    fontSize?: string;
+    theme?: string;
 }
 const textPlaceholder = {
     en: 'What Ragneda can?',
@@ -55,7 +59,20 @@ const textAgentAnswer = {
 };
 
 export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
-    ({ onSend, onFetching, isAgentAnswer, children, className, isLoading: isFetchingChatLoading }, chatRef) => {
+    (
+        {
+            onSend,
+            onFetching,
+            isAgentAnswer,
+            children,
+            className,
+            isLoading: isFetchingChatLoading,
+            accentColor,
+            fontSize,
+            theme,
+        },
+        chatRef,
+    ) => {
         const [messageInput, setMessageInput] = useState('');
 
         const [showArrow, setShowArrow] = useState(false);
@@ -177,7 +194,7 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
         }, [messageInput]);
 
         return (
-            <Wrapper className={className}>
+            <Wrapper style={theme == 'light' ? { background: accentColor } : {}} className={className}>
                 <SearchBar />
                 <Main ref={refSetter(mainRef, chatRef)} onScroll={onScroll}>
                     {isLoading && (
@@ -219,8 +236,9 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
                             onKeyPress={onInputKeyDown}
                             type="text"
                             placeholder={textPlaceholder[hookLanguage]}
+                            style={{ fontSize: getFontSizeFromSettings(fontSize ? fontSize : 'medium') }}
                         />
-                        <FooterSend onClick={onButtonClick} type="submit">
+                        <FooterSend style={{ background: accentColor }} onClick={onButtonClick} type="submit">
                             <WrapperSendIcon>
                                 <SendIcon />
                             </WrapperSendIcon>

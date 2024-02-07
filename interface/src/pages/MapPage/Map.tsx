@@ -408,32 +408,11 @@ export const MapPage = () => {
 
     return (
         <>
-            <NavLink
-                href={routes.HOME}
-                style={userTheme == 'dark' ? { background: '#413d3d' } : { background: 'white' }}
-                className="nav"
-            >
-                <Arrow
-                    style={
-                        userTheme == 'dark'
-                            ? { border: 'solid white', borderWidth: '0 3px 3px 0' }
-                            : { border: 'solid #413d3d', borderWidth: '0 3px 3px 0' }
-                    }
-                ></Arrow>
-                <Linktitle style={userTheme == 'dark' ? { color: 'white' } : { color: 'black' }} className="title">
-                    Назад
-                </Linktitle>
+            <NavLink href={routes.HOME} className="nav">
+                <Arrow></Arrow>
+                <Linktitle className="title">Назад</Linktitle>
             </NavLink>
-            <SaveMap
-                style={
-                    userTheme == 'dark'
-                        ? { background: '#413d3d', color: 'white' }
-                        : { background: 'white', color: 'black' }
-                }
-                onClick={openModal}
-            >
-                +
-            </SaveMap>
+            <SaveMap onClick={openModal}>+</SaveMap>
             <WrapperSavingName style={modalSave ? { zIndex: 1 } : { zIndex: -1 }}>
                 <CloseBtnModal onClick={closeModal} style={{ zIndex: 11 }}></CloseBtnModal>
                 <ModalName style={{ background: '#413d3d' }}>
