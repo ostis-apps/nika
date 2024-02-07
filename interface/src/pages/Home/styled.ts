@@ -141,6 +141,7 @@ export const WrapperWidget = styled.div`
 
 export const WidgetWeather = styled.div`
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-weight: 700;

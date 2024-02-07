@@ -28,7 +28,7 @@ import { ReactComponent as LangIcon } from '@assets/icon/lang.svg';
 import { ReactComponent as SavedIcon } from '@assets/icon/saved.svg';
 import Cookie from 'universal-cookie';
 import styled from 'styled-components';
-const weather_api_key = 'e680417e3e6caf3ad46db4f2528edfdc';
+const weather_api_key = '1c9304a164f14d788f964943232410';
 
 export const Home = () => {
     type w = {
@@ -68,10 +68,6 @@ export const Home = () => {
         } else setRedirectError(true);
     };
 
-    const getApi = async (url: string) => {
-        return (await fetch(url)).json();
-    };
-
     useEffect(() => {
         (async () => {
             // Get Weathe
@@ -83,15 +79,7 @@ export const Home = () => {
     }, []);
 
     useEffect(() => {
-        (async () => {
-            setCity((await getApi('http://ip-api.com/json/'))['city']);
-        })();
-    });
-
-    useEffect(() => {
-        (async () => {
-                
-        })();
+        (async () => {})();
     }, [city]);
 
     const logoutUser = (e) => {
