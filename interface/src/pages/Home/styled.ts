@@ -66,20 +66,9 @@ export const ContentHead = styled.div`
     width: 100%;
 `;
 
-export const LangBtn = styled.a`
-    cursor: pointer;
-    background: none;
-    border: none;
-    transition: all 0.5s ease;
-    :hover {
-        opacity: 0.5;
-    }
-`;
-
 export const UserName = styled.button`
-    // Colour
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     padding: 5px;
     color: white;
@@ -159,16 +148,24 @@ export const WidgetWeather = styled.div`
     border-radius: 10px;
     background: rgba(51, 52, 54, 50%);
     backdrop-filter: blur(10px);
+
+    baclground: black;
 `;
-export const WidgetMap = styled.div`
+export const WidgetMap = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
     width: 100%;
     border-radius: 10px;
-    background: rgba(51, 52, 54, 50%);
-    backdrop-filter: blur(10px);
+    background: url('http://c3337100.beget.tech/map.png') center no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    filter: brightness(0.5);
+    transition: all 0.5s ease;
+    :hover {
+        filter: brightness(1);
+    }
 `;
 
 export const langStyles = {

@@ -7,7 +7,6 @@ import {
     WrapperHead,
     WrapperWidget,
     ContentHead,
-    LangBtn,
     UserName,
     BtnChat,
     BtnSaved,
@@ -24,10 +23,11 @@ import { routes } from '@constants';
 import { ScAddr, ScConstruction, ScLinkContent, ScLinkContentType } from 'ts-sc-client';
 import { ScTemplate, ScType, ScEventType } from 'ts-sc-client';
 import { Redirect } from 'react-router';
-import { checkUser, getUserName, getUserSettings } from '@api/sc/checkUser';
+import { checkUser, getUserName, getUserSettings, getFontSizeFromSettings } from '@api/sc/checkUser';
 import { ReactComponent as LangIcon } from '@assets/icon/lang.svg';
 import { ReactComponent as SavedIcon } from '@assets/icon/saved.svg';
 import Cookie from 'universal-cookie';
+import styled from 'styled-components';
 
 export const Home = () => {
     // Get Cookies
@@ -60,6 +60,8 @@ export const Home = () => {
 
     useEffect(() => {
         (async () => {
+            // Get Weather
+
             check();
             setParams(await getUserSettings(cookieUserAddr));
             console.log(params);
@@ -73,19 +75,38 @@ export const Home = () => {
         setRedirectError(true);
     };
 
+    const LangBtn = styled.a`
+        cursor: pointer;
+        background: none;
+        border: none;
+        transition: all 0.5s ease;
+        :hover {
+            opacity: 0.5;
+        }
+        svg path {
+            fill: white;
+            fill: ${params['nrel_theme'] == 'dark' ? 'white' : params['nrel_accent_color']};
+        }
+    `;
+    console.log(params['nrel_accent_color']);
     return (
         <div>
             {redirectError ? <Redirect to={{ pathname: routes.LOGIN }} /> : ''}
             {noDesireError ? <Redirect to={{ pathname: routes.INTRO }} /> : ''}
 
             <div style={params['nrel_theme'] == 'light' ? { background: params['nrel_accent_color'] } : {}}>
-                <WrapperCircle></WrapperCircle>
+                <WrapperCircle style={{ background: params['nrel_accent_color'] }}></WrapperCircle>
 
                 <WrapperInf>
                     <WrapperHead style={params['nrel_theme'] == 'light' ? { border: '1ps solid white' } : {}}>
                         <ContainerInf>
                             <ContentHead>
-                                <UserName onClick={(e) => logoutUser(e)}>{userName}</UserName>
+                                <UserName
+                                    style={{ fontSize: getFontSizeFromSettings(params['nrel_font_size']) }}
+                                    onClick={(e) => logoutUser(e)}
+                                >
+                                    {userName}
+                                </UserName>
                                 <LangBtn href={routes.SETTINGS}>
                                     <LangIcon style={langStyles} />
                                 </LangBtn>
@@ -94,9 +115,19 @@ export const Home = () => {
                     </WrapperHead>
 
                     <BtnsContainer>
-                        <BtnChat href={routes.CHAT}>Чат</BtnChat>
+                        <BtnChat
+                            style={{ fontSize: getFontSizeFromSettings(params['nrel_font_size']) }}
+                            href={routes.CHAT}
+                        >
+                            Чат
+                        </BtnChat>
                         <WrapperBtns>
-                            <BtnGames href={routes.CHAT}>Развлечения</BtnGames>
+                            <BtnGames
+                                style={{ fontSize: getFontSizeFromSettings(params['nrel_font_size']) }}
+                                href={routes.CHAT}
+                            >
+                                Развлечения
+                            </BtnGames>
                             <BtnSaved href={routes.SAVED}>
                                 <WrapperSaved>
                                     <SavedIcon style={savedStyles} />
@@ -107,7 +138,7 @@ export const Home = () => {
 
                     <WrapperWidget>
                         <WidgetWeather>Weather</WidgetWeather>
-                        <WidgetMap>Map</WidgetMap>
+                        <WidgetMap href={routes.OWNMAP}>L</WidgetMap>
                     </WrapperWidget>
                 </WrapperInf>
             </div>

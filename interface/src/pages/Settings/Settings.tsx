@@ -192,7 +192,7 @@ export const Settings = () => {
                                 Режим для людей с ограниченными возможностями
                             </p>
                             <input
-                                style={{ transform: 'scale(1.2)' }}
+                                style={{ transform: 'scale(1.2)', accentColor: settingAccentColor }}
                                 type="checkbox"
                                 onChange={(e) => changeInvalideMode(e)}
                                 checked={settingInvalideMode == 'on' ? true : false}
