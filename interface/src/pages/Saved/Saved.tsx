@@ -127,21 +127,9 @@ export const Saved = () => {
 
     return (
         <>
-            <NavLink
-                href={routes.HOME}
-                style={userTheme == 'dark' ? { background: '#413d3d' } : { background: 'white' }}
-                className="nav"
-            >
-                <Arrow
-                    style={
-                        userTheme == 'dark'
-                            ? { border: 'solid white', borderWidth: '0 3px 3px 0' }
-                            : { border: 'solid #413d3d', borderWidth: '0 3px 3px 0' }
-                    }
-                ></Arrow>
-                <Linktitle style={userTheme == 'dark' ? { color: 'white' } : { color: 'black' }} className="title">
-                    Назад
-                </Linktitle>
+            <NavLink href={routes.HOME} style={{ background: '#413d3d' }} className="nav">
+                <Arrow></Arrow>
+                <Linktitle className="title">Назад</Linktitle>
             </NavLink>
             <Wrapper>
                 <Container>

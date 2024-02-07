@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState, Fragment } from 'react';
-import { Wrapper, ChatWrapper, BackBtn } from './styled';
+import { Wrapper, ChatWrapper, BackBtn, NavLink, Arrow, Linktitle } from './styled';
 import { Message } from '@components/Chat/Message';
 import { Chat } from '@components/Chat';
 import { Date } from '@components/Chat/Date';
@@ -77,7 +77,10 @@ export const Demo = () => {
             {redirectError ? <Redirect to={{ pathname: routes.LOGIN }} /> : ''}
 
             <Wrapper>
-                <BackBtn href={routes.HOME}></BackBtn>
+                <NavLink href={routes.HOME} className="nav">
+                    <Arrow></Arrow>
+                    <Linktitle className="title">Назад</Linktitle>
+                </NavLink>
                 <ChatWrapper>
                     <Chat
                         ref={chatRef}

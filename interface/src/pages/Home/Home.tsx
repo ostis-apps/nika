@@ -28,8 +28,15 @@ import { ReactComponent as LangIcon } from '@assets/icon/lang.svg';
 import { ReactComponent as SavedIcon } from '@assets/icon/saved.svg';
 import Cookie from 'universal-cookie';
 import styled from 'styled-components';
+const weather_api_key = '1c9304a164f14d788f964943232410';
 
 export const Home = () => {
+    type w = {
+        day: string;
+        temp: string;
+        icon: string;
+    };
+
     // Get Cookies
     const cookie = new Cookie();
     const cookieUserAddr = cookie.get('userAddr')
@@ -37,9 +44,12 @@ export const Home = () => {
         : new ScAddr(0);
     const cookiePassword = cookie.get('password');
 
+    const [weather, setWeather] = useState<w[]>([]);
+
     const [redirectError, setRedirectError] = useState<boolean | undefined>(undefined);
     const [noDesireError, setNoDesireError] = useState<boolean | undefined>(undefined);
     const [userName, setUserName] = useState<string | undefined>(undefined);
+    const [city, setCity] = useState<string>('');
 
     const [params, setParams] = useState<{}>({});
 
@@ -58,15 +68,34 @@ export const Home = () => {
         } else setRedirectError(true);
     };
 
+    const getApi = async (url: string) => {
+        return (await fetch(url)).json();
+    };
+
     useEffect(() => {
         (async () => {
-            // Get Weather
-
+            // Get Weathe
             check();
+
             setParams(await getUserSettings(cookieUserAddr));
             console.log(params);
         })();
     }, []);
+
+    useEffect(() => {
+        (async () => {
+            setCity((await getApi('http://ip-api.com/json/'))['city']);
+        })();
+    });
+
+    useEffect(() => {
+        (async () => {
+            let Day: any = new Date().getDay();
+            let Month: any = new Date().getMonth();
+            let Year: any = new Date().getFullYear();
+            console.log(Day, Month, Year);
+        })();
+    }, [city]);
 
     const logoutUser = (e) => {
         e.preventDefault();

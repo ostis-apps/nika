@@ -87,3 +87,4 @@ export const Linktitle = styled.div`
     font-weight: 700;
     padding: 0 10px 0 0;
 `;
+

@@ -187,17 +187,7 @@ export const Settings = () => {
                                 <option value="en">Английский</option>
                             </Select>
                         </Setting>
-                        <Setting>
-                            <p style={{ fontSize: getFontSizeFromSettings(settingFontSize) }}>
-                                Режим для людей с ограниченными возможностями
-                            </p>
-                            <input
-                                style={{ transform: 'scale(1.2)', accentColor: settingAccentColor }}
-                                type="checkbox"
-                                onChange={(e) => changeInvalideMode(e)}
-                                checked={settingInvalideMode == 'on' ? true : false}
-                            />
-                        </Setting>
+
                         <SaveSettings
                             style={
                                 settingTheme == 'light'
@@ -214,3 +204,17 @@ export const Settings = () => {
         </>
     );
 };
+
+/*
+<Setting>
+    <p style={{ fontSize: getFontSizeFromSettings(settingFontSize) }}>Режим для людей с ограниченными возможностями</p>
+    <input
+        style={{ transform: 'scale(1.2)', accentColor: settingAccentColor }}
+        type="checkbox"
+        onChange={(e) => changeInvalideMode(e)}
+        checked={settingInvalideMode == 'on' ? true : false}
+    />
+</Setting>;
+
+
+*/
