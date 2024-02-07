@@ -22,12 +22,13 @@ import {
     NameInput,
     SaveNameButton,
     Line,
-    BtnSavePoint,
+    Gradient,
 } from './styled';
-import { getUserSettings } from '@api/sc/checkUser';
+import { getFontSizeFromSettings, getUserSettings } from '@api/sc/checkUser';
 import Cookie from 'universal-cookie';
 import { ScAddr, ScConstruction, ScTemplate, ScType, ScLinkContent, ScLinkContentType } from 'ts-sc-client';
 import { client } from '@api/sc';
+import styled from 'styled-components';
 const API_KEY = '5ae2e3f221c38a28845f05b6c5d9bf667efa63f94dcb0e435b058e95';
 
 export const MapPage = () => {
@@ -35,6 +36,25 @@ export const MapPage = () => {
     const cookieUserAddr = cookie.get('userAddr')
         ? new ScAddr(parseInt(String(cookie.get('userAddr'))))
         : new ScAddr(0);
+
+    const SaveB = styled.div`
+        padding: 10px;
+        border-radius: 100px;
+        cursor: pointer;
+
+        path {
+            fill: #00000050;
+            transition: all 0.5s ease;
+        }
+        svg {
+            transform: translate(1px, 1px);
+            width: 50px;
+            height: 50px;
+        }
+        :hover svg path {
+            fill: red;
+        }
+    `;
 
     const [openMenu, setOpenMenu] = useState<boolean>(false);
 
@@ -52,6 +72,9 @@ export const MapPage = () => {
     const [imageTextStyles, setTextImageStyles] = useState<{}>({});
 
     const [liked, setLiked] = useState<Boolean>(false);
+    const [useGradient, setUseGradient] = useState<Boolean>(false);
+
+    const [params, setParams] = useState<{}>({});
 
     const getDataFromXids = async (xid: String) => {
         try {
@@ -66,7 +89,9 @@ export const MapPage = () => {
 
     useEffect(() => {
         (async () => {
-            setAccentColor((await getUserSettings(cookieUserAddr))['nrel_accent_color']);
+            const p = await getUserSettings(cookieUserAddr);
+            setParams(p);
+            setAccentColor(p['nrel_accent_color']);
 
             let allXids: String[] = [];
             let allCoords: String[][] = [];
@@ -226,10 +251,13 @@ export const MapPage = () => {
         setActiveTitle(pageInform[1]);
         setActiveDescription(pageInform[2] as string);
         setActiveXid(pageInform[0]);
+        setUseGradient(false);
 
         setLiked(await checkLikedXid(pageInform[0]));
 
         if (pageInform[3] != '') {
+            setUseGradient(true);
+
             const st = {
                 backgroundImage: `url(${pageInform[3]})`,
                 backgroundRepeat: 'no-repeat',
@@ -331,6 +359,14 @@ export const MapPage = () => {
         }
     };
 
+    const Theme = styled.div`
+        height: 100%;
+        background: ${params['nrel_theme'] == 'dark' ? '#413d3d' : 'white'};
+        * {
+            color: ${params['nrel_theme'] == 'dark' ? 'white' : 'black'};
+        }
+    `;
+
     return (
         <>
             <NavLink href={routes.HOME} className="nav">
@@ -354,28 +390,62 @@ export const MapPage = () => {
                     ))}
                 </Map>
             </YMaps>
-            <Menu style={openMenu ? { top: 0, right: 0 } : {}} className="container_menu">
-                <Loading style={activeTitle == '' ? { opacity: 1, zIndex: 100 } : { opacity: 0, zIndex: -1 }}>
-                    <SpanLoader style={{ background: accentColor }}></SpanLoader>
-                    <Error style={loadError ? { opacity: 1 } : { opacity: 0 }}>Ошибка сети.</Error>
-                </Loading>
-                <Information>
-                    <InformationHeader style={imageStyles}>
-                        <Inf style={imageTextStyles}>
-                            <p style={{ fontSize: '20px' }}>{activeTitle}</p>
-                        </Inf>
-                        <CloseBtn onClick={close}></CloseBtn>
-                    </InformationHeader>
-                    <InformationText>
-                        <div dangerouslySetInnerHTML={{ __html: activeDescription }} />
-                        <Line></Line>
-                        <div style={{ width: '100%', display: 'flex', justifyContent: 'right' }}>
-                            <BtnSavePoint style={liked ? { background: 'red' } : {}} onClick={savePoint}>
-                                L
-                            </BtnSavePoint>
-                        </div>
-                    </InformationText>
-                </Information>
+            <Menu style={openMenu ? { right: 0 } : { right: '-800px' }} className="container_menu">
+                <Theme>
+                    <Loading style={!startPr ? { opacity: 1, zIndex: 100 } : { opacity: 0, zIndex: -1 }}>
+                        <SpanLoader style={{ background: accentColor }}></SpanLoader>
+                        <Error style={loadError ? { opacity: 1 } : { opacity: 0 }}>Ошибка сети.</Error>
+                    </Loading>
+                    <Information>
+                        <InformationHeader style={imageStyles}>
+                            <Inf style={imageTextStyles}>
+                                <p
+                                    style={{
+                                        zIndex: 2,
+                                        fontSize: getFontSizeFromSettings(params['nrel_font_size'], 'h'),
+                                    }}
+                                >
+                                    {activeTitle}
+                                </p>
+                            </Inf>
+                            <Gradient style={useGradient ? { opacity: 1 } : {}}></Gradient>
+                            <CloseBtn onClick={close}></CloseBtn>
+                        </InformationHeader>
+                        <InformationText>
+                            <div
+                                style={{ fontSize: getFontSizeFromSettings(params['nrel_font_size']) }}
+                                dangerouslySetInnerHTML={{ __html: activeDescription }}
+                            />
+                            <div style={{ padding: '10px' }}>
+                                <Line></Line>
+                            </div>
+                            <div style={{ width: '100%', display: 'flex', justifyContent: 'right' }}>
+                                <SaveB onClick={savePoint}>
+                                    <svg
+                                        id="Capa_1"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        x="0px"
+                                        y="0px"
+                                        width="533.333px"
+                                        height="533.334px"
+                                        viewBox="0 0 533.333 533.334"
+                                    >
+                                        <path
+                                            style={
+                                                liked
+                                                    ? { fill: 'red' }
+                                                    : { fill: params['nrel_theme'] == 'dark' ? 'white' : '' }
+                                            }
+                                            d="M533.333,186.54c0,44.98-19.385,85.432-50.256,113.46h0.256L316.667,466.667C300,483.333,283.333,500,266.667,500
+		c-16.667,0-33.333-16.667-50-33.333L50,300h0.255C19.384,271.972,0,231.52,0,186.54C0,101.926,68.593,33.333,153.206,33.333
+		c44.98,0,85.432,19.384,113.46,50.255c28.028-30.871,68.48-50.255,113.46-50.255C464.74,33.333,533.333,101.926,533.333,186.54z"
+                                        />
+                                    </svg>
+                                </SaveB>
+                            </div>
+                        </InformationText>
+                    </Information>
+                </Theme>
             </Menu>
         </>
     );
