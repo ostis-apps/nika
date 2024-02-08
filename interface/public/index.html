@@ -1,45 +1,44 @@
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="A set of complementary tools to ReactJS." />
+        <meta name="author" content="React Toolbox team" />
+        <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+        <meta
+            name="viewport"
+            content="initial-scale=1.0,user-scalable=no,maximum-scale=1"
+            media="(device-height: 568px)"
+        />
+        <meta name="apple-mobile-web-app-title" content="Material Console" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="HandheldFriendly" content="True" />
+        <meta http-equiv="cleartype" content="on" />
+        <title>RagnedaAI</title>
+        <link rel="icon" href="http://c3337100.beget.tech/R.png" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-<head>
-    <meta charset="utf-8"/>
-    <meta name="description" content="A set of complementary tools to ReactJS.">
-    <meta name="author" content="React Toolbox team">
-    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
-    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)">
-    <meta name="apple-mobile-web-app-title" content="Material Console">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="HandheldFriendly" content="True">
-    <meta http-equiv="cleartype" content="on">
-    <title>RagnedaAI</title>
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+        <!--    <link rel="stylesheet" href="/assets/spinner.css">-->
 
-    <!--    <link rel="stylesheet" href="/assets/spinner.css">-->
+        <!--    <link rel="stylesheet" href="/assets/main.css">-->
+    </head>
 
-    <!--    <link rel="stylesheet" href="/assets/main.css">-->
+    <body>
+        <div id="content"></div>
+        <!-- Main -->
 
-</head>
-
-<body>
-<div id="content"></div>
-<!-- Main -->
-
-    <script>
+        <script>
             document.addEventListener('mousemove', (e) => {
-        document.querySelectorAll('.layer').forEach(layer => {
-            const speed = layer.getAttribute('data-speed')
+                document.querySelectorAll('.layer').forEach((layer) => {
+                    const speed = layer.getAttribute('data-speed');
 
-            const x = (window.innerWidth - e.pageX * speed) / 100
-            const y = (window.innerHeight - e.pageY * speed) / 100
+                    const x = (window.innerWidth - e.pageX * speed) / 100;
+                    const y = (window.innerHeight - e.pageY * speed) / 100;
 
-            layer.style.transform = `translateX(${x}px) translateY(${y}px)`
-        })
-    });
-    </script>
-</body>
-
+                    layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
+                });
+            });
+        </script>
+    </body>
 </html>
