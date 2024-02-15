@@ -23,7 +23,7 @@ import { routes } from '@constants';
 import { ScAddr, ScConstruction, ScLinkContent, ScLinkContentType } from 'ts-sc-client';
 import { ScTemplate, ScType, ScEventType } from 'ts-sc-client';
 import { Redirect } from 'react-router';
-import { checkUser, getUserName, getUserSettings, getFontSizeFromSettings } from '@api/sc/checkUser';
+import { checkUser, getUserName, getUserSettings, getFontSizeFromSettings, translateWord } from '@api/sc/checkUser';
 import { ReactComponent as LangIcon } from '@assets/icon/lang.svg';
 import { ReactComponent as SavedIcon } from '@assets/icon/saved.svg';
 import Cookie from 'universal-cookie';
@@ -171,14 +171,14 @@ export const Home = () => {
                             style={{ fontSize: getFontSizeFromSettings(params['nrel_font_size']) }}
                             href={routes.CHAT}
                         >
-                            Чат
+                            {translateWord('Чат', params['nrel_lang'])}
                         </BtnChat>
                         <WrapperBtns>
                             <BtnGames
                                 style={{ fontSize: getFontSizeFromSettings(params['nrel_font_size']) }}
                                 href={routes.CHAT}
                             >
-                                Развлечения
+                                {translateWord('Развлечения', params['nrel_lang'])}
                             </BtnGames>
                             <BtnSaved href={routes.SAVED}>
                                 <WrapperSaved>

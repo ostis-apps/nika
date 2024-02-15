@@ -7,7 +7,7 @@ import { ScTemplate, ScType } from 'ts-sc-client';
 import { Redirect } from 'react-router';
 import { checkUser } from '@api/sc/checkUser';
 import Cookie from 'universal-cookie';
-import { getUserName, findSettings, updateSettings, getUserSettings, getFontSizeFromSettings } from '@api/sc/checkUser';
+import { translateWord, updateSettings, getUserSettings, getFontSizeFromSettings } from '@api/sc/checkUser';
 import styled from 'styled-components';
 import { ChatPageWrapper } from '@components/ChatPageWrapper';
 
@@ -150,7 +150,7 @@ export const Settings = () => {
         <>
             <NavLink href={routes.HOME} className="nav">
                 <Arrow></Arrow>
-                <Linktitle className="title">Назад</Linktitle>
+                <Linktitle className="title">{translateWord('Назад', settings['nrel_lang'])}</Linktitle>
             </NavLink>
             <Main style={settingTheme == 'light' ? { background: settingAccentColor } : {}}>
                 {savedSettings ? <Redirect to={{ pathname: routes.HOME }} /> : ''}
@@ -158,33 +158,41 @@ export const Settings = () => {
 
                 <Container>
                     <SettingsText style={{ fontSize: getFontSizeFromSettings(settingFontSize) }}>
-                        Настройки
+                        {translateWord('Настройки', settings['nrel_lang'])}
                     </SettingsText>
                     <WrapperSettings>
                         <Setting>
-                            <p style={{ fontSize: getFontSizeFromSettings(settingFontSize) }}>Тема</p>
+                            <p style={{ fontSize: getFontSizeFromSettings(settingFontSize) }}>
+                                {translateWord('Тема', settings['nrel_lang'])}
+                            </p>
                             <Select onChange={(e) => changeTheme(e)} value={settingTheme}>
-                                <option value="dark">Темная</option>
-                                <option value="light">Светлая</option>
+                                <option value="dark">{translateWord('Темная', settings['nrel_lang'])}</option>
+                                <option value="light">{translateWord('Светлая', settings['nrel_lang'])}</option>
                             </Select>
                         </Setting>
                         <Setting>
-                            <p style={{ fontSize: getFontSizeFromSettings(settingFontSize) }}>Размер текста</p>
+                            <p style={{ fontSize: getFontSizeFromSettings(settingFontSize) }}>
+                                {translateWord('Размер текста', settings['nrel_lang'])}
+                            </p>
                             <Select onChange={(e) => changeFontSize(e)} value={settingFontSize}>
-                                <option value="small">Мелкий</option>
-                                <option value="medium">Средний</option>
-                                <option value="big">Большой</option>
+                                <option value="small">{translateWord('Мелкий', settings['nrel_lang'])}</option>
+                                <option value="medium">{translateWord('Средний', settings['nrel_lang'])}</option>
+                                <option value="big">{translateWord('Большой', settings['nrel_lang'])}</option>
                             </Select>
                         </Setting>
                         <Setting>
-                            <p style={{ fontSize: getFontSizeFromSettings(settingFontSize) }}>Цвет интерфейса</p>
+                            <p style={{ fontSize: getFontSizeFromSettings(settingFontSize) }}>
+                                {translateWord('Цвет интерфейса', settings['nrel_lang'])}
+                            </p>
                             <input type="color" onChange={(e) => changeAccentColor(e)} value={settingAccentColor} />
                         </Setting>
                         <Setting>
-                            <p style={{ fontSize: getFontSizeFromSettings(settingFontSize) }}>Язык</p>
+                            <p style={{ fontSize: getFontSizeFromSettings(settingFontSize) }}>
+                                {translateWord('Язык', settings['nrel_lang'])}
+                            </p>
                             <Select onChange={(e) => changeLang(e)} value={settingLang}>
                                 <option value="ru">Русский</option>
-                                <option value="en">Английский</option>
+                                <option value="en">English</option>
                             </Select>
                         </Setting>
 
@@ -196,7 +204,7 @@ export const Settings = () => {
                             }
                             onClick={saveSettings}
                         >
-                            Сохранить
+                            {translateWord('Сохранить', settings['nrel_lang'])}
                         </SaveSettings>
                     </WrapperSettings>
                 </Container>

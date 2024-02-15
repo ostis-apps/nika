@@ -5,7 +5,7 @@ import { routes } from '@constants';
 import { ScAddr, ScConstruction, ScLinkContent, ScLinkContentType } from 'ts-sc-client';
 import { ScTemplate, ScType, ScEventType } from 'ts-sc-client';
 import { Redirect } from 'react-router';
-import { checkUser, getFontSizeFromSettings, getUserName, getUserSettings } from '@api/sc/checkUser';
+import { checkUser, getFontSizeFromSettings, getUserName, getUserSettings, translateWord } from '@api/sc/checkUser';
 import Cookie from 'universal-cookie';
 import styled from 'styled-components';
 
@@ -129,7 +129,7 @@ export const Saved = () => {
         <>
             <NavLink href={routes.HOME} style={{ background: '#413d3d' }} className="nav">
                 <Arrow></Arrow>
-                <Linktitle className="title">Назад</Linktitle>
+                <Linktitle className="title">{translateWord('Назад', params['nrel_lang'])}</Linktitle>
             </NavLink>
             <Wrapper>
                 <Container>
@@ -140,7 +140,7 @@ export const Saved = () => {
                             fontSize: getFontSizeFromSettings(params['nrel_font_size']),
                         }}
                     >
-                        Сохраненное
+                        {translateWord('Сохраненное', params['nrel_lang'])}
                     </h2>
                     <WrapperLinks className="wrapper_saved_links">
                         {linkNames.map((item, index) => {

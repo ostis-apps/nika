@@ -56,6 +56,8 @@ export const IntroWrapper = styled.div`
     top: 0;
     left: 0;
     width: 100vw;
+    min-height: 100%;
+    height: max-content;
     backdrop-filter: blur(100px);
 `;
 

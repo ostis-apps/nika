@@ -15,7 +15,7 @@ import {
 import { Redirect } from 'react-router';
 import Cookie from 'universal-cookie';
 import { encryptPassword, decryptPassword } from '@api/sc/password';
-import { checkEmail } from '@api/sc/checkUser';
+import { checkEmail, translateWord } from '@api/sc/checkUser';
 
 export const Registration = () => {
     // Get Cookies
@@ -64,6 +64,8 @@ export const Registration = () => {
             if (cookieUserAddr.isValid() && cookiePassword) {
                 setRedirectError(true);
             }
+            var userLang = navigator.language;
+            console.log(userLang);
 
             const baseKeynodes = [{ id: 'nrel_answer', type: ScType.NodeConstNoRole }];
             const keynodes = await client.resolveKeynodes(baseKeynodes);
@@ -78,36 +80,67 @@ export const Registration = () => {
     }, []);
 
     const registerUser = async (name: string, password: string) => {
-        name = encryptPassword(name);
-        password = encryptPassword(password);
-
         const baseKeynodes = [
-            { id: 'action_register_user', type: ScType.NodeConstClass },
-            { id: 'question_initiated', type: ScType.NodeConstClass },
-            { id: 'question', type: ScType.NodeConstClass },
+            { id: 'concept_users', type: ScType.NodeConstClass },
+            { id: 'nrel_email', type: ScType.NodeConstNoRole },
         ];
-
-        const helpKeynodes = [
-            { id: 'rrel_1', type: ScType.NodeConstRole },
-            { id: 'rrel_2', type: ScType.NodeConstRole },
-        ];
-
         const keynodes = await client.resolveKeynodes(baseKeynodes);
-        const hKeynodes = await client.resolveKeynodes(helpKeynodes);
+        let userFound = false;
+        const [linksArray] = await client.getLinksByContents([encryptPassword(name)]);
+        console.log(linksArray);
 
-        const construction = new ScConstruction();
-        construction.createNode(ScType.NodeConst, 'action_node');
-        construction.createEdge(ScType.EdgeAccessConstPosPerm, keynodes['action_register_user'], 'action_node');
-        construction.createEdge(ScType.EdgeAccessConstPosPerm, keynodes['question_initiated'], 'action_node');
-        construction.createEdge(ScType.EdgeAccessConstPosPerm, keynodes['question'], 'action_node');
-        construction.createLink(ScType.LinkConst, new ScLinkContent(name, ScLinkContentType.String), 'username');
-        construction.createLink(ScType.LinkConst, new ScLinkContent(password, ScLinkContentType.String), 'password');
-        construction.createEdge(ScType.EdgeAccessConstPosPerm, 'action_node', 'username', 'name_edge');
-        construction.createEdge(ScType.EdgeAccessConstPosPerm, 'action_node', 'password', 'pass_edge');
-        construction.createEdge(ScType.EdgeAccessConstPosPerm, hKeynodes['rrel_1'], 'name_edge');
-        construction.createEdge(ScType.EdgeAccessConstPosPerm, hKeynodes['rrel_2'], 'pass_edge');
+        for (let i = 0; i < linksArray.length; i++) {
+            let template = new ScTemplate();
+            template.triple(keynodes['concept_users'], ScType.EdgeAccessVarPosPerm, [ScType.NodeVar, '_user']);
+            template.tripleWithRelation(
+                '_user',
+                ScType.EdgeDCommonVar,
+                linksArray[i],
+                ScType.EdgeAccessVarPosPerm,
+                keynodes['nrel_email'],
+            );
+            const result = await client.templateSearch(template);
+            if (result.length > 0) userFound = true;
+        }
 
-        await client.createElements(construction);
+        if (!userFound) {
+            name = encryptPassword(name);
+            password = encryptPassword(password);
+
+            const baseKeynodes = [
+                { id: 'action_register_user', type: ScType.NodeConstClass },
+                { id: 'question_initiated', type: ScType.NodeConstClass },
+                { id: 'question', type: ScType.NodeConstClass },
+            ];
+
+            const helpKeynodes = [
+                { id: 'rrel_1', type: ScType.NodeConstRole },
+                { id: 'rrel_2', type: ScType.NodeConstRole },
+            ];
+
+            const keynodes = await client.resolveKeynodes(baseKeynodes);
+            const hKeynodes = await client.resolveKeynodes(helpKeynodes);
+
+            const construction = new ScConstruction();
+            construction.createNode(ScType.NodeConst, 'action_node');
+            construction.createEdge(ScType.EdgeAccessConstPosPerm, keynodes['action_register_user'], 'action_node');
+            construction.createEdge(ScType.EdgeAccessConstPosPerm, keynodes['question_initiated'], 'action_node');
+            construction.createEdge(ScType.EdgeAccessConstPosPerm, keynodes['question'], 'action_node');
+            construction.createLink(ScType.LinkConst, new ScLinkContent(name, ScLinkContentType.String), 'username');
+            construction.createLink(
+                ScType.LinkConst,
+                new ScLinkContent(password, ScLinkContentType.String),
+                'password',
+            );
+            construction.createEdge(ScType.EdgeAccessConstPosPerm, 'action_node', 'username', 'name_edge');
+            construction.createEdge(ScType.EdgeAccessConstPosPerm, 'action_node', 'password', 'pass_edge');
+            construction.createEdge(ScType.EdgeAccessConstPosPerm, hKeynodes['rrel_1'], 'name_edge');
+            construction.createEdge(ScType.EdgeAccessConstPosPerm, hKeynodes['rrel_2'], 'pass_edge');
+
+            await client.createElements(construction);
+        } else {
+            setErrorUserNameInUse(true);
+        }
     };
 
     const check = async (e) => {
@@ -115,6 +148,7 @@ export const Registration = () => {
 
         setErrorNotEqual(false);
         setErrorPassLength(false);
+        setErrorUserNameInUse(false);
 
         if (username.length < 3) {
             setErrorUsernameLength(true);
@@ -155,38 +189,60 @@ export const Registration = () => {
             <Wrapper>
                 <WrapperContent>
                     <Form>
-                        <FormText>Регистрация</FormText>
+                        <FormText>{translateWord('Регистрация', navigator.language)}</FormText>
                         <Input
                             type="string"
                             name="username"
-                            placeholder="Имя пользователя"
+                            placeholder={translateWord('Email', navigator.language)}
                             onChange={updateUsername}
                             required
                         ></Input>
                         {errorUsernameLength ? (
-                            <Error>Имя пользователя должно состоять как минимум из 4 символов.</Error>
+                            <Error>
+                                {translateWord(
+                                    'Имя пользователя должно состоять как минимум из 4 символов.',
+                                    navigator.language,
+                                )}
+                            </Error>
                         ) : (
                             ''
                         )}
-                        {errorUserNameInUse ? <Error>Имя пользователя уже занято! Используйте другое.</Error> : ''}
+                        {errorUserNameInUse ? (
+                            <Error>
+                                {translateWord('Имя пользователя уже занято!', navigator.language)}
+                                Используйте другое.
+                            </Error>
+                        ) : (
+                            ''
+                        )}
                         <Input
                             type="password"
                             name="pass1"
                             id="pass1"
-                            placeholder="Пароль"
+                            placeholder={translateWord('Пароль', navigator.language)}
                             onChange={updateChangePassword}
                             required
                         ></Input>
-                        {errorPassLength ? <Error>Пароль должен состоять как минимум из 6 символов.</Error> : ''}
+                        {errorPassLength ? (
+                            <Error>
+                                {translateWord('Пароль должен состоять как минимум из 6 символов.', navigator.language)}
+                            </Error>
+                        ) : (
+                            ''
+                        )}
                         <Input
                             type="password"
                             name="pass2"
                             id="pass2"
-                            placeholder="Повторите пароль"
+                            placeholder={translateWord('Повторите пароль', navigator.language)}
                             onChange={updateChangeRepeatPassword}
                             required
                         ></Input>
-                        {errorNotEqual ? <Error>Пароли не совпадают</Error> : ''}
+                        {errorNotEqual ? (
+                            <Error>{translateWord('Пароли не совпадают!', navigator.language)}</Error>
+                        ) : (
+                            ''
+                        )}
                         <FormBtn
                             type="submit"
                             id="submit"
@@ -194,9 +250,9 @@ export const Registration = () => {
                                 check(e);
                             }}
                         >
-                            Создать
+                            {translateWord('Создать', navigator.language)}
                         </FormBtn>
-                        <Link href={routes.LOGIN}>Уже есть аккаунт?</Link>
+                        <Link href={routes.LOGIN}>{translateWord('Уже есть аккаунт?', navigator.language)}</Link>
                     </Form>
                 </WrapperContent>
             </Wrapper>

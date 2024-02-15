@@ -14,6 +14,7 @@ import {
 } from 'ts-sc-client';
 import { Redirect } from 'react-router';
 import Cookie from 'universal-cookie';
+import { checkEmail, translateWord } from '@api/sc/checkUser';
 import { encryptPassword, decryptPassword } from '@api/sc/password';
 
 export const Login = () => {
@@ -151,11 +152,11 @@ export const Login = () => {
             <Wrapper>
                 <WrapperContent>
                     <Form>
-                        <FormText>Авторизация</FormText>
+                        <FormText>{translateWord('Войти', navigator.language)}</FormText>
                         <Input
                             type="text"
                             name="username"
-                            placeholder="Имя пользователя"
+                            placeholder={translateWord('Email', navigator.language)}
                             onChange={updateUsername}
                             required
                         ></Input>
@@ -163,16 +164,26 @@ export const Login = () => {
                             type="password"
                             name="pass"
                             id="pass"
-                            placeholder="Пароль"
+                            placeholder={translateWord('Пароль', navigator.language)}
                             onChange={updatePass}
                             required
                         ></Input>
-                        {errorEmpty ? <Error>Поля должны быть заполнены!</Error> : ''}
-                        {errorLogin ? <Error>Неверное имя пользоватлеься или пароль!</Error> : ''}
+                        {errorEmpty ? (
+                            <Error>{translateWord('Поля должны быть заполнены!', navigator.language)}</Error>
+                        ) : (
+                            ''
+                        )}
+                        {errorLogin ? (
+                            <Error>
+                                {translateWord('Неверное имя пользоватлеься или пароль!', navigator.language)}
+                            </Error>
+                        ) : (
+                            ''
+                        )}
                         <FormBtn type="submit" id="submit" onClick={check}>
-                            Войти
+                            {translateWord('Войти', navigator.language)}
                         </FormBtn>
-                        <Link href={routes.REGISTRATION}>Еще нет аккаунта?</Link>
+                        <Link href={routes.REGISTRATION}>{translateWord('еще нет аккаунта?', navigator.language)}</Link>
                     </Form>
                 </WrapperContent>
             </Wrapper>

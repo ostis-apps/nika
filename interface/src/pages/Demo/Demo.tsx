@@ -8,7 +8,7 @@ import { ScAddr } from 'ts-sc-client';
 import { resolveUserAgent } from '@agents/resolveUserAgent';
 import { useChat } from '@hooks/useChat';
 import * as React from 'react';
-import { checkUser, getUserName, getUserSettings } from '@api/sc/checkUser';
+import { checkUser, getUserName, getUserSettings, translateWord } from '@api/sc/checkUser';
 import { Redirect } from 'react-router';
 import Cookie from 'universal-cookie';
 import { SC_WEB_URL } from '@constants';
@@ -81,7 +81,7 @@ export const Demo = () => {
             <Wrapper>
                 <NavLink href={routes.HOME} className="nav">
                     <Arrow></Arrow>
-                    <Linktitle className="title">Назад</Linktitle>
+                    <Linktitle className="title">{translateWord('Назад', params['nrel_lang'])}</Linktitle>
                 </NavLink>
                 <ChatWrapper>
                     <Chat
@@ -93,6 +93,7 @@ export const Demo = () => {
                         accentColor={params['nrel_accent_color']}
                         theme={params['nrel_theme']}
                         fontSize={params['nrel_font_size']}
+                        language={params['nrel_lang']}
                     >
                         {messages.map((item, ind) => {
                             const prevItem = messages[ind - 1];

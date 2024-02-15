@@ -24,7 +24,7 @@ import {
     Line,
     Gradient,
 } from './styled';
-import { getFontSizeFromSettings, getUserSettings } from '@api/sc/checkUser';
+import { getFontSizeFromSettings, getUserSettings, translateWord } from '@api/sc/checkUser';
 import Cookie from 'universal-cookie';
 import { ScAddr, ScConstruction, ScTemplate, ScType, ScLinkContent, ScLinkContentType } from 'ts-sc-client';
 import { client } from '@api/sc';
@@ -371,7 +371,7 @@ export const MapPage = () => {
         <>
             <NavLink href={routes.HOME} className="nav">
                 <Arrow></Arrow>
-                <Linktitle className="title">Назад</Linktitle>
+                <Linktitle className="title">{translateWord('Назад', params['nrel_lang'])}</Linktitle>
             </NavLink>
             <Loading
                 style={

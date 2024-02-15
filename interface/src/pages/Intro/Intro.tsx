@@ -22,7 +22,7 @@ import { ScTemplate, ScType } from 'ts-sc-client';
 import { Redirect } from 'react-router';
 import { checkUser } from '@api/sc/checkUser';
 import Cookie from 'universal-cookie';
-import { getUserName } from '@api/sc/checkUser';
+import { getUserName, translateWord } from '@api/sc/checkUser';
 import Alert from 'react-bootstrap';
 
 type DesireDesc = {
@@ -198,8 +198,12 @@ export const Intro = () => {
             <IntroWrapper>
                 <WrapperContentIntro>
                     <div>
-                        <HelloTextIntro>Здравствуйте</HelloTextIntro>
-                        <NameInput type="text" placeholder="Имя" onChange={changeUserName}></NameInput>
+                        <HelloTextIntro>{translateWord('Здравствуйте', navigator.language)}</HelloTextIntro>
+                        <NameInput
+                            type="text"
+                            placeholder={translateWord('Имя', navigator.language)}
+                            onChange={changeUserName}
+                        ></NameInput>
                     </div>
                     <MainBtnsIntro>
                         {desires.map((item, index) => {
@@ -212,7 +216,7 @@ export const Intro = () => {
                                     key={index}
                                     onClick={() => select(item, index)}
                                 >
-                                    <TextButton>{item.title}</TextButton>
+                                    <TextButton>{translateWord(item.title, navigator.language)}</TextButton>
                                     <LinerBtns></LinerBtns>
                                     <SelectMask style={item.isSelected ? opacity : undefined}>✓</SelectMask>
                                 </DesireButton>
@@ -221,7 +225,7 @@ export const Intro = () => {
                     </MainBtnsIntro>
                     {errorNameUserEmpty ? <Error>Поле должно быть заполнено!</Error> : ''}
                     {desiresCountError ? <Error>Выберете больше достопрмечательностей!</Error> : ''}
-                    <SaveButton onClick={saveDesires}>Сохранить</SaveButton>
+                    <SaveButton onClick={saveDesires}>{translateWord('Сохранить', navigator.language)}</SaveButton>
                 </WrapperContentIntro>
             </IntroWrapper>
         </div>

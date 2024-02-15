@@ -44,6 +44,7 @@ interface IProps {
     accentColor?: string;
     fontSize?: string;
     theme?: string;
+    language?: string;
 }
 const textPlaceholder = {
     en: 'What Ragneda can?',
@@ -70,6 +71,7 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
             accentColor,
             fontSize,
             theme,
+            language,
         },
         chatRef,
     ) => {
@@ -200,7 +202,7 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
                     {isLoading && (
                         <WrapperSpinner>
                             <Spinner size={12} />
-                            <FetchingSpinnerText>{textLoad[hookLanguage]}</FetchingSpinnerText>
+                            <FetchingSpinnerText>{textLoad[language ? language : 'ru']}</FetchingSpinnerText>
                         </WrapperSpinner>
                     )}
 
@@ -223,7 +225,7 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
                         {isAgentAnswer && (
                             <WrapperWaitingSpinner>
                                 <WaitingSpinner />
-                                <AnswerSpinnerText>{textAgentAnswer[hookLanguage]}</AnswerSpinnerText>
+                                <AnswerSpinnerText>{textAgentAnswer[language ? language : 'ru']}</AnswerSpinnerText>
                             </WrapperWaitingSpinner>
                         )}
                     </WrapperAgentAnswer>
@@ -235,7 +237,7 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
                             onChange={onInputChange}
                             onKeyPress={onInputKeyDown}
                             type="text"
-                            placeholder={textPlaceholder[hookLanguage]}
+                            placeholder={textPlaceholder[language ? language : 'ru']}
                             style={{ fontSize: getFontSizeFromSettings(fontSize ? fontSize : 'medium') }}
                         />
                         <FooterSend style={{ background: accentColor }} onClick={onButtonClick} type="submit">
