@@ -1,0 +1,33 @@
+section_subject_domain_of_metro
+=> nrel_main_idtf:
+  [Раздел. Предметная область метро.]
+  (* <- lang_ru;; *);
+  [Section. Subject domain of metro.] 
+  (* <- lang_en;; *);
+<- non_atomic_section;;
+
+ 
+section_subject_domain_of_metro = [*
+	subject_domain_of_metro
+<- sc_node_struct;
+	=> nrel_main_idtf:
+	  [Предметная область метро.]
+	  (* <- lang_ru;; *);
+	  [Subject domain of metro.] 
+	  (* <- lang_en;; *);
+	<- subject_domain;
+	-> rrel_maximum_studied_object_class:
+   		concept_metro;
+   	-> rrel_not_maximum_studied_object_class:
+		concept_vetks;
+		concept_metro_station;
+	-> rrel_explored_relation:
+		nrel_vetka;
+		nrel_station;;
+*];;
+
+section_subject_domain_of_metro
+-> rrel_key_sc_element:
+   subject_domain_of_metro;
+   concept_metro;;
+

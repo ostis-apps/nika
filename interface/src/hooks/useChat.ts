@@ -91,6 +91,8 @@ export const useChat = (user: ScAddr | null) => {
     const sendMessage = useCallback(
         async (user: ScAddr, text: string) => {
             const linkAddr = await createLinkText(text);
+            console.log(linkAddr, chatNode);
+
             if (!linkAddr || !chatNode) return;
             const date = new Date();
             const message = {

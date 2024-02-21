@@ -33,6 +33,7 @@ import { Spinner } from '@components/Spinners/LoadSpinner';
 import { WaitingSpinner } from '@components/Spinners/WaitingSpinner';
 import { refSetter, throttle } from '@utils';
 import { useLanguage } from '@hooks/useLanguage';
+import { getFontSizeFromSettings } from '@api/sc/checkUser';
 
 interface IProps {
     onSend: (message: string) => void;
@@ -40,10 +41,14 @@ interface IProps {
     className?: string;
     isLoading?: boolean;
     isAgentAnswer?: boolean;
+    accentColor?: string;
+    fontSize?: string;
+    theme?: string;
+    language?: string;
 }
 const textPlaceholder = {
-    en: 'What Nika can?',
-    ru: 'Что умеет Ника?',
+    en: 'What Ragneda can?',
+    ru: 'Что умеет Рагнеда?',
 };
 const textLoad = {
     en: 'Load messages',
@@ -55,7 +60,21 @@ const textAgentAnswer = {
 };
 
 export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
-    ({ onSend, onFetching, isAgentAnswer, children, className, isLoading: isFetchingChatLoading }, chatRef) => {
+    (
+        {
+            onSend,
+            onFetching,
+            isAgentAnswer,
+            children,
+            className,
+            isLoading: isFetchingChatLoading,
+            accentColor,
+            fontSize,
+            theme,
+            language,
+        },
+        chatRef,
+    ) => {
         const [messageInput, setMessageInput] = useState('');
 
         const [showArrow, setShowArrow] = useState(false);
@@ -177,13 +196,13 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
         }, [messageInput]);
 
         return (
-            <Wrapper className={className}>
+            <Wrapper style={theme == 'light' ? { background: accentColor } : {}} className={className}>
                 <SearchBar />
                 <Main ref={refSetter(mainRef, chatRef)} onScroll={onScroll}>
                     {isLoading && (
                         <WrapperSpinner>
                             <Spinner size={12} />
-                            <FetchingSpinnerText>{textLoad[hookLanguage]}</FetchingSpinnerText>
+                            <FetchingSpinnerText>{textLoad[language ? language : 'ru']}</FetchingSpinnerText>
                         </WrapperSpinner>
                     )}
 
@@ -206,7 +225,7 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
                         {isAgentAnswer && (
                             <WrapperWaitingSpinner>
                                 <WaitingSpinner />
-                                <AnswerSpinnerText>{textAgentAnswer[hookLanguage]}</AnswerSpinnerText>
+                                <AnswerSpinnerText>{textAgentAnswer[language ? language : 'ru']}</AnswerSpinnerText>
                             </WrapperWaitingSpinner>
                         )}
                     </WrapperAgentAnswer>
@@ -218,9 +237,10 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
                             onChange={onInputChange}
                             onKeyPress={onInputKeyDown}
                             type="text"
-                            placeholder={textPlaceholder[hookLanguage]}
+                            placeholder={textPlaceholder[language ? language : 'ru']}
+                            style={{ fontSize: getFontSizeFromSettings(fontSize ? fontSize : 'medium') }}
                         />
-                        <FooterSend onClick={onButtonClick} type="submit">
+                        <FooterSend style={{ background: accentColor }} onClick={onButtonClick} type="submit">
                             <WrapperSendIcon>
                                 <SendIcon />
                             </WrapperSendIcon>
