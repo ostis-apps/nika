@@ -24,6 +24,7 @@ import { checkUser } from '@api/sc/checkUser';
 import Cookie from 'universal-cookie';
 import { getUserName, translateWord } from '@api/sc/checkUser';
 import Alert from 'react-bootstrap';
+import { Template } from 'webpack';
 
 type DesireDesc = {
     title: string;
@@ -95,27 +96,32 @@ export const Intro = () => {
             ScType.EdgeAccessVarPosPerm,
             hKeynodes['nrel_main_idtf'],
         );
-        template.tripleWithRelation(
-            '_desire',
-            ScType.EdgeDCommonVar,
-            [ScType.LinkVar, 'desireImage'],
-            ScType.EdgeAccessVarPosPerm,
-            hKeynodes['nrel_image'],
-        );
 
         template.triple(keynodes['lang_ru'], ScType.EdgeAccessVarPosPerm, '_desire_text');
         const result = await client.templateSearch(template);
+        console.log(result.length);
 
         let a: DesireDesc[] = [];
         for (let i = 0; i < result.length; i++) {
             const linkTitle = result[i].get('_desire_text');
+            const desireAddr = result[i].get('_desire');
             const resTitle = await client.getLinkContents([linkTitle]);
             const title = String(resTitle[0].data);
-            desireImages.push(String((await client.getLinkContents([result[i].get('desireImage')]))[0].data));
 
-            console.log(await client.getLinkContents([result[i].get('desireImage')]));
+            const template = new ScTemplate();
+            template.tripleWithRelation(
+                desireAddr,
+                ScType.EdgeDCommonVar,
+                [ScType.LinkVar, 'desireImage'],
+                ScType.EdgeAccessVarPosPerm,
+                hKeynodes['nrel_image'],
+            );
+            const result1 = await client.templateSearch(template);
 
-            const desireAddr = result[i].get('_desire');
+            desireImages.push(String((await client.getLinkContents([result1[0].get('desireImage')]))[0].data));
+
+            console.log(await client.getLinkContents([result1[0].get('desireImage')]));
+
             const desireObj: DesireDesc = { title: title, img: '', desireAddr: desireAddr, isSelected: false };
             a.push(desireObj);
         }
@@ -210,7 +216,7 @@ export const Intro = () => {
                             return (
                                 <DesireButton
                                     style={{
-                                        backgroundImage: `url(data:image/jpeg;base64,${desireImages[index]}) `,
+                                        backgroundImage: `url("${desireImages[index]}") `,
                                         backgroundSize: 'cover',
                                     }}
                                     key={index}

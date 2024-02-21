@@ -235,5 +235,17 @@ export const translateWord = (text: string, lang: string) => {
         if (text == 'колесо обозрения') return 'ferris wheel';
         if (text == 'скульптура') return 'sculpture';
         if (text == 'усадьба') return 'manor house';
+        if (text == 'хостел') return 'hostel';
+        if (text == 'кинотеатр') return 'cinema';
+        if (text == 'музей') return 'museum';
+        if (text == 'театр') return 'theatre';
+        if (text == 'пляж') return 'beach';
+        if (text == 'стадион') return 'stadium';
+        if (text == 'ночной клуб') return 'nightclub';
+        if (text == 'сауна') return 'sauna';
+        if (text == 'ресторан') return 'restauranе';
+        if (text == 'кафе') return 'cafe';
+        if (text == 'американские горки') return 'roller coaster';
+        if (text == 'парк развлечений') return 'amusement park';
     }
 };

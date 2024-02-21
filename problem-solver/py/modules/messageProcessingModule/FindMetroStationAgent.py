@@ -88,6 +88,8 @@ class FindMetroStationAgent(ScAgentClassic):
 
             ip_first_place = f"{response1[0]['lon']}, {response1[0]['lat']}"
             ip_second_place = f"{response2[0]['lon']}, {response2[0]['lat']}"
+
+            print(f'{ip_first_place} {ip_second_place}');
         except:
             answer = choice([f'К сожалению, не удалось распознать, куда вам надо.'])
 

@@ -159,7 +159,7 @@ export const WidgetMap = styled.a`
     font-weight: 700;
     width: 100%;
     border-radius: 10px;
-    background: url('http://c3337100.beget.tech/map.png') center no-repeat;
+    background: url('http://c3337100.beget.tech/map1.png') center no-repeat;
     background-size: cover;
     cursor: pointer;
     filter: brightness(0.5);

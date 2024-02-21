@@ -141,6 +141,7 @@ export const Home = () => {
             fill: ${params['nrel_theme'] == 'dark' ? 'white' : params['nrel_accent_color']};
         }
     `;
+
     return (
         <div>
             {redirectError ? <Redirect to={{ pathname: routes.LOGIN }} /> : ''}
@@ -192,7 +193,7 @@ export const Home = () => {
                         <WidgetWeather>
                             <p style={{ fontSize: getFontSizeFromSettings(params['nrel_font_size']) }}>{city}</p>
                             <div dangerouslySetInnerHTML={{ __html: icon }} />
-                            <p style={{ fontSize: getFontSizeFromSettings(params['nrel_font_size']) }}>{temp}</p>
+                            <p style={{ fontSize: getFontSizeFromSettings(params['nrel_font_size']) }}>{temp}°C</p>
                         </WidgetWeather>
                         <WidgetMap href={routes.OWNMAP}></WidgetMap>
                     </WrapperWidget>
