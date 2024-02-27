@@ -1,0 +1,162 @@
+concept_course_work
+<-sc_node_not_relation;
+    => nrel_main_idtf:
+          [курсовая работа]
+            (*<-lang_ru;;*);
+          [course work]
+            (* <- lang_en;;*);
+    <- rrel_key_sc_element: ... 
+        (*
+            <- sc_definition;;
+            => nrel_main_idtf:
+                [Опр. (курсовая работа)] (* <- lang_ru;; *);;*);;
+
+concept_student
+<-sc_node_not_relation;
+    => nrel_main_idtf:
+          [студент]
+            (*<-lang_ru;;*);
+          [student]
+            (* <- lang_en;;*);
+    <- rrel_key_sc_element: ... 
+        (*
+            <- sc_definition;;
+            => nrel_main_idtf:
+                [Опр. (студент)] (* <- lang_ru;; *);;*);;
+
+concept_teacher
+<-sc_node_not_relation;
+    => nrel_main_idtf:
+          [преподаватель]
+            (*<-lang_ru;;*);
+          [teacher]
+            (* <- lang_en;;*);
+    <- rrel_key_sc_element: ... 
+        (*
+            <- sc_definition;;
+            => nrel_main_idtf:
+                [Опр. (преподаватель)] (* <- lang_ru;; *);;*);;
+
+concept_project
+<-sc_node_not_relation;
+    => nrel_main_idtf:
+          [проект]
+            (*<-lang_ru;;*);
+          [project]
+            (* <- lang_en;;*);
+    <- rrel_key_sc_element: ... 
+        (*
+            <- sc_definition;;
+            => nrel_main_idtf:
+                [Опр. (проект)] (* <- lang_ru;; *);;*);;
+
+nrel_project
+<-sc_node_norole_relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- antisymmetric_relation;
+<- antitransitive_relation;
+    => nrel_main_idtf:
+          [проект*]
+            (*<-lang_ru;;*);
+          [project*]
+            (* <- lang_en;;*);
+    <- rrel_key_sc_element: ... 
+        (*
+            <- sc_definition;;
+            => nrel_main_idtf:
+                [Опр. (проект)] (* <- lang_ru;; *);;*);;
+
+nrel_best_project
+<-sc_node_norole_relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- antisymmetric_relation;
+<- antitransitive_relation;
+    => nrel_main_idtf:
+          [лучшие проект*]
+            (*<-lang_ru;;*);
+          [best project*]
+            (* <- lang_en;;*);
+    <- rrel_key_sc_element: ... 
+        (*
+            <- sc_definition;;
+            => nrel_main_idtf:
+                [Опр. (лучший проект)] (* <- lang_ru;; *);;*);;
+
+nrel_curator
+<-sc_node_norole_relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- antisymmetric_relation;
+<- antitransitive_relation;
+    => nrel_main_idtf:
+          [куратор*]
+            (*<-lang_ru;;*);
+          [curator*]
+            (* <- lang_en;;*);
+    <- rrel_key_sc_element: ... 
+        (*
+            <- sc_definition;;
+            => nrel_main_idtf:
+                [Опр. (куратор)] (* <- lang_ru;; *);;*);;
+
+nrel_inspector
+<-sc_node_norole_relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- antisymmetric_relation;
+<- antitransitive_relation;
+    => nrel_main_idtf:
+          [инспектор*]
+            (*<-lang_ru;;*);
+          [inspector*]
+            (* <- lang_en;;*);
+    <- rrel_key_sc_element: ... 
+        (*
+            <- sc_definition;;
+            => nrel_main_idtf:
+                [Опр. (инспектор)] (* <- lang_ru;; *);;*);;
+
+nrel_final_grade
+<-sc_node_norole_relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- antisymmetric_relation;
+<- antitransitive_relation;
+    => nrel_main_idtf:
+          [итоговая оценка*]
+            (*<-lang_ru;;*);
+          [final grade*]
+            (* <- lang_en;;*);
+    <- rrel_key_sc_element: ... 
+        (*
+            <- sc_definition;;
+            => nrel_main_idtf:
+                [Опр. (итоговая оценка)] (* <- lang_ru;; *);;*);;
+
+nrel_assignment_sheet_due_date
+<-sc_node_norole_relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- antisymmetric_relation;
+<- antitransitive_relation;
+    => nrel_main_idtf:
+          [дата сдачи листа задания*]
+            (*<-lang_ru;;*);
+          [assignment sheet due date*]
+            (* <- lang_en;;*);
+    <- rrel_key_sc_element: ... 
+        (*
+            <- sc_definition;;
+            => nrel_main_idtf:
+                [Опр. (дата сдачи листа задания)] (* <- lang_ru;; *);;*);;
+ 
+
+             
