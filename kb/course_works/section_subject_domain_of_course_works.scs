@@ -1,0 +1,21 @@
+section_of_course_works
+	=> nrel_main_idtf:
+		[Раздел. Предметная область курсовых работ]
+			(* <- lang_ru;; *);
+[Section. Subject domain of course works] (* <- lang_en;; *);;
+section_of_anatomy_of_course_works<=nrel_section_decomposition:{
+	subject_domain_of_course_works
+};;
+section_of_course_works->rrel_key_sc_element:
+    concept_student;
+    concept_project;
+    concept_teacher;
+    concept_course_work;;
+
+section_of_course_works->rrel_explored_relation:
+    nrel_project;
+    nrel_best_project;
+    nrel_curator;
+    nrel_inspector;
+    nrel_final_grade;
+    nrel_assignment_sheet_due_date;;

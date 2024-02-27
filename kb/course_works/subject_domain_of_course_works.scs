@@ -1,0 +1,9 @@
+ubject_domain_of_course_works
+=>nrel_main_idtf: [Предметная область курсовых работ] (* <- lang_ru;; *);
+[subject domain of course works] (* <- lang_en;; *);
+	<- not_enough_formed_structure;;
+
+  
+subject_domain_of_course_works->rrel_maximum_studied_object_class:concept_course_work;;
+subject_domain_of_course_works->rrel_not_maximum_studied_object_class:concept_project;;
+subject_domain_of_course_works<-subject_domain;;	

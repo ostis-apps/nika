@@ -22,3 +22,29 @@ action_show_weather
 				[Action. show weather is an action of receiving information about the weather at a specific location](* <- lang_en;; *);;
 		*);;
 	*);;
+
+action_show_course
+<- sc_node_class;
+=> nrel_main_idtf:
+	[действие. узнать о курсе](* <- lang_ru;; *);
+	[action. show course](* <- lang_en;; *);
+<- actions_class;
+<- atomic_action_class;
+<= nrel_inclusion: information_action;
+<- rrel_key_sc_element:
+	...
+	(*
+	<- explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+			-> rrel_example:
+				[Действие. узнать узнать о курсе](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+			-> rrel_example:
+				[Action. show course](* <- lang_en;; *);;
+		*);;
+	*);;
+
