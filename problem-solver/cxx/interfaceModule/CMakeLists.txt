@@ -2,12 +2,14 @@ set(SOURCES
     "InterfaceModule.cpp"
     "keynodes/InterfaceKeynodes.cpp"
     "agent/ChangeInterfaceColorAgent.cpp"
+    "agent/CreateAnswerTemplate.cpp"
 )
 
 set(HEADERS
     "InterfaceModule.hpp"
     "keynodes/InterfaceKeynodes.hpp"
     "agent/ChangeInterfaceColorAgent.hpp"
+    "agent/CreateAnswerTemplate.hpp"
 )
 
 include_directories(
@@ -16,10 +18,11 @@ include_directories(
     ${SC_KPM_SRC}
     ${SC_TOOLS_SRC}
     ${SC_COMMON_MODULE_SRC}
+    ${DIALOG_CONTROL_MODULE_SRC}
 )
 
 add_library(interface SHARED ${SOURCES} ${HEADERS})
-target_link_libraries(interface sc-memory sc-agents-common common)
+target_link_libraries(interface sc-memory sc-agents-common common dialogControlModule)
 
 sc_codegen_ex(interface ${CMAKE_CURRENT_LIST_DIR} ${CMAKE_CURRENT_LIST_DIR}/generated)
 
