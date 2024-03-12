@@ -1,6 +1,6 @@
 import { ScAddr, ScTemplate, ScType } from 'ts-sc-client';
 import { client } from '@api/sc/client';
-import { ScConstruction, ScLinkContent, ScLinkContentType } from 'ts-sc-client';
+import { ScConstruction, ScLinkContent, ScLinkContentType, ScEventParams, ScEventType } from 'ts-sc-client';
 
 const nrelSystemIdentifier = 'nrel_system_identifier';
 
@@ -30,6 +30,23 @@ const setSystemIdtf = async (addr: ScAddr, systemIdtf: string) => {
     );
     const result = await client.templateGenerate(template, {});
 };
+
+export const checkToCreatePopup = async (
+    createPopup : boolean
+) => {
+    const concept_popup = 'concept_popup';
+    const create_phrase_template_popup = 'create_phrase_template_popup';
+
+    const baseKeynodes = [
+        { id: concept_popup, type: ScType.NodeConstClass},
+        { id: create_phrase_template_popup, type: ScType.NodeVar},
+    ];
+
+    const keynodes = client.resolveKeynodes(baseKeynodes);
+
+    const eventParams = new ScEventParams(keynodes[concept_popup], ScEventType.AddOutgoingEdge, ()=>{createPopup = true});
+    await client.eventsCreate([eventParams]);
+}
 
 export const handleSave = async (
     systemIdentifierRef: React.RefObject<HTMLInputElement>,

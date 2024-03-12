@@ -3,9 +3,9 @@ import { Wrapper, ChatWrapper, SCgViewerWrapper, PopupWrapper} from "./styled";
 import { Message } from '@components/Chat/Message';
 import { Chat } from '@components/Chat';
 import { Date } from '@components/Chat/Date';
-import { ScAddr, ScConstruction, ScLinkContent, ScLinkContentType, ScTemplate, ScType } from 'ts-sc-client';
+import { ScAddr, ScConstruction, ScEventParams, ScEventType, ScLinkContent, ScLinkContentType, ScTemplate, ScType } from 'ts-sc-client';
 import { resolveUserAgent } from '@agents/resolveUserAgent';
-import { handleSave } from '@agents/helper';
+import { checkToCreatePopup, handleSave } from '@agents/helper';
 import { useChat } from '@hooks/useChat';
 import * as React from "react";
 import { useRef } from 'react';
@@ -23,6 +23,8 @@ export const Demo = () => {
     const russianIdentifierRef = useRef<HTMLInputElement>(null);
     const englishIdentifierRef = useRef<HTMLInputElement>(null);
     const answerTemplatesRef = useRef<HTMLTextAreaElement>(null);
+
+    const createPopup = false;
 
     const { initChat, sendMessage, isAgentAnswer, onFetching, messages, chatRef } = useChat(user);
     const onSend = useCallback(
@@ -154,7 +156,7 @@ export const Demo = () => {
             <SCgViewerWrapper>
                 <iframe src={url} style={{width: '100%', height: '100%', border: 0, borderRadius: '15px'}}/>
             </SCgViewerWrapper>
-            {messages[messages?.length - 1]?.text === 'Создать шаблон ответа' && (
+            {createPopup && (
                 <PopupWrapper>
                     <Popup /> {/* Ваш компонент всплывающего окна */}
                 </PopupWrapper>
