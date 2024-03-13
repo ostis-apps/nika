@@ -24,7 +24,9 @@ export const Demo = () => {
     const englishIdentifierRef = useRef<HTMLInputElement>(null);
     const answerTemplatesRef = useRef<HTMLTextAreaElement>(null);
 
-    const createPopup = false;
+    const createPopup : boolean = false;
+
+    
 
     const { initChat, sendMessage, isAgentAnswer, onFetching, messages, chatRef } = useChat(user);
     const onSend = useCallback(
@@ -32,7 +34,7 @@ export const Demo = () => {
             if (!user) return;
             await sendMessage(user, text);
         },
-        [user, sendMessage],
+        [user, sendMessage, createPopup],
     );
 
     const url = SC_WEB_URL + '/?sys_id=answer_structure&scg_structure_view_only=true';
@@ -45,6 +47,7 @@ export const Demo = () => {
             setUser(user);
             await initChat([user]);
             setIsLoading(false);
+            checkToCreatePopup(createPopup); 
         })();
     }, [initChat]);
 

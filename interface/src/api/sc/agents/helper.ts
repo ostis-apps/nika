@@ -31,11 +31,12 @@ const setSystemIdtf = async (addr: ScAddr, systemIdtf: string) => {
     const result = await client.templateGenerate(template, {});
 };
 
+
 export const checkToCreatePopup = async (
     createPopup : boolean
 ) => {
     const concept_popup = 'concept_popup';
-    const create_phrase_template_popup = 'create_phrase_template_popup';
+    const create_phrase_template_popup = '_create_phrase_template_popup';
 
     const baseKeynodes = [
         { id: concept_popup, type: ScType.NodeConstClass},
@@ -43,8 +44,9 @@ export const checkToCreatePopup = async (
     ];
 
     const keynodes = client.resolveKeynodes(baseKeynodes);
-
-    const eventParams = new ScEventParams(keynodes[concept_popup], ScEventType.AddOutgoingEdge, ()=>{createPopup = true});
+    console.log("hello");
+    const eventParams = new ScEventParams(keynodes[concept_popup], ScEventType.AddOutgoingEdge, ()=>{createPopup = true; console.log("Hello");});
+    console.log("world");
     await client.eventsCreate([eventParams]);
 }
 
