@@ -73,56 +73,126 @@ export const PopupWrapper = styled.div`
 
   .popup{
     background-color: rgba(255, 255, 255, 1);
-    width: 40%;
-    height: 60%;
+    width: 35%;
+    height: 80%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding: 10px;
     color: black;
-    border: 2px solid black;
-    border-radius: 12px;
+    border: 1px solid gray;
+    border-radius: 20px;
     position:relative;
     
-    .input{
-        width: 90%;
-        height: 4vh;
-        border-radius: 10px;
-        box-shadow: 10px 4px 15px rgb(0 0 0 / 25%);
-        border: 1px solid black;
-        margin-bottom: 7px;
-
-        &::placeholder{
-            color: gray;
-        }
+    h2{
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    
+    h4{
+        padding-left: 10px;
     }
 
-    .textarea{
-        width: 90%;
-        height: 40%;
-        resize: none;
-        border-radius: 10px;
-        box-shadow: 10px 4px 15px rgb(0 0 0 / 25%);
-        border: 1px solid black;
+    .numdiv{
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+    }
 
-        &::placeholder{
-            color: gray;
-        }
+    .numdiv button{
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+        
+    }
+    
+    .p1{
+        margin-right: 40px;
+        background: #88AFE2;
+        border: 1px solid #88AFE2;
+    }
+    
+    .p2{
+        background: #3C547B;
+        border: 1px solid #3C547B;
+    }
+
+    .p3{
+        margin-right: 40px;
+        background: #3C547B;
+        border: 1px solid #3C547B;
+    }
+    
+    .p4{
+        background: rgb(203, 203, 203);
+        border: 1px solid rgb(203, 203, 203);
+    }
+
+    input{
+        width: 96%;
+        height: 4vh;
+        border-radius: 20px;
+        box-shadow: 10px 4px 15px rgb(0 0 0 / 25%);
+        border: 1px solid gray;
+        margin-bottom: 7px;
+        padding-left: 10px;
+    }
+
+    input::placeholder {
+        color: black;
+    }
+
+    .close_button{
+        color: black;
+        background: none;
+        border: none;
+        padding: 0;
+        font-size: 30px;
+        position: absolute;
+        right: 20px;
+        top: 16px;
+        width: 30px;
+        height: 30px;
+        
+    }
+
+    .form{
+        padding-left: 10px;
     }
 
     .button{
-        background-color: rgba(255, 255, 255, 1);
-        color: black;
-        border-radius: 10px;
+        background-color: #3C547B;
+        color: white;
+        border-radius: 20px;
         box-shadow: 10px 4px 15px rgb(0 0 0 / 25%);
-        border: 1px solid black;
-        width: 30%;
+        border: 1px solid #3C547B;
+        width: 94%;
         height: 6%;
         position: absolute;
         bottom: 10px;
+        left: 3%;
+    }
+
+    .button-save{
+        background-color: rgb(149 149 149);
+        color: white;
+        border-radius: 20px;
+        box-shadow: 10px 4px 15px rgb(0 0 0 / 25%);
+        border: 1px solid rgb(149 149 149);;
+        width: 94%;
+        height: 6%;
+        position: absolute;
+        bottom: 10px;
+        left: 3%;
     }
 
     .chips{
-        width: 90%;
+        width: 95%;
     }
 
     .chip-div{
@@ -132,21 +202,22 @@ export const PopupWrapper = styled.div`
     .chip{
         background-color: rgba(255, 255, 255, 1);
         color: black;
-        border-radius: 10px;
+        border-radius: 20px;
         box-shadow: 10px 4px 15px rgb(0 0 0 / 25%);
-        border: 1px solid black;
-        width: 100%;
-        padding-left: 20px;
+        border: 1px solid gray;
+        width: 95%;
+        padding-left: 10px;
+        margin-left: 10px;
         margin-bottom: 5px;
         height: 25px;
     }
 
     .chip-delete{
         background-color: rgba(255, 255, 255, 1);
-        color: black;
+        color: gray;
         border-radius: 25px;
         box-shadow: 10px 4px 15px rgb(0 0 0 / 25%);
-        border: 1px solid black;
+        border: 1px solid gray;
         height: 25px;
         width: 25px;
         text-align: center;
@@ -156,10 +227,10 @@ export const PopupWrapper = styled.div`
     .chip-input{
         width: 100%;
         height: 4vh;
-        border-radius: 10px;
+        border-radius: 20px;
         box-shadow: 10px 4px 15px rgb(0 0 0 / 25%);
-        border: 1px solid black;
-        margin-top: 5px;
+        border: 1px solid gray;
+        margin-left: 10px;
         margin-bottom: 10px;
 
         &::placeholder{

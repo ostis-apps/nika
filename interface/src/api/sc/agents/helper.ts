@@ -31,35 +31,14 @@ const setSystemIdtf = async (addr: ScAddr, systemIdtf: string) => {
     const result = await client.templateGenerate(template, {});
 };
 
-
-export const checkToCreatePopup = async (
-    createPopup : boolean
-) => {
-    const concept_popup = 'concept_popup';
-    const create_phrase_template_popup = '_create_phrase_template_popup';
-
-    const baseKeynodes = [
-        { id: concept_popup, type: ScType.NodeConstClass},
-        { id: create_phrase_template_popup, type: ScType.NodeVar},
-    ];
-
-    const keynodes = client.resolveKeynodes(baseKeynodes);
-    console.log("hello");
-    const eventParams = new ScEventParams(keynodes[concept_popup], ScEventType.AddOutgoingEdge, ()=>{createPopup = true; console.log("Hello");});
-    console.log("world");
-    await client.eventsCreate([eventParams]);
-}
-
 export const handleSave = async (
     systemIdentifierRef: React.RefObject<HTMLInputElement>,
     russianIdentifierRef: React.RefObject<HTMLInputElement>,
-    englishIdentifierRef: React.RefObject<HTMLInputElement>,
     chipsValues: string[]
 ) => {
         const inputValues = {
             systemIdentifier: systemIdentifierRef.current?.value || '',
             russianIdentifier: russianIdentifierRef.current?.value || '',
-            englishIdentifier: englishIdentifierRef.current?.value || '',
             };
 
         const phrases = chipsValues.join(', ');
@@ -67,7 +46,6 @@ export const handleSave = async (
         const inputs = [
             'System Identifier: ' + inputValues['systemIdentifier'],
             'Russian Identifier: ' + inputValues['russianIdentifier'],
-            'English Identifier: ' + inputValues['englishIdentifier'],
             'Answer Templates: ' + phrases
         ];
 
