@@ -14,18 +14,6 @@ class CreateAnswerTemplateAgent : public ScAgent
 
 private:
   bool checkActionClass(ScAddr const & actionAddr);
-};
-
-class CreateAnswerTemplate
-{
-public:
-  std::string systemIndetifier = "";
-  std::string russianIndetifier = "";
-  std::string englishIndetifier = "";
-  std::vector<std::string> phrases = {};
-
   std::vector<std::string> split(const std::string & s, const std::string & delimiter);
-  void updateObject(std::vector<std::string> inputs);
 };
-
 }  // namespace interfaceModule

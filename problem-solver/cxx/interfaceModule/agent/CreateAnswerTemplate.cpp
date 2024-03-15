@@ -40,104 +40,300 @@ SC_AGENT_IMPLEMENTATION(CreateAnswerTemplateAgent)
 
   dialogControlModule::MessageConstructionsGenerator messageConstructionGenerator = MessageConstructionsGenerator(&m_memoryCtx);
 
-  ScAddr statusNode;
+  ScAddr const & formLinkAddr = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, questionNode, scAgentsCommon::CoreKeynodes::rrel_2);
 
+  std::string formLinkContent;
+  m_memoryCtx.GetLinkContent(formLinkAddr, formLinkContent);
 
-  while (m_memoryCtx.HelperFindBySystemIdtf("Success", statusNode) != SC_TRUE)
-  {}
-  m_memoryCtx.EraseElement(statusNode);
+  m_memoryCtx.EraseElement(formLinkAddr);
 
-  std::vector<std::string> inputsList;
-  std::string input;
-  m_memoryCtx.GetLinkContent(m_memoryCtx.FindLinksByContentSubstring("System Identifier")[0], input);
-  m_memoryCtx.EraseElement(m_memoryCtx.FindLinksByContentSubstring("System Identifier")[0]);
-  inputsList.push_back(input);
-  m_memoryCtx.GetLinkContent(m_memoryCtx.FindLinksByContentSubstring("Russian Identifier")[0], input);
-  m_memoryCtx.EraseElement(m_memoryCtx.FindLinksByContentSubstring("Russian Identifier")[0]);
-  inputsList.push_back(input);
-  m_memoryCtx.GetLinkContent(m_memoryCtx.FindLinksByContentSubstring("English Identifier")[0], input);
-  m_memoryCtx.EraseElement(m_memoryCtx.FindLinksByContentSubstring("English Identifier")[0]);
-  inputsList.push_back(input);
-  m_memoryCtx.GetLinkContent(m_memoryCtx.FindLinksByContentSubstring("Answer Templates")[0], input);
-  m_memoryCtx.EraseElement(m_memoryCtx.FindLinksByContentSubstring("Answer Templates")[0]);
-  inputsList.push_back(input);
+  std::vector<std::string> formItems = split(formLinkContent, "\n");
 
-  CreateAnswerTemplate inputForm;
-  inputForm.updateObject(inputsList);
+  SC_LOG_ERROR(formLinkContent);
 
-  ScAddr const & mainNode = m_memoryCtx.CreateNode(ScType::NodeConstClass);
-  bool const & isTrue = m_memoryCtx.HelperSetSystemIdtf(inputForm.systemIndetifier, mainNode);
+  //Create Message Class Construction
 
-  ScAddr const & russianIdtfLink = m_memoryCtx.CreateLink(ScType::LinkConst);
-  m_memoryCtx.SetLinkContent(russianIdtfLink, inputForm.russianIndetifier);
+  ScTemplate messageClassConstruction;
 
-  ScAddr const & englishIdtfLink = m_memoryCtx.CreateLink(ScType::LinkConst);
-  m_memoryCtx.SetLinkContent(englishIdtfLink, inputForm.englishIndetifier);
+  ScAddr const & classNode = m_memoryCtx.CreateNode(ScType::NodeConstClass);
+  m_memoryCtx.HelperSetSystemIdtf(formItems[0], classNode);
 
-  ScTemplate createTemplate;
-  
-  createTemplate.TripleWithRelation(
+  ScAddr const & classMainIdtf = m_memoryCtx.CreateLink(ScType::LinkConst);
+  m_memoryCtx.SetLinkContent(classMainIdtf, formItems[1]);
+
+  ScAddr const & witIntent = m_memoryCtx.CreateLink(ScType::LinkConst);
+  m_memoryCtx.SetLinkContent(witIntent, formItems[2]);
+
+  messageClassConstruction.Triple(
+    InterfaceKeynodes::concept_intent_possible_class,
+    ScType::EdgeAccessVarPosPerm,
+    classNode
+  );
+
+  messageClassConstruction.TripleWithRelation(
+    classNode,
+    ScType::EdgeDCommonVar,
+    classMainIdtf,
+    ScType::EdgeAccessVarPosPerm,
+    InterfaceKeynodes::nrel_main_idtf
+  );
+
+  messageClassConstruction.Triple(
+    InterfaceKeynodes::lang_ru,
+    ScType::EdgeAccessVarPosPerm,
+    classMainIdtf
+  );
+
+  messageClassConstruction.TripleWithRelation(
+    classNode,
+    ScType::EdgeDCommonVar,
+    witIntent,
+    ScType::EdgeAccessVarPosPerm,
+    InterfaceKeynodes::nrel_wit_ai_idtf
+  );
+
+  messageClassConstruction.Triple(
+    InterfaceKeynodes::lang_ru,
+    ScType::EdgeAccessVarPosPerm,
+    witIntent
+  );
+
+  //Create Phrase Template
+
+  ScAddr const & phraseTemplateNode = m_memoryCtx.CreateNode(ScType::NodeConstClass);
+  m_memoryCtx.HelperSetSystemIdtf(formItems[3], phraseTemplateNode);
+
+  ScAddr const & phraseTemplateMainIdtf = m_memoryCtx.CreateLink(ScType::LinkConst);
+  m_memoryCtx.SetLinkContent(phraseTemplateMainIdtf, formItems[4]);
+
+  messageClassConstruction.TripleWithRelation(
     InterfaceKeynodes::concept_phrase,
     ScType::EdgeDCommonVar,
-    mainNode,
+    phraseTemplateNode,
     ScType::EdgeAccessVarPosPerm,
     InterfaceKeynodes::nrel_inclusion
   );
 
-  createTemplate.Triple(
+  messageClassConstruction.TripleWithRelation(
+    phraseTemplateNode,
+    ScType::EdgeDCommonVar,
+    phraseTemplateMainIdtf,
+    ScType::EdgeAccessVarPosPerm,
+    InterfaceKeynodes::nrel_main_idtf
+  );
+
+  messageClassConstruction.Triple(
     InterfaceKeynodes::lang_ru,
     ScType::EdgeAccessVarPosPerm,
-    russianIdtfLink
+    phraseTemplateMainIdtf
   );
 
-  createTemplate.Triple(
-    InterfaceKeynodes::lang_en,
-    ScType::EdgeAccessVarPosPerm,
-    englishIdtfLink
-  );
+  std::vector<std::string> phrases = split(formItems[5], ", ");
 
-  createTemplate.TripleWithRelation(
-    mainNode,
-    ScType::EdgeDCommonVar,
-    russianIdtfLink,
-    ScType::EdgeAccessVarPosPerm,
-    InterfaceKeynodes::nrel_main_idtf
-  );
-
-  createTemplate.TripleWithRelation(
-    mainNode,
-    ScType::EdgeDCommonVar,
-    englishIdtfLink,
-    ScType::EdgeAccessVarPosPerm,
-    InterfaceKeynodes::nrel_main_idtf
-  );
-
-  for (string phrase : inputForm.phrases)
+  for (std::string phrase : phrases)
   {
     ScAddr const & phraseLink = m_memoryCtx.CreateLink(ScType::LinkConst);
     m_memoryCtx.SetLinkContent(phraseLink, phrase);
 
-    createTemplate.Triple(
-    InterfaceKeynodes::lang_ru,
-    ScType::EdgeAccessVarPosPerm,
-    phraseLink
+    messageClassConstruction.Triple(
+      phraseTemplateNode,
+      ScType::EdgeAccessVarPosPerm,
+      phraseLink
     );
-    createTemplate.Triple(
-      mainNode,
+
+    messageClassConstruction.Triple(
+      InterfaceKeynodes::lang_ru,
       ScType::EdgeAccessVarPosPerm,
       phraseLink
     );
   }
 
+  //Create Logic Rule
+  //First scg-contour
+  messageClassConstruction.Triple(
+    InterfaceKeynodes::concept_message,
+    ScType::EdgeAccessVarPosPerm >> "edge_from_concept_message",
+    InterfaceKeynodes::_message
+  );
 
-  ScTemplateGenResult answerPhraseConstruction;
+  messageClassConstruction.Triple(
+    classNode,
+    ScType::EdgeAccessVarPosPerm >> "edge_from_class_node",
+    InterfaceKeynodes::_message
+  );
 
-  m_memoryCtx.HelperGenTemplate(createTemplate, answerPhraseConstruction);
+  ScAddr const & structUp = m_memoryCtx.CreateNode(ScType::NodeConstStruct);
 
-  ScAddr const & replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);
-  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
-  messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, InterfaceKeynodes::lang_ru, "Шаблоны ответов успешно созданы");
-  utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);
+  messageClassConstruction.Triple(
+    structUp,
+    ScType::EdgeAccessVarPosPerm,
+    InterfaceKeynodes::concept_message
+  );
+
+  messageClassConstruction.Triple(
+    structUp,
+    ScType::EdgeAccessVarPosPerm,
+    "edge_from_concept_message"
+  );
+
+  messageClassConstruction.Triple(
+    structUp,
+    ScType::EdgeAccessVarPosPerm,
+    InterfaceKeynodes::_message
+  );
+
+  messageClassConstruction.Triple(
+    structUp,
+    ScType::EdgeAccessVarPosPerm,
+    classNode
+  );
+
+  messageClassConstruction.Triple(
+    structUp,
+    ScType::EdgeAccessVarPosPerm,
+    "edge_from_class_node"
+  );
+
+  //Second contour
+  messageClassConstruction.Triple(
+    classNode,
+    ScType::EdgeAccessVarPosPerm >> "edge_to_reply",
+    InterfaceKeynodes::_reply_message
+  );
+
+  messageClassConstruction.Triple(
+    InterfaceKeynodes::concept_atomic_message,
+    ScType::EdgeAccessVarPosPerm >> "edge_from_atomic",
+    InterfaceKeynodes::_reply_message
+  );
+
+  messageClassConstruction.TripleWithRelation(
+    InterfaceKeynodes::_message,
+    ScType::EdgeDCommonVar >> "edge_from_message_to_reply",
+    InterfaceKeynodes::_reply_message,
+    ScType::EdgeAccessVarPosPerm >> "edge_from_nrel_reply",
+    InterfaceKeynodes::nrel_reply
+  );
+
+  ScAddr const & structDown = m_memoryCtx.CreateNode(ScType::NodeConstStruct);
+
+  messageClassConstruction.Triple(
+    structDown,
+    ScType::EdgeAccessVarPosPerm,
+    classNode
+  );
+
+  messageClassConstruction.Triple(
+    structDown,
+    ScType::EdgeAccessVarPosPerm,
+    "edge_to_reply"
+  );
+
+  messageClassConstruction.Triple(
+    structDown,
+    ScType::EdgeAccessVarPosPerm,
+    InterfaceKeynodes::_reply_message
+  );
+
+  messageClassConstruction.Triple(
+    structDown,
+    ScType::EdgeAccessVarPosPerm,
+    InterfaceKeynodes::concept_atomic_message
+  );
+
+  messageClassConstruction.Triple(
+    structDown,
+    ScType::EdgeAccessVarPosPerm,
+    "edge_from_atomic"
+  );
+
+  messageClassConstruction.Triple(
+    structDown,
+    ScType::EdgeAccessVarPosPerm,
+    InterfaceKeynodes::_message
+  );
+
+  messageClassConstruction.Triple(
+    structDown,
+    ScType::EdgeAccessVarPosPerm,
+    InterfaceKeynodes::nrel_reply
+  );
+
+  messageClassConstruction.Triple(
+    structDown,
+    ScType::EdgeAccessVarPosPerm,
+    "edge_from_message_to_reply"
+  );
+
+  messageClassConstruction.Triple(
+    structDown,
+    ScType::EdgeAccessVarPosPerm,
+    "edge_from_nrel_reply"
+  );
+  //Create Rule
+
+  messageClassConstruction.Triple(
+    InterfaceKeynodes::atomic_logical_formula,
+    ScType::EdgeAccessVarPosPerm,
+    structUp
+  );
+  
+  messageClassConstruction.Triple(
+    InterfaceKeynodes::atomic_logical_formula,
+    ScType::EdgeAccessVarPosPerm,
+    structDown
+  );
+
+  messageClassConstruction.TripleWithRelation(
+    structUp,
+    ScType::EdgeDCommonVar >> "key_sc_element",
+    structDown,
+    ScType::EdgeAccessVarPosPerm,
+    InterfaceKeynodes::nrel_implication
+  );
+
+  ScAddr const & ruleNode = m_memoryCtx.CreateNode(ScType::NodeConst);
+  
+  std::string replace = "concept";
+  size_t pos = formItems[0].find(replace);
+    if (pos != std::string::npos) {
+        formItems[0].replace(pos, replace.length(), "lr");
+    }
+  
+  m_memoryCtx.HelperSetSystemIdtf(formItems[0], ruleNode);
+
+  messageClassConstruction.TripleWithRelation(
+    ruleNode,
+    ScType::EdgeAccessVarPosPerm,
+    "key_sc_element",
+    ScType::EdgeAccessVarPosPerm,
+    InterfaceKeynodes::rrel_main_key_sc_element
+  );
+
+  messageClassConstruction.Triple(
+    InterfaceKeynodes::concept_answer_on_standart_message_rule_priority_1,
+    ScType::EdgeAccessVarPosPerm,
+    ruleNode
+  );
+
+  messageClassConstruction.TripleWithRelation(
+    ruleNode,
+    ScType::EdgeDCommonVar,
+    ScType::NodeVarTuple >> "tuple",
+    ScType::EdgeAccessVarPosPerm,
+    InterfaceKeynodes::nrel_answer_pattern
+  );
+
+  messageClassConstruction.TripleWithRelation(
+    "tuple",
+    ScType::EdgeAccessVarPosPerm,
+    phraseTemplateNode,
+    ScType::EdgeAccessVarPosPerm,
+    scAgentsCommon::CoreKeynodes::rrel_1
+  );
+
+  ScTemplateGenResult full_construction;
+  m_memoryCtx.HelperGenTemplate(messageClassConstruction, full_construction);
 
   SC_LOG_DEBUG("CreateAnswerTemplateAgent finished");
   utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode);
@@ -146,7 +342,7 @@ SC_AGENT_IMPLEMENTATION(CreateAnswerTemplateAgent)
 
 
 
-std::vector<std::string> CreateAnswerTemplate::split(const string & s, const string & delimiter)
+std::vector<std::string> CreateAnswerTemplateAgent::split(const string & s, const string & delimiter)
 {
   std::vector<std::string> tokens;
     std::size_t start = 0;
@@ -164,27 +360,8 @@ std::vector<std::string> CreateAnswerTemplate::split(const string & s, const str
     return tokens;
 }
 
-
-
-void CreateAnswerTemplate::updateObject(std::vector<std::string> inputs)
-{    
-    for (string input : inputs)
-    {
-      std::vector<std::string> splitedInput = split(input, ": ");
-      if (splitedInput[0] == "System Identifier")
-        this->systemIndetifier = splitedInput[1];
-      else if (splitedInput[0] == "Russian Identifier")
-        this->russianIndetifier = splitedInput[1];
-      else if (splitedInput[0] == "English Identifier")
-        this->englishIndetifier = splitedInput[1];
-      else if (splitedInput[0] == "Answer Templates")
-        this->phrases = split(splitedInput[1], ", ");
-    }
-}
-
-
 bool CreateAnswerTemplateAgent::checkActionClass(ScAddr const & actionAddr)
 {
   return m_memoryCtx.HelperCheckEdge(
-      InterfaceKeynodes::action_create_answer_template, actionAddr, ScType::EdgeAccessConstPosPerm);
+      InterfaceKeynodes::action_create_question_class_and_phrase_template, actionAddr, ScType::EdgeAccessConstPosPerm);
 }

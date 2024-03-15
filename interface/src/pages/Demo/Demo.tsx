@@ -21,6 +21,8 @@ export const Demo = () => {
     const [createPopup, setCreatePopup] = useState(false);
     const [createPhraseTemplatePopup, setCreatePhraseTemplatePopup] = useState(false);
 
+    const [form, setForm] = useState("");
+    
     const phraseSystemIdentifierRef = useRef<HTMLInputElement>(null);
     const phraseRussianIdentifierRef = useRef<HTMLInputElement>(null);
     const questionSystemIdentifierRef = useRef<HTMLInputElement>(null);
@@ -104,7 +106,9 @@ export const Demo = () => {
         };
 
         const handleClick: React.MouseEventHandler<HTMLButtonElement> = async (event) => {
-            await handleSave(phraseSystemIdentifierRef, phraseRussianIdentifierRef, chipsValues);
+            await handleSave(phraseSystemIdentifierRef, phraseRussianIdentifierRef,
+                form, chipsValues);
+            setCreatePhraseTemplatePopup(false);
           };
 
         const closeClick: React.MouseEventHandler<HTMLButtonElement> = async (event) => {
@@ -136,7 +140,7 @@ export const Demo = () => {
             <h2>Создание сообщения и шаблонов ответов</h2>
             <button className='close_button' onClick={closeClick}>×</button>
             <div className='numdiv'>
-                <button className='p1' onClick={openFirstWindow}>1</button>
+                <button className='p1'>1</button>
                 <button className='p2'>2</button>
             </div>
             <div className="form">
@@ -209,6 +213,7 @@ export const Demo = () => {
         const handleClick: React.MouseEventHandler<HTMLButtonElement> = async (event) => {
             setCreatePopup(false);
             setCreatePhraseTemplatePopup(true);
+            setForm(questionSystemIdentifierRef.current?.value + "\n" + questionRussianIdentifierRef.current?.value + "\n" + questionWitAiRef.current?.value);
           };
 
         const closeClick: React.MouseEventHandler<HTMLButtonElement> = async (event) => {
@@ -241,7 +246,7 @@ export const Demo = () => {
             <button className='close_button' onClick={closeClick}>×</button>
             <div className='numdiv'>
                 <button className='p3'>1</button>
-                <button className='p4' onClick={openSecondWindow}>2</button>
+                <button className='p4'>2</button>
             </div>
             <div className="form">
                 <h4>Системный индетификатор</h4>
