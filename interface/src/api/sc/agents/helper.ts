@@ -3,6 +3,8 @@ import { client } from '@api/sc/client';
 import { ScConstruction, ScLinkContent, ScLinkContentType, ScEventParams, ScEventType } from 'ts-sc-client';
 import { makeAgent } from '@api/sc/agents/makeAgent';
 import { createLinkText } from './newMessageAgent';
+import React from "react";
+import { useEffect } from 'react';
 
 const nrelSystemIdentifier = 'nrel_system_identifier';
 const question = 'question';
@@ -117,3 +119,17 @@ const createQuestionClassAndPhraseTemplateAgent = async (linkAddr: ScAddr) => {
 
     await makeAgent(template, userActionNodeAlias);
 };
+
+export const createPopupCheck = async (
+    setCreatePopup
+)  => {
+    const concept_popup = 'concept_popup';
+
+    const baseKeynodes = [
+        { id: concept_popup, type: ScType.NodeConstClass},
+    ];
+
+    const keynodes = await client.resolveKeynodes(baseKeynodes);
+    const eventParams = new ScEventParams(keynodes[concept_popup], ScEventType.AddOutgoingEdge, () => {setCreatePopup(true)});
+    await client.eventsCreate([eventParams])
+}
