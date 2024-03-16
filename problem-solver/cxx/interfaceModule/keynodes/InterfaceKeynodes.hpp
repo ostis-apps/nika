@@ -40,8 +40,8 @@ public:
   SC_PROPERTY(Keynode("concept_message"), ForceCreate)
   static ScAddr concept_message;
 
-  SC_PROPERTY(Keynode("concept_answer_on_standart_message_rule_priority_1"), ForceCreate)
-  static ScAddr concept_answer_on_standart_message_rule_priority_1;
+  SC_PROPERTY(Keynode("concept_answer_on_standard_message_rule_priority_1"), ForceCreate)
+  static ScAddr concept_answer_on_standard_message_rule_priority_1;
 
   SC_PROPERTY(Keynode("concept_atomic_message"), ForceCreate)
   static ScAddr concept_atomic_message;

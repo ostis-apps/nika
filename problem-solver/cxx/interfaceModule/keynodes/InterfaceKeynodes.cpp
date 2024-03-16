@@ -13,7 +13,7 @@ ScAddr InterfaceKeynodes::concept_footer;
 ScAddr InterfaceKeynodes::concept_phrase;
 ScAddr InterfaceKeynodes::concept_intent_possible_class;
 ScAddr InterfaceKeynodes::concept_message;
-ScAddr InterfaceKeynodes::concept_answer_on_standart_message_rule_priority_1;
+ScAddr InterfaceKeynodes::concept_answer_on_standard_message_rule_priority_1;
 ScAddr InterfaceKeynodes::concept_atomic_message;
 ScAddr InterfaceKeynodes::nrel_component_color;
 ScAddr InterfaceKeynodes::nrel_inclusion;

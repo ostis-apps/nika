@@ -307,7 +307,7 @@ SC_AGENT_IMPLEMENTATION(CreateAnswerTemplateAgent)
   );
 
   logicRule.Triple(
-    InterfaceKeynodes::concept_answer_on_standart_message_rule_priority_1,
+    InterfaceKeynodes::concept_answer_on_standard_message_rule_priority_1,
     ScType::EdgeAccessVarPosPerm,
     ruleNode
   );
