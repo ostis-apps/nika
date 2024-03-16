@@ -98,7 +98,11 @@ SC_AGENT_IMPLEMENTATION(CreateAnswerTemplateAgent)
     witIntent
   );
 
+  ScTemplateGenResult classConstruction;
+  m_memoryCtx.HelperGenTemplate(messageClassConstruction, classConstruction);
+
   //Create Phrase Template
+  ScTemplate phraseTemplate;
 
   ScAddr const & phraseTemplateNode = m_memoryCtx.CreateNode(ScType::NodeConstClass);
   m_memoryCtx.HelperSetSystemIdtf(formItems[3], phraseTemplateNode);
@@ -106,7 +110,7 @@ SC_AGENT_IMPLEMENTATION(CreateAnswerTemplateAgent)
   ScAddr const & phraseTemplateMainIdtf = m_memoryCtx.CreateLink(ScType::LinkConst);
   m_memoryCtx.SetLinkContent(phraseTemplateMainIdtf, formItems[4]);
 
-  messageClassConstruction.TripleWithRelation(
+  phraseTemplate.TripleWithRelation(
     InterfaceKeynodes::concept_phrase,
     ScType::EdgeDCommonVar,
     phraseTemplateNode,
@@ -114,7 +118,7 @@ SC_AGENT_IMPLEMENTATION(CreateAnswerTemplateAgent)
     InterfaceKeynodes::nrel_inclusion
   );
 
-  messageClassConstruction.TripleWithRelation(
+  phraseTemplate.TripleWithRelation(
     phraseTemplateNode,
     ScType::EdgeDCommonVar,
     phraseTemplateMainIdtf,
@@ -122,7 +126,7 @@ SC_AGENT_IMPLEMENTATION(CreateAnswerTemplateAgent)
     InterfaceKeynodes::nrel_main_idtf
   );
 
-  messageClassConstruction.Triple(
+  phraseTemplate.Triple(
     InterfaceKeynodes::lang_ru,
     ScType::EdgeAccessVarPosPerm,
     phraseTemplateMainIdtf
@@ -135,156 +139,148 @@ SC_AGENT_IMPLEMENTATION(CreateAnswerTemplateAgent)
     ScAddr const & phraseLink = m_memoryCtx.CreateLink(ScType::LinkConst);
     m_memoryCtx.SetLinkContent(phraseLink, phrase);
 
-    messageClassConstruction.Triple(
+    phraseTemplate.Triple(
       phraseTemplateNode,
       ScType::EdgeAccessVarPosPerm,
       phraseLink
     );
 
-    messageClassConstruction.Triple(
+    phraseTemplate.Triple(
       InterfaceKeynodes::lang_ru,
       ScType::EdgeAccessVarPosPerm,
       phraseLink
     );
   }
 
-  //Create Logic Rule
-  //First scg-contour
-  messageClassConstruction.Triple(
-    InterfaceKeynodes::concept_message,
-    ScType::EdgeAccessVarPosPerm >> "edge_from_concept_message",
-    InterfaceKeynodes::_message
-  );
+  ScTemplateGenResult genPhrase;
+  m_memoryCtx.HelperGenTemplate(phraseTemplate, genPhrase);
 
-  messageClassConstruction.Triple(
-    classNode,
-    ScType::EdgeAccessVarPosPerm >> "edge_from_class_node",
-    InterfaceKeynodes::_message
-  );
+  //Create Logic Rule
+  ScTemplate logicRule;
+  //First scg-contour
+
+  ScAddr const & edgeFromConceptMessageToMessageVar = m_memoryCtx.CreateEdge(ScType::EdgeAccessVarPosPerm,
+    InterfaceKeynodes::concept_message, InterfaceKeynodes::_message);
+
+  ScAddr const & edgeFromConceptMessageClassToMessageVar = m_memoryCtx.CreateEdge(ScType::EdgeAccessVarPosPerm,
+    classNode, InterfaceKeynodes::_message);
 
   ScAddr const & structUp = m_memoryCtx.CreateNode(ScType::NodeConstStruct);
 
-  messageClassConstruction.Triple(
+  logicRule.Triple(
     structUp,
     ScType::EdgeAccessVarPosPerm,
     InterfaceKeynodes::concept_message
   );
 
-  messageClassConstruction.Triple(
+  logicRule.Triple(
     structUp,
     ScType::EdgeAccessVarPosPerm,
-    "edge_from_concept_message"
+    edgeFromConceptMessageToMessageVar
   );
 
-  messageClassConstruction.Triple(
+  logicRule.Triple(
     structUp,
     ScType::EdgeAccessVarPosPerm,
     InterfaceKeynodes::_message
   );
 
-  messageClassConstruction.Triple(
+  logicRule.Triple(
     structUp,
     ScType::EdgeAccessVarPosPerm,
     classNode
   );
 
-  messageClassConstruction.Triple(
+  logicRule.Triple(
     structUp,
     ScType::EdgeAccessVarPosPerm,
-    "edge_from_class_node"
+    edgeFromConceptMessageClassToMessageVar
   );
 
   //Second contour
-  messageClassConstruction.Triple(
-    classNode,
-    ScType::EdgeAccessVarPosPerm >> "edge_to_reply",
-    InterfaceKeynodes::_reply_message
-  );
 
-  messageClassConstruction.Triple(
-    InterfaceKeynodes::concept_atomic_message,
-    ScType::EdgeAccessVarPosPerm >> "edge_from_atomic",
-    InterfaceKeynodes::_reply_message
-  );
+  ScAddr const & edgeFromConceptMessageClassToReplyMessage = m_memoryCtx.CreateEdge(ScType::EdgeAccessVarPosPerm,
+    classNode, InterfaceKeynodes::_reply_message);
 
-  messageClassConstruction.TripleWithRelation(
-    InterfaceKeynodes::_message,
-    ScType::EdgeDCommonVar >> "edge_from_message_to_reply",
-    InterfaceKeynodes::_reply_message,
-    ScType::EdgeAccessVarPosPerm >> "edge_from_nrel_reply",
-    InterfaceKeynodes::nrel_reply
-  );
+  ScAddr const & edgeFromConceptAtomicMessageToReplyMessage = m_memoryCtx.CreateEdge(ScType::EdgeAccessVarPosPerm,
+    InterfaceKeynodes::concept_atomic_message, InterfaceKeynodes::_reply_message);
+
+  ScAddr const & edgeFromMessageToReplyMessage = m_memoryCtx.CreateEdge(ScType::EdgeDCommonVar,
+    InterfaceKeynodes::_message, InterfaceKeynodes::_reply_message);
+
+  ScAddr const & edgeFromNrelReplyToDCommonEdge = m_memoryCtx.CreateEdge(ScType::EdgeAccessVarPosPerm,
+    InterfaceKeynodes::nrel_reply, edgeFromMessageToReplyMessage);
 
   ScAddr const & structDown = m_memoryCtx.CreateNode(ScType::NodeConstStruct);
 
-  messageClassConstruction.Triple(
+  logicRule.Triple(
     structDown,
     ScType::EdgeAccessVarPosPerm,
     classNode
   );
 
-  messageClassConstruction.Triple(
+  logicRule.Triple(
     structDown,
     ScType::EdgeAccessVarPosPerm,
-    "edge_to_reply"
+    edgeFromConceptMessageClassToReplyMessage
   );
 
-  messageClassConstruction.Triple(
+  logicRule.Triple(
     structDown,
     ScType::EdgeAccessVarPosPerm,
     InterfaceKeynodes::_reply_message
   );
 
-  messageClassConstruction.Triple(
+  logicRule.Triple(
     structDown,
     ScType::EdgeAccessVarPosPerm,
     InterfaceKeynodes::concept_atomic_message
   );
 
-  messageClassConstruction.Triple(
+  logicRule.Triple(
     structDown,
     ScType::EdgeAccessVarPosPerm,
-    "edge_from_atomic"
+    edgeFromConceptAtomicMessageToReplyMessage
   );
 
-  messageClassConstruction.Triple(
+  logicRule.Triple(
     structDown,
     ScType::EdgeAccessVarPosPerm,
     InterfaceKeynodes::_message
   );
 
-  messageClassConstruction.Triple(
+  logicRule.Triple(
     structDown,
     ScType::EdgeAccessVarPosPerm,
     InterfaceKeynodes::nrel_reply
   );
 
-  messageClassConstruction.Triple(
+  logicRule.Triple(
     structDown,
     ScType::EdgeAccessVarPosPerm,
-    "edge_from_message_to_reply"
+    edgeFromMessageToReplyMessage
   );
 
-  messageClassConstruction.Triple(
+  logicRule.Triple(
     structDown,
     ScType::EdgeAccessVarPosPerm,
-    "edge_from_nrel_reply"
+    edgeFromNrelReplyToDCommonEdge
   );
   //Create Rule
 
-  messageClassConstruction.Triple(
+  logicRule.Triple(
     InterfaceKeynodes::atomic_logical_formula,
     ScType::EdgeAccessVarPosPerm,
     structUp
   );
   
-  messageClassConstruction.Triple(
+  logicRule.Triple(
     InterfaceKeynodes::atomic_logical_formula,
     ScType::EdgeAccessVarPosPerm,
     structDown
   );
 
-  messageClassConstruction.TripleWithRelation(
+  logicRule.TripleWithRelation(
     structUp,
     ScType::EdgeDCommonVar >> "key_sc_element",
     structDown,
@@ -302,7 +298,7 @@ SC_AGENT_IMPLEMENTATION(CreateAnswerTemplateAgent)
   
   m_memoryCtx.HelperSetSystemIdtf(formItems[0], ruleNode);
 
-  messageClassConstruction.TripleWithRelation(
+  logicRule.TripleWithRelation(
     ruleNode,
     ScType::EdgeAccessVarPosPerm,
     "key_sc_element",
@@ -310,13 +306,13 @@ SC_AGENT_IMPLEMENTATION(CreateAnswerTemplateAgent)
     InterfaceKeynodes::rrel_main_key_sc_element
   );
 
-  messageClassConstruction.Triple(
+  logicRule.Triple(
     InterfaceKeynodes::concept_answer_on_standart_message_rule_priority_1,
     ScType::EdgeAccessVarPosPerm,
     ruleNode
   );
 
-  messageClassConstruction.TripleWithRelation(
+  logicRule.TripleWithRelation(
     ruleNode,
     ScType::EdgeDCommonVar,
     ScType::NodeVarTuple >> "tuple",
@@ -324,7 +320,7 @@ SC_AGENT_IMPLEMENTATION(CreateAnswerTemplateAgent)
     InterfaceKeynodes::nrel_answer_pattern
   );
 
-  messageClassConstruction.TripleWithRelation(
+  logicRule.TripleWithRelation(
     "tuple",
     ScType::EdgeAccessVarPosPerm,
     phraseTemplateNode,
@@ -333,7 +329,7 @@ SC_AGENT_IMPLEMENTATION(CreateAnswerTemplateAgent)
   );
 
   ScTemplateGenResult full_construction;
-  m_memoryCtx.HelperGenTemplate(messageClassConstruction, full_construction);
+  m_memoryCtx.HelperGenTemplate(logicRule, full_construction);
 
   SC_LOG_DEBUG("CreateAnswerTemplateAgent finished");
   utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode);
