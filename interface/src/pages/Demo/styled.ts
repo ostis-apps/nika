@@ -65,11 +65,11 @@ export const PopupWrapper = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Прозрачный цвет фона */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999; /* Установка высокого значения z-index для отображения поверх других элементов */
+  z-index: 9999;
 
   .popup{
     background-color: rgba(255, 255, 255, 1);
@@ -98,7 +98,7 @@ export const PopupWrapper = styled.div`
         align-items: center;
     }
 
-    .numdiv button{
+    .numdiv p{
         width: 40px;
         height: 40px;
         border-radius: 40px;
@@ -111,24 +111,24 @@ export const PopupWrapper = styled.div`
         
     }
     
-    .p1{
+    .state-1{
         margin-right: 40px;
         background: #88AFE2;
         border: 1px solid #88AFE2;
     }
     
-    .p2{
+    .state-2{
         background: #3C547B;
         border: 1px solid #3C547B;
     }
 
-    .p3{
+    .state-3{
         margin-right: 40px;
         background: #3C547B;
         border: 1px solid #3C547B;
     }
     
-    .p4{
+    .state-4{
         background: rgb(203, 203, 203);
         border: 1px solid rgb(203, 203, 203);
     }
@@ -166,11 +166,9 @@ export const PopupWrapper = styled.div`
     }
 
     .button{
-        background-color: #3C547B;
         color: white;
         border-radius: 20px;
         box-shadow: 10px 4px 15px rgb(0 0 0 / 25%);
-        border: 1px solid #3C547B;
         width: 94%;
         height: 6%;
         position: absolute;
@@ -178,21 +176,18 @@ export const PopupWrapper = styled.div`
         left: 3%;
     }
 
-    .button-save{
+    .next{
         background-color: rgb(149 149 149);
-        color: white;
-        border-radius: 20px;
-        box-shadow: 10px 4px 15px rgb(0 0 0 / 25%);
-        border: 1px solid rgb(149 149 149);;
-        width: 94%;
-        height: 6%;
-        position: absolute;
-        bottom: 10px;
-        left: 3%;
+        border: 1px solid rgb(149 149 149);
+    }
+
+    .save{
+        background-color: #3C547B;
+        border: 1px solid #3C547B;
     }
 
     .chips{
-        width: 95%;
+        width: 96%;
     }
 
     .chip-div{
@@ -209,7 +204,9 @@ export const PopupWrapper = styled.div`
         padding-left: 10px;
         margin-left: 10px;
         margin-bottom: 5px;
-        height: 25px;
+        height: 4vh;
+        display: flex;
+        align-items:center;
     }
 
     .chip-delete{
@@ -218,14 +215,16 @@ export const PopupWrapper = styled.div`
         border-radius: 25px;
         box-shadow: 10px 4px 15px rgb(0 0 0 / 25%);
         border: 1px solid gray;
-        height: 25px;
-        width: 25px;
-        text-align: center;
+        height: 4vh;
+        width: 4vh;
         margin-left: 5px;
+        display: flex;
+        align-items:center;
+        justify-content: center;
     }
 
     .chip-input{
-        width: 100%;
+        width: 98%;
         height: 4vh;
         border-radius: 20px;
         box-shadow: 10px 4px 15px rgb(0 0 0 / 25%);

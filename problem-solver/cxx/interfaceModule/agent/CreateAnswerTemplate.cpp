@@ -331,8 +331,48 @@ SC_AGENT_IMPLEMENTATION(CreateAnswerTemplateAgent)
   ScTemplateGenResult full_construction;
   m_memoryCtx.HelperGenTemplate(logicRule, full_construction);
 
+  /*ScAddr const & answerStructure = m_memoryCtx.HelperFindBySystemIdtf("answer_structure");
+
+  ScTemplate findAnswerStructure;
+
+  findAnswerStructure.Triple(
+    answerStructure,
+    ScType::EdgeAccessVarPosPerm,
+    ScType::Unknown >> "x"
+  );
+
+  ScTemplateSearchResult resultAnswerStructure;
+  bool const is_success = m_memoryCtx.HelperSearchTemplate(findAnswerStructure, resultAnswerStructure);
+  
+  if (is_success)
+  {
+    for (size_t i = 0; i < resultAnswerStructure.Size(); i++)
+    {
+      m_memoryCtx.EraseElement(resultAnswerStructure[i]["x"]);
+    }
+  }
+
+  ScAddr const & link = m_memoryCtx.CreateLink(ScType::LinkConst);
+  m_memoryCtx.SetLinkContent(link, "Конструкция успешно созданна");
+  ScAddr const & finishPhraseClass = m_memoryCtx.CreateNode(ScType::NodeConstClass);
+  m_memoryCtx.HelperSetSystemIdtf("concept_phrase_about_successful_structure_creating", finishPhraseClass);
+  ScAddr const & edgeFromFinishPhraseClassToLink = m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosTemp, finishPhraseClass, link);
+  ScAddr const & edgeFromLangToLink = m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosTemp, InterfaceKeynodes::lang_ru, link);
+
+  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, answerStructure, link);
+  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, answerStructure, finishPhraseClass);
+  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, answerStructure, InterfaceKeynodes::lang_ru);
+  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, answerStructure, edgeFromFinishPhraseClassToLink);
+  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, answerStructure, edgeFromLangToLink);
+
+
+  ScAddr const &replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);
+  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
+  messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, InterfaceKeynodes::lang_ru, "Класс сообщений и шаблоны ответов успешно созданы");
+  utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);*/
+
   SC_LOG_DEBUG("CreateAnswerTemplateAgent finished");
-  utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode);
+  utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, true);
   return SC_RESULT_OK;
 }
 

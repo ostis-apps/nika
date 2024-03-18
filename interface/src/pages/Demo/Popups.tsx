@@ -51,8 +51,8 @@ export const CreateQuestionClassPopup = (
         <h2>Создание сообщения и шаблонов ответов</h2>
         <button className='close_button' onClick={closeClick}>×</button>
         <div className='numdiv'>
-            <button className='p3'>1</button>
-            <button className='p4'>2</button>
+            <p className='state-3'>1</p>
+            <p className='state-4'>2</p>
         </div>
         <div className="form">
             <h4>Системный индетификатор</h4>
@@ -74,10 +74,10 @@ export const CreateQuestionClassPopup = (
             type="text"
             className="input"
             ref={questionWitAiRef}
-            placeholder='your_name'
+            placeholder='Ваш Wit.ai intent'
             />
             </div>
-            <button className="button-save" onClick={handleClick}>
+            <button className="button next" onClick={handleClick}>
             Далее
             </button>
         
@@ -154,8 +154,8 @@ export const CreateQuestionClassPopup = (
         <h2>Создание сообщения и шаблонов ответов</h2>
         <button className='close_button' onClick={closeClick}>×</button>
         <div className='numdiv'>
-            <button className='p1'>1</button>
-            <button className='p2'>2</button>
+            <p className='state-1'>1</p>
+            <p className='state-2'>2</p>
         </div>
         <div className="form">
             <h4>Системный индетификатор</h4>

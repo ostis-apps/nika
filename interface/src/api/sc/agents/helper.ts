@@ -4,39 +4,29 @@ import { ScConstruction, ScLinkContent, ScLinkContentType, ScEventParams, ScEven
 import { makeAgent } from '@api/sc/agents/makeAgent';
 import { createLinkText } from './newMessageAgent';
 import React from "react";
-import { useEffect } from 'react';
 
 const nrelSystemIdentifier = 'nrel_system_identifier';
 const question = 'question';
-const questionInitiated = 'question_initiated';
 const actionCreateQuestionClassAndPhraseTemplate = 'action_create_question_class_and_phrase_template';
 const rrel1 = 'rrel_1';
 const rrel2 = 'rrel_2';
-const nrelAuthors = 'nrel_authors';
 const conceptTextFile = 'concept_text_file';
-const langEn = 'lang_en';
 const langRu = 'lang_ru';
-const questionFinished = 'question_finished';
-const answer = 'nrel_answer';
 const message = '_message';
 
 const baseKeynodes = [
     { id: nrelSystemIdentifier, type: ScType.NodeConstNoRole},
     { id: question, type: ScType.NodeConstClass },
-    { id: questionInitiated, type: ScType.NodeConstClass },
     { id: actionCreateQuestionClassAndPhraseTemplate, type: ScType.NodeConstClass },
     { id: rrel1, type: ScType.NodeConstRole },
     { id: rrel2, type: ScType.NodeConstRole },
-    { id: nrelAuthors, type: ScType.NodeConstNoRole },
     { id: conceptTextFile, type: ScType.NodeConstClass },
-    { id: langEn, type: ScType.NodeConstClass },
     { id: langRu, type: ScType.NodeConstClass },
-    { id: questionFinished, type: ScType.NodeConstClass },
-    { id: answer, type: ScType.NodeConstNoRole },
     { id: message, type: ScType.NodeVar}
+    
 ];
 
-const setSystemIdtf = async (addr: ScAddr, systemIdtf: string) => {
+export const setSystemIdtf = async (addr: ScAddr, systemIdtf: string) => {
     const keynodes = await client.resolveKeynodes(baseKeynodes);
 
     const template = new ScTemplate();
