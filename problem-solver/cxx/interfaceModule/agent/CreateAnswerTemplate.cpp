@@ -2,6 +2,9 @@
 #include "sc-agents-common/utils/IteratorUtils.hpp"
 #include "sc-agents-common/keynodes/coreKeynodes.hpp"
 #include "sc-agents-common/utils/GenerationUtils.hpp"
+#include "sc-agents-common/utils/IteratorUtils.hpp"
+#include "utils/ActionUtils.hpp"
+#include "keynodes/InferenceKeynodes.hpp"
 
 #include "keynodes/InterfaceKeynodes.hpp"
 #include "keynodes/Keynodes.hpp"
@@ -48,6 +51,38 @@ SC_AGENT_IMPLEMENTATION(CreateAnswerTemplateAgent)
   m_memoryCtx.EraseElement(formLinkAddr);
 
   std::vector<std::string> formItems = split(formLinkContent, "\n");
+  ScAddr checkNode;
+  if (m_memoryCtx.HelperFindBySystemIdtf(formItems[0], checkNode) || !m_memoryCtx.FindLinksByContent(formItems[2]).empty() || m_memoryCtx.HelperFindBySystemIdtf(formItems[3], checkNode))
+  {
+    ScAddr error;
+    if(!m_memoryCtx.HelperFindBySystemIdtf("concept_error", error))
+    {
+      error = m_memoryCtx.CreateNode(ScType::NodeConstClass);
+      m_memoryCtx.HelperSetSystemIdtf("concept_error", error);
+    }
+    ScAddr const & newError = m_memoryCtx.CreateNode(ScType::NodeVar);
+    m_memoryCtx.HelperSetSystemIdtf("_node_exist", newError);
+    m_memoryCtx.CreateEdge(ScType::EdgeAccessVarPosPerm, error, newError);
+    SC_LOG_DEBUG("CreateAnswerTemplateAgent finished with error: nodes exists");
+    utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, false);
+    return SC_RESULT_OK;
+  }
+
+  if (formItems[0] == "concept_message_about_" || formItems[2] == "" || formItems[3] == "concept_phrase_template_" || formItems[5] == "")
+  {
+    ScAddr error;
+    if(!m_memoryCtx.HelperFindBySystemIdtf("concept_error", error))
+    {
+      error = m_memoryCtx.CreateNode(ScType::NodeConstClass);
+      m_memoryCtx.HelperSetSystemIdtf("concept_error", error);
+    }
+    ScAddr const & newError = m_memoryCtx.CreateNode(ScType::NodeVar);
+    m_memoryCtx.HelperSetSystemIdtf("invalid_inputs", newError);
+    m_memoryCtx.CreateEdge(ScType::EdgeAccessVarPosPerm, error, newError);
+    SC_LOG_DEBUG("CreateAnswerTemplateAgent finished with error: invalid inputs");
+    utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, false);
+    return SC_RESULT_OK;
+  }
 
   SC_LOG_ERROR(formLinkContent);
 
@@ -371,6 +406,18 @@ SC_AGENT_IMPLEMENTATION(CreateAnswerTemplateAgent)
   messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, InterfaceKeynodes::lang_ru, "Класс сообщений и шаблоны ответов успешно созданы");
   utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);*/
 
+  // ScAddr const & messageClass = m_memoryCtx.HelperFindBySystemIdtf("concept_message_about_successful_creating");
+  // m_memoryCtx.CreateEdge(ScType::EdgeAccessVarPosPerm, messageClass, messageAddr);
+
+  // if (messageClass.IsValid())
+  // {
+  //   SC_LOG_ERROR("find");
+  // }
+
+  // ScAddr logicRuleNode = generateReplyMessage(messageAddr);
+  // ScAddr replyMessageNode = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageAddr, MessageKeynodes::nrel_reply);
+  // m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyMessageNode);
+
   SC_LOG_DEBUG("CreateAnswerTemplateAgent finished");
   utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, true);
   return SC_RESULT_OK;
@@ -400,4 +447,33 @@ bool CreateAnswerTemplateAgent::checkActionClass(ScAddr const & actionAddr)
 {
   return m_memoryCtx.HelperCheckEdge(
       InterfaceKeynodes::action_create_question_class_and_phrase_template, actionAddr, ScType::EdgeAccessConstPosPerm);
+}
+
+ScAddr CreateAnswerTemplateAgent::generateReplyMessage(const ScAddr & messageNode)
+{
+  ScAddr logicRuleNode;
+  ScAddrVector argsVector = {
+      MessageKeynodes::template_reply_target,
+      MessageKeynodes::concept_answer_on_standard_message_rule_class_by_priority,
+      wrapInSet(messageNode)};
+  ScAddr actionDirectInference =
+      utils::AgentUtils::initAgent(&m_memoryCtx, inference::InferenceKeynodes::action_direct_inference, argsVector);
+
+  bool const result = ActionUtils::waitAction(&m_memoryCtx, actionDirectInference, 15000);
+  if (result)
+  {
+    ScAddr answer = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionDirectInference, scAgentsCommon::CoreKeynodes::nrel_answer);
+    ScAddr solutionNode = utils::IteratorUtils::getAnyFromSet(&m_memoryCtx, answer);
+    ScAddr solutionTreeRoot = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, solutionNode, scAgentsCommon::CoreKeynodes::rrel_1);
+    if (solutionTreeRoot.IsValid())
+      logicRuleNode = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, solutionTreeRoot, scAgentsCommon::CoreKeynodes::rrel_1);
+  }
+  return logicRuleNode;
+}
+
+ScAddr CreateAnswerTemplateAgent::wrapInSet(ScAddr const & addr)
+{
+  ScAddr set = m_memoryCtx.CreateNode(ScType::NodeConstTuple);
+  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, set, addr);
+  return set;
 }

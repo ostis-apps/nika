@@ -8,6 +8,7 @@ import React from "react";
 const nrelSystemIdentifier = 'nrel_system_identifier';
 const question = 'question';
 const actionCreateQuestionClassAndPhraseTemplate = 'action_create_question_class_and_phrase_template';
+const actionCreateClass = 'action_create_class';
 const rrel1 = 'rrel_1';
 const rrel2 = 'rrel_2';
 const conceptTextFile = 'concept_text_file';
@@ -22,8 +23,8 @@ const baseKeynodes = [
     { id: rrel2, type: ScType.NodeConstRole },
     { id: conceptTextFile, type: ScType.NodeConstClass },
     { id: langRu, type: ScType.NodeConstClass },
-    { id: message, type: ScType.NodeVar}
-    
+    { id: message, type: ScType.NodeVar},
+    { id: actionCreateClass, type: ScType.NodeConstClass}
 ];
 
 export const setSystemIdtf = async (addr: ScAddr, systemIdtf: string) => {
@@ -47,6 +48,31 @@ export const setSystemIdtf = async (addr: ScAddr, systemIdtf: string) => {
       keynodes[nrelSystemIdentifier]
     );
     const result = await client.templateGenerate(template, {});
+};
+
+export const handleSaveToCreateClass = async (
+    classSystemIdentifierRef: React.RefObject<HTMLInputElement>,
+    classRussianIdentifierRef: React.RefObject<HTMLInputElement>,
+    classNoteRef: React.RefObject<HTMLInputElement>,
+    classSuperClassRef: React.RefObject<HTMLInputElement>,
+    chipsValues: string[]
+) => {
+        const inputValues = {
+            phraseSystemIdentifier: classSystemIdentifierRef.current?.value || '',
+            phraseRussianIdentifier: classRussianIdentifierRef.current?.value || '',
+            classNote: classNoteRef.current?.value || '',
+            classSuperClass: classSuperClassRef.current?.value || '',
+            };
+
+        const phrases = chipsValues.join(', ');
+
+        const result : string = Object.values(inputValues).join('\n') + '\n' + phrases;
+
+        const resultLinkAddr = await createLinkText(result);
+        
+        if (resultLinkAddr !== null) {
+            await createClassAgent(resultLinkAddr);
+        }
 };
 
 export const handleSave = async (
@@ -74,13 +100,14 @@ export const handleSave = async (
 const describeAgent = async (
     keynodes: Record<string, ScAddr>,
     linkAddr: ScAddr,
+    action: string
 ) => {
     const actionNodeAlias = '_action_node';
 
     const template = new ScTemplate();
 
     template.triple(keynodes[question], ScType.EdgeAccessVarPosPerm, [ScType.NodeVar, actionNodeAlias]);
-    template.triple(keynodes[actionCreateQuestionClassAndPhraseTemplate], ScType.EdgeAccessVarPosPerm, actionNodeAlias);
+    template.triple(keynodes[action], ScType.EdgeAccessVarPosPerm, actionNodeAlias);
 
     template.tripleWithRelation(
         actionNodeAlias,
@@ -105,10 +132,18 @@ const describeAgent = async (
 const createQuestionClassAndPhraseTemplateAgent = async (linkAddr: ScAddr) => {
     const keynodes = await client.resolveKeynodes(baseKeynodes);
 
-    const [template, userActionNodeAlias] = await describeAgent(keynodes, linkAddr);
+    const [template, userActionNodeAlias] = await describeAgent(keynodes, linkAddr, actionCreateQuestionClassAndPhraseTemplate);
 
     await makeAgent(template, userActionNodeAlias);
 };
+
+const createClassAgent = async (linkAddr: ScAddr) => {
+    const keynodes = await client.resolveKeynodes(baseKeynodes);
+
+    const [template, userActionNodeAlias] = await describeAgent(keynodes, linkAddr, actionCreateClass);
+
+    await makeAgent(template, userActionNodeAlias);
+}
 
 export const createPopupCheck = async (
     setCreatePopup
@@ -121,5 +156,33 @@ export const createPopupCheck = async (
 
     const keynodes = await client.resolveKeynodes(baseKeynodes);
     const eventParams = new ScEventParams(keynodes[concept_popup], ScEventType.AddOutgoingEdge, () => {setCreatePopup(true)});
+    await client.eventsCreate([eventParams])
+}
+
+export const createClassPopupCheck = async (
+    setCreateClassPopup
+)  => {
+    const concept_popup = 'concept_class_popup';
+
+    const baseKeynodes = [
+        { id: concept_popup, type: ScType.NodeConstClass},
+    ];
+
+    const keynodes = await client.resolveKeynodes(baseKeynodes);
+    const eventParams = new ScEventParams(keynodes[concept_popup], ScEventType.AddOutgoingEdge, () => {setCreateClassPopup(true)});
+    await client.eventsCreate([eventParams])
+}
+
+export const failedToCreateConstruction = async (
+    setErrorLabel
+)  => {
+    const concept_error = 'concept_error';
+
+    const baseKeynodes = [
+        { id: concept_error, type: ScType.NodeConstClass},
+    ];
+
+    const keynodes = await client.resolveKeynodes(baseKeynodes);
+    const eventParams = new ScEventParams(keynodes[concept_error], ScEventType.AddOutgoingEdge, () => {setErrorLabel(true)});
     await client.eventsCreate([eventParams])
 }

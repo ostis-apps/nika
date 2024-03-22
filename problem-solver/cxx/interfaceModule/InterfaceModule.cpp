@@ -30,9 +30,9 @@ sc_result InterfaceModule::InitializeImpl()
     SC_AGENT_REGISTER(CreateAnswerTemplateAgent);
   }
 
-  if (ActionUtils::isActionDeactivated(&ctx, InterfaceKeynodes::action_test))
+  if (ActionUtils::isActionDeactivated(&ctx, InterfaceKeynodes::action_create_class))
   {
-    SC_LOG_ERROR("action_test is deactivated");
+    SC_LOG_ERROR("action_create_class is deactivated");
   }
   else
   {

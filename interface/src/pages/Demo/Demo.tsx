@@ -5,12 +5,12 @@ import { Chat } from '@components/Chat';
 import { Date } from '@components/Chat/Date';
 import { ScAddr } from 'ts-sc-client';
 import { resolveUserAgent } from '@agents/resolveUserAgent';
-import { createPopupCheck } from '@agents/helper';
+import { createClassPopupCheck, createPopupCheck, failedToCreateConstruction } from '@agents/helper';
 import { useChat } from '@hooks/useChat';
 import { SC_WEB_URL } from "@constants";
 import { ScClient } from 'ts-sc-client';
 import { SC_URL } from '@constants';
-import { CreateQuestionClassPopup, CreatePhraseTemplatePopup } from './Popups';
+import { CreateQuestionClassPopup, CreatePhraseTemplatePopup, CreateClassPopup } from './Popups';
 
 const client = new ScClient(SC_URL);
 
@@ -21,7 +21,14 @@ export const Demo = () => {
 
     const [createPopup, setCreatePopup] = useState(false);
     const [createPhraseTemplatePopup, setCreatePhraseTemplatePopup] = useState(false);
+    const [createClassPopup, setCreateClassPopup] = useState(false);
     const [form, setForm] = useState("");
+    const [isVisible, setIsVisible] = useState(false);
+    const [createClass, setCreateClass] = useState(false);  
+    const [errorLabel, setErrorLabel] = useState(false);
+    const [closeLabel, setCloseLabel] = useState(false);    
+    
+    if(errorLabel){setTimeout(() => {setErrorLabel(false)}, 7000);}
 
     const { initChat, sendMessage, isAgentAnswer, onFetching, messages, chatRef } = useChat(user);
     const onSend = useCallback(
@@ -43,18 +50,28 @@ export const Demo = () => {
             await initChat([user]);
             setIsLoading(false);
             createPopupCheck(setCreatePopup);
+            createClassPopupCheck(setCreateClassPopup);
+            failedToCreateConstruction(setErrorLabel);
         })();
     }, [initChat]);
 
     const QuestionClassPopup = ()  => { return CreateQuestionClassPopup(
         setCreatePopup,
         setCreatePhraseTemplatePopup,
-        setForm);
+        setForm,
+        setCloseLabel);
     };
 
     const PhraseTemplatePopup = () => { return CreatePhraseTemplatePopup(
         setCreatePhraseTemplatePopup,
-        form);
+        form,
+        setIsVisible,
+        setCloseLabel);
+    };
+    const ClassPopup = () => { return CreateClassPopup(
+        setCreateClassPopup,
+        setCreateClass,
+        setCloseLabel);
     };
 
     return (
@@ -106,6 +123,26 @@ export const Demo = () => {
                 </PopupWrapper>
                 )
             }
+            {createClassPopup && (
+                <PopupWrapper>
+                    <ClassPopup />
+                </PopupWrapper>
+            )}
+            <div className={`fade-in-out ${isVisible ? 'visible' : 'hidden'}`}>
+                <p className='finish label'>Теперь я умею отвечать на новый вопрос!</p>
+            </div>
+
+            <div className={`fade-in-out ${createClass ? 'visible' : 'hidden'}`}>
+                <p className='finish label'>Класс успешно создан!</p>
+            </div>
+
+            <div className={`fade-in-out ${errorLabel ? 'visible' : 'hidden'}`}>
+                <p className='error label'>Что-то пошло не так. <br /> Пожалуйста, попробуйте снова.</p>
+            </div>
+
+            <div className={`fade-in-out ${closeLabel ? 'visible' : 'hidden'}`}>
+                <p className='close label'>Действие завершено пользователем.</p>
+            </div>
         </Wrapper>
     );
 };

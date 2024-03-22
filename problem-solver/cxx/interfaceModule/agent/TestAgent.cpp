@@ -28,6 +28,12 @@ SC_AGENT_IMPLEMENTATION(TestAgent)
      return SC_RESULT_ERROR;
   }
 
+  ScAddr const & inputLink = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, questionNode, scAgentsCommon::CoreKeynodes::rrel_2);
+  std::string inputContent;
+  m_memoryCtx.GetLinkContent(inputLink, inputContent);
+
+  SC_LOG_ERROR(inputContent);
+
   SC_LOG_ERROR("WORK");
 
   SC_LOG_DEBUG("TestAgent finished");
@@ -38,5 +44,5 @@ SC_AGENT_IMPLEMENTATION(TestAgent)
 bool TestAgent::checkActionClass(ScAddr const & actionAddr)
 {
   return m_memoryCtx.HelperCheckEdge(
-      InterfaceKeynodes::action_test, actionAddr, ScType::EdgeAccessConstPosPerm);
+      InterfaceKeynodes::action_create_class, actionAddr, ScType::EdgeAccessConstPosPerm);
 }

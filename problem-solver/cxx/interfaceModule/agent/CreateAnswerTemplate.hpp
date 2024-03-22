@@ -15,5 +15,7 @@ class CreateAnswerTemplateAgent : public ScAgent
 private:
   bool checkActionClass(ScAddr const & actionAddr);
   std::vector<std::string> split(const std::string & s, const std::string & delimiter);
+  ScAddr generateReplyMessage(const ScAddr & messageNode);
+  ScAddr wrapInSet(ScAddr const & addr);
 };
 }  // namespace interfaceModule

@@ -1,11 +1,12 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
-import { handleSave } from "@api/sc/agents/helper";
+import { handleSave, handleSaveToCreateClass } from "@api/sc/agents/helper";
 
 export const CreateQuestionClassPopup = (
     setCreatePopup,
     setCreatePhraseTemplatePopup,
-    setForm
+    setForm,
+    setCloseLabel
 ) => {
     const questionSystemIdentifierRef = useRef<HTMLInputElement>(null);
     const questionRussianIdentifierRef = useRef<HTMLInputElement>(null);
@@ -24,6 +25,8 @@ export const CreateQuestionClassPopup = (
 
     const closeClick: React.MouseEventHandler<HTMLButtonElement> = async (event) => {
       setCreatePopup(false);
+      setCloseLabel(true);
+      setTimeout(() => {setCloseLabel(false);}, 6000);
     };
 
     const systemIdtfHandleKeyDown = (event) => {
@@ -87,7 +90,9 @@ export const CreateQuestionClassPopup = (
 
   export const CreatePhraseTemplatePopup = (
     setCreatePhraseTemplatePopup,
-    form
+    form,
+    setIsVisible,
+    setCloseLabel
   ) => {
     const phraseSystemIdentifierRef = useRef<HTMLInputElement>(null);
     const phraseRussianIdentifierRef = useRef<HTMLInputElement>(null);
@@ -123,10 +128,16 @@ export const CreateQuestionClassPopup = (
         await handleSave(phraseSystemIdentifierRef, phraseRussianIdentifierRef,
             form, chipsValues);
         setCreatePhraseTemplatePopup(false);
+        setIsVisible(true);
+        setTimeout(() => {
+          setIsVisible(false);
+        }, 6000);
       };
 
     const closeClick: React.MouseEventHandler<HTMLButtonElement> = async (event) => {
       setCreatePhraseTemplatePopup(false);
+      setCloseLabel(true);
+      setTimeout(() => {setCloseLabel(false);}, 6000);
     };
 
     const systemIdtfHandleKeyDown = (event) => {
@@ -203,7 +214,146 @@ export const CreateQuestionClassPopup = (
                         </div>
                     )}
                     <span className="chip-delete" onClick={() => handleChipDelete(index)}>
-                        X
+                      ×
+                    </span>
+                    </div>
+                ))}
+            </div>
+            <button className="button save" onClick={handleClick}>
+            Сохранить
+            </button>
+        
+      </div>
+    );
+  };
+
+
+  export const CreateClassPopup = (
+    setCreateClassPopup,
+    setIsVisible,
+    setCloseLabel
+  ) => {
+    const classSystemIdentifierRef = useRef<HTMLInputElement>(null);
+    const classRussianIdentifierRef = useRef<HTMLInputElement>(null);
+    const classNoteIdentifierRef = useRef<HTMLInputElement>(null);
+    const classSuperClassIdentifierRef = useRef<HTMLInputElement>(null);
+
+    const [chipsValues, setChipsValues] = useState<string[]>([]);
+    const [editingIndex, setEditingIndex] = useState(null);
+    const handleChipAdd = (value: string) => {
+        setChipsValues([...chipsValues, value]);
+    };
+
+    useEffect(() => {
+        classSystemIdentifierRef.current!.value = "concept_";
+    }, [classSystemIdentifierRef])
+    
+    const handleChipDelete = (index: number) => {
+      const newChipsValues = [...chipsValues];
+      newChipsValues.splice(index, 1);
+      setChipsValues(newChipsValues);
+    };
+
+    const handleChipEdit = (index) => {
+        setEditingIndex(index);
+      };
+    
+    const handleChipChange = (event, index) => {
+      const updatedChipsValues = [...chipsValues];
+      updatedChipsValues[index] = event.target.value;
+      setChipsValues(updatedChipsValues);
+    };
+
+    const handleClick: React.MouseEventHandler<HTMLButtonElement> = async (event) => {
+        handleSaveToCreateClass(classSystemIdentifierRef, classRussianIdentifierRef, classNoteIdentifierRef, classSuperClassIdentifierRef, chipsValues);
+        setCreateClassPopup(false);
+        setIsVisible(true);
+        setTimeout(() => {
+          setIsVisible(false);
+        }, 6000);
+      };
+
+    const closeClick: React.MouseEventHandler<HTMLButtonElement> = async (event) => {
+      setCreateClassPopup(false);
+      setCloseLabel(true);
+      setTimeout(() => {setCloseLabel(false);}, 6000);
+    };
+
+    const systemIdtfHandleKeyDown = (event) => {
+        const inputValue = classSystemIdentifierRef.current?.value;
+        const fixedText = "concept_";
+
+        if (inputValue === fixedText   && (event.key === 'Backspace' || event.key === 'Delete')) {
+        event.preventDefault();
+        classSystemIdentifierRef.current!.value = fixedText;
+        }  
+    }
+
+    return (
+      <div className="popup">
+        <h2>Создание классов</h2>
+        <button className='close_button' onClick={closeClick}>×</button>
+        <div className="form">
+            <h4>Системный индетификатор</h4>
+            <input
+            type="text"
+            className="input"
+            ref={classSystemIdentifierRef}
+            onKeyDown={systemIdtfHandleKeyDown}
+            />
+            <h4>Индетификатор на русском языке</h4>
+            <input
+            type="text"
+            className="input"
+            ref={classRussianIdentifierRef}
+            placeholder="Название вашего класса"
+            />
+            <h4>Примечание</h4>
+            <input
+            type="text"
+            className="input"
+            ref={classNoteIdentifierRef}
+            placeholder="Примечание(определение)"
+            />
+            <h4>Надкласс</h4>
+            <input
+            type="text"
+            className="input"
+            ref={classSuperClassIdentifierRef}
+            placeholder="Надкласс для вашего класса"
+            />
+            </div>
+            <h2>Декомпозиция</h2>
+            <div className="chips">
+                <input
+                    type="text"
+                    className="chip-input"
+                    placeholder="Декомпозиция"
+                    onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+                        if (e.key === 'Enter') {
+                        handleChipAdd(e.currentTarget.value);
+                        e.currentTarget.value = '';
+                        }
+                    }}
+                />
+                {chipsValues.map((value, index) => (
+                    <div className="chip-div" key={index}>
+                    {editingIndex === index ? (
+                        <input
+                        type="text"
+                        className="chip"
+                        value={value}
+                        onChange={(e) => handleChipChange(e, index)}
+                        onBlur={() => setEditingIndex(null)}
+                        autoFocus
+                        />
+                    ) : (
+                        <div className="chip" onClick={() => handleChipEdit(index)}>
+                        {value}
+                        </div>
+                    )}
+                    <span className="chip-delete" onClick={() => handleChipDelete(index)}>
+                      ×
                     </span>
                     </div>
                 ))}

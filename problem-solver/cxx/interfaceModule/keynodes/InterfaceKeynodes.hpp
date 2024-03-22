@@ -19,8 +19,8 @@ public:
   SC_PROPERTY(Keynode("action_create_question_class_and_phrase_template"), ForceCreate)
   static ScAddr action_create_question_class_and_phrase_template;
 
-  SC_PROPERTY(Keynode("action_test"), ForceCreate)
-  static ScAddr action_test;
+  SC_PROPERTY(Keynode("action_create_class"), ForceCreate)
+  static ScAddr action_create_class;
 
   SC_PROPERTY(Keynode("concept_header"), ForceCreate)
   static ScAddr concept_header;
