@@ -7,48 +7,6 @@ export const Wrapper = styled(ChatPageWrapper)`
         'chat scgViewer'
         'chat scgViewer';
     grid-gap: 11px;
-    
-    .label{
-        border-radius: 10px;
-        height: 50px;
-        width: 26%;
-        color: black;
-        z-index: 9999;
-        position: fixed;
-        top: 1%;
-        left: 37%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        font-size: 20px;
-        padding: 10px;
-    }
-
-    .finish{
-        background-color: #E1F2DF;
-    }
-
-    .error{
-        background-color: #F0DADA;
-    }
-
-    .close{
-        background-color: #DEDEDE;
-    }
-
-    .fade-in-out {
-        transition: opacity 0.5s ease;
-    }
-      
-    .visible {
-      opacity: 1;
-    }
-      
-    .hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
 `;
 
 export const ChatWrapper = styled.div`

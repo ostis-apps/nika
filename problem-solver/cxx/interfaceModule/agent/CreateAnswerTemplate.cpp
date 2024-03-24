@@ -17,6 +17,8 @@
 #include <vector>
 #include <string>
 #include <unordered_map>
+#include <algorithm>
+
 
 using namespace interfaceModule;
 using namespace scAgentsCommon;
@@ -41,7 +43,33 @@ SC_AGENT_IMPLEMENTATION(CreateAnswerTemplateAgent)
      return SC_RESULT_ERROR;
   }
 
-  dialogControlModule::MessageConstructionsGenerator messageConstructionGenerator = MessageConstructionsGenerator(&m_memoryCtx);
+  //Clear answer structure
+  ScAddr const & answerStructure = m_memoryCtx.HelperFindBySystemIdtf("answer_structure");
+  
+  ScTemplate findAnswerStructure;
+
+  findAnswerStructure.Triple(
+    answerStructure,
+    ScType::EdgeAccessVarPosPerm >> "y",
+    ScType::Unknown
+  );
+
+  ScTemplateSearchResult resultAnswerStructure;
+  bool const is_success = m_memoryCtx.HelperSearchTemplate(findAnswerStructure, resultAnswerStructure);
+  
+  if (is_success)
+  {
+    SC_LOG_ERROR("size of answer structure");
+    SC_LOG_ERROR(resultAnswerStructure.Size());
+    for (size_t i = 0; i < resultAnswerStructure.Size(); ++i)
+    {
+      SC_LOG_ERROR("For step");
+      SC_LOG_ERROR(i);
+      m_memoryCtx.EraseElement(resultAnswerStructure[i]["y"]);
+    }
+  }
+  //------------------------------
+
 
   ScAddr const & formLinkAddr = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, questionNode, scAgentsCommon::CoreKeynodes::rrel_2);
 
@@ -50,40 +78,64 @@ SC_AGENT_IMPLEMENTATION(CreateAnswerTemplateAgent)
 
   m_memoryCtx.EraseElement(formLinkAddr);
 
+  if (formLinkContent == "User close")
+  {
+    ScAddr const & phrase = m_memoryCtx.HelperFindBySystemIdtf("concept_phrase_about_user_close");
+    ScTemplate searchPhraseConstruction;
+    searchPhraseConstruction.TripleWithRelation(
+      InterfaceKeynodes::concept_phrase,
+      ScType::EdgeDCommonVar,
+      phrase,
+      ScType::EdgeAccessVarPosPerm,
+      InterfaceKeynodes::nrel_inclusion
+    );
+    searchPhraseConstruction.Triple(
+      phrase,
+      ScType::EdgeAccessVarPosPerm,
+      ScType::LinkVar >> "_link"
+    );
+    searchPhraseConstruction.Triple(
+      InterfaceKeynodes::lang_ru,
+      ScType::EdgeAccessVarPosPerm,
+      "_link"
+    );
+
+    ScTemplateSearchResult phraseConstruction;
+    m_memoryCtx.HelperSearchTemplate(searchPhraseConstruction, phraseConstruction);
+
+    std::string answer;
+    m_memoryCtx.GetLinkContent(phraseConstruction[0]["_link"], answer);
+    createAnswer(answer);
+
+    for (size_t i = 0; i < phraseConstruction[0].Size(); ++i)
+    {
+      m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, answerStructure, phraseConstruction[0][i]);
+    }
+
+    SC_LOG_DEBUG("CreateAnswerTemplateAgent finished : user close");
+    utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, true);
+    return SC_RESULT_OK;
+  }
+
   std::vector<std::string> formItems = split(formLinkContent, "\n");
   ScAddr checkNode;
   if (m_memoryCtx.HelperFindBySystemIdtf(formItems[0], checkNode) || !m_memoryCtx.FindLinksByContent(formItems[2]).empty() || m_memoryCtx.HelperFindBySystemIdtf(formItems[3], checkNode))
   {
-    ScAddr error;
-    if(!m_memoryCtx.HelperFindBySystemIdtf("concept_error", error))
-    {
-      error = m_memoryCtx.CreateNode(ScType::NodeConstClass);
-      m_memoryCtx.HelperSetSystemIdtf("concept_error", error);
-    }
-    ScAddr const & newError = m_memoryCtx.CreateNode(ScType::NodeVar);
-    m_memoryCtx.HelperSetSystemIdtf("_node_exist", newError);
-    m_memoryCtx.CreateEdge(ScType::EdgeAccessVarPosPerm, error, newError);
+    createAnswerMessageAndStructure("concept_phrase_about_error_of_existing", answerStructure);
+    
     SC_LOG_DEBUG("CreateAnswerTemplateAgent finished with error: nodes exists");
-    utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, false);
+    utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, true);
     return SC_RESULT_OK;
   }
 
   if (formItems[0] == "concept_message_about_" || formItems[2] == "" || formItems[3] == "concept_phrase_template_" || formItems[5] == "")
   {
-    ScAddr error;
-    if(!m_memoryCtx.HelperFindBySystemIdtf("concept_error", error))
-    {
-      error = m_memoryCtx.CreateNode(ScType::NodeConstClass);
-      m_memoryCtx.HelperSetSystemIdtf("concept_error", error);
-    }
-    ScAddr const & newError = m_memoryCtx.CreateNode(ScType::NodeVar);
-    m_memoryCtx.HelperSetSystemIdtf("invalid_inputs", newError);
-    m_memoryCtx.CreateEdge(ScType::EdgeAccessVarPosPerm, error, newError);
+    createAnswerMessageAndStructure("concept_phrase_about_error_invalid_params", answerStructure);
+    
     SC_LOG_DEBUG("CreateAnswerTemplateAgent finished with error: invalid inputs");
-    utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, false);
+    utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, true);
     return SC_RESULT_OK;
   }
-
   SC_LOG_ERROR(formLinkContent);
 
   //Create Message Class Construction
@@ -366,57 +418,20 @@ SC_AGENT_IMPLEMENTATION(CreateAnswerTemplateAgent)
   ScTemplateGenResult full_construction;
   m_memoryCtx.HelperGenTemplate(logicRule, full_construction);
 
-  /*ScAddr const & answerStructure = m_memoryCtx.HelperFindBySystemIdtf("answer_structure");
+  createAnswerMessageAndStructure("concept_phrase_about_successful_creating", answerStructure);
 
-  ScTemplate findAnswerStructure;
-
-  findAnswerStructure.Triple(
-    answerStructure,
-    ScType::EdgeAccessVarPosPerm,
-    ScType::Unknown >> "x"
-  );
-
-  ScTemplateSearchResult resultAnswerStructure;
-  bool const is_success = m_memoryCtx.HelperSearchTemplate(findAnswerStructure, resultAnswerStructure);
-  
-  if (is_success)
+  for (size_t i = 0; i < genPhrase.Size(); ++i)
   {
-    for (size_t i = 0; i < resultAnswerStructure.Size(); i++)
+    m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, answerStructure, genPhrase[i]);
+  }
+  
+  for (size_t i = 0; i < classConstruction.Size(); ++i)
+  {
+    if (std::find(genPhrase.begin(), genPhrase.end(), classConstruction[i]) == genPhrase.end())
     {
-      m_memoryCtx.EraseElement(resultAnswerStructure[i]["x"]);
+      m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, answerStructure, classConstruction[i]);
     }
   }
-
-  ScAddr const & link = m_memoryCtx.CreateLink(ScType::LinkConst);
-  m_memoryCtx.SetLinkContent(link, "Конструкция успешно созданна");
-  ScAddr const & finishPhraseClass = m_memoryCtx.CreateNode(ScType::NodeConstClass);
-  m_memoryCtx.HelperSetSystemIdtf("concept_phrase_about_successful_structure_creating", finishPhraseClass);
-  ScAddr const & edgeFromFinishPhraseClassToLink = m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosTemp, finishPhraseClass, link);
-  ScAddr const & edgeFromLangToLink = m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosTemp, InterfaceKeynodes::lang_ru, link);
-
-  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, answerStructure, link);
-  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, answerStructure, finishPhraseClass);
-  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, answerStructure, InterfaceKeynodes::lang_ru);
-  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, answerStructure, edgeFromFinishPhraseClassToLink);
-  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, answerStructure, edgeFromLangToLink);
-
-
-  ScAddr const &replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);
-  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
-  messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, InterfaceKeynodes::lang_ru, "Класс сообщений и шаблоны ответов успешно созданы");
-  utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, messageAddr, replyAddr, MessageKeynodes::nrel_reply);*/
-
-  // ScAddr const & messageClass = m_memoryCtx.HelperFindBySystemIdtf("concept_message_about_successful_creating");
-  // m_memoryCtx.CreateEdge(ScType::EdgeAccessVarPosPerm, messageClass, messageAddr);
-
-  // if (messageClass.IsValid())
-  // {
-  //   SC_LOG_ERROR("find");
-  // }
-
-  // ScAddr logicRuleNode = generateReplyMessage(messageAddr);
-  // ScAddr replyMessageNode = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageAddr, MessageKeynodes::nrel_reply);
-  // m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyMessageNode);
 
   SC_LOG_DEBUG("CreateAnswerTemplateAgent finished");
   utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, true);
@@ -449,31 +464,58 @@ bool CreateAnswerTemplateAgent::checkActionClass(ScAddr const & actionAddr)
       InterfaceKeynodes::action_create_question_class_and_phrase_template, actionAddr, ScType::EdgeAccessConstPosPerm);
 }
 
-ScAddr CreateAnswerTemplateAgent::generateReplyMessage(const ScAddr & messageNode)
+void CreateAnswerTemplateAgent::createAnswer(std::string message)
 {
-  ScAddr logicRuleNode;
-  ScAddrVector argsVector = {
-      MessageKeynodes::template_reply_target,
-      MessageKeynodes::concept_answer_on_standard_message_rule_class_by_priority,
-      wrapInSet(messageNode)};
-  ScAddr actionDirectInference =
-      utils::AgentUtils::initAgent(&m_memoryCtx, inference::InferenceKeynodes::action_direct_inference, argsVector);
-
-  bool const result = ActionUtils::waitAction(&m_memoryCtx, actionDirectInference, 15000);
-  if (result)
-  {
-    ScAddr answer = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionDirectInference, scAgentsCommon::CoreKeynodes::nrel_answer);
-    ScAddr solutionNode = utils::IteratorUtils::getAnyFromSet(&m_memoryCtx, answer);
-    ScAddr solutionTreeRoot = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, solutionNode, scAgentsCommon::CoreKeynodes::rrel_1);
-    if (solutionTreeRoot.IsValid())
-      logicRuleNode = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, solutionTreeRoot, scAgentsCommon::CoreKeynodes::rrel_1);
-  }
-  return logicRuleNode;
+  dialogControlModule::MessageConstructionsGenerator messageConstructionGenerator = MessageConstructionsGenerator(&m_memoryCtx);
+  ScAddr const & author = m_memoryCtx.HelperFindBySystemIdtf("myself");
+  ScAddr const & dialogue = m_memoryCtx.HelperFindBySystemIdtf("concept_dialogue");
+  ScTemplate findTarg;
+  findTarg.Triple(
+    dialogue,
+    ScType::EdgeAccessVarPosPerm,
+    ScType::NodeVar >> "target"
+  );
+  ScTemplateSearchResult result;
+  bool const isFoundByTemplate = m_memoryCtx.HelperSearchTemplate(findTarg, result);
+  ScAddr const & targAddr = result[0]["target"];
+  
+  ScAddr const &replyAddr = m_memoryCtx.CreateNode(ScType::NodeConst);
+  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyAddr);
+  messageConstructionGenerator.generateTextTranslationConstruction(replyAddr, InterfaceKeynodes::lang_ru, message);
+  utils::GenerationUtils::generateRelationBetween(&m_memoryCtx, replyAddr, author, InterfaceKeynodes::nrel_authors);
+  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, targAddr, replyAddr);
 }
 
-ScAddr CreateAnswerTemplateAgent::wrapInSet(ScAddr const & addr)
+void CreateAnswerTemplateAgent::createAnswerMessageAndStructure(std::string conceptName, ScAddr const & answerStructure)
 {
-  ScAddr set = m_memoryCtx.CreateNode(ScType::NodeConstTuple);
-  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, set, addr);
-  return set;
+  ScAddr const & phrase = m_memoryCtx.HelperFindBySystemIdtf(conceptName);
+  ScTemplate searchPhraseConstruction;
+  searchPhraseConstruction.TripleWithRelation(
+    InterfaceKeynodes::concept_phrase,
+    ScType::EdgeDCommonVar,
+    phrase,
+    ScType::EdgeAccessVarPosPerm,
+    InterfaceKeynodes::nrel_inclusion
+  );
+  searchPhraseConstruction.Triple(
+    phrase,
+    ScType::EdgeAccessVarPosPerm,
+    ScType::LinkVar >> "_link"
+  );
+  searchPhraseConstruction.Triple(
+    InterfaceKeynodes::lang_ru,
+    ScType::EdgeAccessVarPosPerm,
+    "_link"
+  );
+
+  ScTemplateSearchResult phraseConstruction;
+  m_memoryCtx.HelperSearchTemplate(searchPhraseConstruction, phraseConstruction);
+  std::string answer;
+  m_memoryCtx.GetLinkContent(phraseConstruction[0]["_link"], answer);
+  createAnswer(answer);
+
+  for (size_t i = 0; i < phraseConstruction[0].Size(); ++i)
+  {
+    m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, answerStructure, phraseConstruction[0][i]);
+  }
 }

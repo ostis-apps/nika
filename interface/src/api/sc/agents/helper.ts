@@ -6,28 +6,38 @@ import { createLinkText } from './newMessageAgent';
 import React from "react";
 
 const nrelSystemIdentifier = 'nrel_system_identifier';
+const nrelAuthors = 'nrel_authors';
+const nrelScTextTranslation = 'nrel_sc_text_translation';
 const question = 'question';
 const actionCreateQuestionClassAndPhraseTemplate = 'action_create_question_class_and_phrase_template';
 const actionCreateClass = 'action_create_class';
 const rrel1 = 'rrel_1';
 const rrel2 = 'rrel_2';
 const conceptTextFile = 'concept_text_file';
+const conceptMessage = 'concept_message';
+const conceptDialogue = 'concept_dialogue';
 const langRu = 'lang_ru';
 const message = '_message';
+const myself = 'myself';
 
 const baseKeynodes = [
     { id: nrelSystemIdentifier, type: ScType.NodeConstNoRole},
+    { id: nrelAuthors, type: ScType.NodeConstNoRole},
+    { id: nrelScTextTranslation, type: ScType.NodeConstNoRole},
     { id: question, type: ScType.NodeConstClass },
     { id: actionCreateQuestionClassAndPhraseTemplate, type: ScType.NodeConstClass },
     { id: rrel1, type: ScType.NodeConstRole },
     { id: rrel2, type: ScType.NodeConstRole },
     { id: conceptTextFile, type: ScType.NodeConstClass },
+    { id: conceptMessage, type: ScType.NodeConstClass },
+    { id: conceptDialogue, type: ScType.NodeConstClass },
     { id: langRu, type: ScType.NodeConstClass },
     { id: message, type: ScType.NodeVar},
-    { id: actionCreateClass, type: ScType.NodeConstClass}
+    { id: actionCreateClass, type: ScType.NodeConstClass},
+    { id: myself, type: ScType.NodeConst}
 ];
 
-export const setSystemIdtf = async (addr: ScAddr, systemIdtf: string) => {
+const setSystemIdtf = async (addr: ScAddr, systemIdtf: string) => {
     const keynodes = await client.resolveKeynodes(baseKeynodes);
 
     const template = new ScTemplate();
@@ -50,30 +60,63 @@ export const setSystemIdtf = async (addr: ScAddr, systemIdtf: string) => {
     const result = await client.templateGenerate(template, {});
 };
 
-export const handleSaveToCreateClass = async (
-    classSystemIdentifierRef: React.RefObject<HTMLInputElement>,
-    classRussianIdentifierRef: React.RefObject<HTMLInputElement>,
-    classNoteRef: React.RefObject<HTMLInputElement>,
-    classSuperClassRef: React.RefObject<HTMLInputElement>,
-    chipsValues: string[]
-) => {
-        const inputValues = {
-            phraseSystemIdentifier: classSystemIdentifierRef.current?.value || '',
-            phraseRussianIdentifier: classRussianIdentifierRef.current?.value || '',
-            classNote: classNoteRef.current?.value || '',
-            classSuperClass: classSuperClassRef.current?.value || '',
-            };
+const createReply = async (message: string) => {
+    const keynodes = await client.resolveKeynodes(baseKeynodes);
 
-        const phrases = chipsValues.join(', ');
+    const messageLinkConstruction = new ScConstruction();
+    messageLinkConstruction.createLink(
+        ScType.LinkConst,
+        new ScLinkContent(message, ScLinkContentType.String)
+    );
+    const [messageLinkNode] = await client.createElements(messageLinkConstruction);
+    
+    const tupleNode = '_tuple_node';
+    const messageNode = '_message_node';
+    const requiredNodes = new ScConstruction();
+    requiredNodes.createNode(ScType.NodeConst, tupleNode);
+    requiredNodes.createNode(ScType.NodeConst, messageNode);
+    
+    const nodes = await client.createElements(requiredNodes);
+    const target = new ScAddr(393287);
+    const template = new ScTemplate();
+    template.triple(
+        nodes[0],
+        ScType.EdgeAccessVarPosPerm,
+        messageLinkNode
+    );
+    template.tripleWithRelation(
+        nodes[0],
+        ScType.EdgeDCommonVar,
+        nodes[1],
+        ScType.EdgeAccessVarPosPerm,
+        keynodes[nrelScTextTranslation]
+    );
+    template.tripleWithRelation(
+        nodes[1],
+        ScType.EdgeDCommonVar,
+        keynodes[myself],
+        ScType.EdgeAccessVarPosPerm,
+        keynodes[nrelAuthors]
+    );
+    template.triple(
+        keynodes[conceptMessage],
+        ScType.EdgeAccessVarPosPerm,
+        nodes[1]
+    );
+    template.triple(
+        target,
+        ScType.EdgeAccessVarPosPerm,
+        nodes[1]
+    );
+    template.triple(
+        keynodes[langRu],
+        ScType.EdgeAccessVarPosPerm,
+        messageLinkNode
+    );
 
-        const result : string = Object.values(inputValues).join('\n') + '\n' + phrases;
-
-        const resultLinkAddr = await createLinkText(result);
-        
-        if (resultLinkAddr !== null) {
-            await createClassAgent(resultLinkAddr);
-        }
-};
+    const res = await client.templateGenerate(template, {});
+    
+}
 
 export const handleSave = async (
     phraseSystemIdentifierRef: React.RefObject<HTMLInputElement>,
@@ -96,6 +139,16 @@ export const handleSave = async (
             await createQuestionClassAndPhraseTemplateAgent(resultLinkAddr);
         }
 };
+
+export const userClose = async () => {
+    const result : string = "User close";
+
+    const resultLinkAddr = await createLinkText(result);
+    
+    if (resultLinkAddr !== null) {
+        await createQuestionClassAndPhraseTemplateAgent(resultLinkAddr);
+    }    
+}
 
 const describeAgent = async (
     keynodes: Record<string, ScAddr>,
@@ -137,18 +190,10 @@ const createQuestionClassAndPhraseTemplateAgent = async (linkAddr: ScAddr) => {
     await makeAgent(template, userActionNodeAlias);
 };
 
-const createClassAgent = async (linkAddr: ScAddr) => {
-    const keynodes = await client.resolveKeynodes(baseKeynodes);
-
-    const [template, userActionNodeAlias] = await describeAgent(keynodes, linkAddr, actionCreateClass);
-
-    await makeAgent(template, userActionNodeAlias);
-}
-
 export const createPopupCheck = async (
     setCreatePopup
 )  => {
-    const concept_popup = 'concept_popup';
+    const concept_popup = 'concept_popup_component_for_creating_message_class_and_phrase_template';
 
     const baseKeynodes = [
         { id: concept_popup, type: ScType.NodeConstClass},
@@ -156,33 +201,5 @@ export const createPopupCheck = async (
 
     const keynodes = await client.resolveKeynodes(baseKeynodes);
     const eventParams = new ScEventParams(keynodes[concept_popup], ScEventType.AddOutgoingEdge, () => {setCreatePopup(true)});
-    await client.eventsCreate([eventParams])
-}
-
-export const createClassPopupCheck = async (
-    setCreateClassPopup
-)  => {
-    const concept_popup = 'concept_class_popup';
-
-    const baseKeynodes = [
-        { id: concept_popup, type: ScType.NodeConstClass},
-    ];
-
-    const keynodes = await client.resolveKeynodes(baseKeynodes);
-    const eventParams = new ScEventParams(keynodes[concept_popup], ScEventType.AddOutgoingEdge, () => {setCreateClassPopup(true)});
-    await client.eventsCreate([eventParams])
-}
-
-export const failedToCreateConstruction = async (
-    setErrorLabel
-)  => {
-    const concept_error = 'concept_error';
-
-    const baseKeynodes = [
-        { id: concept_error, type: ScType.NodeConstClass},
-    ];
-
-    const keynodes = await client.resolveKeynodes(baseKeynodes);
-    const eventParams = new ScEventParams(keynodes[concept_error], ScEventType.AddOutgoingEdge, () => {setErrorLabel(true)});
     await client.eventsCreate([eventParams])
 }

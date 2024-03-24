@@ -23,6 +23,7 @@ ScAddr InterfaceKeynodes::nrel_wit_ai_idtf;
 ScAddr InterfaceKeynodes::nrel_reply;
 ScAddr InterfaceKeynodes::nrel_implication;
 ScAddr InterfaceKeynodes::nrel_answer_pattern;
+ScAddr InterfaceKeynodes::nrel_authors;
 ScAddr InterfaceKeynodes::rrel_entity;
 ScAddr InterfaceKeynodes::rrel_color;
 ScAddr InterfaceKeynodes::rrel_main_key_sc_element;

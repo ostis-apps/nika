@@ -70,6 +70,9 @@ public:
   SC_PROPERTY(Keynode("nrel_answer_pattern"), ForceCreate)
   static ScAddr nrel_answer_pattern;
 
+  SC_PROPERTY(Keynode("nrel_authors"), ForceCreate)
+  static ScAddr nrel_authors;
+
   SC_PROPERTY(Keynode("rrel_entity"), ForceCreate)
   static ScAddr rrel_entity;
 
