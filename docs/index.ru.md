@@ -20,6 +20,10 @@
     * [Агент смены цвета компонента интерфейса](agents/changeInterfaceColorAgent.ru.md)
     * [Агент поиска слова по первой букве](agents/findWordInSetByFirstLetter.ru.md)
     * [Агент прогноза погоды](agents/weatherAgent.ru.md)
+    * [Агент создания класса сообщений и шаблонов фраз](agents/createMessageClassAndPhraseTemplateAgent.ru.md)
+
+- **Пользовательский интерфейс**
+    * [Всплывающее окно для создания класса сообщений и шаблонов фраз](agents/popupComponentForCreatingMessageClassAndPhraseTemplate.ru.md) 
 
 - **Шаблоны**
     * [Шаблоны для базы знаний](patterns/kb-patterns.ru.md)
