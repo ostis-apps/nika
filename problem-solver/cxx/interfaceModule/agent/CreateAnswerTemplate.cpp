@@ -461,7 +461,7 @@ std::vector<std::string> CreateAnswerTemplateAgent::split(const string & s, cons
 bool CreateAnswerTemplateAgent::checkActionClass(ScAddr const & actionAddr)
 {
   return m_memoryCtx.HelperCheckEdge(
-      InterfaceKeynodes::action_create_question_class_and_phrase_template, actionAddr, ScType::EdgeAccessConstPosPerm);
+      InterfaceKeynodes::action_create_message_class_and_phrase_template, actionAddr, ScType::EdgeAccessConstPosPerm);
 }
 
 void CreateAnswerTemplateAgent::createAnswer(std::string message)

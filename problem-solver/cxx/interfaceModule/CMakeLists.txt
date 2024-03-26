@@ -5,7 +5,6 @@ set(SOURCES
     "keynodes/InterfaceKeynodes.cpp"
     "agent/ChangeInterfaceColorAgent.cpp"
     "agent/CreateAnswerTemplate.cpp"
-    "agent/TestAgent.cpp"
 )
 
 set(HEADERS
@@ -13,7 +12,6 @@ set(HEADERS
     "keynodes/InterfaceKeynodes.hpp"
     "agent/ChangeInterfaceColorAgent.hpp"
     "agent/CreateAnswerTemplate.hpp"
-    "agent/TestAgent.hpp"
 )
 
 include_directories(

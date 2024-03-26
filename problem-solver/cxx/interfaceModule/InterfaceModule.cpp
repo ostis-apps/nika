@@ -21,22 +21,13 @@ sc_result InterfaceModule::InitializeImpl()
     SC_AGENT_REGISTER(ChangeInterfaceColorAgent);
   }
 
-  if (ActionUtils::isActionDeactivated(&ctx, InterfaceKeynodes::action_create_question_class_and_phrase_template))
+  if (ActionUtils::isActionDeactivated(&ctx, InterfaceKeynodes::action_create_message_class_and_phrase_template))
   {
-    SC_LOG_ERROR("action_create_question_class_and_phrase_template is deactivated");
+    SC_LOG_ERROR("action_create_message_class_and_phrase_template is deactivated");
   }
   else
   {
     SC_AGENT_REGISTER(CreateAnswerTemplateAgent);
-  }
-
-  if (ActionUtils::isActionDeactivated(&ctx, InterfaceKeynodes::action_create_class))
-  {
-    SC_LOG_ERROR("action_create_class is deactivated");
-  }
-  else
-  {
-    SC_AGENT_REGISTER(TestAgent);
   }
 
   return SC_RESULT_OK;
@@ -46,7 +37,6 @@ sc_result InterfaceModule::ShutdownImpl()
 {
   SC_AGENT_UNREGISTER(ChangeInterfaceColorAgent);
   SC_AGENT_UNREGISTER(CreateAnswerTemplateAgent);
-  SC_AGENT_UNREGISTER(TestAgent);
 
   return SC_RESULT_OK;
 }

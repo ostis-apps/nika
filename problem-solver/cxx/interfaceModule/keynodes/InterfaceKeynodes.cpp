@@ -5,8 +5,7 @@
 namespace interfaceModule
 {
 ScAddr InterfaceKeynodes::action_change_interface;
-ScAddr InterfaceKeynodes::action_create_question_class_and_phrase_template;
-ScAddr InterfaceKeynodes::action_create_class;
+ScAddr InterfaceKeynodes::action_create_message_class_and_phrase_template;
 ScAddr InterfaceKeynodes::concept_header;
 ScAddr InterfaceKeynodes::concept_main_part;
 ScAddr InterfaceKeynodes::concept_footer;

@@ -20,6 +20,10 @@
     * [Change interface color agent](agents/changeInterfaceColorAgent.md)
     * [Find word in set by first letter agent](agents/findWordInSetByFirstLetter.md)
     * [Weather agent](agents/weatherAgent.md)
+    * [Create message class and phrase template agent](agents/createMessageClassAndPhraseTemplateAgent.md)
+
+- **User Interface**
+    * [Popup component for creating message class and phrase template](ui/popupComponentForCreatingMessageClassAndPhraseTemplate.md) 
 
 - **Patterns**
     * [Knowledge base patterns](patterns/kb-patterns.md)

@@ -135,7 +135,7 @@ export const CreateMessageClassPopup = (
         const inputValue = phraseSystemIdentifierRef.current?.value;
         const fixedText = "concept_phrase_template_";
 
-        if (inputValue === "concept_phrase_template_" && (event.key === 'Backspace' || event.key === 'Delete')) {
+        if (inputValue === fixedText && (event.key === 'Backspace' || event.key === 'Delete')) {
         event.preventDefault();
         phraseSystemIdentifierRef.current!.value = fixedText;
         }  
@@ -217,3 +217,4 @@ export const CreateMessageClassPopup = (
       </div>
     );
   };
+

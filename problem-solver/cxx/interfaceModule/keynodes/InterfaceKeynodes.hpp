@@ -16,11 +16,8 @@ public:
   SC_PROPERTY(Keynode("action_change_interface"), ForceCreate)
   static ScAddr action_change_interface;
 
-  SC_PROPERTY(Keynode("action_create_question_class_and_phrase_template"), ForceCreate)
-  static ScAddr action_create_question_class_and_phrase_template;
-
-  SC_PROPERTY(Keynode("action_create_class"), ForceCreate)
-  static ScAddr action_create_class;
+  SC_PROPERTY(Keynode("action_create_message_class_and_phrase_template"), ForceCreate)
+  static ScAddr action_create_message_class_and_phrase_template;
 
   SC_PROPERTY(Keynode("concept_header"), ForceCreate)
   static ScAddr concept_header;

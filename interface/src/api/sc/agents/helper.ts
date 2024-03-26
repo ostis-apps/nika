@@ -9,8 +9,7 @@ const nrelSystemIdentifier = 'nrel_system_identifier';
 const nrelAuthors = 'nrel_authors';
 const nrelScTextTranslation = 'nrel_sc_text_translation';
 const question = 'question';
-const actionCreateQuestionClassAndPhraseTemplate = 'action_create_question_class_and_phrase_template';
-const actionCreateClass = 'action_create_class';
+const actionCreateMessageClassAndPhraseTemplate = 'action_create_message_class_and_phrase_template';
 const rrel1 = 'rrel_1';
 const rrel2 = 'rrel_2';
 const conceptTextFile = 'concept_text_file';
@@ -18,14 +17,13 @@ const conceptMessage = 'concept_message';
 const conceptDialogue = 'concept_dialogue';
 const langRu = 'lang_ru';
 const message = '_message';
-const myself = 'myself';
 
 const baseKeynodes = [
     { id: nrelSystemIdentifier, type: ScType.NodeConstNoRole},
     { id: nrelAuthors, type: ScType.NodeConstNoRole},
     { id: nrelScTextTranslation, type: ScType.NodeConstNoRole},
     { id: question, type: ScType.NodeConstClass },
-    { id: actionCreateQuestionClassAndPhraseTemplate, type: ScType.NodeConstClass },
+    { id: actionCreateMessageClassAndPhraseTemplate, type: ScType.NodeConstClass },
     { id: rrel1, type: ScType.NodeConstRole },
     { id: rrel2, type: ScType.NodeConstRole },
     { id: conceptTextFile, type: ScType.NodeConstClass },
@@ -33,8 +31,6 @@ const baseKeynodes = [
     { id: conceptDialogue, type: ScType.NodeConstClass },
     { id: langRu, type: ScType.NodeConstClass },
     { id: message, type: ScType.NodeVar},
-    { id: actionCreateClass, type: ScType.NodeConstClass},
-    { id: myself, type: ScType.NodeConst}
 ];
 
 const setSystemIdtf = async (addr: ScAddr, systemIdtf: string) => {
@@ -60,64 +56,6 @@ const setSystemIdtf = async (addr: ScAddr, systemIdtf: string) => {
     const result = await client.templateGenerate(template, {});
 };
 
-const createReply = async (message: string) => {
-    const keynodes = await client.resolveKeynodes(baseKeynodes);
-
-    const messageLinkConstruction = new ScConstruction();
-    messageLinkConstruction.createLink(
-        ScType.LinkConst,
-        new ScLinkContent(message, ScLinkContentType.String)
-    );
-    const [messageLinkNode] = await client.createElements(messageLinkConstruction);
-    
-    const tupleNode = '_tuple_node';
-    const messageNode = '_message_node';
-    const requiredNodes = new ScConstruction();
-    requiredNodes.createNode(ScType.NodeConst, tupleNode);
-    requiredNodes.createNode(ScType.NodeConst, messageNode);
-    
-    const nodes = await client.createElements(requiredNodes);
-    const target = new ScAddr(393287);
-    const template = new ScTemplate();
-    template.triple(
-        nodes[0],
-        ScType.EdgeAccessVarPosPerm,
-        messageLinkNode
-    );
-    template.tripleWithRelation(
-        nodes[0],
-        ScType.EdgeDCommonVar,
-        nodes[1],
-        ScType.EdgeAccessVarPosPerm,
-        keynodes[nrelScTextTranslation]
-    );
-    template.tripleWithRelation(
-        nodes[1],
-        ScType.EdgeDCommonVar,
-        keynodes[myself],
-        ScType.EdgeAccessVarPosPerm,
-        keynodes[nrelAuthors]
-    );
-    template.triple(
-        keynodes[conceptMessage],
-        ScType.EdgeAccessVarPosPerm,
-        nodes[1]
-    );
-    template.triple(
-        target,
-        ScType.EdgeAccessVarPosPerm,
-        nodes[1]
-    );
-    template.triple(
-        keynodes[langRu],
-        ScType.EdgeAccessVarPosPerm,
-        messageLinkNode
-    );
-
-    const res = await client.templateGenerate(template, {});
-    
-}
-
 export const handleSave = async (
     phraseSystemIdentifierRef: React.RefObject<HTMLInputElement>,
     phraseRussianIdentifierRef: React.RefObject<HTMLInputElement>,
@@ -136,7 +74,7 @@ export const handleSave = async (
         const resultLinkAddr = await createLinkText(result);
         
         if (resultLinkAddr !== null) {
-            await createQuestionClassAndPhraseTemplateAgent(resultLinkAddr);
+            await createMessageClassAndPhraseTemplateAgent(resultLinkAddr);
         }
 };
 
@@ -146,7 +84,7 @@ export const userClose = async () => {
     const resultLinkAddr = await createLinkText(result);
     
     if (resultLinkAddr !== null) {
-        await createQuestionClassAndPhraseTemplateAgent(resultLinkAddr);
+        await createMessageClassAndPhraseTemplateAgent(resultLinkAddr);
     }    
 }
 
@@ -182,13 +120,14 @@ const describeAgent = async (
     return [template, actionNodeAlias] as const;
 };
 
-const createQuestionClassAndPhraseTemplateAgent = async (linkAddr: ScAddr) => {
+const createMessageClassAndPhraseTemplateAgent = async (linkAddr: ScAddr) => {
     const keynodes = await client.resolveKeynodes(baseKeynodes);
 
-    const [template, userActionNodeAlias] = await describeAgent(keynodes, linkAddr, actionCreateQuestionClassAndPhraseTemplate);
+    const [template, userActionNodeAlias] = await describeAgent(keynodes, linkAddr, actionCreateMessageClassAndPhraseTemplate);
 
     await makeAgent(template, userActionNodeAlias);
 };
+
 
 export const createPopupCheck = async (
     setCreatePopup
