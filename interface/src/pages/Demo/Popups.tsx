@@ -100,7 +100,7 @@ export const CreateMessageClassPopup = (
     };
 
     useEffect(() => {
-        phraseSystemIdentifierRef.current!.value = "concept_phrase_template_";
+        phraseSystemIdentifierRef.current!.value = "concept_phrase_about_";
         phraseRussianIdentifierRef.current!.value = "Шаблон фразы о ";
     }, [phraseSystemIdentifierRef, phraseRussianIdentifierRef])
     
@@ -175,12 +175,12 @@ export const CreateMessageClassPopup = (
             onKeyDown={russianIdtfHandleKeyDown}
             />
             </div>
-            <h2>Шаблоны ответов</h2>
+            <h2>Ответные фразы</h2>
             <div className="chips">
                 <input
                     type="text"
                     className="chip-input"
-                    placeholder="Шаблон фразы"
+                    placeholder="Напишите фразу и нажмите enter"
                     onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
                         if (e.key === 'Enter') {
                         handleChipAdd(e.currentTarget.value);
