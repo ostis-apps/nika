@@ -42,7 +42,7 @@ export const Demo = () => {
             setUser(user);
             await initChat([user]);
             setIsLoading(false);
-            createPopupCheck(setCreatePopup);
+            createPopupCheck(setCreatePopup, 'concept_popup_component_for_creating_message_class_and_phrase_template');
         })();
     }, [initChat]);
 

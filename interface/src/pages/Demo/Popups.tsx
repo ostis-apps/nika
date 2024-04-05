@@ -175,7 +175,7 @@ export const CreateMessageClassPopup = (
             onKeyDown={russianIdtfHandleKeyDown}
             />
             </div>
-            <h2>Ответные фразы</h2>
+            <h3>Ответные фразы</h3>
             <div className="chips">
                 <input
                     type="text"

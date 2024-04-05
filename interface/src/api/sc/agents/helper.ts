@@ -6,56 +6,25 @@ import { createLinkText } from './newMessageAgent';
 import React from "react";
 
 const nrelSystemIdentifier = 'nrel_system_identifier';
-const nrelAuthors = 'nrel_authors';
-const nrelScTextTranslation = 'nrel_sc_text_translation';
 const question = 'question';
 const actionCreateMessageClassAndPhraseTemplate = 'action_create_message_class_and_phrase_template';
 const rrel1 = 'rrel_1';
 const rrel2 = 'rrel_2';
 const conceptTextFile = 'concept_text_file';
-const conceptMessage = 'concept_message';
-const conceptDialogue = 'concept_dialogue';
 const langRu = 'lang_ru';
 const message = '_message';
 
 const baseKeynodes = [
     { id: nrelSystemIdentifier, type: ScType.NodeConstNoRole},
-    { id: nrelAuthors, type: ScType.NodeConstNoRole},
-    { id: nrelScTextTranslation, type: ScType.NodeConstNoRole},
     { id: question, type: ScType.NodeConstClass },
     { id: actionCreateMessageClassAndPhraseTemplate, type: ScType.NodeConstClass },
     { id: rrel1, type: ScType.NodeConstRole },
     { id: rrel2, type: ScType.NodeConstRole },
     { id: conceptTextFile, type: ScType.NodeConstClass },
-    { id: conceptMessage, type: ScType.NodeConstClass },
-    { id: conceptDialogue, type: ScType.NodeConstClass },
     { id: langRu, type: ScType.NodeConstClass },
     { id: message, type: ScType.NodeVar},
 ];
-
-const setSystemIdtf = async (addr: ScAddr, systemIdtf: string) => {
-    const keynodes = await client.resolveKeynodes(baseKeynodes);
-
-    const template = new ScTemplate();
-    const linkAlias = "_link";
-
-    const sysIdtfLinkConstruction = new ScConstruction();
-    sysIdtfLinkConstruction.createLink(
-        ScType.LinkConst,
-        new ScLinkContent(systemIdtf, ScLinkContentType.String)
-    );
-    const [sysIdtfLinkNode] = await client.createElements(sysIdtfLinkConstruction);
-
-    template.tripleWithRelation(
-      addr,
-      ScType.EdgeDCommonVar,
-      sysIdtfLinkNode,
-      ScType.EdgeAccessVarPosPerm,
-      keynodes[nrelSystemIdentifier]
-    );
-    const result = await client.templateGenerate(template, {});
-};
-
+//Функции для вызова агентов по нажатию кнопки
 export const handleSave = async (
     phraseSystemIdentifierRef: React.RefObject<HTMLInputElement>,
     phraseRussianIdentifierRef: React.RefObject<HTMLInputElement>,
@@ -74,7 +43,7 @@ export const handleSave = async (
         const resultLinkAddr = await createLinkText(result);
         
         if (resultLinkAddr !== null) {
-            await createMessageClassAndPhraseTemplateAgent(resultLinkAddr);
+            await createAgent(resultLinkAddr, actionCreateMessageClassAndPhraseTemplate);
         }
 };
 
@@ -84,10 +53,24 @@ export const userClose = async () => {
     const resultLinkAddr = await createLinkText(result);
     
     if (resultLinkAddr !== null) {
-        await createMessageClassAndPhraseTemplateAgent(resultLinkAddr);
+        await createAgent(resultLinkAddr, actionCreateMessageClassAndPhraseTemplate);
     }    
 }
+//Функция для открытия компонентов
+export const createPopupCheck = async (
+    setCreatePopup,
+    conceptName: string
+)  => {
 
+    const baseKeynodes = [
+        { id: conceptName, type: ScType.NodeConstClass},
+    ];
+
+    const keynodes = await client.resolveKeynodes(baseKeynodes);
+    const eventParams = new ScEventParams(keynodes[conceptName], ScEventType.AddOutgoingEdge, () => {setCreatePopup(true)});
+    await client.eventsCreate([eventParams])
+}
+//Функции добавления агента в программу обработки
 const describeAgent = async (
     keynodes: Record<string, ScAddr>,
     linkAddr: ScAddr,
@@ -120,25 +103,56 @@ const describeAgent = async (
     return [template, actionNodeAlias] as const;
 };
 
-const createMessageClassAndPhraseTemplateAgent = async (linkAddr: ScAddr) => {
+const createAgent = async (linkAddr: ScAddr, action: string) => {
+    const keynodes = await client.resolveKeynodes(baseKeynodes);
+    const [template, userActionNodeAlias] = await describeAgent(keynodes, linkAddr, action);
+    await makeAgent(template, userActionNodeAlias);
+}
+
+//Вспомагательные функции
+export const findAnyInKb = async (setList: (options: { label: string; value: string }[]) => void, param: string): Promise<void> => {
+    const list = await client.getLinksContentsByContentSubstrings([param]);
+    const options = list[0]
+      .filter((word) => word.startsWith(param))
+      .map((word, index) => ({
+        label: word,
+        value: (index + 1).toString(),
+      }));
+    setList(options);
+  };
+
+  export const findRelationsInKb = async (setList: (options: { label: string; value: string }[]) => void): Promise<void> => {
+    const list = await client.getLinksContentsByContentSubstrings(["nrel_", "rrel_"]);
+    const options = list[0]
+      .map((word, index) => ({
+        label: word,
+        value: (index + 1).toString(),
+      }));
+    setList(options);
+  };
+
+  const setSystemIdtf = async (addr: ScAddr, systemIdtf: string) => {
     const keynodes = await client.resolveKeynodes(baseKeynodes);
 
-    const [template, userActionNodeAlias] = await describeAgent(keynodes, linkAddr, actionCreateMessageClassAndPhraseTemplate);
+    const template = new ScTemplate();
+    const linkAlias = "_link";
 
-    await makeAgent(template, userActionNodeAlias);
+    const sysIdtfLinkConstruction = new ScConstruction();
+    sysIdtfLinkConstruction.createLink(
+        ScType.LinkConst,
+        new ScLinkContent(systemIdtf, ScLinkContentType.String)
+    );
+    const [sysIdtfLinkNode] = await client.createElements(sysIdtfLinkConstruction);
+
+    template.tripleWithRelation(
+      addr,
+      ScType.EdgeDCommonVar,
+      sysIdtfLinkNode,
+      ScType.EdgeAccessVarPosPerm,
+      keynodes[nrelSystemIdentifier]
+    );
+    const result = await client.templateGenerate(template, {});
 };
 
+  
 
-export const createPopupCheck = async (
-    setCreatePopup
-)  => {
-    const concept_popup = 'concept_popup_component_for_creating_message_class_and_phrase_template';
-
-    const baseKeynodes = [
-        { id: concept_popup, type: ScType.NodeConstClass},
-    ];
-
-    const keynodes = await client.resolveKeynodes(baseKeynodes);
-    const eventParams = new ScEventParams(keynodes[concept_popup], ScEventType.AddOutgoingEdge, () => {setCreatePopup(true)});
-    await client.eventsCreate([eventParams])
-}
