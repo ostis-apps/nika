@@ -13,7 +13,7 @@ export const CreateMessageClassPopup = (
 
     useEffect(() => {
         messageSystemIdentifierRef.current!.value = "concept_message_about_";
-        messageRussianIdentifierRef.current!.value = "Сообщение о ";
+        messageRussianIdentifierRef.current!.value = "Класс сообщений о ";
     }, [messageSystemIdentifierRef, messageRussianIdentifierRef])
 
     const handleClick: React.MouseEventHandler<HTMLButtonElement> = async (event) => {
@@ -39,7 +39,7 @@ export const CreateMessageClassPopup = (
 
     const russianIdtfHandleKeyDown = (event) => {
         const inputValue = messageRussianIdentifierRef.current?.value;
-        const fixedText = "Сообщение о ";
+        const fixedText = "Класс сообщений о ";
 
         if (inputValue === fixedText && (event.key === 'Backspace' || event.key === 'Delete')) {
         event.preventDefault();
@@ -49,7 +49,7 @@ export const CreateMessageClassPopup = (
 
     return (
       <div className="popup">
-        <h2>Создание сообщения и шаблонов ответов</h2>
+        <h2>Создание класса сообщений и класса ответных фраз</h2>
         <button className='close_button' onClick={closeClick}>×</button>
         <div className='numdiv'>
             <p className='state-3'>1</p>
@@ -101,7 +101,7 @@ export const CreateMessageClassPopup = (
 
     useEffect(() => {
         phraseSystemIdentifierRef.current!.value = "concept_phrase_about_";
-        phraseRussianIdentifierRef.current!.value = "Шаблон фразы о ";
+        phraseRussianIdentifierRef.current!.value = "Класс ответных фраз о ";
     }, [phraseSystemIdentifierRef, phraseRussianIdentifierRef])
     
     const handleChipDelete = (index: number) => {
@@ -143,7 +143,7 @@ export const CreateMessageClassPopup = (
 
     const russianIdtfHandleKeyDown = (event) => {
         const inputValue = phraseRussianIdentifierRef.current?.value;
-        const fixedText = "Шаблон фразы о ";
+        const fixedText = "Класс ответных фраз о ";
 
         if (inputValue === fixedText && (event.key === 'Backspace' || event.key === 'Delete')) {
         event.preventDefault();
@@ -153,7 +153,7 @@ export const CreateMessageClassPopup = (
 
     return (
       <div className="popup">
-        <h2>Создание сообщения и шаблонов ответов</h2>
+        <h2>Создание класса сообщений и класса ответных фраз</h2>
         <button className='close_button' onClick={closeClick}>×</button>
         <div className='numdiv'>
             <p className='state-1'>1</p>
