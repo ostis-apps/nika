@@ -82,9 +82,10 @@ export const PopupWrapper = styled.div`
     border-radius: 20px;
     position:relative;
     
-    h2{
+    h3{
         font-weight: bold;
         margin-top: 10px;
+        margin-left: 10px;
     }
     
     h4{

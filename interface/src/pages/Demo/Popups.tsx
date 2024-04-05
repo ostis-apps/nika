@@ -49,7 +49,7 @@ export const CreateMessageClassPopup = (
 
     return (
       <div className="popup">
-        <h2>Создание класса сообщений и класса ответных фраз</h2>
+        <h3>Создание класса сообщений и класса ответных фраз</h3>
         <button className='close_button' onClick={closeClick}>×</button>
         <div className='numdiv'>
             <p className='state-3'>1</p>
@@ -153,7 +153,7 @@ export const CreateMessageClassPopup = (
 
     return (
       <div className="popup">
-        <h2>Создание класса сообщений и класса ответных фраз</h2>
+        <h3>Создание класса сообщений и класса ответных фраз</h3>
         <button className='close_button' onClick={closeClick}>×</button>
         <div className='numdiv'>
             <p className='state-1'>1</p>
