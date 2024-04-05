@@ -133,7 +133,7 @@ export const CreateMessageClassPopup = (
 
     const systemIdtfHandleKeyDown = (event) => {
         const inputValue = phraseSystemIdentifierRef.current?.value;
-        const fixedText = "concept_phrase_template_";
+        const fixedText = "concept_phrase_about_";
 
         if (inputValue === fixedText && (event.key === 'Backspace' || event.key === 'Delete')) {
         event.preventDefault();
