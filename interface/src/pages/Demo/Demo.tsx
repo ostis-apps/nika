@@ -10,7 +10,7 @@ import { useChat } from '@hooks/useChat';
 import { SC_WEB_URL } from "@constants";
 import { ScClient } from 'ts-sc-client';
 import { SC_URL } from '@constants';
-import { CreateMessageClassPopup, CreatePhraseTemplatePopup } from './Popups';
+import { AddRelationToEntityPopup, CreateClassInstancePopup, CreateMessageClassPopup, CreatePhraseTemplatePopup, CreateClassPopup, CreateRelationPopup } from './Popups';
 
 const client = new ScClient(SC_URL);
 
@@ -19,9 +19,14 @@ export const Demo = () => {
     const [user, setUser] = useState<ScAddr | null>(null);
     const [isLoading, setIsLoading] = useState(false);
 
-    const [createPopup, setCreatePopup] = useState(false);
+    const [createMessageClassAndPhraseTemplatePopup, setCreateMessageClassAndPhraseTemplatePopup] = useState(false);
+    const [createClassPopup, setCreateClassPopup] = useState(false);
     const [createPhraseTemplatePopup, setCreatePhraseTemplatePopup] = useState(false);
-    const [form, setForm] = useState("");   
+    const [createClassInstancePopup, setCreateClassInstancePopup] = useState(false);
+    const [createRelationToEntityPopup, setCreateRelationToEntityPopup] = useState(false);
+    const [createRelationPopup, setCreateRelationPopup] = useState(false);
+    const [form, setForm] = useState("");
+    const [relationForm, setRelationForm] = useState<string[]>([]);   
 
     const { initChat, sendMessage, isAgentAnswer, onFetching, messages, chatRef } = useChat(user);
     const onSend = useCallback(
@@ -42,12 +47,16 @@ export const Demo = () => {
             setUser(user);
             await initChat([user]);
             setIsLoading(false);
-            createPopupCheck(setCreatePopup, 'concept_popup_component_for_creating_message_class_and_phrase_template');
+            
+            createPopupCheck(setCreateMessageClassAndPhraseTemplatePopup, 'concept_popup_component_for_creating_message_class_and_phrase_template');
+            createPopupCheck(setCreateClassInstancePopup, 'concept_popup_component_for_creating_class_instance');
+            createPopupCheck(setCreateRelationPopup, 'concept_popup_component_for_creating_relation');
+            createPopupCheck(setCreateClassPopup, 'concept_popup_component_for_creating_class');
         })();
     }, [initChat]);
 
     const MessageClassPopup = ()  => { return CreateMessageClassPopup(
-        setCreatePopup,
+        setCreateMessageClassAndPhraseTemplatePopup,
         setCreatePhraseTemplatePopup,
         setForm);
     };
@@ -57,7 +66,13 @@ export const Demo = () => {
         form);
     };
 
+    const ClassInstancePopup = () => { return CreateClassInstancePopup(setCreateClassInstancePopup, setCreateRelationToEntityPopup, setRelationForm)};
 
+    const RelationToEntityPopup = () => { return AddRelationToEntityPopup(setCreateRelationToEntityPopup, relationForm)};
+
+    const ClassPopup = () => { return CreateClassPopup(setCreateClassPopup)};
+
+    const RelationPopup = () => {return CreateRelationPopup(setCreateRelationPopup)};
 
     return (
         <Wrapper>
@@ -96,7 +111,7 @@ export const Demo = () => {
             <SCgViewerWrapper>
                 <iframe src={url} style={{width: '100%', height: '100%', border: 0, borderRadius: '15px'}}/>
             </SCgViewerWrapper>
-            {createPopup && (
+            {createMessageClassAndPhraseTemplatePopup && (
                 <PopupWrapper>
                     <MessageClassPopup />
                 </PopupWrapper>
@@ -108,6 +123,31 @@ export const Demo = () => {
                 </PopupWrapper>
                 )
             }
+            {createClassInstancePopup && (
+                <PopupWrapper>
+                    <ClassInstancePopup />
+                </PopupWrapper>
+                )
+            }
+            {createRelationToEntityPopup && (
+                <PopupWrapper>
+                    <RelationToEntityPopup />
+                </PopupWrapper>
+                )
+            }
+            {createClassPopup && (
+                <PopupWrapper>
+                    <ClassPopup />
+                </PopupWrapper>
+                )
+            }
+            {createRelationPopup && (
+                <PopupWrapper>
+                    <RelationPopup />
+                </PopupWrapper>
+                )
+            }
+            
         </Wrapper>
     );
 };

@@ -82,10 +82,9 @@ export const PopupWrapper = styled.div`
     border-radius: 20px;
     position:relative;
     
-    h3{
+    h2{
         font-weight: bold;
         margin-top: 10px;
-        margin-left: 10px;
     }
     
     h4{
@@ -171,19 +170,23 @@ export const PopupWrapper = styled.div`
         box-shadow: 10px 4px 15px rgb(0 0 0 / 25%);
         width: 94%;
         height: 6%;
-        position: absolute;
-        bottom: 10px;
-        left: 3%;
+        
     }
 
     .next{
-        background-color: rgb(149 149 149);
-        border: 1px solid rgb(149 149 149);
+        background-color: #3C547B;
+        border: 1px solid #3C547B;
+        position: absolute;
+        bottom: 70px;
+        left: 3%;
     }
 
     .save{
         background-color: #3C547B;
         border: 1px solid #3C547B;
+        position: absolute;
+        bottom: 10px;
+        left: 3%;
     }
 
     .chips{
@@ -200,13 +203,14 @@ export const PopupWrapper = styled.div`
         border-radius: 20px;
         box-shadow: 10px 4px 15px rgb(0 0 0 / 25%);
         border: 1px solid gray;
-        width: 95%;
+        width: 100%;
         padding-left: 10px;
         margin-left: 10px;
         margin-bottom: 5px;
         height: 4vh;
         display: flex;
         align-items:center;
+        justify-content: space-around;
     }
 
     .chip-delete{
@@ -265,4 +269,13 @@ export const PopupWrapper = styled.div`
         background-color: white;
     }
   }
+`;
+
+export const FormInput = styled.input`
+    height: 4vh;
+    border-radius: 20px;
+    box-shadow: 10px 4px 15px rgb(0 0 0 / 25%);
+    border: 1px solid gray;
+    margin-bottom: 7px;
+    padding-left: 10px;
 `;

@@ -10,7 +10,7 @@
 #include "keynodes/Keynodes.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 
-#include "CreateAnswerTemplate.hpp"
+#include "CreateAnswerTemplateAgent.hpp"
 
 #include "generator/MessageConstructionsGenerator.hpp"
 

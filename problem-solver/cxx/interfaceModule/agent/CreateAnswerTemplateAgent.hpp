@@ -3,7 +3,7 @@
 #include "sc-memory/kpm/sc_agent.hpp"
 #include "sc-agents-common/keynodes/coreKeynodes.hpp"
 
-#include "CreateAnswerTemplate.generated.hpp"
+#include "CreateAnswerTemplateAgent.generated.hpp"
 
 namespace interfaceModule
 {

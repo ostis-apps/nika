@@ -19,6 +19,15 @@ public:
   SC_PROPERTY(Keynode("action_create_message_class_and_phrase_template"), ForceCreate)
   static ScAddr action_create_message_class_and_phrase_template;
 
+  SC_PROPERTY(Keynode("action_create_class_instance"), ForceCreate)
+  static ScAddr action_create_class_instance;
+
+  SC_PROPERTY(Keynode("action_create_class"), ForceCreate)
+  static ScAddr action_create_class;
+
+  SC_PROPERTY(Keynode("action_create_relation"), ForceCreate)
+  static ScAddr action_create_relation;
+
   SC_PROPERTY(Keynode("concept_header"), ForceCreate)
   static ScAddr concept_header;
 
@@ -43,6 +52,9 @@ public:
   SC_PROPERTY(Keynode("concept_atomic_message"), ForceCreate)
   static ScAddr concept_atomic_message;
 
+  SC_PROPERTY(Keynode("concept_wit_entity"), ForceCreate)
+  static ScAddr concept_wit_entity;
+  
   SC_PROPERTY(Keynode("nrel_component_color"), ForceCreate)
   static ScAddr nrel_component_color;
 
@@ -70,6 +82,27 @@ public:
   SC_PROPERTY(Keynode("nrel_authors"), ForceCreate)
   static ScAddr nrel_authors;
 
+  SC_PROPERTY(Keynode("nrel_note"), ForceCreate)
+  static ScAddr nrel_note;
+
+  SC_PROPERTY(Keynode("nrel_subdividing"), ForceCreate)
+  static ScAddr nrel_subdividing;
+
+  SC_PROPERTY(Keynode("nrel_definition"), ForceCreate)
+  static ScAddr nrel_definition;
+
+  SC_PROPERTY(Keynode("nrel_definitional_domain"), ForceCreate)
+  static ScAddr nrel_definitional_domain;
+
+  SC_PROPERTY(Keynode("nrel_combination"), ForceCreate)
+  static ScAddr nrel_combination;
+
+  SC_PROPERTY(Keynode("nrel_first_domain"), ForceCreate)
+  static ScAddr nrel_first_domain;
+
+  SC_PROPERTY(Keynode("nrel_second_domain"), ForceCreate)
+  static ScAddr nrel_second_domain;
+
   SC_PROPERTY(Keynode("rrel_entity"), ForceCreate)
   static ScAddr rrel_entity;
 
@@ -93,6 +126,12 @@ public:
 
   SC_PROPERTY(Keynode("_reply_message"), ForceCreate)
   static ScAddr _reply_message;
+
+  SC_PROPERTY(Keynode("sc_node_norole_relation"), ForceCreate)
+  static ScAddr sc_node_norole_relation;
+
+  SC_PROPERTY(Keynode("relation"), ForceCreate)
+  static ScAddr relation;
 };
 
 }  // namespace interfaceModule

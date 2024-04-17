@@ -4,14 +4,20 @@ set(SOURCES
     "InterfaceModule.cpp"
     "keynodes/InterfaceKeynodes.cpp"
     "agent/ChangeInterfaceColorAgent.cpp"
-    "agent/CreateAnswerTemplate.cpp"
+    "agent/CreateAnswerTemplateAgent.cpp"
+    "agent/CreateClassInstanceAgent.cpp"
+    "agent/CreateClassAgent.cpp"
+    "agent/CreateRelationAgent.cpp"
 )
 
 set(HEADERS
     "InterfaceModule.hpp"
     "keynodes/InterfaceKeynodes.hpp"
     "agent/ChangeInterfaceColorAgent.hpp"
-    "agent/CreateAnswerTemplate.hpp"
+    "agent/CreateAnswerTemplateAgent.hpp"
+    "agent/CreateClassInstanceAgent.hpp"
+    "agent/CreateClassAgent.hpp"
+    "agent/CreateRelationAgent.hpp"
 )
 
 include_directories(
