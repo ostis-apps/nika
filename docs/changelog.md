@@ -57,3 +57,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add SD of intelligent studying systems
 - Add SD of dialogues
 - Add SD of messages
+
+## 25.03.2024
+
+### Added
+
+- Add popup components for creating message class and phrase templates
+- Add help-functions for components
+- Add agent for creating constructions: message class, phrase templates and logic rule

@@ -5,6 +5,10 @@
 
 #include "keynodes/InterfaceKeynodes.hpp"
 #include "agent/ChangeInterfaceColorAgent.hpp"
+#include "agent/CreateAnswerTemplateAgent.hpp"
+#include "agent/CreateClassInstanceAgent.hpp"
+#include "agent/CreateClassAgent.hpp"
+#include "agent/CreateRelationAgent.hpp"
 #include "utils/ActionUtils.hpp"
 
 #include "InterfaceModule.generated.hpp"
