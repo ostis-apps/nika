@@ -20,6 +20,10 @@
     * [Change interface color agent](agents/changeInterfaceColorAgent.md)
     * [Find word in set by first letter agent](agents/findWordInSetByFirstLetter.md)
     * [Weather agent](agents/weatherAgent.md)
+    * [Create an instance of the entity class agent](agents/createClassInstanceAgent.md)
+
+- **User interface**
+    * [Popup component for creating an instance of the entity class](ui/popupComponentForCreatingClassInstance.md)
 
 - **Patterns**
     * [Knowledge base patterns](patterns/kb-patterns.md)
