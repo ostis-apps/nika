@@ -57,3 +57,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add SD of intelligent studying systems
 - Add SD of dialogues
 - Add SD of messages
+
+## 14.04.2024
+
+### Added
+
+- Add popup components for creating an instances of the entity classes
+- Add help-functions for components
+- Add agent for creating constructions of instances of the entity classes

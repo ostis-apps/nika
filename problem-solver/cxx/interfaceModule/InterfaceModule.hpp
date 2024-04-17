@@ -5,6 +5,7 @@
 
 #include "keynodes/InterfaceKeynodes.hpp"
 #include "agent/ChangeInterfaceColorAgent.hpp"
+#include "agent/CreateClassInstanceAgent.hpp"
 #include "utils/ActionUtils.hpp"
 
 #include "InterfaceModule.generated.hpp"
