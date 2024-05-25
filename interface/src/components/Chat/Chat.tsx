@@ -26,13 +26,17 @@ import {
     WrapperIcon,
     WrapperAgentAnswer,
     WrapperFooter,
+    MicroButton,
 } from './styled';
+import { ReactComponent as MicroOnIcon } from '@assets/icon/micro-on-icon.svg';
+import { ReactComponent as MicroOffIcon } from '@assets/icon/micro-off-icon.svg';
 import { ReactComponent as SendIcon } from '@assets/icon/send-icon.svg';
 import { ReactComponent as ArrowIcon } from '@assets/icon/arrowBackToLastMessage.svg';
 import { Spinner } from '@components/Spinners/LoadSpinner';
 import { WaitingSpinner } from '@components/Spinners/WaitingSpinner';
 import { refSetter, throttle } from '@utils';
 import { useLanguage } from '@hooks/useLanguage';
+import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition"
 
 interface IProps {
     onSend: (message: string) => void;
@@ -176,6 +180,23 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
             if (empty) setMessageInput('');
         }, [messageInput]);
 
+        const { finalTranscript, resetTranscript, listening } = useSpeechRecognition();
+
+        useEffect(() => {
+            if (!listening && finalTranscript) {
+                setMessageInput(finalTranscript);
+                resetTranscript();
+            }
+        }, [listening, finalTranscript, resetTranscript]);
+
+        const startListening = () => {
+            SpeechRecognition.startListening({ continuous: true });
+        };
+
+        const stopListening = () => {
+            SpeechRecognition.stopListening();
+        };
+
         return (
             <Wrapper className={className}>
                 <SearchBar />
@@ -220,6 +241,11 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
                             type="text"
                             placeholder={textPlaceholder[hookLanguage]}
                         />
+                        <MicroButton isSpeaking={listening} onClick={listening ? stopListening : startListening} >
+                            <WrapperSendIcon>
+                                {listening ? <MicroOffIcon /> : <MicroOnIcon />}
+                            </WrapperSendIcon>
+                        </MicroButton>
                         <FooterSend onClick={onButtonClick} type="submit">
                             <WrapperSendIcon>
                                 <SendIcon />

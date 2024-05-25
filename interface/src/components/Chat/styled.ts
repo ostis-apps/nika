@@ -147,3 +147,22 @@ export const WrapperSendIcon = styled.div`
     width: 33px;
     height: 27px;
 `;
+
+export const MicroButton = styled.button<{ isSpeaking: boolean }>`
+    padding: 13px 12px 13px 6px;
+    margin-left: 12px;
+    border-radius: 50%;
+    box-shadow: 1.44px 1.44px 1.44px rgba(0, 0, 0, 0.25);
+    background-color: ${p => p.isSpeaking ? `#c6c6c6` : `#ece5e5`};
+    border: 2px solid rgba(100, 150, 150, 0.2);
+    cursor: pointer;
+    &:hover {
+        background: #849299;
+    }
+    &:hover path {
+        stroke: white;
+    }
+    &:active {
+        box-shadow: 0px 0px 10px #627599;
+    }
+`;
