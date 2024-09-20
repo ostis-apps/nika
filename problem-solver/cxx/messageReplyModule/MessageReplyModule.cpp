@@ -2,9 +2,11 @@
 
 using namespace messageReplyModule;
 
-SC_IMPLEMENT_MODULE(MessageReplyModule)
+SC_MODULE_REGISTER(MessageReplyModule)->Agent<MessageReplyAgent>();
 
-sc_result MessageReplyModule::InitializeImpl()
+// todo(codegen-removal): if needed override ScModule::Initialize and move all non-keynodes and non-agents code from
+// previous initialization method
+/*
 {
   if (!messageReplyModule::MessageReplyKeynodes::InitGlobal())
   {
@@ -18,15 +20,21 @@ sc_result MessageReplyModule::InitializeImpl()
   }
   else
   {
-    SC_AGENT_REGISTER(MessageReplyAgent);
+    //todo(codegen-removal): Use agentContext.SubscribeAgent<MessageReplyAgent> or UnsubscribeAgent; to register and
+unregister agent SC_AGENT_REGISTER(MessageReplyAgent);
   }
 
   return SC_RESULT_OK;
 }
+*/
 
-sc_result MessageReplyModule::ShutdownImpl()
+// todo(codegen-removal): if needed override ScModule::Shutdown and move all non-agents code from previous shutdown
+// method
+/*
 {
-  SC_AGENT_UNREGISTER(MessageReplyAgent);
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<MessageReplyAgent> or UnsubscribeAgent; to register and
+unregister agent SC_AGENT_UNREGISTER(MessageReplyAgent);
 
   return SC_RESULT_OK;
 }
+*/

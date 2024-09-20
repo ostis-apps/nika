@@ -4,13 +4,13 @@
 #include "sc-agents-common/utils/IteratorUtils.hpp"
 
 #include "constants/MessageClassificationConstants.hpp"
-#include "keynodes/MessageClassificationKeynodes.hpp"
 #include "keynodes/Keynodes.hpp"
+#include "keynodes/MessageClassificationKeynodes.hpp"
 #include "searcher/MessageSearcher.hpp"
 
 namespace messageClassificationModule
 {
-MessageTopicClassifier::MessageTopicClassifier(ScMemoryContext * context, WitAiClientInterface * client)
+MessageTopicClassifier::MessageTopicClassifier(ScAgentContext * context, WitAiClientInterface * client)
   : context(context)
   , client(client)
 {
@@ -43,12 +43,14 @@ ScAddrVector MessageTopicClassifier::classifyMessage(ScAddr const & messageAddr)
 
 std::string MessageTopicClassifier::getMessageText(ScAddr const & messageAddr)
 {
+  std::string linkContent;
   ScAddr const messageLink = messageSearcher->getMessageLink(messageAddr);
   if (!messageLink.IsValid())
   {
     SC_THROW_EXCEPTION(utils::ExceptionItemNotFound, "MessageTopicClassifier: Message link is not found.");
   }
-  return utils::CommonUtils::getLinkContent(context, messageLink);
+  context->GetLinkContent(messageLink, linkContent);
+  return linkContent;
 }
 
 ScAddrVector MessageTopicClassifier::getMessageIntentClass(ScAddr const & messageAddr, json const & witResponse)
@@ -58,7 +60,7 @@ ScAddrVector MessageTopicClassifier::getMessageIntentClass(ScAddr const & messag
   std::string const messageIntent = getMessageIntent(witResponse);
   if (messageIntent.empty())
   {
-    ScAddr const & messageIntentCLassEdge = context->CreateEdge(
+    ScAddr const & messageIntentCLassEdge = context->GenerateConnector(
         ScType::EdgeAccessConstPosPerm,
         MessageClassificationKeynodes::concept_not_classified_by_intent_message,
         messageAddr);
@@ -67,7 +69,7 @@ ScAddrVector MessageTopicClassifier::getMessageIntentClass(ScAddr const & messag
     return messageIntentCLassElements;
   }
 
-  ScIterator3Ptr const possibleIntentIterator = context->Iterator3(
+  ScIterator3Ptr const possibleIntentIterator = context->CreateIterator3(
       MessageClassificationKeynodes::concept_intent_possible_class,
       ScType::EdgeAccessConstPosPerm,
       ScType::NodeConstClass);
@@ -84,9 +86,10 @@ ScAddrVector MessageTopicClassifier::getMessageIntentClass(ScAddr const & messag
       if (messageIntent == witAiIdtf)
       {
         SC_LOG_DEBUG(
-            "MessageTopicClassifier: found " + context->HelperGetSystemIdtf(possibleMessageCLass) + " intent class");
+            "MessageTopicClassifier: found " + context->GetElementSystemIdentifier(possibleMessageCLass) +
+            " intent class");
         ScAddr messageIntentCLassEdge =
-            context->CreateEdge(ScType::EdgeAccessConstPosPerm, possibleMessageCLass, messageAddr);
+            context->GenerateConnector(ScType::EdgeAccessConstPosPerm, possibleMessageCLass, messageAddr);
         messageIntentCLassElements.push_back(possibleMessageCLass);
         messageIntentCLassElements.push_back(messageIntentCLassEdge);
         return messageIntentCLassElements;
@@ -114,12 +117,14 @@ std::string MessageTopicClassifier::getMessageIntent(json const & witResponse)
 
 std::vector<std::string> MessageTopicClassifier::getWitAiIdtfs(ScAddr const & messageClass)
 {
+  std::string linkContent;
   ScAddrVector witAiIdtfAddrs =
       utils::IteratorUtils::getAllByOutRelation(context, messageClass, MessageClassificationKeynodes::nrel_wit_ai_idtf);
   std::vector<std::string> witAiIdtfs;
   for (ScAddr const & witAiIdtfAddr : witAiIdtfAddrs)
   {
-    witAiIdtfs.push_back(utils::CommonUtils::getLinkContent(context, witAiIdtfAddr));
+    context->GetLinkContent(witAiIdtfAddr, linkContent);
+    witAiIdtfs.push_back(linkContent);
   }
 
   return witAiIdtfs;
@@ -132,7 +137,7 @@ ScAddrVector MessageTopicClassifier::getMessageTraitClass(ScAddr const & message
   json const messageTrait = getMessageTrait(witResponse);
   if (messageTrait.empty())
   {
-    ScAddr const & messageIntentCLassEdge = context->CreateEdge(
+    ScAddr const & messageIntentCLassEdge = context->GenerateConnector(
         ScType::EdgeAccessConstPosPerm,
         MessageClassificationKeynodes::concept_not_classified_by_trait_message,
         messageAddr);
@@ -141,7 +146,7 @@ ScAddrVector MessageTopicClassifier::getMessageTraitClass(ScAddr const & message
     return messageTraitClassElements;
   }
 
-  ScIterator3Ptr possibleTraitIterator = context->Iterator3(
+  ScIterator3Ptr possibleTraitIterator = context->CreateIterator3(
       MessageClassificationKeynodes::concept_trait_possible_class,
       ScType::EdgeAccessConstPosPerm,
       ScType::NodeConstClass);
@@ -169,19 +174,19 @@ json MessageTopicClassifier::getMessageTrait(json const & witResponse)
 
 void MessageTopicClassifier::buildTraitTemplate(ScTemplate & traitTemplate, ScAddr const & possibleMessageCLass)
 {
-  traitTemplate.TripleWithRelation(
+  traitTemplate.Quintuple(
       possibleMessageCLass,
       ScType::EdgeDCommonVar,
       ScType::LinkVar >> MessageClassificationAliasConstants::TRAIT_INCLUDED_CLASS_LINK_ALIAS,
       ScType::EdgeAccessVarPosPerm,
       MessageClassificationKeynodes::nrel_wit_ai_idtf);
-  traitTemplate.TripleWithRelation(
+  traitTemplate.Quintuple(
       ScType::NodeVarClass >> MessageClassificationAliasConstants::SET_OF_TRAITS_CLASS_ALIAS,
       ScType::EdgeDCommonVar,
       possibleMessageCLass,
       ScType::EdgeAccessVarPosPerm,
-      scAgentsCommon::CoreKeynodes::nrel_inclusion);
-  traitTemplate.TripleWithRelation(
+      ScKeynodes::nrel_inclusion);
+  traitTemplate.Quintuple(
       MessageClassificationAliasConstants::SET_OF_TRAITS_CLASS_ALIAS,
       ScType::EdgeDCommonVar,
       ScType::LinkVar >> MessageClassificationAliasConstants::SET_OF_TRAITS_CLASS_LINK_ALIAS,
@@ -208,25 +213,29 @@ ScAddrVector MessageTopicClassifier::processTraits(
     buildTraitTemplate(traitTemplate, possibleMessageCLass);
 
     ScTemplateSearchResult traitTemplateResult;
-    context->HelperSearchTemplate(traitTemplate, traitTemplateResult);
+    context->SearchByTemplate(traitTemplate, traitTemplateResult);
     traitTemplate.Clear();
 
     if (traitTemplateResult.Size() == 1)
     {
+      std::string linkContent;
       ScAddr setOfTraitsLink =
           traitTemplateResult[0][MessageClassificationAliasConstants::SET_OF_TRAITS_CLASS_LINK_ALIAS];
       ScAddr traitLink = traitTemplateResult[0][MessageClassificationAliasConstants::TRAIT_INCLUDED_CLASS_LINK_ALIAS];
 
-      traitWitIdtf = utils::CommonUtils::getLinkContent(context, traitLink);
-      setOfTraitsWitIdtf = utils::CommonUtils::getLinkContent(context, setOfTraitsLink);
+      std::string traitWitIdtf;
+      context->GetLinkContent(traitLink, traitWitIdtf);
+      std::string setOfTraitsWitIdtf;
+      context->GetLinkContent(setOfTraitsLink, setOfTraitsWitIdtf);
       traitClassIdtf = messageTrait.at(setOfTraitsWitIdtf).at(0).at(WitAiConstants::VALUE);
 
       if (traitClassIdtf == traitWitIdtf)
       {
         SC_LOG_DEBUG(
-            "MessageTopicClassifier: found " + context->HelperGetSystemIdtf(possibleMessageCLass) + " trait class");
+            "MessageTopicClassifier: found " + context->GetElementSystemIdentifier(possibleMessageCLass) +
+            " trait class");
         ScAddr messageTraitClassEdge =
-            context->CreateEdge(ScType::EdgeAccessConstPosPerm, possibleMessageCLass, messageAddr);
+            context->GenerateConnector(ScType::EdgeAccessConstPosPerm, possibleMessageCLass, messageAddr);
         messageTraitClassElements.push_back(possibleMessageCLass);
         messageTraitClassElements.push_back(messageTraitClassEdge);
 
@@ -244,7 +253,7 @@ ScAddrVector MessageTopicClassifier::getMessageEntity(ScAddr const & messageAddr
   json const messageEntity = getMessageEntities(witResponse);
   if (!messageEntity.empty())
   {
-    ScIterator3Ptr possibleEntityIterator = context->Iterator3(
+    ScIterator3Ptr possibleEntityIterator = context->CreateIterator3(
         MessageClassificationKeynodes::concept_entity_possible_class,
         ScType::EdgeAccessConstPosPerm,
         ScType::NodeConstClass);
@@ -273,13 +282,13 @@ json MessageTopicClassifier::getMessageEntities(json const & witResponse)
 
 void MessageTopicClassifier::buildEntityTemplate(ScTemplate & entityTemplate, ScAddr const & possibleEntityClass)
 {
-  entityTemplate.TripleWithRelation(
+  entityTemplate.Quintuple(
       possibleEntityClass,
       ScType::EdgeDCommonVar,
       ScType::LinkVar >> MessageClassificationAliasConstants::ENTITY_CLASS_LINK_ALIAS,
       ScType::EdgeAccessVarPosPerm,
       MessageClassificationKeynodes::nrel_wit_ai_idtf);
-  entityTemplate.TripleWithRelation(
+  entityTemplate.Quintuple(
       possibleEntityClass,
       ScType::EdgeDCommonVar,
       ScType::NodeVar >> MessageClassificationAliasConstants::ENTITY_SET_ALIAS,
@@ -289,7 +298,7 @@ void MessageTopicClassifier::buildEntityTemplate(ScTemplate & entityTemplate, Sc
       MessageClassificationAliasConstants::ENTITY_SET_ALIAS,
       ScType::EdgeAccessVarPosPerm,
       ScType::NodeVarRole >> MessageClassificationAliasConstants::ENTITY_ROLE_ALIAS);
-  entityTemplate.TripleWithRelation(
+  entityTemplate.Quintuple(
       MessageClassificationAliasConstants::ENTITY_ROLE_ALIAS,
       ScType::EdgeDCommonVar,
       ScType::LinkVar >> MessageClassificationAliasConstants::ENTITY_ROLE_LINK_ALIAS,
@@ -326,7 +335,7 @@ ScAddrVector MessageTopicClassifier::processEntities(
     buildEntityTemplate(entityTemplate, possibleEntityClass);
 
     ScTemplateSearchResult entityTemplateResult;
-    context->HelperSearchTemplate(entityTemplate, entityTemplateResult);
+    context->SearchByTemplate(entityTemplate, entityTemplateResult);
     entityTemplate.Clear();
 
     if (entityTemplateResult.Size() == 1)
@@ -336,12 +345,14 @@ ScAddrVector MessageTopicClassifier::processEntities(
       ScAddr const & entityRoleLink =
           entityTemplateResult[0][MessageClassificationAliasConstants::ENTITY_ROLE_LINK_ALIAS];
 
-      std::string entityWitAiIdtf = utils::CommonUtils::getLinkContent(context, entityLink);
-      std::string const & entityRoleWitAiIdtf = utils::CommonUtils::getLinkContent(context, entityRoleLink);
+      std::string entityWitAiIdtf;
+      context->GetLinkContent(entityLink, entityWitAiIdtf);
+      std::string entityRoleWitAiIdtf;
+      context->GetLinkContent(entityRoleLink, entityRoleWitAiIdtf);
       std::string entitiesKey = entityWitAiIdtf.append(":").append(entityRoleWitAiIdtf);
 
       ScIterator3Ptr const entityClassIterator =
-          context->Iterator3(possibleEntityClass, ScType::EdgeAccessConstPosPerm, ScType::NodeConst);
+          context->CreateIterator3(possibleEntityClass, ScType::EdgeAccessConstPosPerm, ScType::NodeConst);
       ScAddr entityAddr;
       while (entityClassIterator->Next())
       {
@@ -349,18 +360,20 @@ ScAddrVector MessageTopicClassifier::processEntities(
         std::vector<std::string> identifiers;
         for (ScAddr const & relationToFindEntity : relationsToFindEntity)
         {
-          identifiers.push_back(utils::CommonUtils::getIdtf(
-                context, entityAddr, relationToFindEntity, {scAgentsCommon::CoreKeynodes::lang_ru}));
+          identifiers.push_back(
+              utils::CommonUtils::getIdtf(context, entityAddr, relationToFindEntity, {ScKeynodes::lang_ru}));
         }
 
         for (auto const & [entitySameIdtf, entitySameRoleIdtf] : entityIdtfToRole)
         {
           if (std::find(identifiers.begin(), identifiers.end(), entitySameIdtf) != identifiers.end())
           {
-            SC_LOG_DEBUG("MessageTopicClassifier: found " + context->HelperGetSystemIdtf(entityAddr) + " entity");
-            ScAddr messageEntityEdge = context->CreateEdge(ScType::EdgeAccessConstPosPerm, messageAddr, entityAddr);
+            SC_LOG_DEBUG(
+                "MessageTopicClassifier: found " + context->GetElementSystemIdentifier(entityAddr) + " entity");
+            ScAddr messageEntityEdge =
+                context->GenerateConnector(ScType::EdgeAccessConstPosPerm, messageAddr, entityAddr);
             ScAddr messageEntityRoleEdge =
-                context->CreateEdge(ScType::EdgeAccessConstPosPerm, entityRole, messageEntityEdge);
+                context->GenerateConnector(ScType::EdgeAccessConstPosPerm, entityRole, messageEntityEdge);
 
             messageEntitiesElements.push_back(entityAddr);
             messageEntitiesElements.push_back(entityRole);
@@ -376,12 +389,15 @@ ScAddrVector MessageTopicClassifier::processEntities(
 
   for (auto const & [notFoundEntitiesIdtf, notFoundEntitiesRoles] : entityIdtfToRole)
   {
-    ScAddr const & createdEntity = context->CreateLink();
+    ScAddr const & createdEntity = context->GenerateLink();
     context->SetLinkContent(createdEntity, notFoundEntitiesIdtf);
-    ScAddr const & createdEntityEdge = context->CreateEdge(ScType::EdgeAccessConstPosPerm, commonModule::Keynodes::lang_en, createdEntity);
-    ScAddr const & messageEntityEdge = context->CreateEdge(ScType::EdgeAccessConstPosPerm, messageAddr, createdEntity);
-    ScAddr const & entityRole = context->HelperResolveSystemIdtf(notFoundEntitiesRoles, ScType::NodeConstRole);
-    ScAddr const & messageEntityRoleEdge = context->CreateEdge(ScType::EdgeAccessConstPosPerm, entityRole, messageEntityEdge);
+    ScAddr const & createdEntityEdge =
+        context->GenerateConnector(ScType::EdgeAccessConstPosPerm, commonModule::Keynodes::lang_en, createdEntity);
+    ScAddr const & messageEntityEdge =
+        context->GenerateConnector(ScType::EdgeAccessConstPosPerm, messageAddr, createdEntity);
+    ScAddr const & entityRole = context->ResolveElementSystemIdentifier(notFoundEntitiesRoles, ScType::NodeConstRole);
+    ScAddr const & messageEntityRoleEdge =
+        context->GenerateConnector(ScType::EdgeAccessConstPosPerm, entityRole, messageEntityEdge);
 
     SC_LOG_DEBUG("MessageTopicClassifier: generated " << notFoundEntitiesIdtf << " entity");
     SC_LOG_DEBUG("MessageTopicClassifier: generated " << notFoundEntitiesRoles << " role");

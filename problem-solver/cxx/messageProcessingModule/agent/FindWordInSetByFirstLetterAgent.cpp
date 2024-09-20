@@ -1,70 +1,62 @@
 // Подключение полезных утилит из sc-machine
-#include "sc-agents-common/utils/AgentUtils.hpp"
-#include "sc-agents-common/utils/CommonUtils.hpp"
-#include "sc-agents-common/utils/IteratorUtils.hpp"
-#include "sc-agents-common/keynodes/coreKeynodes.hpp"
-#include "MessageKeynodes.generated.hpp"
-
-#include "keynodes/MessageProcessingKeynodes.hpp"
-#include "keynodes/MessageKeynodes.hpp"
-
 #include "FindWordInSetByFirstLetterAgent.hpp"
 
-using namespace scAgentsCommon;
+#include "sc-agents-common/utils/CommonUtils.hpp"
+#include "sc-agents-common/utils/IteratorUtils.hpp"
+
+#include "keynodes/MessageKeynodes.hpp"
+#include "keynodes/MessageProcessingKeynodes.hpp"
+
 using namespace utils;
 
 namespace messageProcessingModule
 {
-SC_AGENT_IMPLEMENTATION(FindWordInSetByFirstLetterAgent)
+// todo(codegen-removal): remove agent starting and finishing logs, sc-machine is printing them now
+// todo(codegen-removal): if your agent is ScActionInitiatedAgent and uses event only to get action node via
+// event.GetOtherElement() then you can remove event from method arguments and use ScAction & action instead of your
+// action node todo(codegen-removal): if your agent is having method like CheckActionClass(ScAddr actionAddr) that
+// checks connector between action class and actionAddr then you can remove it. Before agent is started sc-machine check
+// that action belongs to class returned by GetActionClass() todo(codegen-removal): use action.SetResult() to pass
+// result of your action instead of using answer or answerElements todo(codegen-removal): use SC_AGENT_LOG_SOMETHING()
+// instead of SC_LOG_SOMETHING to automatically include agent name to logs messages todo(codegen-removal): use auto
+// const & [names of action arguments] = action.GetArguments<amount of arguments>(); to get action arguments
+ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
-  // Проверка условия инициирования sc-агента
-  ScAddr const & actionAddr = otherAddr;
-  if (!checkActionClass(actionAddr))
-  {
-    return SC_RESULT_OK;
-  }
-
-  // Вывод сообщения о начале работы агента
-  SC_LOG_DEBUG("FindWordInSetByFirstLetterAgent started");
-
-  ScAddr const & messageAddr =
-      utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionAddr, scAgentsCommon::CoreKeynodes::rrel_1);
+  ScAddr const & messageAddr = utils::IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_1);
   if (!messageAddr.IsValid())
   {
-    SC_LOG_ERROR("FindWordInSetByFirstLetterAgent: the message isn’t valid");
-    utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
-    return SC_RESULT_ERROR;
+    SC_AGENT_LOG_ERROR("The message isn’t valid");
+    return action.FinishUnsuccessfully();
   }
 
-  if (!m_memoryCtx.HelperCheckEdge(
+  if (!m_context.CheckConnector(
           MessageProcessingKeynodes::concept_message_about_find_word_by_first_letter,
           messageAddr,
           ScType::EdgeAccessConstPosPerm))
   {
-    SC_LOG_DEBUG("FindWordInSetByFirstLetterAgent: the message isn’t about letter search");
-    utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
-    return SC_RESULT_ERROR;
+    SC_AGENT_LOG_DEBUG("The message isn’t about letter search");
+    return action.FinishUnsuccessfully();
   }
 
   ScAddrVector answerElements;
   try
   {
-    ScIterator3Ptr const & agentAnswerLinkIterator = m_memoryCtx.Iterator3(
+    ScIterator3Ptr const & agentAnswerLinkIterator = m_context.CreateIterator3(
         MessageProcessingKeynodes::word_starts_with_required_letter_answer_phrase,
         ScType::EdgeAccessConstPosPerm,
         ScType::LinkConst);
     if (agentAnswerLinkIterator->Next())
     {
-      m_memoryCtx.EraseElement(agentAnswerLinkIterator->Get(2));
+      m_context.EraseElement(agentAnswerLinkIterator->Get(2));
     }
 
-    messageSearcher = std::make_unique<dialogControlModule::MessageSearcher>(&m_memoryCtx);
+    messageSearcher = std::make_unique<dialogControlModule::MessageSearcher>(&m_context);
     std::string messageText = getMessageText(messageAddr);
     ScAddr const & entityAddr = utils::IteratorUtils::getAnyByOutRelation(
-        &m_memoryCtx, messageAddr, dialogControlModule::MessageKeynodes::rrel_entity);
+        &m_context, messageAddr, dialogControlModule::MessageKeynodes::rrel_entity);
     // Создание итератора для поиска элементов к котором есть связь с entity
     ScIterator3Ptr const & entityNodesIterator =
-        m_memoryCtx.Iterator3(entityAddr, ScType::EdgeAccessConstPosPerm, ScType::NodeConst);
+        m_context.CreateIterator3(entityAddr, ScType::EdgeAccessConstPosPerm, ScType::NodeConst);
 
     std::string firstLetter;
     std::string firstWordLetter;
@@ -76,19 +68,17 @@ SC_AGENT_IMPLEMENTATION(FindWordInSetByFirstLetterAgent)
 
     if (entityNodesIterator->Next())
     {
-      word = utils::CommonUtils::getMainIdtf(
-          &m_memoryCtx, entityNodesIterator->Get(2), {scAgentsCommon::CoreKeynodes::lang_ru});
+      word = utils::CommonUtils::getMainIdtf(&m_context, entityNodesIterator->Get(2), {ScKeynodes::lang_ru});
       firstWordLetter = word.substr(0, 2);
       if (firstLetter == firstWordLetter)
       {
         resultStream << word;
-        SC_LOG_DEBUG("FindWordInSetByFirstLetterAgent: found word " << word);
+        SC_AGENT_LOG_DEBUG("Found word " << word);
       }
     }
     while (entityNodesIterator->Next())
     {
-      word = utils::CommonUtils::getMainIdtf(
-          &m_memoryCtx, entityNodesIterator->Get(2), {scAgentsCommon::CoreKeynodes::lang_ru});
+      word = utils::CommonUtils::getMainIdtf(&m_context, entityNodesIterator->Get(2), {ScKeynodes::lang_ru});
       firstWordLetter = word.substr(0, 2);
       if (firstLetter == firstWordLetter)
       {
@@ -96,7 +86,7 @@ SC_AGENT_IMPLEMENTATION(FindWordInSetByFirstLetterAgent)
           resultStream << word;
         else
           resultStream << ", " << word;
-        SC_LOG_DEBUG("FindWordInSetByFirstLetterAgent: found word " << word);
+        SC_AGENT_LOG_DEBUG("Found word " << word);
       }
     }
 
@@ -109,33 +99,37 @@ SC_AGENT_IMPLEMENTATION(FindWordInSetByFirstLetterAgent)
       result = resultStream.str();
     }
     answerElements = createAnswer(result);
-    SC_LOG_DEBUG("FindWordInSetByFirstLetterAgent: reply message is generated");
+    SC_AGENT_LOG_DEBUG("Reply message is generated");
   }
   catch (utils::ScException const & exception)
   {
     SC_LOG_ERROR(exception.Description());
-    utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, answerElements, false);
-    SC_LOG_DEBUG("FindWordInSetByFirstLetterAgent: finished with an error");
-    return SC_RESULT_ERROR;
+    ScStructure result = m_context.GenerateStructure();
+    for (auto const & element : answerElements)
+      result << element;
+    action.SetResult(result);
+    SC_AGENT_LOG_DEBUG("Finished with an error");
+    return action.FinishUnsuccessfully();
   }
 
-  utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, answerElements, true);
+  ScStructure result = m_context.GenerateStructure();
+  for (auto const & element : answerElements)
+    result << element;
+  action.SetResult(result);
 
-  SC_LOG_DEBUG("FindWordInSetByFirstLetterAgent finished");
-  return SC_RESULT_OK;
+  return action.FinishSuccessfully();
 }
 
-bool FindWordInSetByFirstLetterAgent::checkActionClass(ScAddr const & actionAddr)
+ScAddr FindWordInSetByFirstLetterAgent::GetActionClass() const
 {
-  return m_memoryCtx.HelperCheckEdge(
-      MessageProcessingKeynodes::action_find_word_in_set_by_first_letter, actionAddr, ScType::EdgeAccessConstPosPerm);
+  return MessageProcessingKeynodes::action_find_word_in_set_by_first_letter;
 }
 
 ScAddrVector FindWordInSetByFirstLetterAgent::createAnswer(std::string const & linkContent) const
 {
-  ScAddr const & answerLink = m_memoryCtx.CreateLink(ScType::LinkConst);
-  m_memoryCtx.SetLinkContent(answerLink, linkContent);
-  ScAddr const & edgeAccessConstPosPerm = m_memoryCtx.CreateEdge(
+  ScAddr const & answerLink = m_context.GenerateLink(ScType::LinkConst);
+  m_context.SetLinkContent(answerLink, linkContent);
+  ScAddr const & edgeAccessConstPosPerm = m_context.GenerateConnector(
       ScType::EdgeAccessConstPosPerm,
       MessageProcessingKeynodes::word_starts_with_required_letter_answer_phrase,
       answerLink);
@@ -146,11 +140,13 @@ ScAddrVector FindWordInSetByFirstLetterAgent::createAnswer(std::string const & l
 std::string FindWordInSetByFirstLetterAgent::getMessageText(ScAddr const & messageAddr) const
 {
   ScAddr const & messageLink = messageSearcher->getMessageLink(messageAddr);
+  std::string linkContent;
   if (!messageLink.IsValid())
   {
     SC_THROW_EXCEPTION(utils::ExceptionItemNotFound, "FindWordInSetByFirstLetterAgent: message link is not found.");
   }
-  return utils::CommonUtils::getLinkContent(&m_memoryCtx, messageLink);
+  m_context.GetLinkContent(messageLink, linkContent);
+  return linkContent;
 }
 
 }  // namespace messageProcessingModule

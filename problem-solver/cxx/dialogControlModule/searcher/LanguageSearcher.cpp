@@ -15,7 +15,6 @@ LanguageSearcher::LanguageSearcher(ScMemoryContext * ms_context)
 ScAddr LanguageSearcher::getMessageLanguage(const ScAddr & messageNode)
 {
   TokenDomainSearcher searcher(context);
-
   ScAddr langNode;
 
   try
@@ -42,7 +41,7 @@ ScAddr LanguageSearcher::getLanguage(const ScAddr & node)
   templateLang.Triple(ScType::NodeVarClass >> lang, ScType::EdgeAccessVarPosPerm, node);
   templateLang.Triple(Keynodes::languages, ScType::EdgeAccessVarPosPerm, lang);
 
-  if (context->HelperSearchTemplate(templateLang, result))
+  if (context->SearchByTemplate(templateLang, result))
     langNode = result[0][lang];
 
   return langNode;

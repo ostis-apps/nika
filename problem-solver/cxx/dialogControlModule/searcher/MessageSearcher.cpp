@@ -1,12 +1,11 @@
 #include "MessageSearcher.hpp"
 
-#include "sc-agents-common/keynodes/coreKeynodes.hpp"
 #include "sc-agents-common/utils/IteratorUtils.hpp"
 
+#include "keynodes/Keynodes.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 #include <algorithm>
 
-using namespace scAgentsCommon;
 using namespace dialogControlModule;
 
 MessageSearcher::MessageSearcher(ScMemoryContext * ms_context)
@@ -19,21 +18,21 @@ ScAddr MessageSearcher::getFirstMessage(const ScAddr & nonAtomicMessageNode)
   const std::string VAR_TUPLE = "_tuple";
   const std::string VAR_MESSAGE = "_message";
   ScTemplate templ;
-  templ.TripleWithRelation(
+  templ.Quintuple(
       ScType::NodeVarTuple >> VAR_TUPLE,
       ScType::EdgeDCommonVar,
       nonAtomicMessageNode,
       ScType::EdgeAccessVarPosPerm,
       MessageKeynodes::nrel_message_decomposition);
-  templ.TripleWithRelation(
+  templ.Quintuple(
       VAR_TUPLE,
       ScType::EdgeAccessVarPosPerm,
       ScType::NodeVar >> VAR_MESSAGE,
       ScType::EdgeAccessVarPosPerm,
-      CoreKeynodes::rrel_1);
+      ScKeynodes::rrel_1);
 
   ScTemplateSearchResult result;
-  context->HelperSearchTemplate(templ, result);
+  context->SearchByTemplate(templ, result);
 
   ScAddr resultMessageNode;
   if (result.Size() == 1)
@@ -55,7 +54,7 @@ ScAddr MessageSearcher::getNextMessage(const ScAddr & messageNode)
                     VAR_D_COMMON_EDGE = "_d_common_edge", VAR_MESSAGE = "_message";
   ScTemplate templ;
   templ.Triple(ScType::NodeVarTuple >> VAR_TUPLE, ScType::EdgeAccessVarPosPerm >> VAR_EDGE_1, messageNode);
-  templ.TripleWithRelation(
+  templ.Quintuple(
       VAR_EDGE_1,
       ScType::EdgeDCommonVar >> VAR_D_COMMON_EDGE,
       ScType::EdgeAccessVarPosPerm >> VAR_EDGE_2,
@@ -64,7 +63,7 @@ ScAddr MessageSearcher::getNextMessage(const ScAddr & messageNode)
   templ.Triple(VAR_TUPLE, VAR_EDGE_2, ScType::NodeVar >> VAR_MESSAGE);
 
   ScTemplateSearchResult result;
-  context->HelperSearchTemplate(templ, result);
+  context->SearchByTemplate(templ, result);
 
   ScAddr resultMessageNode;
   if (result.Size() > 0)
@@ -84,7 +83,7 @@ ScAddr MessageSearcher::getMessageAuthor(const ScAddr & messageNode)
 {
   ScTemplate templ;
   const std::string VAR_AUTHOR = "_author";
-  templ.TripleWithRelation(
+  templ.Quintuple(
       messageNode,
       ScType::EdgeDCommonVar,
       ScType::NodeVar >> VAR_AUTHOR,
@@ -92,7 +91,7 @@ ScAddr MessageSearcher::getMessageAuthor(const ScAddr & messageNode)
       MessageKeynodes::nrel_authors);
 
   ScTemplateSearchResult result;
-  context->HelperSearchTemplate(templ, result);
+  context->SearchByTemplate(templ, result);
 
   ScAddr resultAuthorNode;
   if (result.Size() > 0)
@@ -112,7 +111,7 @@ ScAddr MessageSearcher::getMessageTheme(const ScAddr & messageNode)
 {
   ScTemplate templ;
   const std::string VAR_THEME = "_theme";
-  templ.TripleWithRelation(
+  templ.Quintuple(
       messageNode,
       ScType::EdgeAccessVarPosPerm,
       ScType::NodeVar >> VAR_THEME,
@@ -120,7 +119,7 @@ ScAddr MessageSearcher::getMessageTheme(const ScAddr & messageNode)
       MessageKeynodes::rrel_message_theme);
 
   ScTemplateSearchResult result;
-  context->HelperSearchTemplate(templ, result);
+  context->SearchByTemplate(templ, result);
 
   ScAddr resultThemeNode;
   if (result.Size() > 0)
@@ -140,7 +139,7 @@ ScAddrVector MessageSearcher::getMessageLinks(ScAddr const & message, ScAddrVect
 {
   ScAddrVector messageLinks;
   ScAddr const translationNode =
-      utils::IteratorUtils::getAnyByInRelation(context, message, CoreKeynodes::nrel_sc_text_translation);
+      utils::IteratorUtils::getAnyByInRelation(context, message, commonModule::Keynodes::nrel_sc_text_translation);
   if (!translationNode.IsValid())
   {
     SC_LOG_WARNING("MessageSearcher: text translation node not found");
@@ -148,12 +147,12 @@ ScAddrVector MessageSearcher::getMessageLinks(ScAddr const & message, ScAddrVect
   }
 
   ScIterator3Ptr const linkIterator =
-      context->Iterator3(translationNode, ScType::EdgeAccessConstPosPerm, ScType::LinkConst);
+      context->CreateIterator3(translationNode, ScType::EdgeAccessConstPosPerm, ScType::LinkConst);
   while (linkIterator->Next())
   {
     ScAddr const & linkAddr = linkIterator->Get(2);
     bool result = std::all_of(linkClasses.cbegin(), linkClasses.cend(), [this, &linkAddr](auto const & addr) {
-      return context->HelperCheckEdge(addr, linkAddr, ScType::EdgeAccessConstPosPerm);
+      return context->CheckConnector(addr, linkAddr, ScType::EdgeAccessConstPosPerm);
     });
 
     if (result == SC_TRUE)

@@ -1,39 +1,42 @@
-#include "sc-agents-common/utils/AgentUtils.hpp"
+#include "AlternativeMessageTopicClassificationAgent.hpp"
+
 #include "sc-agents-common/utils/IteratorUtils.hpp"
 
 #include "factory/InferenceManagerFactory.hpp"
-
 #include "keynodes/MessageClassificationKeynodes.hpp"
-
-#include "AlternativeMessageTopicClassificationAgent.hpp"
 
 using namespace messageClassificationModule;
 
-SC_AGENT_IMPLEMENTATION(AlternativeMessageTopicClassificationAgent)
+// todo(codegen-removal): remove agent starting and finishing logs, sc-machine is printing them now
+// todo(codegen-removal): if your agent is ScActionInitiatedAgent and uses event only to get action node via
+// event.GetOtherElement() then you can remove event from method arguments and use ScAction & action instead of your
+// action node todo(codegen-removal): if your agent is having method like CheckActionClass(ScAddr actionAddr) that
+// checks connector between action class and actionAddr then you can remove it. Before agent is started sc-machine check
+// that action belongs to class returned by GetActionClass() todo(codegen-removal): use action.SetResult() to pass
+// result of your action instead of using answer or answerElements todo(codegen-removal): use SC_AGENT_LOG_SOMETHING()
+// instead of SC_LOG_SOMETHING to automatically include agent name to logs messages todo(codegen-removal): use auto
+// const & [names of action arguments] = action.GetArguments<amount of arguments>(); to get action arguments
+ScResult AlternativeMessageTopicClassificationAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
-  ScAddr const & actionAddr = otherAddr;
-  if (!checkActionClass(actionAddr))
-    return SC_RESULT_OK;
-
-  SC_LOG_DEBUG("AlternativeMessageTopicClassificationAgent started");
-
   ScAddrVector answerElements;
 
-  ScAddr const & messageAddr =
-      utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionAddr, scAgentsCommon::CoreKeynodes::rrel_1);
+  ScAddr const & messageAddr = utils::IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_1);
   if (!messageAddr.IsValid())
   {
-    SC_LOG_ERROR("Action doesn't have a message node.");
-    utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
-    return SC_RESULT_ERROR_INVALID_PARAMS;
+    SC_AGENT_LOG_ERROR("Action doesn't have a message node.");
+    return action.FinishUnsuccessfully();
   }
 
-  ScAddr const & outputStructure = m_memoryCtx.CreateNode(ScType::NodeConstStruct);
-  InferenceParams const & inferenceParams{MessageClassificationKeynodes::concept_classify_message_rule, {messageAddr}, {}, outputStructure};
-  InferenceConfig const & inferenceConfig{
-        GENERATE_ALL_FORMULAS, REPLACEMENTS_ALL, TREE_ONLY_OUTPUT_STRUCTURE, SEARCH_IN_ALL_KB};
+  ScAddr const & outputStructure = m_context.GenerateNode(ScType::NodeConstStruct);
+  inference::InferenceParams const & inferenceParams{
+      MessageClassificationKeynodes::concept_classify_message_rule, {messageAddr}, {}, outputStructure};
+  inference::InferenceConfig const & inferenceConfig{
+      inference::GENERATE_ALL_FORMULAS,
+      inference::REPLACEMENTS_ALL,
+      inference::TREE_ONLY_OUTPUT_STRUCTURE,
+      inference::SEARCH_IN_ALL_KB};
   std::unique_ptr<inference::InferenceManagerAbstract> iterationStrategy =
-        inference::InferenceManagerFactory::constructDirectInferenceManagerAll(&m_memoryCtx, inferenceConfig);
+      inference::InferenceManagerFactory::constructDirectInferenceManagerAll(&m_context, inferenceConfig);
   try
   {
     iterationStrategy->applyInference(inferenceParams);
@@ -41,30 +44,36 @@ SC_AGENT_IMPLEMENTATION(AlternativeMessageTopicClassificationAgent)
   catch (utils::ScException & exception)
   {
     SC_LOG_ERROR(exception.Description());
-    utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, answerElements, false);
-    SC_LOG_DEBUG("AlternativeMessageTopicClassificationAgent finished");
-    return SC_RESULT_ERROR;
+    ScStructure result = m_context.GenerateStructure();
+    for (auto const & element : answerElements)
+      result << element;
+    action.SetResult(result);
+    return action.FinishUnsuccessfully();
   }
 
-  if (!utils::IteratorUtils::getAnyFromSet(&m_memoryCtx, outputStructure).IsValid())
+  if (!utils::IteratorUtils::getAnyFromSet(&m_context, outputStructure).IsValid())
   {
-    SC_LOG_DEBUG("Message is not classified.");
-    utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, answerElements, false);
-    SC_LOG_DEBUG("AlternativeMessageTopicClassificationAgent finished");
-    return SC_RESULT_ERROR;
+    SC_AGENT_LOG_DEBUG("Message is not classified.");
+    ScStructure result = m_context.GenerateStructure();
+    for (auto const & element : answerElements)
+      result << element;
+    action.SetResult(result);
+    return action.FinishUnsuccessfully();
   }
   else
   {
-    SC_LOG_DEBUG("Message is classified.");
+    SC_AGENT_LOG_DEBUG("Message is classified.");
   }
 
-  utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, answerElements, true);
-  SC_LOG_DEBUG("AlternativeMessageTopicClassificationAgent finished");
-  return SC_RESULT_OK;
+  ScStructure result = m_context.GenerateStructure();
+  for (auto const & element : answerElements)
+    result << element;
+  action.SetResult(result);
+
+  return action.FinishSuccessfully();
 }
 
-bool AlternativeMessageTopicClassificationAgent::checkActionClass(ScAddr const & actionAddr)
+ScAddr AlternativeMessageTopicClassificationAgent::GetActionClass() const
 {
-  return m_memoryCtx.HelperCheckEdge(
-      MessageClassificationKeynodes::action_alternative_message_topic_classification, actionAddr, ScType::EdgeAccessConstPosPerm);
+  return MessageClassificationKeynodes::action_alternative_message_topic_classification;
 }

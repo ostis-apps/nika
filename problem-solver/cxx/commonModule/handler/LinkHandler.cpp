@@ -9,7 +9,7 @@ LinkHandler::LinkHandler(ScMemoryContext * context)
 
 ScAddr LinkHandler::createLink(const std::string & text)
 {
-  ScAddr addr = context->CreateLink();
+  ScAddr addr = context->GenerateLink();
   context->SetLinkContent(addr, ScStreamConverter::StreamFromString(text));
   return addr;
 }

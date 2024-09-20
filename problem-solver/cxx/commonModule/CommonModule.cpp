@@ -2,9 +2,12 @@
 
 using namespace commonModule;
 
-SC_IMPLEMENT_MODULE(CommonModule);
+SC_MODULE_REGISTER(CommonModule)->Agent<NonAtomicActionInterpreterAgent>();
+;
 
-sc_result CommonModule::InitializeImpl()
+// todo(codegen-removal): if needed override ScModule::Initialize and move all non-keynodes and non-agents code from
+// previous initialization method
+/*
 {
   if (!commonModule::Keynodes::InitGlobal())
   {
@@ -18,15 +21,21 @@ sc_result CommonModule::InitializeImpl()
   }
   else
   {
-    SC_AGENT_REGISTER(NonAtomicActionInterpreterAgent);
+    //todo(codegen-removal): Use agentContext.SubscribeAgent<NonAtomicActionInterpreterAgent> or UnsubscribeAgent; to
+register and unregister agent SC_AGENT_REGISTER(NonAtomicActionInterpreterAgent);
   }
 
   return SC_RESULT_OK;
 }
+*/
 
-sc_result CommonModule::ShutdownImpl()
+// todo(codegen-removal): if needed override ScModule::Shutdown and move all non-agents code from previous shutdown
+// method
+/*
 {
-  SC_AGENT_UNREGISTER(NonAtomicActionInterpreterAgent);
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<NonAtomicActionInterpreterAgent> or UnsubscribeAgent; to
+register and unregister agent SC_AGENT_UNREGISTER(NonAtomicActionInterpreterAgent);
 
   return SC_RESULT_OK;
 }
+*/

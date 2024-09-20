@@ -1,7 +1,6 @@
 #include "sc_test.hpp"
 #include "sc-builder/src/scs_loader.hpp"
-#include "sc-memory/kpm/sc_agent.hpp"
-#include "sc-agents-common/keynodes/coreKeynodes.hpp"
+#include <sc-memory/sc_agent.hpp>
 #include "agent/NonAtomicActionInterpreterAgent.hpp"
 #include "keynodes/Keynodes.hpp"
 #include "test/agent/QuestionFinishedSuccessfullyTestAgent.hpp"
@@ -24,27 +23,39 @@ using NonAtomicActionInterpreterTest = ScMemoryTest;
 
 void initialize()
 {
-  scAgentsCommon::CoreKeynodes::InitGlobal();
+  ScKeynodes::InitGlobal();
   commonModule::Keynodes::InitGlobal();
   commonTest::TestKeynodes::InitGlobal();
 
   ScAgentInit(true);
-  SC_AGENT_REGISTER(NonAtomicActionInterpreterAgent);
-  SC_AGENT_REGISTER(QuestionFinishedSuccessfullyTestAgent)
-  SC_AGENT_REGISTER(QuestionFinishedTestAgent)
-  SC_AGENT_REGISTER(QuestionFinishedUnsuccessfullyTestAgent)
-  SC_AGENT_REGISTER(AssignDynamicArgumentTestAgent)
-  SC_AGENT_REGISTER(CheckDynamicArgumentTestAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<NonAtomicActionInterpreterAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_REGISTER(NonAtomicActionInterpreterAgent);
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<QuestionFinishedSuccessfullyTestAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_REGISTER(QuestionFinishedSuccessfullyTestAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<QuestionFinishedTestAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_REGISTER(QuestionFinishedTestAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<QuestionFinishedUnsuccessfullyTestAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_REGISTER(QuestionFinishedUnsuccessfullyTestAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<AssignDynamicArgumentTestAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_REGISTER(AssignDynamicArgumentTestAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<CheckDynamicArgumentTestAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_REGISTER(CheckDynamicArgumentTestAgent)
 }
 
 void shutdown()
 {
-  SC_AGENT_UNREGISTER(NonAtomicActionInterpreterAgent);
-  SC_AGENT_UNREGISTER(QuestionFinishedSuccessfullyTestAgent)
-  SC_AGENT_UNREGISTER(QuestionFinishedTestAgent)
-  SC_AGENT_UNREGISTER(QuestionFinishedUnsuccessfullyTestAgent)
-  SC_AGENT_UNREGISTER(AssignDynamicArgumentTestAgent)
-  SC_AGENT_UNREGISTER(CheckDynamicArgumentTestAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<NonAtomicActionInterpreterAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_UNREGISTER(NonAtomicActionInterpreterAgent);
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<QuestionFinishedSuccessfullyTestAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_UNREGISTER(QuestionFinishedSuccessfullyTestAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<QuestionFinishedTestAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_UNREGISTER(QuestionFinishedTestAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<QuestionFinishedUnsuccessfullyTestAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_UNREGISTER(QuestionFinishedUnsuccessfullyTestAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<AssignDynamicArgumentTestAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_UNREGISTER(AssignDynamicArgumentTestAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<CheckDynamicArgumentTestAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_UNREGISTER(CheckDynamicArgumentTestAgent)
 }
 
 ScAddr getFirstAction(ScMemoryContext & context)
@@ -52,7 +63,7 @@ ScAddr getFirstAction(ScMemoryContext & context)
   ScAddr actionAddr;
   ScTemplate scTemplate;
   scTemplate.Triple(
-        context.HelperFindBySystemIdtf("test_nonatomic_action"),
+        context.SearchElementBySystemIdentifier("test_nonatomic_action"),
         ScType::EdgeAccessVarPosPerm,
         ScType::NodeVar >> "_nonAtomicAction");
   scTemplate.TripleWithRelation(
@@ -66,10 +77,10 @@ ScAddr getFirstAction(ScMemoryContext & context)
         ScType::EdgeAccessVarPosPerm,
         ScType::NodeVar >> "_firstAction",
         ScType::EdgeAccessVarPosPerm,
-        scAgentsCommon::CoreKeynodes::rrel_1);
+        ScKeynodes::rrel_1);
 
   ScTemplateSearchResult results;
-  context.HelperSearchTemplate(scTemplate, results);
+  context.SearchByTemplate(scTemplate, results);
   if (results.Size() == 1)
   {
     actionAddr = results[0]["_firstAction"];
@@ -84,41 +95,41 @@ TEST_F(NonAtomicActionInterpreterTest, checkDynamicArguments)
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "dynamicArguments.scs");
   initialize();
 
-  ScAddr test_question_node = context.HelperFindBySystemIdtf("test_question_node");
+  ScAddr test_question_node = context.SearchElementBySystemIdentifier("test_question_node");
   EXPECT_TRUE(test_question_node.IsValid());
 
-  context.CreateEdge(
+  context.GenerateConnector(
         ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
+        ScKeynodes::question_initiated,
         test_question_node);
 
   EXPECT_TRUE(ActionUtils::waitAction(&context, test_question_node, WAIT_TIME));
-  EXPECT_TRUE(context.HelperCheckEdge(
-        scAgentsCommon::CoreKeynodes::question_finished_successfully,
+  EXPECT_TRUE(context.CheckConnector(
+        ScKeynodes::question_finished_successfully,
         test_question_node,
         ScType::EdgeAccessConstPosPerm));
 
   ScAddr action = getFirstAction(context);
-  EXPECT_TRUE(context.HelperCheckEdge(
-        scAgentsCommon::CoreKeynodes::question_finished,
+  EXPECT_TRUE(context.CheckConnector(
+        ScKeynodes::question_finished,
         action,
         ScType::EdgeAccessConstPosPerm));
-  EXPECT_TRUE(context.HelperCheckEdge(
-        scAgentsCommon::CoreKeynodes::question_finished_successfully, action, ScType::EdgeAccessConstPosPerm));
+  EXPECT_TRUE(context.CheckConnector(
+        ScKeynodes::question_finished_successfully, action, ScType::EdgeAccessConstPosPerm));
 
-  ScIterator5Ptr iterator5 = context.Iterator5(
+  ScIterator5Ptr iterator5 = context.CreateIterator5(
         action,
         ScType::EdgeDCommonConst,
         ScType::NodeConst,
         ScType::EdgeAccessConstPosPerm,
-        context.HelperFindBySystemIdtf("nrel_goto"));
+        context.SearchElementBySystemIdentifier("nrel_goto"));
   EXPECT_TRUE(iterator5->Next());
   action = iterator5->Get(2);
 
-  EXPECT_TRUE(context.HelperCheckEdge(
-        scAgentsCommon::CoreKeynodes::question_finished, action, ScType::EdgeAccessConstPosPerm));
-  EXPECT_TRUE(context.HelperCheckEdge(
-        scAgentsCommon::CoreKeynodes::question_finished_successfully, action, ScType::EdgeAccessConstPosPerm));
+  EXPECT_TRUE(context.CheckConnector(
+        ScKeynodes::question_finished, action, ScType::EdgeAccessConstPosPerm));
+  EXPECT_TRUE(context.CheckConnector(
+        ScKeynodes::question_finished_successfully, action, ScType::EdgeAccessConstPosPerm));
 
   ScTemplate scTemplate;
   scTemplate.TripleWithRelation(
@@ -126,16 +137,16 @@ TEST_F(NonAtomicActionInterpreterTest, checkDynamicArguments)
         ScType::EdgeAccessVarPosPerm,
         ScType::NodeVar >> "_dynamic_argument",
         ScType::EdgeAccessVarPosPerm,
-        scAgentsCommon::CoreKeynodes::rrel_1);
+        ScKeynodes::rrel_1);
   scTemplate.Triple(
         "_dynamic_argument",
         ScType::EdgeAccessVarPosTemp,
         TestKeynodes::test_node >> "_dynamic_argument_value");
   ScTemplateSearchResult results;
-  context.HelperSearchTemplate(scTemplate, results);
+  context.SearchByTemplate(scTemplate, results);
   EXPECT_TRUE(results.Size() == 1);
 
-  EXPECT_TRUE(results[0]["_dynamic_argument_value"] == context.HelperFindBySystemIdtf("test_node"));
+  EXPECT_TRUE(results[0]["_dynamic_argument_value"] == context.SearchElementBySystemIdentifier("test_node"));
 
   iterator5.reset();
   shutdown();
@@ -148,39 +159,39 @@ TEST_F(NonAtomicActionInterpreterTest, checkThenSequence)
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "sucsesfullyFinishedSubaction.scs");
   initialize();
 
-  ScAddr test_question_node = context.HelperFindBySystemIdtf("test_question_node");
+  ScAddr test_question_node = context.SearchElementBySystemIdentifier("test_question_node");
   EXPECT_TRUE(test_question_node.IsValid());
 
-  context.CreateEdge(
+  context.GenerateConnector(
         ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
+        ScKeynodes::question_initiated,
         test_question_node);
 
   EXPECT_TRUE(ActionUtils::waitAction(&context, test_question_node, WAIT_TIME));
-  EXPECT_TRUE(context.HelperCheckEdge(
-        scAgentsCommon::CoreKeynodes::question_finished_successfully,
+  EXPECT_TRUE(context.CheckConnector(
+        ScKeynodes::question_finished_successfully,
         test_question_node,
         ScType::EdgeAccessConstPosPerm));
 
   ScAddr action = getFirstAction(context);
-  EXPECT_TRUE(context.HelperCheckEdge(
-        scAgentsCommon::CoreKeynodes::question_finished,
+  EXPECT_TRUE(context.CheckConnector(
+        ScKeynodes::question_finished,
         action,
         ScType::EdgeAccessConstPosPerm));
-  EXPECT_TRUE(context.HelperCheckEdge(
-        scAgentsCommon::CoreKeynodes::question_finished_successfully, action, ScType::EdgeAccessConstPosPerm));
+  EXPECT_TRUE(context.CheckConnector(
+        ScKeynodes::question_finished_successfully, action, ScType::EdgeAccessConstPosPerm));
 
-  ScIterator5Ptr iterator5 = context.Iterator5(
+  ScIterator5Ptr iterator5 = context.CreateIterator5(
         action,
         ScType::EdgeDCommonConst,
         ScType::NodeConst,
         ScType::EdgeAccessConstPosPerm,
-        context.HelperFindBySystemIdtf("nrel_then"));
+        context.SearchElementBySystemIdentifier("nrel_then"));
   EXPECT_TRUE(iterator5->Next());
   action = iterator5->Get(2);
 
-  EXPECT_TRUE(context.HelperCheckEdge(
-        scAgentsCommon::CoreKeynodes::question_finished, action, ScType::EdgeAccessConstPosPerm));
+  EXPECT_TRUE(context.CheckConnector(
+        ScKeynodes::question_finished, action, ScType::EdgeAccessConstPosPerm));
 
   iterator5.reset();
   shutdown();
@@ -193,36 +204,36 @@ TEST_F(NonAtomicActionInterpreterTest, checkElseSequence)
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "unsucsesfullyFinishedSubaction.scs");
   initialize();
 
-  ScAddr test_question_node = context.HelperFindBySystemIdtf("test_question_node");
+  ScAddr test_question_node = context.SearchElementBySystemIdentifier("test_question_node");
   EXPECT_TRUE(test_question_node.IsValid());
 
-  context.CreateEdge(
+  context.GenerateConnector(
         ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
+        ScKeynodes::question_initiated,
         test_question_node);
 
   EXPECT_TRUE(ActionUtils::waitAction(&context, test_question_node, WAIT_TIME));
-  EXPECT_TRUE(context.HelperCheckEdge(
-        scAgentsCommon::CoreKeynodes::question_finished_successfully, test_question_node,
+  EXPECT_TRUE(context.CheckConnector(
+        ScKeynodes::question_finished_successfully, test_question_node,
         ScType::EdgeAccessConstPosPerm));
 
   ScAddr action = getFirstAction(context);
-  EXPECT_TRUE(context.HelperCheckEdge(
-        scAgentsCommon::CoreKeynodes::question_finished, action, ScType::EdgeAccessConstPosPerm));
-  EXPECT_TRUE(context.HelperCheckEdge(
-        scAgentsCommon::CoreKeynodes::question_finished_unsuccessfully, action, ScType::EdgeAccessConstPosPerm));
+  EXPECT_TRUE(context.CheckConnector(
+        ScKeynodes::question_finished, action, ScType::EdgeAccessConstPosPerm));
+  EXPECT_TRUE(context.CheckConnector(
+        ScKeynodes::question_finished_unsuccessfully, action, ScType::EdgeAccessConstPosPerm));
 
-  ScIterator5Ptr iterator5 = context.Iterator5(
+  ScIterator5Ptr iterator5 = context.CreateIterator5(
         action,
         ScType::EdgeDCommonConst,
         ScType::NodeConst,
         ScType::EdgeAccessConstPosPerm,
-        context.HelperFindBySystemIdtf("nrel_else"));
+        context.SearchElementBySystemIdentifier("nrel_else"));
   EXPECT_TRUE(iterator5->Next());
   action = iterator5->Get(2);
 
-  EXPECT_TRUE(context.HelperCheckEdge(
-        scAgentsCommon::CoreKeynodes::question_finished, action, ScType::EdgeAccessConstPosPerm));
+  EXPECT_TRUE(context.CheckConnector(
+        ScKeynodes::question_finished, action, ScType::EdgeAccessConstPosPerm));
 
   iterator5.reset();
   shutdown();
@@ -235,34 +246,34 @@ TEST_F(NonAtomicActionInterpreterTest, checkGotoSequence)
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "finishedSubaction.scs");
   initialize();
 
-  ScAddr test_question_node = context.HelperFindBySystemIdtf("test_question_node");
+  ScAddr test_question_node = context.SearchElementBySystemIdentifier("test_question_node");
   EXPECT_TRUE(test_question_node.IsValid());
 
-  context.CreateEdge(
+  context.GenerateConnector(
         ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
+        ScKeynodes::question_initiated,
         test_question_node);
 
   EXPECT_TRUE(ActionUtils::waitAction(&context, test_question_node, WAIT_TIME));
-  EXPECT_TRUE(context.HelperCheckEdge(
-        scAgentsCommon::CoreKeynodes::question_finished_successfully, test_question_node,
+  EXPECT_TRUE(context.CheckConnector(
+        ScKeynodes::question_finished_successfully, test_question_node,
         ScType::EdgeAccessConstPosPerm));
 
   ScAddr action = getFirstAction(context);
-  EXPECT_TRUE(context.HelperCheckEdge(
-        scAgentsCommon::CoreKeynodes::question_finished, action, ScType::EdgeAccessConstPosPerm));
+  EXPECT_TRUE(context.CheckConnector(
+        ScKeynodes::question_finished, action, ScType::EdgeAccessConstPosPerm));
 
-  ScIterator5Ptr iterator5 = context.Iterator5(
+  ScIterator5Ptr iterator5 = context.CreateIterator5(
         action,
         ScType::EdgeDCommonConst,
         ScType::NodeConst,
         ScType::EdgeAccessConstPosPerm,
-        context.HelperFindBySystemIdtf("nrel_goto"));
+        context.SearchElementBySystemIdentifier("nrel_goto"));
   EXPECT_TRUE(iterator5->Next());
   action = iterator5->Get(2);
 
-  EXPECT_TRUE(context.HelperCheckEdge(
-        scAgentsCommon::CoreKeynodes::question_finished, action, ScType::EdgeAccessConstPosPerm));
+  EXPECT_TRUE(context.CheckConnector(
+        ScKeynodes::question_finished, action, ScType::EdgeAccessConstPosPerm));
 
   iterator5.reset();
   shutdown();
@@ -275,58 +286,58 @@ TEST_F(NonAtomicActionInterpreterTest, checkArgumentsMatching)
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "argumentsMatching.scs");
   initialize();
 
-  ScAddr test_question_node = context.HelperFindBySystemIdtf("test_question_node");
+  ScAddr test_question_node = context.SearchElementBySystemIdentifier("test_question_node");
   EXPECT_TRUE(test_question_node.IsValid());
 
-  context.CreateEdge(
+  context.GenerateConnector(
         ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
+        ScKeynodes::question_initiated,
         test_question_node);
 
   EXPECT_TRUE(ActionUtils::waitAction(&context, test_question_node, WAIT_TIME));
-  EXPECT_TRUE(context.HelperCheckEdge(
-        scAgentsCommon::CoreKeynodes::question_finished_successfully, test_question_node,
+  EXPECT_TRUE(context.CheckConnector(
+        ScKeynodes::question_finished_successfully, test_question_node,
         ScType::EdgeAccessConstPosPerm));
 
   ScAddr action = getFirstAction(context);
-  EXPECT_TRUE(context.HelperCheckEdge(
-        scAgentsCommon::CoreKeynodes::question_finished, action, ScType::EdgeAccessConstPosPerm));
+  EXPECT_TRUE(context.CheckConnector(
+        ScKeynodes::question_finished, action, ScType::EdgeAccessConstPosPerm));
 
   ScTemplate scTemplate;
   scTemplate.TripleWithRelation(
         action,
         ScType::EdgeAccessVarPosPerm,
-        context.HelperFindBySystemIdtf("arg1"),
+        context.SearchElementBySystemIdentifier("arg1"),
         ScType::EdgeAccessVarPosPerm,
-        scAgentsCommon::CoreKeynodes::rrel_1);
+        ScKeynodes::rrel_1);
   scTemplate.TripleWithRelation(
         action,
         ScType::EdgeAccessVarPosPerm,
-        context.HelperFindBySystemIdtf("arg3"),
+        context.SearchElementBySystemIdentifier("arg3"),
         ScType::EdgeAccessVarPosPerm,
-        scAgentsCommon::CoreKeynodes::rrel_2);
+        ScKeynodes::rrel_2);
   ScTemplateSearchResult results;
-  context.HelperSearchTemplate(scTemplate, results);
+  context.SearchByTemplate(scTemplate, results);
   EXPECT_TRUE(results.Size() == 1);
 
-  ScIterator5Ptr iterator5 = context.Iterator5(
+  ScIterator5Ptr iterator5 = context.CreateIterator5(
         action,
         ScType::EdgeDCommonConst,
         ScType::NodeConst,
         ScType::EdgeAccessConstPosPerm,
-        context.HelperFindBySystemIdtf("nrel_goto"));
+        context.SearchElementBySystemIdentifier("nrel_goto"));
   EXPECT_TRUE(iterator5->Next());
   action = iterator5->Get(2);
-  EXPECT_TRUE(context.HelperCheckEdge(
-        scAgentsCommon::CoreKeynodes::question_finished, action, ScType::EdgeAccessConstPosPerm));
+  EXPECT_TRUE(context.CheckConnector(
+        ScKeynodes::question_finished, action, ScType::EdgeAccessConstPosPerm));
 
   scTemplate.TripleWithRelation(
         action,
         ScType::EdgeAccessVarPosPerm,
-        context.HelperFindBySystemIdtf("arg2"),
+        context.SearchElementBySystemIdentifier("arg2"),
         ScType::EdgeAccessVarPosPerm,
-        scAgentsCommon::CoreKeynodes::rrel_1);
-  context.HelperSearchTemplate(scTemplate, results);
+        ScKeynodes::rrel_1);
+  context.SearchByTemplate(scTemplate, results);
   EXPECT_TRUE(results.Size() == 1);
 
   iterator5.reset();

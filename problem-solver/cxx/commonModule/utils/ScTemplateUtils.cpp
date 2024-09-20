@@ -8,7 +8,7 @@ ScAddrVector ScTemplateUtils::getAllWithKey(
   ScAddrVector elements;
 
   ScTemplateSearchResult templateResult;
-  context->HelperSearchTemplate(scTemplate, templateResult);
+  context->SearchByTemplate(scTemplate, templateResult);
 
   for (size_t i = 0; i < templateResult.Size(); i++)
   {

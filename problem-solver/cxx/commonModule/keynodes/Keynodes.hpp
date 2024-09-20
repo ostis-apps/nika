@@ -1,50 +1,40 @@
 #pragma once
 
+#include <sc-memory/sc_keynodes.hpp>
+
 #include "sc-memory/sc_addr.hpp"
 #include "sc-memory/sc_object.hpp"
 
-#include "Keynodes.generated.hpp"
-
 namespace commonModule
 {
-class Keynodes : public ScObject
+class Keynodes : public ScKeynodes
 {
-  SC_CLASS()
-  SC_GENERATED_BODY()
-
 public:
-  SC_PROPERTY(Keynode("action_deactivated"), ForceCreate)
-  static ScAddr action_deactivated;
+  static inline ScKeynode const action_deactivated{"action_deactivated"};
 
-  SC_PROPERTY(Keynode("action_interpret_non_atomic_action"), ForceCreate)
-  static ScAddr action_interpret_non_atomic_action;
+  static inline ScKeynode const number{"number"};
 
-  SC_PROPERTY(Keynode("languages"), ForceCreate)
-  static ScAddr languages;
+  static inline ScKeynode const nrel_sc_text_translation{"nrel_sc_text_translation"};
 
-  SC_PROPERTY(Keynode("nrel_decomposition_of_action"), ForceCreate)
-  static ScAddr nrel_decomposition_of_action;
+  static inline ScKeynode const action_interpret_non_atomic_action{"action_interpret_non_atomic_action"};
 
-  SC_PROPERTY(Keynode("nrel_then"), ForceCreate)
-  static ScAddr nrel_then;
+  static inline ScKeynode const languages{"languages"};
 
-  SC_PROPERTY(Keynode("nrel_else"), ForceCreate)
-  static ScAddr nrel_else;
+  static inline ScKeynode const nrel_decomposition_of_action{"nrel_decomposition_of_action"};
 
-  SC_PROPERTY(Keynode("nrel_goto"), ForceCreate)
-  static ScAddr nrel_goto;
+  static inline ScKeynode const nrel_then{"nrel_then"};
 
-  SC_PROPERTY(Keynode("file"), ForceCreate)
-  static ScAddr file;
+  static inline ScKeynode const nrel_else{"nrel_else"};
 
-  SC_PROPERTY(Keynode("power_of_set"), ForceCreate)
-  static ScAddr power_of_set;
+  static inline ScKeynode const nrel_goto{"nrel_goto"};
 
-  SC_PROPERTY(Keynode("nrel_measurement"), ForceCreate)
-  static ScAddr nrel_measurement;
+  static inline ScKeynode const file{"file"};
 
-  SC_PROPERTY(Keynode("lang_en"), ForceCreate)
-  static ScAddr lang_en;
+  static inline ScKeynode const power_of_set{"power_of_set"};
+
+  static inline ScKeynode const nrel_measurement{"nrel_measurement"};
+
+  static inline ScKeynode const lang_en{"lang_en"};
 };
 
 }  // namespace commonModule

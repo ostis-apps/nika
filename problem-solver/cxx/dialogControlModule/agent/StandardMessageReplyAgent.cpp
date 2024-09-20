@@ -1,85 +1,84 @@
-#include "keynodes/MessageKeynodes.hpp"
-#include "sc-agents-common/utils/AgentUtils.hpp"
-#include "sc-agents-common/utils/IteratorUtils.hpp"
-#include "utils/ActionUtils.hpp"
-#include "keynodes/InferenceKeynodes.hpp"
 #include "StandardMessageReplyAgent.hpp"
+
+#include "sc-agents-common/utils/IteratorUtils.hpp"
+
+#include "agent/DirectInferenceAgent.hpp"
+#include "keynodes/InferenceKeynodes.hpp"
+#include "keynodes/MessageKeynodes.hpp"
+#include "utils/ActionUtils.hpp"
 
 using namespace utils;
 
 namespace dialogControlModule
 {
-SC_AGENT_IMPLEMENTATION(StandardMessageReplyAgent)
+// todo(codegen-removal): remove agent starting and finishing logs, sc-machine is printing them now
+// todo(codegen-removal): if your agent is ScActionInitiatedAgent and uses event only to get action node via
+// event.GetOtherElement() then you can remove event from method arguments and use ScAction & action instead of your
+// action node todo(codegen-removal): if your agent is having method like CheckActionClass(ScAddr actionAddr) that
+// checks connector between action class and actionAddr then you can remove it. Before agent is started sc-machine check
+// that action belongs to class returned by GetActionClass() todo(codegen-removal): use action.SetResult() to pass
+// result of your action instead of using answer or answerElements todo(codegen-removal): use SC_AGENT_LOG_SOMETHING()
+// instead of SC_LOG_SOMETHING to automatically include agent name to logs messages todo(codegen-removal): use auto
+// const & [names of action arguments] = action.GetArguments<amount of arguments>(); to get action arguments
+ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
-  ScAddr actionNode = m_memoryCtx.GetEdgeTarget(edgeAddr);
-
-  if (!checkActionClass(actionNode))
-  {
-    return SC_RESULT_OK;
-  }
-  SC_LOG_DEBUG("StandardMessageReplyAgent started");
-
-  ScAddr messageNode =
-      IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionNode, scAgentsCommon::CoreKeynodes::rrel_1);
+  ScAddr messageNode = IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_1);
 
   if (!messageNode.IsValid())
   {
     SC_LOG_DEBUG("StandardMessageReplyAgent: the action doesn't have a message node");
     SC_LOG_DEBUG("StandardMessageReplyAgent finished");
-    AgentUtils::finishAgentWork(&m_memoryCtx, actionNode, false);
-    return SC_RESULT_ERROR_INVALID_PARAMS;
+
+    return action.FinishUnsuccessfully();
   }
 
   ScAddr logicRuleNode = generateReplyMessage(messageNode);
-  ScAddr replyMessageNode = IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageNode, MessageKeynodes::nrel_reply);
-  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyMessageNode);
+  ScAddr replyMessageNode = IteratorUtils::getAnyByOutRelation(&m_context, messageNode, MessageKeynodes::nrel_reply);
+  m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyMessageNode);
 
   if (!replyMessageNode.IsValid())
   {
     SC_LOG_ERROR("StandardMessageReplyAgent: the reply message isn't generated");
     SC_LOG_DEBUG("StandardMessageReplyAgent finished");
-    AgentUtils::finishAgentWork(&m_memoryCtx, actionNode, false);
-    return SC_RESULT_ERROR;
+
+    return action.FinishUnsuccessfully();
   }
   SC_LOG_DEBUG("StandardMessageReplyAgent: the reply message is generated");
 
-  auto * langSearcher = new LanguageSearcher(&m_memoryCtx);
+  auto * langSearcher = new LanguageSearcher(&m_context);
   ScAddr langNode = langSearcher->getMessageLanguage(messageNode);
   delete langSearcher;
 
   ScAddr parametersNode = generatePhraseAgentParametersNode(messageNode);
 
-  auto * messageHandler = new MessageHandler(&m_memoryCtx);
+  auto * messageHandler = new MessageHandler(&m_context);
   if (!messageHandler->processReplyMessage(replyMessageNode, logicRuleNode, langNode, parametersNode))
   {
     SC_LOG_ERROR("StandardMessageReplyAgent: the reply message is formed incorrectly");
     delete messageHandler;
-    ScIterator5Ptr it5 =
-        IteratorUtils::getIterator5(&m_memoryCtx, replyMessageNode, MessageKeynodes::nrel_reply, false);
+    ScIterator5Ptr it5 = IteratorUtils::getIterator5(&m_context, replyMessageNode, MessageKeynodes::nrel_reply, false);
     if (it5->Next())
     {
-      m_memoryCtx.EraseElement(it5->Get(1));
+      m_context.EraseElement(it5->Get(1));
     }
 
     SC_LOG_DEBUG("StandardMessageReplyAgent finished");
-    AgentUtils::finishAgentWork(&m_memoryCtx, actionNode, false);
-    return SC_RESULT_ERROR;
+
+    return action.FinishUnsuccessfully();
   }
 
-  ScAddr responseNode =
-      IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionNode, scAgentsCommon::CoreKeynodes::rrel_2);
-  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosTemp, responseNode, replyMessageNode);
+  ScAddr responseNode = IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_2);
+  m_context.GenerateConnector(ScType::EdgeAccessConstPosTemp, responseNode, replyMessageNode);
   delete messageHandler;
 
   SC_LOG_DEBUG("StandardMessageReplyAgent finished");
-  AgentUtils::finishAgentWork(&m_memoryCtx, actionNode, replyMessageNode, true);
-  return SC_RESULT_OK;
+
+  return action.FinishSuccessfully();
 }
 
-bool StandardMessageReplyAgent::checkActionClass(const ScAddr & actionNode)
+ScAddr StandardMessageReplyAgent::GetActionClass() const
 {
-  return m_memoryCtx.HelperCheckEdge(
-      MessageKeynodes::action_standard_message_reply, actionNode, ScType::EdgeAccessConstPosPerm);
+  return MessageKeynodes::action_standard_message_reply;
 }
 
 ScAddr StandardMessageReplyAgent::generateReplyMessage(const ScAddr & messageNode)
@@ -89,25 +88,28 @@ ScAddr StandardMessageReplyAgent::generateReplyMessage(const ScAddr & messageNod
       MessageKeynodes::template_reply_target,
       MessageKeynodes::concept_answer_on_standard_message_rule_class_by_priority,
       wrapInSet(messageNode)};
-  ScAddr actionDirectInference =
-      utils::AgentUtils::initAgent(&m_memoryCtx, inference::InferenceKeynodes::action_direct_inference, argsVector);
+  ScAddr actionDirectInference = m_context.GenerateNode(ScType::NodeConst);
+  //  argsVector
+  m_context.GenerateConnector(
+      ScType::EdgeAccessConstPosPerm, inference::InferenceKeynodes::action_direct_inference, actionDirectInference);
+  m_context.SubscribeAgent<inference::DirectInferenceAgent>();
 
-  bool const result = ActionUtils::waitAction(&m_memoryCtx, actionDirectInference, DIRECT_INFERENCE_AGENT_WAIT_TIME);
+  bool const result = ActionUtils::waitAction(&m_context, actionDirectInference, DIRECT_INFERENCE_AGENT_WAIT_TIME);
   if (result)
   {
-    ScAddr answer = IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionDirectInference, scAgentsCommon::CoreKeynodes::nrel_answer);
-    ScAddr solutionNode = IteratorUtils::getAnyFromSet(&m_memoryCtx, answer);
-    ScAddr solutionTreeRoot = IteratorUtils::getAnyByOutRelation(&m_memoryCtx, solutionNode, scAgentsCommon::CoreKeynodes::rrel_1);
+    ScAddr answer = IteratorUtils::getAnyByOutRelation(&m_context, actionDirectInference, ScKeynodes::nrel_result);
+    ScAddr solutionNode = IteratorUtils::getAnyFromSet(&m_context, answer);
+    ScAddr solutionTreeRoot = IteratorUtils::getAnyByOutRelation(&m_context, solutionNode, ScKeynodes::rrel_1);
     if (solutionTreeRoot.IsValid())
-      logicRuleNode = IteratorUtils::getAnyByOutRelation(&m_memoryCtx, solutionTreeRoot, scAgentsCommon::CoreKeynodes::rrel_1);
+      logicRuleNode = IteratorUtils::getAnyByOutRelation(&m_context, solutionTreeRoot, ScKeynodes::rrel_1);
   }
   return logicRuleNode;
 }
 
 ScAddr StandardMessageReplyAgent::wrapInSet(ScAddr const & addr)
 {
-  ScAddr set = m_memoryCtx.CreateNode(ScType::NodeConstTuple);
-  m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, set, addr);
+  ScAddr set = m_context.GenerateNode(ScType::NodeConstTuple);
+  m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, set, addr);
   return set;
 }
 
@@ -116,7 +118,7 @@ ScAddr StandardMessageReplyAgent::generatePhraseAgentParametersNode(const ScAddr
   ScAddrVector parameters;
   parameters.push_back(messageNode);
 
-  auto * messageSearcher = new MessageSearcher(&m_memoryCtx);
+  auto * messageSearcher = new MessageSearcher(&m_context);
 
   ScAddr authorNode = messageSearcher->getMessageAuthor(messageNode);
   if (authorNode.IsValid())
@@ -126,11 +128,11 @@ ScAddr StandardMessageReplyAgent::generatePhraseAgentParametersNode(const ScAddr
   if (themeNode.IsValid())
     parameters.push_back(themeNode);
 
-  ScAddr parametersNode = m_memoryCtx.CreateNode(ScType::NodeConst);
+  ScAddr parametersNode = m_context.GenerateNode(ScType::NodeConst);
   for (auto & node : parameters)
   {
-    if (!m_memoryCtx.HelperCheckEdge(parametersNode, node, ScType::EdgeAccessConstPosPerm))
-      m_memoryCtx.CreateEdge(ScType::EdgeAccessConstPosPerm, parametersNode, node);
+    if (!m_context.CheckConnector(parametersNode, node, ScType::EdgeAccessConstPosPerm))
+      m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, parametersNode, node);
   }
 
   delete messageSearcher;

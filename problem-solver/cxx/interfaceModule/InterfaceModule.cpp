@@ -2,9 +2,11 @@
 
 using namespace interfaceModule;
 
-SC_IMPLEMENT_MODULE(InterfaceModule)
+SC_MODULE_REGISTER(InterfaceModule)->Agent<ChangeInterfaceColorAgent>();
 
-sc_result InterfaceModule::InitializeImpl()
+// todo(codegen-removal): if needed override ScModule::Initialize and move all non-keynodes and non-agents code from
+// previous initialization method
+/*
 {
   if (!interfaceModule::InterfaceKeynodes::InitGlobal())
   {
@@ -18,15 +20,21 @@ sc_result InterfaceModule::InitializeImpl()
   }
   else
   {
-    SC_AGENT_REGISTER(ChangeInterfaceColorAgent);
+    //todo(codegen-removal): Use agentContext.SubscribeAgent<ChangeInterfaceColorAgent> or UnsubscribeAgent; to register
+and unregister agent SC_AGENT_REGISTER(ChangeInterfaceColorAgent);
   }
 
   return SC_RESULT_OK;
 }
+*/
 
-sc_result InterfaceModule::ShutdownImpl()
+// todo(codegen-removal): if needed override ScModule::Shutdown and move all non-agents code from previous shutdown
+// method
+/*
 {
-  SC_AGENT_UNREGISTER(ChangeInterfaceColorAgent);
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<ChangeInterfaceColorAgent> or UnsubscribeAgent; to register
+and unregister agent SC_AGENT_UNREGISTER(ChangeInterfaceColorAgent);
 
   return SC_RESULT_OK;
 }
+*/

@@ -1,26 +1,24 @@
 #pragma once
 
 #include "sc-memory/sc_addr.hpp"
-#include "sc-memory/sc_memory.hpp"
+#include "sc-memory/sc_agent.hpp"
 
 #include "client/WitAiClient.hpp"
 #include "client/WitAiClientInterface.hpp"
 #include "searcher/MessageSearcher.hpp"
-#include "sc-agents-common/keynodes/coreKeynodes.hpp"
-
 namespace messageClassificationModule
 {
 class MessageTopicClassifier
 {
 public:
-  explicit MessageTopicClassifier(ScMemoryContext * context, WitAiClientInterface * client);
+  explicit MessageTopicClassifier(ScAgentContext * context, WitAiClientInterface * client);
 
   ScAddrVector classifyMessage(ScAddr const & messageAddr);
 
 protected:
-  ScMemoryContext * context;
+  ScAgentContext * context;
 
-  ScAddrVector relationsToFindEntity {scAgentsCommon::CoreKeynodes::nrel_main_idtf, scAgentsCommon::CoreKeynodes::nrel_idtf};
+  ScAddrVector relationsToFindEntity{ScKeynodes::nrel_main_idtf, ScKeynodes::nrel_idtf};
 
   std::unique_ptr<dialogControlModule::MessageSearcher> messageSearcher;
 

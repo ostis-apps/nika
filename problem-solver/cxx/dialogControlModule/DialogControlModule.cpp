@@ -2,9 +2,11 @@
 
 using namespace dialogControlModule;
 
-SC_IMPLEMENT_MODULE(DialogControlModule)
+SC_MODULE_REGISTER(DialogControlModule)->Agent<PhraseGenerationAgent>()->Agent<StandardMessageReplyAgent>();
 
-sc_result DialogControlModule::InitializeImpl()
+// todo(codegen-removal): if needed override ScModule::Initialize and move all non-keynodes and non-agents code from
+// previous initialization method
+/*
 {
   if (!dialogControlModule::DialogKeynodes::InitGlobal())
   {
@@ -22,7 +24,8 @@ sc_result DialogControlModule::InitializeImpl()
   }
   else
   {
-    SC_AGENT_REGISTER(PhraseGenerationAgent);
+    //todo(codegen-removal): Use agentContext.SubscribeAgent<PhraseGenerationAgent> or UnsubscribeAgent; to register and
+unregister agent SC_AGENT_REGISTER(PhraseGenerationAgent);
   }
 
   if (ActionUtils::isActionDeactivated(&ctx, MessageKeynodes::action_standard_message_reply))
@@ -31,16 +34,23 @@ sc_result DialogControlModule::InitializeImpl()
   }
   else
   {
-    SC_AGENT_REGISTER(StandardMessageReplyAgent);
+    //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register
+and unregister agent SC_AGENT_REGISTER(StandardMessageReplyAgent);
   }
 
   return SC_RESULT_OK;
 }
+*/
 
-sc_result DialogControlModule::ShutdownImpl()
+// todo(codegen-removal): if needed override ScModule::Shutdown and move all non-agents code from previous shutdown
+// method
+/*
 {
-  SC_AGENT_UNREGISTER(PhraseGenerationAgent);
-  SC_AGENT_UNREGISTER(StandardMessageReplyAgent);
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<PhraseGenerationAgent> or UnsubscribeAgent; to register and
+unregister agent SC_AGENT_UNREGISTER(PhraseGenerationAgent);
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register
+and unregister agent SC_AGENT_UNREGISTER(StandardMessageReplyAgent);
 
   return SC_RESULT_OK;
 }
+*/

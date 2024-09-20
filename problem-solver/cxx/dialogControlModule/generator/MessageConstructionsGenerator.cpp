@@ -1,7 +1,5 @@
 #include "MessageConstructionsGenerator.hpp"
 
-#include "sc-agents-common/keynodes/coreKeynodes.hpp"
-
 #include "handler/LinkHandler.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 
@@ -20,7 +18,7 @@ void MessageConstructionsGenerator::generateTextTranslationConstruction(
   commonModule::LinkHandler handler(context);
 
   ScAddr linkAddr = handler.createLink(messageText);
-  context->CreateEdge(ScType::EdgeAccessConstPosPerm, langAddr, linkAddr);
+  context->GenerateConnector(ScType::EdgeAccessConstPosPerm, langAddr, linkAddr);
   generateTextTranslationConstruction(messageAddr, linkAddr);
 }
 
@@ -28,12 +26,12 @@ void MessageConstructionsGenerator::generateTextTranslationConstruction(
     const ScAddr & messageAddr,
     const ScAddr & linkAddr)
 {
-  ScAddr translationAddr = context->CreateNode(ScType::NodeConst);
-  ScAddr translationEdgeAddr = context->CreateEdge(ScType::EdgeDCommonConst, translationAddr, messageAddr);
-  context->CreateEdge(
-      ScType::EdgeAccessConstPosPerm, scAgentsCommon::CoreKeynodes::nrel_sc_text_translation, translationEdgeAddr);
-  context->CreateEdge(ScType::EdgeAccessConstPosPerm, translationAddr, linkAddr);
-  context->CreateEdge(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_text_file, linkAddr);
+  ScAddr translationAddr = context->GenerateNode(ScType::NodeConst);
+  ScAddr translationEdgeAddr = context->GenerateConnector(ScType::EdgeDCommonConst, translationAddr, messageAddr);
+  context->GenerateConnector(
+      ScType::EdgeAccessConstPosPerm, commonModule::Keynodes::nrel_sc_text_translation, translationEdgeAddr);
+  context->GenerateConnector(ScType::EdgeAccessConstPosPerm, translationAddr, linkAddr);
+  context->GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_text_file, linkAddr);
 }
 
 }  // namespace dialogControlModule

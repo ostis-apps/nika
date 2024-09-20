@@ -1,18 +1,18 @@
 #pragma once
 
-#include "sc-memory/kpm/sc_agent.hpp"
-#include "sc-agents-common/keynodes/coreKeynodes.hpp"
+#include <sc-memory/sc_agent.hpp>
 #include "sc-agents-common/utils/IteratorUtils.hpp"
-
-#include "AssignDynamicArgumentTestAgent.generated.hpp"
 
 namespace commonTest
 {
 
-class AssignDynamicArgumentTestAgent : public ScAgent
+class AssignDynamicArgumentTestAgent : public ScActionInitiatedAgent
 {
-  SC_CLASS(Agent, Event(scAgentsCommon::CoreKeynodes::question_initiated, ScEvent::Type::AddOutputEdge))
-  SC_GENERATED_BODY()
-};
+  public:
+  ScAddr GetActionClass() const override;
+
+  ScResult DoProgram(ScActionInitiatedEvent const & event, ScAction & action) override;
+
+  };
 
 } // namespace commonTest

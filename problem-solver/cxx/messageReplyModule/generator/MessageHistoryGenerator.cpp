@@ -20,7 +20,7 @@ void MessageHistoryGenerator::addMessageToDialog(const ScAddr & dialogAddr, cons
   auto scTemplate = std::make_unique<ScTemplate>();
   ScAddr lastMessageAddr;
 
-  ScIterator5Ptr iterator5Ptr = context->Iterator5(
+  ScIterator5Ptr iterator5Ptr = context->CreateIterator5(
       dialogAddr,
       ScType::EdgeAccessConstPosPerm,
       ScType::NodeConst,
@@ -32,7 +32,7 @@ void MessageHistoryGenerator::addMessageToDialog(const ScAddr & dialogAddr, cons
 
   if (lastMessageAddr.IsValid())
   {
-    ScIterator5Ptr it5 = context->Iterator5(
+    ScIterator5Ptr it5 = context->CreateIterator5(
         dialogAddr,
         ScType::EdgeAccessConstPosPerm,
         lastMessageAddr,
@@ -48,8 +48,8 @@ void MessageHistoryGenerator::addMessageToDialog(const ScAddr & dialogAddr, cons
     scTemplate = createFirstMessageInDialogTemplate(dialogAddr, messageAddr);
 
   ScTemplateGenResult genResult;
-  if (!context->HelperGenTemplate(*scTemplate, genResult))
-    throw std::runtime_error("Unable to generate structure for next dialog message.");
+
+  context->GenerateByTemplate(*scTemplate, genResult);
 }
 
 std::unique_ptr<ScTemplate> MessageHistoryGenerator::createNotFirstMessageInDialogTemplate(
@@ -60,18 +60,18 @@ std::unique_ptr<ScTemplate> MessageHistoryGenerator::createNotFirstMessageInDial
   string const NEXT_MESSAGE_ARC_ALIAS = "_next_message_arc";
 
   ScAddr messageEdge;
-  ScIterator3Ptr iterator3Ptr = context->Iterator3(dialogAddr, ScType::EdgeAccessConstPosPerm, lastMessageAddr);
+  ScIterator3Ptr iterator3Ptr = context->CreateIterator3(dialogAddr, ScType::EdgeAccessConstPosPerm, lastMessageAddr);
   if (iterator3Ptr->Next())
     messageEdge = iterator3Ptr->Get(1);
 
   auto scTemplate = std::make_unique<ScTemplate>();
-  scTemplate->TripleWithRelation(
+  scTemplate->Quintuple(
       dialogAddr,
       ScType::EdgeAccessVarPosPerm >> NEXT_MESSAGE_ARC_ALIAS,
       messageAddr,
       ScType::EdgeAccessVarPosPerm,
       MessageReplyKeynodes::rrel_last);
-  scTemplate->TripleWithRelation(
+  scTemplate->Quintuple(
       messageEdge,
       ScType::EdgeDCommonVar,
       NEXT_MESSAGE_ARC_ALIAS,
@@ -86,13 +86,9 @@ std::unique_ptr<ScTemplate> MessageHistoryGenerator::createFirstMessageInDialogT
     const ScAddr & messageAddr)
 {
   auto scTemplate = std::make_unique<ScTemplate>();
-  scTemplate->TripleWithRelation(
-      dialogAddr,
-      ScType::EdgeAccessVarPosPerm,
-      messageAddr,
-      ScType::EdgeAccessVarPosPerm,
-      scAgentsCommon::CoreKeynodes::rrel_1);
-  scTemplate->TripleWithRelation(
+  scTemplate->Quintuple(
+      dialogAddr, ScType::EdgeAccessVarPosPerm, messageAddr, ScType::EdgeAccessVarPosPerm, ScKeynodes::rrel_1);
+  scTemplate->Quintuple(
       dialogAddr,
       ScType::EdgeAccessVarPosPerm,
       messageAddr,

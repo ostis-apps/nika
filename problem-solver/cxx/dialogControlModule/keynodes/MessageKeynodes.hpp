@@ -1,74 +1,53 @@
 #pragma once
 
+#include <sc-memory/sc_keynodes.hpp>
+
 #include "sc-memory/sc_addr.hpp"
 #include "sc-memory/sc_object.hpp"
 
-#include "MessageKeynodes.generated.hpp"
-
 namespace dialogControlModule
 {
-class MessageKeynodes : public ScObject
+class MessageKeynodes : public ScKeynodes
 {
-  SC_CLASS()
-  SC_GENERATED_BODY()
-
 public:
-  SC_PROPERTY(Keynode("action_phrase_generation"), ForceCreate)
-  static ScAddr action_phrase_generation;
+  static inline ScKeynode const action_phrase_generation{"action_phrase_generation"};
 
-  SC_PROPERTY(Keynode("action_standard_message_reply"), ForceCreate)
-  static ScAddr action_standard_message_reply;
+  static inline ScKeynode const action_standard_message_reply{"action_standard_message_reply"};
 
-  SC_PROPERTY(Keynode("concept_answer_on_standard_message_rule"), ForceCreate)
-  static ScAddr concept_answer_on_standard_message_rule;
+  static inline ScKeynode const concept_answer_on_standard_message_rule{"concept_answer_on_standard_message_rule"};
 
-  SC_PROPERTY(Keynode("concept_answer_on_standard_message_rule_class_by_priority"), ForceCreate)
-  static ScAddr concept_answer_on_standard_message_rule_class_by_priority;
+  static inline ScKeynode const concept_answer_on_standard_message_rule_class_by_priority{
+      "concept_answer_on_standard_message_rule_class_by_priority"};
 
-  SC_PROPERTY(Keynode("concept_atomic_message"), ForceCreate)
-  static ScAddr concept_atomic_message;
+  static inline ScKeynode const concept_atomic_message{"concept_atomic_message"};
 
-  SC_PROPERTY(Keynode("concept_non_atomic_message"), ForceCreate)
-  static ScAddr concept_non_atomic_message;
+  static inline ScKeynode const concept_non_atomic_message{"concept_non_atomic_message"};
 
-  SC_PROPERTY(Keynode("concept_message"), ForceCreate)
-  static ScAddr concept_message;
+  static inline ScKeynode const concept_message{"concept_message"};
 
-  SC_PROPERTY(Keynode("nrel_answer_pattern"), ForceCreate)
-  static ScAddr nrel_answer_pattern;
+  static inline ScKeynode const nrel_answer_pattern{"nrel_answer_pattern"};
 
-  SC_PROPERTY(Keynode("nrel_authors"), ForceCreate)
-  static ScAddr nrel_authors;
+  static inline ScKeynode const nrel_authors{"nrel_authors"};
 
-  SC_PROPERTY(Keynode("nrel_message_key_elements"), ForceCreate)
-  static ScAddr nrel_message_key_elements;
+  static inline ScKeynode const nrel_message_key_elements{"nrel_message_key_elements"};
 
-  SC_PROPERTY(Keynode("nrel_message_decomposition"), ForceCreate)
-  static ScAddr nrel_message_decomposition;
+  static inline ScKeynode const nrel_message_decomposition{"nrel_message_decomposition"};
 
-  SC_PROPERTY(Keynode("nrel_message_sequence"), ForceCreate)
-  static ScAddr nrel_message_sequence;
+  static inline ScKeynode const nrel_message_sequence{"nrel_message_sequence"};
 
-  SC_PROPERTY(Keynode("nrel_reply"), ForceCreate)
-  static ScAddr nrel_reply;
+  static inline ScKeynode const nrel_reply{"nrel_reply"};
 
-  SC_PROPERTY(Keynode("rrel_message_theme"), ForceCreate)
-  static ScAddr rrel_message_theme;
+  static inline ScKeynode const rrel_message_theme{"rrel_message_theme"};
 
-  SC_PROPERTY(Keynode("concept_text_file"), ForceCreate)
-  static ScAddr concept_text_file;
+  static inline ScKeynode const concept_text_file{"concept_text_file"};
 
-  SC_PROPERTY(Keynode("template_reply_target"), ForceCreate)
-  static ScAddr template_reply_target;
+  static inline ScKeynode const template_reply_target{"template_reply_target"};
 
-  SC_PROPERTY(Keynode("rrel_entity"), ForceCreate)
-  static ScAddr rrel_entity;
+  static inline ScKeynode const rrel_entity{"rrel_entity"};
 
-  SC_PROPERTY(Keynode("nrel_semantic_equivalent"), ForceCreate)
-  static ScAddr nrel_semantic_equivalent;
+  static inline ScKeynode const nrel_semantic_equivalent{"nrel_semantic_equivalent"};
 
-  SC_PROPERTY(Keynode("answer_structure"), ForceCreate)
-  static ScAddr answer_structure;
+  static inline ScKeynode const answer_structure{"answer_structure"};
 };
 
 }  // namespace dialogControlModule

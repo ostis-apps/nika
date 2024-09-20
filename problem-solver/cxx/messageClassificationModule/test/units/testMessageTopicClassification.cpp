@@ -22,7 +22,7 @@ using MessageTopicClassificationTest = ScMemoryTest;
 
 void initialize()
 {
-  scAgentsCommon::CoreKeynodes::InitGlobal();
+  ScKeynodes::InitGlobal();
   MessageClassificationKeynodes::InitGlobal();
   commonModule::Keynodes::InitGlobal();
 }
@@ -56,8 +56,8 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithoutEntityTest)
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "wit_concepts.scs");
   initialize();
 
-  ScAddr greetingMessageClass = context.HelperFindBySystemIdtf("concept_greeting_message");
-  ScAddr messageAddr = context.HelperFindBySystemIdtf("message");
+  ScAddr greetingMessageClass = context.SearchElementBySystemIdentifier("concept_greeting_message");
+  ScAddr messageAddr = context.SearchElementBySystemIdentifier("message");
   EXPECT_TRUE(greetingMessageClass.IsValid());
   EXPECT_TRUE(messageAddr.IsValid());
 
@@ -74,7 +74,7 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithoutEntityTest)
   ScAddrVector messageClassificationItems = classifier.classifyMessage(messageAddr);
   EXPECT_FALSE(messageClassificationItems.empty());
 
-  bool isMessageClassified = context.HelperCheckEdge(greetingMessageClass, messageAddr, ScType::EdgeAccessConstPosPerm);
+  bool isMessageClassified = context.CheckConnector(greetingMessageClass, messageAddr, ScType::EdgeAccessConstPosPerm);
   EXPECT_TRUE(isMessageClassified);
 
   shutdown();
@@ -88,10 +88,10 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithEntityTest)
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "wit_concepts.scs");
   initialize();
 
-  ScAddr greetingMessageClass = context.HelperFindBySystemIdtf("concept_greeting_message");
-  ScAddr messageAddr = context.HelperFindBySystemIdtf("message");
-  ScAddr entityAddr = context.HelperFindBySystemIdtf("maksim");
-  ScAddr entityRoleAddr = context.HelperFindBySystemIdtf("rrel_contact");
+  ScAddr greetingMessageClass = context.SearchElementBySystemIdentifier("concept_greeting_message");
+  ScAddr messageAddr = context.SearchElementBySystemIdentifier("message");
+  ScAddr entityAddr = context.SearchElementBySystemIdentifier("maksim");
+  ScAddr entityRoleAddr = context.SearchElementBySystemIdentifier("rrel_contact");
 
   EXPECT_TRUE(greetingMessageClass.IsValid());
   EXPECT_TRUE(messageAddr.IsValid());
@@ -121,7 +121,7 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithEntityTest)
       messageAddr, ScType::EdgeAccessVarPosPerm, entityAddr, ScType::EdgeAccessVarPosPerm, entityRoleAddr);
 
   ScTemplateSearchResult classificationTemplateResult;
-  context.HelperSearchTemplate(classificationTemplate, classificationTemplateResult);
+  context.SearchByTemplate(classificationTemplate, classificationTemplateResult);
   EXPECT_TRUE(classificationTemplateResult.Size() == 1);
 
   shutdown();
@@ -135,13 +135,13 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesTest)
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "wit_concepts.scs");
   initialize();
 
-  ScAddr weatherMessageClass = context.HelperFindBySystemIdtf("concept_general_message_about_weather");
-  ScAddr neutralMessageClass = context.HelperFindBySystemIdtf("concept_message_with_neutral_emotional_coloring");
-  ScAddr messageAddr = context.HelperFindBySystemIdtf("message");
-  ScAddr entityContactAddr = context.HelperFindBySystemIdtf("maksim");
-  ScAddr entitySeasonAddr = context.HelperFindBySystemIdtf("summer");
-  ScAddr rrelContactAddr = context.HelperFindBySystemIdtf("rrel_contact");
-  ScAddr rrelSeasonAddr = context.HelperFindBySystemIdtf("rrel_season");
+  ScAddr weatherMessageClass = context.SearchElementBySystemIdentifier("concept_general_message_about_weather");
+  ScAddr neutralMessageClass = context.SearchElementBySystemIdentifier("concept_message_with_neutral_emotional_coloring");
+  ScAddr messageAddr = context.SearchElementBySystemIdentifier("message");
+  ScAddr entityContactAddr = context.SearchElementBySystemIdentifier("maksim");
+  ScAddr entitySeasonAddr = context.SearchElementBySystemIdentifier("summer");
+  ScAddr rrelContactAddr = context.SearchElementBySystemIdentifier("rrel_contact");
+  ScAddr rrelSeasonAddr = context.SearchElementBySystemIdentifier("rrel_season");
 
   EXPECT_TRUE(weatherMessageClass.IsValid());
   EXPECT_TRUE(messageAddr.IsValid());
@@ -179,7 +179,7 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesTest)
       messageAddr, ScType::EdgeAccessVarPosPerm, entitySeasonAddr, ScType::EdgeAccessVarPosPerm, rrelSeasonAddr);
 
   ScTemplateSearchResult classificationTemplateResult;
-  context.HelperSearchTemplate(classificationTemplate, classificationTemplateResult);
+  context.SearchByTemplate(classificationTemplate, classificationTemplateResult);
 
   EXPECT_TRUE(classificationTemplateResult.Size() == 1);
 
@@ -194,10 +194,10 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesSameRoleTes
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "wit_concepts.scs");
   initialize();
 
-  ScAddr messageAddr = context.HelperFindBySystemIdtf("message");
-  ScAddr hobbyAddr = context.HelperFindBySystemIdtf("concept_hobby");
-  ScAddr theatreAddr = context.HelperFindBySystemIdtf("concept_theatre");
-  ScAddr rrelEntityAddr = context.HelperFindBySystemIdtf("rrel_entity");
+  ScAddr messageAddr = context.SearchElementBySystemIdentifier("message");
+  ScAddr hobbyAddr = context.SearchElementBySystemIdentifier("concept_hobby");
+  ScAddr theatreAddr = context.SearchElementBySystemIdentifier("concept_theatre");
+  ScAddr rrelEntityAddr = context.SearchElementBySystemIdentifier("rrel_entity");
 
   EXPECT_TRUE(messageAddr.IsValid());
   EXPECT_TRUE(hobbyAddr.IsValid());
@@ -235,7 +235,7 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesSameRoleTes
       messageAddr, ScType::EdgeAccessVarPosPerm, theatreAddr, ScType::EdgeAccessVarPosPerm, rrelEntityAddr);
 
   ScTemplateSearchResult classificationTemplateResult;
-  context.HelperSearchTemplate(entitiesTemplate, classificationTemplateResult);
+  context.SearchByTemplate(entitiesTemplate, classificationTemplateResult);
 
   EXPECT_TRUE(classificationTemplateResult.Size() == 1);
 

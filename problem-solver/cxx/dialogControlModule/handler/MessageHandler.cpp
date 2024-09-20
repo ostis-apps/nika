@@ -1,18 +1,16 @@
 #include "MessageHandler.hpp"
 
-#include "sc-agents-common/keynodes/coreKeynodes.hpp"
-#include "sc-agents-common/utils/AgentUtils.hpp"
 #include "sc-agents-common/utils/CommonUtils.hpp"
 #include "sc-agents-common/utils/IteratorUtils.hpp"
 
+#include "agent/PhraseGenerationAgent.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 #include "utils/ActionUtils.hpp"
 
-using namespace scAgentsCommon;
 using namespace dialogControlModule;
 using namespace utils;
 
-MessageHandler::MessageHandler(ScMemoryContext * context)
+MessageHandler::MessageHandler(ScAgentContext * context)
 {
   this->context = context;
   languageSearcher = new LanguageSearcher(context);
@@ -41,15 +39,16 @@ bool MessageHandler::processReplyMessage(
   {
     if (logicRuleNode.IsValid())
     {
-      SC_LOG_DEBUG("MessageHandler: the logic rule " + context->HelperGetSystemIdtf(logicRuleNode) + " is found");
+      SC_LOG_DEBUG(
+          "MessageHandler: the logic rule " + context->GetElementSystemIdentifier(logicRuleNode) + " is found");
       if (langNode.IsValid())
       {
-        SC_LOG_DEBUG("MessageHandler: the message language is " + context->HelperGetSystemIdtf(langNode));
+        SC_LOG_DEBUG("MessageHandler: the message language is " + context->GetElementSystemIdentifier(langNode));
         if (parametersNode.IsValid())
         {
           clearSemanticAnswer();
-          context->CreateEdge(ScType::EdgeAccessConstPosPerm, parametersNode, langNode);
-          if (context->HelperCheckEdge(
+          context->GenerateConnector(ScType::EdgeAccessConstPosPerm, parametersNode, langNode);
+          if (context->CheckConnector(
                   MessageKeynodes::concept_atomic_message, replyMessageNode, ScType::EdgeAccessConstPosPerm))
           {
             SC_LOG_DEBUG("MessageHandler: the message is atomic");
@@ -104,7 +103,7 @@ void MessageHandler::clearSemanticAnswer()
   clearAnswer.Triple(MessageKeynodes::answer_structure, ScType::EdgeAccessVarPosPerm >> "_remove_arc", ScType::Unknown);
 
   ScTemplateSearchResult clearAnswerResult;
-  context->HelperSearchTemplate(clearAnswer, clearAnswerResult);
+  context->SearchByTemplate(clearAnswer, clearAnswerResult);
 
   for (size_t i = 0; i < clearAnswerResult.Size(); i++)
   {
@@ -119,7 +118,7 @@ bool MessageHandler::processNonAtomicMessage(
     const ScAddr & langNode)
 {
   bool result = true;
-
+  std::string linkContent;
   ScAddr messageNode = messageSearcher->getFirstMessage(replyMessageNode);
   if (messageNode.IsValid())
   {
@@ -130,11 +129,12 @@ bool MessageHandler::processNonAtomicMessage(
       do
       {
         ScAddr nextMessageNode;
-        SC_LOG_DEBUG("MessageHandler: the phrase class is " + context->HelperGetSystemIdtf(phraseClassNode));
+        SC_LOG_DEBUG("MessageHandler: the phrase class is " + context->GetElementSystemIdentifier(phraseClassNode));
         ScAddr resultLink = generateLinkByPhrase(replyMessageNode, phraseClassNode, parametersNode, langNode);
         if (resultLink.IsValid())
         {
-          resultText = resultText.append(CommonUtils::getLinkContent(context, resultLink)).append(" ");
+          context->GetLinkContent(resultLink, linkContent);
+          resultText = resultText.append(linkContent).append(" ");
           messageConstructionsGenerator->generateTextTranslationConstruction(messageNode, resultLink);
           messageNode = messageSearcher->getNextMessage(messageNode);
           phraseClassNode = phraseSearcher->getNextPhraseClass(phraseClassNode);
@@ -178,7 +178,7 @@ ScAddr MessageHandler::generateLinkByPhrase(
     const ScAddr & langNode)
 {
   ScAddr resultLink;
-
+  std::string linkContent;
   vector<ScAddr> phrases = phraseSearcher->getPhrases(phraseClassNode, langNode);
   if (!phrases.empty())
   {
@@ -186,31 +186,29 @@ ScAddr MessageHandler::generateLinkByPhrase(
     {
       if (phraseLink.IsValid())
       {
-        SC_LOG_DEBUG(
-            "MessageHandler: the phrase with the content \"" + CommonUtils::getLinkContent(context, phraseLink) +
-            "\" is found");
-        ScAddr phraseGenerationActionNode = AgentUtils::initAgent(
-            context, MessageKeynodes::action_phrase_generation, {replyMessageNode, phraseLink, parametersNode});
+        context->GetLinkContent(phraseLink, linkContent);
+        SC_LOG_DEBUG(R"(The phrase with the content ")" << linkContent << R"(" is found)");
+
+        ScAddr phraseGenerationActionNode = context->GenerateNode(ScType::NodeConst);
+        //  {replyMessageNode, phraseLink, parametersNode}
+        context->GenerateConnector(
+            ScType::EdgeAccessConstPosPerm, MessageKeynodes::action_phrase_generation, phraseGenerationActionNode);
+        context->SubscribeAgent<dialogControlModule::PhraseGenerationAgent>();
 
         ActionUtils::waitAction(context, phraseGenerationActionNode, PHRASE_GENERATION_AGENT_WAIT_TIME);
 
-        if (context->HelperCheckEdge(
-                CoreKeynodes::question_finished_successfully,
-                phraseGenerationActionNode,
-                ScType::EdgeAccessConstPosPerm))
+        if (context->CheckConnector(
+                ScKeynodes::action_finished_successfully, phraseGenerationActionNode, ScType::EdgeAccessConstPosPerm))
         {
-          resultLink = IteratorUtils::getAnyByOutRelation(
-              context, phraseGenerationActionNode, scAgentsCommon::CoreKeynodes::nrel_answer);
-          SC_LOG_DEBUG(
-              "MessageHandler: the result link with the content \"" + CommonUtils::getLinkContent(context, resultLink) +
-              "\" is generated");
+          resultLink = IteratorUtils::getAnyByOutRelation(context, phraseGenerationActionNode, ScKeynodes::nrel_result);
+          context->GetLinkContent(phraseLink, linkContent);
+          SC_LOG_DEBUG("MessageHandler: the result link with the content \"" << linkContent << "\" is generated");
           break;
         }
         else
         {
-          SC_LOG_DEBUG(
-              "MessageHandler: the result link from the phrase \"" + CommonUtils::getLinkContent(context, phraseLink) +
-              "\" isn't generated");
+          context->GetLinkContent(phraseLink, linkContent);
+          SC_LOG_DEBUG("MessageHandler: the result link from the phrase \"" << linkContent << "\" isn't generated");
         }
       }
     }

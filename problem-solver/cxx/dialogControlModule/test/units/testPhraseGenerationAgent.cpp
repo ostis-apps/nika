@@ -5,8 +5,7 @@
 #include "keynodes/MessageKeynodes.hpp"
 #include "keynodes/Keynodes.hpp"
 #include "sc_test.hpp"
-#include "sc-memory/kpm/sc_agent.hpp"
-#include "sc-memory/sc_wait.hpp"
+#include <sc-memory/sc_agent.hpp>
 #include "searcher/LanguageSearcher.hpp"
 #include "sc-agents-common/utils/CommonUtils.hpp"
 
@@ -23,7 +22,7 @@ using PhraseGenerationTest = ScMemoryTest;
 
 void initializeClasses()
 {
-  scAgentsCommon::CoreKeynodes::InitGlobal();
+  ScKeynodes::InitGlobal();
   DialogKeynodes::InitGlobal();
   MessageKeynodes::InitGlobal();
   Keynodes::InitGlobal();
@@ -39,9 +38,9 @@ void checkLinkContent(ScMemoryContext & ctx, ScAddr action, const string& result
         ScType::EdgeDCommonVar,
         ScType::LinkVar >> LINK_ALIAS,
         ScType::EdgeAccessVarPosPerm,
-        scAgentsCommon::CoreKeynodes::nrel_answer
+        ScKeynodes::nrel_answer
   );
-  EXPECT_TRUE(ctx.HelperSearchTemplate(scTemplate, result));
+  EXPECT_TRUE(ctx.SearchByTemplate(scTemplate, result));
 
   ScAddr link = result[0][LINK_ALIAS];
 
@@ -53,25 +52,27 @@ TEST_F(PhraseGenerationTest, ActionDoesNotHaveALinkTemplate)
   ScMemoryContext & ctx = *m_ctx;
 
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + "actionDoesntHaveLinkTemplateTest.scs");
-  ScAddr test_action_node = ctx.HelperFindBySystemIdtf("test_question_node");
+  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_question_node");
 
   ScAgentInit(true);
   initializeClasses();
 
-  SC_AGENT_REGISTER(dialogControlModule::PhraseGenerationAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<dialogControlModule::PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_REGISTER(dialogControlModule::PhraseGenerationAgent)
 
-  ctx.CreateEdge(
+  ctx.GenerateConnector(
         ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
+        ScKeynodes::question_initiated,
         test_action_node);
 
   EXPECT_TRUE(
-        ScWaitEvent<ScEventAddOutputEdge>(
+        ScWaitEvent<ScEventAfterGenerateOutgoingArc>(
               ctx,
-              scAgentsCommon::CoreKeynodes::question_finished_unsuccessfully).
+              ScKeynodes::question_finished_unsuccessfully).
               Wait(WAIT_TIME));
 
-  SC_AGENT_UNREGISTER(dialogControlModule::PhraseGenerationAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<dialogControlModule::PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_UNREGISTER(dialogControlModule::PhraseGenerationAgent)
 }
 
 TEST_F(PhraseGenerationTest, TestIsCorrect)
@@ -81,27 +82,29 @@ TEST_F(PhraseGenerationTest, TestIsCorrect)
   ScMemoryContext & ctx = *m_ctx;
 
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + "correctTest.scs");
-  ScAddr testQuestionNode = ctx.HelperFindBySystemIdtf("test_question_node");
+  ScAddr testQuestionNode = ctx.SearchElementBySystemIdentifier("test_question_node");
 
   ScAgentInit(true);
   initializeClasses();
 
-  SC_AGENT_REGISTER(dialogControlModule::PhraseGenerationAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<dialogControlModule::PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_REGISTER(dialogControlModule::PhraseGenerationAgent)
 
-  ctx.CreateEdge(
+  ctx.GenerateConnector(
         ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
+        ScKeynodes::question_initiated,
         testQuestionNode);
 
   EXPECT_TRUE(
-        ScWaitEvent<ScEventAddOutputEdge>(
+        ScWaitEvent<ScEventAfterGenerateOutgoingArc>(
               ctx,
-              scAgentsCommon::CoreKeynodes::question_finished_successfully).
+              ScKeynodes::question_finished_successfully).
               Wait(WAIT_TIME));
 
   checkLinkContent(ctx, testQuestionNode, resultPhrase);
 
-  SC_AGENT_UNREGISTER(dialogControlModule::PhraseGenerationAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<dialogControlModule::PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_UNREGISTER(dialogControlModule::PhraseGenerationAgent)
 }
 
 TEST_F(PhraseGenerationTest, TestIsCorrect2)
@@ -111,27 +114,29 @@ TEST_F(PhraseGenerationTest, TestIsCorrect2)
   ScMemoryContext & ctx = *m_ctx;
 
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + "correctTest2.scs");
-  ScAddr testQuestionNode = ctx.HelperFindBySystemIdtf("test_question_node");
+  ScAddr testQuestionNode = ctx.SearchElementBySystemIdentifier("test_question_node");
 
   ScAgentInit(true);
   initializeClasses();
 
-  SC_AGENT_REGISTER(dialogControlModule::PhraseGenerationAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<dialogControlModule::PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_REGISTER(dialogControlModule::PhraseGenerationAgent)
 
-  ctx.CreateEdge(
+  ctx.GenerateConnector(
         ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
+        ScKeynodes::question_initiated,
         testQuestionNode);
 
   EXPECT_TRUE(
-        ScWaitEvent<ScEventAddOutputEdge>(
+        ScWaitEvent<ScEventAfterGenerateOutgoingArc>(
               ctx,
-              scAgentsCommon::CoreKeynodes::question_finished_successfully).
+              ScKeynodes::question_finished_successfully).
               Wait(WAIT_TIME));
 
   checkLinkContent(ctx, testQuestionNode, resultPhrase);
 
-  SC_AGENT_UNREGISTER(dialogControlModule::PhraseGenerationAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<dialogControlModule::PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_UNREGISTER(dialogControlModule::PhraseGenerationAgent)
 }
 
 TEST_F(PhraseGenerationTest, TestIsCorrect3)
@@ -141,27 +146,29 @@ TEST_F(PhraseGenerationTest, TestIsCorrect3)
   ScMemoryContext & ctx = *m_ctx;
 
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + "correctTest3.scs");
-  ScAddr testQuestionNode = ctx.HelperFindBySystemIdtf("test_question_node");
+  ScAddr testQuestionNode = ctx.SearchElementBySystemIdentifier("test_question_node");
 
   ScAgentInit(true);
   initializeClasses();
 
-  SC_AGENT_REGISTER(dialogControlModule::PhraseGenerationAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<dialogControlModule::PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_REGISTER(dialogControlModule::PhraseGenerationAgent)
 
-  ctx.CreateEdge(
+  ctx.GenerateConnector(
         ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
+        ScKeynodes::question_initiated,
         testQuestionNode);
 
   EXPECT_TRUE(
-        ScWaitEvent<ScEventAddOutputEdge>(
+        ScWaitEvent<ScEventAfterGenerateOutgoingArc>(
               ctx,
-              scAgentsCommon::CoreKeynodes::question_finished_successfully).
+              ScKeynodes::question_finished_successfully).
               Wait(WAIT_TIME));
 
   checkLinkContent(ctx, testQuestionNode, resultPhrase);
 
-  SC_AGENT_UNREGISTER(dialogControlModule::PhraseGenerationAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<dialogControlModule::PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_UNREGISTER(dialogControlModule::PhraseGenerationAgent)
 }
 
 TEST_F(PhraseGenerationTest, TestTemplateHasNoVariables)
@@ -171,27 +178,29 @@ TEST_F(PhraseGenerationTest, TestTemplateHasNoVariables)
   ScMemoryContext & ctx = *m_ctx;
 
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + "textTemplateDoesntHaveVariables.scs");
-  ScAddr testQuestionNode = ctx.HelperFindBySystemIdtf("test_question_node");
+  ScAddr testQuestionNode = ctx.SearchElementBySystemIdentifier("test_question_node");
 
   ScAgentInit(true);
   initializeClasses();
 
-  SC_AGENT_REGISTER(dialogControlModule::PhraseGenerationAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<dialogControlModule::PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_REGISTER(dialogControlModule::PhraseGenerationAgent)
 
-  ctx.CreateEdge(
+  ctx.GenerateConnector(
         ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
+        ScKeynodes::question_initiated,
         testQuestionNode);
 
   EXPECT_TRUE(
-        ScWaitEvent<ScEventAddOutputEdge>(
+        ScWaitEvent<ScEventAfterGenerateOutgoingArc>(
               ctx,
-              scAgentsCommon::CoreKeynodes::question_finished_successfully).
+              ScKeynodes::question_finished_successfully).
               Wait(WAIT_TIME));
 
   checkLinkContent(ctx, testQuestionNode, resultPhrase);
 
-  SC_AGENT_UNREGISTER(dialogControlModule::PhraseGenerationAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<dialogControlModule::PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_UNREGISTER(dialogControlModule::PhraseGenerationAgent)
 }
 
 TEST_F(PhraseGenerationTest, AgentDoesNotGenerateAPhrase)
@@ -199,25 +208,27 @@ TEST_F(PhraseGenerationTest, AgentDoesNotGenerateAPhrase)
   ScMemoryContext & ctx = *m_ctx;
 
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + "agentDoesntGenerateAPhraseTest.scs");
-  ScAddr testQuestionNode = ctx.HelperFindBySystemIdtf("test_question_node");
+  ScAddr testQuestionNode = ctx.SearchElementBySystemIdentifier("test_question_node");
 
   ScAgentInit(true);
   initializeClasses();
 
-  SC_AGENT_REGISTER(dialogControlModule::PhraseGenerationAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<dialogControlModule::PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_REGISTER(dialogControlModule::PhraseGenerationAgent)
 
-  ctx.CreateEdge(
+  ctx.GenerateConnector(
         ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
+        ScKeynodes::question_initiated,
         testQuestionNode);
 
   EXPECT_TRUE(
-        ScWaitEvent<ScEventAddOutputEdge>(
+        ScWaitEvent<ScEventAfterGenerateOutgoingArc>(
               ctx,
-              scAgentsCommon::CoreKeynodes::question_finished_unsuccessfully).
+              ScKeynodes::question_finished_unsuccessfully).
               Wait(WAIT_TIME));
 
-  SC_AGENT_UNREGISTER(dialogControlModule::PhraseGenerationAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<dialogControlModule::PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_UNREGISTER(dialogControlModule::PhraseGenerationAgent)
 }
 
 TEST_F(PhraseGenerationTest, GeneratedLinkDoesNotHaveALanguageNode)
@@ -226,22 +237,23 @@ TEST_F(PhraseGenerationTest, GeneratedLinkDoesNotHaveALanguageNode)
   LanguageSearcher searcher(&ctx);
 
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + "generatedLinkDoesntHaveALanguageNodeTest.scs");
-  ScAddr testQuestionNode = ctx.HelperFindBySystemIdtf("test_question_node");
+  ScAddr testQuestionNode = ctx.SearchElementBySystemIdentifier("test_question_node");
 
   ScAgentInit(true);
   initializeClasses();
 
-  SC_AGENT_REGISTER(dialogControlModule::PhraseGenerationAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<dialogControlModule::PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_REGISTER(dialogControlModule::PhraseGenerationAgent)
 
-  ctx.CreateEdge(
+  ctx.GenerateConnector(
         ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
+        ScKeynodes::question_initiated,
         testQuestionNode);
 
   EXPECT_TRUE(
-        ScWaitEvent<ScEventAddOutputEdge>(
+        ScWaitEvent<ScEventAfterGenerateOutgoingArc>(
               ctx,
-              scAgentsCommon::CoreKeynodes::question_finished_successfully).
+              ScKeynodes::question_finished_successfully).
               Wait(WAIT_TIME));
 
   ScTemplate scTemplate;
@@ -252,16 +264,17 @@ TEST_F(PhraseGenerationTest, GeneratedLinkDoesNotHaveALanguageNode)
         ScType::EdgeDCommonVar,
         ScType::LinkVar >> LINK_ALIAS,
         ScType::EdgeAccessVarPosPerm,
-        scAgentsCommon::CoreKeynodes::nrel_answer
+        ScKeynodes::nrel_answer
   );
-  EXPECT_TRUE(ctx.HelperSearchTemplate(scTemplate, result));
+  EXPECT_TRUE(ctx.SearchByTemplate(scTemplate, result));
 
   ScAddr link = result[0][LINK_ALIAS];
   ScAddr langNode = searcher.getLanguage(link);
 
   EXPECT_FALSE(langNode.IsValid());
 
-  SC_AGENT_UNREGISTER(dialogControlModule::PhraseGenerationAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<dialogControlModule::PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_UNREGISTER(dialogControlModule::PhraseGenerationAgent)
 }
 
 TEST_F(PhraseGenerationTest, QuestionDoesNotHaveAnyParameters)
@@ -271,25 +284,27 @@ TEST_F(PhraseGenerationTest, QuestionDoesNotHaveAnyParameters)
   ScMemoryContext & ctx = *m_ctx;
 
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + "questionDoesntHaveParametersTest.scs");
-  ScAddr testQuestionNode = ctx.HelperFindBySystemIdtf("test_question_node");
+  ScAddr testQuestionNode = ctx.SearchElementBySystemIdentifier("test_question_node");
 
   ScAgentInit(true);
   initializeClasses();
 
-  SC_AGENT_REGISTER(dialogControlModule::PhraseGenerationAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<dialogControlModule::PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_REGISTER(dialogControlModule::PhraseGenerationAgent)
 
-  ctx.CreateEdge(
+  ctx.GenerateConnector(
         ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
+        ScKeynodes::question_initiated,
         testQuestionNode);
 
   EXPECT_TRUE(
-        ScWaitEvent<ScEventAddOutputEdge>(
+        ScWaitEvent<ScEventAfterGenerateOutgoingArc>(
               ctx,
-              scAgentsCommon::CoreKeynodes::question_finished_unsuccessfully).
+              ScKeynodes::question_finished_unsuccessfully).
               Wait(WAIT_TIME));
 
-  SC_AGENT_UNREGISTER(dialogControlModule::PhraseGenerationAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<dialogControlModule::PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_UNREGISTER(dialogControlModule::PhraseGenerationAgent)
 }
 
 TEST_F(PhraseGenerationTest, ParameterNodeIsEmpty)
@@ -299,26 +314,28 @@ TEST_F(PhraseGenerationTest, ParameterNodeIsEmpty)
   ScMemoryContext & ctx = *m_ctx;
 
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + "parametersNodeAreEmptyTest.scs");
-  ScAddr testQuestionNode = ctx.HelperFindBySystemIdtf("test_question_node");
+  ScAddr testQuestionNode = ctx.SearchElementBySystemIdentifier("test_question_node");
 
   ScAgentInit(true);
   initializeClasses();
 
-  SC_AGENT_REGISTER(dialogControlModule::PhraseGenerationAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<dialogControlModule::PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_REGISTER(dialogControlModule::PhraseGenerationAgent)
 
-  ctx.CreateEdge(
+  ctx.GenerateConnector(
         ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
+        ScKeynodes::question_initiated,
         testQuestionNode);
 
   EXPECT_TRUE(
-        ScWaitEvent<ScEventAddOutputEdge>(
+        ScWaitEvent<ScEventAfterGenerateOutgoingArc>(
               ctx,
-              scAgentsCommon::CoreKeynodes::question_finished_successfully).
+              ScKeynodes::question_finished_successfully).
               Wait(WAIT_TIME));
 
   checkLinkContent(ctx, testQuestionNode, resultPhrase);
 
-  SC_AGENT_UNREGISTER(dialogControlModule::PhraseGenerationAgent)
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<dialogControlModule::PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
+SC_AGENT_UNREGISTER(dialogControlModule::PhraseGenerationAgent)
 }
 }

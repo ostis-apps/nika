@@ -8,7 +8,7 @@ namespace dialogControlModule
 class MessageHandler
 {
 public:
-  explicit MessageHandler(ScMemoryContext * context);
+  explicit MessageHandler(ScAgentContext * context);
 
   ~MessageHandler();
 
@@ -33,7 +33,7 @@ public:
 private:
   const int PHRASE_GENERATION_AGENT_WAIT_TIME = 6000;
 
-  ScMemoryContext * context{};
+  ScAgentContext * context{};
   LanguageSearcher * languageSearcher;
   MessageConstructionsGenerator * messageConstructionsGenerator;
   MessageSearcher * messageSearcher;

@@ -1,6 +1,5 @@
 set(SOURCES
     "CommonModule.cpp"
-    "keynodes/Keynodes.cpp"
     "agent/NonAtomicActionInterpreterAgent.cpp"
     "interpreter/NonAtomicActionInterpreter.cpp"
     "handler/NumberHandler.cpp"
@@ -36,8 +35,6 @@ add_library(common SHARED ${SOURCES} ${HEADERS})
 
 find_package(nlohmann_json 3.7.3 REQUIRED)
 target_link_libraries(common sc-memory sc-agents-common nlohmann_json::nlohmann_json)
-
-sc_codegen_ex(common ${CMAKE_CURRENT_LIST_DIR} ${CMAKE_CURRENT_LIST_DIR}/generated)
 
 if(${SC_BUILD_TESTS})
     include(${CMAKE_CURRENT_LIST_DIR}/test/tests.cmake)

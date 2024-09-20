@@ -1,13 +1,10 @@
 #pragma once
 
-#include <map>
+#include <sc-memory/sc_agent.hpp>
 
-#include "sc-memory/kpm/sc_agent.hpp"
-#include "sc-agents-common/keynodes/coreKeynodes.hpp"
-#include "keynodes/MessageKeynodes.hpp"
 #include "keynodes/Keynodes.hpp"
-#include "PhraseGenerationAgent.generated.hpp"
-
+#include "keynodes/MessageKeynodes.hpp"
+#include <map>
 namespace dialogControlModule
 
 {
@@ -17,27 +14,25 @@ enum VariableType
   SET_ELEMENTS = 2
 };
 
-class PhraseGenerationAgent : public ScAgent
+class PhraseGenerationAgent : public ScActionInitiatedAgent
 {
-  SC_CLASS(Agent, Event(scAgentsCommon::CoreKeynodes::question_initiated, ScEvent::Type::AddOutputEdge))
-  SC_GENERATED_BODY()
+public:
+  ScAddr GetActionClass() const override;
+
+  ScResult DoProgram(ScActionInitiatedEvent const & event, ScAction & action) override;
 
 private:
   const std::string VAR_CONST = "var";
-  const std::string VAR_REGULAR = R"(\$\{var\})";
-  const std::string MAIN_VAR_REGULAR = R"(\$\{_\w+\})";
-  const std::string SET_ELEMENTS_VAR_REGULAR = R"(\$...\{_\w+\})";
+  const std::string VAR_REGULAR = R"(${var})";
+  const std::string MAIN_VAR_REGULAR = R"(${_w+})";
+  const std::string SET_ELEMENTS_VAR_REGULAR = R"($...{_w+})";
 
   const std::vector<ScAddr> NODES_TO_REMOVE = {
       MessageKeynodes::concept_message,
       MessageKeynodes::rrel_entity,
-      scAgentsCommon::CoreKeynodes::lang_ru,
-      scAgentsCommon::CoreKeynodes::nrel_main_idtf};
-  const std::vector<ScAddr> NODES_TO_REMOVE_BY_CONCEPT = {
-      MessageKeynodes::concept_message,
-      scAgentsCommon::CoreKeynodes::lang_ru};
-
-  bool checkActionClass(const ScAddr & actionNode);
+      ScKeynodes::lang_ru,
+      ScKeynodes::nrel_main_idtf};
+  const std::vector<ScAddr> NODES_TO_REMOVE_BY_CONCEPT = {MessageKeynodes::concept_message, ScKeynodes::lang_ru};
 
   ScAddr generateLinkByTemplate(
       const ScAddr & templateNode,
@@ -70,14 +65,14 @@ private:
       std::string const & text);
 
   void replaceLinksVariables(
-        ScTemplateSearchResultItem const & phraseSemanticResult,
-        std::vector<std::string> const & variables,
-        std::string & text);
+      ScTemplateSearchResultItem const & phraseSemanticResult,
+      std::vector<std::string> const & variables,
+      std::string & text);
 
   void replaceSetElementsVariables(
-        ScTemplateSearchResultItem const & phraseSemanticResult,
-        std::vector<std::string> const & variables,
-        std::string & text);
+      ScTemplateSearchResultItem const & phraseSemanticResult,
+      std::vector<std::string> const & variables,
+      std::string & text);
 
   void generateSemanticEquivalent(const ScAddr & replyMessageNode, const ScAddr & structure);
 

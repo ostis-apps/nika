@@ -4,7 +4,7 @@
 
 namespace messageClassificationModule
 {
-MessageTopicClassificationManager::MessageTopicClassificationManager(ScMemoryContext * context)
+MessageTopicClassificationManager::MessageTopicClassificationManager(ScAgentContext * context)
 {
   classifier = std::make_unique<MessageTopicClassifier>(context, new WitAiClient());
 }

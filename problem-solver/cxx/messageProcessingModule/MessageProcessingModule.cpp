@@ -2,10 +2,11 @@
 
 namespace messageProcessingModule
 {
-// Регистрация модуля
-SC_IMPLEMENT_MODULE(MessageProcessingModule)
+SC_MODULE_REGISTER(MessageProcessingModule)->Agent<FindWordInSetByFirstLetterAgent>();
 
-sc_result MessageProcessingModule::InitializeImpl()
+// todo(codegen-removal): if needed override ScModule::Initialize and move all non-keynodes and non-agents code from
+// previous initialization method
+/*
 {
   if (!MessageProcessingKeynodes::InitGlobal())
     return SC_RESULT_ERROR;
@@ -18,18 +19,23 @@ sc_result MessageProcessingModule::InitializeImpl()
   }
   else
   {
-    SC_AGENT_REGISTER(FindWordInSetByFirstLetterAgent);
+    //todo(codegen-removal): Use agentContext.SubscribeAgent<FindWordInSetByFirstLetterAgent> or UnsubscribeAgent; to
+register and unregister agent SC_AGENT_REGISTER(FindWordInSetByFirstLetterAgent);
   }
 
   return SC_RESULT_OK;
 }
+*/
 
-sc_result MessageProcessingModule::ShutdownImpl()
+// todo(codegen-removal): if needed override ScModule::Shutdown and move all non-agents code from previous shutdown
+// method
+/*
 {
   // Дерегистрация агентов модуля
-  SC_AGENT_UNREGISTER(FindWordInSetByFirstLetterAgent);
+  //todo(codegen-removal): Use agentContext.SubscribeAgent<FindWordInSetByFirstLetterAgent> or UnsubscribeAgent; to
+register and unregister agent SC_AGENT_UNREGISTER(FindWordInSetByFirstLetterAgent);
 
   return SC_RESULT_OK;
 }
-
+*/
 }  // namespace messageProcessingModule

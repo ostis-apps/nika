@@ -1,38 +1,28 @@
 #pragma once
 
+#include <sc-memory/sc_keynodes.hpp>
+
 #include "sc-memory/sc_addr.hpp"
 #include "sc-memory/sc_object.hpp"
 
-#include "InterfaceKeynodes.generated.hpp"
-
 namespace interfaceModule
 {
-class InterfaceKeynodes : public ScObject
+class InterfaceKeynodes : public ScKeynodes
 {
-  SC_CLASS()
-  SC_GENERATED_BODY()
-
 public:
-  SC_PROPERTY(Keynode("action_change_interface"), ForceCreate)
-  static ScAddr action_change_interface;
+  static inline ScKeynode const action_change_interface{"action_change_interface"};
 
-  SC_PROPERTY(Keynode("concept_header"), ForceCreate)
-  static ScAddr concept_header;
+  static inline ScKeynode const concept_header{"concept_header"};
 
-  SC_PROPERTY(Keynode("concept_main_part"), ForceCreate)
-  static ScAddr concept_main_part;
+  static inline ScKeynode const concept_main_part{"concept_main_part"};
 
-  SC_PROPERTY(Keynode("concept_footer"), ForceCreate)
-  static ScAddr concept_footer;
+  static inline ScKeynode const concept_footer{"concept_footer"};
 
-  SC_PROPERTY(Keynode("nrel_component_color"), ForceCreate)
-  static ScAddr nrel_component_color;
+  static inline ScKeynode const nrel_component_color{"nrel_component_color"};
 
-  SC_PROPERTY(Keynode("rrel_entity"), ForceCreate)
-  static ScAddr rrel_entity;
+  static inline ScKeynode const rrel_entity{"rrel_entity"};
 
-  SC_PROPERTY(Keynode("rrel_color"), ForceCreate)
-  static ScAddr rrel_color;
+  static inline ScKeynode const rrel_color{"rrel_color"};
 };
 
 }  // namespace interfaceModule
