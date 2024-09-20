@@ -20,22 +20,22 @@ ScResult MessageReplyAgent::DoProgram(ScActionInitiatedEvent const & event, ScAc
   ScAddr authorAddr = utils::IteratorUtils::getAnyByOutRelation(&m_context, action, MessageReplyKeynodes::nrel_authors);
   if (!processingProgramAddr.IsValid())
   {
-    SC_AGENT_LOG_ERROR("Message processing program not found.");
+    SC_LOG_ERROR("Message processing program not found.");
     return action.FinishUnsuccessfully();
   }
   if (!linkIsValid(linkAddr))
   {
-    SC_AGENT_LOG_ERROR("Message link not found.");
+    SC_LOG_ERROR("Message link not found.");
     return action.FinishUnsuccessfully();
   }
   if (!chatAddr.IsValid())
   {
-    SC_AGENT_LOG_ERROR("Message chat not found.");
+    SC_LOG_ERROR("Message chat not found.");
     return action.FinishUnsuccessfully();
   }
   if (!authorAddr.IsValid())
   {
-    SC_AGENT_LOG_ERROR("Message author not found.");
+    SC_LOG_ERROR("Message author not found.");
     return action.FinishUnsuccessfully();
   }
 
@@ -53,23 +53,17 @@ ScResult MessageReplyAgent::DoProgram(ScActionInitiatedEvent const & event, ScAc
     return action.FinishUnsuccessfully();
   }
   ScAddrVector argsVector = {processingProgramAddr, generateNonAtomicActionArgsSet(messageAddr)};
-  // todo(codegen-removal): replace AgentUtils:: usage
-  ScAddr actionToInterpret = m_context.GenerateNode(ScType::NodeConst);
-  m_context.GenerateConnector(
-      ScType::EdgeAccessConstPosPerm, MessageReplyKeynodes::action_reply_to_message, actionToInterpret);
-  m_context.SubscribeAgent<commonModule::NonAtomicActionInterpreterAgent>();
-
+  ScAddr actionToInterpret = ActionUtils::CreateAction(&m_context, commonModule::Keynodes::action_interpret_non_atomic_action, argsVector);
   ScAddr answerAddr;
   if (!waitForActionSuccessfulFinish(actionToInterpret))
   {
-    SC_AGENT_LOG_ERROR("Action wait time expired or action not finished successfully");
+    SC_LOG_ERROR("Action wait time expired or action not finished successfully");
     return action.FinishUnsuccessfully();
   }
 
   try
   {
-    answerAddr = generateAnswer(messageAddr);
-
+    generateAnswer(messageAddr);
     ScTemplate replySearchTemplate;
     replySearchTemplate.Quintuple(
         messageAddr,
@@ -88,11 +82,10 @@ ScResult MessageReplyAgent::DoProgram(ScActionInitiatedEvent const & event, ScAc
   }
   catch (std::runtime_error & exception)
   {
-    SC_AGENT_LOG_ERROR(exception.what());
+    SC_LOG_ERROR(exception.what());
     return action.FinishUnsuccessfully();
   }
 
-  SC_AGENT_LOG_DEBUG("MessageReplyAgent finished");
   return action.FinishSuccessfully();
 }
 
@@ -217,12 +210,12 @@ bool MessageReplyAgent::linkIsValid(ScAddr const & linkAddr)
     bool isTextValid = textLinkIsValid(linkAddr);
     if (isSoundValid)
     {
-      SC_AGENT_LOG_DEBUG("Sound link is found");
+      SC_LOG_DEBUG("Sound link is found");
       return true;
     }
     if (isTextValid)
     {
-      SC_AGENT_LOG_DEBUG("Text link is found");
+      SC_LOG_DEBUG("Text link is found");
       return true;
     }
   }
@@ -263,6 +256,6 @@ bool MessageReplyAgent::textLinkIsValid(ScAddr const & linkAddr)
 
 bool MessageReplyAgent::waitForActionSuccessfulFinish(ScAddr const & actionAddr)
 {
-  return ActionUtils::waitAction(&m_context, actionAddr, WAIT_TIME) &&
+  return m_context.ConvertToAction(actionAddr).InitiateAndWait(WAIT_TIME) &&
          m_context.CheckConnector(ScKeynodes::action_finished_successfully, actionAddr, ScType::EdgeAccessConstPosPerm);
 }

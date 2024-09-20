@@ -2,6 +2,7 @@
 
 #include "sc-agents-common/utils/IteratorUtils.hpp"
 
+#include "agent/NonAtomicActionInterpreterAgent.hpp"
 #include "keynodes/Keynodes.hpp"
 #include "utils/ActionUtils.hpp"
 
@@ -39,13 +40,13 @@ ScAddr NonAtomicActionInterpreter::getFirstSubAction(ScAddr const & decompositio
 
 void NonAtomicActionInterpreter::applyAction(ScAddr const & actionAddr)
 {
-  SC_LOG_DEBUG("NonAtomicActionInterpreter: waiting for atomic action finish.");
-  context->GenerateConnector(ScType::EdgeAccessConstPosPerm, ScKeynodes::action_initiated, actionAddr);
-  if (!ActionUtils::waitAction(context, actionAddr, WAIT_TIME))
+  SC_LOG_DEBUG("Waiting for atomic action finish.");
+  ScAction action = context->ConvertToAction(actionAddr);
+  if (!action.InitiateAndWait(WAIT_TIME))
   {
-    throw std::runtime_error("NonAtomicActionInterpreter: action wait time expired.");
+    throw std::runtime_error("Action wait time expired.");
   }
-  SC_LOG_DEBUG("NonAtomicActionInterpreter: atomic action finished.");
+  SC_LOG_DEBUG("Atomic action finished.");
 }
 
 ScAddr NonAtomicActionInterpreter::getNextAction(ScAddr const & actionAddr)
@@ -53,18 +54,18 @@ ScAddr NonAtomicActionInterpreter::getNextAction(ScAddr const & actionAddr)
   ScAddr nextAction;
   if (context->CheckConnector(ScKeynodes::action_finished_successfully, actionAddr, ScType::EdgeAccessConstPosPerm))
   {
-    SC_LOG_DEBUG("NonAtomicActionInterpreter: atomic action finished successfully.");
+    SC_LOG_DEBUG("Atomic action finished successfully.");
     nextAction = getThenAction(actionAddr);
   }
   else if (context->CheckConnector(
                ScKeynodes::action_finished_unsuccessfully, actionAddr, ScType::EdgeAccessConstPosPerm))
   {
-    SC_LOG_DEBUG("NonAtomicActionInterpreter: atomic action finished unsuccessfully.");
+    SC_LOG_DEBUG("Atomic action finished unsuccessfully.");
     nextAction = getElseAction(actionAddr);
   }
   else
   {
-    SC_LOG_DEBUG("NonAtomicActionInterpreter: atomic action finished with unknown result.");
+    SC_LOG_DEBUG("Atomic action finished with unknown result.");
     nextAction = getGoToAction(actionAddr);
   }
 

@@ -47,7 +47,7 @@ std::string MessageTopicClassifier::getMessageText(ScAddr const & messageAddr)
   ScAddr const messageLink = messageSearcher->getMessageLink(messageAddr);
   if (!messageLink.IsValid())
   {
-    SC_THROW_EXCEPTION(utils::ExceptionItemNotFound, "MessageTopicClassifier: Message link is not found.");
+    SC_THROW_EXCEPTION(utils::ExceptionItemNotFound, "Message link is not found.");
   }
   context->GetLinkContent(messageLink, linkContent);
   return linkContent;
@@ -86,7 +86,7 @@ ScAddrVector MessageTopicClassifier::getMessageIntentClass(ScAddr const & messag
       if (messageIntent == witAiIdtf)
       {
         SC_LOG_DEBUG(
-            "MessageTopicClassifier: found " + context->GetElementSystemIdentifier(possibleMessageCLass) +
+            "Found " << context->GetElementSystemIdentifier(possibleMessageCLass) <<
             " intent class");
         ScAddr messageIntentCLassEdge =
             context->GenerateConnector(ScType::EdgeAccessConstPosPerm, possibleMessageCLass, messageAddr);
@@ -109,7 +109,7 @@ std::string MessageTopicClassifier::getMessageIntent(json const & witResponse)
   }
   catch (...)
   {
-    SC_LOG_WARNING("MessageTopicClassifier: Message intent class is not found.");
+    SC_LOG_WARNING("Message intent class is not found.");
   }
 
   return messageIntent;
@@ -166,7 +166,7 @@ json MessageTopicClassifier::getMessageTrait(json const & witResponse)
   }
   catch (...)
   {
-    SC_LOG_WARNING("MessageTopicClassifier: Message trait class is not found.");
+    SC_LOG_WARNING("Message trait class is not found.");
   }
 
   return messageIntent;
@@ -232,7 +232,7 @@ ScAddrVector MessageTopicClassifier::processTraits(
       if (traitClassIdtf == traitWitIdtf)
       {
         SC_LOG_DEBUG(
-            "MessageTopicClassifier: found " + context->GetElementSystemIdentifier(possibleMessageCLass) +
+            "Found " << context->GetElementSystemIdentifier(possibleMessageCLass) <<
             " trait class");
         ScAddr messageTraitClassEdge =
             context->GenerateConnector(ScType::EdgeAccessConstPosPerm, possibleMessageCLass, messageAddr);
@@ -274,7 +274,7 @@ json MessageTopicClassifier::getMessageEntities(json const & witResponse)
   }
   catch (...)
   {
-    SC_LOG_WARNING("MessageTopicClassifier: Message entities are not found.");
+    SC_LOG_WARNING("Message entities are not found.");
   }
 
   return messageEntity;
@@ -369,7 +369,7 @@ ScAddrVector MessageTopicClassifier::processEntities(
           if (std::find(identifiers.begin(), identifiers.end(), entitySameIdtf) != identifiers.end())
           {
             SC_LOG_DEBUG(
-                "MessageTopicClassifier: found " + context->GetElementSystemIdentifier(entityAddr) + " entity");
+                "Found " << context->GetElementSystemIdentifier(entityAddr) << " entity");
             ScAddr messageEntityEdge =
                 context->GenerateConnector(ScType::EdgeAccessConstPosPerm, messageAddr, entityAddr);
             ScAddr messageEntityRoleEdge =
@@ -399,8 +399,8 @@ ScAddrVector MessageTopicClassifier::processEntities(
     ScAddr const & messageEntityRoleEdge =
         context->GenerateConnector(ScType::EdgeAccessConstPosPerm, entityRole, messageEntityEdge);
 
-    SC_LOG_DEBUG("MessageTopicClassifier: generated " << notFoundEntitiesIdtf << " entity");
-    SC_LOG_DEBUG("MessageTopicClassifier: generated " << notFoundEntitiesRoles << " role");
+    SC_LOG_DEBUG("Generated " << notFoundEntitiesIdtf << " entity");
+    SC_LOG_DEBUG("Generated " << notFoundEntitiesRoles << " role");
 
     messageEntitiesElements.push_back(createdEntity);
     messageEntitiesElements.push_back(createdEntityEdge);

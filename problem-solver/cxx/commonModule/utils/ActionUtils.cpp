@@ -8,8 +8,10 @@ using namespace commonModule;
 
 bool ActionUtils::waitAction(ScAgentContext * context, ScAddr const & actionAddr, int const & waitTime)
 {
-  auto waiter = context->CreateEventWaiter<ScEventAfterGenerateConnector<ScType::EdgeAccessConstPosPerm>>(actionAddr);
-  return waiter->Wait(waitTime);
+  ScAction action = context->ConvertToAction(actionAddr);
+  return action.InitiateAndWait(waitTime);
+//  auto waiter = context->CreateEventWaiter<ScEventAfterGenerateConnector<ScType::EdgeAccessConstPosPerm>>(actionAddr);
+//  return waiter->Wait(waitTime);
 }
 
 bool ActionUtils::isActionDeactivated(ScAgentContext * context, ScAddr const & action)

@@ -3,9 +3,9 @@
 @var_name2 =_[];;
 @var_name2 =>nrel_system_identifier: [_name2];;
 
-test_question_node
+test_action_node
 <-action_phrase_generation;
-<-question;
+<-action;
 -> rrel_1: reply_message;
 -> rrel_2:
 	[${_name2} is the mother of ${_name1}.]

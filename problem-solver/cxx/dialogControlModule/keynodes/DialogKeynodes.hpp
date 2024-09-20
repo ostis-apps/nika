@@ -10,9 +10,9 @@ namespace dialogControlModule
 class DialogKeynodes : public ScKeynodes
 {
 public:
-  static inline ScKeynode const nrel_sc_text_translation{"nrel_sc_text_translation"};
+  static inline ScKeynode const nrel_sc_text_translation{"nrel_sc_text_translation", ScType::NodeConstNoRole};
 
-  static inline ScKeynode const nrel_phrase_template{"nrel_phrase_template"};
+  static inline ScKeynode const nrel_phrase_template{"nrel_phrase_template", ScType::NodeConstNoRole};
 };
 
 }  // namespace dialogControlModule

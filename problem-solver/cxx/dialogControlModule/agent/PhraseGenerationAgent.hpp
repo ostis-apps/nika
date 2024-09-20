@@ -23,9 +23,9 @@ public:
 
 private:
   const std::string VAR_CONST = "var";
-  const std::string VAR_REGULAR = R"(${var})";
-  const std::string MAIN_VAR_REGULAR = R"(${_w+})";
-  const std::string SET_ELEMENTS_VAR_REGULAR = R"($...{_w+})";
+  const std::string VAR_REGULAR = R"(\$\{var\})";
+  const std::string MAIN_VAR_REGULAR = R"(\$\{_\w+\})";
+  const std::string SET_ELEMENTS_VAR_REGULAR = R"(\$...\{_\w+\})";
 
   const std::vector<ScAddr> NODES_TO_REMOVE = {
       MessageKeynodes::concept_message,

@@ -18,10 +18,8 @@ ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & eve
 
   if (!messageNode.IsValid())
   {
-    SC_LOG_DEBUG("StandardMessageReplyAgent: the action doesn't have a message node");
-    SC_LOG_DEBUG("StandardMessageReplyAgent finished");
-
-    return action.FinishUnsuccessfully();
+    SC_LOG_DEBUG("The action doesn't have a message node");
+     return action.FinishUnsuccessfully();
   }
 
   ScAddr logicRuleNode = generateReplyMessage(messageNode);
@@ -30,12 +28,10 @@ ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & eve
 
   if (!replyMessageNode.IsValid())
   {
-    SC_LOG_ERROR("StandardMessageReplyAgent: the reply message isn't generated");
-    SC_LOG_DEBUG("StandardMessageReplyAgent finished");
-
+    SC_LOG_ERROR("The reply message isn't generated");
     return action.FinishUnsuccessfully();
   }
-  SC_LOG_DEBUG("StandardMessageReplyAgent: the reply message is generated");
+  SC_LOG_DEBUG("The reply message is generated");
 
   auto * langSearcher = new LanguageSearcher(&m_context);
   ScAddr langNode = langSearcher->getMessageLanguage(messageNode);
@@ -46,7 +42,7 @@ ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & eve
   auto * messageHandler = new MessageHandler(&m_context);
   if (!messageHandler->processReplyMessage(replyMessageNode, logicRuleNode, langNode, parametersNode))
   {
-    SC_LOG_ERROR("StandardMessageReplyAgent: the reply message is formed incorrectly");
+    SC_LOG_ERROR("The reply message is formed incorrectly");
     delete messageHandler;
     ScIterator5Ptr it5 = IteratorUtils::getIterator5(&m_context, replyMessageNode, MessageKeynodes::nrel_reply, false);
     if (it5->Next())
@@ -54,16 +50,12 @@ ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & eve
       m_context.EraseElement(it5->Get(1));
     }
 
-    SC_LOG_DEBUG("StandardMessageReplyAgent finished");
-
     return action.FinishUnsuccessfully();
   }
 
   ScAddr responseNode = IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_2);
   m_context.GenerateConnector(ScType::EdgeAccessConstPosTemp, responseNode, replyMessageNode);
   delete messageHandler;
-
-  SC_LOG_DEBUG("StandardMessageReplyAgent finished");
 
   return action.FinishSuccessfully();
 }
@@ -83,9 +75,7 @@ ScAddr StandardMessageReplyAgent::generateReplyMessage(const ScAddr & messageNod
 
   ScAction actionDirectInference =
       ActionUtils::CreateAction(&m_context, inference::InferenceKeynodes::action_direct_inference, argsVector);
-  m_context.SubscribeAgent<inference::DirectInferenceAgent>();
-
-  bool const result = ActionUtils::waitAction(&m_context, actionDirectInference, DIRECT_INFERENCE_AGENT_WAIT_TIME);
+  bool const result = actionDirectInference.InitiateAndWait(DIRECT_INFERENCE_AGENT_WAIT_TIME);
   if (result)
   {
     ScAddr answer = IteratorUtils::getAnyByOutRelation(&m_context, actionDirectInference, ScKeynodes::nrel_result);

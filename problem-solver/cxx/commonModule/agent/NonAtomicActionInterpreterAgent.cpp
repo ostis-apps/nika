@@ -6,27 +6,19 @@
 #include "utils/RelationUtils.hpp"
 
 using namespace commonModule;
-// todo(codegen-removal): remove agent starting and finishing logs, sc-machine is printing them now
-// todo(codegen-removal): if your agent is ScActionInitiatedAgent and uses event only to get action node via
-// event.GetOtherElement() then you can remove event from method arguments and use ScAction & action instead of your
-// action node todo(codegen-removal): if your agent is having method like CheckActionClass(ScAddr actionAddr) that
-// checks connector between action class and actionAddr then you can remove it. Before agent is started sc-machine check
-// that action belongs to class returned by GetActionClass() todo(codegen-removal): use action.SetResult() to pass
-// result of your action instead of using answer or answerElements todo(codegen-removal): use SC_AGENT_LOG_SOMETHING()
-// instead of SC_LOG_SOMETHING to automatically include agent name to logs messages todo(codegen-removal): use auto
-// const & [names of action arguments] = action.GetArguments<amount of arguments>(); to get action arguments
+
 ScResult NonAtomicActionInterpreterAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
   ScAddr nonAtomicActionAddr;
   try
   {
-    ScAddr nonAtomicActionTemplateAddr =
+    ScAddr const & nonAtomicActionTemplateAddr =
         utils::IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_1);
     if (!nonAtomicActionTemplateAddr.IsValid())
     {
       throw std::runtime_error("Action params are not formed correctly.");
     }
-    ScAddr argumentsSet = utils::IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_2);
+    ScAddr const & argumentsSet = utils::IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_2);
 
     ScTemplateParams templateParams = createTemplateParams(nonAtomicActionTemplateAddr, argumentsSet);
     nonAtomicActionAddr = replaceNonAtomicAction(nonAtomicActionTemplateAddr, templateParams);
@@ -50,6 +42,8 @@ ScResult NonAtomicActionInterpreterAgent::DoProgram(ScActionInitiatedEvent const
     return action.FinishUnsuccessfully();
   }
   deleteFields();
+
+
   return action.FinishSuccessfully();
 }
 
@@ -63,10 +57,10 @@ void NonAtomicActionInterpreterAgent::generateNonAtomicActionTemplate(
     ScTemplateParams const & templateParams)
 {
   ScTemplate nonAtomicActionTemplate;
-  // todo(codegen-removal): method has signature changed
+
   m_context.BuildTemplate(nonAtomicActionTemplate, nonAtomicActionTemplateAddr);
   ScTemplateGenResult templateGenResult;
-  // todo(codegen-removal): method has signature changed
+
   m_context.GenerateByTemplate(nonAtomicActionTemplate, templateGenResult, templateParams);
 }
 

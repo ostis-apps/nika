@@ -1,7 +1,9 @@
-#include "sc_test.hpp"
-#include "sc-builder/src/scs_loader.hpp"
 #include <sc-memory/sc_agent.hpp>
+
 #include "sc-agents-common/utils/IteratorUtils.hpp"
+#include "sc-builder/src/scs_loader.hpp"
+#include "sc_test.hpp"
+
 #include "agent/MessageReplyAgent.hpp"
 #include "keynodes/Keynodes.hpp"
 #include "keynodes/MessageReplyKeynodes.hpp"
@@ -16,21 +18,14 @@ const int WAIT_TIME = 5000;
 
 using MessageReplyAgentTest = ScMemoryTest;
 
-void initialize()
+void initialize(ScAgentContext & context)
 {
-  ScKeynodes::InitGlobal();
-  commonModule::Keynodes::InitGlobal();
-  messageReplyModule::MessageReplyKeynodes::InitGlobal();
-
-  ScAgentInit(true);
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<messageReplyModule::MessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(messageReplyModule::MessageReplyAgent)
+  context.SubscribeAgent<messageReplyModule::MessageReplyAgent>();
 }
 
-void shutdown()
+void shutdown(ScAgentContext & context)
 {
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<messageReplyModule::MessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(messageReplyModule::MessageReplyAgent)
+  context.UnsubscribeAgent<messageReplyModule::MessageReplyAgent>();
 }
 
 bool generatedMessageIsValid(ScMemoryContext * context, ScAddr const & soundLinkAddr)
@@ -40,22 +35,19 @@ bool generatedMessageIsValid(ScMemoryContext * context, ScAddr const & soundLink
       messageReplyModule::MessageReplyKeynodes::concept_message,
       ScType::EdgeAccessVarPosPerm,
       ScType::NodeVar >> "_user_message");
-  scTemplate.TripleWithRelation(
+  scTemplate.Quintuple(
       "_user_message",
       ScType::EdgeDCommonVar,
       ScType::NodeVar,
       ScType::EdgeAccessVarPosPerm,
       messageReplyModule::MessageReplyKeynodes::nrel_authors);
-  scTemplate.TripleWithRelation(
+  scTemplate.Quintuple(
       ScType::NodeVar >> "_translation_node",
       ScType::EdgeDCommonVar,
       "_user_message",
       ScType::EdgeAccessVarPosPerm,
-      ScKeynodes::nrel_sc_text_translation);
-  scTemplate.Triple(
-      "_translation_node",
-      ScType::EdgeAccessVarPosPerm,
-      soundLinkAddr);
+      commonModule::Keynodes::nrel_sc_text_translation);
+  scTemplate.Triple("_translation_node", ScType::EdgeAccessVarPosPerm, soundLinkAddr);
   ScTemplateSearchResult searchResult;
   context->SearchByTemplate(scTemplate, searchResult);
   return searchResult.Size() == 1;
@@ -63,132 +55,80 @@ bool generatedMessageIsValid(ScMemoryContext * context, ScAddr const & soundLink
 
 TEST_F(MessageReplyAgentTest, messageProcessingWithTextLinkSuccessful)
 {
-  ScMemoryContext & context = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
-  loader.loadScsFile(
-          context,
-          TEST_FILES_DIR_PATH + "replyMessageAgentTextLinkTestStructure.scs");
-  initialize();
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<GenerateReplyMessageAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(GenerateReplyMessageAgent)
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + "replyMessageAgentTextLinkTestStructure.scs");
 
   ScAddr test_action_node = context.SearchElementBySystemIdentifier("test_action_node");
+  ScAction action = context.ConvertToAction(test_action_node);
   EXPECT_TRUE(test_action_node.IsValid());
+  initialize(context);
 
-  context.GenerateConnector(
-          ScType::EdgeAccessConstPosPerm,
-          ScKeynodes::question_initiated,
-          test_action_node);
-
-  EXPECT_TRUE(ActionUtils::waitAction(&context, test_action_node, WAIT_TIME));
+  EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
+  //EXPECT_TRUE(ActionUtils::waitAction(&context, test_action_node, WAIT_TIME));
   EXPECT_TRUE(context.CheckConnector(
-          ScKeynodes::question_finished_successfully,
-          test_action_node,
-          ScType::EdgeAccessConstPosPerm));
+      ScKeynodes::action_finished_successfully, test_action_node, ScType::EdgeAccessConstPosPerm));
 
-  EXPECT_TRUE(generatedMessageIsValid(&context, utils::IteratorUtils::getFirstByOutRelation(
-          &context,
-          test_action_node,
-          ScKeynodes::rrel_1)));
+  EXPECT_TRUE(generatedMessageIsValid(
+      &context, utils::IteratorUtils::getAnyByOutRelation(&context, test_action_node, ScKeynodes::rrel_1)));
 
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<GenerateReplyMessageAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(GenerateReplyMessageAgent)
-  shutdown();
+  shutdown(context);
 }
 
 TEST_F(MessageReplyAgentTest, messageProcessingWithSoundLinkSuccessful)
 {
-  ScMemoryContext & context = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
-  loader.loadScsFile(
-          context,
-          TEST_FILES_DIR_PATH + "replyMessageAgentSoundLinkTestStructure.scs");
-  initialize();
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<GenerateReplyMessageAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(GenerateReplyMessageAgent)
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + "replyMessageAgentSoundLinkTestStructure.scs");
 
   ScAddr test_action_node = context.SearchElementBySystemIdentifier("test_action_node");
   EXPECT_TRUE(test_action_node.IsValid());
 
-  context.GenerateConnector(
-          ScType::EdgeAccessConstPosPerm,
-          ScKeynodes::question_initiated,
-          test_action_node);
+  initialize(context);
 
   EXPECT_TRUE(ActionUtils::waitAction(&context, test_action_node, WAIT_TIME));
   EXPECT_TRUE(context.CheckConnector(
-          ScKeynodes::question_finished_successfully,
-          test_action_node,
-          ScType::EdgeAccessConstPosPerm));
+      ScKeynodes::action_finished_successfully, test_action_node, ScType::EdgeAccessConstPosPerm));
 
-  EXPECT_TRUE(generatedMessageIsValid(&context, utils::IteratorUtils::getFirstByOutRelation(
-          &context,
-          test_action_node,
-          ScKeynodes::rrel_1)));
+  EXPECT_TRUE(generatedMessageIsValid(
+      &context, utils::IteratorUtils::getAnyByOutRelation(&context, test_action_node, ScKeynodes::rrel_1)));
 
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<GenerateReplyMessageAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(GenerateReplyMessageAgent)
-  shutdown();
+  shutdown(context);
 }
 
 TEST_F(MessageReplyAgentTest, argumentIsNotALink)
 {
-  ScMemoryContext & context = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
-  loader.loadScsFile(
-      context,
-      TEST_FILES_DIR_PATH + "replyMessageAgentTestStructureFirstArgumentIsNotALink.scs");
-  initialize();
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<GenerateReplyMessageAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(GenerateReplyMessageAgent)
-
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + "replyMessageAgentTestStructureFirstArgumentIsNotALink.scs");
   ScAddr test_action_node = context.SearchElementBySystemIdentifier("test_action_node");
+
   EXPECT_TRUE(test_action_node.IsValid());
 
-  context.GenerateConnector(
-      ScType::EdgeAccessConstPosPerm,
-      ScKeynodes::question_initiated,
-      test_action_node);
+  initialize(context);
 
   EXPECT_TRUE(ActionUtils::waitAction(&context, test_action_node, WAIT_TIME));
   EXPECT_TRUE(context.CheckConnector(
-      ScKeynodes::question_finished_unsuccessfully,
-      test_action_node,
-      ScType::EdgeAccessConstPosPerm));
+      ScKeynodes::action_finished_unsuccessfully, test_action_node, ScType::EdgeAccessConstPosPerm));
 
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<GenerateReplyMessageAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(GenerateReplyMessageAgent)
-  shutdown();
+  shutdown(context);
 }
 
 TEST_F(MessageReplyAgentTest, linkSpecifiedIncorrectly)
 {
-  ScMemoryContext & context = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
-  loader.loadScsFile(
-      context,
-      TEST_FILES_DIR_PATH + "replyMessageAgentTestStructureWithIncorrectlySpecifiedLink.scs");
-  initialize();
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<GenerateReplyMessageAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(GenerateReplyMessageAgent)
-
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + "replyMessageAgentTestStructureWithIncorrectlySpecifiedLink.scs");
   ScAddr test_action_node = context.SearchElementBySystemIdentifier("test_action_node");
+
   EXPECT_TRUE(test_action_node.IsValid());
 
-  context.GenerateConnector(
-      ScType::EdgeAccessConstPosPerm,
-      ScKeynodes::question_initiated,
-      test_action_node);
+  initialize(context);
 
   EXPECT_TRUE(ActionUtils::waitAction(&context, test_action_node, WAIT_TIME));
   EXPECT_TRUE(context.CheckConnector(
-      ScKeynodes::question_finished_unsuccessfully,
-      test_action_node,
-      ScType::EdgeAccessConstPosPerm));
-
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<GenerateReplyMessageAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(GenerateReplyMessageAgent)
-  shutdown();
+      ScKeynodes::action_finished_unsuccessfully, test_action_node, ScType::EdgeAccessConstPosPerm));
+  shutdown(context);
 }
 
-}//namespace messageReplyModuleTest
+}  // namespace messageReplyModuleTest

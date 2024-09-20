@@ -12,7 +12,6 @@ ScAddr commonModule::NumberHandler::getNumberNode(const double & number)
   {
     numberNode = this->generateNumberNode(number);
   }
-
   return numberNode;
 }
 
@@ -24,7 +23,7 @@ ScAddr commonModule::NumberHandler::findNumberNode(const double & number)
 
   ScAddrSet candidateList = this->context->SearchLinksByContent(numberAsStream);
   SC_LOG_DEBUG(
-      "NumberHandler found " + std::to_string(candidateList.size()) + " sc-link with content " + numberAsString);
+      "Found " << std::to_string(candidateList.size()) << " sc-link with content " << numberAsString);
 
   for (ScAddr candidateLink : candidateList)
   {

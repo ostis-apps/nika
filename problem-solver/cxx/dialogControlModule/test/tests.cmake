@@ -5,3 +5,7 @@ make_tests_from_folder(${CMAKE_CURRENT_LIST_DIR}/units
 )
 
 add_definitions(-DDIALOG_CONTROL_MODULE_TEST_SRC_PATH="${CMAKE_CURRENT_LIST_DIR}")
+
+if(${SC_CLANG_FORMAT_CODE})
+    target_clangformat_setup(test_starter)
+endif()

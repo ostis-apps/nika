@@ -22,45 +22,36 @@ namespace dialogControlModule
 
 ScResult PhraseGenerationAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
-  ScAddr replyMessageNode = IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_1);
-  if (!replyMessageNode.IsValid())
+  ScAddr const & replyMessageNode = IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_1);
+  if (!m_context.IsElement(replyMessageNode))
   {
-    SC_AGENT_LOG_ERROR("Action doesn't have a reply message node.");
-    SC_AGENT_LOG_DEBUG("PhraseGenerationAgent finished");
-
-    return action.FinishUnsuccessfully();
+    SC_LOG_ERROR("Action doesn't have a reply message node.");
+    return action.FinishWithError();
   }
-  ScAddr phraseLink = IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_2);
-  if (!phraseLink.IsValid())
+  ScAddr const & phraseLink = IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_2);
+  if (!m_context.IsElement(phraseLink))
   {
-    SC_AGENT_LOG_ERROR("Action doesn't have a link with a text template.");
-    SC_AGENT_LOG_DEBUG("PhraseGenerationAgent finished");
-
-    return action.FinishUnsuccessfully();
+    SC_LOG_ERROR("Action doesn't have a link with a text template.");
+    return action.FinishWithError();
   }
-
   ScAddr templateNode =
       IteratorUtils::getAnyByOutRelation(&m_context, phraseLink, DialogKeynodes::nrel_phrase_template);
-  ScAddr parametersNode = IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_3);
-  if (!parametersNode.IsValid())
+  ScAddr const & parametersNode = IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_3);
+  if (!m_context.IsElement(parametersNode))
   {
-    SC_AGENT_LOG_ERROR("Action doesn't have a parameters node.");
-    SC_AGENT_LOG_DEBUG("PhraseGenerationAgent finished");
-
-    return action.FinishUnsuccessfully();
+    SC_LOG_ERROR("Action doesn't have a parameters node.");
+    return action.FinishWithError();
   }
 
-  ScAddr linkResult = generateLinkByTemplate(templateNode, parametersNode, phraseLink);
-  if (!linkResult.IsValid())
+  ScAddr const & linkResult = generateLinkByTemplate(templateNode, parametersNode, phraseLink);
+  if (!m_context.IsElement(linkResult))
   {
     SC_LOG_ERROR("Answer isn't found.");
-    SC_LOG_DEBUG("PhraseGenerationAgent finished");
-
     return action.FinishUnsuccessfully();
   }
   LanguageSearcher searcher(&m_context);
-  ScAddr langNode = searcher.getLanguage(phraseLink);
-  if (langNode.IsValid())
+  ScAddr const & langNode = searcher.getLanguage(phraseLink);
+  if (m_context.IsElement(langNode))
   {
     m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, langNode, linkResult);
   }
@@ -68,16 +59,13 @@ ScResult PhraseGenerationAgent::DoProgram(ScActionInitiatedEvent const & event, 
   {
     SC_LOG_DEBUG("Language link isn't found.");
   }
-  if (!templateNode.IsValid())
+  if (!m_context.IsElement(templateNode))
   {
     updateSemanticAnswer(phraseLink);
   }
   generateSemanticEquivalent(replyMessageNode, templateNode);
 
-  ScStructure result = m_context.GenerateStructure();
-
-  result << linkResult;
-  action.SetResult(result);
+  action.SetResult(linkResult);
 
   return action.FinishSuccessfully();
 }
@@ -373,7 +361,7 @@ void PhraseGenerationAgent::updateSemanticAnswer(const ScTemplateSearchResultIte
 
   for (auto & phraseElement : phraseElements)
   {
-    if (find(toRemoveElements.begin(), toRemoveElements.end(), phraseElement) == toRemoveElements.end())
+    // if (find(toRemoveElements.begin(), toRemoveElements.end(), phraseElement) == toRemoveElements.end())
       m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, phraseElement);
   }
 

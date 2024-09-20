@@ -40,10 +40,10 @@ bool MessageHandler::processReplyMessage(
     if (logicRuleNode.IsValid())
     {
       SC_LOG_DEBUG(
-          "MessageHandler: the logic rule " + context->GetElementSystemIdentifier(logicRuleNode) + " is found");
+          "The logic rule " << context->GetElementSystemIdentifier(logicRuleNode) << " is found");
       if (langNode.IsValid())
       {
-        SC_LOG_DEBUG("MessageHandler: the message language is " + context->GetElementSystemIdentifier(langNode));
+        SC_LOG_DEBUG("The message language is " << context->GetElementSystemIdentifier(langNode));
         if (parametersNode.IsValid())
         {
           clearSemanticAnswer();
@@ -51,30 +51,30 @@ bool MessageHandler::processReplyMessage(
           if (context->CheckConnector(
                   MessageKeynodes::concept_atomic_message, replyMessageNode, ScType::EdgeAccessConstPosPerm))
           {
-            SC_LOG_DEBUG("MessageHandler: the message is atomic");
+            SC_LOG_DEBUG("The message is atomic");
             ScAddr phraseClassNode = phraseSearcher->getFirstPhraseClass(logicRuleNode);
             if (phraseClassNode.IsValid())
               result = processAtomicMessage(replyMessageNode, phraseClassNode, parametersNode, langNode);
             else
-              SC_LOG_DEBUG("MessageHandler: the first phrase class isn't found");
+              SC_LOG_DEBUG("The first phrase class isn't found");
           }
           else
           {
-            SC_LOG_DEBUG("MessageHandler: the message is non-atomic");
+            SC_LOG_DEBUG("The message is non-atomic");
             result = processNonAtomicMessage(replyMessageNode, logicRuleNode, parametersNode, langNode);
           }
         }
         else
-          SC_LOG_ERROR("MessageHandler: the parameters aren't valid");
+          SC_LOG_ERROR("The parameters aren't valid");
       }
       else
-        SC_LOG_ERROR("MessageHandler: the message language isn't valid");
+        SC_LOG_ERROR("The message language isn't valid");
     }
     else
-      SC_LOG_ERROR("MessageHandler: the message logic rule isn't valid");
+      SC_LOG_ERROR("The message logic rule isn't valid");
   }
   else
-    SC_LOG_ERROR("MessageHandler: the message isn't valid");
+    SC_LOG_ERROR("The message isn't valid");
 
   return result;
 }
@@ -129,7 +129,7 @@ bool MessageHandler::processNonAtomicMessage(
       do
       {
         ScAddr nextMessageNode;
-        SC_LOG_DEBUG("MessageHandler: the phrase class is " + context->GetElementSystemIdentifier(phraseClassNode));
+        SC_LOG_DEBUG("The phrase class is " << context->GetElementSystemIdentifier(phraseClassNode));
         ScAddr resultLink = generateLinkByPhrase(replyMessageNode, phraseClassNode, parametersNode, langNode);
         if (resultLink.IsValid())
         {
@@ -146,25 +146,25 @@ bool MessageHandler::processNonAtomicMessage(
       } while (messageNode.IsValid() && phraseClassNode.IsValid() && result);
       if (messageNode.IsValid() || phraseClassNode.IsValid())
       {
-        SC_LOG_ERROR("MessageHandler: no match between the message and the phrase class was found");
+        SC_LOG_ERROR("No match between the message and the phrase class was found.");
         result = false;
       }
       if (result)
       {
         resultText = resultText.substr(0, resultText.size() - 1);
-        SC_LOG_DEBUG("MessageHandler: result text: \"" + resultText + "\"");
+        SC_LOG_DEBUG("Result text: \"" + resultText + "\"");
         messageConstructionsGenerator->generateTextTranslationConstruction(replyMessageNode, langNode, resultText);
       }
     }
     else
     {
-      SC_LOG_DEBUG("MessageHandler: the first phrase class isn't found");
+      SC_LOG_DEBUG("The first phrase class isn't found");
       result = false;
     }
   }
   else
   {
-    SC_LOG_DEBUG("MessageHandler: the first message isn't found");
+    SC_LOG_DEBUG("The first message isn't found");
     result = false;
   }
 
@@ -202,20 +202,20 @@ ScAddr MessageHandler::generateLinkByPhrase(
         {
           resultLink = IteratorUtils::getAnyByOutRelation(context, phraseGenerationActionNode, ScKeynodes::nrel_result);
           context->GetLinkContent(phraseLink, linkContent);
-          SC_LOG_DEBUG("MessageHandler: the result link with the content \"" << linkContent << "\" is generated");
+          SC_LOG_DEBUG("The result link with the content \"" << linkContent << "\" is generated");
           break;
         }
         else
         {
           context->GetLinkContent(phraseLink, linkContent);
-          SC_LOG_DEBUG("MessageHandler: the result link from the phrase \"" << linkContent << "\" isn't generated");
+          SC_LOG_DEBUG("The result link from the phrase \"" << linkContent << "\" isn't generated");
         }
       }
     }
   }
   else
   {
-    SC_LOG_DEBUG("MessageHandler: phrases aren't found");
+    SC_LOG_DEBUG("Phrases aren't found");
   }
 
   return resultLink;

@@ -69,11 +69,11 @@ ScAddr PhraseSearcher::getNextPhraseClass(const ScAddr & phraseClassNode)
   if (result.Size() == 1)
   {
     nextPhraseNode = result[0][VAR_PHRASE_CLASS];
-    SC_LOG_DEBUG("MessageSearcher: the next phrase class found");
+    SC_LOG_DEBUG("The next phrase class found");
   }
   else
   {
-    SC_LOG_DEBUG("MessageSearcher: the next phrase class not found");
+    SC_LOG_DEBUG("The next phrase class not found");
   }
 
   return nextPhraseNode;

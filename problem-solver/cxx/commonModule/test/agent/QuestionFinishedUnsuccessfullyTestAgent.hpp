@@ -4,7 +4,7 @@
 namespace commonTest
 {
 
-class QuestionFinishedUnsuccessfullyTestAgent : public ScActionInitiatedAgent
+class ActionFinishedUnsuccessfullyTestAgent : public ScActionInitiatedAgent
 {
   public:
   ScAddr GetActionClass() const override;

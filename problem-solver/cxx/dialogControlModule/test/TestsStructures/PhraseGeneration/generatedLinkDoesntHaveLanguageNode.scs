@@ -3,9 +3,9 @@
 =>nrel_system_identifier:
 	[_name];;
 
-test_question_node
+test_action_node
 <-action_phrase_generation;
-<-question;
+<-action;
 -> rrel_1: reply_message;
 -> rrel_2:
 	[Sorry, ${_name}.]

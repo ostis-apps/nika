@@ -1,4 +1,3 @@
-// Подключение полезных утилит из sc-machine
 #include "FindWordInSetByFirstLetterAgent.hpp"
 
 #include "sc-agents-common/utils/CommonUtils.hpp"
@@ -17,7 +16,7 @@ ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const
   ScAddr const & messageAddr = utils::IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_1);
   if (!messageAddr.IsValid())
   {
-    SC_AGENT_LOG_ERROR("The message isn’t valid");
+    SC_LOG_ERROR("The message isn’t valid");
     return action.FinishUnsuccessfully();
   }
 
@@ -26,7 +25,7 @@ ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const
           messageAddr,
           ScType::EdgeAccessConstPosPerm))
   {
-    SC_AGENT_LOG_DEBUG("The message isn’t about letter search");
+    SC_LOG_DEBUG("The message isn’t about letter search");
     return action.FinishUnsuccessfully();
   }
 
@@ -65,7 +64,7 @@ ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const
       if (firstLetter == firstWordLetter)
       {
         resultStream << word;
-        SC_AGENT_LOG_DEBUG("Found word " << word);
+        SC_LOG_DEBUG("Found word " << word);
       }
     }
     while (entityNodesIterator->Next())
@@ -78,7 +77,7 @@ ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const
           resultStream << word;
         else
           resultStream << ", " << word;
-        SC_AGENT_LOG_DEBUG("Found word " << word);
+        SC_LOG_DEBUG("Found word " << word);
       }
     }
 
@@ -91,7 +90,7 @@ ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const
       result = resultStream.str();
     }
     answerElements = createAnswer(result);
-    SC_AGENT_LOG_DEBUG("Reply message is generated");
+    SC_LOG_DEBUG("Reply message is generated");
   }
   catch (utils::ScException const & exception)
   {
@@ -100,7 +99,7 @@ ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const
     for (auto const & element : answerElements)
       result << element;
     action.SetResult(result);
-    SC_AGENT_LOG_DEBUG("Finished with an error");
+    SC_LOG_DEBUG("Finished with an error");
     return action.FinishUnsuccessfully();
   }
 
@@ -135,7 +134,7 @@ std::string FindWordInSetByFirstLetterAgent::getMessageText(ScAddr const & messa
   std::string linkContent;
   if (!messageLink.IsValid())
   {
-    SC_THROW_EXCEPTION(utils::ExceptionItemNotFound, "FindWordInSetByFirstLetterAgent: message link is not found.");
+    SC_THROW_EXCEPTION(utils::ExceptionItemNotFound, "Message link is not found.");
   }
   m_context.GetLinkContent(messageLink, linkContent);
   return linkContent;

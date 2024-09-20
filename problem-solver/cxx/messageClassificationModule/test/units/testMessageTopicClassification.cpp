@@ -1,13 +1,13 @@
-#include "sc_test.hpp"
 #include "sc-agents-common/utils/CommonUtils.hpp"
+#include "sc_test.hpp"
 #include "scs_loader.hpp"
 
-#include "agent/MessageTopicClassificationAgent.hpp"
-#include "keynodes/MessageClassificationKeynodes.hpp"
-#include "keynodes/Keynodes.hpp"
-#include "utils/ActionUtils.hpp"
-#include "client/WitAiClient.hpp"
 #include "WitAiCkientMock.hpp"
+#include "agent/MessageTopicClassificationAgent.hpp"
+#include "client/WitAiClient.hpp"
+#include "keynodes/Keynodes.hpp"
+#include "keynodes/MessageClassificationKeynodes.hpp"
+#include "utils/ActionUtils.hpp"
 
 using namespace messageClassificationModule;
 
@@ -19,17 +19,6 @@ std::string const TEST_FILES_DIR_PATH = MESSAGE_TOPIC_CLASSIFICATION_MODULE_TEST
 int const WAIT_TIME = 1000;
 
 using MessageTopicClassificationTest = ScMemoryTest;
-
-void initialize()
-{
-  ScKeynodes::InitGlobal();
-  MessageClassificationKeynodes::InitGlobal();
-  commonModule::Keynodes::InitGlobal();
-}
-
-void shutdown()
-{
-}
 
 TEST_F(MessageTopicClassificationTest, connectionTest)
 {
@@ -50,11 +39,10 @@ TEST_F(MessageTopicClassificationTest, connectionTest)
 
 TEST_F(MessageTopicClassificationTest, classifyMessageWithoutEntityTest)
 {
-  ScMemoryContext & context = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "hello_message.scs");
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "wit_concepts.scs");
-  initialize();
 
   ScAddr greetingMessageClass = context.SearchElementBySystemIdentifier("concept_greeting_message");
   ScAddr messageAddr = context.SearchElementBySystemIdentifier("message");
@@ -76,17 +64,14 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithoutEntityTest)
 
   bool isMessageClassified = context.CheckConnector(greetingMessageClass, messageAddr, ScType::EdgeAccessConstPosPerm);
   EXPECT_TRUE(isMessageClassified);
-
-  shutdown();
 }
 
 TEST_F(MessageTopicClassificationTest, classifyMessageWithEntityTest)
 {
-  ScMemoryContext & context = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "hello_message_with_entity.scs");
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "wit_concepts.scs");
-  initialize();
 
   ScAddr greetingMessageClass = context.SearchElementBySystemIdentifier("concept_greeting_message");
   ScAddr messageAddr = context.SearchElementBySystemIdentifier("message");
@@ -117,26 +102,24 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithEntityTest)
 
   ScTemplate classificationTemplate;
   classificationTemplate.Triple(greetingMessageClass, ScType::EdgeAccessVarPosPerm, messageAddr);
-  classificationTemplate.TripleWithRelation(
+  classificationTemplate.Quintuple(
       messageAddr, ScType::EdgeAccessVarPosPerm, entityAddr, ScType::EdgeAccessVarPosPerm, entityRoleAddr);
 
   ScTemplateSearchResult classificationTemplateResult;
   context.SearchByTemplate(classificationTemplate, classificationTemplateResult);
   EXPECT_TRUE(classificationTemplateResult.Size() == 1);
-
-  shutdown();
 }
 
 TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesTest)
 {
-  ScMemoryContext & context = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "hello_message_with_two_entities.scs");
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "wit_concepts.scs");
-  initialize();
 
   ScAddr weatherMessageClass = context.SearchElementBySystemIdentifier("concept_general_message_about_weather");
-  ScAddr neutralMessageClass = context.SearchElementBySystemIdentifier("concept_message_with_neutral_emotional_coloring");
+  ScAddr neutralMessageClass =
+      context.SearchElementBySystemIdentifier("concept_message_with_neutral_emotional_coloring");
   ScAddr messageAddr = context.SearchElementBySystemIdentifier("message");
   ScAddr entityContactAddr = context.SearchElementBySystemIdentifier("maksim");
   ScAddr entitySeasonAddr = context.SearchElementBySystemIdentifier("summer");
@@ -173,26 +156,23 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesTest)
   ScTemplate classificationTemplate;
   classificationTemplate.Triple(weatherMessageClass, ScType::EdgeAccessVarPosPerm, messageAddr);
   classificationTemplate.Triple(neutralMessageClass, ScType::EdgeAccessVarPosPerm, messageAddr);
-  classificationTemplate.TripleWithRelation(
+  classificationTemplate.Quintuple(
       messageAddr, ScType::EdgeAccessVarPosPerm, entityContactAddr, ScType::EdgeAccessVarPosPerm, rrelContactAddr);
-  classificationTemplate.TripleWithRelation(
+  classificationTemplate.Quintuple(
       messageAddr, ScType::EdgeAccessVarPosPerm, entitySeasonAddr, ScType::EdgeAccessVarPosPerm, rrelSeasonAddr);
 
   ScTemplateSearchResult classificationTemplateResult;
   context.SearchByTemplate(classificationTemplate, classificationTemplateResult);
 
   EXPECT_TRUE(classificationTemplateResult.Size() == 1);
-
-  shutdown();
 }
 
 TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesSameRoleTest)
 {
-  ScMemoryContext & context = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "hobby_message_with_two_same_role_entities.scs");
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "wit_concepts.scs");
-  initialize();
 
   ScAddr messageAddr = context.SearchElementBySystemIdentifier("message");
   ScAddr hobbyAddr = context.SearchElementBySystemIdentifier("concept_hobby");
@@ -229,17 +209,15 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesSameRoleTes
   EXPECT_FALSE(messageClassificationItems.empty());
 
   ScTemplate entitiesTemplate;
-  entitiesTemplate.TripleWithRelation(
+  entitiesTemplate.Quintuple(
       messageAddr, ScType::EdgeAccessVarPosPerm, hobbyAddr, ScType::EdgeAccessVarPosPerm, rrelEntityAddr);
-  entitiesTemplate.TripleWithRelation(
+  entitiesTemplate.Quintuple(
       messageAddr, ScType::EdgeAccessVarPosPerm, theatreAddr, ScType::EdgeAccessVarPosPerm, rrelEntityAddr);
 
   ScTemplateSearchResult classificationTemplateResult;
   context.SearchByTemplate(entitiesTemplate, classificationTemplateResult);
 
   EXPECT_TRUE(classificationTemplateResult.Size() == 1);
-
-  shutdown();
 }
 
 }  // namespace messageTopicClassificationTest

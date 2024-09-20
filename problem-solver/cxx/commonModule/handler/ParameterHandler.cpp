@@ -57,14 +57,14 @@ ScAddr ParameterHandler::findParameterNodeByNumber(
   else if (parameterNodes.size() > 1)
   {
     SC_LOG_DEBUG(
-        "ParameterHandler More then 1 parameter node of " + this->context->GetElementSystemIdentifier(parameterClass) +
-        " by number " + this->context->GetElementSystemIdentifier(numberNode));
+        "More then 1 parameter node of " << this->context->GetElementSystemIdentifier(parameterClass) <<
+        " by number " << this->context->GetElementSystemIdentifier(numberNode));
   }
   else
   {
     SC_LOG_DEBUG(
-        "ParameterHandler found no parameter node of " + this->context->GetElementSystemIdentifier(parameterClass) +
-        " by number " + this->context->GetElementSystemIdentifier(numberNode));
+        "Found no parameter node of " << this->context->GetElementSystemIdentifier(parameterClass) <<
+        " by number " << this->context->GetElementSystemIdentifier(numberNode));
   }
 
   return parameterNode;
@@ -82,14 +82,14 @@ ScAddr ParameterHandler::findParameterNodeByEntity(const ScAddr & parameterClass
   else if (parameterNodes.size() > 1)
   {
     SC_LOG_DEBUG(
-        "ParameterHandler More then 1 parameter node of " + this->context->GetElementSystemIdentifier(parameterClass) +
-        " for entity " + this->context->GetElementSystemIdentifier(entity));
+        "More then 1 parameter node of " << this->context->GetElementSystemIdentifier(parameterClass) <<
+        " for entity " << this->context->GetElementSystemIdentifier(entity));
   }
   else
   {
     SC_LOG_DEBUG(
-        "ParameterHandler found no parameter node of " + this->context->GetElementSystemIdentifier(parameterClass) +
-        " for entity " + this->context->GetElementSystemIdentifier(entity));
+        "Found no parameter node of " + this->context->GetElementSystemIdentifier(parameterClass) <<
+        " for entity " << this->context->GetElementSystemIdentifier(entity));
   }
 
   return parameterNode;
@@ -106,7 +106,6 @@ ScAddr ParameterHandler::generateParameterNode(
       "_parameter_node", ScType::EdgeDCommonVar, numberNode, ScType::EdgeAccessVarPosPerm, measurementRel);
 
   ScTemplateGenResult genResult;
-  // todo(codegen-removal): method has signature changed
   this->context->GenerateByTemplate(scTemplate, genResult);
   return genResult["_parameter_node"];
 };

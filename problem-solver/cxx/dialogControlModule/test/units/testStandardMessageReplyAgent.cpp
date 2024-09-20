@@ -1,13 +1,15 @@
-#include "agent/DirectInferenceAgent.hpp"
-#include "agent/StandardMessageReplyAgent.hpp"
-#include "agent/PhraseGenerationAgent.hpp"
-#include "sc-builder/src/scs_loader.hpp"
-#include "keynodes/DialogKeynodes.hpp"
-#include "keynodes/MessageKeynodes.hpp"
+#include <sc-memory/sc_agent.hpp>
+
 #include "sc-agents-common/utils/CommonUtils.hpp"
 #include "sc-agents-common/utils/IteratorUtils.hpp"
-#include <sc-memory/sc_agent.hpp>
+#include "sc-builder/src/scs_loader.hpp"
 #include "sc_test.hpp"
+
+#include "agent/DirectInferenceAgent.hpp"
+#include "agent/PhraseGenerationAgent.hpp"
+#include "agent/StandardMessageReplyAgent.hpp"
+#include "keynodes/DialogKeynodes.hpp"
+#include "keynodes/MessageKeynodes.hpp"
 #include "searcher/TokenDomainSearcher.hpp"
 
 using namespace inference;
@@ -25,456 +27,263 @@ const int WAIT_TIME = 20000;
 
 using StandardMessageReplyTest = ScMemoryTest;
 
-void initializeClasses()
+void initialize(ScAgentContext & ctx)
 {
-  DialogKeynodes::InitGlobal();
-  InferenceKeynodes::InitGlobal();
-  commonModule::Keynodes::InitGlobal();
-  MessageKeynodes::InitGlobal();
-  ScKeynodes::InitGlobal();
-  StandardMessageReplyAgent::InitGlobal();
+  ctx.SubscribeAgent<DirectInferenceAgent>();
+  ctx.SubscribeAgent<PhraseGenerationAgent>();
+  ctx.SubscribeAgent<StandardMessageReplyAgent>();
 }
 
+void shutdown(ScAgentContext & ctx)
+{
+  ctx.UnsubscribeAgent<DirectInferenceAgent>();
+  ctx.UnsubscribeAgent<PhraseGenerationAgent>();
+  ctx.UnsubscribeAgent<StandardMessageReplyAgent>();
+}
 
 TEST_F(StandardMessageReplyTest, ProcessingAtomicMessageIsSuccessful)
 {
   string messageText = "I'm sorry, Mister Ivanov.";
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & ctx = *m_ctx;
 
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr4.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH +
-                          "concept_answer_on_standard_message_rule_class_by_priority.scs");
+  loader.loadScsFile(
+      ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "concept_answer_on_standard_message_rule_class_by_priority.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message4.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + PHRASE_DIR_PATH + "phrase1.scs");
-  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_question_node");
-  ScAgentInit(true);
-  initializeClasses();
+  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_action_node");
 
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<DirectInferenceAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(DirectInferenceAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(PhraseGenerationAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(StandardMessageReplyAgent)
+  ScAction action = ctx.ConvertToAction(test_action_node);
 
-  ctx.GenerateConnector(
-          ScType::EdgeAccessConstPosPerm,
-          ScKeynodes::question_initiated,
-          test_action_node);
+  initialize(ctx);
 
-  EXPECT_TRUE(
-          ScWaitEvent<ScEventAfterGenerateOutgoingArc>(
-                  ctx,
-                  ScKeynodes::question_finished_successfully).
-                  Wait(WAIT_TIME));
-
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(PhraseGenerationAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<DirectInferenceAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(DirectInferenceAgent)
+  EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
 
   ScAddr messageNode = ctx.SearchElementBySystemIdentifier("test_message");
   EXPECT_TRUE(messageNode.IsValid());
 
-  ScAddr replyMessageNode = utils::IteratorUtils::getFirstByOutRelation(&ctx, messageNode, MessageKeynodes::nrel_reply);
+  ScAddr replyMessageNode = utils::IteratorUtils::getAnyByOutRelation(&ctx, messageNode, MessageKeynodes::nrel_reply);
   EXPECT_TRUE(replyMessageNode.IsValid());
 
   TokenDomainSearcher searcher(&ctx);
   ScAddr messageLink = searcher.getMessageText(replyMessageNode);
-  EXPECT_EQ(utils::CommonUtils::getLinkContent(&ctx, messageLink), messageText);
+  std::string linkContent;
+  ctx.GetLinkContent(messageLink, linkContent);
+  EXPECT_EQ(linkContent, messageText);
+
+  shutdown(ctx);
 }
 
 TEST_F(StandardMessageReplyTest, ProcessingNonatomicMessageIsSuccessful)
 {
   string messageText = "I'm sorry, Mister Ivanov. How did this happen, Ivan?";
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & ctx = *m_ctx;
 
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH +
-                          "concept_answer_on_standard_message_rule_class_by_priority.scs");
+  loader.loadScsFile(
+      ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "concept_answer_on_standard_message_rule_class_by_priority.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr1.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message4.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + PHRASE_DIR_PATH + "phrase1.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + PHRASE_DIR_PATH + "phrase2.scs");
-  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_question_node");
+  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_action_node");
 
-  ScAgentInit(true);
-  initializeClasses();
+  ScAction action = ctx.ConvertToAction(test_action_node);
 
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<DirectInferenceAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(DirectInferenceAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(PhraseGenerationAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(StandardMessageReplyAgent)
-
-  ctx.GenerateConnector(
-          ScType::EdgeAccessConstPosPerm,
-          ScKeynodes::question_initiated,
-          test_action_node);
-
-  EXPECT_TRUE(
-          ScWaitEvent<ScEventAfterGenerateOutgoingArc>(
-                  ctx,
-                  ScKeynodes::question_finished_successfully).
-                  Wait(WAIT_TIME));
-
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(PhraseGenerationAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<DirectInferenceAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(DirectInferenceAgent)
+  initialize(ctx);
+  EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
+  shutdown(ctx);
 
   ScAddr messageNode = ctx.SearchElementBySystemIdentifier("test_message");
   EXPECT_TRUE(messageNode.IsValid());
 
-  ScAddr replyMessageNode = utils::IteratorUtils::getFirstByOutRelation(&ctx, messageNode, MessageKeynodes::nrel_reply);
+  ScAddr replyMessageNode = utils::IteratorUtils::getAnyByOutRelation(&ctx, messageNode, MessageKeynodes::nrel_reply);
   EXPECT_TRUE(replyMessageNode.IsValid());
 
   TokenDomainSearcher searcher(&ctx);
   ScAddr messageLink = searcher.getMessageText(replyMessageNode);
-  EXPECT_EQ(utils::CommonUtils::getLinkContent(&ctx, messageLink), messageText);
+  std::string linkContent;
+  ctx.GetLinkContent(messageLink, linkContent);
+  EXPECT_EQ(linkContent, messageText);
 }
 
 TEST_F(StandardMessageReplyTest, ActionDoesntHaveAMessageNode)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & ctx = *m_ctx;
 
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "incorrectAction.scs");
-  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_question_node");
+  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_action_node");
+  ScAction action = ctx.ConvertToAction(test_action_node);
 
-  ScAgentInit(true);
-  initializeClasses();
-
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(StandardMessageReplyAgent)
-
-  ctx.GenerateConnector(
-        ScType::EdgeAccessConstPosPerm,
-        ScKeynodes::question_initiated,
-        test_action_node);
-
-  EXPECT_TRUE(
-        ScWaitEvent<ScEventAfterGenerateOutgoingArc>(
-              ctx,
-              ScKeynodes::question_finished_unsuccessfully).
-              Wait(WAIT_TIME));
-
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
+  ctx.SubscribeAgent<StandardMessageReplyAgent>();
+  EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
+  ctx.UnsubscribeAgent<StandardMessageReplyAgent>();
 }
 
 TEST_F(StandardMessageReplyTest, SystemDoesNotHaveTemplateForMessage)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & ctx = *m_ctx;
 
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr1.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH +
-                          "concept_answer_on_standard_message_rule_class_by_priority.scs");
+  loader.loadScsFile(
+      ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "concept_answer_on_standard_message_rule_class_by_priority.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message1.scs");
-  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_question_node");
+  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_action_node");
+  ScAction action = ctx.ConvertToAction(test_action_node);
 
-  ScAgentInit(true);
-  initializeClasses();
+  ctx.SubscribeAgent<StandardMessageReplyAgent>();
+  ctx.SubscribeAgent<DirectInferenceAgent>();
 
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(StandardMessageReplyAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<DirectInferenceAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(DirectInferenceAgent)
+  EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
 
-  ctx.GenerateConnector(
-        ScType::EdgeAccessConstPosPerm,
-        ScKeynodes::question_initiated,
-        test_action_node);
-
-  EXPECT_TRUE(
-        ScWaitEvent<ScEventAfterGenerateOutgoingArc>(
-              ctx,
-              ScKeynodes::question_finished_unsuccessfully).
-              Wait(WAIT_TIME));
-
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<DirectInferenceAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(DirectInferenceAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
+  ctx.UnsubscribeAgent<DirectInferenceAgent>();
+  ctx.UnsubscribeAgent<StandardMessageReplyAgent>();
 }
 
 TEST_F(StandardMessageReplyTest, MessagesLanguageIsNotFound)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & ctx = *m_ctx;
 
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr1.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH +
-                          "concept_answer_on_standard_message_rule_class_by_priority.scs");
+  loader.loadScsFile(
+      ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "concept_answer_on_standard_message_rule_class_by_priority.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message2.scs");
-  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_question_node");
+  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_action_node");
+  ScAction action = ctx.ConvertToAction(test_action_node);
 
-  ScAgentInit(true);
-  initializeClasses();
+  ctx.SubscribeAgent<StandardMessageReplyAgent>();
+  ctx.SubscribeAgent<DirectInferenceAgent>();
+  EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
 
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(StandardMessageReplyAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<DirectInferenceAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(DirectInferenceAgent)
-
-  ctx.GenerateConnector(
-        ScType::EdgeAccessConstPosPerm,
-        ScKeynodes::question_initiated,
-        test_action_node);
-
-  EXPECT_TRUE(
-        ScWaitEvent<ScEventAfterGenerateOutgoingArc>(
-              ctx,
-              ScKeynodes::question_finished_unsuccessfully).
-              Wait(WAIT_TIME));
-
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<DirectInferenceAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(DirectInferenceAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
+  ctx.UnsubscribeAgent<DirectInferenceAgent>();
+  ctx.UnsubscribeAgent<StandardMessageReplyAgent>();
 }
 
 TEST_F(StandardMessageReplyTest, FirstMessageIsNotFound)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & ctx = *m_ctx;
 
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr2.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH +
-                          "concept_answer_on_standard_message_rule_class_by_priority.scs");
+  loader.loadScsFile(
+      ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "concept_answer_on_standard_message_rule_class_by_priority.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message3.scs");
-  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_question_node");
+  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_action_node");
+  ScAction action = ctx.ConvertToAction(test_action_node);
 
-  ScAgentInit(true);
-  initializeClasses();
+  ctx.SubscribeAgent<StandardMessageReplyAgent>();
+  ctx.SubscribeAgent<DirectInferenceAgent>();
+  EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
 
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(StandardMessageReplyAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<DirectInferenceAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(DirectInferenceAgent)
-
-  ctx.GenerateConnector(
-        ScType::EdgeAccessConstPosPerm,
-        ScKeynodes::question_initiated,
-        test_action_node);
-
-  EXPECT_TRUE(
-        ScWaitEvent<ScEventAfterGenerateOutgoingArc>(
-              ctx,
-              ScKeynodes::question_finished_unsuccessfully).
-              Wait(WAIT_TIME));
-
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<DirectInferenceAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(DirectInferenceAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
+  ctx.UnsubscribeAgent<StandardMessageReplyAgent>();
+  ctx.UnsubscribeAgent<DirectInferenceAgent>();
 }
 
 TEST_F(StandardMessageReplyTest, FirstPhraseClassIsNotFound)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & ctx = *m_ctx;
 
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr3.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH +
-                          "concept_answer_on_standard_message_rule_class_by_priority.scs");
+  loader.loadScsFile(
+      ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "concept_answer_on_standard_message_rule_class_by_priority.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message3.scs");
-  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_question_node");
+  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_action_node");
+  ScAction action = ctx.ConvertToAction(test_action_node);
 
-  ScAgentInit(true);
-  initializeClasses();
+  ctx.SubscribeAgent<StandardMessageReplyAgent>();
+  ctx.SubscribeAgent<DirectInferenceAgent>();
 
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(StandardMessageReplyAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<DirectInferenceAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(DirectInferenceAgent)
+  EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
 
-  ctx.GenerateConnector(
-        ScType::EdgeAccessConstPosPerm,
-        ScKeynodes::question_initiated,
-        test_action_node);
-
-  EXPECT_TRUE(
-        ScWaitEvent<ScEventAfterGenerateOutgoingArc>(
-              ctx,
-              ScKeynodes::question_finished_unsuccessfully).
-              Wait(WAIT_TIME));
-
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<DirectInferenceAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(DirectInferenceAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
+  ctx.UnsubscribeAgent<StandardMessageReplyAgent>();
+  ctx.UnsubscribeAgent<DirectInferenceAgent>();
 }
 
 TEST_F(StandardMessageReplyTest, PhraseForMessageIsNotFound)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & ctx = *m_ctx;
 
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr1.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH +
-                          "concept_answer_on_standard_message_rule_class_by_priority.scs");
+  loader.loadScsFile(
+      ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "concept_answer_on_standard_message_rule_class_by_priority.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message3.scs");
-  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_question_node");
+  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_action_node");
+  ScAction action = ctx.ConvertToAction(test_action_node);
 
-  ScAgentInit(true);
-  initializeClasses();
+  ctx.SubscribeAgent<StandardMessageReplyAgent>();
+  ctx.SubscribeAgent<DirectInferenceAgent>();
+  EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
 
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(StandardMessageReplyAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<DirectInferenceAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(DirectInferenceAgent)
-
-  ctx.GenerateConnector(
-        ScType::EdgeAccessConstPosPerm,
-        ScKeynodes::question_initiated,
-        test_action_node);
-
-  EXPECT_TRUE(
-        ScWaitEvent<ScEventAfterGenerateOutgoingArc>(
-              ctx,
-              ScKeynodes::question_finished_unsuccessfully).
-              Wait(WAIT_TIME));
-
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<DirectInferenceAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(DirectInferenceAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
+  ctx.UnsubscribeAgent<StandardMessageReplyAgent>();
+  ctx.UnsubscribeAgent<DirectInferenceAgent>();
 }
 
 TEST_F(StandardMessageReplyTest, LinkByPhraseIsNotGenerated)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & ctx = *m_ctx;
 
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr1.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH +
-                          "concept_answer_on_standard_message_rule_class_by_priority.scs");
+  loader.loadScsFile(
+      ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "concept_answer_on_standard_message_rule_class_by_priority.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message3.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + PHRASE_DIR_PATH + "phrase1.scs");
-  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_question_node");
-  ScAgentInit(true);
-  initializeClasses();
-
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(StandardMessageReplyAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<DirectInferenceAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(DirectInferenceAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(PhraseGenerationAgent)
-
-  ctx.GenerateConnector(
-        ScType::EdgeAccessConstPosPerm,
-        ScKeynodes::question_initiated,
-        test_action_node);
-
-  EXPECT_TRUE(
-        ScWaitEvent<ScEventAfterGenerateOutgoingArc>(
-              ctx,
-              ScKeynodes::question_finished_unsuccessfully).
-              Wait(WAIT_TIME));
-
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(PhraseGenerationAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<DirectInferenceAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(DirectInferenceAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
+  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_action_node");
+  ScAction action = ctx.ConvertToAction(test_action_node);
+  initialize(ctx);
+  EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
+  shutdown(ctx);
 }
 
 TEST_F(StandardMessageReplyTest, MessagesAndPhraseClassesDoNotMatch1)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & ctx = *m_ctx;
 
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr5.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH +
-                          "concept_answer_on_standard_message_rule_class_by_priority.scs");
+  loader.loadScsFile(
+      ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "concept_answer_on_standard_message_rule_class_by_priority.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message4.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + PHRASE_DIR_PATH + "phrase1.scs");
-  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_question_node");
-  ScAgentInit(true);
-  initializeClasses();
+  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_action_node");
+  ScAction action = ctx.ConvertToAction(test_action_node);
+  initialize(ctx);
+  EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
 
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(StandardMessageReplyAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<DirectInferenceAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(DirectInferenceAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(PhraseGenerationAgent)
-
-  ctx.GenerateConnector(
-        ScType::EdgeAccessConstPosPerm,
-        ScKeynodes::question_initiated,
-        test_action_node);
-
-  EXPECT_TRUE(
-        ScWaitEvent<ScEventAfterGenerateOutgoingArc>(
-              ctx,
-              ScKeynodes::question_finished_unsuccessfully).
-              Wait(WAIT_TIME));
-
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(PhraseGenerationAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<DirectInferenceAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(DirectInferenceAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
+  shutdown(ctx);
 }
 
 TEST_F(StandardMessageReplyTest, MessagesAndPhraseClassesDoNotMatch2)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & ctx = *m_ctx;
 
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr6.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH +
-                          "concept_answer_on_standard_message_rule_class_by_priority.scs");
+  loader.loadScsFile(
+      ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "concept_answer_on_standard_message_rule_class_by_priority.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message4.scs");
   loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + PHRASE_DIR_PATH + "phrase1.scs");
-  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_question_node");
-  ScAgentInit(true);
-  initializeClasses();
+  ScAddr test_action_node = ctx.SearchElementBySystemIdentifier("test_action_node");
+  ScAction action = ctx.ConvertToAction(test_action_node);
+  initialize(ctx);
 
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(StandardMessageReplyAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<DirectInferenceAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(DirectInferenceAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_REGISTER(PhraseGenerationAgent)
+  EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
 
-  ctx.GenerateConnector(
-        ScType::EdgeAccessConstPosPerm,
-        ScKeynodes::question_initiated,
-        test_action_node);
-
-  EXPECT_TRUE(
-        ScWaitEvent<ScEventAfterGenerateOutgoingArc>(
-              ctx,
-              ScKeynodes::question_finished_unsuccessfully).
-              Wait(WAIT_TIME));
-
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<PhraseGenerationAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(PhraseGenerationAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<DirectInferenceAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(DirectInferenceAgent)
-  //todo(codegen-removal): Use agentContext.SubscribeAgent<StandardMessageReplyAgent> or UnsubscribeAgent; to register and unregister agent
-SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
+  shutdown(ctx);
 }
-}
+}  // namespace testStandardMessageReplyAgent
