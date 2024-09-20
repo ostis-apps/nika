@@ -189,10 +189,10 @@ ScAddr MessageHandler::generateLinkByPhrase(
         context->GetLinkContent(phraseLink, linkContent);
         SC_LOG_DEBUG(R"(The phrase with the content ")" << linkContent << R"(" is found)");
 
-        ScAddr phraseGenerationActionNode = context->GenerateNode(ScType::NodeConst);
-        //  {replyMessageNode, phraseLink, parametersNode}
-        context->GenerateConnector(
-            ScType::EdgeAccessConstPosPerm, MessageKeynodes::action_phrase_generation, phraseGenerationActionNode);
+        ScAction phraseGenerationAction = ActionUtils::CreateAction(
+            context, MessageKeynodes::action_phrase_generation, {replyMessageNode, phraseLink, parametersNode});
+        ScAddr phraseGenerationActionNode = phraseGenerationAction.GetRealAddr();
+
         context->SubscribeAgent<dialogControlModule::PhraseGenerationAgent>();
 
         ActionUtils::waitAction(context, phraseGenerationActionNode, PHRASE_GENERATION_AGENT_WAIT_TIME);

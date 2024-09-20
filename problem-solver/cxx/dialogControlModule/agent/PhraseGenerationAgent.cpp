@@ -19,15 +19,7 @@ using namespace utils;
 
 namespace dialogControlModule
 {
-// todo(codegen-removal): remove agent starting and finishing logs, sc-machine is printing them now
-// todo(codegen-removal): if your agent is ScActionInitiatedAgent and uses event only to get action node via
-// event.GetOtherElement() then you can remove event from method arguments and use ScAction & action instead of your
-// action node todo(codegen-removal): if your agent is having method like CheckActionClass(ScAddr actionAddr) that
-// checks connector between action class and actionAddr then you can remove it. Before agent is started sc-machine check
-// that action belongs to class returned by GetActionClass() todo(codegen-removal): use action.SetResult() to pass
-// result of your action instead of using answer or answerElements todo(codegen-removal): use SC_AGENT_LOG_SOMETHING()
-// instead of SC_LOG_SOMETHING to automatically include agent name to logs messages todo(codegen-removal): use auto
-// const & [names of action arguments] = action.GetArguments<amount of arguments>(); to get action arguments
+
 ScResult PhraseGenerationAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
   ScAddr replyMessageNode = IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_1);
@@ -381,8 +373,8 @@ void PhraseGenerationAgent::updateSemanticAnswer(const ScTemplateSearchResultIte
 
   for (auto & phraseElement : phraseElements)
   {
-    // if (find(toRemoveElements.begin(), toRemoveElements.end(), phraseElement) == toRemoveElements.end())
-    m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, phraseElement);
+    if (find(toRemoveElements.begin(), toRemoveElements.end(), phraseElement) == toRemoveElements.end())
+      m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, phraseElement);
   }
 
   m_context.EraseElement(phraseStruct);

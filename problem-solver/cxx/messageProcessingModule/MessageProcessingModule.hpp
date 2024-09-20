@@ -11,8 +11,6 @@ namespace messageProcessingModule
 {
 class MessageProcessingModule : public ScModule
 {
-  // Метод инициализации модуля и его агентов
-  // Метод деинициализации модуля и его агентов
 };
 
 }  // namespace messageProcessingModule
