@@ -30,14 +30,12 @@ using StandardMessageReplyTest = ScMemoryTest;
 void initialize(ScAgentContext & ctx)
 {
   ctx.SubscribeAgent<DirectInferenceAgent>();
-  ctx.SubscribeAgent<PhraseGenerationAgent>();
   ctx.SubscribeAgent<StandardMessageReplyAgent>();
 }
 
 void shutdown(ScAgentContext & ctx)
 {
   ctx.UnsubscribeAgent<DirectInferenceAgent>();
-  ctx.UnsubscribeAgent<PhraseGenerationAgent>();
   ctx.UnsubscribeAgent<StandardMessageReplyAgent>();
 }
 

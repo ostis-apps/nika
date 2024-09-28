@@ -14,12 +14,11 @@ namespace dialogControlModule
 
 ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
-  ScAddr messageNode = IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_1);
-
+  ScAddr messageNode = action.GetArgument(ScKeynodes::rrel_1);
   if (!messageNode.IsValid())
   {
     SC_LOG_DEBUG("The action doesn't have a message node");
-     return action.FinishUnsuccessfully();
+    return action.FinishUnsuccessfully();
   }
 
   ScAddr logicRuleNode = generateReplyMessage(messageNode);
@@ -52,9 +51,10 @@ ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & eve
 
     return action.FinishUnsuccessfully();
   }
+  ScAddr responseNode = action.GetArgument(ScKeynodes::rrel_2);
 
-  ScAddr responseNode = IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_2);
-  m_context.GenerateConnector(ScType::EdgeAccessConstPosTemp, responseNode, replyMessageNode);
+  if (m_context.IsElement(responseNode))
+    m_context.GenerateConnector(ScType::EdgeAccessConstPosTemp, responseNode, replyMessageNode);
   delete messageHandler;
 
   return action.FinishSuccessfully();

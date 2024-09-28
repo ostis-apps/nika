@@ -39,8 +39,7 @@ bool MessageHandler::processReplyMessage(
   {
     if (logicRuleNode.IsValid())
     {
-      SC_LOG_DEBUG(
-          "The logic rule " << context->GetElementSystemIdentifier(logicRuleNode) << " is found");
+      SC_LOG_DEBUG("The logic rule " << context->GetElementSystemIdentifier(logicRuleNode) << " is found");
       if (langNode.IsValid())
       {
         SC_LOG_DEBUG("The message language is " << context->GetElementSystemIdentifier(langNode));
@@ -197,11 +196,13 @@ ScAddr MessageHandler::generateLinkByPhrase(
 
         ActionUtils::waitAction(context, phraseGenerationActionNode, PHRASE_GENERATION_AGENT_WAIT_TIME);
 
+        context->UnsubscribeAgent<dialogControlModule::PhraseGenerationAgent>();
+        
         if (context->CheckConnector(
                 ScKeynodes::action_finished_successfully, phraseGenerationActionNode, ScType::EdgeAccessConstPosPerm))
         {
           resultLink = IteratorUtils::getAnyByOutRelation(context, phraseGenerationActionNode, ScKeynodes::nrel_result);
-          context->GetLinkContent(phraseLink, linkContent);
+          context->GetLinkContent(resultLink, linkContent);
           SC_LOG_DEBUG("The result link with the content \"" << linkContent << "\" is generated");
           break;
         }
