@@ -84,7 +84,7 @@ TEST_F(NonAtomicActionInterpreterTest, checkDynamicArguments)
   EXPECT_TRUE(test_action_node.IsValid());
   initialize(context);
 
-  //EXPECT_TRUE(ActionUtils::waitAction(&context, test_action_node, WAIT_TIME));
+  // EXPECT_TRUE(ActionUtils::waitAction(&context, test_action_node, WAIT_TIME));
   ScAction actionNode = context.ConvertToAction(test_action_node);
   EXPECT_TRUE(actionNode.InitiateAndWait(WAIT_TIME));
   shutdown(context);
@@ -194,6 +194,8 @@ TEST_F(NonAtomicActionInterpreterTest, checkElseSequence)
 
 TEST_F(NonAtomicActionInterpreterTest, checkGotoSequence)
 {
+  // TODO(Semyon Protas): After using the scp-machine instead of the non-atomic action interpreter, check for execution
+  // of goto together with else and true
   ScAgentContext & context = *m_ctx;
 
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "finishedSubaction.scs");
@@ -279,7 +281,6 @@ TEST_F(NonAtomicActionInterpreterTest, checkArgumentsMatching)
   EXPECT_TRUE(results.Size() == 1);
 
   iterator5.reset();
-
 }
 
 }  // namespace commonTest
