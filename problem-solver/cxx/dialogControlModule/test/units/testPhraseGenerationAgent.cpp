@@ -146,7 +146,7 @@ TEST_F(PhraseGenerationTest, AgentDoesNotGenerateAPhrase)
   ctx.SubscribeAgent<dialogControlModule::PhraseGenerationAgent>();
 
   EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
-  EXPECT_TRUE(testAction.IsFinishedSuccessfully());
+  EXPECT_TRUE(testAction.IsFinishedUnsuccessfully());
   ctx.UnsubscribeAgent<dialogControlModule::PhraseGenerationAgent>();
 }
 
@@ -194,7 +194,7 @@ TEST_F(PhraseGenerationTest, actionDoesNotHaveAnyParameters)
   ctx.SubscribeAgent<dialogControlModule::PhraseGenerationAgent>();
 
   EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
-  EXPECT_TRUE(testAction.IsFinishedSuccessfully());
+  EXPECT_TRUE(testAction.IsFinishedWithError());
 
   ctx.UnsubscribeAgent<dialogControlModule::PhraseGenerationAgent>();
 }
