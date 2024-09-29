@@ -10,8 +10,9 @@ bool ActionUtils::waitAction(ScAgentContext * context, ScAddr const & actionAddr
 {
   ScAction action = context->ConvertToAction(actionAddr);
   return action.InitiateAndWait(waitTime);
-//  auto waiter = context->CreateEventWaiter<ScEventAfterGenerateConnector<ScType::EdgeAccessConstPosPerm>>(actionAddr);
-//  return waiter->Wait(waitTime);
+  //  auto waiter =
+  //  context->CreateEventWaiter<ScEventAfterGenerateConnector<ScType::EdgeAccessConstPosPerm>>(actionAddr); return
+  //  waiter->Wait(waitTime);
 }
 
 bool ActionUtils::isActionDeactivated(ScAgentContext * context, ScAddr const & action)

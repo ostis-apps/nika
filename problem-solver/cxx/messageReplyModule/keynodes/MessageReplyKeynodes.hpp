@@ -12,7 +12,7 @@ class MessageReplyKeynodes : public ScKeynodes
 public:
   static inline ScKeynode const action_reply_to_message{"action_reply_to_message", ScType::NodeConstClass};
 
-  static inline ScKeynode const message_processing_program{"message_processing_program",ScType::NodeConst};
+  static inline ScKeynode const message_processing_program{"message_processing_program", ScType::NodeConst};
 
   static inline ScKeynode const nrel_authors{"nrel_authors", ScType::NodeConstNoRole};
 

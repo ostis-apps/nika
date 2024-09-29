@@ -85,9 +85,7 @@ ScAddrVector MessageTopicClassifier::getMessageIntentClass(ScAddr const & messag
     {
       if (messageIntent == witAiIdtf)
       {
-        SC_LOG_DEBUG(
-            "Found " << context->GetElementSystemIdentifier(possibleMessageCLass) <<
-            " intent class");
+        SC_LOG_DEBUG("Found " << context->GetElementSystemIdentifier(possibleMessageCLass) << " intent class");
         ScAddr messageIntentCLassEdge =
             context->GenerateConnector(ScType::EdgeAccessConstPosPerm, possibleMessageCLass, messageAddr);
         messageIntentCLassElements.push_back(possibleMessageCLass);
@@ -231,9 +229,7 @@ ScAddrVector MessageTopicClassifier::processTraits(
 
       if (traitClassIdtf == traitWitIdtf)
       {
-        SC_LOG_DEBUG(
-            "Found " << context->GetElementSystemIdentifier(possibleMessageCLass) <<
-            " trait class");
+        SC_LOG_DEBUG("Found " << context->GetElementSystemIdentifier(possibleMessageCLass) << " trait class");
         ScAddr messageTraitClassEdge =
             context->GenerateConnector(ScType::EdgeAccessConstPosPerm, possibleMessageCLass, messageAddr);
         messageTraitClassElements.push_back(possibleMessageCLass);
@@ -368,8 +364,7 @@ ScAddrVector MessageTopicClassifier::processEntities(
         {
           if (std::find(identifiers.begin(), identifiers.end(), entitySameIdtf) != identifiers.end())
           {
-            SC_LOG_DEBUG(
-                "Found " << context->GetElementSystemIdentifier(entityAddr) << " entity");
+            SC_LOG_DEBUG("Found " << context->GetElementSystemIdentifier(entityAddr) << " entity");
             ScAddr messageEntityEdge =
                 context->GenerateConnector(ScType::EdgeAccessConstPosPerm, messageAddr, entityAddr);
             ScAddr messageEntityRoleEdge =

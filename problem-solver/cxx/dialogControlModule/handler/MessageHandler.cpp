@@ -197,7 +197,7 @@ ScAddr MessageHandler::generateLinkByPhrase(
         ActionUtils::waitAction(context, phraseGenerationActionNode, PHRASE_GENERATION_AGENT_WAIT_TIME);
 
         context->UnsubscribeAgent<dialogControlModule::PhraseGenerationAgent>();
-        
+
         if (context->CheckConnector(
                 ScKeynodes::action_finished_successfully, phraseGenerationActionNode, ScType::EdgeAccessConstPosPerm))
         {

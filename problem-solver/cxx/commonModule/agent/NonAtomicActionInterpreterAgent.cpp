@@ -43,7 +43,6 @@ ScResult NonAtomicActionInterpreterAgent::DoProgram(ScActionInitiatedEvent const
   }
   deleteFields();
 
-
   return action.FinishSuccessfully();
 }
 

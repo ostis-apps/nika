@@ -53,7 +53,8 @@ ScResult MessageReplyAgent::DoProgram(ScActionInitiatedEvent const & event, ScAc
     return action.FinishUnsuccessfully();
   }
   ScAddrVector argsVector = {processingProgramAddr, generateNonAtomicActionArgsSet(messageAddr)};
-  ScAddr actionToInterpret = ActionUtils::CreateAction(&m_context, commonModule::Keynodes::action_interpret_non_atomic_action, argsVector);
+  ScAddr actionToInterpret =
+      ActionUtils::CreateAction(&m_context, commonModule::Keynodes::action_interpret_non_atomic_action, argsVector);
   ScAddr answerAddr;
   if (!waitForActionSuccessfulFinish(actionToInterpret))
   {

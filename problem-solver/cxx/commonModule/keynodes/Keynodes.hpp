@@ -16,7 +16,9 @@ public:
 
   static inline ScKeynode const nrel_sc_text_translation{"nrel_sc_text_translation", ScType::NodeConstNoRole};
 
-  static inline ScKeynode const action_interpret_non_atomic_action{"action_interpret_non_atomic_action", ScType::NodeConstClass};
+  static inline ScKeynode const action_interpret_non_atomic_action{
+      "action_interpret_non_atomic_action",
+      ScType::NodeConstClass};
 
   static inline ScKeynode const languages{"languages", ScType::NodeConst};
 

@@ -362,7 +362,7 @@ void PhraseGenerationAgent::updateSemanticAnswer(const ScTemplateSearchResultIte
   for (auto & phraseElement : phraseElements)
   {
     // if (find(toRemoveElements.begin(), toRemoveElements.end(), phraseElement) == toRemoveElements.end())
-      m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, phraseElement);
+    m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, phraseElement);
   }
 
   m_context.EraseElement(phraseStruct);
