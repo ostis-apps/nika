@@ -21,11 +21,13 @@ using MessageReplyAgentTest = ScMemoryTest;
 void initialize(ScAgentContext & context)
 {
   context.SubscribeAgent<messageReplyModule::MessageReplyAgent>();
+  context.SubscribeAgent<GenerateReplyMessageAgent>();
 }
 
 void shutdown(ScAgentContext & context)
 {
   context.UnsubscribeAgent<messageReplyModule::MessageReplyAgent>();
+  context.UnsubscribeAgent<GenerateReplyMessageAgent>();
 }
 
 bool generatedMessageIsValid(ScMemoryContext * context, ScAddr const & soundLinkAddr)
@@ -65,7 +67,7 @@ TEST_F(MessageReplyAgentTest, messageProcessingWithTextLinkSuccessful)
   initialize(context);
 
   EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
-  //EXPECT_TRUE(ActionUtils::waitAction(&context, test_action_node, WAIT_TIME));
+  // EXPECT_TRUE(ActionUtils::waitAction(&context, test_action_node, WAIT_TIME));
   EXPECT_TRUE(context.CheckConnector(
       ScKeynodes::action_finished_successfully, test_action_node, ScType::EdgeAccessConstPosPerm));
 
