@@ -1,6 +1,7 @@
 #pragma once
 
 #include <sc-memory/sc_agent.hpp>
+
 namespace messageReplyModule
 {
 class MessageReplyAgent : public ScActionInitiatedAgent
@@ -28,8 +29,6 @@ private:
   bool textLinkIsValid(ScAddr const & linkAddr);
 
   bool hasLanguage(ScAddr const & linkAddr);
-
-  bool waitForActionSuccessfulFinish(ScAddr const & actionAddr);
 };
 
 }  // namespace messageReplyModule
