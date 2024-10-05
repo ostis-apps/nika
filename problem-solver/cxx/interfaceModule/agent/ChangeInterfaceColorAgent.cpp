@@ -8,7 +8,7 @@ using namespace interfaceModule;
 
 ScResult ChangeInterfaceColorAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
-  ScAddr const & messageAddr = utils::IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_1);
+  ScAddr const & messageAddr = action.GetArgument(ScKeynodes::rrel_1);
   if (!messageAddr.IsValid())
   {
     SC_AGENT_LOG_ERROR("Message Addr not found.");

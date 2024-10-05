@@ -12,13 +12,12 @@ ScResult NonAtomicActionInterpreterAgent::DoProgram(ScActionInitiatedEvent const
   ScAddr nonAtomicActionAddr;
   try
   {
-    ScAddr const & nonAtomicActionTemplateAddr =
-        utils::IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_1);
+    ScAddr const & nonAtomicActionTemplateAddr = action.GetArgument(ScKeynodes::rrel_1);
     if (!nonAtomicActionTemplateAddr.IsValid())
     {
       SC_THROW_EXCEPTION(utils::ExceptionInvalidParams, "Action params are not formed correctly.");
     }
-    ScAddr const & argumentsSet = utils::IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_2);
+    ScAddr const & argumentsSet = action.GetArgument(ScKeynodes::rrel_2);
 
     ScTemplateParams templateParams = createTemplateParams(nonAtomicActionTemplateAddr, argumentsSet);
     nonAtomicActionAddr = replaceNonAtomicAction(nonAtomicActionTemplateAddr, templateParams);
@@ -89,20 +88,14 @@ ScTemplateParams NonAtomicActionInterpreterAgent::createTemplateParams(
     {
       ScAddr role = RelationUtils::getIndexRelation(&m_context, index);
       if (!role.IsValid())
-      {
         break;
-      }
       ScAddr argument = utils::IteratorUtils::getAnyByOutRelation(&m_context, argumentsSet, role);
       if (!argument.IsValid())
-      {
         break;
-      }
       ScIterator5Ptr variablesIterator5 = m_context.CreateIterator5(
           templateKeyElement, ScType::EdgeAccessVarPosPerm, ScType::NodeVar, ScType::EdgeAccessVarPosPerm, role);
       if (variablesIterator5->Next())
-      {
         templateParams.Add(m_context.GetElementSystemIdentifier(variablesIterator5->Get(2)), argument);
-      }
     }
   }
 

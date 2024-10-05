@@ -42,9 +42,8 @@ void NonAtomicActionInterpreter::applyAction(ScAddr const & actionAddr)
   SC_LOG_DEBUG(getClassNameForLog() + ": Waiting for atomic action finish.");
   ScAction action = context->ConvertToAction(actionAddr);
   if (!action.InitiateAndWait(WAIT_TIME))
-  {
-    throw std::runtime_error("Action wait time expired.");
-  }
+    SC_THROW_EXCEPTION(utils::ExceptionCritical, "Action wait time expired.");
+
   SC_LOG_DEBUG(getClassNameForLog() + ": Atomic action finished.");
 }
 

@@ -11,7 +11,7 @@ ScResult AlternativeMessageTopicClassificationAgent::DoProgram(ScActionInitiated
 {
   ScAddrVector answerElements;
 
-  ScAddr const & messageAddr = utils::IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_1);
+  ScAddr const & messageAddr = action.GetArgument(ScKeynodes::rrel_1);
   if (!messageAddr.IsValid())
   {
     SC_AGENT_LOG_ERROR("Action doesn't have a message node.");

@@ -12,7 +12,7 @@ ScResult MessageTopicClassificationAgent::DoProgram(ScActionInitiatedEvent const
   initFields();
   ScAddrVector answerElements;
 
-  ScAddr const & messageAddr = utils::IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_1);
+  ScAddr const & messageAddr = action.GetArgument(ScKeynodes::rrel_1);
 
   try
   {

@@ -14,7 +14,7 @@ ScResult GenerateReplyMessageAgent::DoProgram(ScActionInitiatedEvent const & eve
     return action.FinishUnsuccessfully();
   }
 
-  ScAddr argsSet = utils::IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_2);
+  ScAddr argsSet = action.GetArgument(ScKeynodes::rrel_1);
   ScAddr messageAddr = utils::IteratorUtils::getAnyByOutRelation(&m_context, argsSet, ScKeynodes::rrel_1);
 
   ScTemplate scTemplate;

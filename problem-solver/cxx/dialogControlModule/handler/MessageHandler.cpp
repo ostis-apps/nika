@@ -189,7 +189,7 @@ ScAddr MessageHandler::generateLinkByPhrase(
         ScAction phraseGenerationAction = ActionUtils::CreateAction(
             context, MessageKeynodes::action_phrase_generation, {replyMessageNode, phraseLink, parametersNode});
 
-        ActionUtils::waitAction(context, phraseGenerationAction, PHRASE_GENERATION_AGENT_WAIT_TIME);
+        phraseGenerationAction.InitiateAndWait(PHRASE_GENERATION_AGENT_WAIT_TIME);
 
         if (context->CheckConnector(
                 ScKeynodes::action_finished_successfully, phraseGenerationAction, ScType::EdgeAccessConstPosPerm))

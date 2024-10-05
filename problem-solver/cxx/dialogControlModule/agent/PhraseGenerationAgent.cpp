@@ -22,13 +22,13 @@ namespace dialogControlModule
 
 ScResult PhraseGenerationAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
-  ScAddr const & replyMessageNode = IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_1);
+  ScAddr const & replyMessageNode = action.GetArgument(ScKeynodes::rrel_1);
   if (!m_context.IsElement(replyMessageNode))
   {
     SC_AGENT_LOG_ERROR("Action doesn't have a reply message node.");
     return action.FinishWithError();
   }
-  ScAddr const & phraseLink = IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_2);
+  ScAddr const & phraseLink = action.GetArgument(ScKeynodes::rrel_2);
   if (!m_context.IsElement(phraseLink))
   {
     SC_AGENT_LOG_ERROR("Action doesn't have a link with a text template.");
@@ -36,7 +36,7 @@ ScResult PhraseGenerationAgent::DoProgram(ScActionInitiatedEvent const & event, 
   }
   ScAddr templateNode =
       IteratorUtils::getAnyByOutRelation(&m_context, phraseLink, DialogKeynodes::nrel_phrase_template);
-  ScAddr const & parametersNode = IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_3);
+  ScAddr const & parametersNode = action.GetArgument(ScKeynodes::rrel_3);
   if (!m_context.IsElement(parametersNode))
   {
     SC_AGENT_LOG_ERROR("Action doesn't have a parameters node.");
