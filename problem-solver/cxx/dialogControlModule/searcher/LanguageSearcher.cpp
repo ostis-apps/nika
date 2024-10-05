@@ -5,7 +5,6 @@
 
 using namespace commonModule;
 using namespace dialogControlModule;
-using namespace std;
 
 LanguageSearcher::LanguageSearcher(ScMemoryContext * ms_context)
 {
@@ -23,7 +22,7 @@ ScAddr LanguageSearcher::getMessageLanguage(const ScAddr & messageNode)
     if (link.IsValid())
       langNode = getLanguage(link);
   }
-  catch (runtime_error & ex)
+  catch (std::runtime_error & ex)
   {
     SC_LOG_ERROR(ex.what());
   }
@@ -33,7 +32,7 @@ ScAddr LanguageSearcher::getMessageLanguage(const ScAddr & messageNode)
 
 ScAddr LanguageSearcher::getLanguage(const ScAddr & node)
 {
-  string lang = "_lang";
+  std::string lang = "_lang";
 
   ScAddr langNode;
   ScTemplate templateLang;

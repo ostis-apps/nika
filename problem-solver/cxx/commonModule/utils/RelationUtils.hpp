@@ -2,8 +2,6 @@
 
 #include "sc-memory/sc_memory.hpp"
 
-using namespace std;
-
 class RelationUtils
 {
 public:

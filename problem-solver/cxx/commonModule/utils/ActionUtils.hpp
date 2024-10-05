@@ -2,8 +2,6 @@
 
 #include <sc-memory/sc_agent.hpp>
 
-using namespace std;
-
 class ActionUtils
 {
 public:

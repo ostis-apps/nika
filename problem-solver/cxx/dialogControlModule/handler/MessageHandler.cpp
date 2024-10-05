@@ -122,7 +122,7 @@ bool MessageHandler::processNonAtomicMessage(
     ScAddr phraseClassNode = phraseSearcher->getFirstPhraseClass(logicRuleNode);
     if (phraseClassNode.IsValid())
     {
-      string resultText;
+      std::string resultText;
       do
       {
         ScAddr nextMessageNode;
@@ -176,7 +176,7 @@ ScAddr MessageHandler::generateLinkByPhrase(
 {
   ScAddr resultLink;
   std::string linkContent;
-  vector<ScAddr> phrases = phraseSearcher->getPhrases(phraseClassNode, langNode);
+  ScAddrVector phrases = phraseSearcher->getPhrases(phraseClassNode, langNode);
   if (!phrases.empty())
   {
     for (auto phraseLink : phrases)

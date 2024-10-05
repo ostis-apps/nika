@@ -1,6 +1,5 @@
 #include <sc-memory/sc_agent.hpp>
 
-#include "sc-agents-common/utils/IteratorUtils.hpp"
 #include "sc-builder/src/scs_loader.hpp"
 #include "sc_test.hpp"
 
@@ -8,13 +7,12 @@
 #include "keynodes/Keynodes.hpp"
 #include "keynodes/MessageReplyKeynodes.hpp"
 #include "test/agent/GenerateReplyMessageAgent.hpp"
-#include "utils/ActionUtils.hpp"
 
 namespace messageReplyModuleTest
 {
 ScsLoader loader;
-const std::string TEST_FILES_DIR_PATH = MESSAGE_REPLY_MODULE_TEST_SRC_PATH "/testStructures/";
-const int WAIT_TIME = 5000;
+std::string const TEST_FILES_DIR_PATH = MESSAGE_REPLY_MODULE_TEST_SRC_PATH "/testStructures/";
+int const WAIT_TIME = 5000;
 
 using MessageReplyAgentTest = ScMemoryTest;
 
@@ -61,16 +59,16 @@ TEST_F(MessageReplyAgentTest, messageProcessingWithTextLinkSuccessful)
 
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "replyMessageAgentTextLinkTestStructure.scs");
 
-  ScAddr test_action_node = context.SearchElementBySystemIdentifier("test_action_node");
-  ScAction action = context.ConvertToAction(test_action_node);
-  EXPECT_TRUE(test_action_node.IsValid());
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
+  EXPECT_TRUE(testActionNode.IsValid());
+
   initialize(context);
 
-  EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
-  EXPECT_TRUE(action.IsFinishedSuccessfully());
+  ScAction testAction = context.ConvertToAction(testActionNode);
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(testAction.IsFinishedSuccessfully());
 
-  EXPECT_TRUE(generatedMessageIsValid(
-      &context, utils::IteratorUtils::getAnyByOutRelation(&context, test_action_node, ScKeynodes::rrel_1)));
+  EXPECT_TRUE(generatedMessageIsValid(&context, testAction.GetArgument(ScKeynodes::rrel_1)));
 
   shutdown(context);
 }
@@ -81,17 +79,16 @@ TEST_F(MessageReplyAgentTest, messageProcessingWithSoundLinkSuccessful)
 
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "replyMessageAgentSoundLinkTestStructure.scs");
 
-  ScAddr test_action_node = context.SearchElementBySystemIdentifier("test_action_node");
-  EXPECT_TRUE(test_action_node.IsValid());
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
+  EXPECT_TRUE(testActionNode.IsValid());
 
   initialize(context);
 
-  EXPECT_TRUE(ActionUtils::waitAction(&context, test_action_node, WAIT_TIME));
-  EXPECT_TRUE(context.CheckConnector(
-      ScKeynodes::action_finished_successfully, test_action_node, ScType::EdgeAccessConstPosPerm));
+  ScAction testAction = context.ConvertToAction(testActionNode);
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(testAction.IsFinishedSuccessfully());
 
-  EXPECT_TRUE(generatedMessageIsValid(
-      &context, utils::IteratorUtils::getAnyByOutRelation(&context, test_action_node, ScKeynodes::rrel_1)));
+  EXPECT_TRUE(generatedMessageIsValid(&context, testAction.GetArgument(ScKeynodes::rrel_1)));
 
   shutdown(context);
 }
@@ -101,15 +98,15 @@ TEST_F(MessageReplyAgentTest, argumentIsNotALink)
   ScAgentContext & context = *m_ctx;
 
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "replyMessageAgentTestStructureFirstArgumentIsNotALink.scs");
-  ScAddr test_action_node = context.SearchElementBySystemIdentifier("test_action_node");
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
 
-  EXPECT_TRUE(test_action_node.IsValid());
+  EXPECT_TRUE(testActionNode.IsValid());
 
   initialize(context);
 
-  EXPECT_TRUE(ActionUtils::waitAction(&context, test_action_node, WAIT_TIME));
-  EXPECT_TRUE(context.CheckConnector(
-      ScKeynodes::action_finished_unsuccessfully, test_action_node, ScType::EdgeAccessConstPosPerm));
+  ScAction testAction = context.ConvertToAction(testActionNode);
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(testAction.IsFinishedUnsuccessfully());
 
   shutdown(context);
 }
@@ -119,15 +116,16 @@ TEST_F(MessageReplyAgentTest, linkSpecifiedIncorrectly)
   ScAgentContext & context = *m_ctx;
 
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "replyMessageAgentTestStructureWithIncorrectlySpecifiedLink.scs");
-  ScAddr test_action_node = context.SearchElementBySystemIdentifier("test_action_node");
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
 
-  EXPECT_TRUE(test_action_node.IsValid());
+  EXPECT_TRUE(testActionNode.IsValid());
 
   initialize(context);
 
-  EXPECT_TRUE(ActionUtils::waitAction(&context, test_action_node, WAIT_TIME));
-  EXPECT_TRUE(context.CheckConnector(
-      ScKeynodes::action_finished_unsuccessfully, test_action_node, ScType::EdgeAccessConstPosPerm));
+  ScAction testAction = context.ConvertToAction(testActionNode);
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(testAction.IsFinishedUnsuccessfully());
+
   shutdown(context);
 }
 
