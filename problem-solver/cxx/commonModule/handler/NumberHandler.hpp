@@ -11,8 +11,6 @@ class NumberHandler
 public:
   explicit NumberHandler(ScMemoryContext * ms_context);
 
-  ~NumberHandler();
-
   ScAddr getNumberNode(const double & number);
 
   ScAddr findNumberNode(const double & number);
@@ -23,7 +21,7 @@ public:
 
 private:
   ScMemoryContext * context;
-  LinkHandler * linkHandler;
+  std::unique_ptr<LinkHandler> linkHandler;
 };
 
 }  // namespace commonModule

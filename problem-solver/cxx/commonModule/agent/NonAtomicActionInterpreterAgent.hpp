@@ -14,7 +14,7 @@ public:
   ScResult DoProgram(ScActionInitiatedEvent const & event, ScAction & action) override;
 
 private:
-  NonAtomicActionInterpreter * nonAtomicActionInterpreter;
+  std::unique_ptr<NonAtomicActionInterpreter> nonAtomicActionInterpreter;
 
   void generateNonAtomicActionTemplate(
       ScAddr const & nonAtomicActionTemplateAddr,
@@ -27,8 +27,6 @@ private:
   ScAddr replaceNonAtomicAction(ScAddr const & templateAddr, ScTemplateParams & templateParams);
 
   void initFields();
-
-  void deleteFields();
 };
 
 }  // namespace commonModule

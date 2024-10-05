@@ -9,7 +9,7 @@ namespace messageClassificationModule
 class MessageTopicClassifier
 {
 public:
-  explicit MessageTopicClassifier(ScAgentContext * context, WitAiClientInterface * client);
+  explicit MessageTopicClassifier(ScAgentContext * context, std::shared_ptr<WitAiClientInterface> const & client);
 
   ScAddrVector classifyMessage(ScAddr const & messageAddr);
 
@@ -20,7 +20,7 @@ protected:
 
   std::unique_ptr<dialogControlModule::MessageSearcher> messageSearcher;
 
-  std::unique_ptr<WitAiClientInterface> client;
+  std::shared_ptr<WitAiClientInterface> client;
 
   std::string getMessageText(ScAddr const & messageAddr);
 

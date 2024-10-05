@@ -9,14 +9,9 @@ using namespace dialogControlModule;
 using namespace utils;
 
 TokenDomainSearcher::TokenDomainSearcher(ScMemoryContext * context)
+  : context(context)
+  , linkHandler(std::make_unique<commonModule::LinkHandler>(context))
 {
-  this->context = context;
-  this->linkHandler = new commonModule::LinkHandler(context);
-}
-
-TokenDomainSearcher::~TokenDomainSearcher()
-{
-  delete this->linkHandler;
 }
 
 ScAddr TokenDomainSearcher::getMessageText(const ScAddr & message)

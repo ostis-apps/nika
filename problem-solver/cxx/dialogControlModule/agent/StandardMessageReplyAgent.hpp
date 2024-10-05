@@ -14,12 +14,18 @@ public:
   ScResult DoProgram(ScActionInitiatedEvent const & event, ScAction & action) override;
 
 private:
-  const int DIRECT_INFERENCE_AGENT_WAIT_TIME = 15000;
+  int const DIRECT_INFERENCE_AGENT_WAIT_TIME = 15000;
+
+  std::unique_ptr<LanguageSearcher> langSearcher;
+  std::unique_ptr<MessageHandler> messageHandler;
+  std::unique_ptr<MessageSearcher> messageSearcher;
 
   ScAddr generatePhraseAgentParametersNode(const ScAddr & messageNode);
 
   ScAddr generateReplyMessage(const ScAddr & messageNode);
 
   ScAddr wrapInSet(ScAddr const & addr);
+
+  void initFields();
 };
 }  // namespace dialogControlModule

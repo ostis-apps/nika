@@ -9,20 +9,12 @@ using namespace dialogControlModule;
 using namespace utils;
 
 MessageHandler::MessageHandler(ScAgentContext * context)
+  : context(context)
+  , languageSearcher(std::make_unique<LanguageSearcher>(context))
+  , messageConstructionsGenerator(std::make_unique<MessageConstructionsGenerator>(context))
+  , messageSearcher(std::make_unique<MessageSearcher>(context))
+  , phraseSearcher(std::make_unique<PhraseSearcher>(context))
 {
-  this->context = context;
-  languageSearcher = new LanguageSearcher(context);
-  messageConstructionsGenerator = new MessageConstructionsGenerator(context);
-  messageSearcher = new MessageSearcher(context);
-  phraseSearcher = new PhraseSearcher(context);
-}
-
-MessageHandler::~MessageHandler()
-{
-  delete languageSearcher;
-  delete messageConstructionsGenerator;
-  delete messageSearcher;
-  delete phraseSearcher;
 }
 
 bool MessageHandler::processReplyMessage(

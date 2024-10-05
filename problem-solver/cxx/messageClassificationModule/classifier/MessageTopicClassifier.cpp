@@ -10,7 +10,9 @@
 
 namespace messageClassificationModule
 {
-MessageTopicClassifier::MessageTopicClassifier(ScAgentContext * context, WitAiClientInterface * client)
+MessageTopicClassifier::MessageTopicClassifier(
+    ScAgentContext * context,
+    std::shared_ptr<WitAiClientInterface> const & client)
   : context(context)
   , client(client)
 {

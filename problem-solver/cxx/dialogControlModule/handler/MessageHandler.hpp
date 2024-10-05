@@ -10,8 +10,6 @@ class MessageHandler
 public:
   explicit MessageHandler(ScAgentContext * context);
 
-  ~MessageHandler();
-
   bool processReplyMessage(
       const ScAddr & replyMessageNode,
       const ScAddr & logicRuleNode,
@@ -33,11 +31,11 @@ public:
 private:
   const int PHRASE_GENERATION_AGENT_WAIT_TIME = 6000;
 
-  ScAgentContext * context{};
-  LanguageSearcher * languageSearcher;
-  MessageConstructionsGenerator * messageConstructionsGenerator;
-  MessageSearcher * messageSearcher;
-  PhraseSearcher * phraseSearcher;
+  ScAgentContext * context;
+  std::unique_ptr<LanguageSearcher> languageSearcher;
+  std::unique_ptr<MessageConstructionsGenerator> messageConstructionsGenerator;
+  std::unique_ptr<MessageSearcher> messageSearcher;
+  std::unique_ptr<PhraseSearcher> phraseSearcher;
 
   void clearSemanticAnswer();
 

@@ -36,11 +36,9 @@ ScResult NonAtomicActionInterpreterAgent::DoProgram(ScActionInitiatedEvent const
   }
   catch (std::runtime_error & ex)
   {
-    deleteFields();
     SC_AGENT_LOG_ERROR(ex.what());
     return action.FinishUnsuccessfully();
   }
-  deleteFields();
 
   return action.FinishSuccessfully();
 }
@@ -116,10 +114,5 @@ ScAddr NonAtomicActionInterpreterAgent::replaceNonAtomicAction(
 
 void NonAtomicActionInterpreterAgent::initFields()
 {
-  this->nonAtomicActionInterpreter = new NonAtomicActionInterpreter(&m_context);
-}
-
-void NonAtomicActionInterpreterAgent::deleteFields()
-{
-  delete this->nonAtomicActionInterpreter;
+  this->nonAtomicActionInterpreter = std::make_unique<NonAtomicActionInterpreter>(&m_context);
 }

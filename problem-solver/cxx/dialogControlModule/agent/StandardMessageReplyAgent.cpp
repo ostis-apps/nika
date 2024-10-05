@@ -17,7 +17,6 @@ ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & eve
   if (!messageNode.IsValid())
   {
     SC_AGENT_LOG_DEBUG("The action doesn't have a message node");
-    SC_AGENT_LOG_DEBUG("The action doesn't have a message node");
   }
 
   ScAddr logicRuleNode = generateReplyMessage(messageNode);
@@ -31,17 +30,14 @@ ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & eve
   }
   SC_AGENT_LOG_DEBUG("The reply message is generated");
 
-  auto * langSearcher = new LanguageSearcher(&m_context);
+  initFields();
   ScAddr langNode = langSearcher->getMessageLanguage(messageNode);
-  delete langSearcher;
 
   ScAddr parametersNode = generatePhraseAgentParametersNode(messageNode);
 
-  auto * messageHandler = new MessageHandler(&m_context);
   if (!messageHandler->processReplyMessage(replyMessageNode, logicRuleNode, langNode, parametersNode))
   {
     SC_AGENT_LOG_ERROR("The reply message is formed incorrectly");
-    delete messageHandler;
     ScIterator5Ptr it5 = IteratorUtils::getIterator5(&m_context, replyMessageNode, MessageKeynodes::nrel_reply, false);
     if (it5->Next())
     {
@@ -54,7 +50,6 @@ ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & eve
 
   if (m_context.IsElement(responseNode))
     m_context.GenerateConnector(ScType::EdgeAccessConstPosTemp, responseNode, replyMessageNode);
-  delete messageHandler;
 
   action.SetResult(replyMessageNode);
   return action.FinishSuccessfully();
@@ -99,8 +94,6 @@ ScAddr StandardMessageReplyAgent::generatePhraseAgentParametersNode(const ScAddr
   ScAddrVector parameters;
   parameters.push_back(messageNode);
 
-  auto * messageSearcher = new MessageSearcher(&m_context);
-
   ScAddr authorNode = messageSearcher->getMessageAuthor(messageNode);
   if (authorNode.IsValid())
     parameters.push_back(authorNode);
@@ -116,8 +109,14 @@ ScAddr StandardMessageReplyAgent::generatePhraseAgentParametersNode(const ScAddr
       m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, parametersNode, node);
   }
 
-  delete messageSearcher;
-
   return parametersNode;
 }
+
+void StandardMessageReplyAgent::initFields()
+{
+  this->langSearcher = std::make_unique<LanguageSearcher>(&m_context);
+  this->messageSearcher = std::make_unique<MessageSearcher>(&m_context);
+  this->messageHandler = std::make_unique<MessageHandler>(&m_context);
+}
+
 }  // namespace dialogControlModule

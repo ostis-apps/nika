@@ -15,7 +15,7 @@ using MessageTopicClassificationTest = ScMemoryTest;
 
 TEST_F(MessageTopicClassificationTest, connectionTest)
 {
-  auto * client = new WitAiClientMock();
+  auto client = std::make_unique<WitAiClientMock>();
   std::string witResponse =
       R"({"entities":{},"intents":[{"confidence":0.8592,"id":"4251337931554570","name":"start_greeting"}],
               "text":"Hello.","traits":{"wit$sentiment":[{"confidence":0.65,"id":"5ac2b50a-44e4-466e-9d49-bad6bd40092c",
@@ -26,8 +26,6 @@ TEST_F(MessageTopicClassificationTest, connectionTest)
   json response = client->getWitResponse("Привет Максиму из лета.");
 
   EXPECT_FALSE(response.empty());
-
-  delete client;
 }
 
 TEST_F(MessageTopicClassificationTest, classifyMessageWithoutEntityTest)
@@ -42,7 +40,7 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithoutEntityTest)
   EXPECT_TRUE(greetingMessageClass.IsValid());
   EXPECT_TRUE(messageAddr.IsValid());
 
-  auto * client = new WitAiClientMock();
+  auto client = std::make_shared<WitAiClientMock>();
   std::string witResponse =
       R"({"entities":{},"intents":[{"confidence":0.8592,"id":"4251337931554570","name":"start_greeting"}],
               "text":"Hello.","traits":{"wit$sentiment":[{"confidence":0.65,"id":"5ac2b50a-44e4-466e-9d49-bad6bd40092c",
@@ -76,7 +74,7 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithEntityTest)
   EXPECT_TRUE(entityAddr.IsValid());
   EXPECT_TRUE(entityRoleAddr.IsValid());
 
-  auto * client = new WitAiClientMock();
+  auto client = std::make_shared<WitAiClientMock>();
   std::string witResponse =
       R"({"entities":{"wit$contact:contact":[{"body":"Максим","confidence":0.9059,"end":12,"entities":{},
               "id":"210261890968181","name":"wit$contact", "role":"contact","start":6,"suggested":true,
@@ -126,7 +124,7 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesTest)
   EXPECT_TRUE(rrelContactAddr.IsValid());
   EXPECT_TRUE(rrelSeasonAddr.IsValid());
 
-  auto * client = new WitAiClientMock();
+  auto client = std::make_shared<WitAiClientMock>();
   std::string witResponse =
       R"({"entities":
               {"season:season":[{"body":"лето","confidence":0.9995,"end":24,"entities":{},"id":"530932871575541",
@@ -177,7 +175,7 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesSameRoleTes
   EXPECT_TRUE(theatreAddr.IsValid());
   EXPECT_TRUE(rrelEntityAddr.IsValid());
 
-  auto * client = new WitAiClientMock();
+  auto client = std::make_shared<WitAiClientMock>();
   // Four entities with the same role "rrel_entity", some entities are duplicated. Expected to get two unique entities
   std::string witResponse =
       R"({"entities": {"rrel_entity:rrel_entity":

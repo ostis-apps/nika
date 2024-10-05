@@ -11,8 +11,6 @@ class ParameterHandler
 public:
   explicit ParameterHandler(ScMemoryContext * ms_context);
 
-  ~ParameterHandler();
-
   ScAddr updateMeasurableParameter(
       const ScAddr & entity,
       const ScAddr & parameterClass,
@@ -32,7 +30,7 @@ public:
 
 private:
   ScMemoryContext * context;
-  NumberHandler * numberHandler;
+  std::unique_ptr<NumberHandler> numberHandler;
 
   static std::string getClassNameForLog();
 };

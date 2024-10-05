@@ -113,14 +113,9 @@ ScAddr ParameterHandler::generateParameterNode(
 };
 
 ParameterHandler::ParameterHandler(ScMemoryContext * ms_context)
+  : context(ms_context)
+  , numberHandler(std::make_unique<NumberHandler>(ms_context))
 {
-  this->context = ms_context;
-  this->numberHandler = new NumberHandler(ms_context);
-}
-
-ParameterHandler::~ParameterHandler()
-{
-  delete this->numberHandler;
 }
 
 std::string ParameterHandler::getClassNameForLog()

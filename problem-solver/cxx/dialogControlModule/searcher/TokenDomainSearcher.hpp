@@ -11,12 +11,10 @@ class TokenDomainSearcher
 public:
   explicit TokenDomainSearcher(ScMemoryContext * ms_context);
 
-  ~TokenDomainSearcher();
-
   ScAddr getMessageText(const ScAddr & message);
 
 private:
   ScMemoryContext * context;
-  commonModule::LinkHandler * linkHandler;
+  std::unique_ptr<commonModule::LinkHandler> linkHandler;
 };
 }  // namespace dialogControlModule
