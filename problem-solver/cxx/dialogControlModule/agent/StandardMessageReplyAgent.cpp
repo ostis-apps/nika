@@ -2,7 +2,6 @@
 
 #include "sc-agents-common/utils/IteratorUtils.hpp"
 
-#include "agent/DirectInferenceAgent.hpp"
 #include "keynodes/InferenceKeynodes.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 #include "utils/ActionUtils.hpp"
@@ -17,8 +16,8 @@ ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & eve
   ScAddr messageNode = action.GetArgument(ScKeynodes::rrel_1);
   if (!messageNode.IsValid())
   {
-    SC_LOG_DEBUG("The action doesn't have a message node");
-    return action.FinishUnsuccessfully();
+    SC_AGENT_LOG_DEBUG("The action doesn't have a message node");
+    SC_AGENT_LOG_DEBUG("The action doesn't have a message node");
   }
 
   ScAddr logicRuleNode = generateReplyMessage(messageNode);
@@ -30,7 +29,7 @@ ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & eve
     SC_LOG_ERROR("The reply message isn't generated");
     return action.FinishUnsuccessfully();
   }
-  SC_LOG_DEBUG("The reply message is generated");
+  SC_AGENT_LOG_DEBUG("The reply message is generated");
 
   auto * langSearcher = new LanguageSearcher(&m_context);
   ScAddr langNode = langSearcher->getMessageLanguage(messageNode);
@@ -41,7 +40,7 @@ ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & eve
   auto * messageHandler = new MessageHandler(&m_context);
   if (!messageHandler->processReplyMessage(replyMessageNode, logicRuleNode, langNode, parametersNode))
   {
-    SC_LOG_ERROR("The reply message is formed incorrectly");
+    SC_AGENT_LOG_ERROR("The reply message is formed incorrectly");
     delete messageHandler;
     ScIterator5Ptr it5 = IteratorUtils::getIterator5(&m_context, replyMessageNode, MessageKeynodes::nrel_reply, false);
     if (it5->Next())
@@ -57,6 +56,7 @@ ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & eve
     m_context.GenerateConnector(ScType::EdgeAccessConstPosTemp, responseNode, replyMessageNode);
   delete messageHandler;
 
+  action.SetResult(replyMessageNode);
   return action.FinishSuccessfully();
 }
 

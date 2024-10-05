@@ -84,7 +84,6 @@ TEST_F(NonAtomicActionInterpreterTest, checkDynamicArguments)
   EXPECT_TRUE(test_action_node.IsValid());
   initialize(context);
 
-  // EXPECT_TRUE(ActionUtils::waitAction(&context, test_action_node, WAIT_TIME));
   ScAction actionNode = context.ConvertToAction(test_action_node);
   EXPECT_TRUE(actionNode.InitiateAndWait(WAIT_TIME));
   shutdown(context);

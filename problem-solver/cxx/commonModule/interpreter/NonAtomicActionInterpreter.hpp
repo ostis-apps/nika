@@ -29,6 +29,8 @@ private:
   ScAddr getElseAction(ScAddr const & actionAddr);
 
   ScAddr getGoToAction(ScAddr const & actionAddr);
+
+  static std::string getClassNameForLog();
 };
 
 }  // namespace commonModule

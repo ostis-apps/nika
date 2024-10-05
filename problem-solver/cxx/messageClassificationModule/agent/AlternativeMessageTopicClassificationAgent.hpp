@@ -11,6 +11,7 @@ public:
   ScResult DoProgram(ScActionInitiatedEvent const & event, ScAction & action) override;
 
 private:
+  
 };
 
 }  // namespace messageClassificationModule

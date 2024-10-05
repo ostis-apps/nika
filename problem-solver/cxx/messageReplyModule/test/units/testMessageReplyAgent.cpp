@@ -67,9 +67,7 @@ TEST_F(MessageReplyAgentTest, messageProcessingWithTextLinkSuccessful)
   initialize(context);
 
   EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
-  // EXPECT_TRUE(ActionUtils::waitAction(&context, test_action_node, WAIT_TIME));
-  EXPECT_TRUE(context.CheckConnector(
-      ScKeynodes::action_finished_successfully, test_action_node, ScType::EdgeAccessConstPosPerm));
+  EXPECT_TRUE(action.IsFinishedSuccessfully());
 
   EXPECT_TRUE(generatedMessageIsValid(
       &context, utils::IteratorUtils::getAnyByOutRelation(&context, test_action_node, ScKeynodes::rrel_1)));

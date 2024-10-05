@@ -33,6 +33,8 @@ public:
 private:
   ScMemoryContext * context;
   NumberHandler * numberHandler;
+
+  static std::string getClassNameForLog();
 };
 
 }  // namespace commonModule

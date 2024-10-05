@@ -198,16 +198,11 @@ ScAddrVector MessageTopicClassifier::processTraits(
     ScAddrVector & messageTraitClassElements,
     ScAddr const & messageAddr)
 {
-  std::string traitWitIdtf;
-  std::string setOfTraitsWitIdtf;
-  std::string traitClassIdtf;
-
-  ScTemplate traitTemplate;
-  ScAddr possibleMessageCLass;
-
   while (possibleTraitIterator->Next())
   {
-    possibleMessageCLass = possibleTraitIterator->Get(2);
+    ScAddr possibleMessageCLass = possibleTraitIterator->Get(2);
+
+    ScTemplate traitTemplate;
     buildTraitTemplate(traitTemplate, possibleMessageCLass);
 
     ScTemplateSearchResult traitTemplateResult;
@@ -225,7 +220,7 @@ ScAddrVector MessageTopicClassifier::processTraits(
       context->GetLinkContent(traitLink, traitWitIdtf);
       std::string setOfTraitsWitIdtf;
       context->GetLinkContent(setOfTraitsLink, setOfTraitsWitIdtf);
-      traitClassIdtf = messageTrait.at(setOfTraitsWitIdtf).at(0).at(WitAiConstants::VALUE);
+      std::string traitClassIdtf = messageTrait.at(setOfTraitsWitIdtf).at(0).at(WitAiConstants::VALUE);
 
       if (traitClassIdtf == traitWitIdtf)
       {

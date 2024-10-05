@@ -57,14 +57,16 @@ ScAddr ParameterHandler::findParameterNodeByNumber(
   else if (parameterNodes.size() > 1)
   {
     SC_LOG_DEBUG(
-        "More then 1 parameter node of " << this->context->GetElementSystemIdentifier(parameterClass) << " by number "
-                                         << this->context->GetElementSystemIdentifier(numberNode));
+        getClassNameForLog() + "More then 1 parameter node of " +
+        this->context->GetElementSystemIdentifier(parameterClass) + " by number " +
+        this->context->GetElementSystemIdentifier(numberNode));
   }
   else
   {
     SC_LOG_DEBUG(
-        "Found no parameter node of " << this->context->GetElementSystemIdentifier(parameterClass) << " by number "
-                                      << this->context->GetElementSystemIdentifier(numberNode));
+        getClassNameForLog() + "Found no parameter node of " +
+        this->context->GetElementSystemIdentifier(parameterClass) + " by number " +
+        this->context->GetElementSystemIdentifier(numberNode));
   }
 
   return parameterNode;
@@ -82,14 +84,16 @@ ScAddr ParameterHandler::findParameterNodeByEntity(const ScAddr & parameterClass
   else if (parameterNodes.size() > 1)
   {
     SC_LOG_DEBUG(
-        "More then 1 parameter node of " << this->context->GetElementSystemIdentifier(parameterClass) << " for entity "
-                                         << this->context->GetElementSystemIdentifier(entity));
+        getClassNameForLog() + "More then 1 parameter node of " +
+        this->context->GetElementSystemIdentifier(parameterClass) + " for entity " +
+        this->context->GetElementSystemIdentifier(entity));
   }
   else
   {
     SC_LOG_DEBUG(
-        "Found no parameter node of " + this->context->GetElementSystemIdentifier(parameterClass)
-        << " for entity " << this->context->GetElementSystemIdentifier(entity));
+        getClassNameForLog() + "Found no parameter node of " +
+        this->context->GetElementSystemIdentifier(parameterClass) + " for entity " +
+        this->context->GetElementSystemIdentifier(entity));
   }
 
   return parameterNode;
@@ -119,4 +123,10 @@ ParameterHandler::ParameterHandler(ScMemoryContext * ms_context)
 ParameterHandler::~ParameterHandler()
 {
   delete this->numberHandler;
+}
+
+std::string ParameterHandler::getClassNameForLog()
+{
+  static std::string const className = "ParameterHandler";
+  return className;
 }

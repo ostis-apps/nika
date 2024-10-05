@@ -1,14 +1,10 @@
 #include <sc-memory/sc_agent.hpp>
 
-#include "sc-agents-common/utils/CommonUtils.hpp"
 #include "sc-builder/src/scs_loader.hpp"
 #include "sc_test.hpp"
 
 #include "agent/PhraseGenerationAgent.hpp"
 #include "handler/LinkHandler.cpp"
-#include "keynodes/DialogKeynodes.hpp"
-#include "keynodes/Keynodes.hpp"
-#include "keynodes/MessageKeynodes.hpp"
 #include "searcher/LanguageSearcher.hpp"
 
 using namespace dialogControlModule;
@@ -52,7 +48,7 @@ TEST_F(PhraseGenerationTest, ActionDoesNotHaveALinkTemplate)
   ctx.SubscribeAgent<dialogControlModule::PhraseGenerationAgent>();
 
   EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
-  EXPECT_FALSE(testAction.IsFinishedUnsuccessfully());
+  EXPECT_TRUE(testAction.IsFinishedWithError());
 
   ctx.UnsubscribeAgent<dialogControlModule::PhraseGenerationAgent>();
 }

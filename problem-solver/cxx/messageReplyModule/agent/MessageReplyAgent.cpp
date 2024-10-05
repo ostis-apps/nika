@@ -1,3 +1,5 @@
+#include "MessageReplyAgent.hpp"
+
 #include "sc-agents-common/utils/CommonUtils.hpp"
 #include "sc-agents-common/utils/GenerationUtils.hpp"
 #include "sc-agents-common/utils/IteratorUtils.hpp"
@@ -5,8 +7,6 @@
 #include "generator/MessageHistoryGenerator.hpp"
 #include "keynodes/Keynodes.hpp"
 #include "keynodes/MessageReplyKeynodes.hpp"
-
-#include "MessageReplyAgent.hpp"
 
 using namespace messageReplyModule;
 

@@ -1,6 +1,5 @@
 #include <sc-memory/sc_agent.hpp>
 
-#include "sc-agents-common/utils/CommonUtils.hpp"
 #include "sc-agents-common/utils/IteratorUtils.hpp"
 #include "sc-builder/src/scs_loader.hpp"
 #include "sc_test.hpp"
@@ -8,7 +7,6 @@
 #include "agent/DirectInferenceAgent.hpp"
 #include "agent/PhraseGenerationAgent.hpp"
 #include "agent/StandardMessageReplyAgent.hpp"
-#include "keynodes/DialogKeynodes.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 #include "searcher/TokenDomainSearcher.hpp"
 
@@ -30,12 +28,14 @@ using StandardMessageReplyTest = ScMemoryTest;
 void initialize(ScAgentContext & ctx)
 {
   ctx.SubscribeAgent<DirectInferenceAgent>();
+  ctx.SubscribeAgent<PhraseGenerationAgent>();
   ctx.SubscribeAgent<StandardMessageReplyAgent>();
 }
 
 void shutdown(ScAgentContext & ctx)
 {
   ctx.UnsubscribeAgent<DirectInferenceAgent>();
+  ctx.UnsubscribeAgent<PhraseGenerationAgent>();
   ctx.UnsubscribeAgent<StandardMessageReplyAgent>();
 }
 
@@ -118,6 +118,7 @@ TEST_F(StandardMessageReplyTest, ActionDoesntHaveAMessageNode)
 
   ctx.SubscribeAgent<StandardMessageReplyAgent>();
   EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(action.IsFinishedWithError());
   ctx.UnsubscribeAgent<StandardMessageReplyAgent>();
 }
 
@@ -138,6 +139,7 @@ TEST_F(StandardMessageReplyTest, SystemDoesNotHaveTemplateForMessage)
   ctx.SubscribeAgent<DirectInferenceAgent>();
 
   EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(action.IsFinishedWithError());
 
   ctx.UnsubscribeAgent<DirectInferenceAgent>();
   ctx.UnsubscribeAgent<StandardMessageReplyAgent>();
@@ -159,7 +161,7 @@ TEST_F(StandardMessageReplyTest, MessagesLanguageIsNotFound)
   ctx.SubscribeAgent<StandardMessageReplyAgent>();
   ctx.SubscribeAgent<DirectInferenceAgent>();
   EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
-
+  EXPECT_TRUE(action.IsFinishedUnsuccessfully());
   ctx.UnsubscribeAgent<DirectInferenceAgent>();
   ctx.UnsubscribeAgent<StandardMessageReplyAgent>();
 }
@@ -180,7 +182,7 @@ TEST_F(StandardMessageReplyTest, FirstMessageIsNotFound)
   ctx.SubscribeAgent<StandardMessageReplyAgent>();
   ctx.SubscribeAgent<DirectInferenceAgent>();
   EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
-
+  EXPECT_TRUE(action.IsFinishedUnsuccessfully());
   ctx.UnsubscribeAgent<StandardMessageReplyAgent>();
   ctx.UnsubscribeAgent<DirectInferenceAgent>();
 }
@@ -202,6 +204,7 @@ TEST_F(StandardMessageReplyTest, FirstPhraseClassIsNotFound)
   ctx.SubscribeAgent<DirectInferenceAgent>();
 
   EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(action.IsFinishedUnsuccessfully());
 
   ctx.UnsubscribeAgent<StandardMessageReplyAgent>();
   ctx.UnsubscribeAgent<DirectInferenceAgent>();
@@ -223,7 +226,7 @@ TEST_F(StandardMessageReplyTest, PhraseForMessageIsNotFound)
   ctx.SubscribeAgent<StandardMessageReplyAgent>();
   ctx.SubscribeAgent<DirectInferenceAgent>();
   EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
-
+  EXPECT_TRUE(action.IsFinishedUnsuccessfully());
   ctx.UnsubscribeAgent<StandardMessageReplyAgent>();
   ctx.UnsubscribeAgent<DirectInferenceAgent>();
 }
@@ -243,6 +246,7 @@ TEST_F(StandardMessageReplyTest, LinkByPhraseIsNotGenerated)
   ScAction action = ctx.ConvertToAction(test_action_node);
   initialize(ctx);
   EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(action.IsFinishedUnsuccessfully());
   shutdown(ctx);
 }
 
@@ -261,7 +265,7 @@ TEST_F(StandardMessageReplyTest, MessagesAndPhraseClassesDoNotMatch1)
   ScAction action = ctx.ConvertToAction(test_action_node);
   initialize(ctx);
   EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
-
+  EXPECT_TRUE(action.IsFinishedUnsuccessfully());
   shutdown(ctx);
 }
 
@@ -281,6 +285,7 @@ TEST_F(StandardMessageReplyTest, MessagesAndPhraseClassesDoNotMatch2)
   initialize(ctx);
 
   EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(action.IsFinishedUnsuccessfully());
 
   shutdown(ctx);
 }

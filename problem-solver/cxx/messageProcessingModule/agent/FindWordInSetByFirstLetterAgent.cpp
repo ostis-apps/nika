@@ -13,10 +13,10 @@ namespace messageProcessingModule
 
 ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
-  ScAddr const & messageAddr = utils::IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_1);
+  ScAddr const & messageAddr = action.GetArgument(ScKeynodes::rrel_1);
   if (!messageAddr.IsValid())
   {
-    SC_LOG_ERROR("The message isn’t valid");
+    SC_AGENT_LOG_ERROR("The message isn’t valid");
     return action.FinishUnsuccessfully();
   }
 
@@ -25,7 +25,7 @@ ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const
           messageAddr,
           ScType::EdgeAccessConstPosPerm))
   {
-    SC_LOG_DEBUG("The message isn’t about letter search");
+    SC_AGENT_LOG_DEBUG("The message isn’t about letter search");
     return action.FinishUnsuccessfully();
   }
 
@@ -45,7 +45,7 @@ ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const
     std::string messageText = getMessageText(messageAddr);
     ScAddr const & entityAddr = utils::IteratorUtils::getAnyByOutRelation(
         &m_context, messageAddr, dialogControlModule::MessageKeynodes::rrel_entity);
-    // Создание итератора для поиска элементов к котором есть связь с entity
+
     ScIterator3Ptr const & entityNodesIterator =
         m_context.CreateIterator3(entityAddr, ScType::EdgeAccessConstPosPerm, ScType::NodeConst);
 
@@ -64,7 +64,7 @@ ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const
       if (firstLetter == firstWordLetter)
       {
         resultStream << word;
-        SC_LOG_DEBUG("Found word " << word);
+        SC_AGENT_LOG_DEBUG("Found word " << word);
       }
     }
     while (entityNodesIterator->Next())
@@ -77,7 +77,7 @@ ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const
           resultStream << word;
         else
           resultStream << ", " << word;
-        SC_LOG_DEBUG("Found word " << word);
+        SC_AGENT_LOG_DEBUG("Found word " << word);
       }
     }
 
@@ -90,16 +90,16 @@ ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const
       result = resultStream.str();
     }
     answerElements = createAnswer(result);
-    SC_LOG_DEBUG("Reply message is generated");
+    SC_AGENT_LOG_DEBUG("Reply message is generated");
   }
   catch (utils::ScException const & exception)
   {
-    SC_LOG_ERROR(exception.Description());
+    SC_AGENT_LOG_ERROR(exception.Description());
     ScStructure result = m_context.GenerateStructure();
     for (auto const & element : answerElements)
       result << element;
     action.SetResult(result);
-    SC_LOG_DEBUG("Finished with an error");
+    SC_AGENT_LOG_DEBUG("Finished with an error");
     return action.FinishUnsuccessfully();
   }
 

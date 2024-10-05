@@ -1,9 +1,7 @@
 #include "MessageHandler.hpp"
 
-#include "sc-agents-common/utils/CommonUtils.hpp"
 #include "sc-agents-common/utils/IteratorUtils.hpp"
 
-#include "agent/PhraseGenerationAgent.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 #include "utils/ActionUtils.hpp"
 
@@ -190,18 +188,13 @@ ScAddr MessageHandler::generateLinkByPhrase(
 
         ScAction phraseGenerationAction = ActionUtils::CreateAction(
             context, MessageKeynodes::action_phrase_generation, {replyMessageNode, phraseLink, parametersNode});
-        ScAddr phraseGenerationActionNode = phraseGenerationAction.GetRealAddr();
 
-        context->SubscribeAgent<dialogControlModule::PhraseGenerationAgent>();
-
-        ActionUtils::waitAction(context, phraseGenerationActionNode, PHRASE_GENERATION_AGENT_WAIT_TIME);
-
-        context->UnsubscribeAgent<dialogControlModule::PhraseGenerationAgent>();
+        ActionUtils::waitAction(context, phraseGenerationAction, PHRASE_GENERATION_AGENT_WAIT_TIME);
 
         if (context->CheckConnector(
-                ScKeynodes::action_finished_successfully, phraseGenerationActionNode, ScType::EdgeAccessConstPosPerm))
+                ScKeynodes::action_finished_successfully, phraseGenerationAction, ScType::EdgeAccessConstPosPerm))
         {
-          resultLink = IteratorUtils::getAnyByOutRelation(context, phraseGenerationActionNode, ScKeynodes::nrel_result);
+          resultLink = IteratorUtils::getAnyByOutRelation(context, phraseGenerationAction, ScKeynodes::nrel_result);
           context->GetLinkContent(resultLink, linkContent);
           SC_LOG_DEBUG("The result link with the content \"" << linkContent << "\" is generated");
           break;
