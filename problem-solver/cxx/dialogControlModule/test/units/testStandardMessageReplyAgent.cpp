@@ -16,7 +16,7 @@ using namespace dialogControlModule;
 namespace testStandardMessageReplyAgent
 {
 ScsLoader loader;
-std::string const TEST_FILES_DIR_PATH = DIALOG_CONTROL_MODULE_TEST_SRC_PATH "/TestsStructures/StandardMessageReply/";
+std::string const TEST_FILES_DIR_PATH = DIALOG_CONTROL_MODULE_TEST_SRC_PATH "/testsStructures/standardMessageReply/";
 std::string const ACTION_DIR_PATH = "actions/";
 std::string const LR_DIR_PATH = "logicRules/";
 std::string const MES_DIR_PATH = "messages/";

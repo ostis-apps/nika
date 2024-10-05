@@ -13,7 +13,7 @@ using namespace commonModule;
 namespace testPhraseGenerationAgent
 {
 ScsLoader loader;
-std::string const TEST_FILES_DIR_PATH = DIALOG_CONTROL_MODULE_TEST_SRC_PATH "/TestsStructures/PhraseGeneration/";
+std::string const TEST_FILES_DIR_PATH = DIALOG_CONTROL_MODULE_TEST_SRC_PATH "/testsStructures/phraseGeneration/";
 int const WAIT_TIME = 5000;
 
 using PhraseGenerationTest = ScMemoryTest;
