@@ -1,5 +1,3 @@
-#include "MessageReplyAgent.hpp"
-
 #include "sc-agents-common/utils/CommonUtils.hpp"
 #include "sc-agents-common/utils/GenerationUtils.hpp"
 #include "sc-agents-common/utils/IteratorUtils.hpp"
@@ -7,6 +5,8 @@
 #include "generator/MessageHistoryGenerator.hpp"
 #include "keynodes/Keynodes.hpp"
 #include "keynodes/MessageReplyKeynodes.hpp"
+
+#include "MessageReplyAgent.hpp"
 
 using namespace messageReplyModule;
 
@@ -60,9 +60,10 @@ ScResult MessageReplyAgent::DoProgram(ScActionInitiatedEvent const & event, ScAc
     return action.FinishUnsuccessfully();
   }
 
+  ScAddr answerAddr;
   try
   {
-    generateAnswer(messageAddr);
+    answerAddr = generateAnswer(messageAddr);
     ScTemplate replySearchTemplate;
     replySearchTemplate.Quintuple(
         messageAddr,
@@ -85,6 +86,7 @@ ScResult MessageReplyAgent::DoProgram(ScActionInitiatedEvent const & event, ScAc
     return action.FinishUnsuccessfully();
   }
 
+  action.SetResult(answerAddr);
   return action.FinishSuccessfully();
 }
 
@@ -165,15 +167,15 @@ ScAddr MessageReplyAgent::generateAnswer(ScAddr const & messageAddr)
     throw std::runtime_error("Reply message not generated.");
   }
 
-  m_context.GenerateNode(ScType::NodeConstStruct);
+  ScAddr answerNodeAddr = m_context.GenerateNode(ScType::NodeConstStruct);
   ScTemplate answerGenerationTemplate;
-  answerGenerationTemplate.Triple(ScType::NodeVarStruct >> ANSWER_ALIAS, ScType::EdgeAccessVarPosPerm, messageAddr);
+  answerGenerationTemplate.Triple(answerNodeAddr, ScType::EdgeAccessVarPosPerm, messageAddr);
   answerGenerationTemplate.Triple(
-      ANSWER_ALIAS, ScType::EdgeAccessVarPosPerm, searchResult[0][REPLY_MESSAGE_RELATION_PAIR_ARC_ALIAS]);
-  answerGenerationTemplate.Triple(ANSWER_ALIAS, ScType::EdgeAccessVarPosPerm, searchResult[0][REPLY_MESSAGE_ALIAS]);
+      answerNodeAddr, ScType::EdgeAccessVarPosPerm, searchResult[0][REPLY_MESSAGE_RELATION_PAIR_ARC_ALIAS]);
+  answerGenerationTemplate.Triple(answerNodeAddr, ScType::EdgeAccessVarPosPerm, searchResult[0][REPLY_MESSAGE_ALIAS]);
   answerGenerationTemplate.Triple(
-      ANSWER_ALIAS, ScType::EdgeAccessVarPosPerm, searchResult[0][REPLY_MESSAGE_RELATION_ACCESS_ARC_ALIAS]);
-  answerGenerationTemplate.Triple(ANSWER_ALIAS, ScType::EdgeAccessVarPosPerm, MessageReplyKeynodes::nrel_reply);
+      answerNodeAddr, ScType::EdgeAccessVarPosPerm, searchResult[0][REPLY_MESSAGE_RELATION_ACCESS_ARC_ALIAS]);
+  answerGenerationTemplate.Triple(answerNodeAddr, ScType::EdgeAccessVarPosPerm, MessageReplyKeynodes::nrel_reply);
 
   ScAddrVector classes;
   ScAddrVector classesArcs;
@@ -188,15 +190,15 @@ ScAddr MessageReplyAgent::generateAnswer(ScAddr const & messageAddr)
 
   for (size_t i = 0; i < classes.size(); i++)
   {
-    answerGenerationTemplate.Triple(ANSWER_ALIAS, ScType::EdgeAccessVarPosPerm, classes.at(i));
-    answerGenerationTemplate.Triple(ANSWER_ALIAS, ScType::EdgeAccessVarPosPerm, classesArcs.at(i));
+    answerGenerationTemplate.Triple(answerNodeAddr, ScType::EdgeAccessVarPosPerm, classes.at(i));
+    answerGenerationTemplate.Triple(answerNodeAddr, ScType::EdgeAccessVarPosPerm, classesArcs.at(i));
   }
 
   ScTemplateGenResult templateGenResult;
 
   m_context.GenerateByTemplate(answerGenerationTemplate, templateGenResult);
 
-  return templateGenResult[ANSWER_ALIAS];
+  return answerNodeAddr;
 }
 
 bool MessageReplyAgent::linkIsValid(ScAddr const & linkAddr)
