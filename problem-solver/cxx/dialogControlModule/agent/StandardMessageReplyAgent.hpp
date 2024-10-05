@@ -3,6 +3,7 @@
 #include <sc-memory/sc_agent.hpp>
 
 #include "handler/MessageHandler.hpp"
+
 namespace dialogControlModule
 {
 class StandardMessageReplyAgent : public ScActionInitiatedAgent

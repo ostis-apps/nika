@@ -31,7 +31,8 @@ ScAddr NonAtomicActionInterpreter::getFirstSubAction(ScAddr const & decompositio
   ScAddr firstAction = utils::IteratorUtils::getAnyByOutRelation(context, decompositionTuple, ScKeynodes::rrel_1);
   if (!firstAction.IsValid())
   {
-    SC_THROW_EXCEPTION(utils::ExceptionItemNotFound, "Non atomic action structure is incorrect. Failed to find first action.");
+    SC_THROW_EXCEPTION(
+        utils::ExceptionItemNotFound, "Non atomic action structure is incorrect. Failed to find first action.");
   }
   return firstAction;
 }

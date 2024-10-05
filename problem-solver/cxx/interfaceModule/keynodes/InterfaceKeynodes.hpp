@@ -2,9 +2,6 @@
 
 #include <sc-memory/sc_keynodes.hpp>
 
-#include "sc-memory/sc_addr.hpp"
-#include "sc-memory/sc_object.hpp"
-
 namespace interfaceModule
 {
 class InterfaceKeynodes : public ScKeynodes

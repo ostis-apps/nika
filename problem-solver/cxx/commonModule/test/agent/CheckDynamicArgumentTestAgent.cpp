@@ -1,7 +1,6 @@
-#include "sc-agents-common/utils/IteratorUtils.hpp"
-#include "test/keynodes/TestKeynodes.hpp"
-
 #include "CheckDynamicArgumentTestAgent.hpp"
+
+#include "test/keynodes/TestKeynodes.hpp"
 
 using namespace commonTest;
 
@@ -10,14 +9,11 @@ ScResult CheckDynamicArgumentTestAgent::DoProgram(ScActionInitiatedEvent const &
   ScTemplate scTemplate;
   scTemplate.Quintuple(
       action,
-        ScType::EdgeAccessVarPosPerm,
-        ScType::NodeVar >> "_dynamic_argument",
-        ScType::EdgeAccessVarPosPerm,
-        ScKeynodes::rrel_1);
-  scTemplate.Triple(
-        "_dynamic_argument",
-        ScType::EdgeAccessVarPosTemp,
-        TestKeynodes::test_node);
+      ScType::EdgeAccessVarPosPerm,
+      ScType::NodeVar >> "_dynamic_argument",
+      ScType::EdgeAccessVarPosPerm,
+      ScKeynodes::rrel_1);
+  scTemplate.Triple("_dynamic_argument", ScType::EdgeAccessVarPosTemp, TestKeynodes::test_node);
   ScTemplateSearchResult results;
   m_context.SearchByTemplate(scTemplate, results);
 
@@ -28,4 +24,3 @@ ScAddr CheckDynamicArgumentTestAgent::GetActionClass() const
 {
   return TestKeynodes::check_dynamic_argument_test_action;
 }
-

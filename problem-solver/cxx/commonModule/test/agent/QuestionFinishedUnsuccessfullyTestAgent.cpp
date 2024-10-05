@@ -1,7 +1,6 @@
-#include "sc-agents-common/utils/IteratorUtils.hpp"
-#include "test/keynodes/TestKeynodes.hpp"
-
 #include "QuestionFinishedUnsuccessfullyTestAgent.hpp"
+
+#include "test/keynodes/TestKeynodes.hpp"
 
 using namespace commonTest;
 
@@ -14,4 +13,3 @@ ScAddr ActionFinishedUnsuccessfullyTestAgent::GetActionClass() const
 {
   return TestKeynodes::unsuccessfully_finished_test_action;
 }
-

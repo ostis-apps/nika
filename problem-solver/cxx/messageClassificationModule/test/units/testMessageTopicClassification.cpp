@@ -1,13 +1,8 @@
-#include "sc-agents-common/utils/CommonUtils.hpp"
 #include "sc_test.hpp"
 #include "scs_loader.hpp"
 
 #include "WitAiCkientMock.hpp"
-#include "agent/MessageTopicClassificationAgent.hpp"
-#include "client/WitAiClient.hpp"
-#include "keynodes/Keynodes.hpp"
-#include "keynodes/MessageClassificationKeynodes.hpp"
-#include "utils/ActionUtils.hpp"
+#include "classifier/MessageTopicClassifier.hpp"
 
 using namespace messageClassificationModule;
 
@@ -15,8 +10,6 @@ namespace messageTopicClassificationTest
 {
 ScsLoader loader;
 std::string const TEST_FILES_DIR_PATH = MESSAGE_TOPIC_CLASSIFICATION_MODULE_TEST_SRC_PATH "/testStructures/";
-
-int const WAIT_TIME = 1000;
 
 using MessageTopicClassificationTest = ScMemoryTest;
 

@@ -1,7 +1,5 @@
 #include "ParameterHandler.hpp"
 
-#include "sc-agents-common/utils/CommonUtils.hpp"
-
 #include "utils//RelationUtils.hpp"
 #include "utils//ScTemplateUtils.hpp"
 

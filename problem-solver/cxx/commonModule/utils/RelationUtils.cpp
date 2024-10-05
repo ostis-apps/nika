@@ -1,8 +1,7 @@
 #include "RelationUtils.hpp"
 
+#include "sc-memory/sc_keynodes.hpp"
 #include "sc-memory/sc_memory.hpp"
-
-#include "keynodes/Keynodes.hpp"
 
 ScAddr RelationUtils::getIndexRelation(ScMemoryContext * context, int const & index)
 {

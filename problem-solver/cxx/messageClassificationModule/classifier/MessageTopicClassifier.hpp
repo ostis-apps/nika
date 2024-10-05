@@ -1,9 +1,7 @@
 #pragma once
 
-#include "sc-memory/sc_addr.hpp"
-#include "sc-memory/sc_agent.hpp"
+#include "sc-memory/sc_agent_context.hpp"
 
-#include "client/WitAiClient.hpp"
 #include "client/WitAiClientInterface.hpp"
 #include "searcher/MessageSearcher.hpp"
 namespace messageClassificationModule

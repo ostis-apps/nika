@@ -1,8 +1,5 @@
 #include "sc-memory/sc_memory.hpp"
 
-#include "keynodes/Keynodes.hpp"
-#include <vector>
-
 namespace dialogControlModule
 {
 class MessageConstructionsGenerator

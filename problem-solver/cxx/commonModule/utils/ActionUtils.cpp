@@ -1,7 +1,5 @@
 #include "ActionUtils.hpp"
 
-#include "sc-memory/sc_event_wait.hpp"
-
 #include "keynodes/Keynodes.hpp"
 
 using namespace commonModule;

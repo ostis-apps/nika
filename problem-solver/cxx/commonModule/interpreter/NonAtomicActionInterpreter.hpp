@@ -2,8 +2,6 @@
 
 #include <sc-memory/sc_agent.hpp>
 
-#include "sc-memory/sc_memory.hpp"
-
 namespace commonModule
 {
 class NonAtomicActionInterpreter

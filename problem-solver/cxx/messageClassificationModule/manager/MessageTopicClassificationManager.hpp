@@ -1,7 +1,6 @@
 #pragma once
 
 #include "sc-memory/sc_addr.hpp"
-#include "sc-memory/sc_agent.hpp"
 
 #include "classifier/MessageTopicClassifier.hpp"
 

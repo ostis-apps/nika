@@ -1,12 +1,8 @@
 #include "MessageHistoryGenerator.hpp"
 
-#include "sc-agents-common/utils/IteratorUtils.hpp"
-
 #include "keynodes/MessageReplyKeynodes.hpp"
-#include "templates/MessageReplyTemplates.hpp"
 
 using namespace utils;
-using namespace std;
 
 namespace messageReplyModule
 {
@@ -57,7 +53,7 @@ std::unique_ptr<ScTemplate> MessageHistoryGenerator::createNotFirstMessageInDial
     const ScAddr & lastMessageAddr,
     const ScAddr & messageAddr)
 {
-  string const NEXT_MESSAGE_ARC_ALIAS = "_next_message_arc";
+  static std::string const NEXT_MESSAGE_ARC_ALIAS = "_next_message_arc";
 
   ScAddr messageEdge;
   ScIterator3Ptr iterator3Ptr = context->CreateIterator3(dialogAddr, ScType::EdgeAccessConstPosPerm, lastMessageAddr);

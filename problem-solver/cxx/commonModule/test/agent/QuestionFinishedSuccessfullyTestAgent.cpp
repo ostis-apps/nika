@@ -1,6 +1,6 @@
-#include "test/keynodes/TestKeynodes.hpp"
-
 #include "QuestionFinishedSuccessfullyTestAgent.hpp"
+
+#include "test/keynodes/TestKeynodes.hpp"
 
 using namespace commonTest;
 
@@ -13,4 +13,3 @@ ScAddr ActionFinishedSuccessfullyTestAgent::GetActionClass() const
 {
   return TestKeynodes::successfully_finished_test_action;
 }
-

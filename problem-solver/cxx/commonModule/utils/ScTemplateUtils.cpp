@@ -1,5 +1,7 @@
 #include "ScTemplateUtils.hpp"
 
+#include "sc-memory/sc_memory.hpp"
+
 ScAddrVector ScTemplateUtils::getAllWithKey(
     ScMemoryContext * context,
     const ScTemplate & scTemplate,

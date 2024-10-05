@@ -1,6 +1,6 @@
-#include "test/keynodes/TestKeynodes.hpp"
-
 #include "AssignDynamicArgumentTestAgent.hpp"
+
+#include "test/keynodes/TestKeynodes.hpp"
 
 using namespace commonTest;
 

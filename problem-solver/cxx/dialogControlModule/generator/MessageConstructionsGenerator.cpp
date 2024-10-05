@@ -1,6 +1,7 @@
 #include "MessageConstructionsGenerator.hpp"
 
 #include "handler/LinkHandler.hpp"
+#include "keynodes/Keynodes.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 
 namespace dialogControlModule

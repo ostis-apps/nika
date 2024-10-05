@@ -3,7 +3,6 @@
 #include "sc-agents-common/utils//IteratorUtils.hpp"
 
 #include "keynodes/Keynodes.hpp"
-#include <sstream>
 
 ScAddr commonModule::NumberHandler::getNumberNode(const double & number)
 {
