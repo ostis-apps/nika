@@ -11,7 +11,6 @@
 #include "test/agent/QuestionFinishedTestAgent.hpp"
 #include "test/agent/QuestionFinishedUnsuccessfullyTestAgent.hpp"
 #include "test/keynodes/TestKeynodes.hpp"
-#include "utils/ActionUtils.hpp"
 
 using namespace commonModule;
 
@@ -43,7 +42,7 @@ void shutdown(ScAgentContext & context)
   context.UnsubscribeAgent<CheckDynamicArgumentTestAgent>();
 }
 
-ScAddr getFirstAction(ScAgentContext & context)
+ScAction getFirstAction(ScAgentContext & context)
 {
   ScAddr actionAddr;
   ScTemplate scTemplate;
@@ -70,7 +69,7 @@ ScAddr getFirstAction(ScAgentContext & context)
   {
     actionAddr = results[0]["_firstAction"];
   }
-  return actionAddr;
+  return context.ConvertToAction(actionAddr);
 }
 
 TEST_F(NonAtomicActionInterpreterTest, checkDynamicArguments)
@@ -79,20 +78,18 @@ TEST_F(NonAtomicActionInterpreterTest, checkDynamicArguments)
 
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "dynamicArguments.scs");
 
-  ScAddr test_action_node = context.SearchElementBySystemIdentifier("test_action_node");
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
 
-  EXPECT_TRUE(test_action_node.IsValid());
+  EXPECT_TRUE(testActionNode.IsValid());
   initialize(context);
 
-  ScAction actionNode = context.ConvertToAction(test_action_node);
-  EXPECT_TRUE(actionNode.InitiateAndWait(WAIT_TIME));
+  ScAction testAction = context.ConvertToAction(testActionNode);
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
   shutdown(context);
-  EXPECT_TRUE(context.CheckConnector(
-      ScKeynodes::action_finished_successfully, test_action_node, ScType::EdgeAccessConstPosPerm));
+  EXPECT_TRUE(testAction.IsFinishedSuccessfully());
 
-  ScAddr action = getFirstAction(context);
-  EXPECT_TRUE(context.CheckConnector(ScKeynodes::action_finished, action, ScType::EdgeAccessConstPosPerm));
-  EXPECT_TRUE(context.CheckConnector(ScKeynodes::action_finished_successfully, action, ScType::EdgeAccessConstPosPerm));
+  ScAction action = getFirstAction(context);
+  EXPECT_TRUE(action.IsFinishedSuccessfully());
 
   ScIterator5Ptr iterator5 = context.CreateIterator5(
       action,
@@ -101,10 +98,9 @@ TEST_F(NonAtomicActionInterpreterTest, checkDynamicArguments)
       ScType::EdgeAccessConstPosPerm,
       context.SearchElementBySystemIdentifier("nrel_goto"));
   EXPECT_TRUE(iterator5->Next());
-  action = iterator5->Get(2);
+  action = context.ConvertToAction(iterator5->Get(2));
 
-  EXPECT_TRUE(context.CheckConnector(ScKeynodes::action_finished, action, ScType::EdgeAccessConstPosPerm));
-  EXPECT_TRUE(context.CheckConnector(ScKeynodes::action_finished_successfully, action, ScType::EdgeAccessConstPosPerm));
+  EXPECT_TRUE(action.IsFinishedSuccessfully());
 
   ScTemplate scTemplate;
   scTemplate.Quintuple(
@@ -130,18 +126,17 @@ TEST_F(NonAtomicActionInterpreterTest, checkThenSequence)
 
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "sucsesfullyFinishedSubaction.scs");
 
-  ScAddr test_action_node = context.SearchElementBySystemIdentifier("test_action_node");
-  EXPECT_TRUE(test_action_node.IsValid());
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
+  EXPECT_TRUE(testActionNode.IsValid());
 
   initialize(context);
-  EXPECT_TRUE(ActionUtils::waitAction(&context, test_action_node, WAIT_TIME));
+  ScAction testAction = context.ConvertToAction(testActionNode);
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
   shutdown(context);
-  EXPECT_TRUE(context.CheckConnector(
-      ScKeynodes::action_finished_successfully, test_action_node, ScType::EdgeAccessConstPosPerm));
+  EXPECT_TRUE(testAction.IsFinishedSuccessfully());
 
-  ScAddr action = getFirstAction(context);
-  EXPECT_TRUE(context.CheckConnector(ScKeynodes::action_finished, action, ScType::EdgeAccessConstPosPerm));
-  EXPECT_TRUE(context.CheckConnector(ScKeynodes::action_finished_successfully, action, ScType::EdgeAccessConstPosPerm));
+  ScAction action = getFirstAction(context);
+  EXPECT_TRUE(action.IsFinishedSuccessfully());
 
   ScIterator5Ptr iterator5 = context.CreateIterator5(
       action,
@@ -150,9 +145,9 @@ TEST_F(NonAtomicActionInterpreterTest, checkThenSequence)
       ScType::EdgeAccessConstPosPerm,
       context.SearchElementBySystemIdentifier("nrel_then"));
   EXPECT_TRUE(iterator5->Next());
-  action = iterator5->Get(2);
+  action = context.ConvertToAction(iterator5->Get(2));
 
-  EXPECT_TRUE(context.CheckConnector(ScKeynodes::action_finished, action, ScType::EdgeAccessConstPosPerm));
+  EXPECT_TRUE(action.IsFinishedSuccessfully());
 
   iterator5.reset();
 }
@@ -162,20 +157,18 @@ TEST_F(NonAtomicActionInterpreterTest, checkElseSequence)
   ScAgentContext & context = *m_ctx;
 
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "unsucsesfullyFinishedSubaction.scs");
-  ScAddr test_action_node = context.SearchElementBySystemIdentifier("test_action_node");
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
 
-  EXPECT_TRUE(test_action_node.IsValid());
+  EXPECT_TRUE(testActionNode.IsValid());
 
   initialize(context);
-  EXPECT_TRUE(ActionUtils::waitAction(&context, test_action_node, WAIT_TIME));
+  ScAction testAction = context.ConvertToAction(testActionNode);
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
   shutdown(context);
-  EXPECT_TRUE(context.CheckConnector(
-      ScKeynodes::action_finished_successfully, test_action_node, ScType::EdgeAccessConstPosPerm));
+  EXPECT_TRUE(testAction.IsFinishedSuccessfully());
 
-  ScAddr action = getFirstAction(context);
-  EXPECT_TRUE(context.CheckConnector(ScKeynodes::action_finished, action, ScType::EdgeAccessConstPosPerm));
-  EXPECT_TRUE(
-      context.CheckConnector(ScKeynodes::action_finished_unsuccessfully, action, ScType::EdgeAccessConstPosPerm));
+  ScAction action = getFirstAction(context);
+  EXPECT_TRUE(action.IsFinishedUnsuccessfully());
 
   ScIterator5Ptr iterator5 = context.CreateIterator5(
       action,
@@ -184,9 +177,9 @@ TEST_F(NonAtomicActionInterpreterTest, checkElseSequence)
       ScType::EdgeAccessConstPosPerm,
       context.SearchElementBySystemIdentifier("nrel_else"));
   EXPECT_TRUE(iterator5->Next());
-  action = iterator5->Get(2);
+  action = context.ConvertToAction(iterator5->Get(2));
 
-  EXPECT_TRUE(context.CheckConnector(ScKeynodes::action_finished, action, ScType::EdgeAccessConstPosPerm));
+  EXPECT_TRUE(action.IsFinishedSuccessfully());
 
   iterator5.reset();
 }
@@ -199,16 +192,17 @@ TEST_F(NonAtomicActionInterpreterTest, checkGotoSequence)
 
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "finishedSubaction.scs");
 
-  ScAddr test_action_node = context.SearchElementBySystemIdentifier("test_action_node");
-  ScAction test_action = context.ConvertToAction(test_action_node);
-  EXPECT_TRUE(test_action_node.IsValid());
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
+  EXPECT_TRUE(testActionNode.IsValid());
 
   initialize(context);
-  EXPECT_TRUE(ActionUtils::waitAction(&context, test_action_node, WAIT_TIME));
-  shutdown(context);
-  EXPECT_TRUE(test_action.IsFinishedSuccessfully());
 
-  ScAction action = context.ConvertToAction(getFirstAction(context));
+  ScAction testAction = context.ConvertToAction(testActionNode);
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
+  shutdown(context);
+  EXPECT_TRUE(testAction.IsFinishedSuccessfully());
+
+  ScAction action = getFirstAction(context);
   EXPECT_TRUE(action.IsFinished());
 
   ScIterator5Ptr iterator5 = context.CreateIterator5(
@@ -218,9 +212,9 @@ TEST_F(NonAtomicActionInterpreterTest, checkGotoSequence)
       ScType::EdgeAccessConstPosPerm,
       context.SearchElementBySystemIdentifier("nrel_goto"));
   EXPECT_TRUE(iterator5->Next());
-  ScAddr next_action = iterator5->Get(2);
+  action = context.ConvertToAction(iterator5->Get(2));
 
-  EXPECT_TRUE(context.ConvertToAction(next_action).IsFinished());
+  EXPECT_TRUE(action.IsFinished());
 
   iterator5.reset();
 }
@@ -230,18 +224,18 @@ TEST_F(NonAtomicActionInterpreterTest, checkArgumentsMatching)
   ScAgentContext & context = *m_ctx;
 
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "argumentsMatching.scs");
-  ScAddr test_action_node = context.SearchElementBySystemIdentifier("test_action_node");
-  EXPECT_TRUE(test_action_node.IsValid());
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
+  EXPECT_TRUE(testActionNode.IsValid());
 
   initialize(context);
-  EXPECT_TRUE(ActionUtils::waitAction(&context, test_action_node, WAIT_TIME));
+  ScAction testAction = context.ConvertToAction(testActionNode);
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
   shutdown(context);
 
-  EXPECT_TRUE(context.CheckConnector(
-      ScKeynodes::action_finished_successfully, test_action_node, ScType::EdgeAccessConstPosPerm));
+  EXPECT_TRUE(testAction.IsFinishedSuccessfully());
 
-  ScAddr action = getFirstAction(context);
-  EXPECT_TRUE(context.CheckConnector(ScKeynodes::action_finished, action, ScType::EdgeAccessConstPosPerm));
+  ScAction action = getFirstAction(context);
+  EXPECT_TRUE(action.IsFinishedSuccessfully());
 
   ScTemplate scTemplate;
   scTemplate.Quintuple(
@@ -267,8 +261,8 @@ TEST_F(NonAtomicActionInterpreterTest, checkArgumentsMatching)
       ScType::EdgeAccessConstPosPerm,
       context.SearchElementBySystemIdentifier("nrel_goto"));
   EXPECT_TRUE(iterator5->Next());
-  action = iterator5->Get(2);
-  EXPECT_TRUE(context.CheckConnector(ScKeynodes::action_finished, action, ScType::EdgeAccessConstPosPerm));
+  action = context.ConvertToAction(iterator5->Get(2));
+  EXPECT_TRUE(action.IsFinishedSuccessfully());
 
   scTemplate.Quintuple(
       action,
