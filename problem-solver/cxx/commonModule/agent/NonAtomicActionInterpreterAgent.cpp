@@ -16,7 +16,7 @@ ScResult NonAtomicActionInterpreterAgent::DoProgram(ScActionInitiatedEvent const
         utils::IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_1);
     if (!nonAtomicActionTemplateAddr.IsValid())
     {
-      throw std::runtime_error("Action params are not formed correctly.");
+      SC_THROW_EXCEPTION(utils::ExceptionInvalidParams, "Action params are not formed correctly.");
     }
     ScAddr const & argumentsSet = utils::IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_2);
 
@@ -26,7 +26,7 @@ ScResult NonAtomicActionInterpreterAgent::DoProgram(ScActionInitiatedEvent const
   }
   catch (std::exception & ex)
   {
-    SC_LOG_ERROR(ex.what());
+    SC_AGENT_LOG_ERROR(ex.what());
     return action.FinishUnsuccessfully();
   }
 
@@ -38,7 +38,7 @@ ScResult NonAtomicActionInterpreterAgent::DoProgram(ScActionInitiatedEvent const
   catch (std::runtime_error & ex)
   {
     deleteFields();
-    SC_LOG_ERROR(ex.what());
+    SC_AGENT_LOG_ERROR(ex.what());
     return action.FinishUnsuccessfully();
   }
   deleteFields();
@@ -70,7 +70,7 @@ ScAddr NonAtomicActionInterpreterAgent::getTemplateKeyElement(ScAddr const & tem
 
   if (!templateKeyElement.IsValid())
   {
-    throw std::runtime_error("Template key element not found.");
+    SC_THROW_EXCEPTION(utils::ExceptionItemNotFound, "Template key element not found.");
   }
 
   return templateKeyElement;

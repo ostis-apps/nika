@@ -25,13 +25,13 @@ ScResult PhraseGenerationAgent::DoProgram(ScActionInitiatedEvent const & event, 
   ScAddr const & replyMessageNode = IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_1);
   if (!m_context.IsElement(replyMessageNode))
   {
-    SC_LOG_ERROR("Action doesn't have a reply message node.");
+    SC_AGENT_LOG_ERROR("Action doesn't have a reply message node.");
     return action.FinishWithError();
   }
   ScAddr const & phraseLink = IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_2);
   if (!m_context.IsElement(phraseLink))
   {
-    SC_LOG_ERROR("Action doesn't have a link with a text template.");
+    SC_AGENT_LOG_ERROR("Action doesn't have a link with a text template.");
     return action.FinishWithError();
   }
   ScAddr templateNode =
@@ -39,14 +39,14 @@ ScResult PhraseGenerationAgent::DoProgram(ScActionInitiatedEvent const & event, 
   ScAddr const & parametersNode = IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_3);
   if (!m_context.IsElement(parametersNode))
   {
-    SC_LOG_ERROR("Action doesn't have a parameters node.");
+    SC_AGENT_LOG_ERROR("Action doesn't have a parameters node.");
     return action.FinishWithError();
   }
 
   ScAddr const & linkResult = generateLinkByTemplate(templateNode, parametersNode, phraseLink);
   if (!m_context.IsElement(linkResult))
   {
-    SC_LOG_ERROR("Answer isn't found.");
+    SC_AGENT_LOG_ERROR("Answer isn't found.");
     return action.FinishUnsuccessfully();
   }
   LanguageSearcher searcher(&m_context);
@@ -57,7 +57,7 @@ ScResult PhraseGenerationAgent::DoProgram(ScActionInitiatedEvent const & event, 
   }
   else
   {
-    SC_LOG_DEBUG("Language link isn't found.");
+    SC_AGENT_LOG_DEBUG("Language link isn't found.");
   }
   if (!m_context.IsElement(templateNode))
   {
@@ -93,7 +93,7 @@ ScAddr PhraseGenerationAgent::generateLinkByTemplate(
   }
   else
   {
-    SC_LOG_DEBUG("Text template doesn't have variables.");
+    SC_AGENT_LOG_DEBUG("Text template doesn't have variables.");
     textResult = text;
   }
   if (!textResult.empty())
@@ -101,7 +101,7 @@ ScAddr PhraseGenerationAgent::generateLinkByTemplate(
     linkResult = handler.createLink(textResult);
     std::string linkContent;
     m_context.GetLinkContent(linkResult, linkContent);
-    SC_LOG_DEBUG("Generated text: \"" << linkContent << "\"");
+    SC_AGENT_LOG_DEBUG("Generated text: \"" << linkContent << "\"");
   }
   return linkResult;
 }
@@ -146,7 +146,7 @@ string PhraseGenerationAgent::findResultText(
   }
   else
   {
-    SC_LOG_DEBUG("Phrase template isn't found.");
+    SC_AGENT_LOG_DEBUG("Phrase template isn't found.");
   }
   return textResult;
 }
@@ -361,7 +361,6 @@ void PhraseGenerationAgent::updateSemanticAnswer(const ScTemplateSearchResultIte
 
   for (auto & phraseElement : phraseElements)
   {
-    // if (find(toRemoveElements.begin(), toRemoveElements.end(), phraseElement) == toRemoveElements.end())
     m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, phraseElement);
   }
 

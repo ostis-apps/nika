@@ -14,7 +14,7 @@ ScResult AlternativeMessageTopicClassificationAgent::DoProgram(ScActionInitiated
   ScAddr const & messageAddr = utils::IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_1);
   if (!messageAddr.IsValid())
   {
-    SC_LOG_ERROR("Action doesn't have a message node.");
+    SC_AGENT_LOG_ERROR("Action doesn't have a message node.");
     return action.FinishUnsuccessfully();
   }
 
@@ -34,7 +34,7 @@ ScResult AlternativeMessageTopicClassificationAgent::DoProgram(ScActionInitiated
   }
   catch (utils::ScException & exception)
   {
-    SC_LOG_ERROR(exception.Description());
+    SC_AGENT_LOG_ERROR(exception.Description());
     ScStructure result = m_context.GenerateStructure();
     for (auto const & element : answerElements)
       result << element;
@@ -44,7 +44,7 @@ ScResult AlternativeMessageTopicClassificationAgent::DoProgram(ScActionInitiated
 
   if (!utils::IteratorUtils::getAnyFromSet(&m_context, outputStructure).IsValid())
   {
-    SC_LOG_DEBUG("Message is not classified.");
+    SC_AGENT_LOG_DEBUG("Message is not classified.");
     ScStructure result = m_context.GenerateStructure();
     for (auto const & element : answerElements)
       result << element;
@@ -53,7 +53,7 @@ ScResult AlternativeMessageTopicClassificationAgent::DoProgram(ScActionInitiated
   }
   else
   {
-    SC_LOG_DEBUG("Message is classified.");
+    SC_AGENT_LOG_DEBUG("Message is classified.");
   }
 
   ScStructure result = m_context.GenerateStructure();

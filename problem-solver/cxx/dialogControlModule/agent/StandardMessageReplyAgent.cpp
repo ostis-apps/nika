@@ -26,7 +26,7 @@ ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & eve
 
   if (!replyMessageNode.IsValid())
   {
-    SC_LOG_ERROR("The reply message isn't generated");
+    SC_AGENT_LOG_ERROR("The reply message isn't generated");
     return action.FinishUnsuccessfully();
   }
   SC_AGENT_LOG_DEBUG("The reply message is generated");

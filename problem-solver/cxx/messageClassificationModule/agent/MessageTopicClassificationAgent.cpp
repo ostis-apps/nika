@@ -23,7 +23,7 @@ ScResult MessageTopicClassificationAgent::DoProgram(ScActionInitiatedEvent const
   }
   catch (utils::ScException & exception)
   {
-    SC_LOG_ERROR(exception.Description());
+    SC_AGENT_LOG_ERROR(exception.Description());
     ScStructure result = m_context.GenerateStructure();
     for (auto const & element : answerElements)
       result << element;

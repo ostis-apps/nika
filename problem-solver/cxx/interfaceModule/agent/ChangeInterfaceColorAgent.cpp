@@ -11,7 +11,7 @@ ScResult ChangeInterfaceColorAgent::DoProgram(ScActionInitiatedEvent const & eve
   ScAddr const & messageAddr = utils::IteratorUtils::getAnyByOutRelation(&m_context, action, ScKeynodes::rrel_1);
   if (!messageAddr.IsValid())
   {
-    SC_LOG_ERROR("Message Addr not found.");
+    SC_AGENT_LOG_ERROR("Message Addr not found.");
     return action.FinishUnsuccessfully();
   }
 
@@ -19,7 +19,7 @@ ScResult ChangeInterfaceColorAgent::DoProgram(ScActionInitiatedEvent const & eve
       utils::IteratorUtils::getAnyByOutRelation(&m_context, messageAddr, InterfaceKeynodes::rrel_entity);
   if (!componentAddr.IsValid())
   {
-    SC_LOG_INFO("Component Addr not found.");
+    SC_AGENT_LOG_INFO("Component Addr not found.");
     return action.FinishUnsuccessfully();
   }
 
@@ -29,12 +29,12 @@ ScResult ChangeInterfaceColorAgent::DoProgram(ScActionInitiatedEvent const & eve
   if (!componentColorAddr.IsValid())
   {
     componentColor = createColor();
-    SC_LOG_DEBUG("Component color is changed to random " << componentColor);
+    SC_AGENT_LOG_DEBUG("Component color is changed to random " << componentColor);
   }
   else
   {
     m_context.GetLinkContent(componentColorAddr, componentColor);
-    SC_LOG_DEBUG("Component color is changed to " << componentColor);
+    SC_AGENT_LOG_DEBUG("Component color is changed to " << componentColor);
   }
 
   bool isSuccess = setComponentColor(componentAddr, componentColor);
