@@ -5,9 +5,8 @@
 #include "keynodes/Keynodes.hpp"
 
 using namespace commonModule;
-NonAtomicActionInterpreter::NonAtomicActionInterpreter(ScAgentContext * ms_context)
+NonAtomicActionInterpreter::NonAtomicActionInterpreter(ScAgentContext * context) : context(context)
 {
-  this->context = ms_context;
 }
 
 void NonAtomicActionInterpreter::interpret(ScAddr const & nonAtomicActionAddr)

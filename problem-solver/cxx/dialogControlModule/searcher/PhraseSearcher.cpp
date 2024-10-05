@@ -9,9 +9,8 @@
 
 using namespace dialogControlModule;
 
-PhraseSearcher::PhraseSearcher(ScMemoryContext * ms_context)
+PhraseSearcher::PhraseSearcher(ScMemoryContext * context) : context(context)
 {
-  this->context = ms_context;
 }
 
 ScAddrVector PhraseSearcher::getPhrases(const ScAddr & phraseClassNode, const ScAddr & langNode)

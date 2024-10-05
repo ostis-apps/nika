@@ -9,7 +9,7 @@ namespace dialogControlModule
 class TokenDomainSearcher
 {
 public:
-  explicit TokenDomainSearcher(ScMemoryContext * ms_context);
+  explicit TokenDomainSearcher(ScMemoryContext * context);
 
   ScAddr getMessageText(const ScAddr & message);
 

@@ -7,7 +7,7 @@ namespace commonModule
 class NonAtomicActionInterpreter
 {
 public:
-  explicit NonAtomicActionInterpreter(ScAgentContext * ms_context);
+  explicit NonAtomicActionInterpreter(ScAgentContext * context);
 
   void interpret(const ScAddr & nonAtomicActionAddr);
 

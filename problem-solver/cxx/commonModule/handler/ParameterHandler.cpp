@@ -112,9 +112,9 @@ ScAddr ParameterHandler::generateParameterNode(
   return genResult["_parameter_node"];
 };
 
-ParameterHandler::ParameterHandler(ScMemoryContext * ms_context)
-  : context(ms_context)
-  , numberHandler(std::make_unique<NumberHandler>(ms_context))
+ParameterHandler::ParameterHandler(ScMemoryContext * context)
+  : context(context)
+  , numberHandler(std::make_unique<NumberHandler>(context))
 {
 }
 

@@ -5,7 +5,7 @@ namespace dialogControlModule
 class LanguageSearcher
 {
 public:
-  explicit LanguageSearcher(ScMemoryContext * ms_context);
+  explicit LanguageSearcher(ScMemoryContext * context);
 
   ScAddr getMessageLanguage(const ScAddr & messageNode);
 

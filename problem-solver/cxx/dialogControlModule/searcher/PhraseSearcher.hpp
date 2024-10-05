@@ -7,7 +7,7 @@ namespace dialogControlModule
 class PhraseSearcher
 {
 public:
-  explicit PhraseSearcher(ScMemoryContext * ms_context);
+  explicit PhraseSearcher(ScMemoryContext * context);
 
   std::vector<ScAddr> getPhrases(const ScAddr & phraseClassNode, const ScAddr & langNode);
 

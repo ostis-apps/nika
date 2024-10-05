@@ -7,7 +7,7 @@ namespace dialogControlModule
 class MessageSearcher
 {
 public:
-  explicit MessageSearcher(ScMemoryContext * ms_context);
+  explicit MessageSearcher(ScMemoryContext * context);
 
   ScAddr getFirstMessage(const ScAddr & nonAtomicMessageNode);
 

@@ -8,9 +8,8 @@
 
 using namespace dialogControlModule;
 
-MessageSearcher::MessageSearcher(ScMemoryContext * ms_context)
+MessageSearcher::MessageSearcher(ScMemoryContext * context) : context(context)
 {
-  this->context = ms_context;
 }
 
 ScAddr MessageSearcher::getFirstMessage(const ScAddr & nonAtomicMessageNode)

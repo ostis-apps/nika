@@ -9,7 +9,7 @@ namespace commonModule
 class NumberHandler
 {
 public:
-  explicit NumberHandler(ScMemoryContext * ms_context);
+  explicit NumberHandler(ScMemoryContext * context);
 
   ScAddr getNumberNode(const double & number);
 

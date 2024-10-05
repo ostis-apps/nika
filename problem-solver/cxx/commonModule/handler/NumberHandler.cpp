@@ -62,8 +62,8 @@ std::string commonModule::NumberHandler::numberToLikView(const double & number)
   return stringStream.str();
 }
 
-commonModule::NumberHandler::NumberHandler(ScMemoryContext * ms_context)
-  : context(ms_context)
-  , linkHandler(std::make_unique<LinkHandler>(ms_context))
+commonModule::NumberHandler::NumberHandler(ScMemoryContext * context)
+  : context(context)
+  , linkHandler(std::make_unique<LinkHandler>(context))
 {
 }

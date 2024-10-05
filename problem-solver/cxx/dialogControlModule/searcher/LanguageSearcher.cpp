@@ -6,9 +6,9 @@
 using namespace commonModule;
 using namespace dialogControlModule;
 
-LanguageSearcher::LanguageSearcher(ScMemoryContext * ms_context)
+LanguageSearcher::LanguageSearcher(ScMemoryContext * context)
+  : context(context)
 {
-  this->context = ms_context;
 }
 
 ScAddr LanguageSearcher::getMessageLanguage(const ScAddr & messageNode)

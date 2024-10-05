@@ -9,7 +9,7 @@ namespace commonModule
 class ParameterHandler
 {
 public:
-  explicit ParameterHandler(ScMemoryContext * ms_context);
+  explicit ParameterHandler(ScMemoryContext * context);
 
   ScAddr updateMeasurableParameter(
       const ScAddr & entity,

@@ -3,8 +3,8 @@
 using namespace commonModule;
 
 LinkHandler::LinkHandler(ScMemoryContext * context)
+  : context(context)
 {
-  this->context = context;
 }
 
 ScAddr LinkHandler::createLink(const std::string & text)
