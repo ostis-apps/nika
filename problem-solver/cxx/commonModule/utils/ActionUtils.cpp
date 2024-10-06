@@ -20,3 +20,14 @@ ScAction ActionUtils::CreateAction(
     action.SetArgument(++index, argument);
   return action;
 }
+
+void ActionUtils::wrapActionResultToScStructure(
+    ScAgentContext * context,
+    ScAction & action,
+    ScAddrVector const & answerElements)
+{
+  ScStructure result = context->GenerateStructure();
+  for (auto const & element : answerElements)
+    result << element;
+  action.SetResult(result);
+}

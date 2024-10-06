@@ -4,6 +4,7 @@
 
 #include "factory/InferenceManagerFactory.hpp"
 #include "keynodes/MessageClassificationKeynodes.hpp"
+#include "utils/ActionUtils.hpp"
 
 using namespace messageClassificationModule;
 
@@ -35,20 +36,14 @@ ScResult AlternativeMessageTopicClassificationAgent::DoProgram(ScActionInitiated
   catch (utils::ScException & exception)
   {
     SC_AGENT_LOG_ERROR(exception.Description());
-    ScStructure result = m_context.GenerateStructure();
-    for (auto const & element : answerElements)
-      result << element;
-    action.SetResult(result);
+    ActionUtils::wrapActionResultToScStructure(&m_context, action, answerElements);
     return action.FinishUnsuccessfully();
   }
 
   if (!utils::IteratorUtils::getAnyFromSet(&m_context, outputStructure).IsValid())
   {
     SC_AGENT_LOG_DEBUG("Message is not classified.");
-    ScStructure result = m_context.GenerateStructure();
-    for (auto const & element : answerElements)
-      result << element;
-    action.SetResult(result);
+    ActionUtils::wrapActionResultToScStructure(&m_context, action, answerElements);
     return action.FinishUnsuccessfully();
   }
   else
@@ -56,10 +51,7 @@ ScResult AlternativeMessageTopicClassificationAgent::DoProgram(ScActionInitiated
     SC_AGENT_LOG_DEBUG("Message is classified.");
   }
 
-  ScStructure result = m_context.GenerateStructure();
-  for (auto const & element : answerElements)
-    result << element;
-  action.SetResult(result);
+  ActionUtils::wrapActionResultToScStructure(&m_context, action, answerElements);
 
   return action.FinishSuccessfully();
 }

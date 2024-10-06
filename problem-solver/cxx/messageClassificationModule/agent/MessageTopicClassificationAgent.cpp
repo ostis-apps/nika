@@ -1,9 +1,8 @@
 #include "MessageTopicClassificationAgent.hpp"
 
-#include "sc-agents-common/utils/IteratorUtils.hpp"
-
 #include "client/WitAiClient.hpp"
 #include "keynodes/MessageClassificationKeynodes.hpp"
+#include "utils/ActionUtils.hpp"
 
 using namespace messageClassificationModule;
 
@@ -24,18 +23,11 @@ ScResult MessageTopicClassificationAgent::DoProgram(ScActionInitiatedEvent const
   catch (utils::ScException & exception)
   {
     SC_AGENT_LOG_ERROR(exception.Description());
-    ScStructure result = m_context.GenerateStructure();
-    for (auto const & element : answerElements)
-      result << element;
-    action.SetResult(result);
+    ActionUtils::wrapActionResultToScStructure(&m_context, action, answerElements);
 
     return action.FinishUnsuccessfully();
   }
-
-  ScStructure result = m_context.GenerateStructure();
-  for (auto const & element : answerElements)
-    result << element;
-  action.SetResult(result);
+  ActionUtils::wrapActionResultToScStructure(&m_context, action, answerElements);
   return action.FinishSuccessfully();
 }
 

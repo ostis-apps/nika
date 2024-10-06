@@ -5,6 +5,7 @@
 
 #include "keynodes/MessageKeynodes.hpp"
 #include "keynodes/MessageProcessingKeynodes.hpp"
+#include "utils/ActionUtils.hpp"
 
 using namespace utils;
 
@@ -95,19 +96,13 @@ ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const
   catch (utils::ScException const & exception)
   {
     SC_AGENT_LOG_ERROR(exception.Description());
-    ScStructure result = m_context.GenerateStructure();
-    for (auto const & element : answerElements)
-      result << element;
-    action.SetResult(result);
+    ActionUtils::wrapActionResultToScStructure(&m_context, action, answerElements);
+
     SC_AGENT_LOG_DEBUG("Finished with an error");
     return action.FinishUnsuccessfully();
   }
 
-  ScStructure result = m_context.GenerateStructure();
-  for (auto const & element : answerElements)
-    result << element;
-  action.SetResult(result);
-
+  ActionUtils::wrapActionResultToScStructure(&m_context, action, answerElements);
   return action.FinishSuccessfully();
 }
 
