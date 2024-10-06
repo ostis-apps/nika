@@ -20,7 +20,7 @@ from sc_kpm.utils import (
     get_edge
 )
 from sc_kpm.utils.action_utils import (
-    create_action_result,
+    create_action_answer,
     finish_action_with_status,
     get_action_arguments,
     get_element_by_role_relation
@@ -106,7 +106,7 @@ class WeatherAgent(ScAgentClassic):
             sc_types.EDGE_D_COMMON_CONST, city_addr, link)
         create_edge(
             sc_types.EDGE_ACCESS_CONST_POS_PERM, nrel_temperature, temperature_edge)
-        create_action_result(action_node, link)
+        create_action_answer(action_node, link)
 
         return ScResult.OK
 
@@ -139,7 +139,7 @@ class WeatherAgent(ScAgentClassic):
             raise
         create_edge(
             sc_types.EDGE_ACCESS_CONST_POS_PERM, answer_phrase, unknown_city_link)
-        create_action_result(action_node, unknown_city_link)
+        create_action_answer(action_node, unknown_city_link)
 
     def get_ru_idtf(self, entity_addr: ScAddr) -> ScAddr:
         main_idtf = ScKeynodes.resolve(
