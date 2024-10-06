@@ -3,7 +3,7 @@ FROM node:16-alpine AS web-buildenv
 
 WORKDIR /nika-ui 
 #Install build-time dependencies
-COPY package.json package-lock.json ./
+COPY package.json package-lock.json yarn.lock ./
 RUN yarn
 #Build the interface 
 COPY . .
