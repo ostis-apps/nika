@@ -1,0 +1,25 @@
+music_style_jazz
+=> nrel_main_idtf:
+    [Экземпляр текстового сообщения для музыкального стиля Джаз]
+    (* <- lang_ru;; *);
+<= nrel_music_style_jazz: nika;
+-> rrel_1: music_style_jazz1;;
+
+music_style_jazz1
+<- concept_music_style_jazz;
+<- concept_wit_entity;
+=> nrel_main_idtf:
+    [Информация про музыкальный стиль Джаз]
+    (* <- lang_ru;; *);
+=> nrel_idtf:
+    [Информация про музыкальный стиль Джаз]
+    (* <- lang_ru;; *);
+=> nrel_music_style_feature:
+    [импровизация]
+    (* <- lang_ru;; *);
+=> nrel_music_style_content:
+   [Свинг и ритмическая гибкость]
+    (* <- lang_ru;; *);
+=> nrel_music_style_highlights:
+    [Гармония и аккордовая прогрессия]
+    (* <- lang_ru;; *);;
