@@ -334,7 +334,7 @@ void PhraseGenerationAgent::replaceSetElementsVariables(
 
 void PhraseGenerationAgent::updateSemanticAnswer(const ScTemplateSearchResultItem & phraseSemanticResult)
 {
-  ScAddr const phraseStruct = m_context.GenerateNode(ScType::NodeStruct);
+  ScAddr const & phraseStruct = m_context.GenerateNode(ScType::NodeStruct);
   ScAddrVector phraseElements;
   for (size_t i = 0; i < phraseSemanticResult.Size(); i++)
   {

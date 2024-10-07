@@ -21,7 +21,7 @@ ScAddr commonModule::NumberHandler::findNumberNode(const double & number)
   ScStreamPtr numberAsStream = ScStreamConverter::StreamFromString(numberAsString);
 
   ScAddrSet candidateList = this->context->SearchLinksByContent(numberAsStream);
-  SC_LOG_DEBUG("Found " << std::to_string(candidateList.size()) << " sc-link with content " << numberAsString);
+  SC_LOG_DEBUG("NumberHandler: Found " << std::to_string(candidateList.size()) << " sc-link with content " << numberAsString);
 
   for (ScAddr candidateLink : candidateList)
   {
