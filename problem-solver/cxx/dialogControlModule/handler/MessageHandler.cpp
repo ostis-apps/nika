@@ -1,101 +1,86 @@
 #include "MessageHandler.hpp"
 
-#include "sc-agents-common/keynodes/coreKeynodes.hpp"
-#include "sc-agents-common/utils/AgentUtils.hpp"
-#include "sc-agents-common/utils/CommonUtils.hpp"
-#include "sc-agents-common/utils/IteratorUtils.hpp"
-
 #include "keynodes/MessageKeynodes.hpp"
-#include "utils/ActionUtils.hpp"
 
-using namespace scAgentsCommon;
 using namespace dialogControlModule;
 using namespace utils;
 
-MessageHandler::MessageHandler(ScMemoryContext * context)
+MessageHandler::MessageHandler(ScAgentContext * context)
+  : context(context)
+  , languageSearcher(std::make_unique<LanguageSearcher>(context))
+  , messageConstructionsGenerator(std::make_unique<MessageConstructionsGenerator>(context))
+  , messageSearcher(std::make_unique<MessageSearcher>(context))
+  , phraseSearcher(std::make_unique<PhraseSearcher>(context))
 {
-  this->context = context;
-  languageSearcher = new LanguageSearcher(context);
-  messageConstructionsGenerator = new MessageConstructionsGenerator(context);
-  messageSearcher = new MessageSearcher(context);
-  phraseSearcher = new PhraseSearcher(context);
-}
-
-MessageHandler::~MessageHandler()
-{
-  delete languageSearcher;
-  delete messageConstructionsGenerator;
-  delete messageSearcher;
-  delete phraseSearcher;
 }
 
 bool MessageHandler::processReplyMessage(
-    const ScAddr & replyMessageNode,
-    const ScAddr & logicRuleNode,
-    const ScAddr & langNode,
-    const ScAddr & parametersNode)
+    ScAddr const & replyMessageNode,
+    ScAddr const & logicRuleNode,
+    ScAddr const & langNode,
+    ScAddr const & parametersNode)
 {
   bool result = false;
 
-  if (replyMessageNode.IsValid())
+  if (!replyMessageNode.IsValid())
   {
-    if (logicRuleNode.IsValid())
-    {
-      SC_LOG_DEBUG("MessageHandler: the logic rule " + context->HelperGetSystemIdtf(logicRuleNode) + " is found");
-      if (langNode.IsValid())
-      {
-        SC_LOG_DEBUG("MessageHandler: the message language is " + context->HelperGetSystemIdtf(langNode));
-        if (parametersNode.IsValid())
-        {
-          clearSemanticAnswer();
-          context->CreateEdge(ScType::EdgeAccessConstPosPerm, parametersNode, langNode);
-          if (context->HelperCheckEdge(
-                  MessageKeynodes::concept_atomic_message, replyMessageNode, ScType::EdgeAccessConstPosPerm))
-          {
-            SC_LOG_DEBUG("MessageHandler: the message is atomic");
-            ScAddr phraseClassNode = phraseSearcher->getFirstPhraseClass(logicRuleNode);
-            if (phraseClassNode.IsValid())
-              result = processAtomicMessage(replyMessageNode, phraseClassNode, parametersNode, langNode);
-            else
-              SC_LOG_DEBUG("MessageHandler: the first phrase class isn't found");
-          }
-          else
-          {
-            SC_LOG_DEBUG("MessageHandler: the message is non-atomic");
-            result = processNonAtomicMessage(replyMessageNode, logicRuleNode, parametersNode, langNode);
-          }
-        }
-        else
-          SC_LOG_ERROR("MessageHandler: the parameters aren't valid");
-      }
-      else
-        SC_LOG_ERROR("MessageHandler: the message language isn't valid");
-    }
+    SC_LOG_ERROR(getClassNameForLog() + ": The message isn't valid");
+    return false;
+  }
+  if (!logicRuleNode.IsValid())
+  {
+    SC_LOG_ERROR(getClassNameForLog() + ": The message logic rule isn't valid");
+    return false;
+  }
+  SC_LOG_DEBUG(
+      getClassNameForLog() + ": The logic rule " + context->GetElementSystemIdentifier(logicRuleNode) + " is found");
+
+  if (!langNode.IsValid())
+  {
+    SC_LOG_ERROR(getClassNameForLog() + ": The message language isn't valid");
+    return false;
+  }
+  SC_LOG_DEBUG(getClassNameForLog() + ": The message language is " + context->GetElementSystemIdentifier(langNode));
+  if (!parametersNode.IsValid())
+  {
+    SC_LOG_ERROR(getClassNameForLog() + ": The parameters aren't valid");
+    return false;
+  }
+
+  clearSemanticAnswer();
+  context->GenerateConnector(ScType::EdgeAccessConstPosPerm, parametersNode, langNode);
+  if (context->CheckConnector(
+          MessageKeynodes::concept_atomic_message, replyMessageNode, ScType::EdgeAccessConstPosPerm))
+  {
+    SC_LOG_DEBUG(getClassNameForLog() + ": The message is atomic");
+    ScAddr phraseClassNode = phraseSearcher->getFirstPhraseClass(logicRuleNode);
+    if (phraseClassNode.IsValid())
+      result = processAtomicMessage(replyMessageNode, phraseClassNode, parametersNode, langNode);
     else
-      SC_LOG_ERROR("MessageHandler: the message logic rule isn't valid");
+      SC_LOG_DEBUG(getClassNameForLog() + ": The first phrase class isn't found");
   }
   else
-    SC_LOG_ERROR("MessageHandler: the message isn't valid");
-
+  {
+    SC_LOG_DEBUG(getClassNameForLog() + ": The message is non-atomic");
+    result = processNonAtomicMessage(replyMessageNode, logicRuleNode, parametersNode, langNode);
+  }
   return result;
 }
 
 bool MessageHandler::processAtomicMessage(
-    const ScAddr & messageNode,
-    const ScAddr & phraseClassNode,
-    const ScAddr & parametersNode,
-    const ScAddr & langNode)
+    ScAddr const & messageNode,
+    ScAddr const & phraseClassNode,
+    ScAddr const & parametersNode,
+    ScAddr const & langNode)
 {
-  bool result = false;
-
   ScAddr resultLink = generateLinkByPhrase(messageNode, phraseClassNode, parametersNode, langNode);
   if (resultLink.IsValid())
   {
     messageConstructionsGenerator->generateTextTranslationConstruction(messageNode, resultLink);
-    result = true;
+    return true;
   }
 
-  return result;
+  return false;
 }
 
 void MessageHandler::clearSemanticAnswer()
@@ -104,7 +89,7 @@ void MessageHandler::clearSemanticAnswer()
   clearAnswer.Triple(MessageKeynodes::answer_structure, ScType::EdgeAccessVarPosPerm >> "_remove_arc", ScType::Unknown);
 
   ScTemplateSearchResult clearAnswerResult;
-  context->HelperSearchTemplate(clearAnswer, clearAnswerResult);
+  context->SearchByTemplate(clearAnswer, clearAnswerResult);
 
   for (size_t i = 0; i < clearAnswerResult.Size(); i++)
   {
@@ -113,112 +98,101 @@ void MessageHandler::clearSemanticAnswer()
 }
 
 bool MessageHandler::processNonAtomicMessage(
-    const ScAddr & replyMessageNode,
-    const ScAddr & logicRuleNode,
-    const ScAddr & parametersNode,
-    const ScAddr & langNode)
+    ScAddr const & replyMessageNode,
+    ScAddr const & logicRuleNode,
+    ScAddr const & parametersNode,
+    ScAddr const & langNode)
 {
-  bool result = true;
+  std::string linkContent;
 
   ScAddr messageNode = messageSearcher->getFirstMessage(replyMessageNode);
-  if (messageNode.IsValid())
+  if (!messageNode.IsValid())
   {
-    ScAddr phraseClassNode = phraseSearcher->getFirstPhraseClass(logicRuleNode);
-    if (phraseClassNode.IsValid())
-    {
-      string resultText;
-      do
-      {
-        ScAddr nextMessageNode;
-        SC_LOG_DEBUG("MessageHandler: the phrase class is " + context->HelperGetSystemIdtf(phraseClassNode));
-        ScAddr resultLink = generateLinkByPhrase(replyMessageNode, phraseClassNode, parametersNode, langNode);
-        if (resultLink.IsValid())
-        {
-          resultText = resultText.append(CommonUtils::getLinkContent(context, resultLink)).append(" ");
-          messageConstructionsGenerator->generateTextTranslationConstruction(messageNode, resultLink);
-          messageNode = messageSearcher->getNextMessage(messageNode);
-          phraseClassNode = phraseSearcher->getNextPhraseClass(phraseClassNode);
-        }
-        else
-        {
-          result = false;
-        }
-      } while (messageNode.IsValid() && phraseClassNode.IsValid() && result);
-      if (messageNode.IsValid() || phraseClassNode.IsValid())
-      {
-        SC_LOG_ERROR("MessageHandler: no match between the message and the phrase class was found");
-        result = false;
-      }
-      if (result)
-      {
-        resultText = resultText.substr(0, resultText.size() - 1);
-        SC_LOG_DEBUG("MessageHandler: result text: \"" + resultText + "\"");
-        messageConstructionsGenerator->generateTextTranslationConstruction(replyMessageNode, langNode, resultText);
-      }
-    }
-    else
-    {
-      SC_LOG_DEBUG("MessageHandler: the first phrase class isn't found");
-      result = false;
-    }
+    SC_LOG_DEBUG(getClassNameForLog() + ": The first message isn't found");
+    return false;
   }
-  else
+  ScAddr phraseClassNode = phraseSearcher->getFirstPhraseClass(logicRuleNode);
+  if (!phraseClassNode.IsValid())
   {
-    SC_LOG_DEBUG("MessageHandler: the first message isn't found");
-    result = false;
+    SC_LOG_DEBUG(getClassNameForLog() + ": The first phrase class isn't found");
+    return false;
   }
 
-  return result;
+  std::string resultText;
+  while (messageNode.IsValid() && phraseClassNode.IsValid())
+  {
+    ScAddr nextMessageNode;
+    SC_LOG_DEBUG(
+        getClassNameForLog() + ": The phrase class is " + context->GetElementSystemIdentifier(phraseClassNode));
+    ScAddr resultLink = generateLinkByPhrase(replyMessageNode, phraseClassNode, parametersNode, langNode);
+    if (!resultLink.IsValid())
+      break;
+    context->GetLinkContent(resultLink, linkContent);
+    resultText = resultText.append(linkContent).append(" ");
+    messageConstructionsGenerator->generateTextTranslationConstruction(messageNode, resultLink);
+    messageNode = messageSearcher->getNextMessage(messageNode);
+    phraseClassNode = phraseSearcher->getNextPhraseClass(phraseClassNode);
+  }
+
+  if (messageNode.IsValid() || phraseClassNode.IsValid())
+  {
+    SC_LOG_ERROR(getClassNameForLog() + ": No match between the message and the phrase class was found.");
+    return false;
+  }
+  resultText = resultText.substr(0, resultText.size() - 1);
+  SC_LOG_DEBUG(getClassNameForLog() + ": Result text: \"" + resultText + "\"");
+  messageConstructionsGenerator->generateTextTranslationConstruction(replyMessageNode, langNode, resultText);
+
+  return true;
 }
 
 ScAddr MessageHandler::generateLinkByPhrase(
-    const ScAddr & replyMessageNode,
-    const ScAddr & phraseClassNode,
-    const ScAddr & parametersNode,
-    const ScAddr & langNode)
+    ScAddr const & replyMessageNode,
+    ScAddr const & phraseClassNode,
+    ScAddr const & parametersNode,
+    ScAddr const & langNode)
 {
-  ScAddr resultLink;
-
-  vector<ScAddr> phrases = phraseSearcher->getPhrases(phraseClassNode, langNode);
-  if (!phrases.empty())
+  ScAddrVector phrases = phraseSearcher->getPhrases(phraseClassNode, langNode);
+  if (phrases.empty())
   {
-    for (auto phraseLink : phrases)
-    {
-      if (phraseLink.IsValid())
-      {
-        SC_LOG_DEBUG(
-            "MessageHandler: the phrase with the content \"" + CommonUtils::getLinkContent(context, phraseLink) +
-            "\" is found");
-        ScAddr phraseGenerationActionNode = AgentUtils::initAgent(
-            context, MessageKeynodes::action_phrase_generation, {replyMessageNode, phraseLink, parametersNode});
-
-        ActionUtils::waitAction(context, phraseGenerationActionNode, PHRASE_GENERATION_AGENT_WAIT_TIME);
-
-        if (context->HelperCheckEdge(
-                CoreKeynodes::question_finished_successfully,
-                phraseGenerationActionNode,
-                ScType::EdgeAccessConstPosPerm))
-        {
-          resultLink = IteratorUtils::getAnyByOutRelation(
-              context, phraseGenerationActionNode, scAgentsCommon::CoreKeynodes::nrel_answer);
-          SC_LOG_DEBUG(
-              "MessageHandler: the result link with the content \"" + CommonUtils::getLinkContent(context, resultLink) +
-              "\" is generated");
-          break;
-        }
-        else
-        {
-          SC_LOG_DEBUG(
-              "MessageHandler: the result link from the phrase \"" + CommonUtils::getLinkContent(context, phraseLink) +
-              "\" isn't generated");
-        }
-      }
-    }
+    SC_LOG_DEBUG(getClassNameForLog() + ": Phrases aren't found");
+    return {};
   }
-  else
+
+  ScAddr resultLink;
+  for (auto phraseLink : phrases)
   {
-    SC_LOG_DEBUG("MessageHandler: phrases aren't found");
+    if (!phraseLink.IsValid())
+      continue;
+
+    std::string linkContent;
+    context->GetLinkContent(phraseLink, linkContent);
+    SC_LOG_DEBUG(getClassNameForLog() + ": The phrase with the content " + linkContent + " is found");
+
+    ScAction phraseGenerationAction = context->GenerateAction(MessageKeynodes::action_phrase_generation);
+    phraseGenerationAction.SetArguments(replyMessageNode, phraseLink, parametersNode);
+
+    phraseGenerationAction.InitiateAndWait(PHRASE_GENERATION_AGENT_WAIT_TIME);
+
+    if (phraseGenerationAction.IsFinishedSuccessfully())
+    {
+      resultLink = phraseGenerationAction.GetResult();
+      context->GetLinkContent(resultLink, linkContent);
+      SC_LOG_DEBUG(getClassNameForLog() + ": The result link with the content \"" + linkContent + "\" is generated");
+      break;
+    }
+    else
+    {
+      context->GetLinkContent(phraseLink, linkContent);
+      SC_LOG_DEBUG(getClassNameForLog() + ": The result link from the phrase \"" + linkContent + "\" isn't generated");
+    }
   }
 
   return resultLink;
+}
+
+std::string MessageHandler::getClassNameForLog()
+{
+  static std::string const className = "MessageHandler";
+  return className;
 }

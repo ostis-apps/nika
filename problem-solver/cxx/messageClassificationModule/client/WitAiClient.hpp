@@ -1,7 +1,6 @@
 #pragma once
 
 #include "client/WitAiClientInterface.hpp"
-#include <memory>
 
 namespace messageClassificationModule
 {

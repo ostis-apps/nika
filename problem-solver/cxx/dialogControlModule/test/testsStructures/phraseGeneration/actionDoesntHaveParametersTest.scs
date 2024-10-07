@@ -3,13 +3,14 @@
 =>nrel_system_identifier:
 	[_name];;
 
-test_question_node
+test_action_node
 <-action_phrase_generation;
-<-question;
+<-action;
 -> rrel_1: reply_message;
 -> rrel_2:
 	[Sorry, ${_name}.]
 	(*
+		<-lang_en;;
 		=>nrel_phrase_template:
 		[*
 			_hum
@@ -31,12 +32,6 @@ test_question_node
 			concept_message
 			_->_mes;;
 		*];;
-	*);
--> rrel_3:
-	parameters_node
-	(*
-		->human_guilderoy_lockhart;;
-		->message_of_guilderoy_lockhart;;
 	*);;
 
 human_guilderoy_lockhart

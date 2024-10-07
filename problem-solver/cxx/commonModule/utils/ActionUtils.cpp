@@ -1,22 +1,33 @@
 #include "ActionUtils.hpp"
 
-#include "sc-agents-common/keynodes/coreKeynodes.hpp"
-#include "sc-memory/sc_wait.hpp"
-
 #include "keynodes/Keynodes.hpp"
 
 using namespace commonModule;
 
-bool ActionUtils::waitAction(ScMemoryContext * context, ScAddr const & actionAddr, int const & waitTime)
+bool ActionUtils::isActionDeactivated(ScAgentContext * context, ScAddr const & action)
 {
-  auto check = [](ScAddr const & listenAddr, ScAddr const & edgeAddr, ScAddr const & otherAddr) {
-    return otherAddr == scAgentsCommon::CoreKeynodes::question_finished;
-  };
-  ScWaitCondition<ScEventAddInputEdge> waiter(*context, actionAddr, SC_WAIT_CHECK(check));
-  return waiter.Wait(waitTime);
+  return context->CheckConnector(commonModule::Keynodes::action_deactivated, action, ScType::EdgeAccessConstPosPerm);
 }
 
-bool ActionUtils::isActionDeactivated(ScMemoryContext * context, ScAddr const & action)
+ScAction ActionUtils::CreateAction(
+    ScAgentContext * context,
+    ScAddr const & actionClass,
+    ScAddrVector const & actionArguments)
 {
-  return context->HelperCheckEdge(commonModule::Keynodes::action_deactivated, action, ScType::EdgeAccessConstPosPerm);
+  ScAction action = context->GenerateAction(actionClass);
+  size_t index = 0;
+  for (ScAddr const argument : actionArguments)
+    action.SetArgument(++index, argument);
+  return action;
+}
+
+void ActionUtils::wrapActionResultToScStructure(
+    ScAgentContext * context,
+    ScAction & action,
+    ScAddrVector const & answerElements)
+{
+  ScStructure result = context->GenerateStructure();
+  for (auto const & element : answerElements)
+    result << element;
+  action.SetResult(result);
 }

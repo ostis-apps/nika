@@ -1,26 +1,17 @@
-#include "sc-agents-common/utils/AgentUtils.hpp"
-#include "sc-agents-common/utils/IteratorUtils.hpp"
-
-#include "keynodes/MessageClassificationKeynodes.hpp"
+#include "MessageTopicClassificationAgent.hpp"
 
 #include "client/WitAiClient.hpp"
-#include "MessageTopicClassificationAgent.hpp"
+#include "keynodes/MessageClassificationKeynodes.hpp"
+#include "utils/ActionUtils.hpp"
 
 using namespace messageClassificationModule;
 
-SC_AGENT_IMPLEMENTATION(MessageTopicClassificationAgent)
+ScResult MessageTopicClassificationAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
-  ScAddr const & actionAddr = otherAddr;
-  if (!checkActionClass(actionAddr))
-    return SC_RESULT_OK;
-
-  SC_LOG_DEBUG("MessageTopicClassificationAgent started");
-
   initFields();
   ScAddrVector answerElements;
 
-  ScAddr const & messageAddr =
-      utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, actionAddr, scAgentsCommon::CoreKeynodes::rrel_1);
+  ScAddr const & messageAddr = action.GetArgument(ScKeynodes::rrel_1);
 
   try
   {
@@ -31,25 +22,22 @@ SC_AGENT_IMPLEMENTATION(MessageTopicClassificationAgent)
   }
   catch (utils::ScException & exception)
   {
-    SC_LOG_ERROR(exception.Description());
-    utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, answerElements, false);
-    SC_LOG_DEBUG("MessageTopicClassificationAgent finished");
-    return SC_RESULT_ERROR;
-  }
+    SC_AGENT_LOG_ERROR(exception.Description());
+    ActionUtils::wrapActionResultToScStructure(&m_context, action, answerElements);
 
-  utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, answerElements, true);
-  SC_LOG_DEBUG("MessageTopicClassificationAgent finished");
-  return SC_RESULT_OK;
+    return action.FinishUnsuccessfully();
+  }
+  ActionUtils::wrapActionResultToScStructure(&m_context, action, answerElements);
+  return action.FinishSuccessfully();
+}
+
+ScAddr MessageTopicClassificationAgent::GetActionClass() const
+{
+  return MessageClassificationKeynodes::action_message_topic_classification;
 }
 
 void MessageTopicClassificationAgent::initFields()
 {
   std::unique_ptr<WitAiClient> client = std::make_unique<WitAiClient>();
-  this->manager = std::make_unique<MessageTopicClassificationManager>(&m_memoryCtx);
-}
-
-bool MessageTopicClassificationAgent::checkActionClass(ScAddr const & actionAddr)
-{
-  return m_memoryCtx.HelperCheckEdge(
-      MessageClassificationKeynodes::action_message_topic_classification, actionAddr, ScType::EdgeAccessConstPosPerm);
+  this->manager = std::make_unique<MessageTopicClassificationManager>(&m_context);
 }

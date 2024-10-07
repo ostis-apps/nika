@@ -9,9 +9,7 @@ namespace commonModule
 class ParameterHandler
 {
 public:
-  explicit ParameterHandler(ScMemoryContext * ms_context);
-
-  ~ParameterHandler();
+  explicit ParameterHandler(ScMemoryContext * context);
 
   ScAddr updateMeasurableParameter(
       const ScAddr & entity,
@@ -32,7 +30,9 @@ public:
 
 private:
   ScMemoryContext * context;
-  NumberHandler * numberHandler;
+  std::unique_ptr<NumberHandler> numberHandler;
+
+  static std::string getClassNameForLog();
 };
 
 }  // namespace commonModule

@@ -23,4 +23,4 @@ private:
   uint8_t m_resultCode;
 };
 
-SHARED_PTR_TYPE(ScHttpResponse)
+SHARED_PTR_TYPE(ScHttpResponse);

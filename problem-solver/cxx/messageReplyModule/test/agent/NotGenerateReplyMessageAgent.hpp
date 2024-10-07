@@ -1,18 +1,17 @@
 #pragma once
 
-#include "sc-memory/kpm/sc_agent.hpp"
+#include <sc-memory/sc_agent.hpp>
 #include "keynodes/MessageReplyKeynodes.hpp"
-#include "sc-agents-common/keynodes/coreKeynodes.hpp"
-
-#include "NotGenerateReplyMessageAgent.generated.hpp"
-
 namespace messageReplyModuleTest
 {
 
-class NotGenerateReplyMessageAgent : public ScAgent
+class NotGenerateReplyMessageAgent : public ScActionInitiatedAgent
 {
-  SC_CLASS(Agent, Event(scAgentsCommon::CoreKeynodes::question_initiated, ScEvent::Type::AddOutputEdge))
-  SC_GENERATED_BODY()
-};
+  public:
+  ScAddr GetActionClass() const override;
+
+  ScResult DoProgram(ScActionInitiatedEvent const & event, ScAction & action) override;
+
+  };
 
 } // namespace commonTest

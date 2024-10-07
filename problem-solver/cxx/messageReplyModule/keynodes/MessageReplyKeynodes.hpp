@@ -1,56 +1,37 @@
 #pragma once
 
-#include "sc-memory/sc_addr.hpp"
-#include "sc-memory/sc_object.hpp"
-
-#include "MessageReplyKeynodes.generated.hpp"
+#include <sc-memory/sc_keynodes.hpp>
 
 namespace messageReplyModule
 {
-class MessageReplyKeynodes : public ScObject
+class MessageReplyKeynodes : public ScKeynodes
 {
-  SC_CLASS()
-  SC_GENERATED_BODY()
-
 public:
-  SC_PROPERTY(Keynode("action_reply_to_message"), ForceCreate)
-  static ScAddr action_reply_to_message;
+  static inline ScKeynode const action_reply_to_message{"action_reply_to_message", ScType::NodeConstClass};
 
-  SC_PROPERTY(Keynode("message_processing_program"), ForceCreate)
-  static ScAddr message_processing_program;
+  static inline ScKeynode const message_processing_program{"message_processing_program", ScType::NodeConst};
 
-  SC_PROPERTY(Keynode("nrel_authors"), ForceCreate)
-  static ScAddr nrel_authors;
+  static inline ScKeynode const nrel_authors{"nrel_authors", ScType::NodeConstNoRole};
 
-  SC_PROPERTY(Keynode("concept_message"), ForceCreate)
-  static ScAddr concept_message;
+  static inline ScKeynode const concept_message{"concept_message", ScType::NodeConstClass};
 
-  SC_PROPERTY(Keynode("nrel_reply"), ForceCreate)
-  static ScAddr nrel_reply;
+  static inline ScKeynode const nrel_reply{"nrel_reply", ScType::NodeConstNoRole};
 
-  SC_PROPERTY(Keynode("format_wav"), ForceCreate)
-  static ScAddr format_wav;
+  static inline ScKeynode const format_wav{"format_wav", ScType::NodeConstClass};
 
-  SC_PROPERTY(Keynode("languages"), ForceCreate)
-  static ScAddr languages;
+  static inline ScKeynode const languages{"languages", ScType::NodeConst};
 
-  SC_PROPERTY(Keynode("concept_sound_file"), ForceCreate)
-  static ScAddr concept_sound_file;
+  static inline ScKeynode const concept_sound_file{"concept_sound_file", ScType::NodeConstClass};
 
-  SC_PROPERTY(Keynode("concept_text_file"), ForceCreate)
-  static ScAddr concept_text_file;
+  static inline ScKeynode const concept_text_file{"concept_text_file", ScType::NodeConstClass};
 
-  SC_PROPERTY(Keynode("concept_dialogue"), ForceCreate)
-  static ScAddr concept_dialogue;
+  static inline ScKeynode const concept_dialogue{"concept_dialogue", ScType::NodeConstClass};
 
-  SC_PROPERTY(Keynode("rrel_last"), ForceCreate)
-  static ScAddr rrel_last;
+  static inline ScKeynode const rrel_last{"rrel_last", ScType::NodeConstRole};
 
-  SC_PROPERTY(Keynode("nrel_message_sequence"), ForceCreate)
-  static ScAddr nrel_message_sequence;
+  static inline ScKeynode const nrel_message_sequence{"nrel_message_sequence", ScType::NodeConstNoRole};
 
-  SC_PROPERTY(Keynode("myself"), ForceCreate(ScType::NodeConst))
-  static ScAddr myself;
+  static inline ScKeynode const myself{"myself", ScType::NodeConst};
 };
 
 }  // namespace messageReplyModule

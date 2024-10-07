@@ -1,17 +1,16 @@
 #pragma once
 
-#include "sc-memory/kpm/sc_agent.hpp"
-#include "sc-agents-common/keynodes/coreKeynodes.hpp"
-
-#include "QuestionFinishedSuccessfullyTestAgent.generated.hpp"
+#include <sc-memory/sc_agent.hpp>
 
 namespace commonTest
 {
 
-class QuestionFinishedSuccessfullyTestAgent : public ScAgent
+class ActionFinishedSuccessfullyTestAgent : public ScActionInitiatedAgent
 {
-  SC_CLASS(Agent, Event(scAgentsCommon::CoreKeynodes::question_initiated, ScEvent::Type::AddOutputEdge))
-  SC_GENERATED_BODY()
+public:
+  ScAddr GetActionClass() const override;
+
+  ScResult DoProgram(ScActionInitiatedEvent const & event, ScAction & action) override;
 };
 
-} // namespace commonTest
+}  // namespace commonTest

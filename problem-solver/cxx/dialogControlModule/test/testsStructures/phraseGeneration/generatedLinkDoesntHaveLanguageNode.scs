@@ -3,21 +3,20 @@
 =>nrel_system_identifier:
 	[_name];;
 
-test_question_node
+test_action_node
 <-action_phrase_generation;
-<-question;
+<-action;
 -> rrel_1: reply_message;
-->rrel_2:
+-> rrel_2:
 	[Sorry, ${_name}.]
 	(*
-		<-lang_en;;
 		=>nrel_phrase_template:
 		[*
 			_hum
 			_=>nrel_main_idtf::
 				@var_name
 				(*
-					_<- _lang;;
+					_<- lang_en;;
 				*);;
 
 			_mes
@@ -33,10 +32,9 @@ test_question_node
 			_->_mes;;
 		*];;
 	*);
-->rrel_3:
+-> rrel_3:
 	parameters_node
 	(*
-		->lang_en;;
 		->human_guilderoy_lockhart;;
 		->message_of_guilderoy_lockhart;;
 	*);;

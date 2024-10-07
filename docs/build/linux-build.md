@@ -36,7 +36,7 @@ git submodule update --init --recursive
 
   ```sh
   # Terminal 1
-  ./scripts/run_sc_server.sh
+  ./scripts/run_sc_machine.sh
 
   # Terminal 2
   ./scripts/run_py_sc_server.sh

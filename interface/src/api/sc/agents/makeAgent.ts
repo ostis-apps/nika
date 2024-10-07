@@ -1,16 +1,16 @@
 import { ScAddr, ScConstruction, ScEventParams, ScEventType, ScTemplate, ScType } from 'ts-sc-client';
 import { client } from '@api/sc/client';
 
-const question = 'question';
-const questionInitiated = 'question_initiated';
+const action = 'action';
+const actionInitiated = 'action_initiated';
 const answer = 'nrel_answer';
-const questionFinished = 'question_finished';
+const actionFinished = 'action_finished';
 
 const baseKeynodes = [
-    { id: question, type: ScType.NodeConstClass },
-    { id: questionInitiated, type: ScType.NodeConstClass },
+    { id: action, type: ScType.NodeConstClass },
+    { id: actionInitiated, type: ScType.NodeConstClass },
     { id: answer, type: ScType.NodeConstNoRole },
-    { id: questionFinished, type: ScType.NodeConstClass },
+    { id: actionFinished, type: ScType.NodeConstClass },
 ];
 
 const describeAgent = async (template: ScTemplate, actionNodeAlias: string) => {
@@ -43,7 +43,7 @@ const findResultCircuit = async (actionNode: ScAddr, keynodes: Record<string, Sc
 
 const subscribeToAgentAnswer = async (actionNode: ScAddr, keynodes: Record<string, ScAddr>, onResponse: () => void) => {
     const onActionFinished = (_subscibedAddr: ScAddr, _arc: ScAddr, anotherAddr: ScAddr, eventId: number) => {
-        if (anotherAddr.isValid() && anotherAddr.equal(keynodes[questionFinished])) {
+        if (anotherAddr.isValid() && anotherAddr.equal(keynodes[actionFinished])) {
             client.eventsDestroy(eventId);
             onResponse();
         }
@@ -65,7 +65,7 @@ export const makeAgent = (template: ScTemplate, actionNodeAlias: string) => {
             };
             await subscribeToAgentAnswer(actionNode, keynodes, onResponse);
             const construction = new ScConstruction();
-            construction.createEdge(ScType.EdgeAccessConstPosPerm, keynodes[questionInitiated], actionNode);
+            construction.createEdge(ScType.EdgeAccessConstPosPerm, keynodes[actionInitiated], actionNode);
             client.createElements(construction);
         });
     });

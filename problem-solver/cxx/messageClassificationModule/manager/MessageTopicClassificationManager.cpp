@@ -4,9 +4,9 @@
 
 namespace messageClassificationModule
 {
-MessageTopicClassificationManager::MessageTopicClassificationManager(ScMemoryContext * context)
+MessageTopicClassificationManager::MessageTopicClassificationManager(ScAgentContext * context)
+  : classifier(std::make_unique<MessageTopicClassifier>(context, std::make_shared<WitAiClient>()))
 {
-  classifier = std::make_unique<MessageTopicClassifier>(context, new WitAiClient());
 }
 
 ScAddrVector MessageTopicClassificationManager::manage(ScAddrVector const & processParameters) const

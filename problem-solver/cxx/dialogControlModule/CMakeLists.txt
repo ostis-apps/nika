@@ -2,8 +2,6 @@ set(INFERENCE_MODULE_SRC "${SUBSYSTEMS_PATH}/scl-machine/problem-solver/cxx/infe
 
 set(SOURCES
     "DialogControlModule.cpp"
-    "keynodes/DialogKeynodes.cpp"
-    "keynodes/MessageKeynodes.cpp"
     "generator/MessageConstructionsGenerator.cpp"
     "agent/PhraseGenerationAgent.cpp"
     "agent/StandardMessageReplyAgent.cpp"
@@ -39,8 +37,6 @@ include_directories(
 
 add_library(dialogControlModule SHARED ${SOURCES} ${HEADERS})
 target_link_libraries(dialogControlModule sc-memory sc-agents-common common sc-builder-lib inferenceModule)
-
-sc_codegen_ex(dialogControlModule ${CMAKE_CURRENT_LIST_DIR} ${CMAKE_CURRENT_LIST_DIR}/generated)
 
 if(${SC_BUILD_TESTS})
     include(${CMAKE_CURRENT_LIST_DIR}/test/tests.cmake)

@@ -3,21 +3,18 @@
 #include "sc-memory/sc_addr.hpp"
 
 #include "handler/LinkHandler.hpp"
-#include "keynodes/DialogKeynodes.hpp"
 
 namespace dialogControlModule
 {
 class TokenDomainSearcher
 {
 public:
-  explicit TokenDomainSearcher(ScMemoryContext * ms_context);
-
-  ~TokenDomainSearcher();
+  explicit TokenDomainSearcher(ScMemoryContext * context);
 
   ScAddr getMessageText(const ScAddr & message);
 
 private:
   ScMemoryContext * context;
-  commonModule::LinkHandler * linkHandler;
+  std::unique_ptr<commonModule::LinkHandler> linkHandler;
 };
 }  // namespace dialogControlModule

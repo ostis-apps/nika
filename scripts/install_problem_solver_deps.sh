@@ -11,6 +11,7 @@ packagelist=(
 	nlohmann-json3-dev
 	libssl-dev
 	file
+	libcurl4-openssl-dev
 )
 sudo apt-get install -y --no-install-recommends "${packagelist[@]}"
 

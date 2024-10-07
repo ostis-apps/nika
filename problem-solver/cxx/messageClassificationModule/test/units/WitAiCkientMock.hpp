@@ -1,8 +1,7 @@
 #pragma once
 
-#include "gmock/gmock.h"
-
 #include "client/WitAiClientInterface.hpp"
+#include "gmock/gmock.h"
 
 namespace messageClassificationModule
 {

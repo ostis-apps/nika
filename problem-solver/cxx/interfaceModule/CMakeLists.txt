@@ -1,6 +1,5 @@
 set(SOURCES
     "InterfaceModule.cpp"
-    "keynodes/InterfaceKeynodes.cpp"
     "agent/ChangeInterfaceColorAgent.cpp"
 )
 
@@ -20,8 +19,6 @@ include_directories(
 
 add_library(interface SHARED ${SOURCES} ${HEADERS})
 target_link_libraries(interface sc-memory sc-agents-common common)
-
-sc_codegen_ex(interface ${CMAKE_CURRENT_LIST_DIR} ${CMAKE_CURRENT_LIST_DIR}/generated)
 
 if(${SC_CLANG_FORMAT_CODE})
     target_clangformat_setup(interface)

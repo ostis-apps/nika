@@ -2,12 +2,10 @@ set(INFERENCE_MODULE_SRC "${SUBSYSTEMS_PATH}/scl-machine/problem-solver/cxx/infe
 
 set(SOURCES
     "MessageClassificationModule.cpp"
-    "keynodes/MessageClassificationKeynodes.cpp"
     "agent/MessageTopicClassificationAgent.cpp"
     "agent/AlternativeMessageTopicClassificationAgent.cpp"
     "classifier/MessageTopicClassifier.cpp"
     "client/WitAiClient.cpp"
-    "keynodes/MessageClassificationKeynodes.cpp"
     "manager/MessageTopicClassificationManager.cpp"
     "constants/MessageClassificationConstants.cpp"
 )
@@ -47,8 +45,6 @@ target_link_libraries(
     sc-config-utils
 	inferenceModule
 )
-
-sc_codegen_ex(messageClassification ${CMAKE_CURRENT_LIST_DIR} ${CMAKE_CURRENT_LIST_DIR}/generated)
 
 add_definitions(-DMESSAGE_CLASSIFICATION_CONFIG_PATH="${NIKA_ROOT}/nika.ini")
 

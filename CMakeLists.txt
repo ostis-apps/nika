@@ -1,6 +1,9 @@
+cmake_minimum_required(VERSION 3.11)
 project(nika)
 set(NIKA_ROOT ${CMAKE_CURRENT_LIST_DIR})
-cmake_minimum_required(VERSION 2.8.12)
+
+option(SC_BUILD_TESTS "Flag to build unit tests" OFF)
+option(SC_CLANG_FORMAT_CODE "Flag to add clangformat and clangformat_check targets" OFF)
 
 set(PROBLEM_SOLVER_PATH "${CMAKE_CURRENT_LIST_DIR}/problem-solver")
 set(SC_MACHINE_PATH "${PROBLEM_SOLVER_PATH}/sc-machine")

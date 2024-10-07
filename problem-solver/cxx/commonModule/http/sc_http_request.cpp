@@ -102,7 +102,7 @@ ScHttpResponsePtr ScHttpRequest::Perform()
 
 void ScHttpRequest::SetURL(std::string const & url)
 {
-  CURLcode const r = curl_easy_setopt((CURL *)m_handle, CURLOPT_URL, url.c_str());
+  curl_easy_setopt((CURL *)m_handle, CURLOPT_URL, url.c_str());
 }
 
 void ScHttpRequest::SetType(Type type)

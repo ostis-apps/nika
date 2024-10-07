@@ -1,24 +1,19 @@
 #pragma once
 
-#include "sc-memory/kpm/sc_agent.hpp"
-#include "sc-agents-common/keynodes/coreKeynodes.hpp"
+#include <sc-memory/sc_agent.hpp>
 
-#include "FindWordInSetByFirstLetterAgent.generated.hpp"
 #include "searcher/MessageSearcher.hpp"
 
 namespace messageProcessingModule
 {
-class FindWordInSetByFirstLetterAgent : public ScAgent
+class FindWordInSetByFirstLetterAgent : public ScActionInitiatedAgent
 {
-  // Тип события условия инициирования sc-агента -- появление в sc-памяти
-  // выходящей дуги из `question_initiated` к действию
-  SC_CLASS(Agent, Event(scAgentsCommon::CoreKeynodes::question_initiated, ScEvent::Type::AddOutputEdge))
+public:
+  ScAddr GetActionClass() const override;
 
-  SC_GENERATED_BODY();
+  ScResult DoProgram(ScActionInitiatedEvent const & event, ScAction & action) override;
 
 private:
-  bool checkActionClass(ScAddr const & actionAddr);
-
   ScAddrVector createAnswer(std::string const & linkContent) const;
 
   std::string getMessageText(ScAddr const & messageAddr) const;

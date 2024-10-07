@@ -1,78 +1,59 @@
-#include "sc-agents-common/utils/AgentUtils.hpp"
+#include "ChangeInterfaceColorAgent.hpp"
+
 #include "sc-agents-common/utils/IteratorUtils.hpp"
-#include "sc-agents-common/keynodes/coreKeynodes.hpp"
 
 #include "keynodes/InterfaceKeynodes.hpp"
 
-#include "ChangeInterfaceColorAgent.hpp"
-
 using namespace interfaceModule;
-using namespace scAgentsCommon;
 
-SC_AGENT_IMPLEMENTATION(ChangeInterfaceColorAgent)
+ScResult ChangeInterfaceColorAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
-  ScAddr const & questionNode = otherAddr;
-  if (!checkActionClass(questionNode))
-  {
-    return SC_RESULT_OK;
-  }
-  SC_LOG_DEBUG("ChangeInterfaceColorAgent started");
-
-  ScAddr const & messageAddr = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, questionNode, scAgentsCommon::CoreKeynodes::rrel_1);
+  ScAddr const & messageAddr = action.GetArgument(ScKeynodes::rrel_1);
   if (!messageAddr.IsValid())
   {
-     SC_LOG_ERROR("Message Addr not found.");
-     utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, false);
-     SC_LOG_DEBUG("ChangeInterfaceColorAgent finished");
-     return SC_RESULT_ERROR;
+    SC_AGENT_LOG_ERROR("Message Addr not found.");
+    return action.FinishUnsuccessfully();
   }
 
-  ScAddr const & componentAddr = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageAddr, InterfaceKeynodes::rrel_entity);
+  ScAddr const & componentAddr =
+      utils::IteratorUtils::getAnyByOutRelation(&m_context, messageAddr, InterfaceKeynodes::rrel_entity);
   if (!componentAddr.IsValid())
   {
-     SC_LOG_INFO("Component Addr not found.");
-     utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, false);
-     SC_LOG_DEBUG("ChangeInterfaceColorAgent finished");
-     return SC_RESULT_ERROR;
+    SC_AGENT_LOG_INFO("Component Addr not found.");
+    return action.FinishUnsuccessfully();
   }
 
-  ScAddr const & componentColorAddr = utils::IteratorUtils::getAnyByOutRelation(&m_memoryCtx, messageAddr, InterfaceKeynodes::rrel_color);
+  ScAddr const & componentColorAddr =
+      utils::IteratorUtils::getAnyByOutRelation(&m_context, messageAddr, InterfaceKeynodes::rrel_color);
   std::string componentColor;
   if (!componentColorAddr.IsValid())
   {
     componentColor = createColor();
-    SC_LOG_DEBUG("ChangeInterfaceColorAgent: component color is changed to random " << componentColor);
+    SC_AGENT_LOG_DEBUG("Component color is changed to random " << componentColor);
   }
   else
   {
-    ms_context->GetLinkContent(componentColorAddr, componentColor);
-    SC_LOG_DEBUG("ChangeInterfaceColorAgent: component color is changed to " << componentColor);
+    m_context.GetLinkContent(componentColorAddr, componentColor);
+    SC_AGENT_LOG_DEBUG("Component color is changed to " << componentColor);
   }
 
   bool isSuccess = setComponentColor(componentAddr, componentColor);
 
-  SC_LOG_DEBUG("InterfaceAgent finished");
-  utils::AgentUtils::finishAgentWork(&m_memoryCtx, questionNode, isSuccess);
-  return SC_RESULT_OK;
+  return isSuccess ? action.FinishSuccessfully() : action.FinishUnsuccessfully();
 }
 
-bool ChangeInterfaceColorAgent::checkActionClass(ScAddr const & actionAddr)
+ScAddr ChangeInterfaceColorAgent::GetActionClass() const
 {
-  return m_memoryCtx.HelperCheckEdge(
-      InterfaceKeynodes::action_change_interface, actionAddr, ScType::EdgeAccessConstPosPerm);
+  return InterfaceKeynodes::action_change_interface;
 }
 
 std::string ChangeInterfaceColorAgent::createColor()
 {
-  std::string colorItems[16]
-  {"0", "1", "2", "3",
-   "4","5", "6", "7",
-   "8", "9","A", "B",
-   "C", "D", "E", "F"};
-  
+  std::string colorItems[16]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"};
+
   std::string color = "#";
   for (size_t i = 0; i < 6; i++)
-  { 
+  {
     size_t randomIndex = rand() % 15 + 0;
     color += colorItems[randomIndex];
   }
@@ -84,15 +65,15 @@ bool ChangeInterfaceColorAgent::setComponentColor(ScAddr const & componentAddr, 
 {
   bool result = false;
   ScAddr componentElementColorLink;
-  ScAddr const & componentElementAddr = utils::IteratorUtils::getAnyFromSet(&m_memoryCtx, componentAddr);
+  ScAddr const & componentElementAddr = utils::IteratorUtils::getAnyFromSet(&m_context, componentAddr);
   if (componentElementAddr.IsValid())
   {
     componentElementColorLink = utils::IteratorUtils::getAnyByOutRelation(
-          &m_memoryCtx, componentElementAddr, InterfaceKeynodes::nrel_component_color);
+        &m_context, componentElementAddr, InterfaceKeynodes::nrel_component_color);
   }
   if (componentElementColorLink.IsValid())
   {
-    ms_context->SetLinkContent(componentElementColorLink, componentColor);
+    m_context.SetLinkContent(componentElementColorLink, componentColor);
     result = true;
   }
 

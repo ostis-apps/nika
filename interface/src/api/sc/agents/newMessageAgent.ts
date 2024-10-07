@@ -2,8 +2,8 @@ import { client } from '@api/sc';
 import { ScAddr, ScConstruction, ScLinkContent, ScTemplate, ScType, ScLinkContentType } from 'ts-sc-client';
 import { makeAgent } from '@api/sc/agents/makeAgent';
 
-const question = 'question';
-const questionInitiated = 'question_initiated';
+const action = 'action';
+const actionInitiated = 'action_initiated';
 const actionReplyToMessage = 'action_reply_to_message';
 const rrel1 = 'rrel_1';
 const rrel2 = 'rrel_2';
@@ -11,12 +11,12 @@ const nrelAuthors = 'nrel_authors';
 const conceptTextFile = 'concept_text_file';
 const langEn = 'lang_en';
 const langRu = 'lang_ru';
-const questionFinished = 'question_finished';
+const actionFinished = 'action_finished';
 const answer = 'nrel_answer';
 
 const baseKeynodes = [
-    { id: question, type: ScType.NodeConstClass },
-    { id: questionInitiated, type: ScType.NodeConstClass },
+    { id: action, type: ScType.NodeConstClass },
+    { id: actionInitiated, type: ScType.NodeConstClass },
     { id: actionReplyToMessage, type: ScType.NodeConstClass },
     { id: rrel1, type: ScType.NodeConstRole },
     { id: rrel2, type: ScType.NodeConstRole },
@@ -24,7 +24,7 @@ const baseKeynodes = [
     { id: conceptTextFile, type: ScType.NodeConstClass },
     { id: langEn, type: ScType.NodeConstClass },
     { id: langRu, type: ScType.NodeConstClass },
-    { id: questionFinished, type: ScType.NodeConstClass },
+    { id: actionFinished, type: ScType.NodeConstClass },
     { id: answer, type: ScType.NodeConstNoRole },
 ];
 
@@ -48,7 +48,7 @@ const describeAgent = async (
 
     const template = new ScTemplate();
 
-    template.triple(keynodes[question], ScType.EdgeAccessVarPosPerm, [ScType.NodeVar, actionNodeAlias]);
+    template.triple(keynodes[action], ScType.EdgeAccessVarPosPerm, [ScType.NodeVar, actionNodeAlias]);
     template.triple(keynodes[actionReplyToMessage], ScType.EdgeAccessVarPosPerm, actionNodeAlias);
 
     template.tripleWithRelation(

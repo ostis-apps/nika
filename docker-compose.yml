@@ -37,7 +37,7 @@ services:
     expose:
       - 8090
     healthcheck:
-      test: "bash -c 'python3 /nika/problem-solver/sc-machine/scripts/healthcheck.py'"
+      test: "bash -c 'source /tmp/problem-solver/sc-machine/.venv/bin/activate && python3 /nika/problem-solver/sc-machine/scripts/healthcheck.py'"
       interval: 5s
       timeout: 10s
       retries: 6

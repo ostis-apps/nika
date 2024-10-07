@@ -1,25 +1,23 @@
 #pragma once
 
-#include "sc-memory/sc_addr.hpp"
-#include "sc-memory/sc_object.hpp"
-#include "MessageProcessingKeynodes.generated.hpp"
+#include <sc-memory/sc_keynodes.hpp>
 
 namespace messageProcessingModule
 {
-class MessageProcessingKeynodes : public ScObject
+class MessageProcessingKeynodes : public ScKeynodes
 {
-    SC_CLASS()
-    SC_GENERATED_BODY()
-
 public:
-  SC_PROPERTY(Keynode("action_find_word_in_set_by_first_letter"), ForceCreate)
-  static ScAddr action_find_word_in_set_by_first_letter;
-  
-  SC_PROPERTY(Keynode("concept_message_about_find_word_by_first_letter"), ForceCreate)
-  static ScAddr concept_message_about_find_word_by_first_letter;
+  static inline ScKeynode const action_find_word_in_set_by_first_letter{
+      "action_find_word_in_set_by_first_letter",
+      ScType::NodeConstClass};
 
-  SC_PROPERTY(Keynode("word_starts_with_required_letter_answer_phrase"), ForceCreate)
-  static ScAddr word_starts_with_required_letter_answer_phrase;
+  static inline ScKeynode const concept_message_about_find_word_by_first_letter{
+      "concept_message_about_find_word_by_first_letter",
+      ScType::NodeConstClass};
+
+  static inline ScKeynode const word_starts_with_required_letter_answer_phrase{
+      "word_starts_with_required_letter_answer_phrase",
+      ScType::NodeConstClass};
 };
 
-} // namespace messageProcessingModule
+}  // namespace messageProcessingModule
