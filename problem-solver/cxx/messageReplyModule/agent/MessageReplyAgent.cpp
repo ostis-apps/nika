@@ -53,7 +53,7 @@ ScResult MessageReplyAgent::DoProgram(ScActionInitiatedEvent const & event, ScAc
 
   ScAction actionToInterpret = m_context.GenerateAction(commonModule::Keynodes::action_interpret_non_atomic_action);
   actionToInterpret.SetArguments(processingProgramAddr, generateNonAtomicActionArgsSet(messageAddr));
-
+  
   if (!actionToInterpret.InitiateAndWait(WAIT_TIME) || !actionToInterpret.IsFinishedSuccessfully())
   {
     SC_AGENT_LOG_ERROR("Action wait time expired or action not finished successfully");
