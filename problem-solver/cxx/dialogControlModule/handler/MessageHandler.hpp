@@ -44,7 +44,7 @@ private:
       ScAddr const & phraseClassNode,
       ScAddr const & parametersNode,
       ScAddr const & langNode);
-  
+
   static std::string getClassNameForLog();
 };
 }  // namespace dialogControlModule

@@ -9,7 +9,8 @@
 
 using namespace dialogControlModule;
 
-PhraseSearcher::PhraseSearcher(ScMemoryContext * context) : context(context)
+PhraseSearcher::PhraseSearcher(ScMemoryContext * context)
+  : context(context)
 {
 }
 

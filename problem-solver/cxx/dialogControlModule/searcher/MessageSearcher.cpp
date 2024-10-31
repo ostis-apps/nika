@@ -8,7 +8,8 @@
 
 using namespace dialogControlModule;
 
-MessageSearcher::MessageSearcher(ScMemoryContext * context) : context(context)
+MessageSearcher::MessageSearcher(ScMemoryContext * context)
+  : context(context)
 {
 }
 

@@ -5,7 +5,8 @@
 #include "keynodes/Keynodes.hpp"
 
 using namespace commonModule;
-NonAtomicActionInterpreter::NonAtomicActionInterpreter(ScAgentContext * context) : context(context)
+NonAtomicActionInterpreter::NonAtomicActionInterpreter(ScAgentContext * context)
+  : context(context)
 {
 }
 

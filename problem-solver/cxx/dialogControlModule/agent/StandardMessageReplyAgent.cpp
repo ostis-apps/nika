@@ -17,18 +17,18 @@ ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & eve
   if (!messageNode.IsValid())
   {
     SC_AGENT_LOG_DEBUG("The action doesn't have a message node");
-    return action.FinishUnsuccessfully();
   }
 
   ScAddr logicRuleNode = generateReplyMessage(messageNode);
   ScAddr replyMessageNode = IteratorUtils::getAnyByOutRelation(&m_context, messageNode, MessageKeynodes::nrel_reply);
+  m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyMessageNode);
+
   if (!replyMessageNode.IsValid())
   {
     SC_AGENT_LOG_ERROR("The reply message isn't generated");
     return action.FinishUnsuccessfully();
   }
 
-  m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyMessageNode);
   SC_AGENT_LOG_DEBUG("The reply message is generated");
 
   initFields();

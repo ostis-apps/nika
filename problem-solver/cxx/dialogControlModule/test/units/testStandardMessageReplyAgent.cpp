@@ -62,7 +62,8 @@ TEST_F(StandardMessageReplyTest, ProcessingAtomicMessageIsSuccessful)
   ScAddr messageNode = context.SearchElementBySystemIdentifier("test_message");
   EXPECT_TRUE(messageNode.IsValid());
 
-  ScAddr replyMessageNode = utils::IteratorUtils::getAnyByOutRelation(&context, messageNode, MessageKeynodes::nrel_reply);
+  ScAddr replyMessageNode =
+      utils::IteratorUtils::getAnyByOutRelation(&context, messageNode, MessageKeynodes::nrel_reply);
   EXPECT_TRUE(replyMessageNode.IsValid());
 
   TokenDomainSearcher searcher(&context);
@@ -98,7 +99,8 @@ TEST_F(StandardMessageReplyTest, ProcessingNonatomicMessageIsSuccessful)
   ScAddr messageNode = context.SearchElementBySystemIdentifier("test_message");
   EXPECT_TRUE(messageNode.IsValid());
 
-  ScAddr replyMessageNode = utils::IteratorUtils::getAnyByOutRelation(&context, messageNode, MessageKeynodes::nrel_reply);
+  ScAddr replyMessageNode =
+      utils::IteratorUtils::getAnyByOutRelation(&context, messageNode, MessageKeynodes::nrel_reply);
   EXPECT_TRUE(replyMessageNode.IsValid());
 
   TokenDomainSearcher searcher(&context);
