@@ -1,14 +1,14 @@
 @var_name1 = _[];;
 @var_name1 => nrel_system_identifier: [_name1];;
-@var_name2 =_[];;
-@var_name2 =>nrel_system_identifier: [_name2];;
+@var_name2 = _[];;
+@var_name2 => nrel_system_identifier: [_name2];;
 
-test_question_node
+test_action_node
 <-action_phrase_generation;
-<-question;
+<-action;
 -> rrel_1: reply_message;
 -> rrel_2:
-	[${_name2} is the mother of ${_name1}.]
+	[${_name2} is ${_name1}'s mother.]
 	(*
 		<-lang_en;;
 		=>nrel_phrase_template:
@@ -20,7 +20,7 @@ test_question_node
 			_hum1
 			_=> nrel_main_idtf::
 				@var_name1
- 				(* _<- _lang;; *);
+				(* _<- _lang;; *);
 			_=> nrel_mother::
 				_hum2;;
 
@@ -42,11 +42,11 @@ test_question_node
 -> rrel_3:
 	...
 	(*
-		->lang_en;;
 		->human_ivan_ivanov;;
 		->human_ruslan_korshunov;;
 		->message_of_ruslan_korshunov;;
 	*);;
+
 
 message_of_ruslan_korshunov
 <-concept_message;
@@ -63,14 +63,13 @@ human_ivan_ivanov
 <-concept_human;
 =>nrel_main_idtf:
 	[Ivan Ivanov]
-	(* <-lang_en;; *);
-=>nrel_mother:human_mariy_ivanova;;
+	(* <-lang_en;; *);;
 
 human_mariy_ivanova
 <-concept_human;
 =>nrel_main_idtf:
-	[Mariya Ivanova]
-	(* <-lang_en;; *);;
+	[Мария Иванова]
+	(* <-lang_ru;; *);;
 
 human_ruslan_korshunov
 <-concept_human;

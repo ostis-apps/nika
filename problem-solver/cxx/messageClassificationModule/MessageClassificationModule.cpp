@@ -1,40 +1,10 @@
 #include "MessageClassificationModule.hpp"
 
-#include "sc-memory/sc_memory.hpp"
-
-#include "agent/MessageTopicClassificationAgent.hpp"
 #include "agent/AlternativeMessageTopicClassificationAgent.hpp"
-
-#include "keynodes/MessageClassificationKeynodes.hpp"
-#include "utils/ActionUtils.hpp"
+#include "agent/MessageTopicClassificationAgent.hpp"
 
 using namespace messageClassificationModule;
 
-SC_IMPLEMENT_MODULE(MessageClassificationModule)
-
-sc_result MessageClassificationModule::InitializeImpl()
-{
-  if (!MessageClassificationKeynodes::InitGlobal())
-    return SC_RESULT_ERROR;
-
-  ScMemoryContext ctx(sc_access_lvl_make_min, "messageClassificationModule");
-  if (ActionUtils::isActionDeactivated(&ctx, MessageClassificationKeynodes::action_message_topic_classification))
-    SC_LOG_ERROR("action_message_topic_classification is deactivated");
-  else
-    SC_AGENT_REGISTER(MessageTopicClassificationAgent)
-
-  if (ActionUtils::isActionDeactivated(&ctx, MessageClassificationKeynodes::action_alternative_message_topic_classification))
-    SC_LOG_ERROR("action_alternative_message_topic_classification is deactivated");
-  else
-    SC_AGENT_REGISTER(AlternativeMessageTopicClassificationAgent)
-
-  return SC_RESULT_OK;
-}
-
-sc_result MessageClassificationModule::ShutdownImpl()
-{
-  SC_AGENT_UNREGISTER(MessageTopicClassificationAgent)
-  SC_AGENT_UNREGISTER(AlternativeMessageTopicClassificationAgent)
-
-  return SC_RESULT_OK;
-}
+SC_MODULE_REGISTER(MessageClassificationModule)
+    ->Agent<MessageTopicClassificationAgent>()
+    ->Agent<AlternativeMessageTopicClassificationAgent>();

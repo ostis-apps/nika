@@ -1,13 +1,8 @@
 #include "sc_test.hpp"
-#include "sc-agents-common/utils/CommonUtils.hpp"
 #include "scs_loader.hpp"
 
-#include "agent/MessageTopicClassificationAgent.hpp"
-#include "keynodes/MessageClassificationKeynodes.hpp"
-#include "keynodes/Keynodes.hpp"
-#include "utils/ActionUtils.hpp"
-#include "client/WitAiClient.hpp"
 #include "WitAiCkientMock.hpp"
+#include "classifier/MessageTopicClassifier.hpp"
 
 using namespace messageClassificationModule;
 
@@ -16,24 +11,11 @@ namespace messageTopicClassificationTest
 ScsLoader loader;
 std::string const TEST_FILES_DIR_PATH = MESSAGE_TOPIC_CLASSIFICATION_MODULE_TEST_SRC_PATH "/testStructures/";
 
-int const WAIT_TIME = 1000;
-
 using MessageTopicClassificationTest = ScMemoryTest;
-
-void initialize()
-{
-  scAgentsCommon::CoreKeynodes::InitGlobal();
-  MessageClassificationKeynodes::InitGlobal();
-  commonModule::Keynodes::InitGlobal();
-}
-
-void shutdown()
-{
-}
 
 TEST_F(MessageTopicClassificationTest, connectionTest)
 {
-  auto * client = new WitAiClientMock();
+  auto client = std::make_unique<WitAiClientMock>();
   std::string witResponse =
       R"({"entities":{},"intents":[{"confidence":0.8592,"id":"4251337931554570","name":"start_greeting"}],
               "text":"Hello.","traits":{"wit$sentiment":[{"confidence":0.65,"id":"5ac2b50a-44e4-466e-9d49-bad6bd40092c",
@@ -44,24 +26,21 @@ TEST_F(MessageTopicClassificationTest, connectionTest)
   json response = client->getWitResponse("Привет Максиму из лета.");
 
   EXPECT_FALSE(response.empty());
-
-  delete client;
 }
 
 TEST_F(MessageTopicClassificationTest, classifyMessageWithoutEntityTest)
 {
-  ScMemoryContext & context = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "hello_message.scs");
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "wit_concepts.scs");
-  initialize();
 
-  ScAddr greetingMessageClass = context.HelperFindBySystemIdtf("concept_greeting_message");
-  ScAddr messageAddr = context.HelperFindBySystemIdtf("message");
+  ScAddr greetingMessageClass = context.SearchElementBySystemIdentifier("concept_greeting_message");
+  ScAddr messageAddr = context.SearchElementBySystemIdentifier("message");
   EXPECT_TRUE(greetingMessageClass.IsValid());
   EXPECT_TRUE(messageAddr.IsValid());
 
-  auto * client = new WitAiClientMock();
+  auto client = std::make_shared<WitAiClientMock>();
   std::string witResponse =
       R"({"entities":{},"intents":[{"confidence":0.8592,"id":"4251337931554570","name":"start_greeting"}],
               "text":"Hello.","traits":{"wit$sentiment":[{"confidence":0.65,"id":"5ac2b50a-44e4-466e-9d49-bad6bd40092c",
@@ -74,31 +53,28 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithoutEntityTest)
   ScAddrVector messageClassificationItems = classifier.classifyMessage(messageAddr);
   EXPECT_FALSE(messageClassificationItems.empty());
 
-  bool isMessageClassified = context.HelperCheckEdge(greetingMessageClass, messageAddr, ScType::EdgeAccessConstPosPerm);
+  bool isMessageClassified = context.CheckConnector(greetingMessageClass, messageAddr, ScType::EdgeAccessConstPosPerm);
   EXPECT_TRUE(isMessageClassified);
-
-  shutdown();
 }
 
 TEST_F(MessageTopicClassificationTest, classifyMessageWithEntityTest)
 {
-  ScMemoryContext & context = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "hello_message_with_entity.scs");
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "wit_concepts.scs");
-  initialize();
 
-  ScAddr greetingMessageClass = context.HelperFindBySystemIdtf("concept_greeting_message");
-  ScAddr messageAddr = context.HelperFindBySystemIdtf("message");
-  ScAddr entityAddr = context.HelperFindBySystemIdtf("maksim");
-  ScAddr entityRoleAddr = context.HelperFindBySystemIdtf("rrel_contact");
+  ScAddr greetingMessageClass = context.SearchElementBySystemIdentifier("concept_greeting_message");
+  ScAddr messageAddr = context.SearchElementBySystemIdentifier("message");
+  ScAddr entityAddr = context.SearchElementBySystemIdentifier("maksim");
+  ScAddr entityRoleAddr = context.SearchElementBySystemIdentifier("rrel_contact");
 
   EXPECT_TRUE(greetingMessageClass.IsValid());
   EXPECT_TRUE(messageAddr.IsValid());
   EXPECT_TRUE(entityAddr.IsValid());
   EXPECT_TRUE(entityRoleAddr.IsValid());
 
-  auto * client = new WitAiClientMock();
+  auto client = std::make_shared<WitAiClientMock>();
   std::string witResponse =
       R"({"entities":{"wit$contact:contact":[{"body":"Максим","confidence":0.9059,"end":12,"entities":{},
               "id":"210261890968181","name":"wit$contact", "role":"contact","start":6,"suggested":true,
@@ -117,31 +93,29 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithEntityTest)
 
   ScTemplate classificationTemplate;
   classificationTemplate.Triple(greetingMessageClass, ScType::EdgeAccessVarPosPerm, messageAddr);
-  classificationTemplate.TripleWithRelation(
+  classificationTemplate.Quintuple(
       messageAddr, ScType::EdgeAccessVarPosPerm, entityAddr, ScType::EdgeAccessVarPosPerm, entityRoleAddr);
 
   ScTemplateSearchResult classificationTemplateResult;
-  context.HelperSearchTemplate(classificationTemplate, classificationTemplateResult);
+  context.SearchByTemplate(classificationTemplate, classificationTemplateResult);
   EXPECT_TRUE(classificationTemplateResult.Size() == 1);
-
-  shutdown();
 }
 
 TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesTest)
 {
-  ScMemoryContext & context = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "hello_message_with_two_entities.scs");
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "wit_concepts.scs");
-  initialize();
 
-  ScAddr weatherMessageClass = context.HelperFindBySystemIdtf("concept_general_message_about_weather");
-  ScAddr neutralMessageClass = context.HelperFindBySystemIdtf("concept_message_with_neutral_emotional_coloring");
-  ScAddr messageAddr = context.HelperFindBySystemIdtf("message");
-  ScAddr entityContactAddr = context.HelperFindBySystemIdtf("maksim");
-  ScAddr entitySeasonAddr = context.HelperFindBySystemIdtf("summer");
-  ScAddr rrelContactAddr = context.HelperFindBySystemIdtf("rrel_contact");
-  ScAddr rrelSeasonAddr = context.HelperFindBySystemIdtf("rrel_season");
+  ScAddr weatherMessageClass = context.SearchElementBySystemIdentifier("concept_general_message_about_weather");
+  ScAddr neutralMessageClass =
+      context.SearchElementBySystemIdentifier("concept_message_with_neutral_emotional_coloring");
+  ScAddr messageAddr = context.SearchElementBySystemIdentifier("message");
+  ScAddr entityContactAddr = context.SearchElementBySystemIdentifier("maksim");
+  ScAddr entitySeasonAddr = context.SearchElementBySystemIdentifier("summer");
+  ScAddr rrelContactAddr = context.SearchElementBySystemIdentifier("rrel_contact");
+  ScAddr rrelSeasonAddr = context.SearchElementBySystemIdentifier("rrel_season");
 
   EXPECT_TRUE(weatherMessageClass.IsValid());
   EXPECT_TRUE(messageAddr.IsValid());
@@ -150,7 +124,7 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesTest)
   EXPECT_TRUE(rrelContactAddr.IsValid());
   EXPECT_TRUE(rrelSeasonAddr.IsValid());
 
-  auto * client = new WitAiClientMock();
+  auto client = std::make_shared<WitAiClientMock>();
   std::string witResponse =
       R"({"entities":
               {"season:season":[{"body":"лето","confidence":0.9995,"end":24,"entities":{},"id":"530932871575541",
@@ -173,38 +147,35 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesTest)
   ScTemplate classificationTemplate;
   classificationTemplate.Triple(weatherMessageClass, ScType::EdgeAccessVarPosPerm, messageAddr);
   classificationTemplate.Triple(neutralMessageClass, ScType::EdgeAccessVarPosPerm, messageAddr);
-  classificationTemplate.TripleWithRelation(
+  classificationTemplate.Quintuple(
       messageAddr, ScType::EdgeAccessVarPosPerm, entityContactAddr, ScType::EdgeAccessVarPosPerm, rrelContactAddr);
-  classificationTemplate.TripleWithRelation(
+  classificationTemplate.Quintuple(
       messageAddr, ScType::EdgeAccessVarPosPerm, entitySeasonAddr, ScType::EdgeAccessVarPosPerm, rrelSeasonAddr);
 
   ScTemplateSearchResult classificationTemplateResult;
-  context.HelperSearchTemplate(classificationTemplate, classificationTemplateResult);
+  context.SearchByTemplate(classificationTemplate, classificationTemplateResult);
 
   EXPECT_TRUE(classificationTemplateResult.Size() == 1);
-
-  shutdown();
 }
 
 TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesSameRoleTest)
 {
-  ScMemoryContext & context = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "hobby_message_with_two_same_role_entities.scs");
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "wit_concepts.scs");
-  initialize();
 
-  ScAddr messageAddr = context.HelperFindBySystemIdtf("message");
-  ScAddr hobbyAddr = context.HelperFindBySystemIdtf("concept_hobby");
-  ScAddr theatreAddr = context.HelperFindBySystemIdtf("concept_theatre");
-  ScAddr rrelEntityAddr = context.HelperFindBySystemIdtf("rrel_entity");
+  ScAddr messageAddr = context.SearchElementBySystemIdentifier("message");
+  ScAddr hobbyAddr = context.SearchElementBySystemIdentifier("concept_hobby");
+  ScAddr theatreAddr = context.SearchElementBySystemIdentifier("concept_theatre");
+  ScAddr rrelEntityAddr = context.SearchElementBySystemIdentifier("rrel_entity");
 
   EXPECT_TRUE(messageAddr.IsValid());
   EXPECT_TRUE(hobbyAddr.IsValid());
   EXPECT_TRUE(theatreAddr.IsValid());
   EXPECT_TRUE(rrelEntityAddr.IsValid());
 
-  auto * client = new WitAiClientMock();
+  auto client = std::make_shared<WitAiClientMock>();
   // Four entities with the same role "rrel_entity", some entities are duplicated. Expected to get two unique entities
   std::string witResponse =
       R"({"entities": {"rrel_entity:rrel_entity":
@@ -229,17 +200,15 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesSameRoleTes
   EXPECT_FALSE(messageClassificationItems.empty());
 
   ScTemplate entitiesTemplate;
-  entitiesTemplate.TripleWithRelation(
+  entitiesTemplate.Quintuple(
       messageAddr, ScType::EdgeAccessVarPosPerm, hobbyAddr, ScType::EdgeAccessVarPosPerm, rrelEntityAddr);
-  entitiesTemplate.TripleWithRelation(
+  entitiesTemplate.Quintuple(
       messageAddr, ScType::EdgeAccessVarPosPerm, theatreAddr, ScType::EdgeAccessVarPosPerm, rrelEntityAddr);
 
   ScTemplateSearchResult classificationTemplateResult;
-  context.HelperSearchTemplate(entitiesTemplate, classificationTemplateResult);
+  context.SearchByTemplate(entitiesTemplate, classificationTemplateResult);
 
   EXPECT_TRUE(classificationTemplateResult.Size() == 1);
-
-  shutdown();
 }
 
 }  // namespace messageTopicClassificationTest

@@ -1,30 +1,15 @@
-#include "sc-agents-common/utils/IteratorUtils.hpp"
-#include "sc-agents-common/utils/AgentUtils.hpp"
+#include "QuestionFinishedUnsuccessfullyTestAgent.hpp"
 
 #include "test/keynodes/TestKeynodes.hpp"
 
-#include "QuestionFinishedUnsuccessfullyTestAgent.hpp"
-
 using namespace commonTest;
 
-SC_AGENT_IMPLEMENTATION(QuestionFinishedUnsuccessfullyTestAgent)
+ScResult ActionFinishedUnsuccessfullyTestAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
-  if (!edgeAddr.IsValid())
-  {
-    return SC_RESULT_ERROR;
-  }
+  return action.FinishUnsuccessfully();
+}
 
-  ScAddr actionAddr = ms_context->GetEdgeTarget(edgeAddr);
-
-  ScIterator3Ptr iterator3Ptr = ms_context->Iterator3(
-        TestKeynodes::unsuccessfully_finished_test_action,
-        ScType::EdgeAccessConstPosPerm,
-        actionAddr);
-  if(!iterator3Ptr->Next())
-  {
-    return SC_RESULT_OK;
-  }
-
-  utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, false);
-  return SC_RESULT_OK;
+ScAddr ActionFinishedUnsuccessfullyTestAgent::GetActionClass() const
+{
+  return TestKeynodes::unsuccessfully_finished_test_action;
 }

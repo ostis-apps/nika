@@ -1,6 +1,6 @@
 #include "RelationUtils.hpp"
 
-#include "sc-agents-common/keynodes/coreKeynodes.hpp"
+#include "sc-memory/sc_keynodes.hpp"
 #include "sc-memory/sc_memory.hpp"
 
 ScAddr RelationUtils::getIndexRelation(ScMemoryContext * context, int const & index)
@@ -11,15 +11,15 @@ ScAddr RelationUtils::getIndexRelation(ScMemoryContext * context, int const & in
   }
   if (index == 1)
   {
-    return scAgentsCommon::CoreKeynodes::rrel_1;
+    return ScKeynodes::rrel_1;
   }
   else if (index == 2)
   {
-    return scAgentsCommon::CoreKeynodes::rrel_2;
+    return ScKeynodes::rrel_2;
   }
   else
   {
-    return context->HelperFindBySystemIdtf("rrel_" + std::to_string(index));
+    return context->SearchElementBySystemIdentifier("rrel_" + std::to_string(index));
   }
 }
 
@@ -29,7 +29,7 @@ void RelationUtils::eraseAllEdges(
     const ScAddr & target,
     const ScType & edgeType)
 {
-  ScIterator3Ptr iterator3 = context->Iterator3(source, edgeType, target);
+  ScIterator3Ptr iterator3 = context->CreateIterator3(source, edgeType, target);
   while (iterator3->Next())
   {
     context->EraseElement(iterator3->Get(1));

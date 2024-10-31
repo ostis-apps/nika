@@ -1,6 +1,5 @@
 #pragma once
 
-#include "sc-memory/sc_addr.hpp"
 #include "sc-memory/sc_memory.hpp"
 
 #include <memory>
@@ -10,7 +9,7 @@ namespace messageReplyModule
 class MessageHistoryGenerator
 {
 public:
-  explicit MessageHistoryGenerator(ScMemoryContext * ms_context);
+  explicit MessageHistoryGenerator(ScMemoryContext * context);
 
   void addMessageToDialog(const ScAddr & dialogAddr, const ScAddr & messageAddr);
 

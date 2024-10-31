@@ -1,10 +1,8 @@
 #include "NumberHandler.hpp"
 
-#include "sc-agents-common/keynodes/coreKeynodes.hpp"
 #include "sc-agents-common/utils//IteratorUtils.hpp"
 
 #include "keynodes/Keynodes.hpp"
-#include <sstream>
 
 ScAddr commonModule::NumberHandler::getNumberNode(const double & number)
 {
@@ -13,7 +11,6 @@ ScAddr commonModule::NumberHandler::getNumberNode(const double & number)
   {
     numberNode = this->generateNumberNode(number);
   }
-
   return numberNode;
 }
 
@@ -22,16 +19,16 @@ ScAddr commonModule::NumberHandler::findNumberNode(const double & number)
   ScAddr numberNode = ScAddr();
   std::string numberAsString = this->numberToLikView(number);
   ScStreamPtr numberAsStream = ScStreamConverter::StreamFromString(numberAsString);
-  ScAddrVector candidateList = this->context->FindLinksByContent(numberAsStream);
+
+  ScAddrSet candidateList = this->context->SearchLinksByContent(numberAsStream);
   SC_LOG_DEBUG(
-      "NumberHandler found " + std::to_string(candidateList.size()) + " sc-link with content " + numberAsString);
+      "NumberHandler: Found " << std::to_string(candidateList.size()) << " sc-link with content " << numberAsString);
 
   for (ScAddr candidateLink : candidateList)
   {
-    ScAddr candidateNode = utils::IteratorUtils::getFirstByInRelation(
-        this->context, candidateLink, scAgentsCommon::CoreKeynodes::nrel_idtf);
-    if (this->context->HelperCheckEdge(
-            scAgentsCommon::CoreKeynodes::number, candidateNode, ScType::EdgeAccessConstPosPerm))
+    ScAddr candidateNode =
+        utils::IteratorUtils::getAnyByInRelation(this->context, candidateLink, ScKeynodes::nrel_idtf);
+    if (this->context->CheckConnector(Keynodes::number, candidateNode, ScType::EdgeAccessConstPosPerm))
     {
       numberNode = candidateNode;
       break;
@@ -45,16 +42,17 @@ ScAddr commonModule::NumberHandler::generateNumberNode(const double & number)
   std::string numberAsString = this->numberToLikView(number);
   ScAddr numberLink = this->linkHandler->createLink(numberAsString);
   ScTemplate scTemplate;
-  scTemplate.TripleWithRelation(
+  scTemplate.Quintuple(
       ScType::NodeVar >> "_number_node",
       ScType::EdgeDCommonVar,
       numberLink,
       ScType::EdgeAccessVarPosPerm,
-      scAgentsCommon::CoreKeynodes::nrel_idtf);
+      ScKeynodes::nrel_idtf);
   scTemplate.Triple(Keynodes::file, ScType::EdgeAccessVarPosPerm, numberLink);
-  scTemplate.Triple(scAgentsCommon::CoreKeynodes::number, ScType::EdgeAccessVarPosPerm, "_number_node");
+  scTemplate.Triple(Keynodes::number, ScType::EdgeAccessVarPosPerm, "_number_node");
   ScTemplateGenResult genResult;
-  this->context->HelperGenTemplate(scTemplate, genResult);
+
+  this->context->GenerateByTemplate(scTemplate, genResult);
   return genResult["_number_node"];
 }
 
@@ -65,13 +63,8 @@ std::string commonModule::NumberHandler::numberToLikView(const double & number)
   return stringStream.str();
 }
 
-commonModule::NumberHandler::NumberHandler(ScMemoryContext * ms_context)
+commonModule::NumberHandler::NumberHandler(ScMemoryContext * context)
+  : context(context)
+  , linkHandler(std::make_unique<LinkHandler>(context))
 {
-  this->context = ms_context;
-  this->linkHandler = new LinkHandler(ms_context);
-}
-
-commonModule::NumberHandler::~NumberHandler()
-{
-  delete this->linkHandler;
 }

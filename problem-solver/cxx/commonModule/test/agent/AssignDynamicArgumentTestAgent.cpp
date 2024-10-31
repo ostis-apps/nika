@@ -1,40 +1,18 @@
-#include "sc-agents-common/utils/IteratorUtils.hpp"
-#include "sc-agents-common/utils/AgentUtils.hpp"
+#include "AssignDynamicArgumentTestAgent.hpp"
 
 #include "test/keynodes/TestKeynodes.hpp"
 
-#include "AssignDynamicArgumentTestAgent.hpp"
-
 using namespace commonTest;
 
-SC_AGENT_IMPLEMENTATION(AssignDynamicArgumentTestAgent)
+ScResult AssignDynamicArgumentTestAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
-  if (!edgeAddr.IsValid())
-  {
-    return SC_RESULT_ERROR;
-  }
+  ScAddr dynamicArgument = action.GetArgument(ScKeynodes::rrel_1);
+  m_context.GenerateConnector(ScType::EdgeAccessConstPosTemp, dynamicArgument, TestKeynodes::test_node);
 
-  ScAddr actionAddr = ms_context->GetEdgeTarget(edgeAddr);
+  return action.FinishSuccessfully();
+}
 
-  ScIterator3Ptr iterator3Ptr = ms_context->Iterator3(
-        TestKeynodes::assign_dynamic_argument_test_action,
-        ScType::EdgeAccessConstPosPerm,
-        actionAddr);
-  if (!iterator3Ptr->Next())
-  {
-    return SC_RESULT_OK;
-  }
-
-  ScAddr dynamicArgument = utils::IteratorUtils::getFirstByOutRelation(
-        &m_memoryCtx,
-        actionAddr,
-        scAgentsCommon::CoreKeynodes::rrel_1);
-
-  m_memoryCtx.CreateEdge(
-        ScType::EdgeAccessConstPosTemp,
-        dynamicArgument,
-        TestKeynodes::test_node);
-
-  utils::AgentUtils::finishAgentWork(&m_memoryCtx, actionAddr, true);
-  return SC_RESULT_OK;
+ScAddr AssignDynamicArgumentTestAgent::GetActionClass() const
+{
+  return TestKeynodes::assign_dynamic_argument_test_action;
 }

@@ -1,23 +1,15 @@
 #pragma once
 
-#include "sc-memory/sc_addr.hpp"
-#include "sc-memory/sc_object.hpp"
-
-#include "DialogKeynodes.generated.hpp"
+#include <sc-memory/sc_keynodes.hpp>
 
 namespace dialogControlModule
 {
-class DialogKeynodes : public ScObject
+class DialogKeynodes : public ScKeynodes
 {
-  SC_CLASS()
-  SC_GENERATED_BODY()
-
 public:
-  SC_PROPERTY(Keynode("nrel_sc_text_translation"), ForceCreate)
-  static ScAddr nrel_sc_text_translation;
+  static inline ScKeynode const nrel_sc_text_translation{"nrel_sc_text_translation", ScType::NodeConstNoRole};
 
-  SC_PROPERTY(Keynode("nrel_phrase_template"), ForceCreate)
-  static ScAddr nrel_phrase_template;
+  static inline ScKeynode const nrel_phrase_template{"nrel_phrase_template", ScType::NodeConstNoRole};
 };
 
 }  // namespace dialogControlModule

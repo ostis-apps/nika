@@ -1,7 +1,6 @@
 #pragma once
 
 #include "sc-memory/sc_addr.hpp"
-#include "sc-memory/sc_memory.hpp"
 
 #include "classifier/MessageTopicClassifier.hpp"
 
@@ -10,7 +9,7 @@ namespace messageClassificationModule
 class MessageTopicClassificationManager
 {
 public:
-  explicit MessageTopicClassificationManager(ScMemoryContext * context);
+  explicit MessageTopicClassificationManager(ScAgentContext * context);
 
   ScAddrVector manage(ScAddrVector const & processParameters) const;
 

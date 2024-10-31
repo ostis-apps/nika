@@ -1,27 +1,31 @@
 #pragma once
 
-#include "handler/MessageHandler.hpp"
-#include "sc-agents-common/keynodes/coreKeynodes.hpp"
-#include "sc-memory/kpm/sc_agent.hpp"
+#include <sc-memory/sc_agent.hpp>
 
-#include "StandardMessageReplyAgent.generated.hpp"
+#include "handler/MessageHandler.hpp"
 
 namespace dialogControlModule
 {
-class StandardMessageReplyAgent : public ScAgent
+class StandardMessageReplyAgent : public ScActionInitiatedAgent
 {
-  SC_CLASS(Agent, Event(scAgentsCommon::CoreKeynodes::question_initiated, ScEvent::Type::AddOutputEdge))
-  SC_GENERATED_BODY()
+public:
+  ScAddr GetActionClass() const override;
+
+  ScResult DoProgram(ScActionInitiatedEvent const & event, ScAction & action) override;
 
 private:
-  const int DIRECT_INFERENCE_AGENT_WAIT_TIME = 15000;
+  int const DIRECT_INFERENCE_AGENT_WAIT_TIME = 15000;
 
-  bool checkActionClass(const ScAddr & actionNode);
+  std::unique_ptr<LanguageSearcher> langSearcher;
+  std::unique_ptr<MessageHandler> messageHandler;
+  std::unique_ptr<MessageSearcher> messageSearcher;
 
   ScAddr generatePhraseAgentParametersNode(const ScAddr & messageNode);
 
   ScAddr generateReplyMessage(const ScAddr & messageNode);
 
   ScAddr wrapInSet(ScAddr const & addr);
+
+  void initFields();
 };
 }  // namespace dialogControlModule

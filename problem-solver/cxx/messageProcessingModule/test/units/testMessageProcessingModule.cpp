@@ -1,170 +1,151 @@
-#include "sc-agents-common/keynodes/coreKeynodes.hpp"
-#include "sc-agents-common/utils/CommonUtils.hpp"
+#include <sc-memory/sc_agent.hpp>
+
 #include "sc-agents-common/utils/IteratorUtils.hpp"
 #include "sc-builder/src/scs_loader.hpp"
-#include "sc-memory/kpm/sc_agent.hpp"
-#include "sc-memory/sc_wait.hpp"
 #include "sc_test.hpp"
 
 #include "agent/FindWordInSetByFirstLetterAgent.hpp"
-#include "keynodes/MessageKeynodes.hpp"
-#include "keynodes/MessageProcessingKeynodes.hpp"
-#include "utils/ActionUtils.hpp"
 
 namespace messageProcessingModuleTest
 {
 ScsLoader loader;
-const std::string TEST_FILES_DIR_PATH = MESSAGE_PROCESSING_MODULE_TEST_SRC_PATH "/testStructures/";
-const int WAIT_TIME = 5000;
+std::string const TEST_FILES_DIR_PATH = MESSAGE_PROCESSING_MODULE_TEST_SRC_PATH "/testStructures/";
+int const WAIT_TIME = 5000;
 
 using MessageProcessingAgentTest = ScMemoryTest;
 
-void initialize()
-{
-  scAgentsCommon::CoreKeynodes::InitGlobal();
-  messageProcessingModule::MessageProcessingKeynodes::InitGlobal();
-  dialogControlModule::MessageKeynodes::InitGlobal();
-
-  ScAgentInit(true);
-  SC_AGENT_REGISTER(messageProcessingModule::FindWordInSetByFirstLetterAgent)
-}
-
-void shutdown(){SC_AGENT_UNREGISTER(messageProcessingModule::FindWordInSetByFirstLetterAgent)}
-
 TEST_F(MessageProcessingAgentTest, notValidMessageTest)
 {
-  ScMemoryContext & ctx = *m_ctx;
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + "notValidMessageTest.scs");
-  initialize();
-
-  ScAddr testActionNode = ctx.HelperFindBySystemIdtf("test_action_node");
+  ScAgentContext & context = *m_ctx;
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + "notValidMessageTest.scs");
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
   EXPECT_TRUE(testActionNode.IsValid());
 
-  ctx.CreateEdge(ScType::EdgeAccessConstPosPerm, scAgentsCommon::CoreKeynodes::question_initiated, testActionNode);
+  context.SubscribeAgent<messageProcessingModule::FindWordInSetByFirstLetterAgent>();
 
-  EXPECT_TRUE(ActionUtils::waitAction(&ctx, testActionNode, WAIT_TIME));
-  EXPECT_TRUE(ctx.HelperCheckEdge(
-      scAgentsCommon::CoreKeynodes::question_finished_unsuccessfully, testActionNode, ScType::EdgeAccessConstPosPerm));
+  ScAction testAction = context.ConvertToAction(testActionNode);
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(testAction.IsFinishedUnsuccessfully());
 
-  shutdown();
+  context.UnsubscribeAgent<messageProcessingModule::FindWordInSetByFirstLetterAgent>();
 }
 
 TEST_F(MessageProcessingAgentTest, messageIsNotAboutLetterSearchTest)
 {
-  ScMemoryContext & ctx = *m_ctx;
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + "messageIsNotAboutLetterSearch.scs");
-  initialize();
-
-  ScAddr testActionNode = ctx.HelperFindBySystemIdtf("test_action_node");
+  ScAgentContext & context = *m_ctx;
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + "messageIsNotAboutLetterSearch.scs");
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
   EXPECT_TRUE(testActionNode.IsValid());
 
-  ctx.CreateEdge(ScType::EdgeAccessConstPosPerm, scAgentsCommon::CoreKeynodes::question_initiated, testActionNode);
+  context.SubscribeAgent<messageProcessingModule::FindWordInSetByFirstLetterAgent>();
 
-  EXPECT_TRUE(ActionUtils::waitAction(&ctx, testActionNode, WAIT_TIME));
-  EXPECT_TRUE(ctx.HelperCheckEdge(
-      scAgentsCommon::CoreKeynodes::question_finished_unsuccessfully, testActionNode, ScType::EdgeAccessConstPosPerm));
+  ScAction testAction = context.ConvertToAction(testActionNode);
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(testAction.IsFinishedUnsuccessfully());
 
-  shutdown();
+  context.UnsubscribeAgent<messageProcessingModule::FindWordInSetByFirstLetterAgent>();
 }
 
 TEST_F(MessageProcessingAgentTest, generateAnswerWithSingleWordTest1)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + "generateAnswerWithSingleWordTest1.scs");
-  initialize();
-
-  ScAddr testActionNode = ctx.HelperFindBySystemIdtf("test_action_node");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + "generateAnswerWithSingleWordTest1.scs");
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
   EXPECT_TRUE(testActionNode.IsValid());
 
-  ctx.CreateEdge(ScType::EdgeAccessConstPosPerm, scAgentsCommon::CoreKeynodes::question_initiated, testActionNode);
+  context.SubscribeAgent<messageProcessingModule::FindWordInSetByFirstLetterAgent>();
 
-  EXPECT_TRUE(ActionUtils::waitAction(&ctx, testActionNode, WAIT_TIME));
-  EXPECT_TRUE(ctx.HelperCheckEdge(
-      scAgentsCommon::CoreKeynodes::question_finished_successfully, testActionNode, ScType::EdgeAccessConstPosPerm));
+  ScAction testAction = context.ConvertToAction(testActionNode);
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(testAction.IsFinishedSuccessfully());
 
-  ScAddr answerAddr = ctx.HelperFindBySystemIdtf("word_starts_with_required_letter_answer_phrase");
+  context.UnsubscribeAgent<messageProcessingModule::FindWordInSetByFirstLetterAgent>();
+
+  ScAddr answerAddr = context.SearchElementBySystemIdentifier("word_starts_with_required_letter_answer_phrase");
   EXPECT_TRUE(answerAddr.IsValid());
 
-  ScAddr answerLink = utils::IteratorUtils::getAnyFromSet(&ctx, answerAddr);
-  EXPECT_EQ(utils::CommonUtils::getLinkContent(&ctx, answerLink), "Апельсин");
-
-  shutdown();
+  ScAddr answerLink = utils::IteratorUtils::getAnyFromSet(&context, answerAddr);
+  std::string linkContent;
+  context.GetLinkContent(answerLink, linkContent);
+  EXPECT_EQ(linkContent, "Апельсин");
 }
 
 TEST_F(MessageProcessingAgentTest, generateAnswerWithSingleWordTest2)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + "generateAnswerWithSingleWordTest2.scs");
-  initialize();
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + "generateAnswerWithSingleWordTest2.scs");
 
-  ScAddr testActionNode = ctx.HelperFindBySystemIdtf("test_action_node");
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
   EXPECT_TRUE(testActionNode.IsValid());
 
-  ctx.CreateEdge(ScType::EdgeAccessConstPosPerm, scAgentsCommon::CoreKeynodes::question_initiated, testActionNode);
+  context.SubscribeAgent<messageProcessingModule::FindWordInSetByFirstLetterAgent>();
 
-  EXPECT_TRUE(ActionUtils::waitAction(&ctx, testActionNode, WAIT_TIME));
-  EXPECT_TRUE(ctx.HelperCheckEdge(
-      scAgentsCommon::CoreKeynodes::question_finished_successfully, testActionNode, ScType::EdgeAccessConstPosPerm));
+  ScAction testAction = context.ConvertToAction(testActionNode);
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(testAction.IsFinishedSuccessfully());
 
-  ScAddr answerAddr = ctx.HelperFindBySystemIdtf("word_starts_with_required_letter_answer_phrase");
+  context.UnsubscribeAgent<messageProcessingModule::FindWordInSetByFirstLetterAgent>();
+
+  ScAddr answerAddr = context.SearchElementBySystemIdentifier("word_starts_with_required_letter_answer_phrase");
   EXPECT_TRUE(answerAddr.IsValid());
 
-  ScAddr answerLink = utils::IteratorUtils::getAnyFromSet(&ctx, answerAddr);
-  EXPECT_EQ(utils::CommonUtils::getLinkContent(&ctx, answerLink), "Мандарин");
-
-  shutdown();
+  ScAddr answerLink = utils::IteratorUtils::getAnyFromSet(&context, answerAddr);
+  std::string linkContent;
+  context.GetLinkContent(answerLink, linkContent);
+  EXPECT_EQ(linkContent, "Мандарин");
 }
 
 TEST_F(MessageProcessingAgentTest, generateAnswerWithSeveralWordsTest)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + "generateAnswerWithSeveralWordsTest.scs");
-  initialize();
-
-  ScAddr testActionNode = ctx.HelperFindBySystemIdtf("test_action_node");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + "generateAnswerWithSeveralWordsTest.scs");
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
   EXPECT_TRUE(testActionNode.IsValid());
 
-  ctx.CreateEdge(ScType::EdgeAccessConstPosPerm, scAgentsCommon::CoreKeynodes::question_initiated, testActionNode);
+  context.SubscribeAgent<messageProcessingModule::FindWordInSetByFirstLetterAgent>();
 
-  EXPECT_TRUE(ActionUtils::waitAction(&ctx, testActionNode, WAIT_TIME));
-  EXPECT_TRUE(ctx.HelperCheckEdge(
-      scAgentsCommon::CoreKeynodes::question_finished_successfully, testActionNode, ScType::EdgeAccessConstPosPerm));
+  ScAction testAction = context.ConvertToAction(testActionNode);
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(testAction.IsFinishedSuccessfully());
 
-  ScAddr answerAddr = ctx.HelperFindBySystemIdtf("word_starts_with_required_letter_answer_phrase");
+  context.UnsubscribeAgent<messageProcessingModule::FindWordInSetByFirstLetterAgent>();
+
+  ScAddr answerAddr = context.SearchElementBySystemIdentifier("word_starts_with_required_letter_answer_phrase");
   EXPECT_TRUE(answerAddr.IsValid());
 
-  ScAddr answerLink = utils::IteratorUtils::getAnyFromSet(&ctx, answerAddr);
-  EXPECT_EQ(utils::CommonUtils::getLinkContent(&ctx, answerLink), "Ананас, Апельсин");
-
-  shutdown();
+  ScAddr answerLink = utils::IteratorUtils::getAnyFromSet(&context, answerAddr);
+  std::string linkContent;
+  context.GetLinkContent(answerLink, linkContent);
+  EXPECT_EQ(linkContent, "Ананас, Апельсин");
 }
 
 TEST_F(MessageProcessingAgentTest, generateAnswerWithoutWords)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + "generateAnswerWithoutWords.scs");
-  initialize();
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + "generateAnswerWithoutWords.scs");
 
-  ScAddr testActionNode = ctx.HelperFindBySystemIdtf("test_action_node");
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
   EXPECT_TRUE(testActionNode.IsValid());
 
-  ctx.CreateEdge(ScType::EdgeAccessConstPosPerm, scAgentsCommon::CoreKeynodes::question_initiated, testActionNode);
+  context.SubscribeAgent<messageProcessingModule::FindWordInSetByFirstLetterAgent>();
 
-  EXPECT_TRUE(ActionUtils::waitAction(&ctx, testActionNode, WAIT_TIME));
-  EXPECT_TRUE(ctx.HelperCheckEdge(
-      scAgentsCommon::CoreKeynodes::question_finished_successfully, testActionNode, ScType::EdgeAccessConstPosPerm));
+  ScAction testAction = context.ConvertToAction(testActionNode);
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(testAction.IsFinishedSuccessfully());
 
-  ScAddr answerAddr = ctx.HelperFindBySystemIdtf("word_starts_with_required_letter_answer_phrase");
+  context.UnsubscribeAgent<messageProcessingModule::FindWordInSetByFirstLetterAgent>();
+
+  ScAddr answerAddr = context.SearchElementBySystemIdentifier("word_starts_with_required_letter_answer_phrase");
   EXPECT_TRUE(answerAddr.IsValid());
 
-  ScAddr answerLink = utils::IteratorUtils::getAnyFromSet(&ctx, answerAddr);
-  EXPECT_EQ(utils::CommonUtils::getLinkContent(&ctx, answerLink), "Таких слов нет");
-
-  shutdown();
+  ScAddr answerLink = utils::IteratorUtils::getAnyFromSet(&context, answerAddr);
+  std::string linkContent;
+  context.GetLinkContent(answerLink, linkContent);
+  EXPECT_EQ(linkContent, "Таких слов нет");
 }
 
 }  // namespace messageProcessingModuleTest

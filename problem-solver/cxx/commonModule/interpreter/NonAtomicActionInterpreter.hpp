@@ -1,20 +1,20 @@
 #pragma once
 
-#include "sc-memory/sc_memory.hpp"
+#include <sc-memory/sc_agent.hpp>
 
 namespace commonModule
 {
 class NonAtomicActionInterpreter
 {
 public:
-  explicit NonAtomicActionInterpreter(ScMemoryContext * ms_context);
+  explicit NonAtomicActionInterpreter(ScAgentContext * context);
 
   void interpret(const ScAddr & nonAtomicActionAddr);
 
 private:
   const int WAIT_TIME = 48000;
 
-  ScMemoryContext * context;
+  ScAgentContext * context;
 
   ScAddr getFirstSubAction(ScAddr const & decompositionTuple);
 
@@ -27,6 +27,8 @@ private:
   ScAddr getElseAction(ScAddr const & actionAddr);
 
   ScAddr getGoToAction(ScAddr const & actionAddr);
+
+  static std::string getClassNameForLog();
 };
 
 }  // namespace commonModule

@@ -1,7 +1,5 @@
 #include "ParameterHandler.hpp"
 
-#include "sc-agents-common/utils/CommonUtils.hpp"
-
 #include "utils//RelationUtils.hpp"
 #include "utils//ScTemplateUtils.hpp"
 
@@ -15,14 +13,14 @@ ScAddr ParameterHandler::updateMeasurableParameter(
 {
   ScAddr numberNode = this->numberHandler->getNumberNode(number);
   ScAddr parameterNode = getParameterNode(parameterClass, measurementRel, numberNode);
-  if (!this->context->HelperCheckEdge(parameterNode, entity, ScType::EdgeAccessConstPosPerm))
+  if (!this->context->CheckConnector(parameterNode, entity, ScType::EdgeAccessConstPosPerm))
   {
     ScAddr currentParameterNode = this->findParameterNodeByEntity(parameterClass, entity);
     if (currentParameterNode.IsValid())
     {
       RelationUtils::eraseAllEdges(this->context, currentParameterNode, entity, ScType::EdgeAccessConstPosPerm);
     }
-    this->context->CreateEdge(ScType::EdgeAccessConstPosPerm, parameterNode, entity);
+    this->context->GenerateConnector(ScType::EdgeAccessConstPosPerm, parameterNode, entity);
   }
   return parameterNode;
 }
@@ -49,7 +47,7 @@ ScAddr ParameterHandler::findParameterNodeByNumber(
   ScAddr parameterNode = ScAddr();
   ScTemplate scTemplate;
   scTemplate.Triple(parameterClass, ScType::EdgeAccessVarPosPerm, ScType::NodeVar >> "_parameter_node");
-  scTemplate.TripleWithRelation(
+  scTemplate.Quintuple(
       "_parameter_node", ScType::EdgeDCommonVar, numberNode, ScType::EdgeAccessVarPosPerm, measurementRel);
   ScAddrVector parameterNodes = ScTemplateUtils::getAllWithKey(this->context, scTemplate, "_parameter_node");
   if (parameterNodes.size() == 1)
@@ -57,14 +55,16 @@ ScAddr ParameterHandler::findParameterNodeByNumber(
   else if (parameterNodes.size() > 1)
   {
     SC_LOG_DEBUG(
-        "ParameterHandler More then 1 parameter node of " + this->context->HelperGetSystemIdtf(parameterClass) +
-        " by number " + this->context->HelperGetSystemIdtf(numberNode));
+        getClassNameForLog() + "More then 1 parameter node of " +
+        this->context->GetElementSystemIdentifier(parameterClass) + " by number " +
+        this->context->GetElementSystemIdentifier(numberNode));
   }
   else
   {
     SC_LOG_DEBUG(
-        "ParameterHandler found no parameter node of " + this->context->HelperGetSystemIdtf(parameterClass) +
-        " by number " + this->context->HelperGetSystemIdtf(numberNode));
+        getClassNameForLog() + "Found no parameter node of " +
+        this->context->GetElementSystemIdentifier(parameterClass) + " by number " +
+        this->context->GetElementSystemIdentifier(numberNode));
   }
 
   return parameterNode;
@@ -82,14 +82,16 @@ ScAddr ParameterHandler::findParameterNodeByEntity(const ScAddr & parameterClass
   else if (parameterNodes.size() > 1)
   {
     SC_LOG_DEBUG(
-        "ParameterHandler More then 1 parameter node of " + this->context->HelperGetSystemIdtf(parameterClass) +
-        " for entity " + this->context->HelperGetSystemIdtf(entity));
+        getClassNameForLog() + "More then 1 parameter node of " +
+        this->context->GetElementSystemIdentifier(parameterClass) + " for entity " +
+        this->context->GetElementSystemIdentifier(entity));
   }
   else
   {
     SC_LOG_DEBUG(
-        "ParameterHandler found no parameter node of " + this->context->HelperGetSystemIdtf(parameterClass) +
-        " for entity " + this->context->HelperGetSystemIdtf(entity));
+        getClassNameForLog() + "Found no parameter node of " +
+        this->context->GetElementSystemIdentifier(parameterClass) + " for entity " +
+        this->context->GetElementSystemIdentifier(entity));
   }
 
   return parameterNode;
@@ -102,21 +104,22 @@ ScAddr ParameterHandler::generateParameterNode(
 {
   ScTemplate scTemplate;
   scTemplate.Triple(parameterClass, ScType::EdgeAccessVarPosPerm, ScType::NodeVar >> "_parameter_node");
-  scTemplate.TripleWithRelation(
+  scTemplate.Quintuple(
       "_parameter_node", ScType::EdgeDCommonVar, numberNode, ScType::EdgeAccessVarPosPerm, measurementRel);
 
   ScTemplateGenResult genResult;
-  this->context->HelperGenTemplate(scTemplate, genResult);
+  this->context->GenerateByTemplate(scTemplate, genResult);
   return genResult["_parameter_node"];
 };
 
-ParameterHandler::ParameterHandler(ScMemoryContext * ms_context)
+ParameterHandler::ParameterHandler(ScMemoryContext * context)
+  : context(context)
+  , numberHandler(std::make_unique<NumberHandler>(context))
 {
-  this->context = ms_context;
-  this->numberHandler = new NumberHandler(ms_context);
 }
 
-ParameterHandler::~ParameterHandler()
+std::string ParameterHandler::getClassNameForLog()
 {
-  delete this->numberHandler;
+  static std::string const className = "ParameterHandler";
+  return className;
 }

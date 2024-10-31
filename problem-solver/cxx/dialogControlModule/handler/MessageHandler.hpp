@@ -8,43 +8,43 @@ namespace dialogControlModule
 class MessageHandler
 {
 public:
-  explicit MessageHandler(ScMemoryContext * context);
-
-  ~MessageHandler();
+  explicit MessageHandler(ScAgentContext * context);
 
   bool processReplyMessage(
-      const ScAddr & replyMessageNode,
-      const ScAddr & logicRuleNode,
-      const ScAddr & langNode,
-      const ScAddr & parametersNode);
+      ScAddr const & replyMessageNode,
+      ScAddr const & logicRuleNode,
+      ScAddr const & langNode,
+      ScAddr const & parametersNode);
 
   bool processAtomicMessage(
-      const ScAddr & messageNode,
-      const ScAddr & phraseClassNode,
-      const ScAddr & parametersNode,
-      const ScAddr & langNode);
+      ScAddr const & messageNode,
+      ScAddr const & phraseClassNode,
+      ScAddr const & parametersNode,
+      ScAddr const & langNode);
 
   bool processNonAtomicMessage(
-      const ScAddr & replyMessageNode,
-      const ScAddr & logicRuleNode,
-      const ScAddr & parametersNode,
-      const ScAddr & langNode);
+      ScAddr const & replyMessageNode,
+      ScAddr const & logicRuleNode,
+      ScAddr const & parametersNode,
+      ScAddr const & langNode);
 
 private:
   const int PHRASE_GENERATION_AGENT_WAIT_TIME = 6000;
 
-  ScMemoryContext * context{};
-  LanguageSearcher * languageSearcher;
-  MessageConstructionsGenerator * messageConstructionsGenerator;
-  MessageSearcher * messageSearcher;
-  PhraseSearcher * phraseSearcher;
+  ScAgentContext * context;
+  std::unique_ptr<LanguageSearcher> languageSearcher;
+  std::unique_ptr<MessageConstructionsGenerator> messageConstructionsGenerator;
+  std::unique_ptr<MessageSearcher> messageSearcher;
+  std::unique_ptr<PhraseSearcher> phraseSearcher;
 
   void clearSemanticAnswer();
 
   ScAddr generateLinkByPhrase(
-      const ScAddr & replyMessageNode,
-      const ScAddr & phraseClassNode,
-      const ScAddr & parametersNode,
-      const ScAddr & langNode);
+      ScAddr const & replyMessageNode,
+      ScAddr const & phraseClassNode,
+      ScAddr const & parametersNode,
+      ScAddr const & langNode);
+
+  static std::string getClassNameForLog();
 };
 }  // namespace dialogControlModule

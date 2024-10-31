@@ -1,5 +1,7 @@
 #include "ScTemplateUtils.hpp"
 
+#include "sc-memory/sc_memory.hpp"
+
 ScAddrVector ScTemplateUtils::getAllWithKey(
     ScMemoryContext * context,
     const ScTemplate & scTemplate,
@@ -8,7 +10,7 @@ ScAddrVector ScTemplateUtils::getAllWithKey(
   ScAddrVector elements;
 
   ScTemplateSearchResult templateResult;
-  context->HelperSearchTemplate(scTemplate, templateResult);
+  context->SearchByTemplate(scTemplate, templateResult);
 
   for (size_t i = 0; i < templateResult.Size(); i++)
   {

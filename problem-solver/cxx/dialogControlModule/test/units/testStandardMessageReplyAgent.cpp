@@ -1,14 +1,13 @@
-#include "agent/DirectInferenceAgent.hpp"
-#include "agent/StandardMessageReplyAgent.hpp"
-#include "agent/PhraseGenerationAgent.hpp"
-#include "sc-builder/src/scs_loader.hpp"
-#include "keynodes/DialogKeynodes.hpp"
-#include "keynodes/MessageKeynodes.hpp"
-#include "sc-agents-common/utils/CommonUtils.hpp"
+#include <sc-memory/sc_agent.hpp>
+
 #include "sc-agents-common/utils/IteratorUtils.hpp"
-#include "sc-memory/kpm/sc_agent.hpp"
-#include "sc-memory/sc_wait.hpp"
+#include "sc-builder/src/scs_loader.hpp"
 #include "sc_test.hpp"
+
+#include "agent/DirectInferenceAgent.hpp"
+#include "agent/PhraseGenerationAgent.hpp"
+#include "agent/StandardMessageReplyAgent.hpp"
+#include "keynodes/MessageKeynodes.hpp"
 #include "searcher/TokenDomainSearcher.hpp"
 
 using namespace inference;
@@ -17,413 +16,279 @@ using namespace dialogControlModule;
 namespace testStandardMessageReplyAgent
 {
 ScsLoader loader;
-const std::string TEST_FILES_DIR_PATH = DIALOG_CONTROL_MODULE_TEST_SRC_PATH "/TestsStructures/StandardMessageReply/";
-const std::string ACTION_DIR_PATH = "actions/";
-const std::string LR_DIR_PATH = "logicRules/";
-const std::string MES_DIR_PATH = "messages/";
-const std::string PHRASE_DIR_PATH = "phrases/";
-const int WAIT_TIME = 20000;
+std::string const TEST_FILES_DIR_PATH = DIALOG_CONTROL_MODULE_TEST_SRC_PATH "/testsStructures/standardMessageReply/";
+std::string const ACTION_DIR_PATH = "actions/";
+std::string const LR_DIR_PATH = "logicRules/";
+std::string const MES_DIR_PATH = "messages/";
+std::string const PHRASE_DIR_PATH = "phrases/";
+int const WAIT_TIME = 20000;
 
 using StandardMessageReplyTest = ScMemoryTest;
 
-void initializeClasses()
+void initialize(ScAgentContext & context)
 {
-  DialogKeynodes::InitGlobal();
-  InferenceKeynodes::InitGlobal();
-  commonModule::Keynodes::InitGlobal();
-  MessageKeynodes::InitGlobal();
-  scAgentsCommon::CoreKeynodes::InitGlobal();
-  StandardMessageReplyAgent::InitGlobal();
+  context.SubscribeAgent<DirectInferenceAgent>();
+  context.SubscribeAgent<PhraseGenerationAgent>();
+  context.SubscribeAgent<StandardMessageReplyAgent>();
 }
 
+void shutdown(ScAgentContext & context)
+{
+  context.UnsubscribeAgent<DirectInferenceAgent>();
+  context.UnsubscribeAgent<PhraseGenerationAgent>();
+  context.UnsubscribeAgent<StandardMessageReplyAgent>();
+}
 
 TEST_F(StandardMessageReplyTest, ProcessingAtomicMessageIsSuccessful)
 {
-  string messageText = "I'm sorry, Mister Ivanov.";
-  ScMemoryContext & ctx = *m_ctx;
+  static std::string const messageText = "I'm sorry, Mister Ivanov.";
+  ScAgentContext & context = *m_ctx;
 
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr4.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH +
-                          "concept_answer_on_standard_message_rule_class_by_priority.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message4.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + PHRASE_DIR_PATH + "phrase1.scs");
-  ScAddr test_action_node = ctx.HelperFindBySystemIdtf("test_question_node");
-  ScAgentInit(true);
-  initializeClasses();
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr4.scs");
+  loader.loadScsFile(
+      context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "concept_answer_on_standard_message_rule_class_by_priority.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message4.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + PHRASE_DIR_PATH + "phrase1.scs");
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
 
-  SC_AGENT_REGISTER(DirectInferenceAgent)
-  SC_AGENT_REGISTER(PhraseGenerationAgent)
-  SC_AGENT_REGISTER(StandardMessageReplyAgent)
+  ScAction testAction = context.ConvertToAction(testActionNode);
 
-  ctx.CreateEdge(
-          ScType::EdgeAccessConstPosPerm,
-          scAgentsCommon::CoreKeynodes::question_initiated,
-          test_action_node);
+  initialize(context);
 
-  EXPECT_TRUE(
-          ScWaitEvent<ScEventAddOutputEdge>(
-                  ctx,
-                  scAgentsCommon::CoreKeynodes::question_finished_successfully).
-                  Wait(WAIT_TIME));
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
 
-  SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
-  SC_AGENT_UNREGISTER(PhraseGenerationAgent)
-  SC_AGENT_UNREGISTER(DirectInferenceAgent)
-
-  ScAddr messageNode = ctx.HelperFindBySystemIdtf("test_message");
+  ScAddr messageNode = context.SearchElementBySystemIdentifier("test_message");
   EXPECT_TRUE(messageNode.IsValid());
 
-  ScAddr replyMessageNode = utils::IteratorUtils::getFirstByOutRelation(&ctx, messageNode, MessageKeynodes::nrel_reply);
+  ScAddr replyMessageNode =
+      utils::IteratorUtils::getAnyByOutRelation(&context, messageNode, MessageKeynodes::nrel_reply);
   EXPECT_TRUE(replyMessageNode.IsValid());
 
-  TokenDomainSearcher searcher(&ctx);
+  TokenDomainSearcher searcher(&context);
   ScAddr messageLink = searcher.getMessageText(replyMessageNode);
-  EXPECT_EQ(utils::CommonUtils::getLinkContent(&ctx, messageLink), messageText);
+  std::string linkContent;
+  context.GetLinkContent(messageLink, linkContent);
+  EXPECT_EQ(linkContent, messageText);
+
+  shutdown(context);
 }
 
 TEST_F(StandardMessageReplyTest, ProcessingNonatomicMessageIsSuccessful)
 {
-  string messageText = "I'm sorry, Mister Ivanov. How did this happen, Ivan?";
-  ScMemoryContext & ctx = *m_ctx;
+  static std::string const messageText = "I'm sorry, Mister Ivanov. How did this happen, Ivan?";
+  ScAgentContext & context = *m_ctx;
 
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH +
-                          "concept_answer_on_standard_message_rule_class_by_priority.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr1.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message4.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + PHRASE_DIR_PATH + "phrase1.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + PHRASE_DIR_PATH + "phrase2.scs");
-  ScAddr test_action_node = ctx.HelperFindBySystemIdtf("test_question_node");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
+  loader.loadScsFile(
+      context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "concept_answer_on_standard_message_rule_class_by_priority.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr1.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message4.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + PHRASE_DIR_PATH + "phrase1.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + PHRASE_DIR_PATH + "phrase2.scs");
+  ScAddr test_action_node = context.SearchElementBySystemIdentifier("test_action_node");
 
-  ScAgentInit(true);
-  initializeClasses();
+  ScAction action = context.ConvertToAction(test_action_node);
 
-  SC_AGENT_REGISTER(DirectInferenceAgent)
-  SC_AGENT_REGISTER(PhraseGenerationAgent)
-  SC_AGENT_REGISTER(StandardMessageReplyAgent)
+  initialize(context);
+  EXPECT_TRUE(action.InitiateAndWait(WAIT_TIME));
+  shutdown(context);
 
-  ctx.CreateEdge(
-          ScType::EdgeAccessConstPosPerm,
-          scAgentsCommon::CoreKeynodes::question_initiated,
-          test_action_node);
-
-  EXPECT_TRUE(
-          ScWaitEvent<ScEventAddOutputEdge>(
-                  ctx,
-                  scAgentsCommon::CoreKeynodes::question_finished_successfully).
-                  Wait(WAIT_TIME));
-
-  SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
-  SC_AGENT_UNREGISTER(PhraseGenerationAgent)
-  SC_AGENT_UNREGISTER(DirectInferenceAgent)
-
-  ScAddr messageNode = ctx.HelperFindBySystemIdtf("test_message");
+  ScAddr messageNode = context.SearchElementBySystemIdentifier("test_message");
   EXPECT_TRUE(messageNode.IsValid());
 
-  ScAddr replyMessageNode = utils::IteratorUtils::getFirstByOutRelation(&ctx, messageNode, MessageKeynodes::nrel_reply);
+  ScAddr replyMessageNode =
+      utils::IteratorUtils::getAnyByOutRelation(&context, messageNode, MessageKeynodes::nrel_reply);
   EXPECT_TRUE(replyMessageNode.IsValid());
 
-  TokenDomainSearcher searcher(&ctx);
+  TokenDomainSearcher searcher(&context);
   ScAddr messageLink = searcher.getMessageText(replyMessageNode);
-  EXPECT_EQ(utils::CommonUtils::getLinkContent(&ctx, messageLink), messageText);
+  std::string linkContent;
+  context.GetLinkContent(messageLink, linkContent);
+  EXPECT_EQ(linkContent, messageText);
 }
 
 TEST_F(StandardMessageReplyTest, ActionDoesntHaveAMessageNode)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "incorrectAction.scs");
-  ScAddr test_action_node = ctx.HelperFindBySystemIdtf("test_question_node");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "incorrectAction.scs");
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
+  ScAction testAction = context.ConvertToAction(testActionNode);
 
-  ScAgentInit(true);
-  initializeClasses();
-
-  SC_AGENT_REGISTER(StandardMessageReplyAgent)
-
-  ctx.CreateEdge(
-        ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
-        test_action_node);
-
-  EXPECT_TRUE(
-        ScWaitEvent<ScEventAddOutputEdge>(
-              ctx,
-              scAgentsCommon::CoreKeynodes::question_finished_unsuccessfully).
-              Wait(WAIT_TIME));
-
-  SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
+  context.SubscribeAgent<StandardMessageReplyAgent>();
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(testAction.IsFinishedWithError());
+  context.UnsubscribeAgent<StandardMessageReplyAgent>();
 }
 
 TEST_F(StandardMessageReplyTest, SystemDoesNotHaveTemplateForMessage)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr1.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH +
-                          "concept_answer_on_standard_message_rule_class_by_priority.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message1.scs");
-  ScAddr test_action_node = ctx.HelperFindBySystemIdtf("test_question_node");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr1.scs");
+  loader.loadScsFile(
+      context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "concept_answer_on_standard_message_rule_class_by_priority.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message1.scs");
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
+  ScAction testAction = context.ConvertToAction(testActionNode);
 
-  ScAgentInit(true);
-  initializeClasses();
+  context.SubscribeAgent<StandardMessageReplyAgent>();
+  context.SubscribeAgent<DirectInferenceAgent>();
 
-  SC_AGENT_REGISTER(StandardMessageReplyAgent)
-  SC_AGENT_REGISTER(DirectInferenceAgent)
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(testAction.IsFinishedWithError());
 
-  ctx.CreateEdge(
-        ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
-        test_action_node);
-
-  EXPECT_TRUE(
-        ScWaitEvent<ScEventAddOutputEdge>(
-              ctx,
-              scAgentsCommon::CoreKeynodes::question_finished_unsuccessfully).
-              Wait(WAIT_TIME));
-
-  SC_AGENT_UNREGISTER(DirectInferenceAgent)
-  SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
+  context.UnsubscribeAgent<DirectInferenceAgent>();
+  context.UnsubscribeAgent<StandardMessageReplyAgent>();
 }
 
 TEST_F(StandardMessageReplyTest, MessagesLanguageIsNotFound)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr1.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH +
-                          "concept_answer_on_standard_message_rule_class_by_priority.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message2.scs");
-  ScAddr test_action_node = ctx.HelperFindBySystemIdtf("test_question_node");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr1.scs");
+  loader.loadScsFile(
+      context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "concept_answer_on_standard_message_rule_class_by_priority.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message2.scs");
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
+  ScAction testAction = context.ConvertToAction(testActionNode);
 
-  ScAgentInit(true);
-  initializeClasses();
-
-  SC_AGENT_REGISTER(StandardMessageReplyAgent)
-  SC_AGENT_REGISTER(DirectInferenceAgent)
-
-  ctx.CreateEdge(
-        ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
-        test_action_node);
-
-  EXPECT_TRUE(
-        ScWaitEvent<ScEventAddOutputEdge>(
-              ctx,
-              scAgentsCommon::CoreKeynodes::question_finished_unsuccessfully).
-              Wait(WAIT_TIME));
-
-  SC_AGENT_UNREGISTER(DirectInferenceAgent)
-  SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
+  context.SubscribeAgent<StandardMessageReplyAgent>();
+  context.SubscribeAgent<DirectInferenceAgent>();
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(testAction.IsFinishedUnsuccessfully());
+  context.UnsubscribeAgent<DirectInferenceAgent>();
+  context.UnsubscribeAgent<StandardMessageReplyAgent>();
 }
 
 TEST_F(StandardMessageReplyTest, FirstMessageIsNotFound)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr2.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH +
-                          "concept_answer_on_standard_message_rule_class_by_priority.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message3.scs");
-  ScAddr test_action_node = ctx.HelperFindBySystemIdtf("test_question_node");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr2.scs");
+  loader.loadScsFile(
+      context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "concept_answer_on_standard_message_rule_class_by_priority.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message3.scs");
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
+  ScAction testAction = context.ConvertToAction(testActionNode);
 
-  ScAgentInit(true);
-  initializeClasses();
-
-  SC_AGENT_REGISTER(StandardMessageReplyAgent)
-  SC_AGENT_REGISTER(DirectInferenceAgent)
-
-  ctx.CreateEdge(
-        ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
-        test_action_node);
-
-  EXPECT_TRUE(
-        ScWaitEvent<ScEventAddOutputEdge>(
-              ctx,
-              scAgentsCommon::CoreKeynodes::question_finished_unsuccessfully).
-              Wait(WAIT_TIME));
-
-  SC_AGENT_UNREGISTER(DirectInferenceAgent)
-  SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
+  context.SubscribeAgent<StandardMessageReplyAgent>();
+  context.SubscribeAgent<DirectInferenceAgent>();
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(testAction.IsFinishedUnsuccessfully());
+  context.UnsubscribeAgent<StandardMessageReplyAgent>();
+  context.UnsubscribeAgent<DirectInferenceAgent>();
 }
 
 TEST_F(StandardMessageReplyTest, FirstPhraseClassIsNotFound)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr3.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH +
-                          "concept_answer_on_standard_message_rule_class_by_priority.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message3.scs");
-  ScAddr test_action_node = ctx.HelperFindBySystemIdtf("test_question_node");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr3.scs");
+  loader.loadScsFile(
+      context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "concept_answer_on_standard_message_rule_class_by_priority.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message3.scs");
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
+  ScAction testAction = context.ConvertToAction(testActionNode);
 
-  ScAgentInit(true);
-  initializeClasses();
+  context.SubscribeAgent<StandardMessageReplyAgent>();
+  context.SubscribeAgent<DirectInferenceAgent>();
 
-  SC_AGENT_REGISTER(StandardMessageReplyAgent)
-  SC_AGENT_REGISTER(DirectInferenceAgent)
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(testAction.IsFinishedUnsuccessfully());
 
-  ctx.CreateEdge(
-        ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
-        test_action_node);
-
-  EXPECT_TRUE(
-        ScWaitEvent<ScEventAddOutputEdge>(
-              ctx,
-              scAgentsCommon::CoreKeynodes::question_finished_unsuccessfully).
-              Wait(WAIT_TIME));
-
-  SC_AGENT_UNREGISTER(DirectInferenceAgent)
-  SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
+  context.UnsubscribeAgent<StandardMessageReplyAgent>();
+  context.UnsubscribeAgent<DirectInferenceAgent>();
 }
 
 TEST_F(StandardMessageReplyTest, PhraseForMessageIsNotFound)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr1.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH +
-                          "concept_answer_on_standard_message_rule_class_by_priority.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message3.scs");
-  ScAddr test_action_node = ctx.HelperFindBySystemIdtf("test_question_node");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr1.scs");
+  loader.loadScsFile(
+      context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "concept_answer_on_standard_message_rule_class_by_priority.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message3.scs");
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
+  ScAction testAction = context.ConvertToAction(testActionNode);
 
-  ScAgentInit(true);
-  initializeClasses();
-
-  SC_AGENT_REGISTER(StandardMessageReplyAgent)
-  SC_AGENT_REGISTER(DirectInferenceAgent)
-
-  ctx.CreateEdge(
-        ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
-        test_action_node);
-
-  EXPECT_TRUE(
-        ScWaitEvent<ScEventAddOutputEdge>(
-              ctx,
-              scAgentsCommon::CoreKeynodes::question_finished_unsuccessfully).
-              Wait(WAIT_TIME));
-
-  SC_AGENT_UNREGISTER(DirectInferenceAgent)
-  SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
+  context.SubscribeAgent<StandardMessageReplyAgent>();
+  context.SubscribeAgent<DirectInferenceAgent>();
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(testAction.IsFinishedUnsuccessfully());
+  context.UnsubscribeAgent<StandardMessageReplyAgent>();
+  context.UnsubscribeAgent<DirectInferenceAgent>();
 }
 
 TEST_F(StandardMessageReplyTest, LinkByPhraseIsNotGenerated)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr1.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH +
-                          "concept_answer_on_standard_message_rule_class_by_priority.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message3.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + PHRASE_DIR_PATH + "phrase1.scs");
-  ScAddr test_action_node = ctx.HelperFindBySystemIdtf("test_question_node");
-  ScAgentInit(true);
-  initializeClasses();
-
-  SC_AGENT_REGISTER(StandardMessageReplyAgent)
-  SC_AGENT_REGISTER(DirectInferenceAgent)
-  SC_AGENT_REGISTER(PhraseGenerationAgent)
-
-  ctx.CreateEdge(
-        ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
-        test_action_node);
-
-  EXPECT_TRUE(
-        ScWaitEvent<ScEventAddOutputEdge>(
-              ctx,
-              scAgentsCommon::CoreKeynodes::question_finished_unsuccessfully).
-              Wait(WAIT_TIME));
-
-  SC_AGENT_UNREGISTER(PhraseGenerationAgent)
-  SC_AGENT_UNREGISTER(DirectInferenceAgent)
-  SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr1.scs");
+  loader.loadScsFile(
+      context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "concept_answer_on_standard_message_rule_class_by_priority.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message3.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + PHRASE_DIR_PATH + "phrase1.scs");
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
+  ScAction testAction = context.ConvertToAction(testActionNode);
+  initialize(context);
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(testAction.IsFinishedUnsuccessfully());
+  shutdown(context);
 }
 
 TEST_F(StandardMessageReplyTest, MessagesAndPhraseClassesDoNotMatch1)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr5.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH +
-                          "concept_answer_on_standard_message_rule_class_by_priority.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message4.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + PHRASE_DIR_PATH + "phrase1.scs");
-  ScAddr test_action_node = ctx.HelperFindBySystemIdtf("test_question_node");
-  ScAgentInit(true);
-  initializeClasses();
-
-  SC_AGENT_REGISTER(StandardMessageReplyAgent)
-  SC_AGENT_REGISTER(DirectInferenceAgent)
-  SC_AGENT_REGISTER(PhraseGenerationAgent)
-
-  ctx.CreateEdge(
-        ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
-        test_action_node);
-
-  EXPECT_TRUE(
-        ScWaitEvent<ScEventAddOutputEdge>(
-              ctx,
-              scAgentsCommon::CoreKeynodes::question_finished_unsuccessfully).
-              Wait(WAIT_TIME));
-
-  SC_AGENT_UNREGISTER(PhraseGenerationAgent)
-  SC_AGENT_UNREGISTER(DirectInferenceAgent)
-  SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr5.scs");
+  loader.loadScsFile(
+      context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "concept_answer_on_standard_message_rule_class_by_priority.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message4.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + PHRASE_DIR_PATH + "phrase1.scs");
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
+  ScAction testAction = context.ConvertToAction(testActionNode);
+  initialize(context);
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(testAction.IsFinishedUnsuccessfully());
+  shutdown(context);
 }
 
 TEST_F(StandardMessageReplyTest, MessagesAndPhraseClassesDoNotMatch2)
 {
-  ScMemoryContext & ctx = *m_ctx;
+  ScAgentContext & context = *m_ctx;
 
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr6.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH +
-                          "concept_answer_on_standard_message_rule_class_by_priority.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message4.scs");
-  loader.loadScsFile(ctx, TEST_FILES_DIR_PATH + PHRASE_DIR_PATH + "phrase1.scs");
-  ScAddr test_action_node = ctx.HelperFindBySystemIdtf("test_question_node");
-  ScAgentInit(true);
-  initializeClasses();
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + ACTION_DIR_PATH + "correctAction.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "lr6.scs");
+  loader.loadScsFile(
+      context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "concept_answer_on_standard_message_rule_class_by_priority.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + LR_DIR_PATH + "reply_target.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + MES_DIR_PATH + "message4.scs");
+  loader.loadScsFile(context, TEST_FILES_DIR_PATH + PHRASE_DIR_PATH + "phrase1.scs");
+  ScAddr testActionNode = context.SearchElementBySystemIdentifier("test_action_node");
+  ScAction testAction = context.ConvertToAction(testActionNode);
+  initialize(context);
 
-  SC_AGENT_REGISTER(StandardMessageReplyAgent)
-  SC_AGENT_REGISTER(DirectInferenceAgent)
-  SC_AGENT_REGISTER(PhraseGenerationAgent)
+  EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
+  EXPECT_TRUE(testAction.IsFinishedUnsuccessfully());
 
-  ctx.CreateEdge(
-        ScType::EdgeAccessConstPosPerm,
-        scAgentsCommon::CoreKeynodes::question_initiated,
-        test_action_node);
-
-  EXPECT_TRUE(
-        ScWaitEvent<ScEventAddOutputEdge>(
-              ctx,
-              scAgentsCommon::CoreKeynodes::question_finished_unsuccessfully).
-              Wait(WAIT_TIME));
-
-  SC_AGENT_UNREGISTER(PhraseGenerationAgent)
-  SC_AGENT_UNREGISTER(DirectInferenceAgent)
-  SC_AGENT_UNREGISTER(StandardMessageReplyAgent)
+  shutdown(context);
 }
-}
+}  // namespace testStandardMessageReplyAgent
