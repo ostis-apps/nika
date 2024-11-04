@@ -1,4 +1,4 @@
-import { ScAddr, ScConstruction, ScEventParams, ScEventType, ScTemplate, ScType } from 'ts-sc-client';
+import { ScAddr, ScConstruction, ScEventSubscriptionParams, ScEventType, ScTemplate, ScType } from 'ts-sc-client';
 import { client } from '@api/sc/client';
 
 const action = 'action';
@@ -49,7 +49,7 @@ const subscribeToAgentAnswer = async (actionNode: ScAddr, keynodes: Record<strin
         }
     };
 
-    const eventParams = new ScEventParams(actionNode, ScEventType.AddIngoingEdge, onActionFinished);
+    const eventParams = new ScEventSubscriptionParams(actionNode, ScEventType.AddIngoingEdge, onActionFinished);
 
     client.eventsCreate(eventParams);
 };

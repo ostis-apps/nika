@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { ScAddr, ScEventParams, ScEventType, ScType } from 'ts-sc-client';
+import { ScAddr, ScEventSubscriptionParams, ScEventType, ScType } from 'ts-sc-client';
 import { client } from '@api';
 import { dialogAgent } from '@api/sc/agents/dialogAgent';
 import { getInfoMessage, searchChatMessages } from '@api/sc/search/searchChatMessages';
@@ -47,7 +47,7 @@ export const useChat = (user: ScAddr | null) => {
             });
             if (newMessage.author.equal(user)) setIsAgentAnswer(true);
         };
-        const eventParams = new ScEventParams(chatNode, ScEventType.AddOutgoingEdge, onActionFinished);
+        const eventParams = new ScEventSubscriptionParams(chatNode, ScEventType.AddOutgoingEdge, onActionFinished);
         await client.eventsCreate([eventParams]);
     }, [chatNode, user]);
 

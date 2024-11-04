@@ -3,7 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 import { loadingComponent } from '@components/LoadingComponent';
 import { routes } from '@constants';
 import { client } from "@api";
-import { ScAddr, ScEventParams, ScEventType, ScTemplate, ScType } from "ts-sc-client";
+import { ScAddr, ScEventSubscriptionParams, ScEventType, ScTemplate, ScType } from "ts-sc-client";
 
 import 'antd/dist/antd.css';
 import './assets/main.css';
@@ -82,7 +82,7 @@ export const App = () => {
                     if (resultColor.length) {
                         let color = resultColor[0].data;
                         funcChange[i](color as any);
-                        const eventParams = new ScEventParams(colorLink, ScEventType.ChangeContent, fetchColorValue);
+                        const eventParams = new ScEventSubscriptionParams(colorLink, ScEventType.ChangeContent, fetchColorValue);
                         await client.eventsCreate([eventParams]); 
                     }
                 }    
