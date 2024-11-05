@@ -7,7 +7,7 @@ option(SC_CLANG_FORMAT_CODE "Flag to add clangformat and clangformat_check targe
 
 set(PROBLEM_SOLVER_PATH "${CMAKE_CURRENT_LIST_DIR}/problem-solver")
 set(SC_MACHINE_PATH "${PROBLEM_SOLVER_PATH}/sc-machine")
-include("${SC_MACHINE_PATH}/CMakeLists.txt")
+add_subdirectory(${SC_MACHINE_PATH})
 project_version(NIKA_PROJECT "0.1.0")
 
 # platform doesn't support multi-extensions. Have to put project binaries to sc-machine extensions

@@ -32,7 +32,7 @@ set(HEADERS
 find_package(CURL REQUIRED)
 find_package(nlohmann_json 3.7.3 REQUIRED)
 
-include_directories(${CMAKE_CURRENT_LIST_DIR} ${SC_MEMORY_SRC} ${SC_KPM_SRC} ${SC_TOOLS_SRC})
+include_directories(${CMAKE_CURRENT_LIST_DIR} ${SC_MEMORY_SRC} ${SC_AGENTS_COMMON_PATH} ${SC_CORE_PATH} ${SC_BUILDER_PATH})
 
 add_library(common SHARED ${SOURCES} ${HEADERS})
 

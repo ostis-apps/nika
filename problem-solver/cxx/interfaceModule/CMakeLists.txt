@@ -12,8 +12,9 @@ set(HEADERS
 include_directories(
     ${CMAKE_CURRENT_LIST_DIR}
     ${SC_MEMORY_SRC}
-    ${SC_KPM_SRC}
-    ${SC_TOOLS_SRC}
+    ${SC_AGENTS_COMMON_PATH}
+    ${SC_CORE_PATH}
+    ${SC_BUILDER_PATH}
     ${SC_COMMON_MODULE_SRC}
 )
 
