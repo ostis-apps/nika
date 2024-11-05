@@ -7,14 +7,14 @@ const answer = 'nrel_answer';
 const actionFinished = 'action_finished';
 
 const baseKeynodes = [
-    { id: action, type: ScType.NodeConstClass },
-    { id: actionInitiated, type: ScType.NodeConstClass },
-    { id: answer, type: ScType.NodeConstNoRole },
-    { id: actionFinished, type: ScType.NodeConstClass },
+    { id: action, type: ScType.ConstNodeClass },
+    { id: actionInitiated, type: ScType.ConstNodeClass },
+    { id: answer, type: ScType.ConstNodeNonRole },
+    { id: actionFinished, type: ScType.ConstNodeClass },
 ];
 
 const describeAgent = async (template: ScTemplate, actionNodeAlias: string) => {
-    const generationResult = await client.templateGenerate(template, {});
+    const generationResult = await client.generateByTemplate(template, {});
 
     if (generationResult && generationResult.size > 0) {
         return generationResult.get(actionNodeAlias);
@@ -26,14 +26,14 @@ const findResultCircuit = async (actionNode: ScAddr, keynodes: Record<string, Sc
     const circuitDialogAlias = '_circuit_dialog';
     const template = new ScTemplate();
 
-    template.tripleWithRelation(
+    template.quintuple(
         actionNode,
-        ScType.EdgeDCommonVar,
-        [ScType.NodeVarStruct, circuitDialogAlias],
-        ScType.EdgeAccessVarPosPerm,
+        ScType.VarCommonArc,
+        [ScType.VarNodeStructure, circuitDialogAlias],
+        ScType.VarPermPosArc,
         keynodes[answer],
     );
-    const result = await client.templateSearch(template);
+    const result = await client.searchByTemplate(template);
 
     if (result.length) {
         return result[0].get(circuitDialogAlias);
@@ -44,14 +44,14 @@ const findResultCircuit = async (actionNode: ScAddr, keynodes: Record<string, Sc
 const subscribeToAgentAnswer = async (actionNode: ScAddr, keynodes: Record<string, ScAddr>, onResponse: () => void) => {
     const onActionFinished = (_subscibedAddr: ScAddr, _arc: ScAddr, anotherAddr: ScAddr, eventId: number) => {
         if (anotherAddr.isValid() && anotherAddr.equal(keynodes[actionFinished])) {
-            client.eventsDestroy(eventId);
+            client.destroyElementaryEventSubscriptions(eventId);
             onResponse();
         }
     };
 
-    const eventParams = new ScEventSubscriptionParams(actionNode, ScEventType.AddIngoingEdge, onActionFinished);
+    const eventParams = new ScEventSubscriptionParams(actionNode, ScEventType.AfterGenerateIncomingArc, onActionFinished);
 
-    client.eventsCreate(eventParams);
+    client.createElementaryEventSubscriptions(eventParams);
 };
 
 export const makeAgent = (template: ScTemplate, actionNodeAlias: string) => {
@@ -65,8 +65,8 @@ export const makeAgent = (template: ScTemplate, actionNodeAlias: string) => {
             };
             await subscribeToAgentAnswer(actionNode, keynodes, onResponse);
             const construction = new ScConstruction();
-            construction.createEdge(ScType.EdgeAccessConstPosPerm, keynodes[actionInitiated], actionNode);
-            client.createElements(construction);
+            construction.generateConnector(ScType.ConstPermPosArc, keynodes[actionInitiated], actionNode);
+            client.generateElements(construction);
         });
     });
 };

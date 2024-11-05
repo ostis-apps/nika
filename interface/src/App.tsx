@@ -1,9 +1,9 @@
 import { lazy, useEffect, useState } from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { loadingComponent } from '@components/LoadingComponent';
 import { routes } from '@constants';
 import { client } from "@api";
-import { ScAddr, ScEventSubscriptionParams, ScEventType, ScTemplate, ScType } from "ts-sc-client";
+import { ScEventSubscriptionParams, ScEventType, ScTemplate, ScType } from "ts-sc-client";
 
 import 'antd/dist/antd.css';
 import './assets/main.css';
@@ -45,13 +45,13 @@ export const App = () => {
             const componentColor = 'nrel_component_color';
 
             const baseKeynodes = [
-                { id: conceptHeader, type: ScType.NodeConstClass },
-                { id: conceptMainPart, type: ScType.NodeConstClass },
-                { id: conceptFooter, type: ScType.NodeConstClass },
+                { id: conceptHeader, type: ScType.ConstNodeClass },
+                { id: conceptMainPart, type: ScType.ConstNodeClass },
+                { id: conceptFooter, type: ScType.ConstNodeClass },
             ];
 
             const helpKeynodes = [
-                { id: componentColor, type: ScType.NodeConstNoRole },
+                { id: componentColor, type: ScType.ConstNodeNonRole },
             ];
 
             const colorAlias = '_color';
@@ -60,30 +60,30 @@ export const App = () => {
             const keynodes = await client.resolveKeynodes(baseKeynodes);
             const hKeynodes = await client.resolveKeynodes(helpKeynodes);
 
-            for (var i = 0; i < baseKeynodes.length; i++) {
+            for (let i = 0; i < baseKeynodes.length; i++) {
                 const template = new ScTemplate();
                 template.triple(
                     keynodes[baseKeynodes[i].id],
-                    ScType.EdgeAccessVarPosPerm,
-                    [ScType.NodeVar, componentAlias],
+                    ScType.VarPermPosArc,
+                    [ScType.VarNode, componentAlias],
                 );
-                template.tripleWithRelation(
+                template.quintuple(
                     componentAlias,
-                    ScType.EdgeDCommonVar,
-                    [ScType.LinkVar, colorAlias],
-                    ScType.EdgeAccessVarPosPerm,
+                    ScType.VarCommonArc,
+                    [ScType.VarNodeLink, colorAlias],
+                    ScType.VarPermPosArc,
                     hKeynodes[componentColor],
                 );
-                const resultColorLink = await client.templateSearch(template);
+                const resultColorLink = await client.searchByTemplate(template);
                 
                 if (resultColorLink.length) {
                     const colorLink = resultColorLink[0].get(colorAlias);
                     const resultColor = await client.getLinkContents([colorLink]);
                     if (resultColor.length) {
-                        let color = resultColor[0].data;
+                        const color = resultColor[0].data;
                         funcChange[i](color as any);
-                        const eventParams = new ScEventSubscriptionParams(colorLink, ScEventType.ChangeContent, fetchColorValue);
-                        await client.eventsCreate([eventParams]); 
+                        const eventParams = new ScEventSubscriptionParams(colorLink, ScEventType.BeforeChangeLinkContent, fetchColorValue);
+                        await client.createElementaryEventSubscriptions([eventParams]); 
                     }
                 }    
             }
