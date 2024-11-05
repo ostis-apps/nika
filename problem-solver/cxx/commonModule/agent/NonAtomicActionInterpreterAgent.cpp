@@ -91,7 +91,7 @@ ScTemplateParams NonAtomicActionInterpreterAgent::createTemplateParams(
       if (!argument.IsValid())
         break;
       ScIterator5Ptr variablesIterator5 = m_context.CreateIterator5(
-          templateKeyElement, ScType::EdgeAccessVarPosPerm, ScType::NodeVar, ScType::EdgeAccessVarPosPerm, role);
+          templateKeyElement, ScType::VarPermPosArc, ScType::VarNode, ScType::VarPermPosArc, role);
       if (variablesIterator5->Next())
         templateParams.Add(m_context.GetElementSystemIdentifier(variablesIterator5->Get(2)), argument);
     }
@@ -104,7 +104,7 @@ ScAddr NonAtomicActionInterpreterAgent::replaceNonAtomicAction(
     ScAddr const & templateAddr,
     ScTemplateParams & templateParams)
 {
-  ScAddr keyElementReplacement = m_context.GenerateNode(ScType::NodeConst);
+  ScAddr keyElementReplacement = m_context.GenerateNode(ScType::ConstNode);
   ScAddr templateKeyElement;
   templateKeyElement = getTemplateKeyElement(templateAddr);
   templateParams.Add(m_context.GetElementSystemIdentifier(templateKeyElement), keyElementReplacement);

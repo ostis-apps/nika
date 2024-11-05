@@ -18,8 +18,8 @@ ScAddrVector PhraseSearcher::getPhrases(const ScAddr & phraseClassNode, const Sc
 {
   ScTemplate phraseTemplate;
   const std::string VAR_PHRASE = "_phrase";
-  phraseTemplate.Triple(phraseClassNode, ScType::EdgeAccessVarPosPerm, ScType::Link >> VAR_PHRASE);
-  phraseTemplate.Triple(langNode, ScType::EdgeAccessVarPosPerm, VAR_PHRASE);
+  phraseTemplate.Triple(phraseClassNode, ScType::VarPermPosArc, ScType::NodeLink >> VAR_PHRASE);
+  phraseTemplate.Triple(langNode, ScType::VarPermPosArc, VAR_PHRASE);
 
   ScTemplateSearchResult result;
   context->SearchByTemplate(phraseTemplate, result);
@@ -57,10 +57,10 @@ ScAddr PhraseSearcher::getNextPhraseClass(const ScAddr & phraseClassNode)
                     VAR_D_COMMON_EDGE = "_d_common_edge", VAR_PHRASE_CLASS = "_phrase_class";
 
   ScTemplate templ;
-  templ.Triple(ScType::NodeVarTuple >> VAR_TUPLE, ScType::EdgeAccessVarPosPerm >> VAR_EDGE_1, phraseClassNode);
-  templ.Triple(VAR_EDGE_1, ScType::EdgeDCommonVar >> VAR_D_COMMON_EDGE, ScType::EdgeAccessVarPosPerm >> VAR_EDGE_2);
-  templ.Triple(ScKeynodes::nrel_basic_sequence, ScType::EdgeAccessVarPosPerm, VAR_D_COMMON_EDGE);
-  templ.Triple(VAR_TUPLE, VAR_EDGE_2, ScType::NodeVar >> VAR_PHRASE_CLASS);
+  templ.Triple(ScType::VarNodeTuple >> VAR_TUPLE, ScType::VarPermPosArc >> VAR_EDGE_1, phraseClassNode);
+  templ.Triple(VAR_EDGE_1, ScType::VarCommonArc >> VAR_D_COMMON_EDGE, ScType::VarPermPosArc >> VAR_EDGE_2);
+  templ.Triple(ScKeynodes::nrel_basic_sequence, ScType::VarPermPosArc, VAR_D_COMMON_EDGE);
+  templ.Triple(VAR_TUPLE, VAR_EDGE_2, ScType::VarNode >> VAR_PHRASE_CLASS);
 
   ScTemplateSearchResult result;
   context->SearchByTemplate(templ, result);

@@ -51,7 +51,7 @@ ScResult PhraseGenerationAgent::DoProgram(ScActionInitiatedEvent const & event, 
   ScAddr const & langNode = searcher.getLanguage(phraseLink);
   if (m_context.IsElement(langNode))
   {
-    m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, langNode, linkResult);
+    m_context.GenerateConnector(ScType::ConstPermPosArc, langNode, linkResult);
   }
   else
   {
@@ -228,9 +228,9 @@ std::string PhraseGenerationAgent::processScTemplate(
 
 void PhraseGenerationAgent::generateSemanticEquivalent(const ScAddr & replyMessageNode, const ScAddr & templateNode)
 {
-  ScAddr semanticEquivalent = m_context.GenerateNode(ScType::NodeConstStruct);
+  ScAddr semanticEquivalent = m_context.GenerateNode(ScType::ConstNodeStructure);
   ScIterator3Ptr semanticEquivalentIterator =
-      m_context.CreateIterator3(MessageKeynodes::answer_structure, ScType::EdgeAccessConstPosPerm, ScType::Unknown);
+      m_context.CreateIterator3(MessageKeynodes::answer_structure, ScType::ConstPermPosArc, ScType::Unknown);
 
   while (semanticEquivalentIterator->Next())
   {
@@ -240,9 +240,9 @@ void PhraseGenerationAgent::generateSemanticEquivalent(const ScAddr & replyMessa
   ScTemplate semanticEquivalentStructure;
   semanticEquivalentStructure.Quintuple(
       replyMessageNode,
-      ScType::EdgeDCommonVar,
+      ScType::VarCommonArc,
       semanticEquivalent,
-      ScType::EdgeAccessVarPosPerm,
+      ScType::VarPermPosArc,
       MessageKeynodes::nrel_semantic_equivalent);
   ScTemplateGenResult result;
 
@@ -307,23 +307,23 @@ void PhraseGenerationAgent::replaceSetElementsVariables(
     }
     ScAddr set = phraseSemanticResult[variable];
     ScIterator3Ptr const & setElementsIterator =
-        m_context.CreateIterator3(set, ScType::EdgeAccessConstPosPerm, ScType::NodeConst);
+        m_context.CreateIterator3(set, ScType::ConstPermPosArc, ScType::ConstNode);
     if (setElementsIterator->Next())
     {
       setElementsTextStream << CommonUtils::getMainIdtf(&m_context, setElementsIterator->Get(2), {ScKeynodes::lang_ru});
       m_context.GenerateConnector(
-          ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, setElementsIterator->Get(1));
+          ScType::ConstPermPosArc, MessageKeynodes::answer_structure, setElementsIterator->Get(1));
       m_context.GenerateConnector(
-          ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, setElementsIterator->Get(2));
+          ScType::ConstPermPosArc, MessageKeynodes::answer_structure, setElementsIterator->Get(2));
     }
     while (setElementsIterator->Next())
     {
       setElementsTextStream << ", "
                             << CommonUtils::getMainIdtf(&m_context, setElementsIterator->Get(2), {ScKeynodes::lang_ru});
       m_context.GenerateConnector(
-          ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, setElementsIterator->Get(1));
+          ScType::ConstPermPosArc, MessageKeynodes::answer_structure, setElementsIterator->Get(1));
       m_context.GenerateConnector(
-          ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, setElementsIterator->Get(2));
+          ScType::ConstPermPosArc, MessageKeynodes::answer_structure, setElementsIterator->Get(2));
     }
 
     std::string variableRegular = regex_replace(
@@ -334,11 +334,11 @@ void PhraseGenerationAgent::replaceSetElementsVariables(
 
 void PhraseGenerationAgent::updateSemanticAnswer(const ScTemplateSearchResultItem & phraseSemanticResult)
 {
-  ScAddr const & phraseStruct = m_context.GenerateNode(ScType::NodeStruct);
+  ScAddr const & phraseStruct = m_context.GenerateNode(ScType::NodeStructure);
   ScAddrVector phraseElements;
   for (size_t i = 0; i < phraseSemanticResult.Size(); i++)
   {
-    m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, phraseStruct, phraseSemanticResult[i]);
+    m_context.GenerateConnector(ScType::ConstPermPosArc, phraseStruct, phraseSemanticResult[i]);
     phraseElements.push_back(phraseSemanticResult[i]);
   }
 
@@ -359,7 +359,7 @@ void PhraseGenerationAgent::updateSemanticAnswer(const ScTemplateSearchResultIte
 
   for (auto & phraseElement : phraseElements)
   {
-    m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, phraseElement);
+    m_context.GenerateConnector(ScType::ConstPermPosArc, MessageKeynodes::answer_structure, phraseElement);
   }
 
   m_context.EraseElement(phraseStruct);
@@ -371,7 +371,7 @@ void PhraseGenerationAgent::updateSemanticAnswer(const ScAddr & phraseAddr)
   phraseElements.push_back(phraseAddr);
 
   ScIterator3Ptr const classesIt3 =
-      m_context.CreateIterator3(ScType::NodeConstClass, ScType::EdgeAccessConstPosPerm, phraseAddr);
+      m_context.CreateIterator3(ScType::ConstNodeClass, ScType::ConstPermPosArc, phraseAddr);
   while (classesIt3->Next())
   {
     phraseElements.push_back(classesIt3->Get(0));
@@ -379,7 +379,7 @@ void PhraseGenerationAgent::updateSemanticAnswer(const ScAddr & phraseAddr)
   }
 
   ScIterator5Ptr const relationsIt5 = m_context.CreateIterator5(
-      phraseAddr, ScType::Unknown, ScType::Unknown, ScType::EdgeAccessConstPosPerm, ScType::NodeConst);
+      phraseAddr, ScType::Unknown, ScType::Unknown, ScType::ConstPermPosArc, ScType::ConstNode);
   while (relationsIt5->Next())
   {
     phraseElements.push_back(relationsIt5->Get(1));
@@ -390,7 +390,7 @@ void PhraseGenerationAgent::updateSemanticAnswer(const ScAddr & phraseAddr)
 
   for (auto & phraseElement : phraseElements)
   {
-    m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, phraseElement);
+    m_context.GenerateConnector(ScType::ConstPermPosArc, MessageKeynodes::answer_structure, phraseElement);
   }
 }
 
@@ -400,8 +400,8 @@ void PhraseGenerationAgent::addToRemoveNodes(
     ScAddrVector & vector)
 {
   ScTemplate templateNode;
-  templateNode.Triple(structNode, ScType::EdgeAccessVarPosPerm, ScType::Unknown >> "_node");
-  templateNode.Triple(conceptNode, ScType::EdgeAccessVarPosPerm, "_node");
+  templateNode.Triple(structNode, ScType::VarPermPosArc, ScType::Unknown >> "_node");
+  templateNode.Triple(conceptNode, ScType::VarPermPosArc, "_node");
 
   ScTemplateSearchResult templateResult;
   m_context.SearchByTemplate(templateNode, templateResult);
@@ -419,25 +419,25 @@ ScAddrVector PhraseGenerationAgent::getIncidentElements(const ScAddr & node, con
 
   ScTemplate templateNode;
   templateNode.Quintuple(
-      node, ScType::EdgeDCommonVar >> "_remove_arc_1", ScType::Unknown, ScType::EdgeAccessVarPosPerm, structNode);
+      node, ScType::VarCommonArc >> "_remove_arc_1", ScType::Unknown, ScType::VarPermPosArc, structNode);
   buffElements = ScTemplateUtils::getAllWithKey(&m_context, templateNode, "_remove_arc_1");
   incidentElements.insert(incidentElements.end(), buffElements.begin(), buffElements.end());
 
   templateNode.Clear();
   templateNode.Quintuple(
-      node, ScType::EdgeAccessVarPosPerm >> "_remove_arc_1", ScType::Unknown, ScType::EdgeAccessVarPosPerm, structNode);
+      node, ScType::VarPermPosArc >> "_remove_arc_1", ScType::Unknown, ScType::VarPermPosArc, structNode);
   buffElements = ScTemplateUtils::getAllWithKey(&m_context, templateNode, "_remove_arc_1");
   incidentElements.insert(incidentElements.end(), buffElements.begin(), buffElements.end());
 
   templateNode.Clear();
   templateNode.Quintuple(
-      ScType::Unknown, ScType::EdgeDCommonVar >> "_remove_arc_1", node, ScType::EdgeAccessVarPosPerm, structNode);
+      ScType::Unknown, ScType::VarCommonArc >> "_remove_arc_1", node, ScType::VarPermPosArc, structNode);
   buffElements = ScTemplateUtils::getAllWithKey(&m_context, templateNode, "_remove_arc_1");
   incidentElements.insert(incidentElements.end(), buffElements.begin(), buffElements.end());
 
   templateNode.Clear();
   templateNode.Quintuple(
-      ScType::Unknown, ScType::EdgeAccessVarPosPerm >> "_remove_arc_1", node, ScType::EdgeAccessVarPosPerm, structNode);
+      ScType::Unknown, ScType::VarPermPosArc >> "_remove_arc_1", node, ScType::VarPermPosArc, structNode);
   buffElements = ScTemplateUtils::getAllWithKey(&m_context, templateNode, "_remove_arc_1");
   incidentElements.insert(incidentElements.end(), buffElements.begin(), buffElements.end());
 

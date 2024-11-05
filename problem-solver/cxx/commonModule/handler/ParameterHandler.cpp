@@ -13,14 +13,14 @@ ScAddr ParameterHandler::updateMeasurableParameter(
 {
   ScAddr numberNode = this->numberHandler->getNumberNode(number);
   ScAddr parameterNode = getParameterNode(parameterClass, measurementRel, numberNode);
-  if (!this->context->CheckConnector(parameterNode, entity, ScType::EdgeAccessConstPosPerm))
+  if (!this->context->CheckConnector(parameterNode, entity, ScType::ConstPermPosArc))
   {
     ScAddr currentParameterNode = this->findParameterNodeByEntity(parameterClass, entity);
     if (currentParameterNode.IsValid())
     {
-      RelationUtils::eraseAllEdges(this->context, currentParameterNode, entity, ScType::EdgeAccessConstPosPerm);
+      RelationUtils::eraseAllEdges(this->context, currentParameterNode, entity, ScType::ConstPermPosArc);
     }
-    this->context->GenerateConnector(ScType::EdgeAccessConstPosPerm, parameterNode, entity);
+    this->context->GenerateConnector(ScType::ConstPermPosArc, parameterNode, entity);
   }
   return parameterNode;
 }
@@ -46,9 +46,9 @@ ScAddr ParameterHandler::findParameterNodeByNumber(
 {
   ScAddr parameterNode = ScAddr();
   ScTemplate scTemplate;
-  scTemplate.Triple(parameterClass, ScType::EdgeAccessVarPosPerm, ScType::NodeVar >> "_parameter_node");
+  scTemplate.Triple(parameterClass, ScType::VarPermPosArc, ScType::VarNode >> "_parameter_node");
   scTemplate.Quintuple(
-      "_parameter_node", ScType::EdgeDCommonVar, numberNode, ScType::EdgeAccessVarPosPerm, measurementRel);
+      "_parameter_node", ScType::VarCommonArc, numberNode, ScType::VarPermPosArc, measurementRel);
   ScAddrVector parameterNodes = ScTemplateUtils::getAllWithKey(this->context, scTemplate, "_parameter_node");
   if (parameterNodes.size() == 1)
     parameterNode = parameterNodes[0];
@@ -74,8 +74,8 @@ ScAddr ParameterHandler::findParameterNodeByEntity(const ScAddr & parameterClass
 {
   ScAddr parameterNode = ScAddr();
   ScTemplate scTemplate;
-  scTemplate.Triple(parameterClass, ScType::EdgeAccessVarPosPerm, ScType::NodeVar >> "_parameter_node");
-  scTemplate.Triple("_parameter_node", ScType::EdgeAccessVarPosPerm, entity);
+  scTemplate.Triple(parameterClass, ScType::VarPermPosArc, ScType::VarNode >> "_parameter_node");
+  scTemplate.Triple("_parameter_node", ScType::VarPermPosArc, entity);
   ScAddrVector parameterNodes = ScTemplateUtils::getAllWithKey(this->context, scTemplate, "_parameter_node");
   if (parameterNodes.size() == 1)
     parameterNode = parameterNodes[0];
@@ -103,9 +103,9 @@ ScAddr ParameterHandler::generateParameterNode(
     const ScAddr & numberNode)
 {
   ScTemplate scTemplate;
-  scTemplate.Triple(parameterClass, ScType::EdgeAccessVarPosPerm, ScType::NodeVar >> "_parameter_node");
+  scTemplate.Triple(parameterClass, ScType::VarPermPosArc, ScType::VarNode >> "_parameter_node");
   scTemplate.Quintuple(
-      "_parameter_node", ScType::EdgeDCommonVar, numberNode, ScType::EdgeAccessVarPosPerm, measurementRel);
+      "_parameter_node", ScType::VarCommonArc, numberNode, ScType::VarPermPosArc, measurementRel);
 
   ScTemplateGenResult genResult;
   this->context->GenerateByTemplate(scTemplate, genResult);

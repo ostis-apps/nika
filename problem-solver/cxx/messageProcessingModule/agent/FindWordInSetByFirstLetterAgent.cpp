@@ -24,7 +24,7 @@ ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const
   if (!m_context.CheckConnector(
           MessageProcessingKeynodes::concept_message_about_find_word_by_first_letter,
           messageAddr,
-          ScType::EdgeAccessConstPosPerm))
+          ScType::ConstPermPosArc))
   {
     SC_AGENT_LOG_DEBUG("The message isn’t about letter search");
     return action.FinishUnsuccessfully();
@@ -35,8 +35,8 @@ ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const
   {
     ScIterator3Ptr const & agentAnswerLinkIterator = m_context.CreateIterator3(
         MessageProcessingKeynodes::word_starts_with_required_letter_answer_phrase,
-        ScType::EdgeAccessConstPosPerm,
-        ScType::LinkConst);
+        ScType::ConstPermPosArc,
+        ScType::ConstNodeLink);
     if (agentAnswerLinkIterator->Next())
     {
       m_context.EraseElement(agentAnswerLinkIterator->Get(2));
@@ -48,7 +48,7 @@ ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const
         &m_context, messageAddr, dialogControlModule::MessageKeynodes::rrel_entity);
 
     ScIterator3Ptr const & entityNodesIterator =
-        m_context.CreateIterator3(entityAddr, ScType::EdgeAccessConstPosPerm, ScType::NodeConst);
+        m_context.CreateIterator3(entityAddr, ScType::ConstPermPosArc, ScType::ConstNode);
 
     std::string firstLetter;
     std::string firstWordLetter;
@@ -113,14 +113,14 @@ ScAddr FindWordInSetByFirstLetterAgent::GetActionClass() const
 
 ScAddrVector FindWordInSetByFirstLetterAgent::createAnswer(std::string const & linkContent) const
 {
-  ScAddr const & answerLink = m_context.GenerateLink(ScType::LinkConst);
+  ScAddr const & answerLink = m_context.GenerateLink(ScType::ConstNodeLink);
   m_context.SetLinkContent(answerLink, linkContent);
-  ScAddr const & edgeAccessConstPosPerm = m_context.GenerateConnector(
-      ScType::EdgeAccessConstPosPerm,
+  ScAddr const & ConstPermPosArc = m_context.GenerateConnector(
+      ScType::ConstPermPosArc,
       MessageProcessingKeynodes::word_starts_with_required_letter_answer_phrase,
       answerLink);
   return {
-      answerLink, edgeAccessConstPosPerm, MessageProcessingKeynodes::word_starts_with_required_letter_answer_phrase};
+      answerLink, ConstPermPosArc, MessageProcessingKeynodes::word_starts_with_required_letter_answer_phrase};
 }
 
 std::string FindWordInSetByFirstLetterAgent::getMessageText(ScAddr const & messageAddr) const

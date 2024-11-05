@@ -21,7 +21,7 @@ ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & eve
 
   ScAddr logicRuleNode = generateReplyMessage(messageNode);
   ScAddr replyMessageNode = IteratorUtils::getAnyByOutRelation(&m_context, messageNode, MessageKeynodes::nrel_reply);
-  m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyMessageNode);
+  m_context.GenerateConnector(ScType::ConstPermPosArc, MessageKeynodes::concept_message, replyMessageNode);
 
   if (!replyMessageNode.IsValid())
   {
@@ -50,7 +50,7 @@ ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & eve
   ScAddr responseNode = action.GetArgument(ScKeynodes::rrel_2);
 
   if (m_context.IsElement(responseNode))
-    m_context.GenerateConnector(ScType::EdgeAccessConstPosTemp, responseNode, replyMessageNode);
+    m_context.GenerateConnector(ScType::ConstTempPosArc, responseNode, replyMessageNode);
 
   action.SetResult(replyMessageNode);
   return action.FinishSuccessfully();
@@ -85,8 +85,8 @@ ScAddr StandardMessageReplyAgent::generateReplyMessage(const ScAddr & messageNod
 
 ScAddr StandardMessageReplyAgent::wrapInSet(ScAddr const & addr)
 {
-  ScAddr set = m_context.GenerateNode(ScType::NodeConstTuple);
-  m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, set, addr);
+  ScAddr set = m_context.GenerateNode(ScType::ConstNodeTuple);
+  m_context.GenerateConnector(ScType::ConstPermPosArc, set, addr);
   return set;
 }
 
@@ -103,11 +103,11 @@ ScAddr StandardMessageReplyAgent::generatePhraseAgentParametersNode(const ScAddr
   if (themeNode.IsValid())
     parameters.push_back(themeNode);
 
-  ScAddr parametersNode = m_context.GenerateNode(ScType::NodeConst);
+  ScAddr parametersNode = m_context.GenerateNode(ScType::ConstNode);
   for (auto & node : parameters)
   {
-    if (!m_context.CheckConnector(parametersNode, node, ScType::EdgeAccessConstPosPerm))
-      m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, parametersNode, node);
+    if (!m_context.CheckConnector(parametersNode, node, ScType::ConstPermPosArc))
+      m_context.GenerateConnector(ScType::ConstPermPosArc, parametersNode, node);
   }
 
   return parametersNode;

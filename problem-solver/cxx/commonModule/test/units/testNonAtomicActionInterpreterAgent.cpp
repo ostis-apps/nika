@@ -48,19 +48,19 @@ ScAction getFirstAction(ScAgentContext & context)
   ScTemplate scTemplate;
   scTemplate.Triple(
       context.SearchElementBySystemIdentifier("test_nonatomic_action"),
-      ScType::EdgeAccessVarPosPerm,
-      ScType::NodeVar >> "_nonAtomicAction");
+      ScType::VarPermPosArc,
+      ScType::VarNode >> "_nonAtomicAction");
   scTemplate.Quintuple(
-      ScType::NodeVar >> "_tuple",
-      ScType::EdgeDCommonVar,
+      ScType::VarNode >> "_tuple",
+      ScType::VarCommonArc,
       "_nonAtomicAction",
-      ScType::EdgeAccessVarPosPerm,
+      ScType::VarPermPosArc,
       Keynodes::nrel_decomposition_of_action);
   scTemplate.Quintuple(
       "_tuple",
-      ScType::EdgeAccessVarPosPerm,
-      ScType::NodeVar >> "_firstAction",
-      ScType::EdgeAccessVarPosPerm,
+      ScType::VarPermPosArc,
+      ScType::VarNode >> "_firstAction",
+      ScType::VarPermPosArc,
       ScKeynodes::rrel_1);
 
   ScTemplateSearchResult results;
@@ -93,9 +93,9 @@ TEST_F(NonAtomicActionInterpreterTest, checkDynamicArguments)
 
   ScIterator5Ptr iterator5 = context.CreateIterator5(
       action,
-      ScType::EdgeDCommonConst,
-      ScType::NodeConst,
-      ScType::EdgeAccessConstPosPerm,
+      ScType::ConstCommonArc,
+      ScType::ConstNode,
+      ScType::ConstPermPosArc,
       context.SearchElementBySystemIdentifier("nrel_goto"));
   EXPECT_TRUE(iterator5->Next());
   action = context.ConvertToAction(iterator5->Get(2));
@@ -105,12 +105,12 @@ TEST_F(NonAtomicActionInterpreterTest, checkDynamicArguments)
   ScTemplate scTemplate;
   scTemplate.Quintuple(
       action,
-      ScType::EdgeAccessVarPosPerm,
-      ScType::NodeVar >> "_dynamic_argument",
-      ScType::EdgeAccessVarPosPerm,
+      ScType::VarPermPosArc,
+      ScType::VarNode >> "_dynamic_argument",
+      ScType::VarPermPosArc,
       ScKeynodes::rrel_1);
   scTemplate.Triple(
-      "_dynamic_argument", ScType::EdgeAccessVarPosTemp, TestKeynodes::test_node >> "_dynamic_argument_value");
+      "_dynamic_argument", ScType::VarTempPosArc, TestKeynodes::test_node >> "_dynamic_argument_value");
   ScTemplateSearchResult results;
   context.SearchByTemplate(scTemplate, results);
   EXPECT_TRUE(results.Size() == 1);
@@ -140,9 +140,9 @@ TEST_F(NonAtomicActionInterpreterTest, checkThenSequence)
 
   ScIterator5Ptr iterator5 = context.CreateIterator5(
       action,
-      ScType::EdgeDCommonConst,
-      ScType::NodeConst,
-      ScType::EdgeAccessConstPosPerm,
+      ScType::ConstCommonArc,
+      ScType::ConstNode,
+      ScType::ConstPermPosArc,
       context.SearchElementBySystemIdentifier("nrel_then"));
   EXPECT_TRUE(iterator5->Next());
   action = context.ConvertToAction(iterator5->Get(2));
@@ -172,9 +172,9 @@ TEST_F(NonAtomicActionInterpreterTest, checkElseSequence)
 
   ScIterator5Ptr iterator5 = context.CreateIterator5(
       action,
-      ScType::EdgeDCommonConst,
-      ScType::NodeConst,
-      ScType::EdgeAccessConstPosPerm,
+      ScType::ConstCommonArc,
+      ScType::ConstNode,
+      ScType::ConstPermPosArc,
       context.SearchElementBySystemIdentifier("nrel_else"));
   EXPECT_TRUE(iterator5->Next());
   action = context.ConvertToAction(iterator5->Get(2));
@@ -207,9 +207,9 @@ TEST_F(NonAtomicActionInterpreterTest, checkGotoSequence)
 
   ScIterator5Ptr iterator5 = context.CreateIterator5(
       action,
-      ScType::EdgeDCommonConst,
-      ScType::NodeConst,
-      ScType::EdgeAccessConstPosPerm,
+      ScType::ConstCommonArc,
+      ScType::ConstNode,
+      ScType::ConstPermPosArc,
       context.SearchElementBySystemIdentifier("nrel_goto"));
   EXPECT_TRUE(iterator5->Next());
   action = context.ConvertToAction(iterator5->Get(2));
@@ -240,15 +240,15 @@ TEST_F(NonAtomicActionInterpreterTest, checkArgumentsMatching)
   ScTemplate scTemplate;
   scTemplate.Quintuple(
       action,
-      ScType::EdgeAccessVarPosPerm,
+      ScType::VarPermPosArc,
       context.SearchElementBySystemIdentifier("arg1"),
-      ScType::EdgeAccessVarPosPerm,
+      ScType::VarPermPosArc,
       ScKeynodes::rrel_1);
   scTemplate.Quintuple(
       action,
-      ScType::EdgeAccessVarPosPerm,
+      ScType::VarPermPosArc,
       context.SearchElementBySystemIdentifier("arg3"),
-      ScType::EdgeAccessVarPosPerm,
+      ScType::VarPermPosArc,
       ScKeynodes::rrel_2);
   ScTemplateSearchResult results;
   context.SearchByTemplate(scTemplate, results);
@@ -256,9 +256,9 @@ TEST_F(NonAtomicActionInterpreterTest, checkArgumentsMatching)
 
   ScIterator5Ptr iterator5 = context.CreateIterator5(
       action,
-      ScType::EdgeDCommonConst,
-      ScType::NodeConst,
-      ScType::EdgeAccessConstPosPerm,
+      ScType::ConstCommonArc,
+      ScType::ConstNode,
+      ScType::ConstPermPosArc,
       context.SearchElementBySystemIdentifier("nrel_goto"));
   EXPECT_TRUE(iterator5->Next());
   action = context.ConvertToAction(iterator5->Get(2));
@@ -266,9 +266,9 @@ TEST_F(NonAtomicActionInterpreterTest, checkArgumentsMatching)
 
   scTemplate.Quintuple(
       action,
-      ScType::EdgeAccessVarPosPerm,
+      ScType::VarPermPosArc,
       context.SearchElementBySystemIdentifier("arg2"),
-      ScType::EdgeAccessVarPosPerm,
+      ScType::VarPermPosArc,
       ScKeynodes::rrel_1);
   context.SearchByTemplate(scTemplate, results);
   EXPECT_TRUE(results.Size() == 1);

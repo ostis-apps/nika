@@ -19,7 +19,7 @@ ScResult AlternativeMessageTopicClassificationAgent::DoProgram(ScActionInitiated
     return action.FinishUnsuccessfully();
   }
 
-  ScAddr const & outputStructure = m_context.GenerateNode(ScType::NodeConstStruct);
+  ScAddr const & outputStructure = m_context.GenerateNode(ScType::ConstNodeStructure);
   inference::InferenceParams const & inferenceParams{
       MessageClassificationKeynodes::concept_classify_message_rule, {messageAddr}, {}, outputStructure};
   inference::InferenceConfig const & inferenceConfig{
