@@ -7,7 +7,7 @@ concept_country
     (* <- lang_en;; *);;
 
 nrel_include_city
-<- sc_node_norole_relation;
+<- sc_node_non_role_relation;
 => nrel_main_idtf:
     [Включать город]
     (* <- lang_ru;; *);
