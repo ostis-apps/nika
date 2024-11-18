@@ -47,6 +47,8 @@ target_link_libraries(
 	inferenceModule
 )
 
+set_target_properties(messageClassification PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${SC_EXTENSIONS})
+
 add_definitions(-DMESSAGE_CLASSIFICATION_CONFIG_PATH="${NIKA_ROOT}/nika.ini")
 
 if(${SC_BUILD_TESTS})

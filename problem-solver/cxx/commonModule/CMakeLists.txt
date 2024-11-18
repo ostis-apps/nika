@@ -38,6 +38,8 @@ add_library(common SHARED ${SOURCES} ${HEADERS})
 
 target_link_libraries(common sc-memory sc-agents-common nlohmann_json::nlohmann_json curl)
 
+set_target_properties(common PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${SC_EXTENSIONS})
+
 if(${SC_BUILD_TESTS})
     include(${CMAKE_CURRENT_LIST_DIR}/test/tests.cmake)
 endif()

@@ -23,6 +23,8 @@ add_library(messageProcessingModule SHARED ${SOURCES} ${HEADERS})
 
 target_link_libraries(messageProcessingModule sc-memory sc-agents-common common dialogControlModule)
 
+set_target_properties(messageProcessingModule PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${SC_EXTENSIONS})
+
 if(${SC_CLANG_FORMAT_CODE})
 	target_clangformat_setup(messageProcessingModule)
 endif()

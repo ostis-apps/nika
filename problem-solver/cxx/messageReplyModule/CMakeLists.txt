@@ -25,6 +25,8 @@ include_directories(
 add_library(messageReply SHARED ${SOURCES} ${HEADERS})
 target_link_libraries(messageReply sc-memory sc-agents-common common)
 
+set_target_properties(messageReply PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${SC_EXTENSIONS})
+
 if(${SC_BUILD_TESTS})
     include(${CMAKE_CURRENT_LIST_DIR}/test/tests.cmake)
 endif()

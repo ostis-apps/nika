@@ -1,8 +1,8 @@
 #include <sc-memory/sc_agent.hpp>
+#include <sc-memory/test/sc_test.hpp>
+#include <sc-builder/scs_loader.hpp>
 
 #include "sc-agents-common/utils/IteratorUtils.hpp"
-#include "sc-builder/src/scs_loader.hpp"
-#include "sc_test.hpp"
 
 #include "agent/DirectInferenceAgent.hpp"
 #include "agent/PhraseGenerationAgent.hpp"
