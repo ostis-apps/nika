@@ -16,9 +16,13 @@ public:
 
   static inline ScKeynode const nrel_set_power{"nrel_set_power", ScType::ConstNodeNonRole};
 
-  static inline ScKeynode const rrel_maximum_studied_object_class{"rrel_maximum_studied_object_class", ScType::ConstNodeRole};
+  static inline ScKeynode const rrel_maximum_studied_object_class{
+      "rrel_maximum_studied_object_class",
+      ScType::ConstNodeRole};
 
-  static inline ScKeynode const rrel_not_maximum_studied_object_class{"rrel_not_maximum_studied_object_class", ScType::ConstNodeRole};
+  static inline ScKeynode const rrel_not_maximum_studied_object_class{
+      "rrel_not_maximum_studied_object_class",
+      ScType::ConstNodeRole};
 };
 
 }  // namespace dialogControlModule
