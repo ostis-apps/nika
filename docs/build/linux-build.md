@@ -12,6 +12,39 @@ git submodule update --init --recursive
 ./scripts/install_py_sc_server_deps.sh
 ```
 
+## Rasa classifier installation
+
+- Directory selection and creation
+  ```sh
+  mkdir rasa_model
+  cd rasa_model
+  ```
+- Virtual environment creation and activation
+  ```sh
+  sudo apt install python3.8-venv
+  python3.8 -m venv ./venv
+  source ./venv/bin/activate
+  ```
+  
+- Rasa module installation
+  ```sh
+  pip install rasa
+  ```
+  
+- Rasa initialization 
+  ```sh
+  rasa init
+  rasa train nlu
+  rasa shell nlu
+  ```
+
+**Note**
+```sh
+rasa init
+```
+
+When running this command, 2 questions will be asked: choosing a folder for the classifier and offering to train the classifier immediately. There is no need to train the classifier, it should be done with the commands written above.
+
 ## Build
 
 - Build problem solver
@@ -46,7 +79,13 @@ git submodule update --init --recursive
   
   # Terminal 4
   ./scripts/run_interface.sh
+  
+  # Terminal 5
+  cd rasa_model
+  rasa run --enable-api -m models/
   ```
+
+In Terminal 5 after models/ should come name of the trained classifier model file. For example, nlu-20241129-200228-wooden-refund.tar.gz.
 
   This commands will launch 2 Web UIs on your machine:
 

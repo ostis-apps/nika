@@ -12,6 +12,39 @@ git submodule update --init --recursive
 ./scripts/install_py_sc_server_deps.sh
 ```
 
+## Установка Rasa классификатора
+
+- Выбор и создание папки
+  ```sh
+  mkdir rasa_model
+  cd rasa_model
+  ```
+- Создание и активация виртуального пространства
+  ```sh
+  sudo apt install python3.8-venv
+  python3.8 -m venv ./venv
+  source ./venv/bin/activate
+  ```
+  
+- Установка Rasa модуля
+  ```sh
+  pip install rasa
+  ```
+  
+- Инициализация Rasa 
+  ```sh
+  rasa init
+  rasa train nlu
+  rasa shell nlu
+  ```
+
+**Примечание**
+```sh
+rasa init
+```
+
+При запускее этой команды, будет задано 2 вопроса: выбор папки для классификатора и предложение сразу тренировать классификатор. Классификатор тренировать не надо, это стоит делать указанными командами выше. 
+
 ## Сборка
 
 - Сборка решателя задач
@@ -43,7 +76,13 @@ git submodule update --init --recursive
 
 # Терминал 3
 ./scripts/run_interface.sh
+
+# Терминал 4
+cd rasa_model
+rasa run --enable-api -m models/
 ```
+
+После models/ должен следовать файл заранее натренированной модели классификатора. Например, nlu-20241129-200228-wooden-refund.tar.gz.
 
   Данные команды запустят 2 следующих web-интерфейса:
 

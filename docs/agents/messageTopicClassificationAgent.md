@@ -16,6 +16,16 @@ The agent classifies a message using Wit.ai.
 
 * [Wit.ai](https://wit.ai/) - to classify message and get entities.
 
+**Wit.ai features**
+
+Unlike other available message classifier(Rasa) With.ai has the ability to determine the message trait. However, a significant disadvantage of using it is its dependence on an Internet connection. Also Wit.ai it has a pre-created interface for training an existing classifier.
+
+The json format of the response from the classifier:
+
+```json
+{"entities":{"rrel_entity:rrel_entity":[{"body":"Ника","confidence":1,"end":23,"entities":{},"id":"545916503952309","name":"rrel_entity","role":"rrel_entity","start":19,"type":"value","value":"Ника"}]},"intents":[{"confidence":1,"id":"271954618797345","name":"about_skill"}],"text":"На что разбивается Ника?","traits":{}}
+```
+
 **Comment:**
 
 * The input message must contain a text file with the text in Russian;
