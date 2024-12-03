@@ -2,25 +2,39 @@ set(INFERENCE_MODULE_SRC "${SUBSYSTEMS_PATH}/scl-machine/problem-solver/cxx/infe
 
 set(SOURCES
     "MessageClassificationModule.cpp"
-    "agent/MessageTopicClassificationAgent.cpp"
+    "agent/WitMessageTopicClassificationAgent.cpp"
+    "agent/RasaMessageTopicClassificationAgent.cpp"
     "agent/AlternativeMessageTopicClassificationAgent.cpp"
-    "classifier/MessageTopicClassifier.cpp"
+    "classifier/WitMessageTopicClassifier.cpp"
+    "classifier/RasaMessageTopicClassifier.cpp"
     "client/WitAiClient.cpp"
-    "manager/MessageTopicClassificationManager.cpp"
-    "constants/MessageClassificationConstants.cpp"
+    "client/RasaClient.cpp"
+    "manager/WitMessageTopicClassificationManager.cpp"
+    "manager/RasaMessageTopicClassificationManager.cpp"
+    "constants/WitMessageClassificationConstants.cpp"
+    "constants/RasaMessageClassificationConstants.cpp"
+    "helper/MessageClassificationHelper.cpp"
 )
 
 set(HEADERS
     "MessageClassificationModule.hpp"
     "keynodes/MessageClassificationKeynodes.hpp"
-    "agent/MessageTopicClassificationAgent.hpp"
+    # "agent/MessageTopicClassificationAgentInterface.hpp"
+    "agent/WitMessageTopicClassificationAgent.hpp"
+    "agent/RasaMessageTopicClassificationAgent.hpp"
     "agent/AlternativeMessageTopicClassificationAgent.hpp"
-    "classifier/MessageTopicClassifier.hpp"
+    "classifier/WitMessageTopicClassifier.hpp"
+    "classifier/RasaMessageTopicClassifier.hpp"
+    "client/ClientInterface.hpp"
     "client/WitAiClient.hpp"
+    "client/RasaClient.hpp"
     "keynodes/MessageClassificationKeynodes.hpp"
-    "manager/MessageTopicClassificationManager.hpp"
-    "client/WitAiClientInterface.hpp"
-    "constants/MessageClassificationConstants.hpp"
+    "manager/MessageTopicClassificationManagerInterface.hpp"
+    "manager/WitMessageTopicClassificationManager.hpp"
+    "manager/RasaMessageTopicClassificationManager.hpp"
+    "constants/WitMessageClassificationConstants.hpp"
+    "constants/RasaMessageClassificationConstants.hpp"
+    "helper/MessageClassificationHelper.hpp"
 )
 
 include_directories(

@@ -6,11 +6,12 @@ nrel_entity_possible_role
 <- asymmetric_relation;
 <- antitransitive_relation;
 => nrel_main_idtf:
-	[возможная роль сущности Wit.ai*]
+	[возможная роль сущности Wit.ai или Rasa*]
 	(* <- lang_ru;; *);
-	[Wit.ai entity possible role*]
+	[Wit.ai or Rasa entity possible role*]
 	(* <- lang_en;; *);
 => nrel_first_domain: wit_entity;
+=> nrel_first_domain: concept_rasa_entity;
 => nrel_second_domain: relation;
 => nrel_definitional_domain:
 	...
@@ -25,22 +26,22 @@ nrel_entity_possible_role
 	...
 	(*
 	=> nrel_main_idtf:
-		[Опр. (возможная роль сущности Wit.ai*)]
+		[Опр. (возможная роль сущности Wit.ai или Rasa*)]
 		(* <- lang_ru;; *);
-		[Def. (Wit.ai entity possible role*)]
+		[Def. (Wit.ai or Rasa entity possible role*)]
 		(* <- lang_en;; *);;
 	<- definition;;
 	<= nrel_sc_text_translation:
 		...
 		(*
 		-> rrel_example: 
-			[Возможная роль сущности Wit.ai* - отношение, связывающее сущность Wit.ai с соответствующим отношением.]
+			[Возможная роль сущности Wit.ai или Rasa* - отношение, связывающее сущность Wit.ai с соответствующим отношением.]
 			(* <- lang_ru;; *);;
 		*);
 		...
 		(*
 		-> rrel_example:
-			[A Wit.ai entity possible role* is a relation that connects a Wit.ai entity with the corresponding relation.]
+			[A Wit.ai or Rasa entity possible role* is a relation that connects a Wit.ai entity with the corresponding relation.]
 			(* <- lang_en;; *);;
 		*);;
 	<= nrel_using_constants:

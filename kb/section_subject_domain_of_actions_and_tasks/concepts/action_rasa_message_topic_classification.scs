@@ -1,0 +1,24 @@
+action_message_topic_classification
+<- sc_node_class;
+=> nrel_main_idtf:
+	[действие. классифицировать сообщение по теме с помощью Rasa](* <- lang_ru;; *);
+	[action. classify a message by topic with Rasa](* <- lang_en;; *);
+<- actions_class;
+<- atomic_action_class;
+<= nrel_inclusion: information_action;
+<- rrel_key_sc_element:
+	...
+	(*
+	<- explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+			-> rrel_example:
+				[Действие. классифицировать сообщение по теме с помощью Rasa - действие по классификации атомарного сообщения по теме с помощью классификатора Rasa.](* <- lang_ru;;	*);;
+		*);
+		...
+		(*
+			-> rrel_example:
+				[Action. classify a message by topic with Rasa is an action for classifying an atomic message by topic with the Rasa classifier.](* <- lang_en;; *);;
+		*);;
+	*);;

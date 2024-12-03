@@ -1,0 +1,52 @@
+nrel_rasa_idtf => nrel_main_idtf: [идентификатор Rasa*] (* <- lang_ru;; *);;
+nrel_rasa_idtf => nrel_main_idtf: [Rasa identifier*] (* <- lang_en;; *);;
+
+nrel_rasa_idtf <- definition;;
+
+nrel_rasa_idtf => nrel_main_idtf: [Опр.(идентификатор Rasa*)] (* <- lang_ru;; *);;
+nrel_rasa_idtf => nrel_main_idtf: [Def.(Rasa identifier*)] (* <- lang_en;; *);;
+ 
+nrel_rasa_idtf -> rrel_key_sc_element: nrel_rasa_idtf;;
+nrel_rasa_idtf <= nrel_sc_text_translation:
+	...
+	(*
+	-> rrel_example: 
+		[Идентификатор Rasa* - подмножество отношения идентификатор*, связывающее класс с соответствующим идентификатором Rasa.]
+		(* <- lang_ru;; *);;
+	*);
+	...
+	(*
+	-> rrel_example:
+		[A Rasa identifier* is a subset of the ID* relation, which connects a class with the corresponding Rasa identifier.]
+		(* <- lang_en;; *);;
+	*);;
+
+nrel_rasa_idtf <= nrel_using_constants:
+	{
+	    relation;
+	    nrel_idtf
+	};;	
+
+
+nrel_rasa_idtf => nrel_first_domain: sc_element;;
+	
+nrel_rasa_idtf => nrel_second_domain: sc_link;;
+
+nrel_rasa_idtf => nrel_definitional_domain: 
+	... 
+	(*
+        <= nrel_combination:
+            {
+                sc_element;
+                sc_link
+            };;
+	*);;	
+
+nrel_rasa_idtf <- relation;;
+nrel_rasa_idtf <- binary_relation;;
+nrel_rasa_idtf <- oriented_relation;;
+nrel_rasa_idtf <- antireflexive_relation;;
+nrel_rasa_idtf <- asymmetric_relation;;
+nrel_rasa_idtf <- antitransitive_relation;;
+
+nrel_idtf => nrel_inclusion: nrel_rasa_idtf;;
