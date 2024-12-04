@@ -1,9 +1,11 @@
 #include "StandardMessageReplyAgent.hpp"
 
 #include "sc-agents-common/utils/IteratorUtils.hpp"
+#include "sc-agents-common/utils/CommonUtils.hpp"
 
 #include "keynodes/InferenceKeynodes.hpp"
 #include "keynodes/MessageKeynodes.hpp"
+#include "keynodes/DialogKeynodes.hpp"
 #include "utils/ActionUtils.hpp"
 
 using namespace utils;
@@ -14,20 +16,79 @@ namespace dialogControlModule
 ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
   ScAddr messageNode = action.GetArgument(ScKeynodes::rrel_1);
-  if (!messageNode.IsValid())
+  if (!messageNode.IsValid())                                     //create reply default message structure 
+                                                                  //if it wasn't found by directInferenceAgent
   {
     SC_AGENT_LOG_DEBUG("The action doesn't have a message node");
   }
 
   ScAddr logicRuleNode = generateReplyMessage(messageNode);
-  ScAddr replyMessageNode = IteratorUtils::getAnyByOutRelation(&m_context, messageNode, MessageKeynodes::nrel_reply);
-  m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyMessageNode);
+  if (!m_context.IsElement(logicRuleNode))
+  {
+    SC_AGENT_LOG_WARNING("The reply message isn't generated because reply construction wasn't found through direct inference agent. Trying to generate default reply message");
+    std::stringstream setElementsTextStream;
+    ScAddrVector messageClasses;
+    setElementsTextStream << "Извините, я не нашла ответа на Ваш вопрос. Я определила, что данное сообщение является элементом классов:";
+    ScIterator3Ptr it3 = m_context.CreateIterator3(
+    ScType::NodeConst,
+    ScType::EdgeAccessConstPosPerm,
+    messageNode);
+    while (it3->Next())
+    {
+      messageClasses.push_back(it3->Get(0));
+    }
+    for (auto & messagClass : messageClasses)
+    {
+      if(CommonUtils::getMainIdtf(&m_context, messagClass, {ScKeynodes::lang_ru}) != "сообщение" && CommonUtils::getMainIdtf(&m_context, messagClass, {ScKeynodes::lang_ru}) != "")
+      setElementsTextStream  << CommonUtils::getMainIdtf(&m_context, messagClass, {ScKeynodes::lang_ru}) <<", ";
+    }
+    ScAddr const & defaultReplyMessage = m_context.GenerateNode(ScType::NodeConst);
+    ScAddr const & defaultReplyLink = m_context.GenerateLink(ScType::LinkConst);
+    std::string replyText = setElementsTextStream.str();
+    replyText[replyText.length() - 2] = '.';
+    m_context.SetLinkContent(defaultReplyLink, replyText);
+    ScTemplate T;
+    T.Triple(
+      ScKeynodes::lang_ru, 
+      ScType::EdgeAccessVarPosPerm, 
+      defaultReplyLink);
+    T.Triple(
+      ScType::NodeVar >> "_link",
+      ScType::EdgeAccessVarPosPerm,
+      defaultReplyLink
+    );
+    T.Quintuple(
+      "_link", 
+      ScType::EdgeDCommonVar, 
+      defaultReplyMessage, 
+      ScType::EdgeAccessVarPosPerm,
+      DialogKeynodes::nrel_sc_text_translation
+    );
+    T.Quintuple(
+      messageNode, 
+      ScType::EdgeDCommonVar,
+      defaultReplyMessage, 
+      ScType::EdgeAccessVarPosPerm, 
+      MessageKeynodes::nrel_reply
+    );
+    ScTemplateResultItem result;
+    m_context.GenerateByTemplate(T, result);
+    action.SetResult(defaultReplyMessage);
+    return action.FinishSuccessfully();
 
-  if (!replyMessageNode.IsValid())
+  }
+ ScAddr replyMessageNode = IteratorUtils::getAnyByOutRelation(&m_context, messageNode, MessageKeynodes::nrel_reply);
+   if (!replyMessageNode.IsValid())
   {
     SC_AGENT_LOG_ERROR("The reply message isn't generated");
     return action.FinishUnsuccessfully();
   }
+  else
+  {
+    if (m_context.GetElementType(replyMessageNode) == ScType::NodeConst)
+    SC_AGENT_LOG_DEBUG("Reply message node is const");
+  }
+  m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyMessageNode);
 
   SC_AGENT_LOG_DEBUG("The reply message is generated");
 
@@ -74,11 +135,30 @@ ScAddr StandardMessageReplyAgent::generateReplyMessage(const ScAddr & messageNod
   bool const result = actionDirectInference.InitiateAndWait(DIRECT_INFERENCE_AGENT_WAIT_TIME);
   if (result)
   {
-    ScAddr answer = IteratorUtils::getAnyByOutRelation(&m_context, actionDirectInference, ScKeynodes::nrel_result);
-    ScAddr solutionNode = IteratorUtils::getAnyFromSet(&m_context, answer);
-    ScAddr solutionTreeRoot = IteratorUtils::getAnyByOutRelation(&m_context, solutionNode, ScKeynodes::rrel_1);
-    if (solutionTreeRoot.IsValid())
-      logicRuleNode = IteratorUtils::getAnyByOutRelation(&m_context, solutionTreeRoot, ScKeynodes::rrel_1);
+    if (actionDirectInference.IsFinishedSuccessfully())
+                                                           //checking if DicrectInferenceAgent
+                                                           //performed successfully
+    {
+      ScAddr answer = IteratorUtils::getAnyByOutRelation(&m_context, actionDirectInference, ScKeynodes::nrel_result);
+      ScAddr solutionNode = IteratorUtils::getAnyFromSet(&m_context, answer);
+      ScAddr solutionTreeRoot = IteratorUtils::getAnyByOutRelation(&m_context, solutionNode, ScKeynodes::rrel_1);
+      if (solutionTreeRoot.IsValid())
+      {
+        ScAddr argNode = IteratorUtils::getAnyFromSet(&m_context, solutionTreeRoot);
+        ScAddrVector Arguments;
+        ScIterator3Ptr ArgIt = m_context.CreateIterator3(argNode, ScType::EdgeAccessConstPosPerm, ScType::NodeVar);
+        while (ArgIt ->Next())
+        {
+          Arguments.push_back(ArgIt->Get(2));
+        }
+        logicRuleNode = IteratorUtils::getAnyByOutRelation(&m_context, solutionTreeRoot, ScKeynodes::rrel_1);
+      }
+    }
+    else
+    {
+      return logicRuleNode;
+    }
+
   }
   return logicRuleNode;
 }

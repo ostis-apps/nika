@@ -1,0 +1,26 @@
+concept_phrase_about_unknown_intent
+<- sc_node_class;
+=> nrel_main_idtf:
+	[фраза о неизвестной цели сообщения]
+	(* <- lang_ru;; *);
+	[phrase_about_unknown_intent]
+	(* <- lang_en;; *);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (фраза о неизвестной цели сообщения)]
+		(* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Фраза о неизвестной цели сообщения - фраза, декларирующий ненахождения цели сообщения.]
+			(* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_phrase
+		};;
+	*);;
