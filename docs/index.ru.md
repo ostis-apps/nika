@@ -20,6 +20,7 @@
     * [Агент смены цвета компонента интерфейса](agents/changeInterfaceColorAgent.ru.md)
     * [Агент поиска слова по первой букве](agents/findWordInSetByFirstLetter.ru.md)
     * [Агент прогноза погоды](agents/weatherAgent.ru.md)
+    * [Агент распознавания речи](agents/audioRecognitionAgent.ru.md)
 
 - **Шаблоны**
     * [Шаблоны для базы знаний](patterns/kb-patterns.ru.md)
