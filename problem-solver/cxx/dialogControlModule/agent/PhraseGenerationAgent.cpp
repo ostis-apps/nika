@@ -17,7 +17,7 @@ using namespace utils;
 
 namespace dialogControlModule
 {
-
+/*Основная программа*/
 ScResult PhraseGenerationAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
   ScAddr const & replyMessageNode = action.GetArgument(ScKeynodes::rrel_1);
@@ -67,29 +67,29 @@ ScResult PhraseGenerationAgent::DoProgram(ScActionInitiatedEvent const & event, 
 
   return action.FinishSuccessfully();
 }
-
+/*Проверка вызвали ли этот агент*/
 ScAddr PhraseGenerationAgent::GetActionClass() const
 {
   return MessageKeynodes::action_phrase_generation;
 }
-
+/*Создание узла ответа*/
 ScAddr PhraseGenerationAgent::generateLinkByTemplate(
     const ScAddr & templateNode,
     const ScAddr & parametersNode,
-    const ScAddr & textTemplateLink)
+    const ScAddr & phraseLink)
 {
   commonModule::LinkHandler handler(&m_context);
   std::string textResult;
   ScAddr linkResult;
 
   std::string text;
-  m_context.GetLinkContent(textTemplateLink, text);
+  m_context.GetLinkContent(phraseLink, text);
   std::map<VariableType, std::vector<std::string>> variables = getTemplateVariables(text);
-  if (!variables.empty())
+  if (!variables.empty())                                                                  
   {
-    textResult = findResultText(templateNode, parametersNode, variables, text);
-  }
-  else
+    textResult = findResultText(templateNode, parametersNode, variables, text); 
+  }                                                                             
+  else                      
   {
     SC_AGENT_LOG_DEBUG("Text template doesn't have variables.");
     textResult = text;
@@ -104,25 +104,45 @@ ScAddr PhraseGenerationAgent::generateLinkByTemplate(
   return linkResult;
 }
 
+/*Создается словарь с элементами: вид переменной - названия переменных в регулярных выражениях(между {}) внутри phraseLink*/
 std::map<VariableType, std::vector<std::string>> PhraseGenerationAgent::getTemplateVariables(std::string const & text)
 {
   std::map<VariableType, std::vector<std::string>> variables;
 
-  std::vector<std::string> linksIdentifiers = getTemplateLinksVariables(text);
+  std::vector<std::string> linksIdentifiers = getVariableNames(text, PhraseGenerationAgent::LINK_VAR_REGULAR);
   if (!linksIdentifiers.empty())
   {
     variables.insert(std::make_pair(LINK, linksIdentifiers));
   }
 
-  std::vector<std::string> setElementsIdentifiers = getTemplateSetElementsVariables(text);
+  std::vector<std::string> setElementsIdentifiers = getVariableNames(text, PhraseGenerationAgent::SET_ELEMENTS_VAR_REGULAR);
   if (!setElementsIdentifiers.empty())
   {
     variables.insert(std::make_pair(SET_ELEMENTS, setElementsIdentifiers));
   }
 
+  std::vector<std::string> setPowerIdentifiers = getVariableNames(text, PhraseGenerationAgent::SET_POWER_REGULAR);
+  if (!setPowerIdentifiers.empty())
+  {
+    variables.insert(std::make_pair(SET_POWER, setPowerIdentifiers));
+  }
+
+  std::vector<std::string> classIdentifiers = getVariableNames(text, PhraseGenerationAgent::CLASS_REGULAR);
+  if (!classIdentifiers.empty())
+  {
+    variables.insert(std::make_pair(CLASS_FIND, classIdentifiers));
+  }
+
+  std::vector<std::string> subareaIdentifiers = getVariableNames(text, PhraseGenerationAgent::SUBAREA_REGULAR);
+  if (!subareaIdentifiers.empty())
+  {
+    variables.insert(std::make_pair(SUBAREA_FIND, subareaIdentifiers));
+  }
+
   return variables;
 }
 
+/*Поиск параметров и обработка переменных из templateNode*/
 std::string PhraseGenerationAgent::findResultText(
     const ScAddr & templateNode,
     const ScAddr & parametersNode,
@@ -149,11 +169,13 @@ std::string PhraseGenerationAgent::findResultText(
   return textResult;
 }
 
+/*Поиск параметров для обработки templateNode*/
 std::vector<ScTemplateParams> PhraseGenerationAgent::findParametersList(
     const ScAddr & templateNode,
     const ScAddr & parametersNode)
 {
   TemplateManager manager(&m_context);
+  /*Поиск узлов исходящих от parametersNode и запись их в аргументы TemplateManager*/
   ScAddrVector arguments = IteratorUtils::getAllWithType(&m_context, parametersNode, ScType::Node);
   manager.setArguments(arguments);
   std::vector<ScTemplateParams> parametersList;
@@ -163,47 +185,34 @@ std::vector<ScTemplateParams> PhraseGenerationAgent::findParametersList(
   }
   if (parametersList.empty())
   {
+    SC_AGENT_LOG_DEBUG("Didn't find any template parameters.");
     parametersList.emplace_back();
   }
   return parametersList;
 }
 
-std::vector<std::string> PhraseGenerationAgent::getTemplateLinksVariables(std::string const & text)
-{
+/*Получение названий переменных из регулярного выражения.
+Происходит изъятие названия переменной из ${}*/
+std::vector<std::string> PhraseGenerationAgent::getVariableNames(std::string const & text,  const std::string regular_str){
   std::vector<std::string> variables;
-  std::regex regular(PhraseGenerationAgent::MAIN_VAR_REGULAR);
+  std::regex regular(regular_str);
   std::smatch result;
-
+  std::size_t regularElementsBeforeNameSize = regular_str.length() - 8;
+  std::size_t regularElementsSize = regular_str.length() - 7;
   std::string::const_iterator searchStart(text.begin());
   while (regex_search(searchStart, text.cend(), result, regular))
   {
     std::string variable = result[0].str();
-    variable = variable.substr(2, variable.length() - 3);
+    variable = variable.substr(regularElementsBeforeNameSize, variable.length() - regularElementsSize);
     variables.push_back(variable);
     searchStart = result.suffix().first;
   }
 
   return variables;
-}
-
-std::vector<std::string> PhraseGenerationAgent::getTemplateSetElementsVariables(std::string const & text)
-{
-  std::vector<std::string> variables;
-  std::regex regularSetElements(PhraseGenerationAgent::SET_ELEMENTS_VAR_REGULAR);
-  std::smatch setElementsResult;
-
-  std::string::const_iterator searchSetElementsStart(text.begin());
-  while (regex_search(searchSetElementsStart, text.cend(), setElementsResult, regularSetElements))
-  {
-    std::string variable = setElementsResult[0].str();
-    variable = variable.substr(5, variable.length() - 6);
-    variables.push_back(variable);
-    searchSetElementsStart = setElementsResult.suffix().first;
   }
 
-  return variables;
-}
-
+/*Нахождение значений переменных.
+Генерация содержимого ссылки-результата и дополнение структуры ответа в базе знаний*/
 std::string PhraseGenerationAgent::processScTemplate(
     ScAddr const & templateNode,
     ScTemplateParams const & parameters,
@@ -213,7 +222,6 @@ std::string PhraseGenerationAgent::processScTemplate(
   std::string textResult;
 
   ScTemplate templateOption;
-
   m_context.BuildTemplate(templateOption, templateNode, parameters);
   m_context.SearchByTemplateInterruptibly(
       templateOption,
@@ -249,28 +257,43 @@ void PhraseGenerationAgent::generateSemanticEquivalent(const ScAddr & replyMessa
   m_context.GenerateByTemplate(semanticEquivalentStructure, result);
 }
 
+
+/*Обработка каждой переменной в зависимости от ее типа*/
 std::string PhraseGenerationAgent::generatePhraseAnswer(
     ScTemplateSearchResultItem const & phraseSemanticResult,
     std::map<VariableType, std::vector<std::string>> const & variables,
     std::string const & text)
 {
   std::string textResult = text;
-
-  auto const & linksIdentifiers = variables.find(LINK);
-  if (linksIdentifiers != variables.cend())
+  /*Поиск элементов в структуре, запрещающей работу с ее элементами.*/
+  PhraseGenerationAgent::findNotSearchableElements();
+  for (auto const& variable: variables)
   {
-    replaceLinksVariables(phraseSemanticResult, linksIdentifiers->second, textResult);
+    switch (variable.first)
+    {
+    case LINK:
+      replaceLinksVariables(phraseSemanticResult, variable.second, textResult);
+      break;
+    case SET_ELEMENTS:
+      replaceSetElementsVariables(phraseSemanticResult, variable.second, textResult);
+      break;
+    case SET_POWER:
+      replaceSetPowerVariables(phraseSemanticResult, variable.second, textResult);
+      break;
+    case CLASS_FIND:
+      replaceClassVariables(phraseSemanticResult, variable.second, textResult);
+      break;
+    case SUBAREA_FIND:
+      replaceSubareaVariables(phraseSemanticResult, variable.second, textResult);
+      break;
+    default:
+      break;
+    }
   }
-
-  auto const & setElementsIdentifiers = variables.find(SET_ELEMENTS);
-  if (setElementsIdentifiers != variables.cend())
-  {
-    replaceSetElementsVariables(phraseSemanticResult, setElementsIdentifiers->second, textResult);
-  }
-
   return textResult;
 }
 
+/*Обработка получения содержимого ссылки*/
 void PhraseGenerationAgent::replaceLinksVariables(
     ScTemplateSearchResultItem const & phraseSemanticResult,
     std::vector<std::string> const & variables,
@@ -292,6 +315,7 @@ void PhraseGenerationAgent::replaceLinksVariables(
   }
 }
 
+/*Обработка получения идентификаторов элементов декомпозиции*/
 void PhraseGenerationAgent::replaceSetElementsVariables(
     ScTemplateSearchResultItem const & phraseSemanticResult,
     std::vector<std::string> const & variables,
@@ -332,6 +356,127 @@ void PhraseGenerationAgent::replaceSetElementsVariables(
   }
 }
 
+/*Обработка получения мощности множества*/
+  void PhraseGenerationAgent::replaceSetPowerVariables(
+      ScTemplateSearchResultItem const & phraseSemanticResult,
+      std::vector<std::string> const & variables,
+      std::string & text)
+  {
+    for (std::string const & variable : variables)
+    {
+      if (!phraseSemanticResult.Has(variable))
+      {
+        text = "";
+        break;
+      }
+      ScAddr set = phraseSemanticResult[variable];
+      std::string strSetPower;
+      ScIterator5Ptr const & setIterator =
+        m_context.CreateIterator5(set, ScType::EdgeDCommon, ScType::LinkConst, ScType::EdgeAccessConstPosPerm, DialogKeynodes::nrel_set_power);
+      
+      if(!setIterator->Next()){
+      size_t setPower = CommonUtils::getSetPower(&m_context, set);
+      strSetPower = std::to_string(setPower);
+      ScAddr const & setPowerAddr = m_context.GenerateLink(ScType::LinkConst);
+      m_context.SetLinkContent(setPowerAddr, strSetPower);
+      ScAddr const & arcCommonAddr = m_context.GenerateConnector(ScType::EdgeDCommonConst, set, setPowerAddr);
+      ScAddr const & arcAccessAddr = m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, DialogKeynodes::nrel_set_power, arcCommonAddr);
+      m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, setPowerAddr);
+      m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, arcCommonAddr);
+      m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, DialogKeynodes::nrel_set_power);
+      m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, arcAccessAddr);
+      }
+      else
+      m_context.GetLinkContent(setIterator->Get(2), strSetPower);
+
+      std::string variableRegular =
+        regex_replace(PhraseGenerationAgent::SET_POWER_VAR_REGULAR, std::regex(PhraseGenerationAgent::VAR_CONST), variable);
+      text = regex_replace(text, std::regex(variableRegular), strSetPower);
+    }
+}
+
+/*Обработка получения идентификаторов надклассов*/
+void PhraseGenerationAgent::replaceClassVariables(
+    ScTemplateSearchResultItem const & phraseSemanticResult,
+    std::vector<std::string> const & variables,
+    std::string & text)
+{
+  std::stringstream classElementsTextStream;
+  for (std::string const & variable : variables)
+  {
+    if (!phraseSemanticResult.Has(variable))
+    {
+      text = "";
+      break;
+    }
+    ScAddr entity = phraseSemanticResult[variable];
+    ScIterator3Ptr const & classElementsIterator =
+        m_context.CreateIterator3(ScType::NodeClass, ScType::EdgeAccessConstPosPerm, entity);
+    while (classElementsIterator->Next())
+    {
+      if(std::find(PhraseGenerationAgent::notSearchable.begin(),PhraseGenerationAgent::notSearchable.end(), 
+      classElementsIterator->Get(0)) == PhraseGenerationAgent::notSearchable.end())
+      {
+      classElementsTextStream << CommonUtils::getMainIdtf(&m_context, classElementsIterator->Get(0), {ScKeynodes::lang_ru});
+      m_context.GenerateConnector(
+          ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, classElementsIterator->Get(0));
+      m_context.GenerateConnector(
+          ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, classElementsIterator->Get(1));
+      classElementsTextStream << ", ";
+      }
+    }
+    std::string result = classElementsTextStream.str();
+    if(result.size()>2)
+      result.erase(result.size() - 2);
+    std::string variableRegular = regex_replace(
+        PhraseGenerationAgent::CLASS_VAR_REGULAR, std::regex(PhraseGenerationAgent::VAR_CONST), variable);
+    text = regex_replace(text, std::regex(variableRegular), result);
+  }
+}
+
+/*Обработка получения идентификаторов предметных областей*/
+void PhraseGenerationAgent::replaceSubareaVariables(
+    ScTemplateSearchResultItem const & phraseSemanticResult,
+    std::vector<std::string> const & variables,
+    std::string & text)
+{
+  std::stringstream subareaElementsTextStream;
+  for (std::string const & variable : variables)
+  {
+    if (!phraseSemanticResult.Has(variable))
+    {
+      text = "";
+      break;
+    }
+    const ScAddr entity = phraseSemanticResult[variable];
+    /*для максимальных объектов исследования*/
+    ScAddrVector maxStudiedNodes = IteratorUtils::getAllByInRelation(&m_context, entity, DialogKeynodes::rrel_maximum_studied_object_class);
+    /*для немаксимальных объектов исследования*/
+    ScAddrVector notMaxStudiedNodes = IteratorUtils::getAllByInRelation(&m_context, entity, DialogKeynodes::rrel_not_maximum_studied_object_class);
+
+
+    if(!maxStudiedNodes.empty()){
+      for (ScAddr maxNode : maxStudiedNodes)
+      {
+        subareaElementsTextStream<<CommonUtils::getMainIdtf(&m_context, maxNode, {ScKeynodes::lang_ru})<<", ";
+      }
+    }
+    if(!notMaxStudiedNodes.empty()){
+      for (ScAddr notMaxNode : notMaxStudiedNodes)
+      {
+        subareaElementsTextStream<<CommonUtils::getMainIdtf(&m_context, notMaxNode, {ScKeynodes::lang_ru})<<", ";
+      }
+    }
+    std::string result = subareaElementsTextStream.str();
+    if(result.size()>2)
+      result.erase(result.size() - 2);
+    std::string variableRegular = regex_replace(
+        PhraseGenerationAgent::SUBAREA_VAR_REGULAR, std::regex(PhraseGenerationAgent::VAR_CONST), variable);
+    text = regex_replace(text, std::regex(variableRegular), result);
+  }
+}
+
+/*Расширение структуры ответа, изменение бз*/
 void PhraseGenerationAgent::updateSemanticAnswer(const ScTemplateSearchResultItem & phraseSemanticResult)
 {
   ScAddr const & phraseStruct = m_context.GenerateNode(ScType::NodeStruct);
@@ -341,22 +486,6 @@ void PhraseGenerationAgent::updateSemanticAnswer(const ScTemplateSearchResultIte
     m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, phraseStruct, phraseSemanticResult[i]);
     phraseElements.push_back(phraseSemanticResult[i]);
   }
-
-  ScAddrVector toRemoveNodes;
-  toRemoveNodes.insert(toRemoveNodes.end(), NODES_TO_REMOVE.begin(), NODES_TO_REMOVE.end());
-  for (auto node : NODES_TO_REMOVE_BY_CONCEPT)
-  {
-    addToRemoveNodes(phraseStruct, node, toRemoveNodes);
-  }
-
-  ScAddrVector toRemoveElements = toRemoveNodes;
-  ScAddrVector buffElements;
-  for (const auto & node : toRemoveNodes)
-  {
-    buffElements = this->getIncidentElements(node, phraseStruct);
-    toRemoveElements.insert(toRemoveElements.end(), buffElements.begin(), buffElements.end());
-  }
-
   for (auto & phraseElement : phraseElements)
   {
     m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::answer_structure, phraseElement);
@@ -365,6 +494,7 @@ void PhraseGenerationAgent::updateSemanticAnswer(const ScTemplateSearchResultIte
   m_context.EraseElement(phraseStruct);
 }
 
+/*Расширение структуры ответа на основе phraseLink*/
 void PhraseGenerationAgent::updateSemanticAnswer(const ScAddr & phraseAddr)
 {
   ScAddrVector phraseElements;
@@ -394,53 +524,12 @@ void PhraseGenerationAgent::updateSemanticAnswer(const ScAddr & phraseAddr)
   }
 }
 
-void PhraseGenerationAgent::addToRemoveNodes(
-    const ScAddr & structNode,
-    const ScAddr & conceptNode,
-    ScAddrVector & vector)
-{
-  ScTemplate templateNode;
-  templateNode.Triple(structNode, ScType::EdgeAccessVarPosPerm, ScType::Unknown >> "_node");
-  templateNode.Triple(conceptNode, ScType::EdgeAccessVarPosPerm, "_node");
-
-  ScTemplateSearchResult templateResult;
-  m_context.SearchByTemplate(templateNode, templateResult);
-
-  for (size_t i = 0; i < templateResult.Size(); i++)
-  {
-    vector.push_back(templateResult[i]["_node"]);
-  }
-}
-
-ScAddrVector PhraseGenerationAgent::getIncidentElements(const ScAddr & node, const ScAddr & structNode)
-{
-  ScAddrVector incidentElements;
-  ScAddrVector buffElements;
-
-  ScTemplate templateNode;
-  templateNode.Quintuple(
-      node, ScType::EdgeDCommonVar >> "_remove_arc_1", ScType::Unknown, ScType::EdgeAccessVarPosPerm, structNode);
-  buffElements = ScTemplateUtils::getAllWithKey(&m_context, templateNode, "_remove_arc_1");
-  incidentElements.insert(incidentElements.end(), buffElements.begin(), buffElements.end());
-
-  templateNode.Clear();
-  templateNode.Quintuple(
-      node, ScType::EdgeAccessVarPosPerm >> "_remove_arc_1", ScType::Unknown, ScType::EdgeAccessVarPosPerm, structNode);
-  buffElements = ScTemplateUtils::getAllWithKey(&m_context, templateNode, "_remove_arc_1");
-  incidentElements.insert(incidentElements.end(), buffElements.begin(), buffElements.end());
-
-  templateNode.Clear();
-  templateNode.Quintuple(
-      ScType::Unknown, ScType::EdgeDCommonVar >> "_remove_arc_1", node, ScType::EdgeAccessVarPosPerm, structNode);
-  buffElements = ScTemplateUtils::getAllWithKey(&m_context, templateNode, "_remove_arc_1");
-  incidentElements.insert(incidentElements.end(), buffElements.begin(), buffElements.end());
-
-  templateNode.Clear();
-  templateNode.Quintuple(
-      ScType::Unknown, ScType::EdgeAccessVarPosPerm >> "_remove_arc_1", node, ScType::EdgeAccessVarPosPerm, structNode);
-  buffElements = ScTemplateUtils::getAllWithKey(&m_context, templateNode, "_remove_arc_1");
-  incidentElements.insert(incidentElements.end(), buffElements.begin(), buffElements.end());
-
-  return incidentElements;
+void PhraseGenerationAgent::findNotSearchableElements(){ 
+  ScIterator3Ptr const & notSearchableStructItr =
+        m_context.CreateIterator3(DialogKeynodes::not_to_search_structure, ScType::EdgeAccessConstPosPerm, ScType::NodeConst);
+    while (notSearchableStructItr->Next())
+    {
+      PhraseGenerationAgent::notSearchable.push_back(notSearchableStructItr->Get(2));
+    }
 }
 }  // namespace dialogControlModule
