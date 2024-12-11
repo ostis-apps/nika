@@ -21,15 +21,16 @@ ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & eve
 
   ScAddr logicRuleNode = generateReplyMessage(messageNode);
   ScAddr replyMessageNode = IteratorUtils::getAnyByOutRelation(&m_context, messageNode, MessageKeynodes::nrel_reply);
-  m_context.GenerateConnector(ScType::ConstPermPosArc, MessageKeynodes::concept_message, replyMessageNode);
 
   if (!replyMessageNode.IsValid())
   {
-    SC_AGENT_LOG_ERROR("The reply message isn't generated");
+    SC_AGENT_LOG_ERROR("The reply message isn't generated. replyMessageNode is not valid.");
     return action.FinishUnsuccessfully();
   }
 
   SC_AGENT_LOG_DEBUG("The reply message is generated");
+
+  m_context.GenerateConnector(ScType::ConstPermPosArc, MessageKeynodes::concept_message, replyMessageNode);
 
   initFields();
   ScAddr langNode = langSearcher->getMessageLanguage(messageNode);

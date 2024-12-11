@@ -10,20 +10,19 @@ from sc_client.client import template_search
 from sc_kpm import ScAgentClassic, ScModule, ScResult, ScServer
 from sc_kpm.sc_sets import ScSet
 from sc_kpm.utils import (
-    create_link,
+    generate_link,
     get_link_content_data,
-    check_edge, create_edge,
-    delete_edges,
-    get_element_by_role_relation,
-    get_element_by_norole_relation,
-    get_system_idtf,
-    get_edge
+    check_connector, 
+    generate_connector,
+    erase_connectors,
+    search_element_by_non_role_relation,
+    get_element_system_identifier,
+    search_connector
 )
 from sc_kpm.utils.action_utils import (
-    create_action_answer,
+    generate_action_result,
     finish_action_with_status,
     get_action_arguments,
-    get_element_by_role_relation
 )
 from sc_kpm import ScKeynodes
 
@@ -55,7 +54,7 @@ class WeatherAgent(ScAgentClassic):
             message_type = ScKeynodes.resolve(
                 "concept_message_about_weather", sc_types.NODE_CONST_CLASS)
 
-            if not check_edge(sc_types.EDGE_ACCESS_VAR_POS_PERM, message_type, message_addr):
+            if not check_connector(sc_types.EDGE_ACCESS_VAR_POS_PERM, message_type, message_addr):
                 self.logger.info(
                     f"WeatherAgent: the message isn’t about weather")
                 return ScResult.OK
@@ -75,7 +74,7 @@ class WeatherAgent(ScAgentClassic):
 
             # if there is no such сity in country
             if not country_addr is None:
-                if not get_edge(country_addr, city_addr, sc_types.EDGE_D_COMMON_VAR):
+                if not search_connector(country_addr, city_addr, sc_types.EDGE_D_COMMON_VAR):
                     self.set_unknown_city_link(action_node, answer_phrase)
                     return ScResult.OK
 
@@ -84,7 +83,7 @@ class WeatherAgent(ScAgentClassic):
                 self.set_unknown_city_link(action_node, answer_phrase)
                 return ScResult.OK
             city_idtf_link = self.get_ru_idtf(city_addr)
-            answer_city_idtf_link = get_element_by_norole_relation(
+            answer_city_idtf_link = search_element_by_non_role_relation(
                 src=city_addr, nrel_node=idtf)
             if not city_idtf_link.is_valid():
                 self.set_unknown_city_link(action_node, answer_phrase)
@@ -100,13 +99,13 @@ class WeatherAgent(ScAgentClassic):
         except requests.exceptions.ConnectionError:
             self.logger.info(f"WeatherAgent: finished with connection error")
             return ScResult.ERROR
-        link = create_link(
+        link = generate_link(
             str(temperature), ScLinkContentType.STRING, link_type=sc_types.LINK_CONST)
-        temperature_edge = create_edge(
+        temperature_edge = generate_connector(
             sc_types.EDGE_D_COMMON_CONST, city_addr, link)
-        create_edge(
+        generate_connector(
             sc_types.EDGE_ACCESS_CONST_POS_PERM, nrel_temperature, temperature_edge)
-        create_action_answer(action_node, link)
+        generate_action_result(action_node, link)
 
         return ScResult.OK
 
@@ -129,7 +128,7 @@ class WeatherAgent(ScAgentClassic):
         main_data = weather_data["current_weather"]
         temperature = main_data["temperature"]
         self.logger.info(
-            f"WeatherAgent: The temperature in {get_system_idtf(city_addr)} is {temperature}°C")
+            f"WeatherAgent: The temperature in {get_element_system_identifier(city_addr)} is {temperature}°C")
         return temperature
 
     def set_unknown_city_link(self, action_node: ScAddr, answer_phrase: ScAddr) -> None:
@@ -137,9 +136,9 @@ class WeatherAgent(ScAgentClassic):
             "unknown_city_for_weather_agent_message_text", None)
         if not unknown_city_link.is_valid():
             raise
-        create_edge(
+        generate_connector(
             sc_types.EDGE_ACCESS_CONST_POS_PERM, answer_phrase, unknown_city_link)
-        create_action_answer(action_node, unknown_city_link)
+        generate_action_result(action_node, unknown_city_link)
 
     def get_ru_idtf(self, entity_addr: ScAddr) -> ScAddr:
         main_idtf = ScKeynodes.resolve(
@@ -157,11 +156,11 @@ class WeatherAgent(ScAgentClassic):
         search_results = template_search(template)
         for result in search_results:
             idtf = result[2]
-            lang_edge = get_edge(
+            lang_edge = search_connector(
                 lang_ru, idtf, sc_types.EDGE_ACCESS_VAR_POS_PERM)
             if lang_edge:
                 return idtf
-        return get_element_by_norole_relation(
+        return search_element_by_non_role_relation(
             src=entity_addr, nrel_node=main_idtf)
 
     def get_entity_addr(self, message_addr: ScAddr, rrel_entity: ScAddr):
@@ -184,7 +183,7 @@ class WeatherAgent(ScAgentClassic):
         if len(search_results) == 1:
             return entity, None
         # check country position in search_results
-        country_edge = get_edge(
+        country_edge = search_connector(
             concept_country, entity, sc_types.EDGE_ACCESS_VAR_POS_PERM)
         if country_edge:
             return search_results[1][2], entity
@@ -207,4 +206,4 @@ class WeatherAgent(ScAgentClassic):
         )
         search_results = template_search(template)
         for result in search_results:
-            delete_edges(result[0], result[2], sc_types.EDGE_D_COMMON_VAR)
+            erase_connectors(result[0], result[2], sc_types.EDGE_D_COMMON_VAR)
