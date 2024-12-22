@@ -24,5 +24,8 @@
 - **Patterns**
     * [Knowledge base patterns](patterns/kb-patterns.md)
 
+- **Guide** 
+    * [NIKA training guide](guide/training_guide.md)
+
 - **Subsystems**
     * [scl-machine](subsystems/scl-machine.md)

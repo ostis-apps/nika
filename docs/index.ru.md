@@ -12,7 +12,7 @@
     
 - **Агенты**
     * [Агент интерпретации неатомарных действий](agents/nonAtomicActionInterpretationAgent.ru.md)
-    * [Агент ответа на сообщениеt](agents/messageReplyAgent.ru.md)
+    * [Агент ответа на сообщение](agents/messageReplyAgent.ru.md)
     * [Агент генерации ответа на сообщение](agents/standardMessageReplyAgent.ru.md)
     * [Агент классификации сообщений с помощью Wit.ai](agents/messageTopicClassificationAgent.ru.md)
     * [Агент классификации сообщений с помощью логических правил](agents/alternativeMessageTopicClassificationAgent.ru.md)
@@ -23,6 +23,9 @@
 
 - **Шаблоны**
     * [Шаблоны для базы знаний](patterns/kb-patterns.ru.md)
+
+- **Guide** 
+    * [Гайд обучения](guide/training_guide.md)
 
 - **Подсистемы**
     * [scl-machine](subsystems/scl-machine.ru.md)
