@@ -1,4 +1,4 @@
-FROM ubuntu:focal as base
+FROM ubuntu:noble as base
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Moscow
 # install dependencies

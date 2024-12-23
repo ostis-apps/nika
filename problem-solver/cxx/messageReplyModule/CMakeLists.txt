@@ -16,13 +16,16 @@ set(HEADERS
 include_directories(
     ${CMAKE_CURRENT_LIST_DIR}
     ${SC_MEMORY_SRC}
-    ${SC_KPM_SRC}
-    ${SC_TOOLS_SRC}
+    ${SC_AGENTS_COMMON_PATH}
+    ${SC_CORE_PATH}
+    ${SC_BUILDER_PATH}
     ${SC_COMMON_MODULE_SRC}
 )
 
 add_library(messageReply SHARED ${SOURCES} ${HEADERS})
 target_link_libraries(messageReply sc-memory sc-agents-common common)
+
+set_target_properties(messageReply PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${SC_EXTENSIONS})
 
 if(${SC_BUILD_TESTS})
     include(${CMAKE_CURRENT_LIST_DIR}/test/tests.cmake)

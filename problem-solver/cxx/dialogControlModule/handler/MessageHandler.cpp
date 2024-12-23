@@ -48,9 +48,9 @@ bool MessageHandler::processReplyMessage(
   }
 
   clearSemanticAnswer();
-  context->GenerateConnector(ScType::EdgeAccessConstPosPerm, parametersNode, langNode);
+  context->GenerateConnector(ScType::ConstPermPosArc, parametersNode, langNode);
   if (context->CheckConnector(
-          MessageKeynodes::concept_atomic_message, replyMessageNode, ScType::EdgeAccessConstPosPerm))
+          MessageKeynodes::concept_atomic_message, replyMessageNode, ScType::ConstPermPosArc))
   {
     SC_LOG_DEBUG(getClassNameForLog() + ": The message is atomic");
     ScAddr phraseClassNode = phraseSearcher->getFirstPhraseClass(logicRuleNode);
@@ -86,7 +86,7 @@ bool MessageHandler::processAtomicMessage(
 void MessageHandler::clearSemanticAnswer()
 {
   ScTemplate clearAnswer;
-  clearAnswer.Triple(MessageKeynodes::answer_structure, ScType::EdgeAccessVarPosPerm >> "_remove_arc", ScType::Unknown);
+  clearAnswer.Triple(MessageKeynodes::answer_structure, ScType::VarPermPosArc >> "_remove_arc", ScType::Unknown);
 
   ScTemplateSearchResult clearAnswerResult;
   context->SearchByTemplate(clearAnswer, clearAnswerResult);

@@ -37,8 +37,8 @@ ScAddr LanguageSearcher::getLanguage(const ScAddr & node)
   ScAddr langNode;
   ScTemplate templateLang;
   ScTemplateSearchResult result;
-  templateLang.Triple(ScType::NodeVarClass >> lang, ScType::EdgeAccessVarPosPerm, node);
-  templateLang.Triple(Keynodes::languages, ScType::EdgeAccessVarPosPerm, lang);
+  templateLang.Triple(ScType::VarNodeClass >> lang, ScType::VarPermPosArc, node);
+  templateLang.Triple(Keynodes::languages, ScType::VarPermPosArc, lang);
 
   if (context->SearchByTemplate(templateLang, result))
     langNode = result[0][lang];

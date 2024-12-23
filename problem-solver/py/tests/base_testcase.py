@@ -1,7 +1,7 @@
 import logging
 from unittest import TestCase
 
-from sc_client.client import create_elements_by_scs
+from sc_client.client import generate_elements_by_scs
 from sc_kpm import ScServer
 from pathlib import Path
 from tests import TESTS_DIR
@@ -26,7 +26,7 @@ class BaseTestCase(TestCase):
                 for item in scs_file.split(separator)
                 if item and item != "\n"
             ]
-            return create_elements_by_scs(scs_lines)
+            return generate_elements_by_scs(scs_lines)
 
     def tearDown(self) -> None:
         self.server.disconnect()

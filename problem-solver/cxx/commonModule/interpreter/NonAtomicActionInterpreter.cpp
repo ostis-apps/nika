@@ -17,7 +17,7 @@ void NonAtomicActionInterpreter::interpret(ScAddr const & nonAtomicActionAddr)
   ScAddr action = getFirstSubAction(decompositionTuple);
   while (action.IsValid())
   {
-    if (!context->CheckConnector(decompositionTuple, action, ScType::EdgeAccessConstPosPerm))
+    if (!context->CheckConnector(decompositionTuple, action, ScType::ConstPermPosArc))
     {
       SC_THROW_EXCEPTION(utils::ExceptionItemNotFound, "Action is not belongs to nonatomic action decomposition.");
     }
@@ -50,13 +50,13 @@ void NonAtomicActionInterpreter::applyAction(ScAddr const & actionAddr)
 ScAddr NonAtomicActionInterpreter::getNextAction(ScAddr const & actionAddr)
 {
   ScAddr nextAction;
-  if (context->CheckConnector(ScKeynodes::action_finished_successfully, actionAddr, ScType::EdgeAccessConstPosPerm))
+  if (context->CheckConnector(ScKeynodes::action_finished_successfully, actionAddr, ScType::ConstPermPosArc))
   {
     SC_LOG_DEBUG(getClassNameForLog() + ": Atomic action finished successfully.");
     nextAction = getThenAction(actionAddr);
   }
   else if (context->CheckConnector(
-               ScKeynodes::action_finished_unsuccessfully, actionAddr, ScType::EdgeAccessConstPosPerm))
+               ScKeynodes::action_finished_unsuccessfully, actionAddr, ScType::ConstPermPosArc))
   {
     SC_LOG_DEBUG(getClassNameForLog() + ": Atomic action finished unsuccessfully.");
     nextAction = getElseAction(actionAddr);

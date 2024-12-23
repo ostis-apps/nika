@@ -12,13 +12,16 @@ set(HEADERS
 include_directories(
     ${CMAKE_CURRENT_LIST_DIR}
     ${SC_MEMORY_SRC}
-    ${SC_KPM_SRC}
-    ${SC_TOOLS_SRC}
+    ${SC_AGENTS_COMMON_PATH}
+    ${SC_CORE_PATH}
+    ${SC_BUILDER_PATH}
     ${SC_COMMON_MODULE_SRC}
 )
 
 add_library(interface SHARED ${SOURCES} ${HEADERS})
 target_link_libraries(interface sc-memory sc-agents-common common)
+
+set_target_properties(interface PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${SC_EXTENSIONS})
 
 if(${SC_CLANG_FORMAT_CODE})
     target_clangformat_setup(interface)

@@ -29,14 +29,17 @@ set(HEADERS
 include_directories(
     ${CMAKE_CURRENT_LIST_DIR}
     ${SC_MEMORY_SRC}
-    ${SC_KPM_SRC}
-    ${SC_TOOLS_SRC}
+    ${SC_AGENTS_COMMON_PATH}
+    ${SC_CORE_PATH}
+    ${SC_BUILDER_PATH}
     ${INFERENCE_MODULE_SRC}
     ${SC_COMMON_MODULE_SRC}
 )
 
 add_library(dialogControlModule SHARED ${SOURCES} ${HEADERS})
 target_link_libraries(dialogControlModule sc-memory sc-agents-common common sc-builder-lib inferenceModule)
+
+set_target_properties(dialogControlModule PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${SC_EXTENSIONS})
 
 if(${SC_BUILD_TESTS})
     include(${CMAKE_CURRENT_LIST_DIR}/test/tests.cmake)

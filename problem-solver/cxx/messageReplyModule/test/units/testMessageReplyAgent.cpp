@@ -1,7 +1,7 @@
 #include <sc-memory/sc_agent.hpp>
 
-#include "sc-builder/src/scs_loader.hpp"
-#include "sc_test.hpp"
+#include <sc-memory/test/sc_test.hpp>
+#include <sc-builder/scs_loader.hpp>
 
 #include "agent/MessageReplyAgent.hpp"
 #include "keynodes/Keynodes.hpp"
@@ -33,21 +33,21 @@ bool generatedMessageIsValid(ScMemoryContext * context, ScAddr const & soundLink
   ScTemplate scTemplate;
   scTemplate.Triple(
       messageReplyModule::MessageReplyKeynodes::concept_message,
-      ScType::EdgeAccessVarPosPerm,
-      ScType::NodeVar >> "_user_message");
+      ScType::VarPermPosArc,
+      ScType::VarNode >> "_user_message");
   scTemplate.Quintuple(
       "_user_message",
-      ScType::EdgeDCommonVar,
-      ScType::NodeVar,
-      ScType::EdgeAccessVarPosPerm,
+      ScType::VarCommonArc,
+      ScType::VarNode,
+      ScType::VarPermPosArc,
       messageReplyModule::MessageReplyKeynodes::nrel_authors);
   scTemplate.Quintuple(
-      ScType::NodeVar >> "_translation_node",
-      ScType::EdgeDCommonVar,
+      ScType::VarNode >> "_translation_node",
+      ScType::VarCommonArc,
       "_user_message",
-      ScType::EdgeAccessVarPosPerm,
+      ScType::VarPermPosArc,
       commonModule::Keynodes::nrel_sc_text_translation);
-  scTemplate.Triple("_translation_node", ScType::EdgeAccessVarPosPerm, soundLinkAddr);
+  scTemplate.Triple("_translation_node", ScType::VarPermPosArc, soundLinkAddr);
   ScTemplateSearchResult searchResult;
   context->SearchByTemplate(scTemplate, searchResult);
   return searchResult.Size() == 1;

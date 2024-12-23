@@ -9,11 +9,11 @@ ScResult CheckDynamicArgumentTestAgent::DoProgram(ScActionInitiatedEvent const &
   ScTemplate scTemplate;
   scTemplate.Quintuple(
       action,
-      ScType::EdgeAccessVarPosPerm,
-      ScType::NodeVar >> "_dynamic_argument",
-      ScType::EdgeAccessVarPosPerm,
+      ScType::VarPermPosArc,
+      ScType::VarNode >> "_dynamic_argument",
+      ScType::VarPermPosArc,
       ScKeynodes::rrel_1);
-  scTemplate.Triple("_dynamic_argument", ScType::EdgeAccessVarPosTemp, TestKeynodes::test_node);
+  scTemplate.Triple("_dynamic_argument", ScType::VarTempPosArc, TestKeynodes::test_node);
   ScTemplateSearchResult results;
   m_context.SearchByTemplate(scTemplate, results);
 

@@ -26,12 +26,13 @@ set(HEADERS
 include_directories(
     ${CMAKE_CURRENT_LIST_DIR}
     ${SC_MEMORY_SRC}
-    ${SC_KPM_SRC}
     ${SC_COMMON_MODULE_SRC}
     ${DIALOG_CONTROL_MODULE_SRC}
-    ${SC_TOOLS_SRC}/sc-config-utils
     ${GLIB2_INCLUDE_DIRS}
     ${INFERENCE_MODULE_SRC}
+    ${SC_AGENTS_COMMON_PATH}
+    ${SC_CORE_PATH}
+    ${SC_BUILDER_PATH}
 )
 
 add_library(messageClassification SHARED ${SOURCES} ${HEADERS})
@@ -42,9 +43,11 @@ target_link_libraries(
     sc-agents-common
     dialogControlModule
     messageReply
-    sc-config-utils
+    sc-config
 	inferenceModule
 )
+
+set_target_properties(messageClassification PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${SC_EXTENSIONS})
 
 add_definitions(-DMESSAGE_CLASSIFICATION_CONFIG_PATH="${NIKA_ROOT}/nika.ini")
 

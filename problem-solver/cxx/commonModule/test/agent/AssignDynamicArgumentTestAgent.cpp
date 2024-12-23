@@ -7,7 +7,7 @@ using namespace commonTest;
 ScResult AssignDynamicArgumentTestAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
   ScAddr dynamicArgument = action.GetArgument(ScKeynodes::rrel_1);
-  m_context.GenerateConnector(ScType::EdgeAccessConstPosTemp, dynamicArgument, TestKeynodes::test_node);
+  m_context.GenerateConnector(ScType::ConstTempPosArc, dynamicArgument, TestKeynodes::test_node);
 
   return action.FinishSuccessfully();
 }
