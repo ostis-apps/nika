@@ -14,7 +14,13 @@
     * [Агент интерпретации неатомарных действий](agents/nonAtomicActionInterpretationAgent.ru.md)
     * [Агент ответа на сообщениеt](agents/messageReplyAgent.ru.md)
     * [Агент генерации ответа на сообщение](agents/standardMessageReplyAgent.ru.md)
-    * [Агент классификации сообщений с помощью Wit.ai](agents/messageTopicClassificationAgent.ru.md)
+    * <details>	
+		<summary>Классификация сообщений по теме</summary>
+		<ul>
+		<li>[Агент классификации сообщений с помощью Wit.ai](agents/messageTopicClassificationAgent.ru.md)</li>
+		<li>[Агент классификации сообщений с помощью Rasa](agents/rasaMessageTopicClassificationAgent.ru.md)</li>
+		</ul>
+	</details>
     * [Агент классификации сообщений с помощью логических правил](agents/alternativeMessageTopicClassificationAgent.ru.md)
     * [Агент генерации фраз](agents/phraseGenerationAgent.ru.md)
     * [Агент смены цвета компонента интерфейса](agents/changeInterfaceColorAgent.ru.md)
@@ -26,3 +32,4 @@
 
 - **Подсистемы**
     * [scl-machine](subsystems/scl-machine.ru.md)
+

@@ -1,0 +1,36 @@
+concept_rasa_entity
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сущность Rasa]
+	(* <- lang_ru;; *);
+	[Rasa entity]
+	(* <- lang_en;; *);
+=> nrel_rasa_idtf:
+    [rrel_entity];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+		[Опр. (сущность Rasa)]
+		(* <- lang_ru;; *);
+		[Def. (Rasa entity)]
+		(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сущность Rasa - множество сущностей, выделенных в сообщении с помощью Rasa.]
+			(* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Rasa entity is a set of entities, defined in the message using Rasa.]
+			(* <- lang_en;; *);;
+		*);;
+	*);
+=> nrel_entity_possible_role: 
+	{
+		rrel_entity
+	};;

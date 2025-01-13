@@ -13,7 +13,7 @@ messageClassificationModule::WitAiClient::WitAiClient()
   witAiUrl = group["url"];
 }
 
-json messageClassificationModule::WitAiClient::getWitResponse(std::string const & messageText)
+json messageClassificationModule::WitAiClient::getResponse(std::string const & messageText)
 {
   json jsonResponse;
   try

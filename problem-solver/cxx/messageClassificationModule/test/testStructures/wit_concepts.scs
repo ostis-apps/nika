@@ -9,10 +9,14 @@ concept_greeting_message
         [greeting];
     => nrel_wit_ai_idtf:
         [start_greeting];;
+    => nrel_rasa_idtf:
+        [start_greeting];;
 
 concept_general_message_about_weather
     <- sc_node_class;
     => nrel_wit_ai_idtf:
+        [weather];
+    => nrel_rasa_idtf:
         [weather];;
 
 concept_trait_possible_class
@@ -25,12 +29,16 @@ concept_message_with_positive_emotional_coloring
     <- sc_node_class;
     => nrel_wit_ai_idtf:
         [positive];
+    => nrel_rasa_idtf:
+        [positive];
     <= nrel_inclusion:
         concept_message_with_emotional_coloring;;
 
 concept_message_with_neutral_emotional_coloring
     <- sc_node_class;
     => nrel_wit_ai_idtf:
+        [neutral];
+    => nrel_rasa_idtf:
         [neutral];
     <= nrel_inclusion:
         concept_message_with_emotional_coloring;;
@@ -39,24 +47,30 @@ concept_message_with_negative_emotional_coloring
     <- sc_node_class;
     => nrel_wit_ai_idtf:
         [negative];
+    => nrel_rasa_idtf:
+        [negative];
     <= nrel_inclusion:
         concept_message_with_emotional_coloring;;
 
 concept_message_with_emotional_coloring
     <- sc_node_class;
     => nrel_wit_ai_idtf:
-        [wit$sentiment];;
+        [wit$sentiment];
+    => nrel_rasa_idtf:
+        [rasa$sentiment];;
 
 concept_entity_possible_class
     <- sc_node_class;
     -> concept_wit_season;
     -> concept_wit_entity;
+    -> concept_rasa_entity;
     -> concept_human;;
 
 concept_human
     <- sc_node_class;
     => nrel_entity_possible_role: { rrel_contact };
     => nrel_wit_ai_idtf: [wit$contact];
+    => nrel_rasa_idtf: [rasa$contact];
     -> maksim;;
 
 maksim
@@ -68,11 +82,15 @@ maksim
 rrel_contact
     <- sc_node_role_relation;
     => nrel_wit_ai_idtf:
+        [contact];
+    => nrel_rasa_idtf:
         [contact];;
 
 concept_wit_season
     <- sc_node_class;
     => nrel_wit_ai_idtf:
+        [season];
+    => nrel_rasa_idtf:
         [season];
     => nrel_entity_possible_role: { rrel_season	};
     -> summer;;
@@ -94,7 +112,15 @@ concept_wit_entity
         [rrel_entity];
     => nrel_entity_possible_role: { rrel_entity	};;
 
+concept_rasa_entity
+    <- sc_node_class;
+    => nrel_rasa_idtf:
+        [rrel_entity];
+    => nrel_entity_possible_role: { rrel_entity	};;
+
 rrel_entity
     <- sc_node_role_relation;
     => nrel_wit_ai_idtf:
-        [rrel_entity];;
+        [rrel_entity];
+    => nrel_rasa_idtf:
+        [rrel_entity]

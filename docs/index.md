@@ -14,12 +14,18 @@
     * [Non-atomic action interpretation agent](agents/nonAtomicActionInterpretationAgent.md)
     * [Message reply agent](agents/messageReplyAgent.md)
     * [Standard message reply agent](agents/standardMessageReplyAgent.md)
-    * [Message topic classification agent](agents/messageTopicClassificationAgent.md)
-    * [Alternative message topic classification agent](agents/alternativeMessageTopicClassificationAgent.md)
-    * [Phrase generation agent](agents/phraseGenerationAgent.md)
-    * [Change interface color agent](agents/changeInterfaceColorAgent.md)
-    * [Find word in set by first letter agent](agents/findWordInSetByFirstLetter.md)
-    * [Weather agent](agents/weatherAgent.md)
+	* <details>	
+		<summary>Message topic classification</summary>
+		<ul>
+		<li>[Wit message topic classification agent](agents/messageTopicClassificationAgent.md)</li>
+		<li>[Rasa message topic classification agent](agents/rasaMessageTopicClassificationAgent.md)</li>
+		</ul>
+	</details>
+	* [Alternative message topic classification agent](agents/alternativeMessageTopicClassificationAgent.md)
+	* [Phrase generation agent](agents/phraseGenerationAgent.md)
+	* [Change interface color agent](agents/changeInterfaceColorAgent.md)
+	* [Find word in set by first letter agent](agents/findWordInSetByFirstLetter.md)
+	* [Weather agent](agents/weatherAgent.md)
 
 - **Patterns**
     * [Knowledge base patterns](patterns/kb-patterns.md)

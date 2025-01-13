@@ -10,13 +10,14 @@ using namespace messageClassificationModule;
 
 ScResult AlternativeMessageTopicClassificationAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
+  return action.FinishUnsuccessfully();
   ScAddrVector answerElements;
 
   ScAddr const & messageAddr = action.GetArgument(ScKeynodes::rrel_1);
   if (!messageAddr.IsValid())
   {
     SC_AGENT_LOG_ERROR("Action doesn't have a message node.");
-    return action.FinishUnsuccessfully();
+    return action.FinishSuccessfully();
   }
 
   ScAddr const & outputStructure = m_context.GenerateNode(ScType::NodeConstStruct);
@@ -53,7 +54,6 @@ ScResult AlternativeMessageTopicClassificationAgent::DoProgram(ScActionInitiated
 
   ActionUtils::wrapActionResultToScStructure(&m_context, action, answerElements);
 
-  return action.FinishSuccessfully();
 }
 
 ScAddr AlternativeMessageTopicClassificationAgent::GetActionClass() const

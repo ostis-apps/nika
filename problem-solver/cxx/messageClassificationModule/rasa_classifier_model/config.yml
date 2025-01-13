@@ -1,0 +1,21 @@
+language: ru, en
+
+pipeline:
+- name: WhitespaceTokenizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+- name: DIETClassifier
+  entity_recognition: true
+- name: RegexFeaturizer
+- name: EntitySynonymMapper
+- name: RegexEntityExtractor
+  use_lookup_tables: false
+  use_regexes: true
+
+policies:
+- name: MemoizationPolicy
+#- name: FallbackPolicy
+#  nlu_threshold: 0.4
+#  core_threshold: 0.3
+#  fallback_action_name: "action_default_fallback"
+assistant_id: 20241029-143355-closed-claim

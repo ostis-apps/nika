@@ -1,15 +1,15 @@
 #pragma once
 
-#include "client/WitAiClientInterface.hpp"
+#include "client/ClientInterface.hpp"
 
 namespace messageClassificationModule
 {
-class WitAiClient : public WitAiClientInterface
+class WitAiClient : public ClientInterface
 {
 public:
   WitAiClient();
 
-  json getWitResponse(std::string const & messageText) override;
+  json getResponse(std::string const & messageText) override;
 
   ~WitAiClient() override = default;
 

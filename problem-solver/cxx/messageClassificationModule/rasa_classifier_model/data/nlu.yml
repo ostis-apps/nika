@@ -1,0 +1,47 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - привет
+      - здравствуйте
+      - доброе утро
+
+  - intent: goodbye
+    examples: |
+      - пока
+      - до свидания
+      - до встречи
+
+#      каждое слово в вопросе разбивается отдельно
+  - intent: message_about_entity
+    examples: |
+      - Что такое [Ника](rrel_entity)?
+      - Что такое \b[а-яА-Я\s]*\s*\b(rrel_entity)?
+      - что такое \b[а-яА-Я\s]*\s*\b(rrel_entity)?      
+
+  - intent: message_about_weather
+    examples: |
+      - Какая погода в [Минск](rrel_entity) в [Беларусь](rrel_entity)?
+
+  - intent: color_message
+    examples: |
+      - Поменяй цвет [хедера](rrel_entity) на [fff](rrel_color)
+      - Поменяй цвет [строки](rrel_entity) на [abc](rrel_color)
+
+  - intent: test_intent
+    examples: |
+      - Это намерение тестовое
+
+#entities:
+#  - Минск
+
+
+# что такое
+# что умеет
+# на что разбивается
+# про погоду
+# поменять цвет интерфейса
+# про лабы по тпису: что нужно делать в () лабораторной
+# найди слово по первой букве: какие ты знаешь () на букву ().
+# что в примере(название множества) начинается на букву ()
