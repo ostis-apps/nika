@@ -1,11 +1,9 @@
 #include "FindWordInSetByFirstLetterAgent.hpp"
 
+#include "keynodes/MessageProcessingKeynodes.hpp"
+#include <common/utils/ActionUtils.hpp>
 #include <sc-agents-common/utils/CommonUtils.hpp>
 #include <sc-agents-common/utils/IteratorUtils.hpp>
-
-#include <common/utils/ActionUtils.hpp>
-
-#include "keynodes/MessageProcessingKeynodes.hpp"
 
 using namespace utils;
 
@@ -44,8 +42,8 @@ ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const
 
     messageSearcher = std::make_unique<MessageSearcher>(&m_context);
     std::string messageText = getMessageText(messageAddr);
-    ScAddr const & entityAddr = utils::IteratorUtils::getAnyByOutRelation(
-        &m_context, messageAddr, MessageProcessingKeynodes::rrel_entity);
+    ScAddr const & entityAddr =
+        utils::IteratorUtils::getAnyByOutRelation(&m_context, messageAddr, MessageProcessingKeynodes::rrel_entity);
 
     ScIterator3Ptr const & entityNodesIterator =
         m_context.CreateIterator3(entityAddr, ScType::EdgeAccessConstPosPerm, ScType::NodeConst);

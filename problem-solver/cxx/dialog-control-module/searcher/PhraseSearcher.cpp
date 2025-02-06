@@ -1,12 +1,10 @@
 #include "PhraseSearcher.hpp"
 
+#include "keynodes/MessageKeynodes.hpp"
 #include <algorithm>
 #include <chrono>
 #include <random>
-
 #include <sc-agents-common/utils/IteratorUtils.hpp>
-
-#include "keynodes/MessageKeynodes.hpp"
 
 using namespace dialogControlModule;
 

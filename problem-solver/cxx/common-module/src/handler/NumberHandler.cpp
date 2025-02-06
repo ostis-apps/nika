@@ -1,8 +1,7 @@
 #include "common/handler/NumberHandler.hpp"
 
-#include <sc-agents-common/utils/IteratorUtils.hpp>
-
 #include "common/keynodes/Keynodes.hpp"
+#include <sc-agents-common/utils/IteratorUtils.hpp>
 
 ScAddr commonModule::NumberHandler::getNumberNode(const double & number)
 {

@@ -1,12 +1,10 @@
 #include <sc-memory/sc_agent.hpp>
-
-#include <sc-builder/scs_loader.hpp>
 #include <sc-memory/test/sc_test.hpp>
-
-#include <common/handler/LinkHandler.hpp>
 
 #include "agent/PhraseGenerationAgent.hpp"
 #include "searcher/LanguageSearcher.hpp"
+#include <common/handler/LinkHandler.hpp>
+#include <sc-builder/scs_loader.hpp>
 
 using namespace dialogControlModule;
 using namespace commonModule;

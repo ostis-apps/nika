@@ -1,10 +1,8 @@
 #include "AlternativeMessageTopicClassificationAgent.hpp"
 
-#include <sc-agents-common/utils/IteratorUtils.hpp>
-
-#include <common/utils/ActionUtils.hpp>
-
 #include "keynodes/MessageClassificationKeynodes.hpp"
+#include <common/utils/ActionUtils.hpp>
+#include <sc-agents-common/utils/IteratorUtils.hpp>
 
 using namespace messageClassificationModule;
 
@@ -31,7 +29,7 @@ ScResult AlternativeMessageTopicClassificationAgent::DoProgram(ScActionInitiated
   //     inference::InferenceManagerFactory::constructDirectInferenceManagerAll(&m_context, inferenceConfig);
   try
   {
-    //iterationStrategy->applyInference(inferenceParams);
+    // iterationStrategy->applyInference(inferenceParams);
   }
   catch (utils::ScException & exception)
   {

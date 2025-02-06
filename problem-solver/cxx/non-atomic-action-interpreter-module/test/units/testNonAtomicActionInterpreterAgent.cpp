@@ -1,17 +1,15 @@
 #include <sc-memory/sc_agent.hpp>
-
-#include <sc-builder/scs_loader.hpp>
 #include <sc-memory/test/sc_test.hpp>
-
-#include "agent/NonAtomicActionInterpreterAgent.hpp"
-#include <common/keynodes/Keynodes.hpp>
 
 #include "agent/AssignDynamicArgumentTestAgent.hpp"
 #include "agent/CheckDynamicArgumentTestAgent.hpp"
+#include "agent/NonAtomicActionInterpreterAgent.hpp"
 #include "agent/QuestionFinishedSuccessfullyTestAgent.hpp"
 #include "agent/QuestionFinishedTestAgent.hpp"
 #include "agent/QuestionFinishedUnsuccessfullyTestAgent.hpp"
 #include "keynodes/TestKeynodes.hpp"
+#include <common/keynodes/Keynodes.hpp>
+#include <sc-builder/scs_loader.hpp>
 
 using namespace commonModule;
 

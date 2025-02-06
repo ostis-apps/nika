@@ -1,7 +1,7 @@
 #include "LanguageSearcher.hpp"
 
-#include <common/keynodes/Keynodes.hpp>
 #include "searcher/TokenDomainSearcher.hpp"
+#include <common/keynodes/Keynodes.hpp>
 
 using namespace commonModule;
 using namespace dialogControlModule;

@@ -1,10 +1,8 @@
 #include "common/searcher/MessageSearcher.hpp"
 
-#include <algorithm>
-
-#include <sc-agents-common/utils/IteratorUtils.hpp>
-
 #include "common/keynodes/Keynodes.hpp"
+#include <algorithm>
+#include <sc-agents-common/utils/IteratorUtils.hpp>
 
 using namespace commonModule;
 

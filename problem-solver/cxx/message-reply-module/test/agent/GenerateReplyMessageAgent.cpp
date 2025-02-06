@@ -1,8 +1,7 @@
 #include "GenerateReplyMessageAgent.hpp"
 
-#include <sc-agents-common/utils/IteratorUtils.hpp>
-
 #include "keynodes/MessageReplyKeynodes.hpp"
+#include <sc-agents-common/utils/IteratorUtils.hpp>
 
 using namespace messageReplyModuleTest;
 

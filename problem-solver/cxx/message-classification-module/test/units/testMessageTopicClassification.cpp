@@ -1,8 +1,8 @@
 #include <sc-memory/test/sc_test.hpp>
-#include <sc-builder/scs_loader.hpp>
 
 #include "WitAiCkientMock.hpp"
 #include "classifier/MessageTopicClassifier.hpp"
+#include <sc-builder/scs_loader.hpp>
 
 using namespace messageClassificationModule;
 

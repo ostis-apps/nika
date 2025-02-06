@@ -1,10 +1,9 @@
 #include <sc-memory/sc_agent.hpp>
-
-#include <sc-agents-common/utils/IteratorUtils.hpp>
-#include <sc-builder/scs_loader.hpp>
 #include <sc-memory/test/sc_test.hpp>
 
 #include "agent/FindWordInSetByFirstLetterAgent.hpp"
+#include <sc-agents-common/utils/IteratorUtils.hpp>
+#include <sc-builder/scs_loader.hpp>
 
 namespace messageProcessingModuleTest
 {

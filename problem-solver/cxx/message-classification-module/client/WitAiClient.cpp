@@ -1,13 +1,13 @@
 #include "WitAiClient.hpp"
 
-#include <sc-config/sc_config.hpp>
 #include <sc-memory/utils/sc_logger.hpp>
 
 #include <common/http/sc_http_request.hpp>
+#include <sc-config/sc_config.hpp>
 
 messageClassificationModule::WitAiClient::WitAiClient()
 {
-  ScConfig config{""};//{MESSAGE_CLASSIFICATION_CONFIG_PATH};
+  ScConfig config{""};  //{MESSAGE_CLASSIFICATION_CONFIG_PATH};
   ScConfigGroup group{config["wit-ai"]};
   witAiServerToken = group["server_token"];
   witAiUrl = group["url"];

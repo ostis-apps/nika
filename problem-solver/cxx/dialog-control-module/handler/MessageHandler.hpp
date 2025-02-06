@@ -1,8 +1,7 @@
-#include <common/searcher/MessageSearcher.hpp>
-
 #include "generator/MessageConstructionsGenerator.hpp"
 #include "searcher/LanguageSearcher.hpp"
 #include "searcher/PhraseSearcher.hpp"
+#include <common/searcher/MessageSearcher.hpp>
 
 using namespace commonModule;
 

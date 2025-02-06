@@ -1,8 +1,7 @@
 #include "ChangeInterfaceColorAgent.hpp"
 
-#include <sc-agents-common/utils/IteratorUtils.hpp>
-
 #include "keynodes/InterfaceKeynodes.hpp"
+#include <sc-agents-common/utils/IteratorUtils.hpp>
 
 using namespace interfaceModule;
 

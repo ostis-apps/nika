@@ -2,9 +2,8 @@
 
 #include <sc-memory/sc_agent_context.hpp>
 
-#include <common/searcher/MessageSearcher.hpp>
-
 #include "client/WitAiClientInterface.hpp"
+#include <common/searcher/MessageSearcher.hpp>
 
 using namespace commonModule;
 

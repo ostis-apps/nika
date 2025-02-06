@@ -1,8 +1,7 @@
 #include "NonAtomicActionInterpreter.hpp"
 
-#include <sc-agents-common/utils/IteratorUtils.hpp>
-
 #include <common/keynodes/Keynodes.hpp>
+#include <sc-agents-common/utils/IteratorUtils.hpp>
 
 using namespace commonModule;
 NonAtomicActionInterpreter::NonAtomicActionInterpreter(ScAgentContext * context)

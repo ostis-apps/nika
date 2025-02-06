@@ -1,13 +1,12 @@
 #include <sc-memory/sc_agent.hpp>
-
-#include <sc-agents-common/utils/IteratorUtils.hpp>
-#include <sc-builder/scs_loader.hpp>
 #include <sc-memory/test/sc_test.hpp>
 
 #include "agent/PhraseGenerationAgent.hpp"
 #include "agent/StandardMessageReplyAgent.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 #include "searcher/TokenDomainSearcher.hpp"
+#include <sc-agents-common/utils/IteratorUtils.hpp>
+#include <sc-builder/scs_loader.hpp>
 
 using namespace dialogControlModule;
 

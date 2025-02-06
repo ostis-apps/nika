@@ -1,17 +1,14 @@
 #include "PhraseGenerationAgent.hpp"
 
-#include <regex>
-
-#include <sc-agents-common/utils/CommonUtils.hpp>
-#include <sc-agents-common/utils/GenerationUtils.hpp>
-#include <sc-agents-common/utils/IteratorUtils.hpp>
-
-#include <common/handler/LinkHandler.hpp>
-#include <common/utils/ScTemplateUtils.hpp>
-
 #include "keynodes/DialogKeynodes.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 #include "searcher/LanguageSearcher.hpp"
+#include <common/handler/LinkHandler.hpp>
+#include <common/utils/ScTemplateUtils.hpp>
+#include <regex>
+#include <sc-agents-common/utils/CommonUtils.hpp>
+#include <sc-agents-common/utils/GenerationUtils.hpp>
+#include <sc-agents-common/utils/IteratorUtils.hpp>
 
 using namespace utils;
 
@@ -153,13 +150,13 @@ std::vector<ScTemplateParams> PhraseGenerationAgent::findParametersList(
     const ScAddr & templateNode,
     const ScAddr & parametersNode)
 {
-  //TemplateManager manager(&m_context);
+  // TemplateManager manager(&m_context);
   ScAddrVector arguments = IteratorUtils::getAllWithType(&m_context, parametersNode, ScType::Node);
-  //manager.setArguments(arguments);
+  // manager.setArguments(arguments);
   std::vector<ScTemplateParams> parametersList;
   if (parametersNode.IsValid())
   {
-    //parametersList = manager.createTemplateParams(templateNode);
+    // parametersList = manager.createTemplateParams(templateNode);
   }
   if (parametersList.empty())
   {

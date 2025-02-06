@@ -19,7 +19,7 @@ public:
       "word_starts_with_required_letter_answer_phrase",
       ScType::NodeConstClass};
 
-   static inline ScKeynode const rrel_entity{"rrel_entity"};
+  static inline ScKeynode const rrel_entity{"rrel_entity"};
 };
 
 }  // namespace messageProcessingModule

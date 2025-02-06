@@ -1,9 +1,8 @@
 #include "NonAtomicActionInterpreterAgent.hpp"
 
-#include <sc-agents-common/utils/IteratorUtils.hpp>
-
 #include <common/keynodes/Keynodes.hpp>
 #include <common/utils/RelationUtils.hpp>
+#include <sc-agents-common/utils/IteratorUtils.hpp>
 
 using namespace commonModule;
 

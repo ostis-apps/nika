@@ -1,10 +1,8 @@
 #include "TokenDomainSearcher.hpp"
 
-#include <stdexcept>
-
-#include <sc-agents-common/utils/IteratorUtils.hpp>
-
 #include "keynodes/DialogKeynodes.hpp"
+#include <sc-agents-common/utils/IteratorUtils.hpp>
+#include <stdexcept>
 
 using namespace dialogControlModule;
 using namespace utils;

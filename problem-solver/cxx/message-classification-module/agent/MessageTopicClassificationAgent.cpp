@@ -1,9 +1,8 @@
 #include "MessageTopicClassificationAgent.hpp"
 
-#include <common/utils/ActionUtils.hpp>
-
 #include "client/WitAiClient.hpp"
 #include "keynodes/MessageClassificationKeynodes.hpp"
+#include <common/utils/ActionUtils.hpp>
 
 using namespace messageClassificationModule;
 

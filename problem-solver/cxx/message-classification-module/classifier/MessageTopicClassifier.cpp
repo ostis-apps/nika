@@ -1,13 +1,11 @@
 #include "MessageTopicClassifier.hpp"
 
-#include <sc-agents-common/utils/CommonUtils.hpp>
-#include <sc-agents-common/utils/IteratorUtils.hpp>
-
-#include <common/keynodes/Keynodes.hpp>
-#include <common/searcher/MessageSearcher.hpp>
-
 #include "constants/MessageClassificationConstants.hpp"
 #include "keynodes/MessageClassificationKeynodes.hpp"
+#include <common/keynodes/Keynodes.hpp>
+#include <common/searcher/MessageSearcher.hpp>
+#include <sc-agents-common/utils/CommonUtils.hpp>
+#include <sc-agents-common/utils/IteratorUtils.hpp>
 
 using namespace commonModule;
 

@@ -1,11 +1,10 @@
 #include <sc-memory/sc_agent.hpp>
-
-#include <sc-builder/scs_loader.hpp>
 #include <sc-memory/test/sc_test.hpp>
 
+#include "agent/GenerateReplyMessageAgent.hpp"
 #include "agent/MessageReplyAgent.hpp"
 #include "keynodes/MessageReplyKeynodes.hpp"
-#include "agent/GenerateReplyMessageAgent.hpp"
+#include <sc-builder/scs_loader.hpp>
 
 namespace messageReplyModuleTest
 {
