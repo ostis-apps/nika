@@ -11,6 +11,7 @@ class nikaRecipe(ConanFile):
     
     def requirements(self):
         self.requires("sc-machine/0.10.0")
+        self.requires("scl-machine/0.2.0")
         self.requires("nlohmann_json/3.11.3")
         self.requires("libcurl/8.11.1")
 

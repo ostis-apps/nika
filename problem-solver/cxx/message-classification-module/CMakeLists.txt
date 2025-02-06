@@ -26,6 +26,7 @@ find_package(nlohmann_json REQUIRED)
 add_library(message-classification-module SHARED ${SOURCES} ${HEADERS})
 target_link_libraries(message-classification-module
     LINK_PUBLIC sc-machine::sc-config
+    LINK_PUBLIC scl-machine::inference
     LINK_PUBLIC common
     LINK_PUBLIC nlohmann_json::nlohmann_json
 )

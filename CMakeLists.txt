@@ -72,6 +72,7 @@ set(CMAKE_BUILD_RPATH_USE_ORIGIN TRUE)
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 find_package(sc-machine REQUIRED)
+find_package(scl-machine REQUIRED)
 
 add_subdirectory(problem-solver)
 
