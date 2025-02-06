@@ -5,6 +5,7 @@
 #include "agent/StandardMessageReplyAgent.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 #include "searcher/TokenDomainSearcher.hpp"
+#include <inference/direct_inference_agent.hpp>
 #include <sc-agents-common/utils/IteratorUtils.hpp>
 #include <sc-builder/scs_loader.hpp>
 
@@ -24,14 +25,14 @@ using StandardMessageReplyTest = ScMemoryTest;
 
 void initialize(ScAgentContext & context)
 {
-  // context.SubscribeAgent<DirectInferenceAgent>();
+  context.SubscribeAgent<inference::DirectInferenceAgent>();
   context.SubscribeAgent<PhraseGenerationAgent>();
   context.SubscribeAgent<StandardMessageReplyAgent>();
 }
 
 void shutdown(ScAgentContext & context)
 {
-  // context.UnsubscribeAgent<DirectInferenceAgent>();
+  context.UnsubscribeAgent<inference::DirectInferenceAgent>();
   context.UnsubscribeAgent<PhraseGenerationAgent>();
   context.UnsubscribeAgent<StandardMessageReplyAgent>();
 }
@@ -135,12 +136,12 @@ TEST_F(StandardMessageReplyTest, SystemDoesNotHaveTemplateForMessage)
   ScAction testAction = context.ConvertToAction(testActionNode);
 
   context.SubscribeAgent<StandardMessageReplyAgent>();
-  // context.SubscribeAgent<DirectInferenceAgent>();
+  context.SubscribeAgent<inference::DirectInferenceAgent>();
 
   EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
   EXPECT_TRUE(testAction.IsFinishedWithError());
 
-  // context.UnsubscribeAgent<DirectInferenceAgent>();
+  context.UnsubscribeAgent<inference::DirectInferenceAgent>();
   context.UnsubscribeAgent<StandardMessageReplyAgent>();
 }
 
@@ -158,10 +159,10 @@ TEST_F(StandardMessageReplyTest, MessagesLanguageIsNotFound)
   ScAction testAction = context.ConvertToAction(testActionNode);
 
   context.SubscribeAgent<StandardMessageReplyAgent>();
-  // context.SubscribeAgent<DirectInferenceAgent>();
+  context.SubscribeAgent<inference::DirectInferenceAgent>();
   EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
   EXPECT_TRUE(testAction.IsFinishedUnsuccessfully());
-  // context.UnsubscribeAgent<DirectInferenceAgent>();
+  context.UnsubscribeAgent<inference::DirectInferenceAgent>();
   context.UnsubscribeAgent<StandardMessageReplyAgent>();
 }
 
@@ -179,11 +180,11 @@ TEST_F(StandardMessageReplyTest, FirstMessageIsNotFound)
   ScAction testAction = context.ConvertToAction(testActionNode);
 
   context.SubscribeAgent<StandardMessageReplyAgent>();
-  // context.SubscribeAgent<DirectInferenceAgent>();
+  context.SubscribeAgent<inference::DirectInferenceAgent>();
   EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
   EXPECT_TRUE(testAction.IsFinishedUnsuccessfully());
   context.UnsubscribeAgent<StandardMessageReplyAgent>();
-  // context.UnsubscribeAgent<DirectInferenceAgent>();
+  context.UnsubscribeAgent<inference::DirectInferenceAgent>();
 }
 
 TEST_F(StandardMessageReplyTest, FirstPhraseClassIsNotFound)
@@ -200,13 +201,13 @@ TEST_F(StandardMessageReplyTest, FirstPhraseClassIsNotFound)
   ScAction testAction = context.ConvertToAction(testActionNode);
 
   context.SubscribeAgent<StandardMessageReplyAgent>();
-  // context.SubscribeAgent<DirectInferenceAgent>();
+  context.SubscribeAgent<inference::DirectInferenceAgent>();
 
   EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
   EXPECT_TRUE(testAction.IsFinishedUnsuccessfully());
 
   context.UnsubscribeAgent<StandardMessageReplyAgent>();
-  // context.UnsubscribeAgent<DirectInferenceAgent>();
+  context.UnsubscribeAgent<inference::DirectInferenceAgent>();
 }
 
 TEST_F(StandardMessageReplyTest, PhraseForMessageIsNotFound)
@@ -223,11 +224,11 @@ TEST_F(StandardMessageReplyTest, PhraseForMessageIsNotFound)
   ScAction testAction = context.ConvertToAction(testActionNode);
 
   context.SubscribeAgent<StandardMessageReplyAgent>();
-  // context.SubscribeAgent<DirectInferenceAgent>();
+  context.SubscribeAgent<inference::DirectInferenceAgent>();
   EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
   EXPECT_TRUE(testAction.IsFinishedUnsuccessfully());
   context.UnsubscribeAgent<StandardMessageReplyAgent>();
-  // context.UnsubscribeAgent<DirectInferenceAgent>();
+  context.UnsubscribeAgent<inference::DirectInferenceAgent>();
 }
 
 TEST_F(StandardMessageReplyTest, LinkByPhraseIsNotGenerated)

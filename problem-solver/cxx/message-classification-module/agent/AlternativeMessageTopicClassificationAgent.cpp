@@ -2,10 +2,9 @@
 
 #include "keynodes/MessageClassificationKeynodes.hpp"
 #include <common/utils/ActionUtils.hpp>
-#include <sc-agents-common/utils/IteratorUtils.hpp>
-
-#include <inference/inference_manager_factory.hpp>
 #include <inference/inference_manager_abstract.hpp>
+#include <inference/inference_manager_factory.hpp>
+#include <sc-agents-common/utils/IteratorUtils.hpp>
 
 using namespace messageClassificationModule;
 

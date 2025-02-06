@@ -5,6 +5,7 @@
 #include "searcher/LanguageSearcher.hpp"
 #include <common/handler/LinkHandler.hpp>
 #include <common/utils/ScTemplateUtils.hpp>
+#include <inference/template_manager.hpp>
 #include <regex>
 #include <sc-agents-common/utils/CommonUtils.hpp>
 #include <sc-agents-common/utils/GenerationUtils.hpp>
@@ -150,13 +151,13 @@ std::vector<ScTemplateParams> PhraseGenerationAgent::findParametersList(
     const ScAddr & templateNode,
     const ScAddr & parametersNode)
 {
-  // TemplateManager manager(&m_context);
+  inference::TemplateManager manager(&m_context);
   ScAddrVector arguments = IteratorUtils::getAllWithType(&m_context, parametersNode, ScType::Node);
-  // manager.setArguments(arguments);
+  manager.setArguments(arguments);
   std::vector<ScTemplateParams> parametersList;
   if (parametersNode.IsValid())
   {
-    // parametersList = manager.createTemplateParams(templateNode);
+    parametersList = manager.createTemplateParams(templateNode);
   }
   if (parametersList.empty())
   {
