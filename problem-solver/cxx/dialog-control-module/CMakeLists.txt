@@ -25,6 +25,7 @@ set(HEADERS
 add_library(dialog-control-module SHARED ${SOURCES} ${HEADERS})
 target_link_libraries(dialog-control-module
     LINK_PUBLIC sc-machine::sc-builder-lib
+    LINK_PUBLIC scl-machine::inference
     LINK_PUBLIC common
 )
 target_include_directories(dialog-control-module

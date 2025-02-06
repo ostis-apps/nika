@@ -323,6 +323,7 @@ ScAddrVector MessageTopicClassifier::processEntities(
   ScTemplate entityTemplate;
   ScAddr possibleEntityClass;
 
+  std::map<std::string, std::string> notFoundEntityIdtfToRole;
   while (possibleEntityIterator->Next())
   {
     possibleEntityClass = possibleEntityIterator->Get(2);
@@ -372,15 +373,14 @@ ScAddrVector MessageTopicClassifier::processEntities(
             messageEntitiesElements.push_back(entityRole);
             messageEntitiesElements.push_back(messageEntityEdge);
             messageEntitiesElements.push_back(messageEntityRoleEdge);
-
-            entityIdtfToRole.erase(entitySameIdtf);
           }
+          notFoundEntityIdtfToRole.insert({entitySameIdtf, entitySameRoleIdtf});
         }
       }
     }
   }
 
-  for (auto const & [notFoundEntitiesIdtf, notFoundEntitiesRoles] : entityIdtfToRole)
+  for (auto const & [notFoundEntitiesIdtf, notFoundEntitiesRoles] : notFoundEntityIdtfToRole)
   {
     ScAddr const & createdEntity = context->GenerateLink();
     context->SetLinkContent(createdEntity, notFoundEntitiesIdtf);
