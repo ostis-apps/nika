@@ -6,9 +6,9 @@ const conceptDialog = 'concept_dialogue';
 const rrelDialogParticipant = 'rrel_dialog_participant';
 
 const baseKeynodes = [
-    { id: conceptUser, type: ScType.NodeConstClass },
-    { id: conceptDialog, type: ScType.NodeConstClass },
-    { id: rrelDialogParticipant, type: ScType.NodeConstRole },
+    { id: conceptUser, type: ScType.ConstNodeClass },
+    { id: conceptDialog, type: ScType.ConstNodeClass },
+    { id: rrelDialogParticipant, type: ScType.ConstNodeRole },
 ];
 
 const getUser = async () => {
@@ -18,10 +18,10 @@ const getUser = async () => {
     const template = new ScTemplate();
     template.triple(
         keynodes[conceptUser],
-        ScType.EdgeAccessVarPosPerm,
-        [ScType.NodeVar, user],
+        ScType.VarPermPosArc,
+        [ScType.VarNode, user],
     );
-    const result = await client.templateSearch(template);
+    const result = await client.searchByTemplate(template);
     if (result.length === 1) {
         return result[0].get(user);
     }
@@ -36,22 +36,22 @@ const createUser = async () => {
     const template = new ScTemplate();
     template.triple(
         keynodes[conceptUser],
-        ScType.EdgeAccessVarPosPerm,
-        [ScType.NodeVar, user],
+        ScType.VarPermPosArc,
+        [ScType.VarNode, user],
     );
     template.triple(
         keynodes[conceptDialog],
-        ScType.EdgeAccessVarPosPerm,
-        [ScType.NodeVar, dialog],
+        ScType.VarPermPosArc,
+        [ScType.VarNode, dialog],
     );
-    template.tripleWithRelation(
+    template.quintuple(
         dialog,
-        ScType.EdgeAccessVarPosPerm,
+        ScType.VarPermPosArc,
         user,
-        ScType.EdgeAccessVarPosPerm,
+        ScType.VarPermPosArc,
         keynodes[rrelDialogParticipant],
     );
-    const result = await client.templateGenerate(template, {});
+    const result = await client.generateByTemplate(template, {});
     return result?.get(user);
 }
 

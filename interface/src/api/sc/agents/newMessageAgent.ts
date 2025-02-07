@@ -12,26 +12,26 @@ const conceptTextFile = 'concept_text_file';
 const langEn = 'lang_en';
 const langRu = 'lang_ru';
 const actionFinished = 'action_finished';
-const answer = 'nrel_answer';
+const result = 'nrel_result';
 
 const baseKeynodes = [
-    { id: action, type: ScType.NodeConstClass },
-    { id: actionInitiated, type: ScType.NodeConstClass },
-    { id: actionReplyToMessage, type: ScType.NodeConstClass },
-    { id: rrel1, type: ScType.NodeConstRole },
-    { id: rrel2, type: ScType.NodeConstRole },
-    { id: nrelAuthors, type: ScType.NodeConstNoRole },
-    { id: conceptTextFile, type: ScType.NodeConstClass },
-    { id: langEn, type: ScType.NodeConstClass },
-    { id: langRu, type: ScType.NodeConstClass },
-    { id: actionFinished, type: ScType.NodeConstClass },
-    { id: answer, type: ScType.NodeConstNoRole },
+    { id: action, type: ScType.ConstNodeClass },
+    { id: actionInitiated, type: ScType.ConstNodeClass },
+    { id: actionReplyToMessage, type: ScType.ConstNodeClass },
+    { id: rrel1, type: ScType.ConstNodeRole },
+    { id: rrel2, type: ScType.ConstNodeRole },
+    { id: nrelAuthors, type: ScType.ConstNodeNonRole },
+    { id: conceptTextFile, type: ScType.ConstNodeClass },
+    { id: langEn, type: ScType.ConstNodeClass },
+    { id: langRu, type: ScType.ConstNodeClass },
+    { id: actionFinished, type: ScType.ConstNodeClass },
+    { id: result, type: ScType.ConstNodeNonRole },
 ];
 
-export const createLinkText = async (messageText: string) => {
+export const generateLinkText = async (messageText: string) => {
     const constructionLink = new ScConstruction();
-    constructionLink.createLink(ScType.LinkConst, new ScLinkContent(messageText, ScLinkContentType.String));
-    const resultLinkNode = await client.createElements(constructionLink);
+    constructionLink.generateLink(ScType.ConstNodeLink, new ScLinkContent(messageText, ScLinkContentType.String));
+    const resultLinkNode = await client.generateElements(constructionLink);
     if (resultLinkNode.length) {
         return resultLinkNode[0];
     }
@@ -48,32 +48,32 @@ const describeAgent = async (
 
     const template = new ScTemplate();
 
-    template.triple(keynodes[action], ScType.EdgeAccessVarPosPerm, [ScType.NodeVar, actionNodeAlias]);
-    template.triple(keynodes[actionReplyToMessage], ScType.EdgeAccessVarPosPerm, actionNodeAlias);
+    template.triple(keynodes[action], ScType.VarPermPosArc, [ScType.VarNode, actionNodeAlias]);
+    template.triple(keynodes[actionReplyToMessage], ScType.VarPermPosArc, actionNodeAlias);
 
-    template.tripleWithRelation(
+    template.quintuple(
         actionNodeAlias,
-        ScType.EdgeAccessVarPosPerm,
+        ScType.VarPermPosArc,
         linkAddr,
-        ScType.EdgeAccessVarPosPerm,
+        ScType.VarPermPosArc,
         keynodes[rrel1],
     );
-    template.tripleWithRelation(
+    template.quintuple(
         actionNodeAlias,
-        ScType.EdgeAccessVarPosPerm,
+        ScType.VarPermPosArc,
         chatNode,
-        ScType.EdgeAccessVarPosPerm,
+        ScType.VarPermPosArc,
         keynodes[rrel2],
     );
-    template.tripleWithRelation(
+    template.quintuple(
         actionNodeAlias,
-        ScType.EdgeDCommonVar,
+        ScType.VarCommonArc,
         author,
-        ScType.EdgeAccessVarPosPerm,
+        ScType.VarPermPosArc,
         keynodes[nrelAuthors],
     );
-    template.triple(keynodes[conceptTextFile], ScType.EdgeAccessVarPosPerm, linkAddr);
-    template.triple(keynodes[langRu], ScType.EdgeAccessVarPosPerm, linkAddr);
+    template.triple(keynodes[conceptTextFile], ScType.VarPermPosArc, linkAddr);
+    template.triple(keynodes[langRu], ScType.VarPermPosArc, linkAddr);
 
     return [template, actionNodeAlias] as const;
 };
@@ -82,8 +82,8 @@ const findNewMessageNode = async (circuitAddr: ScAddr) => {
     const message = '_message';
     const template = new ScTemplate();
 
-    template.triple(circuitAddr, ScType.EdgeAccessVarPosPerm, [ScType.NodeVar, message]);
-    const resultMessageNode = await client.templateSearch(template);
+    template.triple(circuitAddr, ScType.VarPermPosArc, [ScType.VarNode, message]);
+    const resultMessageNode = await client.searchByTemplate(template);
 
     if (resultMessageNode.length) {
         return resultMessageNode[0].get(message);

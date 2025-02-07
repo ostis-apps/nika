@@ -5,8 +5,8 @@ const conceptDialog = 'concept_dialogue';
 const rrelDialogParticipant = 'rrel_dialog_participant';
 
 const baseKeynodes = [
-    { id: conceptDialog, type: ScType.NodeConstClass },
-    { id: rrelDialogParticipant, type: ScType.NodeConstRole },
+    { id: conceptDialog, type: ScType.ConstNodeClass },
+    { id: rrelDialogParticipant, type: ScType.ConstNodeRole },
 ];
 
 const findDialogNode = async (user: ScAddr) => {
@@ -16,17 +16,17 @@ const findDialogNode = async (user: ScAddr) => {
     const template = new ScTemplate();
     template.triple(
         keynodes[conceptDialog],
-        ScType.EdgeAccessVarPosPerm,
-        [ScType.NodeVar, dialog],
+        ScType.VarPermPosArc,
+        [ScType.VarNode, dialog],
     );
-    template.tripleWithRelation(
+    template.quintuple(
         dialog,
-        ScType.EdgeAccessVarPosPerm,
+        ScType.VarPermPosArc,
         user,
-        ScType.EdgeAccessVarPosPerm,
+        ScType.VarPermPosArc,
         keynodes[rrelDialogParticipant],
     );
-    const resultDialogNode = await client.templateSearch(template);
+    const resultDialogNode = await client.searchByTemplate(template);
 
     if (resultDialogNode.length) {
         return resultDialogNode[0].get(dialog);
