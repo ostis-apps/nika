@@ -6,7 +6,7 @@ using namespace commonModule;
 
 bool ActionUtils::isActionDeactivated(ScAgentContext * context, ScAddr const & action)
 {
-  return context->CheckConnector(commonModule::Keynodes::action_deactivated, action, ScType::EdgeAccessConstPosPerm);
+  return context->CheckConnector(commonModule::Keynodes::action_deactivated, action, ScType::ConstPermPosArc);
 }
 
 ScAction ActionUtils::CreateAction(

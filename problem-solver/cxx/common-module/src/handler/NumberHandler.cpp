@@ -27,7 +27,7 @@ ScAddr commonModule::NumberHandler::findNumberNode(const double & number)
   {
     ScAddr candidateNode =
         utils::IteratorUtils::getAnyByInRelation(this->context, candidateLink, ScKeynodes::nrel_idtf);
-    if (this->context->CheckConnector(Keynodes::number, candidateNode, ScType::EdgeAccessConstPosPerm))
+    if (this->context->CheckConnector(Keynodes::number, candidateNode, ScType::ConstPermPosArc))
     {
       numberNode = candidateNode;
       break;
@@ -42,13 +42,13 @@ ScAddr commonModule::NumberHandler::generateNumberNode(const double & number)
   ScAddr numberLink = this->linkHandler->createLink(numberAsString);
   ScTemplate scTemplate;
   scTemplate.Quintuple(
-      ScType::NodeVar >> "_number_node",
-      ScType::EdgeDCommonVar,
+      ScType::VarNode >> "_number_node",
+      ScType::VarCommonArc,
       numberLink,
-      ScType::EdgeAccessVarPosPerm,
+      ScType::VarPermPosArc,
       ScKeynodes::nrel_idtf);
-  scTemplate.Triple(Keynodes::file, ScType::EdgeAccessVarPosPerm, numberLink);
-  scTemplate.Triple(Keynodes::number, ScType::EdgeAccessVarPosPerm, "_number_node");
+  scTemplate.Triple(Keynodes::file, ScType::VarPermPosArc, numberLink);
+  scTemplate.Triple(Keynodes::number, ScType::VarPermPosArc, "_number_node");
   ScTemplateGenResult genResult;
 
   this->context->GenerateByTemplate(scTemplate, genResult);

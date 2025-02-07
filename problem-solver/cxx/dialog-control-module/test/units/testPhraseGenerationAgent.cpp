@@ -24,9 +24,9 @@ void checkLinkContent(ScAgentContext & context, ScAddr action, std::string const
   std::string const LINK_ALIAS = "_link";
   scTemplate.Quintuple(
       action,
-      ScType::EdgeDCommonVar,
-      ScType::LinkVar >> LINK_ALIAS,
-      ScType::EdgeAccessVarPosPerm,
+      ScType::VarCommonArc,
+      ScType::VarNodeLink >> LINK_ALIAS,
+      ScType::VarPermPosArc,
       ScKeynodes::nrel_result);
   EXPECT_TRUE(context.SearchByTemplate(scTemplate, result));
 
@@ -164,9 +164,9 @@ TEST_F(PhraseGenerationTest, GeneratedLinkDoesNotHaveALanguageNode)
   std::string const LINK_ALIAS = "_link";
   scTemplate.Quintuple(
       test_action_node,
-      ScType::EdgeDCommonVar,
-      ScType::LinkVar >> LINK_ALIAS,
-      ScType::EdgeAccessVarPosPerm,
+      ScType::VarCommonArc,
+      ScType::VarNodeLink >> LINK_ALIAS,
+      ScType::VarPermPosArc,
       ScKeynodes::nrel_result);
   EXPECT_TRUE(context.SearchByTemplate(scTemplate, result));
 

@@ -53,7 +53,7 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithoutEntityTest)
   ScAddrVector messageClassificationItems = classifier.classifyMessage(messageAddr);
   EXPECT_FALSE(messageClassificationItems.empty());
 
-  bool isMessageClassified = context.CheckConnector(greetingMessageClass, messageAddr, ScType::EdgeAccessConstPosPerm);
+  bool isMessageClassified = context.CheckConnector(greetingMessageClass, messageAddr, ScType::ConstPermPosArc);
   EXPECT_TRUE(isMessageClassified);
 }
 
@@ -92,9 +92,9 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithEntityTest)
   EXPECT_FALSE(messageClassificationItems.empty());
 
   ScTemplate classificationTemplate;
-  classificationTemplate.Triple(greetingMessageClass, ScType::EdgeAccessVarPosPerm, messageAddr);
+  classificationTemplate.Triple(greetingMessageClass, ScType::VarPermPosArc, messageAddr);
   classificationTemplate.Quintuple(
-      messageAddr, ScType::EdgeAccessVarPosPerm, entityAddr, ScType::EdgeAccessVarPosPerm, entityRoleAddr);
+      messageAddr, ScType::VarPermPosArc, entityAddr, ScType::VarPermPosArc, entityRoleAddr);
 
   ScTemplateSearchResult classificationTemplateResult;
   context.SearchByTemplate(classificationTemplate, classificationTemplateResult);
@@ -145,12 +145,12 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesTest)
   EXPECT_FALSE(messageClassificationItems.empty());
 
   ScTemplate classificationTemplate;
-  classificationTemplate.Triple(weatherMessageClass, ScType::EdgeAccessVarPosPerm, messageAddr);
-  classificationTemplate.Triple(neutralMessageClass, ScType::EdgeAccessVarPosPerm, messageAddr);
+  classificationTemplate.Triple(weatherMessageClass, ScType::VarPermPosArc, messageAddr);
+  classificationTemplate.Triple(neutralMessageClass, ScType::VarPermPosArc, messageAddr);
   classificationTemplate.Quintuple(
-      messageAddr, ScType::EdgeAccessVarPosPerm, entityContactAddr, ScType::EdgeAccessVarPosPerm, rrelContactAddr);
+      messageAddr, ScType::VarPermPosArc, entityContactAddr, ScType::VarPermPosArc, rrelContactAddr);
   classificationTemplate.Quintuple(
-      messageAddr, ScType::EdgeAccessVarPosPerm, entitySeasonAddr, ScType::EdgeAccessVarPosPerm, rrelSeasonAddr);
+      messageAddr, ScType::VarPermPosArc, entitySeasonAddr, ScType::VarPermPosArc, rrelSeasonAddr);
 
   ScTemplateSearchResult classificationTemplateResult;
   context.SearchByTemplate(classificationTemplate, classificationTemplateResult);
@@ -201,9 +201,9 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesSameRoleTes
 
   ScTemplate entitiesTemplate;
   entitiesTemplate.Quintuple(
-      messageAddr, ScType::EdgeAccessVarPosPerm, hobbyAddr, ScType::EdgeAccessVarPosPerm, rrelEntityAddr);
+      messageAddr, ScType::VarPermPosArc, hobbyAddr, ScType::VarPermPosArc, rrelEntityAddr);
   entitiesTemplate.Quintuple(
-      messageAddr, ScType::EdgeAccessVarPosPerm, theatreAddr, ScType::EdgeAccessVarPosPerm, rrelEntityAddr);
+      messageAddr, ScType::VarPermPosArc, theatreAddr, ScType::VarPermPosArc, rrelEntityAddr);
 
   ScTemplateSearchResult classificationTemplateResult;
   context.SearchByTemplate(entitiesTemplate, classificationTemplateResult);

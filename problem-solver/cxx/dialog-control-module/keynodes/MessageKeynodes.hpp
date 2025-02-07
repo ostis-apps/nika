@@ -11,7 +11,7 @@ public:
 
   static inline ScKeynode const action_standard_message_reply{"action_standard_message_reply"};
 
-  static inline ScKeynode const action_direct_inference{"action_direct_inference", ScType::NodeConstClass};
+  static inline ScKeynode const action_direct_inference{"action_direct_inference", ScType::ConstNodeClass};
 
   static inline ScKeynode const concept_answer_on_standard_message_rule{"concept_answer_on_standard_message_rule"};
 

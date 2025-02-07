@@ -5,6 +5,6 @@
 @template_reply_target => nrel_system_identifier: [template_reply_target];;
 _reply_message <- sc_node;;
 _message <- sc_node;;
-nrel_reply <- sc_node_norole_relation;;
+nrel_reply <- sc_CONST_NODE_NON_ROLE_relation;;
 action_template_reply => nrel_template_reply_target: @template_reply_target;;
-nrel_template_reply_target <- sc_node_norole_relation;;
+nrel_template_reply_target <- sc_CONST_NODE_NON_ROLE_relation;;

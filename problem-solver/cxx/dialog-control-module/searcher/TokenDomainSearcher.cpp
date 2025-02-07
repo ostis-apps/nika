@@ -22,7 +22,7 @@ ScAddr TokenDomainSearcher::getMessageText(const ScAddr & message)
     throw std::runtime_error("Invalid params: the text of the message is not specified.");
   }
 
-  ScIterator3Ptr iterator3 = context->CreateIterator3(translationNode, ScType::EdgeAccessConstPosPerm, ScType::Link);
+  ScIterator3Ptr iterator3 = context->CreateIterator3(translationNode, ScType::ConstPermPosArc, ScType::Link);
   if (!iterator3->Next())
   {
     throw std::runtime_error("Invalid params: the text of the message is not specified.");

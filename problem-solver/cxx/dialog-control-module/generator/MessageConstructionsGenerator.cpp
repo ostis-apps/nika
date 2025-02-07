@@ -19,7 +19,7 @@ void MessageConstructionsGenerator::generateTextTranslationConstruction(
   commonModule::LinkHandler handler(context);
 
   ScAddr linkAddr = handler.createLink(messageText);
-  context->GenerateConnector(ScType::EdgeAccessConstPosPerm, langAddr, linkAddr);
+  context->GenerateConnector(ScType::ConstPermPosArc, langAddr, linkAddr);
   generateTextTranslationConstruction(messageAddr, linkAddr);
 }
 
@@ -27,12 +27,12 @@ void MessageConstructionsGenerator::generateTextTranslationConstruction(
     const ScAddr & messageAddr,
     const ScAddr & linkAddr)
 {
-  ScAddr translationAddr = context->GenerateNode(ScType::NodeConst);
-  ScAddr translationEdgeAddr = context->GenerateConnector(ScType::EdgeDCommonConst, translationAddr, messageAddr);
+  ScAddr translationAddr = context->GenerateNode(ScType::ConstNode);
+  ScAddr translationEdgeAddr = context->GenerateConnector(ScType::ConstCommonArc, translationAddr, messageAddr);
   context->GenerateConnector(
-      ScType::EdgeAccessConstPosPerm, commonModule::Keynodes::nrel_sc_text_translation, translationEdgeAddr);
-  context->GenerateConnector(ScType::EdgeAccessConstPosPerm, translationAddr, linkAddr);
-  context->GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_text_file, linkAddr);
+      ScType::ConstPermPosArc, commonModule::Keynodes::nrel_sc_text_translation, translationEdgeAddr);
+  context->GenerateConnector(ScType::ConstPermPosArc, translationAddr, linkAddr);
+  context->GenerateConnector(ScType::ConstPermPosArc, MessageKeynodes::concept_text_file, linkAddr);
 }
 
 }  // namespace dialogControlModule
