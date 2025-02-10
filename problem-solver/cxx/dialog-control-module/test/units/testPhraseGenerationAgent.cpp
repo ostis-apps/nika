@@ -23,11 +23,7 @@ void checkLinkContent(ScAgentContext & context, ScAddr action, std::string const
   ScTemplateSearchResult result;
   std::string const LINK_ALIAS = "_link";
   scTemplate.Quintuple(
-      action,
-      ScType::VarCommonArc,
-      ScType::VarNodeLink >> LINK_ALIAS,
-      ScType::VarPermPosArc,
-      ScKeynodes::nrel_result);
+      action, ScType::VarCommonArc, ScType::VarNodeLink >> LINK_ALIAS, ScType::VarPermPosArc, ScKeynodes::nrel_result);
   EXPECT_TRUE(context.SearchByTemplate(scTemplate, result));
 
   ScAddr link = result[0][LINK_ALIAS];

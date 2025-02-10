@@ -47,8 +47,7 @@ ScAddr ParameterHandler::findParameterNodeByNumber(
   ScAddr parameterNode = ScAddr();
   ScTemplate scTemplate;
   scTemplate.Triple(parameterClass, ScType::VarPermPosArc, ScType::VarNode >> "_parameter_node");
-  scTemplate.Quintuple(
-      "_parameter_node", ScType::VarCommonArc, numberNode, ScType::VarPermPosArc, measurementRel);
+  scTemplate.Quintuple("_parameter_node", ScType::VarCommonArc, numberNode, ScType::VarPermPosArc, measurementRel);
   ScAddrVector parameterNodes = ScTemplateUtils::getAllWithKey(this->context, scTemplate, "_parameter_node");
   if (parameterNodes.size() == 1)
     parameterNode = parameterNodes[0];
@@ -104,8 +103,7 @@ ScAddr ParameterHandler::generateParameterNode(
 {
   ScTemplate scTemplate;
   scTemplate.Triple(parameterClass, ScType::VarPermPosArc, ScType::VarNode >> "_parameter_node");
-  scTemplate.Quintuple(
-      "_parameter_node", ScType::VarCommonArc, numberNode, ScType::VarPermPosArc, measurementRel);
+  scTemplate.Quintuple("_parameter_node", ScType::VarCommonArc, numberNode, ScType::VarPermPosArc, measurementRel);
 
   ScTemplateGenResult genResult;
   this->context->GenerateByTemplate(scTemplate, genResult);

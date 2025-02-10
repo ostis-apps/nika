@@ -17,11 +17,7 @@ void MessageHistoryGenerator::addMessageToDialog(const ScAddr & dialogAddr, cons
   ScAddr lastMessageAddr;
 
   ScIterator5Ptr iterator5Ptr = context->CreateIterator5(
-      dialogAddr,
-      ScType::ConstPermPosArc,
-      ScType::ConstNode,
-      ScType::ConstPermPosArc,
-      MessageReplyKeynodes::rrel_last);
+      dialogAddr, ScType::ConstPermPosArc, ScType::ConstNode, ScType::ConstPermPosArc, MessageReplyKeynodes::rrel_last);
 
   if (iterator5Ptr->Next())
     lastMessageAddr = iterator5Ptr->Get(2);
@@ -29,11 +25,7 @@ void MessageHistoryGenerator::addMessageToDialog(const ScAddr & dialogAddr, cons
   if (lastMessageAddr.IsValid())
   {
     ScIterator5Ptr it5 = context->CreateIterator5(
-        dialogAddr,
-        ScType::ConstPermPosArc,
-        lastMessageAddr,
-        ScType::ConstPermPosArc,
-        MessageReplyKeynodes::rrel_last);
+        dialogAddr, ScType::ConstPermPosArc, lastMessageAddr, ScType::ConstPermPosArc, MessageReplyKeynodes::rrel_last);
 
     if (it5->Next())
       context->EraseElement(it5->Get(3));
@@ -82,14 +74,9 @@ std::unique_ptr<ScTemplate> MessageHistoryGenerator::createFirstMessageInDialogT
     const ScAddr & messageAddr)
 {
   auto scTemplate = std::make_unique<ScTemplate>();
+  scTemplate->Quintuple(dialogAddr, ScType::VarPermPosArc, messageAddr, ScType::VarPermPosArc, ScKeynodes::rrel_1);
   scTemplate->Quintuple(
-      dialogAddr, ScType::VarPermPosArc, messageAddr, ScType::VarPermPosArc, ScKeynodes::rrel_1);
-  scTemplate->Quintuple(
-      dialogAddr,
-      ScType::VarPermPosArc,
-      messageAddr,
-      ScType::VarPermPosArc,
-      MessageReplyKeynodes::rrel_last);
+      dialogAddr, ScType::VarPermPosArc, messageAddr, ScType::VarPermPosArc, MessageReplyKeynodes::rrel_last);
   return scTemplate;
 }
 

@@ -45,19 +45,10 @@ bool GenerateReplyMessageAgent::actionIsValid(const ScAddr & actionAddr)
       ScType::VarPermPosArc,
       ScKeynodes::rrel_1);
   scTemplate.Quintuple(
-      actionAddr,
-      ScType::VarPermPosArc,
-      ScType::VarNode >> "_args_set",
-      ScType::VarPermPosArc,
-      ScKeynodes::rrel_2);
+      actionAddr, ScType::VarPermPosArc, ScType::VarNode >> "_args_set", ScType::VarPermPosArc, ScKeynodes::rrel_2);
   scTemplate.Quintuple(
-      "_args_set",
-      ScType::VarPermPosArc,
-      ScType::VarNode >> "_message",
-      ScType::VarPermPosArc,
-      ScKeynodes::rrel_1);
-  scTemplate.Triple(
-      messageReplyModule::MessageReplyKeynodes::concept_message, ScType::VarPermPosArc, "_message");
+      "_args_set", ScType::VarPermPosArc, ScType::VarNode >> "_message", ScType::VarPermPosArc, ScKeynodes::rrel_1);
+  scTemplate.Triple(messageReplyModule::MessageReplyKeynodes::concept_message, ScType::VarPermPosArc, "_message");
   ScTemplateSearchResult searchResult;
   m_context.SearchByTemplate(scTemplate, searchResult);
   return searchResult.Size() == 1;

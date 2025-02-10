@@ -11,7 +11,7 @@ public:
 
   static inline ScKeynode const number{"number", ScType::ConstNodeClass};
 
-  static inline ScKeynode const nrel_sc_text_translation{"nrel_sc_text_translation", ScType::ConstNodeNoRole};
+  static inline ScKeynode const nrel_sc_text_translation{"nrel_sc_text_translation", ScType::ConstNodeNonRole};
 
   static inline ScKeynode const action_interpret_non_atomic_action{
       "action_interpret_non_atomic_action",
@@ -27,19 +27,19 @@ public:
 
   static inline ScKeynode const languages{"languages", ScType::ConstNode};
 
-  static inline ScKeynode const nrel_decomposition_of_action{"nrel_decomposition_of_action", ScType::ConstNodeNoRole};
+  static inline ScKeynode const nrel_decomposition_of_action{"nrel_decomposition_of_action", ScType::ConstNodeNonRole};
 
-  static inline ScKeynode const nrel_then{"nrel_then", ScType::ConstNodeNoRole};
+  static inline ScKeynode const nrel_then{"nrel_then", ScType::ConstNodeNonRole};
 
-  static inline ScKeynode const nrel_else{"nrel_else", ScType::ConstNodeNoRole};
+  static inline ScKeynode const nrel_else{"nrel_else", ScType::ConstNodeNonRole};
 
-  static inline ScKeynode const nrel_goto{"nrel_goto", ScType::ConstNodeNoRole};
+  static inline ScKeynode const nrel_goto{"nrel_goto", ScType::ConstNodeNonRole};
 
   static inline ScKeynode const file{"file", ScType::ConstNode};
 
   static inline ScKeynode const power_of_set{"power_of_set", ScType::ConstNode};
 
-  static inline ScKeynode const nrel_measurement{"nrel_measurement", ScType::ConstNodeNoRole};
+  static inline ScKeynode const nrel_measurement{"nrel_measurement", ScType::ConstNodeNonRole};
 
   static inline ScKeynode const lang_en{"lang_en", ScType::ConstNodeClass};
 };

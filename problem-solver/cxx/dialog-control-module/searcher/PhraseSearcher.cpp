@@ -17,7 +17,7 @@ ScAddrVector PhraseSearcher::getPhrases(const ScAddr & phraseClassNode, const Sc
 {
   ScTemplate phraseTemplate;
   const std::string VAR_PHRASE = "_phrase";
-  phraseTemplate.Triple(phraseClassNode, ScType::VarPermPosArc, ScType::Link >> VAR_PHRASE);
+  phraseTemplate.Triple(phraseClassNode, ScType::VarPermPosArc, ScType::VarNodeLink >> VAR_PHRASE);
   phraseTemplate.Triple(langNode, ScType::VarPermPosArc, VAR_PHRASE);
 
   ScTemplateSearchResult result;

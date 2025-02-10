@@ -64,18 +64,14 @@ ScAddrVector MessageTopicClassifier::getMessageIntentClass(ScAddr const & messag
   if (messageIntent.empty())
   {
     ScAddr const & messageIntentCLassEdge = context->GenerateConnector(
-        ScType::ConstPermPosArc,
-        MessageClassificationKeynodes::concept_not_classified_by_intent_message,
-        messageAddr);
+        ScType::ConstPermPosArc, MessageClassificationKeynodes::concept_not_classified_by_intent_message, messageAddr);
     messageIntentCLassElements.push_back(MessageClassificationKeynodes::concept_not_classified_by_intent_message);
     messageIntentCLassElements.push_back(messageIntentCLassEdge);
     return messageIntentCLassElements;
   }
 
   ScIterator3Ptr const possibleIntentIterator = context->CreateIterator3(
-      MessageClassificationKeynodes::concept_intent_possible_class,
-      ScType::ConstPermPosArc,
-      ScType::ConstNodeClass);
+      MessageClassificationKeynodes::concept_intent_possible_class, ScType::ConstPermPosArc, ScType::ConstNodeClass);
 
   std::vector<std::string> witAiIdtfs;
   ScAddr possibleMessageCLass;
@@ -139,18 +135,14 @@ ScAddrVector MessageTopicClassifier::getMessageTraitClass(ScAddr const & message
   if (messageTrait.empty())
   {
     ScAddr const & messageIntentCLassEdge = context->GenerateConnector(
-        ScType::ConstPermPosArc,
-        MessageClassificationKeynodes::concept_not_classified_by_trait_message,
-        messageAddr);
+        ScType::ConstPermPosArc, MessageClassificationKeynodes::concept_not_classified_by_trait_message, messageAddr);
     messageTraitClassElements.push_back(MessageClassificationKeynodes::concept_not_classified_by_trait_message);
     messageTraitClassElements.push_back(messageIntentCLassEdge);
     return messageTraitClassElements;
   }
 
   ScIterator3Ptr possibleTraitIterator = context->CreateIterator3(
-      MessageClassificationKeynodes::concept_trait_possible_class,
-      ScType::ConstPermPosArc,
-      ScType::ConstNodeClass);
+      MessageClassificationKeynodes::concept_trait_possible_class, ScType::ConstPermPosArc, ScType::ConstNodeClass);
 
   messageTraitClassElements =
       processTraits(possibleTraitIterator, messageTrait, messageTraitClassElements, messageAddr);
@@ -248,9 +240,7 @@ ScAddrVector MessageTopicClassifier::getMessageEntity(ScAddr const & messageAddr
   if (!messageEntity.empty())
   {
     ScIterator3Ptr possibleEntityIterator = context->CreateIterator3(
-        MessageClassificationKeynodes::concept_entity_possible_class,
-        ScType::ConstPermPosArc,
-        ScType::ConstNodeClass);
+        MessageClassificationKeynodes::concept_entity_possible_class, ScType::ConstPermPosArc, ScType::ConstNodeClass);
 
     messageEntitiesElements =
         processEntities(possibleEntityIterator, messageEntity, messageEntitiesElements, messageAddr);
@@ -364,8 +354,7 @@ ScAddrVector MessageTopicClassifier::processEntities(
           if (std::find(identifiers.begin(), identifiers.end(), entitySameIdtf) != identifiers.end())
           {
             SC_LOG_DEBUG("Found " << context->GetElementSystemIdentifier(entityAddr) << " entity");
-            ScAddr messageEntityEdge =
-                context->GenerateConnector(ScType::ConstPermPosArc, messageAddr, entityAddr);
+            ScAddr messageEntityEdge = context->GenerateConnector(ScType::ConstPermPosArc, messageAddr, entityAddr);
             ScAddr messageEntityRoleEdge =
                 context->GenerateConnector(ScType::ConstPermPosArc, entityRole, messageEntityEdge);
 
@@ -386,8 +375,7 @@ ScAddrVector MessageTopicClassifier::processEntities(
     context->SetLinkContent(createdEntity, notFoundEntitiesIdtf);
     ScAddr const & createdEntityEdge =
         context->GenerateConnector(ScType::ConstPermPosArc, commonModule::Keynodes::lang_en, createdEntity);
-    ScAddr const & messageEntityEdge =
-        context->GenerateConnector(ScType::ConstPermPosArc, messageAddr, createdEntity);
+    ScAddr const & messageEntityEdge = context->GenerateConnector(ScType::ConstPermPosArc, messageAddr, createdEntity);
     ScAddr const & entityRole = context->ResolveElementSystemIdentifier(notFoundEntitiesRoles, ScType::ConstNodeRole);
     ScAddr const & messageEntityRoleEdge =
         context->GenerateConnector(ScType::ConstPermPosArc, entityRole, messageEntityEdge);

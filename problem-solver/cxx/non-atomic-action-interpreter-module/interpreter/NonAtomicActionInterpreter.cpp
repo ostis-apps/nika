@@ -54,8 +54,7 @@ ScAddr NonAtomicActionInterpreter::getNextAction(ScAddr const & actionAddr)
     SC_LOG_DEBUG(getClassNameForLog() + ": Atomic action finished successfully.");
     nextAction = getThenAction(actionAddr);
   }
-  else if (context->CheckConnector(
-               ScKeynodes::action_finished_unsuccessfully, actionAddr, ScType::ConstPermPosArc))
+  else if (context->CheckConnector(ScKeynodes::action_finished_unsuccessfully, actionAddr, ScType::ConstPermPosArc))
   {
     SC_LOG_DEBUG(getClassNameForLog() + ": Atomic action finished unsuccessfully.");
     nextAction = getElseAction(actionAddr);

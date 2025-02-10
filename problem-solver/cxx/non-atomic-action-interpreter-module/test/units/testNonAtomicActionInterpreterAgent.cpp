@@ -56,11 +56,7 @@ ScAction getFirstAction(ScAgentContext & context)
       ScType::VarPermPosArc,
       Keynodes::nrel_decomposition_of_action);
   scTemplate.Quintuple(
-      "_tuple",
-      ScType::VarPermPosArc,
-      ScType::VarNode >> "_firstAction",
-      ScType::VarPermPosArc,
-      ScKeynodes::rrel_1);
+      "_tuple", ScType::VarPermPosArc, ScType::VarNode >> "_firstAction", ScType::VarPermPosArc, ScKeynodes::rrel_1);
 
   ScTemplateSearchResult results;
   context.SearchByTemplate(scTemplate, results);
@@ -103,11 +99,7 @@ TEST_F(NonAtomicActionInterpreterTest, checkDynamicArguments)
 
   ScTemplate scTemplate;
   scTemplate.Quintuple(
-      action,
-      ScType::VarPermPosArc,
-      ScType::VarNode >> "_dynamic_argument",
-      ScType::VarPermPosArc,
-      ScKeynodes::rrel_1);
+      action, ScType::VarPermPosArc, ScType::VarNode >> "_dynamic_argument", ScType::VarPermPosArc, ScKeynodes::rrel_1);
   scTemplate.Triple(
       "_dynamic_argument", ScType::EdgeAccessVarPosTemp, TestKeynodes::test_node >> "_dynamic_argument_value");
   ScTemplateSearchResult results;

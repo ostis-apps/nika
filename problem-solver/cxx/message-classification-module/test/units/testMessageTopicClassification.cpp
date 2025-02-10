@@ -200,10 +200,8 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesSameRoleTes
   EXPECT_FALSE(messageClassificationItems.empty());
 
   ScTemplate entitiesTemplate;
-  entitiesTemplate.Quintuple(
-      messageAddr, ScType::VarPermPosArc, hobbyAddr, ScType::VarPermPosArc, rrelEntityAddr);
-  entitiesTemplate.Quintuple(
-      messageAddr, ScType::VarPermPosArc, theatreAddr, ScType::VarPermPosArc, rrelEntityAddr);
+  entitiesTemplate.Quintuple(messageAddr, ScType::VarPermPosArc, hobbyAddr, ScType::VarPermPosArc, rrelEntityAddr);
+  entitiesTemplate.Quintuple(messageAddr, ScType::VarPermPosArc, theatreAddr, ScType::VarPermPosArc, rrelEntityAddr);
 
   ScTemplateSearchResult classificationTemplateResult;
   context.SearchByTemplate(entitiesTemplate, classificationTemplateResult);

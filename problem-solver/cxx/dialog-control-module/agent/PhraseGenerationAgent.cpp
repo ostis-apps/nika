@@ -226,7 +226,7 @@ std::string PhraseGenerationAgent::processScTemplate(
 
 void PhraseGenerationAgent::generateSemanticEquivalent(const ScAddr & replyMessageNode, const ScAddr & templateNode)
 {
-  ScAddr semanticEquivalent = m_context.GenerateNode(ScType::ConstNodeStruct);
+  ScAddr semanticEquivalent = m_context.GenerateNode(ScType::ConstNodeStructure);
   ScIterator3Ptr semanticEquivalentIterator =
       m_context.CreateIterator3(MessageKeynodes::answer_structure, ScType::ConstPermPosArc, ScType::Unknown);
 
@@ -332,7 +332,7 @@ void PhraseGenerationAgent::replaceSetElementsVariables(
 
 void PhraseGenerationAgent::updateSemanticAnswer(const ScTemplateSearchResultItem & phraseSemanticResult)
 {
-  ScAddr const & phraseStruct = m_context.GenerateNode(ScType::NodeStruct);
+  ScAddr const & phraseStruct = m_context.GenerateNode(ScType::ConstNodeStructure);
   ScAddrVector phraseElements;
   for (size_t i = 0; i < phraseSemanticResult.Size(); i++)
   {

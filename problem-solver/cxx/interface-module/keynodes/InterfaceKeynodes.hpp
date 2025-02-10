@@ -15,7 +15,7 @@ public:
 
   static inline ScKeynode const concept_footer{"concept_footer", ScType::ConstNodeClass};
 
-  static inline ScKeynode const nrel_component_color{"nrel_component_color", ScType::ConstNodeNoRole};
+  static inline ScKeynode const nrel_component_color{"nrel_component_color", ScType::ConstNodeNonRole};
 
   static inline ScKeynode const rrel_entity{"rrel_entity", ScType::ConstNodeRole};
 

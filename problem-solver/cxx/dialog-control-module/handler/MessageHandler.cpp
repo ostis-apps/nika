@@ -49,8 +49,7 @@ bool MessageHandler::processReplyMessage(
 
   clearSemanticAnswer();
   context->GenerateConnector(ScType::ConstPermPosArc, parametersNode, langNode);
-  if (context->CheckConnector(
-          MessageKeynodes::concept_atomic_message, replyMessageNode, ScType::ConstPermPosArc))
+  if (context->CheckConnector(MessageKeynodes::concept_atomic_message, replyMessageNode, ScType::ConstPermPosArc))
   {
     SC_LOG_DEBUG(getClassNameForLog() + ": The message is atomic");
     ScAddr phraseClassNode = phraseSearcher->getFirstPhraseClass(logicRuleNode);

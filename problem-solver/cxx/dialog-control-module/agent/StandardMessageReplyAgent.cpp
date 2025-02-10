@@ -48,7 +48,7 @@ ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & eve
   ScAddr responseNode = action.GetArgument(ScKeynodes::rrel_2);
 
   if (m_context.IsElement(responseNode))
-    m_context.GenerateConnector(ScType::EdgeAccessConstPosTemp, responseNode, replyMessageNode);
+    m_context.GenerateConnector(ScType::ConstTempPosArc, responseNode, replyMessageNode);
 
   action.SetResult(replyMessageNode);
   return action.FinishSuccessfully();

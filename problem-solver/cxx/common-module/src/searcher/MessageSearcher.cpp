@@ -23,11 +23,7 @@ ScAddr MessageSearcher::getFirstMessage(const ScAddr & nonAtomicMessageNode)
       ScType::VarPermPosArc,
       Keynodes::nrel_message_decomposition);
   templ.Quintuple(
-      VAR_TUPLE,
-      ScType::VarPermPosArc,
-      ScType::VarNode >> VAR_MESSAGE,
-      ScType::VarPermPosArc,
-      ScKeynodes::rrel_1);
+      VAR_TUPLE, ScType::VarPermPosArc, ScType::VarNode >> VAR_MESSAGE, ScType::VarPermPosArc, ScKeynodes::rrel_1);
 
   ScTemplateSearchResult result;
   context->SearchByTemplate(templ, result);
@@ -82,11 +78,7 @@ ScAddr MessageSearcher::getMessageAuthor(const ScAddr & messageNode)
   ScTemplate templ;
   const std::string VAR_AUTHOR = "_author";
   templ.Quintuple(
-      messageNode,
-      ScType::VarCommonArc,
-      ScType::VarNode >> VAR_AUTHOR,
-      ScType::VarPermPosArc,
-      Keynodes::nrel_authors);
+      messageNode, ScType::VarCommonArc, ScType::VarNode >> VAR_AUTHOR, ScType::VarPermPosArc, Keynodes::nrel_authors);
 
   ScTemplateSearchResult result;
   context->SearchByTemplate(templ, result);

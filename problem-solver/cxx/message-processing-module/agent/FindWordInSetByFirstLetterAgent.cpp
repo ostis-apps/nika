@@ -114,11 +114,8 @@ ScAddrVector FindWordInSetByFirstLetterAgent::createAnswer(std::string const & l
   ScAddr const & answerLink = m_context.GenerateLink(ScType::ConstNodeLink);
   m_context.SetLinkContent(answerLink, linkContent);
   ScAddr const & ConstPermPosArc = m_context.GenerateConnector(
-      ScType::ConstPermPosArc,
-      MessageProcessingKeynodes::word_starts_with_required_letter_answer_phrase,
-      answerLink);
-  return {
-      answerLink, ConstPermPosArc, MessageProcessingKeynodes::word_starts_with_required_letter_answer_phrase};
+      ScType::ConstPermPosArc, MessageProcessingKeynodes::word_starts_with_required_letter_answer_phrase, answerLink);
+  return {answerLink, ConstPermPosArc, MessageProcessingKeynodes::word_starts_with_required_letter_answer_phrase};
 }
 
 std::string FindWordInSetByFirstLetterAgent::getMessageText(ScAddr const & messageAddr) const

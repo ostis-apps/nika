@@ -107,11 +107,7 @@ ScAddr MessageReplyAgent::generateMessage(ScAddr const & authorAddr, ScAddr cons
   userMessageTemplate.Triple(
       MessageReplyKeynodes::concept_message, ScType::VarPermPosArc, ScType::VarNode >> USER_MESSAGE_ALIAS);
   userMessageTemplate.Quintuple(
-      USER_MESSAGE_ALIAS,
-      ScType::VarCommonArc,
-      authorAddr,
-      ScType::VarPermPosArc,
-      MessageReplyKeynodes::nrel_authors);
+      USER_MESSAGE_ALIAS, ScType::VarCommonArc, authorAddr, ScType::VarPermPosArc, MessageReplyKeynodes::nrel_authors);
   userMessageTemplate.Quintuple(
       ScType::VarNode >> TRANSLATION_NODE_ALIAS,
       ScType::VarCommonArc,
@@ -132,11 +128,7 @@ ScAddr MessageReplyAgent::generateNonAtomicActionArgsSet(ScAddr const & messageA
 
   ScTemplate argsSetTemplate;
   argsSetTemplate.Quintuple(
-      ScType::VarNode >> ARGS_SET_ALIAS,
-      ScType::VarPermPosArc,
-      messageAddr,
-      ScType::VarPermPosArc,
-      ScKeynodes::rrel_1);
+      ScType::VarNode >> ARGS_SET_ALIAS, ScType::VarPermPosArc, messageAddr, ScType::VarPermPosArc, ScKeynodes::rrel_1);
   ScTemplateGenResult templateGenResult;
 
   m_context.GenerateByTemplate(argsSetTemplate, templateGenResult);
@@ -165,7 +157,7 @@ ScAddr MessageReplyAgent::generateAnswer(ScAddr const & messageAddr)
     throw std::runtime_error("Reply message not generated.");
   }
 
-  ScAddr answerNodeAddr = m_context.GenerateNode(ScType::ConstNodeStruct);
+  ScAddr answerNodeAddr = m_context.GenerateNode(ScType::ConstNodeStructure);
   ScTemplate answerGenerationTemplate;
   answerGenerationTemplate.Triple(answerNodeAddr, ScType::VarPermPosArc, messageAddr);
   answerGenerationTemplate.Triple(
@@ -177,8 +169,7 @@ ScAddr MessageReplyAgent::generateAnswer(ScAddr const & messageAddr)
 
   ScAddrVector classes;
   ScAddrVector classesArcs;
-  ScIterator3Ptr classesIt =
-      m_context.CreateIterator3(ScType::ConstNodeClass, ScType::ConstPermPosArc, messageAddr);
+  ScIterator3Ptr classesIt = m_context.CreateIterator3(ScType::ConstNodeClass, ScType::ConstPermPosArc, messageAddr);
 
   while (classesIt->Next())
   {
