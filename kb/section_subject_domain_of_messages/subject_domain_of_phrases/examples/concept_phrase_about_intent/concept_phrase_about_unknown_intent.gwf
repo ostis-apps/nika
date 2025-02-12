@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GWF version="2.0">
+    <staticSector>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_unknown_intent" shapeColor="193" id="2495163472640" parent="0" left="0" top="0" right="232" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="-62.405" y="416.002" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase_about_unknown_intent" shapeColor="0" id="2495165238752" parent="0" left="0" top="0" right="232" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="77.5" y="189" haveBus="false" idtf_pos="4">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/general" idtf="" shapeColor="0" id="2495165237920" parent="0" x="-712.009" y="418.454" haveBus="false" idtf_pos="0">
+            <content type="1" mime_type="content/term" content_visibility="true" file_name=""><![CDATA[Извините, я не смогла определить, к какой теме 
+относится данное сообщение.
+
+Текущие классифицируемые сообщения:
+<ul>
+        <li>Сообщения приветствия</li>	
+        <li>Сообщения с наличием какой-то сущности:</li>
+            <ul>
+            <li><i>Изменение цвета компонентов интерфейса, где вместо #00bfff можно подставить hex код для любого цвета</i>,</li> 
+            <li><i>Вопросы о сущности</i>,</li>
+            <li><i>вопросы о навыках и умениях</i>,</li>
+            <li><i>вопросы про условия и срок сдачи лабораторных работ</i>,</li>
+            <li><i>вопросы о разбиении</i>,</li>
+            <li><i>сообщения о нахождении слова, которые начинаются с заданной пользователем буквы:</i>,</li>
+            <li><i>вопросы о погоде</i>;</li>
+            </ul>
+</ul>]]></content>
+        </node>
+        <node type="node/const/perm/group" idtf="concept_phrase" shapeColor="0" id="2495165243744" parent="0" left="0" top="0" right="95" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="248" y="188.5" haveBus="false" idtf_pos="5">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/relation" idtf="nrel_inclusion" shapeColor="0" id="2495165243328" parent="0" left="0" top="0" right="88" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="157" y="120.5" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <node type="node/const/perm/group" idtf="lang_ru" shapeColor="0" id="2495163477216" parent="0" left="0" top="0" right="52" bottom="25" textColor="164" text_angle="0" text_font="Times New Roman" font_size="10" x="-737.97" y="61.879" haveBus="false" idtf_pos="0">
+            <content type="0" mime_type="" content_visibility="false" file_name=""/>
+        </node>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2495163729024" parent="0" id_b="2495165243328" id_e="2495163732864" b_x="157" b_y="120.5" e_x="0" e_y="0" dotBBalance="0" dotEBalance="0.531597">
+            <points/>
+        </pair>
+        <pair type="pair/const/-/perm/orient" idtf="" shapeColor="0" id="2495163732864" parent="0" id_b="2495165243744" id_e="2495165238752" b_x="248" b_y="188.5" e_x="77.5" e_y="189" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2495163731424" parent="0" id_b="2495163477216" id_e="2495165237920" b_x="-737.97" b_y="61.879" e_x="-712.009" e_y="418.454" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+        <pair type="pair/const/pos/perm/orient/membership" idtf="" shapeColor="0" id="2495163729744" parent="0" id_b="2495163472640" id_e="2495165237920" b_x="-62.405" b_y="416.002" e_x="-712.009" e_y="418.454" dotBBalance="0" dotEBalance="0">
+            <points/>
+        </pair>
+    </staticSector>
+</GWF>
