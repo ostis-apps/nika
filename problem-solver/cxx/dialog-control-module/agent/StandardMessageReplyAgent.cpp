@@ -18,16 +18,64 @@ StandardMessageReplyAgent::StandardMessageReplyAgent()
 ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
   ScAddr messageNode = action.GetArgument(ScKeynodes::rrel_1);
-  if (!messageNode.IsValid())
+  if (!messageNode.IsValid())                                     
   {
     m_logger.Debug("The action doesn't have a message node");
   }
 
   ScAddr logicRuleNode = generateReplyMessage(messageNode);
-  ScAddr replyMessageNode = IteratorUtils::getAnyByOutRelation(&m_context, messageNode, MessageKeynodes::nrel_reply);
-  m_context.GenerateConnector(ScType::ConstPermPosArc, MessageKeynodes::concept_message, replyMessageNode);
+  if (!m_context.IsElement(logicRuleNode))
+  {
+    m_logger.Warning("The reply message isn't generated because reply construction wasn't found through direct inference agent. Trying to generate default reply message");
+    std::stringstream setElementsTextStream;
+    ScAddrVector messageClasses;
+    setElementsTextStream << "Извините, я не нашла ответа на Ваш вопрос. Я определила, что данное сообщение является элементом классов:";
+    ScIterator3Ptr it3 = m_context.CreateIterator3(
+    ScType::NodeConst,
+    ScType::EdgeAccessConstPosPerm,
+    messageNode);
+    while (it3->Next())
+    {
+      messageClasses.push_back(it3->Get(0));
+    }
+    ScAddr const & defaultReplyMessage = m_context.GenerateNode(ScType::NodeConst);
+    ScAddr const & defaultReplyLink = m_context.GenerateLink(ScType::LinkConst);
+    std::string replyText = setElementsTextStream.str();
+    replyText[replyText.length() - 2] = '.';
+    m_context.SetLinkContent(defaultReplyLink, replyText);
+    ScTemplate T;
+    T.Triple(
+      ScKeynodes::lang_ru, 
+      ScType::EdgeAccessVarPosPerm, 
+      defaultReplyLink);
+    T.Triple(
+      ScType::NodeVar >> "_link",
+      ScType::EdgeAccessVarPosPerm,
+      defaultReplyLink
+    );
+    T.Quintuple(
+      "_link", 
+      ScType::EdgeDCommonVar, 
+      defaultReplyMessage, 
+      ScType::EdgeAccessVarPosPerm,
+      DialogKeynodes::nrel_sc_text_translation
+    );
+    T.Quintuple(
+      messageNode, 
+      ScType::EdgeDCommonVar,
+      defaultReplyMessage, 
+      ScType::EdgeAccessVarPosPerm, 
+      MessageKeynodes::nrel_reply
+    );
+    ScTemplateResultItem result;
+    m_context.GenerateByTemplate(T, result);
+    action.SetResult(defaultReplyMessage);
+    return action.FinishSuccessfully();
 
-  if (!replyMessageNode.IsValid())
+  }
+ ScAddr replyMessageNode = IteratorUtils::getAnyByOutRelation(&m_context, messageNode, MessageKeynodes::nrel_reply);
+ m_context.GenerateConnector(ScType::EdgeAccessConstPosPerm, MessageKeynodes::concept_message, replyMessageNode);
+   if (!replyMessageNode.IsValid())
   {
     m_logger.Error("The reply message isn't generated");
     return action.FinishUnsuccessfully();
@@ -78,11 +126,30 @@ ScAddr StandardMessageReplyAgent::generateReplyMessage(const ScAddr & messageNod
   bool const result = actionDirectInference.InitiateAndWait(DIRECT_INFERENCE_AGENT_WAIT_TIME);
   if (result)
   {
-    ScAddr answer = IteratorUtils::getAnyByOutRelation(&m_context, actionDirectInference, ScKeynodes::nrel_result);
-    ScAddr solutionNode = IteratorUtils::getAnyFromSet(&m_context, answer);
-    ScAddr solutionTreeRoot = IteratorUtils::getAnyByOutRelation(&m_context, solutionNode, ScKeynodes::rrel_1);
-    if (solutionTreeRoot.IsValid())
-      logicRuleNode = IteratorUtils::getAnyByOutRelation(&m_context, solutionTreeRoot, ScKeynodes::rrel_1);
+    if (actionDirectInference.IsFinishedSuccessfully())
+                                                           //checking if DicrectInferenceAgent
+                                                           //performed successfully
+    {
+      ScAddr answer = IteratorUtils::getAnyByOutRelation(&m_context, actionDirectInference, ScKeynodes::nrel_result);
+      ScAddr solutionNode = IteratorUtils::getAnyFromSet(&m_context, answer);
+      ScAddr solutionTreeRoot = IteratorUtils::getAnyByOutRelation(&m_context, solutionNode, ScKeynodes::rrel_1);
+      if (solutionTreeRoot.IsValid())
+      {
+        ScAddr argNode = IteratorUtils::getAnyFromSet(&m_context, solutionTreeRoot);
+        ScAddrVector Arguments;
+        ScIterator3Ptr ArgIt = m_context.CreateIterator3(argNode, ScType::EdgeAccessConstPosPerm, ScType::NodeVar);
+        while (ArgIt ->Next())
+        {
+          Arguments.push_back(ArgIt->Get(2));
+        }
+        logicRuleNode = IteratorUtils::getAnyByOutRelation(&m_context, solutionTreeRoot, ScKeynodes::rrel_1);
+      }
+    }
+    else
+    {
+      return logicRuleNode;
+    }
+
   }
   return logicRuleNode;
 }
