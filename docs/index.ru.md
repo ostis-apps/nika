@@ -1,28 +1,37 @@
 # Документация
 
-- **Сборка**
-    * [Docker](build/docker-build.md)
-    * [Linux](build/linux-build.md)
-   
-- **Разработка**
-    * [Git workflow](dev/git-workflow.md)
-    * [Pull Request](dev/pr.md) - *правила создания pull requests*
-    * [Codestyle](dev/codestyle.md) - *документация по стилю написания кода*
-    * [Project structure](dev/project_structure.md)
-    
-- **Агенты**
-    * [Агент интерпретации неатомарных действий](agents/nonAtomicActionInterpretationAgent.ru.md)
-    * [Агент ответа на сообщениеt](agents/messageReplyAgent.ru.md)
-    * [Агент генерации ответа на сообщение](agents/standardMessageReplyAgent.ru.md)
-    * [Агент классификации сообщений с помощью Wit.ai](agents/messageTopicClassificationAgent.ru.md)
-    * [Агент классификации сообщений с помощью логических правил](agents/alternativeMessageTopicClassificationAgent.ru.md)
-    * [Агент генерации фраз](agents/phraseGenerationAgent.ru.md)
-    * [Агент смены цвета компонента интерфейса](agents/changeInterfaceColorAgent.ru.md)
-    * [Агент поиска слова по первой букве](agents/findWordInSetByFirstLetter.ru.md)
-    * [Агент прогноза погоды](agents/weatherAgent.ru.md)
+Добро пожаловать в документацию [NIKA](https://github.com/ostis-apps/nika)!
 
-- **Шаблоны**
-    * [Шаблоны для базы знаний](patterns/kb-patterns.ru.md)
+## Что такое NIKA?
 
-- **Подсистемы**
-    * [scl-machine](subsystems/scl-machine.ru.md)
+NIKA - это Интеллектуальный Ассистент, управляемый знаниями, который работает на основе Технологии OSTIS. Это диалоговая система, которая может использовать преимущества ostis-систем. Для получения дополнительной информации спросите NIKA: "Что такое NIKA?".
+
+Содержание:
+
+- [Быстрый старт](quick_start.md) - *быстро начните работу с NIKA*
+- **Инструкции по сборке** - *руководства по настройке и компиляции NIKA*
+    - [Быстрый старт](build/quick_start.md) - *быстро запустите NIKA с минимальной настройкой*
+    - [Docker](build/docker-build.md) - *сборка, запуск и развертывание NIKA с использованием контейнеров Docker*
+    - [Система сборки](build/build_system.md) - *понимание компонентов базовой системы сборки*
+    - [Флаги CMake](build/cmake_flags.md) - *настройка процесса сборки с использованием доступных опций CMake*
+- **Разработка** - *ресурсы для участия в проекте NIKA*
+    - [Git-процесс](dev/git-workflow.md) - *следуйте нашему git-процессу для эффективного сотрудничества*
+    - [Pull Request](dev/pr.md) - *рекомендации по созданию и отправке pull request'ов*
+    - [Стиль кода](dev/codestyle.md) - *придерживайтесь соглашений о стиле кодирования проекта*
+    - [Структура проекта](dev/project_structure.md) - *узнайте об организации кодовой базы NIKA*
+- **Агенты** - *описания интеллектуальных агентов в системе NIKA*
+    - [Агент интерпретации неатомарных действий](agents/nonAtomicActionInterpretationAgent.md) - *интерпретирует неатомарные действия*
+    - [Агент ответа на сообщения](agents/messageReplyAgent.md) - *генерирует соответствующие ответы на сообщения пользователя*
+    - [Стандартный агент ответа на сообщения](agents/standardMessageReplyAgent.md) - *предоставляет предопределенные, общие ответы на сообщения*
+    - [Агент классификации темы сообщения](agents/messageTopicClassificationAgent.md) - *определяет тему сообщений пользователя*
+    - [Альтернативный агент классификации темы сообщения](agents/alternativeMessageTopicClassificationAgent.md) - *другой подход к классификации темы сообщения*
+    - [Агент генерации фраз](agents/phraseGenerationAgent.md) - *создает фразы на естественном языке*
+    - [Агент изменения цвета интерфейса](agents/changeInterfaceColorAgent.md) - *динамически настраивает цвет пользовательского интерфейса*
+    - [Агент поиска слова в наборе по первой букве](agents/findWordInSetByFirstLetter.md) - *ищет слова в определенном наборе на основе их начальной буквы*
+    - [Агент погоды](agents/weatherAgent.md) - *получает и представляет информацию о погоде*
+- **Паттерны** - *документация паттернов представления знаний*
+    - [Паттерны базы знаний](patterns/kb-patterns.md) - *повторно используемые паттерны для структурирования базы знаний*
+- **Подсистемы** - *информация о внутренних компонентах NIKA*
+    - [scl-machine](subsystems/scl-machine.md) - *подробности о подсистеме `scl-машина`*
+- [Лицензия](https://github.com/ostis-apps/nika/blob/main/LICENSE)
+- [Changelog](changelog.md)
