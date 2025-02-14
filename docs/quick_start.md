@@ -9,6 +9,7 @@
     git clone https://github.com/NikitaZotov/nika
     cd nika
     git checkout feat/migrate_to_0.10.0
+    git submodule update --init --recursive
     ```
 
 2. Install C++ problem solver:
