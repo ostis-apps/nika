@@ -31,4 +31,61 @@ jobs:
           # Setting this input to true will check all Pull Request commits
           checkAllCommitMessages: true # optional, default is false
           # you must provide GITHUB_TOKEN to this input if checkAllCommitMessages is true
-          accessToken: ${{ secrets.GITHUB_TOKEN }} # optional, default is false
+          accessToken: ${{ secrets.GITHUB_TOKEN }} 
+
+  check_formatting:
+    name: Check formatting
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Restore ccache caches
+        uses: hendrikmuhs/ccache-action@v1.2
+        with:
+          key: ${{ github.job }}
+
+      - name: Conan cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.conan/data
+          key: conan-${{ runner.os }}-${{ hashFiles('**/conanfile.py') }}
+
+      - name: apt cache
+        uses: actions/cache@v4     
+        with:
+          path: |
+            /var/cache/apt/
+            /var/lib/apt/
+          key: apt-${{ runner.os }}-${{ github.job }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - name: Set up pipx
+        run: |
+          python -m pip install --user pipx
+          python -m pipx ensurepath
+
+      - name: Set up Conan
+        run: |
+          pipx install cmake
+          pipx install conan
+
+      - name: Install compilers
+        run: sudo apt install build-essential ninja-build ccache
+
+      - name: Set Conan remote
+        run: |
+          conan profile detect
+          conan remote add ostis-ai https://conan.ostis.net/artifactory/api/conan/ostis-ai-sc-machine/
+
+      - name: Install sc-machine
+        run: conan install . --build=missing
+
+      - name: Checking the code with clang
+        run: |
+          ./scripts/clang/check_formatting.sh
