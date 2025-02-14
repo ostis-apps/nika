@@ -1,11 +1,11 @@
 @pattern = [* 
-	_message _<- concept_message;
+	_message <-_ concept_message;
 	_-> rrel_entity:: _entity;;
-	_entity _<- concept_your_class_identifier;
+	_entity <-_ concept_your_class_identifier;
 		_=> nrel_main_idtf: [ ]
 			(*
 				=> nrel_main_idtf: [_id];;
-				_<- lang_ru;;
+				<-_ lang_ru;;
 			*);;
 *];;
 

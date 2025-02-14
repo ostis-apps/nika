@@ -1,14 +1,14 @@
 @contour0 = [*
-	_test_message _<- concept_informing_message_about_object;;
-	_test_message _<- concept_message_with_negative_tone;;
+	_test_message <-_ concept_informing_message_about_object;;
+	_test_message <-_ concept_message_with_negative_tone;;
 *];;
 
 @contour1 = [*
-    _atomic_message_1 _<- concept_atomic_message;;
-    _atomic_message_1 _<- concept_politeness_message;;
+    _atomic_message_1 <-_ concept_atomic_message;;
+    _atomic_message_1 <-_ concept_politeness_message;;
 
-    _atomic_message_2 _<- concept_atomic_message;;
-    _atomic_message_2 _<- concept_information_request_message;;
+    _atomic_message_2 <-_ concept_atomic_message;;
+    _atomic_message_2 <-_ concept_information_request_message;;
 
     @pair1 = (_tuple_node _-> _atomic_message_1);;
     rrel_1 _-> @pair1;;
@@ -16,12 +16,12 @@
     @pair4 = (@pair1 _=>  @pair2);;
     nrel_message_sequence _-> @pair4;;
 
-    _reply_message _<- concept_non_atomic_message;;
+    _reply_message <-_ concept_non_atomic_message;;
 
-    @pair5 = (_reply_message _<= _test_message);;
+    @pair5 = (_reply_message <=_ _test_message);;
     nrel_reply _-> @pair5;;
 
-    @pair6 = (_reply_message _<= _tuple_node);;
+    @pair6 = (_reply_message <=_ _tuple_node);;
     nrel_message_decomposition _-> @pair6;;
 *];;
 
@@ -47,7 +47,7 @@ sc_CONST_NODE_NON_ROLE_relation
     -> nrel_answer_pattern;
     -> nrel_message_decomposition;;
 
-sc_node_not_relation
+sc_node_class
     -> concept_informing_message_about_object;
     -> concept_message_with_negative_tone;
     -> concept_answer_on_standard_message_rule;

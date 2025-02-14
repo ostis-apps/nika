@@ -100,8 +100,7 @@ TEST_F(NonAtomicActionInterpreterTest, checkDynamicArguments)
   ScTemplate scTemplate;
   scTemplate.Quintuple(
       action, ScType::VarPermPosArc, ScType::VarNode >> "_dynamic_argument", ScType::VarPermPosArc, ScKeynodes::rrel_1);
-  scTemplate.Triple(
-      "_dynamic_argument", ScType::EdgeAccessVarPosTemp, TestKeynodes::test_node >> "_dynamic_argument_value");
+  scTemplate.Triple("_dynamic_argument", ScType::VarTempPosArc, TestKeynodes::test_node >> "_dynamic_argument_value");
   ScTemplateSearchResult results;
   context.SearchByTemplate(scTemplate, results);
   EXPECT_TRUE(results.Size() == 1);

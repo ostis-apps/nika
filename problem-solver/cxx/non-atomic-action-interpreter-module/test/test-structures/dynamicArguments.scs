@@ -6,9 +6,9 @@ test_action_node
 
 offset = [*
 _compound_action
-	_<- test_nonatomic_action;
-	_<- action;
-	_<= nrel_decomposition_of_action:: .._decomposition_tuple;;
+	<-_ test_nonatomic_action;
+	<-_ action;
+	<=_ nrel_decomposition_of_action:: .._decomposition_tuple;;
 
 .._decomposition_tuple
 	_-> rrel_1:: _first_action;
@@ -16,14 +16,14 @@ _compound_action
 
 _first_action
 	_=> nrel_goto:: _second_action;
-	_<- assign_dynamic_argument_test_action;
-	_<- action;
+	<-_ assign_dynamic_argument_test_action;
+	<-_ action;
 	_-> rrel_1:: .._dynamic_argument;;
 
 
 _second_action
-	_<- check_dynamic_argument_test_action;
-	_<- action;
+	<-_ check_dynamic_argument_test_action;
+	<-_ action;
 	_-> rrel_1:: .._dynamic_argument;;
 *];;
 

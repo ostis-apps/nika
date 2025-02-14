@@ -20,14 +20,14 @@ test_action_node
 			_hum1
 			_=> nrel_main_idtf::
 				@var_name1
- 				(* _<- _lang;; *);
+ 				(* <-_ _lang;; *);
 			_=> nrel_mother::
 				_hum2;;
 
 			_hum2
 			_=> nrel_main_idtf::
 				@var_name2
-				(* _<- _lang;; *);;
+				(* <-_ _lang;; *);;
 
 			concept_human
 			_-> _hum1;;
@@ -78,7 +78,7 @@ human_ruslan_korshunov
 	[Ruslan Korshunov]
 	(* <-lang_en;; *);;
 
-sc_node_not_relation
+sc_node_class
 ->lang_en;
 ->languages;
 ->concept_message;

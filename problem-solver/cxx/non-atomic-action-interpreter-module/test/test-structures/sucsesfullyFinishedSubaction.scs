@@ -6,9 +6,9 @@ test_action_node
 
 offset = [*
 _compound_action
-	_<- test_nonatomic_action;
-	_<- action;
-	_<= nrel_decomposition_of_action:: .._decomposition_tuple;;
+	<-_ test_nonatomic_action;
+	<-_ action;
+	<=_ nrel_decomposition_of_action:: .._decomposition_tuple;;
 	
 .._decomposition_tuple
 	_-> rrel_1:: _first_action;
@@ -20,20 +20,20 @@ _first_action
 	_=> nrel_then:: _second_true_action;
 	_=> nrel_else:: _second_false_action;
 	_=> nrel_goto:: _second_goto_action;
-	_<- successfully_finished_test_action;
-	_<- action;;
+	<-_ successfully_finished_test_action;
+	<-_ action;;
 
 _second_true_action
-	_<- finished_test_action;
-	_<- action;;
+	<-_ finished_test_action;
+	<-_ action;;
 
 _second_false_action
-	_<- finished_test_action;
-	_<- action;;
+	<-_ finished_test_action;
+	<-_ action;;
 
 _second_goto_action
-	_<- finished_test_action;
-	_<- action;;
+	<-_ finished_test_action;
+	<-_ action;;
 *];;
 
 offset -> rrel_key_sc_element: _compound_action;;

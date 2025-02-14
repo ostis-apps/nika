@@ -1,16 +1,16 @@
 @if = [* 
 	_message 
-		_<- concept_message;
-		_<- concept_your_message_class_name;
+		<-_ concept_message;
+		<-_ concept_your_message_class_name;
 		_-> rrel_entity:: _entity;;
-	_entity _<- concept_your_class_identifier;;
+	_entity <-_ concept_your_class_identifier;;
 *];;
 
 @then = [* 
 	_message _=> nrel_reply:: _reply_message;;
 	_reply_message
-		_<- concept_your_message_class_name;
-		_<- concept_atomic_message;;
+		<-_ concept_your_message_class_name;
+		<-_ concept_atomic_message;;
 *];;
 
 lr_message_about_your_class

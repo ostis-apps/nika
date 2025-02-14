@@ -1,6 +1,6 @@
 if_message_content = [* 
 	_message 
-		_<- concept_message;
+		<-_ concept_message;
 		_=> nrel_sc_text_translation:: .._node;;
     @message_content_link = _[your message content];;
     .._node -> @message_content_link;;

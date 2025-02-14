@@ -16,7 +16,7 @@ test_action_node
 			_=>nrel_main_idtf::
 				@var_name
 				(*
-					_<- lang_en;;
+					<-_ lang_en;;
 				*);;
 
 			_mes
@@ -56,7 +56,7 @@ message_of_guilderoy_lockhart
 		(* <-lang_en;; *);;
 	*);;
 
-sc_node_not_relation
+sc_node_class
 ->lang_en;
 ->languages;
 ->concept_message;
