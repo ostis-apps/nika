@@ -59,7 +59,7 @@
     python3 problem-solver/py/server.py
     ```
 
-9.   Install and build react interface. Open new terminal and run:
+9.   Install and build React interface. Open new terminal and run:
 
     ```sh
     cd interface
@@ -67,7 +67,7 @@
     npm run build
     ```
 
-10. Run react interface:
+10. Run React interface:
 
     ```sh
     npm run start

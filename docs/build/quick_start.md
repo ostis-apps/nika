@@ -33,7 +33,7 @@ pipx ensurepath
 exec $SHELL
 ```
 
-Install Ninja generator for CMake, to use sc-machine CMake presets:
+Install Ninja generator for CMake, to use CMake presets:
 
 ```sh
 # Use pipx to install ninja if not already installed
@@ -130,7 +130,34 @@ ctest -V
 
 You can also check code formatting. To learn more, go to the [CMake flags](cmake_flags.md) page.
 
-## Start develop Python problem solver of nika
+## Start develop sc-web interface
+
+### Install dependencies with npm
+
+To install dependencies, go to the `sc-web` directory and run:
+
+```sh
+cd sc-web
+./scripts/install_dependencies.sh
+```
+
+### Build sc-web interface
+
+To build sc-web, run:
+
+```sh
+npm run build
+```
+
+### Run sc-web interface
+
+After run:
+
+```sh
+source .venv/bin/activate && python3 server/app.py
+```
+
+## Start develop Python problem solver of NIKA
 
 ### Install dependencies with pip3
 
@@ -185,7 +212,7 @@ cd interface
 npm install
 ```
 
-### Build interface 
+### Build interface
 
 To build interface, run:
 
@@ -220,6 +247,13 @@ After run C++ problem solver:
 # by semicolon and wrapped in double quotes
 ```
 
+Run sc-web interface in new terminal:
+
+```sh
+cd sc-web
+source .venv/bin/activate && python3 server/app.py
+```
+
 Run Python problem solver in new terminal:
 
 ```sh
@@ -227,7 +261,7 @@ source problem-solver/py/.venv/bin/activate && \
 python3 problem-solver/py/server.py
 ```
 
-And run react-sc-web in new terminal:
+And run interface in new terminal:
 
 ```sh
 cd interface
