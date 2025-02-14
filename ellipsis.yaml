@@ -1,0 +1,21 @@
+version: 1.3
+about:
+  - "NIKA is an Intelligent Knowledge-driven Assistant that operates on the basis of the OSTIS Technology"
+
+pr_review:
+  rules:
+    - "Code should be DRY (Don't Repeat Yourself)"
+    - "There should be no secrets or credentials in the code"
+    - "Extremely Complicated Code Needs Comments"
+    - "Use Descriptive Variable and Constant Names"
+    - "Don't log sensitive data"
+    - "Follow the Single Responsibility Principle"
+    - "Function and Method Naming Should Follow Consistent Patterns"
+  summary_rules:
+    - "Don't mention changes if the change is only whitespace"
+    - "When a rename occurs, mention the old and new file names, but don't mention every single spot where the file renamed occurred"
+  auto_review_enabled: true
+  enable_approve_prs: true
+
+pr_address_comments:
+  delivery: "new_commit"
