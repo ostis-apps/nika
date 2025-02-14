@@ -11,7 +11,7 @@ Table of contents:
 - [Quick Start](quick_start.md) - *get up and running with NIKA quickly* 
 - **Build Instructions** - *guides for setting up and compiling NIKA*
     - [Quick Start](build/quick_start.md) - *get NIKA running quickly with minimal setup*
-    - [Docker](build/docker-build.md) - *build, run, and deploy NIKA using Docker containers*
+    - [Docker](build/docker_build.md) - *build, run, and deploy NIKA using Docker containers*
     - [Build System](build/build_system.md) - *understand the underlying build system components*
     - [CMake Flags](build/cmake_flags.md) - *configure the build process using available CMake options*
 - **Development** - *resources for contributing to the NIKA project*
@@ -19,7 +19,7 @@ Table of contents:
     - [Pull Request](dev/pr.md) - *guidelines for creating and submitting pull requests*
     - [Codestyle](dev/codestyle.md) - *adhere to the project's coding style conventions*
     - [Project structure](dev/project_structure.md) - *learn about the organization of the NIKA codebase*
-- **Agents** - *descriptions of the intelligent agents within the NIKA system*
+- **Agents** - *description of agents within the NIKA system*
     - [Non-atomic action interpretation agent](agents/nonAtomicActionInterpretationAgent.md) - *interprets non-atomic actions*
     - [Message reply agent](agents/messageReplyAgent.md) - *generates appropriate responses to user messages*
     - [Standard message reply agent](agents/standardMessageReplyAgent.md) - *provides pre-defined, common message replies*
