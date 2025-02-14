@@ -65,10 +65,10 @@ jobs:
           conan profile detect
           conan remote add ostis-ai https://conan.ostis.net/artifactory/api/conan/ostis-ai-sc-machine/
 
-      - name: Install sc-machine
+      - name: Install C++ problem solver dependencies
         run: conan install . --build=missing
 
-      - name: Build ostis-metasystem with tests
+      - name: Build NIKA with tests
         id: run_cmake
         run: |
           cmake --preset release-with-tests-conan
@@ -76,6 +76,6 @@ jobs:
 
       # TODO(NikitaZotov): test Python problem solver
 
-      - name: Run ostis-metasystem tests
+      - name: Run NIKA tests
         id: run_tests
         run: cd build/Release && ctest -V
