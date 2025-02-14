@@ -79,7 +79,7 @@ class WeatherAgentTestCase(BaseTestCase):
             template.triple(
                 answer_node,
                 sc_type.VAR_PERM_POS_ARC,
-                sc_type.VAR_LINK,
+                sc_type.VAR_NODE_LINK,
             )
             search_results = search_by_template(template)
 
@@ -112,7 +112,7 @@ class WeatherAgentTestCase(BaseTestCase):
             template.triple(
                 answer_node,
                 sc_type.VAR_PERM_POS_ARC,
-                sc_type.VAR_LINK,
+                sc_type.VAR_NODE_LINK,
             )
             search_results = search_by_template(template)
 
@@ -159,7 +159,7 @@ class WeatherAgentTestCase(BaseTestCase):
             template.quintuple(
                 entity,
                 sc_type.VAR_COMMON_ARC,
-                sc_type.VAR_LINK,
+                sc_type.VAR_NODE_LINK,
                 sc_type.VAR_PERM_POS_ARC,
                 nrel_temperature
             )
@@ -211,7 +211,7 @@ class WeatherAgentTestCase(BaseTestCase):
             template.quintuple(
                 entity,
                 sc_type.VAR_COMMON_ARC,
-                sc_type.VAR_LINK,
+                sc_type.VAR_NODE_LINK,
                 sc_type.VAR_PERM_POS_ARC,
                 nrel_temperature
             )

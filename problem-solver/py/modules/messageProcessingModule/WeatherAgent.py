@@ -19,7 +19,7 @@ from sc_kpm.utils import (
     search_connector
 )
 from sc_kpm.utils.action_utils import (
-    create_action_result,
+    generate_action_result,
     finish_action_with_status,
     get_action_arguments,
 )
@@ -58,7 +58,7 @@ class WeatherAgent(ScAgentClassic):
                     f"WeatherAgent: the message isn’t about weather")
                 return ScResult.OK
 
-            idtf = ScKeynodes.resolve("nrel_idtf", sc_type.CONST_CONST_NODE_NON_ROLE)
+            idtf = ScKeynodes.resolve("nrel_idtf", sc_type.CONST_NODE_NON_ROLE)
             answer_phrase = ScKeynodes.resolve(
                 "show_weather_answer_phrase", sc_type.CONST_NODE_CLASS)
             rrel_entity = ScKeynodes.resolve("rrel_entity", sc_type.CONST_NODE_ROLE)
@@ -87,8 +87,8 @@ class WeatherAgent(ScAgentClassic):
             if not city_idtf_link.is_valid():
                 self.set_unknown_city_link(action_node, answer_phrase)
                 return ScResult.OK
-        except:
-            self.logger.info(f"WeatherAgent: finished with an error")
+        except Exception as e:
+            self.logger.info(f"WeatherAgent: finished with an error {e}")
             return ScResult.ERROR
 
         entity_idtf = get_link_content_data(city_idtf_link)
@@ -99,12 +99,12 @@ class WeatherAgent(ScAgentClassic):
             self.logger.info(f"WeatherAgent: finished with connection error")
             return ScResult.ERROR
         link = generate_link(
-            str(temperature), ScLinkContentType.STRING, link_type=sc_type.LINK_CONST)
+            str(temperature), ScLinkContentType.STRING, link_type=sc_type.CONST_NODE_LINK)
         temperature_edge = generate_connector(
-            sc_type.EDGE_D_COMMON_CONST, city_addr, link)
+            sc_type.CONST_COMMON_ARC, city_addr, link)
         generate_connector(
             sc_type.CONST_PERM_POS_ARC, nrel_temperature, temperature_edge)
-        create_action_result(action_node, link)
+        generate_action_result(action_node, link)
 
         return ScResult.OK
 
@@ -137,7 +137,7 @@ class WeatherAgent(ScAgentClassic):
             raise
         generate_connector(
             sc_type.CONST_PERM_POS_ARC, answer_phrase, unknown_city_link)
-        create_action_result(action_node, unknown_city_link)
+        generate_action_result(action_node, unknown_city_link)
 
     def get_ru_main_identifier(self, entity_addr: ScAddr) -> ScAddr:
         main_idtf = ScKeynodes.resolve(
@@ -148,14 +148,14 @@ class WeatherAgent(ScAgentClassic):
         template.quintuple(
             entity_addr,
             sc_type.VAR_COMMON_ARC,
-            sc_type.VAR_LINK,
+            sc_type.VAR_NODE_LINK,
             sc_type.VAR_PERM_POS_ARC,
             main_idtf,
         )
         search_results = search_by_template(template)
         for result in search_results:
             idtf = result[2]
-            lang_edge = get_connector(
+            lang_edge = search_connector(
                 lang_ru, idtf, sc_type.VAR_PERM_POS_ARC)
             if lang_edge:
                 return idtf
@@ -199,7 +199,7 @@ class WeatherAgent(ScAgentClassic):
         template.quintuple(
             entity,
             sc_type.VAR_COMMON_ARC,
-            sc_type.VAR_LINK,
+            sc_type.VAR_NODE_LINK,
             sc_type.VAR_PERM_POS_ARC,
             nrel_temperature
         )
