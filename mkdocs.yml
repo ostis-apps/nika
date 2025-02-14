@@ -1,6 +1,6 @@
 site_name: NIKA
 
-dev_addr: 127.0.0.1:8002
+dev_addr: 127.0.0.1:9000
 
 extra_css:
   - _assets/main.css
@@ -21,7 +21,10 @@ plugins:
       translate_nav:
         ru:
           Home: "Главная"
-          Build: "Сборка"
+          Quick Start: "Быстрый старт"
+          Build Instructions: "Инструкции сборки"
+          Build System: "Система сборки"
+          CMake Flags: "Флаги CMake"
           Development: "Разработка"
           Project structure: "Структура проекта"
           Agents: "Агенты"
@@ -36,19 +39,25 @@ plugins:
           Interface component color changer agent: "Агент смены цвета компонента интерфейса"
           Weather agent: "Агент прогноза погоды"
           Find word in set by first letter agent: "Агент поиска слова по первой букве"
-          Changelog: "Список изменений"
           Subsystems: "Подсистемы"
           License: "Лицензия"
+          Changelog: "Список изменений"
 
 
 nav:
   - Home: index.md
   - Home: index.ru.md
-  - Build:
-    - Docker: build/docker-build.md
-    - Docker: build/docker-build.ru.md
-    - Debian-based distros / Linux: build/linux-build.md
-    - Debian-based distros / Linux: build/linux-build.ru.md
+  - Quick Start: quick_start.md
+  - Quick Start: quick_start.ru.md
+  - Build Instructions:
+    - Quick Start: build/quick_start.md
+    - Quick Start: build/quick_start.ru.md
+    - Docker: build/docker_build.md
+    - Docker: build/docker_build.ru.md
+    - Build System: build/build_system.md
+    - Build System: build/build_system.ru.md
+    - CMake Flags: build/cmake_flags.md
+    - CMake Flags: build/cmake_flags.ru.md
   - Development:
     - Git-workflow: dev/git-workflow.md
     - Git-workflow: dev/git-workflow.ru.md
@@ -77,16 +86,16 @@ nav:
     - Weather agent: agents/weatherAgent.ru.md
     - Find word in set by first letter agent: agents/findWordInSetByFirstLetter.md
     - Find word in set by first letter agent: agents/findWordInSetByFirstLetter.ru.md
-  - Subsystems:
-     - scl-machine: subsystems/scl-machine.md
-     - scl-machine: subsystems/scl-machine.ru.md
   - Patterns:
       - Knowledge base patterns: patterns/kb-patterns.md
       - Knowledge base patterns: patterns/kb-patterns.ru.md
-  - Changelog: changelog.md
+  - Subsystems:
+     - scl-machine: subsystems/scl-machine.md
+     - scl-machine: subsystems/scl-machine.ru.md
   - Thirdparty: thirdparty.md
   - Thirdparty: thirdparty.ru.md
   - License: license.md
+  - Changelog: changelog.md
 
 theme: 
     name: material
