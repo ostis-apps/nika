@@ -48,11 +48,11 @@ COPY . .
 RUN --mount=type=cache,target=/ccache/ cmake --preset release-conan && cmake --build --preset release
 
 # Gathering all artifacts together
-FROM base AS final
+FROM devdeps AS final
 
 COPY --from=builder /nika/scripts /nika/scripts
 COPY --from=builder /nika/install /nika/install
-COPY --from=builder /nika/build/Release/lib/extensions /nika/build/Release/lib/extensions
+COPY --from=builder /nika/build/Release /nika/build/Release
 COPY --from=builder /nika/.venv /nika/.venv
 
 WORKDIR /nika
