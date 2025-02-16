@@ -25,7 +25,7 @@ RUN python3 -m venv /nika/.venv && \
     pip3 install -r /nika/requirements.txt
 
 ENV PATH="/root/.local/bin:$PATH"
-RUN conan remote add ostis-ai https://conan.ostis.net/artifactory/api/conan/ostis-ai-sc-machine && \
+RUN conan remote add ostis-ai https://conan.ostis.net/artifactory/api/conan/ostis-ai-library && \
     conan profile detect && \
     conan install . --build=missing
 

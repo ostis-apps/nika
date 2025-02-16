@@ -63,7 +63,7 @@ jobs:
       - name: Set Conan remote
         run: |
           conan profile detect
-          conan remote add ostis-ai https://conan.ostis.net/artifactory/api/conan/ostis-ai-sc-machine/
+          conan remote add ostis-ai https://conan.ostis.net/artifactory/api/conan/ostis-ai-library
 
       - name: Install C++ problem solver dependencies
         run: conan install . --build=missing
