@@ -1,3 +1,9 @@
+const express = require('express');
+
+const app = express();
+
+app.use(express.json());
+
 require('dotenv').config();
 
 const express = require('express');
@@ -79,7 +85,7 @@ app.use(express.static(path.join(__dirname, '../build')));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.set('views', path.resolve(__dirname, '../build'));
-
+app.use(express.json());
 app.get('*', (req, res) => {
     res.render('index');
 });
