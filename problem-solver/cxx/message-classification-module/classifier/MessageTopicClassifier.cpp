@@ -313,7 +313,6 @@ ScAddrVector MessageTopicClassifier::processEntities(
   ScTemplate entityTemplate;
   ScAddr possibleEntityClass;
 
-  std::map<std::string, std::string> notFoundEntityIdtfToRole;
   while (possibleEntityIterator->Next())
   {
     possibleEntityClass = possibleEntityIterator->Get(2);
@@ -349,6 +348,7 @@ ScAddrVector MessageTopicClassifier::processEntities(
               utils::CommonUtils::getIdtf(context, entityAddr, relationToFindEntity, {ScKeynodes::lang_ru}));
         }
 
+        std::set<std::string> foundEntities;
         for (auto const & [entitySameIdtf, entitySameRoleIdtf] : entityIdtfToRole)
         {
           if (std::find(identifiers.begin(), identifiers.end(), entitySameIdtf) != identifiers.end())
@@ -362,14 +362,21 @@ ScAddrVector MessageTopicClassifier::processEntities(
             messageEntitiesElements.push_back(entityRole);
             messageEntitiesElements.push_back(messageEntityEdge);
             messageEntitiesElements.push_back(messageEntityRoleEdge);
+
+            foundEntities.insert(entitySameIdtf);
           }
-          notFoundEntityIdtfToRole.insert({entitySameIdtf, entitySameRoleIdtf});
+        }
+
+        for (auto const & entityIdtf : foundEntities)
+        {
+          if (entityIdtfToRole.find(entityIdtf) != entityIdtfToRole.cend())
+            entityIdtfToRole.erase(entityIdtf);
         }
       }
     }
   }
 
-  for (auto const & [notFoundEntitiesIdtf, notFoundEntitiesRoles] : notFoundEntityIdtfToRole)
+  for (auto const & [notFoundEntitiesIdtf, notFoundEntitiesRoles] : entityIdtfToRole)
   {
     ScAddr const & createdEntity = context->GenerateLink();
     context->SetLinkContent(createdEntity, notFoundEntitiesIdtf);
