@@ -49,7 +49,7 @@ const subscribeToAgentAnswer = async (actionNode: ScAddr, keynodes: Record<strin
         }
     };
 
-    const eventParams = new ScEventSubscriptionParams(actionNode, ScEventType.AfterGenerateOutgoingArc, onActionFinished);
+    const eventParams = new ScEventSubscriptionParams(actionNode, ScEventType.AfterGenerateIncomingArc, onActionFinished);
 
     client.createElementaryEventSubscriptions(eventParams);
 };
