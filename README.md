@@ -21,7 +21,7 @@ pip3 install mkdocs markdown-include mkdocs-material mkdocs-i18n
 mkdocs serve
 ```
 
-Then open http://127.0.0.1:8002/ in your browser
+Then open http://127.0.0.1:9001/ in your browser
 
 ## ✨ Demo
 ![demo.png](docs/images/demo.png)
