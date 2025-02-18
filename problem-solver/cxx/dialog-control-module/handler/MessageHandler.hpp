@@ -3,8 +3,6 @@
 #include "searcher/PhraseSearcher.hpp"
 #include <common/searcher/MessageSearcher.hpp>
 
-using namespace commonModule;
-
 namespace dialogControlModule
 {
 class MessageHandler
@@ -36,7 +34,7 @@ private:
   ScAgentContext * context;
   std::unique_ptr<LanguageSearcher> languageSearcher;
   std::unique_ptr<MessageConstructionsGenerator> messageConstructionsGenerator;
-  std::unique_ptr<MessageSearcher> messageSearcher;
+  std::unique_ptr<commonModule::MessageSearcher> messageSearcher;
   std::unique_ptr<PhraseSearcher> phraseSearcher;
 
   void clearSemanticAnswer();

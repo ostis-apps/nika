@@ -4,8 +4,6 @@
 
 #include <common/searcher/MessageSearcher.hpp>
 
-using namespace commonModule;
-
 namespace messageProcessingModule
 {
 class FindWordInSetByFirstLetterAgent : public ScActionInitiatedAgent
@@ -20,6 +18,6 @@ private:
 
   std::string getMessageText(ScAddr const & messageAddr) const;
 
-  std::unique_ptr<MessageSearcher> messageSearcher;
+  std::unique_ptr<commonModule::MessageSearcher> messageSearcher;
 };
 }  // namespace messageProcessingModule

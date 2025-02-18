@@ -5,8 +5,6 @@
 #include "client/WitAiClientInterface.hpp"
 #include <common/searcher/MessageSearcher.hpp>
 
-using namespace commonModule;
-
 namespace messageClassificationModule
 {
 class MessageTopicClassifier
@@ -21,7 +19,7 @@ protected:
 
   ScAddrVector relationsToFindEntity{ScKeynodes::nrel_main_idtf, ScKeynodes::nrel_idtf};
 
-  std::unique_ptr<MessageSearcher> messageSearcher;
+  std::unique_ptr<commonModule::MessageSearcher> messageSearcher;
 
   std::shared_ptr<WitAiClientInterface> client;
 

@@ -114,7 +114,7 @@ ScAddr StandardMessageReplyAgent::generatePhraseAgentParametersNode(const ScAddr
 void StandardMessageReplyAgent::initFields()
 {
   this->langSearcher = std::make_unique<LanguageSearcher>(&m_context);
-  this->messageSearcher = std::make_unique<MessageSearcher>(&m_context);
+  this->messageSearcher = std::make_unique<commonModule::MessageSearcher>(&m_context);
   this->messageHandler = std::make_unique<MessageHandler>(&m_context);
 }
 

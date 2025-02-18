@@ -40,7 +40,7 @@ ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const
       m_context.EraseElement(agentAnswerLinkIterator->Get(2));
     }
 
-    messageSearcher = std::make_unique<MessageSearcher>(&m_context);
+    messageSearcher = std::make_unique<commonModule::MessageSearcher>(&m_context);
     std::string messageText = getMessageText(messageAddr);
     ScAddr const & entityAddr =
         utils::IteratorUtils::getAnyByOutRelation(&m_context, messageAddr, MessageProcessingKeynodes::rrel_entity);

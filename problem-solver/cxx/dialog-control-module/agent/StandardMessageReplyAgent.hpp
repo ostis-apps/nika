@@ -18,7 +18,7 @@ private:
 
   std::unique_ptr<LanguageSearcher> langSearcher;
   std::unique_ptr<MessageHandler> messageHandler;
-  std::unique_ptr<MessageSearcher> messageSearcher;
+  std::unique_ptr<commonModule::MessageSearcher> messageSearcher;
 
   ScAddr generatePhraseAgentParametersNode(const ScAddr & messageNode);
 

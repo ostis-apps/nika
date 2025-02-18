@@ -9,7 +9,7 @@ MessageHandler::MessageHandler(ScAgentContext * context)
   : context(context)
   , languageSearcher(std::make_unique<LanguageSearcher>(context))
   , messageConstructionsGenerator(std::make_unique<MessageConstructionsGenerator>(context))
-  , messageSearcher(std::make_unique<MessageSearcher>(context))
+  , messageSearcher(std::make_unique<commonModule::MessageSearcher>(context))
   , phraseSearcher(std::make_unique<PhraseSearcher>(context))
 {
 }
