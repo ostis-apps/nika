@@ -26,7 +26,7 @@ install(FILES
 
 set(CPACK_PACKAGE_NAME                  nika)
 set(CPACK_PACKAGE_VENDOR                "OSTIS AI")
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY   "Component manager for ostis-systems")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY   "NIKA is an Intelligent Knowledge-driven Assistant")
 set(CPACK_PACKAGE_INSTALL_DIRECTORY     ${CPACK_PACKAGE_NAME})
 set(CPACK_PACKAGE_VERSION_MAJOR         ${PROJECT_VERSION_MAJOR})
 set(CPACK_PACKAGE_VERSION_MINOR         ${PROJECT_VERSION_MINOR})
