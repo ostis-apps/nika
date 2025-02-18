@@ -135,8 +135,8 @@ ctest -V
 Перейдите в директорию `sc-web` и выполните:
 
 ```sh
-cd interface
-npm install
+cd sc-web
+./scripts/install_dependencies.sh
 ```
 
 ### Сборка sc-web интерфейса

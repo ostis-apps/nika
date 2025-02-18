@@ -6,7 +6,7 @@ NIKA's build system is based on the principles of the [sc-machine](https://githu
 
 This project uses CMake presets. These presets help manage different build configurations, making it easier to work with dependencies and streamline the build process.
 
-If you wish to use CLI instead, you can list all the available configurations in the `CMakePresets.json` file and pick one of the presets:
+If you wish to use CLI instead of a graphical interface like Visual Studio Code, you can list all the available configurations in the `CMakePresets.json` file and pick one of the presets:
 
 ```sh
 conan install . -s build_type=<Debug|Release> --build=missing
