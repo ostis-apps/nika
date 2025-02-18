@@ -65,6 +65,6 @@ endfunction()
 
 function(target_clangformat_setup target)
     get_target_property(target_sources ${target} SOURCES)
-    list(FILTER target_sources EXCLUDE REGEX \(.*/generated/.*|.*/scs/*.|.*/json/.*\))
+    list(FILTER target_sources EXCLUDE REGEX \(.*/scs/*.|.*/json/.*\))
     prefix_clangformat_setup(${target} ${target_sources})
 endfunction()
