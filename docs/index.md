@@ -18,7 +18,6 @@ Table of contents:
     - [Git workflow](dev/git-workflow.md) - *follow our git workflow for effective collaboration*
     - [Pull Request](dev/pr.md) - *guidelines for creating and submitting pull requests*
     - [Codestyle](dev/codestyle.md) - *adhere to the project's coding style conventions*
-    - [Project structure](dev/project_structure.md) - *learn about the organization of the NIKA codebase*
 - **Agents** - *description of agents within the NIKA system*
     - [Non-atomic action interpretation agent](agents/nonAtomicActionInterpretationAgent.md) - *interprets non-atomic actions*
     - [Message reply agent](agents/messageReplyAgent.md) - *generates appropriate responses to user messages*
