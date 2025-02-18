@@ -1,11 +1,11 @@
 set(SOURCES
-    "CommonModule.cpp"
+    "NonAtomicActionInterpreterModule.cpp"
     "agent/NonAtomicActionInterpreterAgent.cpp"
     "interpreter/NonAtomicActionInterpreter.cpp"
 )
 
 set(HEADERS
-    "CommonModule.hpp"
+    "NonAtomicActionInterpreterModule.hpp"
     "agent/NonAtomicActionInterpreterAgent.hpp"
     "interpreter/NonAtomicActionInterpreter.hpp"
 )

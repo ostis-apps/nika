@@ -4,7 +4,7 @@
 #include <common/utils/RelationUtils.hpp>
 #include <sc-agents-common/utils/IteratorUtils.hpp>
 
-using namespace commonModule;
+using namespace nonAtomicActionInterpreterModule;
 
 ScResult NonAtomicActionInterpreterAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
@@ -44,7 +44,7 @@ ScResult NonAtomicActionInterpreterAgent::DoProgram(ScActionInitiatedEvent const
 
 ScAddr NonAtomicActionInterpreterAgent::GetActionClass() const
 {
-  return Keynodes::action_interpret_non_atomic_action;
+  return commonModule::Keynodes::action_interpret_non_atomic_action;
 }
 
 void NonAtomicActionInterpreterAgent::generateNonAtomicActionTemplate(

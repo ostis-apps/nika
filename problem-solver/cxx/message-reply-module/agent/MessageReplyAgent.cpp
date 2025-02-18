@@ -62,15 +62,15 @@ ScResult MessageReplyAgent::DoProgram(ScActionInitiatedEvent const & event, ScAc
   try
   {
     answerAddr = generateAnswer(messageAddr);
-    ScTemplate replysearchByTemplate;
-    replysearchByTemplate.Quintuple(
+    ScTemplate replySearchByTemplate;
+    replySearchByTemplate.Quintuple(
         messageAddr,
         ScType::VarCommonArc,
         ScType::VarNode >> "_reply_message",
         ScType::VarPermPosArc,
         MessageReplyKeynodes::nrel_reply);
     ScTemplateSearchResult searchResult;
-    m_context.SearchByTemplate(replysearchByTemplate, searchResult);
+    m_context.SearchByTemplate(replySearchByTemplate, searchResult);
 
     ScAddr const & replyMessageAddr = searchResult[0]["_reply_message"];
     utils::GenerationUtils::generateRelationBetween(
@@ -143,15 +143,15 @@ ScAddr MessageReplyAgent::generateAnswer(ScAddr const & messageAddr)
   static std::string const REPLY_MESSAGE_ALIAS = "_reply_message";
   static std::string const ANSWER_ALIAS = "_answer";
 
-  ScTemplate replysearchByTemplate;
-  replysearchByTemplate.Quintuple(
+  ScTemplate replySearchByTemplate;
+  replySearchByTemplate.Quintuple(
       messageAddr,
       ScType::VarCommonArc >> REPLY_MESSAGE_RELATION_PAIR_ARC_ALIAS,
       ScType::VarNode >> REPLY_MESSAGE_ALIAS,
       ScType::VarPermPosArc >> REPLY_MESSAGE_RELATION_ACCESS_ARC_ALIAS,
       MessageReplyKeynodes::nrel_reply);
   ScTemplateSearchResult searchResult;
-  m_context.SearchByTemplate(replysearchByTemplate, searchResult);
+  m_context.SearchByTemplate(replySearchByTemplate, searchResult);
   if (searchResult.Size() != 1)
   {
     throw std::runtime_error("Reply message not generated.");

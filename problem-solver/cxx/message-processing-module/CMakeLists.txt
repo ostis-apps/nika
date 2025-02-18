@@ -24,5 +24,5 @@ endif()
 
 if(${SC_BUILD_TESTS})
 	set(MESSAGE_PROCESSING_MODULE_SRC ${CMAKE_CURRENT_SOURCE_DIR})
-    add_subdirectory(test)
+	add_subdirectory(test)
 endif()

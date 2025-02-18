@@ -2,8 +2,9 @@
 
 #include <sc-memory/sc_agent.hpp>
 
-namespace commonModule
+namespace nonAtomicActionInterpreterModule
 {
+
 class NonAtomicActionInterpreter
 {
 public:
@@ -31,4 +32,4 @@ private:
   static std::string getClassNameForLog();
 };
 
-}  // namespace commonModule
+}  // namespace nonAtomicActionInterpreterModule

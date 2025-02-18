@@ -11,7 +11,7 @@
 #include <common/keynodes/Keynodes.hpp>
 #include <sc-builder/scs_loader.hpp>
 
-using namespace commonModule;
+using namespace nonAtomicActionInterpreterModule;
 
 namespace commonTest
 {
@@ -54,7 +54,7 @@ ScAction getFirstAction(ScAgentContext & context)
       ScType::VarCommonArc,
       "_nonAtomicAction",
       ScType::VarPermPosArc,
-      Keynodes::nrel_decomposition_of_action);
+      commonModule::Keynodes::nrel_decomposition_of_action);
   scTemplate.Quintuple(
       "_tuple", ScType::VarPermPosArc, ScType::VarNode >> "_firstAction", ScType::VarPermPosArc, ScKeynodes::rrel_1);
 

@@ -4,7 +4,7 @@
 
 #include "interpreter/NonAtomicActionInterpreter.hpp"
 
-namespace commonModule
+namespace nonAtomicActionInterpreterModule
 {
 class NonAtomicActionInterpreterAgent : public ScActionInitiatedAgent
 {
@@ -29,4 +29,4 @@ private:
   void initFields();
 };
 
-}  // namespace commonModule
+}  // namespace nonAtomicActionInterpreterModule

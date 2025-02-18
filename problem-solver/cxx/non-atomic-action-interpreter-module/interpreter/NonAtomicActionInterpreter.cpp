@@ -3,7 +3,7 @@
 #include <common/keynodes/Keynodes.hpp>
 #include <sc-agents-common/utils/IteratorUtils.hpp>
 
-using namespace commonModule;
+using namespace nonAtomicActionInterpreterModule;
 NonAtomicActionInterpreter::NonAtomicActionInterpreter(ScAgentContext * context)
   : context(context)
 {
@@ -11,8 +11,8 @@ NonAtomicActionInterpreter::NonAtomicActionInterpreter(ScAgentContext * context)
 
 void NonAtomicActionInterpreter::interpret(ScAddr const & nonAtomicActionAddr)
 {
-  ScAddr decompositionTuple =
-      utils::IteratorUtils::getAnyByInRelation(context, nonAtomicActionAddr, Keynodes::nrel_decomposition_of_action);
+  ScAddr decompositionTuple = utils::IteratorUtils::getAnyByInRelation(
+      context, nonAtomicActionAddr, commonModule::Keynodes::nrel_decomposition_of_action);
   ScAddr action = getFirstSubAction(decompositionTuple);
   while (action.IsValid())
   {
@@ -70,7 +70,7 @@ ScAddr NonAtomicActionInterpreter::getNextAction(ScAddr const & actionAddr)
 
 ScAddr NonAtomicActionInterpreter::getThenAction(ScAddr const & actionAddr)
 {
-  ScAddr nextAction = utils::IteratorUtils::getAnyByOutRelation(context, actionAddr, Keynodes::nrel_then);
+  ScAddr nextAction = utils::IteratorUtils::getAnyByOutRelation(context, actionAddr, commonModule::Keynodes::nrel_then);
   if (!nextAction.IsValid())
   {
     SC_LOG_DEBUG(getClassNameForLog() + ": Action with nrel_then relation not found, searching for nrel_goto instead");
@@ -81,7 +81,7 @@ ScAddr NonAtomicActionInterpreter::getThenAction(ScAddr const & actionAddr)
 
 ScAddr NonAtomicActionInterpreter::getElseAction(ScAddr const & actionAddr)
 {
-  ScAddr nextAction = utils::IteratorUtils::getAnyByOutRelation(context, actionAddr, Keynodes::nrel_else);
+  ScAddr nextAction = utils::IteratorUtils::getAnyByOutRelation(context, actionAddr, commonModule::Keynodes::nrel_else);
   if (!nextAction.IsValid())
   {
     SC_LOG_DEBUG(getClassNameForLog() + ": Action with nrel_else relation not found, searching for nrel_goto instead");
@@ -92,7 +92,7 @@ ScAddr NonAtomicActionInterpreter::getElseAction(ScAddr const & actionAddr)
 
 ScAddr NonAtomicActionInterpreter::getGoToAction(ScAddr const & actionAddr)
 {
-  return utils::IteratorUtils::getAnyByOutRelation(context, actionAddr, Keynodes::nrel_goto);
+  return utils::IteratorUtils::getAnyByOutRelation(context, actionAddr, commonModule::Keynodes::nrel_goto);
 }
 
 std::string NonAtomicActionInterpreter::getClassNameForLog()
