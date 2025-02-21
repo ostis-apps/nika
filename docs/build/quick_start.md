@@ -174,8 +174,8 @@ pip3 install -r problem-solver/py/requirements.txt
 Running Python problem solver requires C++ problem solver to be running. Run C++ problem solver:
 
 ```sh
-./path/to/sc-machine/binary -s kb.bin \
-    -e "path/to/nika/lib/extensions;path/to/sc-machine/lib/extensions"
+./path/to/sc-machine/binary -s kb.bin -c nika.ini \
+    -e "path/to/nika/lib/extensions;path/to/sc-machine/lib/extensions;path/to/scl-machine/lib/extensions"
 ```
 
 and after that, run Python problem-solver tests in new terminal:
@@ -190,8 +190,8 @@ python3 -m unittest discover problem-solver/py
 Run C++ problem solver:
 
 ```sh
-./path/to/sc-machine/binary -s kb.bin \
-    -e "path/to/nika/lib/extensions;path/to/sc-machine/lib/extensions"
+./path/to/sc-machine/binary -s kb.bin -c nika.ini \
+    -e "path/to/nika/lib/extensions;path/to/sc-machine/lib/extensions;path/to/scl-machine/lib/extensions"
 ```
 
 and after that, run Python problem-solver in new terminal:
@@ -241,8 +241,8 @@ Firstly, build knowledge base:
 After run C++ problem solver:
 
 ```sh
-./path/to/sc-machine/binary -s kb.bin \
-    -e "path/to/nika/lib/extensions;path/to/sc-machine/lib/extensions"
+./path/to/sc-machine/binary -s kb.bin -c nika.ini \
+    -e "path/to/nika/lib/extensions;path/to/sc-machine/lib/extensions;path/to/scl-machine/lib/extensions"
 # if several paths to extensions are provided then they should be separated 
 # by semicolon and wrapped in double quotes
 ```

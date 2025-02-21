@@ -172,8 +172,8 @@ pip3 install -r problem-solver/py/requirements.txt
 Для запуска Python решателя задач требуется работающий C++ решатель задач. Запустите его:
 
 ```sh
-./path/to/sc-machine/binary -s kb.bin \
-    -e "path/to/nika/lib/extensions;path/to/sc-machine/lib/extensions"
+./path/to/sc-machine/binary -s kb.bin -c nika.ini \
+    -e "path/to/nika/lib/extensions;path/to/sc-machine/lib/extensions;path/to/scl-machine/lib/extensions"
 ```
 
 Затем в новом терминале выполните:
@@ -188,8 +188,8 @@ python3 -m unittest discover problem-solver/py
 Запустите C++ решатель задач:
 
 ```sh
-./path/to/sc-machine/binary -s kb.bin \
-    -e "path/to/nika/lib/extensions;path/to/sc-machine/lib/extensions"
+./path/to/sc-machine/binary -s kb.bin -c nika.ini \
+    -e "path/to/nika/lib/extensions;path/to/sc-machine/lib/extensions;path/to/scl-machine/lib/extensions"
 ```
 
 Затем в новом терминале выполните:
@@ -239,8 +239,8 @@ npm run start
 Затем запустите C++ решатель задач:
 
 ```sh
-./path/to/sc-machine/binary -s kb.bin \
-    -e "path/to/nika/lib/extensions;path/to/sc-machine/lib/extensions"
+./path/to/sc-machine/binary -s kb.bin -c nika.ini \
+    -e "path/to/nika/lib/extensions;path/to/sc-machine/lib/extensions;path/to/scl-machine/lib/extensions"
 ```
 
 Запустите sc-web интерфейс в новом терминале:
