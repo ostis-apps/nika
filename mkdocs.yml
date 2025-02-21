@@ -1,6 +1,7 @@
 site_name: NIKA
-
-dev_addr: 127.0.0.1:8002
+dev_addr: 127.0.0.1:9001
+repo_url: https://github.com/ostis-apps/nika
+edit_uri: edit/main/docs/
 
 extra_css:
   - _assets/main.css
@@ -8,47 +9,20 @@ extra_javascript:
   - _assets/scg.min.js
   - _assets/main.js
 
-plugins:
-  - search                                       
-  - i18n:
-      default_language: en
-      languages:
-        en: English
-        ru: Русский
-      no_translation:
-        ru: "Эта страница не переведена на русский язык"
-        en: "This page isn't translated to English"
-      translate_nav:
-        ru:
-          Home: "Главная"
-          Build: "Сборка"
-          Development: "Разработка"
-          Project structure: "Структура проекта"
-          Agents: "Агенты"
-          Patterns: "Шаблоны"
-          Knowledge base patterns: "Шаблоны для базы знаний"
-          Message reply agent: "Агент ответа на сообщение"
-          Non-atomic action interpretation agent: "Агент интерпретации неатомарных действий"
-          Alternative message topic classification agent: "Агент классификации сообщений с помощью логических правил"
-          Message topic classification agent: "Агент классификации сообщений с помощью Wit.ai"
-          Standard message reply agent: "Агент генерации ответа на сообщение"
-          Phrase generation agent: "Агент генерации фраз"
-          Interface component color changer agent: "Агент смены цвета компонента интерфейса"
-          Weather agent: "Агент прогноза погоды"
-          Find word in set by first letter agent: "Агент поиска слова по первой букве"
-          Changelog: "Список изменений"
-          Subsystems: "Подсистемы"
-          License: "Лицензия"
-
-
 nav:
   - Home: index.md
   - Home: index.ru.md
-  - Build:
-    - Docker: build/docker-build.md
-    - Docker: build/docker-build.ru.md
-    - Debian-based distros / Linux: build/linux-build.md
-    - Debian-based distros / Linux: build/linux-build.ru.md
+  - Quick Start: quick_start.md
+  - Quick Start: quick_start.ru.md
+  - Build Instructions:
+    - Quick Start: build/quick_start.md
+    - Quick Start: build/quick_start.ru.md
+    - Docker: build/docker_build.md
+    - Docker: build/docker_build.ru.md
+    - Build System: build/build_system.md
+    - Build System: build/build_system.ru.md
+    - CMake Flags: build/cmake_flags.md
+    - CMake Flags: build/cmake_flags.ru.md
   - Development:
     - Git-workflow: dev/git-workflow.md
     - Git-workflow: dev/git-workflow.ru.md
@@ -56,8 +30,6 @@ nav:
     - Pull requests: dev/pr.ru.md
     - Codestyle: dev/codestyle.md
     - Codestyle: dev/codestyle.ru.md
-    - Project structure: dev/project_structure.md
-    - Project structure: dev/project_structure.ru.md
   - Agents:
     - Message reply agent: agents/messageReplyAgent.md
     - Message reply agent: agents/messageReplyAgent.ru.md
@@ -77,26 +49,90 @@ nav:
     - Weather agent: agents/weatherAgent.ru.md
     - Find word in set by first letter agent: agents/findWordInSetByFirstLetter.md
     - Find word in set by first letter agent: agents/findWordInSetByFirstLetter.ru.md
-  - Subsystems:
-     - scl-machine: subsystems/scl-machine.md
-     - scl-machine: subsystems/scl-machine.ru.md
   - Patterns:
       - Knowledge base patterns: patterns/kb-patterns.md
       - Knowledge base patterns: patterns/kb-patterns.ru.md
-  - Changelog: changelog.md
+  - Subsystems:
+     - scl-machine: subsystems/scl-machine.md
+     - scl-machine: subsystems/scl-machine.ru.md
   - Thirdparty: thirdparty.md
   - Thirdparty: thirdparty.ru.md
   - License: license.md
+  - Changelog: changelog.md
+
+plugins:
+   - search:
+      lang: en
+      separator: '[\s\-\.]+'
+   - i18n:
+      default_language: en
+      languages:
+        en: English
+        ru: Русский
+      no_translation:
+        ru: "Эта страница не переведена на русский язык"
+        en: "This page isn't translated to English"
+      translate_nav:
+        ru:
+          Home: "Главная"
+          Quick Start: "Быстрый старт"
+          Build Instructions: "Инструкции сборки"
+          Build System: "Система сборки"
+          CMake Flags: "Флаги CMake"
+          Development: "Разработка"
+          Agents: "Агенты"
+          Patterns: "Шаблоны"
+          Knowledge base patterns: "Шаблоны для базы знаний"
+          Message reply agent: "Агент ответа на сообщение"
+          Non-atomic action interpretation agent: "Агент интерпретации неатомарных действий"
+          Alternative message topic classification agent: "Альтернативный агент классификации темы сообщения"
+          Message topic classification agent: "Агент классификации сообщений"
+          Standard message reply agent: "Агент генерации ответа на сообщение"
+          Phrase generation agent: "Агент генерации фраз"
+          Interface component color changer agent: "Агент смены цвета компонента интерфейса"
+          Weather agent: "Агент прогноза погоды"
+          Find word in set by first letter agent: "Агент поиска слова по первой букве"
+          Subsystems: "Подсистемы"
+          License: "Лицензия"
+          Changelog: "Список изменений"
 
 theme: 
-    name: material
-    language: en
+  name: material
+  favicon: ostis-logo.png
+  logo: ostis-logo.png
+  palette:  # Defines color schemes for light and dark modes
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant       # Enables instant loading of pages
+    - navigation.tracking      # Automatically focuses active section in sidebar
+    - navigation.tabs          # Adds top-level sections as tabs
+    - navigation.sections      # Renders top-level sections as groups in sidebar
+    - navigation.expand        # Expands all collapsible sections by default
+    - navigation.top           # Adds a "back to top" button
+    - search.suggest           # Displays search suggestions 
+    - search.highlight         # Highlights search terms on result page
+    - content.action.edit      # Adds links to edit doc files
+    - content.tabs.link        # Shares link when clicking on a tab
+    - content.code.copy        # Adds a copy button to code blocks
 
 extra:
   # Default mkdocs-material alternate links for untranslated pages
   # https://squidfunk.github.io/mkdocs-material/setup/changing-the-language/#site-language-selector
   # For translated pages the language name is replaced by the string configured in i18n plugin
-  # secction and link is replaced by the link to the translated page
+  # section and link is replaced by the link to the translated page
   alternate:
     - name: "Home"
       link: ""
@@ -106,9 +142,12 @@ extra:
       link: index.ru
       lang: ru
 
-
 markdown_extensions:
-  - admonition
+  - admonition                 # Allows creation of call-out boxes (e.g., notes, warnings)
   - codehilite
-  - pymdownx.details
-  - pymdownx.superfences
+  - md_in_html                 # Allows Markdown syntax inside HTML blocks
+  - pymdownx.highlight:        # Enhances code block highlighting
+      anchor_linenums: true
+  - pymdownx.inlinehilite      # Enables inline code highlighting
+  - pymdownx.details           # Allows creating collapsible elements
+  - pymdownx.superfences       # Enables advanced fenced code blocks

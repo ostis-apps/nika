@@ -9,11 +9,97 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  tests-conan:
+    uses: ./.github/workflows/test_conan.yml
+  build-conan:
+    needs: tests-conan
+    strategy:
+      fail-fast: true
+      matrix:
+        config:
+          - { os: ubuntu-22.04, cc: "gcc", cxx: "g++" }
+          - { os: macos-14, cc: "clang", cxx: "clang++" }
+
+    runs-on: ${{ matrix.config.os }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Restore ccache caches
+        uses: hendrikmuhs/ccache-action@v1.2
+        with:
+          key: ${{ github.job }}
+
+      - name: Conan cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.conan/data
+          key: conan-${{ runner.os }}-${{ hashFiles('**/conanfile.py') }}
+
+      - name: apt cache
+        uses: actions/cache@v4
+        if: runner.os == 'Linux'        
+        with:
+          path: |
+            /var/cache/apt/
+            /var/lib/apt/
+          key: apt-${{ runner.os }}-${{ github.job }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - name: Set up pipx
+        run: |
+          python -m pip install --user pipx
+          python -m pipx ensurepath
+
+      - name: Set up Conan
+        run: |
+          pipx install cmake
+          pipx install conan
+
+      - name: Install compilers (Ubuntu)
+        if: runner.os == 'Linux'
+        run: sudo apt install build-essential ninja-build ccache
+
+      - name: Install compilers (macOS)
+        if: runner.os == 'macOS'
+        run: brew install cmake ninja ccache
+
+      - name: Set Conan remote
+        run: |
+          conan profile detect
+          conan remote add ostis-ai https://conan.ostis.net/artifactory/api/conan/ostis-ai-library
+
+      - name: Install C++ problem solver dependencies
+        run: conan install . --build=missing
+
+      - name: Build NIKA
+        id: run_cmake
+        run: |
+          cmake --preset release-conan
+          cmake --build --preset release
+
+      - name: Create archive
+        run: |
+          cd ./build/Release
+          cpack -G TGZ
+
+      - name: Upload archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: nika-${{ matrix.config.os }}-${{ github.ref_name }}
+          path: ./build/Release/nika-*.tar.gz
+
+  changelog:
+    needs: build-conan
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Read changelog
         id: changelog_reader
@@ -22,11 +108,19 @@ jobs:
           version: ${{ github.ref_name }}
           path: docs/changelog.md
 
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: nika-*
+          path: artifacts
+  
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           body: ${{ steps.changelog_reader.outputs.changes }}
           name: 'v${{ github.ref_name }}'
+          files: |
+            artifacts/**/*.tar.gz
 
   problem_solver_docker:
     runs-on: ubuntu-latest

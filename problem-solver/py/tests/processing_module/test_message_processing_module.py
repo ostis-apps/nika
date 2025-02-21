@@ -1,8 +1,8 @@
 from pathlib import Path
 
 from modules.messageProcessingModule.MessageProcessingModule import MessageProcessingModule
-from sc_client.client import template_search
-from sc_client.constants import sc_types
+from sc_client.client import search_by_template
+from sc_client.constants import sc_type
 from sc_client.models import ScTemplate, ScAddr
 from sc_kpm import ScKeynodes
 from sc_kpm.identifiers import CommonIdentifiers
@@ -50,7 +50,7 @@ class WeatherAgentTestCase(BaseTestCase):
         self.server.add_modules(module)
         with self.server.register_modules():
             message_node = ScKeynodes.resolve(
-                "test_message", sc_types.NODE)
+                "test_message", sc_type.NODE)
             self.assertTrue(message_node.is_valid())
 
             self.run_weather_agent(message_node)
@@ -68,20 +68,20 @@ class WeatherAgentTestCase(BaseTestCase):
         self.server.add_modules(module)
         with self.server.register_modules():
             message_node = ScKeynodes.resolve(
-                "test_message", sc_types.NODE)
+                "test_message", sc_type.NODE)
             self.assertTrue(message_node.is_valid())
 
             self.run_weather_agent(message_node)
 
             answer_node = ScKeynodes.resolve(
-                "show_weather_answer_phrase", sc_types.NODE)
+                "show_weather_answer_phrase", sc_type.NODE)
             template = ScTemplate()
             template.triple(
                 answer_node,
-                sc_types.EDGE_ACCESS_VAR_POS_PERM,
-                sc_types.LINK,
+                sc_type.VAR_PERM_POS_ARC,
+                sc_type.VAR_NODE_LINK,
             )
-            search_results = template_search(template)
+            search_results = search_by_template(template)
 
             self.assertEqual(len(search_results), 1)
             link = search_results[0][2]
@@ -101,20 +101,20 @@ class WeatherAgentTestCase(BaseTestCase):
         self.server.add_modules(module)
         with self.server.register_modules():
             message_node = ScKeynodes.resolve(
-                "test_message", sc_types.NODE)
+                "test_message", sc_type.NODE)
             self.assertTrue(message_node.is_valid())
 
             self.run_weather_agent(message_node)
 
             answer_node = ScKeynodes.resolve(
-                "show_weather_answer_phrase", sc_types.NODE)
+                "show_weather_answer_phrase", sc_type.NODE)
             template = ScTemplate()
             template.triple(
                 answer_node,
-                sc_types.EDGE_ACCESS_VAR_POS_PERM,
-                sc_types.LINK,
+                sc_type.VAR_PERM_POS_ARC,
+                sc_type.VAR_NODE_LINK,
             )
-            search_results = template_search(template)
+            search_results = search_by_template(template)
 
             self.assertEqual(len(search_results), 1)
             link = search_results[0][2]
@@ -134,36 +134,36 @@ class WeatherAgentTestCase(BaseTestCase):
         self.server.add_modules(module)
         with self.server.register_modules():
             message_node = ScKeynodes.resolve(
-                "test_message", sc_types.NODE)
+                "test_message", sc_type.CONST_NODE)
             self.assertTrue(message_node.is_valid())
 
             self.run_weather_agent(message_node)
 
-            rrel_entity = ScKeynodes.resolve("rrel_entity", sc_types.NODE_ROLE)
+            rrel_entity = ScKeynodes.resolve("rrel_entity", sc_type.CONST_NODE_ROLE)
             template = ScTemplate()
-            template.triple_with_relation(
+            template.quintuple(
                 message_node,
-                sc_types.EDGE_ACCESS_VAR_POS_PERM,
-                sc_types.NODE,
-                sc_types.EDGE_ACCESS_VAR_POS_PERM,
+                sc_type.VAR_PERM_POS_ARC,
+                sc_type.VAR_NODE,
+                sc_type.VAR_PERM_POS_ARC,
                 rrel_entity
             )
-            search_results = template_search(template)
+            search_results = search_by_template(template)
             self.assertEqual(len(search_results), 1)
 
             entity = search_results[0][2]
             nrel_temperature = ScKeynodes.resolve(
-                "nrel_temperature", sc_types.NODE_NOROLE)
+                "nrel_temperature", sc_type.CONST_NODE_NON_ROLE)
 
             template = ScTemplate()
-            template.triple_with_relation(
+            template.quintuple(
                 entity,
-                sc_types.EDGE_D_COMMON_VAR,
-                sc_types.LINK,
-                sc_types.EDGE_ACCESS_VAR_POS_PERM,
+                sc_type.VAR_COMMON_ARC,
+                sc_type.VAR_NODE_LINK,
+                sc_type.VAR_PERM_POS_ARC,
                 nrel_temperature
             )
-            search_results = template_search(template)
+            search_results = search_by_template(template)
             self.assertEqual(len(search_results), 1)
         self.server.remove_modules(module)
 
@@ -178,44 +178,44 @@ class WeatherAgentTestCase(BaseTestCase):
         self.server.add_modules(module)
         with self.server.register_modules():
             message_node = ScKeynodes.resolve(
-                "test_message_city_and_country", sc_types.NODE)
+                "test_message_city_and_country", sc_type.CONST_NODE)
             self.assertTrue(message_node.is_valid())
 
             self.run_weather_agent(message_node)
 
-            rrel_entity = ScKeynodes.resolve("rrel_entity", sc_types.NODE_ROLE)
+            rrel_entity = ScKeynodes.resolve("rrel_entity", sc_type.CONST_NODE_ROLE)
             template = ScTemplate()
-            template.triple_with_relation(
+            template.quintuple(
                 message_node,
-                sc_types.EDGE_ACCESS_VAR_POS_PERM,
-                sc_types.NODE,
-                sc_types.EDGE_ACCESS_VAR_POS_PERM,
+                sc_type.VAR_PERM_POS_ARC,
+                sc_type.VAR_NODE,
+                sc_type.VAR_PERM_POS_ARC,
                 rrel_entity
             )
-            search_results = template_search(template)
+            search_results = search_by_template(template)
             self.assertEqual(len(search_results), 2)
 
             concept_country = ScKeynodes.resolve(
-                "concept_country", sc_types.NODE)
+                "concept_country", sc_type.NODE)
             country_edge = get_edge(
-                concept_country, search_results[0][2], sc_types.EDGE_ACCESS_VAR_POS_PERM)
+                concept_country, search_results[0][2], sc_type.VAR_PERM_POS_ARC)
             if country_edge:
                 entity = search_results[1][2]
             else:
                 entity = search_results[0][2]
 
             nrel_temperature = ScKeynodes.resolve(
-                "nrel_temperature", sc_types.NODE_NOROLE)
+                "nrel_temperature", sc_type.CONST_NODE_NON_ROLE)
 
             template = ScTemplate()
-            template.triple_with_relation(
+            template.quintuple(
                 entity,
-                sc_types.EDGE_D_COMMON_VAR,
-                sc_types.LINK,
-                sc_types.EDGE_ACCESS_VAR_POS_PERM,
+                sc_type.VAR_COMMON_ARC,
+                sc_type.VAR_NODE_LINK,
+                sc_type.VAR_PERM_POS_ARC,
                 nrel_temperature
             )
-            search_results = template_search(template)
+            search_results = search_by_template(template)
             self.assertEqual(len(search_results), 1)
 
         self.server.remove_modules(module)

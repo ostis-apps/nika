@@ -8,11 +8,11 @@ const nrelMessageSequence = 'nrel_message_sequence';
 const rrelLast = 'rrel_last';
 
 const baseKeynodes = [
-    { id: rrel1, type: ScType.NodeConstRole },
-    { id: nrelAuth, type: ScType.NodeConstNoRole },
-    { id: nrelScTextTranslation, type: ScType.NodeConstNoRole },
-    { id: nrelMessageSequence, type: ScType.NodeConstNoRole },
-    { id: rrelLast, type: ScType.NodeConstRole },
+    { id: rrel1, type: ScType.ConstNodeRole },
+    { id: nrelAuth, type: ScType.ConstNodeNonRole },
+    { id: nrelScTextTranslation, type: ScType.ConstNodeNonRole },
+    { id: nrelMessageSequence, type: ScType.ConstNodeNonRole },
+    { id: rrelLast, type: ScType.ConstNodeRole },
 ];
 
 interface IMessage {
@@ -28,14 +28,14 @@ const findLastMessageNode = async (chatNode: ScAddr, keynodes: Record<string, Sc
     const messagesClassNodeAlias = '_messages_node';
     const template = new ScTemplate();
 
-    template.tripleWithRelation(
+    template.quintuple(
         chatNode,
-        ScType.EdgeAccessVarPosPerm,
-        [ScType.NodeVar, messagesClassNodeAlias],
-        ScType.EdgeAccessVarPosPerm,
+        ScType.VarPermPosArc,
+        [ScType.VarNode, messagesClassNodeAlias],
+        ScType.VarPermPosArc,
         keynodes[rrelLast],
     );
-    const resultMessagesClassNode = await client.templateSearch(template);
+    const resultMessagesClassNode = await client.searchByTemplate(template);
     if (resultMessagesClassNode.length) {
         return resultMessagesClassNode[0].get(messagesClassNodeAlias);
     }
@@ -45,8 +45,8 @@ const findCurrentEdge = async (chatNode: ScAddr, messageNode: ScAddr) => {
     const currentEdgeAlias = '_current_edge';
 
     const template = new ScTemplate();
-    template.triple(chatNode, [ScType.EdgeAccessVarPosPerm, currentEdgeAlias], messageNode);
-    const resultLastMessageEdge = await client.templateSearch(template);
+    template.triple(chatNode, [ScType.VarPermPosArc, currentEdgeAlias], messageNode);
+    const resultLastMessageEdge = await client.searchByTemplate(template);
 
     if (resultLastMessageEdge.length) {
         return resultLastMessageEdge[0].get(currentEdgeAlias);
@@ -58,9 +58,9 @@ const findPreviousMessageNode = async (chatNode: ScAddr, currentEdge: ScAddr) =>
     const previousMessageClassAlias = '_privious_message_class';
 
     const templatePreviousMessageClass = new ScTemplate();
-    templatePreviousMessageClass.triple(chatNode, currentEdge, [ScType.NodeVar, previousMessageClassAlias]);
+    templatePreviousMessageClass.triple(chatNode, currentEdge, [ScType.VarNode, previousMessageClassAlias]);
 
-    const resultNextMessageClassEdge = await client.templateSearch(templatePreviousMessageClass);
+    const resultNextMessageClassEdge = await client.searchByTemplate(templatePreviousMessageClass);
     if (resultNextMessageClassEdge.length) {
         return resultNextMessageClassEdge[0].get(previousMessageClassAlias);
     }
@@ -72,17 +72,17 @@ const findPreviousEdge = async (chatNode: ScAddr, keynodes: Record<string, ScAdd
 
     const templateNextEdge = new ScTemplate();
 
-    templateNextEdge.triple(chatNode, [ScType.EdgeAccessVarPosPerm, nextMessageEdgeAlias], ScType.NodeVar);
-    templateNextEdge.triple(chatNode, [ScType.EdgeAccessVarPosPerm, currentMessageEdgeAlias], currrentMessageNode);
-    templateNextEdge.tripleWithRelation(
+    templateNextEdge.triple(chatNode, [ScType.VarPermPosArc, nextMessageEdgeAlias], ScType.VarNode);
+    templateNextEdge.triple(chatNode, [ScType.VarPermPosArc, currentMessageEdgeAlias], currrentMessageNode);
+    templateNextEdge.quintuple(
         nextMessageEdgeAlias,
-        ScType.EdgeDCommonVar,
+        ScType.VarCommonArc,
         currentMessageEdgeAlias,
-        ScType.EdgeAccessVarPosPerm,
+        ScType.VarPermPosArc,
         keynodes[nrelMessageSequence],
     );
 
-    const resultNextMessageClassEdge = await client.templateSearch(templateNextEdge);
+    const resultNextMessageClassEdge = await client.searchByTemplate(templateNextEdge);
     if (resultNextMessageClassEdge.length) {
         return resultNextMessageClassEdge[0].get(nextMessageEdgeAlias);
     }
@@ -96,23 +96,23 @@ export const getInfoMessage = async (messagesNode: ScAddr, keynodes: Record<stri
 
     const template = new ScTemplate();
 
-    template.tripleWithRelation(
-        [ScType.NodeVar, messageNodeAlias],
-        ScType.EdgeDCommonVar,
+    template.quintuple(
+        [ScType.VarNode, messageNodeAlias],
+        ScType.VarCommonArc,
         messagesNode,
-        ScType.EdgeAccessVarPosPerm,
+        ScType.VarPermPosArc,
         keynodes[nrelScTextTranslation],
     );
-    template.triple(messageNodeAlias, ScType.EdgeAccessVarPosPerm, [ScType.LinkVar, textNodeAlias]);
-    template.tripleWithRelation(
+    template.triple(messageNodeAlias, ScType.VarPermPosArc, [ScType.VarNodeLink, textNodeAlias]);
+    template.quintuple(
         messagesNode,
-        ScType.EdgeDCommonVar,
-        [ScType.NodeVar, authorNodeAlias],
-        ScType.EdgeAccessVarPosPerm,
+        ScType.VarCommonArc,
+        [ScType.VarNode, authorNodeAlias],
+        ScType.VarPermPosArc,
         keynodes[nrelAuth],
     );
 
-    const result = await client.templateSearch(template);
+    const result = await client.searchByTemplate(template);
 
     if (!result.length) return;
 
@@ -139,14 +139,14 @@ export const getInfoMessage = async (messagesNode: ScAddr, keynodes: Record<stri
 
 const checkRrel1 = async (keynodes: Record<string, ScAddr>, chatNode: ScAddr, messageNode: ScAddr) => {
     const template = new ScTemplate();
-    template.tripleWithRelation(
+    template.quintuple(
         chatNode,
-        ScType.EdgeAccessVarPosPerm,
+        ScType.VarPermPosArc,
         messageNode,
-        ScType.EdgeAccessVarPosPerm,
+        ScType.VarPermPosArc,
         keynodes[rrel1],
     );
-    const result = await client.templateSearch(template);
+    const result = await client.searchByTemplate(template);
 
     return !!result.length;
 };

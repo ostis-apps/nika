@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { ScAddr, ScEventParams, ScEventType, ScType } from 'ts-sc-client';
+import { ScAddr, ScEventSubscriptionParams, ScEventType, ScType } from 'ts-sc-client';
 import { client } from '@api';
 import { dialogAgent } from '@api/sc/agents/dialogAgent';
 import { getInfoMessage, searchChatMessages } from '@api/sc/search/searchChatMessages';
-import { newMessageAgent, createLinkText } from '@api/sc/agents/newMessageAgent';
+import { newMessageAgent, generateLinkText } from '@api/sc/agents/newMessageAgent';
 
 interface IMessage {
     addr: ScAddr;
@@ -30,8 +30,8 @@ export const useChat = (user: ScAddr | null) => {
         const nrelScTextTranslation = 'nrel_sc_text_translation';
 
         const baseKeynodes = [
-            { id: nrelAuthors, type: ScType.NodeConstNoRole },
-            { id: nrelScTextTranslation, type: ScType.NodeConstNoRole },
+            { id: nrelAuthors, type: ScType.ConstNodeNonRole },
+            { id: nrelScTextTranslation, type: ScType.ConstNodeNonRole },
         ];
 
         const keynodes = await client.resolveKeynodes(baseKeynodes);
@@ -47,8 +47,8 @@ export const useChat = (user: ScAddr | null) => {
             });
             if (newMessage.author.equal(user)) setIsAgentAnswer(true);
         };
-        const eventParams = new ScEventParams(chatNode, ScEventType.AddOutgoingEdge, onActionFinished);
-        await client.eventsCreate([eventParams]);
+        const eventParams = new ScEventSubscriptionParams(chatNode, ScEventType.AfterGenerateOutgoingArc, onActionFinished);
+        await client.createElementaryEventSubscriptions([eventParams]);
     }, [chatNode, user]);
 
     const minNumberMessages = () => {
@@ -90,7 +90,7 @@ export const useChat = (user: ScAddr | null) => {
 
     const sendMessage = useCallback(
         async (user: ScAddr, text: string) => {
-            const linkAddr = await createLinkText(text);
+            const linkAddr = await generateLinkText(text);
             if (!linkAddr || !chatNode) return;
             const date = new Date();
             const message = {

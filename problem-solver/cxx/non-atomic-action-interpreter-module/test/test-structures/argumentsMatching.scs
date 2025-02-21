@@ -1,0 +1,38 @@
+rrel_key_sc_element <- sc_node_role_relation;;
+
+test_action_node
+	<- action_interpret_non_atomic_action;
+	-> rrel_2: ... (*
+		-> rrel_1: arg1;;
+		-> rrel_2: arg2;;
+		-> rrel_3: arg3;;
+	*);
+	-> rrel_1: offset;;
+
+offset = [*
+_compound_action
+	<-_ test_nonatomic_action;
+	<-_ action;
+	_-> rrel_1:: _arg1_var;
+    _-> rrel_2:: _arg2_var;
+    _-> rrel_3:: _arg3_var;
+	<=_ nrel_decomposition_of_action:: .._decomposition_tuple;;
+
+.._decomposition_tuple
+	_-> rrel_1:: _first_action;
+	_-> _second_action;;
+
+_first_action
+	_=> nrel_goto:: _second_action;
+	<-_ finished_test_action;
+	<-_ action;
+	_-> rrel_1:: _arg1_var;
+	_-> rrel_2:: _arg3_var;;
+
+_second_action
+	<-_ finished_test_action;
+	<-_ action;
+	_-> rrel_1:: _arg2_var;;
+*];;
+
+offset -> rrel_key_sc_element: _compound_action;;

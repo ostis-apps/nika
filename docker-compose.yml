@@ -26,7 +26,7 @@ services:
     container_name: nika-problem-solver
     restart: unless-stopped
     volumes:
-      - ./kb:/nika/kb
+      - ./knowledge-base:/nika/knowledge-base
       - kb-binary:/nika/kb.bin
       - ./repo.path:/nika/repo.path
       - ./nika.ini:/nika/nika.ini
@@ -37,7 +37,7 @@ services:
     expose:
       - 8090
     healthcheck:
-      test: "bash -c 'source /tmp/problem-solver/sc-machine/.venv/bin/activate && python3 /nika/problem-solver/sc-machine/scripts/healthcheck.py'"
+      test: "bash -c 'source /nika/.venv/bin/activate && python3 /nika/scripts/healthcheck.py'"
       interval: 5s
       timeout: 10s
       retries: 6
@@ -45,12 +45,13 @@ services:
     environment:
       # Use the commented env variable if you need to rebuild KB every startup.
       - "REBUILD_KB=1"
-      - "BINARY_PATH=/nika/bin"
-      - "BUILD_PATH=/nika/build"
+      - "BINARY_PATH=/nika/install/sc-machine/bin"
       - "CONFIG_PATH=/nika/nika.ini"
-      - "KB_PATH=../repo.path"
+      - "KB_PATH=/nika/repo.path"
+      - "EXTENSIONS_PATH=/nika/build/Release/lib/extensions;/nika/install/sc-machine/lib/extensions;/nika/install/scl-machine/lib/extensions"
+      - "SC_SERVER_HOST=0.0.0.0"
     command:
-      - "serve"
+      - "run"
 
   nika-ui:
     image: ostis/nika-ui:0.1.0

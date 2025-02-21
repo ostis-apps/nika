@@ -1,0 +1,19 @@
+test_message
+<- concept_message;
+<- concept_atomic_message;
+<- concept_informing_message_about_object;
+<- concept_message_with_negative_tone;
+<= nrel_sc_text_translation: ...
+	(*
+		-> [I broke my cup.]
+			(*
+				<- lang_en;;
+			*);;
+	*);;
+
+lang_en
+<- sc_node_class;;
+
+languages
+<- sc_node_class;
+-> lang_en;;

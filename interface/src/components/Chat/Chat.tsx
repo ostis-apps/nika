@@ -97,7 +97,7 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
             return arr[arr.length - 2];
         };
 
-        const checkMesssageInVisible = (el: Element | null | undefined) => {
+        const checkMessageInVisible = (el: Element | null | undefined) => {
             const elementTop = el?.getBoundingClientRect().top;
             const inputTop = footerRef.current?.lastElementChild?.getBoundingClientRect().top;
 
@@ -105,11 +105,11 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
             return elementTop - inputTop > -10;
         };
 
-        const checkLastMesssageInVisible = () => checkMesssageInVisible(mainRef.current?.lastElementChild);
+        const checkLastMessageInVisible = () => checkMessageInVisible(mainRef.current?.lastElementChild);
 
         const onScroll = (e: React.UIEvent<HTMLDivElement>) => {
             setScrollHappened(true);
-            setShowArrow(checkLastMesssageInVisible());
+            setShowArrow(checkLastMessageInVisible());
 
             const currentScrollFromTop = e.currentTarget.scrollTop;
             if (currentScrollFromTop === 0) setShouldLoadMoreMessages(true);
@@ -160,13 +160,13 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
         }, [hasMoreMessages, shouldLoadMoreMessages, isLoading, onFetching]);
 
         useEffect(() => {
-            if (checkMesssageInVisible(mainRef.current?.lastElementChild) && !scrollHappened) {
+            if (checkMessageInVisible(mainRef.current?.lastElementChild) && !scrollHappened) {
                 scrollToLastMessage();
             }
         }, [children, scrollHappened]);
 
         useEffect(() => {
-            if (!checkMesssageInVisible(penultimateEl())) {
+            if (!checkMessageInVisible(penultimateEl())) {
                 scrollToLastMessage();
             }
         }, [children]);

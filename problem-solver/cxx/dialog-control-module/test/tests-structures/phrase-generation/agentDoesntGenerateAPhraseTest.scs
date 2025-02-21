@@ -1,0 +1,87 @@
+@var_name1 = _[];;
+@var_name1 => nrel_system_identifier: [_name1];;
+@var_name2 = _[];;
+@var_name2 => nrel_system_identifier: [_name2];;
+
+test_action_node
+<-action_phrase_generation;
+<-action;
+-> rrel_1: reply_message;
+-> rrel_2:
+	[${_name2} is ${_name1}'s mother.]
+	(*
+		<-lang_en;;
+		=>nrel_phrase_template:
+		[*
+			_mes
+			_-> rrel_message_theme::
+				_hum1;;
+
+			_hum1
+			_=> nrel_main_idtf::
+				@var_name1
+				(* <-_ _lang;; *);
+			_=> nrel_mother::
+				_hum2;;
+
+			_hum2
+			_=> nrel_main_idtf::
+				@var_name2
+				(* <-_ _lang;; *);;
+
+			concept_human
+			_-> _hum1;;
+
+			concept_message
+			_-> _mes;;
+
+			languages
+			_-> _lang;;
+		*];;
+	*);
+-> rrel_3:
+	...
+	(*
+		->human_ivan_ivanov;;
+		->human_ruslan_korshunov;;
+		->message_of_ruslan_korshunov;;
+	*);;
+
+
+message_of_ruslan_korshunov
+<-concept_message;
+->rrel_message_theme: human_ivan_ivanov;
+=>nrel_authors: human_ruslan_korshunov;
+<=nrel_sc_text_transaltion:
+	...
+	(*
+		->[Who is Ivan's mother?]
+		(* <-lang_en;; *);;
+	*);;
+
+human_ivan_ivanov
+<-concept_human;
+=>nrel_main_idtf:
+	[Ivan Ivanov]
+	(* <-lang_en;; *);;
+
+human_mariy_ivanova
+<-concept_human;
+=>nrel_main_idtf:
+	[Мария Иванова]
+	(* <-lang_ru;; *);;
+
+human_ruslan_korshunov
+<-concept_human;
+=>nrel_main_idtf:
+	[Ruslan Korshunov]
+	(* <-lang_en;; *);;
+
+sc_node_class
+->lang_en;
+->languages;
+->concept_message;
+->concept_human;;
+
+lang_en
+<-languages;;

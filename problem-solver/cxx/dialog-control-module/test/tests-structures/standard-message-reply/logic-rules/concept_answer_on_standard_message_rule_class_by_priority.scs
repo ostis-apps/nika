@@ -1,0 +1,17 @@
+concept_answer_on_standard_message_rule_class_by_priority
+    => nrel_main_idtf:
+        [множество правил ответов на стандартные сообщения] (* <- lang_ru;; *);
+        [set of rules for responding to standard messages] (* <- lang_en;; *);
+    <-sc_node_class;;
+
+@access_arc_1 = (concept_answer_on_standard_message_rule_class_by_priority -> rrel_1: concept_answer_on_standard_message_rule_priority_1);;
+@access_arc_2 = (concept_answer_on_standard_message_rule_class_by_priority -> concept_answer_on_standard_message_rule_priority_2);;
+@access_arc_3 = (concept_answer_on_standard_message_rule_class_by_priority -> concept_answer_on_standard_message_rule_priority_3);;
+
+@sequence_arc_1 = (@access_arc_1 => @access_arc_2);;
+@sequence_arc_2 = (@access_arc_2 => @access_arc_3);;
+
+nrel_basic_sequence
+    -> @sequence_arc_1;
+    -> @sequence_arc_2;;
+

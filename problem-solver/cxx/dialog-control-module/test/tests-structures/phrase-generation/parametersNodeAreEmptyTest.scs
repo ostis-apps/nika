@@ -1,0 +1,58 @@
+@var_name = _[];;
+@var_name
+=>nrel_system_identifier:
+	[_name];;
+
+test_action_node
+<-action_phrase_generation;
+<-action;
+-> rrel_1: reply_message;
+-> rrel_2:
+	[Sorry, ${_name}.]
+	(*
+		<-lang_en;;
+		=>nrel_phrase_template:
+		[*
+			_hum
+			_=>nrel_main_idtf::
+				@var_name
+				(*
+					<-_ lang_en;;
+				*);;
+
+			_mes
+			_->rrel_message_theme:: _hum;;
+
+			concept_human
+			_->_hum;;
+
+			languages
+			_->_lang;;
+
+			concept_message
+			_->_mes;;
+		*];;
+	*);
+-> rrel_3:
+	parameters_node;;
+
+human_guilderoy_lockhart
+<-concept_human;
+=>nrel_main_idtf:
+	[Guilderoy Lockhart]
+	(* <-lang_en;; *);;
+
+message_of_guilderoy_lockhart
+<-concept_message;
+->rrel_message_theme: human_guilderoy_lockhart;
+=>nrel_authors: human_guilderoy_lockhart;
+<=nrel_sc_text_translation:
+	...
+	(*
+		->[My memory was erased by the spell of Oblivion.]
+		(* <-lang_en;; *);;
+	*);;
+
+lang_en
+<-languages;
+<-sc_node_class;;

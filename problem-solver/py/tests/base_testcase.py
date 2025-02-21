@@ -1,7 +1,7 @@
 import logging
 from unittest import TestCase
 
-from sc_client.client import create_elements_by_scs
+from sc_client.client import generate_elements_by_scs
 from sc_kpm import ScServer
 from pathlib import Path
 from tests import TESTS_DIR
@@ -9,7 +9,7 @@ from tests import TESTS_DIR
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s | %(name)s | %(message)s", datefmt="[%d-%b-%y %H:%M:%S]"
 )
-SC_SERVER_URL = "ws://localhost:8091/ws_json"
+SC_SERVER_URL = "ws://localhost:8090/ws_json"
 
 class BaseTestCase(TestCase):
     def setUp(self) -> None:
@@ -26,7 +26,7 @@ class BaseTestCase(TestCase):
                 for item in scs_file.split(separator)
                 if item and item != "\n"
             ]
-            return create_elements_by_scs(scs_lines)
+            return generate_elements_by_scs(scs_lines)
 
     def tearDown(self) -> None:
         self.server.disconnect()
