@@ -59,7 +59,7 @@ extract_archive "${SC_MACHINE_ARCHIVE}" "${SC_MACHINE_DESTINATION_DIR}"
 cleanup "${SC_MACHINE_ARCHIVE}" "${SC_MACHINE_DESTINATION_DIR}"
 
 SCL_MACHINE_ARCHIVE=$(get_archive_name "scl-machine" "${SCL_MACHINE_VERSION}")
-SCL_MACHINE_URL="https://github.com/NikitaZotov/scl-machine/releases/download/${SCL_MACHINE_VERSION}/${SCL_MACHINE_ARCHIVE}"
+SCL_MACHINE_URL="https://github.com/ostis-ai/scl-machine/releases/download/${SCL_MACHINE_VERSION}/${SCL_MACHINE_ARCHIVE}"
 
 download_archive "${SCL_MACHINE_URL}"
 extract_archive "${SCL_MACHINE_ARCHIVE}" "${SCL_MACHINE_DESTINATION_DIR}"
