@@ -45,9 +45,10 @@
     source .venv/bin/activate && python3 server/app.py
     ```
 
-7.  Install Python problem solver dependencies. Open new terminal and run:
+7.  Install Python problem solver dependencies. Open new terminal and run in the root of the project:
 
     ```sh
+    cd ..
     python3 -m venv problem-solver/py/.venv
     source problem-solver/py/.venv/bin/activate
     pip3 install -r problem-solver/py/requirements.txt
