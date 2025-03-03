@@ -153,11 +153,11 @@ std::vector<ScTemplateParams> PhraseGenerationAgent::findParametersList(
 {
   inference::TemplateManager manager(&m_context);
   ScAddrVector arguments = IteratorUtils::getAllWithType(&m_context, parametersNode, ScType::Node);
-  manager.setArguments(arguments);
+  manager.SetArguments(arguments);
   std::vector<ScTemplateParams> parametersList;
   if (parametersNode.IsValid())
   {
-    parametersList = manager.createTemplateParams(templateNode);
+    parametersList = manager.CreateTemplateParams(templateNode);
   }
   if (parametersList.empty())
   {
