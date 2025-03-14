@@ -5,6 +5,11 @@
 
 using namespace interfaceModule;
 
+ChangeInterfaceColorAgent::ChangeInterfaceColorAgent()
+{
+  m_logger = utils::ScLogger(utils::ScLogger::ScLogType::Console, "", utils::ScLogLevel::Debug);
+}
+
 ScResult ChangeInterfaceColorAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
   ScAddr const & messageAddr = action.GetArgument(ScKeynodes::rrel_1);

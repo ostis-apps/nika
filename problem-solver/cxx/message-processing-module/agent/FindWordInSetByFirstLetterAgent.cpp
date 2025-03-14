@@ -10,6 +10,11 @@ using namespace utils;
 namespace messageProcessingModule
 {
 
+FindWordInSetByFirstLetterAgent::FindWordInSetByFirstLetterAgent()
+{
+  m_logger = utils::ScLogger(utils::ScLogger::ScLogType::Console, "", utils::ScLogLevel::Debug);
+}
+
 ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
   ScAddr const & messageAddr = action.GetArgument(ScKeynodes::rrel_1);

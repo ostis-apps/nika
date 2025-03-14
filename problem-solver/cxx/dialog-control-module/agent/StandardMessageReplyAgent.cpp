@@ -9,6 +9,11 @@ using namespace utils;
 namespace dialogControlModule
 {
 
+StandardMessageReplyAgent::StandardMessageReplyAgent()
+{
+  m_logger = utils::ScLogger(utils::ScLogger::ScLogType::Console, "", utils::ScLogLevel::Debug);
+}
+
 ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
   ScAddr messageNode = action.GetArgument(ScKeynodes::rrel_1);

@@ -8,6 +8,11 @@
 
 using namespace messageReplyModule;
 
+MessageReplyAgent::MessageReplyAgent()
+{
+  m_logger = utils::ScLogger(utils::ScLogger::ScLogType::Console, "", utils::ScLogLevel::Debug);
+}
+
 ScResult MessageReplyAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
   ScAddr linkAddr = action.GetArgument(ScKeynodes::rrel_1);

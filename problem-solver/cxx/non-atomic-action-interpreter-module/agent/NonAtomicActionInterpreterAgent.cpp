@@ -6,6 +6,11 @@
 
 using namespace nonAtomicActionInterpreterModule;
 
+NonAtomicActionInterpreterAgent::NonAtomicActionInterpreterAgent()
+{
+  m_logger = utils::ScLogger(utils::ScLogger::ScLogType::Console, "", utils::ScLogLevel::Debug);
+}
+
 ScResult NonAtomicActionInterpreterAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
   ScAddr nonAtomicActionAddr;

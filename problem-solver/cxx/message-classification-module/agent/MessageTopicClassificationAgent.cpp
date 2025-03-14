@@ -6,6 +6,11 @@
 
 using namespace messageClassificationModule;
 
+MessageTopicClassificationAgent::MessageTopicClassificationAgent()
+{
+  m_logger = utils::ScLogger(utils::ScLogger::ScLogType::Console, "", utils::ScLogLevel::Debug);
+}
+
 ScResult MessageTopicClassificationAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
   initFields();

@@ -9,6 +9,8 @@ namespace dialogControlModule
 class StandardMessageReplyAgent : public ScActionInitiatedAgent
 {
 public:
+  StandardMessageReplyAgent();
+
   ScAddr GetActionClass() const override;
 
   ScResult DoProgram(ScActionInitiatedEvent const & event, ScAction & action) override;

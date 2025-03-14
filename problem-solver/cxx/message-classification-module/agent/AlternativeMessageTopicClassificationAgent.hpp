@@ -7,6 +7,8 @@ namespace messageClassificationModule
 class AlternativeMessageTopicClassificationAgent : public ScActionInitiatedAgent
 {
 public:
+  AlternativeMessageTopicClassificationAgent();
+
   ScAddr GetActionClass() const override;
 
   ScResult DoProgram(ScActionInitiatedEvent const & event, ScAction & action) override;

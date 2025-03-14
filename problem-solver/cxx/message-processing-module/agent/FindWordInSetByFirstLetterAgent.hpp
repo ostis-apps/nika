@@ -9,6 +9,8 @@ namespace messageProcessingModule
 class FindWordInSetByFirstLetterAgent : public ScActionInitiatedAgent
 {
 public:
+  FindWordInSetByFirstLetterAgent();
+
   ScAddr GetActionClass() const override;
 
   ScResult DoProgram(ScActionInitiatedEvent const & event, ScAction & action) override;

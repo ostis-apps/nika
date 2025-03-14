@@ -17,6 +17,8 @@ enum VariableType
 class PhraseGenerationAgent : public ScActionInitiatedAgent
 {
 public:
+  PhraseGenerationAgent();
+
   ScAddr GetActionClass() const override;
 
   ScResult DoProgram(ScActionInitiatedEvent const & event, ScAction & action) override;

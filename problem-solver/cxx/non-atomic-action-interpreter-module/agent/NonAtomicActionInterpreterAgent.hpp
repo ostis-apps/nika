@@ -7,8 +7,11 @@
 namespace nonAtomicActionInterpreterModule
 {
 class NonAtomicActionInterpreterAgent : public ScActionInitiatedAgent
+
 {
 public:
+  NonAtomicActionInterpreterAgent();
+
   ScAddr GetActionClass() const override;
 
   ScResult DoProgram(ScActionInitiatedEvent const & event, ScAction & action) override;

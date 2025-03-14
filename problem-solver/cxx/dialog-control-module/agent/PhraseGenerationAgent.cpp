@@ -16,6 +16,11 @@ using namespace utils;
 namespace dialogControlModule
 {
 
+PhraseGenerationAgent::PhraseGenerationAgent()
+{
+  m_logger = utils::ScLogger(utils::ScLogger::ScLogType::Console, "", utils::ScLogLevel::Debug);
+}
+
 ScResult PhraseGenerationAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
   ScAddr const & replyMessageNode = action.GetArgument(ScKeynodes::rrel_1);

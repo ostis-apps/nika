@@ -8,6 +8,11 @@
 
 using namespace messageClassificationModule;
 
+AlternativeMessageTopicClassificationAgent::AlternativeMessageTopicClassificationAgent()
+{
+  m_logger = utils::ScLogger(utils::ScLogger::ScLogType::Console, "", utils::ScLogLevel::Debug);
+}
+
 ScResult AlternativeMessageTopicClassificationAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
   ScAddrVector answerElements;

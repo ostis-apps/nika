@@ -6,6 +6,8 @@ namespace interfaceModule
 class ChangeInterfaceColorAgent : public ScActionInitiatedAgent
 {
 public:
+  ChangeInterfaceColorAgent();
+
   ScAddr GetActionClass() const override;
 
   ScResult DoProgram(ScActionInitiatedEvent const & event, ScAction & action) override;
