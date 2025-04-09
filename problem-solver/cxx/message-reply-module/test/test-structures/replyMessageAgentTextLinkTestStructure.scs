@@ -1,0 +1,17 @@
+test_action_node
+	<- action_reply_to_message;
+	<- action;
+	=> nrel_authors: ...;
+	-> rrel_1: [smth here]
+		(*
+			<- concept_text_file;;
+			<- lang_en;;
+		*);
+	-> rrel_2: chat_node;;
+
+message_processing_program <- sc_node_structure;;
+
+languages
+	<- sc_node_class;
+	-> lang_ru (* <- sc_node_class;; *);
+	-> lang_en (* <- sc_node_class;; *);;

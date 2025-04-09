@@ -1,0 +1,53 @@
+nrel_visual_interface
+<- sc_node_non_role_relation;
+=> nrel_main_idtf:
+	[визуальный интерфейс*]
+	(* <- lang_ru;; *);
+	[visual interface*]
+	(* <- lang_en;; *);
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_first_domain: concept_user_interface;
+=> nrel_second_domain: computer_system;
+=> nrel_definitional_domain:
+	...
+	(*
+	<= nrel_combination:
+		{
+			concept_user_interface;
+			computer_system
+		};;
+	*);
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+    	[Опр. (визуальный интерфейс*)]
+    	(* <- lang_ru;; *);
+    	[Def. (visual interface*)]
+    	(* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Визуальный интерфейс* - это бинарное отношение, связывающее пользовательский интерфейс с системой, в которой он применяется.]
+			(* <- lang_ru;;	*);;
+		*);
+		...
+		(*
+		-> rrel_example:
+	  		[Visual interface* is a binary relation that connects the user interface with the system in which it is used.]
+			(* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+        {
+            binary_relation;
+			computer_system;
+            concept_user_interface
+        };;
+    *);;

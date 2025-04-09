@@ -1,0 +1,43 @@
+nrel_your_relation_identifier
+<- sc_node_non_role_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+=> nrel_main_idtf:
+	[Идентификатор*] (* <- lang_ru;; *);
+=> nrel_main_idtf:
+	[Identifier] (* <- lang_en;; *);
+=> nrel_first_domain: concept_your_first_domain_identifier;
+=> nrel_second_domain: concept_your_second_domain_identifier;
+=> nrel_definitional_domain:
+   ...
+   (*
+        <= nrel_combination:
+        	{
+            	concept_your_first_domain_identifier;
+            	concept_your_second_domain_identifier
+        	};;
+   *);
+<- rrel_key_sc_element:
+   ...
+   (*
+      => nrel_main_idtf:
+          [Опр. (Идентификатор*)]
+          (* <- lang_ru;; *);;
+      <- definition;;
+      <= nrel_sc_text_translation:
+           ...
+           (*
+              -> rrel_example:
+               [Определение]
+               (* <- lang_ru;; *);;
+           *);;
+      <= nrel_using_constants:
+		{
+            concept_your_class_identifier;
+            concept_your_class_identifier
+        };;
+  *);;

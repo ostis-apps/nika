@@ -1,0 +1,51 @@
+nrel_answer_pattern 
+	=> nrel_main_idtf: 
+		[шаблон ответа*] (* <- lang_ru;; *);
+		[answer pattern*] (* <- lang_en;; *);
+	<- sc_node_non_role_relation;;
+
+...
+	<- definition;
+	=> nrel_main_idtf:
+		[Опр.(шаблон ответа*)] (* <- lang_ru;; *);
+		[Def.(answer pattern*)] (* <- lang_en;; *);
+	-> rrel_key_sc_element:
+		nrel_answer_pattern;
+	<= nrel_sc_text_translation: 
+		...
+		(*
+			-> rrel_example: 
+				[Шаблон ответа* - отношение, связывающее множество заготовленных ответов для правила ответов на стандартные сообщения с этим правилом.](* <- lang_ru;; *);;
+		*);
+		...
+		(*
+			-> rrel_example:
+				[Answer pattern* is a relationship, that connects set of canned answers for answer on standard message rule with this rule.](* <- lang_en;; *);;
+		*);
+	<= nrel_using_constants:
+		{
+			set;
+			concept_answer_on_standard_message_rule;
+			relation
+	    };;	
+
+nrel_answer_pattern
+	=> nrel_first_domain:
+		concept_answer_on_standard_message_rule;
+	=> nrel_second_domain:
+		template_phrases_class;
+	=> nrel_definitional_domain: 
+		... 
+		(*
+			<= nrel_combination: 
+				{
+					concept_answer_on_standard_message_rule;
+					template_phrases_class
+				};;
+		*);
+	<- relation;
+	<- binary_relation;
+	<- oriented_relation;
+	<- antireflexive_relation;
+	<- asymmetric_relation;
+	<- antitransitive_relation;;

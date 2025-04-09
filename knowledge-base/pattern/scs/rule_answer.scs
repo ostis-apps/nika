@@ -1,0 +1,26 @@
+@if = [* 
+	_message 
+		<-_ concept_message;
+		<-_ concept_your_message_class_name;
+		_-> rrel_entity:: _entity;;
+	_entity <-_ concept_your_class_identifier;;
+*];;
+
+@then = [* 
+	_message _=> nrel_reply:: _reply_message;;
+	_reply_message
+		<-_ concept_your_message_class_name;
+		<-_ concept_atomic_message;;
+*];;
+
+lr_message_about_your_class
+<- concept_answer_on_standard_message_rule;
+<- concept_answer_on_standard_message_rule_priority_1;
+=> nrel_answer_pattern:
+	{ rrel_1: concept_phrase_about_your_theme };
+<- rrel_main_key_sc_element: (@if => @then)
+	(* <- nrel_implication;; *);;
+
+atomic_logical_formula
+-> @if;
+-> @then;;

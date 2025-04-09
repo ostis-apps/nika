@@ -1,0 +1,33 @@
+@var_name = _[];;
+@var_name
+=>nrel_system_identifier:
+	[_name];;
+
+concept_information_request_for_reasons_phrase ->
+	[How did this happen, ${_name}?]
+	(*
+		<-lang_en;;
+		<- concept_phrase_about_past_time;;
+		=>nrel_phrase_template:
+		[*
+		_hum
+		_=>nrel_name::
+			@var_name
+			(*
+				<-_ _lang;;
+			*);;
+
+		_mes
+		_->rrel_message_theme:: _hum;;
+
+		concept_human
+		_->_hum;;
+
+		languages
+		_->_lang;;
+
+		concept_message
+		_->_mes;;
+		*];;
+	*);;
+	

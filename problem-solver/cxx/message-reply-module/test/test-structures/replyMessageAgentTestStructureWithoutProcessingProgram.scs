@@ -1,0 +1,15 @@
+test_action_node
+	<- action_reply_to_message;
+	<- action;
+	=> nrel_authors: ...;
+	-> rrel_1: [smth here]
+		(*
+			<- format_wav;;
+			<- concept_sound_file;;
+			<- lang_en;;
+		*);;
+
+languages
+	<- sc_node_class;
+	-> lang_ru (* <- sc_node_class;; *);
+	-> lang_en (* <- sc_node_class;; *);;
