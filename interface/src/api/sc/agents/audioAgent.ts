@@ -68,12 +68,13 @@ export const check = async(action: ScAddr,keynodes: Record<string, ScAddr>) => {
             return false;
 
         }
-    console.log("Agent called");
+        console.log("text to speech action");
     return true;
 }
 
 export const getLinkNode= async(action: ScAddr,keynodes: Record<string, ScAddr>) => {
     const arg = '_arg';
+    const answer_construction = '_answer_construction';
     const translation='_translation'
     const link="_link";
     const template = new ScTemplate();
@@ -89,10 +90,15 @@ export const getLinkNode= async(action: ScAddr,keynodes: Record<string, ScAddr>)
         ScType.EdgeAccessVarPosPerm,
         keynodes[rrel1],
     );
+    template.triple(
+        arg,
+        ScType.EdgeAccessVarPosTemp,
+        [ScType.NodeVar, answer_construction],
+    )
     template.tripleWithRelation(
         [ScType.NodeVar, translation],
         ScType.EdgeDCommonVar,
-        arg,
+        answer_construction,
         ScType.EdgeAccessVarPosPerm,
         keynodes[nrelScTextTranslation],
     )
