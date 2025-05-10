@@ -28,11 +28,16 @@ import {
     WrapperFooter,
 } from './styled';
 import { ReactComponent as SendIcon } from '@assets/icon/send-icon.svg';
+import { ReactComponent as AudioIcon } from '@assets/icon/TextToSpeech-icon.svg';
+import { ReactComponent as PauseIcon } from '@assets/icon/pause-icon.svg';
+
 import { ReactComponent as ArrowIcon } from '@assets/icon/arrowBackToLastMessage.svg';
 import { Spinner } from '@components/Spinners/LoadSpinner';
 import { WaitingSpinner } from '@components/Spinners/WaitingSpinner';
 import { refSetter, throttle } from '@utils';
 import { useLanguage } from '@hooks/useLanguage';
+import { callSwitchToAudioModeAgent } from '@api/sc/agents/switchToAudioModeAgent';
+
 
 interface IProps {
     onSend: (message: string) => void;
@@ -129,6 +134,18 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
             }
         };
         const hookLanguage = useLanguage();
+        const [isTalking, setIsTalking] = useState(false);
+        const talking = async () => {
+                if (isTalking) {
+                    setIsTalking(false);
+                    await callSwitchToAudioModeAgent("pause");
+                    
+                }else{
+                    setIsTalking(true);
+                    await callSwitchToAudioModeAgent("talking");
+                }
+                
+        };   
 
         useEffect(() => {
             const LOADING_HEIGHT = 43;
@@ -223,6 +240,15 @@ export const Chat = forwardRef<HTMLDivElement, PropsWithChildren<IProps>>(
                         <FooterSend onClick={onButtonClick} type="submit">
                             <WrapperSendIcon>
                                 <SendIcon />
+                            </WrapperSendIcon>
+                        </FooterSend>
+                        <FooterSend onClick={talking} type="submit">
+                            <WrapperSendIcon>
+                            {isTalking ? (
+                            <PauseIcon />
+                            ) : (
+                            <AudioIcon />
+                            )}
                             </WrapperSendIcon>
                         </FooterSend>
                     </WrapperFooter>

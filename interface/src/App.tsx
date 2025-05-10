@@ -13,6 +13,8 @@ const { Header, Content, Footer } = Layout;
 
 import { HeaderPanel } from "@components/Header";
 import { FooterPanel } from "@components/Footer";
+import { audioAgent } from "@agents/audioAgent";
+import { switchToAudioModeAgent } from "@agents/switchToAudioModeAgent"
 
 const Demo = loadingComponent(lazy(() => import('@pages/Demo')));
 const About = loadingComponent(lazy(() => import('@pages/About')));
@@ -88,9 +90,37 @@ export const App = () => {
                 }    
             }
         }
-    
+        async function registerAudioAgent() {
+            const actionInitiated = "action_initiated";
+            const keynodes = [
+                { id: actionInitiated, type: ScType.NodeConstNoRole },
+            ];
+
+            const keynodesAddrs = await client.resolveKeynodes(keynodes);
+
+            const eventParams = new ScEventParams(keynodesAddrs[actionInitiated], ScEventType.AddOutgoingEdge, audioAgent);
+            await client.eventsCreate([eventParams]); 
+        }
+
+        async function registerSwitchToAudioModeAgent() {
+            const actionInitiated = "action_initiated";
+            const keynodes = [
+                { id: actionInitiated, type: ScType.NodeConstNoRole },
+            ];
+
+            const keynodesAddrs = await client.resolveKeynodes(keynodes);
+
+            const eventParams = new ScEventParams(
+                keynodesAddrs[actionInitiated], 
+                ScEventType.AddOutgoingEdge, 
+                switchToAudioModeAgent);
+            await client.eventsCreate([eventParams]); 
+        }
+
         useEffect(() => {
             fetchColorValue();
+            registerAudioAgent();
+            registerSwitchToAudioModeAgent();
         }, []);
     
         const headerStyles = {
