@@ -27,16 +27,19 @@ const describeAgent = async (
     keynodes: Record<string, ScAddr>,
 ) => {
     const actionNodeAlias = '_action_node';
+    const argNodeAlias='_arg_node'
     const template = new ScTemplate();
     template.triple(keynodes[action], ScType.EdgeAccessVarPosPerm, [ScType.NodeVar, actionNodeAlias]);
     template.triple(keynodes[actionText2Speech], ScType.EdgeAccessVarPosPerm, actionNodeAlias);
     template.tripleWithRelation(
         actionNodeAlias,
         ScType.EdgeAccessVarPosPerm,
-        message,
+        [ScType.NodeVar,argNodeAlias],
         ScType.EdgeAccessVarPosPerm,
         keynodes[rrel1],
     );
+    template.triple(argNodeAlias, ScType.EdgeAccessVarPosTemp, message);
+
     const generationResult = await client.templateGenerate(template, {});
     if (generationResult && generationResult.size > 0) {
         let actionNode = generationResult.get(actionNodeAlias);
