@@ -94,21 +94,6 @@ private:
       std::vector<std::string> const & variables,
       std::string & text);
 
-  void replaceSetPowerVariables(
-      ScTemplateSearchResultItem const & phraseSemanticResult,
-      std::vector<std::string> const & variables,
-      std::string & text);
-
-  void replaceClassVariables(
-      ScTemplateSearchResultItem const & phraseSemanticResult,
-      std::vector<std::string> const & variables,
-      std::string & text);
-
-  void replaceSubareaVariables(
-      ScTemplateSearchResultItem const & phraseSemanticResult,
-      std::vector<std::string> const & variables,
-      std::string & text);
-
   void generateSemanticEquivalent(const ScAddr & replyMessageNode, const ScAddr & structure);
 
   void updateSemanticAnswer(const ScTemplateSearchResultItem & phraseSemanticResult);
