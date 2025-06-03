@@ -1,10 +1,9 @@
 #pragma once
 
-#include <map>
-
 #include <sc-memory/sc_agent.hpp>
 
 #include "keynodes/MessageKeynodes.hpp"
+#include <map>
 
 namespace dialogControlModule
 {

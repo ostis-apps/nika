@@ -1,18 +1,15 @@
 #include "PhraseGenerationAgent.hpp"
 
-#include <regex>
-
-#include <sc-agents-common/utils/CommonUtils.hpp>
-#include <sc-agents-common/utils/GenerationUtils.hpp>
-#include <sc-agents-common/utils/IteratorUtils.hpp>
-
-#include <common/handler/LinkHandler.hpp>
-#include <common/utils/ScTemplateUtils.hpp>
-#include <inference/template_manager.hpp>
-
 #include "keynodes/DialogKeynodes.hpp"
 #include "keynodes/MessageKeynodes.hpp"
 #include "searcher/LanguageSearcher.hpp"
+#include <common/handler/LinkHandler.hpp>
+#include <common/utils/ScTemplateUtils.hpp>
+#include <inference/template_manager.hpp>
+#include <regex>
+#include <sc-agents-common/utils/CommonUtils.hpp>
+#include <sc-agents-common/utils/GenerationUtils.hpp>
+#include <sc-agents-common/utils/IteratorUtils.hpp>
 
 using namespace utils;
 

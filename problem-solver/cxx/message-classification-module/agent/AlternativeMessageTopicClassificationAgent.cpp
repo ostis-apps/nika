@@ -37,7 +37,7 @@ ScResult AlternativeMessageTopicClassificationAgent::DoProgram(ScActionInitiated
       inference::TREE_ONLY_OUTPUT_STRUCTURE,
       inference::SEARCH_IN_ALL_KB};
   std::unique_ptr<inference::InferenceManagerAbstract> iterationStrategy =
-      inference::InferenceManagerFactory::ConstructDirectInferenceManagerAll(&m_context, inferenceConfig);
+      inference::InferenceManagerFactory::ConstructDirectInferenceManagerAll(&m_context, &m_logger, inferenceConfig);
   try
   {
     iterationStrategy->ApplyInference(inferenceParams);

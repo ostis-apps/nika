@@ -1,10 +1,8 @@
 #include "StandardMessageReplyAgent.hpp"
 
-#include <sc-agents-common/utils/IteratorUtils.hpp>
-
-#include <common/utils/ActionUtils.hpp>
-
 #include "keynodes/MessageKeynodes.hpp"
+#include <common/utils/ActionUtils.hpp>
+#include <sc-agents-common/utils/IteratorUtils.hpp>
 
 using namespace utils;
 
