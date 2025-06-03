@@ -146,7 +146,6 @@ std::map<VariableType, std::vector<std::string>> PhraseGenerationAgent::getTempl
   return variables;
 }
 
-/*Поиск параметров и обработка переменных из templateNode*/
 std::string PhraseGenerationAgent::findResultText(
     const ScAddr & templateNode,
     const ScAddr & parametersNode,
@@ -188,7 +187,7 @@ std::vector<ScTemplateParams> PhraseGenerationAgent::findParametersList(
   }
   if (parametersList.empty())
   {
-    m_logger->Debug("Didn't find any template parameters.");
+    m_logger.Debug("Didn't find any template parameters.");
     parametersList.emplace_back();
   }
   return parametersList;
@@ -259,14 +258,12 @@ void PhraseGenerationAgent::generateSemanticEquivalent(const ScAddr & replyMessa
   m_context.GenerateByTemplate(semanticEquivalentStructure, result);
 }
 
-/*Обработка каждой переменной в зависимости от ее типа*/
 std::string PhraseGenerationAgent::generatePhraseAnswer(
     ScTemplateSearchResultItem const & phraseSemanticResult,
     std::map<VariableType, std::vector<std::string>> const & variables,
     std::string const & text)
 {
   std::string textResult = text;
-  /*Поиск элементов в структуре, запрещающей работу с ее элементами.*/
   PhraseGenerationAgent::findNotSearchableElements();
   for (auto const & variable : variables)
   {
@@ -527,8 +524,8 @@ void PhraseGenerationAgent::updateSemanticAnswer(const ScAddr & phraseAddr)
 
 void PhraseGenerationAgent::findNotSearchableElements()
 {
-  ScIterator3Ptr const & notSearchableStructItr = m_context.CreateIterator3(
-      DialogKeynodes::not_to_search_structure, ScType::ConstPermPosArc, ScType::ConstNode);
+  ScIterator3Ptr const & notSearchableStructItr =
+      m_context.CreateIterator3(DialogKeynodes::not_to_search_structure, ScType::ConstPermPosArc, ScType::ConstNode);
   while (notSearchableStructItr->Next())
   {
     PhraseGenerationAgent::notSearchable.push_back(notSearchableStructItr->Get(2));
