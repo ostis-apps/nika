@@ -30,6 +30,8 @@ Table of contents:
     - [Weather agent](agents/weatherAgent.md) - *retrieves and presents weather information*
 - **Patterns** - *documentation of knowledge representation patterns*
     - [Knowledge base patterns](patterns/kb-patterns.md) - *reusable patterns for structuring the knowledge base*
+- **Guides** 
+    * [NIKA training guide](guide/training_guide.md)
 - **Subsystems** - *information about the internal components of NIKA*
     - [scl-machine](subsystems/scl-machine.md) - *details on the `scl-machine` subsystem*
 - [License](https://github.com/ostis-apps/nika/blob/main/LICENSE)
