@@ -10,8 +10,8 @@ class nikaRecipe(ConanFile):
         return tools.get_env("CONAN_RUN_TESTS", False)
     
     def requirements(self):
-        self.requires("sc-machine/0.10.3", override=True)
-        self.requires("scl-machine/0.3.0")
+        self.requires("sc-machine/0.10.4")
+        self.requires("scl-machine/0.3.1")
         self.requires("nlohmann_json/3.11.3")
         self.requires("libcurl/8.11.1")
 
