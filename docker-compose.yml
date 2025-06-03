@@ -19,7 +19,7 @@ services:
         condition: service_healthy
 
   problem-solver:
-    image: ostis/nika:0.1.0
+    image: ostis/nika:0.2.0
     build:
       context: ./
       dockerfile: ./Dockerfile
@@ -54,7 +54,7 @@ services:
       - "run"
 
   nika-ui:
-    image: ostis/nika-ui:0.1.0
+    image: ostis/nika-ui:0.2.0
     build:
       context: ./interface
       dockerfile: ./Dockerfile
@@ -72,7 +72,7 @@ services:
       - web
 
   py-sc-server:
-    image: ostis/nika-py-agents:0.1.0
+    image: ostis/nika-py-agents:0.2.0
     build:
       context: ./
       dockerfile: ./problem-solver/py/Dockerfile
