@@ -139,7 +139,8 @@ TEST_F(StandardMessageReplyTest, SystemDoesNotHaveTemplateForMessage)
   context.SubscribeAgent<inference::DirectInferenceAgent>();
 
   EXPECT_TRUE(testAction.InitiateAndWait(WAIT_TIME));
-  EXPECT_TRUE(testAction.IsFinishedWithError());
+  EXPECT_TRUE(testAction.IsFinished());
+  EXPECT_TRUE(testAction.IsFinishedSuccessfully());
 
   context.UnsubscribeAgent<inference::DirectInferenceAgent>();
   context.UnsubscribeAgent<StandardMessageReplyAgent>();
