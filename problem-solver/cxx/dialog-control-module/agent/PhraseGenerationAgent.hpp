@@ -43,56 +43,56 @@ private:
   void findNotSearchableElements();
 
   ScAddr generateLinkByTemplate(
-    const ScAddr & templateNode,
-    const ScAddr & parametersNode,
-    const ScAddr & textTemplateLink);
+      const ScAddr & templateNode,
+      const ScAddr & parametersNode,
+      const ScAddr & textTemplateLink);
 
   std::map<VariableType, std::vector<std::string>> getTemplateVariables(std::string const & text);
 
   std::string findResultText(
-    ScAddr const & templateNode,
-    ScAddr const & parametersNode,
-    std::map<VariableType, std::vector<std::string>> const & variables,
-    std::string const & text);
+      ScAddr const & templateNode,
+      ScAddr const & parametersNode,
+      std::map<VariableType, std::vector<std::string>> const & variables,
+      std::string const & text);
 
   std::vector<ScTemplateParams> findParametersList(const ScAddr & templateNode, const ScAddr & parametersNode);
   std::vector<std::string> getVariableNames(std::string const & text, std::string regular_str);
 
   std::string processScTemplate(
-    ScAddr const & templateNode,
-    ScTemplateParams const & parameters,
-    std::map<VariableType, std::vector<std::string>> const & variables,
-    std::string const & text);
+      ScAddr const & templateNode,
+      ScTemplateParams const & parameters,
+      std::map<VariableType, std::vector<std::string>> const & variables,
+      std::string const & text);
 
-std::string generatePhraseAnswer(
-    ScTemplateSearchResultItem const & phraseSemanticResult,
-    std::map<VariableType, std::vector<std::string>> const & variables,
-    std::string const & text);
+  std::string generatePhraseAnswer(
+      ScTemplateSearchResultItem const & phraseSemanticResult,
+      std::map<VariableType, std::vector<std::string>> const & variables,
+      std::string const & text);
 
-void replaceLinksVariables(
-    ScTemplateSearchResultItem const & phraseSemanticResult,
-    std::vector<std::string> const & variables,
-    std::string & text);
+  void replaceLinksVariables(
+      ScTemplateSearchResultItem const & phraseSemanticResult,
+      std::vector<std::string> const & variables,
+      std::string & text);
 
   void replaceSetElementsVariables(
-    ScTemplateSearchResultItem const & phraseSemanticResult,
-    std::vector<std::string> const & variables,
-    std::string & text);
+      ScTemplateSearchResultItem const & phraseSemanticResult,
+      std::vector<std::string> const & variables,
+      std::string & text);
 
   void replaceSetPowerVariables(
-    ScTemplateSearchResultItem const & phraseSemanticResult,
-    std::vector<std::string> const & variables,
-    std::string & text);
+      ScTemplateSearchResultItem const & phraseSemanticResult,
+      std::vector<std::string> const & variables,
+      std::string & text);
 
   void replaceClassVariables(
-    ScTemplateSearchResultItem const & phraseSemanticResult,
-    std::vector<std::string> const & variables,
-    std::string & text);
+      ScTemplateSearchResultItem const & phraseSemanticResult,
+      std::vector<std::string> const & variables,
+      std::string & text);
 
   void replaceSubareaVariables(
-    ScTemplateSearchResultItem const & phraseSemanticResult,
-    std::vector<std::string> const & variables,
-    std::string & text);
+      ScTemplateSearchResultItem const & phraseSemanticResult,
+      std::vector<std::string> const & variables,
+      std::string & text);
 
   void replaceSetPowerVariables(
       ScTemplateSearchResultItem const & phraseSemanticResult,
@@ -114,10 +114,6 @@ void replaceLinksVariables(
   void updateSemanticAnswer(const ScTemplateSearchResultItem & phraseSemanticResult);
 
   void updateSemanticAnswer(const ScAddr & phraseAddr);
-<<<<<<< HEAD:problem-solver/cxx/dialog-control-module/agent/PhraseGenerationAgent.hpp
-=======
-
->>>>>>> c4e587d (Add new features to PhraseGenerationAgent):problem-solver/cxx/dialogControlModule/agent/PhraseGenerationAgent.hpp
 };
 
 }  // namespace dialogControlModule
