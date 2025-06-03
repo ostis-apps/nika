@@ -6,9 +6,8 @@
 1. Clone repository of the NIKA:
    
     ```sh
-    git clone https://github.com/NikitaZotov/nika
+    git clone https://github.com/ostis-apps/nika
     cd nika
-    git checkout feat/migrate_to_0.10.0
     git submodule update --init --recursive
     ```
 
@@ -27,7 +26,7 @@
 4. Run C++ problem solver:
 
     ```sh
-    ./install/sc-machine/bin/sc-machine -s kb.bin -c nika.ini \
+    LD_LIBRARY_PATH=./install/problem-solver/lib:./install/sc-machine/lib ./install/sc-machine/bin/sc-machine -s kb.bin -c nika.ini \
         -e "install/sc-machine/lib/extensions;install/scl-machine/lib/extensions;install/problem-solver/lib/extensions"
     ```
 
