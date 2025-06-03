@@ -125,4 +125,4 @@ After completing all the steps, you can build the knowledge base and run the sys
 
 <img src="../images/result.png"></img>
 
-If you encounter unclear errors or wish to examine the agent's workflow, you can check the logs in the console window where the `run_sc_machine.sh` script is running.
+If you encounter unclear errors or wish to examine the agent's workflow, you can check the logs in the console window where the `start.sh` script is running.
