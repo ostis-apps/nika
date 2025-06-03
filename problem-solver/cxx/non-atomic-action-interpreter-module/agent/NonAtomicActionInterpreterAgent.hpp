@@ -6,6 +6,7 @@
 
 namespace nonAtomicActionInterpreterModule
 {
+
 class NonAtomicActionInterpreterAgent : public ScActionInitiatedAgent
 {
 public:

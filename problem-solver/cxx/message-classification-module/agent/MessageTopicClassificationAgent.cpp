@@ -8,7 +8,8 @@ using namespace messageClassificationModule;
 
 MessageTopicClassificationAgent::MessageTopicClassificationAgent()
 {
-  m_logger = utils::ScLogger(utils::ScLogger::ScLogType::Console, "", utils::ScLogLevel::Debug);
+  m_logger = utils::ScLogger(
+      utils::ScLogger::ScLogType::File, "logs/MessageTopicClassificationAgent.log", utils::ScLogLevel::Debug, true);
 }
 
 ScResult MessageTopicClassificationAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
@@ -43,6 +44,6 @@ ScAddr MessageTopicClassificationAgent::GetActionClass() const
 
 void MessageTopicClassificationAgent::initFields()
 {
-  std::unique_ptr<WitAiClient> client = std::make_unique<WitAiClient>();
-  this->manager = std::make_unique<MessageTopicClassificationManager>(&m_context);
+  std::unique_ptr<WitAiClient> client = std::make_unique<WitAiClient>(&m_logger);
+  this->manager = std::make_unique<MessageTopicClassificationManager>(&m_context, &m_logger);
 }

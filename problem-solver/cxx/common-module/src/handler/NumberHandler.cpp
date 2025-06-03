@@ -20,8 +20,8 @@ ScAddr commonModule::NumberHandler::findNumberNode(const double & number)
   ScStreamPtr numberAsStream = ScStreamConverter::StreamFromString(numberAsString);
 
   ScAddrSet candidateList = this->context->SearchLinksByContent(numberAsStream);
-  SC_LOG_DEBUG(
-      "NumberHandler: Found " << std::to_string(candidateList.size()) << " sc-link with content " << numberAsString);
+  logger->Debug(
+      "NumberHandler: Found ", std::to_string(candidateList.size()), " sc-link with content ", numberAsString);
 
   for (ScAddr candidateLink : candidateList)
   {
@@ -62,8 +62,9 @@ std::string commonModule::NumberHandler::numberToLikView(const double & number)
   return stringStream.str();
 }
 
-commonModule::NumberHandler::NumberHandler(ScMemoryContext * context)
+commonModule::NumberHandler::NumberHandler(ScMemoryContext * context, utils::ScLogger * logger)
   : context(context)
+  , logger(logger)
   , linkHandler(std::make_unique<LinkHandler>(context))
 {
 }

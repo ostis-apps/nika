@@ -1,8 +1,10 @@
 #pragma once
 
 #include <sc-memory/sc_agent.hpp>
+
 namespace interfaceModule
 {
+
 class ChangeInterfaceColorAgent : public ScActionInitiatedAgent
 {
 public:

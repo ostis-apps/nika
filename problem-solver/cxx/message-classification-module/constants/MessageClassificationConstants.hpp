@@ -4,6 +4,7 @@
 
 namespace messageClassificationModule
 {
+
 class WitAiConstants
 {
 public:

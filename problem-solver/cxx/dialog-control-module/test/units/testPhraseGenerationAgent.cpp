@@ -144,7 +144,8 @@ TEST_F(PhraseGenerationTest, AgentDoesNotGenerateAPhrase)
 TEST_F(PhraseGenerationTest, GeneratedLinkDoesNotHaveALanguageNode)
 {
   ScAgentContext & context = *m_ctx;
-  LanguageSearcher searcher(&context);
+  utils::ScLogger logger;
+  LanguageSearcher searcher(&context, &logger);
 
   loader.loadScsFile(context, TEST_FILES_DIR_PATH + "generatedLinkDoesntHaveALanguageNodeTest.scs");
   ScAddr test_action_node = context.SearchElementBySystemIdentifier("test_action_node");

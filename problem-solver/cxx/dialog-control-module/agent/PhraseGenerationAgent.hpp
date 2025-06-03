@@ -1,13 +1,14 @@
 #pragma once
 
+#include <map>
+
 #include <sc-memory/sc_agent.hpp>
 
 #include "keynodes/MessageKeynodes.hpp"
-#include <map>
 
 namespace dialogControlModule
-
 {
+
 enum VariableType
 {
   LINK = 1,
@@ -86,4 +87,5 @@ private:
 
   ScAddrVector getIncidentElements(const ScAddr & node, const ScAddr & structNode);
 };
+
 }  // namespace dialogControlModule

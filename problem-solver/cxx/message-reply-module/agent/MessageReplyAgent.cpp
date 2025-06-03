@@ -10,7 +10,8 @@ using namespace messageReplyModule;
 
 MessageReplyAgent::MessageReplyAgent()
 {
-  m_logger = utils::ScLogger(utils::ScLogger::ScLogType::Console, "", utils::ScLogLevel::Debug);
+  m_logger =
+      utils::ScLogger(utils::ScLogger::ScLogType::File, "logs/MessageReplyAgent.log", utils::ScLogLevel::Debug, true);
 }
 
 ScResult MessageReplyAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)

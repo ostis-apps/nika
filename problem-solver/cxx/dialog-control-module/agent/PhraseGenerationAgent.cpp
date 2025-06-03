@@ -1,15 +1,18 @@
 #include "PhraseGenerationAgent.hpp"
 
-#include "keynodes/DialogKeynodes.hpp"
-#include "keynodes/MessageKeynodes.hpp"
-#include "searcher/LanguageSearcher.hpp"
-#include <common/handler/LinkHandler.hpp>
-#include <common/utils/ScTemplateUtils.hpp>
-#include <inference/template_manager.hpp>
 #include <regex>
+
 #include <sc-agents-common/utils/CommonUtils.hpp>
 #include <sc-agents-common/utils/GenerationUtils.hpp>
 #include <sc-agents-common/utils/IteratorUtils.hpp>
+
+#include <common/handler/LinkHandler.hpp>
+#include <common/utils/ScTemplateUtils.hpp>
+#include <inference/template_manager.hpp>
+
+#include "keynodes/DialogKeynodes.hpp"
+#include "keynodes/MessageKeynodes.hpp"
+#include "searcher/LanguageSearcher.hpp"
 
 using namespace utils;
 
@@ -18,7 +21,8 @@ namespace dialogControlModule
 
 PhraseGenerationAgent::PhraseGenerationAgent()
 {
-  m_logger = utils::ScLogger(utils::ScLogger::ScLogType::Console, "", utils::ScLogLevel::Debug);
+  m_logger = utils::ScLogger(
+      utils::ScLogger::ScLogType::File, "logs/PhraseGenerationAgent.log", utils::ScLogLevel::Debug, true);
 }
 
 ScResult PhraseGenerationAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
@@ -50,7 +54,7 @@ ScResult PhraseGenerationAgent::DoProgram(ScActionInitiatedEvent const & event, 
     m_logger.Error("Answer isn't found.");
     return action.FinishUnsuccessfully();
   }
-  LanguageSearcher searcher(&m_context);
+  LanguageSearcher searcher(&m_context, &m_logger);
   ScAddr const & langNode = searcher.getLanguage(phraseLink);
   if (m_context.IsElement(langNode))
   {

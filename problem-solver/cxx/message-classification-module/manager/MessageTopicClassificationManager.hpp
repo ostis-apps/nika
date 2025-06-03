@@ -6,10 +6,11 @@
 
 namespace messageClassificationModule
 {
+
 class MessageTopicClassificationManager
 {
 public:
-  explicit MessageTopicClassificationManager(ScAgentContext * context);
+  explicit MessageTopicClassificationManager(ScAgentContext * context, utils::ScLogger * logger);
 
   ScAddrVector manage(ScAddrVector const & processParameters) const;
 

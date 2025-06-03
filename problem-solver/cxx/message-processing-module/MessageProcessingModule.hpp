@@ -4,6 +4,7 @@
 
 namespace messageProcessingModule
 {
+
 class MessageProcessingModule : public ScModule
 {
 };

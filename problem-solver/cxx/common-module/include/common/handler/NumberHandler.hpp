@@ -9,7 +9,7 @@ namespace commonModule
 class NumberHandler
 {
 public:
-  explicit NumberHandler(ScMemoryContext * context);
+  explicit NumberHandler(ScMemoryContext * context, utils::ScLogger * logger);
 
   ScAddr getNumberNode(const double & number);
 
@@ -21,6 +21,7 @@ public:
 
 private:
   ScMemoryContext * context;
+  utils::ScLogger * logger;
   std::unique_ptr<LinkHandler> linkHandler;
 };
 

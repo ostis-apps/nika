@@ -4,6 +4,7 @@
 
 namespace messageProcessingModule
 {
+
 class MessageProcessingKeynodes : public ScKeynodes
 {
 public:

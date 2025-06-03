@@ -6,6 +6,7 @@
 
 namespace dialogControlModule
 {
+
 MessageConstructionsGenerator::MessageConstructionsGenerator(ScMemoryContext * context)
   : context(context)
 {

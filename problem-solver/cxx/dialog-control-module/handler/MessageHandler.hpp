@@ -5,10 +5,11 @@
 
 namespace dialogControlModule
 {
+
 class MessageHandler
 {
 public:
-  explicit MessageHandler(ScAgentContext * context);
+  explicit MessageHandler(ScAgentContext * context, utils::ScLogger * logger);
 
   bool processReplyMessage(
       ScAddr const & replyMessageNode,
@@ -32,6 +33,7 @@ private:
   const int PHRASE_GENERATION_AGENT_WAIT_TIME = 6000;
 
   ScAgentContext * context;
+  utils::ScLogger * logger;
   std::unique_ptr<LanguageSearcher> languageSearcher;
   std::unique_ptr<MessageConstructionsGenerator> messageConstructionsGenerator;
   std::unique_ptr<commonModule::MessageSearcher> messageSearcher;
@@ -47,4 +49,5 @@ private:
 
   static std::string getClassNameForLog();
 };
+
 }  // namespace dialogControlModule

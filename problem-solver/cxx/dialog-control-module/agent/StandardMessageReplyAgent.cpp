@@ -1,8 +1,10 @@
 #include "StandardMessageReplyAgent.hpp"
 
-#include "keynodes/MessageKeynodes.hpp"
-#include <common/utils/ActionUtils.hpp>
 #include <sc-agents-common/utils/IteratorUtils.hpp>
+
+#include <common/utils/ActionUtils.hpp>
+
+#include "keynodes/MessageKeynodes.hpp"
 
 using namespace utils;
 
@@ -11,7 +13,8 @@ namespace dialogControlModule
 
 StandardMessageReplyAgent::StandardMessageReplyAgent()
 {
-  m_logger = utils::ScLogger(utils::ScLogger::ScLogType::Console, "", utils::ScLogLevel::Debug);
+  m_logger = utils::ScLogger(
+      utils::ScLogger::ScLogType::File, "logs/StandardMessageReplyAgent.log", utils::ScLogLevel::Debug, true);
 }
 
 ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
@@ -118,9 +121,9 @@ ScAddr StandardMessageReplyAgent::generatePhraseAgentParametersNode(const ScAddr
 
 void StandardMessageReplyAgent::initFields()
 {
-  this->langSearcher = std::make_unique<LanguageSearcher>(&m_context);
-  this->messageSearcher = std::make_unique<commonModule::MessageSearcher>(&m_context);
-  this->messageHandler = std::make_unique<MessageHandler>(&m_context);
+  this->langSearcher = std::make_unique<LanguageSearcher>(&m_context, &m_logger);
+  this->messageSearcher = std::make_unique<commonModule::MessageSearcher>(&m_context, &m_logger);
+  this->messageHandler = std::make_unique<MessageHandler>(&m_context, &m_logger);
 }
 
 }  // namespace dialogControlModule
