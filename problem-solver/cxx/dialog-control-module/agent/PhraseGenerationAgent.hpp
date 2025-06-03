@@ -6,8 +6,8 @@
 #include <map>
 
 namespace dialogControlModule
-
 {
+
 enum VariableType
 {
   LINK = 1,
@@ -86,4 +86,5 @@ private:
 
   ScAddrVector getIncidentElements(const ScAddr & node, const ScAddr & structNode);
 };
+
 }  // namespace dialogControlModule

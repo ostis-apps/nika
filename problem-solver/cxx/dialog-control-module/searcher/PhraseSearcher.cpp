@@ -8,8 +8,9 @@
 
 using namespace dialogControlModule;
 
-PhraseSearcher::PhraseSearcher(ScMemoryContext * context)
+PhraseSearcher::PhraseSearcher(ScMemoryContext * context, utils::ScLogger * logger)
   : context(context)
+  , logger(logger)
 {
 }
 
@@ -68,11 +69,11 @@ ScAddr PhraseSearcher::getNextPhraseClass(const ScAddr & phraseClassNode)
   if (result.Size() == 1)
   {
     nextPhraseNode = result[0][VAR_PHRASE_CLASS];
-    SC_LOG_DEBUG("The next phrase class found");
+    logger->Debug("The next phrase class found");
   }
   else
   {
-    SC_LOG_DEBUG("The next phrase class not found");
+    logger->Debug("The next phrase class not found");
   }
 
   return nextPhraseNode;

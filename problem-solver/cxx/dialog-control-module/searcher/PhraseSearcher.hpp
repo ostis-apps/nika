@@ -7,7 +7,7 @@ namespace dialogControlModule
 class PhraseSearcher
 {
 public:
-  explicit PhraseSearcher(ScMemoryContext * context);
+  explicit PhraseSearcher(ScMemoryContext * context, utils::ScLogger * logger);
 
   std::vector<ScAddr> getPhrases(const ScAddr & phraseClassNode, const ScAddr & langNode);
 
@@ -17,5 +17,6 @@ public:
 
 private:
   ScMemoryContext * context;
+  utils::ScLogger * logger;
 };
 }  // namespace dialogControlModule

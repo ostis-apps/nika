@@ -4,6 +4,7 @@
 
 namespace messageClassificationModule
 {
+
 class MessageClassificationModule : public ScModule
 {
 };

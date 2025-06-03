@@ -49,7 +49,8 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithoutEntityTest)
       .Times(testing::Exactly(1))
       .WillOnce(testing::Return(json::parse(witResponse)));
 
-  MessageTopicClassifier classifier(&context, client);
+  utils::ScLogger logger;
+  MessageTopicClassifier classifier(&context, &logger, client);
   ScAddrVector messageClassificationItems = classifier.classifyMessage(messageAddr);
   EXPECT_FALSE(messageClassificationItems.empty());
 
@@ -85,7 +86,8 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithEntityTest)
       .Times(testing::Exactly(1))
       .WillOnce(testing::Return(nlohmann::json::parse(witResponse)));
 
-  MessageTopicClassifier classifier(&context, client);
+  utils::ScLogger logger;
+  MessageTopicClassifier classifier(&context, &logger, client);
 
   ScAddrVector messageClassificationItems = classifier.classifyMessage(messageAddr);
 
@@ -138,7 +140,8 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesTest)
       .Times(testing::Exactly(1))
       .WillOnce(testing::Return(nlohmann::json::parse(witResponse)));
 
-  MessageTopicClassifier classifier(&context, client);
+  utils::ScLogger logger;
+  MessageTopicClassifier classifier(&context, &logger, client);
 
   ScAddrVector messageClassificationItems = classifier.classifyMessage(messageAddr);
 
@@ -193,7 +196,8 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesSameRoleTes
       .Times(testing::Exactly(1))
       .WillOnce(testing::Return(nlohmann::json::parse(witResponse)));
 
-  MessageTopicClassifier classifier(&context, client);
+  utils::ScLogger logger;
+  MessageTopicClassifier classifier(&context, &logger, client);
 
   ScAddrVector messageClassificationItems = classifier.classifyMessage(messageAddr);
 

@@ -6,8 +6,9 @@
 using namespace commonModule;
 using namespace dialogControlModule;
 
-LanguageSearcher::LanguageSearcher(ScMemoryContext * context)
+LanguageSearcher::LanguageSearcher(ScMemoryContext * context, utils::ScLogger * logger)
   : context(context)
+  , logger(logger)
 {
 }
 
@@ -24,7 +25,7 @@ ScAddr LanguageSearcher::getMessageLanguage(const ScAddr & messageNode)
   }
   catch (std::runtime_error & ex)
   {
-    SC_LOG_ERROR(ex.what());
+    logger->Error(ex.what());
   }
 
   return langNode;

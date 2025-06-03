@@ -6,6 +6,7 @@ using namespace utils;
 
 namespace messageReplyModule
 {
+
 MessageHistoryGenerator::MessageHistoryGenerator(ScMemoryContext * context)
   : context(context)
 {

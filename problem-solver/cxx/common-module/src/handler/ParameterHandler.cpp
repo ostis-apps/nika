@@ -53,14 +53,14 @@ ScAddr ParameterHandler::findParameterNodeByNumber(
     parameterNode = parameterNodes[0];
   else if (parameterNodes.size() > 1)
   {
-    SC_LOG_DEBUG(
+    logger->Debug(
         getClassNameForLog() + "More then 1 parameter node of " +
         this->context->GetElementSystemIdentifier(parameterClass) + " by number " +
         this->context->GetElementSystemIdentifier(numberNode));
   }
   else
   {
-    SC_LOG_DEBUG(
+    logger->Debug(
         getClassNameForLog() + "Found no parameter node of " +
         this->context->GetElementSystemIdentifier(parameterClass) + " by number " +
         this->context->GetElementSystemIdentifier(numberNode));
@@ -80,14 +80,14 @@ ScAddr ParameterHandler::findParameterNodeByEntity(const ScAddr & parameterClass
     parameterNode = parameterNodes[0];
   else if (parameterNodes.size() > 1)
   {
-    SC_LOG_DEBUG(
+    logger->Debug(
         getClassNameForLog() + "More then 1 parameter node of " +
         this->context->GetElementSystemIdentifier(parameterClass) + " for entity " +
         this->context->GetElementSystemIdentifier(entity));
   }
   else
   {
-    SC_LOG_DEBUG(
+    logger->Debug(
         getClassNameForLog() + "Found no parameter node of " +
         this->context->GetElementSystemIdentifier(parameterClass) + " for entity " +
         this->context->GetElementSystemIdentifier(entity));
@@ -110,9 +110,10 @@ ScAddr ParameterHandler::generateParameterNode(
   return genResult["_parameter_node"];
 };
 
-ParameterHandler::ParameterHandler(ScMemoryContext * context)
+ParameterHandler::ParameterHandler(ScMemoryContext * context, utils::ScLogger * logger)
   : context(context)
-  , numberHandler(std::make_unique<NumberHandler>(context))
+  , logger(logger)
+  , numberHandler(std::make_unique<NumberHandler>(context, logger))
 {
 }
 

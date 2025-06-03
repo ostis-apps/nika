@@ -4,6 +4,7 @@
 
 namespace dialogControlModule
 {
+
 class MessageKeynodes : public ScKeynodes
 {
 public:

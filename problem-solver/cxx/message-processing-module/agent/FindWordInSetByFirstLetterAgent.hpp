@@ -6,6 +6,7 @@
 
 namespace messageProcessingModule
 {
+
 class FindWordInSetByFirstLetterAgent : public ScActionInitiatedAgent
 {
 public:
@@ -22,4 +23,5 @@ private:
 
   std::unique_ptr<commonModule::MessageSearcher> messageSearcher;
 };
+
 }  // namespace messageProcessingModule

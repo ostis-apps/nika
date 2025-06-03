@@ -7,7 +7,8 @@ using namespace interfaceModule;
 
 ChangeInterfaceColorAgent::ChangeInterfaceColorAgent()
 {
-  m_logger = utils::ScLogger(utils::ScLogger::ScLogType::Console, "", utils::ScLogLevel::Debug);
+  m_logger = utils::ScLogger(
+      utils::ScLogger::ScLogType::File, "logs/ChangeInterfaceColorAgent.log", utils::ScLogLevel::Debug, true);
 }
 
 ScResult ChangeInterfaceColorAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)

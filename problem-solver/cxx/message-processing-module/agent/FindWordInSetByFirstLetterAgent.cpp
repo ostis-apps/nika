@@ -12,7 +12,8 @@ namespace messageProcessingModule
 
 FindWordInSetByFirstLetterAgent::FindWordInSetByFirstLetterAgent()
 {
-  m_logger = utils::ScLogger(utils::ScLogger::ScLogType::Console, "", utils::ScLogLevel::Debug);
+  m_logger = utils::ScLogger(
+      utils::ScLogger::ScLogType::File, "logs/FindWordInSetByFirstLetterAgent.log", utils::ScLogLevel::Debug, true);
 }
 
 ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
@@ -45,7 +46,7 @@ ScResult FindWordInSetByFirstLetterAgent::DoProgram(ScActionInitiatedEvent const
       m_context.EraseElement(agentAnswerLinkIterator->Get(2));
     }
 
-    messageSearcher = std::make_unique<commonModule::MessageSearcher>(&m_context);
+    messageSearcher = std::make_unique<commonModule::MessageSearcher>(&m_context, &m_logger);
     std::string messageText = getMessageText(messageAddr);
     ScAddr const & entityAddr =
         utils::IteratorUtils::getAnyByOutRelation(&m_context, messageAddr, MessageProcessingKeynodes::rrel_entity);

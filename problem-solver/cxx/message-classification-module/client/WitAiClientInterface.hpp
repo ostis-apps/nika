@@ -6,6 +6,7 @@ using json = nlohmann::json;
 
 namespace messageClassificationModule
 {
+
 class WitAiClientInterface
 {
 public:

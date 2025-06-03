@@ -7,6 +7,7 @@
 
 namespace messageReplyModule
 {
+
 class MessageReplyTemplates
 {
 public:
@@ -20,4 +21,5 @@ public:
   static std::string const SUGGESTED_REPLY;
   static std::string const NEXT_MESSAGE_ARC_ALIAS;
 };
+
 }  // namespace messageReplyModule

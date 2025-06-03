@@ -6,7 +6,8 @@
 #include <common/http/sc_http_request.hpp>
 #include <sc-config/sc_config.hpp>
 
-messageClassificationModule::WitAiClient::WitAiClient()
+messageClassificationModule::WitAiClient::WitAiClient(utils::ScLogger * logger)
+  : logger(logger)
 {
   ScConfig config{ScMemory::ms_configPath};
   ScConfigGroup group{config["wit-ai"]};
@@ -28,7 +29,7 @@ json messageClassificationModule::WitAiClient::getWitResponse(std::string const 
   }
   catch (...)
   {
-    SC_LOG_ERROR("WitAiClient: Internet connection error.");
+    logger->Error("WitAiClient: Internet connection error.");
   }
 
   return jsonResponse;

@@ -6,8 +6,9 @@
 
 using namespace commonModule;
 
-MessageSearcher::MessageSearcher(ScMemoryContext * context)
+MessageSearcher::MessageSearcher(ScMemoryContext * context, utils::ScLogger * logger)
   : context(context)
+  , logger(logger)
 {
 }
 
@@ -32,11 +33,11 @@ ScAddr MessageSearcher::getFirstMessage(const ScAddr & nonAtomicMessageNode)
   if (result.Size() == 1)
   {
     resultMessageNode = result[0][VAR_MESSAGE];
-    SC_LOG_DEBUG("MessageSearcher: The first message node found");
+    logger->Debug("MessageSearcher: The first message node found");
   }
   else
   {
-    SC_LOG_DEBUG("MessageSearcher: The first message node not found");
+    logger->Debug("MessageSearcher: The first message node not found");
   }
 
   return resultMessageNode;
@@ -63,11 +64,11 @@ ScAddr MessageSearcher::getNextMessage(const ScAddr & messageNode)
   if (result.Size() > 0)
   {
     resultMessageNode = result[0][VAR_MESSAGE];
-    SC_LOG_DEBUG("MessageSearcher: Next message node found");
+    logger->Debug("MessageSearcher: Next message node found");
   }
   else
   {
-    SC_LOG_DEBUG("MessageSearcher: Next message node not found");
+    logger->Debug("MessageSearcher: Next message node not found");
   }
 
   return resultMessageNode;
@@ -87,11 +88,11 @@ ScAddr MessageSearcher::getMessageAuthor(const ScAddr & messageNode)
   if (result.Size() > 0)
   {
     resultAuthorNode = result[0][VAR_AUTHOR];
-    SC_LOG_DEBUG("MessageSearcher: Author set node found");
+    logger->Debug("MessageSearcher: Author set node found");
   }
   else
   {
-    SC_LOG_DEBUG("MessageSearcher: Author set node not found");
+    logger->Debug("MessageSearcher: Author set node not found");
   }
 
   return resultAuthorNode;
@@ -115,11 +116,11 @@ ScAddr MessageSearcher::getMessageTheme(const ScAddr & messageNode)
   if (result.Size() > 0)
   {
     resultThemeNode = result[0][VAR_THEME];
-    SC_LOG_DEBUG("MessageSearcher: Message theme node found");
+    logger->Debug("MessageSearcher: Message theme node found");
   }
   else
   {
-    SC_LOG_DEBUG("MessageSearcher: Message theme node not found");
+    logger->Debug("MessageSearcher: Message theme node not found");
   }
 
   return resultThemeNode;
@@ -132,7 +133,7 @@ ScAddrVector MessageSearcher::getMessageLinks(ScAddr const & message, ScAddrVect
       utils::IteratorUtils::getAnyByInRelation(context, message, commonModule::Keynodes::nrel_sc_text_translation);
   if (!translationNode.IsValid())
   {
-    SC_LOG_WARNING("MessageSearcher: Text translation node not found");
+    logger->Warning("MessageSearcher: Text translation node not found");
     return {};
   }
 

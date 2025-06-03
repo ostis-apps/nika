@@ -2,6 +2,7 @@
 
 namespace messageClassificationModule
 {
+
 std::string const WitAiConstants::INTENTS = "intents";
 std::string const WitAiConstants::TRAITS = "traits";
 std::string const WitAiConstants::ENTITIES = "entities";

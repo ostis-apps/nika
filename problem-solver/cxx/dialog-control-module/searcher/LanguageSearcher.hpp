@@ -2,10 +2,11 @@
 
 namespace dialogControlModule
 {
+
 class LanguageSearcher
 {
 public:
-  explicit LanguageSearcher(ScMemoryContext * context);
+  explicit LanguageSearcher(ScMemoryContext * context, utils::ScLogger * logger);
 
   ScAddr getMessageLanguage(const ScAddr & messageNode);
 
@@ -13,5 +14,7 @@ public:
 
 private:
   ScMemoryContext * context;
+  utils::ScLogger * logger;
 };
+
 }  // namespace dialogControlModule

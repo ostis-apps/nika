@@ -4,6 +4,7 @@
 
 namespace messageReplyModule
 {
+
 class MessageReplyAgent : public ScActionInitiatedAgent
 {
 public:

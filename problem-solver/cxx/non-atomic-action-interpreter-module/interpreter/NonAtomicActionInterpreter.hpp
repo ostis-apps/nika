@@ -8,7 +8,7 @@ namespace nonAtomicActionInterpreterModule
 class NonAtomicActionInterpreter
 {
 public:
-  explicit NonAtomicActionInterpreter(ScAgentContext * context);
+  explicit NonAtomicActionInterpreter(ScAgentContext * context, utils::ScLogger * logger);
 
   void interpret(const ScAddr & nonAtomicActionAddr);
 
@@ -16,6 +16,7 @@ private:
   const int WAIT_TIME = 48000;
 
   ScAgentContext * context;
+  utils::ScLogger * logger;
 
   ScAddr getFirstSubAction(ScAddr const & decompositionTuple);
 

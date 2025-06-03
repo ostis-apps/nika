@@ -8,7 +8,8 @@ using namespace nonAtomicActionInterpreterModule;
 
 NonAtomicActionInterpreterAgent::NonAtomicActionInterpreterAgent()
 {
-  m_logger = utils::ScLogger(utils::ScLogger::ScLogType::Console, "", utils::ScLogLevel::Debug);
+  m_logger = utils::ScLogger(
+      utils::ScLogger::ScLogType::File, "logs/NonAtomicActionInterpreterAgent.log", utils::ScLogLevel::Debug, true);
 }
 
 ScResult NonAtomicActionInterpreterAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
@@ -118,5 +119,5 @@ ScAddr NonAtomicActionInterpreterAgent::replaceNonAtomicAction(
 
 void NonAtomicActionInterpreterAgent::initFields()
 {
-  this->nonAtomicActionInterpreter = std::make_unique<NonAtomicActionInterpreter>(&m_context);
+  this->nonAtomicActionInterpreter = std::make_unique<NonAtomicActionInterpreter>(&m_context, &m_logger);
 }

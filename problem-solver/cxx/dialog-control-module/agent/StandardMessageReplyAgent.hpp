@@ -6,6 +6,7 @@
 
 namespace dialogControlModule
 {
+
 class StandardMessageReplyAgent : public ScActionInitiatedAgent
 {
 public:
@@ -30,4 +31,5 @@ private:
 
   void initFields();
 };
+
 }  // namespace dialogControlModule

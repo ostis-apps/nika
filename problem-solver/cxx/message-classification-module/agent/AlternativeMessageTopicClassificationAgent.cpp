@@ -10,7 +10,11 @@ using namespace messageClassificationModule;
 
 AlternativeMessageTopicClassificationAgent::AlternativeMessageTopicClassificationAgent()
 {
-  m_logger = utils::ScLogger(utils::ScLogger::ScLogType::Console, "", utils::ScLogLevel::Debug);
+  m_logger = utils::ScLogger(
+      utils::ScLogger::ScLogType::File,
+      "logs/AlternativeMessageTopicClassificationAgent.log",
+      utils::ScLogLevel::Debug,
+      true);
 }
 
 ScResult AlternativeMessageTopicClassificationAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
@@ -33,7 +37,7 @@ ScResult AlternativeMessageTopicClassificationAgent::DoProgram(ScActionInitiated
       inference::TREE_ONLY_OUTPUT_STRUCTURE,
       inference::SEARCH_IN_ALL_KB};
   std::unique_ptr<inference::InferenceManagerAbstract> iterationStrategy =
-      inference::InferenceManagerFactory::ConstructDirectInferenceManagerAll(&m_context, inferenceConfig);
+      inference::InferenceManagerFactory::ConstructDirectInferenceManagerAll(&m_context, &m_logger, inferenceConfig);
   try
   {
     iterationStrategy->ApplyInference(inferenceParams);

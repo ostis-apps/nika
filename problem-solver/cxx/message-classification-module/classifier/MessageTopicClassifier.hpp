@@ -10,12 +10,16 @@ namespace messageClassificationModule
 class MessageTopicClassifier
 {
 public:
-  explicit MessageTopicClassifier(ScAgentContext * context, std::shared_ptr<WitAiClientInterface> const & client);
+  explicit MessageTopicClassifier(
+      ScAgentContext * context,
+      utils::ScLogger * logger,
+      std::shared_ptr<WitAiClientInterface> const & client);
 
   ScAddrVector classifyMessage(ScAddr const & messageAddr);
 
 protected:
   ScAgentContext * context;
+  utils::ScLogger * logger;
 
   ScAddrVector relationsToFindEntity{ScKeynodes::nrel_main_idtf, ScKeynodes::nrel_idtf};
 
@@ -27,13 +31,13 @@ protected:
 
   ScAddrVector getMessageIntentClass(ScAddr const & messageAddr, json const & witResponse);
 
-  static std::string getMessageIntent(json const & witResponse);
+  std::string getMessageIntent(json const & witResponse);
 
   std::vector<std::string> getWitAiIdtfs(ScAddr const & messageClass);
 
   ScAddrVector getMessageTraitClass(ScAddr const & messageClass, json const & witResponse);
 
-  static json getMessageTrait(json const & witResponse);
+  json getMessageTrait(json const & witResponse);
 
   static void buildTraitTemplate(ScTemplate & traitTemplate, ScAddr const & possibleMessageCLass);
 
@@ -45,7 +49,7 @@ protected:
 
   ScAddrVector getMessageEntity(ScAddr const & messageAddr, json const & witResponse);
 
-  static json getMessageEntities(json const & witResponse);
+  json getMessageEntities(json const & witResponse);
 
   static void buildEntityTemplate(ScTemplate & entityTemplate, ScAddr const & possibleEntityClass);
 

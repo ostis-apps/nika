@@ -18,7 +18,8 @@ namespace dialogControlModule
 
 PhraseGenerationAgent::PhraseGenerationAgent()
 {
-  m_logger = utils::ScLogger(utils::ScLogger::ScLogType::Console, "", utils::ScLogLevel::Debug);
+  m_logger = utils::ScLogger(
+      utils::ScLogger::ScLogType::File, "logs/PhraseGenerationAgent.log", utils::ScLogLevel::Debug, true);
 }
 
 ScResult PhraseGenerationAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
@@ -50,7 +51,7 @@ ScResult PhraseGenerationAgent::DoProgram(ScActionInitiatedEvent const & event, 
     m_logger.Error("Answer isn't found.");
     return action.FinishUnsuccessfully();
   }
-  LanguageSearcher searcher(&m_context);
+  LanguageSearcher searcher(&m_context, &m_logger);
   ScAddr const & langNode = searcher.getLanguage(phraseLink);
   if (m_context.IsElement(langNode))
   {

@@ -4,6 +4,7 @@
 
 namespace interfaceModule
 {
+
 class InterfaceModule : public ScModule
 {
 };

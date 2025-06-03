@@ -4,8 +4,9 @@
 
 namespace messageClassificationModule
 {
-MessageTopicClassificationManager::MessageTopicClassificationManager(ScAgentContext * context)
-  : classifier(std::make_unique<MessageTopicClassifier>(context, std::make_shared<WitAiClient>()))
+
+MessageTopicClassificationManager::MessageTopicClassificationManager(ScAgentContext * context, utils::ScLogger * logger)
+  : classifier(std::make_unique<MessageTopicClassifier>(context, logger, std::make_shared<WitAiClient>(logger)))
 {
 }
 

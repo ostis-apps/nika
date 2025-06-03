@@ -6,6 +6,7 @@
 
 namespace messageReplyModule
 {
+
 class MessageHistoryGenerator
 {
 public:

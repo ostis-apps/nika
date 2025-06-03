@@ -13,11 +13,13 @@ namespace messageClassificationModule
 {
 MessageTopicClassifier::MessageTopicClassifier(
     ScAgentContext * context,
+    utils::ScLogger * logger,
     std::shared_ptr<WitAiClientInterface> const & client)
   : context(context)
+  , logger(logger)
   , client(client)
 {
-  messageSearcher = std::make_unique<MessageSearcher>(this->context);
+  messageSearcher = std::make_unique<MessageSearcher>(this->context, logger);
 }
 
 ScAddrVector MessageTopicClassifier::classifyMessage(ScAddr const & messageAddr)
@@ -27,7 +29,7 @@ ScAddrVector MessageTopicClassifier::classifyMessage(ScAddr const & messageAddr)
   std::string const messageText = getMessageText(messageAddr);
 
   json const witResponse = client->getWitResponse(messageText);
-  SC_LOG_INFO(witResponse);
+  logger->Info(witResponse);
 
   ScAddrVector const messageIntentElements = getMessageIntentClass(messageAddr, witResponse);
   messageClassificationElements.insert(
@@ -84,7 +86,7 @@ ScAddrVector MessageTopicClassifier::getMessageIntentClass(ScAddr const & messag
     {
       if (messageIntent == witAiIdtf)
       {
-        SC_LOG_DEBUG("Found " << context->GetElementSystemIdentifier(possibleMessageCLass) << " intent class");
+        logger->Debug("Found ", context->GetElementSystemIdentifier(possibleMessageCLass), " intent class");
         ScAddr messageIntentCLassEdge =
             context->GenerateConnector(ScType::ConstPermPosArc, possibleMessageCLass, messageAddr);
         messageIntentCLassElements.push_back(possibleMessageCLass);
@@ -106,7 +108,7 @@ std::string MessageTopicClassifier::getMessageIntent(json const & witResponse)
   }
   catch (...)
   {
-    SC_LOG_WARNING("Message intent class is not found.");
+    logger->Warning("Message intent class is not found.");
   }
 
   return messageIntent;
@@ -159,7 +161,7 @@ json MessageTopicClassifier::getMessageTrait(json const & witResponse)
   }
   catch (...)
   {
-    SC_LOG_WARNING("Message trait class is not found.");
+    logger->Warning("Message trait class is not found.");
   }
 
   return messageIntent;
@@ -219,7 +221,7 @@ ScAddrVector MessageTopicClassifier::processTraits(
 
       if (traitClassIdtf == traitWitIdtf)
       {
-        SC_LOG_DEBUG("Found " << context->GetElementSystemIdentifier(possibleMessageCLass) << " trait class");
+        logger->Debug("Found ", context->GetElementSystemIdentifier(possibleMessageCLass), " trait class");
         ScAddr messageTraitClassEdge =
             context->GenerateConnector(ScType::ConstPermPosArc, possibleMessageCLass, messageAddr);
         messageTraitClassElements.push_back(possibleMessageCLass);
@@ -258,7 +260,7 @@ json MessageTopicClassifier::getMessageEntities(json const & witResponse)
   }
   catch (...)
   {
-    SC_LOG_WARNING("Message entities are not found.");
+    logger->Warning("Message entities are not found.");
   }
 
   return messageEntity;
@@ -353,7 +355,7 @@ ScAddrVector MessageTopicClassifier::processEntities(
         {
           if (std::find(identifiers.begin(), identifiers.end(), entitySameIdtf) != identifiers.end())
           {
-            SC_LOG_DEBUG("Found " << context->GetElementSystemIdentifier(entityAddr) << " entity");
+            logger->Debug("Found ", context->GetElementSystemIdentifier(entityAddr), " entity");
             ScAddr messageEntityEdge = context->GenerateConnector(ScType::ConstPermPosArc, messageAddr, entityAddr);
             ScAddr messageEntityRoleEdge =
                 context->GenerateConnector(ScType::ConstPermPosArc, entityRole, messageEntityEdge);
@@ -387,8 +389,8 @@ ScAddrVector MessageTopicClassifier::processEntities(
     ScAddr const & messageEntityRoleEdge =
         context->GenerateConnector(ScType::ConstPermPosArc, entityRole, messageEntityEdge);
 
-    SC_LOG_DEBUG("Generated " << notFoundEntitiesIdtf << " entity");
-    SC_LOG_DEBUG("Generated " << notFoundEntitiesRoles << " role");
+    logger->Debug("Generated ", notFoundEntitiesIdtf, " entity");
+    logger->Debug("Generated ", notFoundEntitiesRoles, " role");
 
     messageEntitiesElements.push_back(createdEntity);
     messageEntitiesElements.push_back(createdEntityEdge);

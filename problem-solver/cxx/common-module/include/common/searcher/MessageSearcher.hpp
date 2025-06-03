@@ -7,7 +7,7 @@ namespace commonModule
 class MessageSearcher
 {
 public:
-  explicit MessageSearcher(ScMemoryContext * context);
+  explicit MessageSearcher(ScMemoryContext * context, utils::ScLogger * logger);
 
   ScAddr getFirstMessage(const ScAddr & nonAtomicMessageNode);
 
@@ -23,5 +23,6 @@ public:
 
 private:
   ScMemoryContext * context;
+  utils::ScLogger * logger;
 };
 }  // namespace commonModule
