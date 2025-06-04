@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Use DYLD_LIBRARY_PATH to run sc-machine on macOS
+- Install common library into lib directory
+
 ## [0.2.0] - 03.06.2025
 
 ### Added
