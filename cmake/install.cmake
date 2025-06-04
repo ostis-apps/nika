@@ -1,9 +1,28 @@
+install(TARGETS 
+    common
+    EXPORT nikaExport
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+)
+
 install(TARGETS
-    common dialog-control-module interface-module
+    dialog-control-module interface-module
     message-classification-module message-processing-module
     message-reply-module
     EXPORT privateExport
     LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}/extensions"
+)
+
+export(EXPORT nikaExport 
+    FILE "${CMAKE_CURRENT_BINARY_DIR}/nikaTargets.cmake"
+)
+
+install(EXPORT nikaExport
+    FILE nikaTargets.cmake
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/nika
 )
 
 install(EXPORT privateExport
