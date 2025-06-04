@@ -11,7 +11,7 @@ install(TARGETS
 install(TARGETS
     dialog-control-module interface-module
     message-classification-module message-processing-module
-    message-reply-module
+    message-reply-module non-atomic-action-interpreter-module
     EXPORT privateExport
     LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}/extensions"
 )
