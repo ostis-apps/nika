@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.2] - 04.06.2025
+
+### Fixed
+
+- Relative paths for configs in start.sh
+- Install non-atomic-action-interpreter-module into extensions directory
+
 ## [0.2.1] - 04.06.2025
 
 ### Fixed
