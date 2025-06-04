@@ -7,16 +7,27 @@ PROJECT_ROOT_PATH="$(cd "$SCRIPT_PATH/.." && pwd)"
 SC_MACHINE_PATH="$PROJECT_ROOT_PATH"/install/sc-machine
 SCL_MACHINE_PATH="$PROJECT_ROOT_PATH"/install/scl-machine
 PROBLEM_SOLVER_PATH="$PROJECT_ROOT_PATH"/install/problem-solver
-LD_LIBRARY_PATH="$SCL_MACHINE_PATH/lib:$SC_MACHINE_PATH/lib:$LD_LIBRARY_PATH"
+LIB_PATH="$SCL_MACHINE_PATH/lib:$SC_MACHINE_PATH/lib:$PROBLEM_SOLVER_PATH/lib:$LD_LIBRARY_PATH"
+
+OS_TYPE="$(uname -s)"
 
 case "$1" in
   build_kb)
     "$PROJECT_ROOT_PATH"/install/sc-machine/bin/sc-builder -i repo.path -o kb.bin --clear
     ;;
   machine)
-    LD_LIBRARY_PATH="$LD_LIBRARY_PATH" \
+    if [ "$OS_TYPE" = "Darwin" ]; then
+      DYLD_LIBRARY_PATH="$LIB_PATH${DYLD_LIBRARY_PATH:+:$DYLD_LIBRARY_PATH}" \
       $SC_MACHINE_PATH/bin/sc-machine -s kb.bin \
-      -e "$SC_MACHINE_PATH/lib/extensions;$SCL_MACHINE_PATH/lib/extensions;$PROBLEM_SOLVER_PATH/lib/extensions;" -c nika.ini
+        -e "$SC_MACHINE_PATH/lib/extensions;$SCL_MACHINE_PATH/lib/extensions;$PROBLEM_SOLVER_PATH/lib/extensions;" -c nika.ini
+    elif [ "$OS_TYPE" = "Linux" ]; then
+      LD_LIBRARY_PATH="$LIB_PATH${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}" \
+      $SC_MACHINE_PATH/bin/sc-machine -s kb.bin \
+        -e "$SC_MACHINE_PATH/lib/extensions;$SCL_MACHINE_PATH/lib/extensions;$PROBLEM_SOLVER_PATH/lib/extensions;" -c nika.ini
+    else
+      echo "Unsupported OS: $OS_TYPE"
+      exit 1
+    fi
     ;;
   py_server)
     source $PROJECT_ROOT_PATH/problem-solver/py/.venv/bin/activate
