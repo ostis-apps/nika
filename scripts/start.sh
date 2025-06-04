@@ -7,23 +7,23 @@ PROJECT_ROOT_PATH="$(cd "$SCRIPT_PATH/.." && pwd)"
 SC_MACHINE_PATH="$PROJECT_ROOT_PATH"/install/sc-machine
 SCL_MACHINE_PATH="$PROJECT_ROOT_PATH"/install/scl-machine
 PROBLEM_SOLVER_PATH="$PROJECT_ROOT_PATH"/install/problem-solver
-LIB_PATH="$SCL_MACHINE_PATH/lib:$SC_MACHINE_PATH/lib:$PROBLEM_SOLVER_PATH/lib:$LD_LIBRARY_PATH"
+LIB_PATH="$SCL_MACHINE_PATH/lib:$SC_MACHINE_PATH/lib:$PROBLEM_SOLVER_PATH/lib"
 
 OS_TYPE="$(uname -s)"
 
 case "$1" in
   build_kb)
-    "$PROJECT_ROOT_PATH"/install/sc-machine/bin/sc-builder -i repo.path -o kb.bin --clear
+    "$PROJECT_ROOT_PATH"/install/sc-machine/bin/sc-builder -i $PROJECT_ROOT_PATH/repo.path -o $PROJECT_ROOT_PATH/kb.bin --clear
     ;;
   machine)
     if [ "$OS_TYPE" = "Darwin" ]; then
-      DYLD_LIBRARY_PATH="$LIB_PATH${DYLD_LIBRARY_PATH:+:$DYLD_LIBRARY_PATH}" \
-      $SC_MACHINE_PATH/bin/sc-machine -s kb.bin \
-        -e "$SC_MACHINE_PATH/lib/extensions;$SCL_MACHINE_PATH/lib/extensions;$PROBLEM_SOLVER_PATH/lib/extensions;" -c nika.ini
+      DYLD_LIBRARY_PATH="$LIB_PATH" \
+      $SC_MACHINE_PATH/bin/sc-machine -s $PROJECT_ROOT_PATH/kb.bin \
+        -e "$SC_MACHINE_PATH/lib/extensions;$SCL_MACHINE_PATH/lib/extensions;$PROBLEM_SOLVER_PATH/lib/extensions" -c $PROJECT_ROOT_PATH/nika.ini
     elif [ "$OS_TYPE" = "Linux" ]; then
-      LD_LIBRARY_PATH="$LIB_PATH${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}" \
-      $SC_MACHINE_PATH/bin/sc-machine -s kb.bin \
-        -e "$SC_MACHINE_PATH/lib/extensions;$SCL_MACHINE_PATH/lib/extensions;$PROBLEM_SOLVER_PATH/lib/extensions;" -c nika.ini
+      LD_LIBRARY_PATH="$LIB_PATH" \
+      $SC_MACHINE_PATH/bin/sc-machine -s $PROJECT_ROOT_PATH/kb.bin \
+        -e "$SC_MACHINE_PATH/lib/extensions;$SCL_MACHINE_PATH/lib/extensions;$PROBLEM_SOLVER_PATH/lib/extensions" -c $PROJECT_ROOT_PATH/nika.ini
     else
       echo "Unsupported OS: $OS_TYPE"
       exit 1
