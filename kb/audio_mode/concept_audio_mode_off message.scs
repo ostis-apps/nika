@@ -1,0 +1,24 @@
+concept_audio_mode_off_message
+<- sc_node_not_relation;
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	   [Опр. (сообщение о выключении режима озвучивания)]
+	   (* <- lang_ru;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+	   [Сообщение о выключении режима озвучивания - атомарное сообщение,
+    которое говорит, что режим озвучивания выключен.]
+		   (* <- lang_ru;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;
+	*);;
+
+

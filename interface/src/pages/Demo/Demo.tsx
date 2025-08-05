@@ -52,11 +52,12 @@ export const Demo = () => {
                             <Fragment key={item.id}>
                                 {showDate && <Date date={item.date} />}
                                 <Message
+                                    addr={item.addr}
                                     isLeft={!!user && !item.author.equal(user)}
                                     time={item.time}
                                     isLoading={item.isLoading}
                                 >
-                                    {typeof item.text === 'string' ? (
+                                     {typeof item.text === 'string' ? (
                                         <div dangerouslySetInnerHTML={{__html: item.text}} />
                     
                                     ) : (

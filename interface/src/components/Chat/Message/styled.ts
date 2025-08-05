@@ -50,6 +50,22 @@ export const WrapperLoadingIcon = styled.div`
     bottom: 4px;
 `;
 
+//компонент для кнопки озвучивания
+export const SpeakButton = styled.button`
+    position: absolute;
+    right: 10px; /* сдвигаем кнопку левее, чтобы она была рядом с иконкой загрузки */
+    bottom: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #4a5875;
+    font-size: 16px;
+
+    &:hover {
+        color: #2c3e50; /* цвет при наведении */
+    }
+`;
+
 export const WrapperRebootError = styled.div`
     margin: -4px 16px 6px 0px;
     padding: 3px;
