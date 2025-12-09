@@ -1,6 +1,6 @@
 # Message reply agent
 
-Is an agent that generates the response message, associates with the original relation "nrel_reply"
+It is an agent that generates the response message, associates with the original relation "nrel_reply"
 
 **Action class:**
 

@@ -1,6 +1,6 @@
 # Non-atomic action interpretation agent
 
-Is an agent that generates an action description in the knowlendge base based on the template received. If there are sets of arguments then it performs a role mapping before generation.
+It is an agent that generates an action description in the knowledge base based on the template received. If there are sets of arguments then it performs a role mapping before generation.
 
 **Action class:**
 
