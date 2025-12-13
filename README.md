@@ -28,70 +28,119 @@ Then open http://127.0.0.1:9001/ in your browser
 
 
 # Requirements
-* A computer running Windows 10/11, macOS (10.15+) or 
-Linux (Ubuntu/Debian/Fedora-like).
+* A computer with Windows 10/11, macOS (10.15+), or Linux (Ubuntu/Debian/Fedora-like).
 * Internet access.
-* Administrator / sudo rights (for installing programs).
-* You will need Docker (with Compose plugin) installed and running on your machine.
+* Administrator rights (Windows) or sudo rights (Linux/macOS) for installing programs.
+* You will need Docker (with the Compose plugin) installed and operational on your machine.
 * A little patience — it takes time to install Git, WSL, Docker and download images (10-60 minutes, depending on the Internet speed).
 
 # 0. General training
 
-* PowerShell / Terminal is the place where you enter commands.
-* Windows — PowerShell (Running as an administrator is recommended).
-* macOS / Linux — Terminal.
+### Windows
+  * PowerShell (launched as an administrator).
+  * WSL (Windows Subsystem for Linux, Windows only) — is a special feature in Windows that allows you to use a Linux environment inside Windows.
+
+### MacOS/Linux
+  * Terminal.
+
+### General
+ 
 * Git — is a system for downloading source code (repositories).
 * Docker — is a program that runs "containers" (as small virtual machines).
-* WSL (Windows Subsystem for Linux, only on Windows) — is a special feature in Windows that allows you to run Linux inside Windows.
 
 # 1. Installing Git
 
 ### Windows
 1. Open a browser, go to the Git for Windows [website](https://git-scm.com/download/win) and download the installer.
-2. Run the downloaded file → Next button to the end → Install.
-3. After installation, open PowerShell and run:
+2. Start the installer → press Next until the end → Install.
+3. Restart your computer for the changes to take effect.
+4. After restarting, open PowerShell and execute:
 ```
 git --version
 ```
-You should see the version number (for example, git version 2.x.x).
-
+You should see something like:
+```
+git version 2.x.x
+```
+5. Windows has a path length limitation that may break cloning large repositories. Enable support for long paths:
+```
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f
+```
+6. Then configure Git to work correctly with long filenames:
+```
+git config --system core.longpaths true
+```
+After that Git will work correctly with long filenames and deep folder structures.
 ### macOS
 Open the Terminal (Launchpad → Terminal) and enter:
 ```
 git --version
 ```
-If Git is not installed, macOS will offer to install "Command Line Tools" — you agree and wait for the installation.
+If Git is not installed, macOS will automatically offer to install "Command Line Tools". Agree and wait for installation.
 
 ### Linux (Ubuntu/Debian)
-In the terminal:
+In the terminal:  
+Update the list of available packages
 ```
 sudo apt update
+```
+Install Git
+```
 sudo apt install -y git
+```
+Check the installed Git version
+```
 git --version
 ```
+Expected output:
+```
+git version 2.x.x
+```
 # 2. Installing Docker
-Important: On Windows, Docker Desktop uses WSL2 (see the separate section below). On macOS and Linux, Docker Desktop / Docker Engine is installed according to the instructions below.
+Important: On Windows, Docker Desktop requires WSL2.
 
 ### Windows (Docker Desktop + WSL2)
 
 1. Download Docker Desktop for Windows from the [official website](https://docs.docker.com/desktop/install/windows-install/) and install it.
-2. During installation, make sure that the Use WSL 2 based engine option is enabled.
-3. Open PowerShell as an administrator and run:
+2. During installation, make sure Use WSL 2 based engine is checked.
+3. Enable WSL2 (PowerShell launched as Administrator):
 ```
 wsl --install
 ```
-4. Restart your computer.
-5. Launch Docker Desktop (the icon in the lower right tray). Wait for the Docker is running status.
-6. Checking in PowerShell:
+This installs the WSL2 kernel and the default Linux subsystem.
+
+4. Restart your computer for the changes to take effect.  
+5. After restart, verify WSL:
+```
+wsl -l -v
+```
+You should see your Linux distribution with the status VERSION 2 (WSL2):
+```
+  NAME      STATE    VERSION
+  Ubuntu    Running  2
+
+```
+If VERSION is 1, switch to WSL2:
+```
+wsl --set-version Ubuntu 2
+```
+6. Start Docker Desktop → wait until it fully starts.
+7. Check Docker:
 ```
 docker version
 ```
+Expected output contains:
+```
+Client:
+ Version: 28.x.x
+ ```
+
 ### macOS
 
 1. Download Docker Desktop for Mac from the [official website](https://docs.docker.com/desktop/install/mac-install/).
-2. Open the .dmg installer and drag Docker to Applications.
-3. Launch Docker from the Applications folder. Wait for Docker to rise.
-4. Checking in the Terminal:
+2. Drag the Docker icon into Applications.
+3. Start Docker → wait until it says Running.
+4. Verify installation:
 ```
 docker version
 ```
@@ -107,8 +156,8 @@ sudo apt-get install ./docker-desktop-amd64.deb
 ```
 systemctl --user start docker-desktop
 ```
-4. Signing in with Docker Desktop. Docker Desktop for Linux relies on pass to store credentials in GPG-encrypted files. Before signing in to Docker Desktop with your [Docker ID](https://docs.docker.com/accounts/create-account/), you must initialize pass. Docker Desktop displays a warning if pass is not configured.
-* Generate a GPG key. You can initialize pass by using a gpg key. To generate a gpg key, run:
+4. Signing in with Docker Desktop. Docker Desktop for Linux uses pass (the standard Linux password manager) to store credentials in GPG-encrypted files. Before signing in to Docker Desktop with your [Docker ID](https://docs.docker.com/accounts/create-account/), you must initialize pass. Docker Desktop displays a warning if pass is not configured.
+* Generate a GPG key. You can initialize pass by using a gpg key. To generate a gpg key, use the command:
 ```
 gpg --generate-key
 ```
@@ -116,8 +165,8 @@ gpg --generate-key
 Once confirmed, GPG creates a key pair. Look for the pub line that contains your GPG ID, for example:
 ```
 pubrsa3072 2022-03-31 [SC] [expires: 2024-03-30]
- 3ABCD1234EF56G78
-uid          Molly <molly@example.com>
+ 3ABCD1234EF56G78
+uid          Molly <molly@example.com>
 ```
 * Copy the GPG ID and use it to initialize pass. For example:
 ```
@@ -128,24 +177,35 @@ pass init 3ABCD1234EF56G78
 mkdir: created directory '/home/molly/.password-store/'
 Password store initialized for <generated_gpg-id_public_key>
 ```
-5. After you’ve successfully installed Docker Desktop, you can check the versions of these binaries by running the following commands:
+5. After you’ve successfully installed Docker Desktop, you can check the versions of these binaries by executing the following commands:
 ```
 docker compose version
-Docker Compose version v2.39.4
 ```
+Expected(example): 
+```
+Docker Compose version v2.39.4
+``` 
+Next step:
 ```
 docker --version
+```
+Expected(example):
+```
 Docker version 28.4.0, build d8eb465
 ```
+Next step:
 ```
 docker version
+```
+Expected(example):
+```
 Client:
- Version:           28.4.0
- API version:       1.51
- Go version:        go1.24.7
+ Version:           28.4.0
+ API version:       1.51
+ Go version:        go1.24.7
 <...>
 ```
-To enable Docker Desktop to start on sign in, from the Docker menu, select Settings > General > Start Docker Desktop when you sign in to your computer:
+To enable Docker Desktop to start on sign in, from the Docker menu, select Settings → General → Start Docker Desktop when you sign in to your computer:
 ```
 systemctl --user enable docker-desktop
 ```
@@ -154,81 +214,147 @@ To stop Docker Desktop, select the Docker menu icon to open the Docker menu and 
 systemctl --user stop docker-desktop
 ```
 
-# 3. (Windows) Enabling long paths and configuring Git
+# 3. NIKA repository cloning (general)
 
-Windows may have issues with long paths in large repositories. Use the following command in PowerShell (run as administrator):
+The last verified stable version of NIKA is 0.1.0. To ensure compatibility with the published Docker images, we will checkout the verified commit for this version in the next step.   
+Open PowerShell / Terminal in a working folder, e.g.:
+* Windows:
 ```
-reg add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f
+C:\Users\YourName\Projects
 ```
+* macOS/Linux:
 ```
-git config --system core.longpaths true
+~/project
 ```
-
-# 4. NIKA repository cloning (general)
-
-At this moment, we'd like to mention that the last stable version of NIKA is 0.1.0. Based on this information, we will set up the following part of this manual for version 0.1.0 of NIKA. Open PowerShell / Terminal in a convenient folder (for example, C:\Users\YourName\Projects or ~/projects) and execute:
+Download (clone) the NIKA repository with safe Windows settings.  
+Then execute:  
 ```
-# download (clone) the NIKA repository with safe Windows settings
 git clone -c core.longpaths=true -c core.autocrlf=true https://github.com/ostis-apps/nika
 ```
+
+Go to the NIKA project directory
 ```
-# go to the NIKA project directory
 cd nika
 ```
+
+Checkout the verified stable revision
 ```
-# go to the verified revision
 git checkout 69858165c3b5fb26ca783950c74bfe7bddd64a00
+```
+
+Download all submodules used in the project
+```
 git submodule update --init --recursive
 ```
-# 5. Launch (general)
-In the terminal, in the nika folder:
+
+Every command is necessary — do NOT skip.
+# 4. Launch (general)
+Pull the images (download all required Docker images).  
+Inside the nika directory:
 ```
-# pull the images
 docker compose pull
-# start the containers in the background
-docker compose up --no-build -d
+```
+Start the containers:
+```
+docker compose up --no-build
 ```
 
-# 6. Checking services
-
+# 5. Checking services
+After all containers start, open in your browser:
 * [UI (dialogue)](http://localhost:3033)
 * [SC-web (visualization)](http://localhost:8000)
-* Problem-solver (TCP/WS port): 8090 is not a page, but the service must listen.
+* Problem-solver: port 8090 (service only, no webpage)
 
-If the pages have opened, everything is fine.
+If UI and SC-web open — everything is working.
 
-# Useful commands
-In the nika directory:
+# Useful commands & Troubleshooting
+
+All commands below must be executed inside the nika directory.
+
+Check containers status
 ```
-# show the status of containers
 docker compose ps
 ```
+
+Use when:
+* UI on port 3033 does not open
+* You want to verify that containers are started and healthy
+
+Start the project
 ```
-# stop and delete containers and network
+docker compose up --no-build
+```
+Stop the roject
+```
 docker compose down
 ```
+
+Use when:
+* Docker containers are not running
+* You need a clean restart of the project
+
+View last 200 lines of logs for a specific service
 ```
-# view logs (last 200 lines) of required services
-docker compose logs --tail 200 (server name)
+docker compose logs --tail 200 <service name>
 ```
+Example:
 ```
-# getting inside the container
-docker exec -it (container name) bash
+docker compose logs --tail 200 nika-ui
+```
+Use when:
+* UI does not open
+* A service fails to start
+* You need error details
+
+Restart a specific service
+```
+docker compose restart <service>
+```
+Use when:
+* One service is stuck or misbehaving
+* Full project restart is not required
+
+Get inside a running container
+```
+docker exec -it <container name> bash
 ```
 
-# Troubleshooting
+Use when:
+* Manual inspection or debugging inside a container is required
+* Common problems and solutions
 
-Problem: Docker takes a long time to load images or hangs.  
-Solution: Wait. Check your internet speed. Perform a ```docker compose pull``` separately; see error output.
+Problem: docker compose is not available.  
+Solution: Try the older command 
+``` 
+docker-compose
+```
 
-Problem: There is a long paths error with git clone.  
-Solution: Follow the "enable long paths" step (see Step 3). Clone it again.
+Problem: Docker images download extremely slowly.  
+Solution: Wait. Check your internet speed. Perform a 
+```
+docker compose pull
+``` 
+separately; see error output.
 
-Problem: Port 3033 won't open.   
-Solution: Make sure that Docker containers are running (```docker compose ps```). Look at the ```docker compose logs nika-ui``` logs.
+Problem: Git clone fails with long path errors.  
+Solution: Follow the Step 3 and clone it again.
 
-Problem: You don't have the rights to run Docker (especially on Linux).
-Solution: Add the user to the docker group (```sudo usermod -aG docker $USER```) and log out/log in.
+Problem: UI on port 3033 not opening.  
+Solution: Make sure that Docker containers are active
+```
+docker compose ps
+```
+ View logs 
+ ```
+ docker compose logs nika-ui
+ ```
+
+Problem: Docker permissions error (Linux).  
+Solution: Add the user to the docker group
+ ```
+ sudo usermod -aG docker $USER
+ ```
+ Then log out and log in.
 
 ## 🤝 Contributing
 
