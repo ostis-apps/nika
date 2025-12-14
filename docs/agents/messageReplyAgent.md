@@ -17,7 +17,7 @@ Also there is the `author` of the message.
 **Workflow:**
 
 * The agent generates a message node in the knowledge base, identifying the author of the action as the author of the message and the received text file as the text of that message;
-* Then the necessary construction is generated to call the agent of non-atomic action interpretation. An example of this construction is shown below.
+* Then the necessary construction is generated to call the agent of non-atomic (consisting of several parts) action interpretation. An example of this construction is shown below.
 
 <img src="../images/messageReplyAgentGener.png"></img>
 

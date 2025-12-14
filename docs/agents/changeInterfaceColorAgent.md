@@ -1,6 +1,6 @@
 # Interface component color changer agent
 
-Is an agent that changes a color of an interface component.
+A small agent that updates the color of a user interface component. It accepts a message that names the target component and, optionally, a color value. If no color is provided, the agent picks a random color.
 
 To test you can use messages like `Измени цвет хедера на #001122`, `Поменяй цвет компонента футер на #CC1122` or `Измени цвет компонента основная часть на #00AAFF`.
 
@@ -37,5 +37,5 @@ Example of an input structure:
 
 Possible result codes:
 
-* `SC_RESULT_OK` - interface component color is changed successfully;
-* `SC_RESULT_ERROR`- `message` or `interface component` is not found.
+* `SC_RESULT_OK` - the interface component color was changed successfully.
+* `SC_RESULT_ERROR`- the `message` or `interface component` could not be found.
