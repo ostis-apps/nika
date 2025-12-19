@@ -26,6 +26,7 @@ from sc_kpm.utils.action_utils import (
 from sc_kpm import ScKeynodes
 
 import requests
+from urllib.parse import quote
 
 
 logging.basicConfig(
@@ -54,7 +55,7 @@ class WeatherAgent(ScAgentClassic):
                 "concept_message_about_weather", sc_type.CONST_NODE_CLASS)
 
             if not check_connector(sc_type.VAR_PERM_POS_ARC, message_type, message_addr):
-                self.logger.info(
+                self.logger.debug(
                     f"WeatherAgent: the message isn’t about weather")
                 return ScResult.OK
 
@@ -81,6 +82,7 @@ class WeatherAgent(ScAgentClassic):
             if not city_addr.is_valid():
                 self.set_unknown_city_link(action_node, answer_phrase)
                 return ScResult.OK
+            
             city_idtf_link = self.get_ru_main_identifier(city_addr)
             answer_city_idtf_link = search_element_by_non_role_relation(
                 src=city_addr, nrel_node=idtf)
@@ -88,16 +90,20 @@ class WeatherAgent(ScAgentClassic):
                 self.set_unknown_city_link(action_node, answer_phrase)
                 return ScResult.OK
         except Exception as e:
-            self.logger.info(f"WeatherAgent: finished with an error {e}")
+            self.logger.error(f"WeatherAgent: Error processing message: {e}")
             return ScResult.ERROR
 
         entity_idtf = get_link_content_data(city_idtf_link)
+        
         try:
-            temperature = self.get_weather(
-                entity_idtf, city_addr, country_addr)
-        except requests.exceptions.ConnectionError:
-            self.logger.info(f"WeatherAgent: finished with connection error")
+            temperature = self.get_weather(entity_idtf, city_addr, country_addr)
+        except requests.exceptions.ConnectionError as e:
+            self.logger.error(f"WeatherAgent: Connection error: {e}")
             return ScResult.ERROR
+        except Exception as e:
+            self.logger.error(f"WeatherAgent: Error getting weather: {e}")
+            return ScResult.ERROR
+        
         link = generate_link(
             str(temperature), ScLinkContentType.STRING, link_type=sc_type.CONST_NODE_LINK)
         temperature_edge = generate_connector(
@@ -109,26 +115,68 @@ class WeatherAgent(ScAgentClassic):
         return ScResult.OK
 
     def get_weather(self, entity_idtf: ScAddr, city_addr: ScAddr, country_addr: ScAddr) -> float:
-        # get entity longitude and latitude
+        # get entity longitude and latitude using Nominatim API (free, no key required)
+        headers = {'User-Agent': 'NIKA-Weather-Agent/1.0'}
+
+        geo_params = {
+            'city': str(entity_idtf),
+            'format': 'json'
+        }
+
         if country_addr is not None:
             country = get_link_content_data(self.get_ru_main_identifier(country_addr))
-            coordinates = requests.get(
-                f'https://geocode.maps.co/search?city={entity_idtf}&country={country}').json()[0]
-        else:
-            coordinates = requests.get(
-                f'https://geocode.maps.co/search?city={entity_idtf}').json()[0]
+            geo_params['country'] = str(country)
 
-        # get weather
-        response = requests.get(
-            "https://api.open-meteo.com/v1/forecast?"
-            f"latitude={coordinates['lat']}&longitude={coordinates['lon']}&current_weather=true")
+        try:
+            geo_response = requests.get(
+                'https://nominatim.openstreetmap.org/search', 
+                params=geo_params, 
+                headers=headers, 
+                timeout=10
+            )
+            
+            geo_response.raise_for_status()
+            
+            geo_data = geo_response.json()
+            if not geo_data:
+                self.logger.warning(f"WeatherAgent: City not found: {entity_idtf}")
+                raise ValueError(f"City not found: {entity_idtf}")
+            
+            coordinates = geo_data[0]
 
-        weather_data = response.json()
-        main_data = weather_data["current_weather"]
-        temperature = main_data["temperature"]
-        self.logger.info(
-            f"WeatherAgent: The temperature in {get_element_system_identifier(city_addr)} is {temperature}°C")
-        return temperature
+            # get weather
+            weather_params = {
+                'latitude': coordinates['lat'],
+                'longitude': coordinates['lon'],
+                'current_weather': 'true'
+            }
+
+            weather_response = requests.get(
+                "https://api.open-meteo.com/v1/forecast",
+                params=weather_params,
+                timeout=10
+            )
+            weather_response.raise_for_status()
+
+            weather_data = weather_response.json()
+            main_data = weather_data["current_weather"]
+            temperature = main_data["temperature"]
+            
+            self.logger.info(f"WeatherAgent: {get_element_system_identifier(city_addr)} = {temperature}°C")
+            return temperature
+
+        except requests.exceptions.Timeout:
+            self.logger.error("WeatherAgent: Request timeout")
+            raise
+        except requests.exceptions.RequestException as e:
+            self.logger.error(f"WeatherAgent: Request failed: {e}")
+            raise
+        except (KeyError, ValueError) as e:
+            self.logger.error(f"WeatherAgent: Data parsing error: {e}")
+            raise
+        except Exception as e:
+            self.logger.error(f"WeatherAgent: Unexpected error: {e}")
+            raise
 
     def set_unknown_city_link(self, action_node: ScAddr, answer_phrase: ScAddr) -> None:
         unknown_city_link = ScKeynodes.resolve(
