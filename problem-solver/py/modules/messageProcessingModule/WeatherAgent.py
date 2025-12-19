@@ -55,6 +55,8 @@ class WeatherAgent(ScAgentClassic):
                 "concept_message_about_weather", sc_type.CONST_NODE_CLASS)
 
             if not check_connector(sc_type.VAR_PERM_POS_ARC, message_type, message_addr):
+                self.logger.debug(
+                    f"WeatherAgent: the message isn’t about weather")
                 return ScResult.OK
 
             idtf = ScKeynodes.resolve("nrel_idtf", sc_type.CONST_NODE_NON_ROLE)
@@ -115,17 +117,27 @@ class WeatherAgent(ScAgentClassic):
     def get_weather(self, entity_idtf: ScAddr, city_addr: ScAddr, country_addr: ScAddr) -> float:
         # get entity longitude and latitude using Nominatim API (free, no key required)
         headers = {'User-Agent': 'NIKA-Weather-Agent/1.0'}
-        
+
+        geo_params = {
+            'city': str(entity_idtf),
+            'format': 'json'
+        }
+
+        if country_addr is not None:
+            country = get_link_content_data(self.get_ru_main_identifier(country_addr))
+            geo_params['country'] = str(country)
+
         try:
-            if country_addr is not None:
-                country = get_link_content_data(self.get_ru_main_identifier(country_addr))
-                url = f'https://nominatim.openstreetmap.org/search?city={quote(entity_idtf)}&country={quote(country)}&format=json'
-                response = requests.get(url, headers=headers, timeout=10)
-            else:
-                url = f'https://nominatim.openstreetmap.org/search?city={quote(entity_idtf)}&format=json'
-                response = requests.get(url, headers=headers, timeout=10)
+            geo_response = requests.get(
+                'https://nominatim.openstreetmap.org/search', 
+                params=geo_params, 
+                headers=headers, 
+                timeout=10
+            )
             
-            geo_data = response.json()
+            geo_response.raise_for_status()
+            
+            geo_data = geo_response.json()
             if not geo_data:
                 self.logger.warning(f"WeatherAgent: City not found: {entity_idtf}")
                 raise ValueError(f"City not found: {entity_idtf}")
@@ -133,15 +145,26 @@ class WeatherAgent(ScAgentClassic):
             coordinates = geo_data[0]
 
             # get weather
-            weather_url = (f"https://api.open-meteo.com/v1/forecast?"
-                          f"latitude={coordinates['lat']}&longitude={coordinates['lon']}&current_weather=true")
-            response = requests.get(weather_url, timeout=10)
+            weather_params = {
+                'latitude': coordinates['lat'],
+                'longitude': coordinates['lon'],
+                'current_weather': 'true'
+            }
 
-            weather_data = response.json()
+            weather_response = requests.get(
+                "https://api.open-meteo.com/v1/forecast",
+                params=weather_params,
+                timeout=10
+            )
+            weather_response.raise_for_status()
+
+            weather_data = weather_response.json()
             main_data = weather_data["current_weather"]
             temperature = main_data["temperature"]
+            
             self.logger.info(f"WeatherAgent: {get_element_system_identifier(city_addr)} = {temperature}°C")
             return temperature
+
         except requests.exceptions.Timeout:
             self.logger.error("WeatherAgent: Request timeout")
             raise
