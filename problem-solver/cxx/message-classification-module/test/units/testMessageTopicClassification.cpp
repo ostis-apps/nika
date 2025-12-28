@@ -1,7 +1,7 @@
 #include <sc-memory/test/sc_test.hpp>
 
 #include "WitAiCkientMock.hpp"
-#include "classifier/MessageTopicClassifier.hpp"
+#include "classifier/WitMessageTopicClassifier.hpp"
 #include <sc-builder/scs_loader.hpp>
 
 using namespace messageClassificationModule;
@@ -20,10 +20,10 @@ TEST_F(MessageTopicClassificationTest, connectionTest)
       R"({"entities":{},"intents":[{"confidence":0.8592,"id":"4251337931554570","name":"start_greeting"}],
               "text":"Hello.","traits":{"wit$sentiment":[{"confidence":0.65,"id":"5ac2b50a-44e4-466e-9d49-bad6bd40092c",
               "value":"positive"}]}})";
-  EXPECT_CALL(*client, getWitResponse(testing::_))
+  EXPECT_CALL(*client, getResponse(testing::_))
       .Times(testing::Exactly(1))
       .WillOnce(testing::Return(json::parse(witResponse)));
-  json response = client->getWitResponse("Привет Максиму из лета.");
+  json response = client->getResponse("Привет Максиму из лета.");
 
   EXPECT_FALSE(response.empty());
 }
@@ -45,12 +45,12 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithoutEntityTest)
       R"({"entities":{},"intents":[{"confidence":0.8592,"id":"4251337931554570","name":"start_greeting"}],
               "text":"Hello.","traits":{"wit$sentiment":[{"confidence":0.65,"id":"5ac2b50a-44e4-466e-9d49-bad6bd40092c",
               "value":"positive"}]}})";
-  EXPECT_CALL(*client, getWitResponse(testing::_))
+  EXPECT_CALL(*client, getResponse(testing::_))
       .Times(testing::Exactly(1))
       .WillOnce(testing::Return(json::parse(witResponse)));
 
   utils::ScLogger logger;
-  MessageTopicClassifier classifier(&context, &logger, client);
+  WitMessageTopicClassifier classifier(&context, &logger, client);
   ScAddrVector messageClassificationItems = classifier.classifyMessage(messageAddr);
   EXPECT_FALSE(messageClassificationItems.empty());
 
@@ -82,12 +82,12 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithEntityTest)
               "type":"value","value":"Максим"}]},"intents":[{"confidence":0.9994,"id":"4251337931554570",
               "name":"start_greeting"}],"text":"Hello Maksim","traits":{"wit$sentiment":[{"confidence":0.6224,
               "id":"5ac2b50a-44e4-466e-9d49-bad6bd40092c","value":"neutral"}]}})";
-  EXPECT_CALL(*client, getWitResponse(testing::_))
+  EXPECT_CALL(*client, getResponse(testing::_))
       .Times(testing::Exactly(1))
       .WillOnce(testing::Return(nlohmann::json::parse(witResponse)));
 
   utils::ScLogger logger;
-  MessageTopicClassifier classifier(&context, &logger, client);
+  WitMessageTopicClassifier classifier(&context, &logger, client);
 
   ScAddrVector messageClassificationItems = classifier.classifyMessage(messageAddr);
 
@@ -136,12 +136,12 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesTest)
               [{"confidence":0.6678,"id":"607208973598157","name":"weather"}],"text":"Привет Максиму из лета.",
               "traits":{"wit$sentiment":[{"confidence":0.5628,"id":"5ac2b50a-44e4-466e-9d49-bad6bd40092c",
               "value":"neutral"}]}})";
-  EXPECT_CALL(*client, getWitResponse(testing::_))
+  EXPECT_CALL(*client, getResponse(testing::_))
       .Times(testing::Exactly(1))
       .WillOnce(testing::Return(nlohmann::json::parse(witResponse)));
 
   utils::ScLogger logger;
-  MessageTopicClassifier classifier(&context, &logger, client);
+  WitMessageTopicClassifier classifier(&context, &logger, client);
 
   ScAddrVector messageClassificationItems = classifier.classifyMessage(messageAddr);
 
@@ -192,12 +192,12 @@ TEST_F(MessageTopicClassificationTest, classifyMessageWithTwoEntitiesSameRoleTes
      {"body":"театр","confidence":0.9967311536328475,"end":69,"entities":{},"id":"454915576488202",
      "name":"rrel_entity","role":"rrel_entity","start":58,"suggested":true,"type":"value","value":"театр"}
     ]}})";
-  EXPECT_CALL(*client, getWitResponse(testing::_))
+  EXPECT_CALL(*client, getResponse(testing::_))
       .Times(testing::Exactly(1))
       .WillOnce(testing::Return(nlohmann::json::parse(witResponse)));
 
   utils::ScLogger logger;
-  MessageTopicClassifier classifier(&context, &logger, client);
+  WitMessageTopicClassifier classifier(&context, &logger, client);
 
   ScAddrVector messageClassificationItems = classifier.classifyMessage(messageAddr);
 

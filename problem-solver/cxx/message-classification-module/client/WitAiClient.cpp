@@ -15,7 +15,7 @@ messageClassificationModule::WitAiClient::WitAiClient(utils::ScLogger * logger)
   witAiUrl = group["url"];
 }
 
-json messageClassificationModule::WitAiClient::getWitResponse(std::string const & messageText)
+json messageClassificationModule::WitAiClient::getResponse(std::string const & messageText)
 {
   json jsonResponse;
   try

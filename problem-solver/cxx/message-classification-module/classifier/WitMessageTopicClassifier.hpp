@@ -2,18 +2,18 @@
 
 #include <sc-memory/sc_agent_context.hpp>
 
-#include "client/WitAiClientInterface.hpp"
+#include "client/ClientInterface.hpp"
 #include <common/searcher/MessageSearcher.hpp>
 
 namespace messageClassificationModule
 {
-class MessageTopicClassifier
+class WitMessageTopicClassifier
 {
 public:
-  explicit MessageTopicClassifier(
+  explicit WitMessageTopicClassifier(
       ScAgentContext * context,
       utils::ScLogger * logger,
-      std::shared_ptr<WitAiClientInterface> const & client);
+      std::shared_ptr<ClientInterface> const & client);
 
   ScAddrVector classifyMessage(ScAddr const & messageAddr);
 
@@ -25,7 +25,7 @@ protected:
 
   std::unique_ptr<commonModule::MessageSearcher> messageSearcher;
 
-  std::shared_ptr<WitAiClientInterface> client;
+  std::shared_ptr<ClientInterface> client;
 
   std::string getMessageText(ScAddr const & messageAddr);
 

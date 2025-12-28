@@ -1,0 +1,23 @@
+services:
+  rasa-train:
+    build:
+      context: ./
+      dockerfile: Dockerfile.train
+    container_name: rasa-train
+    volumes:
+      - ./models:/models
+      - ./data:/data
+      - ./config.yml:/config.yml
+      - ./domain.yml:/domain.yml
+    restart: unless-stopped
+
+  rasa-test:
+    build:
+      context: ./
+      dockerfile: Dockerfile.test
+    container_name: rasa-test
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./models:/models
+    restart: unless-stopped

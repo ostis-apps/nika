@@ -2,14 +2,14 @@
 
 #include <gmock/gmock.h>
 
-#include "client/WitAiClientInterface.hpp"
+#include "client/ClientInterface.hpp"
 
 namespace messageClassificationModule
 {
-class WitAiClientMock : public WitAiClientInterface
+class WitAiClientMock : public ClientInterface
 {
 public:
-  MOCK_METHOD(json, getWitResponse, (std::string const & messageText), (override));
+  MOCK_METHOD(json, getResponse, (std::string const & messageText), (override));
 };
 
 }  // namespace messageClassificationModule

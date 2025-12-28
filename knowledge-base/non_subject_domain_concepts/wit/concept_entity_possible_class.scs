@@ -1,31 +1,33 @@
 concept_entity_possible_class
 <- sc_node_class;
 => nrel_main_idtf:
-	[возможный класс сущности Wit.ai]
+	[возможный класс сущности Wit.ai или Rasa]
 	(* <- lang_ru;; *);
-	[Wit.ai entity possible class]
+	[Wit.ai or Rasa entity possible class]
 	(* <- lang_en;; *);
 <- rrel_key_sc_element:
 	...
 	(*
 	=> nrel_main_idtf:
-		[Опр. (возможный класс сущности Wit.ai)]
+		[Опр. (возможный класс сущности Wit.ai или Rasa)]
 		(* <- lang_ru;; *);
-		[Def. (Wit.ai entity possible class)]
+		[Def. (Wit.ai or Rasa entity possible class)]
 		(* <- lang_en;; *);;
 	<- definition;;
 	<= nrel_sc_text_translation:
 		...
 		(*
 		-> rrel_example:
-			[Возможный класс сущности Wit.ai - класс, элементы которого могут быть выделены посредством Wit.ai как сущности.]
+			[Возможный класс сущности Wit.ai или Rasa - класс, элементы которого могут быть выделены посредством Wit.ai как сущности.]
 			(* <- lang_ru;; *);;
 		*);
 		...
 		(*
 		-> rrel_example: 
-			[Wit.ai entity possible class is a class whose elements can be identified by Wit.ai as entities.]
+			[Wit.ai or Rasa entity possible class is a class whose elements can be identified by Wit.ai or Rasa as entities.]
 			(* <- lang_en;; *);;
 		*);;
 	*);
--> concept_wit_entity;;
+
+-> concept_wit_entity;
+-> concept_rasa_entity;;

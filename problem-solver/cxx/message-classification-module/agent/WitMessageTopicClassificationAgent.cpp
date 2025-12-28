@@ -1,4 +1,4 @@
-#include "MessageTopicClassificationAgent.hpp"
+#include "WitMessageTopicClassificationAgent.hpp"
 
 #include "client/WitAiClient.hpp"
 #include "keynodes/MessageClassificationKeynodes.hpp"
@@ -6,13 +6,13 @@
 
 using namespace messageClassificationModule;
 
-MessageTopicClassificationAgent::MessageTopicClassificationAgent()
+WitMessageTopicClassificationAgent::WitMessageTopicClassificationAgent()
 {
   m_logger = utils::ScLogger(
-      utils::ScLogger::ScLogType::File, "logs/MessageTopicClassificationAgent.log", utils::ScLogLevel::Debug, true);
+      utils::ScLogger::ScLogType::File, "logs/WitMessageTopicClassificationAgent.log", utils::ScLogLevel::Debug, true);
 }
 
-ScResult MessageTopicClassificationAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
+ScResult WitMessageTopicClassificationAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
 {
   initFields();
   ScAddrVector answerElements;
@@ -37,13 +37,13 @@ ScResult MessageTopicClassificationAgent::DoProgram(ScActionInitiatedEvent const
   return action.FinishSuccessfully();
 }
 
-ScAddr MessageTopicClassificationAgent::GetActionClass() const
+ScAddr WitMessageTopicClassificationAgent::GetActionClass() const
 {
   return MessageClassificationKeynodes::action_message_topic_classification;
 }
 
-void MessageTopicClassificationAgent::initFields()
+void WitMessageTopicClassificationAgent::initFields()
 {
   std::unique_ptr<WitAiClient> client = std::make_unique<WitAiClient>(&m_logger);
-  this->manager = std::make_unique<MessageTopicClassificationManager>(&m_context, &m_logger);
+  this->manager = std::make_unique<WitMessageTopicClassificationManager>(&m_context, &m_logger);
 }

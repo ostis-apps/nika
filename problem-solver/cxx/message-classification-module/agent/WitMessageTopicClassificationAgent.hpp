@@ -2,21 +2,21 @@
 
 #include <sc-memory/sc_agent.hpp>
 
-#include "manager/MessageTopicClassificationManager.hpp"
+#include "manager/WitMessageTopicClassificationManager.hpp"
 
 namespace messageClassificationModule
 {
-class MessageTopicClassificationAgent : public ScActionInitiatedAgent
+class WitMessageTopicClassificationAgent : public ScActionInitiatedAgent
 {
 public:
-  MessageTopicClassificationAgent();
+  WitMessageTopicClassificationAgent();
 
   ScAddr GetActionClass() const override;
 
   ScResult DoProgram(ScActionInitiatedEvent const & event, ScAction & action) override;
 
 private:
-  std::unique_ptr<MessageTopicClassificationManager> manager;
+  std::unique_ptr<WitMessageTopicClassificationManager> manager;
 
   void initFields();
 };

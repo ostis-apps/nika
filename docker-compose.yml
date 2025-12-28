@@ -85,6 +85,17 @@ services:
       - "--host=problem-solver"
     networks:
       - nika
+  
+  rasa:
+    build:
+      context: ./problem-solver/cxx/message-classification-module/rasa_classifier_model
+      dockerfile: Dockerfile.server
+    container_name: rasa-server
+    restart: unless-stopped
+    ports:
+      - "5005:5005"
+    networks:
+      - nika
 
 volumes:
   kb-binary: {}

@@ -1,71 +1,71 @@
-#include "AlternativeMessageTopicClassificationAgent.hpp"
+  #include "AlternativeMessageTopicClassificationAgent.hpp"
 
-#include "keynodes/MessageClassificationKeynodes.hpp"
-#include <common/utils/ActionUtils.hpp>
-#include <inference/inference_manager_abstract.hpp>
-#include <inference/inference_manager_factory.hpp>
-#include <sc-agents-common/utils/IteratorUtils.hpp>
+  #include "keynodes/MessageClassificationKeynodes.hpp"
+  #include <common/utils/ActionUtils.hpp>
+  #include <inference/inference_manager_abstract.hpp>
+  #include <inference/inference_manager_factory.hpp>
+  #include <sc-agents-common/utils/IteratorUtils.hpp>
 
-using namespace messageClassificationModule;
+  using namespace messageClassificationModule;
 
-AlternativeMessageTopicClassificationAgent::AlternativeMessageTopicClassificationAgent()
-{
-  m_logger = utils::ScLogger(
-      utils::ScLogger::ScLogType::File,
-      "logs/AlternativeMessageTopicClassificationAgent.log",
-      utils::ScLogLevel::Debug,
-      true);
-}
-
-ScResult AlternativeMessageTopicClassificationAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
-{
-  ScAddrVector answerElements;
-
-  ScAddr const & messageAddr = action.GetArgument(ScKeynodes::rrel_1);
-  if (!messageAddr.IsValid())
+  AlternativeMessageTopicClassificationAgent::AlternativeMessageTopicClassificationAgent()
   {
-    m_logger.Error("Action doesn't have a message node.");
-    return action.FinishUnsuccessfully();
+    m_logger = utils::ScLogger(
+        utils::ScLogger::ScLogType::File,
+        "logs/AlternativeMessageTopicClassificationAgent.log",
+        utils::ScLogLevel::Debug,
+        true);
   }
 
-  ScAddr const & outputStructure = m_context.GenerateNode(ScType::ConstNodeStructure);
-  inference::InferenceParams const & inferenceParams{
-      MessageClassificationKeynodes::concept_classify_message_rule, {messageAddr}, {}, outputStructure};
-  inference::InferenceConfig const & inferenceConfig{
-      inference::GENERATE_ALL_FORMULAS,
-      inference::REPLACEMENTS_ALL,
-      inference::TREE_ONLY_OUTPUT_STRUCTURE,
-      inference::SEARCH_IN_ALL_KB};
-  std::unique_ptr<inference::InferenceManagerAbstract> iterationStrategy =
-      inference::InferenceManagerFactory::ConstructDirectInferenceManagerAll(&m_context, &m_logger, inferenceConfig);
-  try
+  ScResult AlternativeMessageTopicClassificationAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
   {
-    iterationStrategy->ApplyInference(inferenceParams);
-  }
-  catch (utils::ScException & exception)
-  {
-    m_logger.Error(exception.Description());
+    ScAddrVector answerElements;
+
+    ScAddr const & messageAddr = action.GetArgument(ScKeynodes::rrel_1);
+    if (!messageAddr.IsValid())
+    {
+      m_logger.Error("Action doesn't have a message node.");
+      return action.FinishUnsuccessfully();
+    }
+
+    ScAddr const & outputStructure = m_context.GenerateNode(ScType::ConstNodeStructure);
+    inference::InferenceParams const & inferenceParams{
+        MessageClassificationKeynodes::concept_classify_message_rule, {messageAddr}, {}, outputStructure};
+    inference::InferenceConfig const & inferenceConfig{
+        inference::GENERATE_ALL_FORMULAS,
+        inference::REPLACEMENTS_ALL,
+        inference::TREE_ONLY_OUTPUT_STRUCTURE,
+        inference::SEARCH_IN_ALL_KB};
+    std::unique_ptr<inference::InferenceManagerAbstract> iterationStrategy =
+        inference::InferenceManagerFactory::ConstructDirectInferenceManagerAll(&m_context, &m_logger, inferenceConfig);
+    try
+    {
+      iterationStrategy->ApplyInference(inferenceParams);
+    }
+    catch (utils::ScException & exception)
+    {
+      m_logger.Error(exception.Description());
+      ActionUtils::wrapActionResultToScStructure(&m_context, action, answerElements);
+      return action.FinishUnsuccessfully();
+    }
+
+    if (!utils::IteratorUtils::getAnyFromSet(&m_context, outputStructure).IsValid())
+    {
+      m_logger.Debug("Message is not classified.");
+      ActionUtils::wrapActionResultToScStructure(&m_context, action, answerElements);
+      return action.FinishUnsuccessfully();
+    }
+    else
+    {
+      m_logger.Debug("Message is classified.");
+    }
+
     ActionUtils::wrapActionResultToScStructure(&m_context, action, answerElements);
-    return action.FinishUnsuccessfully();
+
+    return action.FinishSuccessfully();
   }
 
-  if (!utils::IteratorUtils::getAnyFromSet(&m_context, outputStructure).IsValid())
+  ScAddr AlternativeMessageTopicClassificationAgent::GetActionClass() const
   {
-    m_logger.Debug("Message is not classified.");
-    ActionUtils::wrapActionResultToScStructure(&m_context, action, answerElements);
-    return action.FinishUnsuccessfully();
+    return MessageClassificationKeynodes::action_alternative_message_topic_classification;
   }
-  else
-  {
-    m_logger.Debug("Message is classified.");
-  }
-
-  ActionUtils::wrapActionResultToScStructure(&m_context, action, answerElements);
-
-  return action.FinishSuccessfully();
-}
-
-ScAddr AlternativeMessageTopicClassificationAgent::GetActionClass() const
-{
-  return MessageClassificationKeynodes::action_alternative_message_topic_classification;
-}

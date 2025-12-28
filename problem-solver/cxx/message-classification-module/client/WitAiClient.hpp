@@ -2,17 +2,17 @@
 
 #include <sc-memory/utils/sc_logger.hpp>
 
-#include "client/WitAiClientInterface.hpp"
+#include "client/ClientInterface.hpp"
 
 namespace messageClassificationModule
 {
 
-class WitAiClient : public WitAiClientInterface
+class WitAiClient : public ClientInterface
 {
 public:
   WitAiClient(utils::ScLogger * logger);
 
-  json getWitResponse(std::string const & messageText) override;
+  json getResponse(std::string const & messageText) override;
 
   ~WitAiClient() override = default;
 

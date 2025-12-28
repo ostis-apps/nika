@@ -1,0 +1,19 @@
+language: ru, en
+
+pipeline:
+- name: WhitespaceTokenizer
+- name: components.text_sanitizer.TextSanitizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+- name: DIETClassifier
+  entity_recognition: true
+- name: RegexFeaturizer
+- name: EntitySynonymMapper
+- name: RegexEntityExtractor
+  use_lookup_tables: true
+- name: components.replacement_component.EntityReplacer
+- name: components.intent_validator.IntentValidator
+
+policies:
+- name: MemoizationPolicy
+assistant_id: 20241029-143355-closed-claim

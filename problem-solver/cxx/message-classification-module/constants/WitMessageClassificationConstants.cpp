@@ -1,4 +1,4 @@
-#include "MessageClassificationConstants.hpp"
+#include "WitMessageClassificationConstants.hpp"
 
 namespace messageClassificationModule
 {

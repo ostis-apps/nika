@@ -1,6 +1,6 @@
-#include "MessageTopicClassifier.hpp"
+#include "WitMessageTopicClassifier.hpp"
 
-#include "constants/MessageClassificationConstants.hpp"
+#include "constants/WitMessageClassificationConstants.hpp"
 #include "keynodes/MessageClassificationKeynodes.hpp"
 #include <common/keynodes/Keynodes.hpp>
 #include <common/searcher/MessageSearcher.hpp>
@@ -11,10 +11,10 @@ using namespace commonModule;
 
 namespace messageClassificationModule
 {
-MessageTopicClassifier::MessageTopicClassifier(
+WitMessageTopicClassifier::WitMessageTopicClassifier(
     ScAgentContext * context,
     utils::ScLogger * logger,
-    std::shared_ptr<WitAiClientInterface> const & client)
+    std::shared_ptr<ClientInterface> const & client)
   : context(context)
   , logger(logger)
   , client(client)
@@ -22,13 +22,13 @@ MessageTopicClassifier::MessageTopicClassifier(
   messageSearcher = std::make_unique<MessageSearcher>(this->context, logger);
 }
 
-ScAddrVector MessageTopicClassifier::classifyMessage(ScAddr const & messageAddr)
+ScAddrVector WitMessageTopicClassifier::classifyMessage(ScAddr const & messageAddr)
 {
   ScAddrVector messageClassificationElements = {messageAddr};
 
   std::string const messageText = getMessageText(messageAddr);
 
-  json const witResponse = client->getWitResponse(messageText);
+  json const witResponse = client->getResponse(messageText);
   logger->Info(witResponse);
 
   ScAddrVector const messageIntentElements = getMessageIntentClass(messageAddr, witResponse);
@@ -46,7 +46,7 @@ ScAddrVector MessageTopicClassifier::classifyMessage(ScAddr const & messageAddr)
   return messageClassificationElements;
 }
 
-std::string MessageTopicClassifier::getMessageText(ScAddr const & messageAddr)
+std::string WitMessageTopicClassifier::getMessageText(ScAddr const & messageAddr)
 {
   std::string linkContent;
   ScAddr const messageLink = messageSearcher->getMessageLink(messageAddr);
@@ -58,7 +58,7 @@ std::string MessageTopicClassifier::getMessageText(ScAddr const & messageAddr)
   return linkContent;
 }
 
-ScAddrVector MessageTopicClassifier::getMessageIntentClass(ScAddr const & messageAddr, json const & witResponse)
+ScAddrVector WitMessageTopicClassifier::getMessageIntentClass(ScAddr const & messageAddr, json const & witResponse)
 {
   ScAddrVector messageIntentCLassElements;
 
@@ -99,7 +99,7 @@ ScAddrVector MessageTopicClassifier::getMessageIntentClass(ScAddr const & messag
   return messageIntentCLassElements;
 }
 
-std::string MessageTopicClassifier::getMessageIntent(json const & witResponse)
+std::string WitMessageTopicClassifier::getMessageIntent(json const & witResponse)
 {
   std::string messageIntent;
   try
@@ -114,7 +114,7 @@ std::string MessageTopicClassifier::getMessageIntent(json const & witResponse)
   return messageIntent;
 }
 
-std::vector<std::string> MessageTopicClassifier::getWitAiIdtfs(ScAddr const & messageClass)
+std::vector<std::string> WitMessageTopicClassifier::getWitAiIdtfs(ScAddr const & messageClass)
 {
   std::string linkContent;
   ScAddrVector witAiIdtfAddrs =
@@ -129,7 +129,7 @@ std::vector<std::string> MessageTopicClassifier::getWitAiIdtfs(ScAddr const & me
   return witAiIdtfs;
 }
 
-ScAddrVector MessageTopicClassifier::getMessageTraitClass(ScAddr const & messageAddr, json const & witResponse)
+ScAddrVector WitMessageTopicClassifier::getMessageTraitClass(ScAddr const & messageAddr, json const & witResponse)
 {
   ScAddrVector messageTraitClassElements;
 
@@ -152,7 +152,7 @@ ScAddrVector MessageTopicClassifier::getMessageTraitClass(ScAddr const & message
   return messageTraitClassElements;
 }
 
-json MessageTopicClassifier::getMessageTrait(json const & witResponse)
+json WitMessageTopicClassifier::getMessageTrait(json const & witResponse)
 {
   json messageIntent;
   try
@@ -167,7 +167,7 @@ json MessageTopicClassifier::getMessageTrait(json const & witResponse)
   return messageIntent;
 }
 
-void MessageTopicClassifier::buildTraitTemplate(ScTemplate & traitTemplate, ScAddr const & possibleMessageCLass)
+void WitMessageTopicClassifier::buildTraitTemplate(ScTemplate & traitTemplate, ScAddr const & possibleMessageCLass)
 {
   traitTemplate.Quintuple(
       possibleMessageCLass,
@@ -189,7 +189,7 @@ void MessageTopicClassifier::buildTraitTemplate(ScTemplate & traitTemplate, ScAd
       MessageClassificationKeynodes::nrel_wit_ai_idtf);
 }
 
-ScAddrVector MessageTopicClassifier::processTraits(
+ScAddrVector WitMessageTopicClassifier::processTraits(
     ScIterator3Ptr & possibleTraitIterator,
     json const & messageTrait,
     ScAddrVector & messageTraitClassElements,
@@ -234,7 +234,7 @@ ScAddrVector MessageTopicClassifier::processTraits(
   return messageTraitClassElements;
 }
 
-ScAddrVector MessageTopicClassifier::getMessageEntity(ScAddr const & messageAddr, json const & witResponse)
+ScAddrVector WitMessageTopicClassifier::getMessageEntity(ScAddr const & messageAddr, json const & witResponse)
 {
   ScAddrVector messageEntitiesElements;
 
@@ -251,7 +251,7 @@ ScAddrVector MessageTopicClassifier::getMessageEntity(ScAddr const & messageAddr
   return messageEntitiesElements;
 }
 
-json MessageTopicClassifier::getMessageEntities(json const & witResponse)
+json WitMessageTopicClassifier::getMessageEntities(json const & witResponse)
 {
   json messageEntity;
   try
@@ -266,7 +266,7 @@ json MessageTopicClassifier::getMessageEntities(json const & witResponse)
   return messageEntity;
 }
 
-void MessageTopicClassifier::buildEntityTemplate(ScTemplate & entityTemplate, ScAddr const & possibleEntityClass)
+void WitMessageTopicClassifier::buildEntityTemplate(ScTemplate & entityTemplate, ScAddr const & possibleEntityClass)
 {
   entityTemplate.Quintuple(
       possibleEntityClass,
@@ -292,7 +292,7 @@ void MessageTopicClassifier::buildEntityTemplate(ScTemplate & entityTemplate, Sc
       MessageClassificationKeynodes::nrel_wit_ai_idtf);
 }
 
-ScAddrVector MessageTopicClassifier::processEntities(
+ScAddrVector WitMessageTopicClassifier::processEntities(
     ScIterator3Ptr & possibleEntityIterator,
     json const & messageEntity,
     ScAddrVector & messageEntitiesElements,

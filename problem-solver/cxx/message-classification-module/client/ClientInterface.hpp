@@ -7,12 +7,12 @@ using json = nlohmann::json;
 namespace messageClassificationModule
 {
 
-class WitAiClientInterface
+class ClientInterface
 {
 public:
-  virtual json getWitResponse(std::string const & messageText) = 0;
+  virtual json getResponse(std::string const & messageText) = 0;
 
-  virtual ~WitAiClientInterface() = default;
+  virtual ~ClientInterface() = default;
 };
 
 }  // namespace messageClassificationModule

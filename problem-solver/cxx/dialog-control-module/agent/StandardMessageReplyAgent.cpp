@@ -13,7 +13,7 @@ namespace dialogControlModule
 StandardMessageReplyAgent::StandardMessageReplyAgent()
 {
   m_logger = utils::ScLogger(
-      utils::ScLogger::ScLogType::File, "logs/StandardMessageReplyAgent.log", utils::ScLogLevel::Debug, true);
+      utils::ScLogger::ScLogType::Console, "", utils::ScLogLevel(utils::ScLogLevel::Debug), true);
 }
 
 ScResult StandardMessageReplyAgent::DoProgram(ScActionInitiatedEvent const & event, ScAction & action)
