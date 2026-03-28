@@ -32,24 +32,42 @@ nav:
     - Codestyle: dev/codestyle.md
     - Codestyle: dev/codestyle.ru.md
   - Agents:
-    - Message reply agent: agents/messageReplyAgent.md
-    - Message reply agent: agents/messageReplyAgent.ru.md
-    - Non-atomic action interpretation agent: agents/nonAtomicActionInterpretationAgent.md
-    - Non-atomic action interpretation agent: agents/nonAtomicActionInterpretationAgent.ru.md
-    - Alternative message topic classification agent: agents/alternativeMessageTopicClassificationAgent.md
-    - Alternative message topic classification agent: agents/alternativeMessageTopicClassificationAgent.ru.md
-    - Message topic classification agent: agents/messageTopicClassificationAgent.md
-    - Message topic classification agent: agents/messageTopicClassificationAgent.ru.md
-    - Standard message reply agent: agents/standardMessageReplyAgent.md
-    - Standard message reply agent: agents/standardMessageReplyAgent.ru.md
-    - Phrase generation agent: agents/phraseGenerationAgent.md
-    - Phrase generation agent: agents/phraseGenerationAgent.ru.md
-    - Interface component color changer agent: agents/changeInterfaceColorAgent.md
-    - Interface component color changer agent: agents/changeInterfaceColorAgent.ru.md
-    - Weather agent: agents/weatherAgent.md
-    - Weather agent: agents/weatherAgent.ru.md
-    - Find word in set by first letter agent: agents/findWordInSetByFirstLetter.md
-    - Find word in set by first letter agent: agents/findWordInSetByFirstLetter.ru.md
+    - Base:
+      - Message reply agent: agents/base/messageReplyAgent.md
+      - Message reply agent: agents/base/messageReplyAgent.ru.md
+      - Non-atomic action interpretation agent: agents/base/nonAtomicActionInterpretationAgent.md
+      - Non-atomic action interpretation agent: agents/base/nonAtomicActionInterpretationAgent.ru.md
+      - Alternative message topic classification agent: agents/classification/alternativeMessageTopicClassificationAgent.md
+      - Alternative message topic classification agent: agents/classification/alternativeMessageTopicClassificationAgent.ru.md
+      - Message topic classification agent: agents/classification/messageTopicClassificationAgent.md
+      - Message topic classification agent: agents/classification/messageTopicClassificationAgent.ru.md
+      - Standard message reply agent: agents/base/standardMessageReplyAgent.md
+      - Standard message reply agent: agents/base/standardMessageReplyAgent.ru.md
+      - Phrase generation agent: agents/base/phraseGenerationAgent.md
+      - Phrase generation agent: agents/base/phraseGenerationAgent.ru.md
+    - Auth:
+      - Create Author Agent: agents/auth/createAuthorAgent.md
+      - Create Author Agent: agents/auth/createAuthorAgent.ru.md
+      - Create Access Tokens Agent: agents/auth/createTokensAgent.md
+      - Create Access Tokens Agent: agents/auth/createTokensAgent.ru.md
+    - Theme agents: 
+      - Interface component color changer agent: agents/question_types/changeInterfaceColorAgent.md
+      - Interface component color changer agent: agents/question_types/changeInterfaceColorAgent.ru.md
+      - Weather agent: agents/question_types/weatherAgent.md
+      - Weather agent: agents/question_types/weatherAgent.ru.md
+      - Find word in set by first letter agent: agents/question_types/findWordInSetByFirstLetter.md
+      - Find word in set by first letter agent: agents/question_types/findWordInSetByFirstLetter.ru.md
+      - Requires authorization:
+        - Google Calendar Event Addition Agent: agents/question_types/google/addCalendarEvent.md
+        - Google Calendar Event Addition Agent: agents/question_types/google/addCalendarEvent.ru.md
+        - Google Calendar Event Deleting Agent: agents/question_types/google/deleteCalendarEvent.md
+        - Google Calendar Event Deleting Agent: agents/question_types/google/deleteCalendarEvent.ru.md
+        - Google Calendar Event Updating Agent: agents/question_types/google/updateCalendarEvent.md
+        - Google Calendar Event Updating Agent: agents/question_types/google/updateCalendarEvent.ru.md
+        - Contact Creation Agent: agents/question_types/google/createContactAgent.md
+        - Contact Creation Agent: agents/question_types/google/createContactAgent.ru.md
+        - Send Mail Agent: agents/question_types/google/sendMailSMTP.md
+        - Send Mail Agent: agents/question_types/google/sendMailSMTP.ru.md
   - Patterns:
       - Knowledge base patterns: patterns/kb-patterns.md
       - Knowledge base patterns: patterns/kb-patterns.ru.md
@@ -98,6 +116,19 @@ plugins:
           Subsystems: "Подсистемы"
           License: "Лицензия"
           Changelog: "Список изменений"
+          Create Access Tokens Agent: "Агент создания токенов доступа"
+          Create Author Agent: "Агент создания автора"
+          Base: "Базовые"
+          Auth: "Авторизация"
+          Theme agents: "Тематические агенты"
+          Requires authorization: "Требуют авторизации"
+          Contact Creation Agent: "Агент создания контакта"
+          Google Calendar Event Addition Agent: "Агент добавления события в гугл календарь"
+          Send Mail Agent: "Агент отправки сообщения по почте"
+          Google Calendar Event Updating Agent: "Агент обновления события в гугл календаре"
+          Google Calendar Event Deleting Agent: "Агент удаления события из гугл календаря"
+
+
 
 theme: 
   name: material

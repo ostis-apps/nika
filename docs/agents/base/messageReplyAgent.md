@@ -6,7 +6,6 @@ Is an agent that generates the response message, associates with the original re
 
 `action_reply_to_message`
 
-
 **Parameters:**
 
 1. `linkAddr` -- sc-link with user message text;
@@ -36,6 +35,6 @@ Example of an output structure:
 ### Result
 
 Possible result codes:
- 
+
 * `SC_RESULT_OK` - answer message generated;
 * `SC_RESULT_ERROR`- internal error.
