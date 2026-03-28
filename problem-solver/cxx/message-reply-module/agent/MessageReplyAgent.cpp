@@ -18,7 +18,10 @@ ScResult MessageReplyAgent::DoProgram(ScActionInitiatedEvent const & event, ScAc
 {
   ScAddr linkAddr = action.GetArgument(ScKeynodes::rrel_1);
   ScAddr chatAddr = action.GetArgument(ScKeynodes::rrel_2);
-  ScAddr processingProgramAddr = getMessageProcessingProgram();
+  ScAddr processingProgramAddr = action.GetArgument(ScKeynodes::rrel_3);
+  if (!processingProgramAddr.IsValid()){
+    processingProgramAddr = getMessageProcessingProgram();
+  }
   ScAddr authorAddr = utils::IteratorUtils::getAnyByOutRelation(&m_context, action, MessageReplyKeynodes::nrel_authors);
   if (!processingProgramAddr.IsValid())
   {

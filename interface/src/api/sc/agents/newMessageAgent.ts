@@ -7,12 +7,14 @@ const actionInitiated = 'action_initiated';
 const actionReplyToMessage = 'action_reply_to_message';
 const rrel1 = 'rrel_1';
 const rrel2 = 'rrel_2';
+const rrel3 = 'rrel_3';
 const nrelAuthors = 'nrel_authors';
 const conceptTextFile = 'concept_text_file';
 const langEn = 'lang_en';
 const langRu = 'lang_ru';
 const actionFinished = 'action_finished';
 const result = 'nrel_result';
+const processingProgram = "message_processing_program";
 
 const baseKeynodes = [
     { id: action, type: ScType.ConstNodeClass },
@@ -20,12 +22,14 @@ const baseKeynodes = [
     { id: actionReplyToMessage, type: ScType.ConstNodeClass },
     { id: rrel1, type: ScType.ConstNodeRole },
     { id: rrel2, type: ScType.ConstNodeRole },
+    { id: rrel3, type: ScType.ConstNodeRole },
     { id: nrelAuthors, type: ScType.ConstNodeNonRole },
     { id: conceptTextFile, type: ScType.ConstNodeClass },
     { id: langEn, type: ScType.ConstNodeClass },
     { id: langRu, type: ScType.ConstNodeClass },
     { id: actionFinished, type: ScType.ConstNodeClass },
     { id: result, type: ScType.ConstNodeNonRole },
+    { id: processingProgram, type: ScType.ConstNode },
 ];
 
 export const generateLinkText = async (messageText: string) => {
@@ -64,6 +68,13 @@ const describeAgent = async (
         chatNode,
         ScType.VarPermPosArc,
         keynodes[rrel2],
+    );
+    template.quintuple(
+        actionNodeAlias,
+        ScType.VarPermPosArc,
+        keynodes[processingProgram],
+        ScType.VarPermPosArc,
+        keynodes[rrel3],
     );
     template.quintuple(
         actionNodeAlias,
