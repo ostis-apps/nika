@@ -1,15 +1,21 @@
 # nika-ui
+
 NIKA User Interface
 
-## Run 
+## Run
 
 ### Install dependencies
+
 ```sh
 yarn
 ```
 
 ### Run for development
+
 ```sh
+# Install all dependencies
+yarn install
+
 # Start webpack dev server
 yarn start
 
@@ -17,7 +23,8 @@ yarn start
 yarn serve
 ```
 
-### Run for production:
+### Run for production
+
 ```sh
 # create build folder
 yarn build
@@ -26,6 +33,7 @@ yarn serve
 ```
 
 If you have no need of overriding default api urls (described below) you can use one command
+
 ```sh
 yarn build:serve
 ```

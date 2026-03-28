@@ -1,0 +1,36 @@
+concept_app_launch_message
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение, запускающее приложение]
+	    (* <- lang_ru;; *);
+	[run app message]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[run_app];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение, запускающее приложение)]
+	        (* <- lang_ru;; *);
+	    [Def. (run app message)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение, запускающее программу - сообщение, содержащее название приложения, которое требуется запустить.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[App launch message - a message containing the name of the application to be launched.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

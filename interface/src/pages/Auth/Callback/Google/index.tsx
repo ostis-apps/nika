@@ -1,0 +1,1 @@
+export { GoogleCallback as default } from './google';

@@ -6,18 +6,31 @@ import { Date } from '@components/Chat/Date';
 import { ScAddr } from 'ts-sc-client';
 import { resolveUserAgent } from '@agents/resolveUserAgent';
 import { useChat } from '@hooks/useChat';
-import * as React from "react";
 import { SC_WEB_URL } from "@constants";
 
 export const Demo = () => {
     const [user, setUser] = useState<ScAddr | null>(null);
     const [isLoading, setIsLoading] = useState(false);
 
-    const { initChat, sendMessage, isAgentAnswer, onFetching, messages, chatRef } = useChat(user);
+    const { 
+        initChat, 
+        sendMessage, 
+        isAgentAnswer, 
+        onFetching, 
+        messages, 
+        chatRef 
+    } = useChat(user);
+    
     const onSend = useCallback(
         async (text: string) => {
+            if (!user){
+            const new_user = await resolveUserAgent();
+            if (new_user)
+            setUser(new_user)
+        }
             if (!user) return;
             await sendMessage(user, text);
+            await initChat([user]);
         },
         [user, sendMessage],
     );

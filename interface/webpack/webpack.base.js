@@ -16,7 +16,7 @@ module.exports = (env) => ({
     output: {
         path: relativeRoot('build'),
         filename: IS_DEV ? '[name].js' : '[name].[contenthash].js',
-        publicPath: 'auto',
+        publicPath: '/',
     },
     optimization,
     devServer,

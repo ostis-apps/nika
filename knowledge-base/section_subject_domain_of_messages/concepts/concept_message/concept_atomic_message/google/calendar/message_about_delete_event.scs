@@ -1,0 +1,36 @@
+concept_delete_calendar_event_message
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение об удалении события из календаря]
+	    (* <- lang_ru;; *);
+	[message about deleting calendar event]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[delete_event];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение об удалении события из календаря)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about calendar event delete)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение об удалении события из календаря - запрос на удаление события.]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about calendar event delete is an atomic message that requests event deleting.]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

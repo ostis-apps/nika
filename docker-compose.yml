@@ -78,6 +78,8 @@ services:
       dockerfile: ./problem-solver/py/Dockerfile
     container_name: py-sc-server
     restart: unless-stopped
+    volumes:
+      - ./problem-solver/py:/nika/problem-solver/py
     depends_on:
       problem-solver:
         condition: service_healthy

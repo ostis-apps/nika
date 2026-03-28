@@ -5,6 +5,7 @@ import { dialogAgent } from '@api/sc/agents/dialogAgent';
 import { getInfoMessage, searchChatMessages } from '@api/sc/search/searchChatMessages';
 import { newMessageAgent, generateLinkText } from '@api/sc/agents/newMessageAgent';
 
+
 interface IMessage {
     addr: ScAddr;
     text: string | number;
@@ -87,7 +88,6 @@ export const useChat = (user: ScAddr | null) => {
 
         return localShouldEnd;
     }, [chatNode, shouldEnd, messages]);
-
     const sendMessage = useCallback(
         async (user: ScAddr, text: string) => {
             const linkAddr = await generateLinkText(text);

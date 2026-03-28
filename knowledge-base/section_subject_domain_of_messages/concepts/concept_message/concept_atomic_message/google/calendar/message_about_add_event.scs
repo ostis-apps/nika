@@ -1,0 +1,36 @@
+concept_add_calendar_event_message
+<- sc_node_class;
+=> nrel_main_idtf:
+	[сообщение о добавлении события в календарь]
+	    (* <- lang_ru;; *);
+	[message about adding calendar event]
+	    (* <- lang_en;; *);
+=> nrel_wit_ai_idtf:
+	[add_event];
+<- rrel_key_sc_element:
+	...
+	(*
+	=> nrel_main_idtf:
+	    [Опр. (сообщение о добавлении события в календарь)]
+	        (* <- lang_ru;; *);
+	    [Def. (message about adding calendar event)]
+	        (* <- lang_en;; *);;
+	<- definition;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			[Сообщение о добавлении события в календарь - запрос на добавления события в календарь]
+			    (* <- lang_ru;; *);;
+		*);
+		...
+		(*
+		-> rrel_example: 
+			[Message about successful adding calendar event is an atomic message of a request to add the event to calendar]
+			    (* <- lang_en;; *);;
+		*);;
+	<= nrel_using_constants:
+		{
+			concept_atomic_message
+		};;		
+	*);;

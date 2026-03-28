@@ -15,7 +15,7 @@ SC_SERVER_TIMEOUT_VALUE = 5  # seconds
 def main(args: dict):
     try:
         ws = create_connection(f"ws://{args[SC_SERVER_HOST]}:{args[SC_SERVER_PORT]}", timeout=args[SC_SERVER_TIMEOUT])
-    except _exceptions.WebSocketTimeoutException as e:
+    except _exceptions.WebSocketTimeoutException:
         print("Connection sc-server timed out")
         exit(1)
     except Exception as e:
@@ -26,7 +26,7 @@ def main(args: dict):
 
     try:
         result = ws.recv()
-    except _exceptions.WebSocketTimeoutException as e:
+    except _exceptions.WebSocketTimeoutException:
         print("Sc-server response timed out")
         exit(1)
 

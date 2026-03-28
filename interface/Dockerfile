@@ -9,7 +9,7 @@ RUN yarn
 COPY . .
 RUN yarn build 
 
-FROM node:16-alpine as runtime 
+FROM node:16-alpine AS runtime 
 USER root
 
 WORKDIR /nika-ui
