@@ -1,0 +1,85 @@
+@var_culture_name = _[];;
+@var_culture_name
+=> nrel_system_identifier:
+    [_culture_name];;
+
+@var_period_name = _[];;
+@var_period_name
+=> nrel_system_identifier:
+    [_period_name];;
+
+concept_phrase_about_geoglyph_origin
+<= nrel_inclusion:
+    concept_phrase;
+
+-> [Создателем геоглифов считается ${_culture_name}; период создания: ${_period_name}.]
+    (*
+        <- lang_ru;;
+
+        => nrel_phrase_template:
+        [*
+            _message
+                _<- concept_message;
+                _-> rrel_entity:: _entity;;
+
+            concept_geoglyph
+                _-> _entity;;
+
+            _entity
+                _=> nrel_created_by_culture:: _culture;
+                _=> nrel_origin_period:: _period;;
+
+            _culture
+                _=> nrel_main_idtf::
+                    @var_culture_name
+                    (*
+                        <-_ _lang;;
+                    *);;
+
+            _period
+                _=> nrel_main_idtf::
+                    @var_period_name
+                    (*
+                        <-_ _lang;;
+                    *);;
+
+            languages
+                _-> _lang;;
+        *];;
+    *);
+
+-> [Геоглифы связываются с ${_culture_name}. В базе знаний указан период их создания: ${_period_name}.]
+    (*
+        <- lang_ru;;
+
+        => nrel_phrase_template:
+        [*
+            _message
+                _<- concept_message;
+                _-> rrel_entity:: _entity;;
+
+            concept_geoglyph
+                _-> _entity;;
+
+            _entity
+                _=> nrel_created_by_culture:: _culture;
+                _=> nrel_origin_period:: _period;;
+
+            _culture
+                _=> nrel_main_idtf::
+                    @var_culture_name
+                    (*
+                        <-_ _lang;;
+                    *);;
+
+            _period
+                _=> nrel_main_idtf::
+                    @var_period_name
+                    (*
+                        <-_ _lang;;
+                    *);;
+
+            languages
+                _-> _lang;;
+        *];;
+    *);;
