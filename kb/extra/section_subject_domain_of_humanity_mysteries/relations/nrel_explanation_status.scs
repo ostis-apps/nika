@@ -1,0 +1,18 @@
+nrel_explanation_status
+<- sc_node_norole_relation;
+<- relation;
+<- binary_relation;
+<- oriented_relation;
+<- antireflexive_relation;
+<- asymmetric_relation;
+<- antitransitive_relation;
+
+=> nrel_main_idtf:
+    [имеет статус объяснения*]
+    (* <- lang_ru;; *);
+
+=> nrel_first_domain:
+    concept_humanity_mystery;
+
+=> nrel_second_domain:
+    concept_explanation_status;;

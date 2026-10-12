@@ -1,0 +1,104 @@
+section_subject_domain_of_humanity_mysteries
+=> nrel_main_idtf:
+    [Раздел. Предметная область тайн человечества]
+    (* <- lang_ru;; *);
+<- atomic_section;;
+
+section_subject_domain_of_humanity_mysteries = [*
+    subject_domain_of_humanity_mysteries
+    <- sc_node_struct;
+
+    => nrel_main_idtf:
+        [Предметная область тайн человечества]
+        (* <- lang_ru;; *);
+
+    => nrel_note:
+        [При формализации предметной области использованы материалы
+        из открытых источников:
+        Beinecke Rare Book and Manuscript Library Йельского университета
+        о Манускрипте Войнича;
+        English Heritage о Стоунхендже;
+        UNESCO World Heritage Centre о линиях и геоглифах Наска и Пальпа;
+        National Park Service США об исчезнувшей колонии Роанок.]
+        (* <- lang_ru;; *);
+
+    <- subject_domain;
+
+    -> rrel_maximum_studied_object_class:
+        concept_humanity_mystery;
+
+    -> rrel_not_maximum_studied_object_class:
+        concept_historical_mystery;
+        concept_archaeological_mystery;
+        concept_cryptographic_mystery;
+        concept_disappearance_mystery;
+        concept_purpose_mystery;
+        concept_mysterious_object;
+        concept_artifact;
+        concept_structure;
+        concept_document;
+        concept_geoglyph;
+        concept_hypothesis;
+        concept_evidence;
+        concept_researcher;
+        concept_organization;
+        concept_location;
+        concept_country;
+        concept_historical_period;
+        concept_culture;
+        concept_research_method;
+        concept_research_result;
+        concept_explanation_status;
+
+    -> rrel_explored_relation:
+        nrel_mystery_object;
+        nrel_mystery_location;
+        nrel_has_hypothesis;
+        nrel_supported_by_evidence;
+        nrel_investigated_by;
+        nrel_studied_by_organization;
+        nrel_origin_period;
+        nrel_created_by_culture;
+        nrel_research_method;
+        nrel_research_result;
+        nrel_explanation_status;
+        nrel_located_in_country;;
+*];;
+
+section_subject_domain_of_humanity_mysteries
+-> rrel_key_sc_element:
+    subject_domain_of_humanity_mysteries;
+    concept_humanity_mystery;
+    concept_historical_mystery;
+    concept_archaeological_mystery;
+    concept_cryptographic_mystery;
+    concept_disappearance_mystery;
+    concept_purpose_mystery;
+    concept_mysterious_object;
+    concept_hypothesis;
+    concept_evidence;
+    concept_researcher;
+    concept_location;
+    concept_artifact;
+    concept_structure;
+    concept_document;
+    concept_geoglyph;
+    concept_organization;
+    concept_country;
+    concept_historical_period;
+    concept_culture;
+    concept_research_method;
+    concept_research_result;
+    concept_explanation_status;
+    nrel_mystery_object;
+    nrel_mystery_location;
+    nrel_has_hypothesis;
+    nrel_supported_by_evidence;
+    nrel_investigated_by;
+    nrel_studied_by_organization;
+    nrel_origin_period;
+    nrel_created_by_culture;
+    nrel_research_method;
+    nrel_research_result;
+    nrel_explanation_status;
+    nrel_located_in_country;;

@@ -1,0 +1,17 @@
+concept_disappearance_mystery
+<- sc_node_class;
+<- class;
+<- concept_wit_entity;
+
+=> nrel_main_idtf:
+    [тайна исчезновения]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [историческая тайна, связанная
+    с необъяснённым или не полностью объяснённым исчезновением
+    человека, группы людей либо другого исторического объекта]
+    (* <- lang_ru;; *);
+
+<= nrel_inclusion:
+    concept_historical_mystery;;

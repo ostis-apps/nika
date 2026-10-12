@@ -1,0 +1,17 @@
+concept_artifact
+<- sc_node_class;
+<- class;
+<- concept_wit_entity;
+
+=> nrel_main_idtf:
+    [артефакт]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [созданный или изменённый человеком материальный объект,
+    изучение которого может использоваться для исследования
+    исторической или археологической тайны]
+    (* <- lang_ru;; *);
+
+<= nrel_inclusion:
+    concept_mysterious_object;;

@@ -1,0 +1,17 @@
+concept_document
+<- sc_node_class;
+<- class;
+<- concept_wit_entity;
+
+=> nrel_main_idtf:
+    [документ]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [материальный носитель зафиксированной информации,
+    содержание, происхождение или особенности которого могут быть
+    связаны с исследуемой тайной]
+    (* <- lang_ru;; *);
+
+<= nrel_inclusion:
+    concept_artifact;;

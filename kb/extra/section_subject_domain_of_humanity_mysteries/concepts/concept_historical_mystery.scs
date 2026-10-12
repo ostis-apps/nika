@@ -1,0 +1,17 @@
+concept_historical_mystery
+<- sc_node_class;
+<- class;
+<- concept_wit_entity;
+
+=> nrel_main_idtf:
+    [историческая тайна]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [тайна человечества, связанная с событиями,
+    людьми или обстоятельствами прошлого, сведения о которых не позволяют
+    сформировать однозначное и общепринятое объяснение]
+    (* <- lang_ru;; *);
+
+<= nrel_inclusion:
+    concept_humanity_mystery;;

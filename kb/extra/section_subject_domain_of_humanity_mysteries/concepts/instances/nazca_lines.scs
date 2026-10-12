@@ -1,0 +1,125 @@
+nazca_lines_mystery
+<- concept_humanity_mystery;
+<- concept_wit_entity;
+<- concept_archaeological_mystery;
+<- concept_purpose_mystery;
+
+=> nrel_main_idtf:
+    [тайна назначения линий Наска]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [отсутствие однозначного объяснения назначения многочисленных
+    геоглифов, созданных древними обществами на южном побережье Перу]
+    (* <- lang_ru;; *);
+
+=> nrel_mystery_object:
+    nazca_lines;
+
+=> nrel_mystery_location:
+    nazca_pampa;
+
+=> nrel_has_hypothesis:
+    hypothesis_nazca_ritual_astronomical_function;
+
+=> nrel_explanation_status:
+    status_partially_explained;;
+
+
+nazca_lines
+<- concept_mysterious_object;
+<- concept_geoglyph;
+<- concept_wit_entity;
+
+=> nrel_main_idtf:
+    [линии Наска]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [комплекс крупных геоглифов,
+    расположенных на пустынных равнинах южного Перу
+    и изображающих геометрические фигуры, животных,
+    растения и другие формы]
+    (* <- lang_ru;; *);
+
+=> nrel_created_by_culture:
+    nazca_culture;
+
+=> nrel_origin_period:
+    nazca_geoglyph_creation_period;;
+
+
+nazca_culture
+<- concept_culture;
+
+=> nrel_main_idtf:
+    [культура Наска]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [Культура Наска — доколумбовая культура южного побережья Перу,
+    с которой связано создание значительной части геоглифов Наска.]
+    (* <- lang_ru;; *);;
+
+
+nazca_pampa
+<- concept_location;
+
+=> nrel_main_idtf:
+    [пустынные равнины Наска]
+    (* <- lang_ru;; *);
+
+=> nrel_located_in_country:
+    peru;;
+
+
+peru
+<- concept_country;
+
+=> nrel_main_idtf:
+    [Перу]
+    (* <- lang_ru;; *);;
+
+
+nazca_geoglyph_creation_period
+<- concept_historical_period;
+
+=> nrel_main_idtf:
+    [период создания геоглифов Наска]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [Значительная часть линий и геоглифов Наска была создана
+    примерно в период с 500 года до нашей эры
+    по 500 год нашей эры.]
+    (* <- lang_ru;; *);;
+
+
+hypothesis_nazca_ritual_astronomical_function
+<- concept_hypothesis;
+
+=> nrel_main_idtf:
+    [гипотеза о ритуально-астрономическом назначении линий Наска]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [Гипотеза предполагает, что линии и геоглифы Наска
+    могли выполнять ритуальные и астрономические функции.]
+    (* <- lang_ru;; *);
+
+=> nrel_supported_by_evidence:
+    nazca_symbolic_cultural_landscape;;
+
+
+nazca_symbolic_cultural_landscape
+<- concept_evidence;
+
+=> nrel_main_idtf:
+    [символический характер культурного ландшафта Наска]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [Многочисленные геоглифы образуют масштабный символический
+    культурный ландшафт, связанный с религиозными и социальными
+    традициями доколумбовых обществ региона.]
+    (* <- lang_ru;; *);;

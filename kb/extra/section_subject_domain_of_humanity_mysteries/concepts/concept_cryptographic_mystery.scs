@@ -1,0 +1,18 @@
+concept_cryptographic_mystery
+<- sc_node_class;
+<- class;
+<- concept_wit_entity;
+
+=> nrel_main_idtf:
+    [криптографическая тайна]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [тайна человечества, связанная
+    с текстом, системой письменности, шифром или кодом,
+    содержание или принцип построения которого остаётся
+    полностью или частично нерасшифрованным]
+    (* <- lang_ru;; *);
+
+<= nrel_inclusion:
+    concept_humanity_mystery;;

@@ -1,0 +1,131 @@
+roanoke_colony_mystery
+<- concept_humanity_mystery;
+<- concept_wit_entity;
+<- concept_historical_mystery;
+<- concept_disappearance_mystery;
+
+=> nrel_main_idtf:
+    [тайна исчезновения колонии Роанок]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [неизвестная судьба английских колонистов, оставленных на острове
+    Роанок в 1587 году и не обнаруженных после возвращения
+    Джона Уайта в 1590 году]
+    (* <- lang_ru;; *);
+
+=> nrel_mystery_object:
+    roanoke_colony;
+
+=> nrel_mystery_location:
+    roanoke_island;
+
+=> nrel_has_hypothesis:
+    hypothesis_roanoke_moved_to_croatoan;
+
+=> nrel_investigated_by:
+    john_white;
+
+=> nrel_explanation_status:
+    status_unresolved;;
+
+
+roanoke_colony
+<- concept_mysterious_object;
+
+=> nrel_main_idtf:
+    [колония Роанок 1587 года]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [Колония Роанок 1587 года — английское поселение,
+    основанное на острове Роанок и впоследствии
+    обнаруженное покинутым.]
+    (* <- lang_ru;; *);
+
+=> nrel_origin_period:
+    late_sixteenth_century;;
+
+
+hypothesis_roanoke_moved_to_croatoan
+<- concept_hypothesis;
+
+=> nrel_main_idtf:
+    [гипотеза о переселении колонистов Роанока к кроатонам]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [Гипотеза предполагает, что исчезнувшие колонисты Роанока
+    покинули первоначальное поселение и переселились
+    в район Кроатоан.]
+    (* <- lang_ru;; *);
+
+=> nrel_supported_by_evidence:
+    croatoan_inscription;;
+
+
+croatoan_inscription
+<- concept_evidence;
+
+=> nrel_main_idtf:
+    [надпись CROATOAN в покинутой колонии Роанок]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [При возвращении Джона Уайта в 1590 году
+    слово CROATOAN было обнаружено вырезанным
+    на частоколе покинутого поселения.]
+    (* <- lang_ru;; *);;
+
+
+john_white
+<- concept_researcher;
+
+=> nrel_main_idtf:
+    [Джон Уайт]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [Джон Уайт — губернатор колонии Роанок,
+    вернувшийся на остров в 1590 году
+    для поиска оставленных там колонистов.]
+    (* <- lang_ru;; *);;
+
+
+roanoke_island
+<- concept_location;
+
+=> nrel_main_idtf:
+    [остров Роанок]
+    (* <- lang_ru;; *);
+
+=> nrel_located_in_country:
+    united_states;;
+
+
+late_sixteenth_century
+<- concept_historical_period;
+
+=> nrel_main_idtf:
+    [конец XVI века]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [Исторический период, к которому относятся
+    основание колонии Роанок в 1587 году
+    и обнаружение её исчезновения в 1590 году.]
+    (* <- lang_ru;; *);;
+
+
+status_unresolved
+<- concept_explanation_status;
+
+=> nrel_main_idtf:
+    [не разрешено]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [Статус означает, что имеющиеся исторические данные
+    не позволяют однозначно установить обстоятельства
+    исследуемого события.]
+    (* <- lang_ru;; *);;

@@ -1,0 +1,17 @@
+concept_purpose_mystery
+<- sc_node_class;
+<- class;
+<- concept_wit_entity;
+
+=> nrel_main_idtf:
+    [тайна назначения]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [тайна человечества, связанная
+    с объектом или сооружением, первоначальное назначение
+    или способ использования которого не установлен однозначно]
+    (* <- lang_ru;; *);
+
+<= nrel_inclusion:
+    concept_humanity_mystery;;

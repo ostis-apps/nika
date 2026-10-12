@@ -1,0 +1,85 @@
+@var_method_name = _[];;
+@var_method_name
+=> nrel_system_identifier:
+    [_method_name];;
+
+@var_result_name = _[];;
+@var_result_name
+=> nrel_system_identifier:
+    [_result_name];;
+
+concept_phrase_about_document_research
+<= nrel_inclusion:
+    concept_phrase;
+
+-> [Для данного документа применён метод исследования: ${_method_name}. Результат исследования: ${_result_name}.]
+    (*
+        <- lang_ru;;
+
+        => nrel_phrase_template:
+        [*
+            _message
+                _<- concept_message;
+                _-> rrel_entity:: _entity;;
+
+            concept_document
+                _-> _entity;;
+
+            _entity
+                _=> nrel_research_method:: _method;
+                _=> nrel_research_result:: _result;;
+
+            _method
+                _=> nrel_main_idtf::
+                    @var_method_name
+                    (*
+                        <-_ _lang;;
+                    *);;
+
+            _result
+                _=> nrel_main_idtf::
+                    @var_result_name
+                    (*
+                        <-_ _lang;;
+                    *);;
+
+            languages
+                _-> _lang;;
+        *];;
+    *);
+
+-> [При исследовании документа использован метод «${_method_name}»; полученный результат — ${_result_name}.]
+    (*
+        <- lang_ru;;
+
+        => nrel_phrase_template:
+        [*
+            _message
+                _<- concept_message;
+                _-> rrel_entity:: _entity;;
+
+            concept_document
+                _-> _entity;;
+
+            _entity
+                _=> nrel_research_method:: _method;
+                _=> nrel_research_result:: _result;;
+
+            _method
+                _=> nrel_main_idtf::
+                    @var_method_name
+                    (*
+                        <-_ _lang;;
+                    *);;
+
+            _result
+                _=> nrel_main_idtf::
+                    @var_result_name
+                    (*
+                        <-_ _lang;;
+                    *);;
+
+            languages
+                _-> _lang;;
+        *];;
+    *);;

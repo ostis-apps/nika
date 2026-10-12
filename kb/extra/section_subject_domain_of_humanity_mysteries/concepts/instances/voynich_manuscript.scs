@@ -1,0 +1,164 @@
+voynich_manuscript_mystery
+<- concept_humanity_mystery;
+<- concept_wit_entity;
+<- concept_historical_mystery;
+<- concept_cryptographic_mystery;
+
+=> nrel_main_idtf:
+    [тайна Манускрипта Войнича]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [нерасшифрованный текст рукописи, написанный
+    неизвестной системой письма]
+    (* <- lang_ru;; *);
+
+=> nrel_mystery_object:
+    voynich_manuscript;
+
+=> nrel_mystery_location:
+    new_haven;
+
+=> nrel_has_hypothesis:
+    hypothesis_voynich_text_is_encoded;
+
+=> nrel_investigated_by:
+    lisa_fagin_davis;
+
+=> nrel_explanation_status:
+    status_undeciphered;;
+
+
+voynich_manuscript
+<- concept_mysterious_object;
+<- concept_artifact;
+<- concept_document;
+<- concept_wit_entity;
+
+=> nrel_main_idtf:
+    [Манускрипт Войнича]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [иллюстрированная рукопись,
+    известная также как Beinecke MS 408, текст которой
+    остаётся нерасшифрованным]
+    (* <- lang_ru;; *);
+
+=> nrel_studied_by_organization:
+    beinecke_library;
+
+=> nrel_origin_period:
+    fifteenth_century;
+
+=> nrel_research_method:
+    radiocarbon_dating;
+
+=> nrel_research_result:
+    voynich_parchment_dating_result;;
+
+
+hypothesis_voynich_text_is_encoded
+<- concept_hypothesis;
+
+=> nrel_main_idtf:
+    [гипотеза о зашифрованном характере текста Манускрипта Войнича]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [Гипотеза предполагает, что неизвестный текст Манускрипта Войнича
+    представляет собой закодированный или зашифрованный текст.
+    Однозначного подтверждения этой версии нет.]
+    (* <- lang_ru;; *);;
+
+
+lisa_fagin_davis
+<- concept_researcher;
+
+=> nrel_main_idtf:
+    [Лиза Фейгин Дэвис]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [Лиза Фейгин Дэвис — исследователь средневековых рукописей,
+    занимавшаяся исследованием Манускрипта Войнича.]
+    (* <- lang_ru;; *);;
+
+
+beinecke_library
+<- concept_organization;
+
+=> nrel_main_idtf:
+    [Библиотека редких книг и рукописей Бейнеке]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [Библиотека редких книг и рукописей Бейнеке Йельского университета
+    является хранилищем Манускрипта Войнича.]
+    (* <- lang_ru;; *);;
+
+
+new_haven
+<- concept_location;
+
+=> nrel_main_idtf:
+    [Нью-Хейвен]
+    (* <- lang_ru;; *);
+
+=> nrel_located_in_country:
+    united_states;;
+
+
+united_states
+<- concept_country;
+
+=> nrel_main_idtf:
+    [Соединённые Штаты Америки]
+    (* <- lang_ru;; *);;
+
+
+fifteenth_century
+<- concept_historical_period;
+
+=> nrel_main_idtf:
+    [XV век]
+    (* <- lang_ru;; *);;
+
+
+radiocarbon_dating
+<- concept_research_method;
+
+=> nrel_main_idtf:
+    [радиоуглеродное датирование]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [Радиоуглеродное датирование — метод определения возраста
+    органических материалов по содержанию радиоактивного изотопа углерода.]
+    (* <- lang_ru;; *);;
+
+
+voynich_parchment_dating_result
+<- concept_research_result;
+
+=> nrel_main_idtf:
+    [датирование пергамента Манускрипта Войнича XV веком]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [Радиоуглеродное исследование пергамента Манускрипта Войнича
+    показало его происхождение из XV века.]
+    (* <- lang_ru;; *);;
+
+
+status_undeciphered
+<- concept_explanation_status;
+
+=> nrel_main_idtf:
+    [не расшифровано]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [Статус означает, что содержание исследуемого текста
+    не имеет общепринятой расшифровки.]
+    (* <- lang_ru;; *);;

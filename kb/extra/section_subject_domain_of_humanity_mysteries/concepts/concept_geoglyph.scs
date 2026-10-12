@@ -1,0 +1,17 @@
+concept_geoglyph
+<- sc_node_class;
+<- class;
+<- concept_wit_entity;
+
+=> nrel_main_idtf:
+    [геоглиф]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [крупное изображение или геометрическая фигура,
+    созданная на поверхности земли посредством изменения
+    рельефа, грунта или расположения природных материалов]
+    (* <- lang_ru;; *);
+
+<= nrel_inclusion:
+    concept_mysterious_object;;

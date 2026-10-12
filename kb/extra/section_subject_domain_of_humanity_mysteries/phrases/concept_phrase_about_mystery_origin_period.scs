@@ -1,0 +1,79 @@
+﻿@var_object_name = _[];;
+@var_object_name
+=> nrel_system_identifier:
+    [_object_name];;
+
+@var_period_name = _[];;
+@var_period_name
+=> nrel_system_identifier:
+    [_period_name];;
+
+concept_phrase_about_mystery_origin_period
+<= nrel_inclusion:
+    concept_phrase;
+
+-> [Период происхождения ${_object_name}: ${_period_name}.]
+    (*
+        <- lang_ru;;
+
+        => nrel_phrase_template:
+        [*
+            _message
+                _<- concept_message;
+                _-> rrel_entity:: _entity;;
+
+            concept_structure
+                _-> _entity;;
+
+            _entity
+                _=> nrel_origin_period:: _period;
+                _=> nrel_main_idtf::
+                    @var_object_name
+                    (*
+                        <-_ _lang;;
+                    *);;
+
+            _period
+                _=> nrel_main_idtf::
+                    @var_period_name
+                    (*
+                        <-_ _lang;;
+                    *);;
+
+            languages
+                _-> _lang;;
+        *];;
+    *);
+
+-> [${_object_name} относится к периоду: ${_period_name}.]
+    (*
+        <- lang_ru;;
+
+        => nrel_phrase_template:
+        [*
+            _message
+                _<- concept_message;
+                _-> rrel_entity:: _entity;;
+
+            concept_structure
+                _-> _entity;;
+
+            _entity
+                _=> nrel_origin_period:: _period;
+                _=> nrel_main_idtf::
+                    @var_object_name
+                    (*
+                        <-_ _lang;;
+                    *);;
+
+            _period
+                _=> nrel_main_idtf::
+                    @var_period_name
+                    (*
+                        <-_ _lang;;
+                    *);;
+
+            languages
+                _-> _lang;;
+        *];;
+    *);;

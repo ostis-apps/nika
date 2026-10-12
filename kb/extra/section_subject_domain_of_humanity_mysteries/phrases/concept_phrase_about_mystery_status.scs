@@ -1,0 +1,79 @@
+@var_mystery_name = _[];;
+@var_mystery_name
+=> nrel_system_identifier:
+    [_mystery_name];;
+
+@var_status_name = _[];;
+@var_status_name
+=> nrel_system_identifier:
+    [_status_name];;
+
+concept_phrase_about_mystery_status
+<= nrel_inclusion:
+    concept_phrase;
+
+-> [Для «${_mystery_name}» установлен статус: ${_status_name}.]
+    (*
+        <- lang_ru;;
+
+        => nrel_phrase_template:
+        [*
+            _message
+                _<- concept_message;
+                _-> rrel_entity:: _mystery;;
+
+            concept_humanity_mystery
+                _-> _mystery;;
+
+            _mystery
+                _=> nrel_explanation_status:: _status;
+                _=> nrel_main_idtf::
+                    @var_mystery_name
+                    (*
+                        <-_ _lang;;
+                    *);;
+
+            _status
+                _=> nrel_main_idtf::
+                    @var_status_name
+                    (*
+                        <-_ _lang;;
+                    *);;
+
+            languages
+                _-> _lang;;
+        *];;
+    *);
+
+-> [Текущий статус для «${_mystery_name}»: ${_status_name}.]
+    (*
+        <- lang_ru;;
+
+        => nrel_phrase_template:
+        [*
+            _message
+                _<- concept_message;
+                _-> rrel_entity:: _mystery;;
+
+            concept_humanity_mystery
+                _-> _mystery;;
+
+            _mystery
+                _=> nrel_explanation_status:: _status;
+                _=> nrel_main_idtf::
+                    @var_mystery_name
+                    (*
+                        <-_ _lang;;
+                    *);;
+
+            _status
+                _=> nrel_main_idtf::
+                    @var_status_name
+                    (*
+                        <-_ _lang;;
+                    *);;
+
+            languages
+                _-> _lang;;
+        *];;
+    *);;

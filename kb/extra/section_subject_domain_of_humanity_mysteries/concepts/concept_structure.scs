@@ -1,0 +1,17 @@
+concept_structure
+<- sc_node_class;
+<- class;
+<- concept_wit_entity;
+
+=> nrel_main_idtf:
+    [сооружение]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [созданный человеком материальный объект,
+    представляющий собой архитектурную или инженерную конструкцию
+    и связанный с исследуемой тайной]
+    (* <- lang_ru;; *);
+
+<= nrel_inclusion:
+    concept_mysterious_object;;

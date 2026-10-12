@@ -1,0 +1,141 @@
+stonehenge_mystery
+<- concept_humanity_mystery;
+<- concept_wit_entity;
+<- concept_historical_mystery;
+<- concept_archaeological_mystery;
+<- concept_purpose_mystery;
+
+=> nrel_main_idtf:
+    [тайна назначения Стоунхенджа]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [отсутствие однозначно установленного объяснения первоначального
+    назначения этого доисторического сооружения]
+    (* <- lang_ru;; *);
+
+=> nrel_mystery_object:
+    stonehenge;
+
+=> nrel_mystery_location:
+    wiltshire;
+
+=> nrel_has_hypothesis:
+    hypothesis_stonehenge_solar_ceremonial_use;
+
+=> nrel_explanation_status:
+    status_partially_explained;;
+
+
+stonehenge
+<- concept_mysterious_object;
+<- concept_structure;
+<- concept_wit_entity;
+
+=> nrel_main_idtf:
+    [Стоунхендж]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [доисторический каменный памятник в Англии,
+    формировавшийся в несколько этапов в эпоху неолита
+    и бронзового века]
+    (* <- lang_ru;; *);
+
+=> nrel_studied_by_organization:
+    english_heritage;
+
+=> nrel_origin_period:
+    late_neolithic;;
+
+
+hypothesis_stonehenge_solar_ceremonial_use
+<- concept_hypothesis;
+
+=> nrel_main_idtf:
+    [гипотеза о церемониальном назначении Стоунхенджа,
+    связанном с солнечным циклом]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [Гипотеза предполагает, что Стоунхендж использовался
+    как церемониальное сооружение, связанное с движением Солнца
+    и важными моментами календарного цикла.]
+    (* <- lang_ru;; *);
+
+=> nrel_supported_by_evidence:
+    stonehenge_solstice_alignment;;
+
+
+stonehenge_solstice_alignment
+<- concept_evidence;
+
+=> nrel_main_idtf:
+    [ориентация Стоунхенджа относительно солнцестояний]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [Расположение центральных камней Стоунхенджа связано
+    с направлениями восхода и захода Солнца во время
+    летнего и зимнего солнцестояний.]
+    (* <- lang_ru;; *);;
+
+
+english_heritage
+<- concept_organization;
+
+=> nrel_main_idtf:
+    [English Heritage]
+    (* <- lang_en;; *);
+
+=> nrel_note:
+    [English Heritage — организация, занимающаяся сохранением,
+    изучением и представлением исторических объектов Англии,
+    включая Стоунхендж.]
+    (* <- lang_ru;; *);;
+
+
+wiltshire
+<- concept_location;
+
+=> nrel_main_idtf:
+    [Уилтшир]
+    (* <- lang_ru;; *);
+
+=> nrel_located_in_country:
+    united_kingdom;;
+
+
+united_kingdom
+<- concept_country;
+
+=> nrel_main_idtf:
+    [Соединённое Королевство]
+    (* <- lang_ru;; *);;
+
+
+late_neolithic
+<- concept_historical_period;
+
+=> nrel_main_idtf:
+    [поздний неолит]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [Поздний неолит — исторический период, к которому относится
+    один из основных этапов строительства Стоунхенджа.]
+    (* <- lang_ru;; *);;
+
+
+status_partially_explained
+<- concept_explanation_status;
+
+=> nrel_main_idtf:
+    [частично объяснено]
+    (* <- lang_ru;; *);
+
+=> nrel_note:
+    [Статус означает, что для исследуемой тайны существует
+    научно обоснованная интерпретация, однако все обстоятельства
+    и первоначальное назначение объекта не установлены однозначно.]
+    (* <- lang_ru;; *);;
